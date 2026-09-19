@@ -1,0 +1,170 @@
+<!DOCTYPE html>
+<html lang="fa" dir="rtl">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>پیش‌نمایش نقشه آفلاین برداری</title>
+  <link rel="stylesheet" href="assets/vendor/maplibre-gl.css" />
+  <style>
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    html, body { width: 100%; height: 100%; overflow: hidden; background: #08131f; font-family: system-ui, -apple-system, sans-serif; }
+    #map { width: 100vw; height: 100vh; }
+    
+    /* Country labels */
+    .clabel {
+      font-size: 11px;
+      color: #9cb8dd;
+      opacity: 0.85;
+      white-space: nowrap;
+      pointer-events: none;
+      text-shadow: 0 1px 3px rgba(0, 0, 0, 0.85);
+      letter-spacing: 0.3px;
+    }
+    .clabel.r1, .clabel.r2 { font-size: 12.5px; opacity: 1; color: #d0e3ff; font-weight: 600; }
+    
+    /* City labels */
+    .city-label {
+      font-size: 10px;
+      color: #8bb8e8;
+      opacity: 0.88;
+      white-space: nowrap;
+      pointer-events: none;
+      text-shadow: 0 1px 3px rgba(0, 0, 0, 0.85);
+      transform: translate(10px, 6px);
+    }
+    .city-label.r1 { font-size: 10.5px; font-weight: 600; color: #a8d2f7; }
+
+    /* Map HUD overlay */
+    .hud-box {
+      position: absolute;
+      bottom: 20px;
+      left: 20px;
+      background: rgba(8, 19, 31, 0.85);
+      border: 1px solid rgba(43, 74, 110, 0.6);
+      border-radius: 6px;
+      padding: 8px 14px;
+      color: #8bb8e8;
+      font-size: 12px;
+      font-family: monospace;
+      backdrop-filter: blur(4px);
+      z-index: 10;
+      pointer-events: none;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.5);
+    }
+    .hud-title {
+      font-family: system-ui, sans-serif;
+      font-size: 11px;
+      color: #00d2ff;
+      margin-bottom: 4px;
+      font-weight: bold;
+    }
+  </style>
+</head>
+<body>
+
+  <div id="map"></div>
+  <div class="hud-box">
+    <div class="hud-title">🌍 نقشه برداری آفلاین (بومی)</div>
+    <div id="coords">20.00, 25.00 · z2.0</div>
+  </div>
+
+  <script src="assets/vendor/maplibre-gl.js"></script>
+  <script>
+    var mapStyle = {
+      version: 8,
+      sources: {
+        countries: { type: "geojson", data: "assets/geo/countries.json?_t=" + Date.now() }
+      },
+      layers: [
+        { id: "ocean", type: "background", paint: { "background-color": "#08131f" } },
+        { id: "country-fill", type: "fill", source: "countries", paint: { "fill-color": "#16283d", "fill-opacity": 1 } },
+        { id: "country-hover", type: "fill", source: "countries", filter: ["==", ["get", "NAME"], ""], paint: { "fill-color": "#1f3c5b" } },
+        { id: "country-select", type: "fill", source: "countries", filter: ["==", ["get", "NAME"], ""], paint: { "fill-color": "#254d75", "fill-opacity": 0.85 } },
+        { id: "country-select-outline", type: "line", source: "countries", filter: ["==", ["get", "NAME"], ""], paint: { "line-color": "#00d2ff", "line-width": 1.4, "line-opacity": 1 } },
+        { id: "country-line", type: "line", source: "countries", paint: { "line-color": "#2b4a6e", "line-width": 0.7, "line-opacity": 0.9 } }
+      ]
+    };
+
+    var map = new maplibregl.Map({
+      container: "map",
+      style: mapStyle,
+      center: [30, 28],
+      zoom: 2.2,
+      minZoom: 1,
+      maxZoom: 18,
+      attributionControl: false
+    });
+
+    map.addControl(new maplibregl.NavigationControl(), "top-right");
+
+    map.on("mousemove", function (e) {
+      if (!map.getLayer("country-hover")) return;
+      var f = map.queryRenderedFeatures(e.point, { layers: ["country-fill"] })[0];
+      map.setFilter("country-hover", ["==", ["get", "NAME"], f ? f.properties.NAME : ""]);
+    });
+
+    map.on("click", function (e) {
+      if (!map.getLayer("country-select")) return;
+      var f = map.queryRenderedFeatures(e.point, { layers: ["country-fill"] })[0];
+      var cname = f ? (f.properties.NAME || "") : "";
+      map.setFilter("country-select", ["==", ["get", "NAME"], cname]);
+      map.setFilter("country-select-outline", ["==", ["get", "NAME"], cname]);
+    });
+
+    map.on("move", function () {
+      var c = map.getCenter();
+      document.getElementById("coords").textContent = c.lat.toFixed(2) + ", " + c.lng.toFixed(2) + " · z" + map.getZoom().toFixed(1);
+    });
+
+    // Load country & city labels
+    var labelMarkers = [], cityMarkers = [];
+
+    map.on("load", function () {
+      // Country Labels
+      fetch("assets/geo/labels.json?_t=" + Date.now())
+        .then(function (r) { return r.json(); })
+        .then(function (data) {
+          data.features.forEach(function (f) {
+            var el = document.createElement("div");
+            el.className = "clabel r" + (f.properties.RANK || 5);
+            el.textContent = f.properties.NAME_FA || f.properties.NAME;
+            var m = new maplibregl.Marker({ element: el, anchor: "center" })
+              .setLngLat(f.geometry.coordinates).addTo(map);
+            labelMarkers.push({ marker: m, rank: f.properties.RANK || 5 });
+          });
+          updateZoom();
+        });
+
+      // Space Hub Cities
+      fetch("assets/geo/cities.json?_t=" + Date.now())
+        .then(function (r) { return r.json(); })
+        .then(function (data) {
+          data.features.forEach(function (f) {
+            var el = document.createElement("div");
+            el.className = "city-label r" + (f.properties.RANK || 2);
+            el.textContent = f.properties.NAME_FA || f.properties.NAME;
+            var m = new maplibregl.Marker({ element: el, anchor: "center" })
+              .setLngLat(f.geometry.coordinates).addTo(map);
+            cityMarkers.push({ marker: m, rank: f.properties.RANK || 2 });
+          });
+          updateZoom();
+        });
+    });
+
+    function updateZoom() {
+      var z = map.getZoom();
+      labelMarkers.forEach(function (o) {
+        var el = o.marker.getElement();
+        el.style.display = (z >= o.rank - 1.5) ? "block" : "none";
+      });
+      cityMarkers.forEach(function (o) {
+        var el = o.marker.getElement();
+        var minZ = o.rank === 1 ? 3.2 : (o.rank === 2 ? 4.2 : 5.0);
+        el.style.display = (z >= minZ) ? "block" : "none";
+      });
+    }
+
+    map.on("zoom", updateZoom);
+  </script>
+</body>
+</html>

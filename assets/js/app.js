@@ -115,32 +115,32 @@
   function svgLaunch(c) { // rounded pin + rocket glyph
     return '<svg width="30" height="38" viewBox="0 0 30 38">' +
       '<path d="M15 37C15 37 28 22.5 28 14A13 13 0 1 0 2 14C2 22.5 15 37 15 37Z" fill="' + c + '" stroke="#fff" stroke-opacity=".55" stroke-width="1.4"/>' +
-      '<path d="M15 6.2c2.7 2.3 4.1 5.6 4.1 9 0 1.4-.2 2.6-.6 3.8h-7c-.4-1.2-.6-2.4-.6-3.8 0-3.4 1.4-6.7 4.1-9z" fill="#08131f"/>' +
+      '<path d="M15 6.2c2.7 2.3 4.1 5.6 4.1 9 0 1.4-.2 2.6-.6 3.8h-7c-.4-1.2-.6-2.4-.6-3.8 0-3.4 1.4-6.7 4.1-9z" fill="#040a12"/>' +
       '<circle cx="15" cy="13.6" r="1.7" fill="' + c + '"/>' +
-      '<path d="M10.9 16.6l-2 3.6 2.6-1.1zM19.1 16.6l2 3.6-2.6-1.1z" fill="#08131f"/>' +
-      '<path d="M13.4 20.3h3.2l-1.6 3.4z" fill="#08131f" opacity=".85"/></svg>';
+      '<path d="M10.9 16.6l-2 3.6 2.6-1.1zM19.1 16.6l2 3.6-2.6-1.1z" fill="#040a12"/>' +
+      '<path d="M13.4 20.3h3.2l-1.6 3.4z" fill="#040a12" opacity=".85"/></svg>';
   }
   function svgPropulsion(c) { // hexagon pin + engine bell with flame
     return '<svg width="30" height="38" viewBox="0 0 30 38">' +
       '<path d="M15 37L3.2 24.6A14 14 0 1 1 26.8 24.6Z" fill="' + c + '" stroke="#fff" stroke-opacity=".55" stroke-width="1.4"/>' +
-      '<path d="M12.2 6.6h5.6l1 5.2c.2 1 .7 1.7 1.5 2.4l1.6 1.4c.6.5.4 1.5-.4 1.7l-3 .8h-7l-3-.8c-.8-.2-1-1.2-.4-1.7l1.6-1.4c.8-.7 1.3-1.4 1.5-2.4z" fill="#08131f"/>' +
-      '<path d="M15 19.6c1.5 1.6 2.4 3.2 2.4 4.6 0 1.6-1.1 2.7-2.4 2.7s-2.4-1.1-2.4-2.7c0-1.4.9-3 2.4-4.6z" fill="#08131f" opacity=".9"/></svg>';
+      '<path d="M12.2 6.6h5.6l1 5.2c.2 1 .7 1.7 1.5 2.4l1.6 1.4c.6.5.4 1.5-.4 1.7l-3 .8h-7l-3-.8c-.8-.2-1-1.2-.4-1.7l1.6-1.4c.8-.7 1.3-1.4 1.5-2.4z" fill="#040a12"/>' +
+      '<path d="M15 19.6c1.5 1.6 2.4 3.2 2.4 4.6 0 1.6-1.1 2.7-2.4 2.7s-2.4-1.1-2.4-2.7c0-1.4.9-3 2.4-4.6z" fill="#040a12" opacity=".9"/></svg>';
   }
   function svgAgency(c) { // shield + orbit/globe
     return '<svg width="30" height="38" viewBox="0 0 30 38">' +
       '<path d="M15 37c8.5-4.3 12-9.9 12-17.6V6.6L15 2.2 3 6.6v12.8C3 27.1 6.5 32.7 15 37z" fill="' + c + '" stroke="#fff" stroke-opacity=".55" stroke-width="1.4"/>' +
-      '<circle cx="15" cy="17" r="5.6" fill="none" stroke="#08131f" stroke-width="1.8"/>' +
-      '<path d="M15 11.4c-2.2 2.6-2.2 8.6 0 11.2M9.4 17h11.2" stroke="#08131f" stroke-width="1.4" fill="none"/>' +
-      '<ellipse cx="15" cy="17" rx="9" ry="3.3" fill="none" stroke="#08131f" stroke-width="1.6" transform="rotate(-28 15 17)"/></svg>';
+      '<circle cx="15" cy="17" r="5.6" fill="none" stroke="#040a12" stroke-width="1.8"/>' +
+      '<path d="M15 11.4c-2.2 2.6-2.2 8.6 0 11.2M9.4 17h11.2" stroke="#040a12" stroke-width="1.4" fill="none"/>' +
+      '<ellipse cx="15" cy="17" rx="9" ry="3.3" fill="none" stroke="#040a12" stroke-width="1.6" transform="rotate(-28 15 17)"/></svg>';
   }
   function svgSite(c) { // launch pad: gantry tower + rocket on pad
     return '<svg width="32" height="38" viewBox="0 0 32 38">' +
       '<path d="M16 37L4.5 25.5A16 16 0 1 1 27.5 25.5Z" fill="' + c + '" stroke="#fff" stroke-opacity=".55" stroke-width="1.4" opacity=".18"/>' +
       '<circle cx="16" cy="16" r="13.4" fill="' + c + '" stroke="#fff" stroke-opacity=".6" stroke-width="1.5"/>' +
-      '<path d="M16 6.4c1.9 1.9 2.9 4.4 2.9 7.1 0 2-.4 3.7-1.1 5.2h-3.6c-.7-1.5-1.1-3.2-1.1-5.2 0-2.7 1-5.2 2.9-7.1z" fill="#08131f"/>' +
-      '<path d="M9.6 8.6v13.2M22.4 8.6v13.2" stroke="#08131f" stroke-width="1.7" stroke-linecap="round"/>' +
-      '<path d="M9.6 11.6h3.4M19 11.6h3.4M9.6 15.4h2.8M19.6 15.4h2.8M9.6 19.2h3.4M19 19.2h3.4" stroke="#08131f" stroke-width="1.2"/>' +
-      '<path d="M7.4 23.4h17.2" stroke="#08131f" stroke-width="2.2" stroke-linecap="round"/>' +
+      '<path d="M16 6.4c1.9 1.9 2.9 4.4 2.9 7.1 0 2-.4 3.7-1.1 5.2h-3.6c-.7-1.5-1.1-3.2-1.1-5.2 0-2.7 1-5.2 2.9-7.1z" fill="#040a12"/>' +
+      '<path d="M9.6 8.6v13.2M22.4 8.6v13.2" stroke="#040a12" stroke-width="1.7" stroke-linecap="round"/>' +
+      '<path d="M9.6 11.6h3.4M19 11.6h3.4M9.6 15.4h2.8M19.6 15.4h2.8M9.6 19.2h3.4M19 19.2h3.4" stroke="#040a12" stroke-width="1.2"/>' +
+      '<path d="M7.4 23.4h17.2" stroke="#040a12" stroke-width="2.2" stroke-linecap="round"/>' +
       '<path d="M16 37l-3.4-13h6.8z" fill="' + c + '"/></svg>';
   }
   function iconFor(cat, status) {
@@ -152,6 +152,8 @@
 
   /* ================= state ================= */
   var DATA = { companies: [], sites: [], missions: [] };
+  window.DATA = DATA;
+
   var markers = [], map = null;
   var filters = { launch: true, propulsion: true, agency: true, site: true };
   var SORT = "new";   /* newest launch first — the user asked for this ordering */
@@ -252,10 +254,11 @@
     document.documentElement.dir = LANG === "fa" ? "rtl" : "ltr";
     var lb = $("#langBtn"); if (lb) lb.textContent = LANG === "fa" ? "EN" : "فا";
     var bb2 = $("#baseBtn"); if (bb2 && bb2.querySelector("span")) bb2.querySelector("span").textContent = t(BASEMODE === "offline" ? "base_offline" : "base_online");
+    updateCitiesBtn();
   }
   on("#langBtn", "click", function () {
     LANG = LANG === "fa" ? "en" : "fa"; localStorage.setItem("orbita_lang", LANG);
-    applyI18n(); buildLayerBar(); renderMarkers(); buildLabels(); renderList(); buildFilters(); renderMissions();
+    applyI18n(); buildLayerBar(); renderMarkers(); buildLabels(); buildCityLabels(); renderList(); buildFilters(); renderMissions();
     var d = $("#detail"); if (d) d.classList.remove("open");
     if (window.ORBITA3D && ORBITA3D.ready()) {
       buildOrbLegend(); syncDensityUI(); ORBITA3D.clearSelection();
@@ -274,19 +277,22 @@
       $$(".view").forEach(function (v) { v.classList.remove("active"); });
       $("#view-" + b.dataset.view).classList.add("active");
       if (b.dataset.view === "map" && map) setTimeout(function () { map.resize(); }, 60);
-      if (b.dataset.view === "orbit") { bootOrbit(); } else if (window.ORBITA3D) { ORBITA3D.stop(); }
+      if (b.dataset.view === "orbit") { 
+
+  bootOrbit(); } else if (window.ORBITA3D) { ORBITA3D.stop(); }
     };
   });
 
   /* ================= map ================= */
-  var BASEMODE = localStorage.getItem("orbita_base") || "offline";
+  var BASEMODE = "online";
+  localStorage.setItem("orbita_base", "online");
 
   function offlineStyle() {
     var dark = THEME === "navy";
     return {
       version: 8,
       sources: {
-        countries: { type: "geojson", data: "assets/geo/countries.json" }
+        countries: { type: "geojson", data: "assets/geo/countries.json?_t=" + Date.now() }
       },
       layers: [
         { id: "ocean", type: "background",
@@ -295,9 +301,15 @@
           paint: { "fill-color": dark ? "#16283d" : "#f7fafc", "fill-opacity": 1 } },
         { id: "country-hover", type: "fill", source: "countries",
           filter: ["==", ["get", "NAME"], ""],
-          paint: { "fill-color": dark ? "#1f3c5b" : "#e4eefb" } },
+          paint: { "fill-color": dark ? "#183254" : "#e4eefb" } },
+        { id: "country-select", type: "fill", source: "countries",
+          filter: ["==", ["get", "NAME"], ""],
+          paint: { "fill-color": dark ? "#254d75" : "#cbe2f8", "fill-opacity": 0.85 } },
+        { id: "country-select-outline", type: "line", source: "countries",
+          filter: ["==", ["get", "NAME"], ""],
+          paint: { "line-color": dark ? "#00d2ff" : "#0077ff", "line-width": 1.4, "line-opacity": 1 } },
         { id: "country-line", type: "line", source: "countries",
-          paint: { "line-color": dark ? "#2b4a6e" : "#b9c9dc", "line-width": 0.7, "line-opacity": .9 } }
+          paint: { "line-color": dark ? "#1e3854" : "#b9c9dc", "line-width": 0.35, "line-opacity": 0.45 } }
       ]
     };
   }
@@ -307,23 +319,44 @@
       ? "https://basemaps.cartocdn.com/gl/dark-matter-gl-style/style.json"
       : "https://basemaps.cartocdn.com/gl/positron-gl-style/style.json";
   }
-  function mapStyle() { return BASEMODE === "online" ? onlineStyle() : offlineStyle(); }
+  function mapStyle() { 
+    return BASEMODE === "offline" ? offlineStyle() : onlineStyle(); 
+  }
 
   /* country name labels rendered as DOM markers (works without remote glyph fonts) */
   var labelMarkers = [], LABELS = null;
+  function getCountryAtLngLat(lng, lat) {
+    if (!LABELS || !LABELS.features || !LABELS.features.length) return null;
+    var best = null, bestDist = 1e9;
+    var normLng = ((lng + 180) % 360 + 360) % 360 - 180;
+
+    for (var i = 0; i < LABELS.features.length; i++) {
+      var feat = LABELS.features[i];
+      var c = feat.geometry.coordinates;
+      var dlng = normLng - c[0];
+      var dlat = lat - c[1];
+      if (dlng > 180) dlng -= 360;
+      if (dlng < -180) dlng += 360;
+      var dist = dlng * dlng + dlat * dlat;
+      if (dist < bestDist) {
+        bestDist = dist;
+        best = feat;
+      }
+    }
+    if (best && bestDist < 625) {
+      return {
+        country_en: best.properties.NAME,
+        country_fa: best.properties.NAME_FA || best.properties.NAME
+      };
+    }
+    return null;
+  }
+
   function buildLabels() {
     if (!map) return;
     labelMarkers.forEach(function (m) { m.remove(); });
     labelMarkers = [];
-    if (!LABELS || BASEMODE === "online") return;
-    LABELS.features.forEach(function (f) {
-      var el = document.createElement("div");
-      el.className = "clabel r" + (f.properties.RANK || 5);
-      el.textContent = LANG === "fa" ? (f.properties.NAME_FA || f.properties.NAME) : f.properties.NAME;
-      labelMarkers.push(new maplibregl.Marker({ element: el, anchor: "center" })
-        .setLngLat(f.geometry.coordinates).addTo(map));
-    });
-    zoomLabels();
+    // Country text labels removed per user directive ("نیازی نیست هیچ نام فارسی یا انگلیسی رو کشور ها نوشته شود")
   }
   function zoomLabels() {
     if (!map) return;
@@ -335,7 +368,61 @@
     });
   }
 
+  /* space hub city labels rendered as DOM markers */
+  var cityMarkers = [], CITIES = null, SHOW_CITIES = localStorage.getItem("orbita_cities") === "true";
+  function updateCitiesBtn() {
+    var cb = $("#citiesBtnText");
+    if (cb) {
+      cb.textContent = SHOW_CITIES 
+        ? (LANG === "fa" ? "شهرها: روشن" : "Cities: ON")
+        : (LANG === "fa" ? "شهرها: خاموش" : "Cities: OFF");
+    }
+    var btn = $("#citiesBtn");
+    if (btn) {
+      if (SHOW_CITIES) btn.classList.add("active");
+      else btn.classList.remove("active");
+    }
+  }
+
+  function buildCityLabels() {
+    if (!map) return;
+    cityMarkers.forEach(function (m) { m.remove(); });
+    cityMarkers = [];
+    updateCitiesBtn();
+    if (!CITIES || !SHOW_CITIES || BASEMODE === "online") return;
+    CITIES.features.forEach(function (f) {
+      var el = document.createElement("div");
+      el.className = "city-label r" + (f.properties.RANK || 2);
+      var cname = LANG === "fa" ? (f.properties.NAME_FA || f.properties.NAME) : f.properties.NAME;
+      var hubInfo = f.properties.HUB ? (" · " + f.properties.HUB) : "";
+      el.textContent = cname;
+      el.title = cname + hubInfo;
+      cityMarkers.push(new maplibregl.Marker({ element: el, anchor: "center" })
+        .setLngLat(f.geometry.coordinates).addTo(map));
+    });
+    zoomCityLabels();
+  }
+
+  function zoomCityLabels() {
+    if (!map) return;
+    var z = map.getZoom();
+    cityMarkers.forEach(function (m) {
+      var el = m.getElement();
+      if (!SHOW_CITIES) {
+        el.style.display = "none";
+        return;
+      }
+      var rank = +(el.className.match(/r(\d+)/) || [0, 2])[1];
+      var minZoom = rank === 1 ? 3.2 : (rank === 2 ? 4.2 : 5.0);
+      el.style.display = (z >= minZoom) ? "block" : "none";
+    });
+  }
+
   function initMap() {
+    setTimeout(function() {
+      var el = document.getElementById("mapStatus");
+      if (el) el.style.display = "none";
+    }, 2000);
     if (typeof maplibregl === "undefined") { $("#mapStatus").textContent = "MapLibre failed to load."; return; }
     map = new maplibregl.Map({ container: "map", style: mapStyle(), center: [20, 25], zoom: 1.9,
       minZoom: 1, maxZoom: 18, hash: true, attributionControl: { compact: true } });
@@ -347,31 +434,75 @@
     map.on("load", function () {
       $("#mapStatus").style.display = "none";
       renderMarkers();
-      fetch("assets/geo/labels.json").then(function (r) { return r.json(); })
+      fetch("assets/geo/labels.json?_t=" + Date.now()).then(function (r) { return r.json(); })
         .then(function (d) { LABELS = d; buildLabels(); }).catch(function () {});
+      fetch("assets/geo/cities.json?_t=" + Date.now()).then(function (r) { return r.json(); })
+        .then(function (d) { CITIES = d; buildCityLabels(); }).catch(function () {});
     });
     map.on("styledata", function () {
       if ($("#mapStatus")) $("#mapStatus").style.display = "none";
       if (markers.length === 0) renderMarkers();
     });
-    map.on("zoom", zoomLabels);
+    map.on("zoom", function () {
+      zoomLabels();
+      zoomCityLabels();
+    });
     map.on("move", function () { var c = map.getCenter();
       $("#coords").textContent = c.lat.toFixed(2) + ", " + c.lng.toFixed(2) + " · z" + map.getZoom().toFixed(1); });
-    map.on("error", function (e) { console.warn("map:", (e && e.error && e.error.message) || e); });
+    map.on("error", function (e) { 
+      console.warn("map:", (e && e.error && e.error.message) || e);
+      var statusEl = document.getElementById("mapStatus");
+      if (statusEl) statusEl.style.display = "none";
+    });
 
-    // country hover highlight (offline style only)
+    // country hover & click highlight (offline style only)
     map.on("mousemove", function (e) {
       if (BASEMODE !== "offline" || !map.getLayer("country-hover")) return;
       var f = map.queryRenderedFeatures(e.point, { layers: ["country-fill"] })[0];
       map.setFilter("country-hover", ["==", ["get", "NAME"], f ? f.properties.NAME : ""]);
     });
+
+    map.on("click", function (e) {
+      var cNameEn = null, cNameFa = null;
+      try {
+        if (map.getLayer("country-fill")) {
+          var f = map.queryRenderedFeatures(e.point, { layers: ["country-fill"] })[0];
+          if (f && f.properties && f.properties.NAME) {
+            cNameEn = f.properties.NAME;
+            cNameFa = f.properties.NAME_FA || f.properties.NAME;
+          }
+        }
+      } catch (err) {}
+
+      if (!cNameEn && e.lngLat) {
+        var spatialMatch = getCountryAtLngLat(e.lngLat.lng, e.lngLat.lat);
+        if (spatialMatch) {
+          cNameEn = spatialMatch.country_en;
+          cNameFa = spatialMatch.country_fa;
+        }
+      }
+
+      if (cNameEn) {
+        openDetail({ kind: "country", cat: "country", country_en: cNameEn, country_fa: cNameFa });
+      }
+
+      if (BASEMODE !== "offline" || !map.getLayer("country-select")) return;
+      map.setFilter("country-select", ["==", ["get", "NAME"], cNameEn || ""]);
+      map.setFilter("country-select-outline", ["==", ["get", "NAME"], cNameEn || ""]);
+    });
   }
+
+  on("#citiesBtn", "click", function () {
+    SHOW_CITIES = !SHOW_CITIES;
+    localStorage.setItem("orbita_cities", SHOW_CITIES ? "true" : "false");
+    buildCityLabels();
+  });
 
   on("#baseBtn", "click", function () {
     BASEMODE = BASEMODE === "offline" ? "online" : "offline";
     localStorage.setItem("orbita_base", BASEMODE);
     var bb = $("#baseBtn"); if (bb) bb.querySelector("span").textContent = t(BASEMODE === "offline" ? "base_offline" : "base_online");
-    if (map) { map.setStyle(mapStyle()); setTimeout(function () { renderMarkers(); buildLabels(); }, 400); }
+    if (map) { map.setStyle(mapStyle()); setTimeout(function () { renderMarkers(); buildLabels(); buildCityLabels(); }, 400); }
   });
 
   function allPoints() {
@@ -500,10 +631,20 @@
   function renderList() {
     var pts = filteredPoints();
     $("#resCount").textContent = pts.length;
+    var defaultLogoSvg = "data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><rect width='100' height='100' rx='20' fill='%23090d16' stroke='%2338bdf8' stroke-width='3'/><text x='50' y='60' font-family='sans-serif' font-size='32' fill='%2338bdf8' text-anchor='middle'>🚀</text></svg>";
     $("#resultList").innerHTML = pts.slice(0, 400).map(function (p, i) {
-      var sub = LANG === "fa" ? (p.o.country_fa || "") : (p.o.country || "");
-      var ic = iconFor(p.cat, p.o.status).replace(/width="3\d"/, 'width="17"').replace(/height="38"/, 'height="22"');
-      return '<div class="res" data-i="' + i + '"><span class="ic">' + ic + "</span>" +
+      var sub = (LANG === "fa" ? (p.o.country_fa || p.o.country) : (p.o.country || p.o.country_fa)) || "";
+      var logoSrc = p.o.logo_data || p.o.logo;
+      var logoHtml = "";
+      if (logoSrc) {
+        logoHtml = '<div style="width:26px; height:26px; border-radius:6px; background:#000; border:1px solid var(--line); display:flex; align-items:center; justify-content:center; flex:0 0 auto; overflow:hidden; padding:1px;">' +
+          '<img src="' + esc(logoSrc) + '" alt="' + esc(name(p.o)) + '" onerror="this.onerror=null; this.src=\'' + defaultLogoSvg + '\';" style="max-width:100%; max-height:100%; object-fit:contain;" />' +
+          '</div>';
+      } else {
+        var ic = iconFor(p.cat, p.o.status).replace(/width="3\d"/, 'width="17"').replace(/height="38"/, 'height="22"');
+        logoHtml = '<span class="ic">' + ic + '</span>';
+      }
+      return '<div class="res" data-i="' + i + '" style="display:flex; align-items:center; gap:8px;">' + logoHtml +
         '<span class="t"><b>' + esc(name(p.o)) + "</b><span>" + esc(sub) + "</span></span></div>";
     }).join("") || '<div class="up-empty">' + t("no_res") + "</div>";
     $$("#resultList .res").forEach(function (el) {
@@ -520,34 +661,1662 @@
     return '<div class="cell' + (ltr ? " ltr" : "") + '"><small>' + esc(label) + "</small><b>" + esc(val) + "</b></div>";
   }
 
-  function openDetail(p) {
+
+  function renderSiteDetail(p) {
     var o = p.o, h = "";
     var ic = iconFor(p.cat, o.status).replace(/width="3\d"/, 'width="34"').replace(/height="38"/, 'height="44"');
+    var isFa = LANG === "fa";
+
+    // Status label & badge class
+    var st = o.status || "active";
+    var stClass = st === "active" ? "badge-ok" : (st === "inactive" ? "badge-fail" : "badge-constr");
+    var stText = statusLabel(st);
+
+    // Header with Title & Status Badge placed inline next to title (Fix for Bug 1: No overlap with X button)
+    h += '<div class="d-head" style="margin-inline-end: 38px;">';
+    h += '<div style="display:flex; gap:10px; align-items:center;"><div>' + ic + '</div><div>' +
+      '<div class="d-kicker">' + esc(t("cat_site")) + '</div>' +
+      '<h2 class="d-title" style="display:flex; align-items:center; gap:8px; flex-wrap:wrap;">' + 
+      esc(name(o)) + 
+      ' <span class="' + stClass + '" style="padding:2px 8px; border-radius:12px; font-size:10.5px; font-weight:bold; vertical-align:middle;">' + esc(stText) + '</span>' +
+      '</h2></div></div>';
+    h += '</div>';
+
+    h += '<div class="d-sub">' + esc(isFa ? o.en : o.fa) + '</div>';
+
+    // Header Photo or Design 1 Clean Blueprint Vector (Without Text)
+    h += '<div class="site-photo-box" style="margin-top:8px; margin-bottom:10px; width:100%; height:130px; border-radius:8px; overflow:hidden; border:1px solid var(--line);">';
+    if (o.has_photo && o.photo_url) {
+      h += '<img src="' + esc(o.photo_url) + '" alt="' + esc(name(o)) + '" class="site-photo-img" style="width:100%; height:130px; object-fit:cover;" />';
+    } else {
+      h += "<svg width=\"100%\" height=\"130\" viewBox=\"0 0 380 130\" xmlns=\"http://www.w3.org/2000/svg\" style=\"background: linear-gradient(135deg, #07172b 0%, #0d2847 100%);\">\n  <defs>\n    <pattern id=\"siteGrid\" width=\"20\" height=\"20\" patternUnits=\"userSpaceOnUse\">\n      <path d=\"M 20 0 L 0 0 0 20\" fill=\"none\" stroke=\"rgba(56, 189, 248, 0.12)\" stroke-width=\"0.8\"/>\n    </pattern>\n  </defs>\n  <rect width=\"100%\" height=\"100%\" fill=\"url(#siteGrid)\" />\n  <circle cx=\"190\" cy=\"65\" r=\"45\" stroke=\"rgba(56, 189, 248, 0.25)\" stroke-width=\"1\" fill=\"none\" stroke-dasharray=\"3 3\"/>\n  <circle cx=\"190\" cy=\"65\" r=\"25\" stroke=\"rgba(56, 189, 248, 0.4)\" stroke-width=\"1\" fill=\"none\"/>\n  <line x1=\"190\" y1=\"10\" x2=\"190\" y2=\"120\" stroke=\"rgba(56, 189, 248, 0.2)\" stroke-width=\"1\"/>\n  <line x1=\"130\" y1=\"65\" x2=\"250\" y2=\"65\" stroke=\"rgba(56, 189, 248, 0.2)\" stroke-width=\"1\"/>\n  <path d=\"M190 48 L202 58 L190 68 L178 58 Z\" fill=\"rgba(56, 189, 248, 0.3)\" stroke=\"#38bdf8\" stroke-width=\"1.5\"/>\n  <path d=\"M190 58 L202 68 L190 78 L178 68 Z\" fill=\"rgba(245, 158, 11, 0.3)\" stroke=\"#f59e0b\" stroke-width=\"1.5\"/>\n</svg>";
+    }
+    h += '</div>';
+
+    h += '<div class="d-desc">' + esc(desc(o)) + '</div>';
+
+    var launches = o.launches || [];
+    var tot = launches.length;
+    var succ = 0, fail = 0;
+    var yearCounts = {};
+
+    launches.forEach(function (l) {
+      if (l.success) succ++; else fail++;
+      var yr = (l.date || "").split("-")[0];
+      if (yr) yearCounts[yr] = (yearCounts[yr] || 0) + 1;
+    });
+
+    var rate = tot > 0 ? Math.round((succ / tot) * 100) : 100;
+
+    // 3 Clean Tabs Header
+    h += '<div class="site-tabs">';
+    h += '<button class="site-tab-btn active" onclick="switchSiteTab(\'overview\', this)">' + (isFa ? "شناسنامه و آمار" : "Overview & Stats") + '</button>';
+    h += '<button class="site-tab-btn" onclick="switchSiteTab(\'launches\', this)">' + (isFa ? "تاریخچه و تحلیلی (" + tot + ")" : "Launch History (" + tot + ")") + '</button>';
+    h += '<button class="site-tab-btn" onclick="switchSiteTab(\'analysis\', this)">' + (isFa ? "تحلیل جغرافیا و زیرساخت" : "Analysis & Infra") + '</button>';
+    h += '</div>';
+
+    // TAB 1: OVERVIEW & STATS
+    h += '<div id="siteTabOverview" class="site-tab-content active">';
+    
+    h += '<div class="grid2">';
+    h += cell(t("country"), isFa ? o.country_fa : o.country);
+    h += cell(t("operator"), o.op, true);
+    h += cell(t("status"), stText);
+    h += cell(t("first_launch"), o.first);
+    h += cell(t("pads"), o.pads, true);
+    h += cell(t("coords"), o.lat.toFixed(4) + ", " + o.lon.toFixed(4), true);
+    h += cell(isFa ? "ارتفاع از دریا" : "Altitude", o.alt || "50 m", true);
+    h += cell(isFa ? "جهت‌های مجاز پرتاب (ازیموت)" : "Launch Azimuths", o.azimuth || "شرق روی پهنه ایمن", true);
+    h += cell(isFa ? "مدارهای هدف اصلی" : "Target Orbits", o.target_orbits || "LEO, SSO", true);
+    h += '</div>';
+
+    h += '<div class="site-metrics-grid">';
+    h += '<div class="site-metric-card gold"><div class="lbl">' + (isFa ? "تعداد کل پرتاب‌ها" : "Total Launches") + '</div><div class="val">' + tot + '</div><div class="lbl">' + (isFa ? "پرتاب مداری" : "Orbital Flights") + '</div></div>';
+    h += '<div class="site-metric-card green"><div class="lbl">' + (isFa ? "نرخ موفقیت" : "Success Rate") + '</div><div class="val">' + rate + '%</div><div class="lbl">' + succ + (isFa ? " موفق / " : " ok / ") + fail + (isFa ? " ناموفق" : " failed") + '</div></div>';
+    h += '<div class="site-metric-card"><div class="lbl">' + (isFa ? "ارتفاع از سطح دریا" : "Elevation") + '</div><div class="val">' + (o.alt || "50 m") + '</div><div class="lbl">' + (isFa ? "متر" : "meters") + '</div></div>';
+    h += '<div class="site-metric-card"><div class="lbl">' + (isFa ? "فاصله از خط استوا" : "Equator Dist.") + '</div><div class="val" style="font-size:12px; margin-top:5px;">' + (o.equator_dist || "0 km") + '</div></div>';
+    h += '</div>';
+
+    var years = Object.keys(yearCounts).sort();
+    var maxVal = 1;
+    years.forEach(function (y) { if (yearCounts[y] > maxVal) maxVal = yearCounts[y]; });
+
+    h += '<div class="site-chart-box">';
+    h += '<div class="site-chart-head"><span>📊 ' + (isFa ? "روند پرتاب‌های سالانه (سال میلادی)" : "Annual Launches (Gregorian)") + '</span><span style="font-size:9.5px; opacity:0.75;">' + (isFa ? "استخراج خودکار" : "Auto Calculated") + '</span></div>';
+    h += '<div class="site-chart-bars" style="direction: ltr;">';
+    years.forEach(function (yr) {
+      var cnt = yearCounts[yr];
+      var pct = Math.max(Math.round((cnt / maxVal) * 100), 12);
+      h += '<div class="site-bar-col"><div class="site-bar-fill" style="height:' + pct + '%;"><span class="site-bar-val">' + cnt + '</span></div><span class="site-bar-lbl">' + yr + '</span></div>';
+    });
+    h += '</div></div>';
+
+    var rockets = o.rockets || [];
+    if (rockets.length) {
+      h += '<div class="sec-t">' + (isFa ? "پرتابگرهای مورد استفاده" : "Launch Vehicles") + '</div><div class="chips">' +
+        rockets.map(function (x) { return '<span class="chip">' + esc(x) + '</span>'; }).join("") + '</div>';
+    }
+
+    h += '</div>'; // end tab 1
+
+    // TAB 2: LAUNCH HISTORY & ANALYTICAL DRAWER (Fix for Bug 2: Clean inline onclick handler!)
+    h += '<div id="siteTabLaunches" class="site-tab-content">';
+    h += '<div style="font-size:10.5px; color:var(--muted); margin-bottom:6px;">' + (isFa ? "💡 جهت مشاهده جزئیات فنی و تحلیل علت موفقیت/شکست روی هر پرتاب کلیک کنید:" : "💡 Click on any launch row for technical details & analysis:") + '</div>';
+
+    h += '<div class="site-launch-list" style="display:flex; flex-direction:column; gap:6px;">';
+    launches.forEach(function (l, idx) {
+      var resClass = l.success ? "badge-ok" : "badge-fail";
+      var resText = l.success ? (isFa ? "موفق" : "Success") : (isFa ? "ناموفق" : "Failed");
+      var drawerId = "ldrawer_" + idx;
+
+      h += '<div class="site-launch-item" style="background:var(--bg2); border:1px solid var(--line); border-radius:6px; overflow:hidden;">';
+      h += '<div class="site-launch-row" onclick="toggleSiteLaunchDrawer(\'' + drawerId + '\')" style="padding:8px 10px; display:flex; justify-content:space-between; align-items:center; cursor:pointer; font-size:11px; user-select:none;">';
+      h += '<div style="display:flex; align-items:center; gap:8px;">';
+      h += '<span style="direction:ltr; font-family:monospace; color:var(--accent);">' + esc(l.date) + '</span>';
+      h += '<b>' + esc(l.payload || l.rocket) + ' (' + esc(l.rocket) + ')</b>';
+      h += '</div>';
+      h += '<div><span class="' + resClass + '">' + resText + '</span> <span style="color:var(--accent); font-size:10px; margin-inline-start:4px;">▼</span></div>';
+      h += '</div>';
+
+      // Expanded Drawer
+      h += '<div id="' + drawerId + '" class="site-launch-drawer" style="display:none; padding:10px; background:color-mix(in srgb, var(--bg2) 80%, black); border-top:1px solid var(--line); flex-direction:column; gap:8px; font-size:11px;">';
+      
+      if (l.has_photo && l.photo_url) {
+        h += '<img src="' + esc(l.photo_url) + '" alt="' + esc(l.payload) + '" style="width:100%; height:110px; object-fit:cover; border-radius:5px; border:1px solid var(--line);" />';
+      } else {
+        h += '<div style="background:rgba(255,255,255,0.03); border:1px dashed var(--line); padding:6px; text-align:center; border-radius:5px; color:var(--muted); font-size:10px;">📷 تصویر اختصاصی برای این پرتاب ثبت نشده است</div>';
+      }
+
+      h += '<div style="display:grid; grid-template-columns:1fr 1fr; gap:4px; background:rgba(255,255,255,0.02); padding:6px; border-radius:4px; font-size:10.5px;">';
+      h += '<div><span style="color:var(--muted);">' + (isFa ? "زمان UTC:" : "Time UTC:") + '</span> <b>' + esc(l.time_utc || "12:00:00 UTC") + '</b></div>';
+      h += '<div><span style="color:var(--muted);">' + (isFa ? "جرم محموله:" : "Payload Mass:") + '</span> <b>' + esc(l.mass || "—") + '</b></div>';
+      h += '<div><span style="color:var(--muted);">' + (isFa ? "نسخه پرتابگر:" : "Rocket Variant:") + '</span> <b>' + esc(l.rocket_var || l.rocket) + '</b></div>';
+      h += '<div><span style="color:var(--muted);">' + (isFa ? "شیب مداری:" : "Inclination:") + '</span> <b>' + esc(l.inc || "—") + '</b></div>';
+      h += '<div><span style="color:var(--muted);">' + (isFa ? "مدت مأموریت:" : "Duration:") + '</span> <b>' + esc(l.duration || "—") + '</b></div>';
+      h += '<div><span style="color:var(--muted);">' + (isFa ? "مدار هدف:" : "Orbit:") + '</span> <b>' + esc(l.orbit || "LEO") + '</b></div>';
+      h += '</div>';
+
+      h += '<div style="background:rgba(245, 158, 11, 0.08); border:1px solid rgba(245, 158, 11, 0.25); border-radius:5px; padding:8px; font-size:11px; line-height:1.5; color:#fde68a;">';
+      h += l.analysis;
+      h += '</div>';
+
+      h += '</div>'; // end drawer
+      h += '</div>'; // end item
+    });
+    h += '</div></div>'; // end tab 2
+
+    // TAB 3: GEOGRAPHY & INFRASTRUCTURE ANALYSIS
+    h += '<div id="siteTabAnalysis" class="site-tab-content">';
+    
+    h += '<div style="background:var(--bg2); border:1px solid var(--line); border-radius:6px; padding:10px;">';
+    h += '<div style="font-size:12px; font-weight:bold; color:#f59e0b; margin-bottom:6px;">🌍 ' + (isFa ? "تحلیل دلایل انتخاب موقعیت جغرافیایی" : "Geographical Positioning Analysis") + '</div>';
+    h += '<div style="font-size:11px; color:var(--text); line-height:1.6; text-align:justify;">' + esc(o.geo_analysis || "") + '</div>';
+    h += '</div>';
+
+    h += '<div style="background:var(--bg2); border:1px solid var(--line); border-radius:6px; padding:10px;">';
+    h += '<div style="font-size:12px; font-weight:bold; color:var(--accent); margin-bottom:8px;">🏗️ ' + (isFa ? "چک‌لیست زیرساخت‌های پایگاه (۱۵ گانه)" : "Site Infrastructure Checklist") + '</div>';
+    h += '<div style="display:grid; grid-template-columns:1fr 1fr; gap:5px;">';
+    
+    (o.infra || []).forEach(function (item) {
+      var dotColor = item.active ? "#10b981" : "#ef4444";
+      var statusLbl = item.active ? (isFa ? "موجود" : "Active") : (isFa ? "ناموجود" : "Inactive");
+      h += '<div style="background:rgba(255,255,255,0.02); border:1px solid var(--line); padding:5px 7px; border-radius:4px; display:flex; align-items:center; justify-content:space-between; font-size:10.5px;">';
+      h += '<span>' + esc(item.name) + '</span>';
+      h += '<span style="display:flex; align-items:center; gap:4px;"><small style="opacity:0.75;">' + statusLbl + '</small><i style="width:7px; height:7px; border-radius:50%; background:' + dotColor + '; display:inline-block;"></i></span>';
+      h += '</div>';
+    });
+
+    h += '</div></div>';
+    h += '</div>'; // end tab 3
+
+    return h;
+  }
+
+  window.toggleSiteLaunchDrawer = function(drawerId) {
+    var id = String(drawerId).trim();
+    var drawer = document.getElementById(id);
+    if (!drawer) return;
+    var current = drawer.style.display;
+    drawer.style.display = (current === "none" || !current) ? "flex" : "none";
+  };
+
+  window.switchSiteTab = function(tabId, el) {
+    $$(".site-tab-btn").forEach(function(b) { b.classList.remove("active"); });
+    $$(".site-tab-content").forEach(function(c) { c.classList.remove("active"); });
+    el.classList.add("active");
+    if (tabId === "overview") $("#siteTabOverview").classList.add("active");
+    else if (tabId === "launches") $("#siteTabLaunches").classList.add("active");
+    else if (tabId === "analysis") $("#siteTabAnalysis").classList.add("active");
+  };
+
+  window.flyToLaunchSite = function(siteId) {
+    if (!siteId || typeof DATA === "undefined" || !DATA.sites) return;
+    var sid = String(siteId).trim().toLowerCase();
+    var s = DATA.sites.find(function(x) {
+      return (x.id && x.id.toLowerCase() === sid) || 
+             (x.en && x.en.toLowerCase().indexOf(sid) > -1) || 
+             (x.fa && x.fa.indexOf(sid) > -1);
+    });
+    if (s) {
+      if (typeof map !== "undefined" && map) {
+        map.flyTo({ center: [s.lon, s.lat], zoom: 8, duration: 1400 });
+      }
+      openDetail({ kind: "site", cat: "site", o: s });
+    }
+  };
+
+  window.flyToCoords = function(lat, lon, zoom) {
+    var nLat = parseFloat(lat);
+    var nLon = parseFloat(lon);
+    if (isNaN(nLat) || isNaN(nLon)) return;
+    
+    var nZoom = zoom ? parseFloat(zoom) : 8;
+    
+    if (typeof map !== "undefined" && map) {
+      // Calculate right padding to avoid being covered by right side panel (#detailPanel width ~380px)
+      var rightPad = (window.innerWidth > 900) ? 380 : 0;
+      
+      map.flyTo({
+        center: [nLon, nLat],
+        zoom: Math.max(map.getZoom(), nZoom),
+        duration: 1200,
+        padding: { right: rightPad, top: 60, bottom: 60, left: 60 }
+      });
+
+      // Temporary neon cyan pulsing marker at fly target
+      try {
+        if (window.activeFlyMarker) {
+          window.activeFlyMarker.remove();
+          window.activeFlyMarker = null;
+        }
+        var el = document.createElement("div");
+        el.style.cssText = "width:22px; height:22px; border-radius:50%; background:rgba(0, 210, 255, 0.9); border:2px solid #ffffff; box-shadow:0 0 15px #00d2ff, 0 0 30px #00d2ff; pointer-events:none;";
+        window.activeFlyMarker = new maplibregl.Marker({ element: el, anchor: "center" })
+          .setLngLat([nLon, nLat])
+          .addTo(map);
+
+        setTimeout(function() {
+          if (window.activeFlyMarker) {
+            window.activeFlyMarker.remove();
+            window.activeFlyMarker = null;
+          }
+        }, 4000);
+      } catch (err) {}
+
+      // On mobile screens collapse side panel to reveal map
+      if (window.innerWidth < 900 && typeof closeSide === "function") {
+        closeSide();
+      }
+    }
+  };
+
+  window.switchCompTab = function(tabId, el) {
+    $$(".site-tab-btn").forEach(function(b) { b.classList.remove("active"); });
+    $$(".site-tab-content").forEach(function(c) { 
+      c.classList.remove("active"); 
+      c.style.display = "none"; 
+    });
+
+    if (el) el.classList.add("active");
+
+    var target = null;
+    if (tabId === "cPropulsion") {
+      target = $("#compTabCPropulsion");
+    } else if (tabId === "cLaunch") {
+      target = $("#compTabCLaunch");
+    } else if (tabId === "cAgency") {
+      target = $("#compTabCAgency");
+    } else if (tabId === "cSite") {
+      target = $("#compTabCSite");
+    } else if (tabId === "overview") {
+      target = $("#compTabOverview");
+    } else if (tabId === "vehicles") {
+      target = $("#compTabVehicles") || $("#compTabProducts");
+    } else if (tabId === "products") {
+      target = $("#compTabProducts") || $("#compTabVehicles");
+    } else if (tabId === "engines") {
+      target = $("#compTabEngines") || $("#compTabVehicles") || $("#compTabProducts");
+    } else if (tabId === "testing") {
+      target = $("#compTabTesting") || $("#compTabTimeline") || $("#compTabHistory");
+    } else if (tabId === "timeline" || tabId === "history") {
+      target = $("#compTabTimeline") || $("#compTabHistory");
+    } else if (tabId === "roadmap" || tabId === "partnerships") {
+      target = $("#compTabRoadmap") || $("#compTabPartnerships");
+    } else if (tabId === "gallery") {
+      target = $("#compTabGallery");
+    }
+
+    if (target) {
+      target.classList.add("active");
+      target.style.display = "block";
+    }
+  };
+
+  function renderCompanyDetail(p) {
+    var o = p.o || p, h = "";
+    var isFa = (typeof LANG !== "undefined" && LANG === "fa");
+    var isPropulsionComp = (p.cat === "propulsion" || o.cat === "propulsion" || o.category === "propulsion" || "engine_products_bilingual" in o);
+    var isLaunchComp = (p.cat === "launch" || o.cat === "launch" || p.kind === "launch" || o.rockets_fleet) || !isPropulsionComp;
+
+    // Dynamic Bilingual Org Type Badge calculation
+    var orgTypeStr = isFa ? (o.org_type_fa || o.org_type_en || "شرکت پرتاب تجاری") : (o.org_type_en || o.org_type_fa || o.org_type || "Commercial Launch Provider");
+    var stClass = "badge-private";
+    if ((o.org_type_fa || "").indexOf("دولتی") > -1 || (o.org_type_fa || "").indexOf("حاکمیتی") > -1 || (o.org_type_en || "").indexOf("State") > -1 || (o.org_type_en || "").indexOf("Government") > -1) stClass = "badge-gov";
+
+    // Logo with graceful SVG fallback onerror
+    var defaultLogoSvg = "data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><rect width='100' height='100' rx='20' fill='%23090d16' stroke='%2338bdf8' stroke-width='3'/><text x='50' y='60' font-family='sans-serif' font-size='32' fill='%2338bdf8' text-anchor='middle'>🚀</text></svg>";
+    var logoSrc = o.logo_data || o.logo || defaultLogoSvg;
+
+    // Header with Title & Logo Image Tag & Org Type Badge
+    h += '<div class="d-head" style="display:flex; justify-content:space-between; align-items:center; gap:10px; margin-inline-end: 35px;">';
+    
+    h += '<div style="display:flex; gap:10px; align-items:center; flex:1;">';
+    h += '<div style="width:48px; height:48px; border-radius:8px; background:#000; border:1px solid var(--line); display:flex; align-items:center; justify-content:center; flex:0 0 auto; overflow:hidden; padding:2px;">';
+    h += '<img src="' + esc(logoSrc) + '" alt="' + esc(name(o)) + '" onerror="this.onerror=null; this.src=defaultLogoSvg;" style="max-width:100%; max-height:100%; object-fit:contain;" />';
+    h += '</div>';
+    
+    h += '<div><div class="d-kicker">' + esc(isFa ? (o.acronym_fa || o.en) : (o.en || o.fa)) + '</div>';
+    h += '<h2 class="d-title" style="margin:0;">' + esc(name(o)) + '</h2></div></div>';
+
+    h += '<span class="' + stClass + '" style="padding:3px 10px; border-radius:12px; font-size:10.5px; font-weight:bold; white-space:nowrap;">' + esc(orgTypeStr) + '</span>';
+    h += '</div>';
+
+    h += '<div class="d-sub" style="margin-top:4px;">' + esc(isFa ? (o.en || o.fa) : (o.fa || o.en)) + '</div>';
+    h += '<div class="d-desc" style="margin-top:6px; line-height:1.6;">' + esc(desc(o)) + '</div>';
+
+    if (isPropulsionComp) {
+      // 3 TABS FOR PROPULSION COMPANIES
+      var propCat = isFa ? (o.propulsion_category_fa || o.propulsion_category_en || "پیشرانه فضایی") : (o.propulsion_category_en || "Propulsion Contractor");
+      var propType = isFa ? (o.propulsion_type_fa || o.propulsion_type_en || "سوخت مایع / جامد") : (o.propulsion_type_en || "Liquid/Solid Propulsion");
+
+      h += '<div class="site-tabs" style="margin-top:10px;">';
+      h += '<button class="site-tab-btn active" onclick="switchCompTab(\'overview\', this)">' + (isFa ? "شناسنامه و معماری" : "Overview & Architecture") + '</button>';
+      h += '<button class="site-tab-btn" onclick="switchCompTab(\'engines\', this)">' + (isFa ? "موتورها و موشک مقصد" : "Engines & Mission Link") + '</button>';
+      h += '<button class="site-tab-btn" onclick="switchCompTab(\'testing\', this)">' + (isFa ? "تست‌های گرم و نقشه راه" : "Test History & Roadmap") + '</button>';
+      h += '</div>';
+
+      // TAB 1: OVERVIEW & ARCHITECTURE
+      h += '<div id="compTabOverview" class="site-tab-content active" style="display:block;">';
+      
+      h += '<div class="grid2" style="margin-top:8px;">';
+      h += cell(isFa ? "سال تأسیس" : "Founded", o.founded || "—");
+      h += cell(isFa ? "مقر اصلی" : "Headquarters", isFa ? (o.city_fa || o.city) : (o.city || o.city_fa));
+      h += cell(t("country"), isFa ? (o.country_fa || o.country) : (o.country || o.country_fa));
+      h += cell(isFa ? "نوع نهاد" : "Org Type", orgTypeStr, true);
+      h += cell(isFa ? "رده پیشرانه" : "Category", propCat, true);
+      h += cell(isFa ? "نوع پیشرانه" : "Propulsion Type", propType, true);
+      h += '</div>';
+
+      // Flagship Engine Card
+      var flagshipEngine = isFa ? (o.flagship_engine_fa || o.flagship_engine_en) : (o.flagship_engine_en || o.flagship_engine_fa);
+      var flagshipStatus = isFa ? (o.flagship_status_fa || o.flagship_status_en || "عملیاتی") : (o.flagship_status_en || o.flagship_status_fa || "Operational");
+      
+      if (flagshipEngine) {
+        h += '<div style="background:var(--bg2); border:1px solid var(--line); border-radius:8px; padding:10px; margin-top:8px; display:flex; justify-content:space-between; align-items:center;">';
+        h += '<div><div style="font-size:10px; color:var(--muted);">' + (isFa ? "⚙️ موتور پرچم‌دار اصلی:" : "⚙️ Flagship Engine:") + '</div>';
+        h += '<b style="font-size:12px; color:#fff;">' + esc(flagshipEngine) + '</b></div>';
+        h += '<span style="background:rgba(16,185,129,0.15); border:1px solid rgba(16,185,129,0.3); color:#10b981; font-size:10px; font-weight:bold; padding:2px 8px; border-radius:10px;">' + esc(flagshipStatus) + '</span>';
+        h += '</div>';
+      }
+
+      // EXPLICIT LINKS ROW WITH FULL URL TEXT
+      var compLinks = extractEntityLinks(o);
+      var webUrl = compLinks.webUrl;
+      var displayWeb = compLinks.displayWeb || (isFa ? "وب‌سایت رسمی" : "Website");
+      var linkedinUrl = compLinks.linkedinUrl;
+      var displayLinkedin = compLinks.displayLinkedin || "LinkedIn";
+
+      if (webUrl || linkedinUrl || (o.lat && o.lon)) {
+        h += '<div style="background:var(--bg2); border:1px solid var(--line); border-radius:8px; padding:10px; margin-top:10px; display:flex; justify-content:space-between; align-items:center; font-size:10.5px; flex-wrap:wrap; gap:8px;">';
+        
+        if (webUrl) {
+          h += '<a href="' + esc(webUrl) + '" target="_blank" rel="noopener noreferrer" style="color:var(--accent); font-weight:bold; font-family:monospace; text-decoration:none; background:rgba(56, 189, 248, 0.12); padding:5px 12px; border-radius:6px; border:1px solid rgba(56, 189, 248, 0.3); word-break:break-all;" onclick="window.open(\'' + esc(webUrl) + '\', \'_blank\'); return false;">🌐 ' + esc(displayWeb) + ' ↗</a>';
+        }
+        
+        if (linkedinUrl) {
+          h += '<a href="' + esc(linkedinUrl) + '" target="_blank" rel="noopener noreferrer" style="color:#38bdf8; font-weight:bold; font-family:monospace; text-decoration:none; background:rgba(14, 118, 168, 0.2); padding:5px 12px; border-radius:6px; border:1px solid rgba(14, 118, 168, 0.4); word-break:break-all;" onclick="window.open(\'' + esc(linkedinUrl) + '\', \'_blank\'); return false;">💼 ' + esc(displayLinkedin) + ' ↗</a>';
+        }
+
+        if (o.lat && o.lon) {
+          h += '<button type="button" class="btn btn-sm country-btn-fly" onclick="flyToCoords(' + o.lat + ',' + o.lon + ', 8)" style="font-size:10px; padding:5px 10px; cursor:pointer;">📍 ' + (isFa ? "پرواز به موقعیت روی نقشه ↗" : "Fly to Location ↗") + '</button>';
+        }
+
+        h += '</div>';
+      }
+
+      h += '</div>'; // end TAB 1
+
+      // TAB 2: ENGINES CATALOG
+      h += '<div id="compTabEngines" class="site-tab-content" style="display:none;">';
+      var engList = o.engine_products_bilingual || [];
+      if (engList.length) {
+        h += '<div style="font-size:10.5px; color:var(--muted); margin-bottom:6px;">⚙️ ' + (isFa ? "کاتالوگ موتورهای پیشرانش مایع، جامد و پلاسما:" : "Propulsion Engines Catalog:") + '</div>';
+        h += '<div style="display:flex; flex-direction:column; gap:8px;">';
+        
+        engList.forEach(function(eng, idx) {
+          var engName = isFa ? (eng.name_fa || eng.name_en) : (eng.name_en || eng.name_fa);
+          var engProp = isFa ? (eng.propellant_fa || eng.propellant_en || "—") : (eng.propellant_en || eng.propellant_fa || "—");
+          var engSt = isFa ? (eng.status_fa || eng.status_en || "عملیاتی") : (eng.status_en || eng.status_fa || "Operational");
+          var openAttr = (idx === 0) ? " open" : "";
+
+          h += '<details class="acc" ' + openAttr + ' style="background:linear-gradient(180deg, rgba(15,31,51,0.8) 0%, rgba(9,13,22,0.9) 100%); border:1px solid var(--line); border-radius:8px; overflow:hidden; box-shadow:0 4px 12px rgba(0,0,0,0.3); transition:all 0.2s ease;">';
+          h += '<summary style="padding:10px 12px; cursor:pointer; display:flex; justify-content:space-between; align-items:center; gap:10px; user-select:none; background:rgba(255,255,255,0.03); outline:none; flex-wrap:wrap;">';
+          h += '<div style="font-size:12px; font-weight:bold; color:#fff; line-height:1.45; word-break:break-word; flex:1; min-width:180px;">⚙️ <bdi>' + esc(engName) + '</bdi></div>';
+          h += '<div style="display:flex; align-items:center; gap:6px; flex-wrap:wrap;">';
+          h += '<span style="color:#38bdf8; font-size:9.5px; background:rgba(56, 189, 248, 0.15); border:1px solid rgba(56, 189, 248, 0.3); padding:2px 7px; border-radius:12px; font-weight:bold;"><bdi>' + esc(engProp) + '</bdi></span>';
+          h += '<span style="color:#10b981; font-weight:bold; font-size:9.5px; background:rgba(16, 185, 129, 0.12); border:1px solid rgba(16, 185, 129, 0.3); padding:2px 7px; border-radius:12px;"><bdi>' + esc(engSt) + '</bdi></span>';
+          h += '<span style="color:var(--muted); font-size:10px; opacity:0.8;">▼</span>';
+          h += '</div>';
+          h += '</summary>';
+          
+          h += '<div style="padding:10px 12px; border-top:1px solid var(--line); background:rgba(0,0,0,0.2); font-size:10.5px; line-height:1.6; color:var(--text);">';
+          if (eng.thrust_fa || eng.thrust_en) {
+            h += '<div><b>' + (isFa ? "رانش (Thrust):" : "Thrust:") + '</b> ' + esc(isFa ? (eng.thrust_fa || eng.thrust_en) : (eng.thrust_en || eng.thrust_fa)) + '</div>';
+          }
+          if (eng.isp_fa || eng.isp_en) {
+            h += '<div><b>' + (isFa ? "تکانه ویژه (Isp):" : "Specific Impulse:") + '</b> ' + esc(isFa ? (eng.isp_fa || eng.isp_en) : (eng.isp_en || eng.isp_fa)) + '</div>';
+          }
+          if (eng.engineering_desc_fa || eng.engineering_desc_en) {
+            h += '<div style="margin-top:4px; color:var(--muted);">' + esc(isFa ? (eng.engineering_desc_fa || eng.engineering_desc_en) : (eng.engineering_desc_en || eng.engineering_desc_fa)) + '</div>';
+          }
+          h += '</div>';
+          h += '</details>';
+        });
+
+        h += '</div>';
+      } else {
+        h += '<div style="padding:16px; text-align:center; color:var(--muted); font-size:11px;">' + (isFa ? "کاتالوگ موتورهای جزئی برای این مجموعه ثبت نشده است." : "No detailed engine catalog registered.") + '</div>';
+      }
+      h += '</div>'; // end TAB 2
+
+      // TAB 3: TESTING & ROADMAP
+      h += '<div id="compTabTesting" class="site-tab-content" style="display:none;">';
+      h += '<div style="font-size:10.5px; color:var(--muted); margin-bottom:6px;">🔥 ' + (isFa ? "تاریخچه تست‌های گرم و نقشه راه توسعه:" : "Hot Test History & Roadmap:") + '</div>';
+      h += '<div style="background:var(--bg2); border:1px solid var(--line); border-radius:8px; padding:10px; font-size:11px; line-height:1.6; color:var(--text);">';
+      h += esc(desc(o));
+      h += '</div>';
+      h += '</div>'; // end TAB 3
+
+    } else if (isLaunchComp && o.rockets_fleet) {
+      // 3 TABS FOR LAUNCH COMPANIES
+      h += '<div class="site-tabs" style="margin-top:10px;">';
+      h += '<button class="site-tab-btn active" onclick="switchCompTab(\'overview\', this)">' + (isFa ? "شناسنامه و آمار" : "Overview & Stats") + '</button>';
+      h += '<button class="site-tab-btn" onclick="switchCompTab(\'vehicles\', this)">' + (isFa ? "ناوگان پرتاب‌گرها" : "Rockets Fleet") + '</button>';
+      h += '<button class="site-tab-btn" onclick="switchCompTab(\'timeline\', this)">' + (isFa ? "تاریخچه و شبکه" : "History & Network") + '</button>';
+      h += '</div>';
+
+      // TAB 1: OVERVIEW & STATS
+      h += '<div id="compTabOverview" class="site-tab-content active" style="display:block;">';
+      
+      // Executive Info Grid
+      h += '<div class="grid2">';
+      h += cell(isFa ? "سال تأسیس" : "Founded", o.founded || "—");
+      h += cell(isFa ? "سال اولین پرتاب" : "First Launch", o.first_launch_year || "—");
+      h += cell(isFa ? "بنیان‌گذار" : "Founder", isFa ? (o.founder_fa || "—") : (o.founder_en || o.founder_fa || "—"));
+      h += cell(isFa ? "مدیرعامل" : "CEO", isFa ? (o.ceo_fa || "—") : (o.ceo_en || o.ceo_fa || "—"));
+      h += cell(isFa ? "مقر اصلی" : "Headquarters", isFa ? (o.city_fa || o.city) : (o.city || o.city_fa));
+      h += cell(t("country"), isFa ? (o.country_fa || o.country) : (o.country || o.country_fa));
+      h += '</div>';
+
+      // Performance Stats Banner
+      var stats = o.stats || { total_launches: 0, success_launches: 0, failed_launches: 0, success_rate: "100%", active_vehicles_count: 1 };
+      h += '<div style="background:var(--bg2); border:1px solid var(--line); border-radius:8px; padding:10px; margin-top:8px;">';
+      h += '<div style="font-size:11.5px; font-weight:bold; color:var(--accent); margin-bottom:8px;">📊 ' + (isFa ? "آمار کلیدی عملکرد پرتاب" : "Performance Statistics") + '</div>';
+      h += '<div style="display:grid; grid-template-columns:repeat(4, 1fr); gap:6px; text-align:center;">';
+      
+      h += '<div style="background:rgba(0,0,0,0.3); padding:6px; border-radius:6px; border:1px solid var(--line);">';
+      h += '<div style="font-size:15px; font-weight:bold; color:#fff;">' + esc(stats.total_launches) + '</div>';
+      h += '<div style="font-size:9.5px; color:var(--muted);">' + (isFa ? "کل پرتاب‌ها" : "Total") + '</div>';
+      h += '</div>';
+
+      h += '<div style="background:rgba(16, 185, 129, 0.1); padding:6px; border-radius:6px; border:1px solid rgba(16, 185, 129, 0.3);">';
+      h += '<div style="font-size:15px; font-weight:bold; color:#10b981;">' + esc(stats.success_launches) + '</div>';
+      h += '<div style="font-size:9.5px; color:#10b981;">' + (isFa ? "موفق" : "Success") + '</div>';
+      h += '</div>';
+
+      h += '<div style="background:rgba(239, 68, 68, 0.1); padding:6px; border-radius:6px; border:1px solid rgba(239, 68, 68, 0.3);">';
+      h += '<div style="font-size:15px; font-weight:bold; color:#ef4444;">' + esc(stats.failed_launches) + '</div>';
+      h += '<div style="font-size:9.5px; color:#ef4444;">' + (isFa ? "ناموفق" : "Failed") + '</div>';
+      h += '</div>';
+
+      var srText = isFa ? (stats.success_rate || "۹۵٪") : (stats.success_rate ? stats.success_rate.replace(/[۰-۹]/g, function(c){ return "0123456789"["۰۱۲۳۴۵۶۷۸۹".indexOf(c)]; }) : "95%");
+      h += '<div style="background:rgba(245, 158, 11, 0.1); padding:6px; border-radius:6px; border:1px solid rgba(245, 158, 11, 0.3);">';
+      h += '<div style="font-size:15px; font-weight:bold; color:#f59e0b;">' + esc(srText) + '</div>';
+      h += '<div style="font-size:9.5px; color:#f59e0b;">' + (isFa ? "نرخ موفقیت" : "Success Rate") + '</div>';
+      h += '</div>';
+
+      h += '</div></div>';
+
+      // Annual Launch Trend Chart (HTML/CSS Bar Graph)
+      var trend = stats.annual_trend || [];
+      if (trend.length) {
+        var maxCount = 1;
+        trend.forEach(function(item) { if (item.count > maxCount) maxCount = item.count; });
+        
+        h += '<div style="background:var(--bg2); border:1px solid var(--line); border-radius:8px; padding:10px; margin-top:8px;">';
+        h += '<div style="font-size:11.5px; font-weight:bold; color:#f59e0b; margin-bottom:8px;">📈 ' + (isFa ? "نمودار سالانه تعداد پرتاب‌ها" : "Annual Launch Trend") + '</div>';
+        h += '<div style="display:flex; align-items:flex-end; gap:8px; height:80px; padding-top:10px; border-bottom:1px solid var(--line); border-left:1px solid var(--line); padding-left:6px;">';
+        
+        trend.forEach(function(tItem) {
+          var pct = Math.max(12, Math.round((tItem.count / maxCount) * 100));
+          h += '<div style="flex:1; display:flex; flex-direction:column; align-items:center; gap:3px; height:100%; justify-content:flex-end;">';
+          h += '<small style="font-size:9px; color:#38bdf8; font-weight:bold;">' + esc(tItem.count) + '</small>';
+          h += '<div style="width:100%; max-width:20px; height:' + pct + '%; background:linear-gradient(180deg, #38bdf8, #0284c7); border-radius:3px 3px 0 0;" title="' + esc(tItem.year) + ': ' + esc(tItem.count) + ' launches"></div>';
+          h += '<span style="font-size:9px; color:var(--muted); font-family:monospace;">' + esc(tItem.year) + '</span>';
+          h += '</div>';
+        });
+
+        h += '</div></div>';
+      }
+
+      // Mission Types & Orbital Capabilities Badges
+      var mTypes = isFa ? (o.mission_types_fa || ["پرتاب تجاری", "علمی", "نظامی"]) : (o.mission_types_en || ["Commercial Launch", "Scientific Missions", "Defense Space"]);
+      var oCaps = isFa ? (o.orbital_capabilities_fa || ["LEO", "SSO", "GTO"]) : (o.orbital_capabilities_en || ["LEO", "SSO", "GTO"]);
+
+      h += '<div style="background:var(--bg2); border:1px solid var(--line); border-radius:8px; padding:10px; margin-top:8px; display:flex; flex-direction:column; gap:6px;">';
+      h += '<div style="font-size:11px; font-weight:bold; color:var(--accent);">🎯 ' + (isFa ? "انواع مأموریت‌ها و پوشش مداری" : "Mission Types & Orbit Capabilities") + '</div>';
+      
+      h += '<div style="display:flex; flex-wrap:wrap; gap:4px;">';
+      mTypes.forEach(function(m) {
+        h += '<span style="background:rgba(56, 189, 248, 0.12); border:1px solid rgba(56, 189, 248, 0.3); color:#38bdf8; padding:2px 8px; border-radius:10px; font-size:10px; font-weight:bold;">' + esc(m) + '</span>';
+      });
+      oCaps.forEach(function(ob) {
+        h += '<span style="background:rgba(245, 158, 11, 0.12); border:1px solid rgba(245, 158, 11, 0.3); color:#f59e0b; padding:2px 8px; border-radius:10px; font-size:10px; font-weight:bold;"><code>' + esc(ob) + '</code></span>';
+      });
+      h += '</div></div>';
+
+      // Associated Launch Sites with Click-to-Fly Buttons
+      var siteIds = o.site_ids || [];
+      if (siteIds.length) {
+        h += '<div style="background:var(--bg2); border:1px solid var(--line); border-radius:8px; padding:10px; margin-top:8px;">';
+        h += '<div style="font-size:11px; font-weight:bold; color:#10b981; margin-bottom:6px;">📍 ' + (isFa ? "پایگاه‌های پرتاب مورد استفاده (کلیک جهت انتقال روی نقشه)" : "Operational Launch Sites (Click to Fly)") + '</div>';
+        h += '<div style="display:flex; flex-direction:column; gap:4px;">';
+        
+        siteIds.forEach(function(sid) {
+          var matchedSite = (typeof DATA !== "undefined" && DATA.sites) ? DATA.sites.find(function(x) { return x.id === sid || (x.en && x.en.toLowerCase().indexOf(sid.toLowerCase()) > -1); }) : null;
+          var siteName = matchedSite ? (isFa ? (matchedSite.fa || matchedSite.en) : (matchedSite.en || matchedSite.fa)) : sid;
+          
+          h += '<button type="button" onclick="flyToLaunchSite(\'' + esc(sid) + '\')" class="btn btn-sm country-btn-site" style="display:flex; justify-content:space-between; align-items:center; width:100%; text-align:right; font-size:10.5px; padding:6px 10px; cursor:pointer;">';
+          h += '<span>🚀 ' + esc(siteName) + '</span>';
+          h += '<span style="color:#10b981; font-weight:bold;">' + (isFa ? "پرواز روی نقشه ↗" : "Fly to Location ↗") + '</span>';
+          h += '</button>';
+        });
+
+        h += '</div></div>';
+      }
+
+      // Official Links Box (FULL URL LABELS FOR WEBSITE & LINKEDIN)
+      var compLinks = extractEntityLinks(o);
+      var webUrl = compLinks.webUrl;
+      var displayWeb = compLinks.displayWeb || "Website";
+      var linkedinUrl = compLinks.linkedinUrl;
+      var displayLinkedin = compLinks.displayLinkedin || "LinkedIn";
+
+      if (webUrl || linkedinUrl) {
+        h += '<div style="background:var(--bg2); border:1px solid var(--line); border-radius:8px; padding:10px; margin-top:8px; display:flex; justify-content:space-between; align-items:center; font-size:10.5px; flex-wrap:wrap; gap:8px;">';
+        if (webUrl) {
+          h += '<a href="' + esc(webUrl) + '" target="_blank" rel="noopener noreferrer" style="color:var(--accent); font-weight:bold; font-family:monospace; text-decoration:none; background:rgba(56, 189, 248, 0.12); padding:5px 12px; border-radius:6px; border:1px solid rgba(56, 189, 248, 0.3); word-break:break-all;" onclick="window.open(\'' + esc(webUrl) + '\', \'_blank\'); return false;">🌐 ' + esc(displayWeb) + ' ↗</a>';
+        }
+        if (linkedinUrl) {
+          h += '<a href="' + esc(linkedinUrl) + '" target="_blank" rel="noopener noreferrer" style="color:#38bdf8; font-weight:bold; font-family:monospace; text-decoration:none; background:rgba(14, 118, 168, 0.2); padding:5px 12px; border-radius:6px; border:1px solid rgba(14, 118, 168, 0.4); word-break:break-all;" onclick="window.open(\'' + esc(linkedinUrl) + '\', \'_blank\'); return false;">💼 ' + esc(displayLinkedin) + ' ↗</a>';
+        }
+        h += '</div>';
+      }
+
+      h += '</div>'; // end TAB 1
+
+      // TAB 2: ROCKETS FLEET
+      var fleet = o.rockets_fleet || [];
+      h += '<div id="compTabVehicles" class="site-tab-content" style="display:none;">';
+      h += '<div style="font-size:10.5px; color:var(--muted); margin-bottom:6px;">🚀 ' + (isFa ? "مشخصات کامل فنی و عملیاتی موشک‌ها و پرتاب‌گرها:" : "Detailed Rockets Fleet Specifications:") + '</div>';
+      
+      fleet.forEach(function(v) {
+        var rName = isFa ? v.name : (v.name ? v.name.split(" (")[0] : "Launch Vehicle");
+        var stText = isFa ? (v.status_fa || "عملیاتی") : (v.status_en || v.status_fa || "Operational");
+        var stBadge = "badge-private";
+        if (stText.indexOf("عملیاتی") > -1 || stText.indexOf("Operational") > -1) stBadge = "badge-gov";
+
+        h += '<div style="background:var(--bg2); border:1px solid var(--line); border-radius:8px; padding:10px; margin-bottom:8px;">';
+        h += '<div style="display:flex; justify-content:space-between; align-items:center; border-bottom:1px solid var(--line); padding-bottom:6px; margin-bottom:8px;">';
+        h += '<div><span style="font-size:13px; font-weight:bold; color:#fff;">🚀 <bdi>' + esc(rName) + '</bdi></span> <small style="color:var(--muted); font-size:10px;">(' + esc(v.maiden_flight || "—") + ')</small></div>';
+        h += '<span class="' + stBadge + '" style="padding:2px 8px; border-radius:10px; font-size:10px;"><bdi>' + esc(stText) + '</bdi></span>';
+        h += '</div>';
+
+        var rReu = isFa ? (v.reusability_fa || "یک‌بارمصرف") : (v.reusability_en || "Expendable");
+        var rProp = isFa ? (v.propellant_fa || "—") : (v.propellant_en || v.propellant_fa || "—");
+        var rEng = isFa ? (v.engine_type_fa || "—") : (v.engine_type_en || v.engine_type_fa || "—");
+        var rThr = isFa ? (v.thrust_fa || "—") : (v.thrust_en || v.thrust_fa || "—");
+        var rLeo = isFa ? (v.payload_leo_fa || "—") : (v.payload_leo_en || v.payload_leo_fa || "—");
+        var rSso = isFa ? (v.payload_sso_fa || "—") : (v.payload_sso_en || v.payload_sso_fa || "—");
+        var rGto = isFa ? (v.payload_gto_fa || "—") : (v.payload_gto_en || v.payload_gto_fa || "—");
+
+        var dimText = isFa ?
+          ("ارتفاع: " + esc(v.height_fa || "—") + " | قطر: " + esc(v.diameter_fa || "—") + " | جرم: " + esc(v.mass_fa || "—")) :
+          ("Height: " + esc(v.height_en || v.height_fa || "—") + " | Diameter: " + esc(v.diameter_en || v.diameter_fa || "—") + " | Mass: " + esc(v.mass_en || v.mass_fa || "—"));
+
+        // Rocket Tech Specs Grid
+        h += '<div style="display:grid; grid-template-columns:1fr 1fr; gap:6px; font-size:10.5px;">';
+        h += '<div style="background:rgba(0,0,0,0.25); padding:5px 8px; border-radius:4px;"><b>' + (isFa ? "تعداد مراحل:" : "Stages:") + '</b> ' + esc(v.stages || 2) + '</div>';
+        h += '<div style="background:rgba(0,0,0,0.25); padding:5px 8px; border-radius:4px;"><b>' + (isFa ? "بازمصرف‌پذیری:" : "Reusability:") + '</b> <bdi>' + esc(rReu) + '</bdi></div>';
+        h += '<div style="background:rgba(0,0,0,0.25); padding:5px 8px; border-radius:4px; grid-column:span 2;"><b>' + (isFa ? "پیشرانه / سوخت:" : "Propellant:") + '</b> <bdi>' + esc(rProp) + '</bdi></div>';
+        h += '<div style="background:rgba(0,0,0,0.25); padding:5px 8px; border-radius:4px; grid-column:span 2;"><b>' + (isFa ? "نوع موتور:" : "Engine:") + '</b> <bdi>' + esc(rEng) + '</bdi></div>';
+        h += '<div style="background:rgba(0,0,0,0.25); padding:5px 8px; border-radius:4px;"><b>' + (isFa ? "نیروی رانش:" : "Thrust:") + '</b> <bdi>' + esc(rThr) + '</bdi></div>';
+        h += '<div style="background:rgba(0,0,0,0.25); padding:5px 8px; border-radius:4px;"><b>' + (isFa ? "ظرفیت LEO:" : "LEO Payload:") + '</b> <bdi>' + esc(rLeo) + '</bdi></div>';
+        h += '<div style="background:rgba(0,0,0,0.25); padding:5px 8px; border-radius:4px;"><b>' + (isFa ? "ظرفیت SSO:" : "SSO Payload:") + '</b> <bdi>' + esc(rSso) + '</bdi></div>';
+        h += '<div style="background:rgba(0,0,0,0.25); padding:5px 8px; border-radius:4px;"><b>' + (isFa ? "ظرفیت GTO:" : "GTO Payload:") + '</b> <bdi>' + esc(rGto) + '</bdi></div>';
+        h += '<div style="background:rgba(0,0,0,0.25); padding:5px 8px; border-radius:4px; grid-column:span 2;"><b>' + (isFa ? "ابعاد و جرم:" : "Dimensions:") + '</b> <bdi>' + dimText + '</bdi></div>';
+        h += '</div>';
+
+        // Rocket Flights Record
+        var flightsLabel = isFa ?
+          ('پروازها: <b>' + esc(v.total_launches || 0) + '</b> (موفق: <b style="color:#10b981;">' + esc(v.success_launches || 0) + '</b> | ناموفق: <b style="color:#ef4444;">' + esc(v.failed_launches || 0) + '</b>)') :
+          ('Flights: <b>' + esc(v.total_launches || 0) + '</b> (Success: <b style="color:#10b981;">' + esc(v.success_launches || 0) + '</b> | Failed: <b style="color:#ef4444;">' + esc(v.failed_launches || 0) + '</b>)');
+
+        var lastFlightLabel = isFa ?
+          ('آخرین پرتاب: <b>' + esc(v.last_launch_fa || "—") + '</b>') :
+          ('Last Flight: <b>' + esc(v.last_launch_en || v.last_launch_fa || "—") + '</b>');
+
+        h += '<div style="margin-top:6px; background:rgba(56, 189, 248, 0.08); border:1px solid rgba(56, 189, 248, 0.2); padding:6px; border-radius:4px; font-size:10px; display:flex; justify-content:space-between; flex-wrap:wrap; gap:4px;">';
+        h += '<span>' + flightsLabel + '</span>';
+        h += '<span>' + lastFlightLabel + '</span>';
+        h += '</div>';
+
+        h += '</div>'; // end rocket card
+      });
+
+      h += '</div>'; // end TAB 2
+
+      // TAB 3: TIMELINE & NETWORK
+      var timeline = isFa ? (o.timeline_fa || o.timeline_en || []) : (o.timeline_en || o.timeline_fa || []);
+      var customers = isFa ? (o.customers_fa || o.customers_en || []) : (o.customers_en || o.customers_fa || []);
+      var partners = isFa ? (o.partners_fa || o.partners_en || []) : (o.partners_en || o.partners_fa || []);
+
+      h += '<div id="compTabTimeline" class="site-tab-content" style="display:none;">';
+      
+      // Timeline Box
+      if (timeline.length) {
+        h += '<div style="background:var(--bg2); border:1px solid var(--line); border-radius:8px; padding:10px; margin-bottom:8px;">';
+        h += '<div style="font-size:11.5px; font-weight:bold; color:#f59e0b; margin-bottom:8px;">⏳ ' + (isFa ? "خط زمانی رویدادهای کلیدی و تاریخی" : "Historical Timeline") + '</div>';
+        h += '<div style="display:flex; flex-direction:column; gap:8px;">';
+        
+        timeline.forEach(function(item) {
+          var tTitle = isFa ? (item.title || item.title_fa) : (item.title_en || item.title);
+          var tDesc = isFa ? (item.desc || item.desc_fa) : (item.desc_en || item.desc);
+
+          h += '<div style="background:rgba(0,0,0,0.25); border-right:3px solid #f59e0b; padding:6px 10px; border-radius:4px; font-size:10.5px;">';
+          h += '<div style="font-weight:bold; color:#fff;"><span style="color:#f59e0b; font-family:monospace;">' + esc(item.year) + ':</span> ' + esc(tTitle) + '</div>';
+          h += '<div style="color:var(--muted); margin-top:2px; line-height:1.4;">' + esc(tDesc) + '</div>';
+          h += '</div>';
+        });
+
+        h += '</div></div>';
+      }
+
+      // Customers & Partners Network
+      h += '<div style="background:var(--bg2); border:1px solid var(--line); border-radius:8px; padding:10px;">';
+      h += '<div style="font-size:11.5px; font-weight:bold; color:var(--accent); margin-bottom:6px;">🤝 ' + (isFa ? "شبکه مشتریان و همکاران پیشرانش" : "Customers & Propulsion Network") + '</div>';
+      
+      if (customers.length) {
+        h += '<div style="font-size:10.5px; margin-bottom:4px;"><b>' + (isFa ? "مشتریان اصلی:" : "Primary Customers:") + '</b></div>';
+        h += '<div style="display:flex; flex-wrap:wrap; gap:4px; margin-bottom:8px;">';
+        customers.forEach(function(cst) {
+          h += '<span style="background:rgba(255,255,255,0.05); border:1px solid var(--line); padding:2px 8px; border-radius:4px; font-size:10px;">' + esc(cst) + '</span>';
+        });
+        h += '</div>';
+      }
+
+      if (partners.length) {
+        h += '<div style="font-size:10.5px; margin-bottom:4px;"><b>' + (isFa ? "شرکای صنعتی و تامین‌کنندگان پیشرانه:" : "Industrial Partners & Propulsion Suppliers:") + '</b></div>';
+        h += '<div style="display:flex; flex-wrap:wrap; gap:4px;">';
+        partners.forEach(function(prt) {
+          h += '<span style="background:rgba(16, 185, 129, 0.12); border:1px solid rgba(16, 185, 129, 0.3); color:#10b981; padding:2px 8px; border-radius:4px; font-size:10px;">' + esc(prt) + '</span>';
+        });
+        h += '</div>';
+      }
+
+      h += '</div>';
+
+      h += '</div>'; // end TAB 3
+
+    } else {
+      // STANDARD / AGENCY DRAWER LAYOUT
+      var isAgency = (p.cat === "agency");
+      h += '<div class="site-tabs" style="margin-top:10px;">';
+      h += '<button class="site-tab-btn active" onclick="switchCompTab(\'overview\', this)">' + (isFa ? "شناسنامه و تایم‌لاین" : "Overview & Timeline") + '</button>';
+      h += '<button class="site-tab-btn" onclick="switchCompTab(\'products\', this)">' + (isAgency ? (isFa ? "محصولات و برنامه‌ها" : "Products & Programs") : (isFa ? "سبد محصولات و خدمات" : "Products Portfolio")) + '</button>';
+      if (isAgency && (o.gallery || []).length) {
+        h += '<button class="site-tab-btn" onclick="switchCompTab(\'gallery\', this)">' + (isFa ? "گالری تصاویر" : "Media Gallery") + '</button>';
+      }
+      h += '</div>';
+
+      // TAB 1: OVERVIEW
+      h += '<div id="compTabOverview" class="site-tab-content active" style="display:block;">';
+      h += '<div class="grid2">';
+      h += cell(isFa ? "سال تأسیس" : "Founded", o.founded);
+      h += cell(isFa ? "مقر اصلی" : "Headquarters", isFa ? (o.city_fa || o.city) : (o.city || o.city_fa));
+      h += cell(t("country"), isFa ? (o.country_fa || o.country) : (o.country || o.country_fa));
+      h += cell(isFa ? "حوزه‌های فعالیت" : "Sectors", isFa ? (o.sectors_fa || o.sectors || "هوافضا و صنایع فضایی") : (o.sectors_en || "Aerospace Systems"), true);
+      h += '</div></div>';
+
+      // TAB 2: PRODUCTS
+      h += '<div id="compTabProducts" class="site-tab-content" style="display:none;">';
+      h += '<div style="font-size:11px; color:var(--text); line-height:1.5; padding:10px;">' + esc(desc(o)) + '</div>';
+      h += '</div>';
+    }
+
+    return h;
+  }
+
+  /* ================= COUNTRY PROFILE SYSTEM ================= */
+  window.openDetailById = function(id, kind) {
+    if (!id || typeof DATA === "undefined") return;
+    if (kind === "site") {
+      var s = (DATA.sites || []).find(function(x) { return x.id === id; });
+      if (s) openDetail({ kind: "site", cat: "site", o: s });
+    } else {
+      var c = (DATA.companies || []).find(function(x) { return x.id === id; });
+      if (c) openDetail({ kind: c.cat || "company", cat: c.cat || "launch", o: c });
+    }
+  };
+
+  function isEntityInCountry(entity, targetEn, targetFa) {
+    if (!entity) return false;
+    var eCountryEn = (entity.country || "").trim().toLowerCase();
+    var eCountryFa = (entity.country_fa || "").trim().toLowerCase();
+
+    var tEn = (targetEn || "").trim().toLowerCase();
+    var tFa = (targetFa || "").trim().toLowerCase();
+
+    if (!tEn && !tFa) return false;
+
+    var synMap = {
+      "united states of america": ["united states", "usa", "us", "ایالات متحده", "امریکایی", "آمریکا", "ایالات متحده آمریکا"],
+      "united states": ["united states of america", "usa", "us", "ایالات متحده", "امریکایی", "آمریکا", "ایالات متحده آمریکا"],
+      "usa": ["united states of america", "united states", "us", "ایالات متحده", "آمریکا"],
+      "people's republic of china": ["china", "چین", "جمهوری خلق چین"],
+      "china": ["people's republic of china", "چین", "جمهوری خلق چین"],
+      "russian federation": ["russia", "روسیه", "فدراسیون روسیه"],
+      "russia": ["russian federation", "روسیه", "فدراسیون روسیه"],
+      "united kingdom": ["uk", "great britain", "britain", "بریتانیا", "انگلیس"],
+      "uk": ["united kingdom", "great britain", "britain", "بریتانیا", "انگلیس"],
+      "french guiana": ["france", "گویان فرانسه", "فرانسه"],
+      "france": ["french guiana", "گویان فرانسه", "فرانسه"],
+      "kazakhstan": ["kazakhstan (leased by russia)", "قزاقستان", "قزاقستان (اجارهٔ روسیه)"],
+      "united arab emirates": ["uae", "امارات", "امارات متحده عربی"],
+      "uae": ["united arab emirates", "امارات", "امارات متحده عربی"],
+      "turkey": ["türkiye", "ترکیه"],
+      "türkiye": ["turkey", "ترکیه"],
+      "south korea": ["korea, republic of", "کره جنوبی"],
+      "north korea": ["korea, democratic people's republic of", "کره شمالی", "کرهٔ شمالی"]
+    };
+
+    var eEnParts = eCountryEn.split('/').map(function(x) { return x.trim(); });
+    var eFaParts = eCountryFa.split('/').map(function(x) { return x.trim(); });
+
+    if (tEn && (eEnParts.indexOf(tEn) > -1 || eCountryEn === tEn)) return true;
+    if (tFa && (eFaParts.indexOf(tFa) > -1 || eCountryFa === tFa)) return true;
+
+    var synonyms = [];
+    if (tEn in synMap) synonyms = synonyms.concat(synMap[tEn]);
+    if (tFa in synMap) synonyms = synonyms.concat(synMap[tFa]);
+
+    for (var i = 0; i < synonyms.length; i++) {
+      var s = synonyms[i].trim().toLowerCase();
+      if (eEnParts.indexOf(s) > -1 || eCountryEn === s) return true;
+      if (eFaParts.indexOf(s) > -1 || eCountryFa === s) return true;
+    }
+
+    return false;
+  }
+
+  function extractEntityLinks(item) {
+    if (!item) return { webUrl: null, displayWeb: null, linkedinUrl: null, displayLinkedin: null };
+    var rawWeb = item.website || item.website_url || item.site || item.official_website || (item.contacts ? item.contacts.website : null);
+    var webUrl = rawWeb ? (rawWeb.startsWith("http") ? rawWeb : "https://" + rawWeb) : null;
+    var displayWeb = webUrl ? webUrl.replace(/^https?:\/\//i, "").replace(/^www\./i, "").replace(/\/$/, "") : null;
+
+    var rawLinkedin = item.linkedin || item.linkedin_url || (item.contacts ? item.contacts.linkedin : null);
+    var linkedinUrl = rawLinkedin ? (rawLinkedin.startsWith("http") ? rawLinkedin : "https://" + rawLinkedin) : null;
+    var displayLinkedin = linkedinUrl ? linkedinUrl.replace(/^https?:\/\//i, "").replace(/^www\./i, "").replace(/\/$/, "") : null;
+
+    return { webUrl: webUrl, displayWeb: displayWeb, linkedinUrl: linkedinUrl, displayLinkedin: displayLinkedin };
+  }
+
+  function renderCountryProfile(p) {
+    var isFa = (typeof LANG !== "undefined" && LANG === "fa");
+    
+    // Determine Country Name
+    var cEn = p.country_en || (p.o ? p.o.country_en || p.o.country : null) || p.country || "Iran";
+    var cFa = p.country_fa || (p.o ? p.o.country_fa : null) || countryOf(cEn) || cEn;
+
+    var allCompanies = (typeof DATA !== "undefined" && DATA.companies) ? DATA.companies : [];
+    var allSites = (typeof DATA !== "undefined" && DATA.sites) ? DATA.sites : [];
+
+    // Filter items for this country using smart synonym & spatial matching
+    var propulsionItems = allCompanies.filter(function(c) {
+      var isC = isEntityInCountry(c, cEn, cFa);
+      var isP = (c.category === "propulsion" || c.org_type_en === "Propulsion Contractor" || "engine_products_bilingual" in c || c.cat === "propulsion");
+      return isC && isP;
+    });
+
+    propulsionItems.sort(function(a, b) {
+      if (a.id === "aio-propulsion") return -1;
+      if (b.id === "aio-propulsion") return 1;
+      return (a.fa || a.en || "").localeCompare(b.fa || b.en || "");
+    });
+
+    var launchItems = allCompanies.filter(function(c) {
+      var isC = isEntityInCountry(c, cEn, cFa);
+      var isL = (c.cat === "launch" || "rockets_fleet" in c || c.org_type_en === "Launch Operator");
+      return isC && isL;
+    });
+
+    launchItems.sort(function(a, b) {
+      if (a.id === "irgc-space" || a.id === "aio-iran") return -1;
+      if (b.id === "irgc-space" || b.id === "aio-iran") return 1;
+      return (a.fa || a.en || "").localeCompare(b.fa || b.en || "");
+    });
+
+    var agencyItems = allCompanies.filter(function(c) {
+      var isC = isEntityInCountry(c, cEn, cFa);
+      var isA = (c.cat === "agency");
+      return isC && isA;
+    });
+
+    var siteItems = allSites.filter(function(s) {
+      var isC = isEntityInCountry(s, cEn, cFa);
+      return isC;
+    });
+
+    var totalEntities = propulsionItems.length + launchItems.length + agencyItems.length + siteItems.length;
+
+    var h = "";
+
+    // Header Title (NO COUNTRY FLAGS PER EXPLICIT USER CONSTRAINT!)
+    h += '<div class="d-head" style="display:flex; justify-content:space-between; align-items:center; gap:10px; margin-inline-end:35px;">';
+    h += '<div style="display:flex; gap:10px; align-items:center; flex:1;">';
+    h += '<div style="font-size:28px; background:rgba(56, 189, 248, 0.15); border:1px solid rgba(56, 189, 248, 0.3); border-radius:8px; width:44px; height:44px; display:flex; align-items:center; justify-content:center;">🌍</div>';
+    h += '<div><div class="d-kicker">' + (isFa ? "شناسنامه جامع فضایی کشور" : "National Space Dossier") + '</div>';
+    h += '<h2 class="d-title" style="margin:0;">' + esc(isFa ? cFa : cEn) + '</h2></div></div>';
+    h += '<span class="badge-gov" style="padding:3px 10px; border-radius:12px; font-size:10.5px; font-weight:bold; white-space:nowrap;">' + (isFa ? (totalEntities + " مرکز فعال") : (totalEntities + " Active Entities")) + '</span>';
+    h += '</div>';
+
+    h += '<div class="d-sub" style="margin-top:4px;">' + esc(isFa ? cEn : cFa) + '</div>';
+
+    // SECTION 1: SHARE & OVERVIEW 4-GRID BANNER (سهم و آمار فضایی کشور)
+    h += '<div style="background:linear-gradient(135deg, rgba(15, 31, 51, 0.95) 0%, rgba(9, 13, 22, 0.98) 100%); border:1px solid rgba(56, 189, 248, 0.35); border-radius:8px; padding:12px; margin-top:10px; box-shadow:0 4px 16px rgba(0,0,0,0.4);">';
+    h += '<div style="font-size:11.5px; font-weight:bold; color:var(--accent); margin-bottom:8px; display:flex; align-items:center; gap:6px; border-bottom:1px solid rgba(255,255,255,0.08); padding-bottom:6px;">📊 ' + (isFa ? "سهم و آمار توزیع زیرساخت‌های فضایی کشور:" : "Space Infrastructure Share Distribution:") + '</div>';
+    
+    h += '<div style="display:grid; grid-template-columns:repeat(4, 1fr); gap:6px; text-align:center;">';
+    
+    // 1. Propulsion
+    h += '<div style="background:rgba(245, 158, 11, 0.1); padding:8px 4px; border-radius:6px; border:1px solid rgba(245, 158, 11, 0.3);">';
+    h += '<div style="font-size:16px; font-weight:bold; color:#f59e0b;">' + esc(propulsionItems.length) + '</div>';
+    h += '<div style="font-size:9px; color:#f59e0b; margin-top:2px;">' + (isFa ? "پیشرانش" : "Propulsion") + '</div>';
+    h += '</div>';
+
+    // 2. Launch
+    h += '<div style="background:rgba(16, 185, 129, 0.1); padding:8px 4px; border-radius:6px; border:1px solid rgba(16, 185, 129, 0.3);">';
+    h += '<div style="font-size:16px; font-weight:bold; color:#10b981;">' + esc(launchItems.length) + '</div>';
+    h += '<div style="font-size:9px; color:#10b981; margin-top:2px;">' + (isFa ? "پرتاب‌گرها" : "Launch") + '</div>';
+    h += '</div>';
+
+    // 3. Agencies
+    h += '<div style="background:rgba(56, 189, 248, 0.1); padding:8px 4px; border-radius:6px; border:1px solid rgba(56, 189, 248, 0.3);">';
+    h += '<div style="font-size:16px; font-weight:bold; color:#38bdf8;">' + esc(agencyItems.length) + '</div>';
+    h += '<div style="font-size:9px; color:#38bdf8; margin-top:2px;">' + (isFa ? "سازمان‌ها" : "Agencies") + '</div>';
+    h += '</div>';
+
+    // 4. Sites
+    h += '<div style="background:rgba(239, 68, 68, 0.1); padding:8px 4px; border-radius:6px; border:1px solid rgba(239, 68, 68, 0.3);">';
+    h += '<div style="font-size:16px; font-weight:bold; color:#ef4444;">' + esc(siteItems.length) + '</div>';
+    h += '<div style="font-size:9px; color:#ef4444; margin-top:2px;">' + (isFa ? "پایگاه‌ها" : "Spaceports") + '</div>';
+    h += '</div>';
+
+    h += '</div></div>';
+
+    // SECTION 2: 4 DEDICATED TABS
+    h += '<div class="site-tabs" style="margin-top:10px;">';
+    h += '<button class="site-tab-btn active" onclick="switchCompTab(\'cPropulsion\', this)">' + (isFa ? "شرکت‌های پیشران" : "Propulsion") + ' (' + propulsionItems.length + ')</button>';
+    h += '<button class="site-tab-btn" onclick="switchCompTab(\'cLaunch\', this)">' + (isFa ? "شرکت‌های پرتاب" : "Launch") + ' (' + launchItems.length + ')</button>';
+    h += '<button class="site-tab-btn" onclick="switchCompTab(\'cAgency\', this)">' + (isFa ? "سازمان‌های فضایی" : "Agencies") + ' (' + agencyItems.length + ')</button>';
+    h += '<button class="site-tab-btn" onclick="switchCompTab(\'cSite\', this)">' + (isFa ? "پایگاه‌های پرتاب" : "Sites") + ' (' + siteItems.length + ')</button>';
+    h += '</div>';
+
+    // TAB 1: PROPULSION CONTRACTORS
+    h += '<div id="compTabCPropulsion" class="site-tab-content active" style="display:block;">';
+    if (propulsionItems.length) {
+      h += '<div style="display:flex; flex-direction:column; gap:8px; margin-top:8px;">';
+      propulsionItems.forEach(function(item) {
+        var nameStr = isFa ? (item.fa || item.en) : (item.en || item.fa);
+        var cityStr = isFa ? (item.city_fa || item.city || "—") : (item.city || item.city_fa || "—");
+        var catStr = isFa ? (item.propulsion_category_fa || item.propulsion_category_en || "پیشرانه فضایی") : (item.propulsion_category_en || "Propulsion");
+        var defaultLogo = "data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><rect width='100' height='100' rx='20' fill='%23090d16' stroke='%23f59e0b' stroke-width='3'/><text x='50' y='60' font-family='sans-serif' font-size='32' fill='%23f59e0b' text-anchor='middle'>⚙️</text></svg>";
+        var logoSrc = item.logo_data || item.logo || defaultLogo;
+
+        h += '<div style="background:var(--bg2); border:1px solid var(--line); border-radius:8px; padding:10px; display:flex; flex-direction:column; gap:6px;">';
+        h += '<div style="display:flex; justify-content:space-between; align-items:center;">';
+        h += '<div style="display:flex; align-items:center; gap:8px;">';
+        h += '<img src="' + esc(logoSrc) + '" alt="" onerror="this.src=defaultLogo;" style="width:28px; height:28px; object-fit:contain; border-radius:4px; background:#000; padding:1px; border:1px solid var(--line);" />';
+        h += '<div><b style="font-size:11.5px; color:#fff;"><bdi>' + esc(nameStr) + '</bdi></b>';
+        h += '<div style="font-size:9.5px; color:var(--muted);">📍 ' + esc(cityStr) + '</div></div>';
+        h += '</div>';
+        h += '<span style="font-size:9.5px; color:#f59e0b; background:rgba(245,158,11,0.12); border:1px solid rgba(245,158,11,0.3); padding:2px 6px; border-radius:10px;"><bdi>' + esc(catStr) + '</bdi></span>';
+        h += '</div>';
+
+        // Description Kicker
+        var shortDesc = desc(item);
+        if (shortDesc) {
+          h += '<div style="font-size:10px; color:var(--text); line-height:1.4; display:-webkit-box; -webkit-line-clamp:2; -webkit-box-orient:vertical; overflow:hidden;">' + esc(shortDesc) + '</div>';
+        }
+
+        // LINKS & 2 ACTION BUTTONS UNDER EACH ENTITY CARD
+        var links = extractEntityLinks(item);
+        if (links.webUrl || links.linkedinUrl) {
+          h += '<div style="display:flex; gap:6px; flex-wrap:wrap; margin-top:2px;">';
+          if (links.webUrl) {
+            h += '<a href="' + esc(links.webUrl) + '" target="_blank" rel="noopener noreferrer" style="color:#38bdf8; background:rgba(56, 189, 248, 0.12); border:1px solid rgba(56, 189, 248, 0.35); font-size:10px; font-weight:bold; font-family:monospace; padding:3px 8px; border-radius:4px; text-decoration:none; display:inline-flex; align-items:center; gap:3px; word-break:break-all;" onclick="event.stopPropagation();">🌐 ' + esc(links.displayWeb || "Website") + ' ↗</a>';
+          }
+          if (links.linkedinUrl) {
+            h += '<a href="' + esc(links.linkedinUrl) + '" target="_blank" rel="noopener noreferrer" style="color:#38bdf8; background:rgba(14, 118, 168, 0.18); border:1px solid rgba(14, 118, 168, 0.45); font-size:10px; font-weight:bold; font-family:monospace; padding:3px 8px; border-radius:4px; text-decoration:none; display:inline-flex; align-items:center; gap:3px; word-break:break-all;" onclick="event.stopPropagation();">💼 ' + esc(links.displayLinkedin || "LinkedIn") + ' ↗</a>';
+          }
+          h += '</div>';
+        }
+
+        h += '<div style="display:flex; gap:6px; margin-top:4px;">';
+        if (item.lat && item.lon) {
+          h += '<button type="button" onclick="flyToCoords(' + item.lat + ',' + item.lon + ', 8)" class="btn btn-sm country-btn-fly" style="flex:1; font-size:10px; padding:5px 8px; cursor:pointer;">📍 ' + (isFa ? "مشاهده روی نقشه" : "Fly on Map") + '</button>';
+        }
+        h += '<button type="button" onclick="openDetailById(\'' + esc(item.id) + '\', \'propulsion\')" class="btn btn-sm country-btn-detail" style="flex:1; font-size:10px; padding:5px 8px; cursor:pointer; background:rgba(56, 189, 248, 0.15); border:1px solid rgba(56, 189, 248, 0.4); color:#38bdf8;">📖 ' + (isFa ? "باز شدن جزئیات" : "Open Details") + '</button>';
+        h += '</div>';
+
+        h += '</div>'; // end entity card
+      });
+      h += '</div>';
+    } else {
+      h += '<div style="padding:16px; text-align:center; color:var(--muted); font-size:11px;">' + (isFa ? "هیچ مرکز پیشرانش ثبت‌شده‌ای برای این کشور یافت نشد." : "No registered propulsion contractors for this country.") + '</div>';
+    }
+    h += '</div>'; // end TAB 1
+
+    // TAB 2: LAUNCH OPERATORS
+    h += '<div id="compTabCLaunch" class="site-tab-content" style="display:none;">';
+    if (launchItems.length) {
+      h += '<div style="display:flex; flex-direction:column; gap:8px; margin-top:8px;">';
+      launchItems.forEach(function(item) {
+        var nameStr = isFa ? (item.fa || item.en) : (item.en || item.fa);
+        var cityStr = isFa ? (item.city_fa || item.city || "—") : (item.city || item.city_fa || "—");
+        var orgStr = isFa ? (item.org_type_fa || "شرکت پرتاب تجاری") : (item.org_type_en || "Launch Provider");
+        var defaultLogo = "data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><rect width='100' height='100' rx='20' fill='%23090d16' stroke='%2310b981' stroke-width='3'/><text x='50' y='60' font-family='sans-serif' font-size='32' fill='%2310b981' text-anchor='middle'>🚀</text></svg>";
+        var logoSrc = item.logo_data || item.logo || defaultLogo;
+
+        h += '<div style="background:var(--bg2); border:1px solid var(--line); border-radius:8px; padding:10px; display:flex; flex-direction:column; gap:6px;">';
+        h += '<div style="display:flex; justify-content:space-between; align-items:center;">';
+        h += '<div style="display:flex; align-items:center; gap:8px;">';
+        h += '<img src="' + esc(logoSrc) + '" alt="" onerror="this.src=defaultLogo;" style="width:28px; height:28px; object-fit:contain; border-radius:4px; background:#000; padding:1px; border:1px solid var(--line);" />';
+        h += '<div><b style="font-size:11.5px; color:#fff;"><bdi>' + esc(nameStr) + '</bdi></b>';
+        h += '<div style="font-size:9.5px; color:var(--muted);">📍 ' + esc(cityStr) + '</div></div>';
+        h += '</div>';
+        h += '<span style="font-size:9.5px; color:#10b981; background:rgba(16,185,129,0.12); border:1px solid rgba(16,185,129,0.3); padding:2px 6px; border-radius:10px;"><bdi>' + esc(orgStr) + '</bdi></span>';
+        h += '</div>';
+
+        // Description Kicker
+        var shortDesc = desc(item);
+        if (shortDesc) {
+          h += '<div style="font-size:10px; color:var(--text); line-height:1.4; display:-webkit-box; -webkit-line-clamp:2; -webkit-box-orient:vertical; overflow:hidden;">' + esc(shortDesc) + '</div>';
+        }
+
+        // LINKS & 2 ACTION BUTTONS UNDER EACH ENTITY CARD
+        var links = extractEntityLinks(item);
+        if (links.webUrl || links.linkedinUrl) {
+          h += '<div style="display:flex; gap:6px; flex-wrap:wrap; margin-top:2px;">';
+          if (links.webUrl) {
+            h += '<a href="' + esc(links.webUrl) + '" target="_blank" rel="noopener noreferrer" style="color:#38bdf8; background:rgba(56, 189, 248, 0.12); border:1px solid rgba(56, 189, 248, 0.35); font-size:10px; font-weight:bold; font-family:monospace; padding:3px 8px; border-radius:4px; text-decoration:none; display:inline-flex; align-items:center; gap:3px; word-break:break-all;" onclick="event.stopPropagation();">🌐 ' + esc(links.displayWeb || "Website") + ' ↗</a>';
+          }
+          if (links.linkedinUrl) {
+            h += '<a href="' + esc(links.linkedinUrl) + '" target="_blank" rel="noopener noreferrer" style="color:#38bdf8; background:rgba(14, 118, 168, 0.18); border:1px solid rgba(14, 118, 168, 0.45); font-size:10px; font-weight:bold; font-family:monospace; padding:3px 8px; border-radius:4px; text-decoration:none; display:inline-flex; align-items:center; gap:3px; word-break:break-all;" onclick="event.stopPropagation();">💼 ' + esc(links.displayLinkedin || "LinkedIn") + ' ↗</a>';
+          }
+          h += '</div>';
+        }
+
+        h += '<div style="display:flex; gap:6px; margin-top:4px;">';
+        if (item.lat && item.lon) {
+          h += '<button type="button" onclick="flyToCoords(' + item.lat + ',' + item.lon + ', 8)" class="btn btn-sm country-btn-fly" style="flex:1; font-size:10px; padding:5px 8px; cursor:pointer;">📍 ' + (isFa ? "مشاهده روی نقشه" : "Fly on Map") + '</button>';
+        }
+        h += '<button type="button" onclick="openDetailById(\'' + esc(item.id) + '\', \'launch\')" class="btn btn-sm country-btn-detail" style="flex:1; font-size:10px; padding:5px 8px; cursor:pointer; background:rgba(56, 189, 248, 0.15); border:1px solid rgba(56, 189, 248, 0.4); color:#38bdf8;">📖 ' + (isFa ? "باز شدن جزئیات" : "Open Details") + '</button>';
+        h += '</div>';
+
+        h += '</div>'; // end entity card
+      });
+      h += '</div>';
+    } else {
+      h += '<div style="padding:16px; text-align:center; color:var(--muted); font-size:11px;">' + (isFa ? "هیچ اپراتور پرتابی برای این کشور یافت نشد." : "No launch operators for this country.") + '</div>';
+    }
+    h += '</div>'; // end TAB 2
+
+    // TAB 3: SPACE AGENCIES
+    h += '<div id="compTabCAgency" class="site-tab-content" style="display:none;">';
+    if (agencyItems.length) {
+      h += '<div style="display:flex; flex-direction:column; gap:8px; margin-top:8px;">';
+      agencyItems.forEach(function(item) {
+        var nameStr = isFa ? (item.fa || item.en) : (item.en || item.fa);
+        var cityStr = isFa ? (item.city_fa || item.city || "—") : (item.city || item.city_fa || "—");
+        var orgStr = isFa ? (item.org_type_fa || "سازمان فضایی دولتی") : (item.org_type_en || "Space Agency");
+        var defaultLogo = "data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><rect width='100' height='100' rx='20' fill='%23090d16' stroke='%2338bdf8' stroke-width='3'/><text x='50' y='60' font-family='sans-serif' font-size='32' fill='%2338bdf8' text-anchor='middle'>🏛️</text></svg>";
+        var logoSrc = item.logo_data || item.logo || defaultLogo;
+
+        h += '<div style="background:var(--bg2); border:1px solid var(--line); border-radius:8px; padding:10px; display:flex; flex-direction:column; gap:6px;">';
+        h += '<div style="display:flex; justify-content:space-between; align-items:center;">';
+        h += '<div style="display:flex; align-items:center; gap:8px;">';
+        h += '<img src="' + esc(logoSrc) + '" alt="" onerror="this.src=defaultLogo;" style="width:28px; height:28px; object-fit:contain; border-radius:4px; background:#000; padding:1px; border:1px solid var(--line);" />';
+        h += '<div><b style="font-size:11.5px; color:#fff;"><bdi>' + esc(nameStr) + '</bdi></b>';
+        h += '<div style="font-size:9.5px; color:var(--muted);">📍 ' + esc(cityStr) + '</div></div>';
+        h += '</div>';
+        h += '<span style="font-size:9.5px; color:#38bdf8; background:rgba(56,189,248,0.12); border:1px solid rgba(56,189,248,0.3); padding:2px 6px; border-radius:10px;"><bdi>' + esc(orgStr) + '</bdi></span>';
+        h += '</div>';
+
+        // Description Kicker
+        var shortDesc = desc(item);
+        if (shortDesc) {
+          h += '<div style="font-size:10px; color:var(--text); line-height:1.4; display:-webkit-box; -webkit-line-clamp:2; -webkit-box-orient:vertical; overflow:hidden;">' + esc(shortDesc) + '</div>';
+        }
+
+        // LINKS & 2 ACTION BUTTONS UNDER EACH ENTITY CARD
+        var links = extractEntityLinks(item);
+        if (links.webUrl || links.linkedinUrl) {
+          h += '<div style="display:flex; gap:6px; flex-wrap:wrap; margin-top:2px;">';
+          if (links.webUrl) {
+            h += '<a href="' + esc(links.webUrl) + '" target="_blank" rel="noopener noreferrer" style="color:#38bdf8; background:rgba(56, 189, 248, 0.12); border:1px solid rgba(56, 189, 248, 0.35); font-size:10px; font-weight:bold; font-family:monospace; padding:3px 8px; border-radius:4px; text-decoration:none; display:inline-flex; align-items:center; gap:3px; word-break:break-all;" onclick="event.stopPropagation();">🌐 ' + esc(links.displayWeb || "Website") + ' ↗</a>';
+          }
+          if (links.linkedinUrl) {
+            h += '<a href="' + esc(links.linkedinUrl) + '" target="_blank" rel="noopener noreferrer" style="color:#38bdf8; background:rgba(14, 118, 168, 0.18); border:1px solid rgba(14, 118, 168, 0.45); font-size:10px; font-weight:bold; font-family:monospace; padding:3px 8px; border-radius:4px; text-decoration:none; display:inline-flex; align-items:center; gap:3px; word-break:break-all;" onclick="event.stopPropagation();">💼 ' + esc(links.displayLinkedin || "LinkedIn") + ' ↗</a>';
+          }
+          h += '</div>';
+        }
+
+        h += '<div style="display:flex; gap:6px; margin-top:4px;">';
+        if (item.lat && item.lon) {
+          h += '<button type="button" onclick="flyToCoords(' + item.lat + ',' + item.lon + ', 8)" class="btn btn-sm country-btn-fly" style="flex:1; font-size:10px; padding:5px 8px; cursor:pointer;">📍 ' + (isFa ? "مشاهده روی نقشه" : "Fly on Map") + '</button>';
+        }
+        h += '<button type="button" onclick="openDetailById(\'' + esc(item.id) + '\', \'agency\')" class="btn btn-sm country-btn-detail" style="flex:1; font-size:10px; padding:5px 8px; cursor:pointer; background:rgba(56, 189, 248, 0.15); border:1px solid rgba(56, 189, 248, 0.4); color:#38bdf8;">📖 ' + (isFa ? "باز شدن جزئیات" : "Open Details") + '</button>';
+        h += '</div>';
+
+        h += '</div>'; // end entity card
+      });
+      h += '</div>';
+    } else {
+      h += '<div style="padding:16px; text-align:center; color:var(--muted); font-size:11px;">' + (isFa ? "هیچ سازمان فضایی برای این کشور ثبت نشده است." : "No space agency registered for this country.") + '</div>';
+    }
+    h += '</div>'; // end TAB 3
+
+    // TAB 4: LAUNCH SITES
+    h += '<div id="compTabCSite" class="site-tab-content" style="display:none;">';
+    if (siteItems.length) {
+      h += '<div style="display:flex; flex-direction:column; gap:8px; margin-top:8px;">';
+      siteItems.forEach(function(item) {
+        var nameStr = isFa ? (item.fa || item.en) : (item.en || item.fa);
+        var locStr = isFa ? (item.loc_fa || item.loc || "—") : (item.loc || item.loc_fa || "—");
+        var stStr = isFa ? (item.status === "active" ? "فعال و عملیاتی" : "غیرفعال / تاریخی") : (item.status === "active" ? "Active Spaceport" : "Inactive");
+
+        h += '<div style="background:var(--bg2); border:1px solid var(--line); border-radius:8px; padding:10px; display:flex; flex-direction:column; gap:6px;">';
+        h += '<div style="display:flex; justify-content:space-between; align-items:center;">';
+        h += '<div><b style="font-size:11.5px; color:#fff;">📍 <bdi>' + esc(nameStr) + '</bdi></b>';
+        h += '<div style="font-size:9.5px; color:var(--muted); margin-top:2px;">🌍 ' + esc(locStr) + '</div></div>';
+        h += '<span style="font-size:9.5px; color:#ef4444; background:rgba(239,68,68,0.12); border:1px solid rgba(239,68,68,0.3); padding:2px 6px; border-radius:10px;"><bdi>' + esc(stStr) + '</bdi></span>';
+        h += '</div>';
+
+        // Description Kicker
+        var shortDesc = desc(item);
+        if (shortDesc) {
+          h += '<div style="font-size:10px; color:var(--text); line-height:1.4; display:-webkit-box; -webkit-line-clamp:2; -webkit-box-orient:vertical; overflow:hidden;">' + esc(shortDesc) + '</div>';
+        }
+
+        // LINKS & 2 ACTION BUTTONS UNDER EACH ENTITY CARD
+        var links = extractEntityLinks(item);
+        if (links.webUrl || links.linkedinUrl) {
+          h += '<div style="display:flex; gap:6px; flex-wrap:wrap; margin-top:2px;">';
+          if (links.webUrl) {
+            h += '<a href="' + esc(links.webUrl) + '" target="_blank" rel="noopener noreferrer" style="color:#38bdf8; background:rgba(56, 189, 248, 0.12); border:1px solid rgba(56, 189, 248, 0.35); font-size:10px; font-weight:bold; font-family:monospace; padding:3px 8px; border-radius:4px; text-decoration:none; display:inline-flex; align-items:center; gap:3px; word-break:break-all;" onclick="event.stopPropagation();">🌐 ' + esc(links.displayWeb || "Website") + ' ↗</a>';
+          }
+          if (links.linkedinUrl) {
+            h += '<a href="' + esc(links.linkedinUrl) + '" target="_blank" rel="noopener noreferrer" style="color:#38bdf8; background:rgba(14, 118, 168, 0.18); border:1px solid rgba(14, 118, 168, 0.45); font-size:10px; font-weight:bold; font-family:monospace; padding:3px 8px; border-radius:4px; text-decoration:none; display:inline-flex; align-items:center; gap:3px; word-break:break-all;" onclick="event.stopPropagation();">💼 ' + esc(links.displayLinkedin || "LinkedIn") + ' ↗</a>';
+          }
+          h += '</div>';
+        }
+
+        h += '<div style="display:flex; gap:6px; margin-top:4px;">';
+        if (item.lat && item.lon) {
+          h += '<button type="button" onclick="flyToCoords(' + item.lat + ',' + item.lon + ', 8)" class="btn btn-sm country-btn-fly" style="flex:1; font-size:10px; padding:5px 8px; cursor:pointer;">📍 ' + (isFa ? "مشاهده روی نقشه" : "Fly on Map") + '</button>';
+        }
+        h += '<button type="button" onclick="openDetailById(\'' + esc(item.id) + '\', \'site\')" class="btn btn-sm country-btn-detail" style="flex:1; font-size:10px; padding:5px 8px; cursor:pointer; background:rgba(56, 189, 248, 0.15); border:1px solid rgba(56, 189, 248, 0.4); color:#38bdf8;">📖 ' + (isFa ? "باز شدن جزئیات" : "Open Details") + '</button>';
+        h += '</div>';
+
+        h += '</div>'; // end site card
+      });
+      h += '</div>';
+    } else {
+      h += '<div style="padding:16px; text-align:center; color:var(--muted); font-size:11px;">' + (isFa ? "هیچ پایگاه پرتاب ثبت‌شده‌ای برای این کشور یافت نشد." : "No registered launch sites for this country.") + '</div>';
+    }
+    h += '</div>'; // end TAB 4
+
+    return h;
+  }
+  window.isEntityInCountry = isEntityInCountry;
+  window.getCountryAtLngLat = getCountryAtLngLat;
+  window.renderCompanyDetail = renderCompanyDetail;
+  window.renderCountryProfile = renderCountryProfile;
+  window.bindCountryItemClicks = function() {};
+
+
+  function renderAgencyDetail(p) {
+    var o = p.o || p, h = "";
+    var isFa = (typeof LANG !== "undefined" && LANG === "fa");
+
+    var orgTypeStr = isFa ? (o.org_type_fa || "سازمان فضایی دولتی") : (o.org_type_en || o.org_type || "Government Space Agency");
+
+    // Logo with graceful SVG fallback
+    var defaultLogoSvg = "data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><rect width='100' height='100' rx='20' fill='%23090d16' stroke='%2338bdf8' stroke-width='3'/><text x='50' y='60' font-family='sans-serif' font-size='32' fill='%2338bdf8' text-anchor='middle'>🏛️</text></svg>";
+    var logoSrc = o.logo_data || o.logo || defaultLogoSvg;
+
+    // Header
+    h += '<div class="d-head" style="display:flex; justify-content:space-between; align-items:center; gap:10px; margin-inline-end: 35px;">';
+    h += '<div style="display:flex; gap:10px; align-items:center; flex:1;">';
+    h += '<div style="width:48px; height:48px; border-radius:8px; background:#000; border:1px solid var(--line); display:flex; align-items:center; justify-content:center; flex:0 0 auto; overflow:hidden; padding:2px;">';
+    h += '<img src="' + esc(logoSrc) + '" alt="' + esc(name(o)) + '" onerror="this.onerror=null; this.src=defaultLogoSvg;" style="max-width:100%; max-height:100%; object-fit:contain;" />';
+    h += '</div>';
+    h += '<div><div class="d-kicker">' + esc(t("cat_agency")) + '</div>';
+    h += '<h2 class="d-title" style="margin:0;">' + esc(name(o)) + '</h2></div></div>';
+    h += '<span class="badge-gov" style="padding:3px 10px; border-radius:12px; font-size:10.5px; font-weight:bold; white-space:nowrap;">' + esc(orgTypeStr) + '</span>';
+    h += '</div>';
+
+    h += '<div class="d-sub" style="margin-top:4px;">' + esc(isFa ? (o.en || o.fa) : (o.fa || o.en)) + '</div>';
+    h += '<div class="d-desc" style="margin-top:6px; line-height:1.6;">' + esc(desc(o)) + '</div>';
+
+    // 3 Tabs
+    h += '<div class="site-tabs" style="margin-top:10px;">';
+    h += '<button class="site-tab-btn active" onclick="switchCompTab(\'overview\', this)">' + (isFa ? "شناسنامه و برنامه‌های اصلی" : "Overview & Core Flagships") + '</button>';
+    h += '<button class="site-tab-btn" onclick="switchCompTab(\'products\', this)">' + (isFa ? "محصولات و برنامه‌های کلان" : "Products & Programs") + '</button>';
+    h += '<button class="site-tab-btn" onclick="switchCompTab(\'timeline\', this)">' + (isFa ? "سیر تاریخی و شبکه" : "Timeline & Network") + '</button>';
+    h += '</div>';
+
+    // TAB 1: OVERVIEW & CORE FLAGSHIPS
+    h += '<div id="compTabOverview" class="site-tab-content active" style="display:block;">';
+    
+    // Executive 6-Grid Box
+    h += '<div class="grid2" style="margin-top:8px;">';
+    h += cell(isFa ? "سال تأسیس" : "Founded", o.founded || "—");
+    h += cell(isFa ? "مقر اصلی" : "Headquarters", isFa ? (o.city_fa || o.city) : (o.city || o.city_fa));
+    h += cell(t("country"), isFa ? (o.country_fa || o.country) : (o.country || o.country_fa));
+    h += cell(isFa ? "حوزه‌های فعالیت" : "Sectors", isFa ? (o.sectors_fa || "هوافضا و علوم فضایی") : (o.sectors_en || "Aerospace & Space Science"), true);
+    h += cell(isFa ? "نوع نهاد" : "Org Type", orgTypeStr, true);
+    h += cell(isFa ? "سطح فعالیت" : "Scope", isFa ? "ملی و بین‌المللی" : "Global / National", true);
+    h += '</div>';
+
+    // SECTION 1: FLAGSHIP PRODUCT CARD
+    var flagProdName = isFa ? (o.flagship_product_fa || o.flagship_product) : (o.flagship_product_en || o.flagship_product);
+    var flagProdStatus = isFa ? (o.flagship_prod_status_fa || "عملیاتی") : (o.flagship_prod_status_en || "Operational");
+    var flagProdExpl = isFa ? (o.flagship_prod_expl_fa || o.flagship_prod_expl) : (o.flagship_prod_expl_en || o.flagship_prod_expl);
+
+    if (flagProdName) {
+      h += '<div style="background:linear-gradient(135deg, rgba(245, 158, 11, 0.12) 0%, rgba(15, 31, 51, 0.85) 100%); border:1px solid rgba(245, 158, 11, 0.4); border-radius:8px; padding:12px; margin-top:10px; box-shadow:0 4px 12px rgba(0,0,0,0.3);">';
+      h += '<div style="display:flex; justify-content:space-between; align-items:center; margin-bottom:6px;">';
+      h += '<span style="font-size:12px; font-weight:bold; color:#f59e0b;">🏆 ' + (isFa ? "محصول شاخص:" : "Flagship Product:") + ' <b><bdi style="color:#fff;">' + esc(flagProdName) + '</bdi></b></span>';
+      h += '<span class="badge-gov" style="padding:2px 8px; border-radius:10px; font-size:10px; background:rgba(245, 158, 11, 0.2); border:1px solid rgba(245, 158, 11, 0.4); color:#f59e0b;">' + esc(flagProdStatus) + '</span>';
+      h += '</div>';
+      if (flagProdExpl) {
+        h += '<div style="font-size:10.5px; color:var(--text); margin-top:4px; line-height:1.6;">' + esc(flagProdExpl) + '</div>';
+      }
+      h += '</div>';
+    }
+
+    // SECTION 2: FLAGSHIP PROGRAM CARD
+    var flagProgName = isFa ? (o.flagship_program_fa || o.flagship_program) : (o.flagship_program_en || o.flagship_program);
+    var flagProgTimeline = isFa ? (o.flagship_prog_timeline_fa || o.flagship_prog_timeline || "۲۰۲۰ تا کنون") : (o.flagship_prog_timeline_en || o.flagship_prog_timeline || "2020 to Present");
+    var flagProgExpl = isFa ? (o.flagship_prog_expl_fa || o.flagship_prog_expl) : (o.flagship_prog_expl_en || o.flagship_prog_expl);
+
+    if (flagProgName) {
+      h += '<div style="background:linear-gradient(135deg, rgba(16, 185, 129, 0.12) 0%, rgba(15, 31, 51, 0.85) 100%); border:1px solid rgba(16, 185, 129, 0.4); border-radius:8px; padding:12px; margin-top:10px; box-shadow:0 4px 12px rgba(0,0,0,0.3);">';
+      h += '<div style="display:flex; justify-content:space-between; align-items:center; margin-bottom:6px;">';
+      h += '<span style="font-size:12px; font-weight:bold; color:#10b981;">🚀 ' + (isFa ? "برنامه کلان شاخص:" : "Flagship Program:") + ' <b><bdi style="color:#fff;">' + esc(flagProgName) + '</bdi></b></span>';
+      h += '<span style="padding:2px 8px; border-radius:10px; font-size:10px; background:rgba(16, 185, 129, 0.2); border:1px solid rgba(16, 185, 129, 0.4); color:#10b981;">' + esc(flagProgTimeline) + '</span>';
+      h += '</div>';
+      if (flagProgExpl) {
+        h += '<div style="font-size:10.5px; color:var(--text); margin-top:4px; line-height:1.6;">' + esc(flagProgExpl) + '</div>';
+      }
+      h += '</div>';
+    }
+
+    // SECTION 3: OFFICIAL CONTACTS & LINKS BAR (DISPLAY ACTUAL DOMAIN NAME TEXT INSTEAD OF GENERIC Official Website)
+    var agencyLinks = extractEntityLinks(o);
+    var rawWeb = agencyLinks.webUrl;
+    var webUrl = rawWeb ? (rawWeb.startsWith("http") ? rawWeb : "https://" + rawWeb) : "https://isa.ir";
+    var displayWebDomain = webUrl.replace("https://", "").replace("http://", "").replace("www.", "").replace(/\/$/, "");
+    
+    var rawLinkedin = o.linkedin || (o.contacts ? o.contacts.linkedin : null);
+    var linkedinUrl = rawLinkedin ? (rawLinkedin.startsWith("http") ? rawLinkedin : "https://" + rawLinkedin) : "https://linkedin.com/company/isa-iran";
+    var displayLinkedin = linkedinUrl.replace("https://", "").replace("http://", "").replace("www.", "").replace(/\/$/, "");
+
+    var emailAddr = o.email || (o.contacts ? o.contacts.email : null) || "info@isa.ir";
+
+    h += '<div style="background:linear-gradient(135deg, rgba(15, 31, 51, 0.95) 0%, rgba(9, 13, 22, 0.98) 100%); border:1px solid rgba(56, 189, 248, 0.35); border-radius:8px; padding:12px; margin-top:12px; box-shadow:0 6px 16px rgba(0,0,0,0.4); backdrop-filter:blur(8px);">';
+    h += '<div style="font-size:11.5px; font-weight:bold; color:var(--accent); margin-bottom:10px; display:flex; align-items:center; gap:6px; border-bottom:1px solid rgba(255,255,255,0.08); padding-bottom:6px;">🌐 ' + (isFa ? "درگاه‌های رسمی ارتباطی و وب‌سایت سازمان:" : "Official Communication Channels:") + '</div>';
+    
+    h += '<div style="display:flex; flex-direction:column; gap:8px;">';
+    
+    // Website Row (Displays actual domain URL text like isa.ir ↗)
+    h += '<div style="display:flex; justify-content:space-between; align-items:center; background:rgba(0,0,0,0.3); padding:8px 12px; border-radius:6px; border:1px solid rgba(16, 185, 129, 0.3);">';
+    h += '<span style="font-size:10.5px; color:#fff; font-weight:bold;">🌐 ' + (isFa ? "وب‌سایت رسمی:" : "Official Website:") + '</span>';
+    h += '<a href="' + esc(webUrl) + '" target="_blank" rel="noopener noreferrer" style="color:#10b981; font-weight:bold; text-decoration:none; background:rgba(16, 185, 129, 0.15); padding:4px 12px; border-radius:5px; border:1px solid rgba(16, 185, 129, 0.4); font-size:10.5px; font-family:monospace; display:flex; align-items:center; gap:4px;"><bdi>' + esc(displayWebDomain) + '</bdi> ↗</a>';
+    h += '</div>';
+
+    // LinkedIn Row
+    if (linkedinUrl && linkedinUrl !== "#") {
+      h += '<div style="display:flex; justify-content:space-between; align-items:center; background:rgba(0,0,0,0.3); padding:8px 12px; border-radius:6px; border:1px solid rgba(56, 189, 248, 0.3);">';
+      h += '<span style="font-size:10.5px; color:#fff; font-weight:bold;">💼 ' + (isFa ? "صفحه رسمی لینکدین:" : "Official LinkedIn:") + '</span>';
+      h += '<a href="' + esc(linkedinUrl) + '" target="_blank" rel="noopener noreferrer" style="color:#38bdf8; font-weight:bold; text-decoration:none; background:rgba(56, 189, 248, 0.15); padding:4px 12px; border-radius:5px; border:1px solid rgba(56, 189, 248, 0.4); font-size:10.5px; font-family:monospace; display:flex; align-items:center; gap:4px;"><bdi>' + esc(displayLinkedin) + '</bdi> ↗</a>';
+      h += '</div>';
+    }
+
+    // Email Row
+    if (emailAddr) {
+      h += '<div style="display:flex; justify-content:space-between; align-items:center; background:rgba(0,0,0,0.3); padding:8px 12px; border-radius:6px; border:1px solid rgba(245, 158, 11, 0.3);">';
+      h += '<span style="font-size:10.5px; color:#fff; font-weight:bold;">📧 ' + (isFa ? "پست الکترونیک ارتباطی:" : "Contact Email:") + '</span>';
+      h += '<a href="mailto:' + esc(emailAddr) + '" style="color:#f59e0b; font-weight:bold; font-size:10.5px; font-family:monospace; background:rgba(245, 158, 11, 0.15); padding:4px 12px; border-radius:5px; border:1px solid rgba(245, 158, 11, 0.4); text-decoration:none;"><bdi>' + esc(emailAddr) + '</bdi></a>';
+      h += '</div>';
+    }
+
+    h += '</div></div>';
+
+    h += '</div>'; // end TAB 1
+
+    // TAB 2: PRODUCTS & UMBRELLA PROGRAMS
+    h += '<div id="compTabProducts" class="site-tab-content" style="display:none;">';
+    var pList = o.products_list_bilingual || o.products_list || [];
+    var prgList = o.programs_list_bilingual || o.programs_list || [];
+    var notMissions = isFa ? (o.notable_missions_detail_fa || o.notable_missions_detail) : (o.notable_missions_detail_en || o.notable_missions_detail);
+
+    // 1. Hardware Products Section
+    if (pList.length) {
+      h += '<div style="font-size:10.5px; color:var(--muted); margin-bottom:8px;">🛠️ ' + (isFa ? "برای مشاهده مشخصات فنی، کلاس فیزیکی و شرح کاربردی روی هر محصول کلیک کنید:" : "Click on any product to expand physical class, technical specifications & operational role:") + '</div>';
+      h += '<div style="display:flex; flex-direction:column; gap:8px; margin-bottom:12px;">';
+      
+      pList.forEach(function(item, idx) {
+        var pName = isFa ? (item.name_fa || item.name) : (item.name_en || item.name);
+        var pClass = isFa ? (item.class_fa || item.type_fa || item.type || "پلتفرم مداری بومی") : (item.class_en || item.type_en || item.type || "Indigenous Space Platform");
+        var pYear = isFa ? (item.first_flight_fa || item.first_flight || "—") : (item.first_flight_en || item.first_flight || "—");
+        var pSt = isFa ? (item.status_fa || item.status || "عملیاتی") : (item.status_en || item.status || "Operational");
+        var pSpecs = isFa ? (item.specs_fa || item.specs || "—") : (item.specs_en || item.specs || "—");
+        var pRole = isFa ? (item.role_fa || item.role || "—") : (item.role_en || item.role || "—");
+
+        var openAttr = (idx === 0) ? " open" : "";
+        h += '<details class="acc" ' + openAttr + ' style="background:linear-gradient(180deg, rgba(15,31,51,0.85) 0%, rgba(9,13,22,0.95) 100%); border:1px solid var(--line); border-radius:8px; overflow:hidden; box-shadow:0 4px 12px rgba(0,0,0,0.3); transition:all 0.2s ease;">';
+        
+        // Summary Header Bar
+        h += '<summary style="padding:10px 12px; cursor:pointer; display:flex; justify-content:space-between; align-items:center; user-select:none; background:rgba(255,255,255,0.03); outline:none;">';
+        h += '<div style="font-size:12px; font-weight:bold; color:#fff; flex:1; line-height:1.5;">📡 <bdi>' + esc(pName) + '</bdi></div>';
+        h += '<span style="color:var(--muted); font-size:10px; opacity:0.8; margin-inline-start:8px;">▼</span>';
+        h += '</summary>';
+
+        // Sleek Collapsible Details Body
+        h += '<div style="padding:12px; border-top:1px solid rgba(255,255,255,0.08); background:rgba(4,10,18,0.7); font-size:10.5px; display:flex; flex-direction:column; gap:8px;">';
+        
+        // Grid
+        h += '<div style="display:grid; grid-template-columns:1fr 1fr; gap:6px;">';
+        h += '<div style="background:rgba(0,0,0,0.3); padding:6px 8px; border-radius:4px; border:1px solid var(--line); grid-column:span 2;"><b>' + (isFa ? "کلاس فیزیکی سامانه:" : "Physical Class:") + '</b> <bdi style="color:#38bdf8; font-weight:bold; margin-inline-start:4px;">' + esc(pClass) + '</bdi></div>';
+        h += '<div style="background:rgba(0,0,0,0.3); padding:6px 8px; border-radius:4px; border:1px solid var(--line);"><b>' + (isFa ? "وضعیت عملیاتی:" : "Status:") + '</b> <br><bdi style="color:#10b981; font-weight:bold;">' + esc(pSt) + '</bdi></div>';
+        h += '<div style="background:rgba(0,0,0,0.3); padding:6px 8px; border-radius:4px; border:1px solid var(--line);"><b>' + (isFa ? "سال ساخت / نخستین پرتاب:" : "First Launch:") + '</b> <br><span style="color:#f59e0b; font-weight:bold;"><bdi>' + esc(pYear) + '</bdi></span></div>';
+        h += '</div>';
+
+        // Technical Specs Highlight Box
+        if (pSpecs && pSpecs !== "—") {
+          h += '<div style="background:rgba(16, 185, 129, 0.08); border:1px solid rgba(16, 185, 129, 0.25); padding:8px 10px; border-radius:6px;">';
+          h += '<div style="font-size:11px; font-weight:bold; color:#10b981; margin-bottom:3px; display:flex; align-items:center; gap:4px;">⚙️ ' + (isFa ? "مشخصات فنی و پارامترها:" : "Technical Specifications:") + '</div>';
+          h += '<div style="font-size:10px; color:#fff; line-height:1.5;"><bdi>' + esc(pSpecs) + '</bdi></div>';
+          h += '</div>';
+        }
+
+        // Operational Role Highlight Box
+        if (pRole && pRole !== "—") {
+          h += '<div style="background:rgba(15, 31, 51, 0.6); border:1px solid rgba(245, 158, 11, 0.35); border-radius:6px; padding:8px 10px;">';
+          h += '<div style="font-size:11px; font-weight:bold; color:#f59e0b; margin-bottom:3px; display:flex; align-items:center; gap:4px;">🛠️ ' + (isFa ? "شرح کاربردی و مأموریت مداری:" : "Operational Role & Mission:") + '</div>';
+          h += '<div style="font-size:10px; color:var(--text); line-height:1.5;"><bdi>' + esc(pRole) + '</bdi></div>';
+          h += '</div>';
+        }
+
+        h += '</div>';
+        h += '</details>';
+      });
+      h += '</div>';
+    }
+
+    // 2. Umbrella Programs & Constellations Section
+    if (prgList.length) {
+      h += '<div style="background:var(--bg2); border:1px solid var(--line); border-radius:8px; padding:10px; margin-bottom:8px;">';
+      h += '<div style="font-size:11.5px; font-weight:bold; color:#f59e0b; margin-bottom:6px;">🚀 ' + (isFa ? "برنامه‌های کلان استراتژیک و منظومه‌ها:" : "Umbrella Programs & Space Constellations:") + '</div>';
+      h += '<div style="display:flex; flex-direction:column; gap:6px;">';
+      prgList.forEach(function(prg) {
+        var prgName = isFa ? (prg.name_fa || prg.name) : (prg.name_en || prg.name);
+        var prgAuth = isFa ? (prg.authority_fa || prg.authority) : (prg.authority_en || prg.authority);
+        var prgObj = isFa ? (prg.objective_fa || prg.objective) : (prg.objective_en || prg.objective);
+        var prgNext = isFa ? (prg.next_step_fa || prg.next_step) : (prg.next_step_en || prg.next_step);
+
+        h += '<div style="background:rgba(0,0,0,0.3); border-right:3px solid #f59e0b; padding:8px 10px; border-radius:6px; font-size:10.5px;">';
+        h += '<b style="color:#fff; font-size:11px;">🌌 <bdi>' + esc(prgName) + '</bdi></b>';
+        if (prgObj) h += '<div style="color:var(--text); font-size:10px; margin-top:3px; line-height:1.5;"><b>' + (isFa ? "هدف کلان:" : "Objective:") + '</b> <bdi>' + esc(prgObj) + '</bdi></div>';
+        if (prgNext) h += '<div style="color:#38bdf8; font-size:9.5px; margin-top:3px;"><b>' + (isFa ? "گام بعدی:" : "Next Step:") + '</b> <bdi>' + esc(prgNext) + '</bdi></div>';
+        h += '</div>';
+      });
+      h += '</div></div>';
+    }
+
+    // 3. Notable Missions Section
+    if (notMissions) {
+      h += '<div style="background:var(--bg2); border:1px solid var(--line); border-radius:8px; padding:10px;">';
+      h += '<div style="font-size:11.5px; font-weight:bold; color:#10b981; margin-bottom:4px;">🎯 ' + (isFa ? "مأموریت‌های برجسته فضایی:" : "Notable Space Missions:") + '</div>';
+      h += '<div style="font-size:10.5px; color:var(--text); line-height:1.6;">' + notMissions + '</div>';
+      h += '</div>';
+    }
+
+    h += '</div>'; // end TAB 2
+
+    // TAB 3: TIMELINE & NETWORK
+    h += '<div id="compTabTimeline" class="site-tab-content" style="display:none;">';
+    var timeline = isFa ? (o.timeline_fa || o.timeline || []) : (o.timeline_en || o.timeline || []);
+    var futRoadmap = isFa ? (o.future_roadmap_fa || o.future_roadmap) : (o.future_roadmap_en || o.future_roadmap);
+    var partners = isFa ? (o.partnerships_detail_fa || o.partnerships_detail) : (o.partnerships_detail_en || o.partnerships_detail);
+
+    // 1. Timeline Box
+    if (timeline.length) {
+      h += '<div style="background:var(--bg2); border:1px solid var(--line); border-radius:8px; padding:10px; margin-bottom:8px;">';
+      h += '<div style="font-size:11.5px; font-weight:bold; color:#10b981; margin-bottom:8px;">⏳ ' + (isFa ? "سیر تاریخی و خط زمانی" : "Historical Timeline") + '</div>';
+      h += '<div style="display:flex; flex-direction:column; gap:6px;">';
+      
+      timeline.forEach(function(item) {
+        if (typeof item === "string") {
+          h += '<div style="font-size:10.5px; color:#fff;">• ' + esc(item) + '</div>';
+        } else {
+          var yr = item.year || item.date || "";
+          var txt = isFa ? (item.text || item.title || item.desc) : (item.text_en || item.title_en || item.desc_en || item.text || item.title);
+
+          h += '<div style="font-size:10.5px; color:var(--text); line-height:1.5;">';
+          h += '<b style="color:#f59e0b; font-family:monospace;"><bdi>' + esc(yr) + '</bdi>:</b> <bdi>' + esc(txt) + '</bdi>';
+          h += '</div>';
+        }
+      });
+
+      h += '</div></div>';
+    }
+
+    // 2. Future Roadmap & Partnerships
+    if (futRoadmap) {
+      h += '<div style="background:var(--bg2); border:1px solid var(--line); border-radius:8px; padding:10px; margin-bottom:8px;">';
+      h += '<div style="font-size:11.5px; font-weight:bold; color:var(--accent); margin-bottom:4px;">🚀 ' + (isFa ? "نقشه راه استراتژیک توسعه:" : "Future Strategic Roadmap:") + '</div>';
+      h += '<div style="font-size:10.5px; color:var(--text); line-height:1.6;">' + esc(futRoadmap) + '</div>';
+      h += '</div>';
+    }
+
+    if (partners) {
+      h += '<div style="background:var(--bg2); border:1px solid var(--line); border-radius:8px; padding:10px;">';
+      h += '<div style="font-size:11.5px; font-weight:bold; color:#38bdf8; margin-bottom:4px;">🤝 ' + (isFa ? "دیپلماسی فضایی و مشارکت‌های بین‌المللی:" : "Space Diplomacy & Partnerships:") + '</div>';
+      h += '<div style="font-size:10.5px; color:var(--text); line-height:1.6;">' + esc(partners) + '</div>';
+      h += '</div>';
+    }
+
+    h += '</div>'; // end TAB 3
+
+    return h;
+}
+
+  function renderPropulsionDetail(p) {
+    var o = p.o || p, h = "";
+    var isFa = (typeof LANG !== "undefined" && LANG === "fa");
+
+    var propCat = isFa ? (o.propulsion_category_fa || o.propulsion_category_en || "پیشرانه‌های فضایی") : (o.propulsion_category_en || o.propulsion_category_fa || "Space Propulsion");
+    var propType = isFa ? (o.propulsion_type_fa || o.propulsion_type_en || "پیشرانه سوخت مایع") : (o.propulsion_type_en || o.propulsion_type_fa || "Liquid Propulsion");
+    var orgTypeStr = isFa ? (o.org_type_fa || o.org_type_en || "مجتمع تخصصی پیشرانش") : (o.org_type_en || o.org_type_fa || "Propulsion Contractor");
+
+    // Header with Title & Icon & Category Badge
+    h += '<div class="d-head" style="display:flex; justify-content:space-between; align-items:center; gap:10px; margin-inline-end: 35px;">';
+    h += '<div style="display:flex; gap:10px; align-items:center; flex:1;">';
+    var ic = iconFor("propulsion", "active").replace(/width="3\d"/, 'width="34"').replace(/height="38"/, 'height="44"');
+    h += '<div>' + ic + '</div>';
+    h += '<div><div class="d-kicker">' + esc(t("cat_propulsion")) + '</div>';
+    h += '<h2 class="d-title" style="margin:0;">' + esc(name(o)) + '</h2></div></div>';
+    h += '<span class="badge-private" style="padding:3px 10px; border-radius:12px; font-size:10.5px; font-weight:bold; white-space:nowrap;">' + esc(propCat) + '</span>';
+    h += '</div>';
+
+    h += '<div class="d-sub" style="margin-top:4px;">' + esc(isFa ? (o.en || o.fa) : (o.fa || o.en)) + '</div>';
+    h += '<div class="d-desc" style="margin-top:6px; line-height:1.6;">' + esc(desc(o)) + '</div>';
+
+    // 3 Tabs
+    h += '<div class="site-tabs" style="margin-top:10px;">';
+    h += '<button class="site-tab-btn active" onclick="switchCompTab(\'overview\', this)">' + (isFa ? "شناسنامه و معماری" : "Overview & Architecture") + '</button>';
+    h += '<button class="site-tab-btn" onclick="switchCompTab(\'engines\', this)">' + (isFa ? "موتورها و موشک مقصد" : "Engines & Mission Link") + '</button>';
+    h += '<button class="site-tab-btn" onclick="switchCompTab(\'testing\', this)">' + (isFa ? "تست‌های گرم و نقشه راه" : "Test History & Roadmap") + '</button>';
+    h += '</div>';
+
+    // TAB 1: OVERVIEW & ARCHITECTURE & FLAGSHIP (HIGH-CONTRAST BILINGUAL GLASSMOPHIC UI)
+    h += '<div id="compTabOverview" class="site-tab-content active" style="display:block;">';
+    
+    // Executive 6-Grid Box
+    h += '<div class="grid2" style="margin-top:8px;">';
+    h += cell(isFa ? "سال تأسیس" : "Founded", o.founded || "—");
+    h += cell(isFa ? "مقر اصلی" : "Headquarters", isFa ? (o.city_fa || o.city) : (o.city || o.city_fa));
+    h += cell(t("country"), isFa ? (o.country_fa || o.country) : (o.country || o.country_fa));
+    h += cell(isFa ? "نوع نهاد" : "Org Type", orgTypeStr, true);
+    h += cell(isFa ? "رده پیشرانه" : "Category", propCat, true);
+    h += cell(isFa ? "نوع پیشرانه" : "Propulsion Type", propType, true);
+    h += '</div>';
+
+    // SECTION 1: Flagship Engine Card (100% PURE BILINGUAL)
+    var flagshipEngine = isFa ? (o.flagship_engine_fa || o.flagship_engine_en) : (o.flagship_engine_en || o.flagship_engine_fa);
+    var flagshipStatus = isFa ? (o.flagship_status_fa || o.flagship_status_en || "عملیاتی") : (o.flagship_status_en || o.flagship_status_fa || "Operational");
+    var flagshipApp = isFa ? (o.flagship_application_fa || o.flagship_application_en || "پرتابگرهای مداری") : (o.flagship_application_en || o.flagship_application_fa || "Orbital Launchers");
+
+    if (flagshipEngine) {
+      h += '<div style="background:linear-gradient(135deg, rgba(56, 189, 248, 0.12) 0%, rgba(15, 31, 51, 0.8) 100%); border:1px solid rgba(56, 189, 248, 0.35); border-radius:8px; padding:12px; margin-top:10px; box-shadow:0 4px 12px rgba(0,0,0,0.3);">';
+      h += '<div style="display:flex; justify-content:space-between; align-items:center; margin-bottom:6px;">';
+      h += '<span style="font-size:12px; font-weight:bold; color:var(--accent);">⚙️ ' + (isFa ? "موتور پرچمدار و شاخص:" : "Flagship Engine:") + ' <b><bdi>' + esc(flagshipEngine) + '</bdi></b></span>';
+      h += '<span class="badge-gov" style="padding:2px 8px; border-radius:10px; font-size:10px; background:rgba(16, 185, 129, 0.2); border:1px solid rgba(16, 185, 129, 0.4); color:#10b981;">' + esc(flagshipStatus) + '</span>';
+      h += '</div>';
+      h += '<div style="font-size:10.5px; color:#fff; margin-top:4px; line-height:1.5;">🚀 <b>' + (isFa ? "کاربرد اصلی:" : "Primary Application:") + '</b> <bdi>' + esc(flagshipApp) + '</bdi></div>';
+      h += '</div>';
+    }
+
+    // SECTION 2: Company History Box
+    var histText = isFa ? (o.history_fa || o.history_en || o.fa_d) : (o.history_en || o.history_fa || o.en_d);
+    if (histText) {
+      h += '<div style="background:rgba(15, 31, 51, 0.6); border:1px solid rgba(245, 158, 11, 0.35); border-radius:8px; padding:12px; margin-top:10px; box-shadow:0 4px 12px rgba(0,0,0,0.25);">';
+      h += '<div style="font-size:11.5px; font-weight:bold; color:#f59e0b; margin-bottom:6px; display:flex; align-items:center; gap:6px;">📜 ' + (isFa ? "تاریخچه سازمانی و توسعه پیشرانه:" : "Company & Propulsion History:") + '</div>';
+      h += '<div style="font-size:10.5px; color:var(--text); line-height:1.6;">' + esc(histText) + '</div>';
+      h += '</div>';
+    }
+
+    // SECTION 3: Product Development History Box
+    var prodHistText = isFa ? (o.product_history_fa || o.product_history_en) : (o.product_history_en || o.product_history_fa);
+    if (prodHistText) {
+      h += '<div style="background:rgba(15, 31, 51, 0.6); border:1px solid rgba(16, 185, 129, 0.35); border-radius:8px; padding:12px; margin-top:10px; box-shadow:0 4px 12px rgba(0,0,0,0.25);">';
+      h += '<div style="font-size:11.5px; font-weight:bold; color:#10b981; margin-bottom:6px; display:flex; align-items:center; gap:6px;">⚙️ ' + (isFa ? "تاریخچه بومی‌سازی و ساخت محصولات:" : "Product Development & Manufacturing:") + '</div>';
+      h += '<div style="font-size:10.5px; color:var(--text); line-height:1.6;">' + esc(prodHistText) + '</div>';
+      h += '</div>';
+    }
+
+    // Official Links Bar
+    var compLinks = extractEntityLinks(o);
+    var webUrl = compLinks.webUrl;
+    var displayWeb = compLinks.displayWeb || (isFa ? "وب‌سایت رسمی" : "Website");
+    var linkedinUrl = compLinks.linkedinUrl;
+    var displayLinkedin = compLinks.displayLinkedin || "LinkedIn";
+
+    if (webUrl || linkedinUrl || (o.lat && o.lon)) {
+      h += '<div style="background:var(--bg2); border:1px solid var(--line); border-radius:8px; padding:10px; margin-top:10px; display:flex; justify-content:space-between; align-items:center; font-size:10.5px; flex-wrap:wrap; gap:8px;">';
+      
+      if (webUrl) {
+        h += '<a href="' + esc(webUrl) + '" target="_blank" rel="noopener noreferrer" style="color:var(--accent); font-weight:bold; font-family:monospace; text-decoration:none; background:rgba(56, 189, 248, 0.12); padding:5px 12px; border-radius:6px; border:1px solid rgba(56, 189, 248, 0.3); word-break:break-all;" onclick="window.open(\'' + esc(webUrl) + '\', \'_blank\'); return false;">🌐 ' + esc(displayWeb) + ' ↗</a>';
+      }
+      
+      if (linkedinUrl) {
+        h += '<a href="' + esc(linkedinUrl) + '" target="_blank" rel="noopener noreferrer" style="color:#38bdf8; font-weight:bold; font-family:monospace; text-decoration:none; background:rgba(14, 118, 168, 0.2); padding:5px 12px; border-radius:6px; border:1px solid rgba(14, 118, 168, 0.4); word-break:break-all;" onclick="window.open(\'' + esc(linkedinUrl) + '\', \'_blank\'); return false;">💼 ' + esc(displayLinkedin) + ' ↗</a>';
+      }
+
+      if (o.lat && o.lon) {
+        h += '<button type="button" class="btn btn-sm country-btn-fly" onclick="flyToCoords(' + o.lat + ',' + o.lon + ', 8)" style="font-size:10px; padding:5px 10px; cursor:pointer;">📍 ' + (isFa ? "پرواز به موقعیت روی نقشه ↗" : "Fly to Location ↗") + '</button>';
+      }
+
+      h += '</div>';
+    }
+
+    h += '</div>'; // end TAB 1
+
+    // TAB 2: ENGINES CATALOG & MISSION RELATIONSHIP (REFINED ACCORDION WITH SPACEFLIGHT OPERATIONAL ROLE)
+    h += '<div id="compTabEngines" class="site-tab-content" style="display:none;">';
+    var engList = o.engine_products_bilingual || [];
+    var prodList = o.products || [];
+    var notMissions = isFa ? (o.notable_missions_fa || o.notable_missions_en || []) : (o.notable_missions_en || o.notable_missions_fa || []);
+
+    if (engList.length) {
+      h += '<div style="font-size:10.5px; color:var(--muted); margin-bottom:8px;">⚙️ ' + (isFa ? "برای مشاهده مشخصات فنی، شرح کارکرد عملیاتی در فضا و موشک مقصد روی هر موتور کلیک کنید:" : "Click on any engine to expand specifications & spaceflight operational role:") + '</div>';
+      h += '<div style="display:flex; flex-direction:column; gap:8px;">';
+      
+      (Array.isArray(engList) ? engList : [engList]).forEach(function(eng, idx) {
+        var engName = isFa ? (eng.name_fa || eng.name_en) : (eng.name_en || eng.name_fa);
+        var engType = isFa ? (eng.type_fa || eng.type_en || "پیشرانه موشک") : (eng.type_en || eng.type_fa || "Rocket Engine");
+        var engProp = isFa ? (eng.propellant_fa || eng.propellant_en || "—") : (eng.propellant_en || eng.propellant_fa || "—");
+        var engRocket = isFa ? (eng.rocket_fa || eng.rocket_en || "پرتابگرهای مداری") : (eng.rocket_en || eng.rocket_fa || "Orbital Launchers");
+        var engThrust = isFa ? (eng.thrust_fa || eng.thrust_en || "—") : (eng.thrust_en || eng.thrust_fa || "—");
+        var engSt = isFa ? (eng.status_fa || eng.status_en || "عملیاتی") : (eng.status_en || eng.status_fa || "Operational");
+        var engRole = isFa ? (eng.engineering_desc_fa || eng.engineering_desc_en || "") : (eng.engineering_desc_en || eng.engineering_desc_fa || "");
+
+        var openAttr = (idx === 0) ? " open" : "";
+        h += '<details class="acc" ' + openAttr + ' style="background:linear-gradient(180deg, rgba(15,31,51,0.8) 0%, rgba(9,13,22,0.9) 100%); border:1px solid var(--line); border-radius:8px; overflow:hidden; box-shadow:0 4px 12px rgba(0,0,0,0.3); transition:all 0.2s ease;">';
+        
+        // Summary Header Bar (FIXED FULL WRAP TITLE WITHOUT ELLIPSIS!)
+        h += '<summary style="padding:10px 12px; cursor:pointer; display:flex; justify-content:space-between; align-items:center; gap:10px; user-select:none; background:rgba(255,255,255,0.03); outline:none; flex-wrap:wrap;">';
+        h += '<div style="font-size:12px; font-weight:bold; color:#fff; line-height:1.45; word-break:break-word; flex:1; min-width:180px;">⚙️ <bdi>' + esc(engName) + '</bdi></div>';
+        h += '<div style="display:flex; align-items:center; gap:6px; flex-wrap:wrap;">';
+        h += '<span style="color:#38bdf8; font-size:9.5px; background:rgba(56, 189, 248, 0.15); border:1px solid rgba(56, 189, 248, 0.3); padding:2px 7px; border-radius:12px; font-weight:bold;"><bdi>' + esc(engProp) + '</bdi></span>';
+        h += '<span style="color:#10b981; font-weight:bold; font-size:9.5px; background:rgba(16, 185, 129, 0.12); border:1px solid rgba(16, 185, 129, 0.3); padding:2px 7px; border-radius:12px;"><bdi>' + esc(engSt) + '</bdi></span>';
+        h += '<span style="color:var(--muted); font-size:10px; opacity:0.8;">▼</span>';
+        h += '</div>';
+        h += '</summary>';
+
+        // Sleek Collapsible Details Body
+        h += '<div style="padding:12px; border-top:1px solid rgba(255,255,255,0.08); background:rgba(4,10,18,0.7); font-size:10.5px; display:flex; flex-direction:column; gap:6px;">';
+        h += '<div style="display:grid; grid-template-columns:1fr 1fr; gap:6px;">';
+        h += '<div style="background:rgba(0,0,0,0.3); padding:6px 8px; border-radius:4px; border:1px solid var(--line);"><b>' + (isFa ? "چرخه / نوع احتراق:" : "Cycle / Type:") + '</b> <br><bdi style="color:#fff;">' + esc(engType) + '</bdi></div>';
+        h += '<div style="background:rgba(0,0,0,0.3); padding:6px 8px; border-radius:4px; border:1px solid var(--line);"><b>' + (isFa ? "ترکیب سوخت:" : "Propellant:") + '</b> <br><span style="color:#f59e0b; font-weight:bold;"><bdi>' + esc(engProp) + '</bdi></span></div>';
+        h += '</div>';
+
+        h += '<div style="color:#10b981; background:rgba(16, 185, 129, 0.08); padding:6px 8px; border-radius:4px; border:1px solid rgba(16, 185, 129, 0.2);"><b>' + (isFa ? "مشخصات فنی و رانش:" : "Specifications:") + '</b> <bdi>' + esc(engThrust) + '</bdi></div>';
+
+        // SPACEFLIGHT OPERATIONAL ROLE BOX
+        if (engRole) {
+          h += '<div style="background:rgba(15, 31, 51, 0.6); border:1px solid rgba(245, 158, 11, 0.35); border-radius:6px; padding:8px 10px; margin-top:2px;">';
+          h += '<div style="font-size:11px; font-weight:bold; color:#f59e0b; margin-bottom:3px; display:flex; align-items:center; gap:4px;">🛠️ ' + (isFa ? "شرح کارکرد عملیاتی در فضا:" : "Spaceflight Operational Role:") + '</div>';
+          h += '<div style="font-size:10px; color:var(--text); line-height:1.5;">' + esc(engRole) + '</div>';
+          h += '</div>';
+        }
+
+        // Target Rocket / Mission Highlight Box
+        h += '<div style="color:#fff; background:linear-gradient(90deg, rgba(56, 189, 248, 0.12) 0%, rgba(2, 132, 199, 0.05) 100%); border:1px solid rgba(56, 189, 248, 0.3); padding:8px 10px; border-radius:6px; margin-top:2px;">';
+        h += '<div style="font-size:11px; font-weight:bold; color:var(--accent); margin-bottom:2px;">🚀 ' + (isFa ? "موشک و مأموریت مقصد (Mission → Engine):" : "Target Rocket / Mission:") + '</div>';
+        h += '<div style="font-size:10.5px;"><bdi>' + esc(engRocket) + '</bdi></div>';
+        h += '</div>';
+
+        h += '</div>';
+        h += '</details>';
+      });
+      h += '</div>';
+    } else if (prodList.length) {
+      h += '<div style="font-size:10.5px; color:var(--muted); margin-bottom:6px;">📦 ' + (isFa ? "سبد محصولات و سامانه‌های پیشرانش:" : "Products Portfolio:") + '</div>';
+      h += '<div style="display:flex; flex-direction:column; gap:4px;">';
+      (Array.isArray(prodList) ? prodList : [prodList]).forEach(function(pItem) {
+        h += '<div style="background:var(--bg2); border:1px solid var(--line); padding:6px 10px; border-radius:4px; font-size:10.5px; color:#fff;">⚙️ <bdi>' + esc(pItem) + '</bdi></div>';
+      });
+      h += '</div>';
+    }
+
+    if (notMissions.length) {
+      h += '<div style="background:var(--bg2); border:1px solid var(--line); border-radius:8px; padding:10px; margin-top:8px;">';
+      h += '<div style="font-size:11.5px; font-weight:bold; color:#10b981; margin-bottom:6px;">🎯 ' + (isFa ? "مأموریت‌های برجسته صنعتی و فضایی:" : "Notable Missions:") + '</div>';
+      h += '<div style="display:flex; flex-direction:column; gap:4px;">';
+      (Array.isArray(notMissions) ? notMissions : [notMissions]).forEach(function(m) {
+        h += '<div style="background:rgba(16, 185, 129, 0.08); border:1px solid rgba(16, 185, 129, 0.2); padding:6px; border-radius:4px; font-size:10.5px; color:#fff;">🚀 ' + esc(m) + '</div>';
+      });
+      h += '</div></div>';
+    }
+
+    h += '</div>'; // end TAB 2
+
+    // TAB 3: HOT-FIRE TESTING & ROADMAP (100% BILINGUAL GUARANTEED)
+    h += '<div id="compTabTesting" class="site-tab-content" style="display:none;">';
+    var testHist = isFa ? (o.test_history_fa || o.test_history_en || []) : (o.test_history_en || o.test_history_fa || []);
+    var futPlans = isFa ? (o.future_plans_fa || o.future_plans_en || []) : (o.future_plans_en || o.future_plans_fa || []);
+
+    if (testHist.length) {
+      h += '<div style="background:var(--bg2); border:1px solid var(--line); border-radius:8px; padding:10px; margin-bottom:8px;">';
+      h += '<div style="font-size:11.5px; font-weight:bold; color:#f59e0b; margin-bottom:6px;">🔥 ' + (isFa ? "تاریخچه تست‌های گرم زمین‌پایه و آزمون‌های نازل:" : "Static Hot-Fire Test Records & Nozzle Firing Tests:") + '</div>';
+      h += '<div style="display:flex; flex-direction:column; gap:6px;">';
+      (Array.isArray(testHist) ? testHist : [testHist]).forEach(function(tRecord) {
+        if (typeof tRecord === "string") {
+          h += '<div style="background:rgba(0,0,0,0.25); border-right:3px solid #f59e0b; padding:6px 8px; border-radius:4px; font-size:10.5px; color:#fff;">• ' + esc(tRecord) + '</div>';
+        } else {
+          var tYr = tRecord.year || "2023";
+          var tTitle = isFa ? (tRecord.title_fa || tRecord.title || "") : (tRecord.title_en || tRecord.title || "");
+          var tDesc = isFa ? (tRecord.desc_fa || tRecord.desc || "") : (tRecord.desc_en || tRecord.desc || "");
+
+          h += '<div style="background:rgba(0,0,0,0.3); border-right:3px solid #f59e0b; padding:8px 10px; border-radius:6px; font-size:10.5px; border:1px solid rgba(245,158,11,0.2);">';
+          h += '<b style="color:#fff;"><code style="color:#f59e0b; font-size:11px; font-family:monospace;"><bdi>' + esc(tYr) + '</bdi></code> — ' + esc(tTitle) + '</b>';
+          if (tDesc) h += '<div style="color:var(--muted); font-size:10px; margin-top:3px; line-height:1.5;">' + esc(tDesc) + '</div>';
+          h += '</div>';
+        }
+      });
+      h += '</div></div>';
+    }
+
+    if (futPlans.length) {
+      h += '<div style="background:var(--bg2); border:1px solid var(--line); border-radius:8px; padding:10px;">';
+      h += '<div style="font-size:11.5px; font-weight:bold; color:var(--accent); margin-bottom:6px;">🚀 ' + (isFa ? "برنامه‌های آتی ارتقای توان رانش و نقشه راه:" : "Future Thrust Scaling & Strategic Roadmap:") + '</div>';
+      h += '<div style="display:flex; flex-direction:column; gap:4px;">';
+      (Array.isArray(futPlans) ? futPlans : [futPlans]).forEach(function(fPlan) {
+        h += '<div style="background:rgba(56, 189, 248, 0.08); border:1px solid rgba(56, 189, 248, 0.2); padding:6px; border-radius:4px; font-size:10.5px; color:#fff;">🎯 ' + esc(fPlan) + '</div>';
+      });
+      h += '</div></div>';
+    }
+
+    h += '</div>'; // end TAB 3
+
+    return h;
+  }
+
+  function openDetail(p) {
+    if (!p) return;
+    if (!p.o) {
+      p = { kind: p.cat || "company", cat: p.cat || "launch", o: p };
+    }
+    var cat = p.cat || (p.o ? p.o.cat : "");
+    var kind = p.kind || cat;
+
+    if (cat === "country" || kind === "country" || (p.o && p.o.cat === "country")) {
+      $("#detailBody").innerHTML = renderCountryProfile(p);
+      $("#detail").classList.add("open");
+      bindCountryItemClicks();
+      return;
+    }
+
+
+
+    if (cat === "propulsion" || (p.o && p.o.cat === "propulsion")) {
+      $("#detailBody").innerHTML = renderPropulsionDetail(p);
+      $("#detail").classList.add("open");
+      return;
+    }
+    if (cat === "site" || kind === "site") {
+      $("#detailBody").innerHTML = renderSiteDetail(p);
+      $("#detail").classList.add("open");
+      return;
+    }
+    if (cat === "agency" || (p.o && p.o.cat === "agency")) {
+      $("#detailBody").innerHTML = renderAgencyDetail(p);
+      $("#detail").classList.add("open");
+      return;
+    }
+    if (cat === "agency" || cat === "launch" || kind === "company" || kind === "launch") {
+      $("#detailBody").innerHTML = renderCompanyDetail(p);
+      $("#detail").classList.add("open");
+      return;
+    }
+    if (p.cat === "propulsion") {
+      $("#detailBody").innerHTML = renderPropulsionDetail(p);
+      $("#detail").classList.add("open");
+      return;
+    }
+    // Reverted back to exact normal rendering for launch and propulsion companies
+    var o = p.o, h = "";
+    var ic = iconFor(p.cat, o.status || "active").replace(/width="3\d"/, 'width="34"').replace(/height="38"/, 'height="44"');
     h += '<div class="d-head"><div>' + ic + "</div><div>" +
       '<div class="d-kicker">' + esc(t("cat_" + p.cat).replace(/های /, "")) + "</div>" +
       '<h2 class="d-title">' + esc(name(o)) + "</h2></div></div>";
     h += '<div class="d-sub">' + esc(LANG === "fa" ? o.en : o.fa) + "</div>";
     h += '<div class="d-desc">' + esc(desc(o)) + "</div>";
     h += '<div class="grid2">';
-    h += cell(t("country"), LANG === "fa" ? o.country_fa : o.country);
-    if (p.kind === "company") {
-      h += cell(t("city"), LANG === "fa" ? o.city_fa : o.city);
-      h += cell(t("founded"), o.founded);
-      h += cell(t("website"), o.site && o.site !== "—" ? o.site : "", true);
-    } else {
-      h += cell(t("operator"), o.op, true);
-      h += cell(t("first_launch"), o.first);
-      h += cell(t("status"), statusLabel(o.status));
-      h += cell(t("pads"), o.pads, true);
+    h += cell(t("country"), LANG === "fa" ? (o.country_fa || o.country) : (o.country || o.country_fa));
+    h += cell(t("city"), LANG === "fa" ? (o.city_fa || o.city) : (o.city || o.city_fa));
+    h += cell(t("founded"), o.founded);
+    h += cell(t("website"), o.site && o.site !== "—" ? o.site : "", true);
+    if (o.lat && o.lon) {
+      h += cell(t("coords"), o.lat.toFixed(4) + ", " + o.lon.toFixed(4), true);
     }
-    h += cell(t("coords"), o.lat.toFixed(4) + ", " + o.lon.toFixed(4), true) + "</div>";
+    h += '</div>';
+    
     var list = o.products || o.rockets || [];
     if (list.length) {
-      h += '<div class="sec-t">' + (p.kind === "company" ? t("products") : t("rockets")) + "</div><div class='chips'>" +
+      h += '<div class="sec-t">' + (p.cat === "propulsion" ? t("products") : t("rockets")) + "</div><div class='chips'>" +
         list.map(function (x) { return '<span class="chip">' + esc(x) + "</span>"; }).join("") + "</div>";
     }
-    h += '<details class="acc"><summary>▸ ' + t("en_desc") + '</summary><div class="in"><div class="d-desc en">' +
-      esc(LANG === "fa" ? o.en_d : o.fa_d) + "</div></div></details>";
+    if (o.en_d || o.fa_d) {
+      h += '<details class="acc"><summary>▸ ' + t("en_desc") + '</summary><div class="in"><div class="d-desc en">' +
+        esc(LANG === "fa" ? o.en_d : o.fa_d) + "</div></div></details>";
+    }
     $("#detailBody").innerHTML = h;
     $("#detail").classList.add("open");
   }
@@ -1357,12 +3126,16 @@
     on("#satClose", "click", function () { ORBITA3D.clearSelection(); });
   }
 
+  window.renderAgencyDetail = renderAgencyDetail;
+  window.renderPropulsionDetail = renderPropulsionDetail;
+  window.openDetail = openDetail;
+
   /* ================= boot ================= */
   applyI18n();
   Promise.all([
-    fetch("data/companies.json?v=4").then(function (r) { return r.json(); }),
-    fetch("data/sites.json?v=4").then(function (r) { return r.json(); }),
-    fetch("data/missions.json?v=4").then(function (r) { return r.json(); })
+    fetch("data/companies.json?_t=" + Date.now()).then(function (r) { return r.json(); }),
+    fetch("data/sites.json?_t=" + Date.now()).then(function (r) { return r.json(); }),
+    fetch("data/missions.json?_t=" + Date.now()).then(function (r) { return r.json(); })
   ]).then(function (res) {
     DATA.companies = res[0]; DATA.sites = res[1]; DATA.missions = res[2];
     initMap(); buildLayerBar(); renderList(); buildFilters(); renderMissions(); loadUpcoming(); loadNextLaunch(); loadLiveLaunches();

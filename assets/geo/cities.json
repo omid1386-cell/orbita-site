@@ -1,0 +1,725 @@
+{
+  "type": "FeatureCollection",
+  "features": [
+    {
+      "type": "Feature",
+      "properties": {
+        "NAME": "Tehran",
+        "NAME_FA": "تهران",
+        "COUNTRY": "Iran",
+        "COUNTRY_FA": "ایران",
+        "RANK": 1,
+        "HUB": "مرکز مدیریت آژانس فضایی و صنایع ساخت ماهواره"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          51.389,
+          35.6892
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "NAME": "Isfahan",
+        "NAME_FA": "اصفهان",
+        "COUNTRY": "Iran",
+        "COUNTRY_FA": "ایران",
+        "RANK": 2,
+        "HUB": "قطب تحقیقات ایستگاه‌های زمینی و سیستم‌های فضایی"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          51.666,
+          32.6546
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "NAME": "Semnan",
+        "NAME_FA": "سمنان",
+        "COUNTRY": "Iran",
+        "COUNTRY_FA": "ایران",
+        "RANK": 1,
+        "HUB": "پایگاه ملی پرتاب‌های ماهواره‌بر ایران (امام خمینی)"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          53.3971,
+          35.5729
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "NAME": "Shiraz",
+        "NAME_FA": "شیراز",
+        "COUNTRY": "Iran",
+        "COUNTRY_FA": "ایران",
+        "RANK": 2,
+        "HUB": "مرکز طراحی و ساخت زیرسیستم‌های ماهواره‌ای"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          52.5836,
+          29.5918
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "NAME": "Chabahar",
+        "NAME_FA": "چابهار",
+        "COUNTRY": "Iran",
+        "COUNTRY_FA": "ایران",
+        "RANK": 2,
+        "HUB": "پایگاه ملی پرتاب‌های اقیانوسی اقیانوس هند"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          60.643,
+          25.2919
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "NAME": "Tabriz",
+        "NAME_FA": "تبریز",
+        "COUNTRY": "Iran",
+        "COUNTRY_FA": "ایران",
+        "RANK": 3,
+        "HUB": "مرکز پژوهش‌های پردازش داده و رصد مداری"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          46.2919,
+          38.08
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "NAME": "Mashhad",
+        "NAME_FA": "مشهد",
+        "COUNTRY": "Iran",
+        "COUNTRY_FA": "ایران",
+        "RANK": 3,
+        "HUB": "ایستگاه گیرنده داده‌های ماهواره‌ای رصد زمین"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          59.6062,
+          36.2972
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "NAME": "Cape Canaveral",
+        "NAME_FA": "کیپ کناورال",
+        "COUNTRY": "United States",
+        "COUNTRY_FA": "آمریکا",
+        "RANK": 1,
+        "HUB": "اصلی‌ترین پایگاه پرتاب‌های فضایی آمریکا (ناسا و اسپیس‌ایکس)"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -80.6077,
+          28.3922
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "NAME": "Houston",
+        "NAME_FA": "هیوستون",
+        "COUNTRY": "United States",
+        "COUNTRY_FA": "آمریکا",
+        "RANK": 1,
+        "HUB": "مرکز فضایی جکسون ناسا و کنترل پروازهای سرنشین‌دار"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -95.3698,
+          29.7604
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "NAME": "Huntsville",
+        "NAME_FA": "هانتسویل",
+        "COUNTRY": "United States",
+        "COUNTRY_FA": "آمریکا",
+        "RANK": 1,
+        "HUB": "شهر موشکی آمریکا و مرکز پروازهای فضایی مارشال"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -86.5861,
+          34.7304
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "NAME": "El Segundo / Los Angeles",
+        "NAME_FA": "لس آنجلس",
+        "COUNTRY": "United States",
+        "COUNTRY_FA": "آمریکا",
+        "RANK": 1,
+        "HUB": "مرکز فرماندهی نیروی فضایی و صنایع پیشرانه اسپیس‌ایکس"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -118.2437,
+          34.0522
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "NAME": "Seattle",
+        "NAME_FA": "سیاتل",
+        "COUNTRY": "United States",
+        "COUNTRY_FA": "آمریکا",
+        "RANK": 2,
+        "HUB": "مرکز ساخت ساختار ماهواره‌های استارلینک و بوئینگ"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -122.3321,
+          47.6062
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "NAME": "Denver",
+        "NAME_FA": "دنور",
+        "COUNTRY": "United States",
+        "COUNTRY_FA": "آمریکا",
+        "RANK": 2,
+        "HUB": "قطب صنایع هوافضای لاکهید مارتین و اورسا میجر"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -104.9903,
+          39.7392
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "NAME": "Mojave",
+        "NAME_FA": "موهاوی",
+        "COUNTRY": "United States",
+        "COUNTRY_FA": "آمریکا",
+        "RANK": 2,
+        "HUB": "فرودگاه و فرستادگاه آزمایشی هوافضای موهاوی"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -118.1732,
+          35.011
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "NAME": "Boca Chica",
+        "NAME_FA": "بوکا چیکا",
+        "COUNTRY": "United States",
+        "COUNTRY_FA": "آمریکا",
+        "RANK": 1,
+        "HUB": "پایگاه ساخت و پرتاب موشک فوق‌سنگین استارشپ اسپیس‌ایکس"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -97.155,
+          25.997
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "NAME": "Lompoc / Vandenberg",
+        "NAME_FA": "وندنبرگ",
+        "COUNTRY": "United States",
+        "COUNTRY_FA": "آمریکا",
+        "RANK": 1,
+        "HUB": "پایگاه پرتاب‌های قطبی و نظامی آمریکا"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -120.5724,
+          34.742
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "NAME": "Toulouse",
+        "NAME_FA": "تولوز",
+        "COUNTRY": "France",
+        "COUNTRY_FA": "فرانسه",
+        "RANK": 1,
+        "HUB": "پایتخت هوافضای اروپا و مرکز ساخت آریان‌گروپ"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          1.4442,
+          43.6047
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "NAME": "Vernon",
+        "NAME_FA": "ورنون",
+        "COUNTRY": "France",
+        "COUNTRY_FA": "فرانسه",
+        "RANK": 2,
+        "HUB": "مرکز مونتاژ و تست موتورهای برودتی ولکان آریان ۶"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          1.4833,
+          49.0917
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "NAME": "Bremen",
+        "NAME_FA": "برمن",
+        "COUNTRY": "Germany",
+        "COUNTRY_FA": "آلمان",
+        "RANK": 2,
+        "HUB": "قطب ساخت فضاپیماها و آزمایشگاه‌های فضایی اروپا"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          8.8017,
+          53.0793
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "NAME": "Lampoldshausen",
+        "NAME_FA": "لامپولدس‌هاوزن",
+        "COUNTRY": "Germany",
+        "COUNTRY_FA": "آلمان",
+        "RANK": 2,
+        "HUB": "بزرگترین مرکز آزمون موتورهای موشکی آژانس فضایی آلمان"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          9.39,
+          49.28
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "NAME": "Kourou",
+        "NAME_FA": "کورو",
+        "COUNTRY": "French Guiana",
+        "COUNTRY_FA": "گویان فرانسه",
+        "RANK": 1,
+        "HUB": "پایگاه فضایی اصلی آژانس فضایی اروپا (ESA)"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -52.6497,
+          5.1597
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "NAME": "Noordwijk",
+        "NAME_FA": "نوردویک",
+        "COUNTRY": "Netherlands",
+        "COUNTRY_FA": "هلند",
+        "RANK": 1,
+        "HUB": "مرکز تحقیق و فناوری فضایی اروپا (ESTEC)"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          4.4333,
+          52.2333
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "NAME": "Turin",
+        "NAME_FA": "تورین",
+        "COUNTRY": "Italy",
+        "COUNTRY_FA": "ایتالیا",
+        "RANK": 2,
+        "HUB": "مرکز ساخت ماژول‌های ایستگاه فضایی بین‌المللی (تالس آلنیا)"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          7.6869,
+          45.0703
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "NAME": "Harwell",
+        "NAME_FA": "هارول",
+        "COUNTRY": "United Kingdom",
+        "COUNTRY_FA": "بریتانیا",
+        "RANK": 2,
+        "HUB": "قطب نوآوری‌های فضایی و ماهواره‌های کوچک بریتانیا"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -1.312,
+          51.57
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "NAME": "Baikonur",
+        "NAME_FA": "بایکونور",
+        "COUNTRY": "Kazakhstan",
+        "COUNTRY_FA": "قزاقستان",
+        "RANK": 1,
+        "HUB": "قدیمی‌ترین و بزرگترین پایگاه پرتاب فضایی سرنشین‌دار جهان"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          63.305,
+          45.965
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "NAME": "Star City / Moscow",
+        "NAME_FA": "مسکو / شهر ستاره‌ها",
+        "COUNTRY": "Russia",
+        "COUNTRY_FA": "روسیه",
+        "RANK": 1,
+        "HUB": "مرکز آموزش فضانوردان روسکاسموس و دفتر مرکزی طراحی"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          37.6173,
+          55.7558
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "NAME": "Vostochny / Tsiolkovsky",
+        "NAME_FA": "واستوچنی",
+        "COUNTRY": "Russia",
+        "COUNTRY_FA": "روسیه",
+        "RANK": 1,
+        "HUB": "پایگاه مدرن پرتاب‌های مدرن موشک‌های آنگارا و سایوز"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          128.3333,
+          51.8833
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "NAME": "Jiuquan",
+        "NAME_FA": "جیوچوان",
+        "COUNTRY": "China",
+        "COUNTRY_FA": "چین",
+        "RANK": 1,
+        "HUB": "پایگاه تاریخی پرتاب‌های سرنشین‌دار چین (شنتشو)"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          100.2933,
+          40.9606
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "NAME": "Wenchang",
+        "NAME_FA": "ونچانگ",
+        "COUNTRY": "China",
+        "COUNTRY_FA": "چین",
+        "RANK": 1,
+        "HUB": "پایگاه ساحلی پرتاب موشک‌های فوق‌سنگین راهپیمایی طولانی ۵"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          110.7483,
+          19.6144
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "NAME": "Xi'an",
+        "NAME_FA": "شی‌آن",
+        "COUNTRY": "China",
+        "COUNTRY_FA": "چین",
+        "RANK": 1,
+        "HUB": "آکادمی ششم CASC و مرکز اصلی پیشرانه سوخت مایع چین"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          108.9398,
+          34.3416
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "NAME": "Beijing",
+        "NAME_FA": "پکن",
+        "COUNTRY": "China",
+        "COUNTRY_FA": "چین",
+        "RANK": 1,
+        "HUB": "مرکز هدایت عملیات‌های فضایی چین و سازمان CNSA"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          116.4074,
+          39.9042
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "NAME": "Bangalore",
+        "NAME_FA": "بنگلور",
+        "COUNTRY": "India",
+        "COUNTRY_FA": "هند",
+        "RANK": 1,
+        "HUB": "دفتر مرکزی آژانس فضایی هند (ISRO) و ساخت ماهواره"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          77.5946,
+          12.9716
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "NAME": "Sriharikota",
+        "NAME_FA": "سریهاریکوتا",
+        "COUNTRY": "India",
+        "COUNTRY_FA": "هند",
+        "RANK": 1,
+        "HUB": "پایگاه اصلی پرتاب موشک‌های PSLV و LVM3 هند"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          80.2304,
+          13.7199
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "NAME": "Thiruvananthapuram",
+        "NAME_FA": "تریواندروم",
+        "COUNTRY": "India",
+        "COUNTRY_FA": "هند",
+        "RANK": 2,
+        "HUB": "مرکز فضایی ویکرام سارابهای و توسعه موشک‌های ISRO"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          76.9366,
+          8.5241
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "NAME": "Tsukuba",
+        "NAME_FA": "تسوکوبا",
+        "COUNTRY": "Japan",
+        "COUNTRY_FA": "ژاپن",
+        "RANK": 1,
+        "HUB": "مرکز فضایی اصلی آژانس فضایی ژاپن (JAXA)"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          140.1257,
+          36.0835
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "NAME": "Tanegashima",
+        "NAME_FA": "تانه‌گاشیما",
+        "COUNTRY": "Japan",
+        "COUNTRY_FA": "ژاپن",
+        "RANK": 1,
+        "HUB": "زیباترین پایگاه پرتاب موشک‌های سنگین H3 ژاپن"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          130.97,
+          30.37
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "NAME": "Adelaide",
+        "NAME_FA": "آدلایند",
+        "COUNTRY": "Australia",
+        "COUNTRY_FA": "استرالیا",
+        "RANK": 2,
+        "HUB": "دفتر مرکزی آژانس فضایی استرالیا و استارت‌آپ‌های مداری"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          138.6007,
+          -34.9285
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "NAME": "Mahia Peninsula",
+        "NAME_FA": "شبه جزیره ماهیا",
+        "COUNTRY": "New Zealand",
+        "COUNTRY_FA": "نیوزیلند",
+        "RANK": 1,
+        "HUB": "نخستین پایگاه پرتاب خصوصی جهان (راکتیو لَب)"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          177.8647,
+          -39.2611
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "NAME": "Abu Dhabi / Dubai",
+        "NAME_FA": "ابوظبی / دبی",
+        "COUNTRY": "United Arab Emirates",
+        "COUNTRY_FA": "امارات",
+        "RANK": 2,
+        "HUB": "مرکز فضایی محمد بن راشد و کاوشگرهای مریخ و ماه"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          55.2708,
+          25.2048
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "NAME": "Riyadh",
+        "NAME_FA": "ریاض",
+        "COUNTRY": "Saudi Arabia",
+        "COUNTRY_FA": "عربستان",
+        "RANK": 2,
+        "HUB": "سازمان فضایی عربستان و برنامه‌های فضانوردی تجاری"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          46.7167,
+          24.7136
+        ]
+      }
+    }
+  ]
+}

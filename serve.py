@@ -1,19 +1,35 @@
-#!/usr/bin/env python3
-"""ORBITA static server with no-cache headers (prevents stale-cache mismatches)."""
-import http.server, socketserver, os
+import http.server
+import socketserver
+import os
+import socket
 
-os.chdir(os.path.dirname(os.path.abspath(__file__)))
+PORT = 5173
 
-class H(http.server.SimpleHTTPRequestHandler):
+class FastNoCacheHandler(http.server.SimpleHTTPRequestHandler):
     def end_headers(self):
-        self.send_header("Cache-Control", "no-store, no-cache, must-revalidate, max-age=0")
-        self.send_header("Pragma", "no-cache")
-        self.send_header("Access-Control-Allow-Origin", "*")
+        # Force browser to never cache stale JS or JSON files under any circumstances
+        self.send_header('Cache-Control', 'no-store, no-cache, must-revalidate, proxy-revalidate, max-age=0')
+        self.send_header('Pragma', 'no-cache')
+        self.send_header('Expires', '0')
+        self.send_header('Surrogate-Control', 'no-store')
         super().end_headers()
-    def log_message(self, fmt, *a):
-        pass
 
-socketserver.TCPServer.allow_reuse_address = True
-with socketserver.ThreadingTCPServer(("0.0.0.0", 5173), H) as httpd:
-    print("ORBITA serving on http://0.0.0.0:5173")
-    httpd.serve_forever()
+    def handle_one_request(self):
+        try:
+            super().handle_one_request()
+        except (BrokenPipeError, ConnectionResetError, socket.error):
+            pass
+
+class ThreadedHTTPServer(socketserver.ThreadingMixIn, http.server.HTTPServer):
+    daemon_threads = True
+    allow_reuse_address = True
+
+if __name__ == '__main__':
+    os.chdir('/home/user/spaceapp')
+    server = ThreadedHTTPServer(('0.0.0.0', PORT), FastNoCacheHandler)
+    print(f"ORBITA fast multi-threaded server running on http://0.0.0.0:{PORT}")
+    while True:
+        try:
+            server.serve_forever()
+        except Exception as e:
+            print(f"Server error caught: {e}")
