@@ -13,7 +13,7 @@
     fa: {
       tagline: "سامانهٔ اطلاعات هوافضا", tab_map: "نقشهٔ جهانی", tab_missions: "پروژه‌های فضایی",
       cat_launch: "شرکت‌های پرتاب", cat_propulsion: "شرکت‌های پیشران", cat_agency: "سازمان‌های فضایی",
-      cat_site: "پایگاه‌های پرتاب", results: "نتایج",
+      cat_site: "پایگاه‌های پرتاب", cat_recovery: "فرود و بازیابی", results: "نتایج",
       ph_search_map: "جستجوی شرکت، پایگاه یا کشور...", ph_search_mission: "جستجو در نتایج بارگذاری‌شده...",
       project: "پروژه", upcoming: "پرتاب‌های پیش‌رو (زنده)", up_loading: "در حال دریافت از سرویس زندهٔ The Space Devs…",
       loading_map: "در حال بارگذاری نقشه…", country: "کشور", city: "شهر", founded: "سال تأسیس",
@@ -28,6 +28,7 @@
       sort_near: "مرتب‌سازی: نزدیک‌ترین زمان", sort_new: "جدیدترین پرتاب در صدر",
       sort_old: "قدیمی‌ترین ← جدیدترین", sort_az: "الفبایی",
       credit: "تصویر", show_map: "نمایش پایگاه روی نقشه", base_offline: "نقشهٔ آفلاین", base_online: "نقشهٔ آنلاین",
+      toggle_theme: "تغییر پوسته نقشه", style_dark: "پوسته ۱", style_sunny: "پوسته ۲", style_osm: "پوسته ۳",
       tab_orbit: "مدار زمین", orbit_loading: "در حال آماده‌سازی کرهٔ زمین و محاسبهٔ مدارها…",
       ph_search_sat: "جستجوی ماهواره یا شناسهٔ رصدی...", mega: "منظومه‌های انبوه",
       featured_only: "فقط ماهواره‌های شاخص", objects: "جسم در مدار",
@@ -58,7 +59,7 @@
     en: {
       tagline: "Aerospace Intelligence Platform", tab_map: "World Map", tab_missions: "Space Projects",
       cat_launch: "Launch companies", cat_propulsion: "Propulsion companies", cat_agency: "Space agencies",
-      cat_site: "Launch sites", results: "Results",
+      cat_site: "Launch sites", cat_recovery: "Landing & recovery", results: "Results",
       ph_search_map: "Search company, site or country...", ph_search_mission: "Search loaded results...",
       project: "projects", upcoming: "Upcoming launches (live)", up_loading: "Fetching from The Space Devs…",
       loading_map: "Loading map…", country: "Country", city: "City", founded: "Founded",
@@ -72,6 +73,7 @@
       th_loc: "Country / site", th_result: "Result",
       sort_near: "Sort: nearest date", sort_new: "Latest launch first", sort_old: "Oldest → newest", sort_az: "Alphabetical",
       credit: "Image", show_map: "Show launch site on map", base_offline: "Offline map", base_online: "Online map",
+      toggle_theme: "Toggle Map Style", style_dark: "Style 1", style_sunny: "Style 2", style_osm: "Style 3",
       tab_orbit: "Earth Orbit", orbit_loading: "Preparing the globe and propagating orbits…",
       ph_search_sat: "Search satellite or NORAD ID...", mega: "Mega-constellations",
       featured_only: "Featured satellites only", objects: "objects in orbit",
@@ -143,7 +145,17 @@
       '<path d="M7.4 23.4h17.2" stroke="#040a12" stroke-width="2.2" stroke-linecap="round"/>' +
       '<path d="M16 37l-3.4-13h6.8z" fill="' + c + '"/></svg>';
   }
+  // A new category only; all existing marker artwork and dimensions are untouched.
+  C.recovery = "#38bdf8";
+  function svgRecovery(c) {
+    return '<svg width="30" height="38" viewBox="0 0 30 38" aria-hidden="true">' +
+      '<path d="M15 37S28 23 28 14A13 13 0 0 0 2 14C2 23 15 37 15 37Z" fill="' + c + '" stroke="#fff" stroke-opacity=".8" stroke-width="1.4"/>' +
+      '<path d="M15 5.5v10.8m-4.4-4.4 4.4 4.4 4.4-4.4" fill="none" stroke="#071827" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/>' +
+      '<ellipse cx="15" cy="22.2" rx="7.2" ry="3.1" fill="none" stroke="#071827" stroke-width="1.8"/>' +
+      '<path d="M15 20.4v3.6" stroke="#071827" stroke-width="1.4" stroke-linecap="round"/></svg>';
+  }
   function iconFor(cat, status) {
+    if (cat === "recovery") return svgRecovery(C.recovery);
     if (cat === "launch") return svgLaunch(C.launch);
     if (cat === "propulsion") return svgPropulsion(C.propulsion);
     if (cat === "agency") return svgAgency(C.agency);
@@ -151,11 +163,11 @@
   }
 
   /* ================= state ================= */
-  var DATA = { companies: [], sites: [], missions: [] };
+  var DATA = { companies: [], sites: [], missions: [], recoveries: [] };
   window.DATA = DATA;
 
   var markers = [], map = null;
-  var filters = { launch: true, propulsion: true, agency: true, site: true };
+  var filters = { launch: true, propulsion: true, agency: true, site: true, recovery: false };
   var SORT = "new";   /* newest launch first — the user asked for this ordering */
 
   var $ = function (s) { return document.querySelector(s) || null; };
@@ -265,11 +277,25 @@
       if (SITE && $("#passPanel") && $("#passPanel").classList.contains("open")) runPasses();
     }
   });
-  on("#themeBtn", "click", function () {
-    THEME = THEME === "navy" ? "light" : "navy"; localStorage.setItem("orbita_theme", THEME);
+  var MAP_STYLE = localStorage.getItem("orbita_map_style") || (THEME === "light" ? "sunny" : "dark");
+  function cycleMapStyle() {
+    if (MAP_STYLE === "dark") MAP_STYLE = "sunny";
+    else if (MAP_STYLE === "sunny") MAP_STYLE = "osm";
+    else MAP_STYLE = "dark";
+
+    THEME = MAP_STYLE === "dark" ? "navy" : "light";
+    localStorage.setItem("orbita_map_style", MAP_STYLE);
+    localStorage.setItem("orbita_theme", THEME);
     document.documentElement.setAttribute("data-theme", THEME);
-    if (map) { map.setStyle(mapStyle()); setTimeout(function () { renderMarkers(); buildLabels(); }, 400); }
-  });
+
+    var sc = $("#mapStyleChip");
+    if (sc) {
+      var lbl = sc.querySelector(".lb");
+      if (lbl) lbl.textContent = t("style_" + MAP_STYLE);
+    }
+    if (map) applyMapStyle();
+  }
+  on("#themeBtn", "click", cycleMapStyle);
   $$(".tab").forEach(function (b) {
     b.onclick = function () {
       $$(".tab").forEach(function (x) { x.classList.remove("active"); });
@@ -314,13 +340,68 @@
     };
   }
 
-  function onlineStyle() {
-    return THEME === "navy"
-      ? "https://basemaps.cartocdn.com/gl/dark-matter-gl-style/style.json"
-      : "https://basemaps.cartocdn.com/gl/positron-gl-style/style.json";
+  var ONLINE_DARK_URL = "https://basemaps.cartocdn.com/gl/dark-matter-gl-style/style.json";
+  var ONLINE_SUNNY_URL = "assets/geo/jawg_sunny.json";
+  var ONLINE_OSM_URL = "https://basemaps.cartocdn.com/gl/voyager-gl-style/style.json";
+
+  function onlineStyleUrl() {
+    if (MAP_STYLE === "sunny") return ONLINE_SUNNY_URL;
+    if (MAP_STYLE === "osm") return ONLINE_OSM_URL;
+    return ONLINE_DARK_URL;
   }
-  function mapStyle() { 
-    return BASEMODE === "offline" ? offlineStyle() : onlineStyle(); 
+
+  /* ---- one language rule for all labels: English first, local name fallback ---- */
+  function localizeStyleLabels(style) {
+    (style.layers || []).forEach(function (L) {
+      if (!L.layout || L.layout["text-field"] === undefined) return;
+      var s = JSON.stringify(L.layout["text-field"]);
+      if (s.indexOf("housenumber") > -1) return;
+      if (s.indexOf("name") === -1) return;
+      L.layout["text-field"] = ["coalesce", ["get", "name_en"], ["get", "name"]];
+    });
+    return style;
+  }
+  var STYLE_CACHE = {};
+  function fetchOnlineStyle() {
+    var url = onlineStyleUrl();
+    if (STYLE_CACHE[url]) {
+      try { return Promise.resolve(JSON.parse(JSON.stringify(STYLE_CACHE[url]))); }
+      catch (e) { return Promise.resolve(url); }
+    }
+    return fetch(url).then(function (r) { return r.json(); }).then(function (s) {
+      var localized = localizeStyleLabels(s);
+      STYLE_CACHE[url] = JSON.parse(JSON.stringify(localized));
+      return localized;
+    }).catch(function () { return url; });
+  }
+  function afterStyleApply() {
+    if (!map) return;
+    try { renderMarkers(); buildLabels(); buildCityLabels(); } catch (e) {}
+    setTimeout(function () {
+      try { renderMarkers(); buildLabels(); buildCityLabels(); } catch (e) {}
+    }, 300);
+  }
+  function applyMapStyle() {
+    if (!map) return;
+    if (BASEMODE === "offline") {
+      try { map.setStyle(offlineStyle(), { diff: false }); } catch (e) { map.setStyle(offlineStyle()); }
+      afterStyleApply();
+      return;
+    }
+    fetchOnlineStyle().then(function (st) {
+      if (map) {
+        try { map.setStyle(st, { diff: false }); } catch (e) { map.setStyle(st); }
+        map.once("styledata", afterStyleApply);
+        afterStyleApply();
+      }
+    }).catch(function () {
+      if (map) {
+        var rawUrl = onlineStyleUrl();
+        try { map.setStyle(rawUrl, { diff: false }); } catch (e) { map.setStyle(rawUrl); }
+        map.once("styledata", afterStyleApply);
+        afterStyleApply();
+      }
+    });
   }
 
   /* country name labels rendered as DOM markers (works without remote glyph fonts) */
@@ -424,9 +505,61 @@
       if (el) el.style.display = "none";
     }, 2000);
     if (typeof maplibregl === "undefined") { $("#mapStatus").textContent = "MapLibre failed to load."; return; }
-    map = new maplibregl.Map({ container: "map", style: mapStyle(), center: [20, 25], zoom: 1.9,
-      minZoom: 1, maxZoom: 18, hash: true, attributionControl: { compact: true } });
+    /* correct Persian/Arabic/Hebrew shaping: load RTL plugin before map creation */
+    try {
+      if (maplibregl.setRTLTextPlugin) {
+        var rtlStatus = (typeof maplibregl.getRTLTextPluginStatus === "function") ? maplibregl.getRTLTextPluginStatus() : "unavailable";
+        if (rtlStatus === "unavailable") maplibregl.setRTLTextPlugin("assets/vendor/mapbox-gl-rtl-text.js", null, false);
+      }
+    } catch (e) {}
+    if (BASEMODE === "offline") createMap(offlineStyle());
+    else fetchOnlineStyle().then(function (st) { createMap(st); });
+  }
+
+  function mobileView() {
+    try { return window.matchMedia && window.matchMedia("(max-width: 820px)").matches; }
+    catch (e) { return window.innerWidth <= 820; }
+  }
+  function syncTouchGestures() {
+    if (!map) return;
+    var mob = mobileView();
+    try {
+      if (map.touchZoomRotate) {
+        if (mob && map.touchZoomRotate.disableRotation) map.touchZoomRotate.disableRotation();
+        else if (!mob && map.touchZoomRotate.enableRotation) map.touchZoomRotate.enableRotation();
+      }
+      if (map.touchPitch) {
+        if (mob && map.touchPitch.disable) map.touchPitch.disable();
+        else if (!mob && map.touchPitch.enable) map.touchPitch.enable();
+      }
+    } catch (e) {}
+  }
+  window.addEventListener("resize", function () { try { syncTouchGestures(); } catch (e) {} });
+
+  function createMap(style) {
+    map = new maplibregl.Map({
+      container: "map",
+      style: style,
+      center: [20, 25],
+      zoom: 1.9,
+      minZoom: 1,
+      maxZoom: 20,
+      hash: true,
+      fadeDuration: 0,
+      maxTileCacheSize: 120,
+      trackResize: true,
+      attributionControl: { compact: true }
+    });
     window.map = map;
+    /* faster manual zoom: ~2x wheel/trackpad rate, smooth animation preserved */
+    try {
+      if (map.scrollZoom) {
+        if (map.scrollZoom.setWheelZoomRate) map.scrollZoom.setWheelZoomRate(1 / 225);
+        if (map.scrollZoom.setZoomRate) map.scrollZoom.setZoomRate(1 / 50);
+      }
+    } catch (e) {}
+    /* mobile only: lock rotation & tilt (desktop keeps them) */
+    try { syncTouchGestures(); } catch (e) {}
     map.addControl(new maplibregl.NavigationControl({ visualizePitch: true }), "bottom-right");
     map.addControl(new maplibregl.FullscreenControl(), "bottom-right");
     map.addControl(new maplibregl.ScaleControl({ unit: "metric" }), "bottom-left");
@@ -443,12 +576,22 @@
       if ($("#mapStatus")) $("#mapStatus").style.display = "none";
       if (markers.length === 0) renderMarkers();
     });
+    var rafZoom = null;
     map.on("zoom", function () {
-      zoomLabels();
-      zoomCityLabels();
+      if (rafZoom) cancelAnimationFrame(rafZoom);
+      rafZoom = requestAnimationFrame(function () {
+        zoomLabels();
+        zoomCityLabels();
+      });
     });
-    map.on("move", function () { var c = map.getCenter();
-      $("#coords").textContent = c.lat.toFixed(2) + ", " + c.lng.toFixed(2) + " · z" + map.getZoom().toFixed(1); });
+    var rafMove = null;
+    map.on("move", function () {
+      if (rafMove) cancelAnimationFrame(rafMove);
+      rafMove = requestAnimationFrame(function () {
+        var c = map.getCenter();
+        $("#coords").textContent = c.lat.toFixed(2) + ", " + c.lng.toFixed(2) + " · z" + map.getZoom().toFixed(1);
+      });
+    });
     map.on("error", function (e) { 
       console.warn("map:", (e && e.error && e.error.message) || e);
       var statusEl = document.getElementById("mapStatus");
@@ -502,13 +645,14 @@
     BASEMODE = BASEMODE === "offline" ? "online" : "offline";
     localStorage.setItem("orbita_base", BASEMODE);
     var bb = $("#baseBtn"); if (bb) bb.querySelector("span").textContent = t(BASEMODE === "offline" ? "base_offline" : "base_online");
-    if (map) { map.setStyle(mapStyle()); setTimeout(function () { renderMarkers(); buildLabels(); buildCityLabels(); }, 400); }
+    if (map) applyMapStyle();
   });
 
   function allPoints() {
     var p = [];
     DATA.companies.forEach(function (c) { p.push({ kind: "company", cat: c.cat, o: c }); });
     DATA.sites.forEach(function (s) { p.push({ kind: "site", cat: "site", o: s }); });
+    DATA.recoveries.forEach(function (s) { p.push({ kind: "recovery", cat: "recovery", o: s }); });
     return p;
   }
   function filteredPoints() {
@@ -527,17 +671,44 @@
       { k: "launch", n: DATA.companies.filter(function (x) { return x.cat === "launch"; }).length },
       { k: "propulsion", n: DATA.companies.filter(function (x) { return x.cat === "propulsion"; }).length },
       { k: "agency", n: DATA.companies.filter(function (x) { return x.cat === "agency"; }).length },
-      { k: "site", n: DATA.sites.length }
+      { k: "site", n: DATA.sites.length },
+      { k: "recovery", n: DATA.recoveries.length }
     ];
-    $("#layerbar").innerHTML = cats.map(function (c) {
-      return '<div class="lchip' + (filters[c.k] ? "" : " off") + '" title="' + t("cat_" + c.k) + '" data-cat="' + c.k + '" style="color:' + C[c.k === "site" ? "site" : c.k] + '">' +
+    var html = cats.map(function (c) {
+      if (c.k === "recovery") {
+        return '<button type="button" class="lchip cat-chip recovery-chip' + (filters.recovery ? '' : ' off') +
+          '" data-cat="recovery" aria-pressed="' + filters.recovery + '" aria-label="' + t("cat_recovery") + '" title="' + t("cat_recovery") + '"' +
+          (c.n ? '' : ' disabled') + ' style="color:' + C.recovery + '">' +
+          '<span class="ic">' + svgRecovery(C.recovery).replace('width="30"', 'width="18"').replace('height="38"', 'height="23"') + '</span>' +
+          '<span class="lb">' + t("cat_recovery") + '</span><span class="n">' + fmtNum(c.n) + '</span></button>';
+      }
+      return '<div class="lchip cat-chip' + (filters[c.k] ? "" : " off") + '" title="' + t("cat_" + c.k) + '" data-cat="' + c.k + '" style="color:' + C[c.k === "site" ? "site" : c.k] + '">' +
         '<span class="ic">' + iconFor(c.k, "active").replace(/width="3\d"/, 'width="18"').replace(/height="38"/, 'height="23"') + "</span>" +
         '<span class="lb" style="color:var(--text)">' + t("cat_" + c.k) + '</span><span class="n">' + c.n + "</span></div>";
     }).join("");
-    $$(".lchip").forEach(function (el) {
+    html += '<span class="chip-sep" aria-hidden="true"></span>';
+    html += '<button type="button" class="lchip style-chip" id="mapStyleChip" title="' + t("toggle_theme") + '">' +
+      '<span class="lb" style="color:var(--text)">' + t("style_" + MAP_STYLE) + '</span></button>';
+    $("#layerbar").innerHTML = html;
+    
+    var scEl = $("#mapStyleChip");
+    if (scEl) {
+      scEl.onclick = function (e) {
+        if (e) { e.preventDefault(); e.stopPropagation(); }
+        cycleMapStyle();
+      };
+    }
+    
+    $$(".cat-chip").forEach(function (el) {
       el.onclick = function () {
-        var k = el.dataset.cat; filters[k] = !filters[k];
-        el.classList.toggle("off", !filters[k]); renderMarkers(); renderList();
+        var k = el.dataset.cat;
+        if (!k) return;
+        filters[k] = !filters[k];
+        el.classList.toggle("off", !filters[k]);
+        if (k === "recovery") el.setAttribute("aria-pressed", String(filters[k]));
+        clusterMode = null;
+        renderMarkers();
+        renderList();
       };
     });
   }
@@ -562,8 +733,27 @@
   function clusterPoints(pts) {
     if (!map) return pts.map(function (p) { return { pts: [p] }; });
     var z = map.getZoom();
-    if (z >= 6) return pts.map(function (p) { return { pts: [p] }; });   // close in: never cluster
-    var cell = z < 3 ? 34 : z < 4.5 ? 26 : 20;                            // screen pixels
+    if (z >= 4) {
+      if (!filters.recovery) return pts.map(function (p) { return { pts: [p] }; });
+      // Only the opt-in layer gets a shared selector when it overlaps an existing place.
+      // Never displace individual coordinates or alter the old clustering when the layer is off.
+      var used = {}, shared = [];
+      pts.forEach(function (p, i) {
+        if (p.cat !== "recovery" || used[i]) return;
+        var origin = map.project([p.o.lon, p.o.lat]), group = { pts: [p] };
+        used[i] = true;
+        pts.forEach(function (other, j) {
+          if (used[j]) return;
+          var point = map.project([other.o.lon, other.o.lat]);
+          var dx = point.x - origin.x, dy = point.y - origin.y;
+          if (dx * dx + dy * dy < 22 * 22) { used[j] = true; group.pts.push(other); }
+        });
+        shared.push(group);
+      });
+      pts.forEach(function (p, i) { if (!used[i]) shared.push({ pts: [p] }); });
+      return shared;
+    }
+    var cell = z < 2.5 ? 30 : z < 3.5 ? 24 : 18;                            // screen pixels
     var bins = {}, order = [];
     pts.forEach(function (p) {
       var s;
@@ -586,7 +776,7 @@
     el.style.width = d + "px"; el.style.height = d + "px";
     el.style.setProperty("--cc", col);
     el.textContent = LANG === "fa" ? fmtNum(n) : String(n);
-    el.title = (LANG === "fa" ? n + " مورد در این ناحیه" : n + " items in this area");
+    el.title = (LANG === "fa" ? "مشاهده فهرست " + n + " مورد در این ناحیه" : "View list of " + n + " items in this area");
     return el;
   }
 
@@ -605,12 +795,20 @@
         lngLat = [sx / g.pts.length, sy / g.pts.length];
         el.addEventListener("click", function (ev) {
           ev.stopPropagation();
-          map.flyTo({ center: lngLat, zoom: Math.min(map.getZoom() + 2.4, 9), duration: 800 });
+          openClusterList(g.pts);
         });
       } else {
         var p = g.pts[0];
         el = document.createElement("div");
         el.className = "pin"; el.title = name(p.o);
+        if (p.cat === "recovery") {
+          el.dataset.recoveryId = p.o.id;
+          el.title = name(p.o) + (LANG === "fa" ? " — موقعیت مرجع" : " — reference location");
+          el.setAttribute("role", "button"); el.setAttribute("aria-label", el.title); el.tabIndex = 0;
+          el.addEventListener("keydown", function (e) {
+            if (e.key === "Enter" || e.key === " ") { e.preventDefault(); e.stopPropagation(); el.click(); }
+          });
+        }
         el.innerHTML = sizedIcon(p.cat, p.o.status, sc);
         anchor = "bottom";
         lngLat = [p.o.lon, p.o.lat];
@@ -628,11 +826,36 @@
     }
   }
 
+  /* ---- cluster list mode: one click on a cluster opens its members as a clean list ---- */
+  var clusterMode = null;   /* null = normal results, otherwise { pts: [...] } */
+  function openClusterList(pts) {
+    clusterMode = { pts: pts.slice() };
+    openSide(false);
+    renderList();
+    var rl = $("#resultList");
+    if (rl) rl.scrollTop = 0;
+  }
+  window.exitClusterList = function () {
+    clusterMode = null;
+    renderList();
+  };
+
   function renderList() {
-    var pts = filteredPoints();
+    var inCluster = !!clusterMode;
+    var pts = inCluster ? clusterMode.pts : filteredPoints();
     $("#resCount").textContent = pts.length;
     var defaultLogoSvg = "data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><rect width='100' height='100' rx='20' fill='%23090d16' stroke='%2338bdf8' stroke-width='3'/><text x='50' y='60' font-family='sans-serif' font-size='32' fill='%2338bdf8' text-anchor='middle'>🚀</text></svg>";
-    $("#resultList").innerHTML = pts.slice(0, 400).map(function (p, i) {
+    var html = "";
+    if (inCluster) {
+      var n = pts.length;
+      var headTxt = LANG === "fa" ? ("فهرست " + n + " مورد در این ناحیه") : ("List of " + n + " items in this area");
+      var backTxt = LANG === "fa" ? "بازگشت به همه" : "Back to all";
+      html += '<div style="display:flex; align-items:center; justify-content:space-between; gap:8px; padding:8px 10px; margin-bottom:8px; background:rgba(0,210,255,0.08); border:1px solid rgba(0,210,255,0.30); border-radius:8px; font-size:11px; font-weight:bold;">' +
+        '<span>📋 ' + esc(headTxt) + '</span>' +
+        '<button type="button" class="mini-btn" onclick="exitClusterList()" style="cursor:pointer; white-space:nowrap; width:auto; height:auto; font-size:10px; padding:4px 8px;">↩ ' + esc(backTxt) + '</button>' +
+        '</div>';
+    }
+    html += pts.slice(0, 400).map(function (p, i) {
       var sub = (LANG === "fa" ? (p.o.country_fa || p.o.country) : (p.o.country || p.o.country_fa)) || "";
       var logoSrc = p.o.logo_data || p.o.logo;
       var logoHtml = "";
@@ -647,10 +870,17 @@
       return '<div class="res" data-i="' + i + '" style="display:flex; align-items:center; gap:8px;">' + logoHtml +
         '<span class="t"><b>' + esc(name(p.o)) + "</b><span>" + esc(sub) + "</span></span></div>";
     }).join("") || '<div class="up-empty">' + t("no_res") + "</div>";
+    $("#resultList").innerHTML = html;
     $$("#resultList .res").forEach(function (el) {
       el.onclick = function () {
         var p = pts[+el.dataset.i];
-        map.flyTo({ center: [p.o.lon, p.o.lat], zoom: 5.5, duration: 1100 }); openDetail(p);
+        if (inCluster) {
+          if (p.cat === "recovery") map.flyTo({ center: [p.o.lon, p.o.lat], zoom: 7, duration: 900 });
+          else if (window.flyToCoords) window.flyToCoords(p.o.lat, p.o.lon, 7);
+          openDetail(p);
+        } else {
+          map.flyTo({ center: [p.o.lon, p.o.lat], zoom: 5.5, duration: 1100 }); openDetail(p);
+        }
         if (window.innerWidth < 900) closeSide();
       };
     });
@@ -685,13 +915,24 @@
     h += '<div class="d-sub">' + esc(isFa ? o.en : o.fa) + '</div>';
 
     // Header Photo or Design 1 Clean Blueprint Vector (Without Text)
-    h += '<div class="site-photo-box" style="margin-top:8px; margin-bottom:10px; width:100%; height:130px; border-radius:8px; overflow:hidden; border:1px solid var(--line);">';
+    h += '<div class="site-photo-box" style="margin-top:8px; margin-bottom:10px; width:100%; height:165px; border-radius:8px; overflow:hidden; border:1px solid var(--line); position:relative; background:#07172b;">';
     if (o.has_photo && o.photo_url) {
-      h += '<img src="' + esc(o.photo_url) + '" alt="' + esc(name(o)) + '" class="site-photo-img" style="width:100%; height:130px; object-fit:cover;" />';
+      h += '<img src="' + esc(o.photo_url) + '" alt="" aria-hidden="true" class="site-photo-bg" style="position:absolute; inset:0; width:100%; height:100%; object-fit:cover; filter:blur(14px) brightness(0.55); transform:scale(1.15);" />';
+      h += '<img src="' + esc(o.photo_url) + '" alt="' + esc(name(o)) + '" class="site-photo-img" style="position:relative; width:100%; height:165px; object-fit:contain; z-index:1;" />';
     } else {
-      h += "<svg width=\"100%\" height=\"130\" viewBox=\"0 0 380 130\" xmlns=\"http://www.w3.org/2000/svg\" style=\"background: linear-gradient(135deg, #07172b 0%, #0d2847 100%);\">\n  <defs>\n    <pattern id=\"siteGrid\" width=\"20\" height=\"20\" patternUnits=\"userSpaceOnUse\">\n      <path d=\"M 20 0 L 0 0 0 20\" fill=\"none\" stroke=\"rgba(56, 189, 248, 0.12)\" stroke-width=\"0.8\"/>\n    </pattern>\n  </defs>\n  <rect width=\"100%\" height=\"100%\" fill=\"url(#siteGrid)\" />\n  <circle cx=\"190\" cy=\"65\" r=\"45\" stroke=\"rgba(56, 189, 248, 0.25)\" stroke-width=\"1\" fill=\"none\" stroke-dasharray=\"3 3\"/>\n  <circle cx=\"190\" cy=\"65\" r=\"25\" stroke=\"rgba(56, 189, 248, 0.4)\" stroke-width=\"1\" fill=\"none\"/>\n  <line x1=\"190\" y1=\"10\" x2=\"190\" y2=\"120\" stroke=\"rgba(56, 189, 248, 0.2)\" stroke-width=\"1\"/>\n  <line x1=\"130\" y1=\"65\" x2=\"250\" y2=\"65\" stroke=\"rgba(56, 189, 248, 0.2)\" stroke-width=\"1\"/>\n  <path d=\"M190 48 L202 58 L190 68 L178 58 Z\" fill=\"rgba(56, 189, 248, 0.3)\" stroke=\"#38bdf8\" stroke-width=\"1.5\"/>\n  <path d=\"M190 58 L202 68 L190 78 L178 68 Z\" fill=\"rgba(245, 158, 11, 0.3)\" stroke=\"#f59e0b\" stroke-width=\"1.5\"/>\n</svg>";
+      h += "<svg width=\"100%\" height=\"165\" viewBox=\"0 0 380 130\" preserveAspectRatio=\"xMidYMid slice\" xmlns=\"http://www.w3.org/2000/svg\" style=\"background: linear-gradient(135deg, #07172b 0%, #0d2847 100%);\">\n  <defs>\n    <pattern id=\"siteGrid\" width=\"20\" height=\"20\" patternUnits=\"userSpaceOnUse\">\n      <path d=\"M 20 0 L 0 0 0 20\" fill=\"none\" stroke=\"rgba(56, 189, 248, 0.12)\" stroke-width=\"0.8\"/>\n    </pattern>\n  </defs>\n  <rect width=\"100%\" height=\"100%\" fill=\"url(#siteGrid)\" />\n  <circle cx=\"190\" cy=\"65\" r=\"45\" stroke=\"rgba(56, 189, 248, 0.25)\" stroke-width=\"1\" fill=\"none\" stroke-dasharray=\"3 3\"/>\n  <circle cx=\"190\" cy=\"65\" r=\"25\" stroke=\"rgba(56, 189, 248, 0.4)\" stroke-width=\"1\" fill=\"none\"/>\n  <line x1=\"190\" y1=\"10\" x2=\"190\" y2=\"120\" stroke=\"rgba(56, 189, 248, 0.2)\" stroke-width=\"1\"/>\n  <line x1=\"130\" y1=\"65\" x2=\"250\" y2=\"65\" stroke=\"rgba(56, 189, 248, 0.2)\" stroke-width=\"1\"/>\n  <path d=\"M190 48 L202 58 L190 68 L178 58 Z\" fill=\"rgba(56, 189, 248, 0.3)\" stroke=\"#38bdf8\" stroke-width=\"1.5\"/>\n  <path d=\"M190 58 L202 68 L190 78 L178 68 Z\" fill=\"rgba(245, 158, 11, 0.3)\" stroke=\"#f59e0b\" stroke-width=\"1.5\"/>\n</svg>";
     }
     h += '</div>';
+
+    if (o.has_photo && o.photo_url && (o.photo_caption_fa || o.photo_caption_en || o.photo_credit)) {
+      var pcap = isFa ? (o.photo_caption_fa || o.photo_caption_en) : (o.photo_caption_en || o.photo_caption_fa);
+      h += '<div class="site-photo-meta" style="margin:-6px 0 10px; font-size:10px; line-height:1.9; color:var(--muted);">' +
+        (pcap ? '<span style="display:block; font-size:10.5px; color:var(--fg);">' + esc(pcap) + '</span>' : '') +
+        (o.photo_credit ? (isFa ? 'عکس: ' : 'Photo: ') + esc(o.photo_credit) : '') +
+        (o.photo_license ? ' · <bdi>' + esc(o.photo_license) + '</bdi>' : '') +
+        (o.photo_source_url ? ' · <a href="' + esc(o.photo_source_url) + '" target="_blank" rel="noopener noreferrer" style="color:var(--muted); text-decoration:underline;">' + (isFa ? 'منبع تصویر' : 'Image source') + '</a>' : '') +
+        '</div>';
+    }
 
     h += '<div class="d-desc">' + esc(desc(o)) + '</div>';
 
@@ -712,6 +953,8 @@
     h += '<div class="site-tabs">';
     h += '<button class="site-tab-btn active" onclick="switchSiteTab(\'overview\', this)">' + (isFa ? "شناسنامه و آمار" : "Overview & Stats") + '</button>';
     h += '<button class="site-tab-btn" onclick="switchSiteTab(\'launches\', this)">' + (isFa ? "تاریخچه و تحلیلی (" + tot + ")" : "Launch History (" + tot + ")") + '</button>';
+    var upcCnt = upcomingCountFor(o.id);
+    h += '<button class="site-tab-btn" onclick="switchSiteTab(\'upcoming\', this)">' + (isFa ? "پرتاب‌های پیشِ رو" : "Upcoming") + (upcCnt > 0 ? " (" + upcCnt + ")" : "") + '</button>';
     h += '<button class="site-tab-btn" onclick="switchSiteTab(\'analysis\', this)">' + (isFa ? "تحلیل جغرافیا و زیرساخت" : "Analysis & Infra") + '</button>';
     h += '</div>';
 
@@ -805,6 +1048,11 @@
     });
     h += '</div></div>'; // end tab 2
 
+    // TAB 2.5: UPCOMING LAUNCHES
+    h += '<div id="siteTabUpcoming" class="site-tab-content" data-site="' + esc(o.id) + '" data-isfa="' + (isFa ? "1" : "0") + '">';
+    h += buildUpcomingTabInner(o.id, isFa);
+    h += '</div>'; // end upcoming tab
+
     // TAB 3: GEOGRAPHY & INFRASTRUCTURE ANALYSIS
     h += '<div id="siteTabAnalysis" class="site-tab-content">';
     
@@ -832,6 +1080,137 @@
     return h;
   }
 
+  /* ============ upcoming launches per site (tab: پرتاب‌های پیشِ رو) ============ */
+  var UPC = { data: null, live: null, liveOk: false };
+
+  function loadSiteUpcomingData() {
+    fetch("data/upcoming.json?_t=" + Date.now())
+      .then(function (r) { if (!r.ok) throw new Error("upcoming data unavailable"); return r.json(); })
+      .then(function (j) { UPC.data = j; syncUpcomingLive(); })
+      .catch(function (e) { console.warn("upcoming:", e.message); });
+  }
+
+  function syncUpcomingLive() {
+    try {
+      var c = localStorage.getItem("upcSyncV1");
+      if (c) {
+        var o = JSON.parse(c);
+        if (o && o.ts && (Date.now() - o.ts) < 6 * 3600 * 1000 && o.map) {
+          UPC.live = o.map; UPC.liveOk = true; return;
+        }
+      }
+    } catch (e) {}
+    var wend = (UPC.data && UPC.data.window_end) ? UPC.data.window_end : "2027-01-06";
+    var base = "https://ll.thespacedevs.com/2.2.0/launch/upcoming/?limit=100&mode=list&net__lte=" + wend + "T00%3A00%3A00Z";
+    var map = {};
+    function absorb(j) {
+      (j.results || []).forEach(function (x) {
+        map[x.id] = { net: x.net, status: x.status ? x.status.abbrev : "", prec: x.net_precision ? x.net_precision.abbrev : "" };
+      });
+      return j.next ? fetch(j.next).then(function (r) { return r.json(); }).then(absorb) : null;
+    }
+    fetch(base).then(function (r) { return r.json(); }).then(absorb).then(function () {
+      UPC.live = map; UPC.liveOk = true;
+      try { localStorage.setItem("upcSyncV1", JSON.stringify({ ts: Date.now(), map: map })); } catch (e) {}
+    }).catch(function () { UPC.liveOk = false; });
+  }
+
+  function upcEffective(l) {
+    var eff = { net: l.net, status: l.status, precision: l.precision, dateFa: l.date_label_fa, dateEn: l.date_label_en, timeFa: l.time_fa, timeEn: l.time_en, updatedLive: false };
+    var lv = UPC.live && UPC.live[l.ll2_id];
+    if (lv && lv.net) {
+      var dayPrec = (lv.prec === "SEC" || lv.prec === "MIN" || lv.prec === "HR" || lv.prec === "DAY");
+      if (lv.net !== l.net && dayPrec) {
+        eff.net = lv.net; eff.precision = "day";
+        eff.dateFa = lv.net.slice(0, 10); eff.dateEn = lv.net.slice(0, 10);
+        eff.timeFa = "ساعت " + lv.net.slice(11, 16) + " به وقت جهانی";
+        eff.timeEn = lv.net.slice(11, 16) + " UTC";
+        eff.updatedLive = true;
+      } else { eff.net = lv.net; }
+      if (lv.status) eff.status = lv.status;
+    }
+    return eff;
+  }
+
+  function upcVisibleRows(siteId) {
+    if (!UPC.data) return [];
+    var now = Date.now();
+    var rank = { day: 0, month: 1, quarter: 2, tbd: 3 };
+    return (UPC.data.launches || [])
+      .filter(function (l) { return l.site === siteId; })
+      .map(function (l) { return { l: l, eff: upcEffective(l) }; })
+      .filter(function (p) { return (new Date(p.eff.net)).getTime() > now - 2 * 3600 * 1000; })
+      .sort(function (a, b) {
+        var r = (rank[a.eff.precision] || 0) - (rank[b.eff.precision] || 0);
+        return r !== 0 ? r : (a.eff.net < b.eff.net ? -1 : 1);
+      });
+  }
+
+  function upcomingCountFor(siteId) {
+    try { return upcVisibleRows(siteId).length; } catch (e) { return 0; }
+  }
+
+  function buildUpcomingTabInner(siteId, isFa) {
+    var PREC_BADGE = { day: ["#10b981", "روز و ساعت مشخص", "Date & time set"], month: ["#f59e0b", "فقط ماه مشخص", "Month known"], quarter: ["#f97316", "بازهٔ فصلی", "Quarterly window"], tbd: ["#94a3b8", "در انتظار اعلام", "Date TBA"] };
+    var ST_FA = { Go: "تأیید شده", TBC: "در انتظار تأیید", TBD: "زمان نامعین" };
+    var h = "";
+    if (!UPC.data) {
+      return '<div style="padding:14px; text-align:center; color:var(--muted); font-size:11px;">' + (isFa ? "داده در حال آماده‌سازی است. لحظه‌ای بعد دوباره این زبانه را باز کنید." : "Data is loading; reopen this tab in a moment.") + '</div>';
+    }
+    var covered = (UPC.data.sites_covered || []).indexOf(siteId) > -1;
+    // سربرگ: مهر به‌روزرسانی + وضعیت هم‌زمانی زنده
+    h += '<div style="background:var(--bg2); border:1px solid var(--line); border-radius:6px; padding:7px 10px; margin-bottom:8px; display:flex; justify-content:space-between; align-items:center; flex-wrap:wrap; gap:4px; font-size:10px; color:var(--muted);">';
+    h += '<span>🗓 ' + (isFa ? "آخرین به‌روزرسانی دادهٔ محلی: " : "Local data updated: ") + '<b style="direction:ltr; font-family:monospace;">' + esc(UPC.data.updated || "—") + '</b></span>';
+    h += '<span>' + (UPC.liveOk ? (isFa ? "هم‌زمانی زندهٔ تاریخ‌ها: انجام شد ✅" : "Live date sync: OK ✅") : (isFa ? "هم‌زمانی زنده: در دسترس نیست" : "Live sync: unavailable")) + '</span>';
+    h += '</div>';
+    if (!covered) {
+      h += '<div style="background:rgba(255,255,255,0.03); border:1px dashed var(--line); padding:12px; text-align:center; border-radius:6px; color:var(--muted); font-size:11px;">' + (isFa ? "دادهٔ پرتاب‌های پیشِ رو برای این پایگاه در گام‌های بعدی تکمیل می‌شود." : "Upcoming-launch data for this site will be added in the next phases.") + '</div>';
+      return h;
+    }
+    var rows = upcVisibleRows(siteId);
+    if (!rows.length) {
+      var note = (UPC.data.site_notes || {})[siteId];
+      h += '<div style="background:rgba(255,255,255,0.03); border:1px dashed var(--line); padding:12px; text-align:center; border-radius:6px; color:var(--muted); font-size:11px;">' + (isFa ? "پرتابی برای این پایگاه اعلام نشده است." : "No launches are announced for this site.");
+      if (note) h += '<div style="margin-top:7px; font-size:10.5px; line-height:1.7; color:var(--fg); opacity:0.85;">ℹ️ ' + esc(isFa ? note[0] : note[1]) + '</div>';
+      h += '</div>';
+      return h;
+    }
+    h += '<div style="font-size:10px; color:var(--muted); margin-bottom:6px;">' + (isFa ? "💡 تاریخ‌ها طبق اعلام رسمی است و ممکن است جابه‌جا شود. پس از انجام هر پرتاب، ردیف آن حذف و به تاریخچه منتقل می‌شود." : "💡 Dates follow official announcements and may slip. Completed launches move to the history tab.") + '</div>';
+    h += '<div style="display:flex; flex-direction:column; gap:6px;">';
+    rows.forEach(function (p, idx) {
+      var l = p.l, eff = p.eff;
+      var bd = PREC_BADGE[eff.precision] || PREC_BADGE.tbd;
+      var drawerId = "udrawer_" + idx;
+      h += '<div style="background:var(--bg2); border:1px solid var(--line); border-radius:6px; overflow:hidden;">';
+      h += '<div onclick="toggleSiteLaunchDrawer(\'' + drawerId + '\')" style="padding:8px 10px; display:flex; justify-content:space-between; align-items:center; cursor:pointer; font-size:11px; user-select:none; gap:6px;">';
+      h += '<div style="display:flex; align-items:center; gap:8px; min-width:0;">';
+      h += '<span style="direction:ltr; font-family:monospace; color:var(--accent); white-space:nowrap;">' + esc(isFa ? eff.dateFa : eff.dateEn) + '</span>';
+      h += '<b style="overflow:hidden; text-overflow:ellipsis; white-space:nowrap;">' + esc(isFa ? l.payload_fa : l.payload_en) + '</b>';
+      h += '</div>';
+      h += '<span style="display:flex; align-items:center; gap:6px; white-space:nowrap;"><span style="border:1px solid ' + bd[0] + '; color:' + bd[0] + '; border-radius:10px; padding:1px 7px; font-size:9.5px;">' + (isFa ? bd[1] : bd[2]) + '</span><span style="color:var(--accent); font-size:10px;">▼</span></span>';
+      h += '</div>';
+      h += '<div id="' + drawerId + '" style="display:none; padding:10px; background:color-mix(in srgb, var(--bg2) 80%, black); border-top:1px solid var(--line); flex-direction:column; gap:8px; font-size:11px;">';
+      h += '<div style="display:grid; grid-template-columns:1fr 1fr; gap:4px; background:rgba(255,255,255,0.02); padding:6px; border-radius:4px; font-size:10.5px;">';
+      h += '<div><span style="color:var(--muted);">' + (isFa ? "راکت و پیکربندی:" : "Rocket:") + '</span> <b>' + esc(isFa ? l.rocket_fa : l.rocket_en) + '</b></div>';
+      h += '<div><span style="color:var(--muted);">' + (isFa ? "مدار مقصد:" : "Target orbit:") + '</span> <b>' + esc(isFa ? l.orbit_fa : l.orbit_en) + '</b></div>';
+      h += '<div><span style="color:var(--muted);">' + (isFa ? "نوع مأموریت:" : "Mission type:") + '</span> <b>' + esc(isFa ? l.mtype_fa : l.mtype_en) + '</b></div>';
+      h += '<div><span style="color:var(--muted);">' + (isFa ? "مشتری / بهره‌بردار:" : "Customer:") + '</span> <b>' + esc(isFa ? l.customer_fa : l.customer_en) + '</b></div>';
+      h += '<div><span style="color:var(--muted);">' + (isFa ? "زمان حدودی:" : "Approx. time:") + '</span> <b>' + esc(isFa ? eff.timeFa : eff.timeEn) + (eff.updatedLive ? ' <span style="color:#10b981; font-size:9px;">' + (isFa ? "(به‌روزشدهٔ زنده)" : "(live update)") + '</span>' : '') + '</b></div>';
+      h += '<div><span style="color:var(--muted);">' + (isFa ? "وضعیت:" : "Status:") + '</span> <b>' + esc(isFa ? (ST_FA[eff.status] || eff.status) : eff.status) + '</b></div>';
+      h += '</div>';
+      h += '<div style="background:rgba(59, 130, 246, 0.08); border:1px solid rgba(59, 130, 246, 0.25); border-radius:5px; padding:8px; font-size:11px; line-height:1.6; color:#bfdbfe;">' + esc(isFa ? l.desc_fa : l.desc_en) + '</div>';
+      if (l.calendar_url || l.stream_url) {
+        h += '<div style="display:flex; gap:8px; flex-wrap:wrap;">';
+        if (l.calendar_url) h += '<a href="' + esc(l.calendar_url) + '" target="_blank" rel="noopener noreferrer" style="font-size:10px; color:var(--accent); text-decoration:none; border:1px solid var(--line); border-radius:5px; padding:4px 9px;">🗓 ' + (isFa ? "گاه‌شمار رسمی" : "Official schedule") + ' ↗</a>';
+        if (l.stream_url) h += '<a href="' + esc(l.stream_url) + '" target="_blank" rel="noopener noreferrer" style="font-size:10px; color:var(--accent); text-decoration:none; border:1px solid var(--line); border-radius:5px; padding:4px 9px;">📺 ' + (isFa ? "پخش زندهٔ رسمی" : "Official stream") + ' ↗</a>';
+        h += '</div>';
+      }
+      h += '</div></div>';
+    });
+    h += '</div>';
+    return h;
+  }
+
   window.toggleSiteLaunchDrawer = function(drawerId) {
     var id = String(drawerId).trim();
     var drawer = document.getElementById(id);
@@ -846,6 +1225,13 @@
     el.classList.add("active");
     if (tabId === "overview") $("#siteTabOverview").classList.add("active");
     else if (tabId === "launches") $("#siteTabLaunches").classList.add("active");
+    else if (tabId === "upcoming") {
+      var up = $("#siteTabUpcoming");
+      if (up) {
+        up.innerHTML = buildUpcomingTabInner(up.getAttribute("data-site"), up.getAttribute("data-isfa") === "1");
+        up.classList.add("active");
+      }
+    }
     else if (tabId === "analysis") $("#siteTabAnalysis").classList.add("active");
   };
 
@@ -2248,6 +2634,433 @@
     return h;
   }
 
+  /* ================= landing & recovery: curated, opt-in pilot ================= */
+  function validRecoverySite(s) {
+    return s && s.cat === "recovery" && typeof s.id === "string" && s.fa && s.en &&
+      Number.isFinite(s.lat) && Number.isFinite(s.lon) && Math.abs(s.lat) < 85 && Math.abs(s.lon) <= 180 &&
+      Array.isArray(s.events) && s.events.length > 0 && s.events.every(function (e) {
+        return e.id && /^\d{4}-\d{2}-\d{2}$/.test(e.date || "") && /^https:\/\//.test(e.source_url || "") &&
+          ["success", "failure", "unknown"].indexOf(e.landing_outcome) >= 0 &&
+          ["confirmed", "partial", "failed", "unknown", "not_planned"].indexOf(e.recovery_outcome) >= 0;
+      });
+  }
+  function recoveryDate(date) {
+    return new Date(date + "T12:00:00Z").toLocaleDateString(LANG === "fa" ? "fa-IR-u-ca-gregory" : "en-GB",
+      { day: "numeric", month: "short", year: "numeric", timeZone: "UTC" });
+  }
+  function recoveryText(o, key) { return o[key + (LANG === "fa" ? "_fa" : "_en")] || "—"; }
+  /* External map links: open synchronously while the click is active, with a real fallback.
+     Do not navigate the preview frame to third-party sites or try to override its sandbox. */
+  var externalLinkDialog = null, externalLinkTrigger = null, externalLinkUrl = "";
+  function externalMapUrl(href) {
+    try {
+      var url = new URL(href, window.location.href);
+      if ((url.protocol !== "https:" && url.protocol !== "http:") || url.username || url.password ||
+          url.origin === window.location.origin) return null;
+      return url.href;
+    } catch (e) { return null; }
+  }
+  function openExternalMapWindow(url) {
+    var popup = null;
+    try {
+      // Reserve the tab before any asynchronous work. noopener in window.open's feature
+      // string can return null even on success, so detach the opener on this blank tab first.
+      popup = window.open("about:blank", "_blank");
+      if (!popup || popup.closed) return false;
+      popup.opener = null;
+      var referrer = popup.document.createElement("meta");
+      referrer.name = "referrer"; referrer.content = "no-referrer";
+      popup.document.head.appendChild(referrer);
+      // An anchor's referrer policy is respected even when this click handler lives in
+      // the original document; assigning popup.location can use the opener's policy.
+      var destination = popup.document.createElement("a");
+      destination.href = url; destination.target = "_self";
+      destination.rel = "noreferrer"; destination.referrerPolicy = "no-referrer";
+      destination.hidden = true;
+      popup.document.body.appendChild(destination);
+      destination.click();
+      try { popup.focus(); } catch (ignored) {}
+      return true;
+    } catch (e) {
+      try { if (popup && !popup.closed) popup.close(); } catch (ignored) {}
+      return false;
+    }
+  }
+  function selectExternalLinkAddress() {
+    var field = $("#externalLinkAddress");
+    if (!field) return;
+    field.focus(); field.select(); field.setSelectionRange(0, field.value.length);
+  }
+  function externalCopyStatus(ok) {
+    var status = $("#externalLinkStatus");
+    if (!status) return;
+    status.dataset.state = ok ? "copied" : "manual";
+    status.textContent = LANG === "fa" ?
+      (ok ? "نشانی کپی شد؛ آن را در نوار نشانی مرورگر باز کنید." :
+        "کپی خودکار مجاز نشد. نشانی انتخاب شده است؛ از فرمان کپی مرورگر یا لمسِ طولانی استفاده کنید.") :
+      (ok ? "Link copied. Paste it into your browser address bar." :
+        "Automatic copying is unavailable. The address is selected; use your browser’s Copy command or long-press it.");
+    if (!ok) selectExternalLinkAddress();
+  }
+  function copyExternalLinkAddress() {
+    selectExternalLinkAddress();
+    // Synchronous copy is useful in frames where the async Clipboard API is disallowed.
+    var copied = false;
+    try { copied = document.execCommand("copy"); } catch (e) {}
+    if (copied) { externalCopyStatus(true); return; }
+    externalCopyStatus(false);
+    var copyingUrl = externalLinkUrl;
+    try {
+      if (navigator.clipboard && navigator.clipboard.writeText) {
+        navigator.clipboard.writeText(copyingUrl).then(function () {
+          if (externalLinkDialog.open && externalLinkUrl === copyingUrl) externalCopyStatus(true);
+        }, function () {
+          if (externalLinkDialog.open && externalLinkUrl === copyingUrl) externalCopyStatus(false);
+        });
+      }
+    } catch (e) {}
+  }
+  function ensureExternalLinkDialog() {
+    if (externalLinkDialog) return externalLinkDialog;
+    var dialog = document.createElement("dialog");
+    dialog.id = "externalLinkDialog"; dialog.className = "external-link-dialog";
+    dialog.setAttribute("aria-labelledby", "externalLinkTitle");
+    dialog.setAttribute("aria-describedby", "externalLinkExplanation");
+    dialog.innerHTML = '<h2 id="externalLinkTitle"></h2><p id="externalLinkExplanation"></p>' +
+      '<label id="externalLinkAddressLabel" for="externalLinkAddress"></label>' +
+      '<textarea id="externalLinkAddress" rows="3" dir="ltr" readonly spellcheck="false"></textarea>' +
+      '<p id="externalLinkStatus" class="external-link-status" role="status" aria-live="polite"></p>' +
+      '<div class="external-link-actions"><button type="button" class="ghost-btn" id="externalLinkCopy"></button>' +
+      '<button type="button" class="ghost-btn" id="externalLinkRetry"></button>' +
+      '<button type="button" class="ghost-btn" id="externalLinkClose"></button></div>' +
+      '<a id="externalLinkCurrent" class="external-link-current" target="_self" rel="noreferrer" hidden></a>';
+    document.body.appendChild(dialog); externalLinkDialog = dialog;
+    $("#externalLinkCopy").addEventListener("click", copyExternalLinkAddress);
+    $("#externalLinkRetry").addEventListener("click", function () {
+      if (openExternalMapWindow(externalLinkUrl)) { dialog.close(); return; }
+      $("#externalLinkStatus").textContent = LANG === "fa" ?
+        "بازکردن زبانه همچنان مسدود است؛ از کپی نشانی استفاده کنید." :
+        "New tabs are still blocked. Copy the address instead.";
+    });
+    $("#externalLinkClose").addEventListener("click", function () { dialog.close(); });
+    $("#externalLinkAddress").addEventListener("click", selectExternalLinkAddress);
+    dialog.addEventListener("keydown", function (e) {
+      e.stopPropagation(); // Keep map/search shortcuts out of the modal; native keys still work.
+    });
+    dialog.addEventListener("close", function () {
+      if (externalLinkTrigger && externalLinkTrigger.isConnected) {
+        try { externalLinkTrigger.focus({ preventScroll: true }); } catch (e) {}
+      }
+      externalLinkTrigger = null;
+    });
+    return dialog;
+  }
+  function showExternalLinkFallback(url, trigger) {
+    var dialog = ensureExternalLinkDialog(), fa = LANG === "fa";
+    externalLinkUrl = url; externalLinkTrigger = trigger;
+    $("#externalLinkTitle").textContent = fa ? "زبانهٔ جدید باز نشد" : "The new tab did not open";
+    $("#externalLinkExplanation").textContent = fa ?
+      "پیش‌نمایش یا مرورگر اجازهٔ بازکردن پنجرهٔ جدید را نداد. نشانی منبع را کپی کنید و در مرورگر باز کنید؛ نقشه در همین‌جا باقی می‌ماند." :
+      "The preview or browser did not allow a new window. Copy the source address and open it in your browser; the map will stay here.";
+    $("#externalLinkAddressLabel").textContent = fa ? "نشانی منبع" : "Source address";
+    $("#externalLinkAddress").value = url;
+    $("#externalLinkStatus").textContent = "";
+    $("#externalLinkStatus").removeAttribute("data-state");
+    $("#externalLinkCopy").textContent = fa ? "کپی نشانی" : "Copy link";
+    $("#externalLinkRetry").textContent = fa ? "تلاش دوباره" : "Try again";
+    $("#externalLinkClose").textContent = fa ? "بستن" : "Close";
+    // A top-level browser can offer ordinary same-tab navigation. Never replace an
+    // embedded preview with YouTube/NASA, which can refuse iframe embedding.
+    var current = $("#externalLinkCurrent"), embedded = true;
+    try { embedded = window.top !== window; } catch (e) {}
+    current.hidden = embedded;
+    current.href = url;
+    current.textContent = fa ? "خروج از برنامه و بازکردن منبع در همین زبانه" : "Leave the app and open the source in this tab";
+    if (!dialog.open) dialog.showModal();
+    $("#externalLinkCopy").focus();
+  }
+  var worldMapView = $("#view-map");
+  if (worldMapView) worldMapView.addEventListener("click", function (event) {
+    if (event.button !== 0 || event.ctrlKey || event.metaKey || event.shiftKey || event.altKey) return;
+    var node = event.target;
+    var link = node && node.closest ? node.closest("a[href]") : null;
+    if (!link || !worldMapView.contains(link) || link.hasAttribute("download")) return;
+    var url = externalMapUrl(link.getAttribute("href"));
+    if (!url) return;
+    event.preventDefault();
+    // The older company dossiers have inline window.open handlers. Do not run both.
+    event.stopImmediatePropagation();
+    if (!openExternalMapWindow(url)) showExternalLinkFallback(url, link);
+  }, true);
+
+  function recoverySource(url, label) {
+    if (!/^https:\/\//.test(url || "")) return "";
+    return '<a href="' + esc(url) + '" target="_blank" rel="noopener noreferrer">' + esc(label) + '</a>';
+  }
+  function recoveryOutcome(value, isLanding, method) {
+    var fa = LANG === "fa";
+    var labels = isLanding ? {
+      success: fa ? "فرود موفق" : "Landing confirmed", failure: fa ? "فرود ناموفق" : "Landing failed",
+      unknown: fa ? "نتیجهٔ فرود نامشخص" : "Landing not verified"
+    } : {
+      confirmed: fa ? "بازیابی تأییدشده" : "Recovery confirmed", partial: fa ? "بازیابی جزئی" : "Partial recovery",
+      failed: fa ? "بازیابی ناموفق" : "Recovery failed", unknown: fa ? "بازیابی نامشخص" : "Recovery unverified",
+      not_planned: fa ? "بازیابی در برنامه نبود" : "Recovery not planned"
+    };
+    if (isLanding && method === "tower_capture") {
+      labels.success = fa ? "گرفتن با برج موفق" : "Tower capture confirmed";
+      labels.failure = fa ? "گرفتن با برج ناموفق" : "Tower capture failed";
+      labels.unknown = fa ? "نتیجهٔ گرفتن نامشخص" : "Capture not verified";
+    }
+    var tone = value === "success" || value === "confirmed" ? "good" :
+      value === "failure" || value === "failed" ? "bad" : value === "partial" ? "partial" : "unknown";
+    return '<span class="recovery-outcome ' + tone + '">' + esc(labels[value] || labels.unknown) + '</span>';
+  }
+  function validRecoveryVideo(video, eventId) {
+    if (!video || video.verified !== true || video.official_source !== true || video.event_id !== eventId ||
+        ["landing", "recovery", "return_coverage", "mission_recap"].indexOf(video.kind) < 0 ||
+        !/^\d{4}-\d{2}-\d{2}$/.test(video.verified_on || "")) return false;
+    try {
+      var url = new URL(video.url);
+      if (url.protocol !== "https:" || url.username || url.password) return false;
+      if (url.hostname === "www.youtube.com" || url.hostname === "youtube.com") {
+        return url.pathname === "/watch" && /^[A-Za-z0-9_-]{11}$/.test(url.searchParams.get("v") || "");
+      }
+      if (url.hostname === "youtu.be") return /^\/[A-Za-z0-9_-]{11}\/?$/.test(url.pathname);
+      if (url.hostname === "images.nasa.gov") return url.pathname.indexOf("/details/") === 0 && url.pathname.length > 9;
+      if (url.hostname === "x.com" || url.hostname === "www.x.com" ||
+          url.hostname === "twitter.com" || url.hostname === "www.twitter.com") {
+        return /^\/[A-Za-z0-9_]{1,15}\/status\/\d{10,25}\/?$/.test(url.pathname) && !url.search;
+      }
+      return url.hostname === "plus.nasa.gov" && url.pathname.indexOf("/video/") === 0 && url.pathname.length > 7;
+    } catch (e) { return false; }
+  }
+  function renderRecoveryVideos(event) {
+    var seen = {}, videos = (Array.isArray(event.videos) ? event.videos : []).filter(function (video) {
+      if (!validRecoveryVideo(video, event.id) || seen[video.url]) return false;
+      seen[video.url] = true; return true;
+    });
+    if (!videos.length) return "";
+    var fa = LANG === "fa";
+    var labels = {
+      landing: fa ? "تماشای ویدئوی فرود" : "Watch landing video",
+      recovery: fa ? "تماشای عملیات بازیابی" : "Watch recovery footage",
+      return_coverage: fa ? "تماشای پوشش بازگشت" : "Watch return coverage",
+      mission_recap: fa ? "تماشای گزارش ویدئویی" : "Watch video report"
+    };
+    var h = '<section class="recovery-media" aria-label="' + (fa ? "ویدئوی همین رویداد" : "Video of this event") + '">';
+    videos.forEach(function (video) {
+      var title = fa ? video.title_fa : video.title_en;
+      var provider = fa ? video.provider_fa : video.provider_en;
+      var label = labels[video.kind];
+      h += '<a class="recovery-video-link" href="' + esc(video.url) + '" target="_blank" rel="noopener noreferrer"' +
+        ' data-video-id="' + esc(video.id) + '" data-video-kind="' + esc(video.kind) + '" aria-label="' +
+        esc(label + ' — ' + title + (fa ? ' — بازشدن در زبانهٔ جدید' : ' — opens in a new tab')) + '">' +
+        '<span class="recovery-play" aria-hidden="true">▶</span><span class="recovery-video-copy"><strong>' + esc(label) +
+        '</strong><span>' + esc(title) + '</span></span><span aria-hidden="true">↗</span></a>' +
+        '<div class="recovery-video-meta"><span>' + esc(provider) + '</span><span>' +
+        (fa ? "بررسی پیوند: " : "Link checked: ") + esc(recoveryDate(video.verified_on)) + '</span></div>';
+    });
+    return h + '<p class="recovery-video-note">' +
+      (fa ? "ویدئو در سایت مرجع باز می‌شود. پوشش آرشیوی ممکن است طولانی باشد؛ پخش به شرایط دسترسی سایت مقصد وابسته است." :
+      "Opens on the source website. Archived coverage may be long; playback depends on the destination’s access conditions.") + '</p></section>';
+  }
+
+  function renderRecoveryDetail(o) {
+    var fa = LANG === "fa", events = o.events.slice().sort(function (a, b) { return b.date.localeCompare(a.date); });
+    var types = { booster: fa ? "سکوی بوستر" : "Booster landing", capsule: fa ? "بازیابی کپسول" : "Capsule recovery",
+      runway: fa ? "باند فرود" : "Runway landing", mixed: fa ? "کپسول و باند" : "Capsule & runway",
+      tower: fa ? "برج گرفتن بوستر" : "Booster catch tower",
+      droneship: fa ? "شناور فرود دریایی" : "Landing droneship",
+      splashdown_zone: fa ? "پهنهٔ آب‌نشینی" : "Splashdown zone" };
+    var basis = { utc: fa ? "وقت جهانی" : "UTC", australia: fa ? "تاریخ محلی استرالیا" : "Australian local date",
+      japan: fa ? "وقت ژاپن" : "Japanese local date", us_eastern: fa ? "وقت شرق آمریکا" : "U.S. Eastern date",
+      china: fa ? "تاریخ محلی چین" : "Chinese local date", kazakhstan: fa ? "تاریخ محلی قزاقستان" : "Kazakhstan local date" };
+    var publishers = { "NASA": "ناسا", "JAXA": "سازمان فضایی ژاپن", "JAXA / ISAS": "سازمان فضایی ژاپن",
+      "Australian Space Agency": "سازمان فضایی استرالیا", "U.S. Space Force": "نیروی فضایی آمریکا", "Space.com": "رسانهٔ اسپیس",
+      "U.S. Air Force": "نیروی هوایی آمریکا", "Rocket Lab": "راکت‌لب", "SpaceX": "اسپیس‌ایکس",
+      "CMSA": "برنامهٔ فضایی سرنشین‌دار چین", "CNSA": "سازمان فضایی چین",
+      "China State Council / Xinhua": "درگاه دولت چین و شین‌هوا" };
+    var h = '<div class="recovery-dossier"><header class="recovery-header">' +
+      '<div class="recovery-heading"><span class="recovery-heading-icon">' + svgRecovery(C.recovery) + '</span><div>' +
+      '<div class="d-kicker">' + t("cat_recovery") + '</div><h2 class="d-title">' + esc(name(o)) + '</h2>' +
+      '<p class="recovery-location">' + esc(fa ? o.city_fa : o.city) + '</p></div></div>' +
+      '<div class="recovery-tags"><span class="recovery-type">' + esc(types[o.recovery_type] || "") + '</span><span>' +
+      (o.mobility === "mobile" ? (fa ? "سکوی متحرک" : "Mobile platform") : (fa ? "موقعیت مرجع" : "Reference location")) +
+      '</span><span>' + (fa ? "غیرزنده" : "Not live") + '</span></div></header>' +
+      '<div class="recovery-summary"><div><span>' + (fa ? "رویداد در این فهرست" : "Events in this list") + '</span><strong>' +
+      fmtNum(events.length) + '</strong></div><div><span>' + (fa ? "آخرین رویداد ثبت‌شده" : "Latest recorded event") +
+      '</span><strong class="recovery-summary-date">' + esc(recoveryDate(events[0].date)) + '</strong></div></div>' +
+      '<div class="recovery-tabs" role="tablist" aria-label="' + (fa ? "اطلاعات محل" : "Location details") + '">' +
+      '<button type="button" id="recoveryOverviewTab" role="tab" aria-selected="true" aria-controls="recoveryOverview" data-recovery-tab="overview">' +
+      (fa ? "معرفی محل" : "Overview") + '</button>' +
+      '<button type="button" id="recoveryHistoryTab" role="tab" aria-selected="false" aria-controls="recoveryHistory" tabindex="-1" data-recovery-tab="history">' +
+      (fa ? "تاریخچهٔ فرود و بازیابی" : "Landing & recovery history") + '</button></div>' +
+      '<section id="recoveryOverview" class="recovery-tab-panel" role="tabpanel" aria-labelledby="recoveryOverviewTab" tabindex="0">' +
+      (o.image ? '<figure class="recovery-hero">' +
+        '<img src="' + esc(o.image.file) + '" alt="' + esc(fa ? o.image.caption_fa : o.image.caption_en) + '" loading="lazy" decoding="async">' +
+        '<figcaption><span class="recovery-hero-caption">' + esc(fa ? o.image.caption_fa : o.image.caption_en) + '</span>' +
+        '<span class="recovery-hero-credit">' + (fa ? "عکس: " : "Photo: ") + esc(fa ? o.image.credit_fa : o.image.credit_en) +
+        ' · <bdi>' + esc(o.image.license) + '</bdi>' +
+        (o.image.source_url ? ' · ' + recoverySource(o.image.source_url, fa ? "منبع تصویر" : "Image source") : '') +
+        '</span></figcaption></figure>' : '') +
+      '<div class="recovery-section-label">' + (fa ? "شناسنامهٔ محل" : "Facility profile") + '</div>' +
+      '<p class="recovery-description">' + esc(desc(o)) + '</p><dl class="recovery-facts">';
+    [
+      [fa ? "کشور محل بازگشت" : "Return-location country", fa ? o.country_fa : o.country, ""],
+      [fa ? "نوع محل" : "Facility type", types[o.recovery_type], ""],
+      [fa ? "بهره‌بردار و گروه مرتبط" : "Operator / associated teams", fa ? o.op_fa : o.op, "recovery-fact-wide"],
+      [fa ? "روش فرود و بازیابی" : "Landing and recovery method", recoveryText(o, "method"), "recovery-fact-wide"],
+      [fa ? "وضعیت و دامنهٔ اطلاعات" : "Status and information scope", (fa ? o.activity_fa : o.activity_en) ||
+        (fa ? "سابقهٔ مستند؛ وضعیت آمادگی کنونی محل از این فهرست استنباط نمی‌شود." : "Documented history; current facility readiness is not inferred from this list."), "recovery-fact-wide"]
+    ].forEach(function (row) { h += '<div class="' + row[2] + '"><dt>' + esc(row[0]) + '</dt><dd>' + esc(row[1]) + '</dd></div>'; });
+    h += '</dl>';
+    if (o.mobility === "mobile" && (o.mobility_note_fa || o.mobility_note_en)) {
+      h += '<p class="recovery-location-disclosure recovery-mobility-note"><strong>' +
+        (fa ? "این سکو ثابت نیست." : "This platform is not fixed.") + '</strong><span>' +
+        esc(fa ? o.mobility_note_fa : o.mobility_note_en) + '</span></p>';
+    }
+    h += '<div class="recovery-position"><div class="recovery-section-label">' + (fa ? "موقعیت و دقت مکانی" : "Position & precision") + '</div><p>' +
+      esc(recoveryText(o,"coordinate_note")) + '</p><div class="recovery-position-bottom"><bdi class="recovery-coordinates">' +
+      String(o.lat) + ', ' + String(o.lon) + '</bdi>' + recoverySource(o.coordinate_source_url,
+      fa ? "مرجع موقعیت" : "Location reference") + '</div>' +
+      (o.coordinate_supporting_sources || []).map(function (source) {
+        return '<div class="recovery-position-support">' + recoverySource(source.url, fa ? source.fa : source.en) + '</div>';
+      }).join('') +
+      (o.coordinate_audit ? '<p class="recovery-position-audit">' + esc(fa ? o.coordinate_audit.fa : o.coordinate_audit.en) + '</p>' : '') + '</div>' +
+      '<p class="recovery-small">' + (fa ? "نقطهٔ مرجع، مختصات دقیق تماس یا مرز ایمنی نیست و مجوز ورود به محل محسوب نمی‌شود." :
+      "Reference points are not exact touchdown positions, safety boundaries or access permissions.") + '</p></section>' +
+      '<section id="recoveryHistory" class="recovery-tab-panel" role="tabpanel" aria-labelledby="recoveryHistoryTab" tabindex="0" hidden>' +
+      (function () {
+        var complete = o.history_coverage === "complete";
+        var registry = o.landing_registry;
+        var chip = complete ? (fa ? "پوشش کامل" : "Complete coverage") : (fa ? "در حال تکمیل" : "In progress");
+        var text;
+        if (complete && registry) {
+          text = fa ? "رویدادهای برجسته در خط زمان روایت شده‌اند و فهرست کامل فرودها در انتهای همین زبانه آمده است." :
+            "Key events are narrated on the timeline; the complete landing list appears at the end of this tab.";
+        } else if (complete) {
+          text = fa ? "بر پایهٔ منابع بررسی‌شده، همهٔ بازگشت‌های مداری ثبت‌شدهٔ این محل در همین فهرست آمده‌اند." :
+            "Per the reviewed sources, every recorded orbital return at this location is listed here.";
+        } else if (registry) {
+          text = fa ? "خط زمان، رویدادهای منتخب را روایت می‌کند و فهرست انتهای زبانه نیز هنوز کامل نیست؛ دامنهٔ آن در همان‌جا اعلام شده است." :
+            "The timeline narrates selected events and the list at the end of this tab is itself not yet complete; its scope is stated there.";
+        } else {
+          text = fa ? "این فهرست منتخب است؛ نه تاریخچهٔ کامل همهٔ فرودهای محل." :
+            "Selected, sourced events — not a complete history of this location.";
+        }
+        return '<div class="recovery-coverage' + (complete ? ' is-complete' : '') + '"><div><strong>' +
+          (fa ? "رویدادهای مستند" : "Documented events") + '</strong><span>' + chip + '</span></div><p>' + text + '</p></div>';
+      })() +
+      (o.coverage_start && o.coverage_end ? '<p class="recovery-coverage-range">' +
+        (fa ? "بازهٔ رویدادهای این فهرست: " : "Events in this list: ") + esc(recoveryDate(o.coverage_start)) +
+        (fa ? " تا " : " to ") + esc(recoveryDate(o.coverage_end)) + '</p>' : '') +
+      '<div class="recovery-timeline">';
+    var lastYear = "";
+    events.forEach(function (e) {
+      var year = e.date.slice(0, 4);
+      if (year !== lastYear) {
+        h += '<div class="recovery-year">' + Number(year).toLocaleString(fa ? "fa-IR" : "en", { useGrouping: false }) + '</div>';
+        lastYear = year;
+      }
+      h += '<article class="recovery-event" data-event-id="' + esc(e.id) + '" data-landing-outcome="' + esc(e.landing_outcome) + '">' +
+        '<div class="recovery-event-top"><time datetime="' + esc(e.date) + '">' + esc(recoveryDate(e.date)) + '</time></div>' +
+        '<h3>' + esc(fa ? e.fa : e.en) + '</h3><p class="recovery-vehicle">' + esc(recoveryText(e,"vehicle")) + '</p>';
+      if (e.summary_fa || e.summary_en) h += '<p class="recovery-event-brief">' + esc(recoveryText(e,"summary")) + '</p>';
+      h += '<div class="recovery-outcomes">' + recoveryOutcome(e.landing_outcome,true,e.landing_method) + recoveryOutcome(e.recovery_outcome,false) + '</div>';
+      if (e.site_role === "intended_target") {
+        h += '<p class="recovery-location-disclosure"><strong>' +
+          (fa ? "این محل فقط مقصد برنامه‌ریزی‌شده بود؛ فرود اینجا رخ نداد." : "This site was the intended target; touchdown occurred elsewhere.") +
+          '</strong><span>' + esc(fa ? e.actual_location_fa : e.actual_location_en) + '</span></p>';
+      }
+      if (e.recovery_scope_fa || e.recovery_scope_en) {
+        h += '<p class="recovery-scope-note">' + esc(fa ? e.recovery_scope_fa : e.recovery_scope_en) + '</p>';
+      }
+      h += '<details class="recovery-event-details"><summary><span>' + (fa ? "جزئیات و منبع رویداد" : "Event details and sources") +
+        '</span><span class="recovery-expand" aria-hidden="true"></span></summary><div class="recovery-event-reading">';
+      [
+        ["context", fa ? "زمینهٔ مأموریت" : "Mission context"],
+        ["sequence", fa ? "روند فرود و بازیابی" : "Landing & recovery sequence"],
+        ["significance", fa ? "نتیجه و اهمیت" : "Outcome & significance"]
+      ].forEach(function (part) {
+        if (e[part[0] + (fa ? "_fa" : "_en")]) {
+          h += '<section class="recovery-story-section"><h4>' + part[1] + '</h4><p>' + esc(recoveryText(e,part[0])) + '</p></section>';
+        }
+      });
+      h += renderRecoveryVideos(e);
+      h += '<div class="recovery-evidence"><div class="recovery-evidence-heading">' +
+        (fa ? "منابع و یادداشت ثبت" : "Sources & record notes") + '</div><div class="recovery-primary-source">' +
+        recoverySource(e.source_url, fa ? "گزارش " + (publishers[e.source_publisher] || "منبع رویداد") : e.source_publisher + " report") + '</div>';
+      (e.supporting_sources || []).forEach(function (source) {
+        h += '<div class="recovery-supporting-source">' + recoverySource(source.url, fa ? source.fa : source.en) + '</div>';
+      });
+      h += '<dl class="recovery-evidence-meta"><div><dt>' + (fa ? "مبنای تاریخ" : "Date basis") + '</dt><dd>' +
+        esc(basis[e.date_basis] || basis.utc) + '</dd></div><div><dt>' + (fa ? "بررسی ثبت‌شده" : "Recorded review") + '</dt><dd>' +
+        esc(recoveryDate(e.verified_on || o.reviewed_on)) + '</dd></div></dl><p class="recovery-record-note">' +
+        esc(recoveryText(e,"note")) + '</p></div></div></details></article>';
+    });
+    return h + '</div>' + renderRecoveryRegistry(o) + '<p class="recovery-small">' +
+      (fa ? "«بازیابی نامشخص» یعنی تأیید مستقل آن در منبع ثبت نشده است؛ نه اینکه بازیابی شکست خورده باشد." :
+      "Unverified recovery means a separate confirmation is not recorded in the source; it does not mean recovery failed.") +
+      '</p></section><footer class="recovery-footer"><span>' + (fa ? "آخرین بررسی منابع" : "Sources reviewed") + '</span><span>' +
+      esc(recoveryDate(o.reviewed_on)) + '</span></footer></div>';
+  }
+  function renderRecoveryRegistry(o) {
+    var reg = o.landing_registry;
+    if (!reg || !Array.isArray(reg.entries) || !reg.entries.length) return "";
+    var fa = LANG === "fa";
+    var statusLabels = {
+      success: fa ? "موفق" : "Success", failure: fa ? "ناموفق" : "Failed",
+      partial: fa ? "نیمه‌موفق" : "Partial", no_attempt: fa ? "بدون تلاش" : "No attempt"
+    };
+    var rows = "";
+    reg.entries.forEach(function (r) {
+      var note = fa ? r.n_fa : r.n_en;
+      rows += '<tr><td class="recovery-registry-date"><time datetime="' + esc(r.d) + '">' + esc(recoveryDate(r.d)) + '</time></td>' +
+        '<td class="recovery-registry-mission"><bdi>' + esc(r.m || "—") + '</bdi>' +
+        (r.v ? '<span class="recovery-registry-vehicle"><bdi>' + esc(r.v) + '</bdi></span>' : '') +
+        (note ? '<span class="recovery-registry-note">' + esc(note) + '</span>' : '') + '</td>' +
+        '<td class="recovery-registry-status"><span class="recovery-registry-dot ' + esc(r.o) + '"></span>' +
+        esc(statusLabels[r.o] || r.o) + '</td></tr>';
+    });
+    return '<details class="recovery-registry"><summary><span>' +
+      (fa ? "فهرست کامل فرودها (" + fmtNum(reg.entries.length) + " مورد)" : "Full landing list (" + fmtNum(reg.entries.length) + " entries)") +
+      '</span><span class="recovery-expand" aria-hidden="true"></span></summary>' +
+      '<div class="recovery-registry-body">' +
+      '<p class="recovery-registry-scope">' + esc(fa ? reg.scope_fa : reg.scope_en) + '</p>' +
+      (!reg.complete ? '<p class="recovery-registry-partial">' +
+        (fa ? "این فهرست هنوز کامل نیست و در گام‌های بعدی تکمیل می‌شود." : "This list is not yet complete and will be extended in later steps.") + '</p>' : '') +
+      '<table class="recovery-registry-table"><thead><tr><th>' + (fa ? "تاریخ" : "Date") + '</th><th>' +
+      (fa ? "مأموریت / وسیله" : "Mission / vehicle") + '</th><th>' + (fa ? "نتیجه" : "Result") + '</th></tr></thead><tbody>' +
+      rows + '</tbody></table>' +
+      '<p class="recovery-registry-basis">' + esc(fa ? reg.basis_fa : reg.basis_en) + '</p>' +
+      '<div class="recovery-registry-source">' + recoverySource(reg.source_url, fa ? "منبع فهرست" : "List source") +
+      '<span>' + (fa ? "بررسی پیوند: " : "Checked: ") + esc(recoveryDate(reg.verified_on)) + '</span></div>' +
+      '</div></details>';
+  }
+  function switchRecoveryTab(button) {
+    var root = button.closest(".recovery-dossier");
+    if (!root) return;
+    root.querySelectorAll("[data-recovery-tab]").forEach(function (tab) {
+      var selected = tab === button;
+      tab.setAttribute("aria-selected", String(selected));
+      tab.tabIndex = selected ? 0 : -1;
+      root.querySelector("#" + tab.getAttribute("aria-controls")).hidden = !selected;
+    });
+  }
+  on("#detailBody", "click", function (event) {
+    var button = event.target.closest("button[data-recovery-tab]");
+    if (button) { event.preventDefault(); switchRecoveryTab(button); }
+  });
+  on("#detailBody", "keydown", function (event) {
+    var button = event.target.closest("button[data-recovery-tab]");
+    if (!button || ["ArrowLeft", "ArrowRight", "Home", "End"].indexOf(event.key) < 0) return;
+    var tabs = button.parentElement.querySelectorAll("[data-recovery-tab]");
+    var next = event.key === "Home" ? tabs[0] : event.key === "End" ? tabs[tabs.length-1] :
+      (button === tabs[0] ? tabs[1] : tabs[0]);
+    event.preventDefault(); switchRecoveryTab(next); next.focus();
+  });
+
   function openDetail(p) {
     if (!p) return;
     if (!p.o) {
@@ -2256,6 +3069,12 @@
     var cat = p.cat || (p.o ? p.o.cat : "");
     var kind = p.kind || cat;
 
+    if (cat === "recovery" || kind === "recovery") {
+      $("#detailBody").innerHTML = renderRecoveryDetail(p.o);
+      $("#detail").classList.add("open");
+      $("#detail").scrollTop = 0;
+      return;
+    }
     if (cat === "country" || kind === "country" || (p.o && p.o.cat === "country")) {
       $("#detailBody").innerHTML = renderCountryProfile(p);
       $("#detail").classList.add("open");
@@ -2321,7 +3140,7 @@
     $("#detail").classList.add("open");
   }
   on("#detailClose", "click", function () { var d = $("#detail"); if (d) d.classList.remove("open"); });
-  on("#mapSearch", "input", function () { renderMarkers(); renderList(); });
+  on("#mapSearch", "input", function () { clusterMode = null; renderMarkers(); renderList(); });
 
   function openSide(focus) {
     var sb = $("#sidebar"), fab = $("#sideOpen");
@@ -2338,6 +3157,7 @@
   on("#sideOpen", "click", function () { openSide(true); });
   on("#sideClose", "click", function () {
     var i = $("#mapSearch"); if (i) i.value = "";
+    clusterMode = null;
     renderMarkers(); renderList(); closeSide();
   });
   document.addEventListener("keydown", function (e) {
@@ -3135,10 +3955,15 @@
   Promise.all([
     fetch("data/companies.json?_t=" + Date.now()).then(function (r) { return r.json(); }),
     fetch("data/sites.json?_t=" + Date.now()).then(function (r) { return r.json(); }),
-    fetch("data/missions.json?_t=" + Date.now()).then(function (r) { return r.json(); })
+    fetch("data/missions.json?_t=" + Date.now()).then(function (r) { return r.json(); }),
+    fetch("data/recovery_sites.json").then(function (r) {
+      if (!r.ok) throw new Error("Recovery data unavailable");
+      return r.json();
+    }).catch(function (e) { console.warn(e.message); return { sites: [] }; })
   ]).then(function (res) {
     DATA.companies = res[0]; DATA.sites = res[1]; DATA.missions = res[2];
-    initMap(); buildLayerBar(); renderList(); buildFilters(); renderMissions(); loadUpcoming(); loadNextLaunch(); loadLiveLaunches();
+    DATA.recoveries = res[3] && Array.isArray(res[3].sites) ? res[3].sites.filter(validRecoverySite) : [];
+    initMap(); buildLayerBar(); renderList(); buildFilters(); renderMissions(); loadUpcoming(); loadNextLaunch(); loadLiveLaunches(); loadSiteUpcomingData();
   }).catch(function (e) {
     var el = $("#mapStatus");
     if (el) { el.style.display = "block"; el.textContent = "خطا در بارگذاری داده‌ها / Data load error: " + e; }
