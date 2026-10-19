@@ -5,7 +5,7 @@ if(!chromium){console.log('SKIP: browser checks skipped — playwright is not in
 const assert=require('node:assert/strict');
 const fs=require('node:fs');
 const BASE=process.env.ORBITA_URL || 'http://127.0.0.1:5173';
-const output='/home/user/.cache/link-fix';fs.mkdirSync(output,{recursive:true});
+const output=path.join(require('node:os').tmpdir(),'link-fix');fs.mkdirSync(output,{recursive:true});
 const report=[];const pass=s=>{report.push(s);console.log('PASS:',s)};
 async function setup(browser, mode, mobile=false){
  const context=await browser.newContext({viewport:mobile?{width:390,height:844}:{width:1280,height:950},isMobile:mobile,hasTouch:mobile,ignoreHTTPSErrors:true,reducedMotion:'reduce'});

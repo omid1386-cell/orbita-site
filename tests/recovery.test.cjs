@@ -72,7 +72,7 @@ if(fs.existsSync(path.join(backup,'app.js.gz'))){
   assert(fs.readFileSync(path.join(root,'assets/css/app.css'),'utf8').startsWith(zlib.gunzipSync(fs.readFileSync(path.join(backup,'app.css.gz'))).toString()));
 }
 console.log('PASS: 20 sites, 70 sourced events and 31 official video links, honest coverage/coordinates, existing marker artwork and basemaps unchanged.');
-const output='/home/user/.cache/recovery-qa';fs.mkdirSync(output,{recursive:true});
+const output=path.join(require('node:os').tmpdir(),'recovery-qa');fs.mkdirSync(output,{recursive:true});
 const errors=[],checks=[];
 const vm=require('node:vm');
 const appCode=fs.readFileSync(path.join(root,'assets/js/app.js'),'utf8');
