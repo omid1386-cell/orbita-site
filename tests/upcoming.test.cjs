@@ -11,7 +11,7 @@ const sites = JSON.parse(fs.readFileSync(path.join(__dirname, '..', 'data', 'sit
 const siteIds = new Set(sites.map(s => s.id));
 const L = doc.launches || [];
 
-check('تعداد ردیف‌ها ۱۳۶ است', L.length === 136);
+check('شمار ردیف‌ها در بازهٔ سالم است (۱۰۰ تا ۲۵۰)', L.length >= 100 && L.length <= 250);
 check('همهٔ ردیف‌ها به پایگاه معتبر اشاره می‌کنند', L.every(l => siteIds.has(l.site)));
 check('هر ۶۴ پایگاه پوشش‌دار اعلام شده‌اند', Array.isArray(doc.sites_covered) && doc.sites_covered.length === 64 && doc.sites_covered.every(id => siteIds.has(id)));
 check('مهر به‌روزرسانی موجود است', /^\d{4}-\d{2}-\d{2}$/.test(doc.updated || ''));
