@@ -13,6 +13,7 @@
     fa: {
       tagline: "سامانهٔ اطلاعات هوافضا", tab_map: "نقشهٔ جهانی", tab_missions: "پروژه‌های فضایی",
       cat_launch: "شرکت‌های پرتاب", cat_propulsion: "شرکت‌های پیشران", cat_agency: "سازمان‌های فضایی",
+      cat_satmaker: "سازندگان ماهواره و قطعات",
       cat_site: "پایگاه‌های پرتاب", cat_recovery: "فرود و بازیابی", results: "نتایج",
       ph_search_map: "جستجوی شرکت، پایگاه یا کشور...", ph_search_mission: "جستجو در نتایج بارگذاری‌شده...",
       project: "پروژه", upcoming: "پرتاب‌های پیش‌رو (زنده)", up_loading: "در حال دریافت از سرویس زندهٔ The Space Devs…",
@@ -59,6 +60,7 @@
     en: {
       tagline: "Aerospace Intelligence Platform", tab_map: "World Map", tab_missions: "Space Projects",
       cat_launch: "Launch companies", cat_propulsion: "Propulsion companies", cat_agency: "Space agencies",
+      cat_satmaker: "Satellite & component makers",
       cat_site: "Launch sites", cat_recovery: "Landing & recovery", results: "Results",
       ph_search_map: "Search company, site or country...", ph_search_mission: "Search loaded results...",
       project: "projects", upcoming: "Upcoming launches (live)", up_loading: "Fetching from The Space Devs…",
@@ -146,6 +148,18 @@
       '<path d="M16 37l-3.4-13h6.8z" fill="' + c + '"/></svg>';
   }
   // A new category only; all existing marker artwork and dimensions are untouched.
+  C.satmaker = "#a3e635"; // سبز لیمویی — رنگ اختصاصی دستهٔ سازندگان ماهواره و قطعات
+  function svgSatmaker(c) { // rounded-square pin + satellite glyph (body, solar panels, antenna)
+    return '<svg width="30" height="38" viewBox="0 0 30 38" aria-hidden="true">' +
+      '<rect x="3" y="2.6" width="24" height="24" rx="7.5" fill="' + c + '" stroke="#fff" stroke-opacity=".55" stroke-width="1.4"/>' +
+      '<path d="M15 37l-5.6-10.6h11.2z" fill="' + c + '"/>' +
+      '<rect x="11.6" y="10.6" width="6.8" height="8.2" rx="1.4" fill="#040a12"/>' +
+      '<rect x="4.4" y="12.3" width="5.6" height="4.8" rx="1" fill="#040a12"/>' +
+      '<rect x="20" y="12.3" width="5.6" height="4.8" rx="1" fill="#040a12"/>' +
+      '<path d="M10 14.7h1.6M18.4 14.7H20" stroke="#040a12" stroke-width="1.3"/>' +
+      '<circle cx="15" cy="8" r="1.5" fill="#040a12"/>' +
+      '<path d="M15 9.5v1.1" stroke="#040a12" stroke-width="1.2"/></svg>';
+  }
   C.recovery = "#38bdf8";
   function svgRecovery(c) {
     return '<svg width="30" height="38" viewBox="0 0 30 38" aria-hidden="true">' +
@@ -156,6 +170,7 @@
   }
   function iconFor(cat, status) {
     if (cat === "recovery") return svgRecovery(C.recovery);
+    if (cat === "satmaker") return svgSatmaker(C.satmaker);
     if (cat === "launch") return svgLaunch(C.launch);
     if (cat === "propulsion") return svgPropulsion(C.propulsion);
     if (cat === "agency") return svgAgency(C.agency);
@@ -167,7 +182,7 @@
   window.DATA = DATA;
 
   var markers = [], map = null;
-  var filters = { launch: true, propulsion: true, agency: true, site: true, recovery: false };
+  var filters = { launch: true, propulsion: true, agency: true, satmaker: true, site: true, recovery: false };
   var SORT = "new";   /* newest launch first — the user asked for this ordering */
 
   var $ = function (s) { return document.querySelector(s) || null; };
@@ -671,6 +686,7 @@
       { k: "launch", n: DATA.companies.filter(function (x) { return x.cat === "launch"; }).length },
       { k: "propulsion", n: DATA.companies.filter(function (x) { return x.cat === "propulsion"; }).length },
       { k: "agency", n: DATA.companies.filter(function (x) { return x.cat === "agency"; }).length },
+      { k: "satmaker", n: DATA.companies.filter(function (x) { return x.cat === "satmaker"; }).length },
       { k: "site", n: DATA.sites.length },
       { k: "recovery", n: DATA.recoveries.length }
     ];
@@ -1039,7 +1055,7 @@
       h += '<div><span style="color:var(--muted);">' + (isFa ? "مدار هدف:" : "Orbit:") + '</span> <b>' + esc(l.orbit || "LEO") + '</b></div>';
       h += '</div>';
 
-      h += '<div style="background:rgba(245, 158, 11, 0.08); border:1px solid rgba(245, 158, 11, 0.25); border-radius:5px; padding:8px; font-size:11px; line-height:1.5; color:#fde68a;">';
+      h += '<div style="background:rgba(245, 158, 11, 0.08); border:1px solid rgba(245, 158, 11, 0.25); border-radius:5px; padding:8px; font-size:11px; line-height:1.5; color:var(--amber);">';
       h += l.analysis;
       h += '</div>';
 
@@ -1057,7 +1073,7 @@
     h += '<div id="siteTabAnalysis" class="site-tab-content">';
     
     h += '<div style="background:var(--bg2); border:1px solid var(--line); border-radius:6px; padding:10px;">';
-    h += '<div style="font-size:12px; font-weight:bold; color:#f59e0b; margin-bottom:6px;">🌍 ' + (isFa ? "تحلیل دلایل انتخاب موقعیت جغرافیایی" : "Geographical Positioning Analysis") + '</div>';
+    h += '<div style="font-size:12px; font-weight:bold; color:var(--amber); margin-bottom:6px;">🌍 ' + (isFa ? "تحلیل دلایل انتخاب موقعیت جغرافیایی" : "Geographical Positioning Analysis") + '</div>';
     h += '<div style="font-size:11px; color:var(--text); line-height:1.6; text-align:justify;">' + esc(o.geo_analysis || "") + '</div>';
     h += '</div>';
 
@@ -1082,12 +1098,17 @@
 
   /* ============ upcoming launches per site (tab: پرتاب‌های پیشِ رو) ============ */
   var UPC = { data: null, live: null, liveOk: false };
+  var UPL = { data: null };
 
   function loadSiteUpcomingData() {
     fetch("data/upcoming.json?_t=" + Date.now())
       .then(function (r) { if (!r.ok) throw new Error("upcoming data unavailable"); return r.json(); })
       .then(function (j) { UPC.data = j; syncUpcomingLive(); })
       .catch(function (e) { console.warn("upcoming:", e.message); });
+    fetch("data/upcoming_landings.json?_t=" + Date.now())
+      .then(function (r) { if (!r.ok) throw new Error("upcoming landings unavailable"); return r.json(); })
+      .then(function (j) { UPL.data = j; })
+      .catch(function (e) { console.warn("upcoming landings:", e.message); });
   }
 
   function syncUpcomingLive() {
@@ -1314,6 +1335,8 @@
       target = $("#compTabCAgency");
     } else if (tabId === "cSite") {
       target = $("#compTabCSite");
+    } else if (tabId === "cRecovery") {
+      target = $("#compTabCRecovery");
     } else if (tabId === "overview") {
       target = $("#compTabOverview");
     } else if (tabId === "vehicles") {
@@ -1400,7 +1423,7 @@
       if (flagshipEngine) {
         h += '<div style="background:var(--bg2); border:1px solid var(--line); border-radius:8px; padding:10px; margin-top:8px; display:flex; justify-content:space-between; align-items:center;">';
         h += '<div><div style="font-size:10px; color:var(--muted);">' + (isFa ? "⚙️ موتور پرچم‌دار اصلی:" : "⚙️ Flagship Engine:") + '</div>';
-        h += '<b style="font-size:12px; color:#fff;">' + esc(flagshipEngine) + '</b></div>';
+        h += '<b style="font-size:12px; color:var(--text);">' + esc(flagshipEngine) + '</b></div>';
         h += '<span style="background:rgba(16,185,129,0.15); border:1px solid rgba(16,185,129,0.3); color:#10b981; font-size:10px; font-weight:bold; padding:2px 8px; border-radius:10px;">' + esc(flagshipStatus) + '</span>';
         h += '</div>';
       }
@@ -1451,11 +1474,11 @@
           h += '<div style="display:flex; align-items:center; gap:6px; flex-wrap:wrap;">';
           h += '<span style="color:#38bdf8; font-size:9.5px; background:rgba(56, 189, 248, 0.15); border:1px solid rgba(56, 189, 248, 0.3); padding:2px 7px; border-radius:12px; font-weight:bold;"><bdi>' + esc(engProp) + '</bdi></span>';
           h += '<span style="color:#10b981; font-weight:bold; font-size:9.5px; background:rgba(16, 185, 129, 0.12); border:1px solid rgba(16, 185, 129, 0.3); padding:2px 7px; border-radius:12px;"><bdi>' + esc(engSt) + '</bdi></span>';
-          h += '<span style="color:var(--muted); font-size:10px; opacity:0.8;">▼</span>';
+          h += '<span style="color:#8ba3c4; font-size:10px; opacity:0.8;">▼</span>';
           h += '</div>';
           h += '</summary>';
           
-          h += '<div style="padding:10px 12px; border-top:1px solid var(--line); background:rgba(0,0,0,0.2); font-size:10.5px; line-height:1.6; color:var(--text);">';
+          h += '<div style="padding:10px 12px; border-top:1px solid var(--line); background:rgba(0,0,0,0.2); font-size:10.5px; line-height:1.6; color:#e7f0fb;">';
           if (eng.thrust_fa || eng.thrust_en) {
             h += '<div><b>' + (isFa ? "رانش (Thrust):" : "Thrust:") + '</b> ' + esc(isFa ? (eng.thrust_fa || eng.thrust_en) : (eng.thrust_en || eng.thrust_fa)) + '</div>';
           }
@@ -1463,7 +1486,7 @@
             h += '<div><b>' + (isFa ? "تکانه ویژه (Isp):" : "Specific Impulse:") + '</b> ' + esc(isFa ? (eng.isp_fa || eng.isp_en) : (eng.isp_en || eng.isp_fa)) + '</div>';
           }
           if (eng.engineering_desc_fa || eng.engineering_desc_en) {
-            h += '<div style="margin-top:4px; color:var(--muted);">' + esc(isFa ? (eng.engineering_desc_fa || eng.engineering_desc_en) : (eng.engineering_desc_en || eng.engineering_desc_fa)) + '</div>';
+            h += '<div style="margin-top:4px; color:#8ba3c4;">' + esc(isFa ? (eng.engineering_desc_fa || eng.engineering_desc_en) : (eng.engineering_desc_en || eng.engineering_desc_fa)) + '</div>';
           }
           h += '</div>';
           h += '</details>';
@@ -1511,7 +1534,7 @@
       h += '<div style="display:grid; grid-template-columns:repeat(4, 1fr); gap:6px; text-align:center;">';
       
       h += '<div style="background:rgba(0,0,0,0.3); padding:6px; border-radius:6px; border:1px solid var(--line);">';
-      h += '<div style="font-size:15px; font-weight:bold; color:#fff;">' + esc(stats.total_launches) + '</div>';
+      h += '<div style="font-size:15px; font-weight:bold; color:var(--text);">' + esc(stats.total_launches) + '</div>';
       h += '<div style="font-size:9.5px; color:var(--muted);">' + (isFa ? "کل پرتاب‌ها" : "Total") + '</div>';
       h += '</div>';
 
@@ -1527,8 +1550,8 @@
 
       var srText = isFa ? (stats.success_rate || "۹۵٪") : (stats.success_rate ? stats.success_rate.replace(/[۰-۹]/g, function(c){ return "0123456789"["۰۱۲۳۴۵۶۷۸۹".indexOf(c)]; }) : "95%");
       h += '<div style="background:rgba(245, 158, 11, 0.1); padding:6px; border-radius:6px; border:1px solid rgba(245, 158, 11, 0.3);">';
-      h += '<div style="font-size:15px; font-weight:bold; color:#f59e0b;">' + esc(srText) + '</div>';
-      h += '<div style="font-size:9.5px; color:#f59e0b;">' + (isFa ? "نرخ موفقیت" : "Success Rate") + '</div>';
+      h += '<div style="font-size:15px; font-weight:bold; color:var(--amber);">' + esc(srText) + '</div>';
+      h += '<div style="font-size:9.5px; color:var(--amber);">' + (isFa ? "نرخ موفقیت" : "Success Rate") + '</div>';
       h += '</div>';
 
       h += '</div></div>';
@@ -1540,7 +1563,7 @@
         trend.forEach(function(item) { if (item.count > maxCount) maxCount = item.count; });
         
         h += '<div style="background:var(--bg2); border:1px solid var(--line); border-radius:8px; padding:10px; margin-top:8px;">';
-        h += '<div style="font-size:11.5px; font-weight:bold; color:#f59e0b; margin-bottom:8px;">📈 ' + (isFa ? "نمودار سالانه تعداد پرتاب‌ها" : "Annual Launch Trend") + '</div>';
+        h += '<div style="font-size:11.5px; font-weight:bold; color:var(--amber); margin-bottom:8px;">📈 ' + (isFa ? "نمودار سالانه تعداد پرتاب‌ها" : "Annual Launch Trend") + '</div>';
         h += '<div style="display:flex; align-items:flex-end; gap:8px; height:80px; padding-top:10px; border-bottom:1px solid var(--line); border-left:1px solid var(--line); padding-left:6px;">';
         
         trend.forEach(function(tItem) {
@@ -1567,7 +1590,7 @@
         h += '<span style="background:rgba(56, 189, 248, 0.12); border:1px solid rgba(56, 189, 248, 0.3); color:#38bdf8; padding:2px 8px; border-radius:10px; font-size:10px; font-weight:bold;">' + esc(m) + '</span>';
       });
       oCaps.forEach(function(ob) {
-        h += '<span style="background:rgba(245, 158, 11, 0.12); border:1px solid rgba(245, 158, 11, 0.3); color:#f59e0b; padding:2px 8px; border-radius:10px; font-size:10px; font-weight:bold;"><code>' + esc(ob) + '</code></span>';
+        h += '<span style="background:rgba(245, 158, 11, 0.12); border:1px solid rgba(245, 158, 11, 0.3); color:var(--amber); padding:2px 8px; border-radius:10px; font-size:10px; font-weight:bold;"><code>' + esc(ob) + '</code></span>';
       });
       h += '</div></div>';
 
@@ -1624,7 +1647,7 @@
 
         h += '<div style="background:var(--bg2); border:1px solid var(--line); border-radius:8px; padding:10px; margin-bottom:8px;">';
         h += '<div style="display:flex; justify-content:space-between; align-items:center; border-bottom:1px solid var(--line); padding-bottom:6px; margin-bottom:8px;">';
-        h += '<div><span style="font-size:13px; font-weight:bold; color:#fff;">🚀 <bdi>' + esc(rName) + '</bdi></span> <small style="color:var(--muted); font-size:10px;">(' + esc(v.maiden_flight || "—") + ')</small></div>';
+        h += '<div><span style="font-size:13px; font-weight:bold; color:var(--text);">🚀 <bdi>' + esc(rName) + '</bdi></span> <small style="color:var(--muted); font-size:10px;">(' + esc(v.maiden_flight || "—") + ')</small></div>';
         h += '<span class="' + stBadge + '" style="padding:2px 8px; border-radius:10px; font-size:10px;"><bdi>' + esc(stText) + '</bdi></span>';
         h += '</div>';
 
@@ -1645,7 +1668,17 @@
         h += '<div style="background:rgba(0,0,0,0.25); padding:5px 8px; border-radius:4px;"><b>' + (isFa ? "تعداد مراحل:" : "Stages:") + '</b> ' + esc(v.stages || 2) + '</div>';
         h += '<div style="background:rgba(0,0,0,0.25); padding:5px 8px; border-radius:4px;"><b>' + (isFa ? "بازمصرف‌پذیری:" : "Reusability:") + '</b> <bdi>' + esc(rReu) + '</bdi></div>';
         h += '<div style="background:rgba(0,0,0,0.25); padding:5px 8px; border-radius:4px; grid-column:span 2;"><b>' + (isFa ? "پیشرانه / سوخت:" : "Propellant:") + '</b> <bdi>' + esc(rProp) + '</bdi></div>';
-        h += '<div style="background:rgba(0,0,0,0.25); padding:5px 8px; border-radius:4px; grid-column:span 2;"><b>' + (isFa ? "نوع موتور:" : "Engine:") + '</b> <bdi>' + esc(rEng) + '</bdi></div>';
+        var engSuppliers = (window.findEngineSuppliers) ? window.findEngineSuppliers(o.id, String(v.engine_type_fa || "") + " " + String(v.engine_type_en || "")) : [];
+        h += '<div style="background:rgba(0,0,0,0.25); padding:5px 8px; border-radius:4px; grid-column:span 2;"><b>' + (isFa ? "نوع موتور:" : "Engine:") + '</b> <bdi>' + esc(rEng) + '</bdi>';
+        if (engSuppliers.length) {
+          h += '<span style="display:inline-flex; gap:4px; flex-wrap:wrap; margin-' + (isFa ? 'right' : 'left') + ':6px; vertical-align:middle;">';
+          engSuppliers.forEach(function(sc) {
+            var scName = isFa ? (sc.fa || sc.en) : (sc.en || sc.fa);
+            h += '<a href="#" onclick="openDetailById(\'' + esc(sc.id) + '\', \'propulsion\'); return false;" title="' + (isFa ? 'باز کردن پروندهٔ سازندهٔ موتور' : 'Open engine maker dossier') + '" style="color:var(--amber); font-size:9.5px; font-weight:bold; text-decoration:none; background:rgba(245,158,11,0.12); border:1px solid rgba(245,158,11,0.35); padding:1px 7px; border-radius:10px; cursor:pointer; white-space:nowrap;">⚙️ <bdi>' + esc(scName) + '</bdi> ↗</a>';
+          });
+          h += '</span>';
+        }
+        h += '</div>';
         h += '<div style="background:rgba(0,0,0,0.25); padding:5px 8px; border-radius:4px;"><b>' + (isFa ? "نیروی رانش:" : "Thrust:") + '</b> <bdi>' + esc(rThr) + '</bdi></div>';
         h += '<div style="background:rgba(0,0,0,0.25); padding:5px 8px; border-radius:4px;"><b>' + (isFa ? "ظرفیت LEO:" : "LEO Payload:") + '</b> <bdi>' + esc(rLeo) + '</bdi></div>';
         h += '<div style="background:rgba(0,0,0,0.25); padding:5px 8px; border-radius:4px;"><b>' + (isFa ? "ظرفیت SSO:" : "SSO Payload:") + '</b> <bdi>' + esc(rSso) + '</bdi></div>';
@@ -1682,7 +1715,7 @@
       // Timeline Box
       if (timeline.length) {
         h += '<div style="background:var(--bg2); border:1px solid var(--line); border-radius:8px; padding:10px; margin-bottom:8px;">';
-        h += '<div style="font-size:11.5px; font-weight:bold; color:#f59e0b; margin-bottom:8px;">⏳ ' + (isFa ? "خط زمانی رویدادهای کلیدی و تاریخی" : "Historical Timeline") + '</div>';
+        h += '<div style="font-size:11.5px; font-weight:bold; color:var(--amber); margin-bottom:8px;">⏳ ' + (isFa ? "خط زمانی رویدادهای کلیدی و تاریخی" : "Historical Timeline") + '</div>';
         h += '<div style="display:flex; flex-direction:column; gap:8px;">';
         
         timeline.forEach(function(item) {
@@ -1690,7 +1723,7 @@
           var tDesc = isFa ? (item.desc || item.desc_fa) : (item.desc_en || item.desc);
 
           h += '<div style="background:rgba(0,0,0,0.25); border-right:3px solid #f59e0b; padding:6px 10px; border-radius:4px; font-size:10.5px;">';
-          h += '<div style="font-weight:bold; color:#fff;"><span style="color:#f59e0b; font-family:monospace;">' + esc(item.year) + ':</span> ' + esc(tTitle) + '</div>';
+          h += '<div style="font-weight:bold; color:var(--text);"><span style="color:var(--amber); font-family:monospace;">' + esc(item.year) + ':</span> ' + esc(tTitle) + '</div>';
           h += '<div style="color:var(--muted); margin-top:2px; line-height:1.4;">' + esc(tDesc) + '</div>';
           h += '</div>';
         });
@@ -1759,10 +1792,62 @@
     if (kind === "site") {
       var s = (DATA.sites || []).find(function(x) { return x.id === id; });
       if (s) openDetail({ kind: "site", cat: "site", o: s });
+    } else if (kind === "recovery") {
+      var rs = (DATA.recoveries || []).find(function(x) { return x.id === id; });
+      if (rs) openDetail({ kind: "recovery", cat: "recovery", o: rs });
     } else {
       var c = (DATA.companies || []).find(function(x) { return x.id === id; });
       if (c) openDetail({ kind: c.cat || "company", cat: c.cat || "launch", o: c });
     }
+  };
+
+  // ===== STEP3: Engine <-> Launch company cross-links (via used_by_ids) =====
+  function compById(id) {
+    if (typeof DATA === "undefined") return null;
+    return (DATA.companies || []).find(function(x) { return x.id === id; }) || null;
+  }
+  window.compById = compById;
+
+  function normEngTxt(s) {
+    return String(s || "").toLowerCase().replace(/[^a-z0-9\u0600-\u06FF]+/g, "");
+  }
+
+  // برای یک شرکت پرتاب و متن موتور یک موشک، شرکت‌های پیشرانشی سازنده را پیدا می‌کند.
+  // فقط وقتی وصل می‌کند که نام واقعی موتور در متن «نوع موتور» همان موشک آمده باشد.
+  window.findEngineSuppliers = function(launchId, vehicleEngineText) {
+    var res = [];
+    if (!launchId || typeof DATA === "undefined") return res;
+    var txt = normEngTxt(vehicleEngineText);
+    if (!txt) return res;
+    (DATA.companies || []).forEach(function(c) {
+      if (c.cat !== "propulsion" || c.id === launchId) return;
+      var engs = c.engine_products_bilingual || [];
+      var hit = false;
+      engs.forEach(function(e) {
+        if (hit) return;
+        var u = e.used_by_ids || [];
+        if (u.indexOf(launchId) < 0) return;
+        var keys = [];
+        var GENERIC = ["engine","engines","motor","motors","upper","stage","stages","solid","liquid","rocket","rockets","thruster","thrusters","booster","boosters","family","vacuum","cluster","stand","stands","test","complex","with","flexible","nozzle","payload","fairing","tanks","structures","hypergolic","cryogenic","cold","gas","five","segment","vernier","main","small","large","hybrid","ariane","آریان","موتور","موشک","مرحله","مرحلهٔ","جامد","مایع","بوستر","رانشگر","خوشه","خوشهٔ","نازل","متحرک","سکوی","آزمون","دماغه","دماغهٔ","مخزن","محموله","انعطاف"];
+        [e.name_en, e.name_fa].forEach(function(n) {
+          var raw = String(n || "");
+          // کل نام (بدون فاصله) + تک‌واژه‌های خاص
+          raw.split(/[\/&,،()]|\sو\s/).forEach(function(p) {
+            var k = normEngTxt(p);
+            if (k.length >= 3) keys.push(k);
+          });
+          raw.split(/[\s\/&,،().]+/).forEach(function(w) {
+            var k = normEngTxt(w);
+            if (k.length >= 3 && GENERIC.indexOf(k) < 0 && GENERIC.indexOf(w.toLowerCase()) < 0) keys.push(k);
+          });
+        });
+        for (var i = 0; i < keys.length; i++) {
+          if (txt.indexOf(keys[i]) > -1) { hit = true; break; }
+        }
+      });
+      if (hit) res.push(c);
+    });
+    return res;
   };
 
   function isEntityInCountry(entity, targetEn, targetFa) {
@@ -1776,9 +1861,9 @@
     if (!tEn && !tFa) return false;
 
     var synMap = {
-      "united states of america": ["united states", "usa", "us", "ایالات متحده", "امریکایی", "آمریکا", "ایالات متحده آمریکا"],
-      "united states": ["united states of america", "usa", "us", "ایالات متحده", "امریکایی", "آمریکا", "ایالات متحده آمریکا"],
-      "usa": ["united states of america", "united states", "us", "ایالات متحده", "آمریکا"],
+      "united states of america": ["united states", "usa", "us", "united states (coastal waters)", "ایالات متحده", "امریکایی", "آمریکا", "ایالات متحده آمریکا", "ایالات متحده (آب‌های ساحلی)"],
+      "united states": ["united states of america", "usa", "us", "united states (coastal waters)", "ایالات متحده", "امریکایی", "آمریکا", "ایالات متحده آمریکا", "ایالات متحده (آب‌های ساحلی)"],
+      "usa": ["united states of america", "united states", "us", "united states (coastal waters)", "ایالات متحده", "آمریکا", "ایالات متحده (آب‌های ساحلی)"],
       "people's republic of china": ["china", "چین", "جمهوری خلق چین"],
       "china": ["people's republic of china", "چین", "جمهوری خلق چین"],
       "russian federation": ["russia", "روسیه", "فدراسیون روسیه"],
@@ -1874,7 +1959,19 @@
       return isC;
     });
 
-    var totalEntities = propulsionItems.length + launchItems.length + agencyItems.length + siteItems.length;
+    // بخش «فرود و بازیابی» — پس از تأیید نمونه، برای همهٔ کشورها فعال است
+    var showRecovery = true;
+    var recoveryItems = [];
+    if (typeof DATA !== "undefined" && Array.isArray(DATA.recoveries)) {
+      recoveryItems = DATA.recoveries.filter(function(s) {
+        return isEntityInCountry(s, cEn, cFa);
+      });
+      recoveryItems.sort(function(a, b) {
+        return (a.fa || a.en || "").localeCompare(b.fa || b.en || "");
+      });
+    }
+
+    var totalEntities = propulsionItems.length + launchItems.length + agencyItems.length + siteItems.length + recoveryItems.length;
 
     var h = "";
 
@@ -1891,9 +1988,9 @@
 
     // SECTION 1: SHARE & OVERVIEW 4-GRID BANNER (سهم و آمار فضایی کشور)
     h += '<div style="background:linear-gradient(135deg, rgba(15, 31, 51, 0.95) 0%, rgba(9, 13, 22, 0.98) 100%); border:1px solid rgba(56, 189, 248, 0.35); border-radius:8px; padding:12px; margin-top:10px; box-shadow:0 4px 16px rgba(0,0,0,0.4);">';
-    h += '<div style="font-size:11.5px; font-weight:bold; color:var(--accent); margin-bottom:8px; display:flex; align-items:center; gap:6px; border-bottom:1px solid rgba(255,255,255,0.08); padding-bottom:6px;">📊 ' + (isFa ? "سهم و آمار توزیع زیرساخت‌های فضایی کشور:" : "Space Infrastructure Share Distribution:") + '</div>';
+    h += '<div style="font-size:11.5px; font-weight:bold; color:#2fd4a7; margin-bottom:8px; display:flex; align-items:center; gap:6px; border-bottom:1px solid rgba(255,255,255,0.08); padding-bottom:6px;">📊 ' + (isFa ? "سهم و آمار توزیع زیرساخت‌های فضایی کشور:" : "Space Infrastructure Share Distribution:") + '</div>';
     
-    h += '<div style="display:grid; grid-template-columns:repeat(4, 1fr); gap:6px; text-align:center;">';
+    h += '<div style="display:grid; grid-template-columns:' + (showRecovery ? 'repeat(auto-fit, minmax(90px, 1fr))' : 'repeat(4, 1fr)') + '; gap:6px; text-align:center;">';
     
     // 1. Propulsion
     h += '<div style="background:rgba(245, 158, 11, 0.1); padding:8px 4px; border-radius:6px; border:1px solid rgba(245, 158, 11, 0.3);">';
@@ -1919,6 +2016,14 @@
     h += '<div style="font-size:9px; color:#ef4444; margin-top:2px;">' + (isFa ? "پایگاه‌ها" : "Spaceports") + '</div>';
     h += '</div>';
 
+    // 5. Landing & Recovery (کشورهای نمونه)
+    if (showRecovery) {
+      h += '<div style="background:rgba(45, 212, 191, 0.1); padding:8px 4px; border-radius:6px; border:1px solid rgba(45, 212, 191, 0.3);">';
+      h += '<div style="font-size:16px; font-weight:bold; color:#2dd4bf;">' + esc(recoveryItems.length) + '</div>';
+      h += '<div style="font-size:9px; color:#2dd4bf; margin-top:2px;">' + (isFa ? "فرود و بازیابی" : "Recovery") + '</div>';
+      h += '</div>';
+    }
+
     h += '</div></div>';
 
     // SECTION 2: 4 DEDICATED TABS
@@ -1927,6 +2032,9 @@
     h += '<button class="site-tab-btn" onclick="switchCompTab(\'cLaunch\', this)">' + (isFa ? "شرکت‌های پرتاب" : "Launch") + ' (' + launchItems.length + ')</button>';
     h += '<button class="site-tab-btn" onclick="switchCompTab(\'cAgency\', this)">' + (isFa ? "سازمان‌های فضایی" : "Agencies") + ' (' + agencyItems.length + ')</button>';
     h += '<button class="site-tab-btn" onclick="switchCompTab(\'cSite\', this)">' + (isFa ? "پایگاه‌های پرتاب" : "Sites") + ' (' + siteItems.length + ')</button>';
+    if (showRecovery) {
+      h += '<button class="site-tab-btn" onclick="switchCompTab(\'cRecovery\', this)">' + (isFa ? "فرود و بازیابی" : "Recovery") + ' (' + recoveryItems.length + ')</button>';
+    }
     h += '</div>';
 
     // TAB 1: PROPULSION CONTRACTORS
@@ -1944,10 +2052,10 @@
         h += '<div style="display:flex; justify-content:space-between; align-items:center;">';
         h += '<div style="display:flex; align-items:center; gap:8px;">';
         h += '<img src="' + esc(logoSrc) + '" alt="" onerror="this.src=defaultLogo;" style="width:28px; height:28px; object-fit:contain; border-radius:4px; background:#000; padding:1px; border:1px solid var(--line);" />';
-        h += '<div><b style="font-size:11.5px; color:#fff;"><bdi>' + esc(nameStr) + '</bdi></b>';
+        h += '<div><b style="font-size:11.5px; color:var(--text);"><bdi>' + esc(nameStr) + '</bdi></b>';
         h += '<div style="font-size:9.5px; color:var(--muted);">📍 ' + esc(cityStr) + '</div></div>';
         h += '</div>';
-        h += '<span style="font-size:9.5px; color:#f59e0b; background:rgba(245,158,11,0.12); border:1px solid rgba(245,158,11,0.3); padding:2px 6px; border-radius:10px;"><bdi>' + esc(catStr) + '</bdi></span>';
+        h += '<span style="font-size:9.5px; color:var(--amber); background:rgba(245,158,11,0.12); border:1px solid rgba(245,158,11,0.3); padding:2px 6px; border-radius:10px;"><bdi>' + esc(catStr) + '</bdi></span>';
         h += '</div>';
 
         // Description Kicker
@@ -1999,7 +2107,7 @@
         h += '<div style="display:flex; justify-content:space-between; align-items:center;">';
         h += '<div style="display:flex; align-items:center; gap:8px;">';
         h += '<img src="' + esc(logoSrc) + '" alt="" onerror="this.src=defaultLogo;" style="width:28px; height:28px; object-fit:contain; border-radius:4px; background:#000; padding:1px; border:1px solid var(--line);" />';
-        h += '<div><b style="font-size:11.5px; color:#fff;"><bdi>' + esc(nameStr) + '</bdi></b>';
+        h += '<div><b style="font-size:11.5px; color:var(--text);"><bdi>' + esc(nameStr) + '</bdi></b>';
         h += '<div style="font-size:9.5px; color:var(--muted);">📍 ' + esc(cityStr) + '</div></div>';
         h += '</div>';
         h += '<span style="font-size:9.5px; color:#10b981; background:rgba(16,185,129,0.12); border:1px solid rgba(16,185,129,0.3); padding:2px 6px; border-radius:10px;"><bdi>' + esc(orgStr) + '</bdi></span>';
@@ -2054,7 +2162,7 @@
         h += '<div style="display:flex; justify-content:space-between; align-items:center;">';
         h += '<div style="display:flex; align-items:center; gap:8px;">';
         h += '<img src="' + esc(logoSrc) + '" alt="" onerror="this.src=defaultLogo;" style="width:28px; height:28px; object-fit:contain; border-radius:4px; background:#000; padding:1px; border:1px solid var(--line);" />';
-        h += '<div><b style="font-size:11.5px; color:#fff;"><bdi>' + esc(nameStr) + '</bdi></b>';
+        h += '<div><b style="font-size:11.5px; color:var(--text);"><bdi>' + esc(nameStr) + '</bdi></b>';
         h += '<div style="font-size:9.5px; color:var(--muted);">📍 ' + esc(cityStr) + '</div></div>';
         h += '</div>';
         h += '<span style="font-size:9.5px; color:#38bdf8; background:rgba(56,189,248,0.12); border:1px solid rgba(56,189,248,0.3); padding:2px 6px; border-radius:10px;"><bdi>' + esc(orgStr) + '</bdi></span>';
@@ -2105,7 +2213,7 @@
 
         h += '<div style="background:var(--bg2); border:1px solid var(--line); border-radius:8px; padding:10px; display:flex; flex-direction:column; gap:6px;">';
         h += '<div style="display:flex; justify-content:space-between; align-items:center;">';
-        h += '<div><b style="font-size:11.5px; color:#fff;">📍 <bdi>' + esc(nameStr) + '</bdi></b>';
+        h += '<div><b style="font-size:11.5px; color:var(--text);">📍 <bdi>' + esc(nameStr) + '</bdi></b>';
         h += '<div style="font-size:9.5px; color:var(--muted); margin-top:2px;">🌍 ' + esc(locStr) + '</div></div>';
         h += '<span style="font-size:9.5px; color:#ef4444; background:rgba(239,68,68,0.12); border:1px solid rgba(239,68,68,0.3); padding:2px 6px; border-radius:10px;"><bdi>' + esc(stStr) + '</bdi></span>';
         h += '</div>';
@@ -2143,6 +2251,53 @@
       h += '<div style="padding:16px; text-align:center; color:var(--muted); font-size:11px;">' + (isFa ? "هیچ پایگاه پرتاب ثبت‌شده‌ای برای این کشور یافت نشد." : "No registered launch sites for this country.") + '</div>';
     }
     h += '</div>'; // end TAB 4
+
+    // TAB 5: LANDING & RECOVERY SITES (کشورهای نمونه؛ همان کالبد کارت‌های دیگر)
+    if (showRecovery) {
+      var recTypeFa = { booster: "سکوی بوستر", capsule: "بازیابی کپسول", runway: "باند فرود", mixed: "کپسول و باند",
+        tower: "برج گرفتن بوستر", droneship: "شناور فرود دریایی", splashdown_zone: "پهنهٔ آب‌نشینی" };
+      var recTypeEn = { booster: "Booster landing", capsule: "Capsule recovery", runway: "Runway landing", mixed: "Capsule & runway",
+        tower: "Booster catch tower", droneship: "Landing droneship", splashdown_zone: "Splashdown zone" };
+      h += '<div id="compTabCRecovery" class="site-tab-content" style="display:none;">';
+      if (recoveryItems.length) {
+        h += '<div style="display:flex; flex-direction:column; gap:8px; margin-top:8px;">';
+        recoveryItems.forEach(function(item) {
+          var nameStr = isFa ? (item.fa || item.en) : (item.en || item.fa);
+          var cityStr = isFa ? (item.city_fa || item.city || "—") : (item.city || item.city_fa || "—");
+          var typeStr = isFa ? (recTypeFa[item.recovery_type] || "فرود و بازیابی") : (recTypeEn[item.recovery_type] || "Recovery");
+          var recIcon = "data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><rect width='100' height='100' rx='20' fill='%23090d16' stroke='%232dd4bf' stroke-width='3'/><text x='50' y='62' font-family='sans-serif' font-size='34' fill='%232dd4bf' text-anchor='middle'>🛬</text></svg>";
+
+          h += '<div style="background:var(--bg2); border:1px solid var(--line); border-radius:8px; padding:10px; display:flex; flex-direction:column; gap:6px;">';
+          h += '<div style="display:flex; justify-content:space-between; align-items:center;">';
+          h += '<div style="display:flex; align-items:center; gap:8px;">';
+          h += '<img src="' + recIcon + '" alt="" style="width:28px; height:28px; object-fit:contain; border-radius:4px; background:#000; padding:1px; border:1px solid var(--line);" />';
+          h += '<div><b style="font-size:11.5px; color:var(--text);"><bdi>' + esc(nameStr) + '</bdi></b>';
+          h += '<div style="font-size:9.5px; color:var(--muted);">📍 ' + esc(cityStr) + '</div></div>';
+          h += '</div>';
+          h += '<span style="font-size:9.5px; color:#2dd4bf; background:rgba(45,212,191,0.12); border:1px solid rgba(45,212,191,0.3); padding:2px 6px; border-radius:10px;"><bdi>' + esc(typeStr) + '</bdi></span>';
+          h += '</div>';
+
+          // Description Kicker
+          var shortDesc = desc(item);
+          if (shortDesc) {
+            h += '<div style="font-size:10px; color:var(--text); line-height:1.4; display:-webkit-box; -webkit-line-clamp:2; -webkit-box-orient:vertical; overflow:hidden;">' + esc(shortDesc) + '</div>';
+          }
+
+          h += '<div style="display:flex; gap:6px; margin-top:4px;">';
+          if (item.lat && item.lon) {
+            h += '<button type="button" onclick="flyToCoords(' + item.lat + ',' + item.lon + ', 8)" class="btn btn-sm country-btn-fly" style="flex:1; font-size:10px; padding:5px 8px; cursor:pointer;">📍 ' + (isFa ? "مشاهده روی نقشه" : "Fly on Map") + '</button>';
+          }
+          h += '<button type="button" onclick="openDetailById(\'' + esc(item.id) + '\', \'recovery\')" class="btn btn-sm country-btn-detail" style="flex:1; font-size:10px; padding:5px 8px; cursor:pointer; background:rgba(56, 189, 248, 0.15); border:1px solid rgba(56, 189, 248, 0.4); color:#38bdf8;">📖 ' + (isFa ? "باز شدن جزئیات" : "Open Details") + '</button>';
+          h += '</div>';
+
+          h += '</div>'; // end recovery card
+        });
+        h += '</div>';
+      } else {
+        h += '<div style="padding:16px; text-align:center; color:var(--muted); font-size:11px;">' + (isFa ? "هیچ پایگاه فرود و بازیابی ثبت‌شده‌ای برای این کشور یافت نشد." : "No registered landing & recovery sites for this country.") + '</div>';
+      }
+      h += '</div>'; // end TAB 5
+    }
 
     return h;
   }
@@ -2209,7 +2364,7 @@
       h += '<span class="badge-gov" style="padding:2px 8px; border-radius:10px; font-size:10px; background:rgba(245, 158, 11, 0.2); border:1px solid rgba(245, 158, 11, 0.4); color:#f59e0b;">' + esc(flagProdStatus) + '</span>';
       h += '</div>';
       if (flagProdExpl) {
-        h += '<div style="font-size:10.5px; color:var(--text); margin-top:4px; line-height:1.6;">' + esc(flagProdExpl) + '</div>';
+        h += '<div style="font-size:10.5px; color:#e7f0fb; margin-top:4px; line-height:1.6;">' + esc(flagProdExpl) + '</div>';
       }
       h += '</div>';
     }
@@ -2226,7 +2381,7 @@
       h += '<span style="padding:2px 8px; border-radius:10px; font-size:10px; background:rgba(16, 185, 129, 0.2); border:1px solid rgba(16, 185, 129, 0.4); color:#10b981;">' + esc(flagProgTimeline) + '</span>';
       h += '</div>';
       if (flagProgExpl) {
-        h += '<div style="font-size:10.5px; color:var(--text); margin-top:4px; line-height:1.6;">' + esc(flagProgExpl) + '</div>';
+        h += '<div style="font-size:10.5px; color:#e7f0fb; margin-top:4px; line-height:1.6;">' + esc(flagProgExpl) + '</div>';
       }
       h += '</div>';
     }
@@ -2244,7 +2399,7 @@
     var emailAddr = o.email || (o.contacts ? o.contacts.email : null) || "info@isa.ir";
 
     h += '<div style="background:linear-gradient(135deg, rgba(15, 31, 51, 0.95) 0%, rgba(9, 13, 22, 0.98) 100%); border:1px solid rgba(56, 189, 248, 0.35); border-radius:8px; padding:12px; margin-top:12px; box-shadow:0 6px 16px rgba(0,0,0,0.4); backdrop-filter:blur(8px);">';
-    h += '<div style="font-size:11.5px; font-weight:bold; color:var(--accent); margin-bottom:10px; display:flex; align-items:center; gap:6px; border-bottom:1px solid rgba(255,255,255,0.08); padding-bottom:6px;">🌐 ' + (isFa ? "درگاه‌های رسمی ارتباطی و وب‌سایت سازمان:" : "Official Communication Channels:") + '</div>';
+    h += '<div style="font-size:11.5px; font-weight:bold; color:#2fd4a7; margin-bottom:10px; display:flex; align-items:center; gap:6px; border-bottom:1px solid rgba(255,255,255,0.08); padding-bottom:6px;">🌐 ' + (isFa ? "درگاه‌های رسمی ارتباطی و وب‌سایت سازمان:" : "Official Communication Channels:") + '</div>';
     
     h += '<div style="display:flex; flex-direction:column; gap:8px;">';
     
@@ -2299,11 +2454,11 @@
         // Summary Header Bar
         h += '<summary style="padding:10px 12px; cursor:pointer; display:flex; justify-content:space-between; align-items:center; user-select:none; background:rgba(255,255,255,0.03); outline:none;">';
         h += '<div style="font-size:12px; font-weight:bold; color:#fff; flex:1; line-height:1.5;">📡 <bdi>' + esc(pName) + '</bdi></div>';
-        h += '<span style="color:var(--muted); font-size:10px; opacity:0.8; margin-inline-start:8px;">▼</span>';
+        h += '<span style="color:#8ba3c4; font-size:10px; opacity:0.8; margin-inline-start:8px;">▼</span>';
         h += '</summary>';
 
         // Sleek Collapsible Details Body
-        h += '<div style="padding:12px; border-top:1px solid rgba(255,255,255,0.08); background:rgba(4,10,18,0.7); font-size:10.5px; display:flex; flex-direction:column; gap:8px;">';
+        h += '<div style="padding:12px; border-top:1px solid rgba(255,255,255,0.08); background:rgba(4,10,18,0.7); color:#e7f0fb; font-size:10.5px; display:flex; flex-direction:column; gap:8px;">';
         
         // Grid
         h += '<div style="display:grid; grid-template-columns:1fr 1fr; gap:6px;">';
@@ -2324,7 +2479,7 @@
         if (pRole && pRole !== "—") {
           h += '<div style="background:rgba(15, 31, 51, 0.6); border:1px solid rgba(245, 158, 11, 0.35); border-radius:6px; padding:8px 10px;">';
           h += '<div style="font-size:11px; font-weight:bold; color:#f59e0b; margin-bottom:3px; display:flex; align-items:center; gap:4px;">🛠️ ' + (isFa ? "شرح کاربردی و مأموریت مداری:" : "Operational Role & Mission:") + '</div>';
-          h += '<div style="font-size:10px; color:var(--text); line-height:1.5;"><bdi>' + esc(pRole) + '</bdi></div>';
+          h += '<div style="font-size:10px; color:#e7f0fb; line-height:1.5;"><bdi>' + esc(pRole) + '</bdi></div>';
           h += '</div>';
         }
 
@@ -2337,7 +2492,7 @@
     // 2. Umbrella Programs & Constellations Section
     if (prgList.length) {
       h += '<div style="background:var(--bg2); border:1px solid var(--line); border-radius:8px; padding:10px; margin-bottom:8px;">';
-      h += '<div style="font-size:11.5px; font-weight:bold; color:#f59e0b; margin-bottom:6px;">🚀 ' + (isFa ? "برنامه‌های کلان استراتژیک و منظومه‌ها:" : "Umbrella Programs & Space Constellations:") + '</div>';
+      h += '<div style="font-size:11.5px; font-weight:bold; color:var(--amber); margin-bottom:6px;">🚀 ' + (isFa ? "برنامه‌های کلان استراتژیک و منظومه‌ها:" : "Umbrella Programs & Space Constellations:") + '</div>';
       h += '<div style="display:flex; flex-direction:column; gap:6px;">';
       prgList.forEach(function(prg) {
         var prgName = isFa ? (prg.name_fa || prg.name) : (prg.name_en || prg.name);
@@ -2346,7 +2501,7 @@
         var prgNext = isFa ? (prg.next_step_fa || prg.next_step) : (prg.next_step_en || prg.next_step);
 
         h += '<div style="background:rgba(0,0,0,0.3); border-right:3px solid #f59e0b; padding:8px 10px; border-radius:6px; font-size:10.5px;">';
-        h += '<b style="color:#fff; font-size:11px;">🌌 <bdi>' + esc(prgName) + '</bdi></b>';
+        h += '<b style="color:var(--text); font-size:11px;">🌌 <bdi>' + esc(prgName) + '</bdi></b>';
         if (prgObj) h += '<div style="color:var(--text); font-size:10px; margin-top:3px; line-height:1.5;"><b>' + (isFa ? "هدف کلان:" : "Objective:") + '</b> <bdi>' + esc(prgObj) + '</bdi></div>';
         if (prgNext) h += '<div style="color:#38bdf8; font-size:9.5px; margin-top:3px;"><b>' + (isFa ? "گام بعدی:" : "Next Step:") + '</b> <bdi>' + esc(prgNext) + '</bdi></div>';
         h += '</div>';
@@ -2378,13 +2533,13 @@
       
       timeline.forEach(function(item) {
         if (typeof item === "string") {
-          h += '<div style="font-size:10.5px; color:#fff;">• ' + esc(item) + '</div>';
+          h += '<div style="font-size:10.5px; color:var(--text);">• ' + esc(item) + '</div>';
         } else {
           var yr = item.year || item.date || "";
           var txt = isFa ? (item.text || item.title || item.desc) : (item.text_en || item.title_en || item.desc_en || item.text || item.title);
 
           h += '<div style="font-size:10.5px; color:var(--text); line-height:1.5;">';
-          h += '<b style="color:#f59e0b; font-family:monospace;"><bdi>' + esc(yr) + '</bdi>:</b> <bdi>' + esc(txt) + '</bdi>';
+          h += '<b style="color:var(--amber); font-family:monospace;"><bdi>' + esc(yr) + '</bdi>:</b> <bdi>' + esc(txt) + '</bdi>';
           h += '</div>';
         }
       });
@@ -2461,7 +2616,7 @@
     if (flagshipEngine) {
       h += '<div style="background:linear-gradient(135deg, rgba(56, 189, 248, 0.12) 0%, rgba(15, 31, 51, 0.8) 100%); border:1px solid rgba(56, 189, 248, 0.35); border-radius:8px; padding:12px; margin-top:10px; box-shadow:0 4px 12px rgba(0,0,0,0.3);">';
       h += '<div style="display:flex; justify-content:space-between; align-items:center; margin-bottom:6px;">';
-      h += '<span style="font-size:12px; font-weight:bold; color:var(--accent);">⚙️ ' + (isFa ? "موتور پرچمدار و شاخص:" : "Flagship Engine:") + ' <b><bdi>' + esc(flagshipEngine) + '</bdi></b></span>';
+      h += '<span style="font-size:12px; font-weight:bold; color:#2fd4a7;">⚙️ ' + (isFa ? "موتور پرچمدار و شاخص:" : "Flagship Engine:") + ' <b><bdi>' + esc(flagshipEngine) + '</bdi></b></span>';
       h += '<span class="badge-gov" style="padding:2px 8px; border-radius:10px; font-size:10px; background:rgba(16, 185, 129, 0.2); border:1px solid rgba(16, 185, 129, 0.4); color:#10b981;">' + esc(flagshipStatus) + '</span>';
       h += '</div>';
       h += '<div style="font-size:10.5px; color:#fff; margin-top:4px; line-height:1.5;">🚀 <b>' + (isFa ? "کاربرد اصلی:" : "Primary Application:") + '</b> <bdi>' + esc(flagshipApp) + '</bdi></div>';
@@ -2473,7 +2628,7 @@
     if (histText) {
       h += '<div style="background:rgba(15, 31, 51, 0.6); border:1px solid rgba(245, 158, 11, 0.35); border-radius:8px; padding:12px; margin-top:10px; box-shadow:0 4px 12px rgba(0,0,0,0.25);">';
       h += '<div style="font-size:11.5px; font-weight:bold; color:#f59e0b; margin-bottom:6px; display:flex; align-items:center; gap:6px;">📜 ' + (isFa ? "تاریخچه سازمانی و توسعه پیشرانه:" : "Company & Propulsion History:") + '</div>';
-      h += '<div style="font-size:10.5px; color:var(--text); line-height:1.6;">' + esc(histText) + '</div>';
+      h += '<div style="font-size:10.5px; color:#e7f0fb; line-height:1.6;">' + esc(histText) + '</div>';
       h += '</div>';
     }
 
@@ -2541,12 +2696,12 @@
         h += '<div style="display:flex; align-items:center; gap:6px; flex-wrap:wrap;">';
         h += '<span style="color:#38bdf8; font-size:9.5px; background:rgba(56, 189, 248, 0.15); border:1px solid rgba(56, 189, 248, 0.3); padding:2px 7px; border-radius:12px; font-weight:bold;"><bdi>' + esc(engProp) + '</bdi></span>';
         h += '<span style="color:#10b981; font-weight:bold; font-size:9.5px; background:rgba(16, 185, 129, 0.12); border:1px solid rgba(16, 185, 129, 0.3); padding:2px 7px; border-radius:12px;"><bdi>' + esc(engSt) + '</bdi></span>';
-        h += '<span style="color:var(--muted); font-size:10px; opacity:0.8;">▼</span>';
+        h += '<span style="color:#8ba3c4; font-size:10px; opacity:0.8;">▼</span>';
         h += '</div>';
         h += '</summary>';
 
         // Sleek Collapsible Details Body
-        h += '<div style="padding:12px; border-top:1px solid rgba(255,255,255,0.08); background:rgba(4,10,18,0.7); font-size:10.5px; display:flex; flex-direction:column; gap:6px;">';
+        h += '<div style="padding:12px; border-top:1px solid rgba(255,255,255,0.08); background:rgba(4,10,18,0.7); color:#e7f0fb; font-size:10.5px; display:flex; flex-direction:column; gap:6px;">';
         h += '<div style="display:grid; grid-template-columns:1fr 1fr; gap:6px;">';
         h += '<div style="background:rgba(0,0,0,0.3); padding:6px 8px; border-radius:4px; border:1px solid var(--line);"><b>' + (isFa ? "چرخه / نوع احتراق:" : "Cycle / Type:") + '</b> <br><bdi style="color:#fff;">' + esc(engType) + '</bdi></div>';
         h += '<div style="background:rgba(0,0,0,0.3); padding:6px 8px; border-radius:4px; border:1px solid var(--line);"><b>' + (isFa ? "ترکیب سوخت:" : "Propellant:") + '</b> <br><span style="color:#f59e0b; font-weight:bold;"><bdi>' + esc(engProp) + '</bdi></span></div>';
@@ -2558,14 +2713,25 @@
         if (engRole) {
           h += '<div style="background:rgba(15, 31, 51, 0.6); border:1px solid rgba(245, 158, 11, 0.35); border-radius:6px; padding:8px 10px; margin-top:2px;">';
           h += '<div style="font-size:11px; font-weight:bold; color:#f59e0b; margin-bottom:3px; display:flex; align-items:center; gap:4px;">🛠️ ' + (isFa ? "شرح کارکرد عملیاتی در فضا:" : "Spaceflight Operational Role:") + '</div>';
-          h += '<div style="font-size:10px; color:var(--text); line-height:1.5;">' + esc(engRole) + '</div>';
+          h += '<div style="font-size:10px; color:#e7f0fb; line-height:1.5;">' + esc(engRole) + '</div>';
           h += '</div>';
         }
 
         // Target Rocket / Mission Highlight Box
         h += '<div style="color:#fff; background:linear-gradient(90deg, rgba(56, 189, 248, 0.12) 0%, rgba(2, 132, 199, 0.05) 100%); border:1px solid rgba(56, 189, 248, 0.3); padding:8px 10px; border-radius:6px; margin-top:2px;">';
-        h += '<div style="font-size:11px; font-weight:bold; color:var(--accent); margin-bottom:2px;">🚀 ' + (isFa ? "موشک و مأموریت مقصد (Mission → Engine):" : "Target Rocket / Mission:") + '</div>';
+        h += '<div style="font-size:11px; font-weight:bold; color:#2fd4a7; margin-bottom:2px;">🚀 ' + (isFa ? "موشک و مأموریت مقصد (Mission → Engine):" : "Target Rocket / Mission:") + '</div>';
         h += '<div style="font-size:10.5px;"><bdi>' + esc(engRocket) + '</bdi></div>';
+        var usedBy = eng.used_by_ids || [];
+        if (usedBy.length && window.compById) {
+          h += '<div style="display:flex; gap:5px; flex-wrap:wrap; margin-top:6px;">';
+          usedBy.forEach(function(ubId) {
+            var tc = window.compById(ubId);
+            if (!tc) return;
+            var tcName = isFa ? (tc.fa || tc.en) : (tc.en || tc.fa);
+            h += '<a href="#" onclick="openDetailById(\'' + esc(ubId) + '\', \'launch\'); return false;" title="' + (isFa ? 'باز کردن پروندهٔ بهره‌بردار این موتور' : 'Open the dossier of this engine\'s user') + '" style="color:#2fd4a7; font-size:9.5px; font-weight:bold; text-decoration:none; background:rgba(56,189,248,0.12); border:1px solid rgba(56,189,248,0.35); padding:2px 8px; border-radius:10px; cursor:pointer; white-space:nowrap;">🚀 <bdi>' + esc(tcName) + '</bdi> ↗</a>';
+          });
+          h += '</div>';
+        }
         h += '</div>';
 
         h += '</div>';
@@ -2576,7 +2742,7 @@
       h += '<div style="font-size:10.5px; color:var(--muted); margin-bottom:6px;">📦 ' + (isFa ? "سبد محصولات و سامانه‌های پیشرانش:" : "Products Portfolio:") + '</div>';
       h += '<div style="display:flex; flex-direction:column; gap:4px;">';
       (Array.isArray(prodList) ? prodList : [prodList]).forEach(function(pItem) {
-        h += '<div style="background:var(--bg2); border:1px solid var(--line); padding:6px 10px; border-radius:4px; font-size:10.5px; color:#fff;">⚙️ <bdi>' + esc(pItem) + '</bdi></div>';
+        h += '<div style="background:var(--bg2); border:1px solid var(--line); padding:6px 10px; border-radius:4px; font-size:10.5px; color:var(--text);">⚙️ <bdi>' + esc(pItem) + '</bdi></div>';
       });
       h += '</div>';
     }
@@ -2586,7 +2752,7 @@
       h += '<div style="font-size:11.5px; font-weight:bold; color:#10b981; margin-bottom:6px;">🎯 ' + (isFa ? "مأموریت‌های برجسته صنعتی و فضایی:" : "Notable Missions:") + '</div>';
       h += '<div style="display:flex; flex-direction:column; gap:4px;">';
       (Array.isArray(notMissions) ? notMissions : [notMissions]).forEach(function(m) {
-        h += '<div style="background:rgba(16, 185, 129, 0.08); border:1px solid rgba(16, 185, 129, 0.2); padding:6px; border-radius:4px; font-size:10.5px; color:#fff;">🚀 ' + esc(m) + '</div>';
+        h += '<div style="background:rgba(16, 185, 129, 0.08); border:1px solid rgba(16, 185, 129, 0.2); padding:6px; border-radius:4px; font-size:10.5px; color:var(--text);">🚀 ' + esc(m) + '</div>';
       });
       h += '</div></div>';
     }
@@ -2600,18 +2766,18 @@
 
     if (testHist.length) {
       h += '<div style="background:var(--bg2); border:1px solid var(--line); border-radius:8px; padding:10px; margin-bottom:8px;">';
-      h += '<div style="font-size:11.5px; font-weight:bold; color:#f59e0b; margin-bottom:6px;">🔥 ' + (isFa ? "تاریخچه تست‌های گرم زمین‌پایه و آزمون‌های نازل:" : "Static Hot-Fire Test Records & Nozzle Firing Tests:") + '</div>';
+      h += '<div style="font-size:11.5px; font-weight:bold; color:var(--amber); margin-bottom:6px;">🔥 ' + (isFa ? "تاریخچه تست‌های گرم زمین‌پایه و آزمون‌های نازل:" : "Static Hot-Fire Test Records & Nozzle Firing Tests:") + '</div>';
       h += '<div style="display:flex; flex-direction:column; gap:6px;">';
       (Array.isArray(testHist) ? testHist : [testHist]).forEach(function(tRecord) {
         if (typeof tRecord === "string") {
-          h += '<div style="background:rgba(0,0,0,0.25); border-right:3px solid #f59e0b; padding:6px 8px; border-radius:4px; font-size:10.5px; color:#fff;">• ' + esc(tRecord) + '</div>';
+          h += '<div style="background:rgba(0,0,0,0.25); border-right:3px solid #f59e0b; padding:6px 8px; border-radius:4px; font-size:10.5px; color:var(--text);">• ' + esc(tRecord) + '</div>';
         } else {
           var tYr = tRecord.year || "2023";
           var tTitle = isFa ? (tRecord.title_fa || tRecord.title || "") : (tRecord.title_en || tRecord.title || "");
           var tDesc = isFa ? (tRecord.desc_fa || tRecord.desc || "") : (tRecord.desc_en || tRecord.desc || "");
 
           h += '<div style="background:rgba(0,0,0,0.3); border-right:3px solid #f59e0b; padding:8px 10px; border-radius:6px; font-size:10.5px; border:1px solid rgba(245,158,11,0.2);">';
-          h += '<b style="color:#fff;"><code style="color:#f59e0b; font-size:11px; font-family:monospace;"><bdi>' + esc(tYr) + '</bdi></code> — ' + esc(tTitle) + '</b>';
+          h += '<b style="color:var(--text);"><code style="color:var(--amber); font-size:11px; font-family:monospace;"><bdi>' + esc(tYr) + '</bdi></code> — ' + esc(tTitle) + '</b>';
           if (tDesc) h += '<div style="color:var(--muted); font-size:10px; margin-top:3px; line-height:1.5;">' + esc(tDesc) + '</div>';
           h += '</div>';
         }
@@ -2624,7 +2790,7 @@
       h += '<div style="font-size:11.5px; font-weight:bold; color:var(--accent); margin-bottom:6px;">🚀 ' + (isFa ? "برنامه‌های آتی ارتقای توان رانش و نقشه راه:" : "Future Thrust Scaling & Strategic Roadmap:") + '</div>';
       h += '<div style="display:flex; flex-direction:column; gap:4px;">';
       (Array.isArray(futPlans) ? futPlans : [futPlans]).forEach(function(fPlan) {
-        h += '<div style="background:rgba(56, 189, 248, 0.08); border:1px solid rgba(56, 189, 248, 0.2); padding:6px; border-radius:4px; font-size:10.5px; color:#fff;">🎯 ' + esc(fPlan) + '</div>';
+        h += '<div style="background:rgba(56, 189, 248, 0.08); border:1px solid rgba(56, 189, 248, 0.2); padding:6px; border-radius:4px; font-size:10.5px; color:var(--text);">🎯 ' + esc(fPlan) + '</div>';
       });
       h += '</div></div>';
     }
@@ -2835,6 +3001,165 @@
       return url.hostname === "plus.nasa.gov" && url.pathname.indexOf("/video/") === 0 && url.pathname.length > 7;
     } catch (e) { return false; }
   }
+  /* ============ SATELLITE & COMPONENT MAKERS DOSSIER (cat: satmaker) ============ */
+  function renderSatmakerDetail(p) {
+    var o = p.o || p, h = "";
+    var isFa = (typeof LANG !== "undefined" && LANG === "fa");
+
+    var orgTypeStr = isFa ? (o.org_type_fa || o.org_type_en || "شرکت فضایی") : (o.org_type_en || o.org_type_fa || "Space company");
+    var stClass = "badge-private";
+    if ((o.org_type_fa || "").indexOf("دولتی") > -1 || (o.org_type_en || "").indexOf("State") > -1 || (o.org_type_en || "").indexOf("Government") > -1) stClass = "badge-gov";
+
+    var defaultLogoSvg = "data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><rect width='100' height='100' rx='20' fill='%23090d16' stroke='%23a3e635' stroke-width='3'/><text x='50' y='62' font-family='sans-serif' font-size='34' fill='%23a3e635' text-anchor='middle'>🛰</text></svg>";
+    var logoSrc = o.logo_data || o.logo || defaultLogoSvg;
+
+    h += '<div class="d-head" style="display:flex; justify-content:space-between; align-items:center; gap:10px; margin-inline-end:35px;">';
+    h += '<div style="display:flex; gap:10px; align-items:center; flex:1;">';
+    h += '<div style="width:48px; height:48px; border-radius:8px; background:#000; border:1px solid var(--line); display:flex; align-items:center; justify-content:center; flex:0 0 auto; overflow:hidden; padding:2px;">';
+    h += '<img src="' + esc(logoSrc) + '" alt="' + esc(name(o)) + '" style="max-width:100%; max-height:100%; object-fit:contain;" /></div>';
+    h += '<div><div class="d-kicker">' + esc(isFa ? (o.en || o.fa) : (o.en || o.fa)) + '</div>';
+    h += '<h2 class="d-title" style="margin:0;">' + esc(name(o)) + '</h2></div></div>';
+    h += '<span class="' + stClass + '" style="padding:3px 10px; border-radius:12px; font-size:10.5px; font-weight:bold; white-space:nowrap;"><bdi>' + esc(orgTypeStr) + '</bdi></span>';
+    h += '</div>';
+    h += '<div class="d-desc" style="margin-top:6px; line-height:1.6;">' + esc(desc(o)) + '</div>';
+
+    // 3 tabs
+    h += '<div class="site-tabs" style="margin-top:10px;">';
+    h += '<button class="site-tab-btn active" onclick="switchCompTab(\'overview\', this)">' + (isFa ? "شناسنامه و تخصص" : "Overview & Specialty") + '</button>';
+    h += '<button class="site-tab-btn" onclick="switchCompTab(\'products\', this)">' + (isFa ? "محصولات و مشتری‌ها" : "Products & Customers") + '</button>';
+    h += '<button class="site-tab-btn" onclick="switchCompTab(\'timeline\', this)">' + (isFa ? "کارنامه و آینده" : "Track Record & Future") + '</button>';
+    h += '</div>';
+
+    /* ---- TAB 1: OVERVIEW ---- */
+    h += '<div id="compTabOverview" class="site-tab-content active" style="display:block;">';
+    var mClass = isFa ? (o.maker_class_fa || o.maker_class_en || "—") : (o.maker_class_en || o.maker_class_fa || "—");
+    var spec = isFa ? (o.specialty_fa || o.specialty_en || "—") : (o.specialty_en || o.specialty_fa || "—");
+    h += '<div style="display:grid; grid-template-columns:1fr 1fr; gap:6px; margin-top:8px; font-size:10.5px;">';
+    h += '<div style="background:var(--bg2); border:1px solid var(--line); padding:7px 9px; border-radius:6px;"><b style="color:var(--accent);">' + (isFa ? "زیرگونه:" : "Class:") + '</b><br><bdi style="color:var(--text);">' + esc(mClass) + '</bdi></div>';
+    h += '<div style="background:var(--bg2); border:1px solid var(--line); padding:7px 9px; border-radius:6px;"><b style="color:var(--accent);">' + (isFa ? "حوزهٔ تخصص:" : "Specialty:") + '</b><br><bdi style="color:var(--text);">' + esc(spec) + '</bdi></div>';
+    h += '<div style="background:var(--bg2); border:1px solid var(--line); padding:7px 9px; border-radius:6px;"><b>' + (isFa ? "کشور / شهر:" : "Country / City:") + '</b> <bdi>' + esc(isFa ? ((o.country_fa || "—") + " / " + (o.city_fa || "—")) : ((o.country || o.country_fa || "—") + " / " + (o.city || o.city_fa || "—"))) + '</bdi></div>';
+    h += '<div style="background:var(--bg2); border:1px solid var(--line); padding:7px 9px; border-radius:6px;"><b>' + (isFa ? "سال تأسیس:" : "Founded:") + '</b> ' + esc(o.founded || "—") + '</div>';
+    h += '</div>';
+
+    // Flagship product box (dark island → explicit light text only)
+    var flagP = isFa ? (o.flagship_product_fa || o.flagship_product_en) : (o.flagship_product_en || o.flagship_product_fa);
+    if (flagP) {
+      var flagSt = isFa ? (o.flagship_product_status_fa || "عملیاتی") : (o.flagship_product_status_en || "Operational");
+      var flagApp = isFa ? (o.flagship_product_app_fa || "") : (o.flagship_product_app_en || "");
+      h += '<div style="background:linear-gradient(135deg, rgba(163, 230, 53, 0.12) 0%, rgba(15, 31, 51, 0.85) 100%); border:1px solid rgba(163, 230, 53, 0.4); border-radius:8px; padding:10px 12px; margin-top:8px;">';
+      h += '<div style="display:flex; justify-content:space-between; align-items:center; gap:8px; flex-wrap:wrap;">';
+      h += '<span style="font-size:12px; font-weight:bold; color:#a3e635;">🛰 ' + (isFa ? "محصول شاخص:" : "Flagship Product:") + ' <b><bdi style="color:#fff;">' + esc(flagP) + '</bdi></b></span>';
+      h += '<span class="badge-gov" style="padding:2px 8px; border-radius:10px; font-size:10px;"><bdi>' + esc(flagSt) + '</bdi></span></div>';
+      if (flagApp) h += '<div style="font-size:10.5px; color:#e7f0fb; margin-top:4px; line-height:1.5;">🎯 <b>' + (isFa ? "کاربرد اصلی:" : "Primary Use:") + '</b> <bdi>' + esc(flagApp) + '</bdi></div>';
+      h += '</div>';
+    }
+
+    // History box (dark island → explicit light text)
+    var histText = isFa ? (o.history_fa || o.history_en || o.fa_d) : (o.history_en || o.history_fa || o.en_d);
+    if (histText) {
+      h += '<div style="background:rgba(15, 31, 51, 0.6); border:1px solid rgba(163, 230, 53, 0.3); border-radius:8px; padding:12px; margin-top:8px;">';
+      h += '<div style="font-size:11.5px; font-weight:bold; color:#a3e635; margin-bottom:6px;">📜 ' + (isFa ? "تاریخچه و جایگاه صنعتی:" : "History & Standing:") + '</div>';
+      h += '<div style="font-size:10.5px; color:#e7f0fb; line-height:1.6;">' + esc(histText) + '</div></div>';
+    }
+
+    // Website
+    var webUrl = o.site || o.website || "";
+    if (webUrl) {
+      var displayWeb = String(webUrl).replace(/^https?:\/\//, "").replace(/\/$/, "");
+      h += '<div style="background:var(--bg2); border:1px solid var(--line); border-radius:8px; padding:10px; margin-top:8px; font-size:10.5px;">';
+      h += '<a href="' + esc(webUrl) + '" target="_blank" rel="noopener noreferrer" style="color:var(--accent-2); font-weight:bold; font-family:monospace; text-decoration:none; background:rgba(56,189,248,0.12); padding:5px 12px; border-radius:6px; border:1px solid rgba(56,189,248,0.3); word-break:break-all;">🌐 ' + esc(displayWeb) + ' ↗</a></div>';
+    }
+    h += '</div>'; // end TAB 1
+
+    /* ---- TAB 2: PRODUCTS & CUSTOMERS ---- */
+    h += '<div id="compTabProducts" class="site-tab-content" style="display:none;">';
+    var pl = o.product_lines_bilingual || [];
+    if (pl.length) {
+      h += '<div style="font-size:10.5px; color:var(--muted); margin:8px 0 6px;">🛰 ' + (isFa ? "برای مشاهدهٔ مشخصات هر خط محصول روی آن کلیک کنید:" : "Click a product line for details:") + '</div>';
+      h += '<div style="display:flex; flex-direction:column; gap:8px;">';
+      pl.forEach(function (pr, idx) {
+        var prName = isFa ? (pr.name_fa || pr.name_en) : (pr.name_en || pr.name_fa);
+        var prType = isFa ? (pr.type_fa || pr.type_en || "—") : (pr.type_en || pr.type_fa || "—");
+        var prClass = isFa ? (pr.class_fa || pr.class_en || "—") : (pr.class_en || pr.class_fa || "—");
+        var prSt = isFa ? (pr.status_fa || "عملیاتی") : (pr.status_en || "Operational");
+        var prUsed = isFa ? (pr.used_on_fa || pr.used_on_en || "—") : (pr.used_on_en || pr.used_on_fa || "—");
+        var prDesc = isFa ? (pr.engineering_desc_fa || "") : (pr.engineering_desc_en || "");
+        h += '<details class="acc"' + (idx === 0 ? " open" : "") + ' style="background:linear-gradient(180deg, rgba(15,31,51,0.8) 0%, rgba(9,13,22,0.9) 100%); border:1px solid var(--line); border-radius:8px; overflow:hidden;">';
+        h += '<summary style="padding:10px 12px; cursor:pointer; display:flex; justify-content:space-between; align-items:center; gap:10px; flex-wrap:wrap; user-select:none; background:rgba(255,255,255,0.03);">';
+        h += '<div style="font-size:12px; font-weight:bold; color:#fff; flex:1; min-width:160px; line-height:1.45;">🛰 <bdi>' + esc(prName) + '</bdi></div>';
+        h += '<span style="color:#10b981; font-size:9.5px; font-weight:bold; background:rgba(16,185,129,0.12); border:1px solid rgba(16,185,129,0.3); padding:2px 7px; border-radius:12px;"><bdi>' + esc(prSt) + '</bdi></span>';
+        h += '<span style="color:#8ba3c4; font-size:10px; opacity:0.8;">▼</span></summary>';
+        h += '<div style="padding:12px; border-top:1px solid rgba(255,255,255,0.08); background:rgba(4,10,18,0.7); color:#e7f0fb; font-size:10.5px; display:flex; flex-direction:column; gap:6px;">';
+        h += '<div style="display:grid; grid-template-columns:1fr 1fr; gap:6px;">';
+        h += '<div style="background:rgba(0,0,0,0.3); padding:6px 8px; border-radius:4px; border:1px solid var(--line);"><b>' + (isFa ? "نوع محصول:" : "Type:") + '</b><br><bdi style="color:#fff;">' + esc(prType) + '</bdi></div>';
+        h += '<div style="background:rgba(0,0,0,0.3); padding:6px 8px; border-radius:4px; border:1px solid var(--line);"><b>' + (isFa ? "کلاس / رده:" : "Class:") + '</b><br><bdi style="color:#fff;">' + esc(prClass) + '</bdi></div></div>';
+        if (prDesc) h += '<div style="background:rgba(15, 31, 51, 0.6); border:1px solid rgba(163,230,53,0.3); border-radius:6px; padding:8px 10px;"><b style="color:#a3e635;">🛠️ ' + (isFa ? "شرح مهندسی:" : "Engineering:") + '</b> <span style="color:#e7f0fb;">' + esc(prDesc) + '</span></div>';
+        h += '<div style="color:#fff; background:linear-gradient(90deg, rgba(163,230,53,0.12) 0%, rgba(2,132,199,0.05) 100%); border:1px solid rgba(163,230,53,0.3); padding:8px 10px; border-radius:6px;">';
+        h += '<div style="font-size:11px; font-weight:bold; color:#a3e635; margin-bottom:2px;">🎯 ' + (isFa ? "به‌کاررفته در:" : "Used on:") + '</div>';
+        h += '<div style="font-size:10.5px;"><bdi>' + esc(prUsed) + '</bdi></div>';
+        var cids = pr.customer_ids || [];
+        if (cids.length && window.compById) {
+          h += '<div style="display:flex; gap:5px; flex-wrap:wrap; margin-top:6px;">';
+          cids.forEach(function (cid2) {
+            var tc = window.compById(cid2);
+            if (!tc) return;
+            h += '<a href="#" onclick="openDetailById(\'' + esc(cid2) + '\', \'launch\'); return false;" style="color:#2fd4a7; font-size:9.5px; font-weight:bold; text-decoration:none; background:rgba(47,212,167,0.12); border:1px solid rgba(47,212,167,0.35); padding:2px 8px; border-radius:10px; cursor:pointer; white-space:nowrap;">🤝 <bdi>' + esc(isFa ? (tc.fa || tc.en) : (tc.en || tc.fa)) + '</bdi> ↗</a>';
+          });
+          h += '</div>';
+        }
+        h += '</div></div></details>';
+      });
+      h += '</div>';
+    } else {
+      h += '<div style="background:rgba(255,255,255,0.03); border:1px dashed var(--line); padding:12px; text-align:center; border-radius:6px; color:var(--muted); font-size:11px; margin-top:8px;">' + (isFa ? "خط محصول ثبت نشده است." : "No product lines recorded.") + '</div>';
+    }
+    var custs = isFa ? (o.customers_fa || []) : (o.customers_en || o.customers_fa || []);
+    if (custs.length) {
+      h += '<div style="background:var(--bg2); border:1px solid var(--line); border-radius:8px; padding:10px; margin-top:8px;">';
+      h += '<div style="font-size:11.5px; font-weight:bold; color:#10b981; margin-bottom:6px;">🤝 ' + (isFa ? "مشتریان اصلی:" : "Key Customers:") + '</div>';
+      h += '<div style="display:flex; gap:5px; flex-wrap:wrap;">';
+      custs.forEach(function (cu) { h += '<span style="background:rgba(16,185,129,0.08); border:1px solid rgba(16,185,129,0.25); padding:3px 9px; border-radius:10px; font-size:10px; color:var(--text);"><bdi>' + esc(cu) + '</bdi></span>'; });
+      h += '</div></div>';
+    }
+    h += '</div>'; // end TAB 2
+
+    /* ---- TAB 3: TRACK RECORD & FUTURE ---- */
+    h += '<div id="compTabTimeline" class="site-tab-content" style="display:none;">';
+    var built = isFa ? (o.satellites_built_fa || "—") : (o.satellites_built_en || o.satellites_built_fa || "—");
+    h += '<div style="background:var(--bg2); border:1px solid var(--line); border-radius:8px; padding:10px; margin-top:8px; font-size:10.5px;"><b style="color:#a3e635;">📦 ' + (isFa ? "کارنامهٔ ساخت:" : "Build Record:") + '</b> <bdi style="color:var(--text);">' + esc(built) + '</bdi></div>';
+    var mils = isFa ? (o.milestones_fa || []) : (o.milestones_en || o.milestones_fa || []);
+    if (mils.length) {
+      h += '<div style="background:var(--bg2); border:1px solid var(--line); border-radius:8px; padding:10px; margin-top:8px;">';
+      h += '<div style="font-size:11.5px; font-weight:bold; color:var(--amber); margin-bottom:6px;">🏁 ' + (isFa ? "نقاط عطف:" : "Milestones:") + '</div>';
+      h += '<div style="display:flex; flex-direction:column; gap:6px;">';
+      mils.forEach(function (ms) {
+        h += '<div style="background:rgba(0,0,0,0.18); border-right:3px solid #a3e635; padding:7px 9px; border-radius:5px; font-size:10.5px;">';
+        h += '<b style="color:var(--text);"><code style="color:var(--amber); font-family:monospace;"><bdi>' + esc(ms.year || "") + '</bdi></code> — ' + esc(ms.title || "") + '</b>';
+        if (ms.desc) h += '<div style="color:var(--muted); margin-top:3px; line-height:1.5;">' + esc(ms.desc) + '</div>';
+        h += '</div>';
+      });
+      h += '</div></div>';
+    }
+    var notable = isFa ? (o.notable_missions_fa || []) : (o.notable_missions_en || o.notable_missions_fa || []);
+    if (notable.length) {
+      h += '<div style="background:var(--bg2); border:1px solid var(--line); border-radius:8px; padding:10px; margin-top:8px;">';
+      h += '<div style="font-size:11.5px; font-weight:bold; color:#10b981; margin-bottom:6px;">🎯 ' + (isFa ? "پروژه‌های شاخص:" : "Notable Projects:") + '</div>';
+      notable.forEach(function (m) { h += '<div style="background:rgba(16,185,129,0.08); border:1px solid rgba(16,185,129,0.2); padding:6px; border-radius:4px; font-size:10.5px; color:var(--text); margin-bottom:4px;">🛰 ' + esc(m) + '</div>'; });
+      h += '</div>';
+    }
+    var futs = isFa ? (o.future_plans_fa || []) : (o.future_plans_en || o.future_plans_fa || []);
+    if (futs.length) {
+      h += '<div style="background:var(--bg2); border:1px solid var(--line); border-radius:8px; padding:10px; margin-top:8px;">';
+      h += '<div style="font-size:11.5px; font-weight:bold; color:var(--accent); margin-bottom:6px;">🚀 ' + (isFa ? "برنامه‌های آینده:" : "Future Plans:") + '</div>';
+      futs.forEach(function (f) { h += '<div style="background:rgba(56,189,248,0.08); border:1px solid rgba(56,189,248,0.2); padding:6px; border-radius:4px; font-size:10.5px; color:var(--text); margin-bottom:4px;">▫️ ' + esc(f) + '</div>'; });
+      h += '</div>';
+    }
+    h += '</div>'; // end TAB 3
+
+    return h;
+  }
+  window.renderSatmakerDetail = renderSatmakerDetail;
+
   function renderRecoveryVideos(event) {
     var seen = {}, videos = (Array.isArray(event.videos) ? event.videos : []).filter(function (video) {
       if (!validRecoveryVideo(video, event.id) || seen[video.url]) return false;
@@ -2866,6 +3191,128 @@
       "Opens on the source website. Archived coverage may be long; playback depends on the destination’s access conditions.") + '</p></section>';
   }
 
+  /* ============ فرودهای پیشِ رو — نمونهٔ آزمایشی روی چند پایگاه ============ */
+  function recoveryUpcomingRows(o) {
+    if (!UPL.data || !Array.isArray(UPL.data.landings)) return null;
+    var sample = UPL.data.sample_site_ids || [];
+    if (sample.length && sample.indexOf(o.id) < 0) return null;
+    var rows = UPL.data.landings.filter(function (r) { return r.site_id === o.id; });
+    rows.sort(function (a, b) {
+      if (a.date && b.date) return a.date.localeCompare(b.date);
+      if (a.date) return -1;
+      if (b.date) return 1;
+      return 0;
+    });
+    return rows;
+  }
+  function recoveryUpcomingTabButton(o, fa) {
+    var rows = recoveryUpcomingRows(o);
+    if (rows === null) return "";
+    return '<button type="button" id="recoveryUpcomingTab" role="tab" aria-selected="false" aria-controls="recoveryUpcoming" tabindex="-1" data-recovery-tab="upcoming">' +
+      (fa ? "فرودهای پیشِ رو" : "Upcoming landings") + (rows.length ? " (" + fmtNum(rows.length) + ")" : "") + '</button>';
+  }
+  function renderRecoveryUpcomingPanel(o, fa) {
+    var rows = recoveryUpcomingRows(o);
+    if (rows === null) return "";
+    var types = { asds: fa ? "فرود روی شناور دریایی" : "Droneship landing",
+      rtls: fa ? "فرود زمینی کنار سکوی پرتاب" : "Return to launch site",
+      runway: fa ? "فرود افقی روی باند" : "Runway landing",
+      parachute: fa ? "فرود چتری روی خشکی" : "Parachute land landing" };
+    var statuses = { go: fa ? "زمان‌بندی قطعی" : "Scheduled",
+      tbc: fa ? "در انتظار تأیید" : "To be confirmed",
+      queued: fa ? "در صف — تاریخ نامشخص" : "Queued — date TBD" };
+    var h = '<section id="recoveryUpcoming" class="recovery-tab-panel" role="tabpanel" aria-labelledby="recoveryUpcomingTab" tabindex="0" hidden>';
+    h += '<div class="recovery-coverage"><div><strong>' + (fa ? "فرودهای در انتظار" : "Pending landings") + '</strong><span>' +
+      (fa ? "غیرزنده" : "Not live") + '</span></div><p>' +
+      esc(fa ? (UPL.data.source_note_fa || "") : (UPL.data.source_note_en || "")) + '</p></div>';
+    var fieldDefs = [
+      ["mtype", fa ? "نوع مأموریت" : "Mission type"],
+      ["customer", fa ? "مشتری و بهره‌بردار" : "Customer & operator"],
+      ["time", fa ? "زمان حدودی" : "Approximate time"],
+      ["origin", fa ? "مبدأ بازگشت" : "Return origin"],
+      ["booster", fa ? "بوستر" : "Booster"],
+      ["downrange", fa ? "فاصلهٔ محل فرود" : "Landing distance"]
+    ];
+    function uplVal(r, key) {
+      var v = fa ? r[key + "_fa"] : r[key + "_en"];
+      if (v && key === "time") {
+        var p = fa ? r.precision_fa : r.precision_en;
+        if (p) v += " · " + p;
+      }
+      return v || "";
+    }
+    // رفع تکرار: مقداری که در کارت‌های صفحه یکسان است فقط یک بار
+    // در بلوک «ویژگی‌های مشترک» می‌آید و از تک‌تک کارت‌ها حذف می‌شود.
+    var lifted = {}, liftedPartial = {};
+    if (rows.length > 1) {
+      fieldDefs.forEach(function (f) {
+        var vals = rows.map(function (r) { return uplVal(r, f[0]); }).filter(Boolean);
+        if (vals.length < 2) return;
+        var same = vals.every(function (v) { return v === vals[0]; });
+        if (same) { lifted[f[0]] = vals[0]; liftedPartial[f[0]] = vals.length < rows.length; }
+      });
+    }
+    var shared = (UPL.data.site_shared || {})[o.id];
+    var sharedFacts = [];
+    if (shared && (fa ? shared.tplus_fa : shared.tplus_en)) {
+      sharedFacts.push('<div><dt>' + (fa ? "زمان فرود نسبت به پرتاب" : "Landing time after liftoff") +
+        '</dt><dd>' + esc(fa ? shared.tplus_fa : shared.tplus_en) + '</dd></div>');
+    }
+    fieldDefs.forEach(function (f) {
+      if (!lifted[f[0]]) return;
+      var label = f[1] + (liftedPartial[f[0]] ? (fa ? " (ردیف‌های دارای این داده)" : " (rows with this data)") : "");
+      sharedFacts.push('<div><dt>' + label + '</dt><dd>' + esc(lifted[f[0]]) + '</dd></div>');
+    });
+    if (rows.length && sharedFacts.length) {
+      h += '<div class="recovery-section-label">' + (fa ? "ویژگی‌های مشترک این فهرست" : "Shared traits of this list") +
+        '</div><dl class="recovery-facts">' + sharedFacts.join("") + '</dl>';
+    }
+    if (!rows.length) {
+      h += '<p class="recovery-description">' + (fa ? "در پنجرهٔ فعلی داده، فرود برنامه‌ریزی‌شده‌ای برای این محل ثبت نشده است." :
+        "No planned landing is recorded for this location in the current data window.") + '</p>';
+    }
+    rows.forEach(function (r) {
+      h += '<article class="recovery-event" data-landing-outcome="upcoming">' +
+        '<div class="recovery-event-top">' +
+        (r.date ? '<time datetime="' + esc(r.date) + '">' + esc(recoveryDate(r.date)) + '</time>' :
+          '<span class="recovery-type">' + (fa ? "در صف" : "Queued") + '</span>') + '</div>' +
+        '<h3><bdi>' + esc(fa ? r.mission_fa : r.mission) + '</bdi></h3>' +
+        '<p class="recovery-vehicle">' + esc(fa ? r.vehicle_fa : r.vehicle_en) +
+        ' · ' + esc(fa ? r.operator_fa : r.operator_en) + '</p>' +
+        '<div class="recovery-outcomes"><span class="recovery-type">' + esc(types[r.ltype] || "") + '</span>' +
+        '<span class="recovery-type">' + esc(statuses[r.status] || "") + '</span></div>';
+      if (r.note_fa || r.note_en) h += '<p class="recovery-event-brief">' + esc(fa ? (r.note_fa || "") : (r.note_en || "")) + '</p>';
+      var facts = [];
+      fieldDefs.forEach(function (f) {
+        if (lifted[f[0]]) return; // به بلوک مشترک منتقل شده است
+        var v = uplVal(r, f[0]);
+        if (v) facts.push('<div><dt>' + f[1] + '</dt><dd>' + esc(v) + '</dd></div>');
+      });
+      if (facts.length || r.calendar_url || r.stream_url) {
+        h += '<details class="recovery-event-details"><summary><span>' +
+          (fa ? "جزئیات مأموریت و پیوندهای رسمی" : "Mission details and official links") +
+          '</span><span class="recovery-expand" aria-hidden="true"></span></summary><div class="recovery-event-reading">';
+        if (facts.length) h += '<dl class="recovery-facts">' + facts.join("") + '</dl>';
+        if (r.calendar_url) {
+          h += '<div class="recovery-evidence-heading">' + (fa ? "گاه‌شمار رسمی" : "Official schedule") + '</div>' +
+            '<div class="recovery-primary-source"><a href="' + esc(r.calendar_url) +
+            '" target="_blank" rel="noopener noreferrer" style="font-size:10px; color:var(--accent); border:1px solid var(--line); border-radius:5px; padding:4px 9px; text-decoration:none; display:inline-block;">🗓 ' +
+            (fa ? "صفحهٔ زمان‌بندی اپراتور" : "Operator schedule page") + ' ↗</a></div>';
+        }
+        if (r.stream_url) {
+          h += '<div class="recovery-evidence-heading">' + (fa ? "پخش زندهٔ رسمی" : "Official live stream") + '</div>' +
+            '<div class="recovery-primary-source">' + recoverySource(r.stream_url, fa ? "پخش رسمی رویداد" : "Official webcast") + '</div>';
+        }
+        h += '</div></details>';
+      }
+      h += '</article>';
+    });
+    h += '<p class="recovery-small">' + (fa ?
+      "تاریخ‌ها از منبع داده می‌آیند و ممکن است جابه‌جا شوند؛ پیش از تماشا منبع رسمی را ببینید. آخرین برداشت: " :
+      "Dates come from the data source and may shift; check the official source before watching. Snapshot: ") +
+      esc(recoveryDate(UPL.data.updated)) + '</p></section>';
+    return h;
+  }
   function renderRecoveryDetail(o) {
     var fa = LANG === "fa", events = o.events.slice().sort(function (a, b) { return b.date.localeCompare(a.date); });
     var types = { booster: fa ? "سکوی بوستر" : "Booster landing", capsule: fa ? "بازیابی کپسول" : "Capsule recovery",
@@ -2895,7 +3342,8 @@
       '<button type="button" id="recoveryOverviewTab" role="tab" aria-selected="true" aria-controls="recoveryOverview" data-recovery-tab="overview">' +
       (fa ? "معرفی محل" : "Overview") + '</button>' +
       '<button type="button" id="recoveryHistoryTab" role="tab" aria-selected="false" aria-controls="recoveryHistory" tabindex="-1" data-recovery-tab="history">' +
-      (fa ? "تاریخچهٔ فرود و بازیابی" : "Landing & recovery history") + '</button></div>' +
+      (fa ? "تاریخچهٔ فرود و بازیابی" : "Landing & recovery history") + '</button>' +
+      recoveryUpcomingTabButton(o, fa) + '</div>' +
       '<section id="recoveryOverview" class="recovery-tab-panel" role="tabpanel" aria-labelledby="recoveryOverviewTab" tabindex="0">' +
       (o.image ? '<figure class="recovery-hero">' +
         '<img src="' + esc(o.image.file) + '" alt="' + esc(fa ? o.image.caption_fa : o.image.caption_en) + '" loading="lazy" decoding="async">' +
@@ -3002,7 +3450,8 @@
     return h + '</div>' + renderRecoveryRegistry(o) + '<p class="recovery-small">' +
       (fa ? "«بازیابی نامشخص» یعنی تأیید مستقل آن در منبع ثبت نشده است؛ نه اینکه بازیابی شکست خورده باشد." :
       "Unverified recovery means a separate confirmation is not recorded in the source; it does not mean recovery failed.") +
-      '</p></section><footer class="recovery-footer"><span>' + (fa ? "آخرین بررسی منابع" : "Sources reviewed") + '</span><span>' +
+      '</p></section>' + renderRecoveryUpcomingPanel(o, fa) +
+      '<footer class="recovery-footer"><span>' + (fa ? "آخرین بررسی منابع" : "Sources reviewed") + '</span><span>' +
       esc(recoveryDate(o.reviewed_on)) + '</span></footer></div>';
   }
   function renderRecoveryRegistry(o) {
@@ -3084,6 +3533,11 @@
 
 
 
+    if (cat === "satmaker" || (p.o && p.o.cat === "satmaker")) {
+      $("#detailBody").innerHTML = renderSatmakerDetail(p);
+      $("#detail").classList.add("open");
+      return;
+    }
     if (cat === "propulsion" || (p.o && p.o.cat === "propulsion")) {
       $("#detailBody").innerHTML = renderPropulsionDetail(p);
       $("#detail").classList.add("open");
