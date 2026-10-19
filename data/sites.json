@@ -13717,5 +13717,111 @@
   "photo_credit": "HABS / کتابخانهٔ کنگره",
   "photo_license": "Public domain",
   "photo_source_url": "https://commons.wikimedia.org/wiki/File:V-2_GANTRY,_LAUNCH_COMPLEX_33-_LOOKING_NORTH_-_White_Sands_Missile_Range,_V-2_Gantry_Crane,_White_Sands,_Dona_Ana_County,_NM_HAER_NM,7-WHSA,1A-1.tif"
+ },
+ {
+  "id": "etlaq",
+  "en": "Etlaq Spaceport",
+  "fa": "بندر فضایی اتلاق",
+  "country": "Oman",
+  "country_fa": "عمان",
+  "lat": 18.7862,
+  "lon": 56.822,
+  "op": "Etlaq / NASCOM",
+  "status": "active",
+  "first": 2024,
+  "pads": "Genesis (temporary); LC-1, LC-2, LC-3A/B (planned)",
+  "rockets": [
+   "Weka (Duqm-1)",
+   "AZAD",
+   "Latitude launcher (planned)"
+  ],
+  "en_d": "Oman's commercial spaceport near Duqm, run by Etlaq under NASCOM. Hosted the region's first experimental suborbital launch in December 2024 and targets orbital operations from late 2027.",
+  "fa_d": "بندر فضایی تجاری عمان در نزدیکی دقم، زیر مدیریت شرکت اتلاق از زیرمجموعه‌های ناسکوم. دسامبر ۲۰۲۴ میزبان نخستین پرتاب آزمایشی زیرمداری منطقه بود و هدفش آغاز پرتاب مداری از اواخر ۲۰۲۷ است.",
+  "alt": "17 m",
+  "equator_dist": "2,091 km (18.8° N)",
+  "launches": [
+   {
+    "date": "2024-12-05",
+    "rocket": "Weka",
+    "payload": "مأموریت آزمایشی دقم-۱",
+    "mtype": "پرتاب زیرمداری",
+    "orbit": "زیرمداری (اوج حدود ۱۴۰ کیلومتر)",
+    "success": true,
+    "time_utc": "06:05",
+    "mass": "123 kg",
+    "rocket_var": "Weka (Snowdon Consulting)",
+    "inc": "—",
+    "duration": "حدود ۱۵ دقیقه",
+    "analysis": "نخستین پرتاب عمان و نقطهٔ آغاز بندر فضایی اتلاق؛ راکت کاوشی وکا از خط کارمان گذشت.",
+    "has_photo": true,
+    "photo_url": "assets/img/sites/etlaq.jpg",
+    "mass_fa": "۱۲۳ کیلوگرم با سوخت",
+    "mass_en": "123 kg fueled",
+    "inclination": "—",
+    "inclination_fa": "زیرمداری",
+    "inclination_en": "Suborbital",
+    "analysis_fa": "نخستین پرتاب عمان و نقطهٔ آغاز بندر فضایی اتلاق؛ راکت کاوشی وکا از خط کارمان گذشت.",
+    "analysis_en": "Oman's first launch and Etlaq's starting point; the Weka sounding rocket crossed the Karman line."
+   },
+   {
+    "date": "2026-10-01",
+    "rocket": "AZAD",
+    "payload": "مأموریت کارمان X1 (راکت آزاد)",
+    "mtype": "پرتاب زیرمداری",
+    "orbit": "آزمون کم‌ارتفاع (اوج حدود ۱۰ کیلومتر)",
+    "success": true,
+    "time_utc": "—",
+    "mass": "26 kg",
+    "rocket_var": "AZAD «The Dreamer» (OculloSpace)",
+    "inc": "—",
+    "duration": "—",
+    "analysis": "دومین پرتاب اتلاق با اپراتور عمانی استلار کینتیکس؛ هر دو مرحله سوخت و چتر مرحلهٔ بالایی باز نشد.",
+    "has_photo": false,
+    "photo_url": "",
+    "mass_fa": "۲۶ کیلوگرم",
+    "mass_en": "26 kg",
+    "inclination": "—",
+    "inclination_fa": "زیرمداری",
+    "inclination_en": "Suborbital",
+    "analysis_fa": "دومین پرتاب اتلاق با اپراتور عمانی استلار کینتیکس؛ هر دو مرحله سوخت و چتر مرحلهٔ بالایی باز نشد.",
+    "analysis_en": "Etlaq's second launch with Omani operator Stellar Kinetics; both stages burned, though the upper-stage parachute failed."
+   }
+  ],
+  "has_photo": true,
+  "photo_url": "assets/img/sites/etlaq.jpg",
+  "azimuth": "جنوب و جنوب‌شرق روی دریای عرب (کریدور باز اقیانوسی)",
+  "target_orbits": "Suborbital; LEO & SSO (planned)",
+  "geo_analysis": "جانمایی اتلاق در عرض جغرافیایی ۱۸٫۸ درجه شمالی در ساحل دریای عرب، کریدور پرتاب باز و کم‌ترافیکی به سمت جنوب و جنوب‌شرق فراهم می‌کند. نزدیکی به استوا نسبت به بیشتر پایگاه‌های اوراسیا مزیت سرعت اولیه می‌دهد و منطقهٔ آزاد اقتصادی دقم پشتیبانی بندری و لجستیکی در چند ده کیلومتری سایت است.",
+  "infra": [
+   {
+    "name": "سکوی موقت جنسیس",
+    "active": true
+   },
+   {
+    "name": "آشیانه یکپارچه‌سازی پرتابگر",
+    "active": true
+   },
+   {
+    "name": "مرکز کنترل پرتاب و برد",
+    "active": true
+   },
+   {
+    "name": "مجتمع LC-1 برای کلاس سنگین",
+    "active": false
+   },
+   {
+    "name": "مجتمع LC-2 برای کلاس میانه",
+    "active": false
+   },
+   {
+    "name": "مجتمع LC-3A/B برای کلاس کوچک و زیرمداری",
+    "active": false
+   }
+  ],
+  "photo_caption_fa": "برخاست راکت دقم-۱ از بندر فضایی اتلاق، دسامبر ۲۰۲۴",
+  "photo_caption_en": "Duqm-1 lifting off from Etlaq Spaceport, December 2024",
+  "photo_credit": "Etlaq Spaceport",
+  "photo_license": "CC BY-SA 4.0",
+  "photo_source_url": "https://commons.wikimedia.org/wiki/File:Duqm-1_Mission_Launch_-_Etlaq_Spaceport.png"
  }
 ]

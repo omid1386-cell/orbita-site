@@ -1,7 +1,7 @@
 {
  "schema_version": 1,
- "reviewed_on": "2026-10-01",
- "scope": "12 representative locations in four countries. Selected source-backed history, not complete global coverage. Intended targets are not actual landing positions. Tower capture concerns the booster only. No live vessel locations, safety polygons, images or hosted video.",
+ "reviewed_on": "2026-10-18",
+ "scope": "20 representative locations across four countries and international waters. Selected source-backed history, not complete global coverage. Intended targets are not actual landing positions. Tower capture concerns the booster only. No live vessel locations, safety polygons or hosted video; each dossier may carry one credited official image.",
  "sites": [
   {
    "id": "recovery-lz4",
@@ -6677,6 +6677,37 @@
      "significance_en": "The landing showed the Atlantic recovery pattern repeats in the Pacific and that NASA science missions now trust reflown boosters.",
      "note_fa": "تاریخ به وقت جهانی است؛ پرتاب به وقت محلی کالیفرنیا شب ۲۳ نوامبر بود.",
      "note_en": "Date in UTC; the launch was the night of 23 November California time."
+    },
+    {
+     "id": "ocisly-ussf481",
+     "date": "2026-10-16",
+     "date_basis": "utc",
+     "fa": "فرود دویست‌وبیست‌وهشتم روی این شناور در مأموریت امنیت ملی",
+     "en": "228th landing on this vessel, on a national-security mission",
+     "vehicle_fa": "بوستر فالکون ۹ (B1081)",
+     "vehicle_en": "Falcon 9 booster B1081",
+     "landing_outcome": "success",
+     "recovery_outcome": "confirmed",
+     "verified_on": "2026-10-18",
+     "source_url": "https://spaceflightnow.com/2026/10/15/live-coverage-spacex-to-launch-classified-payload-for-u-s-space-force/",
+     "source_publisher": "Spaceflight Now",
+     "summary_fa": "بوستر B1081 در مأموریت محرمانه USSF-481 حدود هشت و نیم دقیقه پس از برخاست از وندنبرگ، روی شناور «البته هنوز دوستت دارم» در اقیانوس آرام نشست.",
+     "summary_en": "Booster B1081 on the classified USSF-481 mission touched down on Of Course I Still Love You in the Pacific about eight and a half minutes after liftoff from Vandenberg.",
+     "context_fa": "این پرواز بیست‌وهشتم همین بوستر بود؛ پرتاب از مجتمع SLC-4E انجام شد.",
+     "context_en": "It was this booster's 28th flight, launched from SLC-4E.",
+     "sequence_fa": "برخاست در ساعت ۰۰:۰۱ به وقت جهانی؛ جدایش مرحله، بازگشت و فرود عمودی روی عرشه طبق برنامه.",
+     "sequence_en": "Liftoff at 00:01 UTC; stage separation, boostback and a vertical deck landing as planned.",
+     "significance_fa": "دویست‌وبیست‌وهشتمین فرود این شناور و ششصدوهفتادویکمین فرود بوسترهای فالکون.",
+     "significance_en": "The vessel's 228th landing and the 671st Falcon booster landing overall.",
+     "note_fa": "محموله محرمانه بود و پخش زنده پس از فرود بوستر پایان یافت.",
+     "note_en": "The payload was classified; the webcast ended after booster landing.",
+     "supporting_sources": [
+      {
+       "url": "https://www.space.com/space-exploration/launches-spacecraft/spacex-space-force-launch-ussf-481-vandenberg",
+       "publisher": "Space.com"
+      }
+     ],
+     "videos": null
     }
    ],
    "image": {
@@ -9724,6 +9755,301 @@
      ]
     }
    ]
+  },
+  {
+   "id": "recovery-lz40",
+   "cat": "recovery",
+   "recovery_type": "booster",
+   "en": "Landing Zone 40",
+   "fa": "منطقهٔ فرود ۴۰",
+   "country": "United States",
+   "country_fa": "ایالات متحده",
+   "city": "Cape Canaveral, Florida",
+   "city_fa": "کیپ کاناورال، فلوریدا",
+   "lat": 28.562,
+   "lon": -80.5772,
+   "coordinate_precision": "representative",
+   "coordinate_source_url": "https://en.wikipedia.org/wiki/Cape_Canaveral_Space_Launch_Complex_40",
+   "coordinate_note_fa": "مرجع جغرافیایی مجتمع پرتاب ۴۰ است؛ سکوی فرود داخل محدودهٔ همین مجتمع ساخته شده و نقطهٔ دقیق مرکز سکو جداگانه اندازه‌برداری نشده است.",
+   "coordinate_note_en": "A reference for Space Launch Complex 40; the landing pad sits inside this complex's perimeter and the pad center has not been separately surveyed.",
+   "coordinate_audit": {
+    "reviewed_on": "2026-10-13",
+    "decision": "reference_location",
+    "fa": "نقطهٔ نقشه مرجع مجتمع ۴۰ است، نه مرکز دقیق سکوی فرود.",
+    "en": "The map point references Complex 40, not the precise pad center."
+   },
+   "status": "documented",
+   "history_coverage": "complete",
+   "reviewed_on": "2026-10-13",
+   "coverage_start": "2026-02-13",
+   "coverage_end": "2026-10-13",
+   "method_fa": "فرود عمودی بوستر روی خشکی",
+   "method_en": "Propulsive booster landing on land",
+   "op": "SpaceX for the documented events",
+   "op_fa": "اسپیس‌ایکس در رویدادهای ثبت‌شده",
+   "fa_d": "جانشین منطقهٔ فرود ۱؛ سکوی اصلی فرودهای زمینی فلوریدا از زمستان ۱۴۰۴. بوستر چند دقیقه پس از پرتاب، کنار همان سکوی پرتاب می‌نشیند.",
+   "en_d": "Successor to Landing Zone 1 and Florida's primary ground-landing pad since early 2026. Boosters touch down beside the very pad they left minutes earlier.",
+   "activity_fa": "فعال؛ اسپیس‌ایکس در ژانویهٔ ۲۰۲۶ این سکو را سکوی اصلی فرودهای زمینی اعلام کرد. آخرین فرود ثبت‌شده ۱۳ اکتبر ۲۰۲۶ است.",
+   "activity_en": "Active; SpaceX declared it the primary return-to-launch-site pad in January 2026. The latest recorded landing is October 13, 2026.",
+   "products": [
+    "مرحلهٔ اول فالکون ۹",
+    "Falcon 9 first stage",
+    "بوستر جانبی فالکون هوی",
+    "Falcon Heavy side booster",
+    "نخستین پرتاب-و-فرود هم‌مجتمع فلوریدا",
+    "Florida's first same-complex launch and landing",
+    "هشت فرود موفق در نخستین سال",
+    "Eight successful landings in year one"
+   ],
+   "image": {
+    "file": "assets/img/recovery/recovery-lz40.jpg",
+    "caption_fa": "فرود بوستر کرو-۱۲؛ نخستین فرود منطقهٔ ۴۰، فوریهٔ ۲۰۲۶",
+    "caption_en": "The Crew-12 booster touches down; LZ-40's first landing, February 2026",
+    "credit_fa": "ناسا",
+    "credit_en": "NASA",
+    "license": "Public Domain",
+    "source_url": "https://www.nasa.gov/blogs/spacestation/2026/02/13/crew-12-falcon-9-first-stage-returns/"
+   },
+   "events": [
+    {
+     "id": "lz40-crew12",
+     "date": "2026-02-13",
+     "date_basis": "utc",
+     "fa": "نخستین فرود؛ افتتاح سکو با مأموریت سرنشین‌دار",
+     "en": "Maiden landing, inaugurated on a crewed mission",
+     "vehicle_fa": "بوستر فالکون ۹ (کرو-۱۲)",
+     "vehicle_en": "Falcon 9 booster (Crew-12)",
+     "landing_outcome": "success",
+     "recovery_outcome": "confirmed",
+     "verified_on": "2026-10-13",
+     "source_url": "https://www.nasa.gov/blogs/spacestation/2026/02/13/crew-12-falcon-9-first-stage-returns/",
+     "source_publisher": "NASA",
+     "summary_fa": "چند دقیقه پس از پرتاب کرو-۱۲، بوستر داخل محدودهٔ مجتمع ۴۰ نشست. برای نخستین بار در فلوریدا، پرتاب و فرود در یک مجتمع انجام شد.",
+     "summary_en": "Minutes after the Crew-12 liftoff, the booster landed inside the Complex 40 perimeter, Florida's first launch and landing at the same complex.",
+     "note_fa": "تاریخ از وبلاگ رسمی ناسا در روز پرتاب است و منبع، نشستن مرحلهٔ اول را در محدودهٔ مجتمع ۴۰ تأیید می‌کند.",
+     "note_en": "The date comes from NASA's official blog on launch day; the source confirms the first stage set down within the SLC-40 perimeter."
+    },
+    {
+     "id": "lz40-crew13",
+     "date": "2026-10-01",
+     "date_basis": "utc",
+     "fa": "فرود پس از پرتاب کرو-۱۳",
+     "en": "Landing after the Crew-13 launch",
+     "vehicle_fa": "بوستر فالکون ۹ (کرو-۱۳)",
+     "vehicle_en": "Falcon 9 booster (Crew-13)",
+     "landing_outcome": "success",
+     "recovery_outcome": "confirmed",
+     "verified_on": "2026-10-13",
+     "source_url": "https://english.publictv.in/spacex-falcon-9-booster-lands-at-lz-40-after-launching-nasas-crew-13-to-iss/",
+     "source_publisher": "Public TV English",
+     "summary_fa": "بوستر مأموریت سرنشین‌دار کرو-۱۳ دقایقی پس از پرتاب روی همین سکو نشست و سکو را به سکوی ثابت مأموریت‌های سرنشین‌دار بدل کرد.",
+     "summary_en": "The Crew-13 booster returned to this pad minutes after liftoff, cementing it as the regular pad for crewed flights.",
+     "note_fa": "منبع این ردیف یک رسانهٔ خبری است، نه بیانیهٔ رسمی؛ اگر گزارش رسمی پیدا شود جایگزین می‌شود.",
+     "note_en": "This row's source is a news outlet, not an official statement; it will be replaced if an official report is found."
+    }
+   ],
+   "recorded_event_count": 2,
+   "landing_registry": {
+    "complete": true,
+    "scope_fa": "همهٔ فرودهای ثبت‌شده روی این سکو از افتتاح آن (فوریهٔ ۲۰۲۶) تا تاریخ بازبینی، بر پایهٔ فهرست مرجع بوسترها.",
+    "scope_en": "Every landing recorded on this pad from its February 2026 debut through the review date, per the booster reference list.",
+    "basis_fa": "تاریخ هر ردیف، تاریخ پرتاب به وقت جهانی است؛ فرود چند دقیقه پس از پرتاب و در همان مجتمع رخ می‌دهد.",
+    "basis_en": "Each row is dated by UTC launch date; the landing occurs minutes later within the same complex.",
+    "source_url": "https://en.wikipedia.org/wiki/List_of_Falcon_9_first-stage_boosters",
+    "source_publisher": "Wikipedia",
+    "verified_on": "2026-10-13",
+    "entries": [
+     {
+      "d": "2026-02-13",
+      "m": "Crew-12 (Crew Dragon Freedom)",
+      "v": "Falcon 9",
+      "o": "success",
+      "n_fa": "نخستین فرود سکو؛ نخستین پرتاب-و-فرود هم‌مجتمع در فلوریدا.",
+      "n_en": "The pad's maiden landing and Florida's first same-complex launch and landing."
+     },
+     {
+      "d": "2026-04-11",
+      "m": "Cygnus NG-24",
+      "v": "Falcon 9",
+      "o": "success"
+     },
+     {
+      "d": "2026-04-29",
+      "m": "ViaSat-3 (Falcon Heavy)",
+      "v": "Falcon Heavy side booster",
+      "o": "success",
+      "n_fa": "نخستین بوستر جانبی فالکون هوی روی این سکو؛ بوستر دیگر در مجتمع ۳۹آ نشست.",
+      "n_en": "First Falcon Heavy side booster here; its twin landed at LC-39A."
+     },
+     {
+      "d": "2026-05-15",
+      "m": "CRS-34 (Cargo Dragon C209)",
+      "v": "Falcon 9",
+      "o": "success"
+     },
+     {
+      "d": "2026-08-16",
+      "m": "Globalstar (F9-677)",
+      "v": "Falcon 9",
+      "o": "success"
+     },
+     {
+      "d": "2026-10-01",
+      "m": "Crew-13 (Crew Dragon Grace)",
+      "v": "Falcon 9",
+      "o": "success"
+     },
+     {
+      "d": "2026-10-10",
+      "m": "Nancy Grace Roman Space Telescope (Falcon Heavy)",
+      "v": "Falcon Heavy side booster",
+      "o": "success",
+      "n_fa": "پرتاب تلسکوپ فضایی ننسی گریس رومن؛ بوستر دیگر در مجتمع ۳۹آ نشست.",
+      "n_en": "The Roman Space Telescope launch; the twin booster landed at LC-39A."
+     },
+     {
+      "d": "2026-10-13",
+      "m": "CRS-35 (Cargo Dragon C211)",
+      "v": "Falcon 9",
+      "o": "success",
+      "n_fa": "تازه‌ترین فرود؛ نتیجه از کتابخانهٔ پرتاب ۲ تأیید شده است.",
+      "n_en": "The latest landing; outcome confirmed via Launch Library 2."
+     }
+    ]
+   }
+  },
+  {
+   "id": "recovery-jacklyn",
+   "cat": "recovery",
+   "recovery_type": "droneship",
+   "en": "Landing Platform Vessel 1 (Jacklyn)",
+   "fa": "شناور فرود «جکلین»",
+   "country": "United States",
+   "country_fa": "ایالات متحده",
+   "city": "Port Canaveral, Florida (home port)",
+   "city_fa": "بندر کاناورال، فلوریدا (بندر پایگاه)",
+   "lat": 28.4168,
+   "lon": -80.6335,
+   "coordinate_precision": "representative",
+   "coordinate_source_url": "https://en.wikipedia.org/wiki/Port_Canaveral",
+   "coordinate_note_fa": "مرجع جغرافیایی بندر پایگاه است، نه موقعیت فرودها؛ فرودها صدها کیلومتر دورتر در اقیانوس اطلس انجام می‌شوند. نقطه کمی جدا از شناورهای اسپیس‌ایکس گذاشته شده تا نشانگرها روی هم نیفتند.",
+   "coordinate_note_en": "A home-port reference, not a landing position; landings occur hundreds of kilometres out in the Atlantic. The point is offset slightly from the SpaceX vessels so markers do not overlap.",
+   "coordinate_audit": {
+    "reviewed_on": "2026-10-13",
+    "decision": "reference_location",
+    "fa": "نقطهٔ نقشه فقط بندر پایگاه شناور است؛ محل فرود هر مأموریت در دریا متفاوت است.",
+    "en": "The map point is only the vessel's home port; each mission lands at a different offshore position."
+   },
+   "mobility": "mobile",
+   "mobility_note_fa": "این سکو یک شناور متحرک است. برای هر مأموریت با کشتی پشتیبان «هاروی استون» به موقعیت فرود یدک می‌شود و نقطهٔ نقشه فقط بندر پایگاه آن است.",
+   "mobility_note_en": "A mobile platform, towed to each landing position by the support ship Harvey Stone; the map point is only its home port.",
+   "status": "documented",
+   "history_coverage": "complete",
+   "reviewed_on": "2026-10-13",
+   "coverage_start": "2025-01-16",
+   "coverage_end": "2026-04-19",
+   "method_fa": "فرود عمودی بوستر روی عرشهٔ شناور در دریا",
+   "method_en": "Propulsive booster landing on an at-sea deck",
+   "op": "Blue Origin for the documented events",
+   "op_fa": "بلو اوریجین در رویدادهای ثبت‌شده",
+   "fa_d": "سکوی دریایی بازیابی بوستر نیو گلن. با فرود ۱۳ نوامبر ۲۰۲۵، بلو اوریجین دومین شرکت تاریخ شد که بوستر مداری را ایستاده بازیابی می‌کند.",
+   "en_d": "The at-sea recovery platform for New Glenn boosters. Its November 13, 2025 landing made Blue Origin the second company ever to recover an orbital booster upright.",
+   "activity_fa": "فعال؛ دو فرود موفق از سه تلاش تا تاریخ بازبینی. ناوگان نیو گلن پس از نقص مرحلهٔ دوم در پرواز سوم موقتاً زمین‌گیر است و فرود بعدی به پرتاب بعدی بسته است.",
+   "activity_en": "Active; two successful landings in three attempts as of the review date. New Glenn is temporarily grounded after the third flight's upper-stage mishap, so the next landing awaits the next launch.",
+   "products": [
+    "مرحلهٔ اول نیو گلن",
+    "New Glenn first stage",
+    "بارج سفارشی ۱۱۶ متری ساخت ۲۰۲۳",
+    "Purpose-built 116 m barge, 2023",
+    "ربات‌های مهار خودکار بوستر",
+    "Robotic booster-securing systems",
+    "دومین شرکت تاریخ با فرود دریایی بوستر مداری",
+    "Second company ever to land an orbital booster at sea"
+   ],
+   "image": {
+    "file": "assets/img/recovery/recovery-jacklyn.jpg",
+    "caption_fa": "شناور جکلین در بندر کاناورال در انتظار مأموریت، ۲۰۲۵",
+    "caption_en": "Jacklyn at Port Canaveral awaiting a mission, 2025",
+    "credit_fa": "کاربر ویکی‌انبار JER3L1337",
+    "credit_en": "Wikimedia Commons user JER3L1337",
+    "license": "CC0",
+    "source_url": "https://commons.wikimedia.org/wiki/File:Landing_Platform_Vessel_1_%22Jacklyn%22_At_Port_Canaveral.jpg"
+   },
+   "events": [
+    {
+     "id": "jacklyn-ng2",
+     "date": "2025-11-13",
+     "date_basis": "utc",
+     "fa": "نخستین فرود موفق بوستر نیو گلن",
+     "en": "First successful New Glenn booster landing",
+     "vehicle_fa": "بوستر نیو گلن «هرگز احتمالش را به من نگو»",
+     "vehicle_en": "New Glenn booster GS1-2 Never Tell Me the Odds",
+     "landing_outcome": "success",
+     "recovery_outcome": "confirmed",
+     "verified_on": "2026-10-13",
+     "source_url": "https://www.space.com/space-exploration/launches-spacecraft/blue-origin-lands-huge-new-glenn-rocket-booster-for-1st-time-after-acing-mars-escapade-launch-for-nasa",
+     "source_publisher": "Space.com",
+     "summary_fa": "در پرواز دوم نیو گلن و پس از پرتاب دوقلوهای مریخی اسکیپید، بوستر حدود ۶۰۰ کیلومتر دورتر از ساحل روی عرشه نشست. بلو اوریجین دومین شرکت تاریخ شد که بوستر مداری را سالم بازیابی می‌کند.",
+     "summary_en": "On New Glenn's second flight, after launching NASA's twin ESCAPADE Mars probes, the booster landed some 600 km offshore, making Blue Origin the second company ever to recover an orbital booster intact.",
+     "note_fa": "منبع، سالم‌ماندن بوستر روی عرشه را تأیید می‌کند و فاصلهٔ تقریبی از ساحل نیز از همان گزارش آمده است.",
+     "note_en": "The source confirms the booster stood intact on deck; the approximate distance offshore also comes from that report."
+    },
+    {
+     "id": "jacklyn-ng3",
+     "date": "2026-04-19",
+     "date_basis": "utc",
+     "fa": "فرود دوم؛ نخستین بازپرواز بوستر نیو گلن",
+     "en": "Second landing, on New Glenn's first booster reuse",
+     "vehicle_fa": "همان بوستر پرواز دوم در نخستین بازپرواز",
+     "vehicle_en": "The same booster on its first reflight",
+     "landing_outcome": "success",
+     "recovery_outcome": "confirmed",
+     "verified_on": "2026-10-13",
+     "source_url": "https://spaceflightnow.com/2026/04/19/third-flight-of-blue-origins-new-glenn-rocket-to-feature-1st-reuse-of-booster/",
+     "source_publisher": "Spaceflight Now",
+     "summary_fa": "بوستر بازپروازی دوباره روی جکلین نشست؛ ولی مرحلهٔ دوم ماهواره را به مدار اشتباه برد و ناوگان موقتاً زمین‌گیر شد.",
+     "summary_en": "The reflown booster landed on Jacklyn again, though the upper stage left the satellite in a wrong orbit and the fleet was temporarily grounded.",
+     "note_fa": "منبع ثبت، گزارش پیش‌پروازی همان مأموریت است و خلاصهٔ ردیف، نتیجهٔ نهایی پرواز را بازگو می‌کند.",
+     "note_en": "The recorded source is that mission's preflight report, while the row summary reflects the flight's final outcome."
+    }
+   ],
+   "recorded_event_count": 2,
+   "landing_registry": {
+    "complete": true,
+    "scope_fa": "همهٔ فرودها و تلاش‌های ثبت‌شده روی این شناور از نخستین مأموریت نیو گلن (ژانویهٔ ۲۰۲۵) تا تاریخ بازبینی.",
+    "scope_en": "Every recorded landing or attempt on this vessel from New Glenn's maiden flight (January 2025) through the review date.",
+    "basis_fa": "تاریخ هر ردیف، تاریخ پرتاب به وقت جهانی است؛ فرود دقایقی پس از پرتاب و صدها کیلومتر دورتر از ساحل رخ می‌دهد.",
+    "basis_en": "Each row is dated by UTC launch date; the landing occurs minutes later, hundreds of kilometres offshore.",
+    "source_url": "https://en.wikipedia.org/wiki/Landing_Platform_Vessel_1",
+    "source_publisher": "Wikipedia",
+    "verified_on": "2026-10-13",
+    "entries": [
+     {
+      "d": "2025-01-16",
+      "m": "NG-1 (Blue Ring Pathfinder)",
+      "v": "GS1-1",
+      "o": "failure",
+      "n_fa": "بوستر هنگام بازگشت به جو از دست رفت و هرگز به شناور نرسید.",
+      "n_en": "The booster was lost during reentry and never reached the vessel."
+     },
+     {
+      "d": "2025-11-13",
+      "m": "NG-2 (ESCAPADE)",
+      "v": "GS1-2 Never Tell Me the Odds",
+      "o": "success",
+      "n_fa": "نخستین فرود موفق نیو گلن؛ دومین شرکت تاریخ پس از اسپیس‌ایکس.",
+      "n_en": "New Glenn's first successful landing; the second company ever, after SpaceX."
+     },
+     {
+      "d": "2026-04-19",
+      "m": "NG-3 (BlueBird 7)",
+      "v": "GS1-2 (reflight)",
+      "o": "success",
+      "n_fa": "فرود در نخستین بازپرواز بوستر؛ محموله به مدار اشتباه رفت و ناوگان موقتاً زمین‌گیر شد.",
+      "n_en": "Landed on the booster's first reflight; the payload reached a wrong orbit and the fleet was temporarily grounded."
+     }
+    ]
+   }
   }
  ],
  "presentation_updated_on": "2026-10-02",
@@ -9751,6 +10077,10 @@
   {
    "id": "varda-w4-resolved",
    "fa": "واردا ۴ (تعیین تکلیف‌شده): کپسول در بازگشت ناموفق بود و در ۲۲ مه ۲۰۲۶ در جو زمین سوخت؛ هیچ فرودی رخ نداد و به همین دلیل هیچ رویدادی برای یوتا یا کونیبا ثبت نشد. منبع: صفحهٔ دانشنامه‌ای شرکت واردا، بازبینی ۲ اکتبر ۲۰۲۶. موضوع بسته شد."
+  },
+  {
+   "id": "lz40-count-check",
+   "fa": "شمارندهٔ اینفوباکس ویکی‌پدیا برای منطقهٔ فرود ۴۰ تا ۱ اکتبر ۲۰۲۶ هفت فرود می‌گوید؛ استخراج از فهرست بوسترها تا همان تاریخ شش ردیف داد. یک ردیف احتمالی باید در بازبینی بعدی وارسی شود."
   }
  ]
 }

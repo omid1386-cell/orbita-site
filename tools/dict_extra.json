@@ -1,0 +1,47 @@
+{
+ "rocket": {
+  "Long March 8A": "لانگ مارچ ۸A",
+  "Long March 6A": "لانگ مارچ ۶A",
+  "Long March 4B": "لانگ مارچ ۴B",
+  "Long March 4C": "لانگ مارچ ۴C",
+  "Long March 2C": "لانگ مارچ ۲C",
+  "Long March 2D": "لانگ مارچ ۲D",
+  "Long March 3B/E": "لانگ مارچ 3B/E",
+  "Long March 5": "لانگ مارچ ۵",
+  "Long March 7": "لانگ مارچ ۷",
+  "Ceres-1S": "سرس-۱S",
+  "Ceres-1": "سرس-۱",
+  "Mir": "میر",
+  "Zéphyr": "زفیر"
+ },
+ "customer": {
+  "China Aerospace Science and Technology Corporation": "کاسک (چین)",
+  "Galactic Energy": "گلکتیک انرژی",
+  "Orienspace Technology": "اورین‌اسپیس",
+  "S7 Space": "اس۷ اسپیس",
+  "Unknown Payload": "محمولهٔ نامشخص",
+  "Latitude": "لاتیتود (فرانسه)"
+ },
+ "payload_subs": {
+  "Unknown Payload": "محمولهٔ نامشخص",
+  "Starlink Group": "استارلینک گروه",
+  "Maiden Flight": "پرواز نخست",
+  "Demo Flight": "پرواز نمایشی",
+  "Blue Ring-1": "بلورینگ-۱",
+  "BlueBird": "بلوبرد",
+  "Dedicated Mid-Inclination Rideshare": "اشتراکی میان‌شیب اختصاصی"
+ },
+ "mtype": {
+  "Orbital Launch": "پرتاب مداری",
+  "Dedicated Rideshare": "اشتراکی اختصاصی",
+  "Communications": "مخابراتی",
+  "Earth Science": "علوم زمین",
+  "Test Flight": "پرواز آزمایشی"
+ },
+ "orbit": {
+  "TBA": "اعلام‌نشده",
+  "Low Earth Orbit": "مدار پایین زمین",
+  "Sun-Synchronous Orbit": "مدار خورشیدآهنگ",
+  "Geostationary Transfer Orbit": "مدار انتقالی زمین‌همگام"
+ }
+}

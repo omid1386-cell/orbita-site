@@ -25,7 +25,7 @@ class ThreadedHTTPServer(socketserver.ThreadingMixIn, http.server.HTTPServer):
     allow_reuse_address = True
 
 if __name__ == '__main__':
-    os.chdir('/home/user/spaceapp')
+    #os.chdir('/home/user/spaceapp')
     server = ThreadedHTTPServer(('0.0.0.0', PORT), FastNoCacheHandler)
     print(f"ORBITA fast multi-threaded server running on http://0.0.0.0:{PORT}")
     while True:

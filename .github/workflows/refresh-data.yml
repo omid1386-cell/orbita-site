@@ -1,0 +1,50 @@
+# تازه‌سازی خودکار تب‌های «پرتاب‌های پیشِ رو» و «فرودهای پیشِ رو»
+# هر ۸ ساعت یک بار از کتابخانهٔ پرتاب ۲؛ هر اجرا حداکثر ۴ درخواست (زیر سهمیهٔ ۱۵/ساعت)
+# اگر دروازهٔ اعتبارسنجی داده را رد کند یا آزمون‌ها سرخ شوند، هیچ چیزی منتشر نمی‌شود.
+
+name: refresh-upcoming-data
+
+on:
+  schedule:
+    - cron: '17 1,9,17 * * *'   # سه نوبت در شبانه‌روز (دقیقهٔ ۱۷ برای پرهیز از ازدحام)
+  workflow_dispatch: {}          # اجرای دستی از برگهٔ Actions هم ممکن است
+
+permissions:
+  contents: write
+
+concurrency:
+  group: refresh-data
+  cancel-in-progress: false
+
+jobs:
+  refresh:
+    runs-on: ubuntu-latest
+    steps:
+      - name: دریافت مخزن
+        uses: actions/checkout@v4
+
+      - name: تازه‌سازی پرتاب‌های پیشِ رو (۲ درخواست)
+        id: launches
+        run: |
+          python3 tools/refresh_upcoming.py --apply || echo "gate_aborted=true" >> "$GITHUB_OUTPUT"
+
+      - name: تازه‌سازی فرودهای پیشِ رو (۲ درخواست)
+        id: landings
+        run: |
+          python3 tools/refresh_landings.py --apply || echo "gate_aborted=true" >> "$GITHUB_OUTPUT"
+
+      - name: اجرای آزمون‌های قرارداد داده
+        run: |
+          for t in tests/*.cjs; do node "$t"; done
+
+      - name: انتشار فقط در صورت تغییر واقعی
+        run: |
+          git config user.name  "orbita-refresh-bot"
+          git config user.email "orbita-refresh-bot@users.noreply.github.com"
+          if git diff --quiet -- data/upcoming.json data/upcoming_landings.json; then
+            echo "تغییری نبود؛ کامیتی انجام نشد."
+          else
+            git add data/upcoming.json data/upcoming_landings.json
+            git commit -m "تازه‌سازی خودکار تب‌های پیشِ رو — $(date -u +%Y-%m-%dT%H:%M)Z"
+            git push
+          fi

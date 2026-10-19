@@ -1,0 +1,46 @@
+{
+ "locations": {
+  "Tanegashima Space Center, Japan": "tanegashima",
+  "Guiana Space Centre, French Guiana": "kourou",
+  "Satish Dhawan Space Centre, India": "sriharikota",
+  "Vandenberg SFB, CA, USA": "vandenberg",
+  "Rocket Lab Launch Complex 1, Mahia Peninsula, New Zealand": "mahia",
+  "Jiuquan Satellite Launch Center, People's Republic of China": "jiuquan",
+  "Baikonur Cosmodrome, Republic of Kazakhstan": "baikonur",
+  "Andøya Spaceport": "andoya",
+  "SpaceX Starbase, TX, USA": "starbase",
+  "Uchinoura Space Center, Japan": "uchinoura",
+  "Haiyang Oriental Spaceport": "haiyang",
+  "Wallops Flight Facility, Virginia, USA": "wallops",
+  "Wenchang Space Launch Site, People's Republic of China": "wenchang",
+  "SaxaVord Spaceport": "saxavord",
+  "Esrange Space Center": "esrange",
+  "Bowen Orbital Spaceport": "bowen",
+  "Alcântara Space Center, Federative Republic of Brazil": "alcantara",
+  "Taiyuan Satellite Launch Center, People's Republic of China": "taiyuan",
+  "Sea Launch": "sea-launch",
+  "Etlaq Spaceport": "etlaq"
+ },
+ "pad_rules": [
+  {
+   "location": "Cape Canaveral SFS, FL, USA",
+   "pad_contains": "36",
+   "site": "lc36"
+  },
+  {
+   "location": "Cape Canaveral SFS, FL, USA",
+   "pad_contains": "",
+   "site": "ccsfs"
+  },
+  {
+   "location": "Kennedy Space Center, FL, USA",
+   "pad_contains": "39B",
+   "site": "ksc39b"
+  },
+  {
+   "location": "Kennedy Space Center, FL, USA",
+   "pad_contains": "",
+   "site": "ksc39a"
+  }
+ ]
+}

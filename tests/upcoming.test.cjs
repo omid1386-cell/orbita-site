@@ -11,9 +11,9 @@ const sites = JSON.parse(fs.readFileSync(path.join(__dirname, '..', 'data', 'sit
 const siteIds = new Set(sites.map(s => s.id));
 const L = doc.launches || [];
 
-check('تعداد ردیف‌ها ۱۳۱ است', L.length === 131);
+check('تعداد ردیف‌ها ۱۳۶ است', L.length === 136);
 check('همهٔ ردیف‌ها به پایگاه معتبر اشاره می‌کنند', L.every(l => siteIds.has(l.site)));
-check('هر ۶۳ پایگاه پوشش‌دار اعلام شده‌اند', Array.isArray(doc.sites_covered) && doc.sites_covered.length === 63 && doc.sites_covered.every(id => siteIds.has(id)));
+check('هر ۶۴ پایگاه پوشش‌دار اعلام شده‌اند', Array.isArray(doc.sites_covered) && doc.sites_covered.length === 64 && doc.sites_covered.every(id => siteIds.has(id)));
 check('مهر به‌روزرسانی موجود است', /^\d{4}-\d{2}-\d{2}$/.test(doc.updated || ''));
 const REQ = ['ll2_id','net','date_label_fa','date_label_en','precision','precision_fa','time_fa','time_en','rocket_fa','rocket_en','payload_fa','payload_en','mtype_fa','mtype_en','orbit_fa','orbit_en','customer_fa','customer_en','desc_fa','desc_en','status'];
 check('هیچ ستون الزامی خالی نیست', L.every(l => REQ.every(k => typeof l[k] === 'string' && l[k].length > 0)));
