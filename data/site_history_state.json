@@ -1,0 +1,34 @@
+{
+ "last_sync": "2026-10-21T08:18:25Z",
+ "drafts": [
+  {
+   "site": "tanegashima",
+   "net": "2026-10-19T19:41:00Z",
+   "name": "H3-24 | Martian Moons eXploration (MMX)",
+   "mission": "Martian Moons eXploration (MMX)",
+   "rocket": "H3-24",
+   "status": "Success",
+   "orbit": "Heliocentric",
+   "mtype": "Planetary Science",
+   "why": [
+    "فراتر از مدار زمین"
+   ],
+   "added_on": "2026-10-21"
+  },
+  {
+   "site": "haiyang",
+   "net": "2026-10-21T03:35:00Z",
+   "name": "Ceres-1S | Xiguang-4 01",
+   "mission": "Xiguang-4 01",
+   "rocket": "Ceres-1S",
+   "status": "Success",
+   "orbit": "LEO",
+   "mtype": "Communications",
+   "why": [
+    "نخستین حضور این پرتابگر در تاریخچهٔ پایگاه"
+   ],
+   "added_on": "2026-10-21"
+  }
+ ],
+ "backlog_note": "ردیف روایی بندواگن-۵ (۲۰ اکتبر، کیپ‌کاناورال) در پس‌افت از دست رفت؛ آمارش ثبت شد."
+}

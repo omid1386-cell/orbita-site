@@ -348,7 +348,11 @@
   "photo_caption_en": "Aerial view of Pad 39A with a Saturn V rocket (Apollo era)",
   "photo_credit": "NASA",
   "photo_license": "Public Domain",
-  "photo_source_url": "https://images.nasa.gov/details/KSC-66C-6962"
+  "photo_source_url": "https://images.nasa.gov/details/KSC-66C-6962",
+  "stats_total": 224,
+  "stats_success": 222,
+  "stats_fail": 2,
+  "stats_asof": "2026-10-21"
  },
  {
   "id": "ksc39b",
@@ -674,7 +678,11 @@
   "photo_caption_en": "The Artemis I rocket on Pad 39B at sunrise",
   "photo_credit": "Ben Smegelsky",
   "photo_license": "Public domain",
-  "photo_source_url": "https://commons.wikimedia.org/wiki/File:Artemis_I_at_Pad_39B_-_Sunrise_(KSC-20220321-PH-JBS01_0085).jpg"
+  "photo_source_url": "https://commons.wikimedia.org/wiki/File:Artemis_I_at_Pad_39B_-_Sunrise_(KSC-20220321-PH-JBS01_0085).jpg",
+  "stats_total": 59,
+  "stats_success": 58,
+  "stats_fail": 1,
+  "stats_asof": "2026-10-21"
  },
  {
   "id": "ccsfs",
@@ -1024,7 +1032,11 @@
   "photo_caption_en": "Aerial view of Space Launch Complex 40, Cape Canaveral",
   "photo_credit": "SpaceX",
   "photo_license": "CC0",
-  "photo_source_url": "https://commons.wikimedia.org/wiki/File:Space_Launch_Complex_40_at_Cape_Canaveral_(aerial).jpg"
+  "photo_source_url": "https://commons.wikimedia.org/wiki/File:Space_Launch_Complex_40_at_Cape_Canaveral_(aerial).jpg",
+  "stats_total": 1133,
+  "stats_success": 1052,
+  "stats_fail": 81,
+  "stats_asof": "2026-10-21"
  },
  {
   "id": "vandenberg",

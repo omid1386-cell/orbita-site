@@ -33,6 +33,14 @@ jobs:
         run: |
           python3 tools/refresh_landings.py --apply || echo "gate_aborted=true" >> "$GITHUB_OUTPUT"
 
+      - name: بذرپاشی تدریجی آمار پایگاه‌ها (حداکثر ۶ درخواست)
+        run: |
+          python3 tools/seed_site_stats.py --apply --max-sites=3 || echo "seed_skipped=true" >> "$GITHUB_OUTPUT"
+
+      - name: تاریخچه و آمار پایگاه‌ها (۱ درخواست)
+        run: |
+          python3 tools/update_site_history.py --apply || echo "history_skipped=true" >> "$GITHUB_OUTPUT"
+
       - name: اجرای آزمون‌های قرارداد داده
         run: |
           for t in tests/*.cjs; do node "$t"; done
@@ -41,10 +49,10 @@ jobs:
         run: |
           git config user.name  "orbita-refresh-bot"
           git config user.email "orbita-refresh-bot@users.noreply.github.com"
-          if git diff --quiet -- data/upcoming.json data/upcoming_landings.json; then
+          if git diff --quiet -- data/upcoming.json data/upcoming_landings.json data/sites.json data/site_history_state.json; then
             echo "تغییری نبود؛ کامیتی انجام نشد."
           else
-            git add data/upcoming.json data/upcoming_landings.json
+            git add data/upcoming.json data/upcoming_landings.json data/sites.json data/site_history_state.json
             git commit -m "تازه‌سازی خودکار تب‌های پیشِ رو — $(date -u +%Y-%m-%dT%H:%M)Z"
             git push
           fi

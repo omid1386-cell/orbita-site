@@ -964,6 +964,11 @@
     });
 
     var rate = tot > 0 ? Math.round((succ / tot) * 100) : 100;
+    /* آمار واقعی پایگاه (بذر ربات)؛ در نبودش همان شمارش ردیف‌های گزیده */
+    var statTot = (typeof o.stats_total === "number") ? o.stats_total : tot;
+    var statSucc = (typeof o.stats_success === "number") ? o.stats_success : succ;
+    var statFail = (typeof o.stats_fail === "number") ? o.stats_fail : fail;
+    var statRate = statTot > 0 ? Math.round((statSucc / statTot) * 100) : rate;
 
     // 3 Clean Tabs Header
     h += '<div class="site-tabs">';
@@ -990,8 +995,8 @@
     h += '</div>';
 
     h += '<div class="site-metrics-grid">';
-    h += '<div class="site-metric-card gold"><div class="lbl">' + (isFa ? "تعداد کل پرتاب‌ها" : "Total Launches") + '</div><div class="val">' + tot + '</div><div class="lbl">' + (isFa ? "پرتاب مداری" : "Orbital Flights") + '</div></div>';
-    h += '<div class="site-metric-card green"><div class="lbl">' + (isFa ? "نرخ موفقیت" : "Success Rate") + '</div><div class="val">' + rate + '%</div><div class="lbl">' + succ + (isFa ? " موفق / " : " ok / ") + fail + (isFa ? " ناموفق" : " failed") + '</div></div>';
+    h += '<div class="site-metric-card gold"><div class="lbl">' + (isFa ? "تعداد کل پرتاب‌ها" : "Total Launches") + '</div><div class="val">' + statTot + '</div><div class="lbl">' + (isFa ? "پرتاب مداری" : "Orbital Flights") + '</div></div>';
+    h += '<div class="site-metric-card green"><div class="lbl">' + (isFa ? "نرخ موفقیت" : "Success Rate") + '</div><div class="val">' + statRate + '%</div><div class="lbl">' + statSucc + (isFa ? " موفق / " : " ok / ") + statFail + (isFa ? " ناموفق" : " failed") + '</div></div>';
     h += '<div class="site-metric-card"><div class="lbl">' + (isFa ? "ارتفاع از سطح دریا" : "Elevation") + '</div><div class="val">' + (o.alt || "50 m") + '</div><div class="lbl">' + (isFa ? "متر" : "meters") + '</div></div>';
     h += '<div class="site-metric-card"><div class="lbl">' + (isFa ? "فاصله از خط استوا" : "Equator Dist.") + '</div><div class="val" style="font-size:12px; margin-top:5px;">' + (o.equator_dist || "0 km") + '</div></div>';
     h += '</div>';
