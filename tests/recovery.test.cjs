@@ -98,7 +98,7 @@ if(!chromium){console.log('SKIP: browser checks skipped — playwright is not in
     await page.route(/ll\.thespacedevs\.com/,r=>r.fulfill({contentType:'application/json',body:'{"results":[],"next":null,"count":0}'}));
     await page.addInitScript(()=>{localStorage.setItem('orbita_lang','fa');localStorage.setItem('orbita_map_style','dark');localStorage.setItem('orbita_theme','navy')});
     await page.goto('http://127.0.0.1:5173',{waitUntil:'domcontentloaded'});
-    await page.waitForFunction(()=>window.map&&typeof map.getStyle==='function'&&map.getStyle()&&DATA.recoveries.length===18);
+    await page.waitForFunction(()=>window.map&&typeof map.getStyle==='function'&&map.getStyle()&&DATA.recoveries.length===20);
     const chip=page.locator('.recovery-chip');
     assert.equal(await chip.getAttribute('aria-pressed'),'false');
     assert.equal(await page.locator('#mapStyleChip').innerText(),'پوسته ۱');
@@ -239,7 +239,7 @@ if(!chromium){console.log('SKIP: browser checks skipped — playwright is not in
     await mp.route(/ll\.thespacedevs\.com/,r=>r.fulfill({contentType:'application/json',body:'{"results":[],"next":null,"count":0}'}));
     await mp.addInitScript(()=>{localStorage.setItem('orbita_lang','fa');localStorage.setItem('orbita_map_style','osm');localStorage.setItem('orbita_theme','light')});
     await mp.goto('http://127.0.0.1:5173',{waitUntil:'domcontentloaded'});
-    await mp.waitForFunction(()=>window.map&&typeof map.getStyle==='function'&&map.getStyle()&&DATA.recoveries.length===18);
+    await mp.waitForFunction(()=>window.map&&typeof map.getStyle==='function'&&map.getStyle()&&DATA.recoveries.length===20);
     assert.equal(await mp.locator('.recovery-chip .lb').evaluate(el=>getComputedStyle(el).display),'none');
     assert.equal(await mp.locator('.recovery-chip').getAttribute('aria-label'),'فرود و بازیابی');
     assert.equal(await mp.locator('#mapStyleChip').innerText(),'پوسته ۳');
