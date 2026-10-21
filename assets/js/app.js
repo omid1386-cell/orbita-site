@@ -377,6 +377,14 @@
     return style;
   }
   var STYLE_CACHE = {};
+  function cachedOnlineStyle() {
+    try {
+      var k = "orbita_style_" + LANG + "_" + onlineStyleUrl();
+      var saved = JSON.parse(localStorage.getItem(k) || "null");
+      if (saved && saved.ts && (Date.now() - saved.ts) < 7 * 86400000 && saved.style) return saved.style;
+    } catch (e) {}
+    return null;
+  }
   function fetchOnlineStyle() {
     var url = onlineStyleUrl();
     if (STYLE_CACHE[url]) {
@@ -536,9 +544,15 @@
         if (rtlStatus === "unavailable") maplibregl.setRTLTextPlugin("assets/vendor/mapbox-gl-rtl-text.js", null, false);
       }
     } catch (e) {}
-    /* زمینهٔ دومرحله‌ای: اول زمینهٔ محلیِ فوری (بدون هیچ CDN)، سپس پوستهٔ آنلاین نرم سوار می‌شود */
-    createMap(offlineStyle());
-    if (BASEMODE !== "offline") applyMapStyle();
+    /* شروع هوشمند: اگر پوستهٔ آنلاین در کش مرورگر هست، مستقیم با همان (تک‌مرحله‌ای)؛
+       وگرنه زمینهٔ محلی فوری و پوستهٔ آنلاین بعداً نرم سوار می‌شود */
+    var cs = (BASEMODE !== "offline") ? cachedOnlineStyle() : null;
+    if (cs) {
+      createMap(JSON.parse(JSON.stringify(cs)));
+    } else {
+      createMap(offlineStyle());
+      if (BASEMODE !== "offline") applyMapStyle();
+    }
   }
 
   function mobileView() {
@@ -571,7 +585,7 @@
       maxZoom: 20,
       hash: true,
       fadeDuration: 0,
-      maxTileCacheSize: 512,
+      maxTileCacheSize: 256,
       trackResize: true,
       attributionControl: { compact: true }
     });
