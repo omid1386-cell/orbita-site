@@ -36,8 +36,7 @@
   <nav class="tabs">
     <button class="tab active" data-view="map"><span data-i18n="tab_map">نقشهٔ جهانی</span></button>
     <button class="tab" data-view="missions"><span data-i18n="tab_missions">پروژه‌های فضایی</span></button>
-    <button class="tab" data-view="orbit"><span data-i18n="tab_orbit">مدار زمین</span></button>
-  </nav>
+      </nav>
 
   <div class="topbar-actions">
     <button id="langBtn" class="ghost-btn" title="Language">EN</button>
@@ -135,78 +134,9 @@
 </main>
 
 <!-- ============ ORBIT (3D) VIEW ============ -->
-<main id="view-orbit" class="view">
-  <div id="globe"></div>
-  <div id="globeLoading" class="globe-loading">
-    <div class="spin"></div>
-    <span data-i18n="orbit_loading">در حال آماده‌سازی کرهٔ زمین و محاسبهٔ مدارها…</span>
-  </div>
 
-  <div class="orb-toolbar">
-    <div class="orb-search">
-      <svg viewBox="0 0 24 24" width="15" height="15"><path fill="currentColor" d="M10 2a8 8 0 105.3 14l4.4 4.4 1.4-1.4-4.4-4.4A8 8 0 0010 2zm0 2a6 6 0 110 12 6 6 0 010-12z"/></svg>
-      <input id="satSearch" type="text" data-i18n-ph="ph_search_sat" placeholder="جستجوی ماهواره یا شناسهٔ رصدی..." autocomplete="off" />
-    </div>
-    <div class="orb-seg" id="densitySeg" role="group">
-      <button type="button" class="seg-b active" data-density="1" data-i18n-title="dens_1_t" title="ماهواره‌های شاخص هر مدار">
-        <span data-i18n="dens_1">شاخص</span><b class="seg-n" id="segN1">—</b>
-      </button>
-      <button type="button" class="seg-b" data-density="2" data-i18n-title="dens_2_t" title="همه به‌جز منظومه‌های انبوه">
-        <span data-i18n="dens_2">گسترده</span><b class="seg-n" id="segN2">—</b>
-      </button>
-      <button type="button" class="seg-b" data-density="3" data-i18n-title="dens_3_t" title="تمام اجسام فعال در مدار">
-        <span data-i18n="dens_3">کامل</span><b class="seg-n" id="segN3">—</b>
-      </button>
-    </div>
-    <span class="orb-count"><b id="satCount">0</b> <span data-i18n="objects">جسم در مدار</span></span>
-  </div>
-
-  <button type="button" class="orb-btn" id="passBtn" data-i18n-title="pass_title" title="عبور از فراز شما">
-    <svg viewBox="0 0 24 24" width="14" height="14"><path fill="currentColor" d="M12 2a7 7 0 00-7 7c0 5.2 7 13 7 13s7-7.8 7-13a7 7 0 00-7-7zm0 9.5A2.5 2.5 0 1112 6.5a2.5 2.5 0 010 5z"/></svg>
-    <span data-i18n="pass_btn">عبور از فراز شما</span>
-  </button>
-
-  <section id="passPanel" class="pass-panel">
-    <div class="pass-head">
-      <b data-i18n="pass_title">عبور از فراز شما</b>
-      <button class="close-x" id="passClose">✕</button>
-    </div>
-    <div class="pass-loc">
-      <div class="pass-input">
-        <svg viewBox="0 0 24 24" width="14" height="14"><path fill="currentColor" d="M10 2a8 8 0 105.3 14l4.4 4.4 1.4-1.4-4.4-4.4A8 8 0 0010 2zm0 2a6 6 0 110 12 6 6 0 010-12z"/></svg>
-        <input id="cityInput" type="text" data-i18n-ph="ph_city" placeholder="نام شهر را بنویسید…" autocomplete="off" />
-        <div id="cityList" class="city-list"></div>
-      </div>
-      <button type="button" id="geoBtn" class="mini-btn" data-i18n-title="use_gps" title="موقعیت خودکار">
-        <svg viewBox="0 0 24 24" width="14" height="14"><path fill="currentColor" d="M12 8a4 4 0 100 8 4 4 0 000-8zm9 3h-2.06A7.01 7.01 0 0013 5.06V3h-2v2.06A7.01 7.01 0 005.06 11H3v2h2.06A7.01 7.01 0 0011 18.94V21h2v-2.06A7.01 7.01 0 0018.94 13H21v-2zm-9 6a5 5 0 110-10 5 5 0 010 10z"/></svg>
-      </button>
-    </div>
-    <div class="pass-opts">
-      <label class="mini-tg"><input type="checkbox" id="tgVisible" checked /> <span data-i18n="only_visible">فقط قابل رؤیت با چشم</span></label>
-      <select id="passHours" class="mini-sel">
-        <option value="24" data-i18n="h24">۲۴ ساعت</option>
-        <option value="48" data-i18n="h48">۴۸ ساعت</option>
-        <option value="72" data-i18n="h72">۷۲ ساعت</option>
-      </select>
-    </div>
-    <div id="passWhere" class="pass-where"></div>
-    <div id="passBody" class="pass-body"><div class="pass-empty" data-i18n="pass_hint">شهر خود را انتخاب کنید تا عبور ماهواره‌های شاخص محاسبه شود.</div></div>
-  </section>
-
-  <div class="orb-legend" id="orbLegend"></div>
-
-  <div class="orb-hint" id="orbHint" data-i18n="orbit_hint">درگ = چرخش کره · اسکرول = بزرگ‌نمایی · کلیک روی هر نقطه = اطلاعات ماهواره</div>
-
-  <section id="satPanel" class="detail-panel">
-    <button class="close-x" id="satClose">✕</button>
-    <div id="satBody"></div>
-  </section>
-</main>
 
 <script src="assets/vendor/maplibre-gl.js?v=3"></script>
-<script src="assets/vendor/three.min.js"></script>
-<script src="assets/vendor/satellite.min.js"></script>
-<script src="assets/js/orbit.js?v=19"></script>
 <script>
   (function() {
     var ts = Date.now();
