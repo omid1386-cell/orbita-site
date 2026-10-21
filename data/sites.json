@@ -2167,7 +2167,11 @@
   "photo_caption_en": "Processing and integration facility at the Pacific Spaceport Complex, Kodiak Island",
   "photo_credit": "U.S. Air Force/Tech. Sgt. Bennie J. Davis III",
   "photo_license": "Public domain",
-  "photo_source_url": "https://commons.wikimedia.org/wiki/File:Kodiak_Launch_Complex,_Kodiak_Island,_Alaska_AF.jpg"
+  "photo_source_url": "https://commons.wikimedia.org/wiki/File:Kodiak_Launch_Complex,_Kodiak_Island,_Alaska_AF.jpg",
+  "stats_total": 9,
+  "stats_success": 5,
+  "stats_fail": 4,
+  "stats_asof": "2026-10-21"
  },
  {
   "id": "spaceportamerica",
@@ -2377,7 +2381,11 @@
   "photo_caption_en": "The main terminal hangar of Spaceport America at night",
   "photo_credit": "Land Rover MENA",
   "photo_license": "CC BY 2.0",
-  "photo_source_url": "https://commons.wikimedia.org/wiki/File:Spaceport_America_terminal_hangar_at_night_(14907530348).jpg"
+  "photo_source_url": "https://commons.wikimedia.org/wiki/File:Spaceport_America_terminal_hangar_at_night_(14907530348).jpg",
+  "stats_total": 4,
+  "stats_success": 0,
+  "stats_fail": 4,
+  "stats_asof": "2026-10-21"
  },
  {
   "id": "kwajalein",
@@ -2609,7 +2617,11 @@
   "photo_caption_en": "Falcon 1 lifting off from Omelek Island (2009)",
   "photo_credit": "SpaceX",
   "photo_license": "CC0",
-  "photo_source_url": "https://commons.wikimedia.org/wiki/File:2009_Falcon_1_launches_from_Omelek_Island_02.jpg"
+  "photo_source_url": "https://commons.wikimedia.org/wiki/File:2009_Falcon_1_launches_from_Omelek_Island_02.jpg",
+  "stats_total": 5,
+  "stats_success": 2,
+  "stats_fail": 3,
+  "stats_asof": "2026-10-21"
  },
  {
   "id": "mahia",
