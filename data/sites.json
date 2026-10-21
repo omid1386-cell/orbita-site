@@ -1363,7 +1363,11 @@
   "photo_caption_en": "View of the SLC-4 launch and landing facilities at Vandenberg",
   "photo_credit": "SpaceX",
   "photo_license": "CC0",
-  "photo_source_url": "https://commons.wikimedia.org/wiki/File:Vandenberg_Launch_and_Landing_Site.jpg"
+  "photo_source_url": "https://commons.wikimedia.org/wiki/File:Vandenberg_Launch_and_Landing_Site.jpg",
+  "stats_total": 919,
+  "stats_success": 848,
+  "stats_fail": 71,
+  "stats_asof": "2026-10-21"
  },
  {
   "id": "starbase",
@@ -1710,7 +1714,11 @@
   "photo_caption_en": "The Starbase launch facility at Boca Chica, Texas",
   "photo_credit": "Lars Plougmann from United States",
   "photo_license": "CC BY-SA 2.0",
-  "photo_source_url": "https://commons.wikimedia.org/wiki/File:SpaceX_Starbase_launch_facility_(51438071556).jpg"
+  "photo_source_url": "https://commons.wikimedia.org/wiki/File:SpaceX_Starbase_launch_facility_(51438071556).jpg",
+  "stats_total": 23,
+  "stats_success": 15,
+  "stats_fail": 8,
+  "stats_asof": "2026-10-21"
  },
  {
   "id": "wallops",
@@ -1921,7 +1929,11 @@
   "photo_caption_en": "An Antares rocket on the launch pad at Wallops",
   "photo_credit": "NASA/Bill Ingalls",
   "photo_license": "Public Domain",
-  "photo_source_url": "https://images.nasa.gov/details/201401080005HQ"
+  "photo_source_url": "https://images.nasa.gov/details/201401080005HQ",
+  "stats_total": 87,
+  "stats_success": 77,
+  "stats_fail": 10,
+  "stats_asof": "2026-10-21"
  },
  {
   "id": "kodiak",

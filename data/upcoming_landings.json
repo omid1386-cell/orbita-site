@@ -261,31 +261,6 @@
    "customer_en": "NASA",
    "origin_fa": "بازگشت از ایستگاه فضایی بین‌المللی",
    "origin_en": "Return from the International Space Station"
-  },
-  {
-   "id": "upl-auto-3b430f81",
-   "site_id": "recovery-asog",
-   "mission": "Bandwagon 5 (Dedicated Mid-Inclination Rideshare)",
-   "mission_fa": "Bandwagon 5 (Dedicated Mid-Inclination Rideshare)",
-   "vehicle_en": "Falcon 9 Block 5 first stage",
-   "vehicle_fa": "مرحلهٔ اول فالکون ۹ بلوک ۵",
-   "ltype": "asds",
-   "date": null,
-   "status": "queued",
-   "operator_en": "SpaceX",
-   "operator_fa": "اسپیس‌ایکس",
-   "stream_url": "https://x.com/SpaceX",
-   "calendar_url": "https://www.spacex.com/launches/",
-   "mtype_fa": "فرود و بازیابی بوستر",
-   "mtype_en": "Booster landing & recovery",
-   "customer_fa": "اسپیس‌ایکس",
-   "customer_en": "SpaceX",
-   "origin_fa": "مأموریت Bandwagon 5 (Dedicated Mid-Inclination Rideshare) — پرتاب از مجتمع ۴۰ ایستگاه نیروی فضایی کیپ‌کاناورال در فلوریدا",
-   "origin_en": "Bandwagon 5 (Dedicated Mid-Inclination Rideshare) — Launch from SLC-40, Cape Canaveral SFS, Florida",
-   "note_fa": "ردیف خودکار از کتابخانهٔ پرتاب ۲ برای مأموریت Bandwagon 5 (Dedicated Mid-Inclination Rideshare)؛ فرود در شناور «کمبودی از وقار».",
-   "note_en": "Auto-tracked from Launch Library 2 for Bandwagon 5 (Dedicated Mid-Inclination Rideshare); landing on ASOG.",
-   "booster_fa": "بوستر B1085 (پرواز 19م)",
-   "booster_en": "Booster B1085 (flight 19)"
   }
  ]
 }
