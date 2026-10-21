@@ -181,7 +181,7 @@
   var DATA = { companies: [], sites: [], missions: [], recoveries: [] };
   window.DATA = DATA;
 
-  var markers = [], map = null;
+  var markers = [], lastMarkerSig = "", map = null;
   var filters = { launch: true, propulsion: true, agency: true, satmaker: true, site: true, recovery: false };
   var SORT = "new";   /* newest launch first — the user asked for this ordering */
 
@@ -527,8 +527,9 @@
         if (rtlStatus === "unavailable") maplibregl.setRTLTextPlugin("assets/vendor/mapbox-gl-rtl-text.js", null, false);
       }
     } catch (e) {}
-    if (BASEMODE === "offline") createMap(offlineStyle());
-    else fetchOnlineStyle().then(function (st) { createMap(st); });
+    /* زمینهٔ دومرحله‌ای: اول زمینهٔ محلیِ فوری (بدون هیچ CDN)، سپس پوستهٔ آنلاین نرم سوار می‌شود */
+    createMap(offlineStyle());
+    if (BASEMODE !== "offline") applyMapStyle();
   }
 
   function mobileView() {
@@ -803,11 +804,18 @@
   }
 
   var clusterZoomBound = false;
-  function renderMarkers() {
+  function renderMarkers(force) {
     if (!map) return;
-    markers.forEach(function (m) { m.remove(); }); markers = [];
     var sc = pinScale();
-    clusterPoints(filteredPoints()).forEach(function (g) {
+    var groups = clusterPoints(filteredPoints());
+    /* بازساخت هوشمند: اگر خوشه‌بندی و مقیاس عوض نشده، دست به DOM نزن */
+    var sig = sc + "|" + groups.map(function (g) {
+      return g.pts.length + ":" + (g.pts[0].o.id || g.pts[0].o.en || "");
+    }).join(",");
+    if (!force && sig === lastMarkerSig && markers.length) return;
+    lastMarkerSig = sig;
+    markers.forEach(function (m) { m.remove(); }); markers = [];
+    groups.forEach(function (g) {
       var el, lngLat, anchor;
       if (g.pts.length > 1) {
         el = clusterEl(g, sc);
