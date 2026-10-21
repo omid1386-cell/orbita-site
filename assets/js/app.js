@@ -333,7 +333,7 @@
     return {
       version: 8,
       sources: {
-        countries: { type: "geojson", data: "assets/geo/countries.json?_t=" + Date.now() }
+        countries: { type: "geojson", data: "assets/geo/countries.json?v=" + (window.ORBITA_V || "1") }
       },
       layers: [
         { id: "ocean", type: "background",
@@ -383,9 +383,18 @@
       try { return Promise.resolve(JSON.parse(JSON.stringify(STYLE_CACHE[url]))); }
       catch (e) { return Promise.resolve(url); }
     }
+    var lsKey = "orbita_style_" + LANG + "_" + url;
+    try {
+      var saved = JSON.parse(localStorage.getItem(lsKey) || "null");
+      if (saved && saved.ts && (Date.now() - saved.ts) < 7 * 86400000 && saved.style) {
+        STYLE_CACHE[url] = saved.style;
+        return Promise.resolve(JSON.parse(JSON.stringify(saved.style)));
+      }
+    } catch (e) {}
     return fetch(url).then(function (r) { return r.json(); }).then(function (s) {
       var localized = localizeStyleLabels(s);
       STYLE_CACHE[url] = JSON.parse(JSON.stringify(localized));
+      try { localStorage.setItem(lsKey, JSON.stringify({ ts: Date.now(), style: localized })); } catch (e) {}
       return localized;
     }).catch(function () { return url; });
   }
@@ -562,7 +571,7 @@
       maxZoom: 20,
       hash: true,
       fadeDuration: 0,
-      maxTileCacheSize: 120,
+      maxTileCacheSize: 512,
       trackResize: true,
       attributionControl: { compact: true }
     });
@@ -583,9 +592,9 @@
     map.on("load", function () {
       $("#mapStatus").style.display = "none";
       renderMarkers();
-      fetch("assets/geo/labels.json?_t=" + Date.now()).then(function (r) { return r.json(); })
+      fetch("assets/geo/labels.json?v=" + (window.ORBITA_V || "1")).then(function (r) { return r.json(); })
         .then(function (d) { LABELS = d; buildLabels(); }).catch(function () {});
-      fetch("assets/geo/cities.json?_t=" + Date.now()).then(function (r) { return r.json(); })
+      fetch("assets/geo/cities.json?v=" + (window.ORBITA_V || "1")).then(function (r) { return r.json(); })
         .then(function (d) { CITIES = d; buildCityLabels(); }).catch(function () {});
     });
     map.on("styledata", function () {
@@ -1120,11 +1129,11 @@
   var UPL = { data: null };
 
   function loadSiteUpcomingData() {
-    fetch("data/upcoming.json?_t=" + Date.now())
+    fetch("data/upcoming.json?v=" + (window.ORBITA_V || "1"))
       .then(function (r) { if (!r.ok) throw new Error("upcoming data unavailable"); return r.json(); })
       .then(function (j) { UPC.data = j; syncUpcomingLive(); })
       .catch(function (e) { console.warn("upcoming:", e.message); });
-    fetch("data/upcoming_landings.json?_t=" + Date.now())
+    fetch("data/upcoming_landings.json?v=" + (window.ORBITA_V || "1"))
       .then(function (r) { if (!r.ok) throw new Error("upcoming landings unavailable"); return r.json(); })
       .then(function (j) { UPL.data = j; })
       .catch(function (e) { console.warn("upcoming landings:", e.message); });
@@ -4439,7 +4448,7 @@
   }
   var BOOT_LOADERS = {
     sites: function () {
-      return loadLayer("sites", "data/sites.json?_t=" + Date.now(), function (j) { DATA.sites = j; });
+      return loadLayer("sites", "data/sites.json?v=" + (window.ORBITA_V || "1"), function (j) { DATA.sites = j; });
     },
     recoveries: function () {
       return loadLayer("recoveries", "data/recovery_sites.json", function (j) {
@@ -4447,11 +4456,11 @@
       });
     },
     missions: function () {
-      return loadLayer("missions", "data/missions.json?_t=" + Date.now(), function (j) { DATA.missions = j; },
+      return loadLayer("missions", "data/missions.json?v=" + (window.ORBITA_V || "1"), function (j) { DATA.missions = j; },
         function () { buildFilters(); renderMissions(); });
     },
     companies: function () {
-      return loadLayer("companies", "data/companies.json?_t=" + Date.now(), function (j) { DATA.companies = j; },
+      return loadLayer("companies", "data/companies.json?v=" + (window.ORBITA_V || "1"), function (j) { DATA.companies = j; },
         function () { refreshMapUI(); buildFilters(); });
     }
   };
