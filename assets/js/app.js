@@ -682,6 +682,12 @@
   }
 
   function buildLayerBar() {
+    function nTxt(group, n) {
+      var st = (typeof LAYER_STATE !== "undefined") ? LAYER_STATE[group] : "";
+      if (st === "loading" && !n) return "…";
+      if (st === "error" && !n) return "!";
+      return n;
+    }
     var cats = [
       { k: "launch", n: DATA.companies.filter(function (x) { return x.cat === "launch"; }).length },
       { k: "propulsion", n: DATA.companies.filter(function (x) { return x.cat === "propulsion"; }).length },
@@ -696,11 +702,11 @@
           '" data-cat="recovery" aria-pressed="' + filters.recovery + '" aria-label="' + t("cat_recovery") + '" title="' + t("cat_recovery") + '"' +
           (c.n ? '' : ' disabled') + ' style="color:' + C.recovery + '">' +
           '<span class="ic">' + svgRecovery(C.recovery).replace('width="30"', 'width="18"').replace('height="38"', 'height="23"') + '</span>' +
-          '<span class="lb">' + t("cat_recovery") + '</span><span class="n">' + fmtNum(c.n) + '</span></button>';
+          '<span class="lb">' + t("cat_recovery") + '</span><span class="n">' + nTxt("recoveries", c.n) + '</span></button>';
       }
       return '<div class="lchip cat-chip' + (filters[c.k] ? "" : " off") + '" title="' + t("cat_" + c.k) + '" data-cat="' + c.k + '" style="color:' + C[c.k === "site" ? "site" : c.k] + '">' +
         '<span class="ic">' + iconFor(c.k, "active").replace(/width="3\d"/, 'width="18"').replace(/height="38"/, 'height="23"') + "</span>" +
-        '<span class="lb" style="color:var(--text)">' + t("cat_" + c.k) + '</span><span class="n">' + c.n + "</span></div>";
+        '<span class="lb" style="color:var(--text)">' + t("cat_" + c.k) + '</span><span class="n">' + nTxt(c.k === "site" ? "sites" : "companies", c.n) + "</span></div>";
     }).join("");
     html += '<span class="chip-sep" aria-hidden="true"></span>';
     html += '<button type="button" class="lchip style-chip" id="mapStyleChip" title="' + t("toggle_theme") + '">' +
@@ -4409,22 +4415,44 @@
   window.renderPropulsionDetail = renderPropulsionDetail;
   window.openDetail = openDetail;
 
-  /* ================= boot ================= */
+  /* ================= boot: نقشه فوری، داده‌ها لایه‌لایه ================= */
+  var LAYER_STATE = { sites: "loading", companies: "loading", recoveries: "loading", missions: "loading" };
+  function refreshMapUI() { buildLayerBar(); renderMarkers(); renderList(); }
+  function loadLayer(key, url, assign, after) {
+    LAYER_STATE[key] = "loading";
+    return fetch(url)
+      .then(function (r) { if (!r.ok) throw new Error("HTTP " + r.status); return r.json(); })
+      .then(function (j) { assign(j); LAYER_STATE[key] = "ready"; (after || refreshMapUI)(); })
+      .catch(function (e) {
+        console.warn("layer " + key + ":", e);
+        LAYER_STATE[key] = "error"; buildLayerBar();
+        setTimeout(function () { if (LAYER_STATE[key] === "error") BOOT_LOADERS[key](); }, 6000);
+      });
+  }
+  var BOOT_LOADERS = {
+    sites: function () {
+      return loadLayer("sites", "data/sites.json?_t=" + Date.now(), function (j) { DATA.sites = j; });
+    },
+    recoveries: function () {
+      return loadLayer("recoveries", "data/recovery_sites.json", function (j) {
+        DATA.recoveries = j && Array.isArray(j.sites) ? j.sites.filter(validRecoverySite) : [];
+      });
+    },
+    missions: function () {
+      return loadLayer("missions", "data/missions.json?_t=" + Date.now(), function (j) { DATA.missions = j; },
+        function () { buildFilters(); renderMissions(); });
+    },
+    companies: function () {
+      return loadLayer("companies", "data/companies.json?_t=" + Date.now(), function (j) { DATA.companies = j; },
+        function () { refreshMapUI(); buildFilters(); });
+    }
+  };
+  window.retryLayer = function (k) { if (BOOT_LOADERS[k]) BOOT_LOADERS[k](); };
   applyI18n();
-  Promise.all([
-    fetch("data/companies.json?_t=" + Date.now()).then(function (r) { return r.json(); }),
-    fetch("data/sites.json?_t=" + Date.now()).then(function (r) { return r.json(); }),
-    fetch("data/missions.json?_t=" + Date.now()).then(function (r) { return r.json(); }),
-    fetch("data/recovery_sites.json").then(function (r) {
-      if (!r.ok) throw new Error("Recovery data unavailable");
-      return r.json();
-    }).catch(function (e) { console.warn(e.message); return { sites: [] }; })
-  ]).then(function (res) {
-    DATA.companies = res[0]; DATA.sites = res[1]; DATA.missions = res[2];
-    DATA.recoveries = res[3] && Array.isArray(res[3].sites) ? res[3].sites.filter(validRecoverySite) : [];
-    initMap(); buildLayerBar(); renderList(); buildFilters(); renderMissions(); loadUpcoming(); loadNextLaunch(); loadLiveLaunches(); loadSiteUpcomingData();
-  }).catch(function (e) {
-    var el = $("#mapStatus");
-    if (el) { el.style.display = "block"; el.textContent = "خطا در بارگذاری داده‌ها / Data load error: " + e; }
+  initMap(); buildLayerBar(); renderList(); buildFilters(); renderMissions();
+  BOOT_LOADERS.sites().then(function () {
+    BOOT_LOADERS.recoveries(); BOOT_LOADERS.missions(); BOOT_LOADERS.companies();
+    /* تماس‌های غیرحیاتی پس از نقش‌بستن نقشه — پهنای باند نگاه اول مال نقشه */
+    setTimeout(function () { loadUpcoming(); loadNextLaunch(); loadLiveLaunches(); loadSiteUpcomingData(); }, 800);
   });
 })();
