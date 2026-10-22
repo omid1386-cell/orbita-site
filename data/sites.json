@@ -3658,7 +3658,11 @@
   "photo_caption_en": "A sounding rocket inside the Esrange launch tower",
   "photo_credit": "DLR Picture",
   "photo_license": "CC BY 3.0 de",
-  "photo_source_url": "https://commons.wikimedia.org/wiki/File:VSB-30_rocket_for_TEXUS_50_flight_in_launch_tower.jpg"
+  "photo_source_url": "https://commons.wikimedia.org/wiki/File:VSB-30_rocket_for_TEXUS_50_flight_in_launch_tower.jpg",
+  "stats_total": 0,
+  "stats_success": 0,
+  "stats_fail": 0,
+  "stats_asof": "2026-10-22"
  },
  {
   "id": "saxavord",
@@ -3800,7 +3804,11 @@
   "photo_caption_en": "Entrance and construction works at SaxaVord Spaceport, Unst",
   "photo_credit": "Mike Pennington",
   "photo_license": "CC BY-SA 2.0",
-  "photo_source_url": "https://commons.wikimedia.org/wiki/File:Site_entrance_for_the_proposed_Saxavord_Spaceport,_Lamba_Ness_-_geograph.org.uk_-_7179193.jpg"
+  "photo_source_url": "https://commons.wikimedia.org/wiki/File:Site_entrance_for_the_proposed_Saxavord_Spaceport,_Lamba_Ness_-_geograph.org.uk_-_7179193.jpg",
+  "stats_total": 0,
+  "stats_success": 0,
+  "stats_fail": 0,
+  "stats_asof": "2026-10-22"
  },
  {
   "id": "sutherland",
@@ -3940,7 +3948,11 @@
   "photo_caption_en": "The A' Mhòine launch pad site of Sutherland Spaceport, pre-construction",
   "photo_credit": "Andrew Tryon",
   "photo_license": "CC BY-SA 2.0",
-  "photo_source_url": "https://commons.wikimedia.org/wiki/File:The_Spaceport_Launch_Pad_Site,_A%27_Mhoine,_Sutherland_-_geograph.org.uk_-_7200875.jpg"
+  "photo_source_url": "https://commons.wikimedia.org/wiki/File:The_Spaceport_Launch_Pad_Site,_A%27_Mhoine,_Sutherland_-_geograph.org.uk_-_7200875.jpg",
+  "stats_total": 0,
+  "stats_success": 0,
+  "stats_fail": 0,
+  "stats_asof": "2026-10-22"
  },
  {
   "id": "elarenosillo",
