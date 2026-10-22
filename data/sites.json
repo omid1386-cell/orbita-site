@@ -2854,7 +2854,11 @@
   "photo_caption_en": "Aerial survey view of Rocket Lab Launch Complex 1, Mahia Peninsula",
   "photo_credit": "Land Information New Zealand (LINZ)",
   "photo_license": "CC BY 4.0",
-  "photo_source_url": "https://commons.wikimedia.org/wiki/File:Rocket_Lab_Launch_Complex_1_survey_image.jpg"
+  "photo_source_url": "https://commons.wikimedia.org/wiki/File:Rocket_Lab_Launch_Complex_1_survey_image.jpg",
+  "stats_total": 84,
+  "stats_success": 80,
+  "stats_fail": 4,
+  "stats_asof": "2026-10-22"
  },
  {
   "id": "kourou",
@@ -3226,7 +3230,11 @@
   "photo_caption_en": "An Ariane 5 on its way to the ELA-3 pad, Kourou",
   "photo_credit": "elisabetta_monaco from Munich, Germany",
   "photo_license": "CC BY 2.0",
-  "photo_source_url": "https://commons.wikimedia.org/wiki/File:Ariane_5ECA_on_its_way_to_launch_pad_ELA-3.jpg"
+  "photo_source_url": "https://commons.wikimedia.org/wiki/File:Ariane_5ECA_on_its_way_to_launch_pad_ELA-3.jpg",
+  "stats_total": 336,
+  "stats_success": 317,
+  "stats_fail": 19,
+  "stats_asof": "2026-10-22"
  },
  {
   "id": "andoya",
@@ -3436,7 +3444,11 @@
   "photo_caption_en": "Aerial view of the Andøya launch site facilities",
   "photo_credit": "MM2sp",
   "photo_license": "Public domain",
-  "photo_source_url": "https://commons.wikimedia.org/wiki/File:Rocketrangesummer.JPG"
+  "photo_source_url": "https://commons.wikimedia.org/wiki/File:Rocketrangesummer.JPG",
+  "stats_total": 2,
+  "stats_success": 1,
+  "stats_fail": 1,
+  "stats_asof": "2026-10-22"
  },
  {
   "id": "esrange",
