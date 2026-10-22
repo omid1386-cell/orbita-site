@@ -4116,7 +4116,11 @@
   "photo_caption_en": "Night launch of Miura 1 from El Arenosillo",
   "photo_credit": "PLD Space",
   "photo_license": "CC BY-SA 4.0",
-  "photo_source_url": "https://commons.wikimedia.org/wiki/File:Lanzamiento_exitoso_del_cohete_MIURA_1.jpg"
+  "photo_source_url": "https://commons.wikimedia.org/wiki/File:Lanzamiento_exitoso_del_cohete_MIURA_1.jpg",
+  "stats_total": 1,
+  "stats_success": 1,
+  "stats_fail": 0,
+  "stats_asof": "2026-10-22"
  },
  {
   "id": "plesetsk",
@@ -4442,7 +4446,11 @@
   "photo_caption_en": "An Angara-1.2 rocket on the pad at Plesetsk",
   "photo_credit": "Unknown authorUnknown author",
   "photo_license": "CC BY 4.0",
-  "photo_source_url": "https://commons.wikimedia.org/wiki/File:Launch_of_the_Angara-1.2_from_the_Plesetsk_cosmodrome_(2025-08-21)_02.jpg"
+  "photo_source_url": "https://commons.wikimedia.org/wiki/File:Launch_of_the_Angara-1.2_from_the_Plesetsk_cosmodrome_(2025-08-21)_02.jpg",
+  "stats_total": 1688,
+  "stats_success": 1618,
+  "stats_fail": 70,
+  "stats_asof": "2026-10-22"
  },
  {
   "id": "baikonur",
@@ -4814,7 +4822,11 @@
   "photo_caption_en": "A Soyuz rocket being erected on the launch pad at Baikonur",
   "photo_credit": "NASA/Bill Ingalls",
   "photo_license": "Public Domain",
-  "photo_source_url": "https://images.nasa.gov/details/200903240032HQ"
+  "photo_source_url": "https://images.nasa.gov/details/200903240032HQ",
+  "stats_total": 1565,
+  "stats_success": 1438,
+  "stats_fail": 127,
+  "stats_asof": "2026-10-22"
  },
  {
   "id": "vostochny",
