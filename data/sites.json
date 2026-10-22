@@ -1363,7 +1363,11 @@
   "photo_caption_en": "View of the SLC-4 launch and landing facilities at Vandenberg",
   "photo_credit": "SpaceX",
   "photo_license": "CC0",
-  "photo_source_url": "https://commons.wikimedia.org/wiki/File:Vandenberg_Launch_and_Landing_Site.jpg"
+  "photo_source_url": "https://commons.wikimedia.org/wiki/File:Vandenberg_Launch_and_Landing_Site.jpg",
+  "stats_total": 919,
+  "stats_success": 848,
+  "stats_fail": 71,
+  "stats_asof": "2026-10-21"
  },
  {
   "id": "starbase",
@@ -1710,7 +1714,11 @@
   "photo_caption_en": "The Starbase launch facility at Boca Chica, Texas",
   "photo_credit": "Lars Plougmann from United States",
   "photo_license": "CC BY-SA 2.0",
-  "photo_source_url": "https://commons.wikimedia.org/wiki/File:SpaceX_Starbase_launch_facility_(51438071556).jpg"
+  "photo_source_url": "https://commons.wikimedia.org/wiki/File:SpaceX_Starbase_launch_facility_(51438071556).jpg",
+  "stats_total": 23,
+  "stats_success": 15,
+  "stats_fail": 8,
+  "stats_asof": "2026-10-21"
  },
  {
   "id": "wallops",
@@ -1921,7 +1929,11 @@
   "photo_caption_en": "An Antares rocket on the launch pad at Wallops",
   "photo_credit": "NASA/Bill Ingalls",
   "photo_license": "Public Domain",
-  "photo_source_url": "https://images.nasa.gov/details/201401080005HQ"
+  "photo_source_url": "https://images.nasa.gov/details/201401080005HQ",
+  "stats_total": 87,
+  "stats_success": 77,
+  "stats_fail": 10,
+  "stats_asof": "2026-10-21"
  },
  {
   "id": "kodiak",
@@ -2155,7 +2167,11 @@
   "photo_caption_en": "Processing and integration facility at the Pacific Spaceport Complex, Kodiak Island",
   "photo_credit": "U.S. Air Force/Tech. Sgt. Bennie J. Davis III",
   "photo_license": "Public domain",
-  "photo_source_url": "https://commons.wikimedia.org/wiki/File:Kodiak_Launch_Complex,_Kodiak_Island,_Alaska_AF.jpg"
+  "photo_source_url": "https://commons.wikimedia.org/wiki/File:Kodiak_Launch_Complex,_Kodiak_Island,_Alaska_AF.jpg",
+  "stats_total": 9,
+  "stats_success": 5,
+  "stats_fail": 4,
+  "stats_asof": "2026-10-21"
  },
  {
   "id": "spaceportamerica",
@@ -2365,7 +2381,11 @@
   "photo_caption_en": "The main terminal hangar of Spaceport America at night",
   "photo_credit": "Land Rover MENA",
   "photo_license": "CC BY 2.0",
-  "photo_source_url": "https://commons.wikimedia.org/wiki/File:Spaceport_America_terminal_hangar_at_night_(14907530348).jpg"
+  "photo_source_url": "https://commons.wikimedia.org/wiki/File:Spaceport_America_terminal_hangar_at_night_(14907530348).jpg",
+  "stats_total": 4,
+  "stats_success": 0,
+  "stats_fail": 4,
+  "stats_asof": "2026-10-21"
  },
  {
   "id": "kwajalein",
@@ -2597,7 +2617,11 @@
   "photo_caption_en": "Falcon 1 lifting off from Omelek Island (2009)",
   "photo_credit": "SpaceX",
   "photo_license": "CC0",
-  "photo_source_url": "https://commons.wikimedia.org/wiki/File:2009_Falcon_1_launches_from_Omelek_Island_02.jpg"
+  "photo_source_url": "https://commons.wikimedia.org/wiki/File:2009_Falcon_1_launches_from_Omelek_Island_02.jpg",
+  "stats_total": 5,
+  "stats_success": 2,
+  "stats_fail": 3,
+  "stats_asof": "2026-10-21"
  },
  {
   "id": "mahia",
@@ -2830,7 +2854,11 @@
   "photo_caption_en": "Aerial survey view of Rocket Lab Launch Complex 1, Mahia Peninsula",
   "photo_credit": "Land Information New Zealand (LINZ)",
   "photo_license": "CC BY 4.0",
-  "photo_source_url": "https://commons.wikimedia.org/wiki/File:Rocket_Lab_Launch_Complex_1_survey_image.jpg"
+  "photo_source_url": "https://commons.wikimedia.org/wiki/File:Rocket_Lab_Launch_Complex_1_survey_image.jpg",
+  "stats_total": 84,
+  "stats_success": 80,
+  "stats_fail": 4,
+  "stats_asof": "2026-10-22"
  },
  {
   "id": "kourou",
@@ -3202,7 +3230,11 @@
   "photo_caption_en": "An Ariane 5 on its way to the ELA-3 pad, Kourou",
   "photo_credit": "elisabetta_monaco from Munich, Germany",
   "photo_license": "CC BY 2.0",
-  "photo_source_url": "https://commons.wikimedia.org/wiki/File:Ariane_5ECA_on_its_way_to_launch_pad_ELA-3.jpg"
+  "photo_source_url": "https://commons.wikimedia.org/wiki/File:Ariane_5ECA_on_its_way_to_launch_pad_ELA-3.jpg",
+  "stats_total": 336,
+  "stats_success": 317,
+  "stats_fail": 19,
+  "stats_asof": "2026-10-22"
  },
  {
   "id": "andoya",
@@ -3412,7 +3444,11 @@
   "photo_caption_en": "Aerial view of the Andøya launch site facilities",
   "photo_credit": "MM2sp",
   "photo_license": "Public domain",
-  "photo_source_url": "https://commons.wikimedia.org/wiki/File:Rocketrangesummer.JPG"
+  "photo_source_url": "https://commons.wikimedia.org/wiki/File:Rocketrangesummer.JPG",
+  "stats_total": 2,
+  "stats_success": 1,
+  "stats_fail": 1,
+  "stats_asof": "2026-10-22"
  },
  {
   "id": "esrange",
