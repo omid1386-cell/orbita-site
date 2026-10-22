@@ -708,7 +708,7 @@
   function buildLayerBar() {
     function nTxt(group, n) {
       var st = (typeof LAYER_STATE !== "undefined") ? LAYER_STATE[group] : "";
-      if (st === "loading" && !n) return "…";
+      if ((st === "loading" || st === "idle") && !n) return "…";
       if (st === "error" && !n) return "!";
       return n;
     }
@@ -724,7 +724,7 @@
       if (c.k === "recovery") {
         return '<button type="button" class="lchip cat-chip recovery-chip' + (filters.recovery ? '' : ' off') +
           '" data-cat="recovery" aria-pressed="' + filters.recovery + '" aria-label="' + t("cat_recovery") + '" title="' + t("cat_recovery") + '"' +
-          (c.n ? '' : ' disabled') + ' style="color:' + C.recovery + '">' +
+          (c.n ? '' : (LAYER_STATE.recoveries === "error" ? ' disabled' : '')) + ' style="color:' + C.recovery + '">' +
           '<span class="ic">' + svgRecovery(C.recovery).replace('width="30"', 'width="18"').replace('height="38"', 'height="23"') + '</span>' +
           '<span class="lb">' + t("cat_recovery") + '</span><span class="n">' + nTxt("recoveries", c.n) + '</span></button>';
       }
@@ -753,6 +753,12 @@
         el.classList.toggle("off", !filters[k]);
         if (k === "recovery") el.setAttribute("aria-pressed", String(filters[k]));
         clusterMode = null;
+        /* دادهٔ بازیابی از نگاه اول کنار گذاشته شده؛ با نخستین درخواست کاربر می‌آید */
+        if (k === "recovery" && filters.recovery &&
+            (LAYER_STATE.recoveries === "idle" || LAYER_STATE.recoveries === "error")) {
+          BOOT_LOADERS.recoveries();
+          return;
+        }
         renderMarkers();
         renderList();
       };
@@ -4447,7 +4453,7 @@
   window.openDetail = openDetail;
 
   /* ================= boot: نقشه فوری، داده‌ها لایه‌لایه ================= */
-  var LAYER_STATE = { sites: "loading", companies: "loading", recoveries: "loading", missions: "loading" };
+  var LAYER_STATE = { sites: "loading", companies: "loading", recoveries: "idle", missions: "loading" };
   function refreshMapUI() { buildLayerBar(); renderMarkers(); renderList(); }
   function loadLayer(key, url, assign, after) {
     LAYER_STATE[key] = "loading";
@@ -4482,8 +4488,9 @@
   applyI18n();
   initMap(); buildLayerBar(); renderList(); buildFilters(); renderMissions();
   BOOT_LOADERS.sites().then(function () {
-    BOOT_LOADERS.recoveries(); BOOT_LOADERS.missions(); BOOT_LOADERS.companies();
+    BOOT_LOADERS.missions(); BOOT_LOADERS.companies();
     /* تماس‌های غیرحیاتی پس از نقش‌بستن نقشه — پهنای باند نگاه اول مال نقشه */
-    setTimeout(function () { loadUpcoming(); loadNextLaunch(); loadLiveLaunches(); loadSiteUpcomingData(); }, 800);
+    var idle = window.requestIdleCallback || function (fn) { return setTimeout(fn, 900); };
+    idle(function () { loadUpcoming(); loadNextLaunch(); loadLiveLaunches(); loadSiteUpcomingData(); }, { timeout: 2500 });
   });
 })();
