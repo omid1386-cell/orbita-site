@@ -18,7 +18,22 @@
   --shadow:0 14px 40px rgba(30,50,90,.15);
 }
 
-/* ===== Vazirmatn Persian+Latin typeface (self-hosted, offline) ===== */
+/* ===== Dana Pro Persian+Latin typeface (self-hosted, offline; FontIran license) ===== */
+@font-face{font-family:"Dana";font-style:normal;font-weight:300;font-display:swap;
+  src:url("../fonts/Dana-Light.woff2") format("woff2")}
+@font-face{font-family:"Dana";font-style:normal;font-weight:400;font-display:swap;
+  src:url("../fonts/Dana-Regular.woff2") format("woff2")}
+@font-face{font-family:"Dana";font-style:normal;font-weight:500;font-display:swap;
+  src:url("../fonts/Dana-Medium.woff2") format("woff2")}
+@font-face{font-family:"Dana";font-style:normal;font-weight:600;font-display:swap;
+  src:url("../fonts/Dana-DemiBold.woff2") format("woff2")}
+@font-face{font-family:"Dana";font-style:normal;font-weight:700;font-display:swap;
+  src:url("../fonts/Dana-Bold.woff2") format("woff2")}
+@font-face{font-family:"Dana";font-style:normal;font-weight:800;font-display:swap;
+  src:url("../fonts/Dana-ExtraBold.woff2") format("woff2")}
+@font-face{font-family:"Dana";font-style:normal;font-weight:900;font-display:swap;
+  src:url("../fonts/Dana-Black.woff2") format("woff2")}
+/* Vazirmatn kept as fallback (files remain on disk) */
 @font-face{font-family:"Vazirmatn";font-style:normal;font-weight:400;font-display:swap;
   src:url("../fonts/Vazirmatn-Regular.woff2") format("woff2")}
 @font-face{font-family:"Vazirmatn";font-style:normal;font-weight:500;font-display:swap;
@@ -30,7 +45,7 @@
 
 *{box-sizing:border-box}
 html,body{margin:0;height:100%;overflow:hidden;background:var(--bg);color:var(--text);
-  font-family:"Vazirmatn",Tahoma,"Segoe UI",system-ui,-apple-system,sans-serif;font-size:14px}
+  font-family:"Dana","Vazirmatn",Tahoma,"Segoe UI",system-ui,-apple-system,sans-serif;font-size:14px}
 button,input,select{font-family:inherit;color:inherit}
 ::-webkit-scrollbar{width:9px;height:9px}
 ::-webkit-scrollbar-thumb{background:var(--line);border-radius:6px}
@@ -1104,3 +1119,23 @@ html[dir="ltr"] .recovery-heading{padding-inline-end:0;padding-inline-start:22px
 :root[data-theme="light"] .country-btn-site:hover{
   background:rgba(196,147,10,.85)!important;color:#ffffff!important;
   border-color:#c4930a!important;box-shadow:0 0 8px rgba(196,147,10,.4)}
+
+/* =====================================================================
+   ORBITA — Dana typeface pass (2026-10-23)
+   Weight map: 300 long paragraphs · 400 body · 500 labels/chips ·
+   600 section heads/buttons · 700 titles · 800 brand · 900 reserved.
+   ===================================================================== */
+
+/* 300 Light — long descriptive paragraphs */
+.d-desc{font-weight:300}
+.d-desc.en{font-family:"Dana","Segoe UI",system-ui,sans-serif;font-weight:300}
+
+/* 500 Medium — labels, chips, tabs, nav */
+.tab,.chip,.cell small,.d-kicker,.ghost-btn,.lchip,.lchip .lb,
+.up-card span,.tb-select,.site-filter-sel{font-weight:500}
+
+/* 600 SemiBold — section headers, accordion titles, compact values */
+.sec-t,.acc summary,.up-head,.up-pad,.mk,.lnch-name,.up-card b,
+.detail-panel .cell b{font-weight:600}
+
+/* 800 ExtraBold — brand stays as declared (.logo b is already 800) */
