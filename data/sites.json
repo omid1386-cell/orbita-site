@@ -6555,7 +6555,11 @@
   "photo_caption_en": "Sea launch of a Jielong-3 rocket from the floating platform in the Yellow Sea",
   "photo_credit": "China News Service",
   "photo_license": "CC BY 4.0",
-  "photo_source_url": "https://commons.wikimedia.org/wiki/File:Jielong-3_Carrier_Rocket_Maidan_Flight.png"
+  "photo_source_url": "https://commons.wikimedia.org/wiki/File:Jielong-3_Carrier_Rocket_Maidan_Flight.png",
+  "stats_total": 29,
+  "stats_success": 29,
+  "stats_fail": 0,
+  "stats_asof": "2026-10-23"
  },
  {
   "id": "sriharikota",
@@ -6905,7 +6909,11 @@
   "photo_caption_en": "GSLV Mk III on the Second Launch Pad, Satish Dhawan Space Centre",
   "photo_credit": "Indian Space Research Organisation",
   "photo_license": "GODL-India",
-  "photo_source_url": "https://commons.wikimedia.org/wiki/File:01_GSLV_Mk_III_D2_with_GSAT-29_on_Second_Launch_Pad_of_Satish_Dhawan_Space_Centre,_Sriharikota_(SDSC_SHAR).jpg"
+  "photo_source_url": "https://commons.wikimedia.org/wiki/File:01_GSLV_Mk_III_D2_with_GSAT-29_on_Second_Launch_Pad_of_Satish_Dhawan_Space_Centre,_Sriharikota_(SDSC_SHAR).jpg",
+  "stats_total": 105,
+  "stats_success": 90,
+  "stats_fail": 15,
+  "stats_asof": "2026-10-23"
  },
  {
   "id": "kulasekarapattinam",
@@ -7023,7 +7031,11 @@
   "photo_caption_en": "Tiruchendur beach, adjacent to the Kulasekarapattinam spaceport construction area",
   "photo_credit": "Gayathri Dakshinamoorthy",
   "photo_license": "CC BY-SA 4.0",
-  "photo_source_url": "https://commons.wikimedia.org/wiki/File:Arulmigu_Subramaniya_Swamy_Temple,_Tiruchendur.jpg"
+  "photo_source_url": "https://commons.wikimedia.org/wiki/File:Arulmigu_Subramaniya_Swamy_Temple,_Tiruchendur.jpg",
+  "stats_total": 0,
+  "stats_success": 0,
+  "stats_fail": 0,
+  "stats_asof": "2026-10-23"
  },
  {
   "id": "tanegashima",
