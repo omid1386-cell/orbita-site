@@ -1267,7 +1267,7 @@
       h += '<div><span style="color:var(--muted);">' + (isFa ? "زمان حدودی:" : "Approx. time:") + '</span> <b>' + esc(isFa ? eff.timeFa : eff.timeEn) + (eff.updatedLive ? ' <span style="color:#10b981; font-size:9px;">' + (isFa ? "(به‌روزشدهٔ زنده)" : "(live update)") + '</span>' : '') + '</b></div>';
       h += '<div><span style="color:var(--muted);">' + (isFa ? "وضعیت:" : "Status:") + '</span> <b>' + esc(isFa ? (ST_FA[eff.status] || eff.status) : eff.status) + '</b></div>';
       h += '</div>';
-      h += '<div style="background:rgba(59, 130, 246, 0.08); border:1px solid rgba(59, 130, 246, 0.25); border-radius:5px; padding:8px; font-size:11px; line-height:1.6; color:#bfdbfe;">' + esc(isFa ? l.desc_fa : l.desc_en) + '</div>';
+      h += '<div style="background:rgba(0, 125, 145, 0.07); border:1px solid rgba(0, 125, 145, 0.3); border-radius:5px; padding:8px; font-size:11px; line-height:1.6; color:var(--accent-tx);">' + esc(isFa ? l.desc_fa : l.desc_en) + '</div>';
       if (l.calendar_url || l.stream_url) {
         h += '<div style="display:flex; gap:8px; flex-wrap:wrap;">';
         if (l.calendar_url) h += '<a href="' + esc(l.calendar_url) + '" target="_blank" rel="noopener noreferrer" style="font-size:10px; color:var(--accent); text-decoration:none; border:1px solid var(--line); border-radius:5px; padding:4px 9px;">🗓 ' + (isFa ? "گاه‌شمار رسمی" : "Official schedule") + ' ↗</a>';
@@ -1518,7 +1518,7 @@
 
           h += '<details class="acc" ' + openAttr + ' style="background:linear-gradient(180deg, rgba(15,31,51,0.8) 0%, rgba(9,13,22,0.9) 100%); border:1px solid var(--line); border-radius:8px; overflow:hidden; box-shadow:0 4px 12px rgba(0,0,0,0.3); transition:all 0.2s ease;">';
           h += '<summary style="padding:10px 12px; cursor:pointer; display:flex; justify-content:space-between; align-items:center; gap:10px; user-select:none; background:rgba(255,255,255,0.03); outline:none; flex-wrap:wrap;">';
-          h += '<div style="font-size:12px; font-weight:bold; color:#fff; line-height:1.45; word-break:break-word; flex:1; min-width:180px;">⚙️ <bdi>' + esc(engName) + '</bdi></div>';
+          h += '<div style="font-size:12px; font-weight:bold; color:#f2c649; line-height:1.45; word-break:break-word; flex:1; min-width:180px;">⚙️ <bdi>' + esc(engName) + '</bdi></div>';
           h += '<div style="display:flex; align-items:center; gap:6px; flex-wrap:wrap;">';
           h += '<span style="color:#38bdf8; font-size:9.5px; background:rgba(56, 189, 248, 0.15); border:1px solid rgba(56, 189, 248, 0.3); padding:2px 7px; border-radius:12px; font-weight:bold;"><bdi>' + esc(engProp) + '</bdi></span>';
           h += '<span style="color:#10b981; font-weight:bold; font-size:9.5px; background:rgba(16, 185, 129, 0.12); border:1px solid rgba(16, 185, 129, 0.3); padding:2px 7px; border-radius:12px;"><bdi>' + esc(engSt) + '</bdi></span>';
@@ -2036,7 +2036,7 @@
 
     // SECTION 1: SHARE & OVERVIEW 4-GRID BANNER (سهم و آمار فضایی کشور)
     h += '<div style="background:linear-gradient(135deg, rgba(15, 31, 51, 0.95) 0%, rgba(9, 13, 22, 0.98) 100%); border:1px solid rgba(56, 189, 248, 0.35); border-radius:8px; padding:12px; margin-top:10px; box-shadow:0 4px 16px rgba(0,0,0,0.4);">';
-    h += '<div style="font-size:11.5px; font-weight:bold; color:#2fd4a7; margin-bottom:8px; display:flex; align-items:center; gap:6px; border-bottom:1px solid rgba(255,255,255,0.08); padding-bottom:6px;">📊 ' + (isFa ? "سهم و آمار توزیع زیرساخت‌های فضایی کشور:" : "Space Infrastructure Share Distribution:") + '</div>';
+    h += '<div style="font-size:11.5px; font-weight:bold; color:#f2c649; margin-bottom:8px; display:flex; align-items:center; gap:6px; border-bottom:1px solid rgba(255,255,255,0.08); padding-bottom:6px;">📊 ' + (isFa ? "سهم و آمار توزیع زیرساخت‌های فضایی کشور:" : "Space Infrastructure Share Distribution:") + '</div>';
     
     h += '<div style="display:grid; grid-template-columns:' + (showRecovery ? 'repeat(auto-fit, minmax(90px, 1fr))' : 'repeat(4, 1fr)') + '; gap:6px; text-align:center;">';
     
@@ -2406,13 +2406,13 @@
     var flagProdExpl = isFa ? (o.flagship_prod_expl_fa || o.flagship_prod_expl) : (o.flagship_prod_expl_en || o.flagship_prod_expl);
 
     if (flagProdName) {
-      h += '<div style="background:linear-gradient(135deg, rgba(245, 158, 11, 0.12) 0%, rgba(15, 31, 51, 0.85) 100%); border:1px solid rgba(245, 158, 11, 0.4); border-radius:8px; padding:12px; margin-top:10px; box-shadow:0 4px 12px rgba(0,0,0,0.3);">';
+      h += '<div style="background:linear-gradient(135deg, rgba(21, 38, 58, 0.92) 0%, rgba(9, 13, 22, 0.96) 100%); border:1px solid rgba(245, 158, 11, 0.4); border-radius:8px; padding:12px; margin-top:10px; box-shadow:0 4px 12px rgba(0,0,0,0.3);">';
       h += '<div style="display:flex; justify-content:space-between; align-items:center; margin-bottom:6px;">';
-      h += '<span style="font-size:12px; font-weight:bold; color:#f59e0b;">🏆 ' + (isFa ? "محصول شاخص:" : "Flagship Product:") + ' <b><bdi style="color:#fff;">' + esc(flagProdName) + '</bdi></b></span>';
+      h += '<span style="font-size:12px; font-weight:bold; color:#f59e0b;">🏆 ' + (isFa ? "محصول شاخص:" : "Flagship Product:") + ' <b><bdi style="color:#f2c649;">' + esc(flagProdName) + '</bdi></b></span>';
       h += '<span class="badge-gov" style="padding:2px 8px; border-radius:10px; font-size:10px; background:rgba(245, 158, 11, 0.2); border:1px solid rgba(245, 158, 11, 0.4); color:#f59e0b;">' + esc(flagProdStatus) + '</span>';
       h += '</div>';
       if (flagProdExpl) {
-        h += '<div style="font-size:10.5px; color:#e7f0fb; margin-top:4px; line-height:1.6;">' + esc(flagProdExpl) + '</div>';
+        h += '<div style="font-size:10.5px; color:#4ec9d8; margin-top:4px; line-height:1.6;">' + esc(flagProdExpl) + '</div>';
       }
       h += '</div>';
     }
@@ -2425,11 +2425,11 @@
     if (flagProgName) {
       h += '<div style="background:linear-gradient(135deg, rgba(16, 185, 129, 0.12) 0%, rgba(15, 31, 51, 0.85) 100%); border:1px solid rgba(16, 185, 129, 0.4); border-radius:8px; padding:12px; margin-top:10px; box-shadow:0 4px 12px rgba(0,0,0,0.3);">';
       h += '<div style="display:flex; justify-content:space-between; align-items:center; margin-bottom:6px;">';
-      h += '<span style="font-size:12px; font-weight:bold; color:#10b981;">🚀 ' + (isFa ? "برنامه کلان شاخص:" : "Flagship Program:") + ' <b><bdi style="color:#fff;">' + esc(flagProgName) + '</bdi></b></span>';
+      h += '<span style="font-size:12px; font-weight:bold; color:#10b981;">🚀 ' + (isFa ? "برنامه کلان شاخص:" : "Flagship Program:") + ' <b><bdi style="color:#f2c649;">' + esc(flagProgName) + '</bdi></b></span>';
       h += '<span style="padding:2px 8px; border-radius:10px; font-size:10px; background:rgba(16, 185, 129, 0.2); border:1px solid rgba(16, 185, 129, 0.4); color:#10b981;">' + esc(flagProgTimeline) + '</span>';
       h += '</div>';
       if (flagProgExpl) {
-        h += '<div style="font-size:10.5px; color:#e7f0fb; margin-top:4px; line-height:1.6;">' + esc(flagProgExpl) + '</div>';
+        h += '<div style="font-size:10.5px; color:#4ec9d8; margin-top:4px; line-height:1.6;">' + esc(flagProgExpl) + '</div>';
       }
       h += '</div>';
     }
@@ -2447,20 +2447,20 @@
     var emailAddr = o.email || (o.contacts ? o.contacts.email : null) || "info@isa.ir";
 
     h += '<div style="background:linear-gradient(135deg, rgba(15, 31, 51, 0.95) 0%, rgba(9, 13, 22, 0.98) 100%); border:1px solid rgba(56, 189, 248, 0.35); border-radius:8px; padding:12px; margin-top:12px; box-shadow:0 6px 16px rgba(0,0,0,0.4); backdrop-filter:blur(8px);">';
-    h += '<div style="font-size:11.5px; font-weight:bold; color:#2fd4a7; margin-bottom:10px; display:flex; align-items:center; gap:6px; border-bottom:1px solid rgba(255,255,255,0.08); padding-bottom:6px;">🌐 ' + (isFa ? "درگاه‌های رسمی ارتباطی و وب‌سایت سازمان:" : "Official Communication Channels:") + '</div>';
+    h += '<div style="font-size:11.5px; font-weight:bold; color:#f2c649; margin-bottom:10px; display:flex; align-items:center; gap:6px; border-bottom:1px solid rgba(255,255,255,0.08); padding-bottom:6px;">🌐 ' + (isFa ? "درگاه‌های رسمی ارتباطی و وب‌سایت سازمان:" : "Official Communication Channels:") + '</div>';
     
     h += '<div style="display:flex; flex-direction:column; gap:8px;">';
     
     // Website Row (Displays actual domain URL text like isa.ir ↗)
     h += '<div style="display:flex; justify-content:space-between; align-items:center; background:rgba(0,0,0,0.3); padding:8px 12px; border-radius:6px; border:1px solid rgba(16, 185, 129, 0.3);">';
-    h += '<span style="font-size:10.5px; color:#fff; font-weight:bold;">🌐 ' + (isFa ? "وب‌سایت رسمی:" : "Official Website:") + '</span>';
+    h += '<span style="font-size:10.5px; color:#f2c649; font-weight:bold;">🌐 ' + (isFa ? "وب‌سایت رسمی:" : "Official Website:") + '</span>';
     h += '<a href="' + esc(webUrl) + '" target="_blank" rel="noopener noreferrer" style="color:#10b981; font-weight:bold; text-decoration:none; background:rgba(16, 185, 129, 0.15); padding:4px 12px; border-radius:5px; border:1px solid rgba(16, 185, 129, 0.4); font-size:10.5px; font-family:monospace; display:flex; align-items:center; gap:4px;"><bdi>' + esc(displayWebDomain) + '</bdi> ↗</a>';
     h += '</div>';
 
     // LinkedIn Row
     if (linkedinUrl && linkedinUrl !== "#") {
       h += '<div style="display:flex; justify-content:space-between; align-items:center; background:rgba(0,0,0,0.3); padding:8px 12px; border-radius:6px; border:1px solid rgba(56, 189, 248, 0.3);">';
-      h += '<span style="font-size:10.5px; color:#fff; font-weight:bold;">💼 ' + (isFa ? "صفحه رسمی لینکدین:" : "Official LinkedIn:") + '</span>';
+      h += '<span style="font-size:10.5px; color:#f2c649; font-weight:bold;">💼 ' + (isFa ? "صفحه رسمی لینکدین:" : "Official LinkedIn:") + '</span>';
       h += '<a href="' + esc(linkedinUrl) + '" target="_blank" rel="noopener noreferrer" style="color:#38bdf8; font-weight:bold; text-decoration:none; background:rgba(56, 189, 248, 0.15); padding:4px 12px; border-radius:5px; border:1px solid rgba(56, 189, 248, 0.4); font-size:10.5px; font-family:monospace; display:flex; align-items:center; gap:4px;"><bdi>' + esc(displayLinkedin) + '</bdi> ↗</a>';
       h += '</div>';
     }
@@ -2468,7 +2468,7 @@
     // Email Row
     if (emailAddr) {
       h += '<div style="display:flex; justify-content:space-between; align-items:center; background:rgba(0,0,0,0.3); padding:8px 12px; border-radius:6px; border:1px solid rgba(245, 158, 11, 0.3);">';
-      h += '<span style="font-size:10.5px; color:#fff; font-weight:bold;">📧 ' + (isFa ? "پست الکترونیک ارتباطی:" : "Contact Email:") + '</span>';
+      h += '<span style="font-size:10.5px; color:#f2c649; font-weight:bold;">📧 ' + (isFa ? "پست الکترونیک ارتباطی:" : "Contact Email:") + '</span>';
       h += '<a href="mailto:' + esc(emailAddr) + '" style="color:#f59e0b; font-weight:bold; font-size:10.5px; font-family:monospace; background:rgba(245, 158, 11, 0.15); padding:4px 12px; border-radius:5px; border:1px solid rgba(245, 158, 11, 0.4); text-decoration:none;"><bdi>' + esc(emailAddr) + '</bdi></a>';
       h += '</div>';
     }
@@ -2501,7 +2501,7 @@
         
         // Summary Header Bar
         h += '<summary style="padding:10px 12px; cursor:pointer; display:flex; justify-content:space-between; align-items:center; user-select:none; background:rgba(255,255,255,0.03); outline:none;">';
-        h += '<div style="font-size:12px; font-weight:bold; color:#fff; flex:1; line-height:1.5;">📡 <bdi>' + esc(pName) + '</bdi></div>';
+        h += '<div style="font-size:12px; font-weight:bold; color:#f2c649; flex:1; line-height:1.5;">📡 <bdi>' + esc(pName) + '</bdi></div>';
         h += '<span style="color:#8ba3c4; font-size:10px; opacity:0.8; margin-inline-start:8px;">▼</span>';
         h += '</summary>';
 
@@ -2519,13 +2519,13 @@
         if (pSpecs && pSpecs !== "—") {
           h += '<div style="background:rgba(16, 185, 129, 0.08); border:1px solid rgba(16, 185, 129, 0.25); padding:8px 10px; border-radius:6px;">';
           h += '<div style="font-size:11px; font-weight:bold; color:#10b981; margin-bottom:3px; display:flex; align-items:center; gap:4px;">⚙️ ' + (isFa ? "مشخصات فنی و پارامترها:" : "Technical Specifications:") + '</div>';
-          h += '<div style="font-size:10px; color:#fff; line-height:1.5;"><bdi>' + esc(pSpecs) + '</bdi></div>';
+          h += '<div style="font-size:10px; color:#4ec9d8; line-height:1.5;"><bdi>' + esc(pSpecs) + '</bdi></div>';
           h += '</div>';
         }
 
         // Operational Role Highlight Box
         if (pRole && pRole !== "—") {
-          h += '<div style="background:rgba(15, 31, 51, 0.6); border:1px solid rgba(245, 158, 11, 0.35); border-radius:6px; padding:8px 10px;">';
+          h += '<div style="background:rgba(15, 31, 51, 0.88); border:1px solid rgba(245, 158, 11, 0.35); border-radius:6px; padding:8px 10px;">';
           h += '<div style="font-size:11px; font-weight:bold; color:#f59e0b; margin-bottom:3px; display:flex; align-items:center; gap:4px;">🛠️ ' + (isFa ? "شرح کاربردی و مأموریت مداری:" : "Operational Role & Mission:") + '</div>';
           h += '<div style="font-size:10px; color:#e7f0fb; line-height:1.5;"><bdi>' + esc(pRole) + '</bdi></div>';
           h += '</div>';
@@ -2662,28 +2662,28 @@
     var flagshipApp = isFa ? (o.flagship_application_fa || o.flagship_application_en || "پرتابگرهای مداری") : (o.flagship_application_en || o.flagship_application_fa || "Orbital Launchers");
 
     if (flagshipEngine) {
-      h += '<div style="background:linear-gradient(135deg, rgba(56, 189, 248, 0.12) 0%, rgba(15, 31, 51, 0.8) 100%); border:1px solid rgba(56, 189, 248, 0.35); border-radius:8px; padding:12px; margin-top:10px; box-shadow:0 4px 12px rgba(0,0,0,0.3);">';
+      h += '<div style="background:linear-gradient(135deg, rgba(21, 38, 58, 0.92) 0%, rgba(9, 13, 22, 0.96) 100%); border:1px solid rgba(56, 189, 248, 0.35); border-radius:8px; padding:12px; margin-top:10px; box-shadow:0 4px 12px rgba(0,0,0,0.3);">';
       h += '<div style="display:flex; justify-content:space-between; align-items:center; margin-bottom:6px;">';
-      h += '<span style="font-size:12px; font-weight:bold; color:#2fd4a7;">⚙️ ' + (isFa ? "موتور پرچمدار و شاخص:" : "Flagship Engine:") + ' <b><bdi>' + esc(flagshipEngine) + '</bdi></b></span>';
+      h += '<span style="font-size:12px; font-weight:bold; color:#f2c649;">⚙️ ' + (isFa ? "موتور پرچمدار و شاخص:" : "Flagship Engine:") + ' <b><bdi>' + esc(flagshipEngine) + '</bdi></b></span>';
       h += '<span class="badge-gov" style="padding:2px 8px; border-radius:10px; font-size:10px; background:rgba(16, 185, 129, 0.2); border:1px solid rgba(16, 185, 129, 0.4); color:#10b981;">' + esc(flagshipStatus) + '</span>';
       h += '</div>';
-      h += '<div style="font-size:10.5px; color:#fff; margin-top:4px; line-height:1.5;">🚀 <b>' + (isFa ? "کاربرد اصلی:" : "Primary Application:") + '</b> <bdi>' + esc(flagshipApp) + '</bdi></div>';
+      h += '<div style="font-size:10.5px; color:#4ec9d8; margin-top:4px; line-height:1.5;">🚀 <b>' + (isFa ? "کاربرد اصلی:" : "Primary Application:") + '</b> <bdi>' + esc(flagshipApp) + '</bdi></div>';
       h += '</div>';
     }
 
     // SECTION 2: Company History Box
     var histText = isFa ? (o.history_fa || o.history_en || o.fa_d) : (o.history_en || o.history_fa || o.en_d);
     if (histText) {
-      h += '<div style="background:rgba(15, 31, 51, 0.6); border:1px solid rgba(245, 158, 11, 0.35); border-radius:8px; padding:12px; margin-top:10px; box-shadow:0 4px 12px rgba(0,0,0,0.25);">';
+      h += '<div style="background:rgba(15, 31, 51, 0.88); border:1px solid rgba(245, 158, 11, 0.35); border-radius:8px; padding:12px; margin-top:10px; box-shadow:0 4px 12px rgba(0,0,0,0.25);">';
       h += '<div style="font-size:11.5px; font-weight:bold; color:#f59e0b; margin-bottom:6px; display:flex; align-items:center; gap:6px;">📜 ' + (isFa ? "تاریخچه سازمانی و توسعه پیشرانه:" : "Company & Propulsion History:") + '</div>';
-      h += '<div style="font-size:10.5px; color:#e7f0fb; line-height:1.6;">' + esc(histText) + '</div>';
+      h += '<div style="font-size:10.5px; color:#4ec9d8; line-height:1.6;">' + esc(histText) + '</div>';
       h += '</div>';
     }
 
     // SECTION 3: Product Development History Box
     var prodHistText = isFa ? (o.product_history_fa || o.product_history_en) : (o.product_history_en || o.product_history_fa);
     if (prodHistText) {
-      h += '<div style="background:rgba(15, 31, 51, 0.6); border:1px solid rgba(16, 185, 129, 0.35); border-radius:8px; padding:12px; margin-top:10px; box-shadow:0 4px 12px rgba(0,0,0,0.25);">';
+      h += '<div style="background:rgba(15, 31, 51, 0.88); border:1px solid rgba(16, 185, 129, 0.35); border-radius:8px; padding:12px; margin-top:10px; box-shadow:0 4px 12px rgba(0,0,0,0.25);">';
       h += '<div style="font-size:11.5px; font-weight:bold; color:#10b981; margin-bottom:6px; display:flex; align-items:center; gap:6px;">⚙️ ' + (isFa ? "تاریخچه بومی‌سازی و ساخت محصولات:" : "Product Development & Manufacturing:") + '</div>';
       h += '<div style="font-size:10.5px; color:var(--text); line-height:1.6;">' + esc(prodHistText) + '</div>';
       h += '</div>';
@@ -2740,7 +2740,7 @@
         
         // Summary Header Bar (FIXED FULL WRAP TITLE WITHOUT ELLIPSIS!)
         h += '<summary style="padding:10px 12px; cursor:pointer; display:flex; justify-content:space-between; align-items:center; gap:10px; user-select:none; background:rgba(255,255,255,0.03); outline:none; flex-wrap:wrap;">';
-        h += '<div style="font-size:12px; font-weight:bold; color:#fff; line-height:1.45; word-break:break-word; flex:1; min-width:180px;">⚙️ <bdi>' + esc(engName) + '</bdi></div>';
+        h += '<div style="font-size:12px; font-weight:bold; color:#f2c649; line-height:1.45; word-break:break-word; flex:1; min-width:180px;">⚙️ <bdi>' + esc(engName) + '</bdi></div>';
         h += '<div style="display:flex; align-items:center; gap:6px; flex-wrap:wrap;">';
         h += '<span style="color:#38bdf8; font-size:9.5px; background:rgba(56, 189, 248, 0.15); border:1px solid rgba(56, 189, 248, 0.3); padding:2px 7px; border-radius:12px; font-weight:bold;"><bdi>' + esc(engProp) + '</bdi></span>';
         h += '<span style="color:#10b981; font-weight:bold; font-size:9.5px; background:rgba(16, 185, 129, 0.12); border:1px solid rgba(16, 185, 129, 0.3); padding:2px 7px; border-radius:12px;"><bdi>' + esc(engSt) + '</bdi></span>';
@@ -2751,7 +2751,7 @@
         // Sleek Collapsible Details Body
         h += '<div style="padding:12px; border-top:1px solid rgba(255,255,255,0.08); background:rgba(4,10,18,0.7); color:#e7f0fb; font-size:10.5px; display:flex; flex-direction:column; gap:6px;">';
         h += '<div style="display:grid; grid-template-columns:1fr 1fr; gap:6px;">';
-        h += '<div style="background:rgba(0,0,0,0.3); padding:6px 8px; border-radius:4px; border:1px solid var(--line);"><b>' + (isFa ? "چرخه / نوع احتراق:" : "Cycle / Type:") + '</b> <br><bdi style="color:#fff;">' + esc(engType) + '</bdi></div>';
+        h += '<div style="background:rgba(0,0,0,0.3); padding:6px 8px; border-radius:4px; border:1px solid var(--line);"><b>' + (isFa ? "چرخه / نوع احتراق:" : "Cycle / Type:") + '</b> <br><bdi style="color:#f2c649;">' + esc(engType) + '</bdi></div>';
         h += '<div style="background:rgba(0,0,0,0.3); padding:6px 8px; border-radius:4px; border:1px solid var(--line);"><b>' + (isFa ? "ترکیب سوخت:" : "Propellant:") + '</b> <br><span style="color:#f59e0b; font-weight:bold;"><bdi>' + esc(engProp) + '</bdi></span></div>';
         h += '</div>';
 
@@ -2759,15 +2759,15 @@
 
         // SPACEFLIGHT OPERATIONAL ROLE BOX
         if (engRole) {
-          h += '<div style="background:rgba(15, 31, 51, 0.6); border:1px solid rgba(245, 158, 11, 0.35); border-radius:6px; padding:8px 10px; margin-top:2px;">';
+          h += '<div style="background:rgba(15, 31, 51, 0.88); border:1px solid rgba(245, 158, 11, 0.35); border-radius:6px; padding:8px 10px; margin-top:2px;">';
           h += '<div style="font-size:11px; font-weight:bold; color:#f59e0b; margin-bottom:3px; display:flex; align-items:center; gap:4px;">🛠️ ' + (isFa ? "شرح کارکرد عملیاتی در فضا:" : "Spaceflight Operational Role:") + '</div>';
           h += '<div style="font-size:10px; color:#e7f0fb; line-height:1.5;">' + esc(engRole) + '</div>';
           h += '</div>';
         }
 
         // Target Rocket / Mission Highlight Box
-        h += '<div style="color:#fff; background:linear-gradient(90deg, rgba(56, 189, 248, 0.12) 0%, rgba(2, 132, 199, 0.05) 100%); border:1px solid rgba(56, 189, 248, 0.3); padding:8px 10px; border-radius:6px; margin-top:2px;">';
-        h += '<div style="font-size:11px; font-weight:bold; color:#2fd4a7; margin-bottom:2px;">🚀 ' + (isFa ? "موشک و مأموریت مقصد (Mission → Engine):" : "Target Rocket / Mission:") + '</div>';
+        h += '<div style="color:#4ec9d8; background:linear-gradient(90deg, rgba(78, 201, 216, 0.12) 0%, rgba(0, 125, 145, 0.06) 100%); border:1px solid rgba(78, 201, 216, 0.35); padding:8px 10px; border-radius:6px; margin-top:2px;">';
+        h += '<div style="font-size:11px; font-weight:bold; color:#f2c649; margin-bottom:2px;">🚀 ' + (isFa ? "موشک و مأموریت مقصد (Mission → Engine):" : "Target Rocket / Mission:") + '</div>';
         h += '<div style="font-size:10.5px;"><bdi>' + esc(engRocket) + '</bdi></div>';
         var usedBy = eng.used_by_ids || [];
         if (usedBy.length && window.compById) {
@@ -3094,20 +3094,20 @@
     if (flagP) {
       var flagSt = isFa ? (o.flagship_product_status_fa || "عملیاتی") : (o.flagship_product_status_en || "Operational");
       var flagApp = isFa ? (o.flagship_product_app_fa || "") : (o.flagship_product_app_en || "");
-      h += '<div style="background:linear-gradient(135deg, rgba(163, 230, 53, 0.12) 0%, rgba(15, 31, 51, 0.85) 100%); border:1px solid rgba(163, 230, 53, 0.4); border-radius:8px; padding:10px 12px; margin-top:8px;">';
+      h += '<div style="background:linear-gradient(135deg, rgba(21, 38, 58, 0.92) 0%, rgba(9, 13, 22, 0.96) 100%); border:1px solid rgba(163, 230, 53, 0.4); border-radius:8px; padding:10px 12px; margin-top:8px;">';
       h += '<div style="display:flex; justify-content:space-between; align-items:center; gap:8px; flex-wrap:wrap;">';
-      h += '<span style="font-size:12px; font-weight:bold; color:#a3e635;">🛰 ' + (isFa ? "محصول شاخص:" : "Flagship Product:") + ' <b><bdi style="color:#fff;">' + esc(flagP) + '</bdi></b></span>';
+      h += '<span style="font-size:12px; font-weight:bold; color:#a3e635;">🛰 ' + (isFa ? "محصول شاخص:" : "Flagship Product:") + ' <b><bdi style="color:#f2c649;">' + esc(flagP) + '</bdi></b></span>';
       h += '<span class="badge-gov" style="padding:2px 8px; border-radius:10px; font-size:10px;"><bdi>' + esc(flagSt) + '</bdi></span></div>';
-      if (flagApp) h += '<div style="font-size:10.5px; color:#e7f0fb; margin-top:4px; line-height:1.5;">🎯 <b>' + (isFa ? "کاربرد اصلی:" : "Primary Use:") + '</b> <bdi>' + esc(flagApp) + '</bdi></div>';
+      if (flagApp) h += '<div style="font-size:10.5px; color:#4ec9d8; margin-top:4px; line-height:1.5;">🎯 <b>' + (isFa ? "کاربرد اصلی:" : "Primary Use:") + '</b> <bdi>' + esc(flagApp) + '</bdi></div>';
       h += '</div>';
     }
 
     // History box (dark island → explicit light text)
     var histText = isFa ? (o.history_fa || o.history_en || o.fa_d) : (o.history_en || o.history_fa || o.en_d);
     if (histText) {
-      h += '<div style="background:rgba(15, 31, 51, 0.6); border:1px solid rgba(163, 230, 53, 0.3); border-radius:8px; padding:12px; margin-top:8px;">';
+      h += '<div style="background:rgba(15, 31, 51, 0.88); border:1px solid rgba(163, 230, 53, 0.3); border-radius:8px; padding:12px; margin-top:8px;">';
       h += '<div style="font-size:11.5px; font-weight:bold; color:#a3e635; margin-bottom:6px;">📜 ' + (isFa ? "تاریخچه و جایگاه صنعتی:" : "History & Standing:") + '</div>';
-      h += '<div style="font-size:10.5px; color:#e7f0fb; line-height:1.6;">' + esc(histText) + '</div></div>';
+      h += '<div style="font-size:10.5px; color:#4ec9d8; line-height:1.6;">' + esc(histText) + '</div></div>';
     }
 
     // Website
@@ -3134,15 +3134,15 @@
         var prDesc = isFa ? (pr.engineering_desc_fa || "") : (pr.engineering_desc_en || "");
         h += '<details class="acc"' + (idx === 0 ? " open" : "") + ' style="background:linear-gradient(180deg, rgba(15,31,51,0.8) 0%, rgba(9,13,22,0.9) 100%); border:1px solid var(--line); border-radius:8px; overflow:hidden;">';
         h += '<summary style="padding:10px 12px; cursor:pointer; display:flex; justify-content:space-between; align-items:center; gap:10px; flex-wrap:wrap; user-select:none; background:rgba(255,255,255,0.03);">';
-        h += '<div style="font-size:12px; font-weight:bold; color:#fff; flex:1; min-width:160px; line-height:1.45;">🛰 <bdi>' + esc(prName) + '</bdi></div>';
+        h += '<div style="font-size:12px; font-weight:bold; color:#f2c649; flex:1; min-width:160px; line-height:1.45;">🛰 <bdi>' + esc(prName) + '</bdi></div>';
         h += '<span style="color:#10b981; font-size:9.5px; font-weight:bold; background:rgba(16,185,129,0.12); border:1px solid rgba(16,185,129,0.3); padding:2px 7px; border-radius:12px;"><bdi>' + esc(prSt) + '</bdi></span>';
         h += '<span style="color:#8ba3c4; font-size:10px; opacity:0.8;">▼</span></summary>';
         h += '<div style="padding:12px; border-top:1px solid rgba(255,255,255,0.08); background:rgba(4,10,18,0.7); color:#e7f0fb; font-size:10.5px; display:flex; flex-direction:column; gap:6px;">';
         h += '<div style="display:grid; grid-template-columns:1fr 1fr; gap:6px;">';
-        h += '<div style="background:rgba(0,0,0,0.3); padding:6px 8px; border-radius:4px; border:1px solid var(--line);"><b>' + (isFa ? "نوع محصول:" : "Type:") + '</b><br><bdi style="color:#fff;">' + esc(prType) + '</bdi></div>';
-        h += '<div style="background:rgba(0,0,0,0.3); padding:6px 8px; border-radius:4px; border:1px solid var(--line);"><b>' + (isFa ? "کلاس / رده:" : "Class:") + '</b><br><bdi style="color:#fff;">' + esc(prClass) + '</bdi></div></div>';
-        if (prDesc) h += '<div style="background:rgba(15, 31, 51, 0.6); border:1px solid rgba(163,230,53,0.3); border-radius:6px; padding:8px 10px;"><b style="color:#a3e635;">🛠️ ' + (isFa ? "شرح مهندسی:" : "Engineering:") + '</b> <span style="color:#e7f0fb;">' + esc(prDesc) + '</span></div>';
-        h += '<div style="color:#fff; background:linear-gradient(90deg, rgba(163,230,53,0.12) 0%, rgba(2,132,199,0.05) 100%); border:1px solid rgba(163,230,53,0.3); padding:8px 10px; border-radius:6px;">';
+        h += '<div style="background:rgba(0,0,0,0.3); padding:6px 8px; border-radius:4px; border:1px solid var(--line);"><b>' + (isFa ? "نوع محصول:" : "Type:") + '</b><br><bdi style="color:#f2c649;">' + esc(prType) + '</bdi></div>';
+        h += '<div style="background:rgba(0,0,0,0.3); padding:6px 8px; border-radius:4px; border:1px solid var(--line);"><b>' + (isFa ? "کلاس / رده:" : "Class:") + '</b><br><bdi style="color:#f2c649;">' + esc(prClass) + '</bdi></div></div>';
+        if (prDesc) h += '<div style="background:rgba(15, 31, 51, 0.88); border:1px solid rgba(163,230,53,0.3); border-radius:6px; padding:8px 10px;"><b style="color:#a3e635;">🛠️ ' + (isFa ? "شرح مهندسی:" : "Engineering:") + '</b> <span style="color:#4ec9d8;">' + esc(prDesc) + '</span></div>';
+        h += '<div style="color:#4ec9d8; background:linear-gradient(90deg, rgba(78, 201, 216, 0.12) 0%, rgba(0, 125, 145, 0.06) 100%); border:1px solid rgba(78, 201, 216, 0.35); padding:8px 10px; border-radius:6px;">';
         h += '<div style="font-size:11px; font-weight:bold; color:#a3e635; margin-bottom:2px;">🎯 ' + (isFa ? "به‌کاررفته در:" : "Used on:") + '</div>';
         h += '<div style="font-size:10.5px;"><bdi>' + esc(prUsed) + '</bdi></div>';
         var cids = pr.customer_ids || [];
@@ -3565,6 +3565,10 @@
     }
     var cat = p.cat || (p.o ? p.o.cat : "");
     var kind = p.kind || cat;
+
+    /* ORBITA custom palette: entity-coded dossier rail (org = teal, site/recovery = gold) */
+    var __de = document.getElementById("detail");
+    if (__de) __de.setAttribute("data-ent", (cat === "site" || kind === "site" || cat === "recovery" || kind === "recovery") ? "site" : "org");
 
     if (cat === "recovery" || kind === "recovery") {
       $("#detailBody").innerHTML = renderRecoveryDetail(p.o);

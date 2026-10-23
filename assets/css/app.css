@@ -3,14 +3,18 @@
   --bg:#0b1524; --bg2:#122237; --panel:rgba(14,27,45,.94); --panel-solid:#0f1e33;
   --row:#0f1f31; --row2:#132639;
   --line:rgba(126,180,235,.16); --text:#e7f0fb; --muted:#8ba3c4;
-  --accent:#2fd4a7; --accent-2:#38bdf8; --amber:#f5a524; --violet:#a78bfa; --rose:#fb7185; --green:#34d399;
+  --accent:#007d91; --accent-tx:#4ec9d8; --accent-2:#4fbccc;
+  --gold:#ebb40f; --gold-ink:#f2c649;
+  --amber:#f5a524; --violet:#a78bfa; --rose:#fb7185; --green:#34d399;
   --shadow:0 18px 50px rgba(0,0,0,.55);
 }
 :root[data-theme="light"]{
   --bg:#eef3f9; --bg2:#ffffff; --panel:rgba(255,255,255,.96); --panel-solid:#ffffff;
   --row:#ffffff; --row2:#f4f7fc;
   --line:rgba(20,45,85,.13); --text:#14243d; --muted:#5c6f8e;
-  --accent:#0f9d76; --accent-2:#0284c7; --amber:#b8730d; --violet:#7c3aed; --rose:#e11d48; --green:#059669;
+  --accent:#007d91; --accent-tx:#007d91; --accent-2:#0e7e93;
+  --gold:#c4930a; --gold-ink:#7d5f06;
+  --amber:#b8730d; --violet:#7c3aed; --rose:#e11d48; --green:#059669;
   --shadow:0 14px 40px rgba(30,50,90,.15);
 }
 
@@ -981,3 +985,122 @@ html[dir="ltr"] .recovery-heading{padding-inline-end:0;padding-inline-start:22px
 .recovery-registry-source{display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:6px;margin-top:7px;font-size:9.5px;color:var(--muted)}
 .recovery-registry-body{max-height:430px;overflow-y:auto}
 .recovery-mobility-note{margin-top:10px}
+
+/* =====================================================================
+   ORBITA — Custom palette (2026-10-23)
+   Teal #007d91 (structure/orgs) + Gold #ebb40f (honor/sites)
+   Scope: world-map chrome + company/site detail dossiers.
+   The map canvas, pins and clusters stay for the next step.
+   ===================================================================== */
+
+/* --- 1) legibility: small accent-colored text uses the brighter tint --- */
+.logo{color:var(--accent-tx)}
+.tab.active{color:var(--accent-tx)}
+.ghost-btn:hover,.fab:hover,.icon-btn:hover{color:var(--accent-tx)}
+.exp-btn:hover,.mrow.open .exp-btn{color:var(--accent-tx)}
+.lnch-cd{color:var(--accent-tx)}
+.d-kicker{color:var(--accent-tx)}
+.acc summary{color:var(--accent-tx)}
+.chip{color:var(--accent-tx)}
+.up-head,.up-pad,.mk-d,.m-count b{color:var(--accent-tx)}
+.lnch-name.clickable:hover{color:var(--accent-tx)}
+.style-chip:hover{border-color:var(--accent-2);box-shadow:0 0 10px color-mix(in srgb,var(--accent-2) 32%,transparent)}
+
+/* --- 2) next-launch ticker: gold spark of excitement + teal digits --- */
+.lnch-bar{background:linear-gradient(90deg,color-mix(in srgb,var(--gold) 15%,var(--panel-solid)),var(--panel-solid) 62%)}
+.lnch-dot{background:var(--gold)}
+@keyframes lnchPulse{
+  0%{box-shadow:0 0 0 0 color-mix(in srgb,var(--gold) 55%,transparent)}
+  70%{box-shadow:0 0 0 7px transparent}
+  100%{box-shadow:0 0 0 0 transparent}}
+.lnch-name.clickable{text-decoration-color:color-mix(in srgb,var(--gold) 60%,transparent)}
+
+/* --- 3) entity-coded detail dossiers: org = teal, site/recovery = gold --- */
+.detail-panel{--ent:var(--accent);--ent-tx:var(--accent-tx)}
+.detail-panel[data-ent="site"]{--ent:var(--gold);--ent-tx:var(--gold-ink)}
+.detail-panel{border-color:color-mix(in srgb,var(--ent) 38%,var(--line))}
+.detail-panel::before{
+  content:"";display:block;height:3px;margin:-18px -18px 15px;
+  border-radius:13px 13px 2px 2px;
+  background:linear-gradient(-90deg,var(--ent),transparent 82%)}
+@media (max-width:760px){.detail-panel::before{margin:-14px -14px 14px}}
+
+.detail-panel .d-kicker{color:var(--ent-tx)}
+.detail-panel .chip{
+  background:color-mix(in srgb,var(--ent) 13%,transparent);
+  border-color:color-mix(in srgb,var(--ent) 42%,transparent);
+  color:var(--ent-tx)}
+.detail-panel .acc summary{color:var(--ent-tx)}
+.detail-panel .up-head,.detail-panel .up-pad{color:var(--ent-tx)}
+.detail-panel .res:hover{border-color:var(--ent-tx)}
+
+/* "active / operational" state inside a dossier wears the gold of honor */
+.detail-panel .badge-ok{
+  background:color-mix(in srgb,var(--gold) 18%,transparent);color:var(--gold-ink)}
+.detail-panel .b-operational,.detail-panel .b-active,.detail-panel .b-success{
+  background:color-mix(in srgb,var(--gold) 14%,transparent);
+  color:var(--gold-ink);
+  border:1px solid color-mix(in srgb,var(--gold) 45%,transparent)}
+
+/* =====================================================================
+   ORBITA — Map stage (2026-10-23)
+   Country-dossier action buttons harmonized to the teal/gold palette.
+   (Pins, clusters, layer chips and sidebar icons follow the `C` map in
+   app.js automatically; these buttons need theme-aware overrides.)
+   ===================================================================== */
+
+/* fly-to = teal action */
+.country-btn-fly{
+  background:rgba(0,165,184,.2)!important;color:#3cc3d4!important;
+  border:1px solid rgba(60,195,212,.5)!important}
+.country-btn-fly:hover{
+  background:rgba(0,165,184,.45)!important;color:#eafcff!important;
+  border-color:#3cc3d4!important;box-shadow:0 0 8px rgba(60,195,212,.4)}
+:root[data-theme="light"] .country-btn-fly{
+  background:rgba(0,125,145,.12)!important;color:#05707f!important;
+  border-color:rgba(0,125,145,.45)!important}
+:root[data-theme="light"] .country-btn-fly:hover{
+  background:rgba(0,125,145,.82)!important;color:#ffffff!important;
+  border-color:#007d91!important;box-shadow:0 0 8px rgba(0,125,145,.35)}
+
+/* company view = deeper teal */
+.country-btn-view{
+  background:rgba(11,114,128,.18)!important;color:#4fb2c2!important;
+  border:1px solid rgba(79,178,194,.5)!important}
+.country-btn-view:hover{
+  background:rgba(11,114,128,.45)!important;color:#eafcff!important;
+  border-color:#4fb2c2!important;box-shadow:0 0 8px rgba(79,178,194,.4)}
+:root[data-theme="light"] .country-btn-view{
+  background:rgba(11,114,128,.1)!important;color:#0b7280!important;
+  border-color:rgba(11,114,128,.5)!important}
+:root[data-theme="light"] .country-btn-view:hover{
+  background:rgba(11,114,128,.85)!important;color:#ffffff!important;
+  border-color:#0b7280!important;box-shadow:0 0 8px rgba(11,114,128,.35)}
+
+/* propulsion = steel teal */
+.country-btn-prop{
+  background:rgba(95,184,212,.16)!important;color:#7fc9e0!important;
+  border:1px solid rgba(127,201,224,.45)!important}
+.country-btn-prop:hover{
+  background:rgba(95,184,212,.4)!important;color:#ffffff!important;
+  border-color:#7fc9e0!important;box-shadow:0 0 8px rgba(127,201,224,.4)}
+:root[data-theme="light"] .country-btn-prop{
+  background:rgba(42,116,145,.1)!important;color:#2a7491!important;
+  border-color:rgba(42,116,145,.5)!important}
+:root[data-theme="light"] .country-btn-prop:hover{
+  background:rgba(42,116,145,.85)!important;color:#ffffff!important;
+  border-color:#2a7491!important;box-shadow:0 0 8px rgba(42,116,145,.35)}
+
+/* launch sites = gold of the site family */
+.country-btn-site{
+  background:rgba(232,167,15,.16)!important;color:#f2c649!important;
+  border:1px solid rgba(235,180,15,.5)!important}
+.country-btn-site:hover{
+  background:rgba(232,167,15,.4)!important;color:#fff7dd!important;
+  border-color:#f2c649!important;box-shadow:0 0 8px rgba(235,180,15,.45)}
+:root[data-theme="light"] .country-btn-site{
+  background:rgba(196,147,10,.12)!important;color:#8a6508!important;
+  border-color:rgba(180,135,10,.5)!important}
+:root[data-theme="light"] .country-btn-site:hover{
+  background:rgba(196,147,10,.85)!important;color:#ffffff!important;
+  border-color:#c4930a!important;box-shadow:0 0 8px rgba(196,147,10,.4)}
