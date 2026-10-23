@@ -1139,3 +1139,24 @@ html[dir="ltr"] .recovery-heading{padding-inline-end:0;padding-inline-start:22px
 .detail-panel .cell b{font-weight:600}
 
 /* 800 ExtraBold — brand stays as declared (.logo b is already 800) */
+
+/* ============================================================
+   FLAGS PASS 1 (country dossier header flags) — 2026-10-23
+   Flag sits in the dossier header replacing the old 44px 🌍 box
+   slot. Fixed rgb edge so white flags (چ، jp…) keep a visible
+   outline on BOTH themes; slight transparent-white backing.
+   ============================================================ */
+img.d-flag{
+  height:32px;width:auto;max-width:48px;min-width:32px;
+  object-fit:contain;display:block;flex-shrink:0;
+  box-sizing:content-box;padding:2px;
+  border:1px solid rgba(118,142,172,.62);border-radius:5px;
+  background:rgba(255,255,255,.93);
+  box-shadow:0 2px 8px rgba(4,10,20,.22);
+}
+
+/* ---- dual overlapping flags (compound countries, FLAGS PASS 2) ---- */
+.d-flagset{position:relative;display:inline-block;width:72px;height:42px;flex-shrink:0}
+.d-flagset img.d-flag--a{position:absolute;top:0;inset-inline-start:0;height:26px;min-width:26px;max-width:42px;z-index:1}
+.d-flagset img.d-flag--b{position:absolute;bottom:0;inset-inline-end:0;height:26px;min-width:26px;max-width:42px;z-index:2;box-shadow:0 3px 9px rgba(4,10,20,.34)}
+img.d-flag--globe{width:40px;height:40px;min-width:40px;max-width:40px;padding:0;border:none;border-radius:10px;background:transparent;box-shadow:none}

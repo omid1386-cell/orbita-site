@@ -437,14 +437,118 @@
   }
 
   /* country name labels rendered as DOM markers (works without remote glyph fonts) */
-  var labelMarkers = [], LABELS = null;
+  var labelMarkers = [], LABELS = null, COUNTRIES_GEO = null;
+  function indexCountriesGeo(fc) {
+    if (!fc || !fc.features) return null;
+    fc.features.forEach(function (f) {
+      var g = f.geometry;
+      if (!g || !g.coordinates) { f._polys = []; return; }
+      var raw = g.type === "Polygon" ? [g.coordinates] : (g.type === "MultiPolygon" ? g.coordinates : []);
+      f._polys = raw.map(function (poly) {
+        var r = poly[0] || [], minX = 1e9, minY = 1e9, maxX = -1e9, maxY = -1e9;
+        for (var i = 0; i < r.length; i++) {
+          var x = r[i][0], y = r[i][1];
+          if (x < minX) minX = x; if (x > maxX) maxX = x;
+          if (y < minY) minY = y; if (y > maxY) maxY = y;
+        }
+        return { outer: r, holes: poly.slice(1), minX: minX, minY: minY, maxX: maxX, maxY: maxY };
+      });
+    });
+    return fc;
+  }
+  function pipRing(x, y, ring) {
+    var inside = false, n = ring.length;
+    for (var i = 0, j = n - 1; i < n; j = i++) {
+      var xi = ring[i][0], yi = ring[i][1], xj = ring[j][0], yj = ring[j][1];
+      if (((yi > y) !== (yj > y)) && (x < (xj - xi) * (y - yi) / ((yj - yi) || 1e-30) + xi)) inside = !inside;
+    }
+    return inside;
+  }
+  function segDistSq(px, py, ax, ay, bx, by) {
+    var dx = bx - ax, dy = by - ay;
+    if (dx === 0 && dy === 0) return (px - ax) * (px - ax) + (py - ay) * (py - ay);
+    var t = ((px - ax) * dx + (py - ay) * dy) / (dx * dx + dy * dy);
+    if (t < 0) t = 0; else if (t > 1) t = 1;
+    var cx = ax + t * dx, cy = ay + t * dy;
+    return (px - cx) * (px - cx) + (py - cy) * (py - cy);
+  }
+  function formatGeoMatch(props, lng, lat) {
+    if (props.NAME === "France" && lng > -56 && lng < -50 && lat > 1 && lat < 7) {
+      return { country_en: "French Guiana", country_fa: "گویان فرانسه", country_iso: "GF" };
+    }
+    return {
+      country_en: props.NAME,
+      country_fa: props.NAME_FA || props.NAME,
+      country_iso: props.ISO || null
+    };
+  }
+  // Eagerly preload self-hosted country polygons & labels so online map clicks work instantly
+  (function preloadCountryGeo() {
+    var v = (window.ORBITA_V || "1");
+    fetch("assets/geo/countries.json?v=" + v).then(function (r) { return r.json(); })
+      .then(function (d) { COUNTRIES_GEO = indexCountriesGeo(d); }).catch(function () {});
+    fetch("assets/geo/labels.json?v=" + v).then(function (r) { return r.json(); })
+      .then(function (d) { if (!LABELS) { LABELS = d; buildLabels(); } }).catch(function () {});
+  })();
+
   function getCountryAtLngLat(lng, lat) {
+    var normLng = ((lng + 180) % 360 + 360) % 360 - 180;
+    // 1. Exact point-in-polygon against self-hosted countries.json (handles coasts, exclaves, multi-polygons)
+    if (COUNTRIES_GEO && COUNTRIES_GEO.features && COUNTRIES_GEO.features.length) {
+      var feats = COUNTRIES_GEO.features;
+      for (var i = 0; i < feats.length; i++) {
+        var polys = feats[i]._polys || [];
+        for (var p = 0; p < polys.length; p++) {
+          var b = polys[p];
+          if (normLng < b.minX || normLng > b.maxX || lat < b.minY || lat > b.maxY) continue;
+          if (pipRing(normLng, lat, b.outer)) {
+            var inHole = false;
+            for (var h = 0; h < b.holes.length; h++) {
+              if (pipRing(normLng, lat, b.holes[h])) { inHole = true; break; }
+            }
+            if (!inHole) return formatGeoMatch(feats[i].properties, normLng, lat);
+          }
+        }
+      }
+      // 2. Coastal tolerance (<= 3 deg to polygon boundary segment for 110m capes & coastal islands)
+      var bestFeat = null, bestSegD2 = 1e9;
+      for (var fi = 0; fi < feats.length; fi++) {
+        var ps = feats[fi]._polys || [];
+        for (var pi = 0; pi < ps.length; pi++) {
+          var pb = ps[pi];
+          if (normLng < pb.minX - 3.2 || normLng > pb.maxX + 3.2 || lat < pb.minY - 3.2 || lat > pb.maxY + 3.2) continue;
+          var ring = pb.outer;
+          for (var ri = 0; ri < ring.length - 1; ri++) {
+            var d2 = segDistSq(normLng, lat, ring[ri][0], ring[ri][1], ring[ri + 1][0], ring[ri + 1][1]);
+            if (d2 < bestSegD2) { bestSegD2 = d2; bestFeat = feats[fi]; }
+          }
+        }
+      }
+      if (bestFeat && bestSegD2 <= 9.0) return formatGeoMatch(bestFeat.properties, normLng, lat);
+
+      // 3. Sovereign oceanic island sites not present in 110m Natural Earth (e.g. Marshall Islands)
+      if (typeof DATA !== "undefined" && Array.isArray(DATA.sites)) {
+        var bestSite = null, bestSiteD2 = 6.25;
+        for (var si = 0; si < DATA.sites.length; si++) {
+          var st = DATA.sites[si];
+          if (!st.country || /^international/i.test(st.country) || st.lon == null || st.lat == null) continue;
+          var sdx = normLng - st.lon, sdy = lat - st.lat;
+          if (sdx > 180) sdx -= 360; else if (sdx < -180) sdx += 360;
+          var sd2 = sdx * sdx + sdy * sdy;
+          if (sd2 < bestSiteD2) { bestSiteD2 = sd2; bestSite = st; }
+        }
+        if (bestSite) {
+          return { country_en: bestSite.country, country_fa: bestSite.country_fa || bestSite.country, country_iso: null };
+        }
+      }
+      return null;
+    }
+
+    // 4. Fallback if labels loaded before countries.json
     if (!LABELS || !LABELS.features || !LABELS.features.length) return null;
     var best = null, bestDist = 1e9;
-    var normLng = ((lng + 180) % 360 + 360) % 360 - 180;
-
-    for (var i = 0; i < LABELS.features.length; i++) {
-      var feat = LABELS.features[i];
+    for (var li = 0; li < LABELS.features.length; li++) {
+      var feat = LABELS.features[li];
       var c = feat.geometry.coordinates;
       var dlng = normLng - c[0];
       var dlat = lat - c[1];
@@ -459,7 +563,8 @@
     if (best && bestDist < 625) {
       return {
         country_en: best.properties.NAME,
-        country_fa: best.properties.NAME_FA || best.properties.NAME
+        country_fa: best.properties.NAME_FA || best.properties.NAME,
+        country_iso: best.properties.ISO || null
       };
     }
     return null;
@@ -645,13 +750,14 @@
     });
 
     map.on("click", function (e) {
-      var cNameEn = null, cNameFa = null;
+      var cNameEn = null, cNameFa = null, cIso = null;
       try {
         if (map.getLayer("country-fill")) {
           var f = map.queryRenderedFeatures(e.point, { layers: ["country-fill"] })[0];
           if (f && f.properties && f.properties.NAME) {
             cNameEn = f.properties.NAME;
             cNameFa = f.properties.NAME_FA || f.properties.NAME;
+            cIso = f.properties.ISO || null;
           }
         }
       } catch (err) {}
@@ -661,11 +767,12 @@
         if (spatialMatch) {
           cNameEn = spatialMatch.country_en;
           cNameFa = spatialMatch.country_fa;
+          cIso = spatialMatch.country_iso || null;
         }
       }
 
       if (cNameEn) {
-        openDetail({ kind: "country", cat: "country", country_en: cNameEn, country_fa: cNameFa });
+        openDetail({ kind: "country", cat: "country", country_en: cNameEn, country_fa: cNameFa, country_iso: cIso });
       }
 
       if (BASEMODE !== "offline" || !map.getLayer("country-select")) return;
@@ -1961,12 +2068,80 @@
     return { webUrl: webUrl, displayWeb: displayWeb, linkedinUrl: linkedinUrl, displayLinkedin: displayLinkedin };
   }
 
+  // ===================== Country dossier flags (2026-10-23f, full world pack) =====================
+  // Data & map country strings -> SVG flag code(s): "cc" = single / "cc+cc" = dual / "globe" = neutral.
+  // Self-hosted SVGs live at assets/img/flags/{code}.svg (185 files, see LICENSE-flags.txt).
+  var FLAG_TABLE = {
+    "Afghanistan":"af", "Albania":"al", "Algeria":"dz", "Angola":"ao", "Antarctica":"aq",
+    "Argentina":"ar", "Armenia":"am", "Australia":"au", "Austria":"at", "Azerbaijan":"az",
+    "Bangladesh":"bd", "Belarus":"by", "Belgium":"be", "Belize":"bz", "Benin":"bj",
+    "Bhutan":"bt", "Bolivia":"bo", "Bosnia and Herzegovina":"ba", "Botswana":"bw", "Brazil":"br",
+    "Brunei":"bn", "Bulgaria":"bg", "Burkina Faso":"bf", "Burundi":"bi", "Cambodia":"kh",
+    "Cameroon":"cm", "Canada":"ca", "Central African Republic":"cf", "Chad":"td", "Chile":"cl",
+    "China":"cn", "Colombia":"co", "Costa Rica":"cr", "Croatia":"hr", "Cuba":"cu",
+    "Cyprus":"cy", "Czech Republic":"cz", "Democratic Republic of the Congo":"cd", "Denmark":"dk", "Djibouti":"dj",
+    "Dominican Republic":"do", "East Timor":"tl", "Ecuador":"ec", "Egypt":"eg", "Egypt / African Union":"eg+african-union",
+    "El Salvador":"sv", "Equatorial Guinea":"gq", "Eritrea":"er", "Estonia":"ee", "Eswatini":"sz",
+    "Ethiopia":"et", "Falkland Islands":"fk", "Fiji":"fj", "Finland":"fi", "France":"fr",
+    "France / Europe":"fr+eu", "France / Germany":"fr+de", "French Guiana":"gf", "French Southern and Antarctic Lands":"tf", "Gabon":"ga",
+    "Georgia":"ge", "Germany":"de", "Germany / United States":"de+us", "Ghana":"gh", "Great Britain":"gb",
+    "Greece":"gr", "Greenland":"gl", "Guatemala":"gt", "Guinea":"gn", "Guinea-Bissau":"gw",
+    "Guyana":"gy", "Haiti":"ht", "Honduras":"hn", "Hungary":"hu", "Iceland":"is",
+    "India":"in", "Indonesia":"id", "International / Pacific Ocean":"globe", "International waters":"globe", "Iran":"ir",
+    "Iraq":"iq", "Ireland":"ie", "Israel":"il", "Italy":"it", "Ivory Coast":"ci",
+    "Jamaica":"jm", "Japan":"jp", "Jordan":"jo", "Kazakhstan":"kz", "Kazakhstan (leased by Russia)":"kz",
+    "Kenya":"ke", "Kosovo":"globe", "Kuwait":"kw", "Kyrgyzstan":"kg", "Laos":"la",
+    "Latvia":"lv", "Lebanon":"lb", "Lesotho":"ls", "Liberia":"lr", "Libya":"ly",
+    "Lithuania":"lt", "Luxembourg":"lu", "Madagascar":"mg", "Malawi":"mw", "Malaysia":"my",
+    "Mali":"ml", "Marshall Islands":"mh", "Mauritania":"mr", "Mexico":"mx", "Moldova":"md",
+    "Mongolia":"mn", "Montenegro":"me", "Morocco":"ma", "Mozambique":"mz", "Myanmar":"mm",
+    "Namibia":"na", "Nepal":"np", "Netherlands":"nl", "New Caledonia":"nc", "New Zealand":"nz",
+    "New Zealand / Netherlands":"nz+nl", "Nicaragua":"ni", "Niger":"ne", "Nigeria":"ng", "North Korea":"kp",
+    "North Macedonia":"mk", "Northern Cyprus":"globe", "Norway":"no", "Oman":"om", "Pakistan":"pk",
+    "Palestine":"ps", "Panama":"pa", "Papua New Guinea":"pg", "Paraguay":"py", "People's Republic of China":"cn",
+    "Peru":"pe", "Philippines":"ph", "Poland":"pl", "Portugal":"pt", "Puerto Rico":"pr",
+    "Qatar":"qa", "Republic of China":"tw", "Republic of the Congo":"cg", "Romania":"ro", "Russia":"ru",
+    "Russian Federation":"ru", "Rwanda":"rw", "Saudi Arabia":"sa", "Senegal":"sn", "Serbia":"rs",
+    "Sierra Leone":"sl", "Slovakia":"sk", "Slovenia":"si", "Solomon Islands":"sb", "Somalia":"so",
+    "Somaliland":"globe", "South Africa":"za", "South Korea":"kr", "South Sudan":"ss", "Spain":"es",
+    "Sri Lanka":"lk", "Sudan":"sd", "Suriname":"sr", "Sweden":"se", "Sweden / Netherlands":"se+nl",
+    "Switzerland":"ch", "Syria":"sy", "Taiwan":"tw", "Tajikistan":"tj", "Tanzania":"tz",
+    "Thailand":"th", "The Bahamas":"bs", "The Gambia":"gm", "Togo":"tg", "Trinidad and Tobago":"tt",
+    "Tunisia":"tn", "Turkey":"tr", "Turkish Republic of Northern Cyprus":"globe", "Turkmenistan":"tm", "T\u00fcrkiye":"tr",
+    "UAE":"ae", "UK":"gb", "USA":"us", "Uganda":"ug", "Ukraine":"ua",
+    "United Arab Emirates":"ae", "United Kingdom":"gb", "United States":"us", "United States (coastal waters)":"us", "United States / New Zealand":"us+nz",
+    "United States of America":"us", "Uruguay":"uy", "Uzbekistan":"uz", "Vanuatu":"vu", "Venezuela":"ve",
+    "Vietnam":"vn", "Western Sahara":"eh", "Yemen":"ye", "Zambia":"zm", "Zimbabwe":"zw"
+  };
+  var FLAG_TABLE_LC = (function () {
+    var m = {};
+    for (var k in FLAG_TABLE) if (Object.prototype.hasOwnProperty.call(FLAG_TABLE, k)) m[k.toLowerCase()] = FLAG_TABLE[k];
+    return m;
+  })();
+  // Whitelist of codes whose SVG exists in assets/img/flags/ (prevents any 404 for -99 / missing).
+  var FLAG_CODES = {"ae":1,"af":1,"african-union":1,"al":1,"am":1,"ao":1,"aq":1,"ar":1,"at":1,"au":1,"az":1,"ba":1,"bd":1,"be":1,"bf":1,"bg":1,"bh":1,"bi":1,"bj":1,"bn":1,"bo":1,"br":1,"bs":1,"bt":1,"bw":1,"by":1,"bz":1,"ca":1,"cd":1,"cf":1,"cg":1,"ch":1,"ci":1,"cl":1,"cm":1,"cn":1,"co":1,"cr":1,"cu":1,"cy":1,"cz":1,"de":1,"dj":1,"dk":1,"do":1,"dz":1,"ec":1,"ee":1,"eg":1,"eh":1,"er":1,"es":1,"et":1,"eu":1,"fi":1,"fj":1,"fk":1,"fr":1,"ga":1,"gb":1,"ge":1,"gf":1,"gh":1,"gl":1,"globe":1,"gm":1,"gn":1,"gq":1,"gr":1,"gt":1,"gw":1,"gy":1,"hk":1,"hn":1,"hr":1,"ht":1,"hu":1,"id":1,"ie":1,"il":1,"in":1,"iq":1,"ir":1,"is":1,"it":1,"jm":1,"jo":1,"jp":1,"ke":1,"kg":1,"kh":1,"kp":1,"kr":1,"kw":1,"kz":1,"la":1,"lb":1,"lk":1,"lr":1,"ls":1,"lt":1,"lu":1,"lv":1,"ly":1,"ma":1,"mc":1,"md":1,"me":1,"mg":1,"mh":1,"mk":1,"ml":1,"mm":1,"mn":1,"mr":1,"mt":1,"mw":1,"mx":1,"my":1,"mz":1,"na":1,"nc":1,"ne":1,"ng":1,"ni":1,"nl":1,"no":1,"np":1,"nz":1,"om":1,"pa":1,"pe":1,"pg":1,"ph":1,"pk":1,"pl":1,"pr":1,"ps":1,"pt":1,"py":1,"qa":1,"ro":1,"rs":1,"ru":1,"rw":1,"sa":1,"sb":1,"sd":1,"se":1,"sg":1,"si":1,"sk":1,"sl":1,"sn":1,"so":1,"sr":1,"ss":1,"sv":1,"sy":1,"sz":1,"td":1,"tf":1,"tg":1,"th":1,"tj":1,"tl":1,"tm":1,"tn":1,"tr":1,"tt":1,"tw":1,"tz":1,"ua":1,"ug":1,"un":1,"us":1,"uy":1,"uz":1,"ve":1,"vn":1,"vu":1,"ye":1,"za":1,"zm":1,"zw":1};
+  // Chain: 1) valid ISO-2 -> 2) exact / case-insensitive name table -> 3) neutral globe.svg fallback
+  function flagCodesFor(cEn, iso) {
+    if (iso) {
+      var c = String(iso).trim().toLowerCase();
+      if (c !== "globe" && FLAG_CODES[c]) return [c];
+    }
+    var key = typeof cEn === "string" ? cEn.trim() : "";
+    var v = FLAG_TABLE[key] || FLAG_TABLE_LC[key.toLowerCase()];
+    if (!v) {
+      if (key && typeof console !== "undefined" && console.debug) console.debug("[flag] no mapping for country:", key);
+      return ["globe"];
+    }
+    return v === "globe" ? ["globe"] : v.split("+");
+  }
+
   function renderCountryProfile(p) {
     var isFa = (typeof LANG !== "undefined" && LANG === "fa");
     
     // Determine Country Name
     var cEn = p.country_en || (p.o ? p.o.country_en || p.o.country : null) || p.country || "Iran";
     var cFa = p.country_fa || (p.o ? p.o.country_fa : null) || countryOf(cEn) || cEn;
+    var cIso = p.country_iso || (p.o ? p.o.country_iso : null) || null;
 
     var allCompanies = (typeof DATA !== "undefined" && DATA.companies) ? DATA.companies : [];
     var allSites = (typeof DATA !== "undefined" && DATA.sites) ? DATA.sites : [];
@@ -2023,10 +2198,24 @@
 
     var h = "";
 
-    // Header Title (NO COUNTRY FLAGS PER EXPLICIT USER CONSTRAINT!)
+    // Header Title — country flag (ISO-first, name-table fallback); custom palette globe.svg fallback
+    var _flagCodes = flagCodesFor(cEn, cIso);
+    var _flagTitle = isFa ? cFa : cEn;
+    var _flagAlt = isFa ? ("پرچم " + cFa) : ("Flag of " + cEn);
+    var _flagEl;
+    if (_flagCodes.length === 1 && _flagCodes[0] !== "globe") {
+      _flagEl = '<img class="d-flag" src="assets/img/flags/' + _flagCodes[0] + '.svg" alt="' + esc(_flagAlt) + '" title="' + esc(_flagTitle) + '" decoding="async">';
+    } else if (_flagCodes.length === 2) {
+      _flagEl = '<span class="d-flagset" role="img" aria-label="' + esc(_flagAlt) + '" title="' + esc(_flagTitle) + '">'
+        + '<img class="d-flag d-flag--a" src="assets/img/flags/' + _flagCodes[0] + '.svg" alt="" decoding="async">'
+        + '<img class="d-flag d-flag--b" src="assets/img/flags/' + _flagCodes[1] + '.svg" alt="" decoding="async">'
+        + '</span>';
+    } else {
+      _flagEl = '<img class="d-flag d-flag--globe" src="assets/img/flags/globe.svg" alt="' + esc(_flagTitle) + '" title="' + esc(_flagTitle) + '" decoding="async">';
+    }
     h += '<div class="d-head" style="display:flex; justify-content:space-between; align-items:center; gap:10px; margin-inline-end:35px;">';
     h += '<div style="display:flex; gap:10px; align-items:center; flex:1;">';
-    h += '<div style="font-size:28px; background:rgba(56, 189, 248, 0.15); border:1px solid rgba(56, 189, 248, 0.3); border-radius:8px; width:44px; height:44px; display:flex; align-items:center; justify-content:center;">🌍</div>';
+    h += _flagEl;
     h += '<div><div class="d-kicker">' + (isFa ? "شناسنامه جامع فضایی کشور" : "National Space Dossier") + '</div>';
     h += '<h2 class="d-title" style="margin:0;">' + esc(isFa ? cFa : cEn) + '</h2></div></div>';
     h += '<span class="badge-gov" style="padding:3px 10px; border-radius:12px; font-size:10.5px; font-weight:bold; white-space:nowrap;">' + (isFa ? (totalEntities + " مرکز فعال") : (totalEntities + " Active Entities")) + '</span>';
