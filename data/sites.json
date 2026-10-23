@@ -3658,7 +3658,11 @@
   "photo_caption_en": "A sounding rocket inside the Esrange launch tower",
   "photo_credit": "DLR Picture",
   "photo_license": "CC BY 3.0 de",
-  "photo_source_url": "https://commons.wikimedia.org/wiki/File:VSB-30_rocket_for_TEXUS_50_flight_in_launch_tower.jpg"
+  "photo_source_url": "https://commons.wikimedia.org/wiki/File:VSB-30_rocket_for_TEXUS_50_flight_in_launch_tower.jpg",
+  "stats_total": 0,
+  "stats_success": 0,
+  "stats_fail": 0,
+  "stats_asof": "2026-10-22"
  },
  {
   "id": "saxavord",
@@ -3800,7 +3804,11 @@
   "photo_caption_en": "Entrance and construction works at SaxaVord Spaceport, Unst",
   "photo_credit": "Mike Pennington",
   "photo_license": "CC BY-SA 2.0",
-  "photo_source_url": "https://commons.wikimedia.org/wiki/File:Site_entrance_for_the_proposed_Saxavord_Spaceport,_Lamba_Ness_-_geograph.org.uk_-_7179193.jpg"
+  "photo_source_url": "https://commons.wikimedia.org/wiki/File:Site_entrance_for_the_proposed_Saxavord_Spaceport,_Lamba_Ness_-_geograph.org.uk_-_7179193.jpg",
+  "stats_total": 0,
+  "stats_success": 0,
+  "stats_fail": 0,
+  "stats_asof": "2026-10-22"
  },
  {
   "id": "sutherland",
@@ -3940,7 +3948,11 @@
   "photo_caption_en": "The A' Mhòine launch pad site of Sutherland Spaceport, pre-construction",
   "photo_credit": "Andrew Tryon",
   "photo_license": "CC BY-SA 2.0",
-  "photo_source_url": "https://commons.wikimedia.org/wiki/File:The_Spaceport_Launch_Pad_Site,_A%27_Mhoine,_Sutherland_-_geograph.org.uk_-_7200875.jpg"
+  "photo_source_url": "https://commons.wikimedia.org/wiki/File:The_Spaceport_Launch_Pad_Site,_A%27_Mhoine,_Sutherland_-_geograph.org.uk_-_7200875.jpg",
+  "stats_total": 0,
+  "stats_success": 0,
+  "stats_fail": 0,
+  "stats_asof": "2026-10-22"
  },
  {
   "id": "elarenosillo",
@@ -4104,7 +4116,11 @@
   "photo_caption_en": "Night launch of Miura 1 from El Arenosillo",
   "photo_credit": "PLD Space",
   "photo_license": "CC BY-SA 4.0",
-  "photo_source_url": "https://commons.wikimedia.org/wiki/File:Lanzamiento_exitoso_del_cohete_MIURA_1.jpg"
+  "photo_source_url": "https://commons.wikimedia.org/wiki/File:Lanzamiento_exitoso_del_cohete_MIURA_1.jpg",
+  "stats_total": 1,
+  "stats_success": 1,
+  "stats_fail": 0,
+  "stats_asof": "2026-10-22"
  },
  {
   "id": "plesetsk",
@@ -4430,7 +4446,11 @@
   "photo_caption_en": "An Angara-1.2 rocket on the pad at Plesetsk",
   "photo_credit": "Unknown authorUnknown author",
   "photo_license": "CC BY 4.0",
-  "photo_source_url": "https://commons.wikimedia.org/wiki/File:Launch_of_the_Angara-1.2_from_the_Plesetsk_cosmodrome_(2025-08-21)_02.jpg"
+  "photo_source_url": "https://commons.wikimedia.org/wiki/File:Launch_of_the_Angara-1.2_from_the_Plesetsk_cosmodrome_(2025-08-21)_02.jpg",
+  "stats_total": 1688,
+  "stats_success": 1618,
+  "stats_fail": 70,
+  "stats_asof": "2026-10-22"
  },
  {
   "id": "baikonur",
@@ -4802,7 +4822,11 @@
   "photo_caption_en": "A Soyuz rocket being erected on the launch pad at Baikonur",
   "photo_credit": "NASA/Bill Ingalls",
   "photo_license": "Public Domain",
-  "photo_source_url": "https://images.nasa.gov/details/200903240032HQ"
+  "photo_source_url": "https://images.nasa.gov/details/200903240032HQ",
+  "stats_total": 1565,
+  "stats_success": 1438,
+  "stats_fail": 127,
+  "stats_asof": "2026-10-22"
  },
  {
   "id": "vostochny",
@@ -5012,7 +5036,11 @@
   "photo_caption_en": "Launch of a Soyuz-2.1a from Vostochny (2016)",
   "photo_credit": "Пресс-служба Президента России",
   "photo_license": "CC BY 4.0",
-  "photo_source_url": "https://commons.wikimedia.org/wiki/File:Launch_of_the_Soyuz-2.1a_from_Vostochny_2016-04-28_011.jpg"
+  "photo_source_url": "https://commons.wikimedia.org/wiki/File:Launch_of_the_Soyuz-2.1a_from_Vostochny_2016-04-28_011.jpg",
+  "stats_total": 21,
+  "stats_success": 20,
+  "stats_fail": 1,
+  "stats_asof": "2026-10-23"
  },
  {
   "id": "kapyar",
@@ -5222,7 +5250,11 @@
   "photo_caption_en": "A test launch from the Kapustin Yar range, photographed from the ISS",
   "photo_credit": "NASA",
   "photo_license": "Public Domain",
-  "photo_source_url": "https://images.nasa.gov/details/iss037e009214"
+  "photo_source_url": "https://images.nasa.gov/details/iss037e009214",
+  "stats_total": 101,
+  "stats_success": 85,
+  "stats_fail": 16,
+  "stats_asof": "2026-10-23"
  },
  {
   "id": "jiuquan",
@@ -5571,7 +5603,11 @@
   "photo_caption_en": "The vertical assembly building at Jiuquan Launch Center",
   "photo_credit": "中国新闻网",
   "photo_license": "CC BY 4.0",
-  "photo_source_url": "https://commons.wikimedia.org/wiki/File:Jiuquan_Launch_Center_Vertical_Assembly_Building.png"
+  "photo_source_url": "https://commons.wikimedia.org/wiki/File:Jiuquan_Launch_Center_Vertical_Assembly_Building.png",
+  "stats_total": 299,
+  "stats_success": 276,
+  "stats_fail": 23,
+  "stats_asof": "2026-10-23"
  },
  {
   "id": "taiyuan",
