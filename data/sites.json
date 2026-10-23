@@ -5036,7 +5036,11 @@
   "photo_caption_en": "Launch of a Soyuz-2.1a from Vostochny (2016)",
   "photo_credit": "Пресс-служба Президента России",
   "photo_license": "CC BY 4.0",
-  "photo_source_url": "https://commons.wikimedia.org/wiki/File:Launch_of_the_Soyuz-2.1a_from_Vostochny_2016-04-28_011.jpg"
+  "photo_source_url": "https://commons.wikimedia.org/wiki/File:Launch_of_the_Soyuz-2.1a_from_Vostochny_2016-04-28_011.jpg",
+  "stats_total": 21,
+  "stats_success": 20,
+  "stats_fail": 1,
+  "stats_asof": "2026-10-23"
  },
  {
   "id": "kapyar",
@@ -5246,7 +5250,11 @@
   "photo_caption_en": "A test launch from the Kapustin Yar range, photographed from the ISS",
   "photo_credit": "NASA",
   "photo_license": "Public Domain",
-  "photo_source_url": "https://images.nasa.gov/details/iss037e009214"
+  "photo_source_url": "https://images.nasa.gov/details/iss037e009214",
+  "stats_total": 101,
+  "stats_success": 85,
+  "stats_fail": 16,
+  "stats_asof": "2026-10-23"
  },
  {
   "id": "jiuquan",
@@ -5595,7 +5603,11 @@
   "photo_caption_en": "The vertical assembly building at Jiuquan Launch Center",
   "photo_credit": "中国新闻网",
   "photo_license": "CC BY 4.0",
-  "photo_source_url": "https://commons.wikimedia.org/wiki/File:Jiuquan_Launch_Center_Vertical_Assembly_Building.png"
+  "photo_source_url": "https://commons.wikimedia.org/wiki/File:Jiuquan_Launch_Center_Vertical_Assembly_Building.png",
+  "stats_total": 299,
+  "stats_success": 276,
+  "stats_fail": 23,
+  "stats_asof": "2026-10-23"
  },
  {
   "id": "taiyuan",
