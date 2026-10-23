@@ -5818,7 +5818,11 @@
   "photo_caption_en": "Satellite radar (SAR) view of the Taiyuan Satellite Launch Center facilities",
   "photo_credit": "Umbra Space / SpaceFrom.Space",
   "photo_license": "CC BY 2.0",
-  "photo_source_url": "https://commons.wikimedia.org/wiki/File:Taiyuan_Satellite_Launch_Center_in_SAR_-_2023-06-20_(53264414596).jpg"
+  "photo_source_url": "https://commons.wikimedia.org/wiki/File:Taiyuan_Satellite_Launch_Center_in_SAR_-_2023-06-20_(53264414596).jpg",
+  "stats_total": 163,
+  "stats_success": 156,
+  "stats_fail": 7,
+  "stats_asof": "2026-10-23"
  },
  {
   "id": "xichang",
@@ -6051,7 +6055,11 @@
   "photo_caption_en": "Night launch of a Long March 3B from Xichang",
   "photo_credit": "AAxanderr",
   "photo_license": "Public domain",
-  "photo_source_url": "https://commons.wikimedia.org/wiki/File:The_Launch_of_Long_March_3B_Rocket.jpg"
+  "photo_source_url": "https://commons.wikimedia.org/wiki/File:The_Launch_of_Long_March_3B_Rocket.jpg",
+  "stats_total": 242,
+  "stats_success": 231,
+  "stats_fail": 11,
+  "stats_asof": "2026-10-23"
  },
  {
   "id": "wenchang",
@@ -6377,7 +6385,11 @@
   "photo_caption_en": "Rollout of a Long March 5 at Wenchang",
   "photo_credit": "中国新闻社",
   "photo_license": "CC BY 3.0",
-  "photo_source_url": "https://commons.wikimedia.org/wiki/File:Long_March_5_Y5_rollout.png"
+  "photo_source_url": "https://commons.wikimedia.org/wiki/File:Long_March_5_Y5_rollout.png",
+  "stats_total": 75,
+  "stats_success": 72,
+  "stats_fail": 3,
+  "stats_asof": "2026-10-23"
  },
  {
   "id": "haiyang",
