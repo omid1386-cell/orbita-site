@@ -8006,7 +8006,11 @@
   "photo_caption_en": "Aerial view of the Taiki aerospace field, Hokkaido",
   "photo_credit": "国土地理院",
   "photo_license": "Attribution",
-  "photo_source_url": "https://commons.wikimedia.org/wiki/File:Taiki_Town_Aerospace_Interchange_Center_Airfields_Aerial_photograph.2019.jpg"
+  "photo_source_url": "https://commons.wikimedia.org/wiki/File:Taiki_Town_Aerospace_Interchange_Center_Airfields_Aerial_photograph.2019.jpg",
+  "stats_total": 7,
+  "stats_success": 3,
+  "stats_fail": 4,
+  "stats_asof": "2026-10-24"
  },
  {
   "id": "naro",
@@ -8239,7 +8243,11 @@
   "photo_caption_en": "Launch of the Nuri (KSLV-II) rocket from Naro Space Center",
   "photo_credit": "Korea Aerospace Research Institute",
   "photo_license": "KOGL Type 1",
-  "photo_source_url": "https://commons.wikimedia.org/wiki/File:%EB%88%84%EB%A6%AC%ED%98%B8_%EB%B0%9C%EC%82%AC_(1738).jpeg"
+  "photo_source_url": "https://commons.wikimedia.org/wiki/File:%EB%88%84%EB%A6%AC%ED%98%B8_%EB%B0%9C%EC%82%AC_(1738).jpeg",
+  "stats_total": 9,
+  "stats_success": 6,
+  "stats_fail": 3,
+  "stats_asof": "2026-10-24"
  },
  {
   "id": "sohae",
@@ -8472,7 +8480,11 @@
   "photo_caption_en": "The Unha-3 rocket on the launch gantry at Sohae",
   "photo_credit": "Sungwon Baik / VOA",
   "photo_license": "Public domain",
-  "photo_source_url": "https://commons.wikimedia.org/wiki/File:North_Korean_Unha-3_rocket_at_launch_pad.jpg"
+  "photo_source_url": "https://commons.wikimedia.org/wiki/File:North_Korean_Unha-3_rocket_at_launch_pad.jpg",
+  "stats_total": 7,
+  "stats_success": 3,
+  "stats_fail": 4,
+  "stats_asof": "2026-10-24"
  },
  {
   "id": "palmachim",
