@@ -1,5 +1,5 @@
 {
- "last_sync": "2026-10-22T06:09:26Z",
+ "last_sync": "2026-10-24T05:58:14Z",
  "drafts": [
   {
    "site": "tanegashima",
@@ -28,6 +28,20 @@
     "نخستین حضور این پرتابگر در تاریخچهٔ پایگاه"
    ],
    "added_on": "2026-10-21"
+  },
+  {
+   "site": "jiuquan",
+   "net": "2026-10-23T19:25:00Z",
+   "name": "Long March 4B | Yaogan 53-07 to 09/56-19 to 21",
+   "mission": "Yaogan 53-07 to 09/56-19 to 21",
+   "rocket": "Long March 4B",
+   "status": "Success",
+   "orbit": "",
+   "mtype": "Government/Top Secret",
+   "why": [
+    "نخستین حضور این پرتابگر در تاریخچهٔ پایگاه"
+   ],
+   "added_on": "2026-10-24"
   }
  ],
  "backlog_note": "ردیف روایی بندواگن-۵ (۲۰ اکتبر، کیپ‌کاناورال) در پس‌افت از دست رفت؛ آمارش ثبت شد."

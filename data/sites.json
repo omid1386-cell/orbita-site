@@ -1364,10 +1364,10 @@
   "photo_credit": "SpaceX",
   "photo_license": "CC0",
   "photo_source_url": "https://commons.wikimedia.org/wiki/File:Vandenberg_Launch_and_Landing_Site.jpg",
-  "stats_total": 919,
-  "stats_success": 848,
+  "stats_total": 920,
+  "stats_success": 849,
   "stats_fail": 71,
-  "stats_asof": "2026-10-21"
+  "stats_asof": "2026-10-24"
  },
  {
   "id": "starbase",
@@ -2781,6 +2781,31 @@
     "inclination_en": "—",
     "analysis_fa": "✅ <b>تحلیل:</b> یک رترفوردِ ازپیش‌پروازکرده دوباره آتش گرفت؛ گام نخست راکت‌لب به سوی بازاستفاده.",
     "analysis_en": "✅ <b>Analysis:</b> A previously flown Rutherford lit again - Rocket Lab's first step toward reuse."
+   },
+   {
+    "date": "2026-10-23",
+    "rocket": "Electron",
+    "payload": "We're Not Hawking Around (3x HawkEye 360)",
+    "mtype": "علوم زمین",
+    "orbit": "اعلام‌نشده",
+    "success": true,
+    "time_utc": "07:11",
+    "mass": "—",
+    "rocket_var": "Electron",
+    "inc": "—",
+    "duration": "—",
+    "analysis": "✅ <b>تحلیل:</b> پرتاب We're Not Hawking Around (3x HawkEye 360) با الکترون در 2026-10-23 انجام شد و محموله در مسیر اعلام‌نشده قرار گرفت؛ ثبت خودکار از کتابخانهٔ پرتاب ۲.",
+    "has_photo": false,
+    "photo_url": "",
+    "mass_fa": "—",
+    "mass_en": "—",
+    "inclination": "—",
+    "inclination_fa": "—",
+    "inclination_en": "—",
+    "analysis_fa": "✅ <b>تحلیل:</b> پرتاب We're Not Hawking Around (3x HawkEye 360) با الکترون در 2026-10-23 انجام شد و محموله در مسیر اعلام‌نشده قرار گرفت؛ ثبت خودکار از کتابخانهٔ پرتاب ۲.",
+    "analysis_en": "✅ <b>Analysis:</b> We're Not Hawking Around (3x HawkEye 360) launched on 2026-10-23 aboard Electron toward its target orbit; auto-recorded from Launch Library 2.",
+    "auto": true,
+    "ll2_id": "7766f3bb-674c-4c71-b986-963bd633fcfe"
    }
   ],
   "has_photo": true,
@@ -2855,10 +2880,10 @@
   "photo_credit": "Land Information New Zealand (LINZ)",
   "photo_license": "CC BY 4.0",
   "photo_source_url": "https://commons.wikimedia.org/wiki/File:Rocket_Lab_Launch_Complex_1_survey_image.jpg",
-  "stats_total": 84,
-  "stats_success": 80,
+  "stats_total": 85,
+  "stats_success": 81,
   "stats_fail": 4,
-  "stats_asof": "2026-10-22"
+  "stats_asof": "2026-10-24"
  },
  {
   "id": "kourou",
@@ -5604,10 +5629,10 @@
   "photo_credit": "中国新闻网",
   "photo_license": "CC BY 4.0",
   "photo_source_url": "https://commons.wikimedia.org/wiki/File:Jiuquan_Launch_Center_Vertical_Assembly_Building.png",
-  "stats_total": 299,
-  "stats_success": 276,
+  "stats_total": 300,
+  "stats_success": 277,
   "stats_fail": 23,
-  "stats_asof": "2026-10-23"
+  "stats_asof": "2026-10-24"
  },
  {
   "id": "taiyuan",
@@ -5745,6 +5770,31 @@
     "inclination_en": "—",
     "analysis_fa": "✅ <b>تحلیل:</b> نخستین موشک چینی با بوسترهای جامد کنار هستهٔ مایع؛ سکوی تازهٔ تای‌یوان افتتاح شد.",
     "analysis_en": "✅ <b>Analysis:</b> China's first solid-boosted liquid rocket inaugurated Taiyuan's new pad."
+   },
+   {
+    "date": "2026-10-23",
+    "rocket": "Long March 6A",
+    "payload": "Yaogan 50-03",
+    "mtype": "دولتی / محرمانه",
+    "orbit": "اعلام‌نشده",
+    "success": true,
+    "time_utc": "10:15",
+    "mass": "—",
+    "rocket_var": "Long March 6A",
+    "inc": "—",
+    "duration": "—",
+    "analysis": "✅ <b>تحلیل:</b> پرتاب Yaogan 50-03 با لانگ مارچ ۶A در 2026-10-23 انجام شد و محموله در مسیر اعلام‌نشده قرار گرفت؛ ثبت خودکار از کتابخانهٔ پرتاب ۲.",
+    "has_photo": false,
+    "photo_url": "",
+    "mass_fa": "—",
+    "mass_en": "—",
+    "inclination": "—",
+    "inclination_fa": "—",
+    "inclination_en": "—",
+    "analysis_fa": "✅ <b>تحلیل:</b> پرتاب Yaogan 50-03 با لانگ مارچ ۶A در 2026-10-23 انجام شد و محموله در مسیر اعلام‌نشده قرار گرفت؛ ثبت خودکار از کتابخانهٔ پرتاب ۲.",
+    "analysis_en": "✅ <b>Analysis:</b> Yaogan 50-03 launched on 2026-10-23 aboard Long March 6A toward its target orbit; auto-recorded from Launch Library 2.",
+    "auto": true,
+    "ll2_id": "9648124f-8568-46d2-86d7-4b4d6f12187f"
    }
   ],
   "has_photo": true,
@@ -5819,10 +5869,10 @@
   "photo_credit": "Umbra Space / SpaceFrom.Space",
   "photo_license": "CC BY 2.0",
   "photo_source_url": "https://commons.wikimedia.org/wiki/File:Taiyuan_Satellite_Launch_Center_in_SAR_-_2023-06-20_(53264414596).jpg",
-  "stats_total": 163,
-  "stats_success": 156,
+  "stats_total": 164,
+  "stats_success": 157,
   "stats_fail": 7,
-  "stats_asof": "2026-10-23"
+  "stats_asof": "2026-10-24"
  },
  {
   "id": "xichang",
@@ -7384,7 +7434,11 @@
   "photo_caption_en": "The Tanegashima launch pads on the Pacific coast",
   "photo_credit": "Bill Ingalls",
   "photo_license": "Public domain",
-  "photo_source_url": "https://commons.wikimedia.org/wiki/File:Global_Precipitation_Measurement_(GPM)_pre-launch.jpg"
+  "photo_source_url": "https://commons.wikimedia.org/wiki/File:Global_Precipitation_Measurement_(GPM)_pre-launch.jpg",
+  "stats_total": 100,
+  "stats_success": 95,
+  "stats_fail": 5,
+  "stats_asof": "2026-10-24"
  },
  {
   "id": "uchinoura",
@@ -7594,7 +7648,11 @@
   "photo_caption_en": "The Uchinoura Space Center facilities on the coastal hills",
   "photo_credit": "Ippukucho",
   "photo_license": "CC BY 3.0",
-  "photo_source_url": "https://commons.wikimedia.org/wiki/File:UchinouraSpaceCenterFromHoshigaoka.JPG"
+  "photo_source_url": "https://commons.wikimedia.org/wiki/File:UchinouraSpaceCenterFromHoshigaoka.JPG",
+  "stats_total": 43,
+  "stats_success": 33,
+  "stats_fail": 10,
+  "stats_asof": "2026-10-24"
  },
  {
   "id": "kii",
@@ -7734,7 +7792,11 @@
   "photo_caption_en": "Annotated aerial view of Spaceport Kii under construction; the launch point is marked",
   "photo_credit": "国土地理院",
   "photo_license": "Attribution",
-  "photo_source_url": "https://commons.wikimedia.org/wiki/File:Aerial_photo_of_Space_Port_Kii_under_construction._Photographed_on_October_5,_2019.jpg"
+  "photo_source_url": "https://commons.wikimedia.org/wiki/File:Aerial_photo_of_Space_Port_Kii_under_construction._Photographed_on_October_5,_2019.jpg",
+  "stats_total": 3,
+  "stats_success": 0,
+  "stats_fail": 3,
+  "stats_asof": "2026-10-24"
  },
  {
   "id": "taiki",

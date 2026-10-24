@@ -1,5 +1,5 @@
 {
- "updated": "2026-10-23",
+ "updated": "2026-10-24",
  "window_end": "2027-01-06",
  "sites_covered": [
   "ccsfs",
@@ -143,7 +143,7 @@
    "desc_en": "An undisclosed Long March 4B mission from the Jiuquan site.",
    "calendar_url": "",
    "stream_url": "",
-   "status": "Go",
+   "status": "Success",
    "status_fa": "تأیید شده",
    "precision": "day",
    "precision_fa": "روز و ساعت مشخص",
@@ -156,7 +156,7 @@
   {
    "site": "vandenberg",
    "ll2_id": "f6af629d-39b5-4f86-bc0c-f8776444a858",
-   "net": "2026-10-23T22:28:53Z",
+   "net": "2026-10-23T22:48:44Z",
    "rocket_fa": "فالکون ۹ بلاک ۵",
    "rocket_en": "Falcon 9 Block 5",
    "payload_fa": "استارلینک گروه 15-15",
@@ -171,7 +171,7 @@
    "desc_en": "Starlink Group 15-15 expands the broadband constellation from the US west coast.",
    "calendar_url": "",
    "stream_url": "",
-   "status": "Go",
+   "status": "Success",
    "status_fa": "تأیید شده",
    "precision": "tbd",
    "precision_fa": "در انتظار اعلام تاریخ",
