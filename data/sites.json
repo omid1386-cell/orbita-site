@@ -8716,7 +8716,11 @@
   "photo_caption_en": "Night launch of Shavit (Ofek-7) from Palmachim",
   "photo_credit": "התעשייה האווירית.",
   "photo_license": "CC BY 2.5",
-  "photo_source_url": "https://commons.wikimedia.org/wiki/File:Shavit_Ofek7a.jpg"
+  "photo_source_url": "https://commons.wikimedia.org/wiki/File:Shavit_Ofek7a.jpg",
+  "stats_total": 13,
+  "stats_success": 11,
+  "stats_fail": 2,
+  "stats_asof": "2026-10-24"
  },
  {
   "id": "imam-khomeini",
@@ -9088,7 +9092,11 @@
   "photo_caption_en": "Simorgh launch vehicle at the Imam Khomeini National Space Center, Semnan",
   "photo_credit": "Tasnim News Agency",
   "photo_license": "CC BY 4.0",
-  "photo_source_url": "https://commons.wikimedia.org/wiki/File:%D8%B3%DB%8C%D9%85%D8%B1%D8%BA_-_%D8%A7%D9%81%D8%AA%D8%AA%D8%A7%D8%AD_%D9%BE%D8%A7%DB%8C%DA%AF%D8%A7%D9%87_%D9%85%D9%84%DB%8C_%D9%81%D8%B6%D8%A7%DB%8C%DB%8C_%D8%A7%D9%85%D8%A7%D9%85_%D8%AE%D9%85%DB%8C%D9%86%DB%8C(%D8%B1%D9%87)_(1).jpg"
+  "photo_source_url": "https://commons.wikimedia.org/wiki/File:%D8%B3%DB%8C%D9%85%D8%B1%D8%BA_-_%D8%A7%D9%81%D8%AA%D8%AA%D8%A7%D8%AD_%D9%BE%D8%A7%DB%8C%DA%AF%D8%A7%D9%87_%D9%85%D9%84%DB%8C_%D9%81%D8%B6%D8%A7%DB%8C%DB%8C_%D8%A7%D9%85%D8%A7%D9%85_%D8%AE%D9%85%DB%8C%D9%86%DB%8C(%D8%B1%D9%87)_(1).jpg",
+  "stats_total": 15,
+  "stats_success": 6,
+  "stats_fail": 9,
+  "stats_asof": "2026-10-24"
  },
  {
   "id": "shahroud",
@@ -9345,7 +9353,11 @@
   "photo_caption_en": "First launch of the Qased satellite carrier from the Shahroud space site",
   "photo_credit": "Fars News Agency",
   "photo_license": "CC BY 4.0",
-  "photo_source_url": "https://commons.wikimedia.org/wiki/File:Qased_SLV_first_launch_01-cropped.jpg"
+  "photo_source_url": "https://commons.wikimedia.org/wiki/File:Qased_SLV_first_launch_01-cropped.jpg",
+  "stats_total": 6,
+  "stats_success": 5,
+  "stats_fail": 1,
+  "stats_asof": "2026-10-24"
  },
  {
   "id": "chabahar",
