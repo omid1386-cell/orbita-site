@@ -1,16 +1,36 @@
-بستهٔ تغییرات زبان عربی Orbita
+حزمة کامل تغییرات زبان عربی ORBITA
 تاریخ: 2026-10-25
-نسخهٔ کش: 20261025ar17
+مبنای داده‌های به‌روز GitHub main: 72e8672c66a9c6344f038108cc587928e550c2ee
 
-محتویات:
-- assets/js/app.js: رندرر عربی دسته‌های شرکت‌ها، شامل ترجمهٔ کامل محتوای سازندگان ماهواره و قطعات.
-- index.html: نسخهٔ جدید توکن کش.
-- tests/*_ar.test.cjs: آزمون‌های رگرسیون مرتبط با تغییرات عربی و توکن کش.
+روش استفاده
+1) ZIP را استخراج کنید.
+2) فایل‌ها را با حفظ همین مسیرها در ریشهٔ مخزن orbita-site قرار دهید و فایل‌های موجود را جایگزین کنید.
+3) سپس فایل‌های بسته را خودتان از طریق GitHub بارگذاری/ثبت کنید. این بسته هیچ commit، push یا deploy انجام نمی‌دهد.
 
-روش اعمال:
-1) ZIP را در ریشهٔ مخزن GitHub استخراج کنید و مسیر پوشه‌ها را حفظ کنید.
-2) فایل‌های هم‌نام را جایگزین کنید.
-3) در صورت امکان اجرا کنید: node --test tests/*.test.cjs
+محتوای وب‌سایت
+- assets/js/app.js
+- index.html
+- data/companies.json
+- data/sites.json
+- data/recovery_sites.json
+- assets/geo/countries.json
+- assets/geo/labels.json
 
-در این بسته فایل‌های داده گنجانده نشده‌اند، چون در این تغییر دست‌کاری نشده‌اند.
-این بسته فقط فایل‌های کاملِ تغییر‌یافته را دارد؛ commit، push یا deploy انجام نشده است.
+نکتهٔ مهم دربارهٔ داده‌ها
+فایل‌های JSON این بسته با حفظ دادهٔ غیرعربیِ آخرین نسخهٔ GitHub main ساخته شده‌اند و فقط فیلدهای عربی محلی روی آن‌ها ادغام شده است. بنابراین آمار تازهٔ پایگاه‌ها در data/sites.json حفظ می‌شود.
+فایل‌های data/site_history_state.json، data/upcoming.json و data/upcoming_landings.json عمداً در بسته نیستند: اختلاف محلی آن‌ها مربوط به به‌روزرسانی داده/پایش خودکار است، نه ترجمهٔ عربی؛ نسخهٔ GitHub main جدیدتر است.
+
+آزمون‌های عربی (برای مخزن؛ خود رابط سایت نیستند)
+- tests/company_agency_ar.test.cjs
+- tests/company_launch_ar.test.cjs
+- tests/company_propulsion_ar.test.cjs
+- tests/company_satmaker_ar.test.cjs
+- tests/country_ar.test.cjs
+- tests/i18n_ar.test.cjs
+- tests/recovery_ar.test.cjs
+- tests/site_ar.test.cjs
+
+در ریشهٔ مخزن و با Node.js می‌توان آزمون‌ها را این‌طور اجرا کرد:
+node --test tests/company_agency_ar.test.cjs tests/company_launch_ar.test.cjs tests/company_propulsion_ar.test.cjs tests/company_satmaker_ar.test.cjs tests/country_ar.test.cjs tests/i18n_ar.test.cjs tests/recovery_ar.test.cjs tests/site_ar.test.cjs
+
+آزمون بازیابی به فایل data/upcoming_landings.json موجود در مخزن نیاز دارد؛ فایل تازهٔ آن از GitHub main در این بسته جایگزین نشده است.
