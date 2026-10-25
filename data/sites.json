@@ -11623,7 +11623,11 @@
   "photo_license": "Public domain",
   "photo_source_url": "https://commons.wikimedia.org/wiki/File:San_Marco_launch_platform.jpg",
   "ar": "مركز بروليو الفضائي (سان ماركو)",
-  "ar_d": "منصة مدارية بحرية استوائية إيطالية تاريخية قبالة ماليندي في كينيا، استُخدمت حتى 1988؛ ولا تزال محطة أرضية فعالة."
+  "ar_d": "منصة مدارية بحرية استوائية إيطالية تاريخية قبالة ماليندي في كينيا، استُخدمت حتى 1988؛ ولا تزال محطة أرضية فعالة.",
+  "stats_total": 9,
+  "stats_success": 9,
+  "stats_fail": 0,
+  "stats_asof": "2026-10-25"
  },
  {
   "id": "hammaguir",
@@ -11844,7 +11848,11 @@
   "photo_license": "CC BY-SA 3.0",
   "photo_source_url": "https://commons.wikimedia.org/wiki/File:Fus%C3%A9es_sondes_Rubis_Belier_Centaure_Dragon_Veronique_Musee_du_Bourget_P1010474.JPG",
   "ar": "موقع حمّاقير للإطلاق",
-  "ar_d": "موقع في الصحراء الجزائرية أطلقت منه فرنسا أول أقمارها الصناعية، Astérix، عام 1965."
+  "ar_d": "موقع في الصحراء الجزائرية أطلقت منه فرنسا أول أقمارها الصناعية، Astérix، عام 1965.",
+  "stats_total": 4,
+  "stats_success": 4,
+  "stats_fail": 0,
+  "stats_asof": "2026-10-25"
  },
  {
   "id": "sea-launch",
@@ -12090,7 +12098,11 @@
   "photo_license": "CC BY 2.0",
   "photo_source_url": "https://commons.wikimedia.org/wiki/File:Sea_Launch_01.jpg",
   "ar": "منصة أوديسي للإطلاق البحري",
-  "ar_d": "منصة إطلاق حُوّلت من منصة نفطية، أطلقت صواريخ Zenit من خط الاستواء في المحيط الهادئ لزيادة الحمولة المتجهة إلى GTO."
+  "ar_d": "منصة إطلاق حُوّلت من منصة نفطية، أطلقت صواريخ Zenit من خط الاستواء في المحيط الهادئ لزيادة الحمولة المتجهة إلى GTO.",
+  "stats_total": 40,
+  "stats_success": 36,
+  "stats_fail": 4,
+  "stats_asof": "2026-10-25"
  },
  {
   "id": "vostochny-angara",
