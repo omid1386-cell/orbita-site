@@ -6436,10 +6436,10 @@
   "photo_credit": "中国新闻社",
   "photo_license": "CC BY 3.0",
   "photo_source_url": "https://commons.wikimedia.org/wiki/File:Long_March_5_Y5_rollout.png",
-  "stats_total": 75,
-  "stats_success": 72,
+  "stats_total": 76,
+  "stats_success": 73,
   "stats_fail": 3,
-  "stats_asof": "2026-10-23"
+  "stats_asof": "2026-10-25"
  },
  {
   "id": "haiyang",
@@ -9940,7 +9940,11 @@
   "photo_caption_en": "Launch of a VSB-30 sounding rocket from the Alcântara Launch Center",
   "photo_credit": "Agência Brasil",
   "photo_license": "CC BY 3.0",
-  "photo_source_url": "https://commons.wikimedia.org/wiki/File:Lan%C3%A7amento_do_foguete_brasileiro_de_m%C3%A9dio_porte_VSB-30_V07_da_Base_de_Alc%C3%A2ntara.jpg"
+  "photo_source_url": "https://commons.wikimedia.org/wiki/File:Lan%C3%A7amento_do_foguete_brasileiro_de_m%C3%A9dio_porte_VSB-30_V07_da_Base_de_Alc%C3%A2ntara.jpg",
+  "stats_total": 4,
+  "stats_success": 1,
+  "stats_fail": 3,
+  "stats_asof": "2026-10-25"
  },
  {
   "id": "woomera",
@@ -10151,7 +10155,11 @@
   "photo_caption_en": "Rocket on display at the Woomera rocket park",
   "photo_credit": "artq55",
   "photo_license": "CC BY-SA 2.0",
-  "photo_source_url": "https://commons.wikimedia.org/wiki/File:Black_Arrow.jpg"
+  "photo_source_url": "https://commons.wikimedia.org/wiki/File:Black_Arrow.jpg",
+  "stats_total": 6,
+  "stats_success": 2,
+  "stats_fail": 4,
+  "stats_asof": "2026-10-25"
  },
  {
   "id": "bowen",
@@ -10291,7 +10299,11 @@
   "photo_caption_en": "Abbot Point; the Bowen Orbital Spaceport sits in this coastal precinct",
   "photo_credit": "WikkiMediaa",
   "photo_license": "CC BY-SA 4.0",
-  "photo_source_url": "https://commons.wikimedia.org/wiki/File:Abbot_Point_Terminal.jpg"
+  "photo_source_url": "https://commons.wikimedia.org/wiki/File:Abbot_Point_Terminal.jpg",
+  "stats_total": 1,
+  "stats_success": 0,
+  "stats_fail": 1,
+  "stats_asof": "2026-10-25"
  },
  {
   "id": "arnhem",
