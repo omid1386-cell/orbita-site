@@ -1364,10 +1364,10 @@
   "photo_credit": "SpaceX",
   "photo_license": "CC0",
   "photo_source_url": "https://commons.wikimedia.org/wiki/File:Vandenberg_Launch_and_Landing_Site.jpg",
-  "stats_total": 919,
-  "stats_success": 848,
+  "stats_total": 920,
+  "stats_success": 849,
   "stats_fail": 71,
-  "stats_asof": "2026-10-21"
+  "stats_asof": "2026-10-24"
  },
  {
   "id": "starbase",
@@ -2781,6 +2781,31 @@
     "inclination_en": "—",
     "analysis_fa": "✅ <b>تحلیل:</b> یک رترفوردِ ازپیش‌پروازکرده دوباره آتش گرفت؛ گام نخست راکت‌لب به سوی بازاستفاده.",
     "analysis_en": "✅ <b>Analysis:</b> A previously flown Rutherford lit again - Rocket Lab's first step toward reuse."
+   },
+   {
+    "date": "2026-10-23",
+    "rocket": "Electron",
+    "payload": "We're Not Hawking Around (3x HawkEye 360)",
+    "mtype": "علوم زمین",
+    "orbit": "اعلام‌نشده",
+    "success": true,
+    "time_utc": "07:11",
+    "mass": "—",
+    "rocket_var": "Electron",
+    "inc": "—",
+    "duration": "—",
+    "analysis": "✅ <b>تحلیل:</b> پرتاب We're Not Hawking Around (3x HawkEye 360) با الکترون در 2026-10-23 انجام شد و محموله در مسیر اعلام‌نشده قرار گرفت؛ ثبت خودکار از کتابخانهٔ پرتاب ۲.",
+    "has_photo": false,
+    "photo_url": "",
+    "mass_fa": "—",
+    "mass_en": "—",
+    "inclination": "—",
+    "inclination_fa": "—",
+    "inclination_en": "—",
+    "analysis_fa": "✅ <b>تحلیل:</b> پرتاب We're Not Hawking Around (3x HawkEye 360) با الکترون در 2026-10-23 انجام شد و محموله در مسیر اعلام‌نشده قرار گرفت؛ ثبت خودکار از کتابخانهٔ پرتاب ۲.",
+    "analysis_en": "✅ <b>Analysis:</b> We're Not Hawking Around (3x HawkEye 360) launched on 2026-10-23 aboard Electron toward its target orbit; auto-recorded from Launch Library 2.",
+    "auto": true,
+    "ll2_id": "7766f3bb-674c-4c71-b986-963bd633fcfe"
    }
   ],
   "has_photo": true,
@@ -2855,10 +2880,10 @@
   "photo_credit": "Land Information New Zealand (LINZ)",
   "photo_license": "CC BY 4.0",
   "photo_source_url": "https://commons.wikimedia.org/wiki/File:Rocket_Lab_Launch_Complex_1_survey_image.jpg",
-  "stats_total": 84,
-  "stats_success": 80,
+  "stats_total": 85,
+  "stats_success": 81,
   "stats_fail": 4,
-  "stats_asof": "2026-10-22"
+  "stats_asof": "2026-10-24"
  },
  {
   "id": "kourou",
@@ -5604,10 +5629,10 @@
   "photo_credit": "中国新闻网",
   "photo_license": "CC BY 4.0",
   "photo_source_url": "https://commons.wikimedia.org/wiki/File:Jiuquan_Launch_Center_Vertical_Assembly_Building.png",
-  "stats_total": 299,
-  "stats_success": 276,
+  "stats_total": 300,
+  "stats_success": 277,
   "stats_fail": 23,
-  "stats_asof": "2026-10-23"
+  "stats_asof": "2026-10-24"
  },
  {
   "id": "taiyuan",
@@ -5745,6 +5770,31 @@
     "inclination_en": "—",
     "analysis_fa": "✅ <b>تحلیل:</b> نخستین موشک چینی با بوسترهای جامد کنار هستهٔ مایع؛ سکوی تازهٔ تای‌یوان افتتاح شد.",
     "analysis_en": "✅ <b>Analysis:</b> China's first solid-boosted liquid rocket inaugurated Taiyuan's new pad."
+   },
+   {
+    "date": "2026-10-23",
+    "rocket": "Long March 6A",
+    "payload": "Yaogan 50-03",
+    "mtype": "دولتی / محرمانه",
+    "orbit": "اعلام‌نشده",
+    "success": true,
+    "time_utc": "10:15",
+    "mass": "—",
+    "rocket_var": "Long March 6A",
+    "inc": "—",
+    "duration": "—",
+    "analysis": "✅ <b>تحلیل:</b> پرتاب Yaogan 50-03 با لانگ مارچ ۶A در 2026-10-23 انجام شد و محموله در مسیر اعلام‌نشده قرار گرفت؛ ثبت خودکار از کتابخانهٔ پرتاب ۲.",
+    "has_photo": false,
+    "photo_url": "",
+    "mass_fa": "—",
+    "mass_en": "—",
+    "inclination": "—",
+    "inclination_fa": "—",
+    "inclination_en": "—",
+    "analysis_fa": "✅ <b>تحلیل:</b> پرتاب Yaogan 50-03 با لانگ مارچ ۶A در 2026-10-23 انجام شد و محموله در مسیر اعلام‌نشده قرار گرفت؛ ثبت خودکار از کتابخانهٔ پرتاب ۲.",
+    "analysis_en": "✅ <b>Analysis:</b> Yaogan 50-03 launched on 2026-10-23 aboard Long March 6A toward its target orbit; auto-recorded from Launch Library 2.",
+    "auto": true,
+    "ll2_id": "9648124f-8568-46d2-86d7-4b4d6f12187f"
    }
   ],
   "has_photo": true,
@@ -5819,10 +5869,10 @@
   "photo_credit": "Umbra Space / SpaceFrom.Space",
   "photo_license": "CC BY 2.0",
   "photo_source_url": "https://commons.wikimedia.org/wiki/File:Taiyuan_Satellite_Launch_Center_in_SAR_-_2023-06-20_(53264414596).jpg",
-  "stats_total": 163,
-  "stats_success": 156,
+  "stats_total": 164,
+  "stats_success": 157,
   "stats_fail": 7,
-  "stats_asof": "2026-10-23"
+  "stats_asof": "2026-10-24"
  },
  {
   "id": "xichang",
@@ -6386,10 +6436,10 @@
   "photo_credit": "中国新闻社",
   "photo_license": "CC BY 3.0",
   "photo_source_url": "https://commons.wikimedia.org/wiki/File:Long_March_5_Y5_rollout.png",
-  "stats_total": 75,
-  "stats_success": 72,
+  "stats_total": 76,
+  "stats_success": 73,
   "stats_fail": 3,
-  "stats_asof": "2026-10-23"
+  "stats_asof": "2026-10-25"
  },
  {
   "id": "haiyang",
@@ -6555,7 +6605,11 @@
   "photo_caption_en": "Sea launch of a Jielong-3 rocket from the floating platform in the Yellow Sea",
   "photo_credit": "China News Service",
   "photo_license": "CC BY 4.0",
-  "photo_source_url": "https://commons.wikimedia.org/wiki/File:Jielong-3_Carrier_Rocket_Maidan_Flight.png"
+  "photo_source_url": "https://commons.wikimedia.org/wiki/File:Jielong-3_Carrier_Rocket_Maidan_Flight.png",
+  "stats_total": 29,
+  "stats_success": 29,
+  "stats_fail": 0,
+  "stats_asof": "2026-10-23"
  },
  {
   "id": "sriharikota",
@@ -6905,7 +6959,11 @@
   "photo_caption_en": "GSLV Mk III on the Second Launch Pad, Satish Dhawan Space Centre",
   "photo_credit": "Indian Space Research Organisation",
   "photo_license": "GODL-India",
-  "photo_source_url": "https://commons.wikimedia.org/wiki/File:01_GSLV_Mk_III_D2_with_GSAT-29_on_Second_Launch_Pad_of_Satish_Dhawan_Space_Centre,_Sriharikota_(SDSC_SHAR).jpg"
+  "photo_source_url": "https://commons.wikimedia.org/wiki/File:01_GSLV_Mk_III_D2_with_GSAT-29_on_Second_Launch_Pad_of_Satish_Dhawan_Space_Centre,_Sriharikota_(SDSC_SHAR).jpg",
+  "stats_total": 105,
+  "stats_success": 90,
+  "stats_fail": 15,
+  "stats_asof": "2026-10-23"
  },
  {
   "id": "kulasekarapattinam",
@@ -7023,7 +7081,11 @@
   "photo_caption_en": "Tiruchendur beach, adjacent to the Kulasekarapattinam spaceport construction area",
   "photo_credit": "Gayathri Dakshinamoorthy",
   "photo_license": "CC BY-SA 4.0",
-  "photo_source_url": "https://commons.wikimedia.org/wiki/File:Arulmigu_Subramaniya_Swamy_Temple,_Tiruchendur.jpg"
+  "photo_source_url": "https://commons.wikimedia.org/wiki/File:Arulmigu_Subramaniya_Swamy_Temple,_Tiruchendur.jpg",
+  "stats_total": 0,
+  "stats_success": 0,
+  "stats_fail": 0,
+  "stats_asof": "2026-10-23"
  },
  {
   "id": "tanegashima",
@@ -7372,7 +7434,11 @@
   "photo_caption_en": "The Tanegashima launch pads on the Pacific coast",
   "photo_credit": "Bill Ingalls",
   "photo_license": "Public domain",
-  "photo_source_url": "https://commons.wikimedia.org/wiki/File:Global_Precipitation_Measurement_(GPM)_pre-launch.jpg"
+  "photo_source_url": "https://commons.wikimedia.org/wiki/File:Global_Precipitation_Measurement_(GPM)_pre-launch.jpg",
+  "stats_total": 100,
+  "stats_success": 95,
+  "stats_fail": 5,
+  "stats_asof": "2026-10-24"
  },
  {
   "id": "uchinoura",
@@ -7582,7 +7648,11 @@
   "photo_caption_en": "The Uchinoura Space Center facilities on the coastal hills",
   "photo_credit": "Ippukucho",
   "photo_license": "CC BY 3.0",
-  "photo_source_url": "https://commons.wikimedia.org/wiki/File:UchinouraSpaceCenterFromHoshigaoka.JPG"
+  "photo_source_url": "https://commons.wikimedia.org/wiki/File:UchinouraSpaceCenterFromHoshigaoka.JPG",
+  "stats_total": 43,
+  "stats_success": 33,
+  "stats_fail": 10,
+  "stats_asof": "2026-10-24"
  },
  {
   "id": "kii",
@@ -7722,7 +7792,11 @@
   "photo_caption_en": "Annotated aerial view of Spaceport Kii under construction; the launch point is marked",
   "photo_credit": "国土地理院",
   "photo_license": "Attribution",
-  "photo_source_url": "https://commons.wikimedia.org/wiki/File:Aerial_photo_of_Space_Port_Kii_under_construction._Photographed_on_October_5,_2019.jpg"
+  "photo_source_url": "https://commons.wikimedia.org/wiki/File:Aerial_photo_of_Space_Port_Kii_under_construction._Photographed_on_October_5,_2019.jpg",
+  "stats_total": 3,
+  "stats_success": 0,
+  "stats_fail": 3,
+  "stats_asof": "2026-10-24"
  },
  {
   "id": "taiki",
@@ -7932,7 +8006,11 @@
   "photo_caption_en": "Aerial view of the Taiki aerospace field, Hokkaido",
   "photo_credit": "国土地理院",
   "photo_license": "Attribution",
-  "photo_source_url": "https://commons.wikimedia.org/wiki/File:Taiki_Town_Aerospace_Interchange_Center_Airfields_Aerial_photograph.2019.jpg"
+  "photo_source_url": "https://commons.wikimedia.org/wiki/File:Taiki_Town_Aerospace_Interchange_Center_Airfields_Aerial_photograph.2019.jpg",
+  "stats_total": 7,
+  "stats_success": 3,
+  "stats_fail": 4,
+  "stats_asof": "2026-10-24"
  },
  {
   "id": "naro",
@@ -8165,7 +8243,11 @@
   "photo_caption_en": "Launch of the Nuri (KSLV-II) rocket from Naro Space Center",
   "photo_credit": "Korea Aerospace Research Institute",
   "photo_license": "KOGL Type 1",
-  "photo_source_url": "https://commons.wikimedia.org/wiki/File:%EB%88%84%EB%A6%AC%ED%98%B8_%EB%B0%9C%EC%82%AC_(1738).jpeg"
+  "photo_source_url": "https://commons.wikimedia.org/wiki/File:%EB%88%84%EB%A6%AC%ED%98%B8_%EB%B0%9C%EC%82%AC_(1738).jpeg",
+  "stats_total": 9,
+  "stats_success": 6,
+  "stats_fail": 3,
+  "stats_asof": "2026-10-24"
  },
  {
   "id": "sohae",
@@ -8398,7 +8480,11 @@
   "photo_caption_en": "The Unha-3 rocket on the launch gantry at Sohae",
   "photo_credit": "Sungwon Baik / VOA",
   "photo_license": "Public domain",
-  "photo_source_url": "https://commons.wikimedia.org/wiki/File:North_Korean_Unha-3_rocket_at_launch_pad.jpg"
+  "photo_source_url": "https://commons.wikimedia.org/wiki/File:North_Korean_Unha-3_rocket_at_launch_pad.jpg",
+  "stats_total": 7,
+  "stats_success": 3,
+  "stats_fail": 4,
+  "stats_asof": "2026-10-24"
  },
  {
   "id": "palmachim",
@@ -8630,7 +8716,11 @@
   "photo_caption_en": "Night launch of Shavit (Ofek-7) from Palmachim",
   "photo_credit": "התעשייה האווירית.",
   "photo_license": "CC BY 2.5",
-  "photo_source_url": "https://commons.wikimedia.org/wiki/File:Shavit_Ofek7a.jpg"
+  "photo_source_url": "https://commons.wikimedia.org/wiki/File:Shavit_Ofek7a.jpg",
+  "stats_total": 13,
+  "stats_success": 11,
+  "stats_fail": 2,
+  "stats_asof": "2026-10-24"
  },
  {
   "id": "imam-khomeini",
@@ -9002,7 +9092,11 @@
   "photo_caption_en": "Simorgh launch vehicle at the Imam Khomeini National Space Center, Semnan",
   "photo_credit": "Tasnim News Agency",
   "photo_license": "CC BY 4.0",
-  "photo_source_url": "https://commons.wikimedia.org/wiki/File:%D8%B3%DB%8C%D9%85%D8%B1%D8%BA_-_%D8%A7%D9%81%D8%AA%D8%AA%D8%A7%D8%AD_%D9%BE%D8%A7%DB%8C%DA%AF%D8%A7%D9%87_%D9%85%D9%84%DB%8C_%D9%81%D8%B6%D8%A7%DB%8C%DB%8C_%D8%A7%D9%85%D8%A7%D9%85_%D8%AE%D9%85%DB%8C%D9%86%DB%8C(%D8%B1%D9%87)_(1).jpg"
+  "photo_source_url": "https://commons.wikimedia.org/wiki/File:%D8%B3%DB%8C%D9%85%D8%B1%D8%BA_-_%D8%A7%D9%81%D8%AA%D8%AA%D8%A7%D8%AD_%D9%BE%D8%A7%DB%8C%DA%AF%D8%A7%D9%87_%D9%85%D9%84%DB%8C_%D9%81%D8%B6%D8%A7%DB%8C%DB%8C_%D8%A7%D9%85%D8%A7%D9%85_%D8%AE%D9%85%DB%8C%D9%86%DB%8C(%D8%B1%D9%87)_(1).jpg",
+  "stats_total": 15,
+  "stats_success": 6,
+  "stats_fail": 9,
+  "stats_asof": "2026-10-24"
  },
  {
   "id": "shahroud",
@@ -9259,7 +9353,11 @@
   "photo_caption_en": "First launch of the Qased satellite carrier from the Shahroud space site",
   "photo_credit": "Fars News Agency",
   "photo_license": "CC BY 4.0",
-  "photo_source_url": "https://commons.wikimedia.org/wiki/File:Qased_SLV_first_launch_01-cropped.jpg"
+  "photo_source_url": "https://commons.wikimedia.org/wiki/File:Qased_SLV_first_launch_01-cropped.jpg",
+  "stats_total": 6,
+  "stats_success": 5,
+  "stats_fail": 1,
+  "stats_asof": "2026-10-24"
  },
  {
   "id": "chabahar",
@@ -9842,7 +9940,11 @@
   "photo_caption_en": "Launch of a VSB-30 sounding rocket from the Alcântara Launch Center",
   "photo_credit": "Agência Brasil",
   "photo_license": "CC BY 3.0",
-  "photo_source_url": "https://commons.wikimedia.org/wiki/File:Lan%C3%A7amento_do_foguete_brasileiro_de_m%C3%A9dio_porte_VSB-30_V07_da_Base_de_Alc%C3%A2ntara.jpg"
+  "photo_source_url": "https://commons.wikimedia.org/wiki/File:Lan%C3%A7amento_do_foguete_brasileiro_de_m%C3%A9dio_porte_VSB-30_V07_da_Base_de_Alc%C3%A2ntara.jpg",
+  "stats_total": 4,
+  "stats_success": 1,
+  "stats_fail": 3,
+  "stats_asof": "2026-10-25"
  },
  {
   "id": "woomera",
@@ -10053,7 +10155,11 @@
   "photo_caption_en": "Rocket on display at the Woomera rocket park",
   "photo_credit": "artq55",
   "photo_license": "CC BY-SA 2.0",
-  "photo_source_url": "https://commons.wikimedia.org/wiki/File:Black_Arrow.jpg"
+  "photo_source_url": "https://commons.wikimedia.org/wiki/File:Black_Arrow.jpg",
+  "stats_total": 6,
+  "stats_success": 2,
+  "stats_fail": 4,
+  "stats_asof": "2026-10-25"
  },
  {
   "id": "bowen",
@@ -10193,7 +10299,11 @@
   "photo_caption_en": "Abbot Point; the Bowen Orbital Spaceport sits in this coastal precinct",
   "photo_credit": "WikkiMediaa",
   "photo_license": "CC BY-SA 4.0",
-  "photo_source_url": "https://commons.wikimedia.org/wiki/File:Abbot_Point_Terminal.jpg"
+  "photo_source_url": "https://commons.wikimedia.org/wiki/File:Abbot_Point_Terminal.jpg",
+  "stats_total": 1,
+  "stats_success": 0,
+  "stats_fail": 1,
+  "stats_asof": "2026-10-25"
  },
  {
   "id": "arnhem",
