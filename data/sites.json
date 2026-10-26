@@ -14647,7 +14647,11 @@
   "photo_license": "CC BY 2.5",
   "photo_source_url": "https://commons.wikimedia.org/wiki/File:General_View_snyi.jpg",
   "ar": "قاعدة ياسني للإطلاق (دومباروفسكي)",
-  "ar_d": "قاعدة صوامع لصواريخ ICBM في أورينبورغ، استضافت عشرة إطلاقات مدارية تجارية بصاروخ Dnepr المحوّل بين 2006 و2015."
+  "ar_d": "قاعدة صوامع لصواريخ ICBM في أورينبورغ، استضافت عشرة إطلاقات مدارية تجارية بصاروخ Dnepr المحوّل بين 2006 و2015.",
+  "stats_total": 10,
+  "stats_success": 10,
+  "stats_fail": 0,
+  "stats_asof": "2026-10-26"
  },
  {
   "id": "white-sands",
@@ -14780,7 +14784,11 @@
   "photo_license": "Public domain",
   "photo_source_url": "https://commons.wikimedia.org/wiki/File:V-2_GANTRY,_LAUNCH_COMPLEX_33-_LOOKING_NORTH_-_White_Sands_Missile_Range,_V-2_Gantry_Crane,_White_Sands,_Dona_Ana_County,_NM_HAER_NM,7-WHSA,1A-1.tif",
   "ar": "ميدان وايت ساندز لاختبار الصواريخ",
-  "ar_d": "أقدم ميدان اختبار في أمريكا (1945)؛ شهد اختبارات صواريخ V-2 المستولى عليها، والهبوط الوحيد للمكوك في نيو مكسيكو، واختبار الإجهاض لـOrion."
+  "ar_d": "أقدم ميدان اختبار في أمريكا (1945)؛ شهد اختبارات صواريخ V-2 المستولى عليها، والهبوط الوحيد للمكوك في نيو مكسيكو، واختبار الإجهاض لـOrion.",
+  "stats_total": 5,
+  "stats_success": 4,
+  "stats_fail": 1,
+  "stats_asof": "2026-10-26"
  },
  {
   "id": "etlaq",
@@ -14892,6 +14900,10 @@
   "photo_license": "CC BY-SA 4.0",
   "photo_source_url": "https://commons.wikimedia.org/wiki/File:Duqm-1_Mission_Launch_-_Etlaq_Spaceport.png",
   "ar": "ميناء Etlaq الفضائي",
-  "ar_d": "ميناء عُمان التجاري قرب الدقم، تديره Etlaq تحت إشراف NASCOM. استضاف أول إطلاق تجريبي شبه مداري في المنطقة في ديسمبر 2024، ويستهدف بدء العمليات المدارية في أواخر 2027."
+  "ar_d": "ميناء عُمان التجاري قرب الدقم، تديره Etlaq تحت إشراف NASCOM. استضاف أول إطلاق تجريبي شبه مداري في المنطقة في ديسمبر 2024، ويستهدف بدء العمليات المدارية في أواخر 2027.",
+  "stats_total": 0,
+  "stats_success": 0,
+  "stats_fail": 0,
+  "stats_asof": "2026-10-26"
  }
 ]
