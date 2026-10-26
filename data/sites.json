@@ -12248,7 +12248,11 @@
   "photo_license": "CC BY 2.0",
   "photo_source_url": "https://commons.wikimedia.org/wiki/File:Tsiolkovsky-cosmodrome-vostochny-july-2015-amur-oblast.jpg",
   "ar": "سفوبودني (تاريخي)",
-  "ar_d": "قاعدة صواريخ سابقة حُوّلت إلى ميناء فضائي في إقليم آمور؛ أُغلقت عام 2007 وحلّ محلها ميناء فوستوتشني."
+  "ar_d": "قاعدة صواريخ سابقة حُوّلت إلى ميناء فضائي في إقليم آمور؛ أُغلقت عام 2007 وحلّ محلها ميناء فوستوتشني.",
+  "stats_total": 5,
+  "stats_success": 5,
+  "stats_fail": 0,
+  "stats_asof": "2026-10-26"
  },
  {
   "id": "jeju",
@@ -13133,7 +13137,11 @@
   "photo_license": "Public domain",
   "photo_source_url": "https://commons.wikimedia.org/wiki/File:Corn_Ranch_Spaceport_National_Map_view.png",
   "ar": "كورن رانش – موقع الإطلاق 1",
-  "ar_d": "موقع Blue Origin الخاص شبه المداري في غرب تكساس لإطلاق New Shepard بطواقمه والرحلات البحثية."
+  "ar_d": "موقع Blue Origin الخاص شبه المداري في غرب تكساس لإطلاق New Shepard بطواقمه والرحلات البحثية.",
+  "stats_total": 38,
+  "stats_success": 37,
+  "stats_fail": 1,
+  "stats_asof": "2026-10-26"
  },
  {
   "id": "mcgregor",
@@ -14504,7 +14512,11 @@
   "photo_license": "Public domain (NASA)",
   "photo_source_url": "https://commons.wikimedia.org/wiki/File:ISS014-E-16026_-_View_of_North_Korea.jpg",
   "ar": "ميدان تونغهاي لإطلاق الأقمار الصناعية (موسودان-ري)",
-  "ar_d": "الموقع الشرقي التاريخي لكوريا الشمالية؛ شهد محاولتي الإطلاق المداري الفاشلتين عامي 1998 و2009 قبل انتقال النشاط إلى سوهـاي."
+  "ar_d": "الموقع الشرقي التاريخي لكوريا الشمالية؛ شهد محاولتي الإطلاق المداري الفاشلتين عامي 1998 و2009 قبل انتقال النشاط إلى سوهـاي.",
+  "stats_total": 2,
+  "stats_success": 0,
+  "stats_fail": 2,
+  "stats_asof": "2026-10-26"
  },
  {
   "id": "yasny",

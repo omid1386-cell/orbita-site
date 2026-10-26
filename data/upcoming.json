@@ -1,5 +1,5 @@
 {
- "updated": "2026-10-25",
+ "updated": "2026-10-26",
  "window_end": "2027-01-06",
  "sites_covered": [
   "ccsfs",
@@ -69,34 +69,6 @@
  ],
  "note_fa": "داده‌ها از فهرست رسمی The Space Devs گردآوری و به دست انسان دوزبانه شده‌اند. هم‌زمانی زندهٔ تاریخ‌ها در خود برنامه انجام می‌شود.",
  "launches": [
-  {
-   "site": "wenchang",
-   "ll2_id": "6b95bcc8-1f88-4539-84fe-f63630138766",
-   "net": "2026-10-25T02:03:00Z",
-   "rocket_fa": "لانگ مارچ ۸A",
-   "rocket_en": "Long March 8A",
-   "payload_fa": "محمولهٔ نامشخص",
-   "payload_en": "Unknown Payload",
-   "mtype_fa": "Unknown",
-   "mtype_en": "Unknown",
-   "orbit_fa": "اعلام‌نشده",
-   "orbit_en": "TBA",
-   "customer_fa": "کاسک (چین)",
-   "customer_en": "China Aerospace Science and Technology Corporation",
-   "desc_fa": "لانگ مارچ ۸A با محموله‌ای اعلام‌نشده از ونچانگ به مدار می‌رود.",
-   "desc_en": "Long March 8A lofts an undisclosed payload from Wenchang.",
-   "calendar_url": "",
-   "stream_url": "",
-   "status": "Success",
-   "status_fa": "تأیید شده",
-   "precision": "day",
-   "precision_fa": "روز و ساعت مشخص",
-   "precision_en": "Confirmed date & time",
-   "date_label_fa": "2026-10-25",
-   "date_label_en": "2026-10-25",
-   "time_fa": "ساعت 02:03 به وقت جهانی",
-   "time_en": "02:03 UTC"
-  },
   {
    "site": "vandenberg",
    "ll2_id": "e2886a96-5ce9-4f45-872f-4e25a00be837",
