@@ -212,7 +212,7 @@
   {
    "site": "vandenberg",
    "ll2_id": "3cdb9dee-b5cb-406c-bbd1-06a219930fb7",
-   "net": "2026-11-05T05:14:00Z",
+   "net": "2026-11-05T02:35:00Z",
    "rocket_fa": "فالکون ۹ بلاک ۵",
    "rocket_en": "Falcon 9 Block 5",
    "payload_fa": "استارلینک گروه 15-21",
@@ -234,8 +234,8 @@
    "precision_en": "Confirmed date & time",
    "date_label_fa": "2026-11-05",
    "date_label_en": "2026-11-05",
-   "time_fa": "ساعت 05:14 به وقت جهانی",
-   "time_en": "05:14 UTC"
+   "time_fa": "ساعت 02:35 به وقت جهانی",
+   "time_en": "02:35 UTC"
   },
   {
    "site": "mahia",
