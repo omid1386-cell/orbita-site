@@ -36,7 +36,7 @@ check(launchCompanies.every(company => company.en && company.fa && company.en_d 
   'existing English and Persian company data remains intact');
 check(launchCompanies.every(company => !persianOnly.test(company.ar) && !persianOnly.test(company.ar_d)),
   'Arabic company translations contain no Persian-only letters');
-check(propulsionCompanies.length === 43 && propulsionCompanies.every(company => company.ar && company.ar_d),
+check(propulsionCompanies.length === 44 && propulsionCompanies.every(company => company.ar && company.ar_d),
   'the completed propulsion-category Arabic slice remains present');
 check(agencyCompanies.length === 33 && agencyCompanies.every(company => company.ar && company.ar_d),
   'the completed agency-category Arabic slice remains present');
@@ -50,7 +50,7 @@ check(app.includes('نظرة عامة وإحصاءات') && app.includes('أسط
 check(app.includes('safeEnglish(value, fallback)') && app.includes('missionLabel(value)') &&
   app.includes('techValue(value, kind)'),
   'source values pass through Arabic-safe display helpers');
-check(html.includes('window.ORBITA_V = "20261025ar17";'), 'the HTML asset cache version is bumped for the Arabic template');
+check(html.includes('window.ORBITA_V = "20261027ar02";'), 'the HTML asset cache version is bumped for the Arabic template');
 
 // Guard the shared bilingual renderer so this Arabic-only task cannot change Persian or English output.
 const companyDetailStart = app.indexOf('  function renderCompanyDetail(p) {');

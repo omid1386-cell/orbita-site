@@ -53,7 +53,7 @@ check(app.includes('var isAr = (typeof LANG !== "undefined" && LANG === "ar");')
   'country-dossier controls and categories have Arabic labels');
 check(app.includes('live_note: "لا يتوفر وصف عربي لهذا الإطلاق حالياً."'),
   'live records use the exact user-approved Arabic fallback');
-check(html.includes('window.ORBITA_V = "20261025ar17";'), 'HTML and asset cache version is bumped for this slice');
+check(html.includes('window.ORBITA_V = "20261027ar02";'), 'HTML and asset cache version is bumped for this slice');
 
 console.log(`${passed} PASS / ${failed} FAIL`);
 process.exitCode = failed ? 1 : 0;

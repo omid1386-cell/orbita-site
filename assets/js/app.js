@@ -928,9 +928,12 @@
     if (map) applyMapStyle();
   });
 
+  function canonicalCompanyRecords() {
+    return (DATA.companies || []).filter(function (c) { return !c.alias_of_id; });
+  }
   function allPoints() {
     var p = [];
-    DATA.companies.forEach(function (c) { p.push({ kind: "company", cat: c.cat, o: c }); });
+    canonicalCompanyRecords().forEach(function (c) { p.push({ kind: "company", cat: c.cat, o: c }); });
     DATA.sites.forEach(function (s) { p.push({ kind: "site", cat: "site", o: s }); });
     DATA.recoveries.forEach(function (s) { p.push({ kind: "recovery", cat: "recovery", o: s }); });
     return p;
@@ -953,11 +956,12 @@
       if (st === "error" && !n) return "!";
       return n;
     }
+    var companies = canonicalCompanyRecords();
     var cats = [
-      { k: "launch", n: DATA.companies.filter(function (x) { return x.cat === "launch"; }).length },
-      { k: "propulsion", n: DATA.companies.filter(function (x) { return x.cat === "propulsion"; }).length },
-      { k: "agency", n: DATA.companies.filter(function (x) { return x.cat === "agency"; }).length },
-      { k: "satmaker", n: DATA.companies.filter(function (x) { return x.cat === "satmaker"; }).length },
+      { k: "launch", n: companies.filter(function (x) { return x.cat === "launch"; }).length },
+      { k: "propulsion", n: companies.filter(function (x) { return x.cat === "propulsion"; }).length },
+      { k: "agency", n: companies.filter(function (x) { return x.cat === "agency"; }).length },
+      { k: "satmaker", n: companies.filter(function (x) { return x.cat === "satmaker"; }).length },
       { k: "site", n: DATA.sites.length },
       { k: "recovery", n: DATA.recoveries.length }
     ];
@@ -2148,6 +2152,8 @@
       "Iodine Ion Thrusters": "دافعات أيونية تعمل باليود",
       "Kerolox First-stage Engines": "محركات المرحلة الأولى العاملة بالكيروسين والأكسجين السائل",
       "Upper-stage Engines": "محركات المراحل العليا",
+      "Cryogenic & In-Space Propulsion": "الدفع المبرد وأنظمة الدفع داخل الفضاء",
+      "Liquid, Solid & Defense Propulsion": "أنظمة الدفع السائل والصلب والدفاعي",
       "Indian Satellite Propulsion": "أنظمة دفع الأقمار الصناعية الهندية",
       "Water-based Thrusters": "دافعات تعمل بالماء",
       "Green Bipropellant Propulsion": "الدفع الأخضر ثنائي الوقود",
@@ -2187,6 +2193,8 @@
       "Hydrazine thrusters and orbital systems": "دافعات هيدرازين وأنظمة مدارية",
       "Mono/bipropellant thrusters & hybrid motors": "دافعات أحادية أو ثنائية الوقود ومحركات هجينة",
       "Hydrogen gas-generator & expander engines": "محركات مولّد غاز وهيدروجين تمددي",
+      "Cryogenic expander-cycle, monopropellant, bipropellant & electric propulsion": "دفع مبرد بدورة التمدد، ودفع أحادي وثنائي الوقود وكهربائي",
+      "Staged-combustion liquid engines, solid motors & defense propulsion": "محركات سائلة باحتراق مرحلي ومحركات صلبة وأنظمة دفع دفاعية",
       "Hall thrusters for smallsats": "دافعات هول للأقمار الصغيرة",
       "Gridded ion thrusters with iodine propellant": "دافعات أيونية شبكية تعمل باليود",
       "Oxygen-rich staged combustion": "احتراق مرحلي غني بالأكسجين",
@@ -2219,6 +2227,7 @@
     };
     var STATUS_AR = {
       "Operational": "قيد التشغيل",
+      "Reported (source-limited)": "مذكور في تقارير عامة (المصدر محدود)",
       "Operational — serial delivery": "قيد التشغيل والتوريد التسلسلي",
       "In Development": "قيد التطوير",
       "Qualified": "مؤهل للاستخدام",
@@ -2237,7 +2246,8 @@
       "Historical": "تاريخي؛ لم يعد قيد الإنتاج",
       "Supply ended": "انتهى التوريد",
       "Operational & Proven": "قيد التشغيل ومثبت الأداء",
-      "Operational in test flights": "قيد التشغيل في رحلات الاختبار"
+      "Operational in test flights": "قيد التشغيل في رحلات الاختبار",
+      "Product listed; flight status not stated": "المنتج مُدرج؛ وحالة الطيران غير مذكورة"
     };
     var COUNTRY_AR = {
       "Australia": "أستراليا", "Austria": "النمسا", "China": "الصين", "France": "فرنسا",
@@ -2269,7 +2279,14 @@
       "Liquid indium": "إنديوم سائل", "Liquid metal (gallium)": "معدن سائل (غاليوم)",
       "R-236fa": "R-236fa", "Green monopropellant": "مادة دافعة خضراء أحادية الوقود",
       "LH2 / LOX": "هيدروجين سائل / أكسجين سائل", "Various propellants": "مواد دافعة متنوعة",
-      "Customer propellants": "مواد دافعة يحددها العميل", "UDMH / N2O4": "UDMH / N2O4"
+      "Customer propellants": "مواد دافعة يحددها العميل", "UDMH / N2O4": "UDMH / N2O4",
+      "High-test peroxide (HTP)": "بيروكسيد الهيدروجين عالي التركيز (HTP)",
+      "HTP + configuration-specific hydrocarbon fuel": "بيروكسيد الهيدروجين عالي التركيز + وقود هيدروكربوني وفق التهيئة",
+      "87.5% H2O2 / HTPB": "بيروكسيد الهيدروجين بتركيز 87.5% / HTPB",
+      "M20 / MON-3": "وقود M20 / مؤكسد MON-3",
+      "Solid metallic propellant (exact metal not publicly specified)": "مادة دافعة معدنية صلبة (نوع المعدن غير محدد علناً)",
+      "Hydrazine / N2O4 (NTO)": "هيدرازين / رباعي أكسيد النيتروجين (NTO)",
+      "Not independently verified": "غير متحقق منه بصورة مستقلة"
     };
     var PRODUCT_TYPE_AR = {
       "Solid strap-on motor": "محرك صلب مساعد", "Three-stage solid motors": "محركات صلبة ثلاثية المراحل",
@@ -2282,7 +2299,9 @@
       "6 kW Hall-effect thruster": "دافع تأثير هول بقدرة 6 kW", "RF ion thruster": "دافع أيوني بترددات الراديو",
       "Green bipropellant system": "نظام دفع أخضر ثنائي الوقود", "Metal-plasma thruster": "دافع بلازمي معدني",
       "Hydrazine monopropellant": "هيدرازين أحادي الوقود", "Apogee-class engine": "محرك فئة الأوج",
-      "High-thrust bipropellant engine": "محرك ثنائي الوقود عالي الدفع", "Hybrid rocket motor": "محرك صاروخي هجين",
+      "High-thrust bipropellant engine": "محرك ثنائي الوقود عالي الدفع",
+      "Liquid engine cluster (cycle unconfirmed)": "مجموعة محركات سائلة (دورة التشغيل غير مؤكدة علناً)",
+      "Hybrid rocket motor": "محرك صاروخي هجين",
       "Hydrogen gas-generator cycle": "دورة مولّد غاز هيدروجينية", "Low-power Hall thruster": "دافع هول منخفض القدرة",
       "Mid-power Hall thruster": "دافع هول متوسط القدرة", "Gridded ion thruster": "دافع أيوني شبكي",
       "Iodine cold-gas thruster": "دافع غاز بارد يعمل باليود", "Gas-generator cycle": "دورة مولّد الغاز",
@@ -2341,8 +2360,9 @@
     }
     function orgTypeArabic(value) {
       var v = safeEnglish(value, "");
+      if (/aviation|aircraft/i.test(v)) return "شركة متخصصة في مكوّنات محركات الطيران";
+      if (/state|government|public/i.test(v)) return "مركز حكومي للبحث واختبار أنظمة الدفع الفضائي";
       if (/academic|research|university|lab/i.test(v)) return "مختبر أكاديمي للبحث والتطوير في الدفع الفضائي";
-      if (/state|government/i.test(v)) return "مجمع حكومي لأنظمة الدفع الفضائي";
       if (/prime/i.test(v)) return "مقاول رئيسي لأنظمة الدفع الفضائي";
       if (/test|facility|center|centre/i.test(v) || /test/i.test(o.propulsion_category_en || "")) return "منشأة لاختبار وتأهيل أنظمة الدفع";
       return "جهة متخصصة في أنظمة الدفع الفضائي";

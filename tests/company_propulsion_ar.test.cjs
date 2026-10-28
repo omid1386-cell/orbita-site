@@ -66,7 +66,179 @@ function rawEnglishNarratives(company) {
   return items;
 }
 
-check(propulsion.length === 43, 'the propulsion-category slice contains 43 records');
+check(propulsion.length === 44, 'the propulsion-category slice contains 44 retained records');
+const companyById = Object.fromEntries(companies.map(company => [company.id, company]));
+const refreshedAuditIds = [
+  'safran-vernon', 'paleblue', 'spaceforest', 'phasefour', 'accion', 'okb-fakel',
+  'blueorigin-engine', 'spacex-engine', 'relativity-engine', 'enpulsion', 'bradford-ecaps'
+];
+const targetProduct = (id, name) => (companyById[id].engine_products_bilingual || [])
+  .find(engine => engine.name_en === name);
+const targetEvent = (id, year) => (companyById[id].test_history_en || [])
+  .find(event => event.year === String(year));
+check(refreshedAuditIds.length === 11 && refreshedAuditIds.every(id => companyById[id] && companyById[id].cat === 'propulsion'),
+  'the refreshed audit slice contains exactly the 11 requested propulsion records');
+const vinci = targetProduct('safran-vernon', 'Vinci');
+check(companyById['safran-vernon'].founded === 2015 && /Lampoldshausen/.test(vinci.engineering_desc_en) &&
+  /Bremen/.test(vinci.rocket_en) && /Lampoldshausen/.test(companyById['safran-vernon'].test_history_en.find(event => event.year === '2025').desc),
+  'Vernon and Vinci distinguish ArianeGroup founding from the 2025 final-assembly transfer');
+const kirx = targetEvent('paleblue', '2026');
+check(companyById.paleblue.flagship_status_en === 'Flight-proven' && kirx &&
+  /water ion thruster/.test(kirx.desc) && /water resistojet/.test(kirx.desc) && /RAISE-4/.test(kirx.desc),
+  'Pale Blue records the reported in-orbit operation of both KIR-X propulsion types');
+const perunFlight4 = targetEvent('spaceforest', '2026');
+check(companyById.spaceforest.linkedin === 'https://www.linkedin.com/company/spaceforest/' &&
+  companyById.spaceforest.flagship_status_en === 'In Development & Testing' && perunFlight4 &&
+  /flight[- ]termination/.test(perunFlight4.desc) && /recovered within the test-range/.test(perunFlight4.desc) &&
+  /not establish commercial service or reflight/.test(perunFlight4.desc),
+  'SpaceForest Flight 4 remains a test milestone, not evidence of commercial service or reuse');
+check(companyById.phasefour.flagship_status_en === 'Historical' &&
+  /Apex acquired/.test(companyById.phasefour.history_en) && /Quantum Space acquired/.test(companyById.phasefour.history_en) &&
+  /do not show that the legal entity dissolved/.test(companyById.phasefour.history_en),
+  'Phase Four asset transfers are recorded without inferring legal dissolution');
+check(companyById.accion.en.includes('Revolution Space') && companyById.accion.en.includes('formerly Accion Systems') &&
+  companyById.accion.site === 'https://revolutionspace.com/' &&
+  companyById.accion.linkedin === 'https://www.linkedin.com/company/revolution-space/',
+  'the Accion legacy record uses Revolution Space as its current public-facing brand');
+const spt100 = targetProduct('okb-fakel', 'SPT-100');
+const spt100b = targetProduct('okb-fakel', 'SPT-100B');
+check(/80 mN/.test(spt100.thrust_en) && !/83 mN/.test(spt100.thrust_en) &&
+  /83 mN/.test(spt100b.thrust_en) && /1.35 kW/.test(spt100b.thrust_en) &&
+  /1,600 s/.test(spt100b.thrust_en) && /SPT-100B/.test(spt100b.rocket_en),
+  'OKB Fakel ties 83 mN to the SPT-100B variant and its stated operating point');
+const be4 = targetProduct('blueorigin-engine', 'BE-4');
+const be3u = targetProduct('blueorigin-engine', 'BE-3U');
+check(/640,000 lbf/.test(be4.thrust_en) && /220,000 lbf/.test(be4.thrust_en) &&
+  /200,000 lbf/.test(be3u.thrust_en) && /100,000 lbf/.test(be3u.thrust_en),
+  'Blue Origin BE-4 and BE-3U use the current manufacturer thrust and throttle ratings');
+const raptor3 = targetProduct('spacex-engine', 'Raptor 3');
+const flight14 = targetEvent('spacex-engine', '2026');
+check(/250 tf/.test(raptor3.thrust_en) && /275 tf/.test(raptor3.thrust_en) && flight14 &&
+  /first time/.test(flight14.desc) && /26 Starlink V3/.test(flight14.desc),
+  'SpaceX separates Raptor 3 sea-level/vacuum thrust and records confirmed Flight 14 deployment');
+const aeonR = targetProduct('relativity-engine', 'Aeon R');
+const aeonV = targetProduct('relativity-engine', 'Aeon V');
+const relativityUpdate = targetEvent('relativity-engine', '2026');
+check(/269,000 lbf/.test(aeonR.thrust_en) && /sea-level/.test(aeonR.thrust_en) &&
+  /323,000 lbf/.test(aeonV.thrust_en) && /vacuum/.test(aeonV.thrust_en) &&
+  /acceptance testing/.test(relativityUpdate.desc) && /still undergoing inspection/.test(relativityUpdate.desc),
+  'Relativity distinguishes Aeon R sea-level rating, Aeon V vacuum rating, and testing status');
+const nexus = targetProduct('enpulsion', 'Nexus');
+check(nexus.status_en === 'Product listed; flight status not stated' &&
+  /4,500 s/.test(nexus.engineering_desc_en) && /no thrust rating or flight heritage is stated/.test(nexus.engineering_desc_en) &&
+  /320 propulsion systems/.test(companyById.enpulsion.en_d) && /500 cumulative operational flight-years/.test(companyById.enpulsion.en_d),
+  'ENPULSION separates Nexus specifications, unstated flight status, and cumulative on-orbit service');
+const hpgp1 = targetProduct('bradford-ecaps', '1N HPGP');
+const hpgp22 = targetProduct('bradford-ecaps', '22N HPGP');
+check(/TRL 9/.test(hpgp1.engineering_desc_en) && /TRL 5\/6/.test(hpgp22.engineering_desc_en) &&
+  hpgp22.status_en !== 'Qualified',
+  'Bradford/ECAPS distinguishes the flight-mature 1 N product from the 22 N TRL 5/6 product');
+const canonicalSourceStart = app.indexOf('  function canonicalCompanyRecords() {');
+const canonicalSourceEnd = app.indexOf('  function allPoints() {', canonicalSourceStart);
+const canonicalSource = canonicalSourceStart >= 0 && canonicalSourceEnd > canonicalSourceStart
+  ? app.slice(canonicalSourceStart, canonicalSourceEnd) : '';
+const allPointsStart = app.indexOf('  function allPoints() {');
+const filteredPointsStart = app.indexOf('  function filteredPoints() {', allPointsStart);
+const allPointsSource = allPointsStart >= 0 && filteredPointsStart > allPointsStart
+  ? app.slice(allPointsStart, filteredPointsStart) : '';
+const layerBarStart = app.indexOf('  function buildLayerBar() {');
+const layerBarSource = layerBarStart >= 0 ? app.slice(layerBarStart, layerBarStart + 2800) : '';
+let canonicalRecords = [];
+try {
+  const canonicalFn = vm.runInNewContext(canonicalSource + '\ncanonicalCompanyRecords;', { DATA: { companies } });
+  canonicalRecords = canonicalFn();
+} catch (error) {
+  console.error('Canonical-company aggregation error:', error);
+}
+check(companyById['casc-6th'].alias_of_id === 'aalpt-china' &&
+  companyById['aalpt-china'] && canonicalRecords.length === companies.length - 1 &&
+  !canonicalRecords.some(company => company.id === 'casc-6th') &&
+  canonicalRecords.some(company => company.id === 'aalpt-china') &&
+  allPointsSource.includes('canonicalCompanyRecords().forEach') &&
+  layerBarSource.includes('var companies = canonicalCompanyRecords();'),
+  'CASC/AALPT remains as linked records but contributes one organization count and map point');
+const ng = companyById.ngpropulsion;
+const ngGem = ng.engine_products_bilingual.find(engine => engine.name_en === 'GEM 63 / GEM 63XL');
+const castor = ng.engine_products_bilingual.find(engine => engine.name_en === 'Castor 30XL');
+const impulse = companyById.impulse;
+const saiph = impulse.engine_products_bilingual.find(engine => engine.name_en === 'Saiph');
+const rigel = impulse.engine_products_bilingual.find(engine => engine.name_en === 'Rigel');
+check(ngGem.thrust_en.includes('370,835 lbf') && ngGem.thrust_en.includes('463,249 lbf') &&
+  castor.thrust_en.includes('119,900 lbf maximum') && castor.thrust_en.includes('104,350 lbf burn-time average') &&
+  /26 N per Saiph/.test(saiph.thrust_en) && /208 N total/.test(saiph.thrust_en) &&
+  Boolean(rigel && rigel.thrust_en.includes('200 lbf-class')),
+  'GEM/CASTOR ratings are model- and metric-specific; Saiph is per thruster and Rigel is present');
+const agile = companyById.agile.engine_products_bilingual.find(engine => engine.name_en === 'A2200');
+const benchmark = companyById.benchmark.engine_products_bilingual;
+const halcyon = benchmark.find(engine => engine.name_en === 'Halcyon (Monopropellant)');
+const avant = benchmark.find(engine => engine.name_en === 'Halcyon Avant (Bipropellant)');
+const moog5 = companyById.moog.engine_products_bilingual.find(engine => engine.name_en === 'MONARC-5');
+const nucleus = companyById.nammo.engine_products_bilingual.find(engine => engine.name_en === 'Nucleus Hybrid Motor');
+const micro = companyById.exotrail.engine_products_bilingual.find(engine => engine.name_en === 'spaceware micro');
+check(agile.thrust_en === '2,200 N (500 lbf)' && /VoidRunner/.test(agile.rocket_en) &&
+  halcyon.thrust_en.startsWith('1–10 N') && halcyon.propellant_en === 'High-test peroxide (HTP)' &&
+  avant.thrust_en.includes('20 N') && avant.thrust_en.includes('22 N') &&
+  moog5.thrust_en === '5 N' && nucleus.propellant_en === '87.5% H2O2 / HTPB' &&
+  micro.thrust_en === 'Up to 7 mN' && micro.thrust_fa === 'تا ۷ میلی‌نیوتن' &&
+  micro.thrust_ar === 'حتى 7 mN',
+  'A2200, Halcyon variants, MONARC-5, Nucleus and spaceware Micro use their corrected specifications');
+check(companyById['dawn-aerospace'].linkedin === 'https://www.linkedin.com/company/dawnaerospace/' &&
+  companyById['lpsc-isro'].products[0].startsWith('Vikas storable liquid') &&
+  companyById['lpsc-isro'].future_plans_fa[0].includes('CE-20') &&
+  !companyById['lpsc-isro'].future_plans_fa[0].includes('متانی') &&
+  companyById['lpsc-isro'].engine_products_bilingual.find(engine => engine.name_en === 'Vikas').engineering_desc_en.includes('not a cryogenic engine'),
+  'Dawn link is corrected and LPSC Vikas/future-plan translations are aligned');
+const yf77 = companyById['aalpt-china'].engine_products_bilingual.find(engine => engine.name_en === 'YF-77');
+const go2 = companyById['morpheus-space'].engine_products_bilingual.find(engine => engine.name_en === 'GO-2');
+check(yf77.thrust_en.includes('510 kN at sea level') && yf77.thrust_en.includes('700 kN in vacuum') &&
+  go2.thrust_en === '5–400 µN total system thrust' && go2.propellant_en.includes('exact metal not publicly specified'),
+  'YF-77 operating conditions and GO-2 micro-newton/metal-propellant qualifications are explicit');
+check(companyById['avio-aero'].founded === 2013 && companyById['avio-aero'].history_en.includes('1908') &&
+  companyById['avio-aero'].org_type_en.includes('Aviation') &&
+  companyById['dlr-lampoldshausen'].org_type_en.includes('public aerospace research') &&
+  companyById['dlr-lampoldshausen'].test_history_en.some(test => test.year === '2025' && /Vinci final assembly/.test(test.title)),
+  'Avio Aero heritage and DLR test-center/Vinci responsibilities are distinguished');
+check(companyById['nasa-stennis'].engine_products_bilingual.find(engine => engine.name_en === 'B-2 Stand').thrust_en.includes('3,000,000 lbf') &&
+  companyById['nasa-stennis'].engine_products_bilingual.find(engine => engine.name_en.includes('Fred Haise')).thrust_en.includes('650,000 lbf') &&
+  companyById['airborne-eng'].founded === 2001 && companyById['airborne-eng'].history_en.includes('2009') &&
+  companyById['airborne-eng'].engine_products_bilingual[0].engineering_desc_en.includes('not an AEL engine rating'),
+  'Stennis stand capacities and Airborne company/test-bay capacities are not assigned to engines');
+check(companyById['nasa-wstf'].history_en.includes('selected the White Sands site in 1962') &&
+  companyById['nasa-wstf'].history_en.includes('first test firing took place in 1964') &&
+  companyById['nasa-wstf'].history_en.includes('name was established in 1965') &&
+  companyById['lpsc-test'].en.startsWith('ISRO Propulsion Complex (IPRC)'),
+  'WSTF milestones and the Mahendragiri IPRC name are corrected');
+check(companyById.ihi.en_d.includes('zero, two or four') &&
+  companyById.ihi.engine_products_bilingual.find(engine => engine.name_en === 'BT-4 Thruster').propellant_en === 'Hydrazine / N2O4 (NTO)' &&
+  companyById['aio-propulsion'].engine_products_bilingual.find(engine => engine.name_en.startsWith('Simorgh')).propellant_en === 'UDMH / N2O4' &&
+  companyById['aio-propulsion'].engine_products_bilingual.find(engine => engine.name_en.startsWith('Salman')).name_en.includes('not an AIO product') &&
+  companyById['aio-propulsion'].engine_products_bilingual.find(engine => engine.name_en.startsWith('Salman')).thrust_en.includes('No independently verified'),
+  'IHI H3/BT-4 variants and cautious AIO/Simorgh/Salman attribution are retained');
+const rocketdyne = propulsion.find(company => company.id === 'rocketdyne');
+const l3harris = propulsion.find(company => company.id === 'l3harris');
+check(Boolean(rocketdyne && l3harris) && rocketdyne.en === 'Rocketdyne' &&
+  l3harris.en.startsWith('L3Harris Technologies') && rocketdyne.site === 'https://rocketdyne.com/' &&
+  l3harris.site === 'https://www.l3harris.com/',
+  'current Rocketdyne and L3Harris identities, records, and official websites are separate');
+check(rocketdyne.founded === 2026 && l3harris.founded === 2019 &&
+  rocketdyne.city === 'Jupiter, Florida' && l3harris.city === 'Melbourne, Florida' &&
+  rocketdyne.location_en.includes('city-level map pin') && l3harris.location_en.includes('city-level map pin') &&
+  l3harris.lat === 28.0785034 && l3harris.lon === -80.6077908,
+  'founding dates, headquarters, and city-level map pins distinguish Rocketdyne from L3Harris');
+const rl10 = rocketdyne && rocketdyne.engine_products_bilingual[0];
+const rs25 = l3harris && l3harris.engine_products_bilingual[0];
+check(Boolean(rl10 && rs25) && rl10.name_en.includes('RL10') &&
+  rl10.thrust_en.includes('RL10C-1-1') && rl10.thrust_en.includes('RL10E-1') &&
+  rl10.thrust_en.includes('RL10B-2/RL10C-2') &&
+  !rocketdyne.engine_products_bilingual.some(engine => /RS-25/.test(engine.name_en)) &&
+  /RS-25/.test(rs25.name_en) && rs25.engineering_desc_en.includes('per engine'),
+  'RL10 model-specific specifications belong to Rocketdyne and per-engine RS-25 data belongs to L3Harris');
+const rs25Tests = l3harris ? l3harris.test_history_en : [];
+check(rs25Tests.some(test => test.year === '2021' && /0528/.test(test.title_en) &&
+  /not a new-production engine/.test(test.desc_en)) &&
+  rs25Tests.some(test => test.year === '2025' && /20001/.test(test.title_en)) &&
+  rocketdyne.test_history_en.length === 0,
+  'the 2021 developmental RS-25 test is distinguished from the 2025 new-production test');
 check(propulsion.every(company => company.ar && company.ar_d && arabic.test(company.ar) && arabic.test(company.ar_d)),
   'all propulsion profiles retain their Arabic names and descriptions');
 check(propulsion.every(company => company.en && company.fa && company.en_d && company.fa_d),
@@ -157,14 +329,14 @@ try {
   console.error('Live openDetail route error:', error);
   check(false, 'the actual openDetail route renders the shared template in all three languages');
 }
-check(html.includes('window.ORBITA_V = "20261025ar17";'),
+check(html.includes('window.ORBITA_V = "20261027ar02";'),
   'HTML asset cache version is bumped for the shared Arabic propulsion template');
 
 const requiredCompanyFields = [
   'city_ar', 'flagship_engine_ar', 'flagship_application_ar', 'history_ar', 'product_history_ar'
 ];
 check(propulsion.every(company => requiredCompanyFields.every(key => hasArabic(company[key]))),
-  'all 43 profiles have Arabic location, flagship, application, and history fields');
+  'all 44 profiles have Arabic location, flagship, application, and history fields');
 check(propulsion.every(company => ['future_plans_en', 'notable_missions_en'].every(sourceKey => {
   const arabicKey = sourceKey.replace(/_en$/, '_ar');
   const source = company[sourceKey] || [];
@@ -174,8 +346,8 @@ check(propulsion.every(company => ['future_plans_en', 'notable_missions_en'].eve
 
 const products = propulsion.flatMap(company => company.engine_products_bilingual || []);
 const tests = propulsion.flatMap(company => company.test_history_en || []);
-check(products.length === 88 && products.every(engine => hasArabic(engine.name_ar)),
-  'all 88 engine-product names have an Arabic primary name');
+check(products.length === 93 && products.every(engine => hasArabic(engine.name_ar)),
+  'all 93 engine-product names have an Arabic primary name after adding three current product rows');
 check(products.every(engine => !engine.rocket_en || hasArabic(engine.rocket_ar)),
   'all displayed product applications have Arabic text');
 check(products.every(engine => !engine.engineering_desc_en || hasArabic(engine.engineering_desc_ar)),
@@ -183,8 +355,8 @@ check(products.every(engine => !engine.engineering_desc_en || hasArabic(engine.e
 check(products.every(engine => !engine.thrust_en || !engine.thrust_ar ||
   hasArabic(engine.thrust_ar) || !/[A-Za-z]{4,}/.test(engine.thrust_ar)),
   'thrust values are Arabic or remain technical quantities without English prose');
-check(tests.length === 94 && tests.every(test => hasArabic(test.title_ar) && hasArabic(test.desc_ar)),
-  'all 94 test-history titles and descriptions have Arabic translations');
+check(tests.length === 99 && tests.every(test => hasArabic(test.title_ar) && hasArabic(test.desc_ar)),
+  'all 99 test-history titles and descriptions have Arabic translations');
 check(propulsion.every(company => company.engine_products_bilingual.every(engine =>
   engine.name_en && engine.type_en && engine.status_en && engine.rocket_en !== undefined &&
   engine.engineering_desc_en !== undefined)),
@@ -212,7 +384,7 @@ try {
 }
 const visible = decodeHtml(rendered.replace(/<[^>]*>/g, ' '));
 check(Boolean(renderer) && propulsion.every(company => renderedByCompany.get(company.id) && renderedByCompany.get(company.id).includes(company.ar)),
-  'the shared Persian-template renderer executes in Arabic for all 43 profiles');
+  'the shared Persian-template renderer executes in Arabic for all 44 profiles');
 check(!persianOnly.test(visible), 'rendered propulsion dossiers do not leak Persian-only letters');
 check(rendered.includes('المادة الدافعة') && rendered.includes('سجلات اختبارات الإشعال الأرضي') &&
   rendered.includes('تاريخ الشركة وتطوير أنظمة الدفع') && rendered.includes('خطط تطوير قدرات الدفع'),
@@ -255,6 +427,11 @@ if (arabicMaps) {
     'all propulsion specialization labels have Arabic mappings');
   check(propulsion.every(company => arabicMaps.TYPE_AR[company.propulsion_type_en]),
     'all propulsion-system type labels have Arabic mappings');
+  check(arabicMaps.CATEGORY_AR['Cryogenic & In-Space Propulsion'] &&
+    arabicMaps.CATEGORY_AR['Liquid, Solid & Defense Propulsion'] &&
+    arabicMaps.TYPE_AR['Cryogenic expander-cycle, monopropellant, bipropellant & electric propulsion'] &&
+    arabicMaps.TYPE_AR['Staged-combustion liquid engines, solid motors & defense propulsion'],
+    'new Rocketdyne and L3Harris propulsion labels are explicitly mapped to Arabic');
   check([...new Set(propulsion.map(company => company.flagship_status_en))].every(status => arabicMaps.STATUS_AR[status]),
     'all flagship statuses have Arabic mappings');
   check([...new Set(productStatuses)].every(status => arabicMaps.STATUS_AR[status]),
