@@ -1,5 +1,5 @@
 {
- "updated": "2026-10-27",
+ "updated": "2026-10-28",
  "window_end": "2026-12-31",
  "source_note_fa": "برداشت دستی ۱۳ اکتبر ۲۰۲۶ از کتابخانهٔ پرتاب ۲؛ ردیف‌های بدون تاریخ یعنی مأموریت در صف است و زمان‌نمای معتبر ندارد.",
  "source_note_en": "Manual snapshot of Launch Library 2, October 13, 2026; undated rows are queued missions without a credible timeline.",
@@ -232,31 +232,6 @@
    "customer_en": "NASA",
    "origin_fa": "بازگشت از ایستگاه فضایی بین‌المللی",
    "origin_en": "Return from the International Space Station"
-  },
-  {
-   "id": "upl-auto-e2886a96",
-   "site_id": "recovery-ocisly",
-   "mission": "Starlink Group 15-16",
-   "mission_fa": "Starlink Group 15-16",
-   "vehicle_en": "Falcon 9 Block 5 first stage",
-   "vehicle_fa": "مرحلهٔ اول فالکون ۹ بلوک ۵",
-   "ltype": "asds",
-   "date": null,
-   "status": "queued",
-   "operator_en": "SpaceX",
-   "operator_fa": "اسپیس‌ایکس",
-   "stream_url": "https://x.com/SpaceX",
-   "calendar_url": "https://www.spacex.com/launches/",
-   "mtype_fa": "فرود و بازیابی بوستر",
-   "mtype_en": "Booster landing & recovery",
-   "customer_fa": "اسپیس‌ایکس",
-   "customer_en": "SpaceX",
-   "origin_fa": "مأموریت Starlink Group 15-16 — پرتاب از مجتمع ۴-شرقی پایگاه نیروی فضایی وندنبرگ در کالیفرنیا",
-   "origin_en": "Starlink Group 15-16 — Launch from SLC-4E, Vandenberg SFB, California",
-   "note_fa": "ردیف خودکار از کتابخانهٔ پرتاب ۲ برای مأموریت Starlink Group 15-16؛ فرود در شناور «البته هنوز دوستت دارم».",
-   "note_en": "Auto-tracked from Launch Library 2 for Starlink Group 15-16; landing on OCISLY.",
-   "booster_fa": "بوستر B1082 (پرواز 26م)",
-   "booster_en": "Booster B1082 (flight 26)"
   }
  ]
 }
