@@ -1,5 +1,5 @@
 {
- "updated": "2026-10-28",
+ "updated": "2026-10-29",
  "window_end": "2027-01-06",
  "sites_covered": [
   "ccsfs",
@@ -544,6 +544,34 @@
    "stream_url": "https://x.com/SpaceX",
    "status": "TBD",
    "status_fa": "زمان نامعین"
+  },
+  {
+   "site": "vandenberg",
+   "ll2_id": "b0dc988c-ea4a-423f-81b6-6b0fbe7cc17c",
+   "net": "2026-11-30T00:00:00Z",
+   "rocket_fa": "فالکون ۹ بلاک ۵",
+   "rocket_en": "Falcon 9 Block 5",
+   "payload_fa": "OneWeb 21",
+   "payload_en": "OneWeb 21",
+   "mtype_fa": "مخابراتی",
+   "mtype_en": "Communications",
+   "orbit_fa": "اعلام‌نشده",
+   "orbit_en": "TBA",
+   "customer_fa": "اسپیس‌ایکس",
+   "customer_en": "SpaceX",
+   "desc_fa": "پرتاب فالکون ۹ بلاک ۵ با محمولهٔ OneWeb 21؛ زمان‌بندی: نوامبر 2026.",
+   "desc_en": "Falcon 9 Block 5 launching OneWeb 21; schedule: November 2026.",
+   "calendar_url": "",
+   "stream_url": "",
+   "status": "TBD",
+   "status_fa": "نامشخص",
+   "precision": "month",
+   "precision_fa": "فقط ماه مشخص",
+   "precision_en": "Month known",
+   "date_label_fa": "نوامبر 2026",
+   "date_label_en": "November 2026",
+   "time_fa": "در طول نوامبر 2026",
+   "time_en": "During November 2026"
   },
   {
    "site": "jiuquan",
