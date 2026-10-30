@@ -426,26 +426,204 @@
     return {
       version: 8,
       sources: {
-        countries: { type: "geojson", data: "assets/geo/countries.json?v=" + (window.ORBITA_V || "1") }
+        countries: { type: "geojson", data: "assets/geo/countries.json?v=" + (window.ORBITA_V || "1"), promoteId: "NAME" }
       },
       layers: [
         { id: "ocean", type: "background",
           paint: { "background-color": dark ? "#08131f" : "#dbe7f3" } },
         { id: "country-fill", type: "fill", source: "countries",
           paint: { "fill-color": dark ? "#16283d" : "#f7fafc", "fill-opacity": 1 } },
-        { id: "country-hover", type: "fill", source: "countries",
-          filter: ["==", ["get", "NAME"], ""],
-          paint: { "fill-color": dark ? "#183254" : "#e4eefb" } },
-        { id: "country-select", type: "fill", source: "countries",
-          filter: ["==", ["get", "NAME"], ""],
-          paint: { "fill-color": dark ? "#254d75" : "#cbe2f8", "fill-opacity": 0.85 } },
-        { id: "country-select-outline", type: "line", source: "countries",
-          filter: ["==", ["get", "NAME"], ""],
-          paint: { "line-color": dark ? "#00d2ff" : "#0077ff", "line-width": 1.4, "line-opacity": 1 } },
         { id: "country-line", type: "line", source: "countries",
-          paint: { "line-color": dark ? "#1e3854" : "#b9c9dc", "line-width": 0.35, "line-opacity": 0.45 } }
+          paint: { "line-color": dark ? "#1e3854" : "#b9c9dc", "line-width": 0.35, "line-opacity": 0.45 } },
+        { id: "country-hover", type: "fill", source: "countries",
+          paint: { "fill-color": "#F08970", "fill-opacity": ["case", ["boolean", ["feature-state", "hover"], false], 0.72, 0] } },
+        { id: "country-select-outline", type: "line", source: "countries",
+          paint: { "line-color": "#1677F5", "line-width": 2,
+            "line-opacity": ["case", ["boolean", ["feature-state", "selected"], false], 1, 0] } }
       ]
     };
+  }
+
+  var COUNTRY_OVERLAY_SOURCE = "orbita-country-interaction";
+  var COUNTRY_HIT_LAYER = "orbita-country-hit";
+  var COUNTRY_HOVER_LAYER = "orbita-country-hover";
+  var COUNTRY_SELECT_OUTLINE_LAYER = "orbita-country-select-outline";
+  var COUNTRY_HOVER_COLOR = "#F08970";
+  var COUNTRY_SELECTED_OUTLINE = "#1677F5";
+  var selectedCountryName = "", hoveredCountryName = "";
+  var installingCountryLayers = false, countryFeatureStateNeedsSync = true;
+  var countryInteractionEventLayer = "", countryHoverFrame = 0, pendingHoveredCountryName = "";
+
+  function countryInteractionSourceId() {
+    if (!map) return "";
+    if (map.getSource(COUNTRY_OVERLAY_SOURCE)) return COUNTRY_OVERLAY_SOURCE;
+    if (map.getSource("countries")) return "countries";
+    return "";
+  }
+  function setCountryFeatureState(name, stateName, enabled) {
+    if (!map || !name) return;
+    var source = countryInteractionSourceId();
+    if (!source) { countryFeatureStateNeedsSync = true; return; }
+    try {
+      if (map.isSourceLoaded && !map.isSourceLoaded(source)) { countryFeatureStateNeedsSync = true; return; }
+      var state = {}; state[stateName] = !!enabled;
+      map.setFeatureState({ source: source, id: name }, state);
+    } catch (e) { countryFeatureStateNeedsSync = true; }
+  }
+  function syncCountryFeatureStates() {
+    if (!map || !countryFeatureStateNeedsSync) return;
+    var source = countryInteractionSourceId();
+    if (!source) return;
+    try {
+      if (map.isSourceLoaded && !map.isSourceLoaded(source)) return;
+      if (hoveredCountryName) map.setFeatureState({ source: source, id: hoveredCountryName }, { hover: true });
+      if (selectedCountryName) map.setFeatureState({ source: source, id: selectedCountryName }, { selected: true });
+      countryFeatureStateNeedsSync = false;
+    } catch (e) {}
+  }
+  function setHoveredCountry(name) {
+    name = name || "";
+    if (name === hoveredCountryName) return;
+    var previous = hoveredCountryName;
+    hoveredCountryName = name;
+    if (previous) setCountryFeatureState(previous, "hover", false);
+    if (name) setCountryFeatureState(name, "hover", true);
+  }
+  function setSelectedCountry(name) {
+    name = name || "";
+    if (name === selectedCountryName) return;
+    var previous = selectedCountryName;
+    selectedCountryName = name;
+    if (previous) setCountryFeatureState(previous, "selected", false);
+    if (name) setCountryFeatureState(name, "selected", true);
+  }
+  function countryRecordFromFeature(feature) {
+    var props = feature && feature.properties || {};
+    if (!props.NAME) return null;
+    return {
+      en: props.NAME,
+      fa: props.NAME_FA || props.NAME,
+      ar: props.NAME_AR || countryNameAr(props.NAME, props.ISO) || props.NAME,
+      iso: props.ISO || null
+    };
+  }
+  function countryLayerMouseEnter() {
+    if (map && map.getCanvas()) map.getCanvas().style.cursor = "pointer";
+  }
+  function countryLayerMouseMove(e) {
+    var feature = e && e.features && e.features[0];
+    var props = feature && feature.properties || {};
+    pendingHoveredCountryName = props.NAME || "";
+    if (countryHoverFrame) return;
+    countryHoverFrame = requestAnimationFrame(function () {
+      countryHoverFrame = 0;
+      setHoveredCountry(pendingHoveredCountryName);
+    });
+  }
+  function countryLayerMouseLeave() {
+    if (countryHoverFrame) cancelAnimationFrame(countryHoverFrame);
+    countryHoverFrame = 0; pendingHoveredCountryName = "";
+    setHoveredCountry("");
+    if (map && map.getCanvas()) map.getCanvas().style.cursor = "";
+  }
+  function countryRecordFromSpatialMatch(match) {
+    if (!match) return null;
+    return {
+      en: match.country_en, fa: match.country_fa,
+      ar: match.country_ar || countryNameAr(match.country_en, match.country_iso) || match.country_en,
+      iso: match.country_iso || null
+    };
+  }
+  function unbindCountryInteractionEvents() {
+    if (!map || !countryInteractionEventLayer) return;
+    try {
+      map.off("mouseenter", countryInteractionEventLayer, countryLayerMouseEnter);
+      map.off("mousemove", countryInteractionEventLayer, countryLayerMouseMove);
+      map.off("mouseleave", countryInteractionEventLayer, countryLayerMouseLeave);
+    } catch (e) {}
+    countryInteractionEventLayer = "";
+  }
+  function bindCountryInteractionEvents(layerId) {
+    if (!map || !layerId || countryInteractionEventLayer === layerId) return;
+    unbindCountryInteractionEvents();
+    try {
+      map.on("mouseenter", layerId, countryLayerMouseEnter);
+      map.on("mousemove", layerId, countryLayerMouseMove);
+      map.on("mouseleave", layerId, countryLayerMouseLeave);
+      countryInteractionEventLayer = layerId;
+    } catch (e) {
+      console.warn("country interaction events:", e && e.message || e);
+    }
+  }
+  function handleCountryMapClick(e) {
+    if (!map || !e) return;
+    var record = null, sourceId = countryInteractionSourceId();
+    if (countryInteractionEventLayer && e.point) {
+      try {
+        var hits = map.queryRenderedFeatures(e.point, { layers: [countryInteractionEventLayer] });
+        record = countryRecordFromFeature(hits[0]);
+      } catch (err) {}
+    }
+    var sourceReady = false;
+    try { sourceReady = !!sourceId && (!map.isSourceLoaded || map.isSourceLoaded(sourceId)); } catch (err) {}
+    if (!record && e.lngLat && (!countryInteractionEventLayer || !sourceReady)) {
+      record = countryRecordFromSpatialMatch(getCountryAtLngLat(e.lngLat.lng, e.lngLat.lat));
+    }
+    if (!record) { setSelectedCountry(""); return; }
+    setSelectedCountry(record.en);
+    openDetail({
+      kind: "country", cat: "country",
+      country_en: record.en, country_fa: record.fa, country_ar: record.ar, country_iso: record.iso
+    });
+  }
+  function resetCountryInteractionStyleState() {
+    unbindCountryInteractionEvents();
+    if (countryHoverFrame) cancelAnimationFrame(countryHoverFrame);
+    countryHoverFrame = 0; pendingHoveredCountryName = "";
+    setHoveredCountry("");
+    countryFeatureStateNeedsSync = true;
+  }
+  function ensureCountryInteractionLayers() {
+    if (!map || installingCountryLayers) return;
+    try { if (map.isStyleLoaded && !map.isStyleLoaded()) return; } catch (e) { return; }
+    if (map.getSource("countries") && map.getLayer("country-fill")) {
+      bindCountryInteractionEvents("country-fill");
+      syncCountryFeatureStates();
+      return;
+    }
+    installingCountryLayers = true;
+    try {
+      if (!map.getSource(COUNTRY_OVERLAY_SOURCE)) {
+        map.addSource(COUNTRY_OVERLAY_SOURCE, {
+          type: "geojson",
+          data: "assets/geo/countries.json?v=" + (window.ORBITA_V || "1"),
+          promoteId: "NAME"
+        });
+      }
+      var layers = (map.getStyle() || {}).layers || [], beforeId = null;
+      for (var i = 0; i < layers.length; i++) {
+        if (layers[i].type === "symbol") { beforeId = layers[i].id; break; }
+      }
+      function addInteractionLayer(layer) {
+        if (map.getLayer(layer.id)) return;
+        if (beforeId) map.addLayer(layer, beforeId);
+        else map.addLayer(layer);
+      }
+      var stateHover = ["case", ["boolean", ["feature-state", "hover"], false], 0.72, 0];
+      addInteractionLayer({ id: COUNTRY_HIT_LAYER, type: "fill", source: COUNTRY_OVERLAY_SOURCE,
+        paint: { "fill-color": "#000000", "fill-opacity": 0.001 } });
+      addInteractionLayer({ id: COUNTRY_HOVER_LAYER, type: "fill", source: COUNTRY_OVERLAY_SOURCE,
+        paint: { "fill-color": COUNTRY_HOVER_COLOR, "fill-opacity": stateHover } });
+      addInteractionLayer({ id: COUNTRY_SELECT_OUTLINE_LAYER, type: "line", source: COUNTRY_OVERLAY_SOURCE,
+        paint: { "line-color": COUNTRY_SELECTED_OUTLINE, "line-width": 2,
+          "line-opacity": ["case", ["boolean", ["feature-state", "selected"], false], 1, 0] } });
+    } catch (e) {
+      console.warn("country interaction layers:", e && e.message || e);
+    } finally {
+      installingCountryLayers = false;
+    }
+    if (map.getLayer(COUNTRY_HIT_LAYER)) bindCountryInteractionEvents(COUNTRY_HIT_LAYER);
+    syncCountryFeatureStates();
   }
 
   var ONLINE_DARK_URL = "https://basemaps.cartocdn.com/gl/dark-matter-gl-style/style.json";
@@ -512,12 +690,14 @@
   function applyMapStyle() {
     if (!map) return;
     if (BASEMODE === "offline") {
+      resetCountryInteractionStyleState();
       try { map.setStyle(offlineStyle(), { diff: false }); } catch (e) { map.setStyle(offlineStyle()); }
       afterStyleApply();
       return;
     }
     fetchOnlineStyle().then(function (st) {
       if (map) {
+        resetCountryInteractionStyleState();
         try { map.setStyle(st, { diff: false }); } catch (e) { map.setStyle(st); }
         map.once("styledata", afterStyleApply);
         afterStyleApply();
@@ -525,6 +705,7 @@
     }).catch(function () {
       if (map) {
         var rawUrl = onlineStyleUrl();
+        resetCountryInteractionStyleState();
         try { map.setStyle(rawUrl, { diff: false }); } catch (e) { map.setStyle(rawUrl); }
         map.once("styledata", afterStyleApply);
         afterStyleApply();
@@ -842,6 +1023,7 @@
 
     map.on("load", function () {
       $("#mapStatus").style.display = "none";
+      ensureCountryInteractionLayers();
       renderMarkers();
       fetch("assets/geo/labels.json?v=" + (window.ORBITA_V || "1")).then(function (r) { return r.json(); })
         .then(function (d) { LABELS = d; buildLabels(); }).catch(function () {});
@@ -850,8 +1032,15 @@
     });
     map.on("styledata", function () {
       if ($("#mapStatus")) $("#mapStatus").style.display = "none";
+      ensureCountryInteractionLayers();
       if (markers.length === 0) renderMarkers();
     });
+    map.on("sourcedata", function (e) {
+      if (e && e.isSourceLoaded && (e.sourceId === COUNTRY_OVERLAY_SOURCE || e.sourceId === "countries")) {
+        syncCountryFeatureStates();
+      }
+    });
+    map.on("click", handleCountryMapClick);
     var rafZoom = null;
     map.on("zoom", function () {
       if (rafZoom) cancelAnimationFrame(rafZoom);
@@ -874,45 +1063,7 @@
       if (statusEl) statusEl.style.display = "none";
     });
 
-    // country hover & click highlight (offline style only)
-    map.on("mousemove", function (e) {
-      if (BASEMODE !== "offline" || !map.getLayer("country-hover")) return;
-      var f = map.queryRenderedFeatures(e.point, { layers: ["country-fill"] })[0];
-      map.setFilter("country-hover", ["==", ["get", "NAME"], f ? f.properties.NAME : ""]);
-    });
-
-    map.on("click", function (e) {
-      var cNameEn = null, cNameFa = null, cNameAr = null, cIso = null;
-      try {
-        if (map.getLayer("country-fill")) {
-          var f = map.queryRenderedFeatures(e.point, { layers: ["country-fill"] })[0];
-          if (f && f.properties && f.properties.NAME) {
-            cNameEn = f.properties.NAME;
-            cNameFa = f.properties.NAME_FA || f.properties.NAME;
-            cIso = f.properties.ISO || null;
-            cNameAr = f.properties.NAME_AR || countryNameAr(cNameEn, cIso) || cNameEn;
-          }
-        }
-      } catch (err) {}
-
-      if (!cNameEn && e.lngLat) {
-        var spatialMatch = getCountryAtLngLat(e.lngLat.lng, e.lngLat.lat);
-        if (spatialMatch) {
-          cNameEn = spatialMatch.country_en;
-          cNameFa = spatialMatch.country_fa;
-          cNameAr = spatialMatch.country_ar || countryNameAr(cNameEn, spatialMatch.country_iso) || cNameEn;
-          cIso = spatialMatch.country_iso || null;
-        }
-      }
-
-      if (cNameEn) {
-        openDetail({ kind: "country", cat: "country", country_en: cNameEn, country_fa: cNameFa, country_ar: cNameAr, country_iso: cIso });
-      }
-
-      if (BASEMODE !== "offline" || !map.getLayer("country-select")) return;
-      map.setFilter("country-select", ["==", ["get", "NAME"], cNameEn || ""]);
-      map.setFilter("country-select-outline", ["==", ["get", "NAME"], cNameEn || ""]);
-    });
+    // Country hover/click events are bound directly to country layers as each style loads.
   }
 
   on("#citiesBtn", "click", function () {
