@@ -421,6 +421,9 @@
   var BASEMODE = "online";
   localStorage.setItem("orbita_base", "online");
 
+  // Style-layer maxzoom is exclusive; 8.001 keeps coral hover visible through zoom 8.0.
+  var COUNTRY_HOVER_MAX_ZOOM = 8.001;
+
   function offlineStyle() {
     var dark = THEME === "navy";
     return {
@@ -435,7 +438,7 @@
           paint: { "fill-color": dark ? "#16283d" : "#f7fafc", "fill-opacity": 1 } },
         { id: "country-line", type: "line", source: "countries",
           paint: { "line-color": dark ? "#1e3854" : "#b9c9dc", "line-width": 0.35, "line-opacity": 0.45 } },
-        { id: "country-hover", type: "fill", source: "countries",
+        { id: "country-hover", type: "fill", source: "countries", maxzoom: COUNTRY_HOVER_MAX_ZOOM,
           paint: { "fill-color": "#F08970", "fill-opacity": ["case", ["boolean", ["feature-state", "hover"], false], 0.72, 0] } },
         { id: "country-select-outline", type: "line", source: "countries",
           paint: { "line-color": "#1677F5", "line-width": 2,
@@ -613,6 +616,7 @@
       addInteractionLayer({ id: COUNTRY_HIT_LAYER, type: "fill", source: COUNTRY_OVERLAY_SOURCE,
         paint: { "fill-color": "#000000", "fill-opacity": 0.001 } });
       addInteractionLayer({ id: COUNTRY_HOVER_LAYER, type: "fill", source: COUNTRY_OVERLAY_SOURCE,
+        maxzoom: COUNTRY_HOVER_MAX_ZOOM,
         paint: { "fill-color": COUNTRY_HOVER_COLOR, "fill-opacity": stateHover } });
       addInteractionLayer({ id: COUNTRY_SELECT_OUTLINE_LAYER, type: "line", source: COUNTRY_OVERLAY_SOURCE,
         paint: { "line-color": COUNTRY_SELECTED_OUTLINE, "line-width": 2,

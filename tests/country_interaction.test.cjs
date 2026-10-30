@@ -31,6 +31,16 @@ assert.match(app, /"fill-color": "#F08970"[\s\S]*?"feature-state", "hover"/,
   'hover uses a visible warm coral, not pure red');
 assert.match(app, /"fill-opacity": \["case", \["boolean", \["feature-state", "hover"\], false\], 0\.72, 0\]/,
   'coral fill exists only while the country is under the pointer');
+assert.match(app, /var COUNTRY_HOVER_MAX_ZOOM = 8\.001;/,
+  'hover cutoff includes zoom 8.0; maxzoom semantics hide it above that point');
+assert.match(app, /id: "country-hover", type: "fill", source: "countries", maxzoom: COUNTRY_HOVER_MAX_ZOOM/,
+  'offline country hover fill is hidden beyond the zoom cutoff');
+assert.match(app, /id: COUNTRY_HOVER_LAYER, type: "fill", source: COUNTRY_OVERLAY_SOURCE,[\s\S]*?maxzoom: COUNTRY_HOVER_MAX_ZOOM/,
+  'online country hover fill is hidden beyond the same cutoff');
+assert.doesNotMatch(app, /addInteractionLayer\(\{ id: COUNTRY_SELECT_OUTLINE_LAYER, type: "line", source: COUNTRY_OVERLAY_SOURCE,\s*maxzoom:/,
+  'the persistent blue selection outline remains visible at high zoom');
+assert.doesNotMatch(app, /id: "country-select-outline", type: "line", source: "countries", maxzoom:/,
+  'offline persistent blue selection outline also remains visible at high zoom');
 assert.match(app, /"line-color": "#1677F5"[\s\S]*?"feature-state", "selected"/,
   'a clicked country keeps only a blue selected border after hover ends');
 assert.doesNotMatch(app, /COUNTRY_SELECT_LAYER|COUNTRY_SELECTED_COLOR/,
@@ -41,8 +51,8 @@ assert.match(app, /function countryLayerMouseLeave\(\)[\s\S]*?setHoveredCountry\
   'hover state clears immediately after leaving a country');
 assert.match(app, /function ensureCountryInteractionLayers\(\)[\s\S]*?bindCountryInteractionEvents\("country-fill"\)[\s\S]*?bindCountryInteractionEvents\(COUNTRY_HIT_LAYER\)/,
   'offline and online styles bind the same interaction behavior');
-assert.match(html, /window\.ORBITA_V = "20261030country05";/, 'the OSM-aligned country boundary data has a fresh cache key');
+assert.match(html, /window\.ORBITA_V = "20261030country06";/, 'the OSM-aligned country boundary data has a fresh cache key');
 assert.match(app, /customAttribution:\s*"© OpenStreetMap contributors; Terrae"/,
   'the map credits the OSM-derived Terrae boundary data');
 
-console.log('PASS: low-latency country hover, persistent blue outline, and dossier-on-click behavior remain wired across basemaps.');
+console.log('PASS: fast country hover, coral cutoff above zoom 8, persistent blue outline, and click dossiers across basemaps.');
