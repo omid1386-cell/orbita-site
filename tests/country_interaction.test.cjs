@@ -41,6 +41,8 @@ assert.match(app, /function countryLayerMouseLeave\(\)[\s\S]*?setHoveredCountry\
   'hover state clears immediately after leaving a country');
 assert.match(app, /function ensureCountryInteractionLayers\(\)[\s\S]*?bindCountryInteractionEvents\("country-fill"\)[\s\S]*?bindCountryInteractionEvents\(COUNTRY_HIT_LAYER\)/,
   'offline and online styles bind the same interaction behavior');
-assert.match(html, /window\.ORBITA_V = "20261030country04";/, 'the visual performance update has a fresh cache key');
+assert.match(html, /window\.ORBITA_V = "20261030country05";/, 'the OSM-aligned country boundary data has a fresh cache key');
+assert.match(app, /customAttribution:\s*"© OpenStreetMap contributors; Terrae"/,
+  'the map credits the OSM-derived Terrae boundary data');
 
-console.log('PASS: low-latency country hover, warm selected color, and dossier-on-click behavior are wired for both styles.');
+console.log('PASS: low-latency country hover, persistent blue outline, and dossier-on-click behavior remain wired across basemaps.');

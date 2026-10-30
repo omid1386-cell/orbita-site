@@ -50,7 +50,7 @@ check(app.includes('نظرة عامة وإحصاءات') && app.includes('أسط
 check(app.includes('safeEnglish(value, fallback)') && app.includes('missionLabel(value)') &&
   app.includes('techValue(value, kind)'),
   'source values pass through Arabic-safe display helpers');
-check(html.includes('window.ORBITA_V = "20261030country04";'), 'the HTML asset cache version is bumped for the Arabic template');
+check(html.includes('window.ORBITA_V = "20261030country05";'), 'the HTML asset cache version is bumped for the Arabic template');
 
 // Guard the shared bilingual renderer so this Arabic-only task cannot change Persian or English output.
 const companyDetailStart = app.indexOf('  function renderCompanyDetail(p) {');

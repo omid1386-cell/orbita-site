@@ -350,7 +350,7 @@ test('missing Arabic fallbacks never expose untranslated Persian or English desc
 });
 
 test('the global asset cache token is current and the country profile uses Arabic agency cards', () => {
-  assert.ok(html.includes('window.ORBITA_V = "20261030country04";'));
+  assert.ok(html.includes('window.ORBITA_V = "20261030country05";'));
   const countrySource = sourceBetween('  function renderCountryProfile(p) {', '  window.isEntityInCountry = isEntityInCountry;');
   assert.match(countrySource, /isAr \? \(item\.ar \|\| item\.en \|\| item\.fa\)/,
     'country profile cards prefer an agency Arabic name');

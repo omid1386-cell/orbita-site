@@ -817,7 +817,7 @@
           }
         }
       }
-      // 2. Coastal tolerance (<= 3 deg to polygon boundary segment for 110m capes & coastal islands)
+      // 2. Coastal tolerance (<= 3 deg to a mapped land boundary for tiny coastal features)
       var bestFeat = null, bestSegD2 = 1e9;
       for (var fi = 0; fi < feats.length; fi++) {
         var ps = feats[fi]._polys || [];
@@ -833,7 +833,7 @@
       }
       if (bestFeat && bestSegD2 <= 9.0) return formatGeoMatch(bestFeat.properties, normLng, lat);
 
-      // 3. Sovereign oceanic island sites not present in 110m Natural Earth (e.g. Marshall Islands)
+      // 3. Small sovereign oceanic island sites not represented in the country polygons (e.g. Marshall Islands)
       if (typeof DATA !== "undefined" && Array.isArray(DATA.sites)) {
         var bestSite = null, bestSiteD2 = 6.25;
         for (var si = 0; si < DATA.sites.length; si++) {
@@ -1005,7 +1005,8 @@
       fadeDuration: 0,
       maxTileCacheSize: 256,
       trackResize: true,
-      attributionControl: { compact: true }
+      attributionControl: { compact: true },
+      customAttribution: "© OpenStreetMap contributors; Terrae"
     });
     window.map = map;
     /* faster manual zoom: ~2x wheel/trackpad rate, smooth animation preserved */
