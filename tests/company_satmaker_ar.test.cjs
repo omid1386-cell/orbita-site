@@ -54,7 +54,7 @@ check(app.includes('مصنّعو الأقمار الصناعية ومكوّنا�
   app.includes('نوع المنتج:') && app.includes('الفئة:</b>') &&
   app.includes('الوصف الهندسي') && app.includes('يُستخدم في:') && app.includes('سجل الأقمار والمكوّنات'),
   'the dossier tabs and key manufacturer labels are Arabic');
-check(html.includes('window.ORBITA_V = "20261030country06";'),
+check(html.includes('window.ORBITA_V = "20261030country08";'),
   'the HTML cache version is bumped for the satellite-manufacturer slice');
 
 const start = app.indexOf('  function renderSatmakerCompanyArabic(p) {');

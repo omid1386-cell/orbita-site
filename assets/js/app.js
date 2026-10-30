@@ -421,8 +421,8 @@
   var BASEMODE = "online";
   localStorage.setItem("orbita_base", "online");
 
-  // Style-layer maxzoom is exclusive; 8.001 keeps coral hover visible through zoom 8.0.
-  var COUNTRY_HOVER_MAX_ZOOM = 8.001;
+  // Style-layer maxzoom is exclusive; 4.001 keeps coral hover visible through zoom 4.0.
+  var COUNTRY_HOVER_MAX_ZOOM = 4.001;
 
   function offlineStyle() {
     var dark = THEME === "navy";
