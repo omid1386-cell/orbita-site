@@ -421,6 +421,20 @@
   var BASEMODE = "online";
   localStorage.setItem("orbita_base", "online");
 
+  // Country boundaries use pre-tiled local vector data; MapLibre requests only visible tiles.
+  var COUNTRY_VECTOR_LAYER = "countries";
+  var COUNTRY_PM_ARCHIVE_URL = new URL(
+    "assets/geo/countries.pmtiles?v=" + encodeURIComponent(window.ORBITA_V || "1"),
+    window.location.href
+  ).toString();
+  var COUNTRY_PM_TILES_URL = "pmtiles://" + COUNTRY_PM_ARCHIVE_URL;
+  var countryPmtilesProtocol = null;
+  if (window.pmtiles && typeof maplibregl !== "undefined" && maplibregl.addProtocol) {
+    countryPmtilesProtocol = new window.pmtiles.Protocol();
+    maplibregl.addProtocol("pmtiles", countryPmtilesProtocol.tile);
+    countryPmtilesProtocol.add(new window.pmtiles.PMTiles(COUNTRY_PM_ARCHIVE_URL));
+  }
+
   // Style-layer maxzoom is exclusive; 4.001 keeps coral hover visible through zoom 4.0.
   var COUNTRY_HOVER_MAX_ZOOM = 4.001;
 
@@ -429,18 +443,23 @@
     return {
       version: 8,
       sources: {
-        countries: { type: "geojson", data: "assets/geo/countries.json?v=" + (window.ORBITA_V || "1"), promoteId: "NAME" }
+        countries: {
+          type: "vector", url: COUNTRY_PM_TILES_URL,
+          promoteId: { countries: "NAME" },
+          attribution: "© OpenStreetMap contributors; Terrae"
+        }
       },
       layers: [
         { id: "ocean", type: "background",
           paint: { "background-color": dark ? "#08131f" : "#dbe7f3" } },
-        { id: "country-fill", type: "fill", source: "countries",
+        { id: "country-fill", type: "fill", source: "countries", "source-layer": COUNTRY_VECTOR_LAYER,
           paint: { "fill-color": dark ? "#16283d" : "#f7fafc", "fill-opacity": 1 } },
-        { id: "country-line", type: "line", source: "countries",
+        { id: "country-line", type: "line", source: "countries", "source-layer": COUNTRY_VECTOR_LAYER,
           paint: { "line-color": dark ? "#1e3854" : "#b9c9dc", "line-width": 0.35, "line-opacity": 0.45 } },
-        { id: "country-hover", type: "fill", source: "countries", maxzoom: COUNTRY_HOVER_MAX_ZOOM,
+        { id: "country-hover", type: "fill", source: "countries", "source-layer": COUNTRY_VECTOR_LAYER,
+          maxzoom: COUNTRY_HOVER_MAX_ZOOM,
           paint: { "fill-color": "#F08970", "fill-opacity": ["case", ["boolean", ["feature-state", "hover"], false], 0.72, 0] } },
-        { id: "country-select-outline", type: "line", source: "countries",
+        { id: "country-select-outline", type: "line", source: "countries", "source-layer": COUNTRY_VECTOR_LAYER,
           paint: { "line-color": "#1677F5", "line-width": 2,
             "line-opacity": ["case", ["boolean", ["feature-state", "selected"], false], 1, 0] } }
       ]
@@ -456,6 +475,7 @@
   var selectedCountryName = "", hoveredCountryName = "";
   var installingCountryLayers = false, countryFeatureStateNeedsSync = true;
   var countryInteractionEventLayer = "", countryHoverFrame = 0, pendingHoveredCountryName = "";
+  var pendingCountryFeatureStates = Object.create(null), countryCanvasExitBound = false;
 
   function countryInteractionSourceId() {
     if (!map) return "";
@@ -463,15 +483,31 @@
     if (map.getSource("countries")) return "countries";
     return "";
   }
+  function queueCountryFeatureState(name, stateName, enabled) {
+    if (!name) return;
+    if (!pendingCountryFeatureStates[name]) pendingCountryFeatureStates[name] = {};
+    pendingCountryFeatureStates[name][stateName] = !!enabled;
+    countryFeatureStateNeedsSync = true;
+  }
+  function clearPendingCountryFeatureState(name, stateName) {
+    var states = pendingCountryFeatureStates[name];
+    if (!states) return;
+    delete states[stateName];
+    if (!Object.keys(states).length) delete pendingCountryFeatureStates[name];
+  }
   function setCountryFeatureState(name, stateName, enabled) {
     if (!map || !name) return;
     var source = countryInteractionSourceId();
-    if (!source) { countryFeatureStateNeedsSync = true; return; }
+    if (!source) { queueCountryFeatureState(name, stateName, enabled); return; }
     try {
-      if (map.isSourceLoaded && !map.isSourceLoaded(source)) { countryFeatureStateNeedsSync = true; return; }
+      if (map.isSourceLoaded && !map.isSourceLoaded(source)) {
+        queueCountryFeatureState(name, stateName, enabled);
+        return;
+      }
       var state = {}; state[stateName] = !!enabled;
-      map.setFeatureState({ source: source, id: name }, state);
-    } catch (e) { countryFeatureStateNeedsSync = true; }
+      map.setFeatureState({ source: source, sourceLayer: COUNTRY_VECTOR_LAYER, id: name }, state);
+      clearPendingCountryFeatureState(name, stateName);
+    } catch (e) { queueCountryFeatureState(name, stateName, enabled); }
   }
   function syncCountryFeatureStates() {
     if (!map || !countryFeatureStateNeedsSync) return;
@@ -479,10 +515,14 @@
     if (!source) return;
     try {
       if (map.isSourceLoaded && !map.isSourceLoaded(source)) return;
-      if (hoveredCountryName) map.setFeatureState({ source: source, id: hoveredCountryName }, { hover: true });
-      if (selectedCountryName) map.setFeatureState({ source: source, id: selectedCountryName }, { selected: true });
+      Object.keys(pendingCountryFeatureStates).forEach(function (name) {
+        map.setFeatureState({ source: source, sourceLayer: COUNTRY_VECTOR_LAYER, id: name }, pendingCountryFeatureStates[name]);
+      });
+      if (hoveredCountryName) map.setFeatureState({ source: source, sourceLayer: COUNTRY_VECTOR_LAYER, id: hoveredCountryName }, { hover: true });
+      if (selectedCountryName) map.setFeatureState({ source: source, sourceLayer: COUNTRY_VECTOR_LAYER, id: selectedCountryName }, { selected: true });
+      pendingCountryFeatureStates = Object.create(null);
       countryFeatureStateNeedsSync = false;
-    } catch (e) {}
+    } catch (e) { countryFeatureStateNeedsSync = true; }
   }
   function setHoveredCountry(name) {
     name = name || "";
@@ -513,7 +553,16 @@
   function countryLayerMouseEnter() {
     if (map && map.getCanvas()) map.getCanvas().style.cursor = "pointer";
   }
+  function clearCountryHoverState() {
+    if (countryHoverFrame) cancelAnimationFrame(countryHoverFrame);
+    countryHoverFrame = 0; pendingHoveredCountryName = "";
+    setHoveredCountry("");
+  }
   function countryLayerMouseMove(e) {
+    if (map && map.getZoom() >= COUNTRY_HOVER_MAX_ZOOM) {
+      clearCountryHoverState();
+      return;
+    }
     var feature = e && e.features && e.features[0];
     var props = feature && feature.properties || {};
     pendingHoveredCountryName = props.NAME || "";
@@ -524,10 +573,16 @@
     });
   }
   function countryLayerMouseLeave() {
-    if (countryHoverFrame) cancelAnimationFrame(countryHoverFrame);
-    countryHoverFrame = 0; pendingHoveredCountryName = "";
-    setHoveredCountry("");
+    clearCountryHoverState();
     if (map && map.getCanvas()) map.getCanvas().style.cursor = "";
+  }
+  function bindCountryCanvasExit() {
+    if (!map || countryCanvasExitBound) return;
+    var canvas = map.getCanvas();
+    if (!canvas) return;
+    canvas.addEventListener("pointerleave", countryLayerMouseLeave);
+    window.addEventListener("blur", countryLayerMouseLeave);
+    countryCanvasExitBound = true;
   }
   function countryRecordFromSpatialMatch(match) {
     if (!match) return null;
@@ -581,9 +636,7 @@
   }
   function resetCountryInteractionStyleState() {
     unbindCountryInteractionEvents();
-    if (countryHoverFrame) cancelAnimationFrame(countryHoverFrame);
-    countryHoverFrame = 0; pendingHoveredCountryName = "";
-    setHoveredCountry("");
+    clearCountryHoverState();
     countryFeatureStateNeedsSync = true;
   }
   function ensureCountryInteractionLayers() {
@@ -598,9 +651,10 @@
     try {
       if (!map.getSource(COUNTRY_OVERLAY_SOURCE)) {
         map.addSource(COUNTRY_OVERLAY_SOURCE, {
-          type: "geojson",
-          data: "assets/geo/countries.json?v=" + (window.ORBITA_V || "1"),
-          promoteId: "NAME"
+          type: "vector",
+          url: COUNTRY_PM_TILES_URL,
+          promoteId: { countries: "NAME" },
+          attribution: "© OpenStreetMap contributors; Terrae"
         });
       }
       var layers = (map.getStyle() || {}).layers || [], beforeId = null;
@@ -614,11 +668,14 @@
       }
       var stateHover = ["case", ["boolean", ["feature-state", "hover"], false], 0.72, 0];
       addInteractionLayer({ id: COUNTRY_HIT_LAYER, type: "fill", source: COUNTRY_OVERLAY_SOURCE,
+        "source-layer": COUNTRY_VECTOR_LAYER,
         paint: { "fill-color": "#000000", "fill-opacity": 0.001 } });
       addInteractionLayer({ id: COUNTRY_HOVER_LAYER, type: "fill", source: COUNTRY_OVERLAY_SOURCE,
+        "source-layer": COUNTRY_VECTOR_LAYER,
         maxzoom: COUNTRY_HOVER_MAX_ZOOM,
         paint: { "fill-color": COUNTRY_HOVER_COLOR, "fill-opacity": stateHover } });
       addInteractionLayer({ id: COUNTRY_SELECT_OUTLINE_LAYER, type: "line", source: COUNTRY_OVERLAY_SOURCE,
+        "source-layer": COUNTRY_VECTOR_LAYER,
         paint: { "line-color": COUNTRY_SELECTED_OUTLINE, "line-width": 2,
           "line-opacity": ["case", ["boolean", ["feature-state", "selected"], false], 1, 0] } });
     } catch (e) {
@@ -718,8 +775,7 @@
   }
 
   /* country name labels rendered as DOM markers (works without remote glyph fonts) */
-  var labelMarkers = [], LABELS = null, COUNTRIES_GEO = null;
-  var COUNTRY_AR_BY_NAME = Object.create(null), COUNTRY_AR_BY_ISO = Object.create(null);
+  var labelMarkers = [];
   var COUNTRY_AR_SPECIAL = {
     "united states": "الولايات المتحدة", "u s a": "الولايات المتحدة", "usa": "الولايات المتحدة",
     "uae": "الإمارات العربية المتحدة", "uk": "المملكة المتحدة",
@@ -735,152 +791,27 @@
   function countryNameKey(name) {
     return String(name || "").trim().toLowerCase().replace(/[’]/g, "'").replace(/[._-]+/g, " ").replace(/\s+/g, " ");
   }
-  function recordCountryArabic(name, iso, arabic) {
-    if (!arabic) return;
-    var key = countryNameKey(name), code = String(iso || "").trim().toUpperCase();
-    if (key) COUNTRY_AR_BY_NAME[key] = arabic;
-    if (code && code !== "-99") COUNTRY_AR_BY_ISO[code] = arabic;
-  }
   function countryNameAr(name, iso) {
-    var code = String(iso || "").trim().toUpperCase(), key = countryNameKey(name);
-    if (code && COUNTRY_AR_BY_ISO[code]) return COUNTRY_AR_BY_ISO[code];
-    return COUNTRY_AR_BY_NAME[key] || COUNTRY_AR_SPECIAL[key] || null;
+    var key = countryNameKey(name);
+    return COUNTRY_AR_SPECIAL[key] || null;
   }
-  function indexCountriesGeo(fc) {
-    if (!fc || !fc.features) return null;
-    fc.features.forEach(function (f) {
-      var props = f.properties || {};
-      if (props.NAME_AR) recordCountryArabic(props.NAME, props.ISO, props.NAME_AR);
-      var g = f.geometry;
-      if (!g || !g.coordinates) { f._polys = []; return; }
-      var raw = g.type === "Polygon" ? [g.coordinates] : (g.type === "MultiPolygon" ? g.coordinates : []);
-      f._polys = raw.map(function (poly) {
-        var r = poly[0] || [], minX = 1e9, minY = 1e9, maxX = -1e9, maxY = -1e9;
-        for (var i = 0; i < r.length; i++) {
-          var x = r[i][0], y = r[i][1];
-          if (x < minX) minX = x; if (x > maxX) maxX = x;
-          if (y < minY) minY = y; if (y > maxY) maxY = y;
-        }
-        return { outer: r, holes: poly.slice(1), minX: minX, minY: minY, maxX: maxX, maxY: maxY };
-      });
-    });
-    return fc;
-  }
-  function pipRing(x, y, ring) {
-    var inside = false, n = ring.length;
-    for (var i = 0, j = n - 1; i < n; j = i++) {
-      var xi = ring[i][0], yi = ring[i][1], xj = ring[j][0], yj = ring[j][1];
-      if (((yi > y) !== (yj > y)) && (x < (xj - xi) * (y - yi) / ((yj - yi) || 1e-30) + xi)) inside = !inside;
-    }
-    return inside;
-  }
-  function segDistSq(px, py, ax, ay, bx, by) {
-    var dx = bx - ax, dy = by - ay;
-    if (dx === 0 && dy === 0) return (px - ax) * (px - ax) + (py - ay) * (py - ay);
-    var t = ((px - ax) * dx + (py - ay) * dy) / (dx * dx + dy * dy);
-    if (t < 0) t = 0; else if (t > 1) t = 1;
-    var cx = ax + t * dx, cy = ay + t * dy;
-    return (px - cx) * (px - cx) + (py - cy) * (py - cy);
-  }
-  function formatGeoMatch(props, lng, lat) {
-    if (props.NAME === "France" && lng > -56 && lng < -50 && lat > 1 && lat < 7) {
-      return { country_en: "French Guiana", country_fa: "گویان فرانسه", country_ar: "غويانا الفرنسية", country_iso: "GF" };
-    }
-    return {
-      country_en: props.NAME,
-      country_fa: props.NAME_FA || props.NAME,
-      country_ar: props.NAME_AR || countryNameAr(props.NAME, props.ISO) || props.NAME,
-      country_iso: props.ISO || null
-    };
-  }
-  // Eagerly preload self-hosted country polygons & labels so online map clicks work instantly
-  (function preloadCountryGeo() {
-    var v = (window.ORBITA_V || "1");
-    fetch("assets/geo/countries.json?v=" + v).then(function (r) { return r.json(); })
-      .then(function (d) { COUNTRIES_GEO = indexCountriesGeo(d); }).catch(function () {});
-    fetch("assets/geo/labels.json?v=" + v).then(function (r) { return r.json(); })
-      .then(function (d) { if (!LABELS) { LABELS = d; buildLabels(); } }).catch(function () {});
-  })();
 
+  // Any click fallback re-queries the currently rendered vector source. It never guesses
+  // a country from a nearby label, so clicking empty ocean still clears selection.
   function getCountryAtLngLat(lng, lat) {
-    var normLng = ((lng + 180) % 360 + 360) % 360 - 180;
-    // 1. Exact point-in-polygon against self-hosted countries.json (handles coasts, exclaves, multi-polygons)
-    if (COUNTRIES_GEO && COUNTRIES_GEO.features && COUNTRIES_GEO.features.length) {
-      var feats = COUNTRIES_GEO.features;
-      for (var i = 0; i < feats.length; i++) {
-        var polys = feats[i]._polys || [];
-        for (var p = 0; p < polys.length; p++) {
-          var b = polys[p];
-          if (normLng < b.minX || normLng > b.maxX || lat < b.minY || lat > b.maxY) continue;
-          if (pipRing(normLng, lat, b.outer)) {
-            var inHole = false;
-            for (var h = 0; h < b.holes.length; h++) {
-              if (pipRing(normLng, lat, b.holes[h])) { inHole = true; break; }
-            }
-            if (!inHole) return formatGeoMatch(feats[i].properties, normLng, lat);
-          }
-        }
-      }
-      // 2. Coastal tolerance (<= 3 deg to a mapped land boundary for tiny coastal features)
-      var bestFeat = null, bestSegD2 = 1e9;
-      for (var fi = 0; fi < feats.length; fi++) {
-        var ps = feats[fi]._polys || [];
-        for (var pi = 0; pi < ps.length; pi++) {
-          var pb = ps[pi];
-          if (normLng < pb.minX - 3.2 || normLng > pb.maxX + 3.2 || lat < pb.minY - 3.2 || lat > pb.maxY + 3.2) continue;
-          var ring = pb.outer;
-          for (var ri = 0; ri < ring.length - 1; ri++) {
-            var d2 = segDistSq(normLng, lat, ring[ri][0], ring[ri][1], ring[ri + 1][0], ring[ri + 1][1]);
-            if (d2 < bestSegD2) { bestSegD2 = d2; bestFeat = feats[fi]; }
-          }
-        }
-      }
-      if (bestFeat && bestSegD2 <= 9.0) return formatGeoMatch(bestFeat.properties, normLng, lat);
-
-      // 3. Small sovereign oceanic island sites not represented in the country polygons (e.g. Marshall Islands)
-      if (typeof DATA !== "undefined" && Array.isArray(DATA.sites)) {
-        var bestSite = null, bestSiteD2 = 6.25;
-        for (var si = 0; si < DATA.sites.length; si++) {
-          var st = DATA.sites[si];
-          if (!st.country || /^international/i.test(st.country) || st.lon == null || st.lat == null) continue;
-          var sdx = normLng - st.lon, sdy = lat - st.lat;
-          if (sdx > 180) sdx -= 360; else if (sdx < -180) sdx += 360;
-          var sd2 = sdx * sdx + sdy * sdy;
-          if (sd2 < bestSiteD2) { bestSiteD2 = sd2; bestSite = st; }
-        }
-        if (bestSite) {
-          return { country_en: bestSite.country, country_fa: bestSite.country_fa || bestSite.country,
-            country_ar: bestSite.country_ar || countryNameAr(bestSite.country, null) || bestSite.country, country_iso: null };
-        }
-      }
-      return null;
-    }
-
-    // 4. Fallback if labels loaded before countries.json
-    if (!LABELS || !LABELS.features || !LABELS.features.length) return null;
-    var best = null, bestDist = 1e9;
-    for (var li = 0; li < LABELS.features.length; li++) {
-      var feat = LABELS.features[li];
-      var c = feat.geometry.coordinates;
-      var dlng = normLng - c[0];
-      var dlat = lat - c[1];
-      if (dlng > 180) dlng -= 360;
-      if (dlng < -180) dlng += 360;
-      var dist = dlng * dlng + dlat * dlat;
-      if (dist < bestDist) {
-        bestDist = dist;
-        best = feat;
-      }
-    }
-    if (best && bestDist < 625) {
-      return {
-        country_en: best.properties.NAME,
-        country_fa: best.properties.NAME_FA || best.properties.NAME,
-        country_ar: best.properties.NAME_AR || countryNameAr(best.properties.NAME, best.properties.ISO) || best.properties.NAME,
-        country_iso: best.properties.ISO || null
-      };
-    }
-    return null;
+    if (!map || !map.project || !map.queryRenderedFeatures) return null;
+    var layer = countryInteractionEventLayer ||
+      (map.getLayer(COUNTRY_HIT_LAYER) ? COUNTRY_HIT_LAYER : (map.getLayer("country-fill") ? "country-fill" : ""));
+    if (!layer) return null;
+    try {
+      var point = map.project([lng, lat]);
+      var hits = map.queryRenderedFeatures(point, { layers: [layer] });
+      var record = countryRecordFromFeature(hits && hits[0]);
+      return record ? {
+        country_en: record.en, country_fa: record.fa,
+        country_ar: record.ar, country_iso: record.iso
+      } : null;
+    } catch (e) { return null; }
   }
 
   function buildLabels() {
@@ -959,6 +890,7 @@
       if (el) el.style.display = "none";
     }, 2000);
     if (typeof maplibregl === "undefined") { $("#mapStatus").textContent = "MapLibre failed to load."; return; }
+    if (!window.pmtiles || !countryPmtilesProtocol) { $("#mapStatus").textContent = "PMTiles failed to load."; return; }
     /* correct Persian/Arabic/Hebrew shaping: load RTL plugin before map creation */
     try {
       if (maplibregl.setRTLTextPlugin) {
@@ -1029,9 +961,8 @@
     map.on("load", function () {
       $("#mapStatus").style.display = "none";
       ensureCountryInteractionLayers();
+      bindCountryCanvasExit();
       renderMarkers();
-      fetch("assets/geo/labels.json?v=" + (window.ORBITA_V || "1")).then(function (r) { return r.json(); })
-        .then(function (d) { LABELS = d; buildLabels(); }).catch(function () {});
       fetch("assets/geo/cities.json?v=" + (window.ORBITA_V || "1")).then(function (r) { return r.json(); })
         .then(function (d) { CITIES = d; buildCityLabels(); }).catch(function () {});
     });
@@ -1048,6 +979,7 @@
     map.on("click", handleCountryMapClick);
     var rafZoom = null;
     map.on("zoom", function () {
+      if (map.getZoom() >= COUNTRY_HOVER_MAX_ZOOM) clearCountryHoverState();
       if (rafZoom) cancelAnimationFrame(rafZoom);
       rafZoom = requestAnimationFrame(function () {
         zoomLabels();
@@ -3868,6 +3800,48 @@
     return v === "globe" ? ["globe"] : v.split("+");
   }
 
+  function renderCountryProfileHeader(p, totalEntities) {
+    var isFa = (typeof LANG !== "undefined" && LANG === "fa");
+    var isAr = (typeof LANG !== "undefined" && LANG === "ar");
+    var tr = function (fa, en, ar) { return isFa ? fa : (isAr ? ar : en); };
+    var cEn = p.country_en || (p.o ? p.o.country_en || p.o.country : null) || p.country || "Iran";
+    var cFa = p.country_fa || (p.o ? p.o.country_fa : null) || countryOf(cEn) || cEn;
+    var cIso = p.country_iso || (p.o ? p.o.country_iso : null) || null;
+    var cAr = p.country_ar || (p.o ? p.o.country_ar : null) || countryNameAr(cEn, cIso) || cEn;
+    function activeEntitiesAr(n) {
+      var mod100 = n % 100;
+      if (n === 1) return "كيان فضائي نشط";
+      if (n === 2) return "كيانان فضائيان نشطان";
+      if (n === 0 || (mod100 >= 3 && mod100 <= 10)) return "كيانات فضائية نشطة";
+      if (mod100 >= 11 && mod100 <= 99) return "كيانًا فضائيًا نشطًا";
+      return "كيان فضائي نشط";
+    }
+    var flagCodes = flagCodesFor(cEn, cIso);
+    var flagTitle = isFa ? cFa : (isAr ? cAr : cEn);
+    var flagAlt = tr("پرچم " + cFa, "Flag of " + cEn, "علم " + cAr);
+    var flagEl;
+    if (flagCodes.length === 1 && flagCodes[0] !== "globe") {
+      flagEl = '<img class="d-flag" src="assets/img/flags/' + flagCodes[0] + '.svg" alt="' + esc(flagAlt) + '" title="' + esc(flagTitle) + '" loading="eager" fetchpriority="high" decoding="async">';
+    } else if (flagCodes.length === 2) {
+      flagEl = '<span class="d-flagset" role="img" aria-label="' + esc(flagAlt) + '" title="' + esc(flagTitle) + '">'
+        + '<img class="d-flag d-flag--a" src="assets/img/flags/' + flagCodes[0] + '.svg" alt="" loading="eager" fetchpriority="high" decoding="async">'
+        + '<img class="d-flag d-flag--b" src="assets/img/flags/' + flagCodes[1] + '.svg" alt="" loading="eager" fetchpriority="high" decoding="async">'
+        + '</span>';
+    } else {
+      flagEl = '<img class="d-flag d-flag--globe" src="assets/img/flags/globe.svg" alt="' + esc(flagTitle) + '" title="' + esc(flagTitle) + '" loading="eager" fetchpriority="high" decoding="async">';
+    }
+    var countBadge = typeof totalEntities === "number"
+      ? (isFa ? (totalEntities + " مرکز فعال") : (isAr ? (totalEntities + " " + activeEntitiesAr(totalEntities)) : (totalEntities + " Active Entities")))
+      : tr("در حال آماده‌سازی…", "Preparing dossier…", "جارٍ تجهيز الملف…");
+    var h = '<div class="d-head" style="display:flex; justify-content:space-between; align-items:center; gap:10px; margin-inline-end:35px;">';
+    h += '<div style="display:flex; gap:10px; align-items:center; flex:1;">' + flagEl;
+    h += '<div><div class="d-kicker">' + tr("شناسنامه جامع فضایی کشور", "National Space Dossier", "ملف الدولة الفضائي") + '</div>';
+    h += '<h2 class="d-title" style="margin:0;">' + esc(isFa ? cFa : (isAr ? cAr : cEn)) + '</h2></div></div>';
+    h += '<span class="badge-gov" style="padding:3px 10px; border-radius:12px; font-size:10.5px; font-weight:bold; white-space:nowrap;">' + esc(countBadge) + '</span>';
+    h += '</div>';
+    h += '<div class="d-sub" style="margin-top:4px;">' + esc(isFa ? cEn : (isAr ? cEn : cFa)) + '</div>';
+    return h;
+  }
   function renderCountryProfile(p) {
     var isFa = (typeof LANG !== "undefined" && LANG === "fa");
     var isAr = (typeof LANG !== "undefined" && LANG === "ar");
@@ -3940,32 +3914,7 @@
 
     var totalEntities = propulsionItems.length + launchItems.length + agencyItems.length + siteItems.length + recoveryItems.length;
 
-    var h = "";
-
-    // Header Title — country flag (ISO-first, name-table fallback); custom palette globe.svg fallback
-    var _flagCodes = flagCodesFor(cEn, cIso);
-    var _flagTitle = isFa ? cFa : (isAr ? cAr : cEn);
-    var _flagAlt = tr("پرچم " + cFa, "Flag of " + cEn, "علم " + cAr);
-    var _flagEl;
-    if (_flagCodes.length === 1 && _flagCodes[0] !== "globe") {
-      _flagEl = '<img class="d-flag" src="assets/img/flags/' + _flagCodes[0] + '.svg" alt="' + esc(_flagAlt) + '" title="' + esc(_flagTitle) + '" decoding="async">';
-    } else if (_flagCodes.length === 2) {
-      _flagEl = '<span class="d-flagset" role="img" aria-label="' + esc(_flagAlt) + '" title="' + esc(_flagTitle) + '">'
-        + '<img class="d-flag d-flag--a" src="assets/img/flags/' + _flagCodes[0] + '.svg" alt="" decoding="async">'
-        + '<img class="d-flag d-flag--b" src="assets/img/flags/' + _flagCodes[1] + '.svg" alt="" decoding="async">'
-        + '</span>';
-    } else {
-      _flagEl = '<img class="d-flag d-flag--globe" src="assets/img/flags/globe.svg" alt="' + esc(_flagTitle) + '" title="' + esc(_flagTitle) + '" decoding="async">';
-    }
-    h += '<div class="d-head" style="display:flex; justify-content:space-between; align-items:center; gap:10px; margin-inline-end:35px;">';
-    h += '<div style="display:flex; gap:10px; align-items:center; flex:1;">';
-    h += _flagEl;
-    h += '<div><div class="d-kicker">' + tr("شناسنامه جامع فضایی کشور", "National Space Dossier", "ملف الدولة الفضائي") + '</div>';
-    h += '<h2 class="d-title" style="margin:0;">' + esc(isFa ? cFa : (isAr ? cAr : cEn)) + '</h2></div></div>';
-    h += '<span class="badge-gov" style="padding:3px 10px; border-radius:12px; font-size:10.5px; font-weight:bold; white-space:nowrap;">' + (isFa ? (totalEntities + " مرکز فعال") : (isAr ? (totalEntities + " " + activeEntitiesAr(totalEntities)) : (totalEntities + " Active Entities"))) + '</span>';
-    h += '</div>';
-
-    h += '<div class="d-sub" style="margin-top:4px;">' + esc(isFa ? cEn : (isAr ? cEn : cFa)) + '</div>';
+    var h = renderCountryProfileHeader(p, totalEntities);
 
     // SECTION 1: SHARE & OVERVIEW 4-GRID BANNER (سهم و آمار فضایی کشور)
     h += '<div style="background:linear-gradient(135deg, rgba(15, 31, 51, 0.95) 0%, rgba(9, 13, 22, 0.98) 100%); border:1px solid rgba(56, 189, 248, 0.35); border-radius:8px; padding:12px; margin-top:10px; box-shadow:0 4px 16px rgba(0,0,0,0.4);">';
@@ -7910,6 +7859,8 @@
 
   function openDetail(p) {
     if (!p) return;
+    var detailRenderGeneration = (openDetail.__renderGeneration || 0) + 1;
+    openDetail.__renderGeneration = detailRenderGeneration;
     if (!p.o) {
       p = { kind: p.cat || "company", cat: p.cat || "launch", o: p };
     }
@@ -7927,9 +7878,21 @@
       return;
     }
     if (cat === "country" || kind === "country" || (p.o && p.o.cat === "country")) {
-      $("#detailBody").innerHTML = renderCountryProfile(p);
-      $("#detail").classList.add("open");
-      bindCountryItemClicks();
+      var detailBody = $("#detailBody"), detailPanel = $("#detail");
+      if (!detailBody || !detailPanel) return;
+      // Paint the small header and local flag before building the dossier's data-heavy sections.
+      detailBody.innerHTML = renderCountryProfileHeader(p, null) +
+        '<div class="country-profile-loading" role="status" aria-live="polite" style="padding:18px 8px;text-align:center;color:var(--muted);font-size:11px;">' +
+        (LANG === "fa" ? "در حال آماده‌سازی بخش‌های پرونده…" : (LANG === "ar" ? "جارٍ تجهيز أقسام الملف…" : "Preparing dossier sections…")) + '</div>';
+      detailPanel.classList.add("open");
+      detailPanel.scrollTop = 0;
+      requestAnimationFrame(function () {
+        requestAnimationFrame(function () {
+          if (detailRenderGeneration !== openDetail.__renderGeneration || !detailPanel.classList.contains("open")) return;
+          detailBody.innerHTML = renderCountryProfile(p);
+          bindCountryItemClicks();
+        });
+      });
       return;
     }
 

@@ -1,6 +1,6 @@
 # Country-boundary geometry: source and licence
 
-`countries.json` is the app's interaction geometry for country hover, click, and the persistent blue selection outline. Its former Natural Earth 1:110m polygons could visibly drift from the OSM-derived boundary lines in the three online basemaps. The coordinates have therefore been replaced with OpenStreetMap-derived polygons from **Terrae 2026.10**.
+`countries.json` is the attributed source GeoJSON for `countries.pmtiles`, the app's runtime vector source for country hover, click, and the persistent blue selection outline. The archive is used by the three online styles and the offline style, so both paths share exactly the same country geometry and feature IDs. The former Natural Earth 1:110m polygons could visibly drift from the OSM-derived boundary lines in the online basemaps; the source coordinates have therefore been replaced with OpenStreetMap-derived polygons from **Terrae 2026.10**.
 
 ## Dataset and processing
 
@@ -12,6 +12,14 @@
 - Source packages and SHA-256 checksums:
   - [Low-detail reference polygons](https://huggingface.co/buckets/geodataset/terrae/resolve/adm0/2026.10/world/terrae-adm0-2026.10-low-reference-polygons.gpkg) — `4fd0dc8c582dd972354ed875567d752825c5acf3731ed816df586456f89af99f`
   - [Low-detail de-facto polygons](https://huggingface.co/buckets/geodataset/terrae/resolve/adm0/2026.10/world/terrae-adm0-2026.10-low-de_facto-polygons.gpkg) — `f8c61cf2563b5b3f1817b22a0a6c03d53a14bf416a292c0079d5268dd191b8b0`
+
+## Vector tiles and build
+
+- Runtime archive: `countries.pmtiles` (23.9 MB, vector tiles, zooms 0–10, `countries` source-layer). The same archive and `NAME`-based feature IDs serve all three online map styles and the offline style.
+- The 9.6 MB GeoJSON remains as the editable/build source and is not fetched by the browser. MapLibre retrieves only tile byte-ranges needed by the current view through the vendored PMTiles v4.5.0 protocol.
+- Rebuild from the repository root with `tools/build_country_tiles.sh` after installing Tippecanoe 2.53+ and the PMTiles CLI 1.31+. The script converts a temporary MBTiles file and replaces the archive only after a size sanity check.
+- `serve.py` includes HTTP `Range`/`206 Partial Content` support for local preview. Static hosts must support byte-range requests for PMTiles; the app's archive is served from the same origin.
+- PMTiles JS implementation copyright/license is retained in `assets/vendor/PMTILES-LICENSE.txt` (BSD-3-Clause). The PMTiles file format specification is public domain/CC0 as applicable.
 
 ## Attribution and licence
 

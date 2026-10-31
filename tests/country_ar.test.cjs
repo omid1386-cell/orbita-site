@@ -40,9 +40,9 @@ for (const file of ['assets/geo/countries.json', 'assets/geo/labels.json']) {
   }
 }
 
-check(app.includes('country_ar: props.NAME_AR || countryNameAr(props.NAME, props.ISO)') &&
-  app.includes('country_ar: best.properties.NAME_AR || countryNameAr(best.properties.NAME, best.properties.ISO)'),
-  'Arabic country names survive polygon and label-based geographic matching');
+check(app.includes('ar: props.NAME_AR || countryNameAr(props.NAME, props.ISO) || props.NAME') &&
+  app.includes('country_ar: record.ar, country_iso: record.iso'),
+  'Arabic country names from vector features are passed through the geographic selection route');
 check(app.includes('country_ar: record.ar, country_iso: record.iso') &&
   app.includes('var cAr = p.country_ar || (p.o ? p.o.country_ar : null) || countryNameAr(cEn, cIso) || cEn;'),
   'map selection passes the Arabic name through to the country dossier');
@@ -53,7 +53,7 @@ check(app.includes('var isAr = (typeof LANG !== "undefined" && LANG === "ar");')
   'country-dossier controls and categories have Arabic labels');
 check(app.includes('live_note: "لا يتوفر وصف عربي لهذا الإطلاق حالياً."'),
   'live records use the exact user-approved Arabic fallback');
-check(html.includes('window.ORBITA_V = "20261030country08";'), 'HTML and asset cache version is bumped for the country boundary update');
+check(html.includes('window.ORBITA_V = "20261030country10";'), 'HTML and asset cache version is bumped for the country interaction changes');
 
 console.log(`${passed} PASS / ${failed} FAIL`);
 process.exitCode = failed ? 1 : 0;
