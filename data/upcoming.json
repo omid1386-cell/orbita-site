@@ -1,5 +1,5 @@
 {
- "updated": "2026-10-30",
+ "updated": "2026-10-31",
  "window_end": "2027-01-06",
  "sites_covered": [
   "ccsfs",
@@ -94,13 +94,13 @@
    "desc_en": "NVS-03 replaces an ageing member of India’s NavIC navigation constellation via GSLV Mk II.",
    "calendar_url": "https://www.isro.gov.in/LaunchMissions.html",
    "stream_url": "",
-   "status": "Go",
+   "status": "Success",
    "status_fa": "تأیید شده"
   },
   {
    "site": "vandenberg",
    "ll2_id": "57ce0a39-d035-4f16-a418-bd6108f78199",
-   "net": "2026-10-31T04:02:22Z",
+   "net": "2026-10-31T04:04:34Z",
    "rocket_fa": "فالکون ۹ بلاک ۵",
    "rocket_en": "Falcon 9 Block 5",
    "payload_fa": "استارلینک گروه 15-18",
@@ -115,7 +115,7 @@
    "desc_en": "Falcon 9 Block 5 launching Starlink Group 15-18; schedule: 2026-10-28.",
    "calendar_url": "",
    "stream_url": "",
-   "status": "Go",
+   "status": "Success",
    "status_fa": "تأیید شده",
    "precision": "tbd",
    "precision_fa": "در انتظار اعلام تاریخ",
@@ -128,14 +128,14 @@
   {
    "site": "mahia",
    "ll2_id": "426bd2a5-02dd-4fbd-9f4d-2b8439c3a1ff",
-   "net": "2026-11-02T16:00:00Z",
+   "net": "2026-11-02T16:41:00Z",
    "date_label_fa": "2026-11-02",
    "date_label_en": "2026-11-02",
    "precision": "day",
    "precision_fa": "روز و ساعت مشخص",
    "precision_en": "Confirmed date & time",
-   "time_fa": "ساعت 16:00 به وقت جهانی",
-   "time_en": "16:00 UTC",
+   "time_fa": "ساعت 16:41 به وقت جهانی",
+   "time_en": "16:41 UTC",
    "rocket_fa": "الکترون",
    "rocket_en": "Electron",
    "payload_fa": "آی‌کیوپی‌اس، پرواز 9",
@@ -150,8 +150,8 @@
    "desc_en": "iQPS launch 9 adds another SAR satellite toward near-real-time radar imaging of Earth.",
    "calendar_url": "https://rocketlabcorp.com/",
    "stream_url": "https://www.youtube.com/@RocketLabUSA",
-   "status": "TBC",
-   "status_fa": "در انتظار تأیید"
+   "status": "Go",
+   "status_fa": "تأیید شده"
   },
   {
    "site": "vandenberg",
