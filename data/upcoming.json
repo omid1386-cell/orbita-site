@@ -128,14 +128,14 @@
   {
    "site": "mahia",
    "ll2_id": "426bd2a5-02dd-4fbd-9f4d-2b8439c3a1ff",
-   "net": "2026-11-02T16:00:00Z",
+   "net": "2026-11-02T16:41:00Z",
    "date_label_fa": "2026-11-02",
    "date_label_en": "2026-11-02",
    "precision": "day",
    "precision_fa": "روز و ساعت مشخص",
    "precision_en": "Confirmed date & time",
-   "time_fa": "ساعت 16:00 به وقت جهانی",
-   "time_en": "16:00 UTC",
+   "time_fa": "ساعت 16:41 به وقت جهانی",
+   "time_en": "16:41 UTC",
    "rocket_fa": "الکترون",
    "rocket_en": "Electron",
    "payload_fa": "آی‌کیوپی‌اس، پرواز 9",
@@ -150,8 +150,8 @@
    "desc_en": "iQPS launch 9 adds another SAR satellite toward near-real-time radar imaging of Earth.",
    "calendar_url": "https://rocketlabcorp.com/",
    "stream_url": "https://www.youtube.com/@RocketLabUSA",
-   "status": "TBC",
-   "status_fa": "در انتظار تأیید"
+   "status": "Go",
+   "status_fa": "تأیید شده"
   },
   {
    "site": "vandenberg",
