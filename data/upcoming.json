@@ -100,7 +100,7 @@
   {
    "site": "vandenberg",
    "ll2_id": "54d471e8-695c-4fa7-a3cf-dbd8b389e8ae",
-   "net": "2026-11-03T01:42:00Z",
+   "net": "2026-11-04T01:28:00Z",
    "rocket_fa": "فالکون ۹ بلاک ۵",
    "rocket_en": "Falcon 9 Block 5",
    "payload_fa": "USSF-432",
@@ -120,10 +120,10 @@
    "precision": "day",
    "precision_fa": "روز و ساعت مشخص",
    "precision_en": "Confirmed date & time",
-   "date_label_fa": "2026-11-03",
-   "date_label_en": "2026-11-03",
-   "time_fa": "ساعت 01:42 به وقت جهانی",
-   "time_en": "01:42 UTC"
+   "date_label_fa": "2026-11-04",
+   "date_label_en": "2026-11-04",
+   "time_fa": "ساعت 01:28 به وقت جهانی",
+   "time_en": "01:28 UTC"
   },
   {
    "site": "sea-launch",
