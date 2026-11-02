@@ -234,7 +234,13 @@
   var DATA = { companies: [], sites: [], missions: [], recoveries: [] };
   window.DATA = DATA;
 
-  var markers = [], lastMarkerSig = "", map = null;
+  var lastMarkerSig = "", map = null, mapResizeObserver = null;
+  var markerFeatureCollection = { type: "FeatureCollection", features: [] };
+  var markerPointsByKey = Object.create(null), markerClustersByKey = Object.create(null);
+  var recoveryMarkersByKey = Object.create(null), markerImagePromises = Object.create(null), markerLayerEnsurePromise = null;
+  var markerZoomRefreshTimer = 0, markerZoomLastRefresh = 0, markerZoomRefreshInterval = 100;
+  var markerHoverKey = "", markerHoverKind = "", pendingMarkerHoverKey = "", pendingMarkerHoverKind = "", markerHoverFrame = 0;
+  var markerHoverEventsBound = false;
   var filters = { launch: true, propulsion: true, agency: true, satmaker: true, site: true, recovery: false };
   var SORT = "new";   /* newest launch first — the user asked for this ordering */
 
@@ -418,22 +424,14 @@
   });
 
   /* ================= map ================= */
+  var previewHost = window.location && window.location.hostname || "";
+  var embeddedPreview = false;
+  try { embeddedPreview = window.self !== window.top; } catch (e) {}
+  var IS_WORKSPACE_PREVIEW = /(^localhost$|^127\.0\.0\.1$|\.e2b\.app$)/i.test(previewHost) ||
+    (window.location && window.location.port === "5173") || embeddedPreview;
+  // Keep the primary online basemaps enabled in previews; failed online loads fall back to the local map.
   var BASEMODE = "online";
   localStorage.setItem("orbita_base", "online");
-
-  // Country boundaries use pre-tiled local vector data; MapLibre requests only visible tiles.
-  var COUNTRY_VECTOR_LAYER = "countries";
-  var COUNTRY_PM_ARCHIVE_URL = new URL(
-    "assets/geo/countries.pmtiles?v=" + encodeURIComponent(window.ORBITA_V || "1"),
-    window.location.href
-  ).toString();
-  var COUNTRY_PM_TILES_URL = "pmtiles://" + COUNTRY_PM_ARCHIVE_URL;
-  var countryPmtilesProtocol = null;
-  if (window.pmtiles && typeof maplibregl !== "undefined" && maplibregl.addProtocol) {
-    countryPmtilesProtocol = new window.pmtiles.Protocol();
-    maplibregl.addProtocol("pmtiles", countryPmtilesProtocol.tile);
-    countryPmtilesProtocol.add(new window.pmtiles.PMTiles(COUNTRY_PM_ARCHIVE_URL));
-  }
 
   // Style-layer maxzoom is exclusive; 4.001 keeps coral hover visible through zoom 4.0.
   var COUNTRY_HOVER_MAX_ZOOM = 4.001;
@@ -443,23 +441,25 @@
     return {
       version: 8,
       sources: {
+        // GeoJSON-VT simplifies each tile in screen space; retain the full data but avoid drawing sub-pixel detail while panning.
         countries: {
-          type: "vector", url: COUNTRY_PM_TILES_URL,
-          promoteId: { countries: "NAME" },
-          attribution: "© OpenStreetMap contributors; Terrae"
+          type: "geojson",
+          data: "assets/geo/countries.json?v=" + (window.ORBITA_V || "1"),
+          promoteId: "NAME",
+          tolerance: 1.5,
+          maxzoom: 20
         }
       },
       layers: [
         { id: "ocean", type: "background",
           paint: { "background-color": dark ? "#08131f" : "#dbe7f3" } },
-        { id: "country-fill", type: "fill", source: "countries", "source-layer": COUNTRY_VECTOR_LAYER,
+        { id: "country-fill", type: "fill", source: "countries",
           paint: { "fill-color": dark ? "#16283d" : "#f7fafc", "fill-opacity": 1 } },
-        { id: "country-line", type: "line", source: "countries", "source-layer": COUNTRY_VECTOR_LAYER,
+        { id: "country-line", type: "line", source: "countries",
           paint: { "line-color": dark ? "#1e3854" : "#b9c9dc", "line-width": 0.35, "line-opacity": 0.45 } },
-        { id: "country-hover", type: "fill", source: "countries", "source-layer": COUNTRY_VECTOR_LAYER,
-          maxzoom: COUNTRY_HOVER_MAX_ZOOM,
+        { id: "country-hover", type: "fill", source: "countries", maxzoom: COUNTRY_HOVER_MAX_ZOOM,
           paint: { "fill-color": "#F08970", "fill-opacity": ["case", ["boolean", ["feature-state", "hover"], false], 0.72, 0] } },
-        { id: "country-select-outline", type: "line", source: "countries", "source-layer": COUNTRY_VECTOR_LAYER,
+        { id: "country-select-outline", type: "line", source: "countries",
           paint: { "line-color": "#1677F5", "line-width": 2,
             "line-opacity": ["case", ["boolean", ["feature-state", "selected"], false], 1, 0] } }
       ]
@@ -505,7 +505,7 @@
         return;
       }
       var state = {}; state[stateName] = !!enabled;
-      map.setFeatureState({ source: source, sourceLayer: COUNTRY_VECTOR_LAYER, id: name }, state);
+      map.setFeatureState({ source: source, id: name }, state);
       clearPendingCountryFeatureState(name, stateName);
     } catch (e) { queueCountryFeatureState(name, stateName, enabled); }
   }
@@ -516,10 +516,10 @@
     try {
       if (map.isSourceLoaded && !map.isSourceLoaded(source)) return;
       Object.keys(pendingCountryFeatureStates).forEach(function (name) {
-        map.setFeatureState({ source: source, sourceLayer: COUNTRY_VECTOR_LAYER, id: name }, pendingCountryFeatureStates[name]);
+        map.setFeatureState({ source: source, id: name }, pendingCountryFeatureStates[name]);
       });
-      if (hoveredCountryName) map.setFeatureState({ source: source, sourceLayer: COUNTRY_VECTOR_LAYER, id: hoveredCountryName }, { hover: true });
-      if (selectedCountryName) map.setFeatureState({ source: source, sourceLayer: COUNTRY_VECTOR_LAYER, id: selectedCountryName }, { selected: true });
+      if (hoveredCountryName) map.setFeatureState({ source: source, id: hoveredCountryName }, { hover: true });
+      if (selectedCountryName) map.setFeatureState({ source: source, id: selectedCountryName }, { selected: true });
       pendingCountryFeatureStates = Object.create(null);
       countryFeatureStateNeedsSync = false;
     } catch (e) { countryFeatureStateNeedsSync = true; }
@@ -550,13 +550,16 @@
       iso: props.ISO || null
     };
   }
-  function countryLayerMouseEnter() {
-    if (map && map.getCanvas()) map.getCanvas().style.cursor = "pointer";
+  function syncMapCursor() {
+    if (!map || !map.getCanvas()) return;
+    map.getCanvas().style.cursor = (hoveredCountryName || markerHoverKey) ? "pointer" : "";
   }
+  function countryLayerMouseEnter() { syncMapCursor(); }
   function clearCountryHoverState() {
     if (countryHoverFrame) cancelAnimationFrame(countryHoverFrame);
     countryHoverFrame = 0; pendingHoveredCountryName = "";
     setHoveredCountry("");
+    syncMapCursor();
   }
   function countryLayerMouseMove(e) {
     if (map && map.getZoom() >= COUNTRY_HOVER_MAX_ZOOM) {
@@ -574,14 +577,19 @@
   }
   function countryLayerMouseLeave() {
     clearCountryHoverState();
-    if (map && map.getCanvas()) map.getCanvas().style.cursor = "";
+    syncMapCursor();
+  }
+  function clearMapInteractionHover() {
+    clearCountryHoverState();
+    clearMarkerHoverState();
+    if (map && map.getCanvas()) { map.getCanvas().title = ""; map.getCanvas().style.cursor = ""; }
   }
   function bindCountryCanvasExit() {
     if (!map || countryCanvasExitBound) return;
     var canvas = map.getCanvas();
     if (!canvas) return;
-    canvas.addEventListener("pointerleave", countryLayerMouseLeave);
-    window.addEventListener("blur", countryLayerMouseLeave);
+    canvas.addEventListener("pointerleave", clearMapInteractionHover);
+    window.addEventListener("blur", clearMapInteractionHover);
     countryCanvasExitBound = true;
   }
   function countryRecordFromSpatialMatch(match) {
@@ -615,6 +623,7 @@
   }
   function handleCountryMapClick(e) {
     if (!map || !e) return;
+    if (handleMarkerMapClick(e)) return;
     var record = null, sourceId = countryInteractionSourceId();
     if (countryInteractionEventLayer && e.point) {
       try {
@@ -637,11 +646,12 @@
   function resetCountryInteractionStyleState() {
     unbindCountryInteractionEvents();
     clearCountryHoverState();
+    clearMarkerHoverState();
     countryFeatureStateNeedsSync = true;
   }
-  function ensureCountryInteractionLayers() {
+  function ensureCountryInteractionLayers(force) {
     if (!map || installingCountryLayers) return;
-    try { if (map.isStyleLoaded && !map.isStyleLoaded()) return; } catch (e) { return; }
+    try { if (!force && map.isStyleLoaded && !map.isStyleLoaded()) return; } catch (e) { return; }
     if (map.getSource("countries") && map.getLayer("country-fill")) {
       bindCountryInteractionEvents("country-fill");
       syncCountryFeatureStates();
@@ -651,10 +661,13 @@
     try {
       if (!map.getSource(COUNTRY_OVERLAY_SOURCE)) {
         map.addSource(COUNTRY_OVERLAY_SOURCE, {
-          type: "vector",
-          url: COUNTRY_PM_TILES_URL,
-          promoteId: { countries: "NAME" },
-          attribution: "© OpenStreetMap contributors; Terrae"
+          type: "geojson",
+          data: "assets/geo/countries.json?v=" + (window.ORBITA_V || "1"),
+          promoteId: "NAME",
+          // Keep country hits and hover geometry dynamically simplified to about 1.5 screen pixels per GeoJSON tile.
+          // This retains full source geometry/feature IDs while cutting low-zoom draw vertices substantially.
+          tolerance: 1.5,
+          maxzoom: 20
         });
       }
       var layers = (map.getStyle() || {}).layers || [], beforeId = null;
@@ -668,14 +681,11 @@
       }
       var stateHover = ["case", ["boolean", ["feature-state", "hover"], false], 0.72, 0];
       addInteractionLayer({ id: COUNTRY_HIT_LAYER, type: "fill", source: COUNTRY_OVERLAY_SOURCE,
-        "source-layer": COUNTRY_VECTOR_LAYER,
         paint: { "fill-color": "#000000", "fill-opacity": 0.001 } });
       addInteractionLayer({ id: COUNTRY_HOVER_LAYER, type: "fill", source: COUNTRY_OVERLAY_SOURCE,
-        "source-layer": COUNTRY_VECTOR_LAYER,
         maxzoom: COUNTRY_HOVER_MAX_ZOOM,
         paint: { "fill-color": COUNTRY_HOVER_COLOR, "fill-opacity": stateHover } });
       addInteractionLayer({ id: COUNTRY_SELECT_OUTLINE_LAYER, type: "line", source: COUNTRY_OVERLAY_SOURCE,
-        "source-layer": COUNTRY_VECTOR_LAYER,
         paint: { "line-color": COUNTRY_SELECTED_OUTLINE, "line-width": 2,
           "line-opacity": ["case", ["boolean", ["feature-state", "selected"], false], 1, 0] } });
     } catch (e) {
@@ -734,12 +744,15 @@
         return Promise.resolve(JSON.parse(JSON.stringify(saved.style)));
       }
     } catch (e) {}
-    return fetch(url).then(function (r) { return r.json(); }).then(function (s) {
+    return fetch(url).then(function (r) {
+      if (!r.ok) throw new Error("Online map style request failed: " + r.status);
+      return r.json();
+    }).then(function (s) {
       var localized = localizeStyleLabels(s);
       STYLE_CACHE[cacheKey] = JSON.parse(JSON.stringify(localized));
       try { localStorage.setItem(lsKey, JSON.stringify({ ts: Date.now(), style: localized })); } catch (e) {}
       return localized;
-    }).catch(function () { return url; });
+    }).catch(function () { return null; });
   }
   function afterStyleApply() {
     if (!map) return;
@@ -747,6 +760,18 @@
     setTimeout(function () {
       try { renderMarkers(); buildLabels(); buildCityLabels(); } catch (e) {}
     }, 300);
+  }
+  function useOfflineStyleFallback() {
+    if (!map) return;
+    BASEMODE = "offline";
+    try { localStorage.setItem("orbita_base", "offline"); } catch (e) {}
+    var baseButton = $("#baseBtn");
+    if (baseButton && baseButton.querySelector("span")) baseButton.querySelector("span").textContent = t("base_offline");
+    resetCountryInteractionStyleState();
+    var style = offlineStyle();
+    try { map.setStyle(style, { diff: false }); } catch (e) { map.setStyle(style); }
+    map.once("styledata", afterStyleApply);
+    afterStyleApply();
   }
   function applyMapStyle() {
     if (!map) return;
@@ -757,25 +782,19 @@
       return;
     }
     fetchOnlineStyle().then(function (st) {
-      if (map) {
-        resetCountryInteractionStyleState();
-        try { map.setStyle(st, { diff: false }); } catch (e) { map.setStyle(st); }
-        map.once("styledata", afterStyleApply);
-        afterStyleApply();
-      }
-    }).catch(function () {
-      if (map) {
-        var rawUrl = onlineStyleUrl();
-        resetCountryInteractionStyleState();
-        try { map.setStyle(rawUrl, { diff: false }); } catch (e) { map.setStyle(rawUrl); }
-        map.once("styledata", afterStyleApply);
-        afterStyleApply();
-      }
-    });
+      if (!map) return;
+      if (!st) { useOfflineStyleFallback(); return; }
+      resetCountryInteractionStyleState();
+      try { map.setStyle(st, { diff: false }); } catch (e) { map.setStyle(st); }
+      map.once("styledata", afterStyleApply);
+      afterStyleApply();
+    }).catch(function () { useOfflineStyleFallback(); });
   }
 
   /* country name labels rendered as DOM markers (works without remote glyph fonts) */
-  var labelMarkers = [];
+  var labelMarkers = [], LABELS = null, COUNTRIES_GEO = null;
+  var countryLabelsLoadPromise = null, countryGeoLoadPromise = null;
+  var COUNTRY_AR_BY_NAME = Object.create(null), COUNTRY_AR_BY_ISO = Object.create(null);
   var COUNTRY_AR_SPECIAL = {
     "united states": "الولايات المتحدة", "u s a": "الولايات المتحدة", "usa": "الولايات المتحدة",
     "uae": "الإمارات العربية المتحدة", "uk": "المملكة المتحدة",
@@ -791,27 +810,173 @@
   function countryNameKey(name) {
     return String(name || "").trim().toLowerCase().replace(/[’]/g, "'").replace(/[._-]+/g, " ").replace(/\s+/g, " ");
   }
+  function recordCountryArabic(name, iso, arabic) {
+    if (!arabic) return;
+    var key = countryNameKey(name), code = String(iso || "").trim().toUpperCase();
+    if (key) COUNTRY_AR_BY_NAME[key] = arabic;
+    if (code && code !== "-99") COUNTRY_AR_BY_ISO[code] = arabic;
+  }
   function countryNameAr(name, iso) {
-    var key = countryNameKey(name);
-    return COUNTRY_AR_SPECIAL[key] || null;
+    var code = String(iso || "").trim().toUpperCase(), key = countryNameKey(name);
+    if (code && COUNTRY_AR_BY_ISO[code]) return COUNTRY_AR_BY_ISO[code];
+    return COUNTRY_AR_BY_NAME[key] || COUNTRY_AR_SPECIAL[key] || null;
+  }
+  function indexCountriesGeo(fc) {
+    if (!fc || !fc.features) return null;
+    fc.features.forEach(function (f) {
+      var props = f.properties || {};
+      if (props.NAME_AR) recordCountryArabic(props.NAME, props.ISO, props.NAME_AR);
+      var g = f.geometry;
+      if (!g || !g.coordinates) { f._polys = []; return; }
+      var raw = g.type === "Polygon" ? [g.coordinates] : (g.type === "MultiPolygon" ? g.coordinates : []);
+      f._polys = raw.map(function (poly) {
+        var r = poly[0] || [], minX = 1e9, minY = 1e9, maxX = -1e9, maxY = -1e9;
+        for (var i = 0; i < r.length; i++) {
+          var x = r[i][0], y = r[i][1];
+          if (x < minX) minX = x; if (x > maxX) maxX = x;
+          if (y < minY) minY = y; if (y > maxY) maxY = y;
+        }
+        return { outer: r, holes: poly.slice(1), minX: minX, minY: minY, maxX: maxX, maxY: maxY };
+      });
+    });
+    return fc;
+  }
+  function pipRing(x, y, ring) {
+    var inside = false, n = ring.length;
+    for (var i = 0, j = n - 1; i < n; j = i++) {
+      var xi = ring[i][0], yi = ring[i][1], xj = ring[j][0], yj = ring[j][1];
+      if (((yi > y) !== (yj > y)) && (x < (xj - xi) * (y - yi) / ((yj - yi) || 1e-30) + xi)) inside = !inside;
+    }
+    return inside;
+  }
+  function segDistSq(px, py, ax, ay, bx, by) {
+    var dx = bx - ax, dy = by - ay;
+    if (dx === 0 && dy === 0) return (px - ax) * (px - ax) + (py - ay) * (py - ay);
+    var t = ((px - ax) * dx + (py - ay) * dy) / (dx * dx + dy * dy);
+    if (t < 0) t = 0; else if (t > 1) t = 1;
+    var cx = ax + t * dx, cy = ay + t * dy;
+    return (px - cx) * (px - cx) + (py - cy) * (py - cy);
+  }
+  function formatGeoMatch(props, lng, lat) {
+    if (props.NAME === "France" && lng > -56 && lng < -50 && lat > 1 && lat < 7) {
+      return { country_en: "French Guiana", country_fa: "گویان فرانسه", country_ar: "غويانا الفرنسية", country_iso: "GF" };
+    }
+    return {
+      country_en: props.NAME,
+      country_fa: props.NAME_FA || props.NAME,
+      country_ar: props.NAME_AR || countryNameAr(props.NAME, props.ISO) || props.NAME,
+      country_iso: props.ISO || null
+    };
+  }
+  function loadCountryLabels() {
+    if (LABELS) return Promise.resolve(LABELS);
+    if (countryLabelsLoadPromise) return countryLabelsLoadPromise;
+    var v = (window.ORBITA_V || "1");
+    countryLabelsLoadPromise = fetch("assets/geo/labels.json?v=" + v).then(function (r) { return r.json(); })
+      .then(function (d) {
+        LABELS = d;
+        (d.features || []).forEach(function (f) {
+          var props = f.properties || {};
+          if (props.NAME_AR) recordCountryArabic(props.NAME, props.ISO, props.NAME_AR);
+        });
+        return LABELS;
+      }).catch(function () { countryLabelsLoadPromise = null; return null; });
+    return countryLabelsLoadPromise;
+  }
+  function loadCountryGeoForFallback() {
+    if (COUNTRIES_GEO) return Promise.resolve(COUNTRIES_GEO);
+    if (countryGeoLoadPromise) return countryGeoLoadPromise;
+    var v = (window.ORBITA_V || "1");
+    countryGeoLoadPromise = fetch("assets/geo/countries.json?v=" + v).then(function (r) { return r.json(); })
+      .then(function (d) {
+        COUNTRIES_GEO = indexCountriesGeo(d);
+        if (!COUNTRIES_GEO) countryGeoLoadPromise = null;
+        return COUNTRIES_GEO;
+      }).catch(function () { countryGeoLoadPromise = null; return null; });
+    return countryGeoLoadPromise;
   }
 
-  // Any click fallback re-queries the currently rendered vector source. It never guesses
-  // a country from a nearby label, so clicking empty ocean still clears selection.
   function getCountryAtLngLat(lng, lat) {
-    if (!map || !map.project || !map.queryRenderedFeatures) return null;
-    var layer = countryInteractionEventLayer ||
-      (map.getLayer(COUNTRY_HIT_LAYER) ? COUNTRY_HIT_LAYER : (map.getLayer("country-fill") ? "country-fill" : ""));
-    if (!layer) return null;
-    try {
-      var point = map.project([lng, lat]);
-      var hits = map.queryRenderedFeatures(point, { layers: [layer] });
-      var record = countryRecordFromFeature(hits && hits[0]);
-      return record ? {
-        country_en: record.en, country_fa: record.fa,
-        country_ar: record.ar, country_iso: record.iso
-      } : null;
-    } catch (e) { return null; }
+    if (!COUNTRIES_GEO) loadCountryGeoForFallback();
+    if (!LABELS) loadCountryLabels();
+    var normLng = ((lng + 180) % 360 + 360) % 360 - 180;
+    // 1. Exact point-in-polygon against self-hosted countries.json (handles coasts, exclaves, multi-polygons)
+    if (COUNTRIES_GEO && COUNTRIES_GEO.features && COUNTRIES_GEO.features.length) {
+      var feats = COUNTRIES_GEO.features;
+      for (var i = 0; i < feats.length; i++) {
+        var polys = feats[i]._polys || [];
+        for (var p = 0; p < polys.length; p++) {
+          var b = polys[p];
+          if (normLng < b.minX || normLng > b.maxX || lat < b.minY || lat > b.maxY) continue;
+          if (pipRing(normLng, lat, b.outer)) {
+            var inHole = false;
+            for (var h = 0; h < b.holes.length; h++) {
+              if (pipRing(normLng, lat, b.holes[h])) { inHole = true; break; }
+            }
+            if (!inHole) return formatGeoMatch(feats[i].properties, normLng, lat);
+          }
+        }
+      }
+      // 2. Coastal tolerance (<= 3 deg to a mapped land boundary for tiny coastal features)
+      var bestFeat = null, bestSegD2 = 1e9;
+      for (var fi = 0; fi < feats.length; fi++) {
+        var ps = feats[fi]._polys || [];
+        for (var pi = 0; pi < ps.length; pi++) {
+          var pb = ps[pi];
+          if (normLng < pb.minX - 3.2 || normLng > pb.maxX + 3.2 || lat < pb.minY - 3.2 || lat > pb.maxY + 3.2) continue;
+          var ring = pb.outer;
+          for (var ri = 0; ri < ring.length - 1; ri++) {
+            var d2 = segDistSq(normLng, lat, ring[ri][0], ring[ri][1], ring[ri + 1][0], ring[ri + 1][1]);
+            if (d2 < bestSegD2) { bestSegD2 = d2; bestFeat = feats[fi]; }
+          }
+        }
+      }
+      if (bestFeat && bestSegD2 <= 9.0) return formatGeoMatch(bestFeat.properties, normLng, lat);
+
+      // 3. Small sovereign oceanic island sites not represented in the country polygons (e.g. Marshall Islands)
+      if (typeof DATA !== "undefined" && Array.isArray(DATA.sites)) {
+        var bestSite = null, bestSiteD2 = 6.25;
+        for (var si = 0; si < DATA.sites.length; si++) {
+          var st = DATA.sites[si];
+          if (!st.country || /^international/i.test(st.country) || st.lon == null || st.lat == null) continue;
+          var sdx = normLng - st.lon, sdy = lat - st.lat;
+          if (sdx > 180) sdx -= 360; else if (sdx < -180) sdx += 360;
+          var sd2 = sdx * sdx + sdy * sdy;
+          if (sd2 < bestSiteD2) { bestSiteD2 = sd2; bestSite = st; }
+        }
+        if (bestSite) {
+          return { country_en: bestSite.country, country_fa: bestSite.country_fa || bestSite.country,
+            country_ar: bestSite.country_ar || countryNameAr(bestSite.country, null) || bestSite.country, country_iso: null };
+        }
+      }
+      return null;
+    }
+
+    // 4. Fallback if labels loaded before countries.json
+    if (!LABELS || !LABELS.features || !LABELS.features.length) return null;
+    var best = null, bestDist = 1e9;
+    for (var li = 0; li < LABELS.features.length; li++) {
+      var feat = LABELS.features[li];
+      var c = feat.geometry.coordinates;
+      var dlng = normLng - c[0];
+      var dlat = lat - c[1];
+      if (dlng > 180) dlng -= 360;
+      if (dlng < -180) dlng += 360;
+      var dist = dlng * dlng + dlat * dlat;
+      if (dist < bestDist) {
+        bestDist = dist;
+        best = feat;
+      }
+    }
+    if (best && bestDist < 625) {
+      return {
+        country_en: best.properties.NAME,
+        country_fa: best.properties.NAME_FA || best.properties.NAME,
+        country_ar: best.properties.NAME_AR || countryNameAr(best.properties.NAME, best.properties.ISO) || best.properties.NAME,
+        country_iso: best.properties.ISO || null
+      };
+    }
+    return null;
   }
 
   function buildLabels() {
@@ -884,13 +1049,23 @@
     });
   }
 
+  function clearBrokenPreviewMapHash() {
+    if (!IS_WORKSPACE_PREVIEW || !window.location || !window.location.hash || !window.history || !window.history.replaceState) return;
+    var match = window.location.hash.match(/^#(?:map=)?(-?\d+(?:\.\d+)?)\/(-?\d+(?:\.\d+)?)\/(-?\d+(?:\.\d+)?)$/);
+    if (!match) return;
+    var z = Number(match[1]), lng = Number(match[3]);
+    // A prior full-world maxBounds bug wrote z20 at the antimeridian into preview URLs.
+    if (z >= 19.9 && Math.abs(lng) >= 179.9) {
+      window.history.replaceState(null, "", window.location.pathname + window.location.search);
+    }
+  }
   function initMap() {
+    clearBrokenPreviewMapHash();
     setTimeout(function() {
       var el = document.getElementById("mapStatus");
       if (el) el.style.display = "none";
     }, 2000);
     if (typeof maplibregl === "undefined") { $("#mapStatus").textContent = "MapLibre failed to load."; return; }
-    if (!window.pmtiles || !countryPmtilesProtocol) { $("#mapStatus").textContent = "PMTiles failed to load."; return; }
     /* correct Persian/Arabic/Hebrew shaping: load RTL plugin before map creation */
     try {
       if (maplibregl.setRTLTextPlugin) {
@@ -933,6 +1108,9 @@
     map = new maplibregl.Map({
       container: "map",
       style: style,
+      renderWorldCopies: false,
+      // +180 wraps to -180 in MapLibre; keep the eastern edge infinitesimally inside the antimeridian.
+      maxBounds: [[-180, -85.051129], [179.9999, 85.051129]],
       center: [20, 25],
       zoom: 1.9,
       minZoom: 1,
@@ -945,6 +1123,18 @@
       customAttribution: "© OpenStreetMap contributors; Terrae"
     });
     window.map = map;
+    // Live-preview iframes can change size without a window resize event; keep the WebGL canvas in sync.
+    try {
+      if (mapResizeObserver) mapResizeObserver.disconnect();
+      var mapContainer = map.getContainer();
+      if (window.ResizeObserver && mapContainer) {
+        mapResizeObserver = new window.ResizeObserver(function () {
+          if (map) { try { map.resize(); } catch (e) {} }
+        });
+        mapResizeObserver.observe(mapContainer);
+      }
+      requestAnimationFrame(function () { if (map) { try { map.resize(); } catch (e) {} } });
+    } catch (e) {}
     /* faster manual zoom: ~2x wheel/trackpad rate, smooth animation preserved */
     try {
       if (map.scrollZoom) {
@@ -959,17 +1149,24 @@
     map.addControl(new maplibregl.ScaleControl({ unit: "metric" }), "bottom-left");
 
     map.on("load", function () {
+      try { map.resize(); } catch (e) {}
       $("#mapStatus").style.display = "none";
       ensureCountryInteractionLayers();
       bindCountryCanvasExit();
       renderMarkers();
+      loadCountryLabels().then(function (d) { if (d) buildLabels(); });
       fetch("assets/geo/cities.json?v=" + (window.ORBITA_V || "1")).then(function (r) { return r.json(); })
         .then(function (d) { CITIES = d; buildCityLabels(); }).catch(function () {});
+    });
+    // style.load fires after a basemap switch even while its remote tiles are still loading.
+    // Install local country interaction layers then, instead of waiting for isStyleLoaded() (idle).
+    map.on("style.load", function () {
+      ensureCountryInteractionLayers(true);
+      ensureMarkerLayers(true);
     });
     map.on("styledata", function () {
       if ($("#mapStatus")) $("#mapStatus").style.display = "none";
       ensureCountryInteractionLayers();
-      if (markers.length === 0) renderMarkers();
     });
     map.on("sourcedata", function (e) {
       if (e && e.isSourceLoaded && (e.sourceId === COUNTRY_OVERLAY_SOURCE || e.sourceId === "countries")) {
@@ -1150,71 +1347,396 @@
     return order;
   }
 
-  function clusterEl(group, sc) {
-    var n = group.pts.length;
-    var cats = {}; group.pts.forEach(function (p) { cats[p.cat] = (cats[p.cat] || 0) + 1; });
-    var top = Object.keys(cats).sort(function (a, b) { return cats[b] - cats[a]; })[0];
-    var col = C[top === "site" ? "site" : top] || C.launch;
-    var d = Math.round((n > 20 ? 38 : n > 8 ? 34 : 30) * sc);
-    var el = document.createElement("div");
-    el.className = "pin cluster";
-    el.style.width = d + "px"; el.style.height = d + "px";
-    el.style.setProperty("--cc", col);
-    el.textContent = LANG === "fa" ? fmtNum(n) : String(n);
-    el.title = (LANG === "fa" ? "مشاهده فهرست " + n + " مورد در این ناحیه" : "View list of " + n + " items in this area");
-    return el;
-  }
+  var MARKER_SOURCE = "orbita-data-markers";
+  var MARKER_POINT_LAYER = "orbita-data-marker-icons";
+  var MARKER_POINT_HOVER_LAYER = "orbita-data-marker-hover";
+  var MARKER_CLUSTER_SHADOW_LAYER = "orbita-data-cluster-shadow";
+  var MARKER_CLUSTER_HALO_LAYER = "orbita-data-cluster-halo";
+  var MARKER_CLUSTER_CIRCLE_LAYER = "orbita-data-cluster-circles";
+  var MARKER_CLUSTER_LABEL_LAYER = "orbita-data-cluster-labels";
+  var MARKER_CLUSTER_HOVER_LAYER = "orbita-data-cluster-hover";
+  var MARKER_CLUSTER_HOVER_LABEL_LAYER = "orbita-data-cluster-hover-label";
+  var MARKER_IMAGES = {
+    launch: "orbita-pin-launch", propulsion: "orbita-pin-propulsion",
+    agency: "orbita-pin-agency", satmaker: "orbita-pin-satmaker",
+    siteActive: "orbita-pin-site-active", siteInactive: "orbita-pin-site-inactive",
+    siteConstruction: "orbita-pin-site-construction", recovery: "orbita-pin-recovery"
+  };
 
+  function markerPointKey(p) {
+    var o = p && p.o || {};
+    var identity = o.id != null ? o.id : (o.en || o.name || "");
+    return [p.kind || "point", p.cat || "", identity, o.lon, o.lat].join("|");
+  }
+  function markerIconImage(p) {
+    if (p.cat === "recovery") return MARKER_IMAGES.recovery;
+    if (p.cat === "satmaker") return MARKER_IMAGES.satmaker;
+    if (p.cat === "launch") return MARKER_IMAGES.launch;
+    if (p.cat === "propulsion") return MARKER_IMAGES.propulsion;
+    if (p.cat === "agency") return MARKER_IMAGES.agency;
+    if (p.o && p.o.status === "inactive") return MARKER_IMAGES.siteInactive;
+    if (p.o && p.o.status === "under_construction") return MARKER_IMAGES.siteConstruction;
+    return MARKER_IMAGES.siteActive;
+  }
+  function markerSvgWithShadow(svg) {
+    var rootEnd = svg.indexOf(">"), closeAt = svg.lastIndexOf("</svg>");
+    if (rootEnd < 0 || closeAt < 0) return svg;
+    var root = svg.slice(0, rootEnd + 1);
+    var inner = svg.slice(rootEnd + 1, closeAt);
+    if (!/\bxmlns=/.test(root)) root = root.replace("<svg", '<svg xmlns="http://www.w3.org/2000/svg"');
+    root = root.replace(/\bwidth="(\d+)"/, function (_, w) { return 'width="' + (Number(w) * 2) + '"'; })
+      .replace(/\bheight="(\d+)"/, function (_, h) { return 'height="' + (Number(h) * 2) + '"'; });
+    return root + '<defs><filter id="orbita-pin-shadow" x="-35%" y="-25%" width="170%" height="170%">' +
+      '<feGaussianBlur in="SourceAlpha" stdDeviation="1.1" result="blur"/><feOffset in="blur" dx="0" dy="2" result="offsetBlur"/>' +
+      '<feComponentTransfer in="offsetBlur" result="shadow"><feFuncA type="linear" slope=".55"/></feComponentTransfer>' +
+      '<feMerge><feMergeNode in="shadow"/><feMergeNode in="SourceGraphic"/></feMerge></filter></defs>' +
+      '<g filter="url(#orbita-pin-shadow)">' + inner + '</g></svg>';
+  }
+  function clusterLabelImageId(n) { return "orbita-cluster-label-" + LANG + "-" + String(n); }
+  function addClusterLabelImage(id, text) {
+    if (!map) return false;
+    try { if (map.hasImage(id)) return true; } catch (e) { return false; }
+    var scale = 2, width = Math.max(18, String(text).length * 8 + 4), height = 16;
+    var canvas = document.createElement("canvas");
+    canvas.width = width * scale; canvas.height = height * scale;
+    var ctx = canvas.getContext("2d");
+    if (!ctx) return false;
+    ctx.scale(scale, scale);
+    ctx.clearRect(0, 0, width, height);
+    ctx.font = "700 11.5px Arial, sans-serif";
+    ctx.textAlign = "center"; ctx.textBaseline = "middle"; ctx.fillStyle = "#08131f";
+    ctx.fillText(String(text), width / 2, height / 2, width - 2);
+    try {
+      map.addImage(id, ctx.getImageData(0, 0, canvas.width, canvas.height), { pixelRatio: scale });
+      return true;
+    } catch (e) {
+      console.warn("cluster label image install:", id, e && e.message || e);
+      return false;
+    }
+  }
+  function ensureCurrentClusterLabelImages() {
+    if (!map) return;
+    var labelSpecs = Object.create(null);
+    markerFeatureCollection.features.forEach(function (feature) {
+      var props = feature.properties || {};
+      if (props.markerType === "cluster" && props.clusterLabelImage && !labelSpecs[props.clusterLabelImage]) {
+        labelSpecs[props.clusterLabelImage] = props.clusterLabelText;
+      }
+    });
+    Object.keys(labelSpecs).forEach(function (id) { addClusterLabelImage(id, labelSpecs[id]); });
+  }
+  function markerImageSvgSpecs() {
+    return [
+      [MARKER_IMAGES.launch, svgLaunch(C.launch)],
+      [MARKER_IMAGES.propulsion, svgPropulsion(C.propulsion)],
+      [MARKER_IMAGES.agency, svgAgency(C.agency)],
+      [MARKER_IMAGES.satmaker, svgSatmaker(C.satmaker)],
+      [MARKER_IMAGES.siteActive, svgSite(C.site)],
+      [MARKER_IMAGES.siteInactive, svgSite(C.siteOff)],
+      [MARKER_IMAGES.siteConstruction, svgSite(C.siteWip)],
+      [MARKER_IMAGES.recovery, svgRecovery(C.recovery)]
+    ];
+  }
+  function addMarkerImage(id, svg) {
+    if (!markerImagePromises[id]) {
+      markerImagePromises[id] = new Promise(function (resolve) {
+        var image = new Image();
+        image.onload = function () { resolve(image); };
+        image.onerror = function () { console.warn("marker image failed:", id); resolve(null); };
+        image.src = "data:image/svg+xml;charset=utf-8," + encodeURIComponent(svg);
+      });
+    }
+    return markerImagePromises[id].then(function (image) {
+      if (!image || !map) return;
+      try { if (!map.hasImage(id)) map.addImage(id, image, { pixelRatio: 2 }); }
+      catch (e) { console.warn("marker image install:", id, e && e.message || e); }
+    });
+  }
+  function ensureMarkerImages() {
+    var staticJobs = markerImageSvgSpecs().map(function (spec) { return addMarkerImage(spec[0], markerSvgWithShadow(spec[1])); });
+    return Promise.all(staticJobs).then(function () {
+      // Count labels are tiny and local: add them synchronously so a zoom-driven source update
+      // never waits on an SVG image decode before displaying the new clusters.
+      ensureCurrentClusterLabelImages();
+      return true;
+    });
+  }
+  function markerClusterFilter() { return ["==", ["get", "markerType"], "cluster"]; }
+  function markerPointFilter() { return ["==", ["get", "markerType"], "point"]; }
+  function markerNeverFilter() { return ["==", ["get", "markerKey"], "__none__"]; }
+  function setMarkerHoverFilters() {
+    if (!map) return;
+    var kind = markerHoverKind, key = markerHoverKey;
+    try {
+      if (map.getLayer(MARKER_POINT_HOVER_LAYER)) map.setFilter(MARKER_POINT_HOVER_LAYER,
+        key && kind === "point" ? ["all", markerPointFilter(), ["==", ["get", "markerKey"], key]] : markerNeverFilter());
+      if (map.getLayer(MARKER_CLUSTER_HOVER_LAYER)) map.setFilter(MARKER_CLUSTER_HOVER_LAYER,
+        key && kind === "cluster" ? ["all", markerClusterFilter(), ["==", ["get", "markerKey"], key]] : markerNeverFilter());
+      if (map.getLayer(MARKER_CLUSTER_HOVER_LABEL_LAYER)) map.setFilter(MARKER_CLUSTER_HOVER_LABEL_LAYER,
+        key && kind === "cluster" ? ["all", markerClusterFilter(), ["==", ["get", "markerKey"], key]] : markerNeverFilter());
+    } catch (e) {}
+  }
+  function setMapMarkerHover(key, kind) {
+    key = key || ""; kind = key ? kind : "";
+    if (key === markerHoverKey && kind === markerHoverKind) return;
+    markerHoverKey = key; markerHoverKind = kind;
+    setMarkerHoverFilters();
+    var canvas = map && map.getCanvas();
+    if (canvas) {
+      var point = markerPointsByKey[key], members = markerClustersByKey[key];
+      canvas.title = point ? (name(point.o) + (point.cat === "recovery" ? " — " + (LANG === "fa" ? "موقعیت مرجع" : "reference location") : ""))
+        : members ? (LANG === "fa" ? "مشاهده فهرست " + members.length + " مورد در این ناحیه" : "View list of " + members.length + " items in this area") : "";
+    }
+    syncMapCursor();
+  }
+  function clearMarkerHoverState() {
+    if (markerHoverFrame) cancelAnimationFrame(markerHoverFrame);
+    markerHoverFrame = 0; pendingMarkerHoverKey = ""; pendingMarkerHoverKind = "";
+    if (markerHoverKey) { markerHoverKey = ""; markerHoverKind = ""; setMarkerHoverFilters(); }
+    var canvas = map && map.getCanvas();
+    if (canvas) canvas.title = "";
+    syncMapCursor();
+  }
+  function markerLayerMouseMove(e) {
+    var feature = e && e.features && e.features[0];
+    var props = feature && feature.properties || {};
+    var key = props.markerKey || "";
+    if (!key) return;
+    pendingMarkerHoverKey = key;
+    pendingMarkerHoverKind = props.markerType === "cluster" ? "cluster" : "point";
+    if (markerHoverFrame) return;
+    markerHoverFrame = requestAnimationFrame(function () {
+      markerHoverFrame = 0;
+      setMapMarkerHover(pendingMarkerHoverKey, pendingMarkerHoverKind);
+    });
+  }
+  function markerLayerMouseLeave() { clearMarkerHoverState(); }
+  function bindMarkerHoverEvents() {
+    if (!map || markerHoverEventsBound) return;
+    try {
+      map.on("mousemove", MARKER_POINT_LAYER, markerLayerMouseMove);
+      map.on("mouseleave", MARKER_POINT_LAYER, markerLayerMouseLeave);
+      map.on("mousemove", MARKER_CLUSTER_CIRCLE_LAYER, markerLayerMouseMove);
+      map.on("mouseleave", MARKER_CLUSTER_CIRCLE_LAYER, markerLayerMouseLeave);
+      markerHoverEventsBound = true;
+    } catch (e) { console.warn("marker hover events:", e && e.message || e); }
+  }
+  function addMarkerLayerIfMissing(layer) {
+    if (!map.getLayer(layer.id)) map.addLayer(layer);
+  }
+  function ensureMarkerLayers(force) {
+    if (!map) return Promise.resolve(false);
+    try { if (!force && map.isStyleLoaded && !map.isStyleLoaded()) return Promise.resolve(false); } catch (e) { return Promise.resolve(false); }
+    if (markerLayerEnsurePromise) return markerLayerEnsurePromise;
+    markerLayerEnsurePromise = ensureMarkerImages().then(function () {
+      if (!map || !map.getStyle()) return false;
+      if (!map.getSource(MARKER_SOURCE)) {
+        map.addSource(MARKER_SOURCE, { type: "geojson", data: markerFeatureCollection, promoteId: "markerKey", maxzoom: 20 });
+      }
+      var clusterFilter = markerClusterFilter(), pointFilter = markerPointFilter();
+      addMarkerLayerIfMissing({ id: MARKER_CLUSTER_SHADOW_LAYER, type: "circle", source: MARKER_SOURCE, filter: clusterFilter,
+        paint: { "circle-radius": ["get", "clusterRadius"], "circle-color": "rgba(0,0,0,.55)", "circle-opacity": 0.5,
+          "circle-blur": 0.55, "circle-translate": [0, 2] } });
+      addMarkerLayerIfMissing({ id: MARKER_CLUSTER_HALO_LAYER, type: "circle", source: MARKER_SOURCE, filter: clusterFilter,
+        paint: { "circle-radius": ["get", "clusterHaloRadius"], "circle-color": ["get", "clusterColor"], "circle-opacity": 0.26 } });
+      addMarkerLayerIfMissing({ id: MARKER_CLUSTER_CIRCLE_LAYER, type: "circle", source: MARKER_SOURCE, filter: clusterFilter,
+        paint: { "circle-radius": ["get", "clusterRadius"], "circle-color": ["get", "clusterColor"],
+          "circle-stroke-color": "rgba(255,255,255,.72)", "circle-stroke-width": ["get", "clusterStrokeWidth"] } });
+      addMarkerLayerIfMissing({ id: MARKER_CLUSTER_LABEL_LAYER, type: "symbol", source: MARKER_SOURCE, filter: clusterFilter,
+        layout: { "icon-image": ["get", "clusterLabelImage"], "icon-size": 1, "icon-anchor": "center",
+          "icon-allow-overlap": true, "icon-ignore-placement": true, "icon-padding": 0 } });
+      addMarkerLayerIfMissing({ id: MARKER_POINT_LAYER, type: "symbol", source: MARKER_SOURCE, filter: pointFilter,
+        layout: { "icon-image": ["get", "iconImage"], "icon-size": ["get", "iconScale"], "icon-anchor": "bottom",
+          "icon-allow-overlap": true, "icon-ignore-placement": true, "icon-padding": 0 } });
+      addMarkerLayerIfMissing({ id: MARKER_POINT_HOVER_LAYER, type: "symbol", source: MARKER_SOURCE, filter: markerNeverFilter(),
+        layout: { "icon-image": ["get", "iconImage"], "icon-size": ["*", ["get", "iconScale"], 1.28], "icon-anchor": "bottom",
+          "icon-allow-overlap": true, "icon-ignore-placement": true, "icon-padding": 0 } });
+      addMarkerLayerIfMissing({ id: MARKER_CLUSTER_HOVER_LAYER, type: "circle", source: MARKER_SOURCE, filter: markerNeverFilter(),
+        paint: { "circle-radius": ["*", ["get", "clusterRadius"], 1.16], "circle-color": ["get", "clusterColor"],
+          "circle-stroke-color": "rgba(255,255,255,.72)", "circle-stroke-width": ["*", ["get", "clusterStrokeWidth"], 1.16] } });
+      addMarkerLayerIfMissing({ id: MARKER_CLUSTER_HOVER_LABEL_LAYER, type: "symbol", source: MARKER_SOURCE, filter: markerNeverFilter(),
+        layout: { "icon-image": ["get", "clusterLabelImage"], "icon-size": 1.16, "icon-anchor": "center",
+          "icon-allow-overlap": true, "icon-ignore-placement": true, "icon-padding": 0 } });
+      var source = map.getSource(MARKER_SOURCE);
+      if (source && source.setData) source.setData(markerFeatureCollection);
+      bindMarkerHoverEvents();
+      return true;
+    }).catch(function (e) {
+      console.warn("marker source/layers:", e && e.message || e);
+      return false;
+    }).then(function (ok) {
+      markerLayerEnsurePromise = null;
+      return ok;
+    });
+    return markerLayerEnsurePromise;
+  }
+  function markerFeature(p, sc) {
+    var key = markerPointKey(p), lon = Number(p.o.lon), lat = Number(p.o.lat);
+    return {
+      type: "Feature", id: key,
+      properties: { markerKey: key, markerType: "point", iconImage: markerIconImage(p), iconScale: sc,
+        markerTitle: name(p.o), markerCategory: p.cat },
+      geometry: { type: "Point", coordinates: [lon, lat] }
+    };
+  }
+  function markerClusterTitle(n) {
+    return LANG === "fa" ? "مشاهده فهرست " + n + " مورد در این ناحیه" : "View list of " + n + " items in this area";
+  }
+  function updateRecoveryDomMarker(marker, p, sc) {
+    var el = marker.getElement(), title = name(p.o) + (LANG === "fa" ? " — موقعیت مرجع" : " — reference location");
+    el.__orbitaRecoveryPoint = p;
+    el.title = title; el.dataset.recoveryId = p.o.id;
+    el.setAttribute("aria-label", title);
+    var svg = sizedIcon(p.cat, p.o.status, sc);
+    if (el.__orbitaRecoverySvg !== svg) { el.innerHTML = svg; el.__orbitaRecoverySvg = svg; }
+    marker.setLngLat([p.o.lon, p.o.lat]);
+    return marker;
+  }
+  function recoveryDomMarker(p, sc) {
+    var el = document.createElement("div");
+    el.className = "pin";
+    el.setAttribute("role", "button"); el.tabIndex = 0;
+    el.addEventListener("keydown", function (e) {
+      if (e.key === "Enter" || e.key === " ") { e.preventDefault(); e.stopPropagation(); el.click(); }
+    });
+    el.addEventListener("click", function (ev) {
+      ev.stopPropagation();
+      var current = el.__orbitaRecoveryPoint;
+      if (!current) return;
+      var lngLat = [current.o.lon, current.o.lat];
+      openDetail(current);
+      map.flyTo({ center: lngLat, zoom: Math.max(map.getZoom(), 4.5), duration: 900 });
+    });
+    var marker = new maplibregl.Marker({ element: el, anchor: "bottom" })
+      .setLngLat([p.o.lon, p.o.lat]).addTo(map);
+    return updateRecoveryDomMarker(marker, p, sc);
+  }
+  function handleMarkerMapClick(e) {
+    if (!map || !e || !e.point || !map.getLayer(MARKER_POINT_LAYER) || !map.getLayer(MARKER_CLUSTER_CIRCLE_LAYER)) return false;
+    var hits = [];
+    try { hits = map.queryRenderedFeatures(e.point, { layers: [MARKER_POINT_LAYER, MARKER_CLUSTER_CIRCLE_LAYER] }); } catch (err) {}
+    var feature = hits.find(function (f) { return f && f.properties && f.properties.markerKey; });
+    if (!feature) return false;
+    var props = feature.properties || {}, key = props.markerKey;
+    if (props.markerType === "cluster") {
+      var members = markerClustersByKey[key];
+      if (members && members.length) openClusterList(members);
+      return true;
+    }
+    var point = markerPointsByKey[key];
+    if (!point) return false;
+    var lngLat = [point.o.lon, point.o.lat];
+    openDetail(point);
+    map.flyTo({ center: lngLat, zoom: Math.max(map.getZoom(), 4.5), duration: 900 });
+    return true;
+  }
   var clusterZoomBound = false;
+  function markerZoomNow() { return window.performance && performance.now ? performance.now() : Date.now(); }
+  function scheduleMarkerZoomRefresh(finalUpdate) {
+    if (!map) return;
+    if (finalUpdate) {
+      if (markerZoomRefreshTimer) clearTimeout(markerZoomRefreshTimer);
+      markerZoomRefreshTimer = 0;
+      markerZoomLastRefresh = markerZoomNow();
+      renderMarkers();
+      return;
+    }
+    if (markerZoomRefreshTimer) return;
+    var wait = Math.max(0, markerZoomRefreshInterval - (markerZoomNow() - markerZoomLastRefresh));
+    markerZoomRefreshTimer = setTimeout(function () {
+      markerZoomRefreshTimer = 0;
+      markerZoomLastRefresh = markerZoomNow();
+      renderMarkers();
+    }, wait);
+  }
+  function publishMarkerFeatureCollection() {
+    if (!map) return;
+    var source = map.getSource(MARKER_SOURCE);
+    if (source && source.setData) {
+      // A source can exist while remote style tiles are still loading. Do not gate marker updates
+      // on isStyleLoaded(): zoom/filter changes must reach the GeoJSON worker as soon as possible.
+      // MapLibre keeps the current rendered tile until the replacement has been prepared.
+      ensureCurrentClusterLabelImages();
+      try { if (source._data !== markerFeatureCollection) source.setData(markerFeatureCollection); } catch (e) {}
+      return;
+    }
+    ensureMarkerLayers(false).then(function (ready) {
+      if (!ready || !map) return;
+      ensureCurrentClusterLabelImages();
+      var latestSource = map.getSource(MARKER_SOURCE);
+      if (latestSource && latestSource.setData && latestSource._data !== markerFeatureCollection) {
+        latestSource.setData(markerFeatureCollection);
+      }
+    }).catch(function () {});
+  }
   function renderMarkers(force) {
     if (!map) return;
-    var sc = pinScale();
-    var groups = clusterPoints(filteredPoints());
-    /* بازساخت هوشمند: اگر خوشه‌بندی و مقیاس عوض نشده، دست به DOM نزن */
-    var sig = sc + "|" + groups.map(function (g) {
-      return g.pts.length + ":" + (g.pts[0].o.id || g.pts[0].o.en || "");
-    }).join(",");
-    if (!force && sig === lastMarkerSig && markers.length) return;
-    lastMarkerSig = sig;
-    markers.forEach(function (m) { m.remove(); }); markers = [];
-    groups.forEach(function (g) {
-      var el, lngLat, anchor;
-      if (g.pts.length > 1) {
-        el = clusterEl(g, sc);
-        anchor = "center";
-        var sx = 0, sy = 0;
-        g.pts.forEach(function (p) { sx += p.o.lon; sy += p.o.lat; });
-        lngLat = [sx / g.pts.length, sy / g.pts.length];
-        el.addEventListener("click", function (ev) {
-          ev.stopPropagation();
-          openClusterList(g.pts);
-        });
-      } else {
-        var p = g.pts[0];
-        el = document.createElement("div");
-        el.className = "pin"; el.title = name(p.o);
-        if (p.cat === "recovery") {
-          el.dataset.recoveryId = p.o.id;
-          el.title = name(p.o) + (LANG === "fa" ? " — موقعیت مرجع" : " — reference location");
-          el.setAttribute("role", "button"); el.setAttribute("aria-label", el.title); el.tabIndex = 0;
-          el.addEventListener("keydown", function (e) {
-            if (e.key === "Enter" || e.key === " ") { e.preventDefault(); e.stopPropagation(); el.click(); }
-          });
-        }
-        el.innerHTML = sizedIcon(p.cat, p.o.status, sc);
-        anchor = "bottom";
-        lngLat = [p.o.lon, p.o.lat];
-        el.addEventListener("click", function (ev) {
-          ev.stopPropagation(); openDetail(p);
-          map.flyTo({ center: lngLat, zoom: Math.max(map.getZoom(), 4.5), duration: 900 });
-        });
+    var sc = pinScale(), groups = clusterPoints(filteredPoints());
+    var sig = LANG + "|" + sc + "|" + groups.map(function (g) {
+      return g.pts.map(function (p) { return markerPointKey(p) + ":" + (p.o.status || ""); }).join(";");
+    }).join("|");
+    if (!force && sig === lastMarkerSig) {
+      var currentMarkerSource = map.getSource(MARKER_SOURCE);
+      // The feature signature may already be current even though style loading previously
+      // prevented publication; reconcile the source before treating this render as a no-op.
+      if (currentMarkerSource && currentMarkerSource.setData) {
+        if (currentMarkerSource._data !== markerFeatureCollection) publishMarkerFeatureCollection();
+        return;
       }
-      markers.push(new maplibregl.Marker({ element: el, anchor: anchor }).setLngLat(lngLat).addTo(map));
+      ensureMarkerLayers(true);
+      return;
+    }
+    lastMarkerSig = sig;
+    clearMarkerHoverState();
+    var features = [], pointsByKey = Object.create(null), clustersByKey = Object.create(null);
+    var nextRecoveryMarkers = Object.create(null);
+    groups.forEach(function (group, index) {
+      if (!group || !group.pts || !group.pts.length) return;
+      if (group.pts.length === 1 && group.pts[0].cat === "recovery") {
+        var rp = group.pts[0], recoveryKey = markerPointKey(rp);
+        var recoveryMarker = recoveryMarkersByKey[recoveryKey];
+        if (recoveryMarker) updateRecoveryDomMarker(recoveryMarker, rp, sc);
+        else recoveryMarker = recoveryDomMarker(rp, sc);
+        nextRecoveryMarkers[recoveryKey] = recoveryMarker;
+        return;
+      }
+      if (group.pts.length > 1) {
+        var counts = Object.create(null), sx = 0, sy = 0;
+        group.pts.forEach(function (p) { counts[p.cat] = (counts[p.cat] || 0) + 1; sx += Number(p.o.lon); sy += Number(p.o.lat); });
+        var top = Object.keys(counts).sort(function (a, b) { return counts[b] - counts[a]; })[0];
+        var color = C[top === "site" ? "site" : top] || C.launch;
+        var count = group.pts.length, diameter = Math.round((count > 20 ? 38 : count > 8 ? 34 : 30) * sc);
+        var key = "cluster|" + index;
+        var countText = LANG === "fa" ? fmtNum(count) : String(count);
+        var labelImage = clusterLabelImageId(count);
+        clustersByKey[key] = group.pts.slice();
+        features.push({
+          type: "Feature", id: key,
+          properties: { markerKey: key, markerType: "cluster", clusterCount: count, clusterColor: color,
+            clusterRadius: diameter / 2, clusterHaloRadius: diameter / 2 + 4 * sc, clusterStrokeWidth: 2 * sc,
+            clusterLabelImage: labelImage, clusterLabelText: countText, clusterTitle: markerClusterTitle(count) },
+          geometry: { type: "Point", coordinates: [sx / count, sy / count] }
+        });
+        return;
+      }
+      var p = group.pts[0], lon = Number(p.o.lon), lat = Number(p.o.lat);
+      if (!Number.isFinite(lon) || !Number.isFinite(lat)) return;
+      var f = markerFeature(p, sc);
+      pointsByKey[f.properties.markerKey] = p;
+      features.push(f);
     });
+    Object.keys(recoveryMarkersByKey).forEach(function (key) {
+      if (!nextRecoveryMarkers[key]) recoveryMarkersByKey[key].remove();
+    });
+    recoveryMarkersByKey = nextRecoveryMarkers;
+    markerPointsByKey = pointsByKey;
+    markerClustersByKey = clustersByKey;
+    markerFeatureCollection = { type: "FeatureCollection", features: features };
+    publishMarkerFeatureCollection();
     if (!clusterZoomBound) {
       clusterZoomBound = true;
-      var tmr = 0;
-      map.on("zoomend", function () { clearTimeout(tmr); tmr = setTimeout(renderMarkers, 90); });
+      map.on("zoom", function () { scheduleMarkerZoomRefresh(false); });
+      map.on("zoomend", function () { scheduleMarkerZoomRefresh(true); });
     }
   }
 
@@ -3800,48 +4322,6 @@
     return v === "globe" ? ["globe"] : v.split("+");
   }
 
-  function renderCountryProfileHeader(p, totalEntities) {
-    var isFa = (typeof LANG !== "undefined" && LANG === "fa");
-    var isAr = (typeof LANG !== "undefined" && LANG === "ar");
-    var tr = function (fa, en, ar) { return isFa ? fa : (isAr ? ar : en); };
-    var cEn = p.country_en || (p.o ? p.o.country_en || p.o.country : null) || p.country || "Iran";
-    var cFa = p.country_fa || (p.o ? p.o.country_fa : null) || countryOf(cEn) || cEn;
-    var cIso = p.country_iso || (p.o ? p.o.country_iso : null) || null;
-    var cAr = p.country_ar || (p.o ? p.o.country_ar : null) || countryNameAr(cEn, cIso) || cEn;
-    function activeEntitiesAr(n) {
-      var mod100 = n % 100;
-      if (n === 1) return "كيان فضائي نشط";
-      if (n === 2) return "كيانان فضائيان نشطان";
-      if (n === 0 || (mod100 >= 3 && mod100 <= 10)) return "كيانات فضائية نشطة";
-      if (mod100 >= 11 && mod100 <= 99) return "كيانًا فضائيًا نشطًا";
-      return "كيان فضائي نشط";
-    }
-    var flagCodes = flagCodesFor(cEn, cIso);
-    var flagTitle = isFa ? cFa : (isAr ? cAr : cEn);
-    var flagAlt = tr("پرچم " + cFa, "Flag of " + cEn, "علم " + cAr);
-    var flagEl;
-    if (flagCodes.length === 1 && flagCodes[0] !== "globe") {
-      flagEl = '<img class="d-flag" src="assets/img/flags/' + flagCodes[0] + '.svg" alt="' + esc(flagAlt) + '" title="' + esc(flagTitle) + '" loading="eager" fetchpriority="high" decoding="async">';
-    } else if (flagCodes.length === 2) {
-      flagEl = '<span class="d-flagset" role="img" aria-label="' + esc(flagAlt) + '" title="' + esc(flagTitle) + '">'
-        + '<img class="d-flag d-flag--a" src="assets/img/flags/' + flagCodes[0] + '.svg" alt="" loading="eager" fetchpriority="high" decoding="async">'
-        + '<img class="d-flag d-flag--b" src="assets/img/flags/' + flagCodes[1] + '.svg" alt="" loading="eager" fetchpriority="high" decoding="async">'
-        + '</span>';
-    } else {
-      flagEl = '<img class="d-flag d-flag--globe" src="assets/img/flags/globe.svg" alt="' + esc(flagTitle) + '" title="' + esc(flagTitle) + '" loading="eager" fetchpriority="high" decoding="async">';
-    }
-    var countBadge = typeof totalEntities === "number"
-      ? (isFa ? (totalEntities + " مرکز فعال") : (isAr ? (totalEntities + " " + activeEntitiesAr(totalEntities)) : (totalEntities + " Active Entities")))
-      : tr("در حال آماده‌سازی…", "Preparing dossier…", "جارٍ تجهيز الملف…");
-    var h = '<div class="d-head" style="display:flex; justify-content:space-between; align-items:center; gap:10px; margin-inline-end:35px;">';
-    h += '<div style="display:flex; gap:10px; align-items:center; flex:1;">' + flagEl;
-    h += '<div><div class="d-kicker">' + tr("شناسنامه جامع فضایی کشور", "National Space Dossier", "ملف الدولة الفضائي") + '</div>';
-    h += '<h2 class="d-title" style="margin:0;">' + esc(isFa ? cFa : (isAr ? cAr : cEn)) + '</h2></div></div>';
-    h += '<span class="badge-gov" style="padding:3px 10px; border-radius:12px; font-size:10.5px; font-weight:bold; white-space:nowrap;">' + esc(countBadge) + '</span>';
-    h += '</div>';
-    h += '<div class="d-sub" style="margin-top:4px;">' + esc(isFa ? cEn : (isAr ? cEn : cFa)) + '</div>';
-    return h;
-  }
   function renderCountryProfile(p) {
     var isFa = (typeof LANG !== "undefined" && LANG === "fa");
     var isAr = (typeof LANG !== "undefined" && LANG === "ar");
@@ -3914,7 +4394,32 @@
 
     var totalEntities = propulsionItems.length + launchItems.length + agencyItems.length + siteItems.length + recoveryItems.length;
 
-    var h = renderCountryProfileHeader(p, totalEntities);
+    var h = "";
+
+    // Header Title — country flag (ISO-first, name-table fallback); custom palette globe.svg fallback
+    var _flagCodes = flagCodesFor(cEn, cIso);
+    var _flagTitle = isFa ? cFa : (isAr ? cAr : cEn);
+    var _flagAlt = tr("پرچم " + cFa, "Flag of " + cEn, "علم " + cAr);
+    var _flagEl;
+    if (_flagCodes.length === 1 && _flagCodes[0] !== "globe") {
+      _flagEl = '<img class="d-flag" src="assets/img/flags/' + _flagCodes[0] + '.svg" alt="' + esc(_flagAlt) + '" title="' + esc(_flagTitle) + '" decoding="async">';
+    } else if (_flagCodes.length === 2) {
+      _flagEl = '<span class="d-flagset" role="img" aria-label="' + esc(_flagAlt) + '" title="' + esc(_flagTitle) + '">'
+        + '<img class="d-flag d-flag--a" src="assets/img/flags/' + _flagCodes[0] + '.svg" alt="" decoding="async">'
+        + '<img class="d-flag d-flag--b" src="assets/img/flags/' + _flagCodes[1] + '.svg" alt="" decoding="async">'
+        + '</span>';
+    } else {
+      _flagEl = '<img class="d-flag d-flag--globe" src="assets/img/flags/globe.svg" alt="' + esc(_flagTitle) + '" title="' + esc(_flagTitle) + '" decoding="async">';
+    }
+    h += '<div class="d-head" style="display:flex; justify-content:space-between; align-items:center; gap:10px; margin-inline-end:35px;">';
+    h += '<div style="display:flex; gap:10px; align-items:center; flex:1;">';
+    h += _flagEl;
+    h += '<div><div class="d-kicker">' + tr("شناسنامه جامع فضایی کشور", "National Space Dossier", "ملف الدولة الفضائي") + '</div>';
+    h += '<h2 class="d-title" style="margin:0;">' + esc(isFa ? cFa : (isAr ? cAr : cEn)) + '</h2></div></div>';
+    h += '<span class="badge-gov" style="padding:3px 10px; border-radius:12px; font-size:10.5px; font-weight:bold; white-space:nowrap;">' + (isFa ? (totalEntities + " مرکز فعال") : (isAr ? (totalEntities + " " + activeEntitiesAr(totalEntities)) : (totalEntities + " Active Entities"))) + '</span>';
+    h += '</div>';
+
+    h += '<div class="d-sub" style="margin-top:4px;">' + esc(isFa ? cEn : (isAr ? cEn : cFa)) + '</div>';
 
     // SECTION 1: SHARE & OVERVIEW 4-GRID BANNER (سهم و آمار فضایی کشور)
     h += '<div style="background:linear-gradient(135deg, rgba(15, 31, 51, 0.95) 0%, rgba(9, 13, 22, 0.98) 100%); border:1px solid rgba(56, 189, 248, 0.35); border-radius:8px; padding:12px; margin-top:10px; box-shadow:0 4px 16px rgba(0,0,0,0.4);">';
@@ -7859,8 +8364,6 @@
 
   function openDetail(p) {
     if (!p) return;
-    var detailRenderGeneration = (openDetail.__renderGeneration || 0) + 1;
-    openDetail.__renderGeneration = detailRenderGeneration;
     if (!p.o) {
       p = { kind: p.cat || "company", cat: p.cat || "launch", o: p };
     }
@@ -7878,21 +8381,9 @@
       return;
     }
     if (cat === "country" || kind === "country" || (p.o && p.o.cat === "country")) {
-      var detailBody = $("#detailBody"), detailPanel = $("#detail");
-      if (!detailBody || !detailPanel) return;
-      // Paint the small header and local flag before building the dossier's data-heavy sections.
-      detailBody.innerHTML = renderCountryProfileHeader(p, null) +
-        '<div class="country-profile-loading" role="status" aria-live="polite" style="padding:18px 8px;text-align:center;color:var(--muted);font-size:11px;">' +
-        (LANG === "fa" ? "در حال آماده‌سازی بخش‌های پرونده…" : (LANG === "ar" ? "جارٍ تجهيز أقسام الملف…" : "Preparing dossier sections…")) + '</div>';
-      detailPanel.classList.add("open");
-      detailPanel.scrollTop = 0;
-      requestAnimationFrame(function () {
-        requestAnimationFrame(function () {
-          if (detailRenderGeneration !== openDetail.__renderGeneration || !detailPanel.classList.contains("open")) return;
-          detailBody.innerHTML = renderCountryProfile(p);
-          bindCountryItemClicks();
-        });
-      });
+      $("#detailBody").innerHTML = renderCountryProfile(p);
+      $("#detail").classList.add("open");
+      bindCountryItemClicks();
       return;
     }
 
