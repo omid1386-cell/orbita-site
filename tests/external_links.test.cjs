@@ -19,7 +19,11 @@ async function setup(browser, mode, mobile=false){
   await page.goto(BASE+'/link-test-frame',{waitUntil:'domcontentloaded'});
   app=await (await page.waitForSelector('iframe')).contentFrame();
  }else await page.goto(BASE+'/',{waitUntil:'domcontentloaded'});
- await app.waitForFunction(()=>window.DATA&&DATA.recoveries&&DATA.recoveries.length===18&&typeof window.openDetail==='function'&&window.map&&typeof map.getCenter==='function'&&map.getStyle());
+ await app.waitForFunction(()=>window.DATA&&typeof window.openDetail==='function'&&window.map&&typeof map.getCenter==='function'&&map.getStyle());
+ const recoveryChip=app.locator('.recovery-chip');
+ await recoveryChip.waitFor();
+ if(await recoveryChip.getAttribute('aria-pressed')!=='true')await recoveryChip.click();
+ await app.waitForFunction(()=>DATA.recoveries&&DATA.recoveries.length===20);
  await app.evaluate(()=>{if(window.map&&typeof map.stop==='function')map.stop();openDetail({cat:'recovery',kind:'recovery',o:DATA.recoveries.find(s=>s.id==='recovery-utah')})});
  await app.locator('#recoveryHistoryTab').click();
  const event=app.locator('[data-event-id="utah-varda-w1"]');await event.locator('.recovery-event-details>summary').click();

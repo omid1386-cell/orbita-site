@@ -28,7 +28,7 @@ const expectedOverrides = {
   Somaliland: 'أرض الصومال',
   Kosovo: 'كوسوفو'
 };
-for (const file of ['assets/geo/countries.json', 'assets/geo/labels.json']) {
+for (const file of ['assets/geo/countries_simplified.json', 'assets/geo/labels.json']) {
   const geo = JSON.parse(fs.readFileSync(path.join(root, file), 'utf8'));
   const complete = geo.features.length === 177 && geo.features.every(feature =>
     feature.properties && typeof feature.properties.NAME_AR === 'string' && arabic.test(feature.properties.NAME_AR));
@@ -53,7 +53,7 @@ check(app.includes('var isAr = (typeof LANG !== "undefined" && LANG === "ar");')
   'country-dossier controls and categories have Arabic labels');
 check(app.includes('live_note: "لا يتوفر وصف عربي لهذا الإطلاق حالياً."'),
   'live records use the exact user-approved Arabic fallback');
-check(html.includes('window.ORBITA_V = "20261030country10";'), 'HTML and asset cache version is bumped for the country interaction changes');
+check(html.includes('window.ORBITA_V = "20261103boot-opt1";'), 'HTML and asset cache version is bumped for the country interaction changes');
 
 console.log(`${passed} PASS / ${failed} FAIL`);
 process.exitCode = failed ? 1 : 0;

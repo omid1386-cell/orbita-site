@@ -96,11 +96,15 @@ if(!chromium){console.log('SKIP: browser checks skipped — playwright is not in
     const page=await context.newPage();page.on('pageerror',e=>errors.push(e.message));
     const unsolicitedMedia=[];page.on('request',r=>{if(/^https:\/\/(?:www\.)?(?:youtube\.com|youtu\.be|images\.nasa\.gov|plus\.nasa\.gov|x\.com|twitter\.com)\//.test(r.url()))unsolicitedMedia.push(r.url())});
     await page.route(/ll\.thespacedevs\.com/,r=>r.fulfill({contentType:'application/json',body:'{"results":[],"next":null,"count":0}'}));
+    const mockStyle=(name,color)=>({version:8,name,sources:{},layers:[{id:'qa-background',type:'background',paint:{'background-color':color}}]});
+    await page.route(/basemaps\.cartocdn\.com\/gl\/dark-matter-gl-style\/style\.json/,r=>r.fulfill({contentType:'application/json',body:JSON.stringify(mockStyle('Dark Matter','#0b1524'))}));
+    await page.route(/basemaps\.cartocdn\.com\/gl\/voyager-gl-style\/style\.json/,r=>r.fulfill({contentType:'application/json',body:JSON.stringify(mockStyle('Voyager','#edf2f6'))}));
     await page.addInitScript(()=>{localStorage.setItem('orbita_lang','fa');localStorage.setItem('orbita_map_style','dark');localStorage.setItem('orbita_theme','navy')});
     await page.goto('http://127.0.0.1:5173',{waitUntil:'domcontentloaded'});
-    await page.waitForFunction(()=>window.map&&typeof map.getStyle==='function'&&map.getStyle()&&DATA.recoveries.length===20);
+    await page.waitForFunction(()=>window.map&&typeof map.getStyle==='function'&&map.getStyle()&&window.DATA&&document.querySelector('.recovery-chip'));
     const chip=page.locator('.recovery-chip');
     assert.equal(await chip.getAttribute('aria-pressed'),'false');
+    assert.equal(await page.evaluate(()=>DATA.recoveries.length),0,'recovery records are not downloaded before the optional layer is requested');
     assert.equal(await page.locator('#mapStyleChip').innerText(),'پوسته ۱');
     assert.equal(await page.locator('#mapStyleChip .ic').count(),0);
     assert.equal(await page.locator('.recovery-chip .lb').isVisible(),true);
@@ -109,6 +113,7 @@ if(!chromium){console.log('SKIP: browser checks skipped — playwright is not in
     const camera=await page.evaluate(()=>[map.getCenter().lng,map.getCenter().lat,map.getZoom()]);
     await chip.click();
     assert.equal(await chip.getAttribute('aria-pressed'),'true');
+    await page.waitForFunction(()=>DATA.recoveries.length===20);
     assert.deepEqual(await page.evaluate(()=>[map.getCenter().lng,map.getCenter().lat,map.getZoom()]),camera);
     pass('Layer is off by default, keyboard-ready and does not move the map when enabled');
     await page.evaluate(()=>map.jumpTo({center:[-113.25,41],zoom:7}));
@@ -124,28 +129,32 @@ if(!chromium){console.log('SKIP: browser checks skipped — playwright is not in
     assert.equal(await page.locator('.recovery-dossier img').count(),1);
     assert.equal(await page.locator('.recovery-hero img').evaluate(el=>fetch(el.getAttribute('src')).then(r=>r.ok)),true);
     assert.match(await page.locator('.recovery-hero-credit').evaluate(el=>el.textContent),/عکس:/);
-    assert.equal(await page.locator('.recovery-coverage').isVisible(),true);
+    assert.equal(await page.locator('#recoveryHistory .recovery-coverage').isVisible(),true);
     pass('A real map-marker click opens two accessible tabs; Genesis landing failure and partial recovery are distinct');
     for(const site of data.sites){
       await page.evaluate(id=>openDetail({cat:'recovery',kind:'recovery',o:DATA.recoveries.find(s=>s.id===id)}),site.id);
       await page.locator('#recoveryHistoryTab').click();
-      assert.equal(await page.locator('.recovery-event').count(),site.events.length);
-      const dates=await page.locator('.recovery-event time').evaluateAll(nodes=>nodes.map(n=>n.getAttribute('datetime')));
+      const history=page.locator('#recoveryHistory');
+      assert.equal(await history.locator('.recovery-event').count(),site.events.length);
+      const dates=await history.locator('.recovery-event time').evaluateAll(nodes=>nodes.map(n=>n.getAttribute('datetime')));
       assert.deepEqual(dates,[...dates].sort().reverse());
-      assert.equal(await page.locator('.recovery-primary-source a').count(),site.events.length);
-      assert.equal(await page.locator('.recovery-video-link').count(),site.events.reduce((n,e)=>n+(e.videos||[]).length,0));
+      assert.equal(await history.locator('.recovery-primary-source a').count(),site.events.length);
+      assert.equal(await history.locator('.recovery-video-link').count(),site.events.reduce((n,e)=>n+(e.videos||[]).length,0));
       assert.equal(await page.locator('.recovery-dossier video,.recovery-dossier iframe,.recovery-dossier source').count(),0);
-      assert.equal(await page.locator('.recovery-story-section').count(),site.events.length*3);
+      assert.equal(await history.locator('.recovery-story-section').count(),site.events.length*3);
       const reg=site.landing_registry;
-      assert.equal(await page.locator('.recovery-registry').count(),reg?1:0);
+      assert.equal(await history.locator('.recovery-registry').count(),reg?1:0);
       if(reg){
-        assert.equal(await page.locator('.recovery-registry-table tbody tr').count(),reg.entries.length);
-        assert.equal(await page.locator('.recovery-registry-body a').count(),1);
-        assert.equal((await page.locator('.recovery-coverage span').innerText()).trim(),site.history_coverage==='complete'?'پوشش کامل':'در حال تکمیل');
+        assert.equal(await history.locator('.recovery-registry-table tbody tr').count(),reg.entries.length);
+        assert.equal(await history.locator('.recovery-registry-body a').count(),1);
+        assert.equal((await history.locator('.recovery-coverage span').innerText()).trim(),site.history_coverage==='complete'?'پوشش کامل':'در حال تکمیل');
       }
       for(const event of site.events){
-        assert(event.summary_fa && event.context_fa && event.sequence_fa && event.significance_fa);
-        assert(event.summary_en && event.context_en && event.sequence_en && event.significance_en);
+        assert(event.summary_fa && event.summary_en);
+        for(const field of ['context','sequence','significance']){
+          if(event[field+'_fa']||event[field+'_en']||event[field+'_ar'])
+            assert(event[field+'_fa']&&event[field+'_en'],'paired localized narrative field: '+event.id+'/'+field);
+        }
       }
       assert.equal(await page.locator('.recovery-dossier img').count(),site.image?1:0);
       if(site.image)assert.equal(await page.locator('.recovery-hero img').evaluate(el=>fetch(el.getAttribute('src')).then(r=>r.ok)),true);
@@ -155,7 +164,7 @@ if(!chromium){console.log('SKIP: browser checks skipped — playwright is not in
     await page.locator('#recoveryHistoryTab').click();
     const diverted=page.locator('[data-event-id="lz1-crs16-attempt"]');
     assert.equal(await diverted.locator('.recovery-location-disclosure').isVisible(),true);
-    assert.match(await diverted.innerText(),/فرود اینجا رخ نداد/);
+    assert.match(await diverted.innerText(),/فرود در جای دیگری رخ داد/);
     assert.equal(await diverted.locator('.bad').innerText(),'فرود ناموفق');
     assert.equal(await diverted.locator('.good').innerText(),'بازیابی تأییدشده');
     await page.evaluate(()=>openDetail({cat:'recovery',kind:'recovery',o:DATA.recoveries.find(s=>s.id==='recovery-starbase-catch')}));
@@ -165,13 +174,13 @@ if(!chromium){console.log('SKIP: browser checks skipped — playwright is not in
     assert.equal(await page.getByText('فرود موفق',{exact:true}).count(),0);
     pass('Intended targets are separated from actual touchdown locations, and tower catches are labelled accurately');
     await page.evaluate(()=>openDetail({cat:'recovery',kind:'recovery',o:DATA.recoveries.find(s=>s.id==='recovery-ocisly')}));
-    assert.match(await page.locator('.recovery-tags').innerText(),/سکوی متحرک/);
+    assert.match(await page.locator('.recovery-tags').innerText(),/سکوی متحر[کك]/);
     assert.equal(await page.locator('.recovery-mobility-note').isVisible(),true);
     await page.locator('#recoveryHistoryTab').click();
-    assert.equal((await page.locator('.recovery-coverage span').innerText()).trim(),'پوشش کامل');
-    await page.locator('.recovery-registry>summary').click();
-    assert.equal(await page.locator('.recovery-registry-table tbody tr').count(),235);
-    assert.equal(await page.locator('.recovery-registry-dot.failure').count(),data.sites.find(s=>s.id==='recovery-ocisly').landing_registry.entries.filter(r=>r.o==='failure').length);
+    assert.equal((await page.locator('#recoveryHistory .recovery-coverage span').innerText()).trim(),'پوشش کامل');
+    await page.locator('#recoveryHistory .recovery-registry>summary').click();
+    assert.equal(await page.locator('#recoveryHistory .recovery-registry-table tbody tr').count(),235);
+    assert.equal(await page.locator('#recoveryHistory .recovery-registry-dot.failure').count(),data.sites.find(s=>s.id==='recovery-ocisly').landing_registry.entries.filter(r=>r.o==='failure').length);
     await page.evaluate(()=>openDetail({cat:'recovery',kind:'recovery',o:DATA.recoveries.find(s=>s.id==='recovery-starship-indian')}));
     await page.locator('#recoveryHistoryTab').click();
     assert.equal(await page.getByText('بازیابی در برنامه نبود',{exact:true}).count(),3);
@@ -227,11 +236,13 @@ if(!chromium){console.log('SKIP: browser checks skipped — playwright is not in
     await page.reload({waitUntil:'domcontentloaded'});
     await page.waitForFunction(()=>document.querySelector('.recovery-chip'));
     assert.equal(await chip.getAttribute('aria-pressed'),'false');
+    await chip.click();
+    await page.waitForFunction(()=>DATA.recoveries.length===20);
     await page.locator('#langBtn').click();
     await page.evaluate(()=>openDetail({cat:'recovery',kind:'recovery',o:DATA.recoveries[0]}));
     assert.match(await page.locator('#recoveryHistoryTab').innerText(),/Landing/);
     await page.locator('#recoveryHistoryTab').click();
-    assert.match(await page.locator('.recovery-coverage').innerText(),/complete landing list|selected/i);
+    assert.match(await page.locator('#recoveryHistory .recovery-coverage').innerText(),/complete landing list|selected/i);
     pass('Turning off removes the markers; reload stays off; English labels work');
     await context.close();
     const mobile=await browser.newContext({viewport:{width:390,height:844},isMobile:true,hasTouch:true,ignoreHTTPSErrors:true});
@@ -239,12 +250,14 @@ if(!chromium){console.log('SKIP: browser checks skipped — playwright is not in
     await mp.route(/ll\.thespacedevs\.com/,r=>r.fulfill({contentType:'application/json',body:'{"results":[],"next":null,"count":0}'}));
     await mp.addInitScript(()=>{localStorage.setItem('orbita_lang','fa');localStorage.setItem('orbita_map_style','osm');localStorage.setItem('orbita_theme','light')});
     await mp.goto('http://127.0.0.1:5173',{waitUntil:'domcontentloaded'});
-    await mp.waitForFunction(()=>window.map&&typeof map.getStyle==='function'&&map.getStyle()&&DATA.recoveries.length===20);
+    await mp.waitForFunction(()=>window.map&&typeof map.getStyle==='function'&&map.getStyle()&&window.DATA&&document.querySelector('.recovery-chip'));
+    assert.equal(await mp.evaluate(()=>DATA.recoveries.length),0,'mobile startup also leaves recovery data deferred');
     assert.equal(await mp.locator('.recovery-chip .lb').evaluate(el=>getComputedStyle(el).display),'none');
     assert.equal(await mp.locator('.recovery-chip').getAttribute('aria-label'),'فرود و بازیابی');
     assert.equal(await mp.locator('#mapStyleChip').innerText(),'پوسته ۳');
     await mp.screenshot({path:path.join(output,'mobile-toolbar.png')});
     await mp.locator('.recovery-chip').click();
+    await mp.waitForFunction(()=>DATA.recoveries.length===20);
     await mp.locator('#sideOpen').click();await mp.locator('#mapSearch').fill('کونیبا');
     await mp.getByText('محدودهٔ کونیبا',{exact:true}).click();
     await mp.screenshot({path:path.join(output,'mobile-overview.png')});

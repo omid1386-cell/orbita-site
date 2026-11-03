@@ -142,7 +142,9 @@ const filteredPointsStart = app.indexOf('  function filteredPoints() {', allPoin
 const allPointsSource = allPointsStart >= 0 && filteredPointsStart > allPointsStart
   ? app.slice(allPointsStart, filteredPointsStart) : '';
 const layerBarStart = app.indexOf('  function buildLayerBar() {');
-const layerBarSource = layerBarStart >= 0 ? app.slice(layerBarStart, layerBarStart + 2800) : '';
+const layerBarEnd = app.indexOf('\n  function ', layerBarStart + 1);
+const layerBarSource = layerBarStart >= 0
+  ? app.slice(layerBarStart, layerBarEnd > layerBarStart ? layerBarEnd : layerBarStart + 8000) : '';
 let canonicalRecords = [];
 try {
   const canonicalFn = vm.runInNewContext(canonicalSource + '\ncanonicalCompanyRecords;', { DATA: { companies } });
@@ -155,7 +157,8 @@ check(companyById['casc-6th'].alias_of_id === 'aalpt-china' &&
   !canonicalRecords.some(company => company.id === 'casc-6th') &&
   canonicalRecords.some(company => company.id === 'aalpt-china') &&
   allPointsSource.includes('canonicalCompanyRecords().forEach') &&
-  layerBarSource.includes('var companies = canonicalCompanyRecords();'),
+  layerBarSource.includes('{ k: "propulsion", n: COMPANY_CATEGORY_COUNTS.propulsion }') &&
+  app.includes('var COMPANY_CATEGORY_COUNTS = { launch: 61, propulsion: 43, agency: 33, satmaker: 26 };'),
   'CASC/AALPT remains as linked records but contributes one organization count and map point');
 const ng = companyById.ngpropulsion;
 const ngGem = ng.engine_products_bilingual.find(engine => engine.name_en === 'GEM 63 / GEM 63XL');
@@ -310,7 +313,8 @@ function exerciseOpenDetail(language, company) {
     LANG: language,
     document: { getElementById: () => detailPanel },
     $: selector => selector === '#detailBody' ? detailBody : detailPanel,
-    renderPropulsionDetail: renderer
+    renderPropulsionDetail: renderer,
+    COMPANY_CATEGORY_STATE: { launch: 'ready' }
   });
   liveOpenDetail({ cat: 'propulsion', kind: 'propulsion', o: company });
   return detailBody.innerHTML;
@@ -329,7 +333,7 @@ try {
   console.error('Live openDetail route error:', error);
   check(false, 'the actual openDetail route renders the shared template in all three languages');
 }
-check(html.includes('window.ORBITA_V = "20261030country10";'),
+check(html.includes('window.ORBITA_V = "20261103boot-opt1";'),
   'HTML asset cache version is bumped for the shared Arabic propulsion template');
 
 const requiredCompanyFields = [

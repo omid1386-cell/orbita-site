@@ -1,0 +1,33 @@
+ORBITA startup optimization patch — incremental file manifest
+
+Modified/replaced application files:
+  assets/js/app.js
+  assets/css/app.css
+  index.html
+
+New runtime data/assets:
+  assets/geo/countries_simplified.json
+  data/companies_launch.json
+  data/companies_propulsion.json
+  data/companies_agency.json
+  data/companies_satmaker.json
+
+New helper scripts:
+  tools/build_country_simplified.sh
+  tools/split_companies_by_category.py
+
+Added/updated tests:
+  tests/boot_optimization.test.cjs                         [added]
+  tests/company_agency_ar.test.cjs
+  tests/company_launch_ar.test.cjs
+  tests/company_propulsion_ar.test.cjs
+  tests/company_satmaker_ar.test.cjs
+  tests/country_ar.test.cjs
+  tests/country_geometry.test.cjs
+  tests/country_interaction.test.cjs
+  tests/external_links.test.cjs
+  tests/recovery.test.cjs
+  tests/recovery_ar.test.cjs
+  tests/site_ar.test.cjs
+
+The complete canonical source files data/companies.json and assets/geo/countries.json are intentionally excluded; keep the destination repository's copies.

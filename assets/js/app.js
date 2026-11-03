@@ -241,7 +241,34 @@
   var markerZoomRefreshTimer = 0, markerZoomLastRefresh = 0, markerZoomRefreshInterval = 100;
   var markerHoverKey = "", markerHoverKind = "", pendingMarkerHoverKey = "", pendingMarkerHoverKind = "", markerHoverFrame = 0;
   var markerHoverEventsBound = false;
-  var filters = { launch: true, propulsion: true, agency: true, satmaker: true, site: true, recovery: false };
+  var MAP_FILTERS_STORAGE_KEY = "orbita_map_filters_v1";
+  var DEFAULT_MAP_FILTERS = { launch: true, propulsion: false, agency: true, satmaker: false, site: true, recovery: false };
+  function readMapFilters() {
+    var result = {};
+    Object.keys(DEFAULT_MAP_FILTERS).forEach(function (key) { result[key] = DEFAULT_MAP_FILTERS[key]; });
+    try {
+      var saved = JSON.parse(localStorage.getItem(MAP_FILTERS_STORAGE_KEY) || "null");
+      if (saved && typeof saved === "object") Object.keys(result).forEach(function (key) {
+        if (typeof saved[key] === "boolean") result[key] = saved[key];
+      });
+    } catch (e) {}
+    return result;
+  }
+  var filters = readMapFilters();
+  function saveMapFilters() {
+    try { localStorage.setItem(MAP_FILTERS_STORAGE_KEY, JSON.stringify(filters)); } catch (e) {}
+  }
+  var COMPANY_CATEGORY_KEYS = ["launch", "propulsion", "agency", "satmaker"];
+  var COMPANY_CATEGORY_FILES = {
+    launch: "data/companies_launch.json",
+    propulsion: "data/companies_propulsion.json",
+    agency: "data/companies_agency.json",
+    satmaker: "data/companies_satmaker.json"
+  };
+  // Canonical map counts (the propulsion source contains one linked alias record).
+  var COMPANY_CATEGORY_COUNTS = { launch: 61, propulsion: 43, agency: 33, satmaker: 26 };
+  var COMPANY_CATEGORY_STATE = { launch: "idle", propulsion: "idle", agency: "idle", satmaker: "idle" };
+  var COMPANY_CATEGORY_PROMISES = Object.create(null);
   var SORT = "new";   /* newest launch first — the user asked for this ordering */
 
   var $ = function (s) { return document.querySelector(s) || null; };
@@ -384,6 +411,7 @@
     LANG = LANG === "fa" ? "en" : LANG === "en" ? "ar" : "fa";
     localStorage.setItem("orbita_lang", LANG);
     applyI18n(); buildLayerBar(); renderMarkers(); buildLabels(); buildCityLabels(); renderList(); buildFilters(); renderMissions();
+    openDetail._renderToken = (openDetail._renderToken || 0) + 1;
     var d = $("#detail"); if (d) d.classList.remove("open");
     if (previousLang !== LANG && (previousLang === "ar" || LANG === "ar") && map && BASEMODE === "online") applyMapStyle();
     if (window.ORBITA3D && ORBITA3D.ready()) {
@@ -417,6 +445,7 @@
       $$(".view").forEach(function (v) { v.classList.remove("active"); });
       $("#view-" + b.dataset.view).classList.add("active");
       if (b.dataset.view === "map" && map) setTimeout(function () { map.resize(); }, 60);
+      if (b.dataset.view === "missions") ensureMissionViewData();
       if (b.dataset.view === "orbit") { 
 
   bootOrbit(); } else if (window.ORBITA3D) { ORBITA3D.stop(); }
@@ -431,20 +460,22 @@
     (window.location && window.location.port === "5173") || embeddedPreview;
   // Keep the primary online basemaps enabled in previews; failed online loads fall back to the local map.
   var BASEMODE = "online";
+  var activeMapStyleMode = "", activeOfflineTheme = "", mapStyleRequestId = 0;
   localStorage.setItem("orbita_base", "online");
 
   // Style-layer maxzoom is exclusive; 4.001 keeps coral hover visible through zoom 4.0.
   var COUNTRY_HOVER_MAX_ZOOM = 4.001;
+  var COUNTRY_OVERLAY_SOURCE = "orbita-country-interaction";
 
   function offlineStyle() {
     var dark = THEME === "navy";
     return {
       version: 8,
       sources: {
-        // GeoJSON-VT simplifies each tile in screen space; retain the full data but avoid drawing sub-pixel detail while panning.
-        countries: {
+        // A topology-aware compact GeoJSON supplies offline drawing and country interaction geometry.
+        [COUNTRY_OVERLAY_SOURCE]: {
           type: "geojson",
-          data: "assets/geo/countries.json?v=" + (window.ORBITA_V || "1"),
+          data: "assets/geo/countries_simplified.json?v=" + (window.ORBITA_V || "1"),
           promoteId: "NAME",
           tolerance: 1.5,
           maxzoom: 20
@@ -453,20 +484,19 @@
       layers: [
         { id: "ocean", type: "background",
           paint: { "background-color": dark ? "#08131f" : "#dbe7f3" } },
-        { id: "country-fill", type: "fill", source: "countries",
+        { id: "country-fill", type: "fill", source: COUNTRY_OVERLAY_SOURCE,
           paint: { "fill-color": dark ? "#16283d" : "#f7fafc", "fill-opacity": 1 } },
-        { id: "country-line", type: "line", source: "countries",
+        { id: "country-line", type: "line", source: COUNTRY_OVERLAY_SOURCE,
           paint: { "line-color": dark ? "#1e3854" : "#b9c9dc", "line-width": 0.35, "line-opacity": 0.45 } },
-        { id: "country-hover", type: "fill", source: "countries", maxzoom: COUNTRY_HOVER_MAX_ZOOM,
+        { id: "country-hover", type: "fill", source: COUNTRY_OVERLAY_SOURCE, maxzoom: COUNTRY_HOVER_MAX_ZOOM,
           paint: { "fill-color": "#F08970", "fill-opacity": ["case", ["boolean", ["feature-state", "hover"], false], 0.72, 0] } },
-        { id: "country-select-outline", type: "line", source: "countries",
+        { id: "country-select-outline", type: "line", source: COUNTRY_OVERLAY_SOURCE,
           paint: { "line-color": "#1677F5", "line-width": 2,
             "line-opacity": ["case", ["boolean", ["feature-state", "selected"], false], 1, 0] } }
       ]
     };
   }
 
-  var COUNTRY_OVERLAY_SOURCE = "orbita-country-interaction";
   var COUNTRY_HIT_LAYER = "orbita-country-hit";
   var COUNTRY_HOVER_LAYER = "orbita-country-hover";
   var COUNTRY_SELECT_OUTLINE_LAYER = "orbita-country-select-outline";
@@ -476,6 +506,19 @@
   var installingCountryLayers = false, countryFeatureStateNeedsSync = true;
   var countryInteractionEventLayer = "", countryHoverFrame = 0, pendingHoveredCountryName = "";
   var pendingCountryFeatureStates = Object.create(null), countryCanvasExitBound = false;
+
+  function withCountryInteractionSource(style) {
+    var prepared = JSON.parse(JSON.stringify(style));
+    prepared.sources = prepared.sources || {};
+    prepared.sources[COUNTRY_OVERLAY_SOURCE] = {
+      type: "geojson",
+      data: "assets/geo/countries_simplified.json?v=" + (window.ORBITA_V || "1"),
+      promoteId: "NAME",
+      tolerance: 1.5,
+      maxzoom: 20
+    };
+    return prepared;
+  }
 
   function countryInteractionSourceId() {
     if (!map) return "";
@@ -652,7 +695,7 @@
   function ensureCountryInteractionLayers(force) {
     if (!map || installingCountryLayers) return;
     try { if (!force && map.isStyleLoaded && !map.isStyleLoaded()) return; } catch (e) { return; }
-    if (map.getSource("countries") && map.getLayer("country-fill")) {
+    if (map.getSource(COUNTRY_OVERLAY_SOURCE) && map.getLayer("country-fill")) {
       bindCountryInteractionEvents("country-fill");
       syncCountryFeatureStates();
       return;
@@ -662,10 +705,10 @@
       if (!map.getSource(COUNTRY_OVERLAY_SOURCE)) {
         map.addSource(COUNTRY_OVERLAY_SOURCE, {
           type: "geojson",
-          data: "assets/geo/countries.json?v=" + (window.ORBITA_V || "1"),
+          data: "assets/geo/countries_simplified.json?v=" + (window.ORBITA_V || "1"),
           promoteId: "NAME",
-          // Keep country hits and hover geometry dynamically simplified to about 1.5 screen pixels per GeoJSON tile.
-          // This retains full source geometry/feature IDs while cutting low-zoom draw vertices substantially.
+          // The compact source retains all country IDs and feature properties for hit testing and feature states.
+          // GeoJSON-VT still simplifies each rendered tile in screen space.
           tolerance: 1.5,
           maxzoom: 20
         });
@@ -768,27 +811,46 @@
     var baseButton = $("#baseBtn");
     if (baseButton && baseButton.querySelector("span")) baseButton.querySelector("span").textContent = t("base_offline");
     resetCountryInteractionStyleState();
-    var style = offlineStyle();
-    try { map.setStyle(style, { diff: false }); } catch (e) { map.setStyle(style); }
-    map.once("styledata", afterStyleApply);
+    // Startup already paints this local style before trying the online basemap. Do not
+    // set it again on a failed online request: that re-fetches the large country source.
+    if (activeMapStyleMode !== "offline" || activeOfflineTheme !== THEME) {
+      var style = offlineStyle();
+      activeMapStyleMode = "offline";
+      activeOfflineTheme = THEME;
+      try { map.setStyle(style, { diff: true }); } catch (e) { map.setStyle(style); }
+      map.once("styledata", afterStyleApply);
+    }
     afterStyleApply();
   }
   function applyMapStyle() {
     if (!map) return;
+    var requestId = ++mapStyleRequestId;
     if (BASEMODE === "offline") {
       resetCountryInteractionStyleState();
-      try { map.setStyle(offlineStyle(), { diff: false }); } catch (e) { map.setStyle(offlineStyle()); }
+      if (activeMapStyleMode !== "offline" || activeOfflineTheme !== THEME) {
+        activeMapStyleMode = "offline";
+        activeOfflineTheme = THEME;
+        try { map.setStyle(offlineStyle(), { diff: true }); } catch (e) { map.setStyle(offlineStyle()); }
+        map.once("styledata", afterStyleApply);
+      }
       afterStyleApply();
       return;
     }
+    var requestedUrl = onlineStyleUrl(), requestedLang = LANG;
     fetchOnlineStyle().then(function (st) {
-      if (!map) return;
+      if (!map || requestId !== mapStyleRequestId || BASEMODE === "offline" ||
+          requestedUrl !== onlineStyleUrl() || requestedLang !== LANG) return;
       if (!st) { useOfflineStyleFallback(); return; }
       resetCountryInteractionStyleState();
-      try { map.setStyle(st, { diff: false }); } catch (e) { map.setStyle(st); }
+      activeMapStyleMode = "online";
+      activeOfflineTheme = "";
+      var onlineStyle = withCountryInteractionSource(st);
+      try { map.setStyle(onlineStyle, { diff: true }); } catch (e) { map.setStyle(onlineStyle); }
       map.once("styledata", afterStyleApply);
       afterStyleApply();
-    }).catch(function () { useOfflineStyleFallback(); });
+    }).catch(function () {
+      if (requestId === mapStyleRequestId && BASEMODE !== "offline") useOfflineStyleFallback();
+    });
   }
 
   /* country name labels rendered as DOM markers (works without remote glyph fonts) */
@@ -1077,9 +1139,9 @@
        وگرنه زمینهٔ محلی فوری و پوستهٔ آنلاین بعداً نرم سوار می‌شود */
     var cs = (BASEMODE !== "offline") ? cachedOnlineStyle() : null;
     if (cs) {
-      createMap(JSON.parse(JSON.stringify(cs)));
+      createMap(withCountryInteractionSource(cs), "online");
     } else {
-      createMap(offlineStyle());
+      createMap(offlineStyle(), "offline");
       if (BASEMODE !== "offline") applyMapStyle();
     }
   }
@@ -1104,7 +1166,9 @@
   }
   window.addEventListener("resize", function () { try { syncTouchGestures(); } catch (e) {} });
 
-  function createMap(style) {
+  function createMap(style, styleMode) {
+    activeMapStyleMode = styleMode || "";
+    activeOfflineTheme = activeMapStyleMode === "offline" ? THEME : "";
     map = new maplibregl.Map({
       container: "map",
       style: style,
@@ -1234,39 +1298,52 @@
     });
   }
 
+  function layerCategoryState(k) {
+    if (k === "site") return (typeof LAYER_STATE !== "undefined" && LAYER_STATE) ? LAYER_STATE.sites : "idle";
+    if (k === "recovery") return (typeof LAYER_STATE !== "undefined" && LAYER_STATE) ? LAYER_STATE.recoveries : "idle";
+    return COMPANY_CATEGORY_STATE[k] || "idle";
+  }
+  function layerCategoryCountText(k, n) {
+    var state = layerCategoryState(k);
+    if (state === "loading") return "…";
+    if (state === "error") return "!";
+    return String(n);
+  }
+  function updateLayerChipStatus(k) {
+    var chip = $(".cat-chip[data-cat='" + k + "']");
+    if (!chip) return;
+    var state = layerCategoryState(k), count = chip.querySelector(".n");
+    chip.setAttribute("aria-busy", String(state === "loading"));
+    if (count) count.textContent = layerCategoryCountText(k, chip.dataset.count || count.textContent);
+  }
   function buildLayerBar() {
-    function nTxt(group, n) {
-      var st = (typeof LAYER_STATE !== "undefined") ? LAYER_STATE[group] : "";
-      if ((st === "loading" || st === "idle") && !n) return "…";
-      if (st === "error" && !n) return "!";
-      return n;
-    }
-    var companies = canonicalCompanyRecords();
+    var focusedCategory = document.activeElement && document.activeElement.classList &&
+      document.activeElement.classList.contains("cat-chip") ? document.activeElement.dataset.cat : "";
     var cats = [
-      { k: "launch", n: companies.filter(function (x) { return x.cat === "launch"; }).length },
-      { k: "propulsion", n: companies.filter(function (x) { return x.cat === "propulsion"; }).length },
-      { k: "agency", n: companies.filter(function (x) { return x.cat === "agency"; }).length },
-      { k: "satmaker", n: companies.filter(function (x) { return x.cat === "satmaker"; }).length },
-      { k: "site", n: DATA.sites.length },
-      { k: "recovery", n: DATA.recoveries.length }
+      { k: "launch", n: COMPANY_CATEGORY_COUNTS.launch },
+      { k: "propulsion", n: COMPANY_CATEGORY_COUNTS.propulsion },
+      { k: "agency", n: COMPANY_CATEGORY_COUNTS.agency },
+      { k: "satmaker", n: COMPANY_CATEGORY_COUNTS.satmaker },
+      { k: "site", n: 64 },
+      { k: "recovery", n: 20 }
     ];
     var html = cats.map(function (c) {
-      if (c.k === "recovery") {
-        return '<button type="button" class="lchip cat-chip recovery-chip' + (filters.recovery ? '' : ' off') +
-          '" data-cat="recovery" aria-pressed="' + filters.recovery + '" aria-label="' + t("cat_recovery") + '" title="' + t("cat_recovery") + '"' +
-          (c.n ? '' : (LAYER_STATE.recoveries === "error" ? ' disabled' : '')) + ' style="color:' + C.recovery + '">' +
-          '<span class="ic">' + svgRecovery(C.recovery).replace('width="30"', 'width="18"').replace('height="38"', 'height="23"') + '</span>' +
-          '<span class="lb">' + t("cat_recovery") + '</span><span class="n">' + nTxt("recoveries", c.n) + '</span></button>';
-      }
-      return '<div class="lchip cat-chip' + (filters[c.k] ? "" : " off") + '" title="' + t("cat_" + c.k) + '" data-cat="' + c.k + '" style="color:' + C[c.k === "site" ? "site" : c.k] + '">' +
-        '<span class="ic">' + iconFor(c.k, "active").replace(/width="3\d"/, 'width="18"').replace(/height="38"/, 'height="23"') + "</span>" +
-        '<span class="lb" style="color:var(--text)">' + t("cat_" + c.k) + '</span><span class="n">' + nTxt(c.k === "site" ? "sites" : "companies", c.n) + "</span></div>";
+      var state = layerCategoryState(c.k), isRecovery = c.k === "recovery";
+      var icon = iconFor(c.k, "active").replace(/width="3\d"/, 'width="18"').replace(/height="38"/, 'height="23"');
+      var colorKey = c.k === "site" ? "site" : c.k;
+      return '<button type="button" class="lchip cat-chip' + (isRecovery ? ' recovery-chip' : '') +
+        (filters[c.k] ? "" : " off") + '" title="' + t("cat_" + c.k) + '" data-cat="' + c.k +
+        '" data-count="' + c.n + '" aria-label="' + t("cat_" + c.k) + '" aria-pressed="' + String(!!filters[c.k]) +
+        '" aria-busy="' + String(state === "loading") + '" style="color:' + C[colorKey] + '">' +
+        '<span class="ic">' + icon + '</span>' +
+        '<span class="lb" style="color:var(--text)">' + t("cat_" + c.k) + '</span>' +
+        '<span class="n">' + layerCategoryCountText(c.k, c.n) + '</span></button>';
     }).join("");
     html += '<span class="chip-sep" aria-hidden="true"></span>';
     html += '<button type="button" class="lchip style-chip" id="mapStyleChip" title="' + t("toggle_theme") + '">' +
       '<span class="lb" style="color:var(--text)">' + t("style_" + MAP_STYLE) + '</span></button>';
     $("#layerbar").innerHTML = html;
-    
+
     var scEl = $("#mapStyleChip");
     if (scEl) {
       scEl.onclick = function (e) {
@@ -1274,27 +1351,26 @@
         cycleMapStyle();
       };
     }
-    
+
     $$(".cat-chip").forEach(function (el) {
       el.onclick = function () {
         var k = el.dataset.cat;
-        if (!k) return;
+        if (!k || typeof filters[k] !== "boolean") return;
         filters[k] = !filters[k];
+        saveMapFilters();
         el.classList.toggle("off", !filters[k]);
-        if (k === "recovery") el.setAttribute("aria-pressed", String(filters[k]));
+        el.setAttribute("aria-pressed", String(filters[k]));
         clusterMode = null;
-        /* دادهٔ بازیابی از نگاه اول کنار گذاشته شده؛ با نخستین درخواست کاربر می‌آید */
-        if (k === "recovery" && filters.recovery &&
-            (LAYER_STATE.recoveries === "idle" || LAYER_STATE.recoveries === "error")) {
-          BOOT_LOADERS.recoveries();
-          return;
-        }
+        if (filters[k]) ensureMapCategoryLoaded(k);
         renderMarkers();
         renderList();
       };
     });
+    if (focusedCategory) {
+      var focusTarget = $(".cat-chip[data-cat='" + focusedCategory + "']");
+      if (focusTarget) focusTarget.focus();
+    }
   }
-
   /* ---- marker sizing: compact at world zoom, full size when zoomed in ---- */
   var PIN_BASE = 0.8;              // 80% of the original artwork
   function pinScale() {
@@ -8362,11 +8438,26 @@
     event.preventDefault(); switchRecoveryTab(next); next.focus();
   });
 
+  function activeDetailTabId(body) {
+    var active = body && body.querySelector(".site-tab-btn.active");
+    var match = active && (active.getAttribute("onclick") || "").match(/switchCompTab\(\s*['\"]([^'\"]+)/);
+    return match ? match[1] : "";
+  }
+  function restoreDetailTab(body, tabId) {
+    if (!body || !tabId) return;
+    var buttons = body.querySelectorAll(".site-tab-btn");
+    for (var i = 0; i < buttons.length; i++) {
+      var match = (buttons[i].getAttribute("onclick") || "").match(/switchCompTab\(\s*['\"]([^'\"]+)/);
+      if (match && match[1] === tabId) { window.switchCompTab(tabId, buttons[i]); return; }
+    }
+  }
   function openDetail(p) {
     if (!p) return;
     if (!p.o) {
       p = { kind: p.cat || "company", cat: p.cat || "launch", o: p };
     }
+    openDetail._renderToken = (openDetail._renderToken || 0) + 1;
+    var detailToken = openDetail._renderToken;
     var cat = p.cat || (p.o ? p.o.cat : "");
     var kind = p.kind || cat;
 
@@ -8381,9 +8472,31 @@
       return;
     }
     if (cat === "country" || kind === "country" || (p.o && p.o.cat === "country")) {
-      $("#detailBody").innerHTML = renderCountryProfile(p);
-      $("#detail").classList.add("open");
+      var countryBody = $("#detailBody"), countryPanel = $("#detail"), priorCountryTab = activeDetailTabId(countryBody);
+      countryBody.innerHTML = renderCountryProfile(p);
+      countryPanel.classList.add("open");
       bindCountryItemClicks();
+      var countryDataReady = LAYER_STATE.sites === "ready" && LAYER_STATE.recoveries === "ready" &&
+        ["launch", "propulsion", "agency"].every(function (key) { return COMPANY_CATEGORY_STATE[key] === "ready"; });
+      if (!countryDataReady) {
+        var loadingNote = document.createElement("div");
+        loadingNote.className = "up-empty";
+        loadingNote.textContent = t("up_loading");
+        countryBody.appendChild(loadingNote);
+      }
+      ensureCountryProfileData().then(function (results) {
+        if (detailToken !== openDetail._renderToken || !countryPanel.classList.contains("open")) return;
+        var selectedTab = activeDetailTabId(countryBody) || priorCountryTab;
+        countryBody.innerHTML = renderCountryProfile(p);
+        restoreDetailTab(countryBody, selectedTab);
+        bindCountryItemClicks();
+        if (!results.every(Boolean)) {
+          var note = document.createElement("div");
+          note.className = "up-empty";
+          note.textContent = t("up_loading");
+          countryBody.appendChild(note);
+        }
+      });
       return;
     }
 
@@ -8395,8 +8508,18 @@
       return;
     }
     if (cat === "propulsion" || (p.o && p.o.cat === "propulsion")) {
-      $("#detailBody").innerHTML = renderPropulsionDetail(p);
-      $("#detail").classList.add("open");
+      var propulsionBody = $("#detailBody"), propulsionPanel = $("#detail"), propulsionTab = "";
+      propulsionBody.innerHTML = renderPropulsionDetail(p);
+      propulsionPanel.classList.add("open");
+      if (COMPANY_CATEGORY_STATE.launch !== "ready") {
+        propulsionTab = activeDetailTabId(propulsionBody);
+        loadCompanyCategory("launch").then(function (ok) {
+          if (!ok || detailToken !== openDetail._renderToken || !propulsionPanel.classList.contains("open")) return;
+          var selectedTab = activeDetailTabId(propulsionBody) || propulsionTab;
+          propulsionBody.innerHTML = renderPropulsionDetail(p);
+          restoreDetailTab(propulsionBody, selectedTab);
+        });
+      }
       return;
     }
     if (cat === "site" || kind === "site") {
@@ -8410,8 +8533,18 @@
       return;
     }
     if (cat === "agency" || cat === "launch" || kind === "company" || kind === "launch") {
-      $("#detailBody").innerHTML = renderCompanyDetail(p);
-      $("#detail").classList.add("open");
+      var launchBody = $("#detailBody"), launchPanel = $("#detail"), launchTab = "";
+      launchBody.innerHTML = renderCompanyDetail(p);
+      launchPanel.classList.add("open");
+      if ((cat === "launch" || (p.o && p.o.cat === "launch")) && COMPANY_CATEGORY_STATE.propulsion !== "ready") {
+        launchTab = activeDetailTabId(launchBody);
+        loadCompanyCategory("propulsion").then(function (ok) {
+          if (!ok || detailToken !== openDetail._renderToken || !launchPanel.classList.contains("open")) return;
+          var selectedTab = activeDetailTabId(launchBody) || launchTab;
+          launchBody.innerHTML = renderCompanyDetail(p);
+          restoreDetailTab(launchBody, selectedTab);
+        });
+      }
       return;
     }
     if (p.cat === "propulsion") {
@@ -8449,7 +8582,10 @@
     $("#detailBody").innerHTML = h;
     $("#detail").classList.add("open");
   }
-  on("#detailClose", "click", function () { var d = $("#detail"); if (d) d.classList.remove("open"); });
+  on("#detailClose", "click", function () {
+    openDetail._renderToken = (openDetail._renderToken || 0) + 1;
+    var d = $("#detail"); if (d) d.classList.remove("open");
+  });
   on("#mapSearch", "input", function () { clusterMode = null; renderMarkers(); renderList(); });
 
   function openSide(focus) {
@@ -9271,19 +9407,102 @@
   window.renderPropulsionDetail = renderPropulsionDetail;
   window.openDetail = openDetail;
 
-  /* ================= boot: نقشه فوری، داده‌ها لایه‌لایه ================= */
-  var LAYER_STATE = { sites: "loading", companies: "loading", recoveries: "idle", missions: "loading" };
+  /* ================= boot: local map first, core data in parallel, optional data on demand ================= */
+  var LAYER_STATE = { sites: "idle", recoveries: "idle", missions: "idle" };
+  var LAYER_PROMISES = Object.create(null);
+  var missionViewLoadStarted = false;
   function refreshMapUI() { buildLayerBar(); renderMarkers(); renderList(); }
   function loadLayer(key, url, assign, after) {
+    if (LAYER_STATE[key] === "ready") return Promise.resolve(true);
+    if (LAYER_PROMISES[key]) return LAYER_PROMISES[key];
     LAYER_STATE[key] = "loading";
-    return fetch(url)
+    if (key === "sites") updateLayerChipStatus("site");
+    if (key === "recoveries") updateLayerChipStatus("recovery");
+    var request = fetch(url)
       .then(function (r) { if (!r.ok) throw new Error("HTTP " + r.status); return r.json(); })
-      .then(function (j) { assign(j); LAYER_STATE[key] = "ready"; (after || refreshMapUI)(); })
+      .then(function (j) {
+        assign(j);
+        LAYER_STATE[key] = "ready";
+        LAYER_PROMISES[key] = null;
+        (after || refreshMapUI)();
+        return true;
+      })
       .catch(function (e) {
         console.warn("layer " + key + ":", e);
-        LAYER_STATE[key] = "error"; buildLayerBar();
+        LAYER_STATE[key] = "error";
+        LAYER_PROMISES[key] = null;
+        if (key === "sites") updateLayerChipStatus("site");
+        if (key === "recoveries") updateLayerChipStatus("recovery");
         setTimeout(function () { if (LAYER_STATE[key] === "error") BOOT_LOADERS[key](); }, 6000);
+        return false;
       });
+    LAYER_PROMISES[key] = request;
+    return request;
+  }
+  function mergeCompanyCategoryRows(rows) {
+    var merged = (DATA.companies || []).slice(), seen = Object.create(null);
+    merged.forEach(function (c) { if (c && c.id != null) seen[String(c.id)] = true; });
+    rows.forEach(function (c) {
+      if (!c || c.id == null || seen[String(c.id)]) return;
+      seen[String(c.id)] = true;
+      merged.push(c);
+    });
+    DATA.companies = merged;
+  }
+  function loadCompanyCategory(category) {
+    if (!COMPANY_CATEGORY_FILES[category]) return Promise.resolve(false);
+    if (COMPANY_CATEGORY_STATE[category] === "ready") return Promise.resolve(true);
+    if (COMPANY_CATEGORY_PROMISES[category]) return COMPANY_CATEGORY_PROMISES[category];
+    COMPANY_CATEGORY_STATE[category] = "loading";
+    updateLayerChipStatus(category);
+    var url = COMPANY_CATEGORY_FILES[category] + "?v=" + (window.ORBITA_V || "1");
+    var request = fetch(url)
+      .then(function (r) { if (!r.ok) throw new Error("HTTP " + r.status); return r.json(); })
+      .then(function (rows) {
+        if (!Array.isArray(rows)) throw new Error("Invalid company category data");
+        mergeCompanyCategoryRows(rows);
+        COMPANY_CATEGORY_STATE[category] = "ready";
+        COMPANY_CATEGORY_PROMISES[category] = null;
+        refreshMapUI();
+        return true;
+      })
+      .catch(function (e) {
+        console.warn("company category " + category + ":", e);
+        COMPANY_CATEGORY_STATE[category] = "error";
+        COMPANY_CATEGORY_PROMISES[category] = null;
+        updateLayerChipStatus(category);
+        return false;
+      });
+    COMPANY_CATEGORY_PROMISES[category] = request;
+    return request;
+  }
+  function ensureMapCategoryLoaded(category) {
+    if (COMPANY_CATEGORY_FILES[category]) return loadCompanyCategory(category);
+    if (category === "site") return BOOT_LOADERS.sites();
+    if (category === "recovery") return BOOT_LOADERS.recoveries();
+    return Promise.resolve(true);
+  }
+  function ensureCountryProfileData() {
+    return Promise.all([
+      BOOT_LOADERS.sites(),
+      BOOT_LOADERS.recoveries(),
+      loadCompanyCategory("launch"),
+      loadCompanyCategory("propulsion"),
+      loadCompanyCategory("agency")
+    ]);
+  }
+  function ensureMissionViewData() {
+    if (missionViewLoadStarted) return;
+    missionViewLoadStarted = true;
+    if (LAYER_STATE.missions !== "ready") {
+      var count = $("#mCount"), rows = $("#missionRows");
+      if (count) count.textContent = "…";
+      if (rows) rows.innerHTML = '<div class="up-empty">' + t("up_loading") + "</div>";
+    }
+    if (LAYER_STATE.sites !== "ready") BOOT_LOADERS.sites();
+    BOOT_LOADERS.missions();
+    loadUpcoming();
+    loadLiveLaunches();
   }
   var BOOT_LOADERS = {
     sites: function () {
@@ -9299,17 +9518,25 @@
         function () { buildFilters(); renderMissions(); });
     },
     companies: function () {
-      return loadLayer("companies", "data/companies.json?v=" + (window.ORBITA_V || "1"), function (j) { DATA.companies = j; },
-        function () { refreshMapUI(); buildFilters(); });
+      return Promise.all(COMPANY_CATEGORY_KEYS.map(loadCompanyCategory));
     }
   };
-  window.retryLayer = function (k) { if (BOOT_LOADERS[k]) BOOT_LOADERS[k](); };
+  window.retryLayer = function (k) {
+    if (k === "companies") return BOOT_LOADERS.companies();
+    if (COMPANY_CATEGORY_FILES[k]) return loadCompanyCategory(k);
+    if (BOOT_LOADERS[k]) return BOOT_LOADERS[k]();
+  };
   applyI18n();
   initMap(); buildLayerBar(); renderList(); buildFilters(); renderMissions();
-  BOOT_LOADERS.sites().then(function () {
-    BOOT_LOADERS.missions(); BOOT_LOADERS.companies();
-    /* تماس‌های غیرحیاتی پس از نقش‌بستن نقشه — پهنای باند نگاه اول مال نقشه */
+  var initialMapLoads = [];
+  if (filters.site) initialMapLoads.push(BOOT_LOADERS.sites());
+  if (filters.recovery) initialMapLoads.push(BOOT_LOADERS.recoveries());
+  COMPANY_CATEGORY_KEYS.forEach(function (category) {
+    if (filters[category]) initialMapLoads.push(loadCompanyCategory(category));
+  });
+  Promise.all(initialMapLoads).then(function () {
+    /* Non-critical panels start only after the first map data work has settled. */
     var idle = window.requestIdleCallback || function (fn) { return setTimeout(fn, 900); };
-    idle(function () { loadUpcoming(); loadNextLaunch(); loadLiveLaunches(); loadSiteUpcomingData(); }, { timeout: 2500 });
+    idle(function () { loadNextLaunch(); loadSiteUpcomingData(); }, { timeout: 2500 });
   });
 })();

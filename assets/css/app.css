@@ -839,7 +839,7 @@ body.has-lnch .view{inset:86px 0 0 0}
 
 /* Landing & recovery dossier. Scoped to this module; existing markers and other dossiers are unchanged. */
 .recovery-chip .lb{color:var(--text)}
-.recovery-chip:focus-visible{outline:2px solid var(--accent);outline-offset:2px}
+.cat-chip:focus-visible{outline:2px solid var(--accent);outline-offset:2px}
 .recovery-chip:disabled{cursor:not-allowed}
 .recovery-dossier{--recovery-ink:#71cfff;--recovery-wash:rgba(56,189,248,.065);line-height:1.8}
 :root[data-theme="light"] .recovery-dossier{--recovery-ink:#0369a1;--recovery-wash:rgba(2,132,199,.045)}
