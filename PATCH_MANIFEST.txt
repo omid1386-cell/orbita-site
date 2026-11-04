@@ -1,33 +1,20 @@
-ORBITA startup optimization patch — incremental file manifest
+ORBITA pan/marker incremental patch — 2026-11-04
+Scope: latest marker transform-transition fix only; not a full project snapshot.
+Prerequisite: branch includes the previous boot optimization/current structure.
 
-Modified/replaced application files:
-  assets/js/app.js
-  assets/css/app.css
-  index.html
-
-New runtime data/assets:
-  assets/geo/countries_simplified.json
-  data/companies_launch.json
-  data/companies_propulsion.json
-  data/companies_agency.json
-  data/companies_satmaker.json
-
-New helper scripts:
-  tools/build_country_simplified.sh
-  tools/split_companies_by_category.py
-
-Added/updated tests:
-  tests/boot_optimization.test.cjs                         [added]
-  tests/company_agency_ar.test.cjs
-  tests/company_launch_ar.test.cjs
-  tests/company_propulsion_ar.test.cjs
-  tests/company_satmaker_ar.test.cjs
-  tests/country_ar.test.cjs
-  tests/country_geometry.test.cjs
-  tests/country_interaction.test.cjs
-  tests/external_links.test.cjs
-  tests/recovery.test.cjs
-  tests/recovery_ar.test.cjs
-  tests/site_ar.test.cjs
-
-The complete canonical source files data/companies.json and assets/geo/countries.json are intentionally excluded; keep the destination repository's copies.
+Payload files (SHA-256):
+42f4f33473c8394363c443b68f8b286361d6589f4d443f8fc49fb0050636a8f6       3388 bytes  README-apply-fa.md
+b3107e6d6b8572019e2a37290f32797e02b49b743b94eb29276e6f626632be8c       7137 bytes  index.html
+0b6d68f3b8e24f27679d5726cbf5d64aa34a1510dfe54ac781da9043cd7f247f      66661 bytes  assets/css/app.css
+94b74d2d10923d6f012451f760ecd0e6516eaf1c9ced905066a14ac269f8e177       3964 bytes  tests/boot_optimization.test.cjs
+74d0fcdfebb733c41291f9c4a015856637caf39896893111ab6c159d5b1ab832      20768 bytes  tests/company_agency_ar.test.cjs
+5c333be01d36dc83187660942aed15ef499daae2422e63bba630b42c236b8e89      10766 bytes  tests/company_launch_ar.test.cjs
+b67eaaad88c02768ada7826c56039c4dc45913f94b29877d0e74177cdbaf9e83      36464 bytes  tests/company_propulsion_ar.test.cjs
+f092e2f63bc300c59985e4ae51bf36c339ebdfcdedd5b4daf5537ab1a1fe5059      16647 bytes  tests/company_satmaker_ar.test.cjs
+6fd823f02718a17b9065141a0f8cff54834566a135201d3d83737e138fdcce99       2935 bytes  tests/country_ar.test.cjs
+2bda0d5af0f4269255bb29378075afff1700ec543a88ee5da38195fe0f4e6b57       8691 bytes  tests/country_interaction.test.cjs
+fbf2abfb3150bd456aa465fa9763f13770b8ba61eff97accd1861523df74a60c       9367 bytes  tests/recovery_ar.test.cjs
+fca48f48a65cefac0a3f0e4bf3b4de6f09b6c6cbc021e2ef564ac21fc08bc46f      10897 bytes  tests/site_ar.test.cjs
+dc6c964594773d1c715b6e01c4cb0a128e5cb4e9f8a573b140be8d124a85cd48       2041 bytes  tests/map_pan_markers.test.cjs
+f222e6b55f00a9fd0b0cdde220cc1d21fe42f6d75d76b59fdbf7a5255180afb1       4737 bytes  .work/recovery_pan_diagnostic.cjs
+46a95944fb438dfe08e995d04100da2bc7c309dab058ed432ff9e37aa6772dcc      11554 bytes  .work/pan_drag_diagnostic.cjs

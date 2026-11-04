@@ -333,7 +333,7 @@ try {
   console.error('Live openDetail route error:', error);
   check(false, 'the actual openDetail route renders the shared template in all three languages');
 }
-check(html.includes('window.ORBITA_V = "20261103boot-opt1";'),
+check(html.includes('window.ORBITA_V = "20261104panfix1";'),
   'HTML asset cache version is bumped for the shared Arabic propulsion template');
 
 const requiredCompanyFields = [
