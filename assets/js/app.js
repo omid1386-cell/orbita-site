@@ -595,7 +595,7 @@
   }
   function syncMapCursor() {
     if (!map || !map.getCanvas()) return;
-    map.getCanvas().style.cursor = (hoveredCountryName || markerHoverKey) ? "pointer" : "";
+    map.getCanvas().style.cursor = (hoveredCountryName || pendingHoveredCountryName || markerHoverKey || pendingMarkerHoverKey) ? "pointer" : "";
   }
   function countryLayerMouseEnter() { syncMapCursor(); }
   function clearCountryHoverState() {
@@ -605,6 +605,10 @@
     syncMapCursor();
   }
   function countryLayerMouseMove(e) {
+    if (markerHoverKey || pendingMarkerHoverKey) {
+      if (hoveredCountryName || countryHoverFrame || pendingHoveredCountryName) clearCountryHoverState();
+      return;
+    }
     if (map && map.getZoom() >= COUNTRY_HOVER_MAX_ZOOM) {
       clearCountryHoverState();
       return;
@@ -1605,20 +1609,34 @@
     if (!key) return;
     pendingMarkerHoverKey = key;
     pendingMarkerHoverKind = props.markerType === "cluster" ? "cluster" : "point";
+    if (hoveredCountryName || countryHoverFrame || pendingHoveredCountryName) clearCountryHoverState();
     if (markerHoverFrame) return;
     markerHoverFrame = requestAnimationFrame(function () {
       markerHoverFrame = 0;
       setMapMarkerHover(pendingMarkerHoverKey, pendingMarkerHoverKind);
     });
   }
-  function markerLayerMouseLeave() { clearMarkerHoverState(); }
+  function markerLayerMouseLeave(e) {
+    var interactionHits = e && e.point ? interactionFeaturesAtPoint(e.point, true) : [];
+    var feature = markerFeatureFromHits(interactionHits);
+    if (feature) { markerLayerMouseMove({ features: [feature] }); return; }
+    clearMarkerHoverState();
+    var countryHits = interactionHits.filter(function (hit) {
+      return hit && hit.layer && hit.layer.id === countryInteractionEventLayer;
+    });
+    if (countryHits.length) {
+      countryLayerMouseMove({ features: countryHits });
+      if (map.getCanvas().style.cursor !== "pointer") syncMapCursor();
+    } else clearCountryHoverState();
+  }
   function bindMarkerHoverEvents() {
     if (!map || markerHoverEventsBound) return;
     try {
+      var clusterHoverLayer = map.getLayer(MARKER_CLUSTER_HALO_LAYER) ? MARKER_CLUSTER_HALO_LAYER : MARKER_CLUSTER_CIRCLE_LAYER;
       map.on("mousemove", MARKER_POINT_LAYER, markerLayerMouseMove);
       map.on("mouseleave", MARKER_POINT_LAYER, markerLayerMouseLeave);
-      map.on("mousemove", MARKER_CLUSTER_CIRCLE_LAYER, markerLayerMouseMove);
-      map.on("mouseleave", MARKER_CLUSTER_CIRCLE_LAYER, markerLayerMouseLeave);
+      map.on("mousemove", clusterHoverLayer, markerLayerMouseMove);
+      map.on("mouseleave", clusterHoverLayer, markerLayerMouseLeave);
       markerHoverEventsBound = true;
     } catch (e) { console.warn("marker hover events:", e && e.message || e); }
   }
@@ -1712,11 +1730,32 @@
       .setLngLat([p.o.lon, p.o.lat]).addTo(map);
     return updateRecoveryDomMarker(marker, p, sc);
   }
+  function markerInteractionLayerIds() {
+    if (!map) return [];
+    return [MARKER_POINT_LAYER, MARKER_CLUSTER_LABEL_LAYER, MARKER_CLUSTER_CIRCLE_LAYER, MARKER_CLUSTER_HALO_LAYER]
+      .filter(function (id) { return !!map.getLayer(id); });
+  }
+  function interactionFeaturesAtPoint(point, includeCountry) {
+    if (!map || !point) return [];
+    var layers = markerInteractionLayerIds();
+    if (includeCountry && map.getZoom() < COUNTRY_HOVER_MAX_ZOOM && countryInteractionEventLayer &&
+        map.getLayer(countryInteractionEventLayer)) layers.push(countryInteractionEventLayer);
+    if (!layers.length) return [];
+    try { return map.queryRenderedFeatures(point, { layers: layers }) || []; } catch (e) { return []; }
+  }
+  function markerFeatureFromHits(hits) {
+    hits = hits || [];
+    var pointFeature = hits.find(function (f) {
+      return f && f.properties && f.properties.markerKey && f.properties.markerType === "point";
+    });
+    return pointFeature || hits.find(function (f) { return f && f.properties && f.properties.markerKey; }) || null;
+  }
+  function markerFeatureAtPoint(point) {
+    return markerFeatureFromHits(interactionFeaturesAtPoint(point, false));
+  }
   function handleMarkerMapClick(e) {
-    if (!map || !e || !e.point || !map.getLayer(MARKER_POINT_LAYER) || !map.getLayer(MARKER_CLUSTER_CIRCLE_LAYER)) return false;
-    var hits = [];
-    try { hits = map.queryRenderedFeatures(e.point, { layers: [MARKER_POINT_LAYER, MARKER_CLUSTER_CIRCLE_LAYER] }); } catch (err) {}
-    var feature = hits.find(function (f) { return f && f.properties && f.properties.markerKey; });
+    if (!map || !e || !e.point) return false;
+    var feature = markerFeatureAtPoint(e.point);
     if (!feature) return false;
     var props = feature.properties || {}, key = props.markerKey;
     if (props.markerType === "cluster") {

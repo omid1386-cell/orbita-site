@@ -28,7 +28,7 @@ test('cluster labels use a single atlas readback and preserve their drawing styl
 test('only the application script gets a new cache token', () => {
   assert.match(html, /window\.ORBITA_V = "20261104panfix1";/,
     'the shared data and CSS cache token stays unchanged');
-  assert.match(html, /window\.ORBITA_APP_V = "20261104clusteratlas1";/);
+  assert.match(html, /window\.ORBITA_APP_V = "20261105clusterhalo1";/);
   assert.match(html, /var ts = window\.ORBITA_APP_V \|\| window\.ORBITA_V \|\| Date\.now\(\);[\s\S]*?s\.src = 'assets\/js\/app\.js\?_t=' \+ ts;/,
     'the application script uses its dedicated cache token');
 });
