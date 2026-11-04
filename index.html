@@ -14,6 +14,7 @@
 <link rel="stylesheet" href="assets/vendor/maplibre-gl.css?v=3" />
 <script>
   window.ORBITA_V = "20261104panfix1";
+  window.ORBITA_APP_V = "20261104clusteratlas1";
   (function() {
     var ts = window.ORBITA_V;
     var link = document.createElement('link');
@@ -140,7 +141,7 @@
 <script src="assets/vendor/maplibre-gl.js?v=3"></script>
 <script>
   (function() {
-    var ts = window.ORBITA_V || Date.now();
+    var ts = window.ORBITA_APP_V || window.ORBITA_V || Date.now();
     var s = document.createElement('script');
     s.src = 'assets/js/app.js?_t=' + ts;
     document.body.appendChild(s);

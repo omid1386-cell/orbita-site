@@ -1469,26 +1469,51 @@
       '<g filter="url(#orbita-pin-shadow)">' + inner + '</g></svg>';
   }
   function clusterLabelImageId(n) { return "orbita-cluster-label-" + LANG + "-" + String(n); }
-  function addClusterLabelImage(id, text) {
-    if (!map) return false;
-    try { if (map.hasImage(id)) return true; } catch (e) { return false; }
-    var scale = 2, width = Math.max(18, String(text).length * 8 + 4), height = 16;
+  function addClusterLabelImages(labelSpecs) {
+    if (!map) return;
+    var pending = [];
+    Object.keys(labelSpecs).forEach(function (id) {
+      try { if (map.hasImage(id)) return; } catch (e) { return; }
+      var text = String(labelSpecs[id]);
+      pending.push({ id: id, text: text, width: Math.max(18, text.length * 8 + 4), offset: 0 });
+    });
+    if (!pending.length) return;
+    var scale = 2, height = 16, totalWidth = 0;
+    pending.forEach(function (spec) { spec.offset = totalWidth; totalWidth += spec.width; });
     var canvas = document.createElement("canvas");
-    canvas.width = width * scale; canvas.height = height * scale;
+    canvas.width = totalWidth * scale; canvas.height = height * scale;
     var ctx = canvas.getContext("2d");
-    if (!ctx) return false;
+    if (!ctx) return;
     ctx.scale(scale, scale);
-    ctx.clearRect(0, 0, width, height);
+    ctx.clearRect(0, 0, totalWidth, height);
     ctx.font = "700 11.5px Arial, sans-serif";
     ctx.textAlign = "center"; ctx.textBaseline = "middle"; ctx.fillStyle = "#08131f";
-    ctx.fillText(String(text), width / 2, height / 2, width - 2);
+    pending.forEach(function (spec) {
+      ctx.fillText(spec.text, spec.offset + spec.width / 2, height / 2, spec.width - 2);
+    });
+    var atlas;
     try {
-      map.addImage(id, ctx.getImageData(0, 0, canvas.width, canvas.height), { pixelRatio: scale });
-      return true;
+      atlas = ctx.getImageData(0, 0, canvas.width, canvas.height);
     } catch (e) {
-      console.warn("cluster label image install:", id, e && e.message || e);
-      return false;
+      pending.forEach(function (spec) {
+        console.warn("cluster label image install:", spec.id, e && e.message || e);
+      });
+      return;
     }
+    pending.forEach(function (spec) {
+      try {
+        var imageWidth = spec.width * scale, imageHeight = height * scale;
+        var image = ctx.createImageData(imageWidth, imageHeight);
+        for (var row = 0; row < imageHeight; row++) {
+          var from = (row * canvas.width + spec.offset * scale) * 4;
+          var to = row * imageWidth * 4;
+          image.data.set(atlas.data.subarray(from, from + imageWidth * 4), to);
+        }
+        map.addImage(spec.id, image, { pixelRatio: scale });
+      } catch (e) {
+        console.warn("cluster label image install:", spec.id, e && e.message || e);
+      }
+    });
   }
   function ensureCurrentClusterLabelImages() {
     if (!map) return;
@@ -1499,7 +1524,7 @@
         labelSpecs[props.clusterLabelImage] = props.clusterLabelText;
       }
     });
-    Object.keys(labelSpecs).forEach(function (id) { addClusterLabelImage(id, labelSpecs[id]); });
+    addClusterLabelImages(labelSpecs);
   }
   function markerImageSvgSpecs() {
     return [
