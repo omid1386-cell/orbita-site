@@ -25,10 +25,13 @@ test('cluster labels use a single atlas readback and preserve their drawing styl
   assert.match(cluster, /addClusterLabelImages\(labelSpecs\);/);
 });
 
-test('only the application script gets a new cache token', () => {
+test('guide CSS and app use dedicated cache tokens without changing the shared data token', () => {
   assert.match(html, /window\.ORBITA_V = "20261104panfix1";/,
-    'the shared data and CSS cache token stays unchanged');
-  assert.match(html, /window\.ORBITA_APP_V = "20261105clusterhalo1";/);
+    'map and data assets keep their existing cache token');
+  assert.match(html, /window\.ORBITA_CSS_V = "20261105siteguide2";/);
+  assert.match(html, /window\.ORBITA_APP_V = "20261105siteguide3";/);
+  assert.match(html, /var ts = window\.ORBITA_CSS_V \|\| window\.ORBITA_V;[\s\S]*?link\.href = 'assets\/css\/app\.css\?_t=' \+ ts;/,
+    'only the updated stylesheet receives its dedicated cache token');
   assert.match(html, /var ts = window\.ORBITA_APP_V \|\| window\.ORBITA_V \|\| Date\.now\(\);[\s\S]*?s\.src = 'assets\/js\/app\.js\?_t=' \+ ts;/,
     'the application script uses its dedicated cache token');
 });

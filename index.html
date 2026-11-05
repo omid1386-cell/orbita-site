@@ -14,9 +14,10 @@
 <link rel="stylesheet" href="assets/vendor/maplibre-gl.css?v=3" />
 <script>
   window.ORBITA_V = "20261104panfix1";
-  window.ORBITA_APP_V = "20261105clusterhalo1";
+  window.ORBITA_CSS_V = "20261105siteguide2";
+  window.ORBITA_APP_V = "20261105siteguide3";
   (function() {
-    var ts = window.ORBITA_V;
+    var ts = window.ORBITA_CSS_V || window.ORBITA_V;
     var link = document.createElement('link');
     link.rel = 'stylesheet';
     link.href = 'assets/css/app.css?_t=' + ts;
@@ -42,6 +43,16 @@
 
   <div class="topbar-actions">
     <button id="langBtn" class="ghost-btn" title="Language" data-i18n-title="change_language" aria-label="Change language">EN</button>
+    <button id="siteGuideBtn" class="ghost-btn guide-trigger" type="button" title="راهنما"
+      data-i18n-title="guide_button" data-i18n-aria-label="guide_button"
+      aria-haspopup="dialog" aria-controls="siteGuideDialog" aria-expanded="false">
+      <svg viewBox="0 0 24 24" width="16" height="16" aria-hidden="true" focusable="false">
+        <circle cx="12" cy="12" r="9" fill="none" stroke="currentColor" stroke-width="1.7"/>
+        <path d="M9.7 9.2a2.45 2.45 0 1 1 4.1 1.8c-1.2 1.05-1.8 1.45-1.8 2.8" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round"/>
+        <circle cx="12" cy="17.1" r=".9" fill="currentColor"/>
+      </svg>
+      <span class="guide-trigger-label" data-i18n="guide_button">راهنما</span>
+    </button>
     <button id="themeBtn" class="ghost-btn" title="تغییر پوسته نقشه" data-i18n-title="toggle_theme">
       <svg viewBox="0 0 24 24" width="18" height="18"><path d="M12 3a9 9 0 108.5 12A7 7 0 0112 3z" fill="currentColor"/></svg>
     </button>
@@ -137,6 +148,87 @@
 
 <!-- ============ ORBIT (3D) VIEW ============ -->
 
+
+<dialog id="siteGuideDialog" class="site-guide-dialog" aria-labelledby="siteGuideTitle" aria-describedby="siteGuideIntro">
+  <div class="site-guide-shell">
+    <header class="site-guide-head">
+      <div class="site-guide-heading">
+        <p class="site-guide-kicker" data-i18n="guide_kicker">راهنمای سریع</p>
+        <h2 id="siteGuideTitle" data-i18n="guide_title">راهنمای استفاده از ORBITA</h2>
+      </div>
+      <button id="siteGuideClose" class="ghost-btn site-guide-close" type="button"
+        title="بستن راهنما" data-i18n-title="guide_close" data-i18n-aria-label="guide_close">
+        <span aria-hidden="true">×</span>
+      </button>
+    </header>
+    <p id="siteGuideIntro" class="site-guide-intro" data-i18n="guide_intro">
+      راهنمای کوتاهی برای پیدا کردن و بررسی اطلاعات در سایت. برای جزئیات، هر بخش را باز کنید.
+    </p>
+    <div class="site-guide-content">
+      <details class="site-guide-section" open>
+        <summary><span class="site-guide-step" aria-hidden="true">01</span><span data-i18n="guide_quick_title">شروع در چند گام</span></summary>
+        <p class="site-guide-copy" data-i18n="guide_quick_body">برای شروع، جست‌وجو یا دستهٔ موردنظر را انتخاب کنید؛ سپس نشانگر را روی نقشه پیدا کنید و برای دیدن جزئیات روی آن بزنید.</p>
+      </details>
+      <details class="site-guide-section">
+        <summary><span class="site-guide-step" aria-hidden="true">02</span><span data-i18n="guide_map_title">نقشه، دسته‌ها و نشانگرها</span></summary>
+        <p class="site-guide-copy" data-i18n="guide_map_body"></p>
+      </details>
+      <details class="site-guide-section">
+        <summary><span class="site-guide-step" aria-hidden="true">03</span><span data-i18n="guide_search_title">جست‌وجوی نقشه و فهرست نتایج</span></summary>
+        <p class="site-guide-copy" data-i18n="guide_search_body"></p>
+      </details>
+      <details class="site-guide-section">
+        <summary><span class="site-guide-step" aria-hidden="true">04</span><span data-i18n="guide_country_title">شناسنامهٔ کشور</span></summary>
+        <p class="site-guide-copy" data-i18n="guide_country_body"></p>
+      </details>
+      <details class="site-guide-section">
+        <summary><span class="site-guide-step" aria-hidden="true">05</span><span data-i18n="guide_projects_title">پروژه‌های فضایی</span></summary>
+        <p class="site-guide-copy" data-i18n="guide_projects_body">در برگهٔ پروژه‌های فضایی می‌توانید نتایج بارگذاری‌شده را جست‌وجو کنید و بر اساس وضعیت، مدار یا نوع مأموریت فیلتر کنید.</p>
+      </details>
+      <details class="site-guide-section">
+        <summary><span class="site-guide-step" aria-hidden="true">06</span><span data-i18n="guide_companies_title">پروندهٔ شرکت‌ها و سازمان‌ها</span></summary>
+        <p class="site-guide-copy" data-i18n="guide_companies_body"></p>
+      </details>
+      <details class="site-guide-section">
+        <summary><span class="site-guide-step" aria-hidden="true">07</span><span data-i18n="guide_site_title">پروندهٔ پایگاه پرتاب</span></summary>
+        <p class="site-guide-copy" data-i18n="guide_site_body"></p>
+      </details>
+      <details class="site-guide-section">
+        <summary><span class="site-guide-step" aria-hidden="true">08</span><span data-i18n="guide_recovery_title">پروندهٔ فرود و بازیابی</span></summary>
+        <p class="site-guide-copy" data-i18n="guide_recovery_body"></p>
+      </details>
+      <details class="site-guide-section">
+        <summary><span class="site-guide-step" aria-hidden="true">09</span><span data-i18n="guide_next_title">نوار «پرتاب بعدی» در سربرگ</span></summary>
+        <p class="site-guide-copy" data-i18n="guide_next_body"></p>
+      </details>
+      <details class="site-guide-section">
+        <summary><span class="site-guide-step" aria-hidden="true">10</span><span data-i18n="guide_data_title">اتصال و داده‌ها</span></summary>
+        <p class="site-guide-copy" data-i18n="guide_data_body">اگر نقشهٔ برخط در دسترس نباشد، سایت از نقشهٔ محلی استفاده می‌کند. دریافت اطلاعات زندهٔ پرتاب‌های پیش‌رو به اینترنت نیاز دارد؛ پوشش و زمان به‌روزرسانی داده‌ها ممکن است میان پرونده‌ها متفاوت باشد.</p>
+      </details>
+      <details class="site-guide-section">
+        <summary><span class="site-guide-step" aria-hidden="true">11</span><span data-i18n="guide_scope_title">دامنهٔ پوشش</span></summary>
+        <p class="site-guide-copy" data-i18n="guide_scope_body"></p>
+      </details>
+      <details class="site-guide-section">
+        <summary><span class="site-guide-step" aria-hidden="true">12</span><span data-i18n="guide_sources_title">منابع و تازگی داده‌ها</span></summary>
+        <p class="site-guide-copy" data-i18n="guide_sources_body"></p>
+      </details>
+      <details class="site-guide-section">
+        <summary><span class="site-guide-step" aria-hidden="true">13</span><span data-i18n="guide_metrics_title">وضعیت‌ها و تفسیر شمارش‌ها</span></summary>
+        <p class="site-guide-copy" data-i18n="guide_metrics_body"></p>
+      </details>
+      <details class="site-guide-section">
+        <summary><span class="site-guide-step" aria-hidden="true">14</span><span data-i18n="guide_limits_title">دقت مکان، مرزها و عدم‌قطعیت</span></summary>
+        <p class="site-guide-copy" data-i18n="guide_limits_body"></p>
+      </details>
+      <details class="site-guide-section">
+        <summary><span class="site-guide-step" aria-hidden="true">15</span><span data-i18n="guide_glossary_title">واژه‌نامهٔ مشترک برای این بخش‌ها</span></summary>
+        <p class="site-guide-copy" data-i18n="guide_glossary_body"></p>
+      </details>
+    </div>
+    <p class="site-guide-note" data-i18n="guide_note">این راهنما با زبان فعلی سایت نمایش داده می‌شود. برای بستن، دکمهٔ × یا کلید Escape را بزنید.</p>
+  </div>
+</dialog>
 
 <script src="assets/vendor/maplibre-gl.js?v=3"></script>
 <script>
