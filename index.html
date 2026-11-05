@@ -14,8 +14,10 @@
 <link rel="stylesheet" href="assets/vendor/maplibre-gl.css?v=3" />
 <script>
   window.ORBITA_V = "20261104panfix1";
-  window.ORBITA_CSS_V = "20261105siteguide2";
-  window.ORBITA_APP_V = "20261105siteguide3";
+  window.ORBITA_CSS_V = "20261105report1";
+  window.ORBITA_APP_V = "20261105report1";
+  // Public API URL only; never place the Resend key or another secret here.
+  window.ORBITA_REPORT_API_URL = "";
   (function() {
     var ts = window.ORBITA_CSS_V || window.ORBITA_V;
     var link = document.createElement('link');
@@ -52,6 +54,15 @@
         <circle cx="12" cy="17.1" r=".9" fill="currentColor"/>
       </svg>
       <span class="guide-trigger-label" data-i18n="guide_button">راهنما</span>
+    </button>
+    <button id="reportBtn" class="ghost-btn report-trigger" type="button" title="گزارش ایراد"
+      data-i18n-title="report_button" data-i18n-aria-label="report_button"
+      aria-haspopup="dialog" aria-controls="reportDialog" aria-expanded="false">
+      <svg viewBox="0 0 24 24" width="16" height="16" aria-hidden="true" focusable="false">
+        <path d="M4 5.5h16v11H8l-4 3v-14Z" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linejoin="round"/>
+        <path d="M8 9.5h8M8 13h5" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round"/>
+      </svg>
+      <span class="report-trigger-label" data-i18n="report_button">گزارش</span>
     </button>
     <button id="themeBtn" class="ghost-btn" title="تغییر پوسته نقشه" data-i18n-title="toggle_theme">
       <svg viewBox="0 0 24 24" width="18" height="18"><path d="M12 3a9 9 0 108.5 12A7 7 0 0112 3z" fill="currentColor"/></svg>
@@ -227,6 +238,135 @@
       </details>
     </div>
     <p class="site-guide-note" data-i18n="guide_note">این راهنما با زبان فعلی سایت نمایش داده می‌شود. برای بستن، دکمهٔ × یا کلید Escape را بزنید.</p>
+  </div>
+</dialog>
+
+<dialog id="reportDialog" class="report-dialog" aria-labelledby="reportTitle" aria-describedby="reportIntro">
+  <div class="report-shell">
+    <header class="report-head">
+      <div class="report-heading">
+        <p class="report-kicker" data-i18n="report_kicker">بازخورد برای بهبود سایت</p>
+        <h2 id="reportTitle" data-i18n="report_title">گزارش ایراد یا اختلاف داده</h2>
+      </div>
+      <button id="reportClose" class="ghost-btn report-close" type="button"
+        title="بستن گزارش" data-i18n-title="report_close" data-i18n-aria-label="report_close">
+        <span aria-hidden="true">×</span>
+      </button>
+    </header>
+    <p id="reportIntro" class="report-intro" data-i18n="report_intro">
+      گزارش فنی و علمی مسیرهای جدا دارند. هر گزارش پیش از هر اصلاحی توسط انسان بررسی می‌شود؛ ارسال فرم داده‌های سایت را تغییر نمی‌دهد.
+    </p>
+    <form id="reportForm" class="report-form" autocomplete="on">
+      <div class="report-form-scroll">
+        <fieldset class="report-type-choice">
+          <legend data-i18n="report_type_label">نوع گزارش</legend>
+          <div class="report-type-options">
+            <label class="report-type-option">
+              <input type="radio" name="type" value="bug" checked />
+              <span data-i18n="report_type_bug">ایراد فنی</span>
+            </label>
+            <label class="report-type-option">
+              <input type="radio" name="type" value="data" />
+              <span data-i18n="report_type_data">اختلاف علمی یا داده‌ای</span>
+            </label>
+          </div>
+        </fieldset>
+
+        <div class="report-form-grid">
+          <div class="report-field">
+            <label for="reportSummary" data-i18n="report_summary">خلاصهٔ گزارش</label>
+            <input id="reportSummary" name="summary" type="text" minlength="4" maxlength="120" required
+              data-i18n-ph="report_summary_ph" placeholder="مثلاً فیلتر نقشه کار نمی‌کند" />
+          </div>
+          <div class="report-field">
+            <label for="reportPage" data-i18n="report_page">مسیر صفحه</label>
+            <input id="reportPage" name="page" type="text" readonly aria-describedby="reportPageHint" dir="ltr" />
+            <small id="reportPageHint" class="report-help" data-i18n="report_page_hint">فقط مسیر صفحه فرستاده می‌شود؛ نشانی نقشه یا بخش پس از # ارسال نمی‌شود.</small>
+          </div>
+        </div>
+
+        <fieldset id="reportBugFields" class="report-detail-fields" disabled>
+          <legend data-i18n="report_bug_legend">جزئیات ایراد فنی</legend>
+          <div class="report-form-grid">
+            <div class="report-field">
+              <label for="reportExpected" data-i18n="report_expected">رفتار مورد انتظار</label>
+              <textarea id="reportExpected" name="expected" minlength="3" maxlength="1200" required
+                data-i18n-ph="report_expected_ph" placeholder="چه چیزی باید رخ می‌داد؟"></textarea>
+            </div>
+            <div class="report-field">
+              <label for="reportActual" data-i18n="report_actual">رفتار مشاهده‌شده</label>
+              <textarea id="reportActual" name="actual" minlength="3" maxlength="1200" required
+                data-i18n-ph="report_actual_ph" placeholder="چه اتفاقی افتاد؟"></textarea>
+            </div>
+          </div>
+          <div class="report-field">
+            <label for="reportSteps" data-i18n="report_steps">گام‌های بازتولید</label>
+            <textarea id="reportSteps" name="steps" minlength="3" maxlength="2400" required
+              data-i18n-ph="report_steps_ph" placeholder="مراحل را به‌ترتیب بنویسید."></textarea>
+          </div>
+        </fieldset>
+
+        <fieldset id="reportDataFields" class="report-detail-fields" hidden disabled>
+          <legend data-i18n="report_data_legend">جزئیات اختلاف علمی یا داده‌ای</legend>
+          <div class="report-form-grid">
+            <div class="report-field">
+              <label for="reportRecord" data-i18n="report_record">نام یا شناسهٔ رکورد</label>
+              <input id="reportRecord" name="record" type="text" maxlength="180" required
+                data-i18n-ph="report_record_ph" placeholder="نام شرکت، مأموریت، پایگاه یا شناسه" />
+            </div>
+            <div class="report-field">
+              <label for="reportField" data-i18n="report_field">فیلد یا ادعای مورد اختلاف</label>
+              <input id="reportField" name="field" type="text" maxlength="140" required
+                data-i18n-ph="report_field_ph" placeholder="مثلاً مدار، تاریخ یا وضعیت" />
+            </div>
+          </div>
+          <div class="report-form-grid">
+            <div class="report-field">
+              <label for="reportCurrent" data-i18n="report_current">مقدار فعلی سایت</label>
+              <textarea id="reportCurrent" name="currentValue" minlength="1" maxlength="1600" required
+                data-i18n-ph="report_current_ph" placeholder="مقداری که اکنون در سایت دیده می‌شود"></textarea>
+            </div>
+            <div class="report-field">
+              <label for="reportSuggested" data-i18n="report_suggested">مقدار پیشنهادی</label>
+              <textarea id="reportSuggested" name="suggestedValue" minlength="1" maxlength="1600" required
+                data-i18n-ph="report_suggested_ph" placeholder="مقدار درست یا پیشنهادی شما"></textarea>
+            </div>
+          </div>
+          <div class="report-field">
+            <label for="reportSource" data-i18n="report_source">پیوند منبع</label>
+            <input id="reportSource" name="sourceUrl" type="url" maxlength="800" required
+              data-i18n-ph="report_source_ph" placeholder="https://…" dir="ltr" />
+            <small class="report-help" data-i18n="report_source_hint">برای بررسی پیشنهاد علمی یا داده‌ای، منبع مستقیم و معتبر لازم است.</small>
+          </div>
+        </fieldset>
+
+        <div class="report-field">
+          <label for="reportNotes" data-i18n="report_notes">توضیحات تکمیلی (اختیاری)</label>
+          <textarea id="reportNotes" name="notes" maxlength="2400"
+            data-i18n-ph="report_notes_ph" placeholder="زمینه یا نکتهٔ دیگری که به بررسی کمک می‌کند"></textarea>
+        </div>
+        <div class="report-field report-contact-field">
+          <label for="reportContact" data-i18n="report_contact">ایمیل تماس (اختیاری)</label>
+          <input id="reportContact" name="contactEmail" type="email" maxlength="254" autocomplete="email"
+            data-i18n-ph="report_contact_ph" placeholder="name@example.com" dir="ltr" />
+        </div>
+
+        <p class="report-privacy" data-i18n="report_privacy">
+          با ارسال فرم، متن گزارش و مسیر صفحه از راه Resend به صندوق مدیر سایت می‌رود. نشانی تماس اختیاری است؛ موقعیت جغرافیایی و تصویر صفحه خودکار فرستاده نمی‌شوند. گزارش‌ها هیچ داده‌ای را خودکار تغییر نمی‌دهند.
+        </p>
+        <div class="report-honeypot" aria-hidden="true">
+          <label for="reportWebsite">Website</label>
+          <input id="reportWebsite" name="website" type="text" tabindex="-1" autocomplete="off" />
+        </div>
+      </div>
+      <footer class="report-form-footer">
+        <p id="reportStatus" class="report-status" role="status" aria-live="polite" aria-atomic="true"></p>
+        <div class="report-actions">
+          <button id="reportCancel" class="ghost-btn" type="button" data-i18n="report_cancel">انصراف</button>
+          <button id="reportSubmit" class="report-submit" type="submit" data-i18n="report_send">ارسال گزارش</button>
+        </div>
+      </footer>
+    </form>
   </div>
 </dialog>
 

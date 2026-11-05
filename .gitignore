@@ -5,8 +5,11 @@ __pycache__/
 .venv/
 venv/
 env/
+.env
+.env.*
+!.env.example
 
-# ---- Node (only used for local testing, never shipped) ----
+# ---- Node dependencies and generated artifacts ----
 node_modules/
 package-lock.json
 npm-debug.log*

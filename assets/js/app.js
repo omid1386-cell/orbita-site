@@ -89,6 +89,30 @@
       guide_glossary_title: "واژه‌نامهٔ مشترک برای این بخش‌ها",
       guide_glossary_body: "• وضعیت پایگاه مانند فعال، غیرفعال، راکد یا در دست ساخت، شرایط ثبت‌شدهٔ خود پایگاه را توصیف می‌کند.\n• نتیجهٔ پرتاب مانند موفق یا ناموفق، نتیجهٔ یک رویداد مشخص است؛ از آن وضعیت کنونی پایگاه را نتیجه نگیرید.\n• نتیجهٔ فرود و نتیجهٔ بازیابی دو مرحله/نتیجهٔ جدا هستند؛ ثبت‌نشدن تأیید بازیابی مساوی شکست نیست.\n• زمان دقیق را فقط وقتی دقیق بخوانید که خود پنل آن را با UTC و دقت مربوط مشخص کرده باشد. تاریخ تقریبی یا شمارش‌گر تقریبی، لحظهٔ قطعی پرتاب نیست.\n• صفر یا خالی در شمارش‌ها و فیلدها به دادهٔ فعلی مربوط است؛ به‌تنهایی نبودن موجودیت یا رویداد در واقعیت را اثبات نمی‌کند.",
       guide_note: "این راهنما با زبان فعلی سایت نمایش داده می‌شود. برای بستن، دکمهٔ × یا کلید Escape را بزنید.",
+      report_button: "گزارش", report_title: "گزارش ایراد یا اختلاف داده", report_kicker: "بازخورد برای بهبود سایت",
+      report_intro: "ایراد فنی و اختلاف علمی/داده‌ای مسیر جدا دارند. هر گزارش پیش از هر اصلاحی به‌دست انسان بررسی می‌شود؛ ارسال فرم داده‌های سایت را تغییر نمی‌دهد.",
+      report_close: "بستن فرم گزارش", report_type_label: "نوع گزارش", report_type_bug: "ایراد فنی", report_type_data: "اختلاف علمی یا داده‌ای",
+      report_summary: "خلاصهٔ گزارش", report_summary_ph: "مثلاً فیلتر نقشه کار نمی‌کند", report_page: "مسیر صفحه",
+      report_page_hint: "فقط مسیر صفحه فرستاده می‌شود؛ نشانی نقشه یا بخش پس از # ارسال نمی‌شود.",
+      report_bug_legend: "جزئیات ایراد فنی", report_expected: "رفتار مورد انتظار", report_expected_ph: "چه چیزی باید رخ می‌داد؟",
+      report_actual: "رفتار مشاهده‌شده", report_actual_ph: "چه اتفاقی افتاد؟", report_steps: "گام‌های بازتولید",
+      report_steps_ph: "مراحل را به‌ترتیب بنویسید.", report_data_legend: "جزئیات اختلاف علمی یا داده‌ای",
+      report_record: "نام یا شناسهٔ رکورد", report_record_ph: "نام شرکت، مأموریت، پایگاه یا شناسه",
+      report_field: "فیلد یا ادعای مورد اختلاف", report_field_ph: "مثلاً مدار، تاریخ یا وضعیت",
+      report_current: "مقدار فعلی سایت", report_current_ph: "مقداری که اکنون در سایت دیده می‌شود",
+      report_suggested: "مقدار پیشنهادی", report_suggested_ph: "مقدار درست یا پیشنهادی شما",
+      report_source: "پیوند منبع", report_source_ph: "https://…",
+      report_source_hint: "برای بررسی پیشنهاد علمی یا داده‌ای، منبع مستقیم و معتبر لازم است.",
+      report_notes: "توضیحات تکمیلی (اختیاری)", report_notes_ph: "زمینه یا نکتهٔ دیگری که به بررسی کمک می‌کند",
+      report_contact: "ایمیل تماس (اختیاری)", report_contact_ph: "name@example.com",
+      report_privacy: "با ارسال فرم، متن گزارش، مسیر صفحه و زبان رابط از راه Resend به صندوق مدیر سایت می‌رود. ایمیل تماس اختیاری است؛ موقعیت جغرافیایی و تصویر صفحه خودکار فرستاده نمی‌شوند. رمز عبور یا اطلاعات محرمانه ننویسید؛ گزارش‌ها هیچ داده‌ای را خودکار تغییر نمی‌دهند.",
+      report_send: "ارسال گزارش", report_cancel: "انصراف", report_sending: "در حال ارسال…",
+      report_success: "گزارش برای بررسی انسانی فرستاده شد. شناسهٔ پیگیری: {id}",
+      report_unconfigured: "ارسال گزارش هنوز پیکربندی نشده است؛ چیزی ارسال نشد.",
+      report_rate_limited: "تعداد گزارش‌ها در مدت کوتاه زیاد است. کمی بعد دوباره تلاش کنید.",
+      report_unavailable: "سرویس ایمیل موقتاً در دسترس نیست. بعداً دوباره تلاش کنید.",
+      report_error: "ارسال انجام نشد؛ اتصال را بررسی کنید و دوباره تلاش کنید.",
+      report_invalid: "لطفاً فیلدهای مشخص‌شده را کامل و بررسی کنید.",
       orbit_hint: "کشیدن = چرخش کره · چرخ موشی = بزرگ‌نمایی · کلیک روی هر نقطه = اطلاعات ماهواره"
     },
     en: {
@@ -167,6 +191,30 @@
       guide_glossary_title: "Shared glossary for these areas",
       guide_glossary_body: "• Site status—such as Active, Inactive, Dormant, or Under construction—describes the recorded condition of the site.\n• Launch outcome—such as Success or Failed—is the result of a specific event; do not infer the site's present status from it.\n• Landing outcome and recovery outcome are separate results/stages. A missing recovery confirmation is not the same as a failed recovery.\n• Read a time as exact only when the panel identifies it as UTC and gives the relevant precision. An approximate date or countdown is not an exact launch moment.\n• Zero or blank refers to the current data; by itself it does not prove that an entity or event does not exist in reality.",
       guide_note: "The guide follows the current site language. Close it with the button or the Escape key.",
+      report_button: "Report", report_title: "Report a problem or data issue", report_kicker: "Help improve the site",
+      report_intro: "Technical bugs and scientific/data issues use separate forms. A person reviews every report before any correction; submitting a report never changes site data.",
+      report_close: "Close report form", report_type_label: "Report type", report_type_bug: "Technical bug", report_type_data: "Scientific or data issue",
+      report_summary: "Short summary", report_summary_ph: "For example, a map filter does not work", report_page: "Page path",
+      report_page_hint: "Only the page path is included; map coordinates and anything after # are not sent.",
+      report_bug_legend: "Technical bug details", report_expected: "Expected behavior", report_expected_ph: "What should have happened?",
+      report_actual: "Observed behavior", report_actual_ph: "What happened instead?", report_steps: "Steps to reproduce",
+      report_steps_ph: "List the steps in order.", report_data_legend: "Scientific or data issue details",
+      report_record: "Record name or ID", report_record_ph: "Company, mission, site, or record ID",
+      report_field: "Disputed field or claim", report_field_ph: "For example, orbit, date, or status",
+      report_current: "Current site value", report_current_ph: "The value currently shown on the site",
+      report_suggested: "Suggested value", report_suggested_ph: "The correct or proposed value",
+      report_source: "Source link", report_source_ph: "https://…",
+      report_source_hint: "A direct, credible source is required to review a scientific or data correction.",
+      report_notes: "Additional notes (optional)", report_notes_ph: "Any context that may help the review",
+      report_contact: "Contact email (optional)", report_contact_ph: "name@example.com",
+      report_privacy: "When you submit, the report text, page path, and interface language are sent through Resend to the site maintainer’s inbox. Contact email is optional; location and screenshots are not collected automatically. Do not include passwords or confidential information. Reports never change site data on their own.",
+      report_send: "Send report", report_cancel: "Cancel", report_sending: "Sending…",
+      report_success: "Your report was sent for human review. Reference: {id}",
+      report_unconfigured: "Report delivery is not configured yet; nothing was sent.",
+      report_rate_limited: "Too many reports in a short time. Please try again later.",
+      report_unavailable: "The email service is temporarily unavailable. Please try again later.",
+      report_error: "The report could not be sent. Check your connection and try again.",
+      report_invalid: "Please complete and check the highlighted fields.",
       orbit_hint: "Drag = rotate · Scroll = zoom · Click any dot = satellite info"
     },
     ar: {
@@ -247,6 +295,30 @@
       guide_glossary_title: "مصطلحات مشتركة لهذه الأقسام",
       guide_glossary_body: "• حالة الموقع—مثل نشط أو غير نشط أو خامل أو قيد الإنشاء—تصف الحالة المسجلة للموقع.\n• نتيجة الإطلاق—مثل النجاح أو الإخفاق—هي نتيجة حدث محدد؛ فلا تستنتج منها الحالة الحالية للموقع.\n• نتيجة الهبوط ونتيجة الاستعادة نتيجتان/مرحلتان منفصلتان. وغياب تأكيد الاستعادة لا يعني فشلها.\n• لا تقرأ الوقت على أنه دقيق إلا إذا حددت اللوحة أنه بتوقيت UTC وبيّنت درجة دقته. فالتاريخ أو العدّ التنازلي التقريبي ليس لحظة إطلاق مؤكدة.\n• يشير الصفر أو الحقل الفارغ إلى البيانات الحالية؛ ولا يثبت وحده أن الجهة أو الحدث غير موجود في الواقع.",
       guide_note: "يُعرض الدليل بلغة الموقع الحالية. أغلقه بالزر أو بمفتاح Escape.",
+      report_button: "إبلاغ", report_title: "الإبلاغ عن خلل أو مشكلة في البيانات", report_kicker: "ساعد في تحسين الموقع",
+      report_intro: "للأعطال التقنية والمشكلات العلمية/البيانات نماذج منفصلة. يراجع شخص كل بلاغ قبل إجراء أي تصحيح؛ ولا يغيّر إرسال البلاغ بيانات الموقع.",
+      report_close: "إغلاق نموذج البلاغ", report_type_label: "نوع البلاغ", report_type_bug: "خلل تقني", report_type_data: "مشكلة علمية أو في البيانات",
+      report_summary: "ملخص قصير", report_summary_ph: "مثال: مرشح الخريطة لا يعمل", report_page: "مسار الصفحة",
+      report_page_hint: "يُرسل مسار الصفحة فقط؛ ولا تُرسل إحداثيات الخريطة أو أي بيانات بعد #.",
+      report_bug_legend: "تفاصيل الخلل التقني", report_expected: "السلوك المتوقع", report_expected_ph: "ما الذي كان ينبغي أن يحدث؟",
+      report_actual: "السلوك الملحوظ", report_actual_ph: "ما الذي حدث فعلياً؟", report_steps: "خطوات إعادة المشكلة",
+      report_steps_ph: "اكتب الخطوات بالترتيب.", report_data_legend: "تفاصيل المشكلة العلمية أو مشكلة البيانات",
+      report_record: "اسم السجل أو معرّفه", report_record_ph: "الشركة أو المهمة أو الموقع أو معرّف السجل",
+      report_field: "الحقل أو الادعاء محل الاختلاف", report_field_ph: "مثال: المدار أو التاريخ أو الحالة",
+      report_current: "القيمة الحالية في الموقع", report_current_ph: "القيمة المعروضة حالياً في الموقع",
+      report_suggested: "القيمة المقترحة", report_suggested_ph: "القيمة الصحيحة أو المقترحة",
+      report_source: "رابط المصدر", report_source_ph: "https://…",
+      report_source_hint: "يلزم مصدر مباشر وموثوق لمراجعة التصحيح العلمي أو تصحيح البيانات.",
+      report_notes: "ملاحظات إضافية (اختياري)", report_notes_ph: "أي سياق قد يساعد في المراجعة",
+      report_contact: "بريد للتواصل (اختياري)", report_contact_ph: "name@example.com",
+      report_privacy: "عند الإرسال، يُرسل نص البلاغ ومسار الصفحة ولغة الواجهة عبر Resend إلى صندوق مدير الموقع. بريد التواصل اختياري؛ ولا تُجمع بيانات الموقع الجغرافي أو لقطات الشاشة تلقائياً. لا تكتب كلمات المرور أو المعلومات السرية؛ ولا تغيّر البلاغات بيانات الموقع تلقائياً.",
+      report_send: "إرسال البلاغ", report_cancel: "إلغاء", report_sending: "جارٍ الإرسال…",
+      report_success: "أُرسل البلاغ للمراجعة البشرية. رقم المتابعة: {id}",
+      report_unconfigured: "لم يُجهّز إرسال البلاغات بعد؛ لم يُرسل شيء.",
+      report_rate_limited: "أُرسلت بلاغات كثيرة خلال وقت قصير. حاول لاحقاً.",
+      report_unavailable: "خدمة البريد غير متاحة مؤقتاً. حاول لاحقاً.",
+      report_error: "تعذّر إرسال البلاغ. تحقق من الاتصال ثم حاول مرة أخرى.",
+      report_invalid: "أكمل الحقول المحددة وتحقق منها من فضلك.",
       orbit_hint: "اسحب لتدوير الكرة · مرّر للتكبير · انقر على أي نقطة لعرض معلومات القمر الصناعي"
     }
   };
@@ -543,7 +615,162 @@
   }
   bindSiteGuide();
 
+
+
   var MAP_STYLE = localStorage.getItem("orbita_map_style") || (THEME === "light" ? "sunny" : "dark");
+
+  function bindReportForm() {
+    var trigger = $("#reportBtn"), dialog = $("#reportDialog"), close = $("#reportClose");
+    var cancel = $("#reportCancel"), form = $("#reportForm"), status = $("#reportStatus");
+    var submit = $("#reportSubmit"), bugFields = $("#reportBugFields"), dataFields = $("#reportDataFields");
+    var pageField = $("#reportPage"), recordField = $("#reportRecord");
+    if (!trigger || !dialog || !close || !cancel || !form || !status || !submit || !bugFields || !dataFields || typeof dialog.showModal !== "function") return;
+
+    function setStatus(key, tone, id) {
+      if (!key) {
+        status.textContent = "";
+        status.removeAttribute("data-tone");
+        return;
+      }
+      var message = t(key);
+      if (id) message = message.replace("{id}", id);
+      else message = message.replace(/\s*[:：]\s*\{id\}/, "");
+      status.textContent = message;
+      if (tone) status.setAttribute("data-tone", tone);
+      else status.removeAttribute("data-tone");
+    }
+
+    function setType() {
+      var selected = form.querySelector('input[name="type"]:checked');
+      var isData = !!(selected && selected.value === "data");
+      bugFields.disabled = isData;
+      bugFields.hidden = isData;
+      dataFields.disabled = !isData;
+      dataFields.hidden = !isData;
+    }
+
+    function setPageContext() {
+      if (pageField) pageField.value = window.location.pathname || "/";
+      if (recordField && !recordField.value.trim()) {
+        var visibleTitle = document.querySelector("#detail.open .d-title");
+        if (visibleTitle) recordField.value = visibleTitle.textContent.trim().slice(0, 180);
+      }
+    }
+
+    function openDialog() {
+      if (dialog.open) return;
+      setPageContext();
+      setType();
+      setStatus("");
+      dialog.showModal();
+      trigger.setAttribute("aria-expanded", "true");
+      var summary = $("#reportSummary");
+      if (summary) {
+        try { summary.focus({ preventScroll: true }); } catch (e) { summary.focus(); }
+      }
+    }
+
+    trigger.addEventListener("click", openDialog);
+    close.addEventListener("click", function () { if (dialog.open) dialog.close(); });
+    cancel.addEventListener("click", function () { if (dialog.open) dialog.close(); });
+    dialog.addEventListener("click", function (event) {
+      if (event.target === dialog && dialog.open) dialog.close();
+    });
+    dialog.addEventListener("keydown", function (event) { event.stopPropagation(); });
+    dialog.addEventListener("close", function () {
+      trigger.setAttribute("aria-expanded", "false");
+      if (trigger.isConnected) {
+        try { trigger.focus({ preventScroll: true }); } catch (e) { trigger.focus(); }
+      }
+    });
+
+    form.addEventListener("change", function (event) {
+      if (event.target && event.target.name === "type") setType();
+      if (!submit.disabled) setStatus("");
+    });
+    form.addEventListener("input", function () {
+      if (!submit.disabled) setStatus("");
+    });
+    form.addEventListener("submit", async function (event) {
+      event.preventDefault();
+      if (!form.reportValidity()) {
+        setStatus("report_invalid", "error");
+        return;
+      }
+
+      var endpoint = String(window.ORBITA_REPORT_API_URL || "").trim();
+      if (!endpoint) {
+        setStatus("report_unconfigured", "error");
+        return;
+      }
+      try {
+        var endpointUrl = new URL(endpoint);
+        if (endpointUrl.protocol !== "https:") throw new Error("https_required");
+      } catch (e) {
+        setStatus("report_unconfigured", "error");
+        return;
+      }
+
+      var data = new FormData(form);
+      var payload = {
+        type: data.get("type"),
+        summary: data.get("summary"),
+        page: data.get("page"),
+        expected: data.get("expected"),
+        actual: data.get("actual"),
+        steps: data.get("steps"),
+        record: data.get("record"),
+        field: data.get("field"),
+        currentValue: data.get("currentValue"),
+        suggestedValue: data.get("suggestedValue"),
+        sourceUrl: data.get("sourceUrl"),
+        notes: data.get("notes"),
+        contactEmail: data.get("contactEmail"),
+        website: data.get("website"),
+        lang: LANG
+      };
+
+      submit.disabled = true;
+      form.setAttribute("aria-busy", "true");
+      setStatus("report_sending", "");
+      try {
+        var response = await fetch(endpoint, {
+          method: "POST",
+          mode: "cors",
+          credentials: "omit",
+          cache: "no-store",
+          redirect: "error",
+          headers: { "Content-Type": "application/json" },
+          body: JSON.stringify(payload)
+        });
+        var result = await response.json().catch(function () { return null; });
+        if (!response.ok || !result || result.ok !== true) {
+          var code = result && result.error;
+          if (code === "not_configured") setStatus("report_unconfigured", "error");
+          else if (code === "rate_limited") setStatus("report_rate_limited", "error");
+          else if (code === "invalid_report") setStatus("report_invalid", "error");
+          else if (response.status === 502 || response.status === 503) setStatus("report_unavailable", "error");
+          else setStatus("report_error", "error");
+          return;
+        }
+
+        var reportId = typeof result.id === "string" ? result.id : "";
+        form.reset();
+        setType();
+        setPageContext();
+        setStatus("report_success", "success", reportId);
+      } catch (e) {
+        setStatus("report_error", "error");
+      } finally {
+        submit.disabled = false;
+        form.removeAttribute("aria-busy");
+      }
+    });
+
+    setType();
+    setPageContext();
+  }
+  bindReportForm();
   function cycleMapStyle() {
     if (MAP_STYLE === "dark") MAP_STYLE = "sunny";
     else if (MAP_STYLE === "sunny") MAP_STYLE = "osm";

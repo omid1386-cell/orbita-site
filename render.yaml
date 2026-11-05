@@ -1,0 +1,20 @@
+services:
+  - type: web
+    name: orbita-report-api
+    runtime: node
+    plan: free
+    rootDir: report-api
+    buildCommand: npm install
+    startCommand: npm start
+    healthCheckPath: /api/health
+    envVars:
+      - key: NODE_ENV
+        value: production
+      - key: REPORT_ALLOWED_ORIGIN
+        value: https://orbita-site.onrender.com
+      - key: REPORT_FROM
+        value: "ORBITA Reports <onboarding@resend.dev>"
+      - key: REPORT_TO
+        sync: false
+      - key: RESEND_API_KEY
+        sync: false
