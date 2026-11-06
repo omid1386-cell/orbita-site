@@ -20960,7 +20960,7 @@
     "location_note_fa": "فقط موقعیت مندرج در فهرست با اطمینان پایین؛ نشان محدوده کیپ‌تاون تقریبی است و نشانی دفتر تأیید نشده.",
     "location_note_ar": "موقع وارد في دليل منخفض الثقة فقط؛ دبوس منطقة كيب تاون تقريبي وليس عنوان مكتب مؤكداً.",
     "founded": null,
-    "site": "https://pyralink.co.za/",
+    "site": "",
     "linkedin": "https://www.linkedin.com/company/pyralink-aerospace/",
     "en_d": "Low-confidence directory-level candidate only. A satsearch supplier page and the ZASpace business directory describe PyraLink as a South African rocket-engine/launch startup and list a Protea RB-E1 engine concept. The official domain returned a hosting-provider default page and its Contact URL returned 404 on 6 November 2026. The reviewed evidence does not independently verify an engine hot-fire, completed hardware, launch contract, orbital mission, or operating service; do not treat directory claims as achieved capability.",
     "fa_d": "فقط نامزد کم‌اطمینان بر پایه فهرست‌های تجاری. صفحه فروشندگان satsearch و فهرست کسب‌وکار ZASpace، PyraLink را استارتاپ پیشران/پرتاب آفریقای جنوبی معرفی می‌کنند و مفهوم موتور Protea RB-E1 را فهرست می‌کنند. دامنه رسمی در 6 نوامبر 2026 صفحه پیش‌فرض میزبان را برگرداند و نشانی Contact خطای 404 داشت. شواهد بررسی‌شده آزمون آتش موتور، سخت‌افزار تکمیل‌شده، قرارداد پرتاب، مأموریت مداری یا خدمت عملیاتی را مستقلاً تأیید نمی‌کند؛ ادعاهای فهرست‌ها را توان محقق‌شده تلقی نکنید.",
@@ -22589,7 +22589,7 @@
     "location_note_fa": "مختصات نقشه نشان تقریبی محدوده شهر است، نه نشانی تأییدشده دفتر یا تأسیسات.",
     "location_note_ar": "إحداثيات الخريطة دبابيس تقريبية لمناطق المدن وليست إحداثيات مكاتب أو منشآت مؤكدة.",
     "founded": 2023,
-    "site": "https://x.com/AsesAgence",
+    "site": "",
     "en_d": "Senegal’s space-studies agency, created in 2023 to shape and implement national space policy and strategy. Its 2026 public activity includes the Senegal edition of ActInSpace. This is an agency and capacity-building record, not evidence of an indigenous launcher or satellite.",
     "fa_d": "آژانس مطالعات فضایی سنگال که در 2023 برای طراحی و اجرای سیاست و راهبرد ملی فضایی ایجاد شد. فعالیت عمومی 2026 آن شامل برگزاری نسخه سنگالی ActInSpace است. این رکورد درباره نهاد و توسعه ظرفیت است، نه مدرک پرتابگر یا ماهواره بومی.",
     "ar_d": "وكالة السنغال للدراسات الفضائية، أُنشئت عام 2023 لصياغة السياسة والاستراتيجية الوطنية وتنفيذهما. وشمل نشاطها العام في 2026 تنظيم نسخة سنغالية من ActInSpace. هذا سجل مؤسسي لبناء القدرات، وليس دليلاً على قمر أو مركبة إطلاق محلية.",
@@ -22650,7 +22650,7 @@
       }
     ],
     "contacts": {
-      "website": "https://x.com/AsesAgence"
+      "x": "https://x.com/AsesAgence"
     },
     "source_note_en": "Official ASES account and 2026 Senegalese Press Agency report syndicated by AllAfrica.",
     "source_note_fa": "حساب رسمی ASES و گزارش آژانس خبری سنگال در 2026.",
@@ -22675,7 +22675,7 @@
     "location_note_fa": "مختصات نقشه نشان تقریبی محدوده شهر است، نه نشانی تأییدشده دفتر یا تأسیسات.",
     "location_note_ar": "إحداثيات الخريطة دبابيس تقريبية لمناطق المدن وليست إحداثيات مكاتب أو منشآت مؤكدة.",
     "founded": 2021,
-    "site": "https://zingsa.co.zw/",
+    "site": "https://zingsa.ac.zw/",
     "en_d": "A wholly government-owned Zimbabwean agency established under the Research Act and officially launched in 2021. ZINGSA works across geospatial services, Earth observation, space science and satellite programmes. Its official material identifies ZIMSAT-1 and ZIMSAT-2; no domestic orbital launcher is claimed.",
     "fa_d": "نهاد کاملاً دولتی زیمبابوه که ذیل قانون پژوهش ایجاد و در 2021 رسماً راه‌اندازی شد. ZINGSA در خدمات مکانی، سنجش از دور، علوم فضایی و برنامه‌های ماهواره‌ای فعالیت می‌کند. اسناد رسمی ZIMSAT-1 و ZIMSAT-2 را معرفی می‌کنند؛ پرتابگر مداری داخلی ادعا نمی‌شود.",
     "ar_d": "وكالة زيمبابوية مملوكة بالكامل للحكومة، أُنشئت بموجب قانون البحث وأُطلقت رسمياً عام 2021. تعمل ZINGSA في الخدمات الجغرافية ورصد الأرض وعلوم الفضاء وبرامج الأقمار. وتذكر موادها الرسمية ZIMSAT-1 وZIMSAT-2؛ ولا تدّعي مركبة إطلاق مدارية محلية.",
@@ -22736,7 +22736,7 @@
       }
     ],
     "contacts": {
-      "website": "https://zingsa.co.zw/"
+      "website": "https://zingsa.ac.zw/"
     },
     "source_note_en": "Official ZINGSA site, divisions and 2026 news.",
     "source_note_fa": "وب‌سایت، بخش‌ها و خبرهای رسمی ZINGSA در 2026.",
@@ -22761,7 +22761,7 @@
     "location_note_fa": "مختصات نقشه نشان تقریبی محدوده شهر است، نه نشانی تأییدشده دفتر یا تأسیسات.",
     "location_note_ar": "إحداثيات الخريطة دبابيس تقريبية لمناطق المدن وليست إحداثيات مكاتب أو منشآت مؤكدة.",
     "founded": 2010,
-    "site": "https://www.economie-numerique.gouv.ga/2-ministere/2077-directions-generales/2084-entites-sous-tutelles/2103-agence-gabonaise-d-etudes-et-d-observations-spatiales-ageos-/",
+    "site": "https://www.ageos.ga/",
     "en_d": "Gabon’s public Earth-observation agency, created in 2010. AGEOS collects, processes and provides satellite imagery for environmental, forest, land-use and natural-resource management. Its headquarters are in Libreville and its receiving station is at Nkok; this is not a launch site.",
     "fa_d": "نهاد عمومی سنجش از دور گابن که در 2010 ایجاد شد. AGEOS تصاویر ماهواره‌ای را برای مدیریت محیط زیست، جنگل، کاربری زمین و منابع طبیعی دریافت و پردازش می‌کند. دفتر مرکزی در لیبرویل و ایستگاه دریافت در Nkok است؛ این محل پایگاه پرتاب نیست.",
     "ar_d": "وكالة الغابون العامة لرصد الأرض، أُنشئت عام 2010. تجمع AGEOS صور الأقمار وتعالجها وتتيحها لإدارة البيئة والغابات واستخدام الأراضي والموارد الطبيعية. مقرها في ليبرفيل ومحطة الاستقبال في Nkok؛ وهذا ليس موقع إطلاق.",
@@ -22813,7 +22813,7 @@
       }
     ],
     "contacts": {
-      "website": "https://www.economie-numerique.gouv.ga/2-ministere/2077-directions-generales/2084-entites-sous-tutelles/2103-agence-gabonaise-d-etudes-et-d-observations-spatiales-ageos-/"
+      "website": "https://www.ageos.ga/"
     },
     "source_note_en": "Official Gabonese ministry record and contact page; HQ and Nkok station are distinct.",
     "source_note_fa": "رکورد و صفحه تماس رسمی وزارت گابن؛ دفتر مرکزی و ایستگاه Nkok جدا هستند.",
@@ -23087,7 +23087,7 @@
     "location_note_fa": "مختصات نقشه نشان تقریبی محدوده شهر است، نه نشانی تأییدشده دفتر یا تأسیسات.",
     "location_note_ar": "إحداثيات الخريطة دبابيس تقريبية لمناطق المدن وليست إحداثيات مكاتب أو منشآت مؤكدة.",
     "founded": null,
-    "site": "https://www.nust.na/",
+    "site": "https://www.nust.na/taxonomy/term/384",
     "en_d": "The Namibia Institute of Space Technology is a university institute within NUST, not a standalone national space agency. NUST commissioned its satellite-data receiving ground station in March 2026, expanding research and teaching capacity in Windhoek.",
     "fa_d": "مؤسسه فناوری فضایی نامیبیا زیرمجموعه دانشگاه NUST است و آژانس ملی مستقل نیست. دانشگاه NUST در مارس 2026 ایستگاه دریافت داده ماهواره‌ای را افتتاح کرد و ظرفیت آموزش و پژوهش در ویندهوک را گسترش داد.",
     "ar_d": "معهد ناميبيا لتكنولوجيا الفضاء وحدة جامعية ضمن NUST، وليس وكالة فضاء وطنية مستقلة. دشنت الجامعة محطة استقبال بيانات الأقمار في مارس 2026 لتعزيز البحث والتعليم في ويندهوك.",
@@ -23139,7 +23139,7 @@
       }
     ],
     "contacts": {
-      "website": "https://www.nust.na/"
+      "website": "https://www.nust.na/taxonomy/term/384"
     },
     "source_note_en": "Official NUST news and 2026 report; the institution is classified as a university institute.",
     "source_note_fa": "خبر رسمی NUST و گزارش 2026؛ نهاد به‌عنوان مؤسسه دانشگاهی دسته‌بندی شده است.",
@@ -23671,7 +23671,7 @@
     "location_note_fa": "مختصات نقشه نشان تقریبی محدوده شهر است، نه نشانی تأییدشده دفتر یا تأسیسات.",
     "location_note_ar": "إحداثيات الخريطة دبابيس تقريبية لمناطق المدن وليست إحداثيات مكاتب أو منشآت مؤكدة.",
     "founded": 2013,
-    "site": "http://www.isra.sd/",
+    "site": "",
     "en_d": "Sudan’s Institute of Space Research and Aerospace was established in 2013 and appeared in public accounts of the country’s space programme. Because current operations and organisational continuity are difficult to verify, this record is explicitly historical and status-cautious.",
     "fa_d": "مؤسسه پژوهش فضایی و هوافضای سودان در 2013 ایجاد شد و در گزارش‌های عمومی برنامه فضایی کشور حضور داشت. چون عملیات جاری و تداوم سازمانی به‌سختی قابل تأیید است، این رکورد صریحاً تاریخی و محتاطانه ثبت شده است.",
     "ar_d": "أُنشئ معهد السودان لأبحاث الفضاء والفضاء الجوي عام 2013 وظهر في تقارير عامة عن برنامج البلاد الفضائي. ونظراً لصعوبة التحقق من التشغيل الحالي والاستمرارية المؤسسية، سُجل هذا المدخل بوصفه تاريخياً مع التحفظ على الحالة.",
@@ -23731,9 +23731,7 @@
         "text_ar": "أُطلق SRSS-1؛ ولم يتم التحقق من استمرار البرنامج حالياً."
       }
     ],
-    "contacts": {
-      "website": "http://www.isra.sd/"
-    },
+    "contacts": {},
     "source_note_en": "Official domain and historical/2023 sources; no current operating status is asserted.",
     "source_note_fa": "دامنه رسمی و منابع تاریخی/2023؛ وضعیت عملیاتی جاری ادعا نمی‌شود.",
     "source_note_ar": "النطاق الرسمي ومصادر تاريخية/2023؛ لا يُدّعى وضع تشغيلي حالي."

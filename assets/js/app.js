@@ -5381,46 +5381,50 @@
       h += '</div>';
     }
 
-    // SECTION 3: OFFICIAL CONTACTS & LINKS BAR (DISPLAY ACTUAL DOMAIN NAME TEXT INSTEAD OF GENERIC Official Website)
+    // SECTION 3: CONTACT LINKS — only render values explicitly supplied for this organization.
+    // Never substitute another agency's website, LinkedIn page, or email when a field is absent.
     var agencyLinks = extractEntityLinks(o);
     var rawWeb = agencyLinks.webUrl;
-    var webUrl = rawWeb ? (rawWeb.startsWith("http") ? rawWeb : "https://" + rawWeb) : "https://isa.ir";
+    var webUrl = rawWeb ? (rawWeb.startsWith("http") ? rawWeb : "https://" + rawWeb) : "";
     var displayWebDomain = webUrl.replace("https://", "").replace("http://", "").replace("www.", "").replace(/\/$/, "");
-    
+
     var rawLinkedin = o.linkedin || (o.contacts ? o.contacts.linkedin : null);
-    var linkedinUrl = rawLinkedin ? (rawLinkedin.startsWith("http") ? rawLinkedin : "https://" + rawLinkedin) : "https://linkedin.com/company/isa-iran";
+    var linkedinUrl = rawLinkedin ? (rawLinkedin.startsWith("http") ? rawLinkedin : "https://" + rawLinkedin) : "";
     var displayLinkedin = linkedinUrl.replace("https://", "").replace("http://", "").replace("www.", "").replace(/\/$/, "");
 
-    var emailAddr = o.email || (o.contacts ? o.contacts.email : null) || "info@isa.ir";
+    var emailAddr = o.email || (o.contacts ? o.contacts.email : null) || "";
 
-    h += '<div style="background:linear-gradient(135deg, rgba(15, 31, 51, 0.95) 0%, rgba(9, 13, 22, 0.98) 100%); border:1px solid rgba(56, 189, 248, 0.35); border-radius:8px; padding:12px; margin-top:12px; box-shadow:0 6px 16px rgba(0,0,0,0.4); backdrop-filter:blur(8px);">';
-    h += '<div style="font-size:11.5px; font-weight:bold; color:#f2c649; margin-bottom:10px; display:flex; align-items:center; gap:6px; border-bottom:1px solid rgba(255,255,255,0.08); padding-bottom:6px;">🌐 ' + (isFa ? "درگاه‌های رسمی ارتباطی و وب‌سایت سازمان:" : "Official Communication Channels:") + '</div>';
-    
-    h += '<div style="display:flex; flex-direction:column; gap:8px;">';
-    
-    // Website Row (Displays actual domain URL text like isa.ir ↗)
-    h += '<div style="display:flex; justify-content:space-between; align-items:center; background:rgba(0,0,0,0.3); padding:8px 12px; border-radius:6px; border:1px solid rgba(16, 185, 129, 0.3);">';
-    h += '<span style="font-size:10.5px; color:#f2c649; font-weight:bold;">🌐 ' + (isFa ? "وب‌سایت رسمی:" : "Official Website:") + '</span>';
-    h += '<a href="' + esc(webUrl) + '" target="_blank" rel="noopener noreferrer" style="color:#10b981; font-weight:bold; text-decoration:none; background:rgba(16, 185, 129, 0.15); padding:4px 12px; border-radius:5px; border:1px solid rgba(16, 185, 129, 0.4); font-size:10.5px; font-family:monospace; display:flex; align-items:center; gap:4px;"><bdi>' + esc(displayWebDomain) + '</bdi> ↗</a>';
-    h += '</div>';
+    if (webUrl || linkedinUrl || emailAddr) {
+      h += '<div style="background:linear-gradient(135deg, rgba(15, 31, 51, 0.95) 0%, rgba(9, 13, 22, 0.98) 100%); border:1px solid rgba(56, 189, 248, 0.35); border-radius:8px; padding:12px; margin-top:12px; box-shadow:0 6px 16px rgba(0,0,0,0.4); backdrop-filter:blur(8px);">';
+      h += '<div style="font-size:11.5px; font-weight:bold; color:#f2c649; margin-bottom:10px; display:flex; align-items:center; gap:6px; border-bottom:1px solid rgba(255,255,255,0.08); padding-bottom:6px;">🌐 ' + (isFa ? "درگاه‌های رسمی ارتباطی و وب‌سایت سازمان:" : "Official Communication Channels:") + '</div>';
+      h += '<div style="display:flex; flex-direction:column; gap:8px;">';
 
-    // LinkedIn Row
-    if (linkedinUrl && linkedinUrl !== "#") {
-      h += '<div style="display:flex; justify-content:space-between; align-items:center; background:rgba(0,0,0,0.3); padding:8px 12px; border-radius:6px; border:1px solid rgba(56, 189, 248, 0.3);">';
-      h += '<span style="font-size:10.5px; color:#f2c649; font-weight:bold;">💼 ' + (isFa ? "صفحه رسمی لینکدین:" : "Official LinkedIn:") + '</span>';
-      h += '<a href="' + esc(linkedinUrl) + '" target="_blank" rel="noopener noreferrer" style="color:#38bdf8; font-weight:bold; text-decoration:none; background:rgba(56, 189, 248, 0.15); padding:4px 12px; border-radius:5px; border:1px solid rgba(56, 189, 248, 0.4); font-size:10.5px; font-family:monospace; display:flex; align-items:center; gap:4px;"><bdi>' + esc(displayLinkedin) + '</bdi> ↗</a>';
-      h += '</div>';
+      // Website Row
+      if (webUrl) {
+        h += '<div style="display:flex; justify-content:space-between; align-items:center; background:rgba(0,0,0,0.3); padding:8px 12px; border-radius:6px; border:1px solid rgba(16, 185, 129, 0.3);">';
+        h += '<span style="font-size:10.5px; color:#f2c649; font-weight:bold;">🌐 ' + (isFa ? "وب‌سایت رسمی:" : "Official Website:") + '</span>';
+        h += '<a href="' + esc(webUrl) + '" target="_blank" rel="noopener noreferrer" style="color:#10b981; font-weight:bold; text-decoration:none; background:rgba(16, 185, 129, 0.15); padding:4px 12px; border-radius:5px; border:1px solid rgba(16, 185, 129, 0.4); font-size:10.5px; font-family:monospace; display:flex; align-items:center; gap:4px;"><bdi>' + esc(displayWebDomain) + '</bdi> ↗</a>';
+        h += '</div>';
+      }
+
+      // LinkedIn Row
+      if (linkedinUrl && linkedinUrl !== "#") {
+        h += '<div style="display:flex; justify-content:space-between; align-items:center; background:rgba(0,0,0,0.3); padding:8px 12px; border-radius:6px; border:1px solid rgba(56, 189, 248, 0.3);">';
+        h += '<span style="font-size:10.5px; color:#f2c649; font-weight:bold;">💼 ' + (isFa ? "صفحه رسمی لینکدین:" : "Official LinkedIn:") + '</span>';
+        h += '<a href="' + esc(linkedinUrl) + '" target="_blank" rel="noopener noreferrer" style="color:#38bdf8; font-weight:bold; text-decoration:none; background:rgba(56, 189, 248, 0.15); padding:4px 12px; border-radius:5px; border:1px solid rgba(56, 189, 248, 0.4); font-size:10.5px; font-family:monospace; display:flex; align-items:center; gap:4px;"><bdi>' + esc(displayLinkedin) + '</bdi> ↗</a>';
+        h += '</div>';
+      }
+
+      // Email Row
+      if (emailAddr) {
+        h += '<div style="display:flex; justify-content:space-between; align-items:center; background:rgba(0,0,0,0.3); padding:8px 12px; border-radius:6px; border:1px solid rgba(245, 158, 11, 0.3);">';
+        h += '<span style="font-size:10.5px; color:#f2c649; font-weight:bold;">📧 ' + (isFa ? "پست الکترونیک ارتباطی:" : "Contact Email:") + '</span>';
+        h += '<a href="mailto:' + esc(emailAddr) + '" style="color:#f59e0b; font-weight:bold; font-size:10.5px; font-family:monospace; background:rgba(245, 158, 11, 0.15); padding:4px 12px; border-radius:5px; border:1px solid rgba(245, 158, 11, 0.4); text-decoration:none;"><bdi>' + esc(emailAddr) + '</bdi></a>';
+        h += '</div>';
+      }
+
+      h += '</div></div>';
     }
-
-    // Email Row
-    if (emailAddr) {
-      h += '<div style="display:flex; justify-content:space-between; align-items:center; background:rgba(0,0,0,0.3); padding:8px 12px; border-radius:6px; border:1px solid rgba(245, 158, 11, 0.3);">';
-      h += '<span style="font-size:10.5px; color:#f2c649; font-weight:bold;">📧 ' + (isFa ? "پست الکترونیک ارتباطی:" : "Contact Email:") + '</span>';
-      h += '<a href="mailto:' + esc(emailAddr) + '" style="color:#f59e0b; font-weight:bold; font-size:10.5px; font-family:monospace; background:rgba(245, 158, 11, 0.15); padding:4px 12px; border-radius:5px; border:1px solid rgba(245, 158, 11, 0.4); text-decoration:none;"><bdi>' + esc(emailAddr) + '</bdi></a>';
-      h += '</div>';
-    }
-
-    h += '</div></div>';
 
     h += '</div>'; // end TAB 1
 

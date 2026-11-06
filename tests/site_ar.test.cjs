@@ -85,7 +85,7 @@ check(app.includes('Total Orbital Launches') && app.includes('Orbital Launch Suc
   'site metrics are explicitly orbital and a zero launch denominator renders as unavailable');
 check(app.includes('dormant: "خامل"') && app.includes('dormant: "راکد"') && app.includes('dormant: "Dormant"'),
   'dormant launch sites have localized Persian, English, and Arabic status labels');
-check(html.includes('window.ORBITA_V = "20261106africa2";'), 'HTML asset cache version is bumped for the site slice');
+check(html.includes('window.ORBITA_V = "20261106contactaudit1";'), 'HTML asset cache version is bumped for the site slice');
 
 // Exercise the real site renderer with all 72 records to catch runtime errors or Persian leakage.
 const siteStart = app.indexOf('  function renderSiteDetail(p) {');

@@ -110,5 +110,5 @@ test('UI marks dormant sites as non-operational and renders proposed orbit goals
   assert.match(app, /var altitudeUnit = altitudeValue && altitudeValue !== "—"/);
   assert.match(app, /Optical imaging payload/);
   assert.match(app, /Private optical-payload manufacturer \(Belgium; South Africa production facility\)/);
-  assert.match(html, /window\.ORBITA_V = "20261106africa2";/);
+  assert.match(html, /window\.ORBITA_V = "20261106contactaudit1";/);
 });
