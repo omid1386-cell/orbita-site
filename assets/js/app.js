@@ -326,19 +326,19 @@
 
   var STATUS_FA = { success: "موفق", operational: "فعال / در بهره‌برداری", upcoming: "پیش‌رو", development: "در دست توسعه",
     cruise: "در مسیر", partial: "موفقیت نسبی", failure: "ناموفق", deployment: "در حال استقرار",
-    active: "فعال", inactive: "غیرفعال", dormant: "راکد", under_construction: "در دست ساخت" };
+    active: "فعال", inactive: "غیرفعال", dormant: "راکد", planned: "برنامه‌ریزی‌شده", under_construction: "در دست ساخت" };
   var STATUS_EN = { success: "Success", operational: "Operational", upcoming: "Upcoming", development: "In development",
     cruise: "In cruise", partial: "Partial", failure: "Failure", deployment: "Deploying",
-    active: "Active", inactive: "Inactive", dormant: "Dormant", under_construction: "Under construction" };
+    active: "Active", inactive: "Inactive", dormant: "Dormant", planned: "Planned", under_construction: "Under construction" };
   var STATUS_AR = { success: "نجاح", operational: "قيد التشغيل", upcoming: "قادم", development: "قيد التطوير",
     cruise: "في طريقه", partial: "نجاح جزئي", failure: "فشل", deployment: "قيد النشر",
-    active: "نشط", inactive: "غير نشط", dormant: "خامل", under_construction: "قيد الإنشاء" };
+    active: "نشط", inactive: "غير نشط", dormant: "خامل", planned: "مخطط له", under_construction: "قيد الإنشاء" };
   function statusLabel(s) {
     return LANG === "fa" ? (STATUS_FA[s] || s) : LANG === "ar" ? (STATUS_AR[s] || STATUS_EN[s] || s) : (STATUS_EN[s] || s);
   }
 
   /* ================= professional SVG markers ================= */
-  var C = { launch: "#2fd4a7", propulsion: "#f5a524", agency: "#a78bfa", site: "#fb7185", siteOff: "#8ea0bd", siteWip: "#38bdf8" };
+  var C = { launch: "#2fd4a7", propulsion: "#f5a524", agency: "#a78bfa", site: "#fb7185", siteOff: "#8ea0bd", siteWip: "#38bdf8", sitePlanned: "#fbbf24" };
 
   function svgLaunch(c) { // rounded pin + rocket glyph
     return '<svg width="30" height="38" viewBox="0 0 30 38">' +
@@ -398,7 +398,7 @@
     if (cat === "launch") return svgLaunch(C.launch);
     if (cat === "propulsion") return svgPropulsion(C.propulsion);
     if (cat === "agency") return svgAgency(C.agency);
-    return svgSite(status === "inactive" ? C.siteOff : status === "under_construction" ? C.siteWip : C.site);
+    return svgSite((status === "inactive" || status === "dormant") ? C.siteOff : status === "planned" ? C.sitePlanned : status === "under_construction" ? C.siteWip : C.site);
   }
 
   /* ================= state ================= */
@@ -437,7 +437,7 @@
     satmaker: "data/companies_satmaker.json"
   };
   // Canonical map counts (the propulsion source contains one linked alias record).
-  var COMPANY_CATEGORY_COUNTS = { launch: 61, propulsion: 43, agency: 33, satmaker: 26 };
+  var COMPANY_CATEGORY_COUNTS = { launch: 61, propulsion: 48, agency: 50, satmaker: 28 };
   var COMPANY_CATEGORY_STATE = { launch: "idle", propulsion: "idle", agency: "idle", satmaker: "idle" };
   var COMPANY_CATEGORY_PROMISES = Object.create(null);
   var SORT = "new";   /* newest launch first — the user asked for this ordering */
@@ -1679,7 +1679,7 @@
       { k: "propulsion", n: COMPANY_CATEGORY_COUNTS.propulsion },
       { k: "agency", n: COMPANY_CATEGORY_COUNTS.agency },
       { k: "satmaker", n: COMPANY_CATEGORY_COUNTS.satmaker },
-      { k: "site", n: 64 },
+      { k: "site", n: 72 },
       { k: "recovery", n: 20 }
     ];
     var html = cats.map(function (c) {
@@ -1791,7 +1791,7 @@
     launch: "orbita-pin-launch", propulsion: "orbita-pin-propulsion",
     agency: "orbita-pin-agency", satmaker: "orbita-pin-satmaker",
     siteActive: "orbita-pin-site-active", siteInactive: "orbita-pin-site-inactive",
-    siteConstruction: "orbita-pin-site-construction", recovery: "orbita-pin-recovery"
+    siteConstruction: "orbita-pin-site-construction", sitePlanned: "orbita-pin-site-planned", recovery: "orbita-pin-recovery"
   };
 
   function markerPointKey(p) {
@@ -1805,8 +1805,9 @@
     if (p.cat === "launch") return MARKER_IMAGES.launch;
     if (p.cat === "propulsion") return MARKER_IMAGES.propulsion;
     if (p.cat === "agency") return MARKER_IMAGES.agency;
-    if (p.o && p.o.status === "inactive") return MARKER_IMAGES.siteInactive;
+    if (p.o && (p.o.status === "inactive" || p.o.status === "dormant")) return MARKER_IMAGES.siteInactive;
     if (p.o && p.o.status === "under_construction") return MARKER_IMAGES.siteConstruction;
+    if (p.o && p.o.status === "planned") return MARKER_IMAGES.sitePlanned;
     return MARKER_IMAGES.siteActive;
   }
   function markerSvgWithShadow(svg) {
@@ -1890,6 +1891,7 @@
       [MARKER_IMAGES.siteActive, svgSite(C.site)],
       [MARKER_IMAGES.siteInactive, svgSite(C.siteOff)],
       [MARKER_IMAGES.siteConstruction, svgSite(C.siteWip)],
+      [MARKER_IMAGES.sitePlanned, svgSite(C.sitePlanned)],
       [MARKER_IMAGES.recovery, svgRecovery(C.recovery)]
     ];
   }
@@ -2391,7 +2393,7 @@
 
     // Status label & badge class
     var st = o.status || "active";
-    var stClass = st === "active" ? "badge-ok" : (st === "inactive" ? "badge-fail" : "badge-constr");
+    var stClass = st === "active" ? "badge-ok" : ((st === "inactive" || st === "dormant") ? "badge-fail" : "badge-constr");
     var stText = statusLabel(st);
 
     // Header: Arabic names are primary; the official Latin name remains available secondarily.
@@ -2437,12 +2439,14 @@
       if (yr) yearCounts[yr] = (yearCounts[yr] || 0) + 1;
     });
 
-    var rate = tot > 0 ? Math.round((succ / tot) * 100) : 100;
-    /* آمار واقعی پایگاه؛ در نبودش همان شمارش ردیف‌های گزیده */
-    var statTot = (typeof o.stats_total === "number") ? o.stats_total : tot;
+    var rate = tot > 0 ? Math.round((succ / tot) * 100) : null;
+    /* Orbital statistics stay separate from selected historical/suborbital rows. */
+    var hasExplicitOrbitalStats = typeof o.stats_total === "number";
+    var statTot = hasExplicitOrbitalStats ? o.stats_total : tot;
     var statSucc = (typeof o.stats_success === "number") ? o.stats_success : succ;
     var statFail = (typeof o.stats_fail === "number") ? o.stats_fail : fail;
-    var statRate = statTot > 0 ? Math.round((statSucc / statTot) * 100) : rate;
+    var statRate = statTot > 0 ? Math.round((statSucc / statTot) * 100) : (hasExplicitOrbitalStats ? null : rate);
+    var statRateText = statRate == null ? "—" : statRate + "%";
 
     // Three site tabs.
     h += '<div class="site-tabs">';
@@ -2457,20 +2461,31 @@
     h += '<div id="siteTabOverview" class="site-tab-content active"><div class="grid2">';
     var countryValue = isFa ? (o.country_fa || o.country) : (isAr ? (o.country_ar || countryNameAr(o.country, o.country_iso) || safeEnglish(o.country, "غير محددة")) : (o.country || o.country_fa));
     h += cell(t("country"), countryValue);
-    h += cell(t("operator"), isAr ? safeEnglish(o.op, "—") : o.op, true);
+    var operatorValue = isAr ? (o.op_ar || safeEnglish(o.op_en || o.op, "—")) : (isFa ? (o.op_fa || o.op || "—") : (o.op_en || o.op || "—"));
+    h += cell(t("operator"), operatorValue, true);
     h += cell(t("status"), stText);
     h += cell(t("first_launch"), o.first);
-    h += cell(t("pads"), isAr ? safeEnglish(o.pads, "غير متاح بالعربية") : o.pads, true);
-    h += cell(t("coords"), o.lat.toFixed(4) + ", " + o.lon.toFixed(4), true);
-    h += cell(stxt("ارتفاع از دریا", "Altitude", "الارتفاع عن سطح البحر"), isAr ? safeEnglish(o.alt || "50 m", "—") : (o.alt || "50 m"), true);
-    h += cell(stxt("جهت‌های مجاز پرتاب (ازیموت)", "Launch Azimuths", "اتجاهات الإطلاق (السمت)"), isAr ? safeEnglish(o.azimuth, "غير متاح بالعربية") : (o.azimuth || "شرق روی پهنه ایمن"), true);
-    h += cell(stxt("مدارهای هدف اصلی", "Target Orbits", "المدارات المستهدفة"), isAr ? safeEnglish(o.target_orbits, "غير متاح بالعربية") : (o.target_orbits || "LEO, SSO"), true);
+    h += cell(t("pads"), isAr ? (safeArabic(o.pads_ar, "") || safeEnglish(o.pads, "غير متاح بالعربية")) : (isFa ? (o.pads_fa || o.pads) : o.pads), true);
+    var approximateCoords = String(o.coordinates_precision || "").indexOf("approximate") === 0;
+    var coordDigits = approximateCoords ? 2 : 4;
+    var coordinateText = o.lat.toFixed(coordDigits) + ", " + o.lon.toFixed(coordDigits);
+    if (approximateCoords) coordinateText += isFa ? " (تقریبی)" : (isAr ? " (تقريبي)" : " (approx.)");
+    h += cell(t("coords"), coordinateText, true);
+    var altitudeValue = isAr ? safeEnglish(o.alt || "50 m", "—") : (o.alt || "50 m");
+    var altitudeUnit = altitudeValue && altitudeValue !== "—" ? stxt("متر", "meters", "متر") : "";
+    h += cell(stxt("ارتفاع از دریا", "Altitude", "الارتفاع عن سطح البحر"), altitudeValue, true);
+    var azimuthValue = isAr ? (o.azimuth_ar || safeEnglish(o.azimuth_en || o.azimuth, "غير متاح بالعربية")) : (isFa ? (o.azimuth_fa || o.azimuth || "شرق روی پهنه ایمن") : (o.azimuth_en || o.azimuth || "East over a safe range"));
+    h += cell(stxt("جهت‌های مجاز پرتاب (ازیموت)", "Launch Azimuths", "اتجاهات الإطلاق (السمت)"), azimuthValue, true);
+    var targetOrbitValue = isAr ? (o.target_orbits_ar || safeEnglish(o.target_orbits_en || o.target_orbits, "غير متاح بالعربية")) : (isFa ? (o.target_orbits_fa || o.target_orbits_en || o.target_orbits || "LEO, SSO") : (o.target_orbits_en || o.target_orbits || "LEO, SSO"));
+    h += cell(stxt("مدارهای ثبت‌شده / هدف اصلی", "Recorded / Target Orbits", "المدارات المسجلة / المستهدفة"), targetOrbitValue, true);
+    var futureOrbitValue = isAr ? (o.future_orbits_ar || safeEnglish(o.future_orbits_en || o.future_orbits, "غير متاح بالعربية")) : (isFa ? (o.future_orbits_fa || o.future_orbits_en || o.future_orbits) : (o.future_orbits_en || o.future_orbits));
+    if (futureOrbitValue) h += cell(stxt("مدار پیشنهادی / آینده", "Future / Proposed Orbits", "مدارات مستقبلية / مقترحة"), futureOrbitValue, true);
     h += '</div>';
 
     h += '<div class="site-metrics-grid">';
-    h += '<div class="site-metric-card gold"><div class="lbl">' + stxt("تعداد کل پرتاب‌ها", "Total Launches", "إجمالي عمليات الإطلاق") + '</div><div class="val">' + statTot + '</div><div class="lbl">' + stxt("پرتاب مداری", "Orbital Flights", "إطلاقات مدارية") + '</div></div>';
-    h += '<div class="site-metric-card green"><div class="lbl">' + stxt("نرخ موفقیت", "Success Rate", "معدل النجاح") + '</div><div class="val">' + statRate + '%</div><div class="lbl">' + statSucc + (isFa ? " موفق / " : (isAr ? " ناجحة / " : " ok / ")) + statFail + (isFa ? " ناموفق" : (isAr ? " إخفاق" : " failed")) + '</div></div>';
-    h += '<div class="site-metric-card"><div class="lbl">' + stxt("ارتفاع از سطح دریا", "Elevation", "الارتفاع") + '</div><div class="val"><bdi>' + esc(isAr ? safeEnglish(o.alt || "50 m", "—") : (o.alt || "50 m")) + '</bdi></div><div class="lbl">' + stxt("متر", "meters", "متر") + '</div></div>';
+    h += '<div class="site-metric-card gold"><div class="lbl">' + stxt("مجموع پرتاب‌های مداری", "Total Orbital Launches", "إجمالي الإطلاقات المدارية") + '</div><div class="val">' + statTot + '</div><div class="lbl">' + stxt("پرتاب‌های مداری ثبت‌شده", "Documented orbital launches", "الإطلاقات المدارية الموثقة") + '</div></div>';
+    h += '<div class="site-metric-card green"><div class="lbl">' + stxt("نرخ موفقیت پرتاب مداری", "Orbital Launch Success Rate", "معدل نجاح الإطلاقات المدارية") + '</div><div class="val">' + statRateText + '</div><div class="lbl">' + statSucc + (isFa ? " موفق / " : (isAr ? " ناجحة / " : " successful / ")) + statFail + (isFa ? " ناموفق" : (isAr ? " إخفاق" : " failed")) + '</div></div>';
+    h += '<div class="site-metric-card"><div class="lbl">' + stxt("ارتفاع از سطح دریا", "Elevation", "الارتفاع") + '</div><div class="val"><bdi>' + esc(altitudeValue) + '</bdi></div><div class="lbl">' + altitudeUnit + '</div></div>';
     h += '<div class="site-metric-card"><div class="lbl">' + stxt("فاصله از خط استوا", "Equator Dist.", "المسافة عن خط الاستواء") + '</div><div class="val" style="font-size:12px; margin-top:5px;"><bdi>' + esc(isAr ? safeEnglish(o.equator_dist, "—") : (o.equator_dist || "0 km")) + '</bdi></div></div>';
     h += '</div>';
 
@@ -2490,7 +2505,10 @@
     var rockets = o.rockets || [];
     if (rockets.length) {
       h += '<div class="sec-t">' + stxt("پرتابگرهای مورد استفاده", "Launch Vehicles", "مركبات الإطلاق") + '</div><div class="chips">' +
-        rockets.map(function (x) { return '<span class="chip"><bdi>' + esc(isAr ? safeEnglish(x, "—") : x) + '</bdi></span>'; }).join("") + '</div>';
+        rockets.map(function (x, idx) {
+          var rocketLabel = isAr ? (safeArabic((o.rockets_ar || [])[idx], "") || safeEnglish(x, "—")) : x;
+          return '<span class="chip"><bdi>' + esc(rocketLabel) + '</bdi></span>';
+        }).join("") + '</div>';
     }
     h += '</div>'; // end overview tab
 
@@ -2556,7 +2574,7 @@
     h += '<div id="siteTabAnalysis" class="site-tab-content">';
     h += '<div style="background:var(--bg2); border:1px solid var(--line); border-radius:6px; padding:10px;">';
     h += '<div style="font-size:12px; font-weight:bold; color:var(--amber); margin-bottom:6px;">🌍 ' + stxt("تحلیل دلایل انتخاب موقعیت جغرافیایی", "Geographical Positioning Analysis", "تحليل الموقع الجغرافي") + '</div>';
-    var geoAnalysisText = isAr ? (o.geo_analysis_ar || "لا يتوفر تحليل جغرافي عربي موثّق لهذا الموقع بعد.") : (o.geo_analysis || "");
+    var geoAnalysisText = isAr ? (o.geo_analysis_ar || "لا يتوفر تحليل جغرافي عربي موثّق لهذا الموقع بعد.") : (isFa ? (o.geo_analysis_fa || o.geo_analysis || "") : (o.geo_analysis_en || o.geo_analysis || ""));
     h += '<div style="font-size:11px; color:var(--text); line-height:1.6; text-align:justify;">' + esc(geoAnalysisText) + '</div>';
     h += '</div>';
 
@@ -2870,7 +2888,19 @@
     var ORG_TYPE_AR = {
       "Government Space Agency": "وكالة فضاء حكومية",
       "International Space Agency": "وكالة فضاء دولية",
-      "International Space Organization": "منظمة فضائية دولية"
+      "International Space Organization": "منظمة فضائية دولية",
+      "Public Earth-Observation Agency": "وكالة عامة لرصد الأرض والبيانات الفضائية",
+      "National Remote-Sensing and Space-Science Authority": "هيئة وطنية للاستشعار عن بعد وعلوم الفضاء",
+      "University Space Technology Institute": "معهد جامعي لتكنولوجيا الفضاء",
+      "Public Research and Innovation Council": "مجلس عام للبحث والابتكار",
+      "Government Cartography and Remote-Sensing Centre": "مركز حكومي لرسم الخرائط والاستشعار عن بعد",
+      "Government Space Science and Technology Research Institute": "معهد حكومي لبحوث علوم وتكنولوجيا الفضاء",
+      "Royal Remote-Sensing Centre": "مركز ملكي للاستشعار عن بعد",
+      "Government Remote-Sensing and Space-Science Centre": "مركز حكومي للاستشعار عن بعد وعلوم الفضاء",
+      "National Remote-Sensing Centre": "مركز وطني للاستشعار عن بعد",
+      "Space Research and Aerospace Institute (current status unverified)": "معهد لأبحاث الفضاء والفضاء الجوي؛ الوضع الحالي غير مؤكد",
+      "Remote Sensing and Seismology Authority (current status unverified)": "هيئة للاستشعار عن بعد وعلم الزلازل؛ الوضع الحالي غير مؤكد",
+      "National Space Programme (under the Ministry; not an independent agency)": "برنامج وطني للفضاء تابع للوزارة وليس وكالة مستقلة"
     };
     var SECTOR_AR = {
       "Aerospace, Launch Vehicles & Satellites": "الطيران والفضاء ومركبات الإطلاق والأقمار الصناعية",
@@ -2887,7 +2917,16 @@
       "Observation & Reconnaissance Satellites, Satellite Launch Vehicles": "أقمار الرصد والاستطلاع ومركبات إطلاق الأقمار الصناعية",
       "National Space Coordination, EO, Communications, Private Launchers": "تنسيق البرنامج الفضائي الوطني ورصد الأرض والاتصالات ومركبات الإطلاق الخاصة",
       "Astronaut Program, Communication & EO Satellites, Space Economy": "برنامج رواد الفضاء وأقمار الاتصالات ورصد الأرض والاقتصاد الفضائي",
-      "SAR Earth Observation, Science Satellites, Indigenous Launcher": "رصد الأرض بالرادار ذي الفتحة الاصطناعية والأقمار العلمية ومركبة الإطلاق المحلية"
+      "SAR Earth Observation, Science Satellites, Indigenous Launcher": "رصد الأرض بالرادار ذي الفتحة الاصطناعية والأقمار العلمية ومركبة الإطلاق المحلية",
+      "Space Policy, Research & National Space Applications": "سياسات الفضاء والبحث والتطبيقات الوطنية",
+      "Earth Observation, Geospatial Data & Environmental Management": "رصد الأرض والبيانات الجغرافية وإدارة البيئة",
+      "Remote Sensing, Space Sciences & Satellite Applications": "الاستشعار عن بعد وعلوم الفضاء وتطبيقات الأقمار",
+      "Satellite Data Reception, Space Science & Engineering Education": "استقبال بيانات الأقمار وعلوم الفضاء والتعليم الهندسي",
+      "Research, Innovation & National Space Coordination": "البحث والابتكار والتنسيق الوطني لشؤون الفضاء",
+      "Remote Sensing, Cartography & Geospatial Services": "الاستشعار عن بعد ورسم الخرائط والخدمات الجغرافية",
+      "Space Science, Satellite Communications, Earth Observation & Astronomy": "علوم الفضاء واتصالات الأقمار ورصد الأرض وعلم الفلك",
+      "Remote Sensing, Aerospace, Space Science & Seismology": "الاستشعار عن بعد والطيران والفضاء وعلوم الفضاء والزلازل",
+      "National Space Programme, Satellite Development & Earth Observation": "البرنامج الوطني للفضاء وتطوير الأقمار ورصد الأرض"
     };
     var PRODUCT_TYPE_AR = {
       "Remote Sensing Satellite": "قمر صناعي للاستشعار عن بعد",
@@ -2976,7 +3015,13 @@
       "Under Construction for Lunar Gateway": "قيد الإنشاء لصالح المحطة القمرية Gateway",
       "Accomplished (2024)": "أُنجز في 2024",
       "In Development": "قيد التطوير",
-      "In Orbit (claimed operational)": "في المدار (حالة التشغيل وفق السجل)"
+      "In Orbit (claimed operational)": "في المدار (حالة التشغيل وفق السجل)",
+      "New agency; institutional implementation underway": "وكالة جديدة؛ استكمال البناء المؤسسي جارٍ",
+      "Established; operationalisation not verified": "أُنشئت؛ ولم يتم التحقق من اكتمال التشغيل",
+      "Operational institute; transition to a separate agency not completed": "معهد عامل؛ لم يكتمل التحول إلى وكالة مستقلة",
+      "Current activity unverified": "النشاط الحالي غير مؤكد",
+      "Active research centre; current services reported": "مركز بحث نشط؛ أُبلغ عن خدمات حالية",
+      "National programme under development; no standalone agency": "برنامج وطني قيد التطوير؛ لا توجد وكالة مستقلة"
     };
     var COUNTRY_AR = {
       "United States": "الولايات المتحدة", "France": "فرنسا", "Europe": "أوروبا", "Russia": "روسيا",
@@ -2987,7 +3032,11 @@
       "Kenya": "كينيا", "Germany": "ألمانيا", "Italy": "إيطاليا", "United Kingdom": "المملكة المتحدة",
       "Canada": "كندا", "Pakistan": "باكستان", "Türkiye": "تركيا", "Israel": "إسرائيل",
       "Australia": "أستراليا", "North Korea": "كوريا الشمالية", "Spain": "إسبانيا",
-      "Saudi Arabia": "السعودية", "Argentina": "الأرجنتين"
+      "Saudi Arabia": "السعودية", "Argentina": "الأرجنتين",
+      "Rwanda": "رواندا", "Senegal": "السنغال", "Zimbabwe": "زيمبابوي", "Gabon": "الغابون",
+      "Côte d’Ivoire": "كوت ديفوار", "Malawi": "ملاوي", "Namibia": "ناميبيا", "Mauritius": "موريشيوس",
+      "Tunisia": "تونس", "Zambia": "زامبيا", "Ghana": "غانا", "Morocco": "المغرب",
+      "Libya": "ليبيا", "Sudan": "السودان", "Tanzania": "تنزانيا"
     };
     function latinDigits(value) {
       return String(value == null ? "" : value)
@@ -3279,7 +3328,12 @@
       "Rocket Engine Test Center": "مركز اختبار محركات الصواريخ",
       "Engine Test Services": "خدمات اختبار المحركات",
       "Thruster & Materials Test Center": "مركز اختبار الدافعات والمواد",
-      "ISRO Engine Test Center": "مركز ISRO لاختبار المحركات"
+      "ISRO Engine Test Center": "مركز ISRO لاختبار المحركات",
+      "Rocket Propulsion Research & Test Facilities": "أبحاث دفع الصواريخ ومرافق الاختبار",
+      "National Rocket Transport & Propulsion R&D Centre": "مركز وطني للبحث والتطوير في النقل الصاروخي والدفع",
+      "Small-Satellite Electric Propulsion": "الدفع الكهربائي للأقمار الصغيرة",
+      "University Rocket Propulsion & Vehicle R&D": "بحث جامعي في دفع الصواريخ والمركبات",
+      "Rocket Propulsion & Launch Development (Low Confidence)": "تطوير دفع الصواريخ والإطلاق (ثقة منخفضة)"
     };
     var TYPE_AR = {
       "Solid motors & bipropellant thrusters": "محركات صلبة ودافعات ثنائية الوقود",
@@ -3324,7 +3378,12 @@
       "America's largest engine test site (builds none)": "أكبر موقع أمريكي لاختبار المحركات (لا يصنّعها)",
       "Independent testing for startups (no commercial engines)": "اختبارات مستقلة للشركات الناشئة (من دون إنتاج محركات تجارية)",
       "Storable-thruster and propellant-safety testing (builds none)": "اختبار الدافعات القابلة للتخزين وسلامة المواد الدافعة (من دون تصنيع)",
-      "Mahendragiri test stands (engines built at sister LPSC)": "منصات اختبار ماهيندراغيري (تُصنّع المحركات في مركز LPSC الشقيق)"
+      "Mahendragiri test stands (engines built at sister LPSC)": "منصات اختبار ماهيندراغيري (تُصنّع المحركات في مركز LPSC الشقيق)",
+      "Liquid & Hybrid Rocket Engines; Ground-Test Systems": "محركات صاروخية سائلة وهجينة وأنظمة اختبار أرضية",
+      "Solid-Rocket Motors & Launch-System R&D": "محركات صاروخية صلبة وبحث وتطوير أنظمة الإطلاق",
+      "Vacuum-Arc Electric Microthrusters with Solid-Metal Propellant": "دافعات كهربائية دقيقة بالقوس الفراغي ومادة دافعة معدنية صلبة",
+      "Solid-Propellant Sounding Rockets; Liquid-Engine Test-Stand Development": "صواريخ سبر بوقود صلب وتطوير منصة اختبار لمحرك سائل",
+      "Directory-claimed liquid rocket engine / launcher; hardware unverified": "محرك صاروخي سائل أو مركبة إطلاق وفق دليل تجاري؛ العتاد غير مؤكد"
     };
     var STATUS_AR = {
       "Operational": "قيد التشغيل",
@@ -3348,14 +3407,19 @@
       "Supply ended": "انتهى التوريد",
       "Operational & Proven": "قيد التشغيل ومثبت الأداء",
       "Operational in test flights": "قيد التشغيل في رحلات الاختبار",
-      "Product listed; flight status not stated": "المنتج مُدرج؛ وحالة الطيران غير مذكورة"
+      "Product listed; flight status not stated": "المنتج مُدرج؛ وحالة الطيران غير مذكورة",
+      "Active research; suborbital flight tests, orbital vehicle in development": "بحث نشط واختبارات شبه مدارية؛ والمركبة المدارية قيد التطوير",
+      "Active R&D; suborbital testing only": "بحث وتطوير نشطان؛ اختبارات شبه مدارية فقط",
+      "Thruster available; in-space heritage not verified": "الدافع متاح؛ ولم يتم التحقق من سجل طيران فضائي",
+      "Student project; suborbital testing; orbital goal not achieved": "مشروع طلابي واختبارات شبه مدارية؛ لم يتحقق الهدف المداري",
+      "Low confidence — directory-only": "ثقة منخفضة؛ مستند إلى دليل تجاري فقط"
     };
     var COUNTRY_AR = {
       "Australia": "أستراليا", "Austria": "النمسا", "China": "الصين", "France": "فرنسا",
       "Germany": "ألمانيا", "India": "الهند", "Iran": "إيران", "Italy": "إيطاليا",
       "Japan": "اليابان", "Netherlands": "هولندا", "New Zealand": "نيوزيلندا", "Norway": "النرويج",
       "Poland": "بولندا", "Russia": "روسيا", "Sweden": "السويد", "United Kingdom": "المملكة المتحدة",
-      "United States": "الولايات المتحدة"
+      "United States": "الولايات المتحدة", "South Africa": "جنوب أفريقيا", "Nigeria": "نيجيريا", "Kenya": "كينيا"
     };
     var PROPELLANT_AR = {
       "Composite solid propellant": "مادة دافعة صلبة مركّبة",
@@ -3539,7 +3603,9 @@
       "Private Aerospace & Defense Conglomerate": "تكتل خاص للطيران والفضاء والدفاع",
       "Private / Industrial Group Subsidiary": "شركة تابعة لمجموعة صناعية",
       "Private / Industrial Corporation": "شركة صناعية خاصة",
-      "State-backed / Propulsion Technology": "شركة تقنيات دفع مدعومة حكوميًا"
+      "State-backed / Propulsion Technology": "شركة تقنيات دفع مدعومة حكوميًا",
+      "Early-stage Commercial Small-Satellite Launcher Developer": "مطوّر ناشئ لمركبات إطلاق تجارية للأقمار الصغيرة",
+      "Commercial Launch Infrastructure & Investment Company": "شركة تجارية للاستثمار في بنية الإطلاق الفضائي"
     };
     var STATUS_AR = {
       "Active & Operational": "نشط وقيد التشغيل",
@@ -3603,7 +3669,7 @@
       "Israel": "إسرائيل", "Italy": "إيطاليا", "Japan": "اليابان", "Russia": "روسيا",
       "South Africa": "جنوب أفريقيا", "South Korea": "كوريا الجنوبية", "Spain": "إسبانيا",
       "Türkiye": "تركيا", "Turkey": "تركيا", "Ukraine": "أوكرانيا", "United Kingdom": "المملكة المتحدة",
-      "United States": "الولايات المتحدة", "New Zealand": "نيوزيلندا"
+      "United States": "الولايات المتحدة", "New Zealand": "نيوزيلندا", "Kenya": "كينيا"
     };
     var CITY_AR = {
       "Alameda, California": "ألاميدا، كاليفورنيا",
@@ -6001,6 +6067,8 @@
       "Private company under the Advent fund (United States)": "شركة خاصة مملوكة لصندوق Advent (الولايات المتحدة)",
       "Private space component maker (France)": "شركة خاصة لتصنيع مكوّنات فضائية (فرنسا)",
       "Private space component maker (South Africa)": "شركة خاصة لتصنيع مكوّنات فضائية (جنوب أفريقيا)",
+      "Private satellite and payload manufacturer (South Africa)": "شركة خاصة لتصنيع الأقمار والحمولات (جنوب أفريقيا)",
+      "Private optical-payload manufacturer (Belgium; South Africa production facility)": "شركة خاصة لتصنيع الحمولات البصرية (مقرها بلجيكا؛ ومنشأة إنتاج في جنوب أفريقيا)",
       "Private startup (United States)": "شركة ناشئة خاصة (الولايات المتحدة)",
       "Public company (Denmark)": "شركة مساهمة عامة (الدنمارك)",
       "Public company (Sweden)": "شركة مساهمة عامة (السويد)",
@@ -6051,6 +6119,7 @@
       "Cryogenic tank segments": "مقاطع خزانات مبردة", "Launcher separation mechanism": "آلية فصل لمركبة الإطلاق",
       "Synthetic aperture radar": "رادار ذو فتحة اصطناعية", "High-resolution radar": "رادار عالي الدقة",
       "Small LEO bus": "منصة صغيرة للمدار الأرضي المنخفض", "Nanosatellite": "قمر نانوي",
+      "Optical imaging payload": "حمولة تصوير بصري", "Imager electronics": "إلكترونيات منظومة التصوير",
       "Modular nanosatellite": "قمر نانوي معياري", "Modular CubeSat": "قمر CubeSat معياري",
       "GEO communications": "اتصالات المدار الثابت (GEO)", "GEO meteorology": "أرصاد جوية من المدار الثابت (GEO)",
       "Optical communications": "اتصالات بصرية", "Ground equipment": "معدات أرضية",
@@ -8052,6 +8121,95 @@
         "إرث Made In Space",
         "طابعات محطة الفضاء الدولية وعشرات تجارب الأدوية",
         "انبثقت أول طابعة ثلاثية الأبعاد مدارية من هذه العائلة؛ وأصبحت صناعة الأدوية في الجاذبية الصغرى سوقاً جديدة."
+      ]
+    }
+  },
+  "dragonfly-space": {
+    "history": "تأسست Dragonfly Aerospace عام 2019 في جنوب أفريقيا، ويقع مقرها في ستيلينبوش. تطور الشركة كاميرات وحمولات تصوير كهروضوئية ومنصات للأقمار الصغيرة، كما تصنع أقمار رصد أرض كاملة. صُنع القمر EOS SAT-1 في منشأة الشركة بجنوب أفريقيا وأُطلق في 3 يناير 2023.",
+    "productHistory": "تتدرج محفظة المنتجات من كاميرات التصوير المدمجة إلى الحمولات البصرية ومنصات الأقمار. وأثبت EOS SAT-1 قدرة الشركة على تصنيع مركبة كاملة لرصد الأرض ودمج أنظمتها.",
+    "customers": {
+      "EOSDA": "شركة EOS Data Analytics (EOSDA)"
+    },
+    "missions": {
+      "EOS SAT-1: the first satellite in EOSDA’s agriculture-focused constellation, manufactured in Stellenbosch and launched on 3 January 2023.": "EOS SAT-1: أول أقمار كوكبة EOSDA المخصصة للزراعة؛ صُنع في ستيلينبوش وأُطلق في 3 يناير 2023."
+    },
+    "plans": {},
+    "milestones": {
+      "2019|Founded": [
+        "التأسيس",
+        "شارك Bryan Dean في تأسيس Dragonfly Aerospace عام 2019."
+      ],
+      "2023|EOS SAT-1 launch": [
+        "إطلاق EOS SAT-1",
+        "أُطلق قمر رصد الأرض الذي صنعته الشركة في 3 يناير."
+      ]
+    },
+    "products": {
+      "DragonEye Cameras": [
+        "كاميرات DragonEye",
+        "حمولة تصوير بصري",
+        "أقمار صناعية صغيرة",
+        "كاميرتان على متن EOS SAT-1",
+        "يحمل EOS SAT-1 كاميرتين للتصوير الكهروضوئي من DragonEye تغطيان 11 نطاقاً طيفياً."
+      ],
+      "Gecko, Mantis & Chameleon Imagers": [
+        "مصوّرات Gecko وMantis وChameleon",
+        "حمولة تصوير بصري",
+        "أقمار صناعية صغيرة",
+        "تطبيقات رصد الأرض على الأقمار الصغيرة؛ لم يُفصّل سجل الطيران لكل طراز هنا",
+        "تشمل المحفظة مصوّرات RGB ومتعددة وفائقة الأطياف؛ ولا يُنسب سجل طيران محدد لكل طراز دون توثيق مستقل."
+      ],
+      "Satellite Bus Platforms": [
+        "منصات الأقمار الصناعية",
+        "منصة صغيرة للمدار الأرضي المنخفض",
+        "أقمار صغيرة ومتوسطة",
+        "صُنعت وجُمعت بنية EOS SAT-1 في منشأة الشركة في ستيلينبوش",
+        "تطور الشركة منصات للأقمار ومركبات تصوير كاملة؛ وصُنعت بنية EOS SAT-1 وجُمعت في منشأتها بجنوب أفريقيا."
+      ]
+    }
+  },
+  "simera-sense": {
+    "history": "تأسست Simera Sense عام 2018 لتطوير حمولات بصرية متكاملة وحلول تحليل بيانات لرصد الأرض بالأقمار الصناعية. يقع مقرها الرئيسي في لوفان ببلجيكا، ولها منشأة إنتاج في سومرست ويست بجنوب أفريقيا ومكاتب في تولوز وغلاسكو. ويذكر موقع الشركة إطلاق أكثر من 60 حمولة وتمكين أكثر من 100 مهمة لرصد الأرض.",
+    "productHistory": "تشمل المحفظة الحالية حمولات xScape50 وxScape100 وxScape200 Dual-Use البصرية، وإلكترونيات التصوير وخدمات معالجة الصور.",
+    "customers": {},
+    "missions": {
+      "Company-reported: more than 60 payloads launched and over 100 Earth-observation missions enabled; individual payload-to-mission links are not listed here.": "بحسب الشركة: أُطلقت أكثر من 60 حمولة ومُكِّن أكثر من 100 مهمة لرصد الأرض؛ ولا تُفصّل الصفحة ربط كل حمولة بمهمة بعينها."
+    },
+    "plans": {},
+    "milestones": {
+      "2018|Founded": [
+        "التأسيس",
+        "تأسست Simera Sense عام 2018."
+      ]
+    },
+    "products": {
+      "xScape50": [
+        "حمولة xScape50",
+        "حمولة تصوير بصري",
+        "أقمار نانوية",
+        "تصوير واسع الزاوية لرصد الأرض من الأقمار النانوية",
+        "حل تصوير واسع الزاوية بحجم 1U؛ وتذكر الشركة دقة مكانية قدرها 30 متراً عند ارتفاع 500 كم."
+      ],
+      "xScape100": [
+        "حمولة xScape100",
+        "حمولة تصوير بصري",
+        "أقمار نانوية",
+        "رصد الأرض من منصات نانوية مدمجة",
+        "حمولة بصرية عالية الأداء بحجم 1.5U؛ وتذكر الشركة دقة 4.75 متر عند ارتفاع 500 كم."
+      ],
+      "xScape200 Dual-Use": [
+        "حمولة xScape200 ثنائية الاستخدام",
+        "حمولة تصوير بصري",
+        "أقمار صناعية صغيرة",
+        "عمارات GEOINT موزعة وفق وصف الشركة",
+        "حل بصري بصيغة 12U تسوقه الشركة للاستخدامات المدنية والدفاعية."
+      ],
+      "Imager Electronics": [
+        "إلكترونيات التصوير",
+        "إلكترونيات منظومة التصوير",
+        "أقمار صناعية صغيرة",
+        "أنظمة تصوير رصد الأرض؛ ولم تُفصّل مهمات كل منتج",
+        "تعرض الشركة إلكترونيات تصوير بدقة 65 ميغابكسل ودعم لثمانية نطاقات طيفية."
       ]
     }
   }

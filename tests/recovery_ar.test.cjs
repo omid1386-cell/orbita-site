@@ -57,7 +57,7 @@ function recoveryApi(language) {
 }
 
 check('the recovery Arabic slice bumps the shared asset cache version', () => {
-  assert.ok(html.includes('window.ORBITA_V = \"20261104panfix1\";'));
+  assert.ok(html.includes('window.ORBITA_V = \"20261106africa2\";'));
 });
 
 check('all 20 recovery sites have Arabic names, descriptions, cities, countries, operators, methods and coordinates', () => {

@@ -26,7 +26,7 @@ assert.match(app, /el\.className = "pin";[\s\S]*?el\.setAttribute\("role", "butt
   'the recovery point remains a keyboard-focusable MapLibre DOM marker');
 assert.match(app, /if \(e\.key === "Enter" \|\| e\.key === " "\)[\s\S]*?el\.click\(\)/,
   'Enter and Space continue to activate the recovery marker');
-assert.match(html, /window\.ORBITA_V = "20261104panfix1";/,
+assert.match(html, /window\.ORBITA_V = "20261106africa2";/,
   'the pan-marker CSS fix receives a fresh cache token');
 
 console.log('PASS: DOM recovery markers keep geographic transforms immediate and remain keyboard accessible.');

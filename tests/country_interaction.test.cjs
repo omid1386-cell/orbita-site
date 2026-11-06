@@ -97,7 +97,7 @@ assert.match(app, /function renderCountryProfile\(p\)[\s\S]*?class="d-head"[\s\S
   'the country flag and dossier heading are rendered by the country profile');
 assert.match(app, /countryBody\.innerHTML = renderCountryProfile\(p\);[\s\S]*?countryPanel\.classList\.add\("open"\)[\s\S]*?if \(!countryDataReady\)[\s\S]*?loadingNote\.className = "up-empty"[\s\S]*?ensureCountryProfileData\(\)\.then/,
   'the dossier opens immediately, indicates its deferred data, and refreshes after those sources settle');
-assert.match(html, /window\.ORBITA_V = "20261104panfix1";/,
+assert.match(html, /window\.ORBITA_V = "20261106africa2";/,
   'country interactions and compact geometry have a fresh cache key');
 assert.match(app, /customAttribution:\s*"© OpenStreetMap contributors; Terrae"/,
   'the map credits the OSM-derived Terrae boundary data');

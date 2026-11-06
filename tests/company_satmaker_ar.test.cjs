@@ -30,19 +30,19 @@ function check(condition, label) {
   }
 }
 
-check(makers.length === 26, 'the satellite-manufacturer slice contains 26 records');
+check(makers.length === 28, 'the satellite-manufacturer slice contains 28 records');
 check(makers.every(company => arabicFields.every(field => company[field] && arabic.test(company[field]))),
-  'all 26 manufacturers have Arabic names, summaries, classes, specialties, products, uses, and build records');
+  'all 28 manufacturers have Arabic names, summaries, classes, specialties, products, uses, and build records');
 check(makers.every(company => arabicFields.every(field => !persianOnly.test(company[field]))),
   'all newly localized manufacturer fields use Arabic orthography, with no Persian-only letters');
 check(makers.every(company => company.en && company.fa && company.en_d && company.fa_d),
   'the original English and Persian manufacturer fields remain intact');
-check(makers.reduce((sum, company) => sum + (company.product_lines_bilingual || []).length, 0) === 108 &&
-  makers.reduce((sum, company) => sum + (company.milestones_en || []).length, 0) === 150,
-  'all 108 product lines and 150 source milestones remain available');
-check(agencies.length === 33 && agencies.every(company => company.ar && company.ar_d) &&
+check(makers.reduce((sum, company) => sum + (company.product_lines_bilingual || []).length, 0) === 115 &&
+  makers.reduce((sum, company) => sum + (company.milestones_en || []).length, 0) === 153,
+  'all 115 product lines and 153 source milestones remain available');
+check(agencies.length === 50 && agencies.every(company => company.ar && company.ar_d) &&
   launch.length === 61 && launch.every(company => company.ar && company.ar_d) &&
-  propulsion.length === 44 && propulsion.every(company => company.ar && company.ar_d),
+  propulsion.length === 49 && propulsion.every(company => company.ar && company.ar_d),
   'the previously localized agency, launch, and propulsion slices remain intact');
 check(companies.filter(company => company.cat !== 'satmaker').every(company =>
   !company.maker_class_ar && !company.specialty_ar && !company.flagship_product_app_ar && !company.satellites_built_ar),
@@ -54,7 +54,7 @@ check(app.includes('مصنّعو الأقمار الصناعية ومكوّنا�
   app.includes('نوع المنتج:') && app.includes('الفئة:</b>') &&
   app.includes('الوصف الهندسي') && app.includes('يُستخدم في:') && app.includes('سجل الأقمار والمكوّنات'),
   'the dossier tabs and key manufacturer labels are Arabic');
-check(html.includes('window.ORBITA_V = "20261104panfix1";'),
+check(html.includes('window.ORBITA_V = "20261106africa2";'),
   'the HTML cache version is bumped for the satellite-manufacturer slice');
 
 const start = app.indexOf('  function renderSatmakerCompanyArabic(p) {');
@@ -99,7 +99,7 @@ if (start >= 0 && detailStart > start) {
 }
 const visible = rendered.replace(/<[^>]*>/g, ' ').replace(/&(?:amp|lt|gt|quot);/g, ' ');
 check(Boolean(renderer) && makers.every(company => rendered.includes(company.ar) && rendered.includes(company.ar_d)),
-  'the Arabic renderer executes for all 26 manufacturers and displays each localized name and summary');
+  'the Arabic renderer executes for all 28 manufacturers and displays each localized name and summary');
 check(!persianOnly.test(visible), 'rendered manufacturer dossiers contain no Persian-only letters');
 check(makers.every(company => rendered.includes(company.flagship_product_ar) &&
   rendered.includes(company.flagship_product_app_ar) && rendered.includes(company.satellites_built_ar)),
@@ -152,7 +152,7 @@ check(Boolean(copyMap) && makers.every(company => {
       const row = copy.milestones[key];
       return row && row.length === 2 && row.every(isArabicCopy);
     });
-}), 'Arabic copy covers all 26 histories, product lines, customers, missions, plans, and 150 milestones');
+}), 'Arabic copy covers all 28 histories, product lines, customers, missions, plans, and 153 milestones');
 check(Boolean(renderer) && makers.every(company => {
   const copy = copyMap && copyMap[company.id];
   if (!copy) return false;
@@ -247,7 +247,7 @@ if (parity) {
 }
 if (!parity) console.error('First Arabic/Persian structural mismatch:', parityId || '(renderer unavailable)');
 check(parity,
-  'the production Arabic and Persian satellite-maker dossiers share the same DOM structure across all 26 records');
+  'the production Arabic and Persian satellite-maker dossiers share the same DOM structure across all 28 records');
 
 const sharedDetail = app.slice(detailStart, detailEnd);
 const sharedDetailHash = crypto.createHash('sha256').update(sharedDetail).digest('hex');

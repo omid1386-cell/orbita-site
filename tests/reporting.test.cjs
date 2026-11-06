@@ -25,10 +25,10 @@ test('report UI keeps technical and scientific/data reports separate and structu
 });
 
 test('report transmission is submission-only and does not expose email secrets in browser files', () => {
-  assert.match(html, /window\.ORBITA_REPORT_API_URL = ""/);
+  assert.match(html, /window\.ORBITA_REPORT_API_URL = "https:\/\/orbita-report-api\.onrender\.com\/api\/report";/);
   assert.match(app, /credentials: "omit"/);
   assert.match(app, /cache: "no-store"/);
-  assert.doesNotMatch(html + app + css, /RESEND_API_KEY|habib1386hrs@gmail\.com/);
+  assert.doesNotMatch(html + app + css, /RESEND_API_KEY|[A-Z0-9._%+-]+@gmail\.com/i);
   assert.match(app, /fetch\(endpoint/);
   assert.match(api, /api\.resend\.com\/emails/);
   assert.match(api, /env\.REPORT_TO/);

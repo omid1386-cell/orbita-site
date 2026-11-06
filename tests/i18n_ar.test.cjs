@@ -42,7 +42,7 @@ if (allLocalesFound) {
   check(dictionaries.ar.size >= 120, 'Arabic dictionary covers the shared interface and common tools');
 
   const htmlKeys = new Set();
-  for (const attr of ['data-i18n', 'data-i18n-ph', 'data-i18n-title']) {
+  for (const attr of ['data-i18n', 'data-i18n-ph', 'data-i18n-title', 'data-i18n-aria-label']) {
     const re = new RegExp(attr + '="([^"]+)"', 'g');
     let m;
     while ((m = re.exec(html))) htmlKeys.add(m[1]);

@@ -1,0 +1,153 @@
+{
+  "companies": {
+    "asri-ukzn": [
+      "https://aerospace.ukzn.ac.za/about/",
+      "https://ukzn.ac.za/news/asris-successful-sounding-rocket-launch-campaign-captured-on-video/",
+      "https://www.sansa.org.za/2024/12/sansa-payload-takes-flight-at-south-africas-new-rocket-gantry/"
+    ],
+    "cstp-nasrda": [
+      "https://cstp.nasrda.gov.ng/",
+      "https://central.nasrda.gov.ng/nigeria-steadily-advance-in-rocketry-as-nasrda-records-yet-another-successful-launch-test/"
+    ],
+    "solid-state-propulsion-za": [
+      "https://solidstatepropulsion.co.za/",
+      "https://satsearch.co/suppliers/solid-state-propulsion",
+      "https://spaceinafrica.com/2024/06/28/quub-inc-partners-with-ssp-to-advance-space-propulsion-technology/"
+    ],
+    "nakuja-project": [
+      "https://nakujaproject.com/",
+      "https://spaceinafrica.com/2024/05/10/ksa-jkuat-and-jica-achieve-milestone-in-nakuja-3-5-rocket-field-tests/",
+      "https://ksa.go.ke/ksa-news-nakuja.html"
+    ],
+    "pyralink-aerospace": [
+      "https://satsearch.co/suppliers/pyra-link-aerospace",
+      "https://zaspaceinc.org/directory-businesses/listing/pyralink-aerospace-ltd/",
+      "https://pyralink.co.za/",
+      "https://pyralink.co.za/contact.html"
+    ],
+    "rwanda-space-agency": [
+      "https://space.gov.rw/",
+      "https://space.gov.rw/rwanda-space-policy.pdf"
+    ],
+    "ases-senegal": [
+      "https://x.com/AsesAgence",
+      "https://fr.allafrica.com/stories/202601310187.html"
+    ],
+    "zingsa-zimbabwe": [
+      "https://zingsa.co.zw/",
+      "https://zingsa.co.zw/news.html",
+      "https://zingsa.co.zw/divisions.html"
+    ],
+    "ageos-gabon": [
+      "https://www.economie-numerique.gouv.ga/2-ministere/2077-directions-generales/2084-entites-sous-tutelles/2103-agence-gabonaise-d-etudes-et-d-observations-spatiales-ageos-/",
+      "https://economie-numerique.gouv.ga/contact/"
+    ],
+    "asci-civ": [
+      "https://www.asci.ci/",
+      "https://bilan.gouv.ci/actualite/19704",
+      "https://spaceinafrica.com/2025/06/05/cote-divoire-establishes-national-space-agency-to-advance-its-space-programme/"
+    ],
+    "narss-egypt": [
+      "https://www.narss.sci.eg/",
+      "https://www.eoportal.org/satellite-missions/egyptsat-2"
+    ],
+    "malawi-space-agency": [
+      "https://space.gov.mw/",
+      "https://mwnation.com/where-is-malawi-in-space-race/"
+    ],
+    "nist-namibia": [
+      "https://www.nust.na/taxonomy/term/384",
+      "https://spaceinafrica.com/2026/03/05/namibia-launches-first-nanosatellite-ground-station-to-strengthen-space-science-capacity/"
+    ],
+    "mric-mauritius": [
+      "https://www.mric.mu/",
+      "https://spaceinafrica.com/2026/10/06/mauritius-unveils-space-strategy-2036-to-advance-national-space-sector/",
+      "https://global.jaxa.jp/press/2021/06/20210625-1_e.html"
+    ],
+    "cnct-tunisia": [
+      "https://defense.tn/centre-national-de-la-cartographie-et-de-la-teledetection/?lang=fr",
+      "https://www.defense.tn/category/ministere/etablissements-sous-tutelle/?lang=fr"
+    ],
+    "gssti-ghana": [
+      "https://gssti.org/",
+      "https://gaec.gov.gh/2026/04/"
+    ],
+    "crts-morocco": [
+      "https://www.crts.gov.ma/",
+      "https://crts.gov.ma/files/DECRETCRTS.pdf"
+    ],
+    "lcrsss-libya": [
+      "https://www.lcrsss.ly/",
+      "https://libyaherald.com/2026/09/work-started-in-activating-libyas-national-seismic-monitoring-network-with-16-stations",
+      "https://libyaobserver.ly/inbrief/lcrsss-bright-object-seen-over-tripoli-was-meteor"
+    ],
+    "nrsc-zambia": [
+      "https://nrsc.org.zm/about-us/",
+      "https://nrsc.org.zm/nrsc-hosts-copperbelt-university-physics-students-for-practical-training-at-ground-receiving-station-chibombo-district-zambia-26-28-may-2026/",
+      "https://nrsc.org.zm/nrsc-and-digital-earth-africa-formalise-strategic-partnership-to-strengthen-earth-observation-capacity-in-zambia/"
+    ],
+    "isra-sudan": [
+      "http://www.isra.sd/",
+      "https://spaceinafrica.com/2019/07/23/inside-sudans-national-space-programme/",
+      "https://worldfactbookarchive.org/archive/field/SD/Space%20agency/agencies"
+    ],
+    "rssa-sudan": [
+      "https://worldfactbookarchive.org/archive/field/SD/Space%20agency/agencies",
+      "https://spaceinafrica.com/2019/07/23/inside-sudans-national-space-programme/"
+    ],
+    "tanzania-space-programme": [
+      "https://www.mawasiliano.go.tz/",
+      "https://dailynews.co.tz/tanzanias-space-ambitions-take-off/",
+      "https://spaceinafrica.com/2026/10/29/russia-to-launch-tanzanias-first-eo-satellite-in-2027/",
+      "https://tass.com/science/2210243"
+    ],
+    "nakuja-space": [
+      "https://www.nakujaspace.com/",
+      "https://spaceinafrica.com/2026/03/27/newspace-africa-pitch-competition-finalists/"
+    ],
+    "mura-space": [
+      "https://www.muraspace.co/",
+      "https://www.itweb.co.za/article/ukzn-in-deal-to-launch-sas-commercial-space-era/xA9PO7NEJwxvo4J8",
+      "https://techcentral.co.za/south-africa-targets-2030-for-its-first-satellite-launch-from-home-soil/284835/"
+    ]
+  },
+  "sites": {
+    "overberg": [
+      "https://aerospace.ukzn.ac.za/about/",
+      "https://www.itweb.co.za/article/ukzn-in-deal-to-launch-sas-commercial-space-era/xA9PO7NEJwxvo4J8",
+      "https://ukzn.ac.za/news/asris-successful-sounding-rocket-launch-campaign-captured-on-video/"
+    ],
+    "somalia-spaceport": [
+      "https://www.trtafrika.com/english/article/3053d4050c9e",
+      "https://newspaceeconomy.ca/2026/10/07/somalia-is-getting-a-spaceport/"
+    ],
+    "kipini-spaceport": [
+      "https://pppkenya.go.ke/kenya-advances-plans-for-proposed-spaceport-project/",
+      "https://spaceinafrica.com/2026/10/28/kenya-appoints-consortium-to-advise-on-proposed-commercial-spaceport/"
+    ],
+    "epe-lagoon-test-site": [
+      "https://cstp.nasrda.gov.ng/",
+      "https://central.nasrda.gov.ng/nigeria-steadily-advance-in-rocketry-as-nasrda-records-yet-another-successful-launch-test/"
+    ],
+    "isiolo-test-range": [
+      "https://spaceinafrica.com/2024/05/10/ksa-jkuat-and-jica-achieve-milestone-in-nakuja-3-5-rocket-field-tests/",
+      "https://thekenyatimes.com/latest-kenya-times-news/milestone-for-kenya-as-it-successfully-launches-rocket/"
+    ],
+    "reggane": [
+      "https://spaceinafrica.com/2020/07/17/analysis-africas-old-rocket-launch-sites/",
+      "https://astronautix.com/r/reggane.html"
+    ],
+    "shaba-north": [
+      "https://spaceinafrica.com/2020/07/17/analysis-africas-old-rocket-launch-sites/",
+      "https://astronautix.com/k/kapanitonneo.html"
+    ],
+    "tawiwa": [
+      "https://astronautix.com/t/tawiwa.html",
+      "https://spaceinafrica.com/2020/07/17/analysis-africas-old-rocket-launch-sites/"
+    ],
+    "nouadhibou": [
+      "https://astronautix.com/n/nouadhibou.html",
+      "https://spaceinafrica.com/2020/07/17/analysis-africas-old-rocket-launch-sites/"
+    ]
+  }
+}

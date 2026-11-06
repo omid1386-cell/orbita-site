@@ -26,7 +26,7 @@ test('cluster labels use a single atlas readback and preserve their drawing styl
 });
 
 test('guide CSS and app use dedicated cache tokens without changing the shared data token', () => {
-  assert.match(html, /window\.ORBITA_V = "20261104panfix1";/,
+  assert.match(html, /window\.ORBITA_V = "20261106africa2";/,
     'map and data assets keep their existing cache token');
   assert.match(html, /window\.ORBITA_CSS_V = "20261105report1";/);
   assert.match(html, /window\.ORBITA_APP_V = "20261105report1";/);

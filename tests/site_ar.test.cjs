@@ -22,25 +22,29 @@ function check(condition, label) {
   }
 }
 
-check(sites.length === 64 && new Set(sites.map(site => site.id)).size === 64,
-  'the source set contains 64 unique launch sites');
+check(sites.length === 72 && new Set(sites.map(site => site.id)).size === 72,
+  'the source set contains 72 unique launch sites');
 check(sites.every(site => typeof site.ar === 'string' && site.ar.trim() && arabic.test(site.ar) &&
   typeof site.ar_d === 'string' && site.ar_d.trim() && arabic.test(site.ar_d)),
-  'all 64 launch sites have Arabic names and descriptions');
+  'all 72 launch sites have Arabic names and descriptions');
 check(sites.every(site => site.en && site.fa && site.en_d && site.fa_d),
   'existing English and Persian site fields remain intact');
 const persianOnlyLetters = /[پچژگکی]/;
 check(sites.every(site => !persianOnlyLetters.test(site.ar) && !persianOnlyLetters.test(site.ar_d)),
   'the Arabic site translations contain no Persian-only letters');
 const launchRows = sites.flatMap(site => site.launches || []);
-check(launchRows.length === 350 && launchRows.every(launch => launch.payload_ar && arabic.test(launch.payload_ar)),
-  'all 350 launch-history payload names now have Arabic labels');
+check(launchRows.length === 356 && launchRows.every(launch => launch.payload_ar && arabic.test(launch.payload_ar)),
+  'all 356 launch-history payload names now have Arabic labels');
 check(launchRows.every(launch => launch.analysis_ar && arabic.test(launch.analysis_ar)),
-  'all 350 launch-history success/failure analyses now have Arabic translations');
+  'all 356 launch-history success/failure analyses now have Arabic translations');
 check(launchRows.every(launch => launch.payload && launch.analysis_fa && launch.analysis_en),
   'original Persian and English launch-history fields remain intact');
 check(launchRows.every(launch => !persianOnlyLetters.test(launch.payload_ar + launch.analysis_ar)),
   'new launch-history Arabic fields contain no Persian-only letters');
+const overberg = sites.find(site => site.id === 'overberg');
+check(overberg && overberg.stats_total === 0 && overberg.stats_success === 0 && overberg.stats_fail === 0 &&
+  (overberg.launches || []).length > 0,
+  'Overberg has explicit zero orbital-launch statistics despite its sounding-rocket/test history');
 
 const infraMatch = app.match(/var INFRA_LABEL_AR = (\{[\s\S]*?\n  \});/);
 let infraMap = {};
@@ -72,11 +76,18 @@ check(app.includes('buildUpcomingTabInner(o.id, isFa, isAr)') &&
 check(app.includes('ST_AR = { Go: "مؤكد", TBC: "بانتظار التأكيد", TBD: "الموعد غير محدد" }') &&
   app.includes('"التحليل والبنية التحتية"') && app.includes('"قائمة التحقق من بنية موقع الإطلاق"'),
   'site dossier and upcoming-tab controls have Arabic labels and statuses');
+check(app.includes('planned: "Planned"') && app.includes('planned: "مخطط له"') &&
+  app.includes('planned: "مخطط له"') && app.includes('MARKER_IMAGES.sitePlanned') &&
+  app.includes('svgSite(C.sitePlanned)'),
+  'planned sites have localized status labels and a distinct map/list marker color');
+check(app.includes('Total Orbital Launches') && app.includes('Orbital Launch Success Rate') &&
+  app.includes('hasExplicitOrbitalStats ? null : rate'),
+  'site metrics are explicitly orbital and a zero launch denominator renders as unavailable');
 check(app.includes('dormant: "خامل"') && app.includes('dormant: "راکد"') && app.includes('dormant: "Dormant"'),
   'dormant launch sites have localized Persian, English, and Arabic status labels');
-check(html.includes('window.ORBITA_V = "20261104panfix1";'), 'HTML asset cache version is bumped for the site slice');
+check(html.includes('window.ORBITA_V = "20261106africa2";'), 'HTML asset cache version is bumped for the site slice');
 
-// Exercise the real site renderer with all 64 records to catch runtime errors or Persian leakage.
+// Exercise the real site renderer with all 72 records to catch runtime errors or Persian leakage.
 const siteStart = app.indexOf('  function renderSiteDetail(p) {');
 const siteEnd = app.indexOf('  /* ============ upcoming launches per site', siteStart);
 const infraStart = app.indexOf('  // Arabic labels for the repeated launch-site infrastructure checklist.');
@@ -85,11 +96,13 @@ let renderedSiteHtml = '';
 let renderedSiteText = '';
 let renderedPersianSiteText = '';
 let renderedEnglishSiteText = '';
+let siteRenderer = null;
+let activeSiteSandbox = null;
 if (renderable) {
   const sandbox = {
     LANG: 'ar',
     iconFor: () => '<svg width="30" height="38"></svg>',
-    statusLabel: status => ({ active: 'نشط', inactive: 'غير نشط', dormant: 'خامل', under_construction: 'قيد الإنشاء' }[status] || status),
+    statusLabel: status => ({ active: 'نشط', inactive: 'غير نشط', dormant: 'خامل', planned: 'مخطط له', under_construction: 'قيد الإنشاء' }[status] || status),
     name: site => sandbox.LANG === 'fa' ? (site.fa || site.en) : (sandbox.LANG === 'ar' ? (site.ar || site.en || site.fa) : (site.en || site.fa)),
     desc: site => sandbox.LANG === 'fa' ? (site.fa_d || site.en_d) : (sandbox.LANG === 'ar' ? (site.ar_d || site.en_d || '') : (site.en_d || site.fa_d)),
     esc: value => String(value == null ? '' : value).replace(/[&<>\"]/g, char => ({ '&': '&amp;', '<': '&lt;', '>': '&gt;', '\"': '&quot;' }[char])),
@@ -99,20 +112,21 @@ if (renderable) {
     upcomingCountFor: () => 0,
     buildUpcomingTabInner: () => '<div>لا تتوفر بيانات الإطلاقات القادمة بعد.</div>'
   };
+  activeSiteSandbox = sandbox;
   try {
-    const renderer = vm.runInNewContext(app.slice(infraStart, siteStart) + app.slice(siteStart, siteEnd) + '\nrenderSiteDetail;', sandbox);
-    renderedSiteHtml = sites.map(site => renderer({ o: site, cat: 'site' })).join(' ');
+    siteRenderer = vm.runInNewContext(app.slice(infraStart, siteStart) + app.slice(siteStart, siteEnd) + '\nrenderSiteDetail;', sandbox);
+    renderedSiteHtml = sites.map(site => siteRenderer({ o: site, cat: 'site' })).join(' ');
     renderedSiteText = renderedSiteHtml.replace(/<[^>]*>/g, ' ')
       .replace(/&amp;/g, '&').replace(/&lt;/g, '<').replace(/&gt;/g, '>').replace(/&quot;/g, ' ');
     sandbox.LANG = 'fa';
-    renderedPersianSiteText = renderer({ o: sites[0], cat: 'site' });
+    renderedPersianSiteText = siteRenderer({ o: sites[0], cat: 'site' });
     sandbox.LANG = 'en';
-    renderedEnglishSiteText = renderer({ o: sites[0], cat: 'site' });
+    renderedEnglishSiteText = siteRenderer({ o: sites[0], cat: 'site' });
   } catch (error) {
     console.error('Arabic site renderer error:', error);
   }
 }
-check(renderable && renderedSiteText.length > 0, 'the actual Arabic site renderer runs for all 64 records');
+check(renderable && renderedSiteText.length > 0, 'the actual Arabic site renderer runs for all 72 records');
 check(!persianOnlyLetters.test(renderedSiteText), 'rendered Arabic site dossiers contain no Persian-only letters');
 const escapeHtml = value => String(value)
   .replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/>/g, '&gt;').replace(/"/g, '&quot;');
@@ -131,6 +145,22 @@ const englishAnalysisLeaks = launchRows.some(launch => {
 check(!englishAnalysisLeaks, 'Arabic launch drawers do not show the English success/failure narratives');
 check(renderedPersianSiteText.includes(sites[0].fa) && renderedEnglishSiteText.includes(sites[0].en),
   'site dossier rendering continues to preserve Persian and English names');
+if (siteRenderer && overberg) {
+  activeSiteSandbox.LANG = 'ar';
+  const overbergHtml = siteRenderer({ o: overberg, cat: 'site' });
+  const greenAt = overbergHtml.indexOf('<div class="site-metric-card green">');
+  const greenCard = greenAt >= 0 ? overbergHtml.slice(greenAt, greenAt + 550) : '';
+  const planned = sites.find(site => site.id === 'kipini-spaceport');
+  const plannedHtml = planned ? siteRenderer({ o: planned, cat: 'site' }) : '';
+  check(greenCard.includes('معدل نجاح الإطلاقات المدارية') && greenCard.includes('<div class="val">—</div>') &&
+    !greenCard.includes('100%'),
+    'the Arabic Overberg profile shows no derived orbital success rate from suborbital test rows');
+  check(plannedHtml.includes('مخطط له') && plannedHtml.includes('تقريبي'),
+    'Kipini renders as planned with a localized approximate-coordinate label');
+} else {
+  check(false, 'the Arabic Overberg profile shows no derived orbital success rate from suborbital test rows');
+  check(false, 'Kipini renders as planned with a localized approximate-coordinate label');
+}
 
 const upcomingStart = app.indexOf('  function buildUpcomingTabInner(siteId, isFa, isAr) {');
 const upcomingEnd = app.indexOf('  window.toggleSiteLaunchDrawer', upcomingStart);

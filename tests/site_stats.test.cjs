@@ -19,6 +19,13 @@ for (const s of sites) for (const h of (s.launches || [])) {
   assert(h.analysis_fa && h.analysis_en && typeof h.success === 'boolean', 'تحلیل دوزبانهٔ خودکار: ' + s.id);
   assert(h.ll2_id, 'ردپای منبع ردیف خودکار: ' + s.id);
 }
+const overberg = sites.find(s => s.id === 'overberg');
+assert(overberg, 'Overberg exists');
+assert.equal(overberg.stats_total, 0, 'Overberg has zero verified orbital launches');
+assert.equal(overberg.stats_success, 0);
+assert.equal(overberg.stats_fail, 0);
+assert((overberg.launches || []).length > 0, 'Overberg retains historical/suborbital records independently');
+pass('Overberg orbital statistics remain explicitly zero despite separate suborbital/test rows');
 pass('ردیف‌های روایی خودکار (در صورت وجود) دوزبانه و منبع‌دارند');
 pass('آمار پایگاه‌ها سازگار است (' + seeded + ' پایگاه بذرخورده از ' + sites.length + ')');
 console.log(n + ' PASS / 0 FAIL');

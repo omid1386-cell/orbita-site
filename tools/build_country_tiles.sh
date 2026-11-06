@@ -9,10 +9,15 @@ cd "$ROOT"
 command -v tippecanoe >/dev/null 2>&1 || { echo "Missing dependency: tippecanoe" >&2; exit 1; }
 command -v pmtiles >/dev/null 2>&1 || { echo "Missing dependency: pmtiles CLI" >&2; exit 1; }
 
-SOURCE="assets/geo/countries.json"
+SOURCE_GZ="assets/geo/countries.json.gz"
 OUTPUT="assets/geo/countries.pmtiles"
 TMP="$(mktemp -d "${TMPDIR:-/tmp}/orbita-country-tiles.XXXXXX")"
 trap 'rm -rf "$TMP"' EXIT
+if [ ! -f "$SOURCE_GZ" ]; then
+  echo "Missing compressed source: $SOURCE_GZ" >&2
+  exit 1
+fi
+gzip -cd "$SOURCE_GZ" > "$TMP/countries.json"
 
 # Low zooms are simplified for fast world-scale rendering; zoom 10 retains the
 # current Terrae low-detail source geometry as closely as vector-tile quantization allows.
@@ -29,7 +34,7 @@ tippecanoe \
   --detect-shared-borders \
   --simplification-at-maximum-zoom=0.5 \
   --quiet \
-  "$SOURCE"
+  "$TMP/countries.json"
 
 pmtiles convert -q "$TMP/countries.mbtiles" "$TMP/countries.pmtiles"
 
