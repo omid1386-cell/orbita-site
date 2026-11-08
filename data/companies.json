@@ -11213,7 +11213,9 @@
     "notable_missions_ar": [
       "توفير أنظمة الدفع لنشر الأقمار الصناعية في المدارات الإيرانية.",
       "اختبارات إشعال ساخن ساكنة أُجريت على الأرض داخل حجرات فراغ محاكية."
-    ]
+    ],
+    "logo": "assets/img/logos/sharif-iran.png",
+    "logo_bg": "light"
   },
   {
     "id": "roketsan",
@@ -11555,7 +11557,8 @@
       "دعمت طرز RL10 مهمات المراحل العليا لصواريخ Atlas V وVulcan وNASA SLS؛ ويختلف طراز المحرك حسب المركبة والمهمة.",
       "يشمل إرث Rocketdyne في الدفع والطاقة الفضائية مهمات Cassini وParker Solar Probe وOrion وVoyager ومركبتي Curiosity وPerseverance."
     ],
-    "location_ar": "المقر الرئيسي في جوبيتر، فلوريدا (إحداثيات الخريطة على مستوى المدينة وليست لمبنى بعينه)؛ ومراكز أخرى في دايتونا بيتش ومايسون وريدموند ولوس أنجلوس."
+    "location_ar": "المقر الرئيسي في جوبيتر، فلوريدا (إحداثيات الخريطة على مستوى المدينة وليست لمبنى بعينه)؛ ومراكز أخرى في دايتونا بيتش ومايسون وريدموند ولوس أنجلوس.",
+    "logo": "assets/img/logos/rocketdyne-logo.png"
   },
   {
     "id": "l3harris",
@@ -12054,7 +12057,8 @@
     "notable_missions_ar": [
       "المورّد الوحيد لأنظمة الدفع لصاروخ Daytona التابع لشركة Phantom Space",
       "تشغيل رحلات Talon-A الاختبارية الأسرع من الصوت بمحركات الشركة."
-    ]
+    ],
+    "logo": "assets/img/logos/ursamajor-logo.png"
   },
   {
     "id": "impulse",
@@ -13414,7 +13418,9 @@
     ],
     "notable_missions_ar": [
       "أول تشغيل عالمي لدافع أيوني يعمل باليود (2020)."
-    ]
+    ],
+    "logo": "assets/img/logos/thrustme-logo.png",
+    "logo_bg": "light"
   },
   {
     "id": "energomash",
@@ -14324,7 +14330,9 @@
     "notable_missions_ar": [
       "الرحلة الرابعة لـPERUN (27 أغسطس 2026، Ustka): التحقق من تعديلات TVC؛ وتفعيل إنهاء الرحلة واستعادة الصاروخ داخل منطقة الاختبار"
     ],
-    "flagship_status_ar": "قيد التطوير والاختبار"
+    "flagship_status_ar": "قيد التطوير والاختبار",
+    "logo": "assets/img/logos/spaceforest-logo.svg",
+    "logo_bg": "light"
   },
   {
     "id": "dragonfly-space",
@@ -15164,7 +15172,8 @@
     "notable_missions_ar": [
       "مشاركة رحلات النقل منذ عام 2021"
     ],
-    "flagship_status_ar": "تاريخي"
+    "flagship_status_ar": "تاريخي",
+    "logo": "assets/img/logos/phasefour-logo.png"
   },
   {
     "id": "accion",
@@ -15278,7 +15287,9 @@
     ],
     "notable_missions_ar": [
       "رحلات متعددة لـ قمر مكعب (CubeSat)"
-    ]
+    ],
+    "logo": "assets/img/logos/revolution-space-logo.png",
+    "logo_bg": "light"
   },
   {
     "id": "bradford-ecaps",
@@ -15559,7 +15570,9 @@
     ],
     "notable_missions_ar": [
       "التحقق من صحة HT100 في المدار (2022)"
-    ]
+    ],
+    "logo": "assets/img/logos/sitael-logo.png",
+    "logo_bg": "light"
   },
   {
     "id": "kongsberg-space",
@@ -17129,7 +17142,8 @@
       "مئات رحلات Falcon 9 مع إعادة استخدام المعزز",
       "Starship Flight 14 (28 سبتمبر 2026): أول دخول مداري ونشر 26 قمراً من Starlink V3"
     ],
-    "flagship_status_ar": "مثبت في الطيران"
+    "flagship_status_ar": "مثبت في الطيران",
+    "logo": "assets/img/logos/spacex-logo.svg"
   },
   {
     "id": "relativity-engine",
@@ -17309,7 +17323,8 @@
     ],
     "notable_missions_ar": [
       "رحلة تيران 1 التاريخية (2023)"
-    ]
+    ],
+    "logo": "assets/img/logos/relativity-space-logo.png"
   },
   {
     "id": "casc-6th",
@@ -17415,7 +17430,9 @@
       "صاروخا Long March 6 وLong March 7"
     ],
     "org_type_ar": "أكاديمية للدفع (سجل اسم بديل لـAALPT)",
-    "alias_of_id": "aalpt-china"
+    "alias_of_id": "aalpt-china",
+    "logo": "assets/img/logos/casc-parent-logo.png",
+    "logo_bg": "light"
   },
   {
     "id": "enpulsion",
@@ -18323,7 +18340,9 @@
     ],
     "notable_missions_ar": [
       "مهمة MarCO: أول أقمار قمر مكعّب (CubeSat) بين الكواكب (2018)."
-    ]
+    ],
+    "logo": "assets/img/logos/vacco-logo.png",
+    "logo_bg": "light"
   },
   {
     "id": "mt-aerospace",
@@ -20029,7 +20048,9 @@
     "site_ids": [],
     "source_note_en": "Manufacturer page supplies specifications and test status; the older Quub flight forecast is not treated as completed flight evidence.",
     "source_note_fa": "صفحه سازنده مشخصات و وضعیت آزمون را می‌دهد؛ پیش‌بینی قدیمی پرواز Quub مدرک انجام پرواز تلقی نشده است.",
-    "source_note_ar": "تقدم صفحة المصنع المواصفات وحالة الاختبار؛ ولم يُعامل توقع Quub القديم للإطلاق كدليل على رحلة مكتملة."
+    "source_note_ar": "تقدم صفحة المصنع المواصفات وحالة الاختبار؛ ولم يُعامل توقع Quub القديم للإطلاق كدليل على رحلة مكتملة.",
+    "logo": "assets/img/logos/solid-state-propulsion-logo.png",
+    "logo_bg": "light"
   },
   {
     "id": "nakuja-project",
@@ -20628,7 +20649,8 @@
     ],
     "notable_missions_ar": [
       "لم يُتحقق من إطلاق مداري حتى 6 نوفمبر 2026."
-    ]
+    ],
+    "logo": "assets/img/logos/spacefields-logo.png"
   },
   {
     "id": "cnsa",
@@ -32381,7 +32403,9 @@
     "evidence_confidence": "high",
     "source_note_en": "The company is mapped in French Guiana because its relevant production facility is at CSG; the French territory is not relabelled as metropolitan France.",
     "source_note_fa": "شرکت به‌دلیل استقرار کارخانهٔ مرتبط در CSG، در گویان فرانسه نقشه‌گذاری شده است؛ قلمرو گویان به فرانسهٔ اروپایی تغییر داده نشده.",
-    "source_note_ar": "سُجل الموقع في غويانا الفرنسية لوجود منشأة الإنتاج في CSG؛ ولم تُحوّل المنطقة الفرنسية إلى فرنسا الأوروبية."
+    "source_note_ar": "سُجل الموقع في غويانا الفرنسية لوجود منشأة الإنتاج في CSG؛ ولم تُحوّل المنطقة الفرنسية إلى فرنسا الأوروبية.",
+    "logo": "assets/img/logos/regulus-logo.png",
+    "logo_bg": "light"
   },
   {
     "id": "safran-spacecraft-propulsion",
@@ -32483,7 +32507,9 @@
     "evidence_confidence": "high",
     "source_note_en": "Kept separate from ArianeGroup's Vernon liquid-engine site; official Safran page supplies location and GPS coordinates.",
     "source_note_fa": "از سایت مایع‌سوز آریان‌گروپ در ورنون جدا نگه داشته شد؛ صفحهٔ رسمی سفران محل و مختصات را می‌دهد.",
-    "source_note_ar": "أُبقي منفصلاً عن موقع محركات ArianeGroup السائلة في فيرنون؛ وتوفر صفحة Safran الرسمية الموقع والإحداثيات."
+    "source_note_ar": "أُبقي منفصلاً عن موقع محركات ArianeGroup السائلة في فيرنون؛ وتوفر صفحة Safran الرسمية الموقع والإحداثيات.",
+    "logo": "assets/img/logos/safran-parent-logo.svg",
+    "logo_bg": "light"
   },
   {
     "id": "ion-x",
@@ -32925,7 +32951,8 @@
     "evidence_confidence": "high",
     "source_note_en": "Included as a propulsion developer; ground-tested electric thrusters and future fusion R&D are separately labelled.",
     "source_note_fa": "به‌عنوان توسعه‌دهندهٔ پیشران افزوده شد؛ رانشگرهای آزموده‌شدهٔ زمینی و پژوهش‌وتوسعهٔ آیندهٔ همجوشی جدا برچسب خورده‌اند.",
-    "source_note_ar": "أُدرجت بوصفها مطوراً للدفع؛ وفُصلت الدافعات المختبرة أرضياً عن أبحاث الاندماج المستقبلية."
+    "source_note_ar": "أُدرجت بوصفها مطوراً للدفع؛ وفُصلت الدافعات المختبرة أرضياً عن أبحاث الاندماج المستقبلية.",
+    "logo": "assets/img/logos/pulsar-fusion-logo.svg"
   },
   {
     "id": "t4i",
@@ -33076,7 +33103,8 @@
     "source_note_en": "Flight hardware and activation are kept separate; the map pin follows the Monselice operating site, not the separate Padua postal headquarters.",
     "source_note_fa": "پرتاب سخت‌افزار از روشن‌شدن سامانه جداست؛ نشانگر محل عملیات مونسه‌لیچه را نشان می‌دهد، نه نشانی پستیِ جداگانه در پادووا.",
     "source_note_ar": "يُفصل إطلاق العتاد عن تشغيل النظام؛ وتمثل النقطة موقع العمل في مونسيليتشي لا العنوان البريدي المنفصل في بادوفا.",
-    "founded": 2014
+    "founded": 2014,
+    "logo": "assets/img/logos/t4i-logo.png"
   },
   {
     "id": "pangea-propulsion",
@@ -33277,7 +33305,9 @@
     "evidence_confidence": "high",
     "source_note_en": "The product set includes spacecraft and launcher propulsion. ARCOS is described by Pangea as built and ground-tested; KRONOS is in development; no product is labelled flight-proven without a mission source.",
     "source_note_fa": "مجموعهٔ محصول شامل پیشران فضاپیما وپرتابگر است. پانگه‌آ می‌گوید ARCOS ساخته و زمینی آزموده شده و KRONOS در حال توسعه است؛ بدون منبع مأموریتی هیچ محصولی پروازآزموده نامیده نشده.",
-    "source_note_ar": "تشمل المنتجات دفع المركبات الفضائية ومركبات الإطلاق. وتصف Pangea محرك ARCOS بأنه بُني واختُبر أرضياً وKRONOS بأنه قيد التطوير؛ ولا يصنف أي منتج مثبتاً في الطيران من دون مصدر مهمة."
+    "source_note_ar": "تشمل المنتجات دفع المركبات الفضائية ومركبات الإطلاق. وتصف Pangea محرك ARCOS بأنه بُني واختُبر أرضياً وKRONOS بأنه قيد التطوير؛ ولا يصنف أي منتج مثبتاً في الطيران من دون مصدر مهمة.",
+    "logo": "assets/img/logos/pangea-propulsion-logo.svg",
+    "logo_bg": "light"
   },
   {
     "id": "miprons",
@@ -33676,7 +33706,9 @@
     "evidence_confidence": "high",
     "source_note_en": "Production role is distinguished from design; the map pin is city-level because the official street address was not geocoded to a verified company building.",
     "source_note_fa": "نقش تولید از طراحی جدا شده؛ چون نشانی خیابانی رسمی تا ساختمان تأییدشده ژئوکد نشد، نشانگر شهرمحور است.",
-    "source_note_ar": "فُصل دور الإنتاج عن التصميم؛ والنقطة على مستوى المدينة لأن العنوان الرسمي لم يُطابق مع مبنى مؤكد."
+    "source_note_ar": "فُصل دور الإنتاج عن التصميم؛ والنقطة على مستوى المدينة لأن العنوان الرسمي لم يُطابق مع مبنى مؤكد.",
+    "logo": "assets/img/logos/rostech-parent-logo.svg",
+    "logo_bg": "light"
   },
   {
     "id": "proton-pm",
@@ -33805,7 +33837,9 @@
     "evidence_confidence": "high",
     "source_note_en": "RD-191 design and manufacture are separated: NPO Energomash is the design authority; Proton-PM's documented work is components/assemblies and transition to production.",
     "source_note_fa": "طراحی و تولید RD-191 جدا شده‌اند: NPO Energomash مرجع طراحی است؛ کار مستند Proton-PM قطعات/مجموعه‌ها و گذار به تولید است.",
-    "source_note_ar": "فُصل تصميم RD-191 عن إنتاجه: NPO Energomash صاحبة التصميم؛ ويقتصر العمل الموثق لـProton-PM على المكوّنات والتجميعات والانتقال للإنتاج."
+    "source_note_ar": "فُصل تصميم RD-191 عن إنتاجه: NPO Energomash صاحبة التصميم؛ ويقتصر العمل الموثق لـProton-PM على المكوّنات والتجميعات والانتقال للإنتاج.",
+    "logo": "assets/img/logos/proton-pm-logo.svg",
+    "logo_bg": "light"
   },
   {
     "id": "niimash",
@@ -34132,7 +34166,8 @@
     "evidence_confidence": "high",
     "source_note_en": "SPS-25 flight operation is attributed to SETS's report; ST-25 is not marked flight-proven without a source confirming it.",
     "source_note_fa": "کارکرد پروازی SPS-25 به گزارش SETS نسبت داده شده؛ ST-25 بدون منبع تأییدکننده پروازآزموده علامت نخورده است.",
-    "source_note_ar": "يُنسب تشغيل SPS-25 في المدار إلى تقرير SETS؛ ولا يصنف ST-25 مثبتاً في الطيران من دون مصدر يؤكد ذلك."
+    "source_note_ar": "يُنسب تشغيل SPS-25 في المدار إلى تقرير SETS؛ ولا يصنف ST-25 مثبتاً في الطيران من دون مصدر يؤكد ذلك.",
+    "logo": "assets/img/logos/sets-logo.svg"
   },
   {
     "id": "atd-aerospace-rs",
@@ -34354,6 +34389,7 @@
     "evidence_confidence": "high",
     "source_note_en": "Added as a propulsion development/commercialisation company; atmospheric bench tests are not represented as vacuum qualification or flight.",
     "source_note_fa": "به‌عنوان شرکت توسعه/تجاری‌سازی پیشران افزوده شد؛ آزمون جوی پایهٔ خلأ یا پرواز تلقی نشده است.",
-    "source_note_ar": "أُدرجت كشركة تطوير وتسويق للدفع؛ ولا تُعامل الاختبارات الجوية كتأهيل فراغي أو طيران."
+    "source_note_ar": "أُدرجت كشركة تطوير وتسويق للدفع؛ ولا تُعامل الاختبارات الجوية كتأهيل فراغي أو طيران.",
+    "logo": "assets/img/logos/thaliana-space-logo.svg"
   }
 ]

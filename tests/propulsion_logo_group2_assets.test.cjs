@@ -87,7 +87,7 @@ for (const id of noVerifiedLogo) {
 }
 
 const html = fs.readFileSync(path.join(root, 'index.html'), 'utf8');
-assert.match(html, /window\.ORBITA_V = "20261023propulsionlogos2";/);
-assert.match(html, /window\.ORBITA_APP_V = "20261023propulsionlogos2";/);
+assert.match(html, /window\.ORBITA_V = "20261023propulsionlogos3";/);
+assert.match(html, /window\.ORBITA_APP_V = "20261023propulsionlogos3";/);
 
 console.log(`Verified ${Object.keys(expectedLogos).length} reviewed group-2 logo assignments across ${group2Ids.length} records; ${noVerifiedLogo.length} remain unassigned.`);
