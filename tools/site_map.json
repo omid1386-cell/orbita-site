@@ -19,9 +19,20 @@
   "Alcântara Space Center, Federative Republic of Brazil": "alcantara",
   "Taiyuan Satellite Launch Center, People's Republic of China": "taiyuan",
   "Sea Launch": "sea-launch",
-  "Etlaq Spaceport": "etlaq"
+  "Etlaq Spaceport": "etlaq",
+  "Naro Space Center, South Korea": "naro"
  },
  "pad_rules": [
+  {
+   "location": "Wenchang Space Launch Site, People's Republic of China",
+   "pad_contains": "Commercial LC-1",
+   "site": "hainan-commercial"
+  },
+  {
+   "location": "Wenchang Space Launch Site, People's Republic of China",
+   "pad_contains": "Commercial LC-2",
+   "site": "hainan-commercial"
+  },
   {
    "location": "Cape Canaveral SFS, FL, USA",
    "pad_contains": "36",

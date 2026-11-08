@@ -40,9 +40,9 @@ check(makers.every(company => company.en && company.fa && company.en_d && compan
 check(makers.reduce((sum, company) => sum + (company.product_lines_bilingual || []).length, 0) === 115 &&
   makers.reduce((sum, company) => sum + (company.milestones_en || []).length, 0) === 153,
   'all 115 product lines and 153 source milestones remain available');
-check(agencies.length === 50 && agencies.every(company => company.ar && company.ar_d) &&
-  launch.length === 61 && launch.every(company => company.ar && company.ar_d) &&
-  propulsion.length === 49 && propulsion.every(company => company.ar && company.ar_d),
+check(agencies.length === 66 && agencies.every(company => company.ar && company.ar_d) &&
+  launch.length === 60 && launch.every(company => company.ar && company.ar_d) &&
+  propulsion.length === 52 && propulsion.every(company => company.ar && company.ar_d),
   'the previously localized agency, launch, and propulsion slices remain intact');
 check(companies.filter(company => company.cat !== 'satmaker').every(company =>
   !company.maker_class_ar && !company.specialty_ar && !company.flagship_product_app_ar && !company.satellites_built_ar),
@@ -54,7 +54,7 @@ check(app.includes('مصنّعو الأقمار الصناعية ومكوّنا�
   app.includes('نوع المنتج:') && app.includes('الفئة:</b>') &&
   app.includes('الوصف الهندسي') && app.includes('يُستخدم في:') && app.includes('سجل الأقمار والمكوّنات'),
   'the dossier tabs and key manufacturer labels are Arabic');
-check(html.includes('window.ORBITA_V = "20261106contactaudit1";'),
+check(html.includes('window.ORBITA_V = "20261107stellarkinetics1";'),
   'the HTML cache version is bumped for the satellite-manufacturer slice');
 
 const start = app.indexOf('  function renderSatmakerCompanyArabic(p) {');

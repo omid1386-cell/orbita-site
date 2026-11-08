@@ -29,16 +29,25 @@ function check(condition, label) {
   }
 }
 
-check(launchCompanies.length === 61, 'the launch-category slice contains 61 records');
+check(launchCompanies.length === 60, 'the launch-category slice contains 60 records');
 check(launchCompanies.every(company => company.ar && company.ar_d && arabic.test(company.ar) && arabic.test(company.ar_d)),
-  'all 61 launch companies have Arabic names and descriptions');
+  'all 60 launch companies have Arabic names and descriptions');
 check(launchCompanies.every(company => company.en && company.fa && company.en_d && company.fa_d),
   'existing English and Persian company data remains intact');
 check(launchCompanies.every(company => !persianOnly.test(company.ar) && !persianOnly.test(company.ar_d)),
   'Arabic company translations contain no Persian-only letters');
-check(propulsionCompanies.length === 49 && propulsionCompanies.every(company => company.ar && company.ar_d),
+const stellar = launchCompanies.find(company => company.id === 'stellar-kinetics');
+check(Boolean(stellar) && stellar.country === 'Oman' && stellar.country_fa === 'عمان' &&
+  stellar.site_ids.includes('etlaq') && stellar.lat == null && stellar.lon == null,
+  'Stellar Kinetics MCT is classified under Oman, linked to Etlaq, and has no invented company coordinates');
+check(Boolean(stellar) && stellar.stats.total_launches === 0 && stellar.stats.success_launches === 0 &&
+  stellar.stats.failed_launches === 0 && /scrubbed before liftoff/.test(stellar.stats.scope_en) &&
+  stellar.rockets_fleet[0].name === 'Kea-1' && stellar.rockets_fleet[0].maiden_flight == null &&
+  !stellar.rockets_fleet.some(vehicle => /AZAD/.test(vehicle.name)),
+  'Kea-1 prelaunch scrubs are not counted as flights and partner-owned AZAD is not listed as Stellar Kinetics hardware');
+check(propulsionCompanies.length === 52 && propulsionCompanies.every(company => company.ar && company.ar_d),
   'the completed propulsion-category Arabic slice remains present');
-check(agencyCompanies.length === 50 && agencyCompanies.every(company => company.ar && company.ar_d),
+check(agencyCompanies.length === 66 && agencyCompanies.every(company => company.ar && company.ar_d),
   'the completed agency-category Arabic slice remains present');
 check(satelliteMakers.length === 28 && satelliteMakers.every(company => company.ar && company.ar_d),
   'the separate satellite-manufacturer Arabic slice is complete');
@@ -50,15 +59,22 @@ check(app.includes('نظرة عامة وإحصاءات') && app.includes('أسط
 check(app.includes('safeEnglish(value, fallback)') && app.includes('missionLabel(value)') &&
   app.includes('techValue(value, kind)'),
   'source values pass through Arabic-safe display helpers');
-check(html.includes('window.ORBITA_V = "20261106contactaudit1";'), 'the HTML asset cache version is bumped for the Arabic template');
+check(html.includes('window.ORBITA_V = "20261107stellarkinetics1";'), 'the HTML asset cache version is bumped for the Arabic template');
 
 // Guard the shared bilingual renderer so this Arabic-only task cannot change Persian or English output.
 const companyDetailStart = app.indexOf('  function renderCompanyDetail(p) {');
 const countryMarker = app.indexOf('  /* ================= COUNTRY PROFILE SYSTEM ================= */', companyDetailStart);
 const sharedRenderer = app.slice(companyDetailStart, countryMarker);
 const sharedRendererHash = crypto.createHash('sha256').update(sharedRenderer).digest('hex');
-check(sharedRendererHash === '8184c83f7450b75cc1068f60727654a4ecffb58c37b5e995b1c0c2fbe2ed0c82',
-  'the shared Persian/English company renderer is unchanged');
+check(sharedRenderer.includes('var statsScopeText = isFa ? (stats.scope_fa || stats.scope_en || "") : (stats.scope_en || stats.scope_fa || "");') &&
+  sharedRenderer.includes('stats.total_launches == null ? "—" : stats.total_launches') &&
+  sharedRenderer.includes('stats.success_rate == null || stats.success_rate === "" ? "—"') &&
+  !sharedRenderer.includes('success_rate || "۹۵٪"') && !sharedRenderer.includes('v.stages || 2') &&
+  !sharedRenderer.includes('v.reusability_en || "Expendable"') &&
+  !sharedRenderer.includes('v.status_en || v.status_fa || "Operational"'),
+  'the shared company renderer shows scope and dashes for unknown metrics instead of invented defaults');
+check(sharedRendererHash === 'a62c8b0e4649ae74635677d0a6023f980e8d59f2ad925e059dce97a915179f96',
+  'the shared Persian/English renderer is pinned to the reviewed no-defaults implementation');
 
 function makeRenderer(lang) {
   const launchStart = app.indexOf('  function renderLaunchCompanyArabic(p) {');
@@ -131,7 +147,11 @@ function alignPersianTemplateData(company) {
     orbital_capabilities_fa: unique(company.orbital_capabilities_en),
     timeline_fa: company.timeline_en || company.timeline_fa || [],
     customers_fa: company.customers_en || company.customers_fa || [],
-    partners_fa: company.partners_en || company.partners_fa || []
+    partners_fa: company.partners_en || company.partners_fa || [],
+    rockets_fleet: (company.rockets_fleet || []).map(vehicle => ({
+      ...vehicle,
+      status_fa: vehicle.status_en || vehicle.status_fa
+    }))
   };
 }
 let structuralParity = Boolean(arabicRenderer && persianRenderer);
@@ -150,7 +170,33 @@ if (structuralParity) {
 }
 if (!structuralParity) console.error('First Arabic/Persian DOM-shape mismatch:', parityFailure || '(renderer unavailable)');
 check(structuralParity,
-  'Arabic and Persian launch dossiers have the same DOM structure and layout across all 61 records');
+  'Arabic and Persian launch dossiers have the same DOM structure and layout across all 60 records');
+const scopeCompany = launchCompanies.find(company => company.id === 'spaceone');
+if (arabicRenderer && persianRenderer && scopeCompany && scopeCompany.stats) {
+  const arabicScopeHtml = arabicRenderer({ o: scopeCompany, cat: 'launch' });
+  const persianScopeHtml = persianRenderer({ o: scopeCompany, cat: 'launch' });
+  check(arabicScopeHtml.includes(scopeCompany.stats.scope_ar) &&
+    persianScopeHtml.includes(scopeCompany.stats.scope_fa),
+    'scope notes are rendered from reviewed language fields in Arabic and the shared Persian template');
+} else {
+  check(false, 'scope notes are rendered from reviewed language fields in Arabic and the shared Persian template');
+}
+
+if (arabicRenderer && persianRenderer) {
+  const sparse = {
+    id: 'sparse-fixture', cat: 'launch', en: 'Sparse fixture', fa: 'نمونهٔ کم‌داده',
+    rockets_fleet: [{ name: 'Unspecified Vehicle' }], stats: {},
+    mission_types_en: [], mission_types_fa: [], orbital_capabilities_en: [], orbital_capabilities_fa: []
+  };
+  const sparseHtml = persianRenderer({ o: sparse, cat: 'launch' });
+  check(sparseHtml.includes('تعداد مراحل:</b> —') && sparseHtml.includes('بازمصرف‌پذیری:</b>') &&
+    sparseHtml.includes('Flights:') === false && sparseHtml.includes('پروازها: <b>—</b>') &&
+    !sparseHtml.includes('95%') && !sparseHtml.includes('۹۵٪') && !sparseHtml.includes('Expendable') &&
+    !sparseHtml.includes('یک‌بارمصرف') && !sparseHtml.includes('Launch Vehicle'),
+    'missing rocket and fleet data remain unavailable rather than defaulting to two stages, expendable, or operational');
+} else {
+  check(false, 'missing rocket and fleet data remain unavailable rather than defaulting to two stages, expendable, or operational');
+}
 
 if (arabicRenderer) {
   const spacex = launchCompanies.find(company => company.id === 'spacex');
@@ -160,7 +206,7 @@ if (arabicRenderer) {
   const englishUiLabels = [
     'Historical Timeline', 'Primary Customers', 'Industrial Partners & Propulsion Suppliers',
     'Performance Statistics', 'Annual Launch Trend', 'Mission Types & Orbit Capabilities',
-    'Operational Launch Sites', 'Fly to Location', 'Detailed Rockets Fleet Specifications',
+    'Associated Launch Sites', 'Fly to Location', 'Detailed Rockets Fleet Specifications',
     'Success Rate', 'Last Flight'
   ];
   check(englishUiLabels.every(label => !rendered.includes(label)),

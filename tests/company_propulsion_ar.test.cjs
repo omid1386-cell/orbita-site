@@ -66,7 +66,7 @@ function rawEnglishNarratives(company) {
   return items;
 }
 
-check(propulsion.length === 49, 'the propulsion-category slice contains 49 retained records');
+check(propulsion.length === 52, 'the propulsion-category slice contains 52 retained records');
 const companyById = Object.fromEntries(companies.map(company => [company.id, company]));
 const refreshedAuditIds = [
   'safran-vernon', 'paleblue', 'spaceforest', 'phasefour', 'accion', 'okb-fakel',
@@ -158,7 +158,7 @@ check(companyById['casc-6th'].alias_of_id === 'aalpt-china' &&
   canonicalRecords.some(company => company.id === 'aalpt-china') &&
   allPointsSource.includes('canonicalCompanyRecords().forEach') &&
   layerBarSource.includes('{ k: "propulsion", n: COMPANY_CATEGORY_COUNTS.propulsion }') &&
-  app.includes('var COMPANY_CATEGORY_COUNTS = { launch: 61, propulsion: 48, agency: 50, satmaker: 28 };'),
+  app.includes('var COMPANY_CATEGORY_COUNTS = { launch: 60, propulsion: 52, agency: 66, satmaker: 28 };'),
   'CASC/AALPT remains as linked records but contributes one organization count and map point');
 const ng = companyById.ngpropulsion;
 const ngGem = ng.engine_products_bilingual.find(engine => engine.name_en === 'GEM 63 / GEM 63XL');
@@ -248,11 +248,11 @@ check(propulsion.every(company => company.en && company.fa && company.en_d && co
   'existing English and Persian company data remains intact');
 check(propulsion.every(company => !persianOnly.test(company.ar) && !persianOnly.test(company.ar_d)),
   'Arabic propulsion profile text contains no Persian-only letters');
-check(agencies.length === 50 && agencies.every(company => company.ar && company.ar_d),
+check(agencies.length === 66 && agencies.every(company => company.ar && company.ar_d),
   'the completed agency slice is present without changing propulsion profiles');
 check(satelliteMakers.length === 28 && satelliteMakers.every(company => company.ar && company.ar_d),
   'the separate satellite-manufacturer Arabic slice is complete');
-check(launch.length === 61 && launch.every(company => company.ar && company.ar_d),
+check(launch.length === 60 && launch.every(company => company.ar && company.ar_d),
   'the completed launch-company Arabic slice remains intact');
 check(app.includes('function propulsionArabicLocale(p) {') &&
   app.includes('function renderPropulsionCompanyArabic(p) {\n    return renderPropulsionDetail(p);'),
@@ -333,14 +333,14 @@ try {
   console.error('Live openDetail route error:', error);
   check(false, 'the actual openDetail route renders the shared template in all three languages');
 }
-check(html.includes('window.ORBITA_V = "20261106contactaudit1";'),
+check(html.includes('window.ORBITA_V = "20261107stellarkinetics1";'),
   'HTML asset cache version is bumped for the shared Arabic propulsion template');
 
 const requiredCompanyFields = [
   'city_ar', 'flagship_engine_ar', 'flagship_application_ar', 'history_ar', 'product_history_ar'
 ];
 check(propulsion.every(company => requiredCompanyFields.every(key => hasArabic(company[key]))),
-  'all 49 profiles have Arabic location, flagship, application, and history fields');
+  'all 52 profiles have Arabic location, flagship, application, and history fields');
 check(propulsion.every(company => ['future_plans_en', 'notable_missions_en'].every(sourceKey => {
   const arabicKey = sourceKey.replace(/_en$/, '_ar');
   const source = company[sourceKey] || [];
@@ -350,8 +350,8 @@ check(propulsion.every(company => ['future_plans_en', 'notable_missions_en'].eve
 
 const products = propulsion.flatMap(company => company.engine_products_bilingual || []);
 const tests = propulsion.flatMap(company => company.test_history_en || []);
-check(products.length === 93 && products.every(engine => hasArabic(engine.name_ar)),
-  'all 93 engine-product names have an Arabic primary name after adding three current product rows');
+check(products.length === 99 && products.every(engine => hasArabic(engine.name_ar)),
+  'all 99 engine-product names have an Arabic primary name');
 check(products.every(engine => !engine.rocket_en || hasArabic(engine.rocket_ar)),
   'all displayed product applications have Arabic text');
 check(products.every(engine => !engine.engineering_desc_en || hasArabic(engine.engineering_desc_ar)),
@@ -359,8 +359,8 @@ check(products.every(engine => !engine.engineering_desc_en || hasArabic(engine.e
 check(products.every(engine => !engine.thrust_en || !engine.thrust_ar ||
   hasArabic(engine.thrust_ar) || !/[A-Za-z]{4,}/.test(engine.thrust_ar)),
   'thrust values are Arabic or remain technical quantities without English prose');
-check(tests.length === 99 && tests.every(test => hasArabic(test.title_ar) && hasArabic(test.desc_ar)),
-  'all 99 test-history titles and descriptions have Arabic translations');
+check(tests.length === 105 && tests.every(test => hasArabic(test.title_ar) && hasArabic(test.desc_ar)),
+  'all 105 test-history titles and descriptions have Arabic translations');
 check(propulsion.every(company => company.engine_products_bilingual.every(engine =>
   engine.name_en && engine.type_en && engine.status_en && engine.rocket_en !== undefined &&
   engine.engineering_desc_en !== undefined)),
@@ -388,7 +388,7 @@ try {
 }
 const visible = decodeHtml(rendered.replace(/<[^>]*>/g, ' '));
 check(Boolean(renderer) && propulsion.every(company => renderedByCompany.get(company.id) && renderedByCompany.get(company.id).includes(company.ar)),
-  'the shared Persian-template renderer executes in Arabic for all 49 profiles');
+  'the shared Persian-template renderer executes in Arabic for all 52 profiles');
 check(!persianOnly.test(visible), 'rendered propulsion dossiers do not leak Persian-only letters');
 check(rendered.includes('المادة الدافعة') && rendered.includes('سجلات اختبارات الإشعال الأرضي') &&
   rendered.includes('تاريخ الشركة وتطوير أنظمة الدفع') && rendered.includes('خطط تطوير قدرات الدفع'),

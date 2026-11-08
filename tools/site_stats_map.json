@@ -12,7 +12,12 @@
   "uchinoura": 24,
   "haiyang": 185,
   "wallops": 21,
-  "wenchang": 8,
+  "wenchang": {
+   "pads": [
+    175,
+    176
+   ]
+  },
   "saxavord": 157,
   "esrange": 178,
   "bowen": 181,
@@ -38,7 +43,6 @@
   "kulasekarapattinam": 187,
   "kii": 166,
   "taiki": 32,
-  "naro": 9,
   "sohae": 7,
   "palmachim": 4,
   "woomera": 152,
@@ -54,7 +58,13 @@
   "shahroud": 145,
   "hammaguir": 147,
   "corn-ranch": 29,
-  "yasny": 5
+  "yasny": 5,
+  "hainan-commercial": {
+   "pads": [
+    218,
+    219
+   ]
+  }
  },
  "unmapped": {
   "emamshahr": "هم‌ارض با شاهرود در منبع؛ برای پرهیز از دوشماری بدون آمار می‌ماند",
@@ -69,7 +79,8 @@
   "mojave": "پرتاب هوایی؛ در منبع سبد عمومی است",
   "cornwall": "پرتاب هوایی؛ در منبع سبد عمومی است",
   "thumba": "در منبع نیست",
-  "lc36": "سکوی نوسازی‌شدهٔ نیوگلن؛ شناسهٔ سکوی منبع در دست تعیین"
+  "lc36": "سکوی نوسازی‌شدهٔ نیوگلن؛ شناسهٔ سکوی منبع در دست تعیین",
+  "naro": "LL2 location 9 raw count includes one KSLV-TLV suborbital attempt; orbital stats are manually reconciled as 8/5/3."
  },
- "note": "نگاشت پایگاه‌های ما به شناسهٔ مکان کتابخانهٔ پرتاب ۲ برای آمار کل/موفقیت | مقدار عددی=مکان؛ {\"pad\": id}=سکو"
+ "note": "مقدار عددی=شناسهٔ مکان؛ {\"pad\": id}=یک پد؛ {\"pads\": [id, ...]}=جمع چند پد. برای Naro شمار مداری دستی است تا KSLV-TLV زیرمداری حذف شود."
 }

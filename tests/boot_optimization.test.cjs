@@ -20,8 +20,8 @@ function countPositions(value) {
 }
 
 test('company category files are an exact, non-overwriting split of the canonical source', () => {
-  const counts = { launch: 61, propulsion: 49, agency: 50, satmaker: 28 };
-  const canonicalCounts = { launch: 61, propulsion: 48, agency: 50, satmaker: 28 };
+  const counts = { launch: 60, propulsion: 52, agency: 66, satmaker: 28 };
+  const canonicalCounts = { launch: 60, propulsion: 51, agency: 66, satmaker: 28 };
   const splitIds = [];
   for (const [category, expectedCount] of Object.entries(counts)) {
     const split = JSON.parse(fs.readFileSync(path.join(root, `data/companies_${category}.json`), 'utf8'));
@@ -57,5 +57,5 @@ test('startup requests compact map geometry and only default company categories;
   assert.match(app, /if \(b\.dataset\.view === "missions"\) ensureMissionViewData\(\)/);
   assert.match(app, /propulsion: "data\/companies_propulsion\.json"/);
   assert.match(app, /satmaker: "data\/companies_satmaker\.json"/);
-  assert.match(html, /window\.ORBITA_V = "20261106contactaudit1";/);
+  assert.match(html, /window\.ORBITA_V = "20261107stellarkinetics1";/);
 });

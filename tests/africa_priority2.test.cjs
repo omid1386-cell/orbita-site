@@ -36,7 +36,7 @@ test('Africa Priority 2 adds the reviewed agencies and correctly separates insti
   assert.deepEqual(
     Object.fromEntries(['agency', 'propulsion', 'launch', 'satmaker'].map(cat =>
       [cat, companies.filter(row => row.cat === cat).length])),
-    { agency: 50, propulsion: 49, launch: 61, satmaker: 28 }
+    { agency: 66, propulsion: 52, launch: 60, satmaker: 28 }
   );
   const agencyIds = [
     'rwanda-space-agency', 'ases-senegal', 'zingsa-zimbabwe', 'ageos-gabon', 'asci-civ', 'narss-egypt',

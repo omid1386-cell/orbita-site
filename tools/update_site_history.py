@@ -37,7 +37,9 @@ def fetch(url):
 
 
 def site_for(launch, smap):
-    loc, pad = launch.get('location') or '', launch.get('pad') or ''
+    loc_obj, pad_obj = launch.get('location') or '', launch.get('pad') or ''
+    loc = loc_obj.get('name', '') if isinstance(loc_obj, dict) else str(loc_obj)
+    pad = pad_obj.get('name', '') if isinstance(pad_obj, dict) else str(pad_obj)
     for rule in smap.get('pad_rules', []):
         if rule['location'] == loc and rule['pad_contains'] in pad:
             return rule['site']
@@ -103,7 +105,7 @@ def main():
         return
 
     try:
-        res = fetch('https://ll.thespacedevs.com/2.2.0/launch/previous/?mode=list&limit=30&net__gte=%s' % marker)
+        res = fetch('https://ll.thespacedevs.com/2.2.0/launch/previous/?mode=normal&limit=30&net__gte=%s' % marker)
     except Exception as e:
         print('⛔ دروازهٔ اعتبارسنجی: %s — لغو شد.' % e)
         sys.exit(2)
@@ -122,8 +124,34 @@ def main():
         s = by_id[sid]
         ok = (st == 'Success')
 
-        # ——— ۱) آمار
-        if 'stats_total' in s:
+        mission_obj = L.get('mission') or {}
+        mission = mission_obj.get('name', '') if isinstance(mission_obj, dict) else str(mission_obj)
+        mission = mission or (L.get('name') or '').split(' | ')[-1]
+        orbit_obj = mission_obj.get('orbit') if isinstance(mission_obj, dict) else None
+        orbit = (orbit_obj.get('abbrev') or orbit_obj.get('name') or '') if isinstance(orbit_obj, dict) else str(orbit_obj or L.get('orbit') or '')
+        mtype = mission_obj.get('type', '') if isinstance(mission_obj, dict) else ''
+        mtype = mtype or L.get('mission_type') or ''
+        name = L.get('name') or ''
+        rocket_obj = L.get('rocket') or {}
+        if isinstance(rocket_obj, dict):
+            config = rocket_obj.get('configuration') or {}
+            rk = config.get('name') or config.get('full_name') or rocket_obj.get('name') or ''
+        else:
+            rk = str(rocket_obj)
+        rk = rk or name.split(' | ')[0]
+        is_suborbital = bool(re.search(r'sub.?orbital|sounding|probe flight', str(orbit) + ' ' + str(mtype), re.I))
+        stats_kind = s.get('stats_kind')
+        stats_countable = stats_kind in ('orbital', 'suborbital')
+        is_orbital = bool(orbit) and not is_suborbital
+        if stats_countable and stats_kind == 'orbital' and not is_orbital:
+            skipped.append((L, 'مدار تأییدپذیر نیست؛ آمار مداری جابه‌جا نشد'))
+            continue
+        if stats_countable and stats_kind == 'suborbital' and not is_suborbital:
+            skipped.append((L, 'زیرمداری بودن تأییدپذیر نیست؛ آمار زیرمداری جابه‌جا نشد'))
+            continue
+
+        # ——— ۱) آمار؛ نوع نامشخص یا گزارش‌شده، و outcome نامعلوم هرگز به عدد کامل تبدیل نمی‌شود.
+        if stats_countable and 'stats_total' in s and isinstance(s.get('stats_success'), int) and isinstance(s.get('stats_fail'), int):
             s['stats_total'] += 1
             if ok:
                 s['stats_success'] += 1
@@ -133,11 +161,6 @@ def main():
             bumps.append((sid, st))
 
         # ——— ۲) دروازهٔ روایت
-        name = L.get('name') or ''
-        mission = L.get('mission') or name.split(' | ')[-1]
-        rk = name.split(' | ')[0]
-        orbit = L.get('orbit') or ''
-        mtype = L.get('mission_type') or ''
         hist = s.get('launches') or []
         def fam(x):
             x = str(x or '')

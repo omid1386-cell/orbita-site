@@ -31,10 +31,16 @@ def main():
     done = []
     for s in pending[:maxn]:
         lid = smap[s['id']]
-        qp = ('pad__ids=%d' % lid['pad']) if isinstance(lid, dict) else ('location__ids=%d' % lid)
+        if isinstance(lid, dict) and lid.get('pads'):
+            queries = [('pad__ids=%d' % pad_id) for pad_id in lid['pads']]
+        else:
+            queries = [('pad__ids=%d' % lid['pad']) if isinstance(lid, dict) else ('location__ids=%d' % lid)]
         try:
-            total = count('https://ll.thespacedevs.com/2.2.0/launch/previous/?%s&limit=1' % qp)
-            succ = count('https://ll.thespacedevs.com/2.2.0/launch/previous/?%s&status__ids=3&limit=1' % qp)
+            total = 0
+            succ = 0
+            for qp in queries:
+                total += count('https://ll.thespacedevs.com/2.2.0/launch/previous/?%s&limit=1' % qp)
+                succ += count('https://ll.thespacedevs.com/2.2.0/launch/previous/?%s&status__ids=3&limit=1' % qp)
         except Exception as e:
             print('  ⛔ %s: %s — این نوبت رد شد' % (s['id'], e))
             break

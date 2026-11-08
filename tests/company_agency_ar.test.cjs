@@ -165,8 +165,8 @@ function englishNarrativeFields(company) {
   return values.filter(value => typeof value === 'string' && value.trim());
 }
 
-test('the 50 agency records have complete Arabic profiles and retain both existing languages', () => {
-  assert.equal(agencies.length, 50);
+test('the 66 agency records have complete Arabic profiles and retain both existing languages', () => {
+  assert.equal(agencies.length, 66);
   for (const company of agencies) {
     for (const key of ['ar', 'ar_d', 'en', 'en_d', 'fa', 'fa_d']) {
       assert.ok(company[key], `${company.id}.${key} is missing`);
@@ -210,8 +210,8 @@ test('Arabic data uses Arabic-script explanatory text, Latin technical digits, a
     assert.doesNotMatch(value, NON_LATIN_DIGITS, `${key} must use Latin technical digits`);
   }
   assert.equal(satelliteMakers.length, 28);
-  assert.equal(launch.length, 61);
-  assert.equal(propulsion.length, 49);
+  assert.equal(launch.length, 60);
+  assert.equal(propulsion.length, 52);
   assert.ok(satelliteMakers.every(company => company.ar && company.ar_d));
   assert.ok(launch.every(company => company.ar && company.ar_d));
   assert.ok(propulsion.every(company => company.ar && company.ar_d));
@@ -350,7 +350,7 @@ test('missing Arabic fallbacks never expose untranslated Persian or English desc
 });
 
 test('the global asset cache token is current and the country profile uses Arabic agency cards', () => {
-  assert.ok(html.includes('window.ORBITA_V = "20261106contactaudit1";'));
+  assert.ok(html.includes('window.ORBITA_V = "20261107stellarkinetics1";'));
   const countrySource = sourceBetween('  function renderCountryProfile(p) {', '  window.isEntityInCountry = isEntityInCountry;');
   assert.match(countrySource, /isAr \? \(item\.ar \|\| item\.en \|\| item\.fa\)/,
     'country profile cards prefer an agency Arabic name');
