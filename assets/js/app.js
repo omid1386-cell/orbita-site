@@ -326,13 +326,13 @@
 
   var STATUS_FA = { success: "موفق", operational: "فعال / در بهره‌برداری", upcoming: "پیش‌رو", development: "در دست توسعه",
     cruise: "در مسیر", partial: "موفقیت نسبی", failure: "ناموفق", deployment: "در حال استقرار",
-    active: "فعال", inactive: "غیرفعال", dormant: "راکد", planned: "برنامه‌ریزی‌شده", unknown: "نامشخص", under_construction: "در دست ساخت" };
+    active: "فعال", inactive: "غیرفعال", dormant: "راکد", planned: "برنامه‌ریزی‌شده", under_construction: "در دست ساخت" };
   var STATUS_EN = { success: "Success", operational: "Operational", upcoming: "Upcoming", development: "In development",
     cruise: "In cruise", partial: "Partial", failure: "Failure", deployment: "Deploying",
-    active: "Active", inactive: "Inactive", dormant: "Dormant", planned: "Planned", unknown: "Unknown", under_construction: "Under construction" };
+    active: "Active", inactive: "Inactive", dormant: "Dormant", planned: "Planned", under_construction: "Under construction" };
   var STATUS_AR = { success: "نجاح", operational: "قيد التشغيل", upcoming: "قادم", development: "قيد التطوير",
     cruise: "في طريقه", partial: "نجاح جزئي", failure: "فشل", deployment: "قيد النشر",
-    active: "نشط", inactive: "غير نشط", dormant: "خامل", planned: "مخطط له", unknown: "غير محدد", under_construction: "قيد الإنشاء" };
+    active: "نشط", inactive: "غير نشط", dormant: "خامل", planned: "مخطط له", under_construction: "قيد الإنشاء" };
   function statusLabel(s) {
     return LANG === "fa" ? (STATUS_FA[s] || s) : LANG === "ar" ? (STATUS_AR[s] || STATUS_EN[s] || s) : (STATUS_EN[s] || s);
   }
@@ -398,7 +398,7 @@
     if (cat === "launch") return svgLaunch(C.launch);
     if (cat === "propulsion") return svgPropulsion(C.propulsion);
     if (cat === "agency") return svgAgency(C.agency);
-    return svgSite((status === "inactive" || status === "dormant" || status === "unknown") ? C.siteOff : status === "planned" ? C.sitePlanned : status === "under_construction" ? C.siteWip : C.site);
+    return svgSite((status === "inactive" || status === "dormant") ? C.siteOff : status === "planned" ? C.sitePlanned : status === "under_construction" ? C.siteWip : C.site);
   }
 
   /* ================= state ================= */
@@ -437,7 +437,7 @@
     satmaker: "data/companies_satmaker.json"
   };
   // Canonical map counts (the propulsion source contains one linked alias record).
-  var COMPANY_CATEGORY_COUNTS = { launch: 60, propulsion: 52, agency: 66, satmaker: 28 };
+  var COMPANY_CATEGORY_COUNTS = { launch: 69, propulsion: 68, agency: 81, satmaker: 28 };
   var COMPANY_CATEGORY_STATE = { launch: "idle", propulsion: "idle", agency: "idle", satmaker: "idle" };
   var COMPANY_CATEGORY_PROMISES = Object.create(null);
   var SORT = "new";   /* newest launch first — the user asked for this ordering */
@@ -1632,6 +1632,28 @@
     if (map) applyMapStyle();
   });
 
+  function companyCategories(company) {
+    if (!company) return [];
+    var values = [company.cat].concat(Array.isArray(company.secondary_categories) ? company.secondary_categories : []);
+    var seen = Object.create(null), result = [];
+    values.forEach(function (category) {
+      if (typeof category !== "string" || !category || seen[category]) return;
+      seen[category] = true; result.push(category);
+    });
+    return result;
+  }
+  function companyBelongsToCategory(company, category) {
+    return !!(company && category && companyCategories(company).indexOf(category) >= 0);
+  }
+  function activeCompanyCategory(company) {
+    var categories = companyCategories(company);
+    for (var i = 0; i < categories.length; i++) if (filters[categories[i]]) return categories[i];
+    return null;
+  }
+  function companyCategoryForDisplay(company, preferredCategory) {
+    if (companyBelongsToCategory(company, preferredCategory)) return preferredCategory;
+    return company && company.cat ? company.cat : "company";
+  }
   function canonicalCompanyRecords() {
     return (DATA.companies || []).filter(function (c) { return !c.alias_of_id; });
   }
@@ -1643,14 +1665,17 @@
     return p;
   }
   function filteredPoints() {
-    var q = (($("#mapSearch")||{}).value || "").trim().toLowerCase();
-    return allPoints().filter(function (p) {
-      if (!filters[p.cat]) return false;
-      if (p.o.lat == null || p.o.lon == null || !Number.isFinite(Number(p.o.lat)) || !Number.isFinite(Number(p.o.lon))) return false;
+    var q = (($('#mapSearch')||{}).value || "").trim().toLowerCase();
+    var visible = allPoints().map(function (point) {
+      if (point.kind !== "company") return filters[point.cat] ? point : null;
+      var category = activeCompanyCategory(point.o);
+      return category ? { kind: point.kind, cat: category, o: point.o } : null;
+    }).filter(Boolean);
+    return visible.filter(function (p) {
       if (!q) return true;
       var o = p.o;
-      return [o.en, o.fa, o.country, o.country_fa, o.city, o.city_fa, o.op, (o.rockets || o.products || []).join(" ")]
-        .join(" ").toLowerCase().indexOf(q) > -1;
+      return [o.en, o.fa, o.country, o.country_fa, o.city, o.city_fa, o.op,
+        (o.rockets || o.products || []).join(" ")].join(" ").toLowerCase().indexOf(q) > -1;
     });
   }
 
@@ -1680,7 +1705,7 @@
       { k: "propulsion", n: COMPANY_CATEGORY_COUNTS.propulsion },
       { k: "agency", n: COMPANY_CATEGORY_COUNTS.agency },
       { k: "satmaker", n: COMPANY_CATEGORY_COUNTS.satmaker },
-      { k: "site", n: 78 },
+      { k: "site", n: 73 },
       { k: "recovery", n: 20 }
     ];
     var html = cats.map(function (c) {
@@ -1806,7 +1831,7 @@
     if (p.cat === "launch") return MARKER_IMAGES.launch;
     if (p.cat === "propulsion") return MARKER_IMAGES.propulsion;
     if (p.cat === "agency") return MARKER_IMAGES.agency;
-    if (p.o && (p.o.status === "inactive" || p.o.status === "dormant" || p.o.status === "unknown")) return MARKER_IMAGES.siteInactive;
+    if (p.o && (p.o.status === "inactive" || p.o.status === "dormant")) return MARKER_IMAGES.siteInactive;
     if (p.o && p.o.status === "under_construction") return MARKER_IMAGES.siteConstruction;
     if (p.o && p.o.status === "planned") return MARKER_IMAGES.sitePlanned;
     return MARKER_IMAGES.siteActive;
@@ -2432,31 +2457,22 @@
 
     var launches = o.launches || [];
     var tot = launches.length;
+    var succ = 0, fail = 0;
     var yearCounts = {};
     launches.forEach(function (l) {
+      if (l.success) succ++; else fail++;
       var yr = (l.date || "").split("-")[0];
       if (yr) yearCounts[yr] = (yearCounts[yr] || 0) + 1;
     });
 
-    /* Curated history rows are not a complete aggregate. Never derive site totals from them. */
-    var hasExplicitStats = typeof o.stats_total === "number";
-    var statTot = hasExplicitStats ? o.stats_total : null;
-    var statSucc = hasExplicitStats && typeof o.stats_success === "number" ? o.stats_success : null;
-    var statFail = hasExplicitStats && typeof o.stats_fail === "number" ? o.stats_fail : null;
-    var statRate = o.stats_complete !== false && statTot != null && statSucc != null && statFail != null && statTot > 0
-      ? Math.round((statSucc / statTot) * 100) : null;
-    var statTotText = statTot == null ? "—" : ((o.stats_is_minimum === true ? "≥ " : "") + String(statTot));
-    var statSuccText = statSucc == null ? "—" : String(statSucc);
-    var statFailText = statFail == null ? "—" : String(statFail);
+    var rate = tot > 0 ? Math.round((succ / tot) * 100) : null;
+    /* Orbital statistics stay separate from selected historical/suborbital rows. */
+    var hasExplicitOrbitalStats = typeof o.stats_total === "number";
+    var statTot = hasExplicitOrbitalStats ? o.stats_total : tot;
+    var statSucc = (typeof o.stats_success === "number") ? o.stats_success : succ;
+    var statFail = (typeof o.stats_fail === "number") ? o.stats_fail : fail;
+    var statRate = statTot > 0 ? Math.round((statSucc / statTot) * 100) : (hasExplicitOrbitalStats ? null : rate);
     var statRateText = statRate == null ? "—" : statRate + "%";
-    var statsKind = o.stats_kind || "unknown";
-    var totalMetricLabel = statsKind === "suborbital"
-      ? stxt("مجموع پروازهای زیرمداری", "Documented Suborbital Flights", "الرحلات شبه المدارية الموثقة")
-      : statsKind === "reported_research"
-        ? stxt("مأموریت‌های پژوهشی گزارش‌شده", "Reported Research Missions", "المهمات البحثية المعلنة")
-        : statsKind === "orbital"
-          ? stxt("مجموع پرتاب‌های مداری", "Total Orbital Launches", "إجمالي الإطلاقات المدارية")
-          : stxt("شمار پرتاب‌های ثبت‌شده (نوع مشخص نیست)", "Recorded Launches (type unspecified)", "الإطلاقات المسجلة (النوع غير محدد)");
 
     // Three site tabs.
     h += '<div class="site-tabs">';
@@ -2477,39 +2493,33 @@
     h += cell(t("first_launch"), o.first);
     h += cell(t("pads"), isAr ? (safeArabic(o.pads_ar, "") || safeEnglish(o.pads, "غير متاح بالعربية")) : (isFa ? (o.pads_fa || o.pads) : o.pads), true);
     var approximateCoords = String(o.coordinates_precision || "").indexOf("approximate") === 0;
-    var hasCoords = typeof o.lat === "number" && Number.isFinite(o.lat) && typeof o.lon === "number" && Number.isFinite(o.lon);
     var coordDigits = approximateCoords ? 2 : 4;
-    var coordinateText = hasCoords ? o.lat.toFixed(coordDigits) + ", " + o.lon.toFixed(coordDigits) : "—";
-    if (approximateCoords && hasCoords) coordinateText += isFa ? " (تقریبی)" : (isAr ? " (تقريبي)" : " (approx.)");
+    var coordinateText = o.lat.toFixed(coordDigits) + ", " + o.lon.toFixed(coordDigits);
+    if (approximateCoords) coordinateText += isFa ? " (تقریبی)" : (isAr ? " (تقريبي)" : " (approx.)");
     h += cell(t("coords"), coordinateText, true);
-    var altRaw = o.alt;
-    var altitudeValue = altRaw == null || String(altRaw).trim() === "" ? "—" : (isAr ? safeEnglish(altRaw, "—") : String(altRaw));
+    var altitudeValue = isAr ? safeEnglish(o.alt || "50 m", "—") : (o.alt || "50 m");
     var altitudeUnit = altitudeValue && altitudeValue !== "—" ? stxt("متر", "meters", "متر") : "";
     h += cell(stxt("ارتفاع از دریا", "Altitude", "الارتفاع عن سطح البحر"), altitudeValue, true);
-    var azimuthRaw = isAr ? (o.azimuth_ar || safeEnglish(o.azimuth_en || o.azimuth, "—")) : (isFa ? (o.azimuth_fa || o.azimuth) : (o.azimuth_en || o.azimuth));
-    var azimuthValue = azimuthRaw == null || String(azimuthRaw).trim() === "" ? "—" : azimuthRaw;
+    var azimuthValue = isAr ? (o.azimuth_ar || safeEnglish(o.azimuth_en || o.azimuth, "غير متاح بالعربية")) : (isFa ? (o.azimuth_fa || o.azimuth || "شرق روی پهنه ایمن") : (o.azimuth_en || o.azimuth || "East over a safe range"));
     h += cell(stxt("جهت‌های مجاز پرتاب (ازیموت)", "Launch Azimuths", "اتجاهات الإطلاق (السمت)"), azimuthValue, true);
-    var targetOrbitRaw = isAr ? (o.target_orbits_ar || safeEnglish(o.target_orbits_en || o.target_orbits, "—")) : (isFa ? (o.target_orbits_fa || o.target_orbits_en || o.target_orbits) : (o.target_orbits_en || o.target_orbits));
-    var targetOrbitValue = targetOrbitRaw == null || String(targetOrbitRaw).trim() === "" ? "—" : targetOrbitRaw;
+    var targetOrbitValue = isAr ? (o.target_orbits_ar || safeEnglish(o.target_orbits_en || o.target_orbits, "غير متاح بالعربية")) : (isFa ? (o.target_orbits_fa || o.target_orbits_en || o.target_orbits || "LEO, SSO") : (o.target_orbits_en || o.target_orbits || "LEO, SSO"));
     h += cell(stxt("مدارهای ثبت‌شده / هدف اصلی", "Recorded / Target Orbits", "المدارات المسجلة / المستهدفة"), targetOrbitValue, true);
     var futureOrbitValue = isAr ? (o.future_orbits_ar || safeEnglish(o.future_orbits_en || o.future_orbits, "غير متاح بالعربية")) : (isFa ? (o.future_orbits_fa || o.future_orbits_en || o.future_orbits) : (o.future_orbits_en || o.future_orbits));
     if (futureOrbitValue) h += cell(stxt("مدار پیشنهادی / آینده", "Future / Proposed Orbits", "مدارات مستقبلية / مقترحة"), futureOrbitValue, true);
     h += '</div>';
 
     h += '<div class="site-metrics-grid">';
-    h += '<div class="site-metric-card gold"><div class="lbl">' + totalMetricLabel + '</div><div class="val">' + statTotText + '</div><div class="lbl">' + stxt("بر پایهٔ شمارِ تجمیعی، نه ردیف‌های گزیده", "Aggregate count, not selected history rows", "إجمالي موثق، لا سجلات تاريخية منتقاة") + '</div></div>';
-    h += '<div class="site-metric-card green"><div class="lbl">' + stxt("نرخ موفقیت در دادهٔ قابل‌شمارش", "Success Rate (when outcomes are known)", "معدل النجاح عند توفر النتائج") + '</div><div class="val">' + statRateText + '</div><div class="lbl">' + statSuccText + (isFa ? " موفق / " : (isAr ? " ناجحة / " : " successful / ")) + statFailText + (isFa ? " ناموفق" : (isAr ? " إخفاق" : " failed")) + '</div></div>';
+    h += '<div class="site-metric-card gold"><div class="lbl">' + stxt("مجموع پرتاب‌های مداری", "Total Orbital Launches", "إجمالي الإطلاقات المدارية") + '</div><div class="val">' + statTot + '</div><div class="lbl">' + stxt("پرتاب‌های مداری ثبت‌شده", "Documented orbital launches", "الإطلاقات المدارية الموثقة") + '</div></div>';
+    h += '<div class="site-metric-card green"><div class="lbl">' + stxt("نرخ موفقیت پرتاب مداری", "Orbital Launch Success Rate", "معدل نجاح الإطلاقات المدارية") + '</div><div class="val">' + statRateText + '</div><div class="lbl">' + statSucc + (isFa ? " موفق / " : (isAr ? " ناجحة / " : " successful / ")) + statFail + (isFa ? " ناموفق" : (isAr ? " إخفاق" : " failed")) + '</div></div>';
     h += '<div class="site-metric-card"><div class="lbl">' + stxt("ارتفاع از سطح دریا", "Elevation", "الارتفاع") + '</div><div class="val"><bdi>' + esc(altitudeValue) + '</bdi></div><div class="lbl">' + altitudeUnit + '</div></div>';
-    h += '<div class="site-metric-card"><div class="lbl">' + stxt("فاصله از خط استوا", "Equator Dist.", "المسافة عن خط الاستواء") + '</div><div class="val" style="font-size:12px; margin-top:5px;"><bdi>' + esc(isAr ? safeEnglish(o.equator_dist, "—") : (o.equator_dist == null || o.equator_dist === "" ? "—" : o.equator_dist)) + '</bdi></div></div>';
+    h += '<div class="site-metric-card"><div class="lbl">' + stxt("فاصله از خط استوا", "Equator Dist.", "المسافة عن خط الاستواء") + '</div><div class="val" style="font-size:12px; margin-top:5px;"><bdi>' + esc(isAr ? safeEnglish(o.equator_dist, "—") : (o.equator_dist || "0 km")) + '</bdi></div></div>';
     h += '</div>';
-    var statsScopeText = isFa ? (o.stats_scope_fa || "") : (isAr ? (safeArabic(o.stats_scope_ar, "") || safeEnglish(o.stats_scope_en, "")) : (o.stats_scope_en || ""));
-    if (statsScopeText) h += '<div class="site-stats-scope" style="margin-top:6px; padding:7px 9px; border-inline-start:3px solid var(--accent); color:var(--muted); font-size:10px; line-height:1.5;">' + esc(statsScopeText) + '</div>';
 
     var years = Object.keys(yearCounts).sort();
     var maxVal = 1;
     years.forEach(function (y) { if (yearCounts[y] > maxVal) maxVal = yearCounts[y]; });
     h += '<div class="site-chart-box">';
-    h += '<div class="site-chart-head"><span>📊 ' + stxt("رویدادهای منتخب ثبت‌شده بر پایهٔ سال", "Selected recorded events by year", "الأحداث المسجلة المختارة حسب السنة") + '</span><span style="font-size:9.5px; opacity:0.75;">' + stxt("فهرست گزیده؛ نه تاریخچهٔ کامل", "Selected history; not a complete log", "سجل مختار لا يمثل التاريخ كاملاً") + '</span></div>';
+    h += '<div class="site-chart-head"><span>📊 ' + stxt("روند پرتاب‌های سالانه (سال میلادی)", "Annual Launches (Gregorian)", "عمليات الإطلاق السنوية (بالتقويم الميلادي)") + '</span><span style="font-size:9.5px; opacity:0.75;">' + stxt("استخراج خودکار", "Auto Calculated", "محسوب تلقائيًا") + '</span></div>';
     h += '<div class="site-chart-bars" style="direction: ltr;">';
     years.forEach(function (yr) {
       var cnt = yearCounts[yr];
@@ -2560,8 +2570,7 @@
       h += '<div><span style="color:var(--muted);">' + stxt("نسخه پرتابگر:", "Rocket Variant:", "طراز مركبة الإطلاق:") + '</span> <b><bdi>' + esc(isAr ? safeEnglish(l.rocket_var || l.rocket, "—") : (l.rocket_var || l.rocket || "—")) + '</bdi></b></div>';
       h += '<div><span style="color:var(--muted);">' + stxt("شیب مداری:", "Inclination:", "الميل المداري:") + '</span> <b><bdi>' + esc(isAr ? safeEnglish(l.inc, "—") : (l.inc || "—")) + '</bdi></b></div>';
       h += '<div><span style="color:var(--muted);">' + stxt("مدت مأموریت:", "Duration:", "المدة:") + '</span> <b><bdi>' + esc(isAr ? safeEnglish(l.duration, "—") : (l.duration || "—")) + '</bdi></b></div>';
-      var historyOrbit = l.orbit == null || String(l.orbit).trim() === "" ? "—" : (isAr ? safeEnglish(l.orbit, "—") : l.orbit);
-      h += '<div><span style="color:var(--muted);">' + stxt("مدار هدف:", "Orbit:", "المدار:") + '</span> <b><bdi>' + esc(historyOrbit) + '</bdi></b></div>';
+      h += '<div><span style="color:var(--muted);">' + stxt("مدار هدف:", "Orbit:", "المدار:") + '</span> <b><bdi>' + esc(isAr ? safeEnglish(l.orbit, "—") : (l.orbit || "LEO")) + '</bdi></b></div>';
       h += '</div>';
 
       h += '<div style="background:rgba(245, 158, 11, 0.08); border:1px solid rgba(245, 158, 11, 0.25); border-radius:5px; padding:8px; font-size:11px; line-height:1.5; color:var(--amber);">';
@@ -2918,11 +2927,34 @@
       "Space Research and Aerospace Institute (current status unverified)": "معهد لأبحاث الفضاء والفضاء الجوي؛ الوضع الحالي غير مؤكد",
       "Remote Sensing and Seismology Authority (current status unverified)": "هيئة للاستشعار عن بعد وعلم الزلازل؛ الوضع الحالي غير مؤكد",
       "National Space Programme (under the Ministry; not an independent agency)": "برنامج وطني للفضاء تابع للوزارة وليس وكالة مستقلة",
-      "State-Owned Space Operator": "مشغل فضائي مملوك للدولة",
-      "Space Regulatory and Promotion Agency": "جهة لتنظيم وتعزيز الأنشطة الفضائية",
-      "Government Aerospace Committee": "لجنة حكومية للفضاء والطيران",
-      "Space Research Programme under National Research Body": "برنامج أبحاث فضائية ضمن هيئة البحث الوطنية"
-    };
+      "National Space Agency": "وكالة فضاء وطنية",
+      "Government Space Agency (within Ministry)": "وكالة فضاء حكومية ضمن وزارة",
+      "Federal Science Policy Administration": "إدارة اتحادية للسياسة العلمية",
+      "Government Space Affairs Office (within Digital Transition Office)": "مكتب حكومي لشؤون الفضاء ضمن مكتب التحول الرقمي",
+      "Intergovernmental Space Organisation": "منظمة فضائية حكومية دولية",
+      "European Union Agency": "وكالة تابعة للاتحاد الأوروبي",
+      "Government Space Regulatory Authority (within Ministry)": "جهة حكومية لتنظيم الأنشطة الفضائية ضمن وزارة",
+      "Government Space Office (within EIS)": "مكتب فضائي حكومي ضمن EIS",
+      "Government Space Office (Ministry Unit)": "مكتب فضائي حكومي ضمن وحدة وزارية",
+      "Public Space Unit (within Innovation Agency)": "وحدة فضائية عامة ضمن وكالة الابتكار",
+      "Government Space Agency Unit (within FFG)": "وحدة لوكالة فضاء حكومية ضمن FFG",
+      "Government Space Office (within SERI)": "مكتب فضائي حكومي ضمن SERI",
+      "Government Space Regulator (Office for Communications)": "جهة حكومية لتنظيم الفضاء ضمن مكتب الاتصالات",
+      "Aerospace Research Centre": "مركز لأبحاث الطيران والفضاء",
+      "Government Space Agency Unit (within DLR)": "وحدة لوكالة الفضاء الحكومية ضمن DLR",
+      "Government Space Directorate (within DSIT)": "مديرية فضاء حكومية ضمن DSIT",
+      "Space Research Institute (within Bulgarian Academy of Sciences)": "معهد أبحاث الفضاء ضمن الأكاديمية البلغارية للعلوم",
+      "Private Nonprofit Space Association": "جمعية فضائية خاصة غير ربحية",
+      "Public Nonprofit Space Organization (government-supervised)": "منظمة فضائية عامة غير ربحية خاضعة لإشراف الحكومة",
+      "Government Research and Innovation Agency (Space Unit)": "وكالة حكومية للبحث والابتكار (وحدة الفضاء)",
+      "Joint Ministry–SARIO Space Office": "مكتب فضائي مشترك بين الوزارة وSARIO",
+      "State-Owned Space Company (CJSC)": "شركة فضائية مملوكة للدولة (مساهمة مغلقة)",
+      "National Communications Regulator (transitional Space Authority)": "جهة وطنية لتنظيم الاتصالات (سلطة فضائية انتقالية)",
+      "Government Telecommunications Regulator (Space-Spectrum Role)": "جهة حكومية لتنظيم الاتصالات (دور في الطيف الفضائي)",
+      "Historical Government Space Agency (closed 2026)": "وكالة فضاء حكومية تاريخية (انتهت عام 2026)",
+      "State Corporation (Space)": "شركة حكومية روسية للأنشطة الفضائية",
+      "Public-Law Space Operator": "مشغل فضائي ذو شخصية اعتبارية عامة",
+        };
     var SECTOR_AR = {
       "Aerospace, Launch Vehicles & Satellites": "الطيران والفضاء ومركبات الإطلاق والأقمار الصناعية",
       "Orbital Exploration, Launch Systems, Earth Observation": "استكشاف المدار وأنظمة الإطلاق ورصد الأرض",
@@ -2948,11 +2980,12 @@
       "Space Science, Satellite Communications, Earth Observation & Astronomy": "علوم الفضاء واتصالات الأقمار ورصد الأرض وعلم الفلك",
       "Remote Sensing, Aerospace, Space Science & Seismology": "الاستشعار عن بعد والطيران والفضاء وعلوم الفضاء والزلازل",
       "National Space Programme, Satellite Development & Earth Observation": "البرنامج الوطني للفضاء وتطوير الأقمار ورصد الأرض",
-      "Launch Regulation, Commercialisation & Industry Coordination": "تنظيم الإطلاق والتسويق التجاري وتنسيق الصناعة",
-      "National Space Coordination, Earth Observation & Satellite Applications": "تنسيق الفضاء الوطني ورصد الأرض وتطبيقات الأقمار",
-      "Space Science, Earth Observation & International Space Operations": "علوم الفضاء ورصد الأرض والعمليات الفضائية الدولية",
-      "International Space Cooperation, Training & Capacity Building": "التعاون الفضائي الدولي والتدريب وبناء القدرات"
-    };
+      "Meteorological Satellite Operations, Weather & Climate": "تشغيل أقمار الأرصاد والطقس والمناخ",
+      "EU Space Programme Operations & Satellite Navigation": "تشغيل برنامج الفضاء الأوروبي والملاحة بالأقمار",
+      "Space Regulation, Licensing & Spectrum Governance": "تنظيم الفضاء والترخيص وإدارة الطيف",
+      "Space Science, Technology & Earth Observation Research": "أبحاث علوم الفضاء وتكنولوجياته ورصد الأرض",
+      "Satellite Operations, Earth Observation & Space Services": "تشغيل الأقمار ورصد الأرض والخدمات الفضائية",
+        };
     var PRODUCT_TYPE_AR = {
       "Remote Sensing Satellite": "قمر صناعي للاستشعار عن بعد",
       "Hyperspectral Remote Sensing Satellite": "قمر للاستشعار عن بعد فائق الأطياف",
@@ -3046,8 +3079,14 @@
       "Operational institute; transition to a separate agency not completed": "معهد عامل؛ لم يكتمل التحول إلى وكالة مستقلة",
       "Current activity unverified": "النشاط الحالي غير مؤكد",
       "Active research centre; current services reported": "مركز بحث نشط؛ أُبلغ عن خدمات حالية",
-      "National programme under development; no standalone agency": "برنامج وطني قيد التطوير؛ لا توجد وكالة مستقلة"
-    };
+      "National programme under development; no standalone agency": "برنامج وطني قيد التطوير؛ لا توجد وكالة مستقلة",
+      "Ongoing institutional mandate": "اختصاص مؤسسي مستمر",
+      "Operational research institution": "مؤسسة بحثية عاملة",
+      "Ongoing public programme": "برنامج عام جارٍ",
+      "Transitional Space Authority; permanent successor unverified": "سلطة فضائية انتقالية؛ لم يتحقق من وجود خلف دائم",
+      "Satellite programme planned; operational fleet unverified": "برنامج الأقمار مخطط؛ ولم يتحقق من وجود أسطول تشغيلي",
+      "Historical; executive agency closed 31 March 2026": "تاريخية؛ أغلقت الوكالة التنفيذية في 31 مارس 2026",
+        };
     var COUNTRY_AR = {
       "United States": "الولايات المتحدة", "France": "فرنسا", "Europe": "أوروبا", "Russia": "روسيا",
       "China": "الصين", "India": "الهند", "Japan": "اليابان", "South Korea": "كوريا الجنوبية",
@@ -3062,11 +3101,34 @@
       "Côte d’Ivoire": "كوت ديفوار", "Malawi": "ملاوي", "Namibia": "ناميبيا", "Mauritius": "موريشيوس",
       "Tunisia": "تونس", "Zambia": "زامبيا", "Ghana": "غانا", "Morocco": "المغرب",
       "Libya": "ليبيا", "Sudan": "السودان", "Tanzania": "تنزانيا",
-      "Singapore": "سنغافورة", "Philippines": "الفلبين", "Malaysia": "ماليزيا", "Taiwan": "تايوان",
-      "Uzbekistan": "أوزبكستان", "Azerbaijan": "أذربيجان", "Thailand": "تايلاند", "Vietnam": "فيتنام",
-      "Kazakhstan": "كازاخستان", "Bangladesh": "بنغلادش", "Indonesia": "إندونيسيا", "Bahrain": "البحرين",
-      "Asia-Pacific": "آسيا والمحيط الهادئ"
-    };
+      "Azerbaijan": "أذربيجان",
+      "Norway": "النرويج",
+      "Sweden": "السويد",
+      "Netherlands": "هولندا",
+      "Luxembourg": "لوكسمبورغ",
+      "Belgium": "بلجيكا",
+      "Monaco": "موناكو",
+      "Czech Republic": "التشيك",
+      "Denmark": "الدنمارك",
+      "Estonia": "إستونيا",
+      "Finland": "فنلندا",
+      "Lithuania": "ليتوانيا",
+      "Austria": "النمسا",
+      "Switzerland": "سويسرا",
+      "Liechtenstein": "ليختنشتاين",
+      "Poland": "بولندا",
+      "Romania": "رومانيا",
+      "Bulgaria": "بلغاريا",
+      "Portugal": "البرتغال",
+      "Greece": "اليونان",
+      "Cyprus": "قبرص",
+      "Malta": "مالطا",
+      "Slovenia": "سلوفينيا",
+      "Slovakia": "سلوفاكيا",
+      "Armenia": "أرمينيا",
+      "Croatia": "كرواتيا",
+      "Ukraine": "أوكرانيا",
+        };
     function latinDigits(value) {
       return String(value == null ? "" : value)
         .replace(/[۰-۹]/g, function (c) { return "0123456789"["۰۱۲۳۴۵۶۷۸۹".indexOf(c)]; })
@@ -3314,6 +3376,25 @@
 
   function propulsionArabicLocale(p) {
     var o = p.o || p;
+    var EUROPE_PROPULSION_ORG_AR = {
+      "Rocket-engine developer/manufacturer in the test and development stage": "مطوّر ومصنّع لمحركات الصواريخ؛ في مرحلة الاختبار والتطوير",
+      "Solid-motor designer, developer and producer/finaliser": "مصمّم ومطوّر ومنتج للمحركات الصاروخية الصلبة",
+      "Electrospray spacecraft-propulsion developer": "مطوّر لأنظمة دفع المركبات الفضائية بالرش الكهربائي",
+      "Ionic-liquid electrospray propulsion developer and manufacturer": "مطوّر ومصنّع لأنظمة الدفع بالرش الكهربائي للسوائل الأيونية",
+      "Propulsion design bureau; current corporate identity unresolved": "مكتب تصميم لأنظمة الدفع؛ الهوية المؤسسية الحالية غير محسومة",
+      "Spacecraft propulsion-system developer and in-orbit demonstrator": "مطوّر لأنظمة دفع المركبات الفضائية ومنفّذ لعرض مداري",
+      "Space-propulsion technology developer": "مطوّر لتقنيات الدفع الفضائي",
+      "Spacecraft low-thrust engine developer and manufacturer": "مطوّر ومصنّع لمحركات المركبات الفضائية منخفضة الدفع",
+      "Space propulsion company with industrial manufacturing, integration and validation capability": "شركة دفع فضائي ذات قدرات تصنيع ودمج واختبار صناعية",
+      "Rocket-engine manufacturer and component supplier; not the design authority for RD-191": "مصنّع لمحركات الصواريخ ومورّد لمكوّناتها؛ وليس جهة تصميم RD-191",
+      "Space-propulsion company; electric thruster developer and fusion-propulsion R&D": "شركة دفع فضائي ومطوّر للدافعات الكهربائية وباحث في دفع الاندماج",
+      "Solid-propellant manufacturing plant operator": "مشغّل منشأة لتصنيع المواد الدافعة الصلبة",
+      "Spacecraft propulsion system developer, manufacturer and tester": "مطوّر ومصنّع ومختبر لأنظمة دفع المركبات الفضائية",
+      "Electric spacecraft-propulsion system and thruster manufacturer": "مصنّع لأنظمة الدفع الكهربائي للمركبات الفضائية ودافعاتها",
+      "Space propulsion system developer, integrator and manufacturer": "مطوّر ومُكامل ومصنّع لأنظمة دفع المركبات الفضائية",
+      "Propulsion design and commercialisation company": "شركة لتصميم وتسويق أنظمة الدفع",
+      "Rocket-engine manufacturer (not the designer of every engine it produces)": "مصنّع لمحركات الصواريخ؛ ولا يصمم جميع المحركات التي ينتجها"
+    };
     var CATEGORY_AR = {
       "Solid Propulsion & Spacecraft Thrusters": "الدفع الصلب ودافعات المركبات الفضائية",
       "Orbital Micro-Propulsion, Cold Gas & Green Thrusters": "الدفع المداري الدقيق ودافعات الغاز البارد والوقود الأخضر",
@@ -3363,9 +3444,13 @@
       "Small-Satellite Electric Propulsion": "الدفع الكهربائي للأقمار الصغيرة",
       "University Rocket Propulsion & Vehicle R&D": "بحث جامعي في دفع الصواريخ والمركبات",
       "Rocket Propulsion & Launch Development (Low Confidence)": "تطوير دفع الصواريخ والإطلاق (ثقة منخفضة)",
-      "Green monopropellant and hybrid propulsion": "الدفع الأخضر أحادي الوقود والأنظمة الهجينة",
-      "Solid motors and aerospike propulsion R&D": "المحركات الصلبة وأبحاث الدفع بمحرك أيروشبيك"
-    };
+      "Solid Propellant Production": "إنتاج المواد الدافعة الصلبة",
+      "Metal-Plasma Thrusters": "دافعات البلازما المعدنية",
+      "Electric Propulsion & Fusion R&D": "الدفع الكهربائي وأبحاث الاندماج النووي",
+      "Chemical Spacecraft & Launcher Engines": "محركات كيميائية للمركبات الفضائية ومركبات الإطلاق",
+      "Small-Thrust Spacecraft Engines": "محركات المركبات الفضائية منخفضة الدفع",
+      "Liquid & Solid Rocket-Engine Development": "تطوير محركات صاروخية سائلة وصلبة",
+        };
     var TYPE_AR = {
       "Solid motors & bipropellant thrusters": "محركات صلبة ودافعات ثنائية الوقود",
       "Cold-Gas ADCS Thrusters, Monopropellant & Hybrid Motors": "دافعات غاز بارد للتحكم المداري (ADCS)، ومحركات أحادية الوقود وهجينة",
@@ -3415,9 +3500,23 @@
       "Vacuum-Arc Electric Microthrusters with Solid-Metal Propellant": "دافعات كهربائية دقيقة بالقوس الفراغي ومادة دافعة معدنية صلبة",
       "Solid-Propellant Sounding Rockets; Liquid-Engine Test-Stand Development": "صواريخ سبر بوقود صلب وتطوير منصة اختبار لمحرك سائل",
       "Directory-claimed liquid rocket engine / launcher; hardware unverified": "محرك صاروخي سائل أو مركبة إطلاق وفق دليل تجاري؛ العتاد غير مؤكد",
-      "Green monopropellant and hybrid propulsion": "الدفع الأخضر أحادي الوقود وأنظمة الدفع الهجينة",
-      "Solid motors and aerospike propulsion R&D": "المحركات الصلبة وأبحاث الدفع بمحرك أيروشبيك"
-    };
+      "Segmented solid rocket motors and booster integration": "محركات صاروخية صلبة مجزأة ودمج المعززات",
+      "Solid-propellant manufacturing and motor casting": "تصنيع المادة الدافعة الصلبة وصبّ المحركات",
+      "Hall-effect electric thrusters and satellite propulsion subsystems": "دافعات كهربائية بتأثير هول ومنظومات دفع فرعية للأقمار الصناعية",
+      "Pulsed metal-plasma propulsion": "دفع نبضي بالبلازما المعدنية",
+      "Hall-effect thrusters; fusion propulsion remains a development programme": "دافعات بتأثير هول؛ ودفع الاندماج ما زال برنامجاً تطويرياً",
+      "Cold-gas, chemical and electric propulsion systems": "أنظمة دفع بالغاز البارد والكيميائي والكهربائي",
+      "Storable spacecraft propulsion and methalox launch-engine development": "دفع قابل للتخزين للمركبات الفضائية وتطوير محركات إطلاق بالميثان والأكسجين",
+      "Water-electrolysis chemical propulsion": "دفع كيميائي بالتحليل الكهربائي للماء",
+      "Ionic-liquid electrospray electric propulsion": "دفع كهربائي بالرش لسائل أيوني",
+      "Serial manufacture of liquid rocket engines": "الإنتاج التسلسلي لمحركات الصواريخ السائلة",
+      "Liquid-engine manufacture and component production": "تصنيع المحركات السائلة وإنتاج المكوّنات",
+      "Design, production and testing of low-thrust rocket engines": "تصميم وإنتاج واختبار محركات صاروخية منخفضة الدفع",
+      "Design and production of upper-stage propulsion systems": "تصميم وإنتاج منظومات دفع للمراحل العليا",
+      "Hall-effect thrusters and electric propulsion systems": "دافعات بتأثير هول وأنظمة دفع كهربائي",
+      "Rocket-engine design, manufacture and ground testing": "تصميم المحركات الصاروخية وتصنيعها واختبارها أرضياً",
+      "Restartable bipropellant upper-stage engine development": "تطوير محرك ثنائي الوقود قابل لإعادة التشغيل للمرحلة العليا",
+        };
     var STATUS_AR = {
       "Operational": "قيد التشغيل",
       "Reported (source-limited)": "مذكور في تقارير عامة (المصدر محدود)",
@@ -3446,9 +3545,30 @@
       "Thruster available; in-space heritage not verified": "الدافع متاح؛ ولم يتم التحقق من سجل طيران فضائي",
       "Student project; suborbital testing; orbital goal not achieved": "مشروع طلابي واختبارات شبه مدارية؛ لم يتحقق الهدف المداري",
       "Low confidence — directory-only": "ثقة منخفضة؛ مستند إلى دليل تجاري فقط",
-      "Delivered; flight heritage not verified": "تم التسليم؛ ولم يُتحقق من سجل الطيران الفضائي",
-      "Qualification testing; flight heritage not verified": "اختبارات التأهيل؛ ولم يُتحقق من سجل الطيران الفضائي"
-    };
+      "In-orbit firing reported (May 2025); product maturation ongoing": "أُبلغ عن تشغيل في المدار في مايو 2025؛ وما زال نضج المنتج جارياً",
+      "In-orbit demo (2026); spacecraft manoeuvre not demonstrated": "عرض مداري في 2026؛ ولم تُثبت مناورة المركبة الفضائية",
+      "Ground-tested; no in-space operation verified": "اختُبر أرضياً؛ ولم يُتحقق من تشغيله في الفضاء",
+      "Flight hardware flown; system activation not independently verified": "أُطلق العتاد إلى الفضاء؛ ولم يُتحقق بصورة مستقلة من تفعيل النظام",
+      "Product line listed; flight status not stated": "خط المنتج مدرج؛ وحالة الطيران غير مذكورة",
+      "Built and ground-tested; flight status not stated": "صُنع واختُبر أرضياً؛ وحالة الطيران غير مذكورة",
+      "In Development & Testing; no orbital operation verified": "قيد التطوير والاختبار؛ ولم يُتحقق من تشغيل مداري",
+      "Flight hardware in orbit; thruster activation not confirmed": "العتاد في المدار؛ ولم يُؤكد تشغيل الدافع",
+      "Flight-proven (company-reported SPS-25 operation on EOS SAT-1)": "اجتاز اختبار الطيران وفق الشركة؛ وتذكر تشغيل SPS-25 على EOS SAT-1",
+      "Flight-proven (company-reported within SPS-25 on EOS SAT-1)": "اجتاز اختبار الطيران وفق الشركة؛ وتذكر تشغيل الدافع ضمن SPS-25 على EOS SAT-1",
+      "Ground-tested; flight qualification not verified": "اختُبر أرضياً؛ ولم يُتحقق من تأهيله للطيران",
+      "Atmospheric bench-tested; vacuum/flight qualification unverified": "اختُبر على منصة عند الضغط الجوي؛ ولم يُتحقق من تأهيله للفراغ أو الطيران",
+      "Active manufacturer; model-specific flight status not stated": "مصنّع نشط؛ ولم تُذكر حالة الطيران لكل طراز",
+      "Production history; current serial status unverified": "له سجل إنتاج؛ ولم يُتحقق من استمرار الإنتاج التسلسلي حالياً",
+      "Component production; full-engine serial production not confirmed": "إنتاج مكوّنات؛ ولم يُؤكد الإنتاج التسلسلي للمحرك كاملاً",
+      "Historical / current legal status unverified": "تاريخي؛ ولم يُتحقق من الوضع القانوني الحالي",
+      "Operational (P120C); P160C in development": "P120C قيد التشغيل؛ وP160C قيد التطوير",
+      "Operational manufacturing plant": "منشأة إنتاج قيد التشغيل",
+      "In-orbit firing reported (2025); product maturation ongoing": "أُبلغ عن تشغيل في المدار في 2025؛ وما زال نضج المنتج جارياً",
+      "Nereus product line listed; Cryox/KRONOS in development; ARCOS built and ground-tested; flight status not stated": "خط Nereus مدرج؛ وCryox وKRONOS قيد التطوير؛ وبُني ARCOS واختُبر أرضياً؛ وحالة الطيران غير مذكورة",
+      "Operational serial production; design roles vary by engine": "إنتاج تسلسلي تشغيلي؛ وتختلف أدوار التصميم باختلاف المحرك",
+      "RD-276 production history; RD-191 component industrialisation underway": "سجل إنتاج سابق لـRD-276؛ وتصنيع مكوّنات RD-191 قيد التوسّع الصناعي",
+      "Current standalone legal/operational status unverified": "لم يُتحقق من الوضع القانوني أو التشغيلي المستقل الحالي",
+        };
     var COUNTRY_AR = {
       "Australia": "أستراليا", "Austria": "النمسا", "China": "الصين", "France": "فرنسا",
       "Germany": "ألمانيا", "India": "الهند", "Iran": "إيران", "Italy": "إيطاليا",
@@ -3487,11 +3607,17 @@
       "Solid metallic propellant (exact metal not publicly specified)": "مادة دافعة معدنية صلبة (نوع المعدن غير محدد علناً)",
       "Hydrazine / N2O4 (NTO)": "هيدرازين / رباعي أكسيد النيتروجين (NTO)",
       "Not independently verified": "غير متحقق منه بصورة مستقلة",
-      "Hybrid propellant; public configuration details limited": "مادة دافعة هجينة؛ وتفاصيل التهيئة المتاحة علناً محدودة",
-      "MS289 hydrogen-peroxide/alcohol-based green propellant": "المادة الدافعة الخضراء MS289 القائمة على بيروكسيد الهيدروجين والكحول",
-      "MS289 green propellant": "المادة الدافعة الخضراء MS289",
-      "HTPB-based composite solid propellant (reported)": "مادة دافعة صلبة مركّبة قائمة على HTPB (وفق تقارير)"
-    };
+      "Aluminium powder / ammonium perchlorate / polybutadiene binder": "مسحوق ألمنيوم / بيركلورات الأمونيوم / رابط بولي بيوتادايين",
+      "H2O2": "بيروكسيد الهيدروجين (H2O2)",
+      "H2O2 / Jet A": "بيروكسيد الهيدروجين (H2O2) / وقود Jet A",
+      "Krypton / Xenon (separate ground-test campaigns)": "كريبتون / زينون (في حملات اختبار أرضية منفصلة)",
+      "Not publicly specified": "غير محدد علناً",
+      "Water-derived H2/O2": "هيدروجين وأكسجين مستخلصان من الماء",
+      "Water-based; detailed configuration not publicly specified": "يعتمد على الماء؛ ولم تُعلن تفاصيل التهيئة",
+      "Xenon (ST-25 Hall thruster; company article)": "زينون (دافع هول ST-25؛ وفق مقال الشركة)",
+      "Hypergolic propellants (exact formulation not stated)": "مواد دافعة ذاتية الاشتعال (التركيبة الدقيقة غير معلنة)",
+      "Fusion fuel; detailed configuration not established": "وقود اندماج نووي؛ ولم تُحدد التهيئة التفصيلية",
+        };
     var PRODUCT_TYPE_AR = {
       "Solid strap-on motor": "محرك صلب مساعد", "Three-stage solid motors": "محركات صلبة ثلاثية المراحل",
       "Bipropellant apogee thruster": "دافع ثنائي الوقود للأوج", "Cold Gas Micro-Propulsion": "دفع دقيق بالغاز البارد",
@@ -3532,8 +3658,25 @@
       "Single-engine test stand": "منصة اختبار لمحرك منفرد", "Commercial test stands": "منصات اختبار تجارية",
       "Static stands and instrumentation": "منصات ثابتة وأجهزة قياس", "Spacecraft thruster test stands": "منصات اختبار دافعات المركبات الفضائية",
       "Cryogenic engine test stand": "منصة اختبار محركات مبردة", "Liquid engine test stand": "منصة اختبار محركات سائلة",
-      "Aerospike solid rocket engine": "محرك صاروخي صلب بفوهة أيروشبيك"
-    };
+      "Solid propellant production": "إنتاج المادة الدافعة الصلبة",
+      "Pulsed metal-plasma thruster": "دافع نبضي بالبلازما المعدنية",
+      "Fusion propulsion concept": "مفهوم دفع بالاندماج النووي",
+      "Cryogenic methalox engine": "محرك مبرد يعمل بالميثان والأكسجين",
+      "Methalox aerospike launcher engine": "محرك إطلاق بفوهة أيروشبيك يعمل بالميثان والأكسجين",
+      "Full-flow staged-combustion methalox launcher engine": "محرك إطلاق بالميثان والأكسجين واحتراق مرحلي كامل التدفق",
+      "Water-electrolysis chemical thruster": "دافع كيميائي بالتحليل الكهربائي للماء",
+      "Integrated low-/high-thrust spacecraft propulsion": "منظومة دفع متكاملة منخفضة وعالية الدفع للمركبات الفضائية",
+      "Liquid oxygen/kerosene launcher engines": "محركات إطلاق تعمل بالأكسجين السائل والكيروسين",
+      "Liquid oxygen/kerosene launcher engine": "محرك إطلاق يعمل بالأكسجين السائل والكيروسين",
+      "Liquid hypergolic launcher engine": "محرك إطلاق سائل بوقود ذاتي الاشتعال",
+      "Liquid rocket-engine components": "مكوّنات محرك صاروخي سائل",
+      "Small-thrust spacecraft rocket engine": "محرك صاروخي منخفض الدفع للمركبات الفضائية",
+      "Upper-stage liquid propulsion system": "منظومة دفع سائل للمرحلة العليا",
+      "Hall-effect electric propulsion system": "منظومة دفع كهربائي بتأثير هول",
+      "Throttleable liquid rocket engine": "محرك صاروخي سائل قابل لتغيير الدفع",
+      "Bipropellant upper-stage engine": "محرك ثنائي الوقود للمرحلة العليا",
+      "Iodine-fed electric thruster": "دافع كهربائي يعمل باليود",
+        };
     function latinDigits(value) {
       return String(value == null ? "" : value)
         .replace(/[۰-۹]/g, function (c) { return "0123456789"["۰۱۲۳۴۵۶۷۸۹".indexOf(c)]; })
@@ -3564,6 +3707,7 @@
       }).join(" / ");
     }
     function orgTypeArabic(value) {
+      if (Object.prototype.hasOwnProperty.call(EUROPE_PROPULSION_ORG_AR, value)) return EUROPE_PROPULSION_ORG_AR[value];
       var v = safeEnglish(value, "");
       if (/aviation|aircraft/i.test(v)) return "شركة متخصصة في مكوّنات محركات الطيران";
       if (/state|government|public/i.test(v)) return "مركز حكومي للبحث واختبار أنظمة الدفع الفضائي";
@@ -4097,8 +4241,7 @@
     h += cell("سنة أول إطلاق", o.first_launch_year == null ? "—" : latinDigits(o.first_launch_year));
     h += cell("المؤسس", personValue(o.founder_ar || o.founder_en || o.founder_fa));
     h += cell("الرئيس التنفيذي", personValue(o.ceo_ar || o.ceo_en || o.ceo_fa));
-    var companyCity = o.city_ar || o.city;
-    if (companyCity) h += cell("المقر الرئيسي", arabicCity(companyCity));
+    h += cell("المقر الرئيسي", arabicCity(o.city_ar || o.city));
     h += cell(t("country"), arabicCountry(o.country_ar || o.country));
     h += '</div>';
 
@@ -4149,8 +4292,9 @@
     }
 
     // Mission Types & Orbital Capabilities
-    var mTypes = uniqueValues(o.mission_types_ar || o.mission_types_en || ["Commercial Launch", "Scientific Missions", "Defense Space"]);
-    var oCaps = uniqueValues(o.orbital_capabilities_ar || o.orbital_capabilities_en || ["LEO", "SSO", "GTO"]);
+    var mTypes = uniqueValues(o.mission_types_ar || o.mission_types_en || []);
+    var oCaps = uniqueValues(o.orbital_capabilities_ar || o.orbital_capabilities_en || []);
+    if (mTypes.length || oCaps.length) {
     h += '<div style="background:var(--bg2); border:1px solid var(--line); border-radius:8px; padding:10px; margin-top:8px; display:flex; flex-direction:column; gap:6px;">';
     h += '<div style="font-size:11px; font-weight:bold; color:var(--accent);">🎯 أنواع المهام والقدرات المدارية</div>';
     h += '<div style="display:flex; flex-wrap:wrap; gap:4px;">';
@@ -4161,6 +4305,7 @@
       h += '<span style="background:rgba(245, 158, 11, 0.12); border:1px solid rgba(245, 158, 11, 0.3); color:var(--amber); padding:2px 8px; border-radius:10px; font-size:10px; font-weight:bold;"><code>' + esc(orbitLabel(orbit)) + '</code></span>';
     });
     h += '</div></div>';
+    }
 
     // Associated Launch Sites
     var siteIds = o.site_ids || [];
@@ -4307,11 +4452,11 @@
     if (LANG === "ar" && (p.cat === "propulsion" || p.kind === "propulsion" || o.cat === "propulsion")) return renderPropulsionDetail(p);
     if (LANG === "ar" && (p.cat === "launch" || p.kind === "launch" || o.cat === "launch")) return renderLaunchCompanyArabic(p);
     var isFa = (typeof LANG !== "undefined" && LANG === "fa");
-    var isPropulsionComp = (p.cat === "propulsion" || o.cat === "propulsion" || o.category === "propulsion" || "engine_products_bilingual" in o);
+    var isPropulsionComp = (p.cat === "propulsion" || o.cat === "propulsion" || o.category === "propulsion");
     var isLaunchComp = (p.cat === "launch" || o.cat === "launch" || p.kind === "launch" || o.rockets_fleet) || !isPropulsionComp;
 
     // Dynamic Bilingual Org Type Badge calculation
-    var orgTypeStr = isFa ? (o.org_type_fa || o.org_type_en || o.org_type || "—") : (o.org_type_en || o.org_type_fa || o.org_type || "—");
+    var orgTypeStr = isFa ? (o.org_type_fa || o.org_type_en || "شرکت پرتاب تجاری") : (o.org_type_en || o.org_type_fa || o.org_type || "Commercial Launch Provider");
     var stClass = "badge-private";
     if ((o.org_type_fa || "").indexOf("دولتی") > -1 || (o.org_type_fa || "").indexOf("حاکمیتی") > -1 || (o.org_type_en || "").indexOf("State") > -1 || (o.org_type_en || "").indexOf("Government") > -1) stClass = "badge-gov";
 
@@ -4338,8 +4483,8 @@
 
     if (isPropulsionComp) {
       // 3 TABS FOR PROPULSION COMPANIES
-      var propCat = isFa ? (o.propulsion_category_fa || o.propulsion_category_en || "—") : (o.propulsion_category_en || o.propulsion_category_fa || "—");
-      var propType = isFa ? (o.propulsion_type_fa || o.propulsion_type_en || "—") : (o.propulsion_type_en || o.propulsion_type_fa || "—");
+      var propCat = isFa ? (o.propulsion_category_fa || o.propulsion_category_en || "پیشرانه فضایی") : (o.propulsion_category_en || "Propulsion Contractor");
+      var propType = isFa ? (o.propulsion_type_fa || o.propulsion_type_en || "سوخت مایع / جامد") : (o.propulsion_type_en || "Liquid/Solid Propulsion");
 
       h += '<div class="site-tabs" style="margin-top:10px;">';
       h += '<button class="site-tab-btn active" onclick="switchCompTab(\'overview\', this)">' + (isFa ? "شناسنامه و معماری" : "Overview & Architecture") + '</button>';
@@ -4351,7 +4496,7 @@
       h += '<div id="compTabOverview" class="site-tab-content active" style="display:block;">';
       
       h += '<div class="grid2" style="margin-top:8px;">';
-      h += cell(isFa ? "سال تأسیس" : "Founded", o.founded == null ? "—" : o.founded);
+      h += cell(isFa ? "سال تأسیس" : "Founded", o.founded || "—");
       h += cell(isFa ? "مقر اصلی" : "Headquarters", isFa ? (o.city_fa || o.city) : (o.city || o.city_fa));
       h += cell(t("country"), isFa ? (o.country_fa || o.country) : (o.country || o.country_fa));
       h += cell(isFa ? "نوع نهاد" : "Org Type", orgTypeStr, true);
@@ -4361,7 +4506,7 @@
 
       // Flagship Engine Card
       var flagshipEngine = isFa ? (o.flagship_engine_fa || o.flagship_engine_en) : (o.flagship_engine_en || o.flagship_engine_fa);
-      var flagshipStatus = isFa ? (o.flagship_status_fa || o.flagship_status_en || "—") : (o.flagship_status_en || o.flagship_status_fa || "—");
+      var flagshipStatus = isFa ? (o.flagship_status_fa || o.flagship_status_en || "عملیاتی") : (o.flagship_status_en || o.flagship_status_fa || "Operational");
       
       if (flagshipEngine) {
         h += '<div style="background:var(--bg2); border:1px solid var(--line); border-radius:8px; padding:10px; margin-top:8px; display:flex; justify-content:space-between; align-items:center;">';
@@ -4408,7 +4553,7 @@
         engList.forEach(function(eng, idx) {
           var engName = isFa ? (eng.name_fa || eng.name_en) : (eng.name_en || eng.name_fa);
           var engProp = isFa ? (eng.propellant_fa || eng.propellant_en || "—") : (eng.propellant_en || eng.propellant_fa || "—");
-          var engSt = isFa ? (eng.status_fa || eng.status_en || "—") : (eng.status_en || eng.status_fa || "—");
+          var engSt = isFa ? (eng.status_fa || eng.status_en || "عملیاتی") : (eng.status_en || eng.status_fa || "Operational");
           var openAttr = (idx === 0) ? " open" : "";
 
           h += '<details class="acc" ' + openAttr + ' style="background:linear-gradient(180deg, rgba(15,31,51,0.8) 0%, rgba(9,13,22,0.9) 100%); border:1px solid var(--line); border-radius:8px; overflow:hidden; box-shadow:0 4px 12px rgba(0,0,0,0.3); transition:all 0.2s ease;">';
@@ -4462,8 +4607,8 @@
       
       // Executive Info Grid
       h += '<div class="grid2">';
-      h += cell(isFa ? "سال تأسیس" : "Founded", o.founded == null ? "—" : o.founded);
-      h += cell(isFa ? "سال اولین پرتاب" : "First Launch", o.first_launch_year == null ? "—" : o.first_launch_year);
+      h += cell(isFa ? "سال تأسیس" : "Founded", o.founded || "—");
+      h += cell(isFa ? "سال اولین پرتاب" : "First Launch", o.first_launch_year || "—");
       h += cell(isFa ? "بنیان‌گذار" : "Founder", isFa ? (o.founder_fa || "—") : (o.founder_en || o.founder_fa || "—"));
       h += cell(isFa ? "مدیرعامل" : "CEO", isFa ? (o.ceo_fa || "—") : (o.ceo_en || o.ceo_fa || "—"));
       h += cell(isFa ? "مقر اصلی" : "Headquarters", isFa ? (o.city_fa || o.city) : (o.city || o.city_fa));
@@ -4526,6 +4671,7 @@
       // Mission Types & Orbital Capabilities Badges
       var mTypes = isFa ? (o.mission_types_fa || o.mission_types_en || []) : (o.mission_types_en || o.mission_types_fa || []);
       var oCaps = isFa ? (o.orbital_capabilities_fa || o.orbital_capabilities_en || []) : (o.orbital_capabilities_en || o.orbital_capabilities_fa || []);
+
       if (mTypes.length || oCaps.length) {
       h += '<div style="background:var(--bg2); border:1px solid var(--line); border-radius:8px; padding:10px; margin-top:8px; display:flex; flex-direction:column; gap:6px;">';
       h += '<div style="font-size:11px; font-weight:bold; color:var(--accent);">🎯 ' + (isFa ? "انواع مأموریت‌ها و پوشش مداری" : "Mission Types & Orbit Capabilities") + '</div>';
@@ -4544,7 +4690,7 @@
       var siteIds = o.site_ids || [];
       if (siteIds.length) {
         h += '<div style="background:var(--bg2); border:1px solid var(--line); border-radius:8px; padding:10px; margin-top:8px;">';
-        h += '<div style="font-size:11px; font-weight:bold; color:#10b981; margin-bottom:6px;">📍 ' + (isFa ? "پایگاه‌های پرتاب مرتبط (کلیک جهت انتقال روی نقشه)" : "Associated Launch Sites (Click to Fly)") + '</div>';
+        h += '<div style="font-size:11px; font-weight:bold; color:#10b981; margin-bottom:6px;">📍 ' + (isFa ? "پایگاه‌های پرتاب مورد استفاده (کلیک جهت انتقال روی نقشه)" : "Operational Launch Sites (Click to Fly)") + '</div>';
         h += '<div style="display:flex; flex-direction:column; gap:4px;">';
         
         siteIds.forEach(function(sid) {
@@ -4586,8 +4732,8 @@
       h += '<div style="font-size:10.5px; color:var(--muted); margin-bottom:6px;">🚀 ' + (isFa ? "مشخصات کامل فنی و عملیاتی موشک‌ها و پرتاب‌گرها:" : "Detailed Rockets Fleet Specifications:") + '</div>';
       
       fleet.forEach(function(v) {
-        var rName = isFa ? (v.name || "—") : (v.name ? v.name.split(" (")[0] : "—");
-        var stText = isFa ? (v.status_fa || "—") : (v.status_en || "—");
+        var rName = isFa ? v.name : (v.name ? v.name.split(" (")[0] : "Launch Vehicle");
+        var stText = isFa ? (v.status_fa || "عملیاتی") : (v.status_en || v.status_fa || "Operational");
         var stBadge = "badge-private";
         if (stText.indexOf("عملیاتی") > -1 || stText.indexOf("Operational") > -1) stBadge = "badge-gov";
 
@@ -4597,7 +4743,7 @@
         h += '<span class="' + stBadge + '" style="padding:2px 8px; border-radius:10px; font-size:10px;"><bdi>' + esc(stText) + '</bdi></span>';
         h += '</div>';
 
-        var rReu = isFa ? (v.reusability_fa || "—") : (v.reusability_en || "—");
+        var rReu = isFa ? (v.reusability_fa || "یک‌بارمصرف") : (v.reusability_en || "Expendable");
         var rProp = isFa ? (v.propellant_fa || "—") : (v.propellant_en || v.propellant_fa || "—");
         var rEng = isFa ? (v.engine_type_fa || "—") : (v.engine_type_en || v.engine_type_fa || "—");
         var rThr = isFa ? (v.thrust_fa || "—") : (v.thrust_en || v.thrust_fa || "—");
@@ -4611,7 +4757,7 @@
 
         // Rocket Tech Specs Grid
         h += '<div style="display:grid; grid-template-columns:1fr 1fr; gap:6px; font-size:10.5px;">';
-        h += '<div style="background:rgba(0,0,0,0.25); padding:5px 8px; border-radius:4px;"><b>' + (isFa ? "تعداد مراحل:" : "Stages:") + '</b> ' + esc(v.stages == null ? "—" : v.stages) + '</div>';
+        h += '<div style="background:rgba(0,0,0,0.25); padding:5px 8px; border-radius:4px;"><b>' + (isFa ? "تعداد مراحل:" : "Stages:") + '</b> ' + esc(v.stages || 2) + '</div>';
         h += '<div style="background:rgba(0,0,0,0.25); padding:5px 8px; border-radius:4px;"><b>' + (isFa ? "بازمصرف‌پذیری:" : "Reusability:") + '</b> <bdi>' + esc(rReu) + '</bdi></div>';
         h += '<div style="background:rgba(0,0,0,0.25); padding:5px 8px; border-radius:4px; grid-column:span 2;"><b>' + (isFa ? "پیشرانه / سوخت:" : "Propellant:") + '</b> <bdi>' + esc(rProp) + '</bdi></div>';
         var engSuppliers = (window.findEngineSuppliers) ? window.findEngineSuppliers(o.id, String(v.engine_type_fa || "") + " " + String(v.engine_type_en || "")) : [];
@@ -4634,8 +4780,8 @@
 
         // Rocket Flights Record
         var flightsLabel = isFa ?
-          ('پروازها: <b>' + esc(v.total_launches == null ? "—" : v.total_launches) + '</b> (موفق: <b style="color:#10b981;">' + esc(v.success_launches == null ? "—" : v.success_launches) + '</b> | ناموفق: <b style="color:#ef4444;">' + esc(v.failed_launches == null ? "—" : v.failed_launches) + '</b>)') :
-          ('Flights: <b>' + esc(v.total_launches == null ? "—" : v.total_launches) + '</b> (Success: <b style="color:#10b981;">' + esc(v.success_launches == null ? "—" : v.success_launches) + '</b> | Failed: <b style="color:#ef4444;">' + esc(v.failed_launches == null ? "—" : v.failed_launches) + '</b>)');
+          ('پروازها: <b>' + esc(v.total_launches || 0) + '</b> (موفق: <b style="color:#10b981;">' + esc(v.success_launches || 0) + '</b> | ناموفق: <b style="color:#ef4444;">' + esc(v.failed_launches || 0) + '</b>)') :
+          ('Flights: <b>' + esc(v.total_launches || 0) + '</b> (Success: <b style="color:#10b981;">' + esc(v.success_launches || 0) + '</b> | Failed: <b style="color:#ef4444;">' + esc(v.failed_launches || 0) + '</b>)');
 
         var lastFlightLabel = isFa ?
           ('آخرین پرتاب: <b>' + esc(v.last_launch_fa || "—") + '</b>') :
@@ -4720,7 +4866,7 @@
       h += cell(isFa ? "سال تأسیس" : "Founded", o.founded);
       h += cell(isFa ? "مقر اصلی" : "Headquarters", isFa ? (o.city_fa || o.city) : (o.city || o.city_fa));
       h += cell(t("country"), isFa ? (o.country_fa || o.country) : (o.country || o.country_fa));
-      h += cell(isFa ? "حوزه‌های فعالیت" : "Sectors", isFa ? (o.sectors_fa || o.sectors_en || o.sectors || "—") : (o.sectors_en || o.sectors_fa || o.sectors || "—"), true);
+      h += cell(isFa ? "حوزه‌های فعالیت" : "Sectors", isFa ? (o.sectors_fa || o.sectors || "هوافضا و صنایع فضایی") : (o.sectors_en || "Aerospace Systems"), true);
       h += '</div></div>';
 
       // TAB 2: PRODUCTS
@@ -4743,7 +4889,10 @@
       if (rs) openDetail({ kind: "recovery", cat: "recovery", o: rs });
     } else {
       var c = (DATA.companies || []).find(function(x) { return x.id === id; });
-      if (c) openDetail({ kind: c.cat || "company", cat: c.cat || "launch", o: c });
+      if (c) {
+        var displayCategory = companyCategoryForDisplay(c, kind);
+        openDetail({ kind: displayCategory, cat: displayCategory, o: c });
+      }
     }
   };
 
@@ -4766,7 +4915,7 @@
     var txt = normEngTxt(vehicleEngineText);
     if (!txt) return res;
     (DATA.companies || []).forEach(function(c) {
-      if (c.cat !== "propulsion" || c.id === launchId) return;
+      if (!companyBelongsToCategory(c, "propulsion") || c.id === launchId) return;
       var engs = c.engine_products_bilingual || [];
       var hit = false;
       engs.forEach(function(e) {
@@ -4951,7 +5100,7 @@
     // Filter items for this country using smart synonym & spatial matching
     var propulsionItems = allCompanies.filter(function(c) {
       var isC = isEntityInCountry(c, cEn, cFa);
-      var isP = (c.category === "propulsion" || c.org_type_en === "Propulsion Contractor" || "engine_products_bilingual" in c || c.cat === "propulsion");
+      var isP = companyBelongsToCategory(c, "propulsion") || c.category === "propulsion" || c.org_type_en === "Propulsion Contractor";
       return isC && isP;
     });
 
@@ -4963,7 +5112,7 @@
 
     var launchItems = allCompanies.filter(function(c) {
       var isC = isEntityInCountry(c, cEn, cFa);
-      var isL = (c.cat === "launch" || "rockets_fleet" in c || c.org_type_en === "Launch Operator");
+      var isL = companyBelongsToCategory(c, "launch") || "rockets_fleet" in c || c.org_type_en === "Launch Operator";
       return isC && isL;
     });
 
@@ -4996,7 +5145,11 @@
       });
     }
 
-    var totalEntities = propulsionItems.length + launchItems.length + agencyItems.length + siteItems.length + recoveryItems.length;
+    var uniqueCompanies = [];
+    propulsionItems.concat(launchItems, agencyItems).forEach(function(c) {
+      if (uniqueCompanies.indexOf(c) < 0) uniqueCompanies.push(c);
+    });
+    var totalEntities = uniqueCompanies.length + siteItems.length + recoveryItems.length;
 
     var h = "";
 
