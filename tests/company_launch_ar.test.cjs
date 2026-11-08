@@ -29,9 +29,9 @@ function check(condition, label) {
   }
 }
 
-check(launchCompanies.length === 60, 'the launch-category slice contains 60 records');
+check(launchCompanies.length === 68, 'the launch-category slice contains 68 records');
 check(launchCompanies.every(company => company.ar && company.ar_d && arabic.test(company.ar) && arabic.test(company.ar_d)),
-  'all 60 launch companies have Arabic names and descriptions');
+  'all 68 launch companies have Arabic names and descriptions');
 check(launchCompanies.every(company => company.en && company.fa && company.en_d && company.fa_d),
   'existing English and Persian company data remains intact');
 check(launchCompanies.every(company => !persianOnly.test(company.ar) && !persianOnly.test(company.ar_d)),
@@ -45,10 +45,10 @@ check(Boolean(stellar) && stellar.stats.total_launches === 0 && stellar.stats.su
   stellar.rockets_fleet[0].name === 'Kea-1' && stellar.rockets_fleet[0].maiden_flight == null &&
   !stellar.rockets_fleet.some(vehicle => /AZAD/.test(vehicle.name)),
   'Kea-1 prelaunch scrubs are not counted as flights and partner-owned AZAD is not listed as Stellar Kinetics hardware');
-check(propulsionCompanies.length === 52 && propulsionCompanies.every(company => company.ar && company.ar_d),
-  'the completed propulsion-category Arabic slice remains present');
-check(agencyCompanies.length === 66 && agencyCompanies.every(company => company.ar && company.ar_d),
-  'the completed agency-category Arabic slice remains present');
+check(propulsionCompanies.length === 69 && propulsionCompanies.every(company => company.ar && company.ar_d),
+  'all 69 primary propulsion-company dossiers retain their Arabic text');
+check(agencyCompanies.length === 96 && agencyCompanies.every(company => company.ar && company.ar_d),
+  'the completed space-organization Arabic slice remains present');
 check(satelliteMakers.length === 28 && satelliteMakers.every(company => company.ar && company.ar_d),
   'the separate satellite-manufacturer Arabic slice is complete');
 check(app.includes('if (LANG === "ar" && (p.cat === "launch" || p.kind === "launch" || o.cat === "launch")) return renderLaunchCompanyArabic(p);'),
@@ -59,7 +59,7 @@ check(app.includes('نظرة عامة وإحصاءات') && app.includes('أسط
 check(app.includes('safeEnglish(value, fallback)') && app.includes('missionLabel(value)') &&
   app.includes('techValue(value, kind)'),
   'source values pass through Arabic-safe display helpers');
-check(html.includes('window.ORBITA_V = "20261107stellarkinetics1";'), 'the HTML asset cache version is bumped for the Arabic template');
+check(html.includes('window.ORBITA_V = "20261023propulsionlogos1";'), 'the HTML asset cache version is bumped for the Arabic template');
 
 // Guard the shared bilingual renderer so this Arabic-only task cannot change Persian or English output.
 const companyDetailStart = app.indexOf('  function renderCompanyDetail(p) {');
@@ -73,7 +73,7 @@ check(sharedRenderer.includes('var statsScopeText = isFa ? (stats.scope_fa || st
   !sharedRenderer.includes('v.reusability_en || "Expendable"') &&
   !sharedRenderer.includes('v.status_en || v.status_fa || "Operational"'),
   'the shared company renderer shows scope and dashes for unknown metrics instead of invented defaults');
-check(sharedRendererHash === 'a62c8b0e4649ae74635677d0a6023f980e8d59f2ad925e059dce97a915179f96',
+check(sharedRendererHash === 'c0c9bf9c9813e2dd8fd270930a6a4598ca310044863b4f09168792e42bcf1b91',
   'the shared Persian/English renderer is pinned to the reviewed no-defaults implementation');
 
 function makeRenderer(lang) {
@@ -170,7 +170,7 @@ if (structuralParity) {
 }
 if (!structuralParity) console.error('First Arabic/Persian DOM-shape mismatch:', parityFailure || '(renderer unavailable)');
 check(structuralParity,
-  'Arabic and Persian launch dossiers have the same DOM structure and layout across all 60 records');
+  'Arabic and Persian launch dossiers have the same DOM structure and layout across all 68 records');
 const scopeCompany = launchCompanies.find(company => company.id === 'spaceone');
 if (arabicRenderer && persianRenderer && scopeCompany && scopeCompany.stats) {
   const arabicScopeHtml = arabicRenderer({ o: scopeCompany, cat: 'launch' });

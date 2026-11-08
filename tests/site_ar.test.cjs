@@ -22,21 +22,32 @@ function check(condition, label) {
   }
 }
 
-check(sites.length === 78 && new Set(sites.map(site => site.id)).size === 78,
-  'the source set contains 78 unique launch sites');
+check(sites.length === 79 && new Set(sites.map(site => site.id)).size === 79,
+  'the source set contains 79 unique launch sites');
 check(sites.every(site => typeof site.ar === 'string' && site.ar.trim() && arabic.test(site.ar) &&
   typeof site.ar_d === 'string' && site.ar_d.trim() && arabic.test(site.ar_d)),
-  'all 78 launch sites have Arabic names and descriptions');
+  'all 79 launch sites have Arabic names and descriptions');
 check(sites.every(site => site.en && site.fa && site.en_d && site.fa_d),
   'existing English and Persian site fields remain intact');
+const malbusca = sites.find(site => site.id === 'malbusca');
+check(malbusca && malbusca.country === 'Portugal' && malbusca.lat === 36.9325 && malbusca.lon === -25.07 &&
+  malbusca.status === 'active' && malbusca.first === 2024 &&
+  malbusca.source_urls.includes('https://www.anacom.pt/render.jsp?contentId=1815664'),
+  'Malbusca uses the published Portugal centre coordinates, licensed-site status and traceable sources');
+check(malbusca && malbusca.launches.length === 2 &&
+  malbusca.launches.every(event => event.mtype === 'آزمون راکت جوی' && event.orbit === '—' && event.success === true) &&
+  malbusca.stats_kind === 'orbital' && malbusca.stats_total === 0 && malbusca.stats_complete === false &&
+  malbusca.stats_scope_en.includes('not a complete independent launch register'),
+  'Malbusca’s atmospheric GAMA tests remain separate from its incomplete zero-verified-orbital count');
+check(app.includes('{ k: "site", n: 79 }'), 'the map site-layer count matches the expanded data set');
 const persianOnlyLetters = /[پچژگکی]/;
 check(sites.every(site => !persianOnlyLetters.test(site.ar) && !persianOnlyLetters.test(site.ar_d)),
   'the Arabic site translations contain no Persian-only letters');
 const launchRows = sites.flatMap(site => site.launches || []);
-check(launchRows.length === 362 && launchRows.every(launch => launch.payload_ar && arabic.test(launch.payload_ar)),
-  'all 362 launch-history payload names now have Arabic labels');
+check(launchRows.length === 364 && launchRows.every(launch => launch.payload_ar && arabic.test(launch.payload_ar)),
+  'all 364 launch-history payload names now have Arabic labels');
 check(launchRows.every(launch => launch.analysis_ar && arabic.test(launch.analysis_ar)),
-  'all 362 launch-history success/failure analyses now have Arabic translations');
+  'all 364 launch-history success/failure analyses now have Arabic translations');
 check(launchRows.every(launch => launch.payload && launch.analysis_fa && launch.analysis_en),
   'original Persian and English launch-history fields remain intact');
 check(launchRows.every(launch => !persianOnlyLetters.test(launch.payload_ar + launch.analysis_ar)),
@@ -89,9 +100,9 @@ check(app.includes('var historyOrbit = l.orbit == null || String(l.orbit).trim()
   'history records with unknown orbit do not default to LEO');
 check(app.includes('dormant: "خامل"') && app.includes('dormant: "راکد"') && app.includes('dormant: "Dormant"'),
   'dormant launch sites have localized Persian, English, and Arabic status labels');
-check(html.includes('window.ORBITA_V = "20261107stellarkinetics1";'), 'HTML asset cache version is bumped for the site slice');
+check(html.includes('window.ORBITA_V = "20261023propulsionlogos1";'), 'HTML asset cache version is bumped for the site slice');
 
-// Exercise the real site renderer with all 78 records to catch runtime errors or Persian leakage.
+// Exercise the real site renderer with all 79 records to catch runtime errors or Persian leakage.
 const siteStart = app.indexOf('  function renderSiteDetail(p) {');
 const siteEnd = app.indexOf('  /* ============ upcoming launches per site', siteStart);
 const infraStart = app.indexOf('  // Arabic labels for the repeated launch-site infrastructure checklist.');
@@ -130,7 +141,7 @@ if (renderable) {
     console.error('Arabic site renderer error:', error);
   }
 }
-check(renderable && renderedSiteText.length > 0, 'the actual Arabic site renderer runs for all 78 records');
+check(renderable && renderedSiteText.length > 0, 'the actual Arabic site renderer runs for all 79 records');
 check(!persianOnlyLetters.test(renderedSiteText), 'rendered Arabic site dossiers contain no Persian-only letters');
 const escapeHtml = value => String(value)
   .replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/>/g, '&gt;').replace(/"/g, '&quot;');

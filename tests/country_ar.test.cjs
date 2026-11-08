@@ -48,12 +48,12 @@ check(app.includes('country_ar: record.ar, country_iso: record.iso') &&
   'map selection passes the Arabic name through to the country dossier');
 check(app.includes('var isAr = (typeof LANG !== "undefined" && LANG === "ar");') &&
   app.includes('"شركات أنظمة الدفع"') && app.includes('"شركات الإطلاق"') &&
-  app.includes('"وكالات الفضاء"') && app.includes('"مواقع الإطلاق"') &&
+  app.includes('"الجهات الفضائية"') && app.includes('"مواقع الإطلاق"') &&
   app.includes('"الهبوط والاستعادة"'),
   'country-dossier controls and categories have Arabic labels');
 check(app.includes('live_note: "لا يتوفر وصف عربي لهذا الإطلاق حالياً."'),
   'live records use the exact user-approved Arabic fallback');
-check(html.includes('window.ORBITA_V = "20261106contactaudit1";'), 'HTML and asset cache version is bumped for the country interaction changes');
+check(html.includes('window.ORBITA_V = "20261023propulsionlogos1";'), 'HTML and asset cache version is bumped for the country interaction changes');
 
 console.log(`${passed} PASS / ${failed} FAIL`);
 process.exitCode = failed ? 1 : 0;

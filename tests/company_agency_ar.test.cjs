@@ -1,4 +1,4 @@
-// Regression coverage for Arabic space-agency profiles and their real openDetail route.
+// Regression coverage for Arabic space-organization profiles and their real openDetail route.
 // Run with: node --test tests/company_agency_ar.test.cjs
 const test = require('node:test');
 const assert = require('node:assert/strict');
@@ -165,8 +165,8 @@ function englishNarrativeFields(company) {
   return values.filter(value => typeof value === 'string' && value.trim());
 }
 
-test('the 66 agency records have complete Arabic profiles and retain both existing languages', () => {
-  assert.equal(agencies.length, 66);
+test('the 96 space-organization records have complete Arabic profiles and retain both existing languages', () => {
+  assert.equal(agencies.length, 96);
   for (const company of agencies) {
     for (const key of ['ar', 'ar_d', 'en', 'en_d', 'fa', 'fa_d']) {
       assert.ok(company[key], `${company.id}.${key} is missing`);
@@ -187,6 +187,47 @@ test('the 66 agency records have complete Arabic profiles and retain both existi
     }
     for (const image of company.gallery || []) assert.ok(image.title_ar, `${company.id} gallery image lacks Arabic title`);
   }
+});
+
+test('reviewed organization records retain legal distinctions and sourced location/status fields', () => {
+  const byId = Object.fromEntries(agencies.map(company => [company.id, company]));
+  const addedIds = ['nosa', 'snsa', 'nlsa', 'lsa-luxembourg', 'belspo', 'bas-monaco', 'eumetsat', 'euspa', 'ufsn-dk',
+    'estonian-space-office', 'finnish-space-office', 'space-hub-lt', 'alr-ffg', 'swiss-space-office', 'liechtenstein-ak',
+    'german-space-agency-dlr', 'dsit-space-directorate', 'polsa', 'rosa', 'ssau', 'srti-bas', 'portugal-space',
+    'hsc-greece', 'cyprus-space-office', 'xjenza-malta', 'slovenian-space-office', 'slovak-space-office',
+    'geocosmos', 'anacom', 'hakom'];
+  assert.equal(new Set(addedIds).size, 30);
+  for (const id of addedIds) {
+    const company = byId[id];
+    assert.ok(company, `${id} should be in the organization category`);
+    for (const key of ['en', 'country', 'city', 'source_note_en', 'coordinate_source_url', 'coordinates_precision',
+      'flagship_prod_status_en']) assert.ok(company[key], `${id}.${key} must be sourced/present`);
+    assert.ok(Number.isFinite(company.lat) && Number.isFinite(company.lon), `${id} needs a map coordinate`);
+    assert.ok(company.lat >= -90 && company.lat <= 90 && company.lon >= -180 && company.lon <= 180,
+      `${id} coordinate bounds`);
+  }
+  for (const id of ['dlr-germany', 'uksa-uk', 'roscosmos', 'azercosmos']) {
+    const company = byId[id];
+    assert.ok(company, `${id} should remain a single organization record`);
+    for (const key of ['source_note_en', 'coordinate_source_url', 'coordinates_precision', 'flagship_prod_status_en'])
+      assert.ok(company[key], `${id}.${key} must remain sourced/present`);
+    assert.ok(Number.isFinite(company.lat) && Number.isFinite(company.lon), `${id} needs a map coordinate`);
+  }
+  assert.equal(byId.eumetsat.org_type_en, 'Intergovernmental Space Organisation');
+  assert.equal(byId.euspa.org_type_en, 'European Union Agency');
+  assert.equal(byId.belspo.org_type_en, 'Federal Science Policy Administration');
+  assert.equal(byId['bas-monaco'].org_type_en, 'Government Space Affairs Office (within Digital Transition Office)');
+  assert.equal(byId['portugal-space'].org_type_en, 'Private Nonprofit Space Association');
+  assert.equal(byId['hsc-greece'].org_type_en, 'Public Nonprofit Space Organization (government-supervised)');
+  assert.equal(byId['srti-bas'].org_type_en, 'Space Research Institute (within Bulgarian Academy of Sciences)');
+  assert.equal(byId['dlr-germany'].org_type_en, 'Aerospace Research Centre');
+  assert.equal(byId['german-space-agency-dlr'].city, 'Bonn');
+  assert.match(byId.anacom.org_type_en, /Regulator/);
+  assert.match(byId.anacom.flagship_prod_status_en, /transitional/i);
+  assert.match(byId.hakom.org_type_en, /Regulator/);
+  assert.match(byId['uksa-uk'].flagship_prod_status_en, /Historical/);
+  assert.equal(byId['azercosmos'].org_type_en, 'Public-Law Space Operator');
+  assert.equal(byId['azercosmos'].founded, 2021);
 });
 
 test('Arabic data uses Arabic-script explanatory text, Latin technical digits, and no Persian-only letters', () => {
@@ -210,8 +251,8 @@ test('Arabic data uses Arabic-script explanatory text, Latin technical digits, a
     assert.doesNotMatch(value, NON_LATIN_DIGITS, `${key} must use Latin technical digits`);
   }
   assert.equal(satelliteMakers.length, 28);
-  assert.equal(launch.length, 60);
-  assert.equal(propulsion.length, 52);
+  assert.equal(launch.length, 68);
+  assert.equal(propulsion.length, 69);
   assert.ok(satelliteMakers.every(company => company.ar && company.ar_d));
   assert.ok(launch.every(company => company.ar && company.ar_d));
   assert.ok(propulsion.every(company => company.ar && company.ar_d));
@@ -285,7 +326,7 @@ test('the real openDetail route follows the Persian dossier layout with Arabic c
   }
 
   const allAgencyHtml = [...outputs.values()].map(value => value.html).join(' ');
-  for (const label of ['الملف التعريفي والبرامج الرئيسة', 'المنتجات والبرامج', 'التاريخ والشبكة', 'المقر الرئيسي', 'نوع الجهة', 'مجالات العمل', 'الفئة الفيزيائية للنظام', 'الحالة التشغيلية', 'أول إطلاق', 'المواصفات الفنية والمعايير', 'الدور التشغيلي والمهمة المدارية', 'الهدف العام', 'الخطوة التالية', 'التاريخ والخط الزمني', 'المهمات الفضائية البارزة', 'خارطة الطريق الاستراتيجية للتطوير', 'الدبلوماسية الفضائية والشراكات الدولية']) {
+  for (const label of ['الملف التعريفي والدور الرئيس', 'البرامج والخدمات', 'التاريخ والشبكة', 'المقر الرئيسي', 'نوع الجهة', 'مجالات العمل', 'الفئة الفيزيائية للنظام', 'الحالة التشغيلية', 'أول إطلاق', 'المواصفات الفنية والمعايير', 'الدور التشغيلي والمهمة المدارية', 'الهدف العام', 'الخطوة التالية', 'التاريخ والخط الزمني', 'المهمات الفضائية البارزة', 'خارطة الطريق الاستراتيجية للتطوير', 'الدبلوماسية الفضائية والشراكات الدولية']) {
     assert.ok(allAgencyHtml.includes(label), `agency renderer is missing Arabic UI label: ${label}`);
   }
   const nasaText = outputs.get('nasa').text;
@@ -350,7 +391,7 @@ test('missing Arabic fallbacks never expose untranslated Persian or English desc
 });
 
 test('the global asset cache token is current and the country profile uses Arabic agency cards', () => {
-  assert.ok(html.includes('window.ORBITA_V = "20261107stellarkinetics1";'));
+  assert.ok(html.includes('window.ORBITA_V = "20261023propulsionlogos1";'));
   const countrySource = sourceBetween('  function renderCountryProfile(p) {', '  window.isEntityInCountry = isEntityInCountry;');
   assert.match(countrySource, /isAr \? \(item\.ar \|\| item\.en \|\| item\.fa\)/,
     'country profile cards prefer an agency Arabic name');

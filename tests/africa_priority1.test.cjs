@@ -26,7 +26,7 @@ function site(id) {
 test('Dragonfly Aerospace and Simera Sense are clean satellite/payload-maker records, not launchers', () => {
   const counts = Object.fromEntries(['launch', 'propulsion', 'agency', 'satmaker'].map(cat =>
     [cat, companies.filter(row => row.cat === cat).length]));
-  assert.deepEqual(counts, { launch: 60, propulsion: 52, agency: 66, satmaker: 28 });
+  assert.deepEqual(counts, { launch: 68, propulsion: 69, agency: 96, satmaker: 28 });
 
   const dragonfly = company('dragonfly-space');
   const simera = company('simera-sense');
@@ -110,5 +110,5 @@ test('UI marks dormant sites as non-operational and renders proposed orbit goals
   assert.match(app, /var altitudeUnit = altitudeValue && altitudeValue !== "—"/);
   assert.match(app, /Optical imaging payload/);
   assert.match(app, /Private optical-payload manufacturer \(Belgium; South Africa production facility\)/);
-  assert.match(html, /window\.ORBITA_V = "20261107stellarkinetics1";/);
+  assert.match(html, /window\.ORBITA_V = "20261023propulsionlogos1";/);
 });

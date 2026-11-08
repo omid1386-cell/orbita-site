@@ -19,20 +19,23 @@ function countPositions(value) {
   return value.reduce((sum, item) => sum + countPositions(item), 0);
 }
 
-test('company category files are an exact, non-overwriting split of the canonical source', () => {
-  const counts = { launch: 60, propulsion: 52, agency: 66, satmaker: 28 };
-  const canonicalCounts = { launch: 60, propulsion: 51, agency: 66, satmaker: 28 };
+test('company category files preserve primary and explicitly approved secondary memberships', () => {
+  const counts = { launch: 68, propulsion: 72, agency: 96, satmaker: 28 };
+  const canonicalCounts = { launch: 68, propulsion: 71, agency: 96, satmaker: 28 };
   const splitIds = [];
   for (const [category, expectedCount] of Object.entries(counts)) {
     const split = JSON.parse(fs.readFileSync(path.join(root, `data/companies_${category}.json`), 'utf8'));
-    const expected = allCompanies.filter(row => row.cat === category);
+    const expected = allCompanies.filter(row => row.cat === category ||
+      (Array.isArray(row.secondary_categories) && row.secondary_categories.includes(category)));
     assert.deepEqual(split, expected, `${category} split preserves source records and field values`);
     assert.equal(split.length, expectedCount);
     assert.equal(split.filter(row => !row.alias_of_id).length, canonicalCounts[category]);
     splitIds.push(...split.map(row => row.id));
   }
-  assert.equal(new Set(splitIds).size, allCompanies.length, 'each source record is included exactly once');
-  assert.equal(new Set(splitIds).size, new Set(allCompanies.map(row => row.id)).size, 'no company ID was lost or duplicated');
+  assert.equal(splitIds.length, 264, 'secondary memberships add category rows without adding master records');
+  assert.equal(new Set(splitIds).size, allCompanies.length, 'every master company appears in at least one category slice');
+  assert.equal(splitIds.length - new Set(splitIds).size, 3, 'only the three approved cross-category memberships overlap');
+  assert.equal(new Set(splitIds).size, new Set(allCompanies.map(row => row.id)).size, 'no company ID was lost');
 });
 
 test('map GeoJSON keeps every country property and feature while reducing geometry payload', () => {
@@ -57,5 +60,5 @@ test('startup requests compact map geometry and only default company categories;
   assert.match(app, /if \(b\.dataset\.view === "missions"\) ensureMissionViewData\(\)/);
   assert.match(app, /propulsion: "data\/companies_propulsion\.json"/);
   assert.match(app, /satmaker: "data\/companies_satmaker\.json"/);
-  assert.match(html, /window\.ORBITA_V = "20261107stellarkinetics1";/);
+  assert.match(html, /window\.ORBITA_V = "20261023propulsionlogos1";/);
 });
