@@ -100,7 +100,7 @@ check(app.includes('var historyOrbit = l.orbit == null || String(l.orbit).trim()
   'history records with unknown orbit do not default to LEO');
 check(app.includes('dormant: "خامل"') && app.includes('dormant: "راکد"') && app.includes('dormant: "Dormant"'),
   'dormant launch sites have localized Persian, English, and Arabic status labels');
-check(html.includes('window.ORBITA_V = "20261023propulsionlogos1";'), 'HTML asset cache version is bumped for the site slice');
+check(html.includes('window.ORBITA_V = "20261023propulsionlogos2";'), 'HTML asset cache version is bumped for the site slice');
 
 // Exercise the real site renderer with all 79 records to catch runtime errors or Persian leakage.
 const siteStart = app.indexOf('  function renderSiteDetail(p) {');

@@ -10075,7 +10075,9 @@
     "notable_missions_ar": [
       "ست رحلات Epsilon",
       "تكوينات H3 التي تستخدم 0 أو 2 أو 4 معززات SRB-3 بحسب طراز المركبة"
-    ]
+    ],
+    "logo": "assets/img/logos/ihi-aerospace-logo.png",
+    "logo_bg": "light"
   },
   {
     "id": "interstellar-jp",
@@ -11691,7 +11693,8 @@
       "برنامج مكوك الفضاء: وفرت محركات RS-25 الدفع الرئيس للمكوك.",
       "مهمات NASA SLS وArtemis، ومنها Artemis I وArtemis II؛ سُلّمت أربعة محركات لمهمة Artemis III المقررة في 2027."
     ],
-    "location_ar": "المقر الرئيسي في ملبورن، فلوريدا (إحداثيات الخريطة على مستوى المدينة وليست لمبنى محدد). يدعم مركز التصنيع والتجميع في Canoga Park، كاليفورنيا برامج RS-25 والدفاع؛ وتجري اختبارات الإشعال الساخن في مركز Stennis الفضائي، ميسيسيبي."
+    "location_ar": "المقر الرئيسي في ملبورن، فلوريدا (إحداثيات الخريطة على مستوى المدينة وليست لمبنى محدد). يدعم مركز التصنيع والتجميع في Canoga Park، كاليفورنيا برامج RS-25 والدفاع؛ وتجري اختبارات الإشعال الساخن في مركز Stennis الفضائي، ميسيسيبي.",
+    "logo": "assets/img/logos/l3harris-logo.svg"
   },
   {
     "id": "ngpropulsion",
@@ -11871,7 +11874,8 @@
     "notable_missions_ar": [
       "ساهمت معزّزات GEM 63 في إطلاق Artemis I.",
       "معزّزات لعشرات الرحلات بصاروخي Atlas V وVulcan"
-    ]
+    ],
+    "logo": "assets/img/logos/northrop-grumman-logo.png"
   },
   {
     "id": "ursamajor",
@@ -12210,7 +12214,8 @@
     ],
     "notable_missions_ar": [
       "ميرا (2023)"
-    ]
+    ],
+    "logo": "assets/img/logos/impulse-space-logo.svg"
   },
   {
     "id": "agile",
@@ -12779,7 +12784,8 @@
     ],
     "notable_missions_ar": [
       "العشرات من أقمار GEO والمسبارات العلمية"
-    ]
+    ],
+    "logo": "assets/img/logos/moog-logo.png"
   },
   {
     "id": "nammo",
@@ -12944,7 +12950,8 @@
     "notable_missions_ar": [
       "جونو في كوكب المشتري",
       "إنسايت على المريخ"
-    ]
+    ],
+    "logo": "assets/img/logos/nammo-logo.svg"
   },
   {
     "id": "safran-vernon",
@@ -13589,7 +13596,9 @@
     "notable_missions_ar": [
       "محركات الدفع المستخدمة في جميع رحلات Soyuz المأهولة.",
       "99 رحلة لصاروخ Atlas V باستخدام محرك RD-180."
-    ]
+    ],
+    "logo": "assets/img/logos/roscosmos-parent-logo-2022.png",
+    "logo_bg": "light"
   },
   {
     "id": "kbkha",
@@ -13736,7 +13745,8 @@
     "notable_missions_ar": [
       "محركات المرحلة الثالثة المستخدمة في مئات رحلات Soyuz.",
       "محركات المراحل العليا لصاروخ Angara A5"
-    ]
+    ],
+    "logo": "assets/img/logos/kbkha-logo.svg"
   },
   {
     "id": "bellatrix",
@@ -14037,7 +14047,8 @@
       "قمر التصوير EYE ضمن مشروع STAR SPHERE التابع لـSony (دافع مقاومي مائي، 2023–2025)",
       "RAISE-4 / KIR-X التابع لـJAXA: تشغيل الدافع الأيوني والدافع المقاومي المائيين في المدار (2026)"
     ],
-    "flagship_status_ar": "مثبت في الطيران"
+    "flagship_status_ar": "مثبت في الطيران",
+    "logo": "assets/img/logos/paleblue-logo.png"
   },
   {
     "id": "dawn-aerospace",
@@ -15921,7 +15932,9 @@
     "notable_missions_ar": [
       "مئات من الأقمار الصناعية GEO",
       "تراث الطيران لمدة 50 عامًا"
-    ]
+    ],
+    "logo": "assets/img/logos/roscosmos-parent-logo-2022.png",
+    "logo_bg": "light"
   },
   {
     "id": "lpsc-isro",
@@ -16102,7 +16115,9 @@
     "notable_missions_ar": [
       "تشاندرايان -2 و3",
       "مهمة مانجاليان إلى المريخ"
-    ]
+    ],
+    "logo": "assets/img/logos/lpsc-logo.png",
+    "logo_bg": "light"
   },
   {
     "id": "aalpt-china",
@@ -17686,7 +17701,8 @@
     ],
     "notable_missions_ar": [
       "UWE-4: أول قمر قمر مكعّب (CubeSat) يستخدم دافع FEEP (2018)"
-    ]
+    ],
+    "logo": "assets/img/logos/morpheus-space-logo.png"
   },
   {
     "id": "comat",
@@ -19407,7 +19423,8 @@
       "حملات اختبار المحرك الرئيس للمكوك",
       "اختبار SLS Green Run للمرحلة الأساسية في B-2 (2021)"
     ],
-    "org_type_ar": "مركز ناسا لاختبار محركات الصواريخ (الولايات المتحدة)"
+    "org_type_ar": "مركز ناسا لاختبار محركات الصواريخ (الولايات المتحدة)",
+    "logo": "assets/img/logos/nasa-logo.svg"
   },
   {
     "id": "airborne-eng",
@@ -19641,7 +19658,8 @@
     "notable_missions_ar": [
       "أبولو والمكوك وأوريون"
     ],
-    "org_type_ar": "منشأة ناسا لاختبار دفع المركبات الفضائية والمواد الخطرة (الولايات المتحدة)"
+    "org_type_ar": "منشأة ناسا لاختبار دفع المركبات الفضائية والمواد الخطرة (الولايات المتحدة)",
+    "logo": "assets/img/logos/nasa-logo.svg"
   },
   {
     "id": "lpsc-test",
@@ -19781,7 +19799,9 @@
     "notable_missions_ar": [
       "تشاندرايان-3، جاجانيان"
     ],
-    "org_type_ar": "مركز ISRO لاختبار الدفع (الهند؛ وتُطوّر المحركات في مركز LPSC الشقيق)"
+    "org_type_ar": "مركز ISRO لاختبار الدفع (الهند؛ وتُطوّر المحركات في مركز LPSC الشقيق)",
+    "logo": "assets/img/logos/isro-parent-logo.png",
+    "logo_bg": "light"
   },
   {
     "id": "asri-ukzn",
@@ -20499,7 +20519,8 @@
     ],
     "notable_missions_ar": [
       "عرض Vyom 2U في المدار على POEM-4؛ وليس رحلة خدمة إطلاق."
-    ]
+    ],
+    "logo": "assets/img/logos/manastu-space-logo.svg"
   },
   {
     "cat": "propulsion",
@@ -32001,7 +32022,8 @@
         "title_ar": "أول اختبار إشعال ناجح لـPEPEk-1",
         "desc_ar": "تذكر OteSpace اختباراً أرضياً ناجحاً لمحرك PEPEk-1 ثنائي الوقود بتغذية مضخية من فئة 1 kN؛ ولا تذكر رحلة."
       }
-    ]
+    ],
+    "logo": "assets/img/logos/otespace-logo.png"
   },
   {
     "id": "borospace",
@@ -32593,7 +32615,8 @@
         "title_ar": "أول تشغيل معلن لحزمة أيونية في المدار",
         "desc_ar": "أفادت ION-X بتشغيل دافع الرش الكهربائي في المدار في 2025؛ وذكرت أن الاختبار مستمر."
       }
-    ]
+    ],
+    "logo": "assets/img/logos/ion-x-logo.svg"
   },
   {
     "id": "magdrive",
@@ -32722,7 +32745,9 @@
     "evidence_confidence": "high",
     "source_note_en": "Map pin indicates Harwell Campus approximately. Status is deliberately below 'flight-proven propulsion' because no spacecraft manoeuvre/thrust measurement was published.",
     "source_note_fa": "نشانگر به‌طور تقریبی پردیس هارول را نشان می‌دهد. وضعیت عمداً پایین‌تر از «پیشران پروازآزموده» نگه داشته شده، چون مانور فضاپیما/اندازه‌گیری رانش منتشر نشده است.",
-    "source_note_ar": "تمثل النقطة حرم هاروِل تقريبياً. وخُفّضت الحالة عن «دفع مثبت في الطيران» لعدم نشر مناورة للمركبة أو قياس للدفع."
+    "source_note_ar": "تمثل النقطة حرم هاروِل تقريبياً. وخُفّضت الحالة عن «دفع مثبت في الطيران» لعدم نشر مناورة للمركبة أو قياس للدفع.",
+    "logo": "assets/img/logos/magdrive-logo.svg",
+    "logo_bg": "light"
   },
   {
     "id": "pulsar-fusion",
@@ -33377,7 +33402,8 @@
     "evidence_confidence": "high",
     "source_note_en": "The pin represents the official operational headquarters in Colleferro at city-centre precision; Segni is listed separately as the Italy headquarters/info address.",
     "source_note_fa": "نشانگر، دفتر عملیاتی رسمی در کوله‌فرو را با دقت مرکز شهر نمایش می‌دهد؛ سِنی جداگانه دفتر مرکزی/اطلاعات ایتالیاست.",
-    "source_note_ar": "تمثل النقطة المقر التشغيلي الرسمي في كوليفيرو بدقة مركز البلدة؛ وتُذكر سيني منفصلة بوصفها مقر إيطاليا/المعلومات."
+    "source_note_ar": "تمثل النقطة المقر التشغيلي الرسمي في كوليفيرو بدقة مركز البلدة؛ وتُذكر سيني منفصلة بوصفها مقر إيطاليا/المعلومات.",
+    "logo": "assets/img/logos/miprons-logo.png"
   },
   {
     "id": "ienai-space",
@@ -33875,7 +33901,8 @@
     "evidence_confidence": "high",
     "source_note_en": "The pin is city-level and the site is east of the conventional Europe–Asia boundary; no exact facility coordinates or model-specific flight claims are made.",
     "source_note_fa": "نشانگر شهرمحور است و محل در شرق مرز متعارف اروپا/آسیاست؛ مختصات دقیق تأسیسات یا ادعای پرواز مدل مشخص مطرح نمی‌شود.",
-    "source_note_ar": "النقطة على مستوى المدينة والموقع شرق الحد التقليدي بين أوروبا وآسيا؛ ولا تُذكر إحداثيات دقيقة للمنشأة أو ادعاءات طيران لطراز محدد."
+    "source_note_ar": "النقطة على مستوى المدينة والموقع شرق الحد التقليدي بين أوروبا وآسيا؛ ولا تُذكر إحداثيات دقيقة للمنشأة أو ادعاءات طيران لطراز محدد.",
+    "logo": "assets/img/logos/niimash-logo.png"
   },
   {
     "id": "kbhm-isayev",
@@ -33976,7 +34003,9 @@
     "evidence_confidence": "medium",
     "source_note_en": "Included only as a documented propulsion design bureau with unresolved present-day standalone legal status; do not count as an active independent manufacturer.",
     "source_note_fa": "فقط به‌عنوان دفتر طراحی پیشرانِ مستند با وضعیت حقوقی مستقلِ امروزِ حل‌نشده افزوده شد؛ آن را سازندهٔ مستقلِ فعال نشمارید.",
-    "source_note_ar": "أُدرج بوصفه مكتب تصميم دفع موثقاً مع بقاء الحالة القانونية المستقلة الحالية غير محسومة؛ ولا يُعد مصنعاً مستقلاً نشطاً."
+    "source_note_ar": "أُدرج بوصفه مكتب تصميم دفع موثقاً مع بقاء الحالة القانونية المستقلة الحالية غير محسومة؛ ولا يُعد مصنعاً مستقلاً نشطاً.",
+    "logo": "assets/img/logos/roscosmos-parent-logo-2022.png",
+    "logo_bg": "light"
   },
   {
     "id": "sets",

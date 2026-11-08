@@ -60,5 +60,5 @@ test('startup requests compact map geometry and only default company categories;
   assert.match(app, /if \(b\.dataset\.view === "missions"\) ensureMissionViewData\(\)/);
   assert.match(app, /propulsion: "data\/companies_propulsion\.json"/);
   assert.match(app, /satmaker: "data\/companies_satmaker\.json"/);
-  assert.match(html, /window\.ORBITA_V = "20261023propulsionlogos1";/);
+  assert.match(html, /window\.ORBITA_V = "20261023propulsionlogos2";/);
 });
