@@ -3543,7 +3543,7 @@
       h += '<span style="font-size:12px; font-weight:bold; color:#10b981;">🚀 البرنامج الرئيس: <b><bdi style="color:#f2c649;">' + esc(flagProgName) + '</bdi></b></span>';
       if (flagProgTimeline) h += '<span style="padding:2px 8px; border-radius:10px; font-size:10px; background:rgba(16, 185, 129, 0.2); border:1px solid rgba(16, 185, 129, 0.4); color:#10b981;">' + esc(flagProgTimeline) + '</span>';
       h += '</div>';
-      if (flagProgExpl) h += '<div style="font-size:10.5px; color:#4ec9d8; margin-top:4px; line-height:1.6;">' + esc(flagProgExpl) + '</div>';
+      if (flagProgExpl) h += '<div class="dossier-card-copy">' + esc(flagProgExpl) + '</div>';
       h += '</div>';
     }
 
@@ -5903,7 +5903,7 @@
       if (flagProgTimeline) h += '<span style="padding:2px 8px; border-radius:10px; font-size:10px; background:rgba(16, 185, 129, 0.2); border:1px solid rgba(16, 185, 129, 0.4); color:#10b981;">' + esc(flagProgTimeline) + '</span>';
       h += '</div>';
       if (flagProgExpl) {
-        h += '<div style="font-size:10.5px; color:#4ec9d8; margin-top:4px; line-height:1.6;">' + esc(flagProgExpl) + '</div>';
+        h += '<div class="dossier-card-copy">' + esc(flagProgExpl) + '</div>';
       }
       h += '</div>';
     }
@@ -6166,7 +6166,7 @@
     if (histText) {
       h += '<div style="background:rgba(15, 31, 51, 0.88); border:1px solid rgba(245, 158, 11, 0.35); border-radius:8px; padding:12px; margin-top:10px; box-shadow:0 4px 12px rgba(0,0,0,0.25);">';
       h += '<div style="font-size:11.5px; font-weight:bold; color:#f59e0b; margin-bottom:6px; display:flex; align-items:center; gap:6px;">📜 ' + label("تاریخچه سازمانی و توسعه پیشرانه:", "Company & Propulsion History:", "تاريخ الشركة وتطوير أنظمة الدفع:") + '</div>';
-      h += '<div style="font-size:10.5px; color:#4ec9d8; line-height:1.6;">' + esc(histText) + '</div>';
+      h += '<div class="propulsion-history-copy">' + esc(histText) + '</div>';
       h += '</div>';
     }
 
@@ -6175,7 +6175,7 @@
     if (prodHistText) {
       h += '<div style="background:rgba(15, 31, 51, 0.88); border:1px solid rgba(16, 185, 129, 0.35); border-radius:8px; padding:12px; margin-top:10px; box-shadow:0 4px 12px rgba(0,0,0,0.25);">';
       h += '<div style="font-size:11.5px; font-weight:bold; color:#10b981; margin-bottom:6px; display:flex; align-items:center; gap:6px;">⚙️ ' + label("تاریخچه بومی‌سازی و ساخت محصولات:", "Product Development & Manufacturing:", "تاريخ تطوير المنتجات وتصنيعها:") + '</div>';
-      h += '<div style="font-size:10.5px; color:var(--text); line-height:1.6;">' + esc(prodHistText) + '</div>';
+      h += '<div class="dossier-card-copy">' + esc(prodHistText) + '</div>';
       h += '</div>';
     }
 

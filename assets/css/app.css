@@ -1394,3 +1394,7 @@ img.d-flag--globe{width:40px;height:40px;min-width:40px;max-width:40px;padding:0
 @supports (height:100dvh){
   @media(max-width:600px){.report-dialog{height:min(820px,calc(100dvh - 16px));max-height:calc(100dvh - 16px)}}
 }
+
+
+/* Agency major-program and propulsion product-history cards use fixed dark surfaces in both app themes. Keep body copy theme-independent and readable without changing the established type size or accent palette. */
+.detail-panel .dossier-card-copy{color:#dce8f4;font-size:10.5px;font-weight:400;line-height:1.8}

@@ -100,7 +100,7 @@ assert.equal(companyById['casc-6th'].logo, companyById['aalpt-china'].logo, 'the
 assert.equal(companyById['casc-6th'].logo_bg, companyById['aalpt-china'].logo_bg, 'the CASC alias uses the same mark background');
 
 const html = fs.readFileSync(path.join(root, 'index.html'), 'utf8');
-assert.match(html, /window\.ORBITA_V = "20261023propulsionlogos3";/);
-assert.match(html, /window\.ORBITA_APP_V = "20261023propulsionlogos3";/);
+assert.match(html, /window\.ORBITA_V = "20261023help1";/);
+assert.match(html, /window\.ORBITA_APP_V = "20261023dossierread1";/);
 
 console.log(`Verified ${Object.keys(expectedLogos).length} reviewed group-3 logo assignments across ${group3Ids.length} records; one remains unassigned.`);

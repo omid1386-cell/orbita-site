@@ -3,6 +3,9 @@ assets/js/app.js
 assets/css/app.css
 tests/site_guide.test.cjs
 tests/cluster_label_startup.test.cjs
+tests/company_propulsion_ar.test.cjs
+tests/propulsion_logo_group2_assets.test.cjs
+tests/propulsion_logo_group3_assets.test.cjs
 README-site-guide-fa.md
 SITE_GUIDE_CONTENT_MAP_fa.md
 SITE_GUIDE_COPY_DRAFT_fa.md

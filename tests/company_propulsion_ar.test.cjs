@@ -7,6 +7,7 @@ const vm = require('vm');
 const root = path.resolve(__dirname, '..');
 const app = fs.readFileSync(path.join(root, 'assets/js/app.js'), 'utf8');
 const html = fs.readFileSync(path.join(root, 'index.html'), 'utf8');
+const css = fs.readFileSync(path.join(root, 'assets/css/app.css'), 'utf8');
 const companies = JSON.parse(fs.readFileSync(path.join(root, 'data/companies.json'), 'utf8'));
 const propulsion = companies.filter(company => company.cat === 'propulsion');
 const agencies = companies.filter(company => company.cat === 'agency');
@@ -361,7 +362,7 @@ try {
   console.error('Live openDetail route error:', error);
   check(false, 'the actual openDetail route renders the shared template in all three languages');
 }
-check(html.includes('window.ORBITA_V = "20261023propulsionlogos3";'),
+check(html.includes('window.ORBITA_V = "20261023help1";'),
   'HTML asset cache version is bumped for the shared Arabic propulsion template');
 
 const requiredCompanyFields = [
@@ -570,6 +571,16 @@ if (renderer) {
     check(false, 'Persian-only fallback fields are suppressed and technical values are retained');
   }
 }
+
+const dossierCopyStyle = css.match(/\.detail-panel \.dossier-card-copy\s*\{([^}]*)\}/);
+const agencyProgramCopyLine = "h += '<div class=\"dossier-card-copy\">' + esc(flagProgExpl) + '</div>';";
+const propulsionProductCopyLine = "h += '<div class=\"dossier-card-copy\">' + esc(prodHistText) + '</div>';";
+check((app.split(agencyProgramCopyLine).length - 1) === 2 &&
+  (app.split(propulsionProductCopyLine).length - 1) === 1 && dossierCopyStyle &&
+  /color:\s*#dce8f4/i.test(dossierCopyStyle[1]) && /font-size:\s*10\.5px/i.test(dossierCopyStyle[1]) &&
+  /font-weight:\s*400/.test(dossierCopyStyle[1]) && /line-height:\s*1\.8/.test(dossierCopyStyle[1]) &&
+  app.includes('color:#f59e0b') && app.includes('color:#10b981'),
+  'agency major-program and propulsion product-history copy gain theme-safe contrast without changing font size or accent colors');
 
 console.log(`${passed} PASS / ${failed} FAIL`);
 process.exitCode = failed ? 1 : 0;
