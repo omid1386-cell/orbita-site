@@ -13,9 +13,9 @@
 <title>ORBITA — سامانهٔ اطلاعات هوافضا</title>
 <link rel="stylesheet" href="assets/vendor/maplibre-gl.css?v=3" />
 <script>
-  window.ORBITA_V = "20261023propulsionlogos3";
-  window.ORBITA_CSS_V = "20261105report1";
-  window.ORBITA_APP_V = "20261023propulsionlogos3";
+  window.ORBITA_V = "20261023help1";
+  window.ORBITA_CSS_V = "20261023help1";
+  window.ORBITA_APP_V = "20261023help1";
   // Public API URL only; never place the Resend key or another secret here.
   window.ORBITA_REPORT_API_URL = "https://orbita-report-api.onrender.com/api/report";
   (function() {
@@ -164,8 +164,8 @@
   <div class="site-guide-shell">
     <header class="site-guide-head">
       <div class="site-guide-heading">
-        <p class="site-guide-kicker" data-i18n="guide_kicker">راهنمای سریع</p>
-        <h2 id="siteGuideTitle" data-i18n="guide_title">راهنمای استفاده از ORBITA</h2>
+        <p class="site-guide-kicker" data-i18n="guide_kicker">راهنمای تعاملی</p>
+        <h2 id="siteGuideTitle" class="site-guide-title" data-i18n="guide_title">راهنمای استفاده از ORBITA</h2>
       </div>
       <button id="siteGuideClose" class="ghost-btn site-guide-close" type="button"
         title="بستن راهنما" data-i18n-title="guide_close" data-i18n-aria-label="guide_close">
@@ -173,71 +173,153 @@
       </button>
     </header>
     <p id="siteGuideIntro" class="site-guide-intro" data-i18n="guide_intro">
-      راهنمای کوتاهی برای پیدا کردن و بررسی اطلاعات در سایت. برای جزئیات، هر بخش را باز کنید.
+      بخش موردنظرت را با آیکونش پیدا کن یا در راهنما جست‌وجو کن.
     </p>
-    <div class="site-guide-content">
-      <details class="site-guide-section" open>
-        <summary><span class="site-guide-step" aria-hidden="true">01</span><span data-i18n="guide_quick_title">شروع در چند گام</span></summary>
-        <p class="site-guide-copy" data-i18n="guide_quick_body">برای شروع، جست‌وجو یا دستهٔ موردنظر را انتخاب کنید؛ سپس نشانگر را روی نقشه پیدا کنید و برای دیدن جزئیات روی آن بزنید.</p>
-      </details>
-      <details class="site-guide-section">
-        <summary><span class="site-guide-step" aria-hidden="true">02</span><span data-i18n="guide_map_title">نقشه، دسته‌ها و نشانگرها</span></summary>
-        <p class="site-guide-copy" data-i18n="guide_map_body"></p>
-      </details>
-      <details class="site-guide-section">
-        <summary><span class="site-guide-step" aria-hidden="true">03</span><span data-i18n="guide_search_title">جست‌وجوی نقشه و فهرست نتایج</span></summary>
-        <p class="site-guide-copy" data-i18n="guide_search_body"></p>
-      </details>
-      <details class="site-guide-section">
-        <summary><span class="site-guide-step" aria-hidden="true">04</span><span data-i18n="guide_country_title">شناسنامهٔ کشور</span></summary>
-        <p class="site-guide-copy" data-i18n="guide_country_body"></p>
-      </details>
-      <details class="site-guide-section">
-        <summary><span class="site-guide-step" aria-hidden="true">05</span><span data-i18n="guide_projects_title">پروژه‌های فضایی</span></summary>
-        <p class="site-guide-copy" data-i18n="guide_projects_body">در برگهٔ پروژه‌های فضایی می‌توانید نتایج بارگذاری‌شده را جست‌وجو کنید و بر اساس وضعیت، مدار یا نوع مأموریت فیلتر کنید.</p>
-      </details>
-      <details class="site-guide-section">
-        <summary><span class="site-guide-step" aria-hidden="true">06</span><span data-i18n="guide_companies_title">پروندهٔ شرکت‌ها و سازمان‌ها</span></summary>
-        <p class="site-guide-copy" data-i18n="guide_companies_body"></p>
-      </details>
-      <details class="site-guide-section">
-        <summary><span class="site-guide-step" aria-hidden="true">07</span><span data-i18n="guide_site_title">پروندهٔ پایگاه پرتاب</span></summary>
-        <p class="site-guide-copy" data-i18n="guide_site_body"></p>
-      </details>
-      <details class="site-guide-section">
-        <summary><span class="site-guide-step" aria-hidden="true">08</span><span data-i18n="guide_recovery_title">پروندهٔ فرود و بازیابی</span></summary>
-        <p class="site-guide-copy" data-i18n="guide_recovery_body"></p>
-      </details>
-      <details class="site-guide-section">
-        <summary><span class="site-guide-step" aria-hidden="true">09</span><span data-i18n="guide_next_title">نوار «پرتاب بعدی» در سربرگ</span></summary>
-        <p class="site-guide-copy" data-i18n="guide_next_body"></p>
-      </details>
-      <details class="site-guide-section">
-        <summary><span class="site-guide-step" aria-hidden="true">10</span><span data-i18n="guide_data_title">اتصال و داده‌ها</span></summary>
-        <p class="site-guide-copy" data-i18n="guide_data_body">اگر نقشهٔ برخط در دسترس نباشد، سایت از نقشهٔ محلی استفاده می‌کند. دریافت اطلاعات زندهٔ پرتاب‌های پیش‌رو به اینترنت نیاز دارد؛ پوشش و زمان به‌روزرسانی داده‌ها ممکن است میان پرونده‌ها متفاوت باشد.</p>
-      </details>
-      <details class="site-guide-section">
-        <summary><span class="site-guide-step" aria-hidden="true">11</span><span data-i18n="guide_scope_title">دامنهٔ پوشش</span></summary>
-        <p class="site-guide-copy" data-i18n="guide_scope_body"></p>
-      </details>
-      <details class="site-guide-section">
-        <summary><span class="site-guide-step" aria-hidden="true">12</span><span data-i18n="guide_sources_title">منابع و تازگی داده‌ها</span></summary>
-        <p class="site-guide-copy" data-i18n="guide_sources_body"></p>
-      </details>
-      <details class="site-guide-section">
-        <summary><span class="site-guide-step" aria-hidden="true">13</span><span data-i18n="guide_metrics_title">وضعیت‌ها و تفسیر شمارش‌ها</span></summary>
-        <p class="site-guide-copy" data-i18n="guide_metrics_body"></p>
-      </details>
-      <details class="site-guide-section">
-        <summary><span class="site-guide-step" aria-hidden="true">14</span><span data-i18n="guide_limits_title">دقت مکان، مرزها و عدم‌قطعیت</span></summary>
-        <p class="site-guide-copy" data-i18n="guide_limits_body"></p>
-      </details>
-      <details class="site-guide-section">
-        <summary><span class="site-guide-step" aria-hidden="true">15</span><span data-i18n="guide_glossary_title">واژه‌نامهٔ مشترک برای این بخش‌ها</span></summary>
-        <p class="site-guide-copy" data-i18n="guide_glossary_body"></p>
-      </details>
+    <div class="site-guide-search" role="search">
+      <label for="siteGuideSearch" class="site-guide-search-label" data-i18n="guide_search_label">جست‌وجو در راهنما</label>
+      <div class="site-guide-searchbox">
+        <svg viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M10.8 3a7.8 7.8 0 1 0 4.9 13.9l4.2 4.2 1.4-1.4-4.2-4.2A7.8 7.8 0 0 0 10.8 3Zm0 2a5.8 5.8 0 1 1 0 11.6 5.8 5.8 0 0 1 0-11.6Z" fill="currentColor"/></svg>
+        <input id="siteGuideSearch" type="search" autocomplete="off" spellcheck="false"
+          data-i18n-ph="guide_search_placeholder" data-i18n-aria-label="guide_search_label"
+          aria-describedby="siteGuideSearchHint" placeholder="مثلاً شمارش‌ها، جست‌وجو یا پرتاب‌های پیش‌رو" />
+        <button id="siteGuideSearchClear" class="site-guide-search-clear" type="button" hidden
+          data-i18n-title="guide_search_clear" data-i18n-aria-label="guide_search_clear" title="پاک کردن جست‌وجو">
+          <span aria-hidden="true">×</span>
+        </button>
+      </div>
+      <p id="siteGuideSearchHint" class="site-guide-search-hint" data-i18n="guide_search_hint">در عنوان‌ها، توضیح‌ها و واژه‌های هم‌معنی جست‌وجو می‌شود؛ بدون نیاز به اینترنت.</p>
     </div>
-    <p class="site-guide-note" data-i18n="guide_note">این راهنما با زبان فعلی سایت نمایش داده می‌شود. برای بستن، دکمهٔ × یا کلید Escape را بزنید.</p>
+
+    <div class="site-guide-content">
+      <section id="siteGuideShortcuts" class="site-guide-shortcuts" aria-labelledby="siteGuideTasksTitle">
+        <div class="site-guide-section-heading">
+          <h3 id="siteGuideTasksTitle" data-i18n="guide_tasks_title">از اینجا شروع کن</h3>
+          <p data-i18n="guide_tasks_intro">یک کار را انتخاب کن تا راهنمای همان قسمت باز شود.</p>
+        </div>
+        <div class="site-guide-task-grid">
+          <button class="site-guide-task" type="button" data-guide-open-topic="search">
+            <span class="site-guide-task-icon" data-guide-icon="search" aria-hidden="true"></span>
+            <span class="site-guide-task-copy"><strong data-i18n="guide_task_find_title">پیدا کردن یک شرکت، پایگاه یا کشور</strong><small data-i18n="guide_task_find_body">راهنمای نقشه و جست‌وجوی فهرست</small></span>
+            <span class="site-guide-task-arrow" aria-hidden="true">↗</span>
+          </button>
+          <button class="site-guide-task" type="button" data-guide-open-topic="projects">
+            <span class="site-guide-task-icon" data-guide-icon="projects" aria-hidden="true"></span>
+            <span class="site-guide-task-copy"><strong data-i18n="guide_task_missions_title">دیدن مأموریت‌ها و پرتاب‌های پیش‌رو</strong><small data-i18n="guide_task_missions_body">فیلترها، جدول و زمان‌بندی</small></span>
+            <span class="site-guide-task-arrow" aria-hidden="true">↗</span>
+          </button>
+          <button class="site-guide-task" type="button" data-guide-open-topic="metrics">
+            <span class="site-guide-task-icon" data-guide-icon="metrics" aria-hidden="true"></span>
+            <span class="site-guide-task-copy"><strong data-i18n="guide_task_counts_title">فهمیدن شمارش‌ها و وضعیت‌ها</strong><small data-i18n="guide_task_counts_body">معنی نشان‌ها، آمار و خانه‌های خالی</small></span>
+            <span class="site-guide-task-arrow" aria-hidden="true">↗</span>
+          </button>
+        </div>
+      </section>
+
+      <div id="siteGuideResultsStatus" class="site-guide-results-status" role="status" aria-live="polite" aria-atomic="true" hidden></div>
+      <section id="siteGuideNoResults" class="site-guide-no-results" aria-labelledby="siteGuideNoResultsTitle" hidden>
+        <span class="site-guide-no-results-icon" aria-hidden="true">?</span>
+        <h3 id="siteGuideNoResultsTitle" data-i18n="guide_no_results_title">چیزی پیدا نشد</h3>
+        <p data-i18n="guide_no_results_body">عبارت دیگری را امتحان کن یا یکی از پیشنهادها را باز کن.</p>
+        <div class="site-guide-suggestion-list" data-i18n-aria-label="guide_suggestions_label" aria-label="پیشنهادهای راهنما">
+          <button type="button" data-guide-open-topic="map" data-i18n="guide_suggest_map">نقشه و دسته‌ها</button>
+          <button type="button" data-guide-open-topic="projects" data-i18n="guide_suggest_projects">پروژه‌ها و پرتاب‌ها</button>
+          <button type="button" data-guide-open-topic="metrics" data-i18n="guide_suggest_metrics">شمارش‌ها و وضعیت‌ها</button>
+        </div>
+      </section>
+
+      <section class="site-guide-topics" aria-labelledby="siteGuideTopicsTitle">
+        <div class="site-guide-section-heading site-guide-topics-heading">
+          <h3 id="siteGuideTopicsTitle" data-i18n="guide_topics_title">آشنایی با بخش‌های نرم‌افزار</h3>
+          <p data-i18n="guide_topics_intro">هر کارت آیکون و ظاهر همان بخشی را دارد که در ORBITA می‌بینی.</p>
+        </div>
+
+        <details id="guide-topic-quick" class="site-guide-section" data-guide-topic="quick" data-guide-keywords="شروع شروع سریع استفاده راهنما help help center guide quick start getting started البداية دليل مساعدة">
+          <summary><span class="site-guide-topic-icon" data-guide-icon="map" aria-hidden="true"></span><span class="site-guide-summary-copy"><strong data-i18n="guide_quick_title">شروع در چند گام</strong><small class="site-guide-teaser" data-guide-teaser></small></span></summary>
+          <div class="site-guide-topic-body"><div class="site-guide-visual" data-guide-visual="start" aria-hidden="true"></div><p class="site-guide-copy" data-i18n="guide_quick_body"></p></div>
+        </details>
+
+        <details id="guide-topic-map" class="site-guide-section" data-guide-topic="map" data-guide-keywords="نقشه دسته لایه نشانگر خوشه شمار تعداد layer layers category chip marker cluster icons map pins طبقات الفئات العلامات المؤشرات الخريطة">
+          <summary><span class="site-guide-topic-icon" data-guide-icon="map" aria-hidden="true"></span><span class="site-guide-summary-copy"><strong data-i18n="guide_map_title">نقشه، دسته‌ها و نشانگرها</strong><small class="site-guide-teaser" data-guide-teaser></small></span></summary>
+          <div class="site-guide-topic-body"><div class="site-guide-visual" data-guide-visual="map-categories" aria-hidden="true"></div><p class="site-guide-copy" data-i18n="guide_map_body"></p><div class="site-guide-topic-actions"><button type="button" data-guide-command="map-search" data-i18n="guide_open_map">رفتن به نقشه و بازکردن جست‌وجو</button></div></div>
+        </details>
+
+        <details id="guide-topic-search" class="site-guide-section" data-guide-topic="search" data-guide-keywords="جستجو جست‌وجو شرکت پایگاه کشور نتیجه فهرست میانبر ctrl k keyboard map search company launch site country result list بحث البحث الشركة الموقع الدولة">
+          <summary><span class="site-guide-topic-icon" data-guide-icon="search" aria-hidden="true"></span><span class="site-guide-summary-copy"><strong data-i18n="guide_search_title">جست‌وجوی نقشه و فهرست نتایج</strong><small class="site-guide-teaser" data-guide-teaser></small></span></summary>
+          <div class="site-guide-topic-body"><div class="site-guide-visual" data-guide-visual="map-search" aria-hidden="true"></div><p class="site-guide-copy" data-i18n="guide_search_body"></p><div class="site-guide-topic-actions"><button type="button" data-guide-command="map-search" data-i18n="guide_open_map">رفتن به نقشه و بازکردن جست‌وجو</button></div></div>
+        </details>
+
+        <details id="guide-topic-country" class="site-guide-section" data-guide-topic="country" data-guide-keywords="کشور شناسنامه آمار مراکز فعال active entities country profile country total nation ملف الدولة البلد المجموع الكيانات">
+          <summary><span class="site-guide-topic-icon" data-guide-icon="country" aria-hidden="true"></span><span class="site-guide-summary-copy"><strong data-i18n="guide_country_title">شناسنامهٔ کشور</strong><small class="site-guide-teaser" data-guide-teaser></small></span></summary>
+          <div class="site-guide-topic-body"><div class="site-guide-visual" data-guide-visual="country-profile" aria-hidden="true"></div><p class="site-guide-copy" data-i18n="guide_country_body"></p><div class="site-guide-topic-actions"><button type="button" data-guide-command="map-search" data-i18n="guide_open_map">رفتن به نقشه و بازکردن جست‌وجو</button></div></div>
+        </details>
+
+        <details id="guide-topic-projects" class="site-guide-section" data-guide-topic="projects" data-guide-keywords="مأموریت پروژه فضایی پروژه‌های فضایی جدول فیلتر وضعیت مدار نوع مرتب سازی زمان utc پرتاب آینده پیش رو live upcoming launches space projects launch mission project table filters status orbit type sort refresh ll2 launch library 2 المهمة المشاريع الإطلاق القادم">
+          <summary><span class="site-guide-topic-icon" data-guide-icon="projects" aria-hidden="true"></span><span class="site-guide-summary-copy"><strong data-i18n="guide_projects_title">پروژه‌های فضایی</strong><small class="site-guide-teaser" data-guide-teaser></small></span></summary>
+          <div class="site-guide-topic-body"><div class="site-guide-visual" data-guide-visual="missions-table" aria-hidden="true"></div><p class="site-guide-copy" data-i18n="guide_projects_body"></p><div class="site-guide-topic-actions"><button type="button" data-guide-command="missions" data-i18n="guide_open_projects">رفتن به پروژه‌های فضایی</button></div></div>
+        </details>
+
+        <details id="guide-topic-companies" class="site-guide-section" data-guide-topic="companies" data-guide-keywords="شرکت سازمان آژانس پیشران پرتاب ماهواره پرونده زبانه موتور ناوگان برنامه تاریخچه profile company organization agency propulsion launch satellite manufacturer dossier tabs engines fleet programs history space agency الشركة المؤسسة الوكالة مصنع ملف المحركات">
+          <summary><span class="site-guide-topic-icon" data-guide-icon="companies" aria-hidden="true"></span><span class="site-guide-summary-copy"><strong data-i18n="guide_companies_title">پروندهٔ شرکت‌ها و سازمان‌ها</strong><small class="site-guide-teaser" data-guide-teaser></small></span></summary>
+          <div class="site-guide-topic-body"><div class="site-guide-visual" data-guide-visual="company-categories" aria-hidden="true"></div><p class="site-guide-copy" data-i18n="guide_companies_body"></p><div class="site-guide-topic-actions"><button type="button" data-guide-command="map-search" data-i18n="guide_open_map">رفتن به نقشه و بازکردن جست‌وجو</button></div></div>
+        </details>
+
+        <details id="guide-topic-site" class="site-guide-section" data-guide-topic="site" data-guide-keywords="پایگاه پرتاب سکو تاریخچه آمار اپراتور بهره بردار زیرساخت تحلیل ارتفاع ازیموت مدار target orbit launch site pads operator stats history infrastructure upcoming موقع الإطلاق منصة المشغل البنية التحتية">
+          <summary><span class="site-guide-topic-icon" data-guide-icon="site" aria-hidden="true"></span><span class="site-guide-summary-copy"><strong data-i18n="guide_site_title">پروندهٔ پایگاه پرتاب</strong><small class="site-guide-teaser" data-guide-teaser></small></span></summary>
+          <div class="site-guide-topic-body"><div class="site-guide-visual" data-guide-visual="site-tabs" aria-hidden="true"></div><p class="site-guide-copy" data-i18n="guide_site_body"></p><div class="site-guide-topic-actions"><button type="button" data-guide-command="map-search" data-i18n="guide_open_map">رفتن به نقشه و بازکردن جست‌وجو</button></div></div>
+        </details>
+
+        <details id="guide-topic-recovery" class="site-guide-section" data-guide-topic="recovery" data-guide-keywords="فرود بازیابی بازگشت کپسول شناور محل دریا landing recovery touchdown vessel splashdown return site الهبوط الاستعادة كبسولة سفينة البحر الموقع">
+          <summary><span class="site-guide-topic-icon" data-guide-icon="recovery" aria-hidden="true"></span><span class="site-guide-summary-copy"><strong data-i18n="guide_recovery_title">پروندهٔ فرود و بازیابی</strong><small class="site-guide-teaser" data-guide-teaser></small></span></summary>
+          <div class="site-guide-topic-body"><div class="site-guide-visual" data-guide-visual="recovery-tabs" aria-hidden="true"></div><p class="site-guide-copy" data-i18n="guide_recovery_body"></p><div class="site-guide-topic-actions"><button type="button" data-guide-command="map-search" data-i18n="guide_open_map">رفتن به نقشه و بازکردن جست‌وجو</button></div></div>
+        </details>
+
+        <details id="guide-topic-next" class="site-guide-section" data-guide-topic="next" data-guide-keywords="پرتاب بعدی نوار شمارش معکوس پخش زنده زمان زمانبندی next launch ticker countdown webcast scheduled الإطلاق القادم العد التنازلي البث">
+          <summary><span class="site-guide-topic-icon" data-guide-icon="next" aria-hidden="true"></span><span class="site-guide-summary-copy"><strong data-i18n="guide_next_title">نوار «پرتاب بعدی» در سربرگ</strong><small class="site-guide-teaser" data-guide-teaser></small></span></summary>
+          <div class="site-guide-topic-body"><div class="site-guide-visual" data-guide-visual="next-launch" aria-hidden="true"></div><p class="site-guide-copy" data-i18n="guide_next_body"></p></div>
+        </details>
+
+        <details id="guide-topic-controls" class="site-guide-section" data-guide-topic="controls" data-guide-keywords="زبان تغییر زبان فارسی عربی انگلیسی پوسته ظاهر نقشه تنظیمات دکمه language theme map style controls اللغة الفارسية العربية نمط الخريطة الإعدادات">
+          <summary><span class="site-guide-topic-icon" data-guide-icon="controls" aria-hidden="true"></span><span class="site-guide-summary-copy"><strong data-i18n="guide_controls_title">دکمه‌ها و تنظیمات بالای صفحه</strong><small class="site-guide-teaser" data-guide-teaser></small></span></summary>
+          <div class="site-guide-topic-body"><div class="site-guide-visual" data-guide-visual="top-controls" aria-hidden="true"></div><p class="site-guide-copy" data-i18n="guide_controls_body"></p></div>
+        </details>
+
+        <details id="guide-topic-report" class="site-guide-section" data-guide-topic="report" data-guide-keywords="گزارش ایراد خطا فنی داده علمی پیشنهاد اصلاح منبع feedback report bug issue data correction source form الإبلاغ عطل خطأ بيانات علمي تصحيح مصدر">
+          <summary><span class="site-guide-topic-icon" data-guide-icon="report" aria-hidden="true"></span><span class="site-guide-summary-copy"><strong data-i18n="guide_report_title">گزارش ایراد یا اختلاف داده</strong><small class="site-guide-teaser" data-guide-teaser></small></span></summary>
+          <div class="site-guide-topic-body"><div class="site-guide-visual" data-guide-visual="report-types" aria-hidden="true"></div><p class="site-guide-copy" data-i18n="guide_report_body"></p><div class="site-guide-topic-actions"><button type="button" data-guide-command="report" data-i18n="guide_open_report">بازکردن فرم گزارش</button></div></div>
+        </details>
+
+        <details id="guide-topic-data" class="site-guide-section" data-guide-topic="data" data-guide-keywords="اینترنت آنلاین آفلاین بارگذاری اتصال خطا نقشه محلی offline online internet connectivity loading error الإنترنت غير متصل تحميل اتصال">
+          <summary><span class="site-guide-topic-icon" data-guide-icon="data" aria-hidden="true"></span><span class="site-guide-summary-copy"><strong data-i18n="guide_data_title">اتصال و داده‌ها</strong><small class="site-guide-teaser" data-guide-teaser></small></span></summary>
+          <div class="site-guide-topic-body"><p class="site-guide-copy" data-i18n="guide_data_body"></p></div>
+        </details>
+
+        <details id="guide-topic-scope" class="site-guide-section" data-guide-topic="scope" data-guide-keywords="دامنه پوشش جهانی کامل سرشماری completeness scope coverage global census النطاق التغطية عالمي إحصاء">
+          <summary><span class="site-guide-topic-icon" data-guide-icon="scope" aria-hidden="true"></span><span class="site-guide-summary-copy"><strong data-i18n="guide_scope_title">دامنهٔ پوشش</strong><small class="site-guide-teaser" data-guide-teaser></small></span></summary>
+          <div class="site-guide-topic-body"><p class="site-guide-copy" data-i18n="guide_scope_body"></p></div>
+        </details>
+
+        <details id="guide-topic-sources" class="site-guide-section" data-guide-topic="sources" data-guide-keywords="منبع پیوند اعتبار تازگی به روزرسانی تاریخ بررسی زنده همگام سازی snapshot source provenance freshness updated review date المصادر التحديث تاريخ المراجعة المزامنة">
+          <summary><span class="site-guide-topic-icon" data-guide-icon="sources" aria-hidden="true"></span><span class="site-guide-summary-copy"><strong data-i18n="guide_sources_title">منابع و تازگی داده‌ها</strong><small class="site-guide-teaser" data-guide-teaser></small></span></summary>
+          <div class="site-guide-topic-body"><p class="site-guide-copy" data-i18n="guide_sources_body"></p></div>
+        </details>
+
+        <details id="guide-topic-metrics" class="site-guide-section" data-guide-topic="metrics" data-guide-keywords="شمارش عدد آمار وضعیت موفق شکست فعال غیرفعال خالی صفر alias عضویت category count status statistics metrics outcome success failure active inactive empty zero الأعداد الإحصاءات الحالات نشط فشل صفر">
+          <summary><span class="site-guide-topic-icon" data-guide-icon="metrics" aria-hidden="true"></span><span class="site-guide-summary-copy"><strong data-i18n="guide_metrics_title">وضعیت‌ها و تفسیر شمارش‌ها</strong><small class="site-guide-teaser" data-guide-teaser></small></span></summary>
+          <div class="site-guide-topic-body"><p class="site-guide-copy" data-i18n="guide_metrics_body"></p></div>
+        </details>
+
+        <details id="guide-topic-limits" class="site-guide-section" data-guide-topic="limits" data-guide-keywords="مختصات مکان دقت نقشه مرز اختلافی uncertainty coordinates accuracy boundaries geography openstreetmap الإحداثيات الدقة الحدود الجغرافيا">
+          <summary><span class="site-guide-topic-icon" data-guide-icon="limits" aria-hidden="true"></span><span class="site-guide-summary-copy"><strong data-i18n="guide_limits_title">دقت مکان، مرزها و عدم‌قطعیت</strong><small class="site-guide-teaser" data-guide-teaser></small></span></summary>
+          <div class="site-guide-topic-body"><p class="site-guide-copy" data-i18n="guide_limits_body"></p></div>
+        </details>
+
+        <details id="guide-topic-glossary" class="site-guide-section" data-guide-topic="glossary" data-guide-keywords="واژه معنی تعریف اصطلاح اپراتور سازنده مأموریت launch operator manufacturer glossary terms definitions المصطلحات التعريف المشغل المصنع">
+          <summary><span class="site-guide-topic-icon" data-guide-icon="glossary" aria-hidden="true"></span><span class="site-guide-summary-copy"><strong data-i18n="guide_glossary_title">واژه‌نامهٔ مشترک برای این بخش‌ها</strong><small class="site-guide-teaser" data-guide-teaser></small></span></summary>
+          <div class="site-guide-topic-body"><p class="site-guide-copy" data-i18n="guide_glossary_body"></p></div>
+        </details>
+      </section>
+    </div>
+    <p class="site-guide-note" data-i18n="guide_note">راهنما با زبان فعلی سایت نمایش داده می‌شود. با × یا کلید Escape آن را ببند.</p>
   </div>
 </dialog>
 

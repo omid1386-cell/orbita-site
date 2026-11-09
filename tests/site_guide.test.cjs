@@ -1,5 +1,5 @@
 'use strict';
-// Regression checks for the lightweight, localized site guide and its data claims.
+// Regression checks for ORBITA's searchable, visual, localized Help center.
 const fs = require('node:fs');
 const path = require('node:path');
 const test = require('node:test');
@@ -26,18 +26,31 @@ const guideEnd = app.indexOf('  var MAP_STYLE', guideStart);
 assert.ok(guideStart >= 0 && guideEnd > guideStart, 'site guide event binding exists');
 const guideBinding = app.slice(guideStart, guideEnd);
 
-const guideKeys = [
+const guideTitleKeys = [
   'guide_title', 'guide_quick_title', 'guide_map_title', 'guide_search_title',
   'guide_country_title', 'guide_projects_title', 'guide_companies_title',
-  'guide_site_title', 'guide_recovery_title', 'guide_next_title', 'guide_data_title',
-  'guide_scope_title', 'guide_sources_title', 'guide_metrics_title', 'guide_limits_title',
-  'guide_glossary_title', 'guide_note'
+  'guide_site_title', 'guide_recovery_title', 'guide_next_title', 'guide_controls_title',
+  'guide_report_title', 'guide_data_title', 'guide_scope_title', 'guide_sources_title',
+  'guide_metrics_title', 'guide_limits_title', 'guide_glossary_title', 'guide_note'
 ];
 const guideBodyKeys = [
   'guide_quick_body', 'guide_map_body', 'guide_search_body', 'guide_country_body',
   'guide_projects_body', 'guide_companies_body', 'guide_site_body', 'guide_recovery_body',
-  'guide_next_body', 'guide_data_body', 'guide_scope_body', 'guide_sources_body',
-  'guide_metrics_body', 'guide_limits_body', 'guide_glossary_body'
+  'guide_next_body', 'guide_controls_body', 'guide_report_body', 'guide_data_body',
+  'guide_scope_body', 'guide_sources_body', 'guide_metrics_body', 'guide_limits_body',
+  'guide_glossary_body'
+];
+const guideUiKeys = [
+  'guide_search_label', 'guide_search_placeholder', 'guide_search_hint', 'guide_search_clear',
+  'guide_tasks_title', 'guide_tasks_intro', 'guide_task_find_title', 'guide_task_find_body',
+  'guide_task_missions_title', 'guide_task_missions_body', 'guide_task_counts_title',
+  'guide_task_counts_body', 'guide_results_heading', 'guide_results_count',
+  'guide_no_results_title', 'guide_no_results_body', 'guide_suggestions_label',
+  'guide_suggest_map', 'guide_suggest_projects', 'guide_suggest_metrics',
+  'guide_topics_title', 'guide_topics_intro', 'guide_open_map', 'guide_open_projects',
+  'guide_open_report', 'guide_site_tab_overview', 'guide_site_tab_history',
+  'guide_site_tab_upcoming', 'guide_site_tab_analysis', 'guide_recovery_tab_overview',
+  'guide_recovery_tab_history', 'guide_recovery_tab_upcoming'
 ];
 function localeValues(key) {
   const re = new RegExp(`\\b${key}: "([^"\\n]*)"`, 'g');
@@ -49,66 +62,121 @@ function normalizeDigits(text) {
     .replace(/[٠-٩]/g, ch => String.fromCharCode(ch.charCodeAt(0) - 0x0660 + 0x30));
 }
 
-test('the guide has an accessible topbar trigger and fifteen progressive-disclosure sections', () => {
+test('the existing Help icon opens an accessible dialog with local search and task shortcuts', () => {
   assert.match(html, /<button id="siteGuideBtn"[^>]*aria-haspopup="dialog"[^>]*aria-controls="siteGuideDialog"/);
   assert.match(html, /data-i18n="guide_button"/);
   assert.match(html, /data-i18n-aria-label="guide_button"/);
   assert.match(dialog, /aria-labelledby="siteGuideTitle"/);
   assert.match(dialog, /aria-describedby="siteGuideIntro"/);
+  assert.match(dialog, /id="siteGuideSearch" type="search"/);
+  assert.match(dialog, /<label for="siteGuideSearch"[^>]*data-i18n="guide_search_label"/);
+  assert.match(dialog, /id="siteGuideSearchClear"[^>]*hidden/);
+  assert.match(dialog, /id="siteGuideResultsStatus"[^>]*role="status"[^>]*aria-live="polite"/);
+  assert.match(dialog, /id="siteGuideNoResults"[^>]*hidden/);
+  assert.match(dialog, /id="siteGuideShortcuts"/);
+  assert.match(dialog, /data-guide-open-topic="search"/);
+  assert.match(dialog, /data-guide-open-topic="projects"/);
+  assert.match(dialog, /data-guide-open-topic="metrics"/);
   assert.match(dialog, /id="siteGuideClose"[^>]*data-i18n-aria-label="guide_close"/);
-  assert.equal((dialog.match(/<details class="site-guide-section"/g) || []).length, 15,
-    'the expanded guide covers map/search, country and organization profiles, launch/recovery, the banner, and retained caveats');
-  assert.match(dialog, /<details class="site-guide-section" open>/,
-    'only the quick-start section is visible immediately');
-  assert.deepEqual(
-    [...dialog.matchAll(/class="site-guide-step" aria-hidden="true">(\d{2})/g)].map(m => m[1]),
-    ['01', '02', '03', '04', '05', '06', '07', '08', '09', '10', '11', '12', '13', '14', '15']
-  );
 });
 
-test('the guide is localized, static, and adds no external media requests', () => {
-  for (const key of [...guideKeys, ...guideBodyKeys]) {
-    assert.equal(localeValues(key).length, 3, `${key} exists in fa/en/ar dictionaries`);
-    assert.match(dialog, new RegExp(`data-i18n="${key}"`), `${key} is used by the guide markup`);
+test('the guide covers all current user-facing areas and gives each topic an identifying icon', () => {
+  const topics = [...dialog.matchAll(/data-guide-topic="([^"]+)"/g)].map(m => m[1]);
+  assert.deepEqual(topics, [
+    'quick', 'map', 'search', 'country', 'projects', 'companies', 'site', 'recovery',
+    'next', 'controls', 'report', 'data', 'scope', 'sources', 'metrics', 'limits', 'glossary'
+  ]);
+  assert.equal((dialog.match(/class="site-guide-topic-icon" data-guide-icon=/g) || []).length, topics.length);
+  assert.match(dialog, /data-guide-visual="map-categories"/);
+  assert.match(dialog, /data-guide-visual="missions-table"/);
+  assert.match(dialog, /data-guide-visual="company-categories"/);
+  assert.match(dialog, /data-guide-visual="site-tabs"/);
+  assert.match(dialog, /data-guide-visual="recovery-tabs"/);
+  assert.match(dialog, /data-guide-visual="top-controls"/);
+  assert.match(app, /function guideIconMarkup\(name\)/);
+  assert.match(app, /iconFor\(name, "active"\)/,
+    'map-category help previews reuse the app’s actual marker artwork');
+  assert.match(app, /function renderGuideVisuals\(\)/);
+  assert.doesNotMatch(dialog, /<details class="site-guide-section"[^>]* open>/,
+    'topic details stay collapsed until a user chooses one');
+});
+
+test('all Help text and controls are localized in Persian, English, and Arabic', () => {
+  for (const key of [...guideTitleKeys, ...guideBodyKeys, ...guideUiKeys]) {
+    assert.equal(localeValues(key).length, 3, `${key} exists in fa/en/ar`);
   }
-  for (const key of ['guide_scope_body', 'guide_sources_body', 'guide_metrics_body', 'guide_limits_body']) {
-    assert.match(dialog, new RegExp(`<p class="site-guide-copy" data-i18n="${key}"></p>`),
-      `${key} stays out of the HTML fallback and is filled from the active locale at startup`);
+  for (const key of [...guideTitleKeys, ...guideBodyKeys]) {
+    assert.match(dialog, new RegExp(`data-i18n="${key}"`), `${key} is used by Help markup`);
+  }
+  for (const key of guideUiKeys) {
+    assert.ok(app.includes(`"${key}"`) || dialog.includes(`data-i18n="${key}"`) ||
+      dialog.includes(`data-i18n-ph="${key}"`) || dialog.includes(`data-i18n-aria-label="${key}"`),
+      `${key} is used by localized Help UI or a generated preview`);
   }
   assert.doesNotMatch(dialog, /<(?:img|iframe|video|audio|script)\b/i,
-    'the guide does not add image, player, or script network work');
+    'visuals are local inline artwork and add no external media requests');
   assert.match(app, /\$\$\("\[data-i18n-aria-label\]"\)/,
-    'icon-only controls receive a localized accessible name');
+    'icon-only controls receive localized accessible names');
 });
 
-test('approved profile copy is localized and the existing Space Projects copy stays unchanged', () => {
+test('the Help search matches localized content and synonyms and offers alternatives for an empty result', () => {
+  assert.match(app, /function guideSearchNormalize\(value\)/);
+  assert.match(app, /normalize\("NFKC"\)/);
+  assert.match(app, /\.replace\(\/\[يى\]\/g, "ی"\)/);
+  assert.match(guideBinding, /data-guide-keywords/);
+  assert.match(guideBinding, /words\.every\(function \(word\)/);
+  assert.match(guideBinding, /noResults\.hidden = !active \|\| matchCount > 0/);
+  assert.match(guideBinding, /guide_results_count/);
+  assert.match(guideBinding, /siteGuideSearchClear/);
+  assert.match(dialog, /data-i18n="guide_no_results_title"/);
+  assert.match(dialog, /data-guide-open-topic="map"[^>]*data-i18n="guide_suggest_map"/);
+  assert.match(dialog, /data-guide-open-topic="projects"[^>]*data-i18n="guide_suggest_projects"/);
+  assert.match(dialog, /data-guide-open-topic="metrics"[^>]*data-i18n="guide_suggest_metrics"/);
+});
+
+test('guide actions open the matching app view without loading new data', () => {
+  assert.match(dialog, /data-guide-command="map-search"/);
+  assert.match(dialog, /data-guide-command="missions"/);
+  assert.match(dialog, /data-guide-command="report"/);
+  assert.match(guideBinding, /function openTopic\(key\)/);
+  assert.match(guideBinding, /function runGuideCommand\(command\)/);
+  assert.match(guideBinding, /\.tab\[data-view='map'\]/);
+  assert.match(guideBinding, /\.tab\[data-view='missions'\]/);
+  assert.match(guideBinding, /#reportBtn/);
+  assert.match(guideBinding, /openSide\(true\)/);
+  assert.doesNotMatch(guideBinding, /map\.on\(|queryRenderedFeatures|renderMarkers\(|setData\(|fetch\(/,
+    'Help navigation adds no map listeners, network fetches, or map-data rerenders');
+});
+
+test('expanded guide content accurately explains profiles, projects, sources, and limitations', () => {
   const approvedBodyKeys = [
-    'guide_map_body', 'guide_search_body', 'guide_country_body', 'guide_companies_body',
-    'guide_site_body', 'guide_recovery_body', 'guide_next_body', 'guide_glossary_body'
+    'guide_map_body', 'guide_search_body', 'guide_country_body', 'guide_projects_body',
+    'guide_companies_body', 'guide_site_body', 'guide_recovery_body', 'guide_next_body',
+    'guide_controls_body', 'guide_report_body', 'guide_glossary_body'
   ];
   for (const key of approvedBodyKeys) {
     const values = localeValues(key);
-    assert.equal(values.length, 3, `${key} exists in fa/en/ar`);
+    assert.equal(values.length, 3, `${key} exists in all locales`);
     for (const value of values) assert.doesNotMatch(value, /\*\*|`/, `${key} has no raw Markdown markers`);
     assert.doesNotMatch(values[2], /[پچژگکی]/, `${key} Arabic copy contains no Persian-only letters`);
   }
   assert.deepEqual(localeValues('guide_projects_title'), ['پروژه‌های فضایی', 'Space Projects', 'المشاريع الفضائية']);
-  assert.deepEqual(localeValues('guide_projects_body'), [
-    'در برگهٔ پروژه‌های فضایی می‌توانید نتایج بارگذاری‌شده را جست‌وجو کنید و بر اساس وضعیت، مدار یا نوع مأموریت فیلتر کنید.',
-    'The Space Projects tab lets you search loaded results and filter them by status, orbit or mission type.',
-    'تتيح علامة تبويب المشاريع الفضائية البحث ضمن النتائج المحمّلة وتصفيتها حسب الحالة أو المدار أو نوع المهمة.'
-  ]);
-  assert.equal((dialog.match(/data-i18n="guide_projects_body"/g) || []).length, 1,
-    'the existing short Projects entry remains a single, unchanged section');
+  const projectsCopy = localeValues('guide_projects_body').join('\n');
+  assert.match(projectsCopy, /status|وضعیت|الحالة/i);
+  assert.match(projectsCopy, /sort|مرتب|ترتيب/i);
+  assert.match(projectsCopy, /Launch Library 2/);
+  assert.match(projectsCopy, /UTC/);
+  assert.match(projectsCopy, /upcoming-launch cards|کارت‌های پرتاب پیش‌رو|بطاقات الإطلاقات القادمة/i);
   const allApproved = approvedBodyKeys.map(localeValues).flat().join('\n');
   assert.match(allApproved, /Launch Library 2/);
   assert.match(allApproved, /The Space Devs/);
   assert.match(allApproved, /satellite manufacturers|سازندگان ماهواره|مصنّعو الأقمار الصناعية/);
   assert.match(allApproved, /manual|دستی|يدوية/);
   assert.match(allApproved, /UTC/);
+  assert.equal((dialog.match(/data-i18n="guide_projects_body"/g) || []).length, 1);
 });
 
-test('coverage, sources, freshness, statuses and location caveats match the local datasets', () => {
+test('coverage, sources, freshness, statuses, and location caveats match the local datasets', () => {
   assert.equal(recovery.sites.length, 20);
   assert.match(recovery.scope, /20 representative locations across four countries and international waters/i);
   assert.match(recovery.scope, /not complete global coverage/i);
@@ -143,7 +211,7 @@ test('coverage, sources, freshness, statuses and location caveats match the loca
   assert.match(metricsCopy, /TBA/);
   assert.match(metricsCopy, /UTC/);
   assert.match(metricsCopy, /zero|صفر|الصفر/i,
-    'the guide explains that zero or blank is a data-coverage statement, not proof of absence');
+    'zero or blank is explained as a data-coverage statement, not proof of absence');
   const locationCopy = localeValues('guide_limits_body').join('\n');
   assert.match(locationCopy, /Terrae 2026\.10/);
   assert.match(locationCopy, /OpenStreetMap/);
@@ -158,32 +226,34 @@ test('coverage, sources, freshness, statuses and location caveats match the loca
   assert.ok(sites.some(record => record.photo_source_url), 'site photo credits are distinct from general data citations');
 });
 
-test('opening and closing the guide is isolated from map events and restores focus', () => {
+test('opening and closing Help is keyboard accessible and restores focus', () => {
   assert.match(guideBinding, /dialog\.showModal\(\)/);
   assert.match(guideBinding, /dialog\.close\(\)/);
   assert.match(guideBinding, /event\.target === dialog/,
-    'clicking the modal backdrop closes the guide');
+    'clicking the modal backdrop closes Help');
   assert.match(guideBinding, /event\.stopPropagation\(\)/,
-    'guide keys do not invoke unrelated global map shortcuts');
+    'Help keys do not invoke unrelated global map shortcuts');
   assert.match(guideBinding, /aria-expanded", "true"/);
   assert.match(guideBinding, /aria-expanded", "false"/);
   assert.match(guideBinding, /trigger\.focus\(\{ preventScroll: true \}\)/,
-    'keyboard focus returns to the trigger after closing');
-  assert.doesNotMatch(guideBinding, /map\.on\(|queryRenderedFeatures|renderMarkers\(|setData\(|fetch\(/,
-    'the guide introduces no map listeners, data queries, rerenders, or fetches');
+    'keyboard focus returns to the Help trigger after closing');
+  assert.match(guideBinding, /search\.focus\(\{ preventScroll: true \}\)/,
+    'opening Help moves focus to its search field');
 });
 
-test('guide styling is responsive and only its own content scrolls', () => {
+test('Help styling is responsive, visually identifies sections, and keeps its own scrolling', () => {
   assert.match(css, /\.site-guide-dialog::backdrop/);
-  assert.match(css, /\.site-guide-content\{[^}]*overflow-y:auto/);
-  assert.match(css, /\.site-guide-copy\{[^}]*white-space:pre-line/,
-    'line breaks in approved multi-paragraph copy remain readable in all locales');
+  assert.match(css, /\.site-guide-content\{[^}]*overflow:auto/);
+  assert.match(css, /\.site-guide-copy\{[^}]*white-space:pre-line/);
+  assert.match(css, /\.site-guide-topic-icon/);
+  assert.match(css, /\.site-guide-preview-categories/);
+  assert.match(css, /\.site-guide-task-grid/);
+  assert.match(css, /\.site-guide-searchbox:focus-within/);
+  assert.match(css, /\.site-guide-section summary:focus-visible/);
   assert.match(css, /@media\(max-width:820px\)[\s\S]*?\.guide-trigger-label\{display:none\}/,
-    'the header trigger becomes a compact, accessibly labelled icon on mobile');
-  assert.match(css, /@media\(max-width:560px\)[\s\S]*?\.site-guide-dialog\{/,
-    'the guide is sized for narrow screens');
-  assert.match(css, /\.site-guide-section summary:focus-visible/,
-    'keyboard focus remains visible in the guide');
+    'the topbar trigger remains a compact, accessible icon on mobile');
+  assert.match(css, /@media\(max-width:680px\)[\s\S]*?\.site-guide-task-grid\{grid-template-columns:1fr[^}]*\}/,
+    'Help shortcuts adapt to narrow screens');
 });
 
-console.log('PASS: the localized site guide is on-demand, keyboard accessible, data-caveat aware, responsive, and isolated from map work.');
+console.log('PASS: the searchable Help center is localized, visual, accessible, and grounded in current app data.');

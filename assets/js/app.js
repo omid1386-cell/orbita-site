@@ -57,17 +57,17 @@
       n_n: "شمال", n_ne: "شمال شرقی", n_e: "شرق", n_se: "جنوب شرقی",
       n_s: "جنوب", n_sw: "جنوب غربی", n_w: "غرب", n_nw: "شمال غربی",
       guide_button: "راهنما", guide_title: "راهنمای استفاده از ORBITA", guide_kicker: "راهنمای سریع",
-      guide_intro: "این راهنمای کوتاه روش‌های اصلی پیدا کردن و بررسی اطلاعات در سایت را توضیح می‌دهد. برای جزئیات، هر بخش را باز کنید.",
+      guide_intro: "هر بخش را با آیکون آشنایش پیدا کن؛ یا در عنوان‌ها، توضیح‌ها و واژه‌های هم‌معنی جست‌وجو کن.",
       guide_close: "بستن راهنما", guide_quick_title: "شروع در چند گام",
-      guide_quick_body: "برای شروع، جست‌وجو یا دستهٔ موردنظر را انتخاب کنید؛ سپس نشانگر را روی نقشه پیدا کنید و برای دیدن جزئیات روی آن بزنید.",
+      guide_quick_body: "دو نمای اصلی ORBITA، نقشهٔ جهانی و پروژه‌های فضایی هستند. برای یافتن یک شرکت، پایگاه یا کشور از نقشه و دسته‌ها استفاده کن؛ برای بررسی مأموریت‌ها، فیلترها و پرتاب‌های پیش‌رو به نمای پروژه‌ها برو.",
       guide_map_title: "نقشه، دسته‌ها و نشانگرها",
       guide_map_body: "نقشه جای تقریبی رکوردهایی را نشان می‌دهد که دستهٔ مربوط به آن‌ها روشن است. دسته‌ها شامل شرکت‌های پرتاب، پیشرانش، آژانس‌ها، سازندگان ماهواره، پایگاه‌های پرتاب و فرود/بازیابی هستند. خاموش‌کردن یک دسته، نمایش آن را از نقشه و فهرست نتایج پنهان می‌کند؛ رکورد را حذف نمی‌کند.\n\nعدد کنار هر دسته شمار رکوردهای فهرست آن دسته است، نه تعداد مواردی که در محدودهٔ دید یا نتیجهٔ جست‌وجوی فعلی مانده‌اند و نه سرشماری کل جهان. هنگام بارگذاری، علامت انتظار دیده می‌شود؛ علامت خطا یعنی دادهٔ آن دسته بارگذاری نشده است.\n\nنشانگر منفرد یک رکورد را باز می‌کند؛ خوشه فقط چند رکورد نزدیک را برای خوانایی نقشه کنار هم نشان می‌دهد. برای دیدن محتویات خوشه آن را باز کنید. انتخاب کشور شناسنامهٔ همان کشور را می‌آورد؛ کلیک روی فضای خالی انتخاب کشور را پاک می‌کند.\n\nدکمهٔ پوسته ظاهر نقشه را عوض می‌کند؛ در UI فعلی دکمهٔ جداگانه‌ای برای جابه‌جایی دستی بین نقشهٔ آنلاین و آفلاین دیده نمی‌شود. اگر نقشهٔ برخط در دسترس نباشد، برنامه می‌تواند به نقشهٔ محلی برگردد.",
       guide_search_title: "جست‌وجوی نقشه و فهرست نتایج",
-      guide_search_body: "جست‌وجوی نقشه برای پیدا کردن شرکت، پایگاه یا کشور است. نتیجه‌ها با دسته‌های روشن‌شده هماهنگ‌اند؛ اگر موردی را نمی‌بینید، ابتدا دسته‌های فعال و عبارت جست‌وجو را بررسی کنید. پیدا نشدن نتیجه به‌تنهایی ثابت نمی‌کند که آن مورد در جهان وجود ندارد؛ ممکن است در مجموعهٔ فعلی ثبت نشده باشد یا با فیلترهای فعلی نمایش داده نشود.\n\nانتخاب یک مورد از نقشه یا فهرست، پروندهٔ همان رکورد را باز می‌کند. زوم و جابه‌جایی نقشه فقط محدودهٔ دید را تغییر می‌دهند؛ شمار کنار دسته، شمار نتیجه‌های قابل‌دیدن را نشان نمی‌دهد.",
+      guide_search_body: "جست‌وجوی نقشه برای پیدا کردن شرکت، پایگاه یا کشور است و نتیجه‌ها با دسته‌های روشن‌شده هماهنگ‌اند. میانبر Ctrl/⌘ + K جست‌وجوی نقشه را باز می‌کند. اگر موردی را نمی‌بینی، دسته‌های فعال و عبارت جست‌وجو را بررسی کن. پیدا نشدن نتیجه به‌تنهایی ثابت نمی‌کند که آن مورد در جهان وجود ندارد؛ ممکن است در دادهٔ فعلی ثبت نشده یا با فیلترها پنهان باشد.\n\nانتخاب مورد از نقشه یا فهرست، پروندهٔ آن را باز می‌کند. زوم و جابه‌جایی فقط محدودهٔ دید را تغییر می‌دهند؛ شمار کنار دسته، شمار نتیجه‌های قابل‌دیدن نیست.",
       guide_country_title: "شناسنامهٔ کشور",
       guide_country_body: "شناسنامهٔ کشور، رکوردهایی را که طبق تطبیق فعلی سامانه به کشور نسبت داده شده‌اند، در دسته‌های پیشرانش، پرتاب، آژانس‌ها، پایگاه‌ها و فرود/بازیابی گروه‌بندی می‌کند. عدد «مجموعه‌های فعال» جمع همین رکوردهای دسته‌بندی‌شده است؛ شمار رسمی زیرساخت کشور یا شمار قطعی تأسیساتِ در حال کار نیست و می‌تواند رکوردهای در ساخت، غیرفعال یا راکد را نیز دربرگیرد.\n\nصفر یا خالی یعنی در مجموعهٔ فعلی رکورد مطابقی نمایش داده نشده است؛ از آن نمی‌توان نبودن مورد را در دنیای واقعی نتیجه گرفت. سازندگان ماهواره در دستهٔ جداگانهٔ نقشه هستند، اما در جمع و زبانه‌های فعلی شناسنامهٔ کشور وارد نشده‌اند.\n\nشمارهای این صفحه را با تعداد شرکت‌های جهان، کل مأموریت‌های یک کشور یا تعداد قطعی تأسیسات فعال یکی نگیرید. آن‌ها خلاصهٔ رکوردهای حاضر در دسته‌های همین شناسنامه‌اند.",
       guide_projects_title: "پروژه‌های فضایی",
-      guide_projects_body: "در برگهٔ پروژه‌های فضایی می‌توانید نتایج بارگذاری‌شده را جست‌وجو کنید و بر اساس وضعیت، مدار یا نوع مأموریت فیلتر کنید.",
+      guide_projects_body: "نمای پروژه‌های فضایی دو بخش جدا دارد: جدول مأموریت‌ها و فهرست پرتاب‌های پیش‌رو. جست‌وجو و فیلترهای وضعیت، مدار و نوع، فقط جدول را محدود می‌کنند؛ مرتب‌سازی ترتیب ردیف‌های همان جدول را عوض می‌کند و می‌تواند نزدیک‌ترین زمان، تازه‌ترین، قدیمی‌ترین یا ترتیب الفبایی را نشان دهد. گزینه‌های فیلتر از داده‌های بارگذاری‌شده ساخته می‌شوند.\n\nبرای دیدن جزئیات، ردیف جدول را باز کن. اگر پیوند نقشه در جزئیات موجود باشد، از همان‌جا پایگاه را روی نقشه ببین. زمان‌های دقیق جدول با UTC نمایش داده می‌شوند. نشان‌های «پروندهٔ کامل» و «تازه‌رسیده» نوع ورود یا گزینش رکورد را مشخص می‌کنند؛ تضمین کامل‌بودن جهانی نیستند. شمار کنار واژهٔ «پروژه» تعداد ردیف‌های جدول پس از فیلتر است، نه تعداد کارت‌های پرتاب پیش‌رو.\n\nفهرست پرتاب‌های پیش‌رو جدا از جدول است و از سرویس برخط Launch Library 2 می‌آید. دکمهٔ به‌روزرسانی فهرست آینده و پرتاب‌های تازه را دوباره می‌گیرد؛ به اینترنت نیاز دارد. زمان برنامه‌ریزی‌شده ممکن است تغییر کند و تضمین انجام پرتاب نیست.",
       guide_companies_title: "پروندهٔ شرکت‌ها و سازمان‌ها",
       guide_companies_body: "پرونده‌ها یک قالب واحد ندارند؛ زبانه‌ها بر اساس نوع نهاد فرق می‌کنند. در شرکت‌های پرتاب، زبانه‌ها دربارهٔ شناسنامه و آمار، ناوگان پرتابگرها و تاریخچه/شبکه‌اند. در شرکت‌های پیشرانش، بخش‌ها معماری و نوع پیشران، موتورهای معرفی‌شده و پیوند مأموریت، آزمون‌ها و نقشهٔ راه را پوشش می‌دهند. پروندهٔ آژانس‌ها شناسنامه و برنامه‌های اصلی، محصولات/برنامه‌ها و سیر تاریخی/شبکه را دارد؛ پروندهٔ سازندگان ماهواره شناسنامه/تخصص، محصولات/مشتری‌ها و کارنامه/آینده را نشان می‌دهد.\n\nفیلدهای یکسانی در همهٔ پرونده‌ها وجود ندارد. خانهٔ خالی یعنی این مقدار در پروندهٔ فعلی نمایش داده نشده، نه اینکه حتماً وجود خارجی ندارد. پیوند وب‌سایت نهاد یا منبع عکس را استناد مستقل به همهٔ مشخصات و آمار پرونده تلقی نکنید.",
       guide_site_title: "پروندهٔ پایگاه پرتاب",
@@ -88,7 +88,43 @@
       guide_limits_body: "مختصات پرونده‌های بازیابی نقطهٔ مرجع/نماینده‌اند و لزوماً محل دقیق تماس یا عملیات نیستند؛ هدف اعلام‌شدهٔ فرود، محل واقعی تماس را ثابت نمی‌کند. این پرونده‌ها موقعیت زندهٔ شناورها یا محدودهٔ ایمنی را ارائه نمی‌کنند؛ یادداشت دقت و منبع مختصات را در هر پرونده ببینید. مرزهای کشور از Terrae 2026.10 بر پایهٔ نسخهٔ برداشت‌شدهٔ OpenStreetMap در ۲۸ سپتامبر ۲۰۲۶ گرفته شده‌اند. این مرزها مرجع جغرافیایی‌اند، نه مرز حقوقی قطعی؛ نواحی مورد اختلاف و نسخه‌های نقشه ممکن است تفاوت داشته باشند.",
       guide_glossary_title: "واژه‌نامهٔ مشترک برای این بخش‌ها",
       guide_glossary_body: "• وضعیت پایگاه مانند فعال، غیرفعال، راکد یا در دست ساخت، شرایط ثبت‌شدهٔ خود پایگاه را توصیف می‌کند.\n• نتیجهٔ پرتاب مانند موفق یا ناموفق، نتیجهٔ یک رویداد مشخص است؛ از آن وضعیت کنونی پایگاه را نتیجه نگیرید.\n• نتیجهٔ فرود و نتیجهٔ بازیابی دو مرحله/نتیجهٔ جدا هستند؛ ثبت‌نشدن تأیید بازیابی مساوی شکست نیست.\n• زمان دقیق را فقط وقتی دقیق بخوانید که خود پنل آن را با UTC و دقت مربوط مشخص کرده باشد. تاریخ تقریبی یا شمارش‌گر تقریبی، لحظهٔ قطعی پرتاب نیست.\n• صفر یا خالی در شمارش‌ها و فیلدها به دادهٔ فعلی مربوط است؛ به‌تنهایی نبودن موجودیت یا رویداد در واقعیت را اثبات نمی‌کند.",
-      guide_note: "این راهنما با زبان فعلی سایت نمایش داده می‌شود. برای بستن، دکمهٔ × یا کلید Escape را بزنید.",
+      guide_controls_title: "دکمه‌ها و تنظیمات بالای صفحه",
+      guide_controls_body: "دکمهٔ زبان، رابط را میان فارسی، انگلیسی و عربی می‌چرخاند. دکمهٔ پوسته ظاهر نقشه را عوض می‌کند؛ انتخاب پوسته با انتخاب نقشهٔ برخط یا محلی یکی نیست. آیکون راهنما همین پنل را باز می‌کند و دکمهٔ گزارش، فرم بازخورد را. در نمای نقشه می‌توانی با Ctrl/⌘ + K جست‌وجوی نقشه را سریع باز کنی.",
+      guide_report_title: "گزارش ایراد یا اختلاف داده",
+      guide_report_body: "از دکمهٔ گزارش می‌توانی ایراد فنی یا اختلاف علمی/داده‌ای را جداگانه بفرستی. برای پیشنهاد داده‌ای، نام رکورد، فیلد مورد اختلاف، مقدار فعلی و پیشنهادی و پیوند منبع مستقیم را وارد کن؛ ایمیل تماس اختیاری است. گزارش پیش از هر اصلاحی به‌دست انسان بررسی می‌شود و ارسال آن داده‌های سایت را خودکار تغییر نمی‌دهد. اطلاعات محرمانه ننویس.",
+      guide_search_label: "جست‌وجو در راهنما",
+      guide_search_placeholder: "مثلاً: جست‌وجو، شمارش‌ها یا پرتاب‌های پیش‌رو",
+      guide_search_hint: "عنوان‌ها، توضیح‌ها و واژه‌های هم‌معنی جست‌وجو می‌شوند؛ این جست‌وجو در همین صفحه انجام می‌شود و اینترنت نمی‌خواهد.",
+      guide_search_clear: "پاک‌کردن جست‌وجو",
+      guide_tasks_title: "از اینجا شروع کن",
+      guide_tasks_intro: "یک کار را انتخاب کن تا راهنمای همان قسمت باز شود.",
+      guide_task_find_title: "پیدا کردن شرکت، پایگاه یا کشور",
+      guide_task_find_body: "راهنمای نقشه و جست‌وجوی فهرست",
+      guide_task_missions_title: "دیدن مأموریت‌ها و پرتاب‌های پیش‌رو",
+      guide_task_missions_body: "فیلترها، جدول و زمان‌بندی",
+      guide_task_counts_title: "فهمیدن شمارش‌ها و وضعیت‌ها",
+      guide_task_counts_body: "معنی نشان‌ها، آمار و خانه‌های خالی",
+      guide_results_heading: "نتیجه‌های جست‌وجو",
+      guide_results_count: "{count} نتیجه پیدا شد",
+      guide_no_results_title: "چیزی پیدا نشد",
+      guide_no_results_body: "عبارت کوتاه‌تر یا یکی از پیشنهادهای زیر را امتحان کن.",
+      guide_suggestions_label: "پیشنهادهای راهنما",
+      guide_suggest_map: "نقشه و دسته‌ها",
+      guide_suggest_projects: "پروژه‌ها و پرتاب‌ها",
+      guide_suggest_metrics: "شمارش‌ها و وضعیت‌ها",
+      guide_topics_title: "آشنایی با بخش‌های نرم‌افزار",
+      guide_topics_intro: "آیکون‌ها و پیش‌نمایش‌ها کمک می‌کنند بخش درست را بشناسی؛ تصویرها شماتیک‌اند و دادهٔ زنده نشان نمی‌دهند.",
+      guide_open_map: "رفتن به نقشه و بازکردن جست‌وجو",
+      guide_open_projects: "رفتن به پروژه‌های فضایی",
+      guide_open_report: "بازکردن فرم گزارش",
+      guide_site_tab_overview: "شناسنامه و آمار",
+      guide_site_tab_history: "تاریخچهٔ پرتاب‌ها",
+      guide_site_tab_upcoming: "پرتاب‌های پیش‌رو",
+      guide_site_tab_analysis: "تحلیل و زیرساخت",
+      guide_recovery_tab_overview: "معرفی محل",
+      guide_recovery_tab_history: "تاریخچهٔ فرود و بازیابی",
+      guide_recovery_tab_upcoming: "فرودهای پیش‌رو",
+      guide_note: "این راهنما با زبان فعلی سایت نمایش داده می‌شود. جست‌وجوی آن به اینترنت نیاز ندارد؛ با × یا کلید Escape ببندش.",
       report_button: "گزارش", report_title: "گزارش ایراد یا اختلاف داده", report_kicker: "بازخورد برای بهبود سایت",
       report_intro: "ایراد فنی و اختلاف علمی/داده‌ای مسیر جدا دارند. هر گزارش پیش از هر اصلاحی به‌دست انسان بررسی می‌شود؛ ارسال فرم داده‌های سایت را تغییر نمی‌دهد.",
       report_close: "بستن فرم گزارش", report_type_label: "نوع گزارش", report_type_bug: "ایراد فنی", report_type_data: "اختلاف علمی یا داده‌ای",
@@ -159,17 +195,17 @@
       my_loc: "Your location",
       n_n: "N", n_ne: "NE", n_e: "E", n_se: "SE", n_s: "S", n_sw: "SW", n_w: "W", n_nw: "NW",
       guide_button: "Guide", guide_title: "Using ORBITA", guide_kicker: "Quick guide",
-      guide_intro: "This short guide explains the main ways to find and explore information on the site. Open a section for details.",
+      guide_intro: "Find a part of the app by its familiar icon, or search titles, explanations, and related terms.",
       guide_close: "Close guide", guide_quick_title: "Get started in a few steps",
-      guide_quick_body: "Choose a search or category, locate a marker on the map, then select it to open its details.",
+      guide_quick_body: "ORBITA has two main views: World Map and Space Projects. Use the map and its categories to find a company, site, or country; use Space Projects for mission records, filters, and upcoming launches.",
       guide_map_title: "Map, categories and markers",
       guide_map_body: "The map shows the approximate locations of records in categories that are switched on. Categories include launch companies, propulsion companies, space organizations, satellite manufacturers, launch sites, and landing/recovery. Turning a category off hides its records from the map and results list; it does not delete them.\n\nThe number beside each category is the number of records in that category's list—not the number currently in view or matching the search, and not a worldwide census. An ellipsis appears while the data is loading; an exclamation mark means that category's data did not load.\n\nA single marker opens one record; a cluster groups nearby records to keep the map readable. Open a cluster to see its contents. Selecting a country opens its profile; clicking empty map space clears the country selection.\n\nThe map-style button changes the map's appearance. The current UI does not show a separate manual online/offline map switch. If the online basemap is unavailable, the app may fall back to the local map.",
       guide_search_title: "Map search and results list",
-      guide_search_body: "Map search is for finding a company, launch site, or country. Results follow the categories that are switched on. If an item is missing, first check the active categories and the search text. A missing result alone does not prove that the real-world item does not exist; it may not be recorded in the current dataset or may be hidden by the current filters.\n\nSelecting an item on the map or in the list opens that record's profile. Zooming and panning change only the map view; the number beside a category is not the number of currently visible results.",
+      guide_search_body: "Map search finds a company, launch site, or country, and follows the categories that are switched on. Press Ctrl/⌘ + K to open map search. If something is missing, check the active categories and search text. A missing result alone does not prove that the real-world item does not exist; it may not be recorded in the current data or may be hidden by filters.\n\nSelecting an item on the map or in the list opens its profile. Zooming and panning change only the view; the number beside a category is not the number of visible results.",
       guide_country_title: "Country profile",
       guide_country_body: "The country profile groups records that the app's current matching rules assign to that country: propulsion, launch, space organizations, launch sites, and landing/recovery. The figure labelled Active Entities is the sum of those grouped records. It is not an official count of national infrastructure or a definitive count of facilities currently operating, and it can include records marked under construction, inactive, or dormant.\n\nZero or blank means that no matching record is shown in the current dataset; it does not prove real-world absence. Satellite manufacturers appear in a separate map category but are not included in the current country-profile total or tabs.\n\nDo not treat these totals as a worldwide company count, a country's total number of missions, or a definitive count of active facilities. They summarize the records currently included in this profile.",
       guide_projects_title: "Space Projects",
-      guide_projects_body: "The Space Projects tab lets you search loaded results and filter them by status, orbit or mission type.",
+      guide_projects_body: "Space Projects has two separate parts: the mission table and the upcoming-launch list. Search and the status, orbit, and type filters narrow the table; sorting only changes its row order and can show the nearest time, newest, oldest, or alphabetical order. Filter choices are built from the data that has loaded.\n\nOpen a table row to see its details. If a map link is available there, use it to show the site on the map. Exact table times are in UTC. The Curated and Newly Added badges distinguish how a row entered the dataset; they do not certify global completeness. The number beside Projects is the filtered table-row count, not the number of upcoming-launch cards.\n\nThe upcoming-launch list is separate from the table and comes from the online Launch Library 2 service. Refresh requests the upcoming list and recent imported launches again; an internet connection is needed. Schedules can change and do not guarantee that a launch will occur.",
       guide_companies_title: "Company and organization profiles",
       guide_companies_body: "Profiles do not use one template; their tabs depend on the type of organization. A launch-company profile covers overview and statistics, its rocket fleet, and history/network. A propulsion-company profile covers overview and architecture, engines and mission links, and test history/roadmap. An organization profile covers its overview and core role, programmes/services, and timeline/network. A satellite-manufacturer profile covers overview/specialty, products/customers, and track record/future.\n\nThe same fields are not present in every profile. An empty field means that value is not shown in the current record; it does not necessarily mean the real-world entity or value does not exist. A company website or photo-source link should not be treated as an independent citation for every profile detail and statistic.",
       guide_site_title: "Launch-site profile",
@@ -190,7 +226,43 @@
       guide_limits_body: "Recovery coordinates are reference/representative points, not necessarily the exact touchdown or operation location. An intended landing target does not prove where a vehicle actually touched down. These dossiers do not provide live vessel positions or safety zones; check each record’s coordinate note and source. Country outlines use Terrae 2026.10 based on the 28 September 2026 OpenStreetMap snapshot. They are geographic reference data, not legally authoritative boundaries; disputed areas and map releases can differ.",
       guide_glossary_title: "Shared glossary for these areas",
       guide_glossary_body: "• Site status—such as Active, Inactive, Dormant, or Under construction—describes the recorded condition of the site.\n• Launch outcome—such as Success or Failed—is the result of a specific event; do not infer the site's present status from it.\n• Landing outcome and recovery outcome are separate results/stages. A missing recovery confirmation is not the same as a failed recovery.\n• Read a time as exact only when the panel identifies it as UTC and gives the relevant precision. An approximate date or countdown is not an exact launch moment.\n• Zero or blank refers to the current data; by itself it does not prove that an entity or event does not exist in reality.",
-      guide_note: "The guide follows the current site language. Close it with the button or the Escape key.",
+      guide_controls_title: "Header buttons and settings",
+      guide_controls_body: "The language button cycles the interface through Persian, English, and Arabic. The map-style button changes the map appearance; it is not a switch between online and local maps. The guide icon opens this panel, and Report opens the feedback form. In the map view, Ctrl/⌘ + K quickly opens map search.",
+      guide_report_title: "Report a bug or data issue",
+      guide_report_body: "Use Report to submit a technical bug or a scientific/data issue through separate forms. For a data suggestion, include the record name, disputed field, current and proposed values, and a direct source link; contact email is optional. A person reviews every report before any correction, and submitting one never changes site data automatically. Do not include confidential information.",
+      guide_search_label: "Search this guide",
+      guide_search_placeholder: "For example: filters, counts, upcoming launches",
+      guide_search_hint: "Searches titles, explanations, and related terms locally; no internet connection is needed.",
+      guide_search_clear: "Clear guide search",
+      guide_tasks_title: "Start with a task",
+      guide_tasks_intro: "Choose a task to open the guide for that part of ORBITA.",
+      guide_task_find_title: "Find a company, site, or country",
+      guide_task_find_body: "Map categories and the results list",
+      guide_task_missions_title: "Explore missions and upcoming launches",
+      guide_task_missions_body: "Filters, table, and schedules",
+      guide_task_counts_title: "Understand counts and statuses",
+      guide_task_counts_body: "Badges, statistics, and blank values",
+      guide_results_heading: "Search results",
+      guide_results_count: "{count} results found",
+      guide_no_results_title: "No matching guide topic",
+      guide_no_results_body: "Try a shorter phrase or open one of these suggestions.",
+      guide_suggestions_label: "Guide suggestions",
+      guide_suggest_map: "Map and categories",
+      guide_suggest_projects: "Projects and launches",
+      guide_suggest_metrics: "Counts and statuses",
+      guide_topics_title: "Explore the parts of ORBITA",
+      guide_topics_intro: "Icons and previews help identify each area; the small illustrations are schematic, not live data.",
+      guide_open_map: "Open map search",
+      guide_open_projects: "Open Space Projects",
+      guide_open_report: "Open the report form",
+      guide_site_tab_overview: "Overview & Stats",
+      guide_site_tab_history: "Launch History",
+      guide_site_tab_upcoming: "Upcoming",
+      guide_site_tab_analysis: "Analysis & Infrastructure",
+      guide_recovery_tab_overview: "Facility Overview",
+      guide_recovery_tab_history: "Landing & Recovery History",
+      guide_recovery_tab_upcoming: "Upcoming Landings",
+      guide_note: "The guide follows the current site language. Search works locally; close with × or Escape.",
       report_button: "Report", report_title: "Report a problem or data issue", report_kicker: "Help improve the site",
       report_intro: "Technical bugs and scientific/data issues use separate forms. A person reviews every report before any correction; submitting a report never changes site data.",
       report_close: "Close report form", report_type_label: "Report type", report_type_bug: "Technical bug", report_type_data: "Scientific or data issue",
@@ -263,17 +335,17 @@
       n_n: "شمال", n_ne: "شمال شرقي", n_e: "شرق", n_se: "جنوب شرقي",
       n_s: "جنوب", n_sw: "جنوب غربي", n_w: "غرب", n_nw: "شمال غربي",
       guide_button: "الدليل", guide_title: "دليل استخدام ORBITA", guide_kicker: "دليل سريع",
-      guide_intro: "يوضح هذا الدليل المختصر الطرق الأساسية للعثور على المعلومات واستكشافها في الموقع. افتح أي قسم لمعرفة التفاصيل.",
+      guide_intro: "اعثر على القسم من أيقونته المألوفة، أو ابحث في العناوين والشروح والكلمات ذات الصلة.",
       guide_close: "إغلاق الدليل", guide_quick_title: "ابدأ في خطوات قليلة",
-      guide_quick_body: "اختر البحث أو الفئة المطلوبة، ثم حدّد العلامة على الخريطة وانقر عليها لفتح تفاصيلها.",
+      guide_quick_body: "يضم ORBITA واجهتين رئيسيتين: الخريطة العالمية والمشاريع الفضائية. استخدم الخريطة وفئاتها للعثور على شركة أو موقع أو دولة؛ واستخدم المشاريع الفضائية للاطلاع على سجلات المهمات والمرشحات والإطلاقات القادمة.",
       guide_map_title: "الخريطة والفئات والعلامات",
       guide_map_body: "تعرض الخريطة المواقع التقريبية للسجلات ضمن الفئات المفعّلة. تشمل الفئات شركات الإطلاق، وشركات أنظمة الدفع، والجهات الفضائية، ومصنّعي الأقمار الصناعية، ومواقع الإطلاق، والهبوط والاستعادة. يؤدي إيقاف فئة إلى إخفاء سجلاتها عن الخريطة وقائمة النتائج؛ ولا يحذفها.\n\nالعدد بجوار كل فئة هو عدد السجلات في قائمتها، وليس عدد العناصر الظاهرة حالياً أو المطابقة للبحث، ولا إحصاءً عالمياً. تظهر علامة الحذف أثناء تحميل البيانات؛ وتعني علامة التعجب أن بيانات تلك الفئة لم تُحمّل.\n\nتفتح العلامة المنفردة سجلاً واحداً؛ وتجمع المجموعة سجلات متقاربة لتسهيل قراءة الخريطة. افتح المجموعة لعرض محتوياتها. يؤدي اختيار دولة إلى فتح ملفها؛ والنقر على مساحة فارغة من الخريطة يلغي اختيار الدولة.\n\nيغيّر زر نمط الخريطة مظهرها. لا تعرض الواجهة الحالية مفتاحاً منفصلاً للتبديل اليدوي بين الخريطة المتصلة وغير المتصلة. وإذا تعذّر تحميل خريطة الإنترنت، فقد يعود التطبيق إلى الخريطة المحلية.",
       guide_search_title: "بحث الخريطة وقائمة النتائج",
-      guide_search_body: "يُستخدم بحث الخريطة للعثور على شركة أو موقع إطلاق أو دولة. تتبع النتائج الفئات المفعّلة. إذا لم يظهر عنصر، فتحقق أولاً من الفئات النشطة وعبارة البحث. عدم ظهور نتيجة لا يثبت وحده أن العنصر غير موجود في الواقع؛ فقد لا يكون مسجلاً في مجموعة البيانات الحالية أو قد تخفيه عوامل التصفية.\n\nيؤدي اختيار عنصر من الخريطة أو القائمة إلى فتح ملفه. يغيّر التكبير وتحريك الخريطة نطاق العرض فقط؛ والعدد بجوار الفئة ليس عدد النتائج الظاهرة حالياً.",
+      guide_search_body: "يبحث بحث الخريطة عن شركة أو موقع إطلاق أو دولة، ويتبع الفئات المفعّلة. اضغط Ctrl/⌘ + K لفتح بحث الخريطة. إذا غاب عنصر، فتحقق من الفئات النشطة وعبارة البحث. عدم ظهور نتيجة لا يثبت وحده أن العنصر غير موجود في الواقع؛ فقد لا يكون مسجلاً في البيانات الحالية أو قد تخفيه المرشحات.\n\nيؤدي اختيار عنصر على الخريطة أو في القائمة إلى فتح ملفه. يغيّر التكبير والتحريك نطاق العرض فقط؛ والعدد بجوار الفئة ليس عدد النتائج الظاهرة.",
       guide_country_title: "ملف الدولة",
       guide_country_body: "يجمع ملف الدولة السجلات التي تنسبها قواعد المطابقة الحالية في التطبيق إلى الدولة ضمن فئات أنظمة الدفع والإطلاق والجهات الفضائية ومواقع الإطلاق والهبوط والاستعادة. والعدد الموسوم الكيانات النشطة هو مجموع هذه السجلات؛ وليس إحصاءً رسمياً للبنية التحتية الوطنية ولا عدّاً نهائياً للمنشآت العاملة حالياً. وقد يشمل سجلات قيد الإنشاء أو غير نشطة أو خاملة.\n\nيعني الصفر أو الحقل الفارغ عدم عرض سجل مطابق في مجموعة البيانات الحالية؛ ولا يثبت عدم وجوده في الواقع. يظهر مصنّعو الأقمار الصناعية ضمن فئة مستقلة على الخريطة، لكنهم غير مدرجين في المجموع أو التبويبات الحالية لملف الدولة.\n\nلا تعامل هذه الأعداد على أنها إجمالي الشركات في العالم، أو إجمالي مهمات الدولة، أو عدّ نهائي للمنشآت النشطة؛ فهي تلخص السجلات الموجودة حالياً في هذا الملف.",
       guide_projects_title: "المشاريع الفضائية",
-      guide_projects_body: "تتيح علامة تبويب المشاريع الفضائية البحث ضمن النتائج المحمّلة وتصفيتها حسب الحالة أو المدار أو نوع المهمة.",
+      guide_projects_body: "تضم واجهة المشاريع الفضائية قسمين منفصلين: جدول المهمات وقائمة الإطلاقات القادمة. يقيّد البحث ومرشحات الحالة والمدار والنوع الجدول فقط؛ أما الترتيب فيغيّر ترتيب صفوف الجدول ويمكن أن يكون حسب أقرب موعد أو الأحدث أو الأقدم أو أبجدياً. تُبنى خيارات المرشحات من البيانات التي تم تحميلها.\n\nافتح صفاً في الجدول لعرض تفاصيله. وإذا توفر رابط للخريطة في التفاصيل، فاستخدمه لعرض الموقع عليها. الأوقات الدقيقة في الجدول بتوقيت UTC. تميّز شارتا موثّق ومضاف حديثاً طريقة إدراج السجل؛ ولا تضمنان اكتمال البيانات عالمياً. العدد بجوار كلمة المشاريع هو عدد صفوف الجدول بعد التصفية، وليس عدد بطاقات الإطلاقات القادمة.\n\nقائمة الإطلاقات القادمة منفصلة عن الجدول، وتُجلب من خدمة Launch Library 2 عبر الإنترنت. يعيد زر التحديث طلب القائمة القادمة والإطلاقات الحديثة المستوردة؛ ويلزم اتصال بالإنترنت. قد تتغير المواعيد، ولا تضمن الجدولة تنفيذ الإطلاق.",
       guide_companies_title: "ملفات الشركات والمؤسسات",
       guide_companies_body: "لا تتبع الملفات قالباً واحداً؛ إذ تختلف تبويباتها باختلاف نوع الجهة. يغطي ملف شركة الإطلاق النظرة العامة والإحصاءات، وأسطول الصواريخ، والسجل والشبكة. ويغطي ملف شركة أنظمة الدفع النظرة العامة والهندسة المعمارية، والمحركات وربط المهام، وسجل الاختبارات وخارطة الطريق. أما ملف الجهة الفضائية فيعرض نظرة عامة على دورها القانوني والعملي، والبرامج والخدمات، والخط الزمني والشبكة. ويعرض ملف مُصنّع الأقمار الصناعية النظرة العامة والتخصص، والمنتجات والعملاء، والسجل والآفاق المستقبلية.\n\nلا تظهر الحقول نفسها في جميع الملفات. ويعني الحقل الفارغ أن القيمة غير معروضة في السجل الحالي؛ ولا يعني بالضرورة أن الجهة أو القيمة غير موجودة في الواقع. ولا ينبغي اعتبار رابط موقع الجهة أو مصدر الصورة مرجعاً مستقلاً لكل تفاصيل الملف وإحصاءاته.",
       guide_site_title: "ملف موقع الإطلاق",
@@ -294,7 +366,43 @@
       guide_limits_body: "إحداثيات ملفات الهبوط والاستعادة نقاط مرجعية/تمثيلية، وليست بالضرورة موضع التماس أو التشغيل الدقيق. والهدف المعلن للهبوط لا يثبت أين هبطت المركبة فعلياً. لا تعرض هذه الملفات مواقع السفن مباشرة ولا مناطق السلامة؛ راجع ملاحظة الإحداثيات ومصدرها في كل سجل. تستخدم حدود الدول Terrae 2026.10 المبنية على لقطة OpenStreetMap بتاريخ 28 سبتمبر 2026. وهي بيانات مرجعية جغرافية وليست حدوداً قانونية معتمدة؛ وقد تختلف المناطق المتنازع عليها أو إصدارات الخرائط.",
       guide_glossary_title: "مصطلحات مشتركة لهذه الأقسام",
       guide_glossary_body: "• حالة الموقع—مثل نشط أو غير نشط أو خامل أو قيد الإنشاء—تصف الحالة المسجلة للموقع.\n• نتيجة الإطلاق—مثل النجاح أو الإخفاق—هي نتيجة حدث محدد؛ فلا تستنتج منها الحالة الحالية للموقع.\n• نتيجة الهبوط ونتيجة الاستعادة نتيجتان/مرحلتان منفصلتان. وغياب تأكيد الاستعادة لا يعني فشلها.\n• لا تقرأ الوقت على أنه دقيق إلا إذا حددت اللوحة أنه بتوقيت UTC وبيّنت درجة دقته. فالتاريخ أو العدّ التنازلي التقريبي ليس لحظة إطلاق مؤكدة.\n• يشير الصفر أو الحقل الفارغ إلى البيانات الحالية؛ ولا يثبت وحده أن الجهة أو الحدث غير موجود في الواقع.",
-      guide_note: "يُعرض الدليل بلغة الموقع الحالية. أغلقه بالزر أو بمفتاح Escape.",
+      guide_controls_title: "أزرار وإعدادات أعلى الصفحة",
+      guide_controls_body: "يبدّل زر اللغة الواجهة بين الفارسية والإنجليزية والعربية. يغيّر زر نمط الخريطة مظهرها؛ وليس مفتاحاً للتبديل بين الخرائط المتصلة والمحلية. تفتح أيقونة الدليل هذه اللوحة، ويفتح زر الإبلاغ نموذج الملاحظات. في عرض الخريطة، اضغط Ctrl/⌘ + K لفتح البحث سريعاً.",
+      guide_report_title: "الإبلاغ عن خلل أو مشكلة في البيانات",
+      guide_report_body: "استخدم زر الإبلاغ لإرسال خلل تقني أو مشكلة علمية/بيانية عبر نموذج منفصل لكل نوع. لاقتراح تصحيح بيانات، اذكر اسم السجل والحقل المختلف والقيمة الحالية والمقترحة ورابطاً مباشراً للمصدر؛ وبريد التواصل اختياري. يراجع شخص كل بلاغ قبل التصحيح، ولا يغيّر الإرسال بيانات الموقع تلقائياً. لا تكتب معلومات سرية.",
+      guide_search_label: "ابحث في الدليل",
+      guide_search_placeholder: "مثال: المرشحات، الأعداد، الإطلاقات القادمة",
+      guide_search_hint: "يبحث محلياً في العناوين والشروح والكلمات المرتبطة؛ لا حاجة إلى الإنترنت.",
+      guide_search_clear: "مسح بحث الدليل",
+      guide_tasks_title: "ابدأ من هنا",
+      guide_tasks_intro: "اختر مهمة لفتح شرح القسم المناسب في ORBITA.",
+      guide_task_find_title: "العثور على شركة أو موقع أو دولة",
+      guide_task_find_body: "شرح الخريطة والفئات وقائمة النتائج",
+      guide_task_missions_title: "استكشاف المهمات والإطلاقات القادمة",
+      guide_task_missions_body: "المرشحات والجدول والمواعيد",
+      guide_task_counts_title: "فهم الأعداد والحالات",
+      guide_task_counts_body: "الشارات والإحصاءات والقيم الفارغة",
+      guide_results_heading: "نتائج البحث",
+      guide_results_count: "عُثر على {count} نتيجة",
+      guide_no_results_title: "لا توجد نتيجة مطابقة",
+      guide_no_results_body: "جرّب عبارة أقصر أو افتح أحد الاقتراحات التالية.",
+      guide_suggestions_label: "اقتراحات الدليل",
+      guide_suggest_map: "الخريطة والفئات",
+      guide_suggest_projects: "المشاريع والإطلاقات",
+      guide_suggest_metrics: "الأعداد والحالات",
+      guide_topics_title: "استكشف أقسام ORBITA",
+      guide_topics_intro: "تساعد الأيقونات والمعاينات على تمييز القسم؛ والرسوم التوضيحية تخطيطية ولا تعرض بيانات حية.",
+      guide_open_map: "فتح بحث الخريطة",
+      guide_open_projects: "فتح المشاريع الفضائية",
+      guide_open_report: "فتح نموذج الإبلاغ",
+      guide_site_tab_overview: "نظرة عامة وإحصاءات",
+      guide_site_tab_history: "سجل الإطلاقات",
+      guide_site_tab_upcoming: "الإطلاقات القادمة",
+      guide_site_tab_analysis: "التحليل والبنية التحتية",
+      guide_recovery_tab_overview: "ملف الموقع",
+      guide_recovery_tab_history: "سجل الهبوط والاستعادة",
+      guide_recovery_tab_upcoming: "حالات الهبوط القادمة",
+      guide_note: "يُعرض الدليل بلغة الموقع الحالية. يعمل البحث محلياً؛ أغلقه بزر × أو بمفتاح Escape.",
       report_button: "إبلاغ", report_title: "الإبلاغ عن خلل أو مشكلة في البيانات", report_kicker: "ساعد في تحسين الموقع",
       report_intro: "للأعطال التقنية والمشكلات العلمية/البيانات نماذج منفصلة. يراجع شخص كل بلاغ قبل إجراء أي تصحيح؛ ولا يغيّر إرسال البلاغ بيانات الموقع.",
       report_close: "إغلاق نموذج البلاغ", report_type_label: "نوع البلاغ", report_type_bug: "خلل تقني", report_type_data: "مشكلة علمية أو في البيانات",
@@ -546,6 +654,7 @@
   }
 
   /* ================= theme / language ================= */
+  var refreshSiteGuideUI = null;
   function applyI18n() {
     $$("[data-i18n]").forEach(function (el) { el.textContent = t(el.getAttribute("data-i18n")); });
     $$("[data-i18n-ph]").forEach(function (el) { el.placeholder = t(el.getAttribute("data-i18n-ph")); });
@@ -577,6 +686,7 @@
     }
     var bb2 = $("#baseBtn"); if (bb2 && bb2.querySelector("span")) bb2.querySelector("span").textContent = t(BASEMODE === "offline" ? "base_offline" : "base_online");
     updateCitiesBtn();
+    if (refreshSiteGuideUI) refreshSiteGuideUI();
   }
   on("#langBtn", "click", function () {
     var previousLang = LANG;
@@ -591,21 +701,192 @@
       if (SITE && $("#passPanel") && $("#passPanel").classList.contains("open")) runPasses();
     }
   });
+  function guideSearchNormalize(value) {
+    var text = String(value || "");
+    if (text.normalize) text = text.normalize("NFKC");
+    return text.toLowerCase()
+      .replace(/[\u064b-\u065f\u0670\u0640\u0300-\u036f]/g, "")
+      .replace(/[يى]/g, "ی").replace(/ك/g, "ک")
+      .replace(/[٠-٩]/g, function (d) { return String(d.charCodeAt(0) - 1632); })
+      .replace(/[۰-۹]/g, function (d) { return String(d.charCodeAt(0) - 1776); })
+      .replace(/[^\p{L}\p{N}]+/gu, " ").trim();
+  }
+
+  function guideSvg(name) {
+    var paths = {
+      map: '<path d="M4 6.5 9 4l6 2.5L20 4v13.5L15 20l-6-2.5L4 20Z"/><path d="M9 4v13.5m6-11v13.5"/>',
+      search: '<circle cx="10.5" cy="10.5" r="6.5"/><path d="m15.4 15.4 5 5"/>',
+      country: '<circle cx="12" cy="12" r="9"/><path d="M3.5 12h17M12 3c2.4 2.4 3.6 5.4 3.6 9s-1.2 6.6-3.6 9c-2.4-2.4-3.6-5.4-3.6-9S9.6 5.4 12 3Z"/>',
+      projects: '<path d="M5 5h14M5 10h14M5 15h9M5 20h7"/><circle cx="18" cy="17" r="3"/><path d="m18 15.5 1.2 1.5-1.2 1.5-1.2-1.5Z"/>',
+      next: '<path d="M14.5 3.5c3.2 1.3 5.3 4.4 5 7.8L12 18.8l-6.8-6.8 7.5-7.5c.6-.6 1.2-.9 1.8-1Z"/><path d="m7 17-3 3m5-1-2 2m8-13.5h.01"/><path d="m6.4 12-2.7.6 3.5 3.5"/>',
+      controls: '<path d="M4 6h5m4 0h7M4 12h9m4 0h3M4 18h2m4 0h10"/><circle cx="11" cy="6" r="2"/><circle cx="15" cy="12" r="2"/><circle cx="8" cy="18" r="2"/>',
+      data: '<ellipse cx="12" cy="5" rx="8" ry="3"/><path d="M4 5v7c0 1.7 3.6 3 8 3s8-1.3 8-3V5M4 12v7c0 1.7 3.6 3 8 3s8-1.3 8-3v-7"/>',
+      sources: '<path d="M7 4h10v13H7zM4 7v13h10"/><path d="M10 8h4m-4 3h4m-4 3h2"/>',
+      metrics: '<path d="M4 20V11h4v9M10 20V5h4v15M16 20v-8h4v8M3 20h18"/>',
+      limits: '<path d="M19 10c0 5-7 11-7 11S5 15 5 10a7 7 0 1 1 14 0Z"/><circle cx="12" cy="10" r="2.2"/>',
+      theme: '<path d="M12 3a9 9 0 1 0 8.5 12A7 7 0 0 1 12 3Z" fill="currentColor" stroke="none"/>',
+      help: '<circle cx="12" cy="12" r="9"/><path d="M9.7 9.2a2.45 2.45 0 1 1 4.1 1.8c-1.2 1.05-1.8 1.45-1.8 2.8"/><circle cx="12" cy="17.1" r=".8" fill="currentColor" stroke="none"/>',
+      glossary: '<path d="M4 5.5c3.4-1.5 6.1-.9 8 1.2v13c-1.9-2.1-4.6-2.7-8-1.2zM20 5.5c-3.4-1.5-6.1-.9-8 1.2v13c1.9-2.1 4.6-2.7 8-1.2z"/><path d="M7 9h2m-2 3h2m6-3h2m-2 3h2"/>',
+      report: '<path d="M4 5.5h16v11H8l-4 3v-14Z"/><path d="M8 9.5h8M8 13h5"/>'
+    };
+    return '<svg viewBox="0 0 24 24" width="24" height="24" fill="none" stroke="currentColor" stroke-width="1.65" stroke-linecap="round" stroke-linejoin="round" focusable="false" aria-hidden="true">' + (paths[name] || paths.map) + '</svg>';
+  }
+
+  function guideIconMarkup(name) {
+    var categoryNames = ["launch", "propulsion", "agency", "satmaker", "site", "recovery"];
+    if (categoryNames.indexOf(name) > -1) {
+      return iconFor(name, "active").replace(/width="30"/, 'width="24"').replace(/height="38"/, 'height="30"');
+    }
+    if (name === "companies") {
+      return '<span class="site-guide-icon-pack">' + ["launch", "propulsion", "agency", "satmaker"].map(function (key) {
+        return '<span>' + iconFor(key, "active").replace(/width="30"/, 'width="16"').replace(/height="38"/, 'height="21"') + '</span>';
+      }).join("") + '</span>';
+    }
+    return guideSvg(name);
+  }
+
+  function guideCategoryPreview(keys) {
+    return '<div class="site-guide-preview-categories">' + keys.map(function (key) {
+      var icon = iconFor(key, "active").replace(/width="30"/, 'width="18"').replace(/height="38"/, 'height="23"');
+      return '<span class="site-guide-preview-chip"><span class="site-guide-preview-marker">' + icon + '</span><span>' + esc(t("cat_" + key)) + '</span></span>';
+    }).join("") + '</div>';
+  }
+
+  function guideTabPreview(keys) {
+    return '<div class="site-guide-preview-tabs">' + keys.map(function (key, i) {
+      return '<span class="site-guide-preview-tab' + (i === 0 ? ' is-active' : '') + '">' + esc(t(key)) + '</span>';
+    }).join("") + '</div>';
+  }
+
+  function renderGuideVisuals() {
+    $$("[data-guide-visual]").forEach(function (box) {
+      var kind = box.getAttribute("data-guide-visual"), html = "";
+      if (kind === "start") {
+        html = '<div class="site-guide-preview-views"><span class="is-active">' + guideSvg("map") + '<b>' + esc(t("tab_map")) + '</b></span><span>' + guideSvg("projects") + '<b>' + esc(t("tab_missions")) + '</b></span></div>';
+      } else if (kind === "map-categories") {
+        html = guideCategoryPreview(["launch", "propulsion", "agency", "satmaker", "site", "recovery"]);
+      } else if (kind === "map-search") {
+        html = '<div class="site-guide-preview-search"><span>' + guideSvg("search") + '<b>' + esc(t("ph_search_map")) + '</b></span><kbd>Ctrl/⌘ K</kbd></div>';
+      } else if (kind === "country-profile") {
+        html = '<div class="site-guide-preview-country"><span class="site-guide-country-icon">' + guideSvg("country") + '</span><b>' + esc(t("country")) + '</b><span class="site-guide-country-bars"><i></i><i></i><i></i></span><small>' + esc(t("cat_launch")) + ' · ' + esc(t("cat_propulsion")) + ' · ' + esc(t("cat_agency")) + '</small></div>';
+      } else if (kind === "missions-table") {
+        html = '<div class="site-guide-preview-missions"><div class="site-guide-preview-toolbar"><span>' + guideSvg("search") + '<b>' + esc(t("ph_search_mission")) + '</b></span><i>' + esc(t("status")) + '</i><i>' + esc(t("orbit")) + '</i><i>' + esc(t("mtype")) + '</i><i>' + esc(t("sort_az")) + '</i></div><div class="site-guide-preview-table">' + ["th_mission", "th_rocket", "th_op", "th_orbit"].map(function (key) { return '<span>' + esc(t(key)) + '</span>'; }).join("") + '</div></div>';
+      } else if (kind === "company-categories") {
+        html = guideCategoryPreview(["launch", "propulsion", "agency", "satmaker"]);
+      } else if (kind === "site-tabs") {
+        html = guideTabPreview(["guide_site_tab_overview", "guide_site_tab_history", "guide_site_tab_upcoming", "guide_site_tab_analysis"]);
+      } else if (kind === "recovery-tabs") {
+        html = guideTabPreview(["guide_recovery_tab_overview", "guide_recovery_tab_history", "guide_recovery_tab_upcoming"]);
+      } else if (kind === "next-launch") {
+        html = '<div class="site-guide-preview-ticker"><span class="site-guide-preview-dot"></span><b>' + esc(t("next_launch")) + '</b><span class="site-guide-preview-dash">—</span><small>—</small><span class="site-guide-preview-live">' + esc(t("watch_live")) + '</span></div>';
+      } else if (kind === "top-controls") {
+        var nextLanguage = LANG === "fa" ? "EN" : LANG === "en" ? "عربي" : "فا";
+        html = '<div class="site-guide-preview-controls"><span class="site-guide-preview-language"><b>' + esc(nextLanguage) + '</b><small>' + esc(t("change_language")) + '</small></span><span>' + guideSvg("theme") + '<b>' + esc(t("toggle_theme")) + '</b></span><span>' + guideSvg("help") + '<b>' + esc(t("guide_button")) + '</b></span><span>' + guideSvg("report") + '<b>' + esc(t("report_button")) + '</b></span></div>';
+      } else if (kind === "report-types") {
+        html = '<div class="site-guide-preview-report"><span>' + guideSvg("controls") + '<b>' + esc(t("report_type_bug")) + '</b></span><span>' + guideSvg("data") + '<b>' + esc(t("report_type_data")) + '</b></span></div>';
+      }
+      box.innerHTML = html;
+    });
+  }
+
   function bindSiteGuide() {
     var trigger = $("#siteGuideBtn"), dialog = $("#siteGuideDialog"), close = $("#siteGuideClose");
+    var search = $("#siteGuideSearch"), clear = $("#siteGuideSearchClear");
+    var shortcuts = $("#siteGuideShortcuts"), noResults = $("#siteGuideNoResults");
+    var status = $("#siteGuideResultsStatus"), topicsHeading = $("#siteGuideTopicsTitle");
     if (!trigger || !dialog || !close || typeof dialog.showModal !== "function") return;
+
+    var topicEls = $$("[data-guide-topic]");
+    function teaserFor(topic) {
+      var copy = topic.querySelector(".site-guide-copy"), text = copy ? copy.textContent.trim().replace(/\s+/g, " ") : "";
+      if (!text) return "";
+      var firstLine = text.split(/[\r\n]+/)[0].trim();
+      if (firstLine.length > 142) {
+        firstLine = firstLine.slice(0, 139).replace(/\s+\S*$/, "") + "…";
+      }
+      return firstLine;
+    }
+    function updateGuideSearch() {
+      if (!search) return;
+      var raw = search.value || "", query = guideSearchNormalize(raw);
+      var words = query ? query.split(/\s+/).filter(Boolean) : [];
+      var active = words.length > 0, matchCount = 0;
+      topicEls.forEach(function (topic) {
+        var title = topic.querySelector("summary");
+        var teaser = topic.querySelector("[data-guide-teaser]");
+        var copy = topic.querySelector(".site-guide-copy");
+        if (teaser) teaser.textContent = teaserFor(topic);
+        var corpus = [title && title.textContent, copy && copy.textContent, topic.textContent,
+          topic.getAttribute("data-guide-keywords")].join(" ");
+        var normalized = guideSearchNormalize(corpus);
+        var matches = !active || words.every(function (word) { return normalized.indexOf(word) > -1; });
+        topic.hidden = !matches;
+        if (matches) matchCount++;
+      });
+      if (shortcuts) shortcuts.hidden = active;
+      if (topicsHeading) topicsHeading.textContent = t(active ? "guide_results_heading" : "guide_topics_title");
+      var topicsIntro = $(".site-guide-topics-heading p");
+      if (topicsIntro) topicsIntro.hidden = active;
+      if (status) {
+        status.hidden = !active;
+        status.textContent = active ? t("guide_results_count").replace("{count}", fmtNum(matchCount)) : "";
+      }
+      if (noResults) noResults.hidden = !active || matchCount > 0;
+      if (clear) clear.hidden = !String(raw).length;
+    }
+    function openTopic(key) {
+      var topic = $("[data-guide-topic='" + String(key).replace(/[^a-z0-9-]/gi, "") + "']");
+      if (!topic) return;
+      if (search && search.value) { search.value = ""; updateGuideSearch(); }
+      topic.open = true;
+      var summary = topic.querySelector("summary");
+      if (summary) {
+        setTimeout(function () {
+          try { summary.focus({ preventScroll: true }); } catch (e) { summary.focus(); }
+          topic.scrollIntoView({ behavior: window.matchMedia && window.matchMedia("(prefers-reduced-motion: reduce)").matches ? "auto" : "smooth", block: "start" });
+        }, 0);
+      }
+    }
+    function runGuideCommand(command) {
+      if (dialog.open) dialog.close();
+      setTimeout(function () {
+        if (command === "map-search") {
+          var mapTab = $(".tab[data-view='map']"); if (mapTab) mapTab.click();
+          openSide(true);
+        } else if (command === "missions") {
+          var missionsTab = $(".tab[data-view='missions']"); if (missionsTab) missionsTab.click();
+        } else if (command === "report") {
+          var reportTrigger = $("#reportBtn"); if (reportTrigger) reportTrigger.click();
+        }
+      }, 0);
+    }
+    function refreshGuide() {
+      $$("[data-guide-icon]").forEach(function (node) { node.innerHTML = guideIconMarkup(node.getAttribute("data-guide-icon")); });
+      renderGuideVisuals();
+      updateGuideSearch();
+    }
+    refreshSiteGuideUI = refreshGuide;
+    refreshGuide();
+
     trigger.addEventListener("click", function () {
       if (dialog.open) return;
       dialog.showModal();
       trigger.setAttribute("aria-expanded", "true");
+      if (search) setTimeout(function () { if (dialog.open) search.focus({ preventScroll: true }); }, 0);
     });
     close.addEventListener("click", function () { if (dialog.open) dialog.close(); });
+    if (search) search.addEventListener("input", updateGuideSearch);
+    if (clear) clear.addEventListener("click", function () {
+      if (search) { search.value = ""; updateGuideSearch(); search.focus(); }
+    });
     dialog.addEventListener("click", function (event) {
-      if (event.target === dialog && dialog.open) dialog.close();
+      if (event.target === dialog && dialog.open) { dialog.close(); return; }
+      var opener = event.target.closest && event.target.closest("[data-guide-open-topic]");
+      if (opener) { event.preventDefault(); openTopic(opener.getAttribute("data-guide-open-topic")); return; }
+      var command = event.target.closest && event.target.closest("[data-guide-command]");
+      if (command) { event.preventDefault(); runGuideCommand(command.getAttribute("data-guide-command")); }
     });
-    dialog.addEventListener("keydown", function (event) {
-      event.stopPropagation();
-    });
+    dialog.addEventListener("keydown", function (event) { event.stopPropagation(); });
     dialog.addEventListener("close", function () {
       trigger.setAttribute("aria-expanded", "false");
       if (trigger.isConnected) {

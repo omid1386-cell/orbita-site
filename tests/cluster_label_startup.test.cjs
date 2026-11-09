@@ -25,11 +25,11 @@ test('cluster labels use a single atlas readback and preserve their drawing styl
   assert.match(cluster, /addClusterLabelImages\(labelSpecs\);/);
 });
 
-test('contact fixes receive fresh data and app cache tokens while the stylesheet token stays unchanged', () => {
-  assert.match(html, /window\.ORBITA_V = "20261023propulsionlogos3";/,
+test('the Help redesign uses fresh, distinct cache tokens for the map data, stylesheet, and app script', () => {
+  assert.match(html, /window\.ORBITA_V = "20261023help1";/,
     'map and data assets receive a fresh token for the corrected P2 records');
-  assert.match(html, /window\.ORBITA_CSS_V = "20261105report1";/);
-  assert.match(html, /window\.ORBITA_APP_V = "20261023propulsionlogos3";/);
+  assert.match(html, /window\.ORBITA_CSS_V = "20261023help1";/);
+  assert.match(html, /window\.ORBITA_APP_V = "20261023help1";/);
   assert.match(html, /var ts = window\.ORBITA_CSS_V \|\| window\.ORBITA_V;[\s\S]*?link\.href = 'assets\/css\/app\.css\?_t=' \+ ts;/,
     'only the updated stylesheet receives its dedicated cache token');
   assert.match(html, /var ts = window\.ORBITA_APP_V \|\| window\.ORBITA_V \|\| Date\.now\(\);[\s\S]*?s\.src = 'assets\/js\/app\.js\?_t=' \+ ts;/,

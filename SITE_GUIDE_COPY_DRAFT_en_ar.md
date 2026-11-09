@@ -1,8 +1,8 @@
 # ORBITA Guide Copy — English and Arabic
 
-**Status:** The English and Arabic translations of the eight non–Space Projects topics were approved by the user and integrated into the guide UI alongside the approved Persian copy. The existing short Space Projects text remains unchanged; no new explanatory content was added for that view. No map or data logic was changed.
+**Status:** This file records the English and Arabic copy currently used by the redesigned Help center. The guide keeps its existing topbar trigger and now includes local search, task shortcuts, visual section markers, 17 expandable topics, and suggestions when a search has no match.
 
-**Scope note:** No new guide section for the Space Projects view is included. The existing short guide text is not removed or edited here. The 3D orbit view is also omitted because it is not currently exposed as a visible view in the UI.
+**Scope note:** Space Projects, header controls, and the report form are included. The 3D orbit view remains omitted because it is not currently exposed as a visible view in the UI. Illustrative previews are schematic, not live data.
 
 The Arabic version uses Modern Standard Arabic. Latin service and product names remain where they identify the actual source or UI term; the guide follows the site's Arabic RTL locale.
 
@@ -124,7 +124,43 @@ When it appears, the banner shows a launch name, provider, and countdown to the 
 
 عند ظهور الشريط، يعرض اسم الإطلاق والجهة المنفذة والعدّ التنازلي إلى الموعد المجدول. تأتي بياناته من Launch Library 2 وقد تتغير عند تحديث الجدول. ويكون العدّ التنازلي تقريبياً إذا كان وقت المصدر غير دقيق؛ فالموعد لا يضمن تنفيذ الإطلاق. ويظهر رابط البث إن توفر. وإذا تضمن المصدر إحداثيات منصة الإطلاق، فقد يؤدي اختيار اسم الإطلاق إلى عرض الموقع على الخريطة. وقد يبقى الشريط مخفياً عند تعذر الوصول إلى البيانات المتصلة.
 
-## 8. Shared glossary for these areas
+## 8. Space Projects view
+
+### English
+
+Space Projects has two separate parts: the mission table and the upcoming-launch list. Search and the status, orbit, and type filters narrow the table; sorting only changes its row order and can show nearest time, newest, oldest, or alphabetical order. Filter choices are built from the data that has loaded.
+
+Open a table row to see its details. If a map link is available there, use it to show the site on the map. Exact table times are in UTC. The Curated and Newly Added badges distinguish how a row entered the dataset; they do not certify global completeness. The number beside Projects is the filtered table-row count, not the number of upcoming-launch cards.
+
+The upcoming-launch list is separate from the table and comes from the online Launch Library 2 service. Refresh requests the upcoming list and recent imported launches again; an internet connection is needed. Schedules can change and do not guarantee that a launch will occur.
+
+### العربية
+
+تضم واجهة المشاريع الفضائية قسمين منفصلين: جدول المهمات وقائمة الإطلاقات القادمة. يقيّد البحث ومرشحات الحالة والمدار والنوع الجدول فقط؛ أما الترتيب فيغيّر ترتيب صفوف الجدول ويمكن أن يكون حسب أقرب موعد أو الأحدث أو الأقدم أو أبجدياً. تُبنى خيارات المرشحات من البيانات التي تم تحميلها.
+
+افتح صفاً في الجدول لعرض تفاصيله. وإذا توفر رابط للخريطة في التفاصيل، فاستخدمه لعرض الموقع عليها. الأوقات الدقيقة في الجدول بتوقيت UTC. تميّز شارتا موثّق ومضاف حديثاً طريقة إدراج السجل؛ ولا تضمنان اكتمال البيانات عالمياً. العدد بجوار كلمة المشاريع هو عدد صفوف الجدول بعد التصفية، وليس عدد بطاقات الإطلاقات القادمة.
+
+قائمة الإطلاقات القادمة منفصلة عن الجدول، وتُجلب من خدمة Launch Library 2 عبر الإنترنت. يعيد زر التحديث طلب القائمة القادمة والإطلاقات الحديثة المستوردة؛ ويلزم اتصال بالإنترنت. قد تتغير المواعيد، ولا تضمن الجدولة تنفيذ الإطلاق.
+
+## 9. Header controls and reporting
+
+### English — controls
+
+The language button cycles the interface through Persian, English, and Arabic. The map-style button changes the map appearance; it is not a switch between online and local maps. The guide icon opens this panel, and Report opens the feedback form. In the map view, Ctrl/⌘ + K quickly opens map search.
+
+### English — report form
+
+Use Report to submit a technical bug or a scientific/data issue through separate forms. For a data suggestion, include the record name, disputed field, current and proposed values, and a direct source link; contact email is optional. A person reviews every report before any correction, and submitting one never changes site data automatically. Do not include confidential information.
+
+### العربية — الأزرار والإعدادات
+
+يبدّل زر اللغة الواجهة بين الفارسية والإنجليزية والعربية. يغيّر زر نمط الخريطة مظهرها؛ وليس مفتاحاً للتبديل بين الخرائط المتصلة والمحلية. تفتح أيقونة الدليل هذه اللوحة، ويفتح زر الإبلاغ نموذج الملاحظات. في عرض الخريطة، اضغط Ctrl/⌘ + K لفتح البحث سريعاً.
+
+### العربية — نموذج الإبلاغ
+
+استخدم زر الإبلاغ لإرسال خلل تقني أو مشكلة علمية/بيانية عبر نموذج منفصل لكل نوع. لاقتراح تصحيح بيانات، اذكر اسم السجل والحقل المختلف والقيمة الحالية والمقترحة ورابطاً مباشراً للمصدر؛ وبريد التواصل اختياري. يراجع شخص كل بلاغ قبل التصحيح، ولا يغيّر الإرسال بيانات الموقع تلقائياً. لا تكتب معلومات سرية.
+
+## 10. Shared glossary for these areas
 
 ### English
 
@@ -151,11 +187,11 @@ These notes are for review only; they are not text to show users.
 1. Site statistics may use aggregate fields when present and fall back to counts derived from history rows otherwise. The UI does not show a uniform reference date for all sites; do not claim one global date or source.
 2. In some site-history details, the UI supplies `12:00:00 UTC` when the time is missing from the data. Until that behavior is clarified or corrected, do not present that time as the actual event time; decide whether it needs a user-facing caveat or a separate technical review.
 3. The current country-profile total does not include satellite manufacturers.
-4. No new explanatory guide section for Space Projects is in scope; the existing short guide text remains unchanged.
+4. The current Help covers the Space Projects view, controls, and reporting; the 3D orbit view remains out of scope until it is accessible in the UI.
 
 ### العربية
 
 1. قد تستخدم إحصاءات مواقع الإطلاق حقولاً إجمالية عند توفرها، وإلا فقد تُحسب من صفوف السجل التاريخي. لا تعرض الواجهة تاريخاً مرجعياً موحداً لكل المواقع؛ لذلك لا تذكر تاريخاً أو مصدراً عاماً واحداً.
 2. في بعض تفاصيل سجل الموقع، تضع الواجهة `12:00:00 UTC` افتراضياً عندما يكون الوقت مفقوداً من البيانات. إلى أن يتضح هذا السلوك أو يُصحّح، لا تعرض هذا الوقت على أنه وقت الحدث الفعلي؛ ويجب تقرير ما إذا كان يحتاج إلى تنبيه للمستخدم أو مراجعة فنية منفصلة.
 3. لا يشمل إجمالي ملف الدولة الحالي مصنّعي الأقمار الصناعية.
-4. لا يدخل ضمن النطاق إنشاء قسم إرشادي جديد لواجهة Space Projects؛ ويظل النص المختصر الحالي كما هو.
+4. يغطي الدليل الحالي واجهة المشاريع الفضائية والأزرار والإبلاغ؛ وتظل واجهة المدار ثلاثي الأبعاد خارج النطاق حتى تصبح متاحة للمستخدم في الواجهة.
