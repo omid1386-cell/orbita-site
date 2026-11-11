@@ -545,7 +545,7 @@
     satmaker: "data/companies_satmaker.json"
   };
   // Category-slice rows; propulsion includes three explicit secondary memberships and one linked alias.
-  var COMPANY_CATEGORY_COUNTS = { launch: 68, propulsion: 72, agency: 96, satmaker: 28 };
+  var COMPANY_CATEGORY_COUNTS = { launch: 68, propulsion: 68, agency: 96, satmaker: 37 };
   var COMPANY_CATEGORY_STATE = { launch: "idle", propulsion: "idle", agency: "idle", satmaker: "idle" };
   var COMPANY_CATEGORY_PROMISES = Object.create(null);
   var SORT = "new";   /* newest launch first — the user asked for this ordering */
@@ -6165,8 +6165,8 @@
     var histText = isAr ? ar.arabicText(o.history_ar, "") : (isFa ? (o.history_fa || o.history_en || o.fa_d) : (o.history_en || o.history_fa || o.en_d));
     if (histText) {
       h += '<div style="background:rgba(15, 31, 51, 0.88); border:1px solid rgba(245, 158, 11, 0.35); border-radius:8px; padding:12px; margin-top:10px; box-shadow:0 4px 12px rgba(0,0,0,0.25);">';
-      h += '<div style="font-size:11.5px; font-weight:bold; color:#f59e0b; margin-bottom:6px; display:flex; align-items:center; gap:6px;">📜 ' + label("تاریخچه سازمانی و توسعه پیشرانه:", "Company & Propulsion History:", "تاريخ الشركة وتطوير أنظمة الدفع:") + '</div>';
-      h += '<div class="propulsion-history-copy">' + esc(histText) + '</div>';
+      h += '<div class="propulsion-history-heading" style="font-weight:bold; color:#f59e0b; margin-bottom:6px; display:flex; align-items:center; gap:6px;">📜 ' + label("تاریخچه سازمانی و توسعه پیشرانه:", "Company & Propulsion History:", "تاريخ الشركة وتطوير أنظمة الدفع:") + '</div>';
+      h += '<div class="propulsion-history-copy propulsion-history-org">' + esc(histText) + '</div>';
       h += '</div>';
     }
 
@@ -6174,8 +6174,8 @@
     var prodHistText = isAr ? ar.arabicText(o.product_history_ar, "") : (isFa ? (o.product_history_fa || o.product_history_en) : (o.product_history_en || o.product_history_fa));
     if (prodHistText) {
       h += '<div style="background:rgba(15, 31, 51, 0.88); border:1px solid rgba(16, 185, 129, 0.35); border-radius:8px; padding:12px; margin-top:10px; box-shadow:0 4px 12px rgba(0,0,0,0.25);">';
-      h += '<div style="font-size:11.5px; font-weight:bold; color:#10b981; margin-bottom:6px; display:flex; align-items:center; gap:6px;">⚙️ ' + label("تاریخچه بومی‌سازی و ساخت محصولات:", "Product Development & Manufacturing:", "تاريخ تطوير المنتجات وتصنيعها:") + '</div>';
-      h += '<div class="dossier-card-copy">' + esc(prodHistText) + '</div>';
+      h += '<div class="propulsion-history-heading" style="font-weight:bold; color:#10b981; margin-bottom:6px; display:flex; align-items:center; gap:6px;">⚙️ ' + label("تاریخچه بومی‌سازی و ساخت محصولات:", "Product Development & Manufacturing:", "تاريخ تطوير المنتجات وتصنيعها:") + '</div>';
+      h += '<div class="dossier-card-copy propulsion-history-copy propulsion-history-product">' + esc(prodHistText) + '</div>';
       h += '</div>';
     }
 
@@ -8808,14 +8808,14 @@
     var profileDesc = arabicField(o.ar_d, "") || safeEnglish(o.en_d, "لا يتوفر وصف عربي موثّق لهذا المصنّع حالياً.");
     var makerClass = arabicField(o.maker_class_ar, "") || MAKER_CLASS_AR[o.maker_class_en] || "جهة فضائية";
     var specialty = arabicField(o.specialty_ar, "") || safeEnglish(o.specialty_en, "غير محدد");
-    var country = countryArabic(o.country_ar || o.country);
+    var country = arabicField(o.country_ar, "") || countryArabic(o.country);
     var city = arabicField(o.city_ar, "") || safeEnglish(o.city, "غير محدد");
     var founded = latinDigits(o.founded || "—");
     var flagship = arabicField(o.flagship_product_ar, "") || safeEnglish(o.flagship_product_en, "منتج غير محدد");
     var flagshipOfficial = safeEnglish(o.flagship_product_en, "");
     var flagshipDisplay = flagship;
     if (flagshipOfficial && flagshipOfficial.toLowerCase() !== flagship.toLowerCase()) flagshipDisplay += " (" + flagshipOfficial + ")";
-    var flagshipStatus = statusArabic(o.flagship_product_status_en);
+    var flagshipStatus = arabicField(o.flagship_product_status_ar, "") || statusArabic(o.flagship_product_status_en);
     var application = arabicField(o.flagship_product_app_ar, "") || safeEnglish(o.flagship_product_app_en, "");
     var buildRecord = arabicField(o.satellites_built_ar, "") || safeEnglish(o.satellites_built_en, "لا تتوفر معلومات مؤكدة عن سجل التصنيع.");
     var productLines = Array.isArray(o.product_lines_bilingual) ? o.product_lines_bilingual : [];
@@ -8849,6 +8849,31 @@
     h += '<div style="background:var(--bg2); border:1px solid var(--line); padding:7px 9px; border-radius:6px;"><b>الدولة / المدينة:</b> <bdi>' + esc((country || "—") + " / " + (city || "—")) + '</bdi></div>';
     h += '<div style="background:var(--bg2); border:1px solid var(--line); padding:7px 9px; border-radius:6px;"><b>سنة التأسيس:</b> ' + esc(founded) + '</div>';
     h += '</div>';
+
+    // Sources for newly documented locations and product claims. Other dossiers remain unchanged.
+    if (o.location_reviewed_on && o.coordinate_source_url && o.address_source_url) {
+      var evidenceIsAr = LANG === "ar", evidenceIsFa = LANG === "fa";
+      var locNote = evidenceIsAr ? o.location_note_ar : (evidenceIsFa ? o.location_note_fa : o.location_note_en);
+      var evidenceLabel = evidenceIsAr ? "الموقع والمصادر" : (evidenceIsFa ? "موقعیت و منابع" : "Location and sources");
+      var addressLabel = evidenceIsAr ? "مصدر العنوان" : (evidenceIsFa ? "منبع نشانی" : "Address source");
+      var coordinateLabel = evidenceIsAr ? "مصدر الإحداثيات" : (evidenceIsFa ? "منبع مختصات" : "Coordinate source");
+      var claimsLabel = evidenceIsAr ? "مصادر المنتجات والنشاط" : (evidenceIsFa ? "منابع محصول و فعالیت" : "Product and activity sources");
+      var checkedLabel = evidenceIsAr ? "تاريخ المراجعة" : (evidenceIsFa ? "تاریخ بررسی" : "Reviewed");
+      var links = [[addressLabel, o.address_source_url], [coordinateLabel, o.coordinate_source_url]];
+      (Array.isArray(o.evidence_sources) ? o.evidence_sources : []).forEach(function (source, index) {
+        links.push([claimsLabel + " " + (index + 1), source.url]);
+      });
+      h += '<div style="background:var(--bg2);border:1px solid var(--line);border-radius:8px;padding:10px;margin-top:8px;font-size:10.5px;line-height:1.6;">';
+      h += '<b style="color:var(--accent);">' + esc(evidenceLabel) + ':</b> ' + esc(locNote || "");
+      h += '<div><bdi>' + esc(String(o.lat) + ", " + String(o.lon)) + '</bdi> · ' + esc(checkedLabel) + ': <bdi>' + esc(o.location_reviewed_on) + '</bdi></div>';
+      h += '<div style="display:flex;flex-wrap:wrap;gap:5px 12px;">';
+      links.forEach(function (link) {
+        if (!/^https?:\/\//i.test(String(link[1] || ""))) return;
+        h += '<a href="' + esc(link[1]) + '" target="_blank" rel="noopener noreferrer" style="color:var(--accent-2);">' + esc(link[0]) + ' ↗</a>';
+      });
+      if (/openstreetmap\.org/i.test(o.coordinate_source_url)) h += '<span>© OpenStreetMap contributors · ODbL</span>';
+      h += '</div></div>';
+    }
 
     // Flagship product box uses the Persian template's card hierarchy.
     var flagP = flagshipDisplay;
@@ -9020,6 +9045,31 @@
     h += '<div style="background:var(--bg2); border:1px solid var(--line); padding:7px 9px; border-radius:6px;"><b>' + (isFa ? "کشور / شهر:" : "Country / City:") + '</b> <bdi>' + esc(isFa ? ((o.country_fa || "—") + " / " + (o.city_fa || "—")) : ((o.country || o.country_fa || "—") + " / " + (o.city || o.city_fa || "—"))) + '</bdi></div>';
     h += '<div style="background:var(--bg2); border:1px solid var(--line); padding:7px 9px; border-radius:6px;"><b>' + (isFa ? "سال تأسیس:" : "Founded:") + '</b> ' + esc(o.founded || "—") + '</div>';
     h += '</div>';
+
+    // Sources for newly documented locations and product claims. Other dossiers remain unchanged.
+    if (o.location_reviewed_on && o.coordinate_source_url && o.address_source_url) {
+      var evidenceIsAr = LANG === "ar", evidenceIsFa = LANG === "fa";
+      var locNote = evidenceIsAr ? o.location_note_ar : (evidenceIsFa ? o.location_note_fa : o.location_note_en);
+      var evidenceLabel = evidenceIsAr ? "الموقع والمصادر" : (evidenceIsFa ? "موقعیت و منابع" : "Location and sources");
+      var addressLabel = evidenceIsAr ? "مصدر العنوان" : (evidenceIsFa ? "منبع نشانی" : "Address source");
+      var coordinateLabel = evidenceIsAr ? "مصدر الإحداثيات" : (evidenceIsFa ? "منبع مختصات" : "Coordinate source");
+      var claimsLabel = evidenceIsAr ? "مصادر المنتجات والنشاط" : (evidenceIsFa ? "منابع محصول و فعالیت" : "Product and activity sources");
+      var checkedLabel = evidenceIsAr ? "تاريخ المراجعة" : (evidenceIsFa ? "تاریخ بررسی" : "Reviewed");
+      var links = [[addressLabel, o.address_source_url], [coordinateLabel, o.coordinate_source_url]];
+      (Array.isArray(o.evidence_sources) ? o.evidence_sources : []).forEach(function (source, index) {
+        links.push([claimsLabel + " " + (index + 1), source.url]);
+      });
+      h += '<div style="background:var(--bg2);border:1px solid var(--line);border-radius:8px;padding:10px;margin-top:8px;font-size:10.5px;line-height:1.6;">';
+      h += '<b style="color:var(--accent);">' + esc(evidenceLabel) + ':</b> ' + esc(locNote || "");
+      h += '<div><bdi>' + esc(String(o.lat) + ", " + String(o.lon)) + '</bdi> · ' + esc(checkedLabel) + ': <bdi>' + esc(o.location_reviewed_on) + '</bdi></div>';
+      h += '<div style="display:flex;flex-wrap:wrap;gap:5px 12px;">';
+      links.forEach(function (link) {
+        if (!/^https?:\/\//i.test(String(link[1] || ""))) return;
+        h += '<a href="' + esc(link[1]) + '" target="_blank" rel="noopener noreferrer" style="color:var(--accent-2);">' + esc(link[0]) + ' ↗</a>';
+      });
+      if (/openstreetmap\.org/i.test(o.coordinate_source_url)) h += '<span>© OpenStreetMap contributors · ODbL</span>';
+      h += '</div></div>';
+    }
 
     // Flagship product box (dark island → explicit light text only)
     var flagP = isFa ? (o.flagship_product_fa || o.flagship_product_en) : (o.flagship_product_en || o.flagship_product_fa);
