@@ -1,0 +1,69 @@
+﻿id,name,founded,country,city,founder,ceo,verified_identity_source,fleet_entries,timeline_entries,numeric_launch_total,metrics_date,metric_source,outstanding_fields
+spacex,SpaceX,2002,United States,"Starbase, Texas",ایلان ماسک,ایلان ماسک,https://ir.spacex.com/leadership/,5,6,744,2026-11-08,https://mcval.org/launches/launchers,
+ula,United Launch Alliance (ULA),2006,United States,"Centennial, Colorado",مشارکت بوئینگ و لاکهید مارتین,مارک پلر,https://newsroom.ulalaunch.com/releases/mark-peller-named-united-launch-alliance-president-and-chief-executive-officer,3,4,175,2026-11-08,https://mcval.org/launches/numbers,
+blueorigin,Blue Origin,2000,United States,"Kent, Washington",جف بزوس,دیو لیمپ,https://www.blueorigin.com/ar-EG/news/new-glenn-return-to-flight,2,2,38,2026-01-22,https://www.blueorigin.com/fr-FR/news/new-shepard-ns-38-mission,
+rocketlab,Rocket Lab,2006,United States / New Zealand,"Long Beach, California",پیتر بک,پیتر بک,https://rocketlabcorp.com/about/team/,3,2,99,2026-11-08,https://mcval.org/launches/launchers,
+firefly,Firefly Aerospace,2014,United States,"Cedar Park, Texas",,جیسون کیم,https://investors.fireflyspace.com/governance/management,2,1,,,,founder_fa; aggregate launches unavailable
+relativity,Relativity Space,2015,United States,"Long Beach, California",,اریک اشمیت,https://www.relativityspace.com/leadership,2,1,,,,founder_fa; aggregate launches unavailable
+stoke,Stoke Space,2019,United States,"Kent, Washington",اندی لپسا و تام فلدمن,اندی لپسا,https://www.stokespace.com/our-team,1,1,,,,aggregate launches unavailable
+northrop,Northrop Grumman Space Systems,1994,United States,"Dulles, Virginia",,,,5,1,,,,founder_fa; ceo_fa; aggregate launches unavailable
+sierraspace,Sierra Space,2021,United States,"Louisville, Colorado",,,,0,1,,,,founder_fa; ceo_fa; aggregate launches unavailable; no verified owned launch vehicle
+abl,Long Wall (formerly ABL Space Systems),2017,United States,"El Segundo, California",,,,1,2,1,2023-01-10,https://spacelaunchnow.app/vehicle/launch_vehicle/475/,founder_fa; ceo_fa
+astra,Astra Space,2016,United States,"Alameda, California",,,,2,1,,,,founder_fa; ceo_fa; aggregate launches unavailable
+virgingalactic,Virgin Galactic,2004,United States,"Tustin, California",ریچارد برانسون,مایکل کالگلیزر,https://investors.virgingalactic.com/governance/board-of-directors/person-details/default.aspx?ItemId=c247ba52-f8ef-40c6-9388-50fe070feab6,2,2,12,2024-06-08,https://press.virgingalactic.com/virgin-galactic-completes-12th-successful-spaceflight,
+boeing,"Boeing Defense, Space & Security",2002,United States,"Arlington, Virginia",,,,1,1,,,,founder_fa; ceo_fa; aggregate launches unavailable
+lockheed,Lockheed Martin Space,1995,United States,"Littleton, Colorado",,,,1,1,,,,founder_fa; ceo_fa; aggregate launches unavailable
+arianespace,Arianespace,1980,France / Europe,Évry-Courcouronnes,,داوید کاوایولس,https://www.arianespace.com/structure-governance/,3,1,328,2026-11-08,https://mcval.org/launches/numbers,founder_fa
+arianegroup,ArianeGroup,2015,France / Germany,Paris,سرمایه‌گذاری مشترک ایرباس و سافران,کریستوف برونو,https://www.ariane.group/en/news/arianegroups-board-of-directors-appoints-christophe-bruneau-as-chief-executive-officer-effective-april-1-2026/,1,1,,,,aggregate launches unavailable
+avio,Avio,1908,Italy,Colleferro,,,,3,1,,,,founder_fa; ceo_fa; aggregate launches unavailable
+isar,Isar Aerospace,2018,Germany,Ottobrunn,,,,1,2,2,2026-09-05,https://www.esa.int/Enabling_Support/Space_Transportation/Boost/Isar_Aerospace_achieves_first_launch_to_orbit_from_continental_Europe,founder_fa; ceo_fa
+rfa,Rocket Factory Augsburg (RFA),2018,Germany,Augsburg,اشتفان بریشنک و یورن اشپورمان,الکساندر دام,https://www.rfa.space/about/,1,1,,,,aggregate launches unavailable
+hyimpulse,HyImpulse,2018,Germany,Neuenstadt am Kocher,کریستیان اشمیرر (از هم‌بنیان‌گذاران),کریستیان اشمیرر,https://www.hyimpulse.de/about-us,2,1,,,,aggregate launches unavailable
+orbex,Orbex,2015,United Kingdom,"Forres, Scotland",,,,1,1,,,,founder_fa; ceo_fa; aggregate launches unavailable
+skyrora,Skyrora,2017,United Kingdom,Edinburgh,ولودیمیر لویکین,ولودیمیر لویکین,https://skyrora.com/personal/who-we-are/volodymyr-levykin/,2,1,,,,aggregate launches unavailable
+pldspace,PLD Space,2011,Spain,Elche,رائول تورس و رائول وردو,رائول تورس,https://www.pldspace.com/en/leadership-governance/,2,2,,,,aggregate launches unavailable
+latitude,Latitude,2019,France,Reims,,,,1,0,,,,founder_fa; ceo_fa; aggregate launches unavailable; no sourced timeline
+maiaspace,MaiaSpace,2022,France,Vernon,,,,1,1,,,,founder_fa; ceo_fa; aggregate launches unavailable
+progress-rocket,Progress Rocket Space Centre,1996,Russia,Samara,,,,2,1,,,,founder_fa; ceo_fa; aggregate launches unavailable
+khrunichev,Khrunichev Center,1916,Russia,Moscow,,,,3,1,,,,founder_fa; ceo_fa; aggregate launches unavailable
+energia,RSC Energia,1946,Russia,Korolyov,,,,1,1,,,,founder_fa; ceo_fa; aggregate launches unavailable
+calt,CALT (China Academy of Launch Vehicle Technology),1957,China,Beijing,,,,3,1,,,,founder_fa; ceo_fa; aggregate launches unavailable
+sast,SAST (Shanghai Academy of Spaceflight Technology),1961,China,Shanghai,,,,3,1,,,,founder_fa; ceo_fa; aggregate launches unavailable
+expace,ExPace / CASIC,2016,China,Wuhan,,,,2,1,,,,founder_fa; ceo_fa; aggregate launches unavailable
+landspace,LandSpace,2015,China,Beijing / Huzhou,ژانگ چانگ‌وو,ژانگ چانگ‌وو,https://www.landspace.com/en/about.html,3,1,13,2026-11-06,https://www.flightatlas.org/trackers/landspace,
+ispace-cn,i-Space (Beijing Interstellar Glory),2016,China,Beijing,,,,1,1,,,,founder_fa; ceo_fa; aggregate launches unavailable
+galactic-energy,Galactic Energy,2018,China,Beijing,,,,4,1,27,2026-11-06,https://mcval.org/launches/launchers/ge,founder_fa; ceo_fa
+space-pioneer,Space Pioneer (Tianbing),2019,China,Beijing,,,,2,1,,,,founder_fa; ceo_fa; aggregate launches unavailable
+orienspace,Orienspace,2020,China,Yantai,,,,2,1,4,2026-09-15,https://api.nextspaceflight.com/rockets/294,founder_fa; ceo_fa
+deepblue,Deep Blue Aerospace,2016,China,Nantong,,,,2,1,,,,founder_fa; ceo_fa; aggregate launches unavailable
+casspace,CAS Space,2018,China,Guangzhou,,,,3,1,,,,founder_fa; ceo_fa; aggregate launches unavailable
+skyroot,Skyroot Aerospace,2018,India,Hyderabad,پاوان کومار چاندانا و ناگا بهارات داکا,پاوان کومار چاندانا,https://www.skyroot.in/about-skyroot,3,1,1,2026-07-18,https://www.isro.gov.in/First_private_orbital_launch_lifts_from_Sriharikota.html,
+agnikul,Agnikul Cosmos,2017,India,Chennai,,,,2,1,,,,founder_fa; ceo_fa; aggregate launches unavailable
+mhi,Mitsubishi Heavy Industries,1884,Japan,Tokyo,,,,2,2,50,2025-06-29,https://www.mhi.com/business/products-services/space-defense/launch-service/past-missions,founder_fa; ceo_fa
+interstellar-jp,Interstellar Technologies,2013,Japan,"Taiki, Hokkaido",,,,2,1,,,,founder_fa; ceo_fa; aggregate launches unavailable
+spaceone,Space One,2018,Japan,Tokyo,,,,1,1,3,2026-03-05,https://www.space.com/space-exploration/private-spaceflight/japan-startup-space-one-kairos-third-launch,founder_fa; ceo_fa
+innospace,Innospace,2017,South Korea,Sejong,,,,2,1,1,2025-12-22,https://www.innospc.com/shop_contents/myboard_read.htm?idx=937154&myboard_code=sub04_02&myboard_idx=64079,founder_fa; ceo_fa
+gilmour,Gilmour Space Technologies,2012,Australia,"Gold Coast, Queensland",,,,1,1,,,,founder_fa; ceo_fa; aggregate launches unavailable
+iai,Israel Aerospace Industries,1953,Israel,Lod,,,,1,1,,,,founder_fa; ceo_fa; aggregate launches unavailable
+aio-iran,Aerospace Industries Organization (AIO),1980,Iran,Tehran,وزارت دفاع و پشتیبانی نیروهای مسلح ایران,,,2,1,,,,ceo_fa; aggregate launches unavailable
+irgc-space,IRGC Aerospace Force – Space Division,2009,Iran,Tehran,نیروی هوافضای سپاه پاسداران انقلاب اسلامی,فرماندهی فضایی هوافضا,,2,1,,,,aggregate launches unavailable
+roketsan,Roketsan,1988,Türkiye,Ankara,,,,1,1,,,,founder_fa; ceo_fa; aggregate launches unavailable
+pivdenmash,Pivdenmash (Yuzhmash),,Ukraine,Dnipro,,,,0,0,,,,founded; founder_fa; ceo_fa; aggregate launches unavailable; no verified owned launch vehicle; no sourced timeline
+pivdenne,Pivdenne (Yuzhnoye) State Design Office,,Ukraine,Dnipro,,,,0,0,,,,founded; founder_fa; ceo_fa; aggregate launches unavailable; no verified owned launch vehicle; no sourced timeline
+hanwha,Hanwha Aerospace,1977,South Korea,Changwon,گروه هانوا,سون جه-ایل,,1,1,,,,aggregate launches unavailable
+perigee,Perigee Aerospace,2018,South Korea,Daejeon,,,,1,1,,,,founder_fa; ceo_fa; aggregate launches unavailable
+space-epoch,Space Epoch,2019,China,Beijing,,,,1,1,,,,founder_fa; ceo_fa; aggregate launches unavailable
+nordspace,NordSpace,2022,Canada,Markham,راهول گوئل,راهول گوئل,,2,2,,,,aggregate launches unavailable
+etherealx,EtherealX,2022,India,Bengaluru,مانو جی نایر و شوبهایو ساردار,مانو جی نایر,,1,1,,,,aggregate launches unavailable
+phantomspace,Phantom Space,2019,United States,Tucson,جیم کنترل و مایکل دی‌آنجلو,جیم کنترل,,1,1,,,,aggregate launches unavailable
+honda,Honda (Space Development),1948,Japan,Tokyo,سوئیچیرو هوندا (شرکت مادر),توشیهیرو میبه,,1,1,1,2025-06-17,https://global.honda/en/topics/2025/c_2025-06-17ceng.html,
+nakuja-space,Nakuja Space,2026,Kenya,Nairobi,,,,0,1,0,,,founder_fa; ceo_fa; no verified owned launch vehicle
+mura-space,Mura Space,,South Africa,Cape Town area (approximate map pin; office not verified),,,,0,2,0,,,founded; founder_fa; ceo_fa; no verified owned launch vehicle
+stellar-kinetics,Stellar Kinetics MCT,,Oman,,,,,1,2,0,2025-07-31,https://etlaq.om/launches/duqm-2/,founded; city; founder_fa; ceo_fa
+glavkosmos,Glavkosmos,,Russia,Moscow,,,,0,1,,,,founded; founder_fa; ceo_fa; aggregate launches unavailable; no verified owned launch vehicle
+exolaunch,Exolaunch,,Germany,Berlin,,,,0,1,,,,founded; founder_fa; ceo_fa; aggregate launches unavailable; no verified owned launch vehicle
+sirius-space-services,Sirius Space Services,,France,Nanterre,,,,0,0,,,,founded; founder_fa; ceo_fa; aggregate launches unavailable; no verified owned launch vehicle; no sourced timeline
+hyprspace,HyPrSpace,2019,France,Le Haillan,,,,0,1,,,,founder_fa; ceo_fa; aggregate launches unavailable; no verified owned launch vehicle
+t-minus-engineering,T-Minus Engineering,2011,Netherlands,Delft,,,,0,1,,,,founder_fa; ceo_fa; aggregate launches unavailable; no verified owned launch vehicle
+otespace,OteSpace,2022,Czechia,Brno,,,,0,1,,,,founder_fa; ceo_fa; aggregate launches unavailable; no verified owned launch vehicle
+borospace,Borospace,,Slovakia,Bratislava,,,,0,0,,,,founded; founder_fa; ceo_fa; aggregate launches unavailable; no verified owned launch vehicle; no sourced timeline

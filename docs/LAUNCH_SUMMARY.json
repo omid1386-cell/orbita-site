@@ -1,0 +1,32 @@
+{
+  "companies": 68,
+  "fleet_vehicles": 107,
+  "companies_with_fleet": 56,
+  "companies_with_timeline": 63,
+  "timeline_events": 81,
+  "companies_with_dated_numeric_metric": 19,
+  "founder_visible": 20,
+  "ceo_visible": 22,
+  "identity_primary_verified_now": 16,
+  "source_url_rocket_entries": 61,
+  "missing_founded": 8,
+  "missing_hq": 1,
+  "verified_identity_ids": [
+    "spacex",
+    "ula",
+    "blueorigin",
+    "rocketlab",
+    "firefly",
+    "relativity",
+    "stoke",
+    "virgingalactic",
+    "arianespace",
+    "arianegroup",
+    "rfa",
+    "hyimpulse",
+    "skyrora",
+    "pldspace",
+    "landspace",
+    "skyroot"
+  ]
+}

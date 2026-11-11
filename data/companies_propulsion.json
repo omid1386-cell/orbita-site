@@ -7123,9 +7123,32 @@
     "partners_fa": [],
     "partners_ar": [],
     "rockets_fleet": [],
-    "timeline_en": [],
-    "timeline_fa": [],
-    "timeline_ar": [],
+    "timeline_en": [
+      {
+        "year": 2019,
+        "title_en": "Launch programme milestone",
+        "desc_en": "This archival milestone still requires independent primary-source verification.",
+        "source_url": null,
+        "verification_status": "legacy_not_independently_confirmed"
+      }
+    ],
+    "timeline_fa": [
+      {
+        "year": 2019,
+        "title": "سال تأسیس ثبت‌شده در پرونده",
+        "desc": "این سال از داده‌های موجود ORBITA بازیابی شده و هنوز با سند اولیه رسمی تطبیق نهایی نشده است.",
+        "verification_status": "legacy_not_independently_confirmed"
+      }
+    ],
+    "timeline_ar": [
+      {
+        "year": 2019,
+        "title_ar": "محطة في برنامج الإطلاق",
+        "desc_ar": "بيانات أرشيفية تتطلب التحقق المستقل.",
+        "source_url": null,
+        "verification_status": "legacy_not_independently_confirmed"
+      }
+    ],
     "source_note_en": "Secondary propulsion membership on the existing HyPrSpace launch record; one company ID and one map marker only.",
     "source_note_fa": "عضویت ثانویهٔ پیشران روی رکورد پرتاب موجود HyPrSpace؛ فقط یک شناسهٔ شرکت و یک نشانگر نقشه.",
     "source_note_ar": "عضوية دفع ثانوية في سجل الإطلاق الموجود لـHyPrSpace؛ معرّف شركة واحد وعلامة خريطة واحدة فقط.",
@@ -7134,12 +7157,13 @@
       "success_launches": null,
       "failed_launches": null,
       "success_rate": null,
-      "active_vehicles_count": null,
       "annual_trend": [],
-      "scope_en": "The DGA reports a planned first Baguette One suborbital launch in 2027. It is not a flown vehicle yet; no orbital launches are attributed to HyPrSpace.",
       "scope_fa": "سازمان DGA نخستین پرواز زیرمداری Baguette One را برای ۲۰۲۷ برنامه‌ریزی‌شده گزارش می‌کند. هنوز پرواز انجام نشده و هیچ پرتاب مداری به HyPrSpace نسبت داده نمی‌شود.",
-      "scope_ar": "تفيد DGA بأن أول إطلاق شبه مداري لـBaguette One مخطط لعام 2027. لم تطِر المركبة بعد، ولا تُنسب إلى HyPrSpace إطلاقات مدارية.",
-      "as_of": "2026-11-08"
+      "scope_en": "The DGA reports a planned first Baguette One suborbital launch in 2027. It is not a flown vehicle yet; no orbital launches are attributed to HyPrSpace.",
+      "as_of": null,
+      "source_url": null,
+      "verification_status": "pending_aggregate",
+      "scope_ar": "تفيد DGA بأن أول إطلاق شبه مداري لـBaguette One مخطط لعام 2027. لم تطِر المركبة بعد، ولا تُنسب إلى HyPrSpace إطلاقات مدارية."
     },
     "founded": 2019,
     "secondary_categories": [
@@ -7210,7 +7234,13 @@
       }
     ],
     "evidence_confidence": "high",
-    "logo": "assets/img/logos/hyprspace-logo.svg"
+    "logo": "assets/img/logos/hyprspace-logo.svg",
+    "fleet_scope_fa": "فعالیت توسعه پرتابگر هیبریدی؛ ادعای نام، عملکرد و تاریخ نخستین پرواز نیازمند سند مستقل است.",
+    "fleet_scope_en": "No independently owned orbital launch fleet is verified for this organization; partner vehicle launches must not be double-counted.",
+    "launch_profile_review_date": "2026-11-11",
+    "launch_sources": [],
+    "fleet_scope_ar": "مركبات الإطلاق المرتبطة بالمؤسسة؛ لا يعني الإدراج ملكية حصرية أو حالة تشغيل راهنة. الحقول التقنية غير الموثقة تظل فارغة.",
+    "identity_verified_on": null
   },
   {
     "id": "otespace",
@@ -7273,9 +7303,32 @@
     "partners_fa": [],
     "partners_ar": [],
     "rockets_fleet": [],
-    "timeline_en": [],
-    "timeline_fa": [],
-    "timeline_ar": [],
+    "timeline_en": [
+      {
+        "year": 2022,
+        "title_en": "Launch programme milestone",
+        "desc_en": "This archival milestone still requires independent primary-source verification.",
+        "source_url": null,
+        "verification_status": "legacy_not_independently_confirmed"
+      }
+    ],
+    "timeline_fa": [
+      {
+        "year": 2022,
+        "title": "سال تأسیس ثبت‌شده در پرونده",
+        "desc": "این سال از داده‌های موجود ORBITA بازیابی شده و هنوز با سند اولیه رسمی تطبیق نهایی نشده است.",
+        "verification_status": "legacy_not_independently_confirmed"
+      }
+    ],
+    "timeline_ar": [
+      {
+        "year": 2022,
+        "title_ar": "محطة في برنامج الإطلاق",
+        "desc_ar": "بيانات أرشيفية تتطلب التحقق المستقل.",
+        "source_url": null,
+        "verification_status": "legacy_not_independently_confirmed"
+      }
+    ],
     "source_note_en": "Secondary propulsion membership on the existing OteSpace launch record; engine ground test is not a launcher flight.",
     "source_note_fa": "عضویت ثانویهٔ پیشران روی رکورد پرتاب موجود OteSpace؛ آزمون زمینی موتور، پرواز پرتابگر نیست.",
     "source_note_ar": "عضوية دفع ثانوية في سجل الإطلاق الموجود لـOteSpace؛ واختبار المحرك الأرضي ليس رحلة لمركبة الإطلاق.",
@@ -7284,12 +7337,13 @@
       "success_launches": null,
       "failed_launches": null,
       "success_rate": null,
-      "active_vehicles_count": null,
       "annual_trend": [],
-      "scope_en": "The cited company pages describe development concepts and propulsion tests, not orbital launches. No OTESting flight or independent orbital launch is verified in the sources used for this record.",
       "scope_fa": "صفحه‌های منبع از طرح‌های در حال توسعه و آزمون پیشران می‌گویند، نه پرتاب مداری. در منابع این رکورد، پرواز OTESting یا پرتاب مداری مستقل تأیید نشده است.",
-      "scope_ar": "تصف المصادر المذكورة مفاهيم قيد التطوير واختبارات دفع، لا إطلاقات مدارية. ولم يُتحقق في هذه المصادر من رحلة لـOTESting أو إطلاق مداري مستقل.",
-      "as_of": "2026-11-08"
+      "scope_en": "The cited company pages describe development concepts and propulsion tests, not orbital launches. No OTESting flight or independent orbital launch is verified in the sources used for this record.",
+      "as_of": null,
+      "source_url": null,
+      "verification_status": "pending_aggregate",
+      "scope_ar": "تصف المصادر المذكورة مفاهيم قيد التطوير واختبارات دفع، لا إطلاقات مدارية. ولم يُتحقق في هذه المصادر من رحلة لـOTESting أو إطلاق مداري مستقل."
     },
     "founded": 2022,
     "secondary_categories": [
@@ -7411,7 +7465,13 @@
         "desc_ar": "تذكر OteSpace اختباراً أرضياً ناجحاً لمحرك PEPEk-1 ثنائي الوقود بتغذية مضخية من فئة 1 kN؛ ولا تذكر رحلة."
       }
     ],
-    "logo": "assets/img/logos/otespace-logo.png"
+    "logo": "assets/img/logos/otespace-logo.png",
+    "fleet_scope_fa": "داده کافی برای انتساب پرتابگر عملیاتی یا تعداد پرتاب مستقل موجود نیست.",
+    "fleet_scope_en": "No independently owned orbital launch fleet is verified for this organization; partner vehicle launches must not be double-counted.",
+    "launch_profile_review_date": "2026-11-11",
+    "launch_sources": [],
+    "fleet_scope_ar": "مركبات الإطلاق المرتبطة بالمؤسسة؛ لا يعني الإدراج ملكية حصرية أو حالة تشغيل راهنة. الحقول التقنية غير الموثقة تظل فارغة.",
+    "identity_verified_on": null
   },
   {
     "id": "borospace",
@@ -7481,12 +7541,13 @@
       "success_launches": null,
       "failed_launches": null,
       "success_rate": null,
-      "active_vehicles_count": null,
       "annual_trend": [],
-      "scope_en": "The company describes rocket development and engine-testing projects; the sources used do not establish an orbital launch record. No flight totals or operating launcher fleet are assigned.",
       "scope_fa": "شرکت از پروژه‌های توسعهٔ موشک و آزمون موتور می‌گوید؛ منابع این رکورد سابقهٔ پرتاب مداری را اثبات نمی‌کنند. تعداد پرواز یا ناوگان پرتابگر عملیاتی ثبت نشده است.",
-      "scope_ar": "تصف الشركة مشاريع تطوير الصواريخ واختبار المحركات؛ ولا تثبت المصادر المستخدمة سجل إطلاق مداري. لم تُسجل أعداد رحلات أو أسطول مركبات تشغيلية.",
-      "as_of": "2026-11-08"
+      "scope_en": "The company describes rocket development and engine-testing projects; the sources used do not establish an orbital launch record. No flight totals or operating launcher fleet are assigned.",
+      "as_of": null,
+      "source_url": null,
+      "verification_status": "pending_aggregate",
+      "scope_ar": "تصف الشركة مشاريع تطوير الصواريخ واختبار المحركات؛ ولا تثبت المصادر المستخدمة سجل إطلاق مداري. لم تُسجل أعداد رحلات أو أسطول مركبات تشغيلية."
     },
     "secondary_categories": [
       "propulsion"
@@ -7546,7 +7607,13 @@
       }
     ],
     "evidence_confidence": "medium",
-    "logo": "assets/img/logos/borospace-logo.svg"
+    "logo": "assets/img/logos/borospace-logo.svg",
+    "fleet_scope_fa": "داده کافی برای انتساب پرتابگر عملیاتی یا تعداد پرتاب مستقل موجود نیست.",
+    "fleet_scope_en": "No independently owned orbital launch fleet is verified for this organization; partner vehicle launches must not be double-counted.",
+    "launch_profile_review_date": "2026-11-11",
+    "launch_sources": [],
+    "fleet_scope_ar": "مركبات الإطلاق المرتبطة بالمؤسسة؛ لا يعني الإدراج ملكية حصرية أو حالة تشغيل راهنة. الحقول التقنية غير الموثقة تظل فارغة.",
+    "identity_verified_on": null
   },
   {
     "id": "europropulsion",

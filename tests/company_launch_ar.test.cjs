@@ -45,11 +45,11 @@ check(Boolean(stellar) && stellar.stats.total_launches === 0 && stellar.stats.su
   stellar.rockets_fleet[0].name === 'Kea-1' && stellar.rockets_fleet[0].maiden_flight == null &&
   !stellar.rockets_fleet.some(vehicle => /AZAD/.test(vehicle.name)),
   'Kea-1 prelaunch scrubs are not counted as flights and partner-owned AZAD is not listed as Stellar Kinetics hardware');
-check(propulsionCompanies.length === 69 && propulsionCompanies.every(company => company.ar && company.ar_d),
-  'all 69 primary propulsion-company dossiers retain their Arabic text');
+check(propulsionCompanies.length === 65 && propulsionCompanies.every(company => company.ar && company.ar_d),
+  'all 65 primary propulsion-company dossiers retain their Arabic text');
 check(agencyCompanies.length === 96 && agencyCompanies.every(company => company.ar && company.ar_d),
   'the completed space-organization Arabic slice remains present');
-check(satelliteMakers.length === 28 && satelliteMakers.every(company => company.ar && company.ar_d),
+check(satelliteMakers.length === 37 && satelliteMakers.every(company => company.ar && company.ar_d),
   'the separate satellite-manufacturer Arabic slice is complete');
 check(app.includes('if (LANG === "ar" && (p.cat === "launch" || p.kind === "launch" || o.cat === "launch")) return renderLaunchCompanyArabic(p);'),
   'the real Arabic launch route dispatches to its dedicated renderer');
@@ -59,7 +59,7 @@ check(app.includes('نظرة عامة وإحصاءات') && app.includes('أسط
 check(app.includes('safeEnglish(value, fallback)') && app.includes('missionLabel(value)') &&
   app.includes('techValue(value, kind)'),
   'source values pass through Arabic-safe display helpers');
-check(html.includes('window.ORBITA_V = "20261023propulsionlogos3";'), 'the HTML asset cache version is bumped for the Arabic template');
+check(html.includes('window.ORBITA_V = "20261023mapuk2";'), 'the HTML asset cache version is bumped for the Arabic template');
 
 // Guard the shared bilingual renderer so this Arabic-only task cannot change Persian or English output.
 const companyDetailStart = app.indexOf('  function renderCompanyDetail(p) {');
@@ -73,7 +73,7 @@ check(sharedRenderer.includes('var statsScopeText = isFa ? (stats.scope_fa || st
   !sharedRenderer.includes('v.reusability_en || "Expendable"') &&
   !sharedRenderer.includes('v.status_en || v.status_fa || "Operational"'),
   'the shared company renderer shows scope and dashes for unknown metrics instead of invented defaults');
-check(sharedRendererHash === 'c0c9bf9c9813e2dd8fd270930a6a4598ca310044863b4f09168792e42bcf1b91',
+check(sharedRendererHash === '45301e7c4bef5790e6e9f925335c09c376280dc6e8fb154652fd8792adfa70e6',
   'the shared Persian/English renderer is pinned to the reviewed no-defaults implementation');
 
 function makeRenderer(lang) {

@@ -4572,7 +4572,7 @@
     h += '<div style="display:grid; grid-template-columns:repeat(4, 1fr); gap:6px; text-align:center;">';
     h += '<div style="background:rgba(0,0,0,0.3); padding:6px; border-radius:6px; border:1px solid var(--line);">';
     h += '<div style="font-size:15px; font-weight:bold; color:var(--text);">' + esc(statDisplay(stats.total_launches)) + '</div>';
-    h += '<div style="font-size:9.5px; color:var(--muted);">الإجمالي</div>';
+    h += '<div style="font-size:9.5px; color:var(--muted);">' + esc(arabicText(stats.total_label_ar) || safeEnglish(stats.total_label_en, '') || 'الإجمالي') + '</div>';
     h += '</div>';
     h += '<div style="background:rgba(16, 185, 129, 0.1); padding:6px; border-radius:6px; border:1px solid rgba(16, 185, 129, 0.3);">';
     h += '<div style="font-size:15px; font-weight:bold; color:#10b981;">' + esc(statDisplay(stats.success_launches)) + '</div>';
@@ -4590,6 +4590,13 @@
     h += '</div></div>';
     var statsScopeArabic = arabicText(stats.scope_ar) || safeEnglish(stats.scope_en, "");
     if (statsScopeArabic) h += '<div style="margin-top:6px; padding:7px 9px; border-inline-start:3px solid var(--accent); color:var(--muted); font-size:10px; line-height:1.5;">' + esc(statsScopeArabic) + '</div>';
+
+    if (Array.isArray(o.launch_sources) && o.launch_sources.length) {
+      h += '<div style="background:var(--bg2);border:1px solid var(--line);border-radius:8px;padding:8px 10px;margin-top:8px;font-size:10px;">';
+      h += '<div style="font-weight:bold;color:var(--accent);margin-bottom:5px;">مصادر بيانات الإطلاق والأسطول</div>';
+      o.launch_sources.slice(0, 5).forEach(function(url,ix){ if (/^https:\/\//.test(url)) h += '<a href="' + esc(url) + '" target="_blank" rel="noopener noreferrer" style="color:var(--text);text-decoration:underline;display:inline-block;margin:3px 9px;">مصدر ' + (ix+1) + ' ↗</a>'; });
+      h += '</div>';
+    }
 
     // Annual Launch Trend Chart (same chart structure as the Persian template).
     var trend = stats.annual_trend || [];
@@ -4664,6 +4671,8 @@
     // TAB 2: ROCKETS FLEET
     h += '<div id="compTabVehicles" class="site-tab-content" style="display:none;">';
     h += '<div style="font-size:10.5px; color:var(--muted); margin-bottom:6px;">🚀 المواصفات الفنية والتشغيلية لأسطول مركبات الإطلاق (المركبات النشطة: ' + esc(statDisplay(activeVehicles)) + '):</div>';
+    if (o.fleet_scope_ar) h += '<div style="border-inline-start:3px solid var(--amber);background:var(--bg2);color:var(--text);padding:7px 9px;margin-bottom:8px;font-size:10px;line-height:1.7;">' + esc(o.fleet_scope_ar) + '</div>';
+    if (!fleet.length) h += '<div style="padding:12px;color:var(--text);background:var(--bg2);border:1px solid var(--line);border-radius:8px;font-size:11px;">لم تُوثّق أسطول مستقل لمركبات الإطلاق، وهذا لا يعني عدم وجود نشاط فضائي.</div>';
     fleet.forEach(function (v) {
       var rName = safeEnglish(v.name, "مركبة إطلاق غير مسماة");
       var stText = arabicStatus(v.status_ar || v.status_en || v.status_fa);
@@ -4716,7 +4725,8 @@
       h += '<span>' + flightsLabel + '</span>';
       h += '<span>' + lastFlightLabel + '</span>';
       h += '</div>';
-      h += '</div>'; // end rocket card
+      if (v.source_url && /^https:\/\//.test(v.source_url)) h += '<a href="' + esc(v.source_url) + '" target="_blank" rel="noopener noreferrer" style="display:inline-block;color:var(--accent);font-size:10px;margin-top:6px;text-decoration:underline;">' + "مصدر معلومات مركبة الإطلاق ↗" + '</a>';
+        h += '</div>'; // end rocket card
     });
     h += '</div>'; // end TAB 2
 
@@ -4734,12 +4744,15 @@
         var detail = timelineDescription(item.desc_ar || item.desc_en || item.desc || item.desc_fa);
         h += '<div style="background:rgba(0,0,0,0.25); border-right:3px solid #f59e0b; padding:6px 10px; border-radius:4px; font-size:10.5px;">';
         h += '<div style="font-weight:bold; color:var(--text);"><span style="color:var(--amber); font-family:monospace;">' + esc(latinDigits(item.year)) + ':</span> ' + esc(title) + '</div>';
-        h += '<div style="color:var(--muted); margin-top:2px; line-height:1.4;">' + esc(detail) + '</div>';
+        h += '<div style="color:var(--text); opacity:0.9; margin-top:2px; line-height:1.55;">' + esc(detail) + '</div>';
+        if (item.verification_status === 'legacy_not_independently_confirmed' || item.verification_status === 'source_pending') h += '<div style="color:var(--amber);font-size:9px;margin-top:4px;">يتطلب الحدث توثيق المصدر الأصلي</div>';
+        if (item.source_url && /^https:\/\//.test(item.source_url)) h += '<a href="' + esc(item.source_url) + '" target="_blank" rel="noopener noreferrer" style="color:var(--accent);font-size:9.5px;display:inline-block;margin-top:3px;">مصدر هذا الحدث ↗</a>';
         h += '</div>';
       });
       h += '</div></div>';
     }
 
+    if (!timeline.length) h += '<div style="background:var(--bg2);border:1px solid var(--line);border-radius:8px;padding:10px;margin-bottom:8px;color:var(--text);font-size:10.5px;">لا توجد أحداث تاريخية مؤرخة ومتحقَّق منها لهذا الملف؛ لم تُختلق تواريخ.</div>';
     // Customers & Partners Network
     h += '<div style="background:var(--bg2); border:1px solid var(--line); border-radius:8px; padding:10px;">';
     h += '<div style="font-size:11.5px; font-weight:bold; color:var(--accent); margin-bottom:6px;">🤝 شبكة العملاء والشركاء الصناعيين</div>';
@@ -4940,7 +4953,7 @@
       
       h += '<div style="background:rgba(0,0,0,0.3); padding:6px; border-radius:6px; border:1px solid var(--line);">';
       h += '<div style="font-size:15px; font-weight:bold; color:var(--text);">' + esc(stats.total_launches == null ? "—" : stats.total_launches) + '</div>';
-      h += '<div style="font-size:9.5px; color:var(--muted);">' + (isFa ? "کل پرتاب‌ها" : "Total") + '</div>';
+      h += '<div style="font-size:9.5px; color:var(--muted);">' + esc(isFa ? (stats.total_label_fa || "کل پرتاب‌ها") : (stats.total_label_en || "Total")) + '</div>';
       h += '</div>';
 
       h += '<div style="background:rgba(16, 185, 129, 0.1); padding:6px; border-radius:6px; border:1px solid rgba(16, 185, 129, 0.3);">';
@@ -4962,6 +4975,13 @@
       h += '</div></div>';
       var statsScopeText = isFa ? (stats.scope_fa || stats.scope_en || "") : (stats.scope_en || stats.scope_fa || "");
       if (statsScopeText) h += '<div style="margin-top:6px; padding:7px 9px; border-inline-start:3px solid var(--accent); color:var(--muted); font-size:10px; line-height:1.5;">' + esc(statsScopeText) + '</div>';
+
+      if (Array.isArray(o.launch_sources) && o.launch_sources.length) {
+        h += '<div style="background:var(--bg2);border:1px solid var(--line);border-radius:8px;padding:8px 10px;margin-top:8px;font-size:10px;">';
+        h += '<div style="font-weight:bold;color:var(--accent);margin-bottom:5px;">' + (isFa ? 'منابع اطلاعات پرتاب و ناوگان' : 'Launch and fleet references') + '</div>';
+        o.launch_sources.slice(0, 5).forEach(function(url,ix){ if (/^https:\/\//.test(url)) h += '<a href="' + esc(url) + '" target="_blank" rel="noopener noreferrer" style="color:var(--text);text-decoration:underline;display:inline-block;margin:3px 9px;">' + (isFa ? 'منبع ' : 'Source ') + (ix+1) + ' ↗</a>'; });
+        h += '</div>';
+      }
 
       // Annual Launch Trend Chart (HTML/CSS Bar Graph)
       var trend = stats.annual_trend || [];
@@ -5045,7 +5065,9 @@
       // TAB 2: ROCKETS FLEET
       var fleet = o.rockets_fleet || [];
       h += '<div id="compTabVehicles" class="site-tab-content" style="display:none;">';
-      h += '<div style="font-size:10.5px; color:var(--muted); margin-bottom:6px;">🚀 ' + (isFa ? "مشخصات کامل فنی و عملیاتی موشک‌ها و پرتاب‌گرها:" : "Detailed Rockets Fleet Specifications:") + '</div>';
+      h += '<div style="font-size:10.5px; color:var(--muted); margin-bottom:6px;">🚀 ' + (isFa ? "پرتابگرهای مرتبط و داده‌های فنی مستند:" : "Associated launch vehicles and documented specs:") + '</div>';
+      if (o.fleet_scope_fa || o.fleet_scope_en) h += '<div style="border-inline-start:3px solid var(--amber);background:var(--bg2);color:var(--text);padding:7px 9px;margin-bottom:8px;font-size:10px;line-height:1.7;">' + esc(isFa ? (o.fleet_scope_fa || o.fleet_scope_en) : (o.fleet_scope_en || o.fleet_scope_fa)) + '</div>';
+      if (!fleet.length) h += '<div style="padding:12px;color:var(--text);background:var(--bg2);border:1px solid var(--line);border-radius:8px;font-size:11px;">' + (isFa ? "ناوگان پرتابگر مستقل و تأییدشده ثبت نشده است؛ این وضعیت با نبود فعالیت فضایی یکسان نیست." : "No verified independently operated launcher fleet is recorded. This does not imply that the organization has no space-related activity.") + '</div>';
       
       fleet.forEach(function(v) {
         var rName = isFa ? (v.name || "—") : (v.name ? v.name.split(" (")[0] : "—");
@@ -5108,6 +5130,7 @@
         h += '<span>' + lastFlightLabel + '</span>';
         h += '</div>';
 
+        if (v.source_url && /^https:\/\//.test(v.source_url)) h += '<a href="' + esc(v.source_url) + '" target="_blank" rel="noopener noreferrer" style="display:inline-block;color:var(--accent);font-size:10px;margin-top:6px;text-decoration:underline;">' + (isFa ? 'منبع مشخصات پرتابگر ↗' : 'Vehicle source ↗') + '</a>';
         h += '</div>'; // end rocket card
       });
 
@@ -5132,13 +5155,16 @@
 
           h += '<div style="background:rgba(0,0,0,0.25); border-right:3px solid #f59e0b; padding:6px 10px; border-radius:4px; font-size:10.5px;">';
           h += '<div style="font-weight:bold; color:var(--text);"><span style="color:var(--amber); font-family:monospace;">' + esc(item.year) + ':</span> ' + esc(tTitle) + '</div>';
-          h += '<div style="color:var(--muted); margin-top:2px; line-height:1.4;">' + esc(tDesc) + '</div>';
+          h += '<div style="color:var(--text); opacity:0.9; margin-top:2px; line-height:1.55;">' + esc(tDesc) + '</div>';
+          if (item.verification_status === 'legacy_not_independently_confirmed' || item.verification_status === 'source_pending') h += '<div style="color:var(--amber);font-size:9px;margin-top:4px;">' + (isFa ? 'نیازمند تأیید منبع اولیه' : 'Primary-source verification pending') + '</div>';
+          if (item.source_url && /^https:\/\//.test(item.source_url)) h += '<a href="' + esc(item.source_url) + '" target="_blank" rel="noopener noreferrer" style="color:var(--accent);font-size:9.5px;display:inline-block;margin-top:3px;">' + (isFa ? 'سند این رویداد ↗' : 'Event source ↗') + '</a>';
           h += '</div>';
         });
 
         h += '</div></div>';
       }
 
+      if (!timeline.length) h += '<div style="background:var(--bg2);border:1px solid var(--line);border-radius:8px;padding:10px;margin-bottom:8px;color:var(--text);font-size:10.5px;">' + (isFa ? "هنوز رویداد تاریخی تاریخ‌دار و تأییدشده برای این پرونده ثبت نشده است؛ اطلاعات تاریخ‌سازی نشده‌اند." : "No independently verified dated event has been registered for this record; dates have not been invented.") + '</div>';
       // Customers & Partners Network
       h += '<div style="background:var(--bg2); border:1px solid var(--line); border-radius:8px; padding:10px;">';
       h += '<div style="font-size:11.5px; font-weight:bold; color:var(--accent); margin-bottom:6px;">🤝 ' + (isFa ? "شبکه مشتریان و همکاران پیشرانش" : "Customers & Propulsion Network") + '</div>';
@@ -10631,7 +10657,7 @@
     if (COMPANY_CATEGORY_PROMISES[category]) return COMPANY_CATEGORY_PROMISES[category];
     COMPANY_CATEGORY_STATE[category] = "loading";
     updateLayerChipStatus(category);
-    var url = COMPANY_CATEGORY_FILES[category] + "?v=" + (window.ORBITA_V || "1");
+    var url = COMPANY_CATEGORY_FILES[category] + "?v=" + ((category === "launch" || category === "propulsion") ? (window.ORBITA_COMPANIES_V || window.ORBITA_V || "1") : (window.ORBITA_V || "1"));
     var request = fetch(url)
       .then(function (r) { if (!r.ok) throw new Error("HTTP " + r.status); return r.json(); })
       .then(function (rows) {
