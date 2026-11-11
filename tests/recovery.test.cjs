@@ -34,7 +34,7 @@ for(const s of imaged){
 for(const sid of ['recovery-koonibba','recovery-starship-indian'])
   assert(!data.sites.find(x=>x.id===sid).image,'honest skip: '+sid);
 // --- landing registry integrity ---
-const expectedRegistries={'recovery-lz1':54,'recovery-lz4':35,'recovery-jrti':159,'recovery-ocisly':235,'recovery-asog':168,
+const expectedRegistries={'recovery-lz1':54,'recovery-lz4':35,'recovery-jrti':159,'recovery-ocisly':236,'recovery-asog':168,
   'recovery-kennedy-runway':81,'recovery-edwards':54,'recovery-dzhezkazgan':160,'recovery-dongfeng':11,'recovery-siziwang':13,
   'recovery-starbase-catch':4,'recovery-starship-indian':9,'recovery-dragon-pacific':7,'recovery-dragon-gulf':27,
   'recovery-lz40':8,'recovery-jacklyn':3};
@@ -54,7 +54,7 @@ for(const [sid,count] of Object.entries(expectedRegistries)){
 }
 for(const sid of ['recovery-white-sands','recovery-utah','recovery-woomera','recovery-koonibba']){
   const s=data.sites.find(x=>x.id===sid);
-  assert.equal(s.history_coverage,'complete');assert(!s.landing_registry);
+  assert.equal(s.history_coverage,'partial');assert(!s.landing_registry);
 }
 for(const s of data.sites){
   if(s.recovery_type==='droneship'){assert.equal(s.mobility,'mobile');assert(s.mobility_note_fa && s.mobility_note_en);}
@@ -62,7 +62,7 @@ for(const s of data.sites){
 }
 assert.equal(data.sites.filter(s=>s.recovery_type==='droneship').length,4);
 assert.equal(data.sites.filter(s=>s.recovery_type==='splashdown_zone').length,3);
-console.log('PASS: 16 landing registries (1028 rows) are sourced, dated, ordered and scope-labelled; marine sites disclose mobility and zone approximation.');
+console.log('PASS: 16 landing registries (1029 rows) are sourced, dated, ordered and scope-labelled; marine sites disclose mobility and zone approximation.');
 const backup='/home/user/rollback/landing-recovery';
 if(fs.existsSync(path.join(backup,'app.js.gz'))){
   const before=zlib.gunzipSync(fs.readFileSync(path.join(backup,'app.js.gz'))).toString();
@@ -179,7 +179,7 @@ if(!chromium){console.log('SKIP: browser checks skipped — playwright is not in
     await page.locator('#recoveryHistoryTab').click();
     assert.equal((await page.locator('#recoveryHistory .recovery-coverage span').innerText()).trim(),'پوشش کامل');
     await page.locator('#recoveryHistory .recovery-registry>summary').click();
-    assert.equal(await page.locator('#recoveryHistory .recovery-registry-table tbody tr').count(),235);
+    assert.equal(await page.locator('#recoveryHistory .recovery-registry-table tbody tr').count(),236);
     assert.equal(await page.locator('#recoveryHistory .recovery-registry-dot.failure').count(),data.sites.find(s=>s.id==='recovery-ocisly').landing_registry.entries.filter(r=>r.o==='failure').length);
     await page.evaluate(()=>openDetail({cat:'recovery',kind:'recovery',o:DATA.recoveries.find(s=>s.id==='recovery-starship-indian')}));
     await page.locator('#recoveryHistoryTab').click();

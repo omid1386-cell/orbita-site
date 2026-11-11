@@ -57,7 +57,7 @@ function recoveryApi(language) {
 }
 
 check('the recovery Arabic slice bumps the shared asset cache version', () => {
-  assert.ok(html.includes('window.ORBITA_V = \"20261023propulsionlogos3\";'));
+  assert.ok(html.includes('window.ORBITA_V = \"20261023mapuk2\";'));
 });
 
 check('all 20 recovery sites have Arabic names, descriptions, cities, countries, operators, methods and coordinates', () => {
@@ -96,11 +96,11 @@ check('all 70 sourced events have Arabic summaries and caveats; all detailed Eng
   }
 });
 
-check('all landing registries and explanatory row notes have Arabic labels while preserving the 1,028 source rows', () => {
+check('all landing registries and explanatory row notes have Arabic labels while preserving the 1,029 source rows', () => {
   const registries = recovery.sites.filter((site) => site.landing_registry);
   const entries = registries.flatMap((site) => site.landing_registry.entries || []);
   assert.equal(registries.length, 16);
-  assert.equal(entries.length, 1028);
+  assert.equal(entries.length, 1029);
   for (const site of registries) {
     const registry = site.landing_registry;
     assert.ok(registry.scope_ar, `${site.id} registry scope lacks Arabic`);
