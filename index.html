@@ -11,12 +11,16 @@
 <meta property="og:description" content="نقشهٔ جهانی شرکت‌های پرتاب، مجموعه‌های پیشرانش، سازمان‌های فضایی، سازندگان ماهواره، پایگاه‌های پرتاب و محل‌های فرود و بازیابی." />
 <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'%3E%3Ccircle cx='12' cy='12' r='6' fill='%232fd4a7'/%3E%3C/svg%3E" />
 <title>ORBITA — سامانهٔ اطلاعات هوافضا</title>
+<!-- Resolve basemap hosts early so the first zoom does not pay DNS/TLS setup latency. -->
+<link rel="preconnect" href="https://basemaps.cartocdn.com" crossorigin />
+<link rel="preconnect" href="https://tile.jawg.io" crossorigin />
+<link rel="preconnect" href="https://api.jawg.io" crossorigin />
 <link rel="stylesheet" href="assets/vendor/maplibre-gl.css?v=3" />
 <script>
   window.ORBITA_V = "20261023mapuk2";
   window.ORBITA_COMPANIES_V = "20261111launch68deepv3";
-  window.ORBITA_CSS_V = "20261111identitywhite105v2";
-  window.ORBITA_APP_V = "20261112twostylefixv1";
+  window.ORBITA_CSS_V = "20261112tilecontinuitycssv1";
+  window.ORBITA_APP_V = "20261112tilecontinuityv1";
   // Public API URL only; never place the Resend key or another secret here.
   window.ORBITA_REPORT_API_URL = "https://orbita-report-api.onrender.com/api/report";
   (function() {

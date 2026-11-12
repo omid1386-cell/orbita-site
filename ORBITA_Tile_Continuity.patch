@@ -1,0 +1,90 @@
+diff --git a/index.html b/index.html
+--- a/index.html
++++ b/index.html
+@@ -11,12 +11,16 @@
+ <meta property="og:description" content="نقشهٔ جهانی شرکت‌های پرتاب، مجموعه‌های پیشرانش، سازمان‌های فضایی، سازندگان ماهواره، پایگاه‌های پرتاب و محل‌های فرود و بازیابی." />
+ <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'%3E%3Ccircle cx='12' cy='12' r='6' fill='%232fd4a7'/%3E%3C/svg%3E" />
+ <title>ORBITA — سامانهٔ اطلاعات هوافضا</title>
++<!-- Resolve basemap hosts early so the first zoom does not pay DNS/TLS setup latency. -->
++<link rel="preconnect" href="https://basemaps.cartocdn.com" crossorigin />
++<link rel="preconnect" href="https://tile.jawg.io" crossorigin />
++<link rel="preconnect" href="https://api.jawg.io" crossorigin />
+ <link rel="stylesheet" href="assets/vendor/maplibre-gl.css?v=3" />
+ <script>
+   window.ORBITA_V = "20261023mapuk2";
+   window.ORBITA_COMPANIES_V = "20261111launch68deepv3";
+-  window.ORBITA_CSS_V = "20261111identitywhite105v2";
+-  window.ORBITA_APP_V = "20261112twostylefixv1";
++  window.ORBITA_CSS_V = "20261112tilecontinuitycssv1";
++  window.ORBITA_APP_V = "20261112tilecontinuityv1";
+   // Public API URL only; never place the Resend key or another secret here.
+   window.ORBITA_REPORT_API_URL = "https://orbita-report-api.onrender.com/api/report";
+   (function() {
+diff --git a/assets/js/app.js b/assets/js/app.js
+--- a/assets/js/app.js
++++ b/assets/js/app.js
+@@ -1753,6 +1753,26 @@
+     try { return window.matchMedia && window.matchMedia("(max-width: 820px)").matches; }
+     catch (e) { return window.innerWidth <= 820; }
+   }
++  // Without world copies, zooming out until the Mercator world is narrower
++  // than the canvas exposes empty strips beyond the antimeridian. Keep the
++  // original minZoom=1 on small screens; only constrain wide viewports.
++  // The 512px world size is MapLibre GL JS v3's Mercator tile size.
++  function minimumZoomForWorldCoverage(viewportWidth) {
++    var width = Number(viewportWidth);
++    if (!(width > 0) || !isFinite(width)) return 1;
++    return Math.max(1, Math.min(4, Math.log2((width + 2) / 512)));
++  }
++  function maintainWorldCoverage() {
++    if (!map || !map.getContainer || !map.setMinZoom) return;
++    var container = map.getContainer();
++    var width = container && container.clientWidth;
++    if (!(width > 0)) return;
++    var desiredMinZoom = minimumZoomForWorldCoverage(width);
++    // Only adjust when the viewport really changed; avoid a resize/zoom loop.
++    if (!map.getMinZoom || Math.abs(map.getMinZoom() - desiredMinZoom) > 0.015) {
++      map.setMinZoom(desiredMinZoom);
++    }
++  }
+   function syncTouchGestures() {
+     if (!map) return;
+     var mob = mobileView();
+@@ -1796,11 +1816,11 @@
+       var mapContainer = map.getContainer();
+       if (window.ResizeObserver && mapContainer) {
+         mapResizeObserver = new window.ResizeObserver(function () {
+-          if (map) { try { map.resize(); } catch (e) {} }
++          if (map) { try { map.resize(); maintainWorldCoverage(); } catch (e) {} }
+         });
+         mapResizeObserver.observe(mapContainer);
+       }
+-      requestAnimationFrame(function () { if (map) { try { map.resize(); } catch (e) {} } });
++      requestAnimationFrame(function () { if (map) { try { map.resize(); maintainWorldCoverage(); } catch (e) {} } });
+     } catch (e) {}
+     /* responsive, controlled wheel/trackpad zoom; no abrupt 2x camera acceleration */
+     try {
+@@ -1816,7 +1836,7 @@
+     map.addControl(new maplibregl.ScaleControl({ unit: "metric" }), "bottom-left");
+ 
+     map.on("load", function () {
+-      try { map.resize(); } catch (e) {}
++      try { map.resize(); maintainWorldCoverage(); } catch (e) {}
+       $("#mapStatus").style.display = "none";
+       ensureCountryInteractionLayers();
+       bindCountryCanvasExit();
+diff --git a/assets/css/app.css b/assets/css/app.css
+--- a/assets/css/app.css
++++ b/assets/css/app.css
+@@ -111,7 +111,11 @@
+ }
+ 
+ /* ===== MAP ===== */
++/* The canvas can briefly reveal its container during tile/style loading.
++   Match each existing basemap background without changing its paint layers. */
+ #map{position:absolute;inset:0;background:var(--bg)}
++:root[data-theme="navy"] #map{background:#08131f}
++:root[data-theme="light"] #map{background:#f8f4f0}
+ .map-status{position:absolute;top:50%;left:50%;transform:translate(-50%,-50%);color:var(--muted);z-index:2}
+ .coords{position:absolute;bottom:10px;left:12px;z-index:12;font-size:11px;color:var(--muted);background:var(--panel);
+   padding:4px 9px;border-radius:6px;direction:ltr;font-family:ui-monospace,monospace;border:1px solid var(--line)}

@@ -132,7 +132,7 @@ test('tooltip text is inserted as textContent, not executable HTML',()=>{
 });
 test('marker hover preserves original CSS/map-data version while only script version changes',()=>{
  const html=fs.readFileSync(path.join(__dirname,'../index.html'),'utf8');
- assert.match(html,/ORBITA_APP_V = "20261112twostylefixv1"/);
- assert.match(html,/ORBITA_CSS_V = "20261111identitywhite105v2"/);
+ assert.match(html,/ORBITA_APP_V = "20261112tilecontinuityv1"/);
+ assert.match(html,/ORBITA_CSS_V = "20261112tilecontinuitycssv1"/);
  assert.match(html,/ORBITA_V = "20261023mapuk2"/);
 });

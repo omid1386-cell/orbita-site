@@ -36,7 +36,7 @@ test('only first and second basemap URLs survive byte-for-byte; no third Voyager
  }
  assert.doesNotMatch(app,/ONLINE_OSM_URL|voyager-gl-style|style_osm:\s*"|MAP_STYLE\s*=\s*"osm"/);
  assert.match(app,/MAP_STYLE = MAP_STYLE === "dark" \? "sunny" : "dark";/);
- assert.match(html,/ORBITA_APP_V = "20261112twostylefixv1"/);
+ assert.match(html,/ORBITA_APP_V = "20261112tilecontinuityv1"/);
 });
 test('saved third style is migrated to the original second style without altering the theme',()=>{
  const store={orbita_map_style:'osm'}, writes=[];

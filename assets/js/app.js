@@ -1753,6 +1753,26 @@
     try { return window.matchMedia && window.matchMedia("(max-width: 820px)").matches; }
     catch (e) { return window.innerWidth <= 820; }
   }
+  // Without world copies, zooming out until the Mercator world is narrower
+  // than the canvas exposes empty strips beyond the antimeridian. Keep the
+  // original minZoom=1 on small screens; only constrain wide viewports.
+  // The 512px world size is MapLibre GL JS v3's Mercator tile size.
+  function minimumZoomForWorldCoverage(viewportWidth) {
+    var width = Number(viewportWidth);
+    if (!(width > 0) || !isFinite(width)) return 1;
+    return Math.max(1, Math.min(4, Math.log2((width + 2) / 512)));
+  }
+  function maintainWorldCoverage() {
+    if (!map || !map.getContainer || !map.setMinZoom) return;
+    var container = map.getContainer();
+    var width = container && container.clientWidth;
+    if (!(width > 0)) return;
+    var desiredMinZoom = minimumZoomForWorldCoverage(width);
+    // Only adjust when the viewport really changed; avoid a resize/zoom loop.
+    if (!map.getMinZoom || Math.abs(map.getMinZoom() - desiredMinZoom) > 0.015) {
+      map.setMinZoom(desiredMinZoom);
+    }
+  }
   function syncTouchGestures() {
     if (!map) return;
     var mob = mobileView();
@@ -1796,11 +1816,11 @@
       var mapContainer = map.getContainer();
       if (window.ResizeObserver && mapContainer) {
         mapResizeObserver = new window.ResizeObserver(function () {
-          if (map) { try { map.resize(); } catch (e) {} }
+          if (map) { try { map.resize(); maintainWorldCoverage(); } catch (e) {} }
         });
         mapResizeObserver.observe(mapContainer);
       }
-      requestAnimationFrame(function () { if (map) { try { map.resize(); } catch (e) {} } });
+      requestAnimationFrame(function () { if (map) { try { map.resize(); maintainWorldCoverage(); } catch (e) {} } });
     } catch (e) {}
     /* responsive, controlled wheel/trackpad zoom; no abrupt 2x camera acceleration */
     try {
@@ -1816,7 +1836,7 @@
     map.addControl(new maplibregl.ScaleControl({ unit: "metric" }), "bottom-left");
 
     map.on("load", function () {
-      try { map.resize(); } catch (e) {}
+      try { map.resize(); maintainWorldCoverage(); } catch (e) {}
       $("#mapStatus").style.display = "none";
       ensureCountryInteractionLayers();
       bindCountryCanvasExit();
