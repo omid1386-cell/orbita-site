@@ -1,0 +1,256 @@
+--- a/index.html
++++ b/index.html
+@@ -16,7 +16,7 @@
+   window.ORBITA_V = "20261023mapuk2";
+   window.ORBITA_COMPANIES_V = "20261111launch68deepv3";
+   window.ORBITA_CSS_V = "20261111identitywhite105v2";
+-  window.ORBITA_APP_V = "20261112maponlyv1";
++  window.ORBITA_APP_V = "20261112twostylefixv1";
+   // Public API URL only; never place the Resend key or another secret here.
+   window.ORBITA_REPORT_API_URL = "https://orbita-report-api.onrender.com/api/report";
+   (function() {
+--- a/assets/js/app.js
++++ b/assets/js/app.js
+@@ -25,7 +25,7 @@
+       location: "مکان", date: "تاریخ", cost: "هزینهٔ برآوردی", en_desc: "شرح رسمی انگلیسی", all: "همه",
+       no_res: "موردی یافت نشد",
+       credit: "تصویر", show_map: "نمایش پایگاه روی نقشه", base_offline: "نقشهٔ آفلاین", base_online: "نقشهٔ آنلاین",
+-      toggle_theme: "تغییر پوسته نقشه", style_dark: "پوسته ۱", style_sunny: "پوسته ۲", style_osm: "پوسته ۳",
++      toggle_theme: "تغییر پوسته نقشه", style_dark: "پوسته ۱", style_sunny: "پوسته ۲",
+       tab_orbit: "مدار زمین", orbit_loading: "در حال آماده‌سازی کرهٔ زمین و محاسبهٔ مدارها…",
+       ph_search_sat: "جستجوی ماهواره یا شناسهٔ رصدی...", mega: "منظومه‌های انبوه",
+       featured_only: "فقط ماهواره‌های شاخص", objects: "جسم در مدار",
+@@ -152,7 +152,7 @@
+       location: "Location", date: "Date", cost: "Estimated cost", en_desc: "Full English description", all: "All",
+       no_res: "No results",
+       credit: "Image", show_map: "Show launch site on map", base_offline: "Offline map", base_online: "Online map",
+-      toggle_theme: "Toggle Map Style", style_dark: "Style 1", style_sunny: "Style 2", style_osm: "Style 3",
++      toggle_theme: "Toggle Map Style", style_dark: "Style 1", style_sunny: "Style 2",
+       tab_orbit: "Earth Orbit", orbit_loading: "Preparing the globe and propagating orbits…",
+       ph_search_sat: "Search satellite or NORAD ID...", mega: "Mega-constellations",
+       featured_only: "Featured satellites only", objects: "objects in orbit",
+@@ -279,7 +279,7 @@
+       location: "الموقع", date: "التاريخ", cost: "التكلفة التقديرية", en_desc: "الوصف الرسمي باللغة الإنجليزية", all: "الكل",
+       no_res: "لا توجد نتائج",
+       credit: "الصورة", show_map: "إظهار موقع الإطلاق على الخريطة", base_offline: "خريطة دون اتصال", base_online: "خريطة متصلة بالإنترنت",
+-      toggle_theme: "تغيير نمط الخريطة", style_dark: "النمط 1", style_sunny: "النمط 2", style_osm: "النمط 3",
++      toggle_theme: "تغيير نمط الخريطة", style_dark: "النمط 1", style_sunny: "النمط 2",
+       tab_orbit: "مدار الأرض", orbit_loading: "جارٍ تجهيز الكرة الأرضية وحساب المدارات…",
+       ph_search_sat: "ابحث عن قمر صناعي أو رقم NORAD…", mega: "الكوكبات الضخمة للأقمار الصناعية",
+       featured_only: "الأقمار الصناعية البارزة فقط", objects: "أجسام في المدار",
+@@ -784,7 +784,14 @@
+ 
+ 
+ 
+-  var MAP_STYLE = localStorage.getItem("orbita_map_style") || (THEME === "light" ? "sunny" : "dark");
++  // Older visitors may still have the retired third style in localStorage.
++  // Map it to the original second (sunny/light) style; never substitute Voyager.
++  var savedMapStyle = localStorage.getItem("orbita_map_style");
++  var MAP_STYLE = (savedMapStyle === "dark" || savedMapStyle === "sunny")
++    ? savedMapStyle : (THEME === "light" ? "sunny" : "dark");
++  if (savedMapStyle !== MAP_STYLE) {
++    try { localStorage.setItem("orbita_map_style", MAP_STYLE); } catch (e) {}
++  }
+ 
+   function bindReportForm() {
+     var trigger = $("#reportBtn"), dialog = $("#reportDialog"), close = $("#reportClose");
+@@ -939,9 +946,8 @@
+   }
+   bindReportForm();
+   function cycleMapStyle() {
+-    if (MAP_STYLE === "dark") MAP_STYLE = "sunny";
+-    else if (MAP_STYLE === "sunny") MAP_STYLE = "osm";
+-    else MAP_STYLE = "dark";
++    // Only the original first (dark) and second (sunny) basemaps remain.
++    MAP_STYLE = MAP_STYLE === "dark" ? "sunny" : "dark";
+ 
+     THEME = MAP_STYLE === "dark" ? "navy" : "light";
+     localStorage.setItem("orbita_map_style", MAP_STYLE);
+@@ -1252,11 +1258,9 @@
+ 
+   var ONLINE_DARK_URL = "https://basemaps.cartocdn.com/gl/dark-matter-gl-style/style.json";
+   var ONLINE_SUNNY_URL = "assets/geo/jawg_sunny.json";
+-  var ONLINE_OSM_URL = "https://basemaps.cartocdn.com/gl/voyager-gl-style/style.json";
+ 
+   function onlineStyleUrl() {
+     if (MAP_STYLE === "sunny") return ONLINE_SUNNY_URL;
+-    if (MAP_STYLE === "osm") return ONLINE_OSM_URL;
+     return ONLINE_DARK_URL;
+   }
+ 
+@@ -1307,25 +1311,60 @@
+       return localized;
+     }).catch(function () { return null; });
+   }
++  // Verify the WHOLE marker overlay, including icon images and all cluster/hover layers.
++  // Partial style reloads formerly passed the "point layer exists" test while icons were invisible.
++  var overlayRepairAttempts = 0;
++  function markerOverlayIsComplete() {
++    if (!map || !map.getStyle() || !map.getSource(MARKER_SOURCE)) return false;
++    var layers = [MARKER_POINT_LAYER, MARKER_POINT_HOVER_LAYER,
++      MARKER_CLUSTER_SHADOW_LAYER, MARKER_CLUSTER_HALO_LAYER,
++      MARKER_CLUSTER_CIRCLE_LAYER, MARKER_CLUSTER_LABEL_LAYER,
++      MARKER_CLUSTER_HOVER_LAYER, MARKER_CLUSTER_HOVER_LABEL_LAYER];
++    for (var i = 0; i < layers.length; i++) {
++      try { if (!map.getLayer(layers[i])) return false; } catch (e) { return false; }
++    }
++    if (!Object.keys(MARKER_IMAGES).every(function (key) {
++      try { return !!map.hasImage(MARKER_IMAGES[key]); } catch (e) { return false; }
++    })) return false;
++    // Cluster count labels are generated on demand rather than stored in MARKER_IMAGES.
++    return (markerFeatureCollection.features || []).every(function (feature) {
++      var props = feature && feature.properties;
++      if (!props || props.markerType !== "cluster" || !props.clusterLabelImage) return true;
++      try { return !!map.hasImage(props.clusterLabelImage); } catch (e) { return false; }
++    });
++  }
+   function scheduleMapOverlayRepair(delay) {
+     if (!map) return;
+     if (mapOverlayRepairTimer) clearTimeout(mapOverlayRepairTimer);
++    var generation = mapStyleGeneration;
+     mapOverlayRepairTimer = setTimeout(function () {
+       mapOverlayRepairTimer = 0;
+-      if (!map || mapStyleTransitionPending || !map.getStyle()) return;
+-      // Do not perform full marker rebuilds here: reattach only missing layers.
++      if (!map || generation !== mapStyleGeneration || mapStyleTransitionPending || !map.getStyle()) return;
+       if (!map.getLayer(COUNTRY_HIT_LAYER) && !map.getLayer("country-fill")) {
+         ensureCountryInteractionLayers(true);
+       }
+-      var imagesMissing = Object.keys(MARKER_IMAGES).some(function (key) {
+-        try { return !map.hasImage(MARKER_IMAGES[key]); } catch (e) { return true; }
++      if (markerOverlayIsComplete()) {
++        overlayRepairAttempts = 0;
++        syncCountryFeatureStates();
++        try { map.triggerRepaint(); } catch (e) {}
++        return;
++      }
++      ensureMarkerLayers(true).then(function (ready) {
++        if (!map || generation !== mapStyleGeneration || mapStyleTransitionPending) return;
++        if (ready && markerOverlayIsComplete()) {
++          overlayRepairAttempts = 0;
++          publishMarkerFeatureCollection();
++          try { map.triggerRepaint(); } catch (e) {}
++          return;
++        }
++        // Bounded retries; never loop forever on a broken SVG or disconnected map.
++        overlayRepairAttempts++;
++        if (overlayRepairAttempts <= 4) scheduleMapOverlayRepair(Math.min(2800, 300 * Math.pow(2, overlayRepairAttempts)));
++        else console.warn("map marker overlay remains incomplete after retries");
++      }).catch(function (e) {
++        console.warn("map marker overlay repair failed:", e && e.message || e);
+       });
+-      if (!map.getSource(MARKER_SOURCE) || !map.getLayer(MARKER_POINT_LAYER) ||
+-          !map.getLayer(MARKER_CLUSTER_CIRCLE_LAYER) || imagesMissing) {
+-        ensureMarkerLayers(true);
+-      }
+       syncCountryFeatureStates();
+-      try { map.triggerRepaint(); } catch (e) {}
+     }, delay == null ? 150 : delay);
+   }
+   function afterStyleApply() {
+@@ -1340,16 +1379,11 @@
+     mapStyleWatchdogTimer = setTimeout(function () {
+       mapStyleWatchdogTimer = 0;
+       if (!map || generation !== mapStyleGeneration || !mapStyleTransitionPending) return;
+-      // A slow raster/vector tile does not necessarily mean a broken style.
+-      // Repair overlays without discarding the current basemap or camera state.
+-      var style = null;
+-      try { style = map.getStyle(); map.resize(); map.triggerRepaint(); } catch (e) {}
+-      if (style && style.layers && style.layers.length) {
+-        mapStyleTransitionPending = false;
+-        ensureCountryInteractionLayers(true);
+-        ensureMarkerLayers(true);
+-        afterStyleApply();
+-      } else if (BASEMODE !== "offline") {
++      // Merely having style.layers does NOT mean its resources are ready.
++      // style.load below is the sole authority for completing a style change.
++      // On a stalled style, fall back to the already-existing local basemap.
++      try { map.resize(); map.triggerRepaint(); } catch (e) {}
++      if (BASEMODE !== "offline") {
+         console.warn("map style stalled: switching to the existing local fallback");
+         useOfflineStyleFallback();
+       } else {
+@@ -1365,6 +1399,7 @@
+     if (!map) return;
+     var generation = ++mapStyleGeneration;
+     mapStyleTransitionPending = true;
++    overlayRepairAttempts = 0;
+     // Never allow an image install started under the previous style to block or
+     // mutate the fresh style's marker source.
+     markerLayerEnsurePromise = null;
+@@ -1372,9 +1407,12 @@
+     activeMapStyleMode = mode;
+     activeOfflineTheme = mode === "offline" ? THEME : "";
+     if (mapOverlayRepairTimer) { clearTimeout(mapOverlayRepairTimer); mapOverlayRepairTimer = 0; }
+-    try { map.setStyle(style, { diff: true }); }
++    // The previous diff could retain partial app-owned overlays across basemap swaps.
++    // A full style replacement provides a clean source/layer registry; overlays are then
++    // restored in style.load. Only rendering lifecycle changes, not either basemap's JSON.
++    try { map.setStyle(style, { diff: false }); }
+     catch (e) {
+-      try { map.setStyle(style); }
++      try { map.setStyle(style, { diff: false }); }
+       catch (err) {
+         mapStyleTransitionPending = false;
+         console.warn("map style change failed:", err && err.message || err);
+@@ -1791,12 +1829,20 @@
+     // style.load fires after a basemap switch even while its remote tiles are still loading.
+     // Install local country interaction layers then, instead of waiting for isStyleLoaded() (idle).
+     map.on("style.load", function () {
++      var generation = mapStyleGeneration;
+       mapStyleTransitionPending = false;
+       if (mapStyleWatchdogTimer) { clearTimeout(mapStyleWatchdogTimer); mapStyleWatchdogTimer = 0; }
+       countryFeatureStateNeedsSync = true;
+       ensureCountryInteractionLayers(true);
+-      ensureMarkerLayers(true);
+-      afterStyleApply();
++      // Marker image decoding is asynchronous; publish the current snapshot
++      // after the complete set of symbol/cluster layers is present.
++      ensureMarkerLayers(true).then(function (ready) {
++        if (!map || generation !== mapStyleGeneration || mapStyleTransitionPending) return;
++        if (ready && markerOverlayIsComplete()) {
++          overlayRepairAttempts = 0;
++          afterStyleApply();
++        } else scheduleMapOverlayRepair(250);
++      }).catch(function () { scheduleMapOverlayRepair(400); });
+       var status = $("#mapStatus");
+       if (status) status.style.display = "none";
+     });
+@@ -1804,7 +1850,7 @@
+     // interaction layers against it. The style.load + idle hooks own recovery.
+     map.on("idle", function () {
+       if (!mapStyleTransitionPending && map.getStyle() &&
+-          (!map.getSource(MARKER_SOURCE) || !map.getLayer(MARKER_POINT_LAYER) ||
++          (!markerOverlayIsComplete() ||
+            (!map.getLayer(COUNTRY_HIT_LAYER) && !map.getLayer("country-fill")))) {
+         scheduleMapOverlayRepair(0);
+       }
+@@ -1813,6 +1859,12 @@
+       if (e && e.isSourceLoaded && (e.sourceId === COUNTRY_OVERLAY_SOURCE || e.sourceId === "countries")) {
+         syncCountryFeatureStates();
+       }
++    });
++    // MapLibre can request a symbol image before its async SVG decode completes.
++    // Reconcile our own images only; do not interfere with either basemap's sprites.
++    map.on("styleimagemissing", function (e) {
++      if (!mapStyleTransitionPending && e && typeof e.id === "string" &&
++          /^(orbita-pin-|orbita-cluster-label-)/.test(e.id)) scheduleMapOverlayRepair(120);
+     });
+     map.on("click", handleCountryMapClick);
+     map.on("movestart", clearMapInteractionHover); // never leave a tooltip behind during a camera flight/pan
+@@ -2228,9 +2280,12 @@
+   function ensureMarkerImages(generation) {
+     var staticJobs = markerImageSvgSpecs().map(function (spec) { return addMarkerImage(spec[0], markerSvgWithShadow(spec[1]), generation); });
+     return Promise.all(staticJobs).then(function () {
+-      if (generation !== mapStyleGeneration || mapStyleTransitionPending) return false;
+-      // Count labels are tiny and local: add them synchronously so a zoom-driven source update
+-      // never waits on an SVG image decode before displaying the new clusters.
++      if (generation !== mapStyleGeneration || mapStyleTransitionPending || !map) return false;
++      var allPresent = Object.keys(MARKER_IMAGES).every(function (key) {
++        try { return !!map.hasImage(MARKER_IMAGES[key]); } catch (e) { return false; }
++      });
++      if (!allPresent) return false;
++      // Count labels are tiny and local: register them before publishing the clusters.
+       ensureCurrentClusterLabelImages();
+       return true;
+     });
