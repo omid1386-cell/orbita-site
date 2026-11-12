@@ -1,0 +1,64 @@
+{
+  "base": "ORBITA_Tile_Continuity_Work/data",
+  "files": [
+    {
+      "file": "companies.json",
+      "records": 266,
+      "modified": true,
+      "original_sha256": "289052609373d48bcb0b6c2a997730c33b47e6af102669646802aa78564e2158",
+      "new_sha256": "b8c6a7d403334fa3ab7a53c4daeaf4686ac5479b43f45456e5029f2e13217a47"
+    },
+    {
+      "file": "companies_launch.json",
+      "records": 68,
+      "modified": true,
+      "original_sha256": "977fd0ed764b498aa8d8a2048041c8500223692594083f33cc8da0e2c0fa4216",
+      "new_sha256": "0c1e50c0b66ebd7c196b38e04e65b48a91fc59123ad5dc21b571024ece1b8dd9"
+    },
+    {
+      "file": "companies_agency.json",
+      "records": 96,
+      "modified": true,
+      "original_sha256": "9918ade6b5831c34b9effc4279a767500d068756e8e8da0a226a405b5d36f718",
+      "new_sha256": "d692b6d3e6c267c04e0306b25b3497f764085d82cc15f260854b6907a767901b"
+    },
+    {
+      "file": "companies_propulsion.json",
+      "records": 68,
+      "modified": true,
+      "original_sha256": "bdb945930b20ae42ee895db8a0afb694dafa8611531755796a8493698280bfdf",
+      "new_sha256": "57f970b6d213fbc07d6cfd84d93d7fc935d7c7024ff433a813308ce1a4da7a77"
+    },
+    {
+      "file": "companies_satmaker.json",
+      "records": 37,
+      "modified": true,
+      "original_sha256": "e01932816d743516e27d8030dea4b267160d5bd50540228916f178e64775245f",
+      "new_sha256": "337bfd20c2377d945154c8f4ce9a7344393285159f49aa6b073117adbc4d60c6"
+    },
+    {
+      "file": "sites.json",
+      "records": 79,
+      "modified": true,
+      "original_sha256": "e41dc07cd4ccff20355a08961a0916970c7ea794345969c10890800f8d3edbbd",
+      "new_sha256": "f5805114b64bc7083ab40a8560b68be4854e689ef1cf48e9f0270ea595a60f2e"
+    },
+    {
+      "file": "recovery_sites.json",
+      "records": 20,
+      "modified": false,
+      "original_sha256": "a22a2de67a679d89f33fc046890a5ee3d7794bbb3b36d05eb2f72f4ee8d4995d",
+      "new_sha256": "a22a2de67a679d89f33fc046890a5ee3d7794bbb3b36d05eb2f72f4ee8d4995d"
+    }
+  ],
+  "edited_files": [
+    "companies.json",
+    "companies_launch.json",
+    "companies_agency.json",
+    "companies_propulsion.json",
+    "companies_satmaker.json",
+    "sites.json"
+  ],
+  "change_operations": 2104,
+  "unresolved_field_gaps": 506
+}

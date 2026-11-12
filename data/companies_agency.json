@@ -233,7 +233,11 @@
     "city_ar": "واشنطن العاصمة",
     "flagship_product_ar": "كبسولة Orion المأهولة للفضاء العميق",
     "flagship_program_ar": "برنامج Artemis لاستكشاف القمر والمريخ",
-    "org_type_ar": "وكالة فضاء حكومية"
+    "org_type_ar": "وكالة فضاء حكومية",
+    "country_ar": "الولايات المتحدة",
+    "flagship_prod_status_ar": "تشغيلي (رحلات أرتميس)",
+    "sectors_ar": "الفضاء والطيران ومركبات الإطلاق والأقمار الصناعية",
+    "flagship_prog_timeline_ar": "2017 إلى 2035"
   },
   {
     "id": "esa",
@@ -426,7 +430,11 @@
     "city_ar": "باريس",
     "flagship_product_ar": "مركبة الإطلاق الثقيلة Ariane 6 ومرصد Euclid الكوني",
     "flagship_program_ar": "برنامج كوبرنيكوس لرصد الأرض",
-    "org_type_ar": "وكالة فضاء دولية"
+    "org_type_ar": "وكالة فضاء دولية",
+    "country_ar": "فرنسا / أوروبا",
+    "flagship_prod_status_ar": "تشغيلي",
+    "sectors_ar": "الفضاء والطيران ومركبات الإطلاق والأقمار الصناعية",
+    "flagship_prog_timeline_ar": "1998 إلى الآن"
   },
   {
     "id": "roscosmos",
@@ -637,7 +645,9 @@
     "coordinate_source_url": "https://nominatim.openstreetmap.org/reverse?lat=55.7836&lon=37.6304&format=json&zoom=18",
     "source_note_en": "Roscosmos official address: 42 Shchepkina Street, Moscow. The current state corporation was created under the 2015 law and began operating in 2016, distinct from the 1992 predecessor agency. Sources: https://en.roscosmos.ru/ ; https://www.roscosmos.ru/26064/ ; http://government.ru/docs/all/102750/ .",
     "source_note_fa": "نشانی رسمی Roscosmos خیابان شچپکینا، پلاک ۴۲، مسکو است. شرکت دولتی کنونی بر پایهٔ قانون ۲۰۱۵ ایجاد شد و از ۲۰۱۶ آغاز به کار کرد؛ این شرکت از آژانس پیشینِ تأسیس‌شده در ۱۹۹۲ متمایز است. منابع: https://en.roscosmos.ru/ ؛ https://www.roscosmos.ru/26064/ ؛ http://government.ru/docs/all/102750/ .",
-    "source_note_ar": "العنوان الرسمي لـRoscosmos هو شارع شتشيبكينا 42 في موسكو. أُنشئت الشركة الحكومية الحالية بموجب قانون 2015 وبدأت العمل في 2016، وهي منفصلة عن الوكالة السابقة التي تأسست عام 1992. المصادر: https://en.roscosmos.ru/ ؛ https://www.roscosmos.ru/26064/ ؛ http://government.ru/docs/all/102750/ ."
+    "source_note_ar": "العنوان الرسمي لـRoscosmos هو شارع شتشيبكينا 42 في موسكو. أُنشئت الشركة الحكومية الحالية بموجب قانون 2015 وبدأت العمل في 2016، وهي منفصلة عن الوكالة السابقة التي تأسست عام 1992. المصادر: https://en.roscosmos.ru/ ؛ https://www.roscosmos.ru/26064/ ؛ http://government.ru/docs/all/102750/ .",
+    "country_ar": "روسيا",
+    "sectors_ar": "الفضاء والطيران ومركبات الإطلاق والأقمار الصناعية"
   },
   {
     "id": "casc",
@@ -827,7 +837,11 @@
     "city_ar": "بكين",
     "flagship_product_ar": "صاروخ Long March 5 الثقيل ومركبة Shenzhou المأهولة",
     "flagship_program_ar": "برنامج استكشاف القمر الصيني (Chang’e)",
-    "org_type_ar": "وكالة فضاء حكومية"
+    "org_type_ar": "وكالة فضاء حكومية",
+    "country_ar": "الصين",
+    "flagship_prod_status_ar": "تشغيلي (وجود دائم لرواد الفضاء)",
+    "sectors_ar": "الفضاء والطيران ومركبات الإطلاق والأقمار الصناعية",
+    "flagship_prog_timeline_ar": "2004 إلى 2030"
   },
   {
     "id": "isro",
@@ -1017,7 +1031,11 @@
     "city_ar": "بنغالورو",
     "flagship_product_ar": "صاروخ LVM3 الثقيل ومركبة الهبوط Vikram والجوال Pragyan في Chandrayaan-3",
     "flagship_program_ar": "برنامج رحلات الفضاء المأهولة Gaganyaan",
-    "org_type_ar": "وكالة فضاء حكومية"
+    "org_type_ar": "وكالة فضاء حكومية",
+    "country_ar": "الهند",
+    "flagship_prod_status_ar": "اختبارات تجريبية / استعداد للإطلاق",
+    "sectors_ar": "الفضاء والطيران ومركبات الإطلاق والأقمار الصناعية",
+    "flagship_prog_timeline_ar": "2008 إلى 2028"
   },
   {
     "id": "jaxa",
@@ -1187,7 +1205,11 @@
     "future_roadmap_ar": "إطلاق مسبار MMX لإعادة عينات Phobos، وتطوير مركبة قمرية مضغوطة بالتعاون مع Toyota وMitsubishi، وتحسين بنية الإطلاق H3.",
     "notable_missions_detail_ar": "<b>• Hayabusa2 (2014–2020):</b> أعادت عينات من الكويكب Ryugu.<br><b>• SLIM (2024):</b> هبوط دقيق على بُعد نحو 55 m من الهدف.<br><b>• H3 (2024):</b> نجاح الرحلة الأولى لمركبة الإطلاق اليابانية الجديدة.",
     "partnerships_detail_ar": "شريك رئيسي في اتفاقيات Artemis، يساهم بمركبات قمرية مضغوطة لصالح NASA، إلى جانب مهمات مشتركة لرصد الشمس والكويكبات مع ESA وISRO.",
-    "org_type_ar": "وكالة فضاء حكومية"
+    "org_type_ar": "وكالة فضاء حكومية",
+    "country_ar": "اليابان",
+    "flagship_prod_status_ar": "تشغيلي",
+    "sectors_ar": "الفضاء والطيران ومركبات الإطلاق والأقمار الصناعية",
+    "flagship_prog_timeline_ar": "2003 إلى 2029"
   },
   {
     "id": "kari",
@@ -1339,7 +1361,11 @@
     "future_roadmap_ar": "تطوير مركبة الإطلاق القابلة لإعادة الاستخدام KSLV-III، وإنزال مسبار كوري على القمر بحلول 2032، واستكمال شبكة الملاحة الإقليمية KPS.",
     "notable_missions_detail_ar": "<b>• CAS500-1 (2021):</b> أول قمر صناعي على المنصة الوطنية القياسية.<br><b>• Nuri (2022):</b> وصل صاروخ كوري محلي بالكامل إلى المدار.<br><b>• Danuri (2022):</b> أول مسبار مداري كوري حول القمر.",
     "partnerships_detail_ar": "وقّعت كوريا اتفاقيات Artemis، وتتبادل بيانات حمولة Danuri مع NASA، كما تتعاون في تبادل تقنيات الأقمار الصناعية مع شركات أمريكية وأوروبية.",
-    "org_type_ar": "وكالة فضاء حكومية"
+    "org_type_ar": "وكالة فضاء حكومية",
+    "country_ar": "كوريا الجنوبية",
+    "flagship_prod_status_ar": "تشغيلي",
+    "sectors_ar": "الفضاء والطيران ومركبات الإطلاق والأقمار الصناعية",
+    "flagship_prog_timeline_ar": "2021 إلى 2040"
   },
   {
     "id": "isa-iran",
@@ -1540,7 +1566,11 @@
     "future_roadmap_ar": "إنشاء منصات الإطلاق المدارية في ميناء تشابهار، وتوطين تقنيات أقمار SSO، وتجهيز البنية التحتية للوصول إلى المدار الثابت GEO.",
     "notable_missions_detail_ar": "<b>• Omid (2009):</b> أول قمر صناعي إيراني محلي، أُطلق على صاروخ Safir.<br><b>• Pars-1 (2024):</b> قمر للاستشعار عن بعد بدقة 15 m.<br><b>• Nahid-2 (2025):</b> قمر اتصالات أُطلق على صاروخ Soyuz من فوستوتشني.",
     "partnerships_detail_ar": "تعاون مداري استراتيجي وتبادل لبيانات الأقمار الصناعية مع منظمة التعاون الفضائي لآسيا والمحيط الهادئ (APSCO) وRoscosmos واتحادات بحثية دولية.",
-    "org_type_ar": "وكالة فضاء حكومية"
+    "org_type_ar": "وكالة فضاء حكومية",
+    "country_ar": "إيران",
+    "flagship_prod_status_ar": "تشغيلي في المدار",
+    "sectors_ar": "الفضاء والطيران ومركبات الإطلاق والأقمار الصناعية",
+    "flagship_prog_timeline_ar": "1401 إلى 1410 (بالتقويم الهجري الشمسي)"
   },
   {
     "id": "isrc-iran",
@@ -1706,7 +1736,11 @@
     "future_roadmap_ar": "تطوير أجيال متقدمة من قاطرة Saman، وبحوث الدفع الكهربائي والبلازمي، وتوسعة حجرات الاختبار الحراري في الفراغ الفائق (TVAC) لتأهيل الأقمار الثقيلة.",
     "notable_missions_detail_ar": "<b>• الكبسولة الحيوية (2023):</b> إطلاق كبسولة اختبار بيولوجي من الجيل الجديد.<br><b>• Saman-1 (2021–2024):</b> اختباران شبه مداريين، ثم اختبار مداري على صاروخ Simorgh.<br><b>• Nahid-2 (2025):</b> تطوير مشترك مع وكالة الفضاء الإيرانية، وهو الآن في المدار.",
     "partnerships_detail_ar": "شراكات مختبرية وبحثية مشتركة مع جامعات وطنية رائدة في الطيران والفضاء، ومعاهد الاكتفاء الدفاعي ومراكز أبحاث فضائية إقليمية.",
-    "org_type_ar": "وكالة فضاء حكومية"
+    "org_type_ar": "وكالة فضاء حكومية",
+    "country_ar": "إيران",
+    "flagship_prod_status_ar": "اختبار طيران ناجح / قيد التطوير",
+    "sectors_ar": "الفضاء والطيران ومركبات الإطلاق والأقمار الصناعية",
+    "flagship_prog_timeline_ar": "1397 إلى الآن (بالتقويم الهجري الشمسي)"
   },
   {
     "id": "mbrsc",
@@ -1867,7 +1901,11 @@
     "future_roadmap_ar": "إطلاق MBR Explorer إلى حزام الكويكبات الرئيسي في 2028، والهبوط على الكويكب 269 Justitia، وتصنيع وحدة معادلة الضغط لمحطة Gateway.",
     "notable_missions_detail_ar": "<b>• KhalifaSat (2018):</b> أول قمر صناعي صُنع بالكامل في الإمارات.<br><b>• مسبار الأمل (2021):</b> دخول تاريخي إلى مدار المريخ.<br><b>• AlNeyadi (2023):</b> مهمة استمرت ستة أشهر وأول سير فضائي عربي.",
     "partnerships_detail_ar": "شريك رسمي في محطة Gateway القمرية يساهم بوحدة معادلة ضغط الطاقم، وموقّع على اتفاقيات Artemis، وينفذ مشروعات بحثية مشتركة مع جامعات عالمية رائدة.",
-    "org_type_ar": "وكالة فضاء حكومية"
+    "org_type_ar": "وكالة فضاء حكومية",
+    "country_ar": "الإمارات العربية المتحدة",
+    "flagship_prod_status_ar": "تشغيلي",
+    "sectors_ar": "الفضاء والطيران ومركبات الإطلاق والأقمار الصناعية",
+    "flagship_prog_timeline_ar": "2014 إلى 2035"
   },
   {
     "id": "aeb",
@@ -2010,7 +2048,11 @@
     "future_roadmap_ar": "الانتقال الكامل بمركز ألكانتارا إلى التشغيل التجاري لخدمة مركبات الإطلاق العالمية، ومواصلة تطوير VLM-1 بهدف تنفيذ أول رحلة نحو 2028، وتوسيع سلسلة أقمار Amazônia.",
     "notable_missions_detail_ar": "<b>• CBERS (منذ 1999):</b> سلسلة مشتركة بين البرازيل والصين لرصد الأرض.<br><b>• Pontes (2006):</b> أول رائد فضاء برازيلي على محطة ISS.<br><b>• Amazonia-1 (2021):</b> أول قمر صناعي برازيلي بالكامل، بناه INPE.",
     "partnerships_detail_ar": "اتفاقيات تجارية مع شركات أمريكية وأوروبية لاستخدام ميناء ألكانتارا، والتوقيع على اتفاقيات Artemis، وتعاون طويل الأمد مع الصين في تطوير أقمار CBERS.",
-    "org_type_ar": "وكالة فضاء حكومية"
+    "org_type_ar": "وكالة فضاء حكومية",
+    "country_ar": "البرازيل",
+    "flagship_prod_status_ar": "تشغيلي / قيد التطوير",
+    "sectors_ar": "الفضاء والطيران ومركبات الإطلاق والأقمار الصناعية",
+    "flagship_prog_timeline_ar": "2022 إلى 2031"
   },
   {
     "id": "afsa",
@@ -2132,7 +2174,11 @@
     "future_roadmap_ar": "إنشاء المقر التنفيذي في مدينة الفضاء بالقاهرة الجديدة، وتشغيل منصة البيانات الفضائية الأفريقية، ودعم تصنيع الأقمار الصناعية الوطنية في القارة.",
     "notable_missions_detail_ar": "<b>• النظام الأساسي (2018):</b> اعتمده الاتحاد الأفريقي بوصفه الوثيقة التأسيسية.<br><b>• مجلس الفضاء الأفريقي (2024):</b> تعيين أول مجلس من عشرة أعضاء.<br><b>• افتتاح المقر (2025):</b> بدء العمليات في مدينة الفضاء بالقاهرة.",
     "partnerships_detail_ar": "تنسيق حكومي بين الدول الأعضاء الـ55 في الاتحاد الأفريقي، مع شراكات استراتيجية مع ESA وNASA وCNSA وEgSA.",
-    "org_type_ar": "منظمة فضائية دولية"
+    "org_type_ar": "منظمة فضائية دولية",
+    "country_ar": "مصر / الاتحاد الأفريقي",
+    "flagship_prod_status_ar": "تأسيس مؤسسي / قيد التطوير",
+    "sectors_ar": "الفضاء والطيران ومركبات الإطلاق والأقمار الصناعية",
+    "flagship_prog_timeline_ar": "2023 إلى 2063"
   },
   {
     "id": "egsa",
@@ -2266,7 +2312,11 @@
     "future_roadmap_ar": "استكمال مدينة الفضاء المصرية، وتوسيع قدرات تجميع الأقمار واختبارها في AITC، وإطلاق كوكبات CubeSat تعليمية للجامعات.",
     "notable_missions_detail_ar": "<b>• EgyptSat-A (2019):</b> قمر للاستشعار عن بعد بُني بالتعاون مع روسيا.<br><b>• MisrSat-2 (2023):</b> أول قمر جُمّع على الأراضي المصرية.<br><b>• NExSat-1 (2024):</b> قمر مصغّر تجريبي طُوّر بالتعاون مع ألمانيا.",
     "partnerships_detail_ar": "تستضيف الوكالة المقر القاري لـAfSA، وتنفذ مشاريع تقنية مشتركة مع CASC وCNES وRoscosmos.",
-    "org_type_ar": "وكالة فضاء حكومية"
+    "org_type_ar": "وكالة فضاء حكومية",
+    "country_ar": "مصر",
+    "flagship_prod_status_ar": "تشغيلي",
+    "sectors_ar": "الفضاء والطيران ومركبات الإطلاق والأقمار الصناعية",
+    "flagship_prog_timeline_ar": "2019 إلى 2030"
   },
   {
     "id": "sansa",
@@ -2400,7 +2450,11 @@
     "future_roadmap_ar": "توسيع مركز التحذير من الطقس الفضائي في هيرمانوس، وبناء القمر الوطني EO-Sat1، وتحديث هوائيات التتبع الأرضية في هارتبيستهوك.",
     "notable_missions_detail_ar": "<b>• SumbandilaSat (2009–2011):</b> قمر وطني واصل العمل حتى تضرر بسبب عاصفة شمسية.<br><b>• مركز هيرمانوس:</b> مركز الرصد الإقليمي الوحيد للطقس الفضائي في أفريقيا.<br><b>• دعم Artemis:</b> تعاون مع NASA في تتبع المهمات القمرية.",
     "partnerships_detail_ar": "اتفاق مع NASA للتتبع في الفضاء العميق دعماً لمهمات Artemis، وعضوية فاعلة في الهيئات الفضائية الدولية، وشراكة ضمن كوكبة BRICS الفضائية.",
-    "org_type_ar": "وكالة فضاء حكومية"
+    "org_type_ar": "وكالة فضاء حكومية",
+    "country_ar": "جنوب أفريقيا",
+    "flagship_prod_status_ar": "مركز رصد تشغيلي؛ والقمر الصناعي قيد التصنيع",
+    "sectors_ar": "الفضاء والطيران ومركبات الإطلاق والأقمار الصناعية",
+    "flagship_prog_timeline_ar": "2010 إلى 2032"
   },
   {
     "id": "nasrda",
@@ -2543,7 +2597,11 @@
     "future_roadmap_ar": "تصنيع قمر NigeriaSat-3 لرصد الأرض، وتحديث محطة التحكم الأرضية في أبوجا، وإعداد المرشحين الوطنيين لبرنامج رواد الفضاء.",
     "notable_missions_detail_ar": "<b>• NigeriaSat-1 (2003):</b> أول قمر صناعي لنيجيريا.<br><b>• NigComSat-1 (2007):</b> قمر اتصالات في المدار الثابت GEO.<br><b>• NigeriaSat-2 وNigeriaSat-X (2011):</b> إطلاق مزدوج؛ وشارك مهندسون نيجيريون في بناء NigeriaSat-X.",
     "partnerships_detail_ar": "وقّعت نيجيريا اتفاقيات Artemis، ونقلت إليها المملكة المتحدة تقنيات الأقمار (SSTL)، وتتعاون مع الصين (CGWIC) في تشغيل أقمار الاتصالات الثابتة.",
-    "org_type_ar": "وكالة فضاء حكومية"
+    "org_type_ar": "وكالة فضاء حكومية",
+    "country_ar": "نيجيريا",
+    "flagship_prod_status_ar": "تشغيلي",
+    "sectors_ar": "الفضاء والطيران ومركبات الإطلاق والأقمار الصناعية",
+    "flagship_prog_timeline_ar": "1999 إلى 2025"
   },
   {
     "id": "asal",
@@ -2686,7 +2744,11 @@
     "future_roadmap_ar": "تطوير قمر الاتصالات الثابت Alsat-3، وتوسعة مركز وهران الفضائي، وتوطين المستشعرات البصرية عالية الدقة.",
     "notable_missions_detail_ar": "<b>• Alsat-1 (2002):</b> أول قمر جزائري وعضو في كوكبة مراقبة الكوارث.<br><b>• Alsat-2A (2010):</b> تصوير عالي الدقة يبلغ 2.5 m.<br><b>• إطلاق ثلاثي (2016):</b> وضع ثلاثة أقمار Alsat في المدار برحلة واحدة لصاروخ PSLV.",
     "partnerships_detail_ar": "اتفاقيات تقنية فضائية مع الصين وفرنسا والمملكة المتحدة، وتوفير بيانات رصد الأرض لمتابعة البيئة في شمال أفريقيا.",
-    "org_type_ar": "وكالة فضاء حكومية"
+    "org_type_ar": "وكالة فضاء حكومية",
+    "country_ar": "الجزائر",
+    "flagship_prod_status_ar": "تشغيلي",
+    "sectors_ar": "الفضاء والطيران ومركبات الإطلاق والأقمار الصناعية",
+    "flagship_prog_timeline_ar": "2020 إلى 2035"
   },
   {
     "id": "ggpen",
@@ -2820,7 +2882,11 @@
     "future_roadmap_ar": "تعظيم سعة النطاق العريض للقمر AngoSat-2، وتوسيع الإنترنت الفضائي إلى المناطق النائية، وإنشاء المحطة الأرضية المركزية لأنغولا.",
     "notable_missions_detail_ar": "<b>• AngoSat-1 (2017):</b> أول قمر أنغولي، فُقد بعد الإطلاق.<br><b>• AngoSat-2 (2022):</b> قمر اتصالات في المدار الثابت، بدأ التشغيل في ديسمبر.<br><b>• محطة لواندا:</b> تحكم أرضي بالأقمار الصناعية على الأراضي الأنغولية.",
     "partnerships_detail_ar": "شراكة استراتيجية لتشغيل الأقمار الصناعية مع روسيا (Reshetnev)، وتوفير خدمات الاتصالات عبر الدول الشريكة في مجموعة تنمية الجنوب الأفريقي (SADC).",
-    "org_type_ar": "وكالة فضاء حكومية"
+    "org_type_ar": "وكالة فضاء حكومية",
+    "country_ar": "أنغولا",
+    "flagship_prod_status_ar": "تشغيلي عند الموقع المداري 23 درجة شرقاً",
+    "sectors_ar": "الفضاء والطيران ومركبات الإطلاق والأقمار الصناعية",
+    "flagship_prog_timeline_ar": "2020 إلى الآن"
   },
   {
     "id": "ssgi",
@@ -2954,7 +3020,11 @@
     "future_roadmap_ar": "توسيع مرافق البحث في مرصد إنتوتو، وإطلاق ثاني قمر إثيوبي لرصد الأرض، وتدريب مهندسين وطنيين في الطيران والفضاء.",
     "notable_missions_detail_ar": "<b>• مرصد إنتوتو:</b> أول مرصد بحثي في شرق أفريقيا.<br><b>• ETRSS-1 (2019):</b> أول قمر إثيوبي، بُني بالتعاون مع الصين.<br><b>• الدمج المؤسسي (2022):</b> تأسيس معهد علوم الفضاء والجغرافيا المكانية.",
     "partnerships_detail_ar": "شراكة تقنية وتعليمية مع الصين لتطوير ETRSS-1، ودبلوماسية فضائية إقليمية مع دول شرق أفريقيا.",
-    "org_type_ar": "وكالة فضاء حكومية"
+    "org_type_ar": "وكالة فضاء حكومية",
+    "country_ar": "إثيوبيا",
+    "flagship_prod_status_ar": "تشغيلي",
+    "sectors_ar": "الفضاء والطيران ومركبات الإطلاق والأقمار الصناعية",
+    "flagship_prog_timeline_ar": "2020 إلى الآن"
   },
   {
     "id": "ksa",
@@ -3088,7 +3158,11 @@
     "future_roadmap_ar": "تطوير القمر البصري Taifa-2، وبناء مركز تحكم أرضي في نيروبي، وتوسيع برامج الشهادات الجامعية في علوم الفضاء.",
     "notable_missions_detail_ar": "<b>• 1KUNS-PF (2018):</b> أول قمر نانوي لكينيا، أُطلق من محطة ISS.<br><b>• Taifa-1 (2023):</b> أول قمر تشغيلي لكينيا، أُطلق على Falcon 9.<br><b>• ماليندي:</b> قاعدة إطلاق ساحلية ومحطة أرضية.",
     "partnerships_detail_ar": "تعاون تقني مع بلغاريا في تطوير Taifa-1، ومع ASI للاستفادة من مركز بروغليو الفضائي في ماليندي.",
-    "org_type_ar": "وكالة فضاء حكومية"
+    "org_type_ar": "وكالة فضاء حكومية",
+    "country_ar": "كينيا",
+    "flagship_prod_status_ar": "تشغيلي",
+    "sectors_ar": "الفضاء والطيران ومركبات الإطلاق والأقمار الصناعية",
+    "flagship_prog_timeline_ar": "2020 إلى الآن"
   },
   {
     "id": "cnes-france",
@@ -3247,7 +3321,11 @@
     "future_roadmap_ar": "التحقق من أداء محرك Prometheus القابل لإعادة الاستخدام، وإطلاق مركبة الإطلاق الصغيرة Maia، وتطوير أقمار TRISHNA الحرارية بالأشعة تحت الحمراء لمراقبة المناخ.",
     "notable_missions_detail_ar": "قاد CNES تطوير صناعة مركبات الإطلاق الأوروبية، وأسهم بدور محوري في عائلة صواريخ Ariane ومهمات الفضاء العميق، ومنها Rosetta وInSight.",
     "partnerships_detail_ar": "يقود مبادرات فضائية أوروبية ضمن ESA، ويتعاون على نطاق واسع مع NASA في مهمات الهبوط على المريخ ورصد المحيطات بمهمة SWOT، ويطور أقماراً مشتركة مع ISRO.",
-    "org_type_ar": "وكالة فضاء حكومية"
+    "org_type_ar": "وكالة فضاء حكومية",
+    "country_ar": "فرنسا",
+    "flagship_prod_status_ar": "تشغيلي",
+    "sectors_ar": "أنظمة الإطلاق والمهمات المدارية والاستشعار عن بُعد",
+    "flagship_prog_timeline_ar": "2015 إلى 2030"
   },
   {
     "id": "dlr-germany",
@@ -3406,7 +3484,11 @@
     "coordinate_source_url": "https://nominatim.openstreetmap.org/search?q=Linder+H%C3%B6he+51147+K%C3%B6ln%2C+Germany&format=json&limit=1",
     "source_note_en": "Official sources distinguish DLR as a research centre from the separate German Space Agency at DLR. DLR identifies Linder Höhe, Cologne as a research-centre location; the map pin is an approximate campus-access-road point. Sources: https://www.dlr.de/en/dlr/locations-and-offices/bonn ; https://www.dlr.de/en/dlr/about-us/organisation/executive-departments/dlr-communications ; https://www.dlr.de/en/dlr/german-space-agency-at-dlr .",
     "source_note_fa": "منابع رسمی، DLR را از واحد جداگانهٔ German Space Agency at DLR متمایز می‌کنند. DLR، Linder Höhe در کلن را به‌عنوان محل مرکز پژوهشی معرفی می‌کند؛ نشانگر نقشه نقطه‌ای تقریبی در مسیر دسترسی پردیس است. منابع: https://www.dlr.de/en/dlr/locations-and-offices/bonn ؛ https://www.dlr.de/en/dlr/about-us/organisation/executive-departments/dlr-communications ؛ https://www.dlr.de/en/dlr/german-space-agency-at-dlr .",
-    "source_note_ar": "تميز المصادر الرسمية بين مركز DLR البحثي والوحدة المنفصلة German Space Agency at DLR. يحدد DLR موقع Linder Höhe في كولونيا ضمن مواقع المركز البحثي؛ وعلامة الخريطة تقريبية على طريق الوصول إلى الحرم. المصادر: https://www.dlr.de/en/dlr/locations-and-offices/bonn ؛ https://www.dlr.de/en/dlr/about-us/organisation/executive-departments/dlr-communications ؛ https://www.dlr.de/en/dlr/german-space-agency-at-dlr ."
+    "source_note_ar": "تميز المصادر الرسمية بين مركز DLR البحثي والوحدة المنفصلة German Space Agency at DLR. يحدد DLR موقع Linder Höhe في كولونيا ضمن مواقع المركز البحثي؛ وعلامة الخريطة تقريبية على طريق الوصول إلى الحرم. المصادر: https://www.dlr.de/en/dlr/locations-and-offices/bonn ؛ https://www.dlr.de/en/dlr/about-us/organisation/executive-departments/dlr-communications ؛ https://www.dlr.de/en/dlr/german-space-agency-at-dlr .",
+    "country_ar": "ألمانيا",
+    "flagship_prod_status_ar": "تشغيلي",
+    "sectors_ar": "أبحاث الفضاء والطيران واختبارات الدفع والروبوتات الفضائية",
+    "flagship_prog_timeline_ar": "2000 إلى 2030"
   },
   {
     "id": "asi-italy",
@@ -3556,7 +3638,11 @@
     "future_roadmap_ar": "نشر أقمار COSMO-SkyMed الرادارية من الجيل الثاني، وتصنيع وحدات مضغوطة لمحطة Axiom التجارية، وتحديث مركبة Vega-C.",
     "notable_missions_detail_ar": "كانت إيطاليا ثالث دولة في العالم تطلق قمراً صناعياً (San Marco 1 عام 1964)، وهي تقود تطوير وحدات الإسكان القمري لبرنامج Artemis.",
     "partnerships_detail_ar": "مورد تاريخي لوحدات NASA لمحطتي ISS وGateway، وموقّع على اتفاقيات Artemis، ومصدر لهياكل فضائية وحمولات رادارية إلى أنحاء أوروبا.",
-    "org_type_ar": "وكالة فضاء حكومية"
+    "org_type_ar": "وكالة فضاء حكومية",
+    "country_ar": "إيطاليا",
+    "flagship_prod_status_ar": "تشغيلي",
+    "sectors_ar": "الوحدات الفضائية المضغوطة ومركبات الإطلاق ومجموعات الأقمار الرادارية",
+    "flagship_prog_timeline_ar": "1996 إلى 2035"
   },
   {
     "id": "uksa-uk",
@@ -3728,7 +3814,10 @@
     "current_status_fa": "تاریخی؛ پایان فعالیت به‌عنوان آژانس اجرایی در ۳۱ مارس ۲۰۲۶",
     "current_status_ar": "تاريخية؛ انتهت كوكالة تنفيذية في 31 مارس 2026",
     "source_note_fa": "گزارش سالانهٔ UK Space Agency برای ۲۰۲۵–۲۶ تأیید می‌کند که UKSA در ۳۱ مارس ۲۰۲۶ از جایگاه آژانس اجرایی خارج شد و وظایفش از ۱ آوریل ۲۰۲۶ به DSIT منتقل شد. نشانگر سوینْدون تاریخی است. منبع: https://www.gov.uk/government/publications/uk-space-agency-annual-report-and-accounts-2025-2026/uk-space-agency-annual-report-2025-2026 .",
-    "source_note_ar": "يؤكد التقرير السنوي لوكالة الفضاء البريطانية 2025–2026 أن UKSA توقفت عن كونها وكالة تنفيذية في 31 مارس 2026 وانتقلت وظائفها إلى DSIT اعتباراً من 1 أبريل 2026. علامة سويندون تاريخية. المصدر: https://www.gov.uk/government/publications/uk-space-agency-annual-report-and-accounts-2025-2026/uk-space-agency-annual-report-2025-2026 ."
+    "source_note_ar": "يؤكد التقرير السنوي لوكالة الفضاء البريطانية 2025–2026 أن UKSA توقفت عن كونها وكالة تنفيذية في 31 مارس 2026 وانتقلت وظائفها إلى DSIT اعتباراً من 1 أبريل 2026. علامة سويندون تاريخية. المصدر: https://www.gov.uk/government/publications/uk-space-agency-annual-report-and-accounts-2025-2026/uk-space-agency-annual-report-2025-2026 .",
+    "country_ar": "المملكة المتحدة",
+    "sectors_ar": "الأقمار الصغيرة والاتصالات الساتلية ومواقع الإطلاق العمودي",
+    "flagship_prog_timeline_ar": "2010 إلى 2026"
   },
   {
     "id": "csa-canada",
@@ -3896,7 +3985,11 @@
     "future_roadmap_ar": "تشغيل نظام Canadarm3 الروبوتي على محطة Gateway القمرية، وتعزيز دور كندا في الاستكشاف المأهول بعد نجاح رحلة Artemis II.",
     "notable_missions_detail_ar": "كان Canadarm الكندي أساسياً في تجميع محطة ISS. وبمشاركة Jeremy Hansen في رحلة Artemis II حول القمر في أبريل 2026، أصبحت CSA أول وكالة غير أمريكية ترسل رائداً في رحلة حول القمر.",
     "partnerships_detail_ar": "شراكة استراتيجية من المستوى الأول مع NASA في Artemis ومحطة ISS، وتعاون وثيق مع ESA في رصد الأرض، ودور قيادي في اتفاقيات Artemis.",
-    "org_type_ar": "وكالة فضاء حكومية"
+    "org_type_ar": "وكالة فضاء حكومية",
+    "country_ar": "كندا",
+    "flagship_prod_status_ar": "قيد التصنيع لتركيبه على محطة Gateway",
+    "sectors_ar": "الروبوتات الفضائية ورادار الفتحة الاصطناعية وعلوم الكواكب",
+    "flagship_prog_timeline_ar": "1995 إلى 2035"
   },
   {
     "id": "cnsa",
@@ -4085,7 +4178,11 @@
     "future_roadmap_ar": "تمهيد Chang’e-7 وChang’e-8 لإنشاء المحطة القمرية، وإعادة عينات من المريخ عبر Tianwen-3 في الفترة 2028–2030، وتوسيع شراكة ILRS.",
     "notable_missions_detail_ar": "<b>• Chang’e-4 (2019):</b> أول هبوط سلس في التاريخ على الجانب البعيد للقمر، مع الجوال Yutu-2.<br><b>• Chang’e-5 وChang’e-6 (2020 و2024):</b> إعادة عينات من الجانب القريب ثم الجانب البعيد للقمر.<br><b>• Tianwen-1 (2021):</b> جعلت الصين ثاني دولة تشغّل جوالاً على المريخ.",
     "partnerships_detail_ar": "شراكة وثيقة مع Roscosmos في ILRS، واتفاقيات ثنائية عبر أوروبا وآسيا وأفريقيا وأمريكا اللاتينية، واستضافة حمولات دولية، منها CubeSat باكستاني على Chang’e-6.",
-    "org_type_ar": "وكالة فضاء حكومية"
+    "org_type_ar": "وكالة فضاء حكومية",
+    "country_ar": "الصين",
+    "flagship_prod_status_ar": "تشغيلي — أُنجزت المهمة",
+    "sectors_ar": "استكشاف القمر والكواكب والأقمار التطبيقية والتعاون الدولي",
+    "flagship_prog_timeline_ar": "2004 إلى 2035+"
   },
   {
     "id": "suparco",
@@ -4245,7 +4342,11 @@
     "future_roadmap_ar": "استكمال كوكبة رصد الأرض، وتطوير قمر اتصالات من الجيل الجديد، وإرسال رائد فضاء إلى Tiangong، والمشاركة في ILRS ضمن رؤية 2047.",
     "notable_missions_detail_ar": "<b>• Rehbar-1 (1962):</b> جعل باكستان ثالث دولة آسيوية تطلق صاروخ سبر.<br><b>• Badr-1 (1990):</b> انضمت باكستان إلى الدول المشغّلة للأقمار الصناعية.<br><b>• iCube-Qamar (2024):</b> أول حمولة باكستانية تصل إلى مدار القمر.",
     "partnerships_detail_ar": "شريك فضائي استراتيجي للصين، وعضو فاعل في لجنة الأمم المتحدة لاستخدام الفضاء الخارجي للأغراض السلمية (COPUOS) ومنظمة التعاون الفضائي لآسيا والمحيط الهادئ (APSCO).",
-    "org_type_ar": "وكالة فضاء حكومية"
+    "org_type_ar": "وكالة فضاء حكومية",
+    "country_ar": "باكستان",
+    "flagship_prod_status_ar": "تشغيلي في المدار",
+    "sectors_ar": "الاستشعار عن بُعد وأقمار الاتصالات وعلوم الغلاف الجوي العلوي",
+    "flagship_prog_timeline_ar": "2022 إلى 2047"
   },
   {
     "id": "tua",
@@ -4396,7 +4497,11 @@
     "future_roadmap_ar": "تنفيذ مراحل المهمة القمرية، واختبار مركبة الإطلاق الوطنية الصغيرة، وتطوير أقمار وبنية إطلاق من الجيل الجديد، سعياً إلى بناء قدرة فضائية إقليمية متكاملة.",
     "notable_missions_detail_ar": "<b>• أول رائد فضاء تركي (2024):</b> مهمة Gezeravcı على محطة ISS لمدة 18 يوماً ضمن Ax-3.<br><b>• İMECE (2023):</b> تقدم في استقلالية رصد الأرض.<br><b>• Türksat 6A (2024):</b> انضمت تركيا إلى الدول العشر التي تصنع أقمار الاتصالات.",
     "partnerships_detail_ar": "تعاون مع NASA عبر Axiom في Ax-3، وروابط تقنية مع وكالات أوروبية وآسيوية، وعضوية فاعلة في هيئات الفضاء الدولية.",
-    "org_type_ar": "وكالة فضاء حكومية"
+    "org_type_ar": "وكالة فضاء حكومية",
+    "country_ar": "تركيا",
+    "flagship_prod_status_ar": "تشغيلي في المدار",
+    "sectors_ar": "البرنامج الفضائي الوطني وأقمار الرصد والاتصالات والمهمات القمرية",
+    "flagship_prog_timeline_ar": "2021 إلى 2030+"
   },
   {
     "id": "isa-israel",
@@ -4556,7 +4661,11 @@
     "future_roadmap_ar": "تطوير Beresheet-2 وأجيال جديدة من Ofeq وAmos، وتنمية منظومة NewSpace، والمشاركة العلمية في مهمات دولية مثل مهمة ULTRASAT للفيزياء الفلكية.",
     "notable_missions_detail_ar": "<b>• Ofeq-1 (1988):</b> انضمت إسرائيل إلى الدول التي تصل إلى المدار بإطلاق غربي من بالماخيم.<br><b>• Beresheet (2019):</b> أول مركبة خاصة تصل إلى مدار القمر.<br><b>• Rakia/Ax-1 (2022):</b> رائد الفضاء الإسرائيلي الثاني في الفضاء مع مجموعة تجارب وطنية.",
     "partnerships_detail_ar": "علاقات طويلة الأمد مع NASA وCNES (مهمة VENµS)، والتوقيع على اتفاقيات Artemis، وروابط وثيقة مع الصناعات المحلية (IAI وRafael).",
-    "org_type_ar": "وكالة فضاء حكومية"
+    "org_type_ar": "وكالة فضاء حكومية",
+    "country_ar": "إسرائيل",
+    "flagship_prod_status_ar": "تشغيلي",
+    "sectors_ar": "أقمار الرصد والاتصالات وعلوم الفضاء والتقنيات الحديثة",
+    "flagship_prog_timeline_ar": "2019 إلى 2030"
   },
   {
     "id": "asa-australia",
@@ -4716,7 +4825,11 @@
     "future_roadmap_ar": "إرسال الجوال Roo-ver خلال هذا العقد، وتوسيع مواقع الإطلاق التجارية، وتعزيز دور أستراليا في الاتصالات العميقة لمهمات Artemis.",
     "notable_missions_detail_ar": "<b>• إرث WRESAT (1967):</b> من الدول القليلة ذات تاريخ في الإطلاق المداري من أراضيها.<br><b>• Arnhem (2022):</b> عودة إطلاقات NASA العلمية إلى نصف الكرة الجنوبي.<br><b>• Eris (2025):</b> أول محاولة مدارية أسترالية بالكامل تحت إشراف الوكالة.",
     "partnerships_detail_ar": "موقّع على اتفاقيات Artemis، ويتعاون عن كثب مع NASA في التتبع من تيدبينبيلا، ومع ESA في محطة نيو نورسيا، ومع شركاء إقليميين.",
-    "org_type_ar": "وكالة فضاء حكومية"
+    "org_type_ar": "وكالة فضاء حكومية",
+    "country_ar": "أستراليا",
+    "flagship_prod_status_ar": "قيد التصنيع",
+    "sectors_ar": "تنظيم الإطلاق واستكشاف القمر والمريخ والاتصالات وتحديد المواقع",
+    "flagship_prog_timeline_ar": "2019 إلى 2030"
   },
   {
     "id": "nata-nk",
@@ -4896,7 +5009,11 @@
     "future_roadmap_ar": "استكمال كوكبة الاستطلاع وتطوير مركبة إطلاق أكبر وتوسيع منصة سوهاي الساحلية؛ ولا يزال الحد الفاصل دولياً بين نشاط الفضاء والصواريخ محل خلاف.",
     "notable_missions_detail_ar": "<b>• Kwangmyongsong-3 Unit 2 (2012):</b> أول إطلاق مداري ناجح لكوريا الشمالية على صاروخ Unha-3.<br><b>• Malligyong-1 (2023):</b> أول قمر استطلاع بعد فشل محاولتين في العام نفسه.<br><b>• فشل 2024:</b> انفجر صاروخ إطلاق جديد في بداية الرحلة.",
     "partnerships_detail_ar": "معزولة دولياً بموجب قرارات مجلس الأمن؛ والشراكة الوحيدة المعلنة هي تعاون تقني مع روسيا. وهي طرف في معاهدة الفضاء الخارجي منذ 2009.",
-    "org_type_ar": "وكالة فضاء حكومية"
+    "org_type_ar": "وكالة فضاء حكومية",
+    "country_ar": "كوريا الشمالية",
+    "flagship_prod_status_ar": "في المدار (مع ادعاء التشغيل)",
+    "sectors_ar": "أقمار المراقبة والاستطلاع ومركبات إطلاق الأقمار الصناعية",
+    "flagship_prog_timeline_ar": "2023 إلى 2030"
   },
   {
     "id": "aee-spain",
@@ -5056,7 +5173,11 @@
     "future_roadmap_ar": "تنفيذ الرحلة المدارية لمركبة Miura-5 من غويانا الفرنسية، واستكمال كوكبة الأطلسي، وتعزيز دور إسبانيا في ESA، وتوسيع تجمع الصناعات الفضائية الأندلسي حول إشبيلية.",
     "notable_missions_detail_ar": "<b>• Intasat (1974):</b> انضمت إسبانيا إلى الدول المشغّلة للأقمار الصناعية.<br><b>• PAZ (2018):</b> تعزيز الاستقلال في التصوير الراداري.<br><b>• Miura-1 (2023):</b> أول صاروخ خاص في أوروبا القارية؛ أُطلق من ولبة بدعم حكومي إسباني.",
     "partnerships_detail_ar": "عضو مؤسس في ESA، وشراكة رادارية مع ألمانيا عبر كوكبة PAZ/TerraSAR، وتستضيف محطتي NASA وESA للفضاء العميق في مدريد وثيبريروس.",
-    "org_type_ar": "وكالة فضاء حكومية"
+    "org_type_ar": "وكالة فضاء حكومية",
+    "country_ar": "إسبانيا",
+    "flagship_prod_status_ar": "تشغيلي في المدار",
+    "sectors_ar": "التنسيق الفضائي الوطني ورصد الأرض والاتصالات ومركبات الإطلاق الخاصة",
+    "flagship_prog_timeline_ar": "2023 إلى 2030"
   },
   {
     "id": "ssa-saudi",
@@ -5216,7 +5337,11 @@
     "future_roadmap_ar": "تنفيذ مزيد من رحلات رواد الفضاء، وتطوير أقمار وطنية لرصد الأرض، وتنمية Neo Space Group لتكون الذراع التجارية، وتعزيز حصة المملكة من اقتصاد الفضاء الإقليمي بحلول 2030.",
     "notable_missions_detail_ar": "<b>• مكوك Discovery (1985):</b> أول رائد فضاء عربي ومسلم.<br><b>• Ax-2 (2023):</b> أول امرأة عربية في الفضاء ووجود رائدي فضاء سعوديين معاً على محطة ISS.<br><b>• اتفاقيات Artemis (2022):</b> الانضمام إلى الإطار القمري بقيادة NASA.",
     "partnerships_detail_ar": "تعاون مع NASA وAxiom في الرحلات المأهولة، واستضافة اتحاد Arabsat، واتفاقات ثنائية مع الصين وأوروبا وكوريا الجنوبية، وعضوية في اتفاقيات Artemis.",
-    "org_type_ar": "وكالة فضاء حكومية"
+    "org_type_ar": "وكالة فضاء حكومية",
+    "country_ar": "المملكة العربية السعودية",
+    "flagship_prod_status_ar": "تشغيلي",
+    "sectors_ar": "برنامج رواد الفضاء وأقمار الاتصالات والرصد والاقتصاد الفضائي",
+    "flagship_prog_timeline_ar": "2018 إلى 2030"
   },
   {
     "id": "conae",
@@ -5376,7 +5501,11 @@
     "future_roadmap_ar": "تطوير الجيل الثاني من SAOCOM، والقمر SABIA-Mar لدراسة لون المحيط بالتعاون مع البرازيل، ومواصلة اختبارات Tronador، وتوسيع مركز Teófilo Tabanera في قرطبة.",
     "notable_missions_detail_ar": "<b>• SAC-D/Aquarius (2011):</b> أول خريطة عالمية لملوحة المحيطات بالتعاون مع NASA.<br><b>• SAOCOM 1A و1B (2018 و2020):</b> كوكبة رادارية بنطاق L، أُطلق قمرَاها على Falcon 9.<br><b>• SIASGE:</b> منظومة رادارية مشتركة مع إيطاليا لإدارة الكوارث.",
     "partnerships_detail_ar": "علاقات طويلة مع NASA (SAC وAquarius)، وتعاون مع إيطاليا (SIASGE) والبرازيل (SABIA-Mar) وESA؛ كما تستضيف محطة الصين للفضاء العميق وهوائي ESA في مالارغوي.",
-    "org_type_ar": "وكالة فضاء حكومية"
+    "org_type_ar": "وكالة فضاء حكومية",
+    "country_ar": "الأرجنتين",
+    "flagship_prod_status_ar": "تشغيلي في المدار",
+    "sectors_ar": "رصد الأرض بالرادار والأقمار العلمية ومركبة إطلاق محلية",
+    "flagship_prog_timeline_ar": "2007 إلى 2030"
   },
   {
     "id": "rwanda-space-agency",
@@ -5453,7 +5582,9 @@
     },
     "source_note_en": "Official agency site and 2025 national space policy.",
     "source_note_fa": "وب‌سایت رسمی آژانس و سیاست فضایی ملی 2025.",
-    "source_note_ar": "الموقع الرسمي للوكالة وسياسة الفضاء الوطنية لعام 2025."
+    "source_note_ar": "الموقع الرسمي للوكالة وسياسة الفضاء الوطنية لعام 2025.",
+    "sectors_ar": "السياسة الفضائية والبحوث والتطبيقات الوطنية لتكنولوجيا الفضاء",
+    "flagship_prog_timeline_ar": "2020"
   },
   {
     "id": "ases-senegal",
@@ -5539,7 +5670,9 @@
     },
     "source_note_en": "Official ASES account and 2026 Senegalese Press Agency report syndicated by AllAfrica.",
     "source_note_fa": "حساب رسمی ASES و گزارش آژانس خبری سنگال در 2026.",
-    "source_note_ar": "حساب ASES الرسمي وتقرير وكالة الأنباء السنغالية لعام 2026."
+    "source_note_ar": "حساب ASES الرسمي وتقرير وكالة الأنباء السنغالية لعام 2026.",
+    "sectors_ar": "السياسة الفضائية والبحوث والتطبيقات الوطنية لتكنولوجيا الفضاء",
+    "flagship_prog_timeline_ar": "2023"
   },
   {
     "id": "zingsa-zimbabwe",
@@ -5625,7 +5758,9 @@
     },
     "source_note_en": "Official ZINGSA site, divisions and 2026 news.",
     "source_note_fa": "وب‌سایت، بخش‌ها و خبرهای رسمی ZINGSA در 2026.",
-    "source_note_ar": "موقع ZINGSA الرسمي وأقسامه وأخبار 2026."
+    "source_note_ar": "موقع ZINGSA الرسمي وأقسامه وأخبار 2026.",
+    "sectors_ar": "السياسة الفضائية والبحوث والتطبيقات الوطنية لتكنولوجيا الفضاء",
+    "flagship_prog_timeline_ar": "2021"
   },
   {
     "id": "ageos-gabon",
@@ -5702,7 +5837,9 @@
     },
     "source_note_en": "Official Gabonese ministry record and contact page; HQ and Nkok station are distinct.",
     "source_note_fa": "رکورد و صفحه تماس رسمی وزارت گابن؛ دفتر مرکزی و ایستگاه Nkok جدا هستند.",
-    "source_note_ar": "سجل وصفحة اتصال رسميان للوزارة الغابونية؛ المقر ومحطة Nkok موقعان مختلفان."
+    "source_note_ar": "سجل وصفحة اتصال رسميان للوزارة الغابونية؛ المقر ومحطة Nkok موقعان مختلفان.",
+    "sectors_ar": "الاستشعار عن بُعد والبيانات المكانية والإدارة البيئية",
+    "flagship_prog_timeline_ar": "2010"
   },
   {
     "id": "asci-civ",
@@ -5788,7 +5925,9 @@
     },
     "source_note_en": "Official ASCI site and government announcement; the agency is new and its infrastructure is still being built.",
     "source_note_fa": "وب‌سایت رسمی ASCI و اطلاعیه دولت؛ نهاد تازه است و زیرساخت آن در حال شکل‌گیری است.",
-    "source_note_ar": "الموقع الرسمي لـASCI والإعلان الحكومي؛ الوكالة حديثة وبنيتها التحتية قيد الإنشاء."
+    "source_note_ar": "الموقع الرسمي لـASCI والإعلان الحكومي؛ الوكالة حديثة وبنيتها التحتية قيد الإنشاء.",
+    "sectors_ar": "السياسة الفضائية والبحوث والتطبيقات الوطنية لتكنولوجيا الفضاء",
+    "flagship_prog_timeline_ar": "2025"
   },
   {
     "id": "narss-egypt",
@@ -5865,7 +6004,9 @@
     },
     "source_note_en": "Official NARSS site and ESA eoPortal mission record; the satellite example is explicitly historical.",
     "source_note_fa": "وب‌سایت رسمی NARSS و رکورد مأموریت ESA eoPortal؛ نمونه ماهواره‌ای تاریخی است.",
-    "source_note_ar": "موقع NARSS الرسمي وسجل المهمة في eoPortal التابع لـESA؛ ومثال القمر تاريخي صراحة."
+    "source_note_ar": "موقع NARSS الرسمي وسجل المهمة في eoPortal التابع لـESA؛ ومثال القمر تاريخي صراحة.",
+    "sectors_ar": "الاستشعار عن بُعد وعلوم الفضاء والتطبيقات الساتلية",
+    "flagship_prog_timeline_ar": "2026 إلى الآن"
   },
   {
     "id": "malawi-space-agency",
@@ -5951,7 +6092,9 @@
     },
     "source_note_en": "The official site and June 2026 reporting differ in tone; status is therefore marked as not fully operationalised.",
     "source_note_fa": "لحن وب‌سایت رسمی و گزارش ژوئن 2026 متفاوت است؛ وضعیت به‌صورت عملیاتی‌نشدن کامل ثبت شده است.",
-    "source_note_ar": "تختلف نبرة الموقع الرسمي عن تقرير يونيو 2026؛ لذلك سُجلت الحالة بأنها لم تكتمل تشغيلياً."
+    "source_note_ar": "تختلف نبرة الموقع الرسمي عن تقرير يونيو 2026؛ لذلك سُجلت الحالة بأنها لم تكتمل تشغيلياً.",
+    "sectors_ar": "السياسة الفضائية والبحوث والتطبيقات الوطنية لتكنولوجيا الفضاء",
+    "flagship_prog_timeline_ar": "2023"
   },
   {
     "id": "nist-namibia",
@@ -6028,7 +6171,9 @@
     },
     "source_note_en": "Official NUST news and 2026 report; the institution is classified as a university institute.",
     "source_note_fa": "خبر رسمی NUST و گزارش 2026؛ نهاد به‌عنوان مؤسسه دانشگاهی دسته‌بندی شده است.",
-    "source_note_ar": "أخبار NUST الرسمية وتقرير 2026؛ صُنف الكيان معهدًا جامعياً."
+    "source_note_ar": "أخبار NUST الرسمية وتقرير 2026؛ صُنف الكيان معهدًا جامعياً.",
+    "sectors_ar": "استقبال بيانات الأقمار الصناعية وعلوم الفضاء والتعليم الهندسي",
+    "flagship_prog_timeline_ar": "2026 إلى الآن"
   },
   {
     "id": "mric-mauritius",
@@ -6114,7 +6259,9 @@
     },
     "source_note_en": "MRIC/Space Mauritius strategy reporting and JAXA deployment record; Mauritius’ current satellite status is not inferred.",
     "source_note_fa": "گزارش راهبرد MRIC/Space Mauritius و رکورد استقرار JAXA؛ وضعیت کنونی ماهواره موریس استنباط نشده است.",
-    "source_note_ar": "تقارير استراتيجية MRIC/Space Mauritius وسجل النشر لدى JAXA؛ لم يُستنتج وضع القمر الحالي."
+    "source_note_ar": "تقارير استراتيجية MRIC/Space Mauritius وسجل النشر لدى JAXA؛ لم يُستنتج وضع القمر الحالي.",
+    "sectors_ar": "البحث والابتكار والتنسيق الوطني لشؤون الفضاء",
+    "flagship_prog_timeline_ar": "2026 إلى الآن"
   },
   {
     "id": "cnct-tunisia",
@@ -6200,7 +6347,9 @@
     },
     "source_note_en": "Official Tunisian Ministry of Defence record; 1988 creation and 2009 renaming are distinguished.",
     "source_note_fa": "رکورد رسمی وزارت دفاع تونس؛ تأسیس 1988 و تغییر نام 2009 از هم تفکیک شده‌اند.",
-    "source_note_ar": "سجل رسمي لوزارة الدفاع التونسية؛ فُصل بين الإنشاء عام 1988 وتغيير الاسم عام 2009."
+    "source_note_ar": "سجل رسمي لوزارة الدفاع التونسية؛ فُصل بين الإنشاء عام 1988 وتغيير الاسم عام 2009.",
+    "sectors_ar": "الاستشعار عن بُعد ورسم الخرائط والخدمات الجغرافية المكانية",
+    "flagship_prog_timeline_ar": "1988"
   },
   {
     "id": "gssti-ghana",
@@ -6286,7 +6435,9 @@
     },
     "source_note_en": "Official GSSTI and GAEC sources; the institute is not conflated with the not-yet-established standalone agency.",
     "source_note_fa": "منابع رسمی GSSTI و GAEC؛ مؤسسه با آژانس مستقلِ هنوز تأسیس‌نشده یکی نشده است.",
-    "source_note_ar": "مصادر GSSTI وGAEC الرسمية؛ لم يُخلط المعهد بوكالة مستقلة لم تُنشأ بعد."
+    "source_note_ar": "مصادر GSSTI وGAEC الرسمية؛ لم يُخلط المعهد بوكالة مستقلة لم تُنشأ بعد.",
+    "sectors_ar": "علوم الفضاء والاتصالات الساتلية والاستشعار عن بُعد وعلم الفلك",
+    "flagship_prog_timeline_ar": "2012"
   },
   {
     "id": "crts-morocco",
@@ -6372,7 +6523,9 @@
     },
     "source_note_en": "Official CRTS site and creation decree; the profile is for remote-sensing services, not satellite manufacturing.",
     "source_note_fa": "وب‌سایت رسمی CRTS و فرمان تأسیس؛ پرونده درباره خدمات سنجش از دور است، نه ساخت ماهواره.",
-    "source_note_ar": "موقع CRTS الرسمي ومرسوم الإنشاء؛ هذا الملف لخدمات الاستشعار عن بعد لا لتصنيع الأقمار."
+    "source_note_ar": "موقع CRTS الرسمي ومرسوم الإنشاء؛ هذا الملف لخدمات الاستشعار عن بعد لا لتصنيع الأقمار.",
+    "sectors_ar": "الاستشعار عن بُعد ورسم الخرائط والخدمات الجغرافية المكانية",
+    "flagship_prog_timeline_ar": "1983"
   },
   {
     "id": "lcrsss-libya",
@@ -6449,7 +6602,9 @@
     },
     "source_note_en": "Official centre domain plus 2026 reports; map pin is a Tripoli-area marker, not a surveyed campus coordinate.",
     "source_note_fa": "دامنه رسمی مرکز به‌علاوه گزارش‌های 2026؛ نشان نقشه منطقه طرابلس است، نه مختصات مساحی‌شده دانشگاه.",
-    "source_note_ar": "النطاق الرسمي للمركز وتقارير 2026؛ دبوس الخريطة لمنطقة طرابلس وليس إحداثية حرم ممسوحة."
+    "source_note_ar": "النطاق الرسمي للمركز وتقارير 2026؛ دبوس الخريطة لمنطقة طرابلس وليس إحداثية حرم ممسوحة.",
+    "sectors_ar": "الاستشعار عن بُعد والفضاء والطيران وعلوم الفضاء وعلم الزلازل",
+    "flagship_prog_timeline_ar": "2026 إلى الآن"
   },
   {
     "id": "nrsc-zambia",
@@ -6535,7 +6690,9 @@
     },
     "source_note_en": "Official NRSC pages; the Lusaka pin represents a headquarters-area marker while the reported receiving station is in Chibombo.",
     "source_note_fa": "صفحات رسمی NRSC؛ نشان لوساکا تقریبی است و ایستگاه دریافت گزارش‌شده در چیبومبو قرار دارد.",
-    "source_note_ar": "صفحات NRSC الرسمية؛ دبوس لوساكا تقريبي، بينما تقع محطة الاستقبال المذكورة في تشيبومبو."
+    "source_note_ar": "صفحات NRSC الرسمية؛ دبوس لوساكا تقريبي، بينما تقع محطة الاستقبال المذكورة في تشيبومبو.",
+    "sectors_ar": "الاستشعار عن بُعد ورسم الخرائط والخدمات الجغرافية المكانية",
+    "flagship_prog_timeline_ar": "1999"
   },
   {
     "id": "isra-sudan",
@@ -6619,7 +6776,9 @@
     "contacts": {},
     "source_note_en": "Official domain and historical/2023 sources; no current operating status is asserted.",
     "source_note_fa": "دامنه رسمی و منابع تاریخی/2023؛ وضعیت عملیاتی جاری ادعا نمی‌شود.",
-    "source_note_ar": "النطاق الرسمي ومصادر تاريخية/2023؛ لا يُدّعى وضع تشغيلي حالي."
+    "source_note_ar": "النطاق الرسمي ومصادر تاريخية/2023؛ لا يُدّعى وضع تشغيلي حالي.",
+    "sectors_ar": "الاستشعار عن بُعد والفضاء والطيران وعلوم الفضاء وعلم الزلازل",
+    "flagship_prog_timeline_ar": "2013"
   },
   {
     "id": "rssa-sudan",
@@ -6703,7 +6862,9 @@
     "contacts": {},
     "source_note_en": "Historical reference only; no official current site was verified. The city pin is approximate.",
     "source_note_fa": "فقط ارجاع تاریخی؛ وب‌سایت رسمی کنونی تأیید نشد. نشان شهر تقریبی است.",
-    "source_note_ar": "مرجع تاريخي فقط؛ لم يتم التحقق من موقع رسمي حالي. دبوس المدينة تقريبي."
+    "source_note_ar": "مرجع تاريخي فقط؛ لم يتم التحقق من موقع رسمي حالي. دبوس المدينة تقريبي.",
+    "sectors_ar": "الاستشعار عن بُعد والفضاء والطيران وعلوم الفضاء وعلم الزلازل",
+    "flagship_prog_timeline_ar": "1977"
   },
   {
     "id": "tanzania-space-programme",
@@ -6789,7 +6950,9 @@
     },
     "source_note_en": "Government ministry site, Tanzanian reporting and October 2026 coverage. No independent agency or completed satellite launch is claimed.",
     "source_note_fa": "وب‌سایت وزارتخانه، گزارش تانزانیایی و پوشش اکتبر 2026؛ آژانس مستقل یا پرتاب ماهواره انجام‌شده ادعا نمی‌شود.",
-    "source_note_ar": "موقع الوزارة وتقارير تنزانية وتغطية أكتوبر 2026؛ لا يُدّعى إنشاء وكالة مستقلة أو إنجاز إطلاق."
+    "source_note_ar": "موقع الوزارة وتقارير تنزانية وتغطية أكتوبر 2026؛ لا يُدّعى إنشاء وكالة مستقلة أو إنجاز إطلاق.",
+    "sectors_ar": "البرنامج الفضائي الوطني وتطوير الأقمار الصناعية والاستشعار عن بُعد",
+    "flagship_prog_timeline_ar": "2026 إلى الآن"
   },
   {
     "id": "nsas",
@@ -6815,7 +6978,7 @@
     "org_type_ar": "وكالة فضاء حكومية",
     "sectors_en": "Space Policy, Research & National Space Applications",
     "sectors_fa": "سیاست فضایی، پژوهش و کاربردهای ملی فضا",
-    "sectors_ar": "سياسة الفضاء والبحث والتطبيقات الفضائية الوطنية",
+    "sectors_ar": "السياسة الفضائية والبحوث والتطبيقات الوطنية للفضاء",
     "flagship_product_en": "National space-sector development and coordination",
     "flagship_product_fa": "توسعه و هماهنگی بخش ملی فضا",
     "flagship_product_ar": "تنمية قطاع الفضاء الوطني وتنسيقه",
@@ -6845,7 +7008,9 @@
     "timeline_fa": [],
     "products_list_bilingual": [],
     "programs_list_bilingual": [],
-    "gallery": []
+    "gallery": [],
+    "flagship_prod_status_ar": "وكالة حديثة التأسيس؛ يجري ترسيخ هيكلها المؤسسي",
+    "flagship_prog_timeline_ar": "منذ 2026"
   },
   {
     "id": "kasa",
@@ -6871,7 +7036,7 @@
     "org_type_ar": "وكالة فضاء حكومية",
     "sectors_en": "Aerospace, Launch Vehicles & Satellites",
     "sectors_fa": "هوافضا، پرتابگرها و ماهواره‌ها",
-    "sectors_ar": "الطيران والفضاء ومركبات الإطلاق والأقمار الصناعية",
+    "sectors_ar": "الفضاء والطيران ومركبات الإطلاق والأقمار الصناعية",
     "flagship_product_en": "National space policy and programme coordination",
     "flagship_product_fa": "سیاست‌گذاری و هماهنگی برنامه ملی فضا",
     "flagship_product_ar": "سياسة الفضاء الوطنية وتنسيق برامجها",
@@ -6901,7 +7066,9 @@
     "timeline_fa": [],
     "products_list_bilingual": [],
     "programs_list_bilingual": [],
-    "gallery": []
+    "gallery": [],
+    "flagship_prod_status_ar": "تشغيلي",
+    "flagship_prog_timeline_ar": "منذ 2024"
   },
   {
     "id": "philsa",
@@ -6927,7 +7094,7 @@
     "org_type_ar": "وكالة فضاء حكومية",
     "sectors_en": "Space Policy, Research & National Space Applications",
     "sectors_fa": "سیاست فضایی، پژوهش و کاربردهای ملی فضا",
-    "sectors_ar": "سياسة الفضاء والبحث والتطبيقات الفضائية الوطنية",
+    "sectors_ar": "السياسة الفضائية والبحوث والتطبيقات الوطنية للفضاء",
     "flagship_product_en": "National space-science and technology applications",
     "flagship_product_fa": "کاربردهای ملی علوم و فناوری فضایی",
     "flagship_product_ar": "تطبيقات علوم وتكنولوجيا الفضاء الوطنية",
@@ -6957,7 +7124,9 @@
     "timeline_fa": [],
     "products_list_bilingual": [],
     "programs_list_bilingual": [],
-    "gallery": []
+    "gallery": [],
+    "flagship_prod_status_ar": "تشغيلي",
+    "flagship_prog_timeline_ar": "منذ 2019"
   },
   {
     "id": "mysa",
@@ -6983,7 +7152,7 @@
     "org_type_ar": "وكالة فضاء حكومية",
     "sectors_en": "Earth Observation, Geospatial Data & Environmental Management",
     "sectors_fa": "مشاهده زمین، داده‌های مکانی و مدیریت محیط زیست",
-    "sectors_ar": "رصد الأرض والبيانات الجغرافية وإدارة البيئة",
+    "sectors_ar": "رصد الأرض والبيانات الجغرافية المكانية والإدارة البيئية",
     "flagship_product_en": "Space technology, satellite and remote-sensing applications",
     "flagship_product_fa": "فناوری فضایی، ماهواره و کاربردهای سنجش‌ازدور",
     "flagship_product_ar": "تقنيات الفضاء والأقمار وتطبيقات الاستشعار عن بعد",
@@ -7013,7 +7182,9 @@
     "timeline_fa": [],
     "products_list_bilingual": [],
     "programs_list_bilingual": [],
-    "gallery": []
+    "gallery": [],
+    "flagship_prod_status_ar": "تشغيلي",
+    "flagship_prog_timeline_ar": "منذ 2019"
   },
   {
     "id": "tasa",
@@ -7039,7 +7210,7 @@
     "org_type_ar": "وكالة فضاء حكومية",
     "sectors_en": "Aerospace, Launch Vehicles & Satellites",
     "sectors_fa": "هوافضا، پرتابگرها و ماهواره‌ها",
-    "sectors_ar": "الطيران والفضاء ومركبات الإطلاق والأقمار الصناعية",
+    "sectors_ar": "الفضاء والطيران ومركبات الإطلاق والأقمار الصناعية",
     "flagship_product_en": "Satellite systems, space science and sounding-rocket research",
     "flagship_product_fa": "سامانه‌های ماهواره‌ای، علوم فضایی و پژوهش راکت کاوشی",
     "flagship_product_ar": "أنظمة الأقمار وعلوم الفضاء وأبحاث الصواريخ الاستطلاعية",
@@ -7069,7 +7240,9 @@
     "timeline_fa": [],
     "products_list_bilingual": [],
     "programs_list_bilingual": [],
-    "gallery": []
+    "gallery": [],
+    "flagship_prod_status_ar": "تشغيلي",
+    "flagship_prog_timeline_ar": "منذ 1991"
   },
   {
     "id": "uzbekspace",
@@ -7095,7 +7268,7 @@
     "org_type_ar": "وكالة فضاء حكومية",
     "sectors_en": "Space Policy, Research & National Space Applications",
     "sectors_fa": "سیاست فضایی، پژوهش و کاربردهای ملی فضا",
-    "sectors_ar": "سياسة الفضاء والبحث والتطبيقات الفضائية الوطنية",
+    "sectors_ar": "السياسة الفضائية والبحوث والتطبيقات الوطنية للفضاء",
     "flagship_product_en": "Space research, Earth observation and national technology coordination",
     "flagship_product_fa": "پژوهش فضایی، مشاهده زمین و هماهنگی فناوری ملی",
     "flagship_product_ar": "أبحاث الفضاء ورصد الأرض وتنسيق التقنية الوطنية",
@@ -7125,7 +7298,9 @@
     "timeline_fa": [],
     "products_list_bilingual": [],
     "programs_list_bilingual": [],
-    "gallery": []
+    "gallery": [],
+    "flagship_prod_status_ar": "تشغيلي",
+    "flagship_prog_timeline_ar": "منذ 2019"
   },
   {
     "id": "azercosmos",
@@ -7151,7 +7326,7 @@
     "org_type_ar": "مشغل فضائي ذو شخصية اعتبارية عامة",
     "sectors_en": "Space Science, Satellite Communications, Earth Observation & Astronomy",
     "sectors_fa": "علوم فضا، ارتباطات ماهواره‌ای، مشاهده زمین و اخترشناسی",
-    "sectors_ar": "علوم الفضاء واتصالات الأقمار ورصد الأرض وعلم الفلك",
+    "sectors_ar": "علوم الفضاء والاتصالات الساتلية ورصد الأرض وعلم الفلك",
     "flagship_product_en": "Satellite communications and Earth-observation services",
     "flagship_product_fa": "ارتباطات ماهواره‌ای و خدمات مشاهده زمین",
     "flagship_product_ar": "اتصالات الأقمار وخدمات رصد الأرض",
@@ -7214,7 +7389,9 @@
     "coordinate_source_url": "https://nominatim.openstreetmap.org/search?q=Baku%2C+Azerbaijan&format=json&limit=1",
     "source_note_en": "The presidential decree of 27 April 2021 establishes Azercosmos as a public legal entity and legal successor; its official page lists the Baku address. The map marker is a city pin because address geocoding did not verify the office building. Sources: https://api.azercosmos.az/files/decree.pdf ; https://azercosmos.az/en/about-us/our-story .",
     "source_note_fa": "فرمان ریاست‌جمهوری ۲۷ آوریل ۲۰۲۱، Azercosmos را به‌عنوان شخصیت حقوقی عمومی و جانشین قانونی ایجاد می‌کند؛ صفحهٔ رسمی نشانی باکو را می‌دهد. چون نشانی به ساختمان دفتر با اطمینان قابل‌تطبیق نبود، نشانگر نقشه در سطح شهر است. منابع: https://api.azercosmos.az/files/decree.pdf ؛ https://azercosmos.az/en/about-us/our-story .",
-    "source_note_ar": "ينشئ المرسوم الرئاسي الصادر في 27 أبريل 2021 شركة Azercosmos كشخص اعتباري عام وخلف قانوني؛ وتعرض صفحتها الرسمية عنوان باكو. ولأن الترميز الجغرافي لم يثبت مبنى المكتب، فعلامة الخريطة على مستوى المدينة. المصادر: https://api.azercosmos.az/files/decree.pdf ؛ https://azercosmos.az/en/about-us/our-story ."
+    "source_note_ar": "ينشئ المرسوم الرئاسي الصادر في 27 أبريل 2021 شركة Azercosmos كشخص اعتباري عام وخلف قانوني؛ وتعرض صفحتها الرسمية عنوان باكو. ولأن الترميز الجغرافي لم يثبت مبنى المكتب، فعلامة الخريطة على مستوى المدينة. المصادر: https://api.azercosmos.az/files/decree.pdf ؛ https://azercosmos.az/en/about-us/our-story .",
+    "flagship_prod_status_ar": "تشغيلي",
+    "flagship_prog_timeline_ar": "منذ 2010"
   },
   {
     "id": "gistda",
@@ -7240,7 +7417,7 @@
     "org_type_ar": "وكالة عامة لرصد الأرض والبيانات الفضائية",
     "sectors_en": "Earth Observation, Geospatial Data & Environmental Management",
     "sectors_fa": "مشاهده زمین، داده‌های مکانی و مدیریت محیط زیست",
-    "sectors_ar": "رصد الأرض والبيانات الجغرافية وإدارة البيئة",
+    "sectors_ar": "رصد الأرض والبيانات الجغرافية المكانية والإدارة البيئية",
     "flagship_product_en": "Satellite data, Earth observation and geospatial services",
     "flagship_product_fa": "داده ماهواره‌ای، مشاهده زمین و خدمات مکانی",
     "flagship_product_ar": "بيانات الأقمار ورصد الأرض والخدمات الجغرافية",
@@ -7270,7 +7447,9 @@
     "timeline_fa": [],
     "products_list_bilingual": [],
     "programs_list_bilingual": [],
-    "gallery": []
+    "gallery": [],
+    "flagship_prod_status_ar": "تشغيلي",
+    "flagship_prog_timeline_ar": "منذ 2000"
   },
   {
     "id": "vnsc",
@@ -7296,7 +7475,7 @@
     "org_type_ar": "معهد حكومي لبحوث علوم وتكنولوجيا الفضاء",
     "sectors_en": "Space Science, Satellite Communications, Earth Observation & Astronomy",
     "sectors_fa": "علوم فضا، ماهواره، مشاهده زمین و اخترشناسی",
-    "sectors_ar": "علوم الفضاء والأقمار ورصد الأرض وعلم الفلك",
+    "sectors_ar": "علوم الفضاء والأقمار الصناعية ورصد الأرض وعلم الفلك",
     "flagship_product_en": "Satellite research, space science and Earth observation",
     "flagship_product_fa": "پژوهش ماهواره، علوم فضایی و مشاهده زمین",
     "flagship_product_ar": "أبحاث الأقمار وعلوم الفضاء ورصد الأرض",
@@ -7326,7 +7505,9 @@
     "timeline_fa": [],
     "products_list_bilingual": [],
     "programs_list_bilingual": [],
-    "gallery": []
+    "gallery": [],
+    "flagship_prod_status_ar": "تشغيلي",
+    "flagship_prog_timeline_ar": "منذ 2011"
   },
   {
     "id": "in-space",
@@ -7352,7 +7533,7 @@
     "org_type_ar": "جهة لتنظيم وتعزيز الأنشطة الفضائية",
     "sectors_en": "Launch Regulation, Commercialisation & Industry Coordination",
     "sectors_fa": "تنظیم پرتاب، تجاری‌سازی و هماهنگی صنعت",
-    "sectors_ar": "تنظيم الإطلاق والتسويق التجاري وتنسيق الصناعة",
+    "sectors_ar": "تنظيم الإطلاق والتسويق التجاري وتنسيق القطاع الصناعي",
     "flagship_product_en": "Authorization and promotion of non-government space activities",
     "flagship_product_fa": "مجوزدهی و ترویج فعالیت‌های فضایی غیردولتی",
     "flagship_product_ar": "ترخيص وتعزيز الأنشطة الفضائية غير الحكومية",
@@ -7382,7 +7563,9 @@
     "timeline_fa": [],
     "products_list_bilingual": [],
     "programs_list_bilingual": [],
-    "gallery": []
+    "gallery": [],
+    "flagship_prod_status_ar": "تشغيلي",
+    "flagship_prog_timeline_ar": "منذ 2020"
   },
   {
     "id": "kazakhstan-aerospace-committee",
@@ -7408,7 +7591,7 @@
     "org_type_ar": "لجنة حكومية للفضاء والطيران",
     "sectors_en": "National Space Coordination, Earth Observation & Satellite Applications",
     "sectors_fa": "هماهنگی ملی فضا، مشاهده زمین و کاربرد ماهواره",
-    "sectors_ar": "تنسيق الفضاء الوطني ورصد الأرض وتطبيقات الأقمار",
+    "sectors_ar": "التنسيق الفضائي الوطني ورصد الأرض والتطبيقات الساتلية",
     "flagship_product_en": "Government oversight of national space activity",
     "flagship_product_fa": "نظارت دولتی بر فعالیت فضایی ملی",
     "flagship_product_ar": "الإشراف الحكومي على الأنشطة الفضائية الوطنية",
@@ -7438,7 +7621,9 @@
     "timeline_fa": [],
     "products_list_bilingual": [],
     "programs_list_bilingual": [],
-    "gallery": []
+    "gallery": [],
+    "flagship_prod_status_ar": "تشغيلي",
+    "flagship_prog_timeline_ar": "مهمة جارية"
   },
   {
     "id": "sparrso",
@@ -7464,7 +7649,7 @@
     "org_type_ar": "معهد حكومي لبحوث علوم وتكنولوجيا الفضاء",
     "sectors_en": "Remote Sensing, Communication Satellites, Upper-Atmosphere Science",
     "sectors_fa": "سنجش‌ازدور، ماهواره‌های ارتباطی و علوم جو فوقانی",
-    "sectors_ar": "الاستشعار عن بعد وأقمار الاتصالات وعلوم الغلاف الجوي العلوي",
+    "sectors_ar": "الاستشعار عن بُعد وأقمار الاتصالات وعلوم الغلاف الجوي العلوي",
     "flagship_product_en": "Satellite remote sensing and space-science research",
     "flagship_product_fa": "سنجش‌ازدور ماهواره‌ای و پژوهش علوم فضایی",
     "flagship_product_ar": "الاستشعار عن بعد بالأقمار وأبحاث علوم الفضاء",
@@ -7494,7 +7679,9 @@
     "timeline_fa": [],
     "products_list_bilingual": [],
     "programs_list_bilingual": [],
-    "gallery": []
+    "gallery": [],
+    "flagship_prod_status_ar": "تشغيلي",
+    "flagship_prog_timeline_ar": "منذ 1980"
   },
   {
     "id": "inasa-brin",
@@ -7550,7 +7737,9 @@
     "timeline_fa": [],
     "products_list_bilingual": [],
     "programs_list_bilingual": [],
-    "gallery": []
+    "gallery": [],
+    "flagship_prod_status_ar": "تشغيلي / قيد البحث والتطوير",
+    "flagship_prog_timeline_ar": "مهمة جارية"
   },
   {
     "id": "bahrain-space-agency",
@@ -7576,7 +7765,7 @@
     "org_type_ar": "وكالة فضاء حكومية",
     "sectors_en": "Space Policy, Research & National Space Applications",
     "sectors_fa": "سیاست فضایی، پژوهش و کاربردهای ملی فضا",
-    "sectors_ar": "سياسة الفضاء والبحث والتطبيقات الفضائية الوطنية",
+    "sectors_ar": "السياسة الفضائية والبحوث والتطبيقات الوطنية للفضاء",
     "flagship_product_en": "Space science, satellite initiatives and national capacity",
     "flagship_product_fa": "علوم فضایی، طرح‌های ماهواره‌ای و ظرفیت ملی",
     "flagship_product_ar": "علوم الفضاء ومبادرات الأقمار والقدرات الوطنية",
@@ -7606,7 +7795,9 @@
     "timeline_fa": [],
     "products_list_bilingual": [],
     "programs_list_bilingual": [],
-    "gallery": []
+    "gallery": [],
+    "flagship_prod_status_ar": "تأسس الكيان؛ ولم يُؤكَّد التشغيل الكامل",
+    "flagship_prog_timeline_ar": "مهمة جارية"
   },
   {
     "id": "apsco",
@@ -7632,7 +7823,7 @@
     "org_type_ar": "منظمة فضائية دولية",
     "sectors_en": "International Space Cooperation, Training & Capacity Building",
     "sectors_fa": "همکاری بین‌المللی فضایی، آموزش و ظرفیت‌سازی",
-    "sectors_ar": "التعاون الفضائي الدولي والتدريب وبناء القدرات",
+    "sectors_ar": "التعاون الفضائي الدولي والتعليم وبناء القدرات",
     "flagship_product_en": "Regional cooperation, training and joint space programmes",
     "flagship_product_fa": "همکاری منطقه‌ای، آموزش و برنامه‌های مشترک فضایی",
     "flagship_product_ar": "التعاون الإقليمي والتدريب والبرامج الفضائية المشتركة",
@@ -7662,7 +7853,9 @@
     "timeline_fa": [],
     "products_list_bilingual": [],
     "programs_list_bilingual": [],
-    "gallery": []
+    "gallery": [],
+    "flagship_prod_status_ar": "تشغيلي",
+    "flagship_prog_timeline_ar": "منذ 2008"
   },
   {
     "id": "uae-space-agency",
@@ -7688,7 +7881,7 @@
     "org_type_ar": "وكالة فضاء حكومية",
     "sectors_en": "Space Policy, Research & National Space Applications",
     "sectors_fa": "سیاست فضایی، پژوهش و کاربردهای ملی فضا",
-    "sectors_ar": "سياسة الفضاء والبحث والتطبيقات الفضائية الوطنية",
+    "sectors_ar": "السياسة الفضائية والبحوث والتطبيقات الوطنية للفضاء",
     "flagship_product_en": "Federal space policy, sector coordination and national programmes",
     "flagship_product_fa": "سیاست فدرال فضا، هماهنگی بخش و برنامه‌های ملی",
     "flagship_product_ar": "سياسة الفضاء الاتحادية وتنسيق القطاع والبرامج الوطنية",
@@ -7718,7 +7911,9 @@
     "timeline_fa": [],
     "products_list_bilingual": [],
     "programs_list_bilingual": [],
-    "gallery": []
+    "gallery": [],
+    "flagship_prod_status_ar": "تشغيلي",
+    "flagship_prog_timeline_ar": "منذ 2014"
   },
   {
     "id": "nosa",
@@ -7778,7 +7973,8 @@
     "timeline_fa": [],
     "source_note_en": "Official organization source: https://www.regjeringen.no/en/dep/nfd/organisation/etater-og-virksomheter-under-narings--og-fiskeridepartementet/Subordinate-agencies-and-institutions/norwegian-space-centre/id435114/; mapped location source: https://nominatim.openstreetmap.org/search?q=Norwegian+Space+Agency%2C+Oslo%2C+Norway&format=json&limit=1.",
     "source_note_fa": "منبع رسمی سازمان: https://www.regjeringen.no/en/dep/nfd/organisation/etater-og-virksomheter-under-narings--og-fiskeridepartementet/Subordinate-agencies-and-institutions/norwegian-space-centre/id435114/؛ منبع موقعیت نقشه‌ای: https://nominatim.openstreetmap.org/search?q=Norwegian+Space+Agency%2C+Oslo%2C+Norway&format=json&limit=1.",
-    "source_note_ar": "المصدر الرسمي للجهة: https://www.regjeringen.no/en/dep/nfd/organisation/etater-og-virksomheter-under-narings--og-fiskeridepartementet/Subordinate-agencies-and-institutions/norwegian-space-centre/id435114/؛ مصدر موضع الخريطة: https://nominatim.openstreetmap.org/search?q=Norwegian+Space+Agency%2C+Oslo%2C+Norway&format=json&limit=1."
+    "source_note_ar": "المصدر الرسمي للجهة: https://www.regjeringen.no/en/dep/nfd/organisation/etater-og-virksomheter-under-narings--og-fiskeridepartementet/Subordinate-agencies-and-institutions/norwegian-space-centre/id435114/؛ مصدر موضع الخريطة: https://nominatim.openstreetmap.org/search?q=Norwegian+Space+Agency%2C+Oslo%2C+Norway&format=json&limit=1.",
+    "sectors_ar": "السياسة الفضائية والبحوث والتطبيقات الفضائية الوطنية"
   },
   {
     "id": "snsa",
@@ -7838,7 +8034,8 @@
     "timeline_fa": [],
     "source_note_en": "Official organization source: https://www.rymdstyrelsen.se/en/about-us/; mapped location source: https://nominatim.openstreetmap.org/search?q=Swedish+National+Space+Agency%2C+Solna%2C+Sweden&format=json&limit=1.",
     "source_note_fa": "منبع رسمی سازمان: https://www.rymdstyrelsen.se/en/about-us/؛ منبع موقعیت نقشه‌ای: https://nominatim.openstreetmap.org/search?q=Swedish+National+Space+Agency%2C+Solna%2C+Sweden&format=json&limit=1.",
-    "source_note_ar": "المصدر الرسمي للجهة: https://www.rymdstyrelsen.se/en/about-us/؛ مصدر موضع الخريطة: https://nominatim.openstreetmap.org/search?q=Swedish+National+Space+Agency%2C+Solna%2C+Sweden&format=json&limit=1."
+    "source_note_ar": "المصدر الرسمي للجهة: https://www.rymdstyrelsen.se/en/about-us/؛ مصدر موضع الخريطة: https://nominatim.openstreetmap.org/search?q=Swedish+National+Space+Agency%2C+Solna%2C+Sweden&format=json&limit=1.",
+    "sectors_ar": "السياسة الفضائية والبحوث والتطبيقات الفضائية الوطنية"
   },
   {
     "id": "nlsa",
@@ -7899,7 +8096,8 @@
     "source_note_en": "Official NLSA page confirms the 2026 transformation and address at Centre Court, Prinses Beatrixlaan 2. OpenStreetMap still labels the same mapped office point with the former NSO name.",
     "source_note_fa": "منبع رسمی سازمان: https://www.nlsa.nl/en/about-nlsa/organisation/؛ منبع موقعیت نقشه‌ای: https://nominatim.openstreetmap.org/search?q=Prinses+Beatrixlaan+2%2C+Den+Haag%2C+Netherlands&format=json&limit=1.",
     "source_note_ar": "المصدر الرسمي للجهة: https://www.nlsa.nl/en/about-nlsa/organisation/؛ مصدر موضع الخريطة: https://nominatim.openstreetmap.org/search?q=Prinses+Beatrixlaan+2%2C+Den+Haag%2C+Netherlands&format=json&limit=1.",
-    "founded": 2026
+    "founded": 2026,
+    "sectors_ar": "السياسة الفضائية والبحوث والتطبيقات الفضائية الوطنية"
   },
   {
     "id": "lsa-luxembourg",
@@ -7960,7 +8158,8 @@
     "source_note_en": "Official organization source: https://meco.gouvernement.lu/en/secteurs-prioritaires/affaires-spatiales.html; mapped location source: https://nominatim.openstreetmap.org/search?q=Luxembourg+Space+Agency%2C+Luxembourg&format=json&limit=1.",
     "source_note_fa": "منبع رسمی سازمان: https://meco.gouvernement.lu/en/secteurs-prioritaires/affaires-spatiales.html؛ منبع موقعیت نقشه‌ای: https://nominatim.openstreetmap.org/search?q=Luxembourg+Space+Agency%2C+Luxembourg&format=json&limit=1.",
     "source_note_ar": "المصدر الرسمي للجهة: https://meco.gouvernement.lu/en/secteurs-prioritaires/affaires-spatiales.html؛ مصدر موضع الخريطة: https://nominatim.openstreetmap.org/search?q=Luxembourg+Space+Agency%2C+Luxembourg&format=json&limit=1.",
-    "founded": 2018
+    "founded": 2018,
+    "sectors_ar": "السياسة الفضائية والبحوث والتطبيقات الفضائية الوطنية"
   },
   {
     "id": "belspo",
@@ -8020,7 +8219,8 @@
     "timeline_fa": [],
     "source_note_en": "Official BELSPO address: WTC III, Boulevard Simon Bolivar 30, Brussels. Coordinates are an approximate mapped address point.",
     "source_note_fa": "منبع رسمی سازمان: https://www.belspo.be/belspo/space/index_en.stm؛ منبع موقعیت نقشه‌ای: https://nominatim.openstreetmap.org/search?q=Boulevard+Simon+Bolivar+30%2C+1000+Brussels%2C+Belgium&format=json&limit=1.",
-    "source_note_ar": "المصدر الرسمي للجهة: https://www.belspo.be/belspo/space/index_en.stm؛ مصدر موضع الخريطة: https://nominatim.openstreetmap.org/search?q=Boulevard+Simon+Bolivar+30%2C+1000+Brussels%2C+Belgium&format=json&limit=1."
+    "source_note_ar": "المصدر الرسمي للجهة: https://www.belspo.be/belspo/space/index_en.stm؛ مصدر موضع الخريطة: https://nominatim.openstreetmap.org/search?q=Boulevard+Simon+Bolivar+30%2C+1000+Brussels%2C+Belgium&format=json&limit=1.",
+    "sectors_ar": "السياسة الفضائية والبحوث والتطبيقات الفضائية الوطنية"
   },
   {
     "id": "bas-monaco",
@@ -8081,7 +8281,8 @@
     "source_note_en": "Official organization source: https://www.gouv.mc/en/news/monaco-to-host-the-3rd-ocean-space-forum-on-2-july-2026; mapped location source: https://nominatim.openstreetmap.org/search?q=Rue+du+Gabian+2%2C+98000+Monaco&format=json&limit=1.",
     "source_note_fa": "منبع رسمی سازمان: https://www.gouv.mc/en/news/monaco-to-host-the-3rd-ocean-space-forum-on-2-july-2026؛ منبع موقعیت نقشه‌ای: https://nominatim.openstreetmap.org/search?q=Rue+du+Gabian+2%2C+98000+Monaco&format=json&limit=1.",
     "source_note_ar": "المصدر الرسمي للجهة: https://www.gouv.mc/en/news/monaco-to-host-the-3rd-ocean-space-forum-on-2-july-2026؛ مصدر موضع الخريطة: https://nominatim.openstreetmap.org/search?q=Rue+du+Gabian+2%2C+98000+Monaco&format=json&limit=1.",
-    "founded": 2021
+    "founded": 2021,
+    "sectors_ar": "السياسة الفضائية والبحوث والتطبيقات الفضائية الوطنية"
   },
   {
     "id": "eumetsat",
@@ -8142,7 +8343,8 @@
     "source_note_en": "Official organization source: https://www.eumetsat.int/about-us/who-we-are; mapped location source: https://nominatim.openstreetmap.org/search?q=EUMETSAT%2C+Darmstadt%2C+Germany&format=json&limit=1.",
     "source_note_fa": "منبع رسمی سازمان: https://www.eumetsat.int/about-us/who-we-are؛ منبع موقعیت نقشه‌ای: https://nominatim.openstreetmap.org/search?q=EUMETSAT%2C+Darmstadt%2C+Germany&format=json&limit=1.",
     "source_note_ar": "المصدر الرسمي للجهة: https://www.eumetsat.int/about-us/who-we-are؛ مصدر موضع الخريطة: https://nominatim.openstreetmap.org/search?q=EUMETSAT%2C+Darmstadt%2C+Germany&format=json&limit=1.",
-    "founded": 1986
+    "founded": 1986,
+    "sectors_ar": "تشغيل أقمار الأرصاد الجوية والطقس والمناخ"
   },
   {
     "id": "euspa",
@@ -8203,7 +8405,8 @@
     "source_note_en": "Official organization source: https://www.euspa.europa.eu/about/euspa-sites; mapped location source: https://nominatim.openstreetmap.org/search?q=Prague%2C+Czech+Republic&format=json&limit=1.",
     "source_note_fa": "منبع رسمی سازمان: https://www.euspa.europa.eu/about/euspa-sites؛ منبع موقعیت نقشه‌ای: https://nominatim.openstreetmap.org/search?q=Prague%2C+Czech+Republic&format=json&limit=1.",
     "source_note_ar": "المصدر الرسمي للجهة: https://www.euspa.europa.eu/about/euspa-sites؛ مصدر موضع الخريطة: https://nominatim.openstreetmap.org/search?q=Prague%2C+Czech+Republic&format=json&limit=1.",
-    "founded": 2021
+    "founded": 2021,
+    "sectors_ar": "تشغيل برنامج الفضاء للاتحاد الأوروبي والملاحة الساتلية"
   },
   {
     "id": "ufsn-dk",
@@ -8263,7 +8466,8 @@
     "timeline_fa": [],
     "source_note_en": "Official space page identifies UFSN as Denmark's national space authority; official contact page gives the mapped office address at Haraldsgade 53.",
     "source_note_fa": "منبع رسمی سازمان: https://ufsn.dk/english/research-and-innovation/space-and-denmark/؛ منبع موقعیت نقشه‌ای: https://nominatim.openstreetmap.org/search?q=Haraldsgade+53%2C+Copenhagen%2C+Denmark&format=json&limit=1.",
-    "source_note_ar": "المصدر الرسمي للجهة: https://ufsn.dk/english/research-and-innovation/space-and-denmark/؛ مصدر موضع الخريطة: https://nominatim.openstreetmap.org/search?q=Haraldsgade+53%2C+Copenhagen%2C+Denmark&format=json&limit=1."
+    "source_note_ar": "المصدر الرسمي للجهة: https://ufsn.dk/english/research-and-innovation/space-and-denmark/؛ مصدر موضع الخريطة: https://nominatim.openstreetmap.org/search?q=Haraldsgade+53%2C+Copenhagen%2C+Denmark&format=json&limit=1.",
+    "sectors_ar": "تنظيم أنشطة الفضاء والترخيص وإدارة الطيف الترددي"
   },
   {
     "id": "estonian-space-office",
@@ -8323,7 +8527,8 @@
     "timeline_fa": [],
     "source_note_en": "EIS's current contact page identifies the Head of the Estonian Space Office and locates the parent agency at Sepise 7, Tallinn.",
     "source_note_fa": "منبع رسمی سازمان: https://eis.ee/en/about-the-organisation/contact/؛ منبع موقعیت نقشه‌ای: https://nominatim.openstreetmap.org/search?q=Sepise+7%2C+Tallinn%2C+Estonia&format=json&limit=1.",
-    "source_note_ar": "المصدر الرسمي للجهة: https://eis.ee/en/about-the-organisation/contact/؛ مصدر موضع الخريطة: https://nominatim.openstreetmap.org/search?q=Sepise+7%2C+Tallinn%2C+Estonia&format=json&limit=1."
+    "source_note_ar": "المصدر الرسمي للجهة: https://eis.ee/en/about-the-organisation/contact/؛ مصدر موضع الخريطة: https://nominatim.openstreetmap.org/search?q=Sepise+7%2C+Tallinn%2C+Estonia&format=json&limit=1.",
+    "sectors_ar": "السياسة الفضائية والبحوث والتطبيقات الفضائية الوطنية"
   },
   {
     "id": "finnish-space-office",
@@ -8383,7 +8588,8 @@
     "timeline_fa": [],
     "source_note_en": "The official Space Finland page states that Finland has no standalone space agency and locates the Finnish Space Office secretariat under the Ministry.",
     "source_note_fa": "منبع رسمی سازمان: https://spacefinland.fi/en/-/is-finland-also-in-space-؛ منبع موقعیت نقشه‌ای: https://nominatim.openstreetmap.org/search?q=Aleksanterinkatu+4%2C+Helsinki%2C+Finland&format=json&limit=1.",
-    "source_note_ar": "المصدر الرسمي للجهة: https://spacefinland.fi/en/-/is-finland-also-in-space-؛ مصدر موضع الخريطة: https://nominatim.openstreetmap.org/search?q=Aleksanterinkatu+4%2C+Helsinki%2C+Finland&format=json&limit=1."
+    "source_note_ar": "المصدر الرسمي للجهة: https://spacefinland.fi/en/-/is-finland-also-in-space-؛ مصدر موضع الخريطة: https://nominatim.openstreetmap.org/search?q=Aleksanterinkatu+4%2C+Helsinki%2C+Finland&format=json&limit=1.",
+    "sectors_ar": "السياسة الفضائية والبحوث والتطبيقات الفضائية الوطنية"
   },
   {
     "id": "space-hub-lt",
@@ -8443,7 +8649,8 @@
     "timeline_fa": [],
     "source_note_en": "Official ministry page describes Space Hub LT as operating within Innovation Agency Lithuania; the map point is the parent agency address in Vilnius.",
     "source_note_fa": "منبع رسمی سازمان: https://eimin.lrv.lt/en/sector-activities/innovation/space-policy/؛ منبع موقعیت نقشه‌ای: https://nominatim.openstreetmap.org/search?q=%C5%A0eimyni%C5%A1ki%C5%B3+19%2C+Vilnius%2C+Lithuania&format=json&limit=1.",
-    "source_note_ar": "المصدر الرسمي للجهة: https://eimin.lrv.lt/en/sector-activities/innovation/space-policy/؛ مصدر موضع الخريطة: https://nominatim.openstreetmap.org/search?q=%C5%A0eimyni%C5%A1ki%C5%B3+19%2C+Vilnius%2C+Lithuania&format=json&limit=1."
+    "source_note_ar": "المصدر الرسمي للجهة: https://eimin.lrv.lt/en/sector-activities/innovation/space-policy/؛ مصدر موضع الخريطة: https://nominatim.openstreetmap.org/search?q=%C5%A0eimyni%C5%A1ki%C5%B3+19%2C+Vilnius%2C+Lithuania&format=json&limit=1.",
+    "sectors_ar": "السياسة الفضائية والبحوث والتطبيقات الفضائية الوطنية"
   },
   {
     "id": "alr-ffg",
@@ -8503,7 +8710,8 @@
     "timeline_fa": [],
     "source_note_en": "FFG publishes its main-office GPS position as 48°13'11\"N, 16°21'11\"E; the ALR is an internal FFG unit.",
     "source_note_fa": "منبع رسمی سازمان: https://www.ffg.at/en/content/aeronautics-and-space-agency-0؛ منبع موقعیت نقشه‌ای: https://www.ffg.at/en/contact-and-address.",
-    "source_note_ar": "المصدر الرسمي للجهة: https://www.ffg.at/en/content/aeronautics-and-space-agency-0؛ مصدر موضع الخريطة: https://www.ffg.at/en/contact-and-address."
+    "source_note_ar": "المصدر الرسمي للجهة: https://www.ffg.at/en/content/aeronautics-and-space-agency-0؛ مصدر موضع الخريطة: https://www.ffg.at/en/contact-and-address.",
+    "sectors_ar": "السياسة الفضائية والبحوث والتطبيقات الفضائية الوطنية"
   },
   {
     "id": "swiss-space-office",
@@ -8563,7 +8771,8 @@
     "timeline_fa": [],
     "source_note_en": "Official organization source: https://www.sbfi.admin.ch/en/space-affairs; mapped location source: https://nominatim.openstreetmap.org/search?q=Einsteinstrasse+2%2C+3003+Bern%2C+Switzerland&format=json&limit=1.",
     "source_note_fa": "منبع رسمی سازمان: https://www.sbfi.admin.ch/en/space-affairs؛ منبع موقعیت نقشه‌ای: https://nominatim.openstreetmap.org/search?q=Einsteinstrasse+2%2C+3003+Bern%2C+Switzerland&format=json&limit=1.",
-    "source_note_ar": "المصدر الرسمي للجهة: https://www.sbfi.admin.ch/en/space-affairs؛ مصدر موضع الخريطة: https://nominatim.openstreetmap.org/search?q=Einsteinstrasse+2%2C+3003+Bern%2C+Switzerland&format=json&limit=1."
+    "source_note_ar": "المصدر الرسمي للجهة: https://www.sbfi.admin.ch/en/space-affairs؛ مصدر موضع الخريطة: https://nominatim.openstreetmap.org/search?q=Einsteinstrasse+2%2C+3003+Bern%2C+Switzerland&format=json&limit=1.",
+    "sectors_ar": "السياسة الفضائية والبحوث والتطبيقات الفضائية الوطنية"
   },
   {
     "id": "liechtenstein-ak",
@@ -8623,7 +8832,8 @@
     "timeline_fa": [],
     "source_note_en": "Official organization source: https://www.llv.li/en/national-administration/office-for-communications/space; mapped location source: https://nominatim.openstreetmap.org/search?q=%C3%84ulestrasse+51%2C+9490+Vaduz%2C+Liechtenstein&format=json&limit=1.",
     "source_note_fa": "منبع رسمی سازمان: https://www.llv.li/en/national-administration/office-for-communications/space؛ منبع موقعیت نقشه‌ای: https://nominatim.openstreetmap.org/search?q=%C3%84ulestrasse+51%2C+9490+Vaduz%2C+Liechtenstein&format=json&limit=1.",
-    "source_note_ar": "المصدر الرسمي للجهة: https://www.llv.li/en/national-administration/office-for-communications/space؛ مصدر موضع الخريطة: https://nominatim.openstreetmap.org/search?q=%C3%84ulestrasse+51%2C+9490+Vaduz%2C+Liechtenstein&format=json&limit=1."
+    "source_note_ar": "المصدر الرسمي للجهة: https://www.llv.li/en/national-administration/office-for-communications/space؛ مصدر موضع الخريطة: https://nominatim.openstreetmap.org/search?q=%C3%84ulestrasse+51%2C+9490+Vaduz%2C+Liechtenstein&format=json&limit=1.",
+    "sectors_ar": "تنظيم أنشطة الفضاء والترخيص وإدارة الطيف الترددي"
   },
   {
     "id": "german-space-agency-dlr",
@@ -8683,7 +8893,8 @@
     "timeline_fa": [],
     "source_note_en": "Official organization source: https://www.dlr.de/en/dlr/locations-and-offices/bonn; mapped location source: https://nominatim.openstreetmap.org/search?q=K%C3%B6nigswinterer+Stra%C3%9Fe+522-524%2C+Bonn%2C+Germany&format=json&limit=1.",
     "source_note_fa": "منبع رسمی سازمان: https://www.dlr.de/en/dlr/locations-and-offices/bonn؛ منبع موقعیت نقشه‌ای: https://nominatim.openstreetmap.org/search?q=K%C3%B6nigswinterer+Stra%C3%9Fe+522-524%2C+Bonn%2C+Germany&format=json&limit=1.",
-    "source_note_ar": "المصدر الرسمي للجهة: https://www.dlr.de/en/dlr/locations-and-offices/bonn؛ مصدر موضع الخريطة: https://nominatim.openstreetmap.org/search?q=K%C3%B6nigswinterer+Stra%C3%9Fe+522-524%2C+Bonn%2C+Germany&format=json&limit=1."
+    "source_note_ar": "المصدر الرسمي للجهة: https://www.dlr.de/en/dlr/locations-and-offices/bonn؛ مصدر موضع الخريطة: https://nominatim.openstreetmap.org/search?q=K%C3%B6nigswinterer+Stra%C3%9Fe+522-524%2C+Bonn%2C+Germany&format=json&limit=1.",
+    "sectors_ar": "السياسة الفضائية والبحوث والتطبيقات الفضائية الوطنية"
   },
   {
     "id": "dsit-space-directorate",
@@ -8743,7 +8954,8 @@
     "timeline_fa": [],
     "source_note_en": "Official organization source: https://www.gov.uk/government/publications/uk-space-agency-annual-report-and-accounts-2025-2026/uk-space-agency-annual-report-2025-2026; mapped location source: https://nominatim.openstreetmap.org/search?q=Department+for+Science+Innovation+and+Technology%2C+London%2C+United+Kingdom&format=json&limit=1.",
     "source_note_fa": "منبع رسمی سازمان: https://www.gov.uk/government/publications/uk-space-agency-annual-report-and-accounts-2025-2026/uk-space-agency-annual-report-2025-2026؛ منبع موقعیت نقشه‌ای: https://nominatim.openstreetmap.org/search?q=Department+for+Science+Innovation+and+Technology%2C+London%2C+United+Kingdom&format=json&limit=1.",
-    "source_note_ar": "المصدر الرسمي للجهة: https://www.gov.uk/government/publications/uk-space-agency-annual-report-and-accounts-2025-2026/uk-space-agency-annual-report-2025-2026؛ مصدر موضع الخريطة: https://nominatim.openstreetmap.org/search?q=Department+for+Science+Innovation+and+Technology%2C+London%2C+United+Kingdom&format=json&limit=1."
+    "source_note_ar": "المصدر الرسمي للجهة: https://www.gov.uk/government/publications/uk-space-agency-annual-report-and-accounts-2025-2026/uk-space-agency-annual-report-2025-2026؛ مصدر موضع الخريطة: https://nominatim.openstreetmap.org/search?q=Department+for+Science+Innovation+and+Technology%2C+London%2C+United+Kingdom&format=json&limit=1.",
+    "sectors_ar": "السياسة الفضائية والبحوث والتطبيقات الفضائية الوطنية"
   },
   {
     "id": "polsa",
@@ -8804,7 +9016,8 @@
     "source_note_en": "POLSA's official contact page identifies Gdańsk as headquarters; Warsaw and Rzeszów are regional offices.",
     "source_note_fa": "منبع رسمی سازمان: https://polsa.gov.pl/about-polsa/contact/؛ منبع موقعیت نقشه‌ای: https://nominatim.openstreetmap.org/search?q=Trzy+Lipy+3%2C+Gdansk%2C+Poland&format=json&limit=1.",
     "source_note_ar": "المصدر الرسمي للجهة: https://polsa.gov.pl/about-polsa/contact/؛ مصدر موضع الخريطة: https://nominatim.openstreetmap.org/search?q=Trzy+Lipy+3%2C+Gdansk%2C+Poland&format=json&limit=1.",
-    "founded": 2014
+    "founded": 2014,
+    "sectors_ar": "السياسة الفضائية والبحوث والتطبيقات الفضائية الوطنية"
   },
   {
     "id": "rosa",
@@ -8865,7 +9078,8 @@
     "source_note_en": "ROSA's official site identifies its public-institution status, mission and Bucharest headquarters at Mendeleev 21–25.",
     "source_note_fa": "منبع رسمی سازمان: https://rosa.ro/؛ منبع موقعیت نقشه‌ای: https://nominatim.openstreetmap.org/search?q=Mendeleev+21-25%2C+Bucharest%2C+Romania&format=json&limit=1.",
     "source_note_ar": "المصدر الرسمي للجهة: https://rosa.ro/؛ مصدر موضع الخريطة: https://nominatim.openstreetmap.org/search?q=Mendeleev+21-25%2C+Bucharest%2C+Romania&format=json&limit=1.",
-    "founded": 1995
+    "founded": 1995,
+    "sectors_ar": "السياسة الفضائية والبحوث والتطبيقات الفضائية الوطنية"
   },
   {
     "id": "ssau",
@@ -8926,7 +9140,8 @@
     "source_note_en": "Official organization source: https://www.nkau.gov.ua/en/; mapped location source: https://nominatim.openstreetmap.org/search?q=State+Space+Agency+of+Ukraine%2C+Kyiv%2C+Ukraine&format=json&limit=1.",
     "source_note_fa": "منبع رسمی سازمان: https://www.nkau.gov.ua/en/؛ منبع موقعیت نقشه‌ای: https://nominatim.openstreetmap.org/search?q=State+Space+Agency+of+Ukraine%2C+Kyiv%2C+Ukraine&format=json&limit=1.",
     "source_note_ar": "المصدر الرسمي للجهة: https://www.nkau.gov.ua/en/؛ مصدر موضع الخريطة: https://nominatim.openstreetmap.org/search?q=State+Space+Agency+of+Ukraine%2C+Kyiv%2C+Ukraine&format=json&limit=1.",
-    "founded": 1992
+    "founded": 1992,
+    "sectors_ar": "السياسة الفضائية والبحوث والتطبيقات الفضائية الوطنية"
   },
   {
     "id": "srti-bas",
@@ -8986,7 +9201,8 @@
     "timeline_fa": [],
     "source_note_en": "The institute's official address is Acad. Georgi Bonchev Street, block 1, Sofia; coordinates mark the institute building.",
     "source_note_fa": "منبع رسمی سازمان: http://space.bas.bg/en/؛ منبع موقعیت نقشه‌ای: https://nominatim.openstreetmap.org/search?q=Acad+Georgi+Bonchev+1%2C+1113+Sofia%2C+Bulgaria&format=json&limit=1.",
-    "source_note_ar": "المصدر الرسمي للجهة: http://space.bas.bg/en/؛ مصدر موضع الخريطة: https://nominatim.openstreetmap.org/search?q=Acad+Georgi+Bonchev+1%2C+1113+Sofia%2C+Bulgaria&format=json&limit=1."
+    "source_note_ar": "المصدر الرسمي للجهة: http://space.bas.bg/en/؛ مصدر موضع الخريطة: https://nominatim.openstreetmap.org/search?q=Acad+Georgi+Bonchev+1%2C+1113+Sofia%2C+Bulgaria&format=json&limit=1.",
+    "sectors_ar": "أبحاث علوم الفضاء وتقنياته ورصد الأرض"
   },
   {
     "id": "portugal-space",
@@ -9047,7 +9263,8 @@
     "source_note_en": "The current official page lists Lisbon offices and marks Santa Maria headquarters as under construction; the pin is in the Lisbon office area.",
     "source_note_fa": "منبع رسمی سازمان: https://ptspace.pt/contact-us/؛ منبع موقعیت نقشه‌ای: https://nominatim.openstreetmap.org/search?q=Estrada+das+Laranjeiras%2C+Lisbon%2C+Portugal&format=json&limit=1.",
     "source_note_ar": "المصدر الرسمي للجهة: https://ptspace.pt/contact-us/؛ مصدر موضع الخريطة: https://nominatim.openstreetmap.org/search?q=Estrada+das+Laranjeiras%2C+Lisbon%2C+Portugal&format=json&limit=1.",
-    "founded": 2019
+    "founded": 2019,
+    "sectors_ar": "السياسة الفضائية والبحوث والتطبيقات الفضائية الوطنية"
   },
   {
     "id": "hsc-greece",
@@ -9107,7 +9324,8 @@
     "timeline_fa": [],
     "source_note_en": "Official HSC homepage and programme pages identify its public non-profit form, headquarters in Chalandri and the current national microsatellite status.",
     "source_note_fa": "منبع رسمی سازمان: https://hsc.gov.gr/en/homepage/؛ منبع موقعیت نقشه‌ای: https://nominatim.openstreetmap.org/search?q=Hellenic+Space+Center%2C+Athens%2C+Greece&format=json&limit=1.",
-    "source_note_ar": "المصدر الرسمي للجهة: https://hsc.gov.gr/en/homepage/؛ مصدر موضع الخريطة: https://nominatim.openstreetmap.org/search?q=Hellenic+Space+Center%2C+Athens%2C+Greece&format=json&limit=1."
+    "source_note_ar": "المصدر الرسمي للجهة: https://hsc.gov.gr/en/homepage/؛ مصدر موضع الخريطة: https://nominatim.openstreetmap.org/search?q=Hellenic+Space+Center%2C+Athens%2C+Greece&format=json&limit=1.",
+    "sectors_ar": "السياسة الفضائية والبحوث والتطبيقات الفضائية الوطنية"
   },
   {
     "id": "cyprus-space-office",
@@ -9168,7 +9386,8 @@
     "source_note_en": "The government strategy says the Department of Electronic Communications was established as the Cyprus Space Office by a Council decision on 5 February 2025; the strategy's final approval remains unverified.",
     "source_note_fa": "منبع رسمی سازمان: https://dec.dmrid.gov.cy/dmrid/DEC/ws_dec.nsf/0/E92BC88635EAE6B2C2258C9A00391D44/$file/Cyprus%20Space%20Strategy%202025-2030%20-%20for%20Public%20Consultation%20(changes%20highlighted)_final.pdf؛ منبع موقعیت نقشه‌ای: https://nominatim.openstreetmap.org/search?q=Department+of+Electronic+Communications%2C+Nicosia%2C+Cyprus&format=json&limit=1.",
     "source_note_ar": "المصدر الرسمي للجهة: https://dec.dmrid.gov.cy/dmrid/DEC/ws_dec.nsf/0/E92BC88635EAE6B2C2258C9A00391D44/$file/Cyprus%20Space%20Strategy%202025-2030%20-%20for%20Public%20Consultation%20(changes%20highlighted)_final.pdf؛ مصدر موضع الخريطة: https://nominatim.openstreetmap.org/search?q=Department+of+Electronic+Communications%2C+Nicosia%2C+Cyprus&format=json&limit=1.",
-    "founded": 2025
+    "founded": 2025,
+    "sectors_ar": "السياسة الفضائية والبحوث والتطبيقات الفضائية الوطنية"
   },
   {
     "id": "xjenza-malta",
@@ -9228,7 +9447,8 @@
     "timeline_fa": [],
     "source_note_en": "Xjenza Malta's official site identifies the Space Unit and lists Villa Bighi, Kalkara as the parent agency address.",
     "source_note_fa": "منبع رسمی سازمان: https://mcst.gov.mt/space-directorate/national-space-policy/؛ منبع موقعیت نقشه‌ای: https://nominatim.openstreetmap.org/search?q=Villa+Bighi%2C+Kalkara%2C+Malta&format=json&limit=1.",
-    "source_note_ar": "المصدر الرسمي للجهة: https://mcst.gov.mt/space-directorate/national-space-policy/؛ مصدر موضع الخريطة: https://nominatim.openstreetmap.org/search?q=Villa+Bighi%2C+Kalkara%2C+Malta&format=json&limit=1."
+    "source_note_ar": "المصدر الرسمي للجهة: https://mcst.gov.mt/space-directorate/national-space-policy/؛ مصدر موضع الخريطة: https://nominatim.openstreetmap.org/search?q=Villa+Bighi%2C+Kalkara%2C+Malta&format=json&limit=1.",
+    "sectors_ar": "السياسة الفضائية والبحوث والتطبيقات الفضائية الوطنية"
   },
   {
     "id": "slovenian-space-office",
@@ -9288,7 +9508,8 @@
     "timeline_fa": [],
     "source_note_en": "The current government page lists the Slovenian Space Office as a ministry organizational unit at Kotnikova ulica 5, Ljubljana.",
     "source_note_fa": "منبع رسمی سازمان: https://www.gov.si/en/state-authorities/ministries/ministry-of-the-economy-labour-and-sport/about-the-ministry-of-the-economy-tourism-and-sport/؛ منبع موقعیت نقشه‌ای: https://nominatim.openstreetmap.org/search?q=Kotnikova+ulica+5%2C+Ljubljana%2C+Slovenia&format=json&limit=1.",
-    "source_note_ar": "المصدر الرسمي للجهة: https://www.gov.si/en/state-authorities/ministries/ministry-of-the-economy-labour-and-sport/about-the-ministry-of-the-economy-tourism-and-sport/؛ مصدر موضع الخريطة: https://nominatim.openstreetmap.org/search?q=Kotnikova+ulica+5%2C+Ljubljana%2C+Slovenia&format=json&limit=1."
+    "source_note_ar": "المصدر الرسمي للجهة: https://www.gov.si/en/state-authorities/ministries/ministry-of-the-economy-labour-and-sport/about-the-ministry-of-the-economy-tourism-and-sport/؛ مصدر موضع الخريطة: https://nominatim.openstreetmap.org/search?q=Kotnikova+ulica+5%2C+Ljubljana%2C+Slovenia&format=json&limit=1.",
+    "sectors_ar": "السياسة الفضائية والبحوث والتطبيقات الفضائية الوطنية"
   },
   {
     "id": "slovak-space-office",
@@ -9348,7 +9569,8 @@
     "timeline_fa": [],
     "source_note_en": "The official Space Office page describes its two-part structure and gives the SARIO contact address at Mlynské nivy 44/B, Bratislava.",
     "source_note_fa": "منبع رسمی سازمان: https://spaceoffice.sk/about-us/؛ منبع موقعیت نقشه‌ای: https://nominatim.openstreetmap.org/search?q=Mlynsk%C3%A9+nivy+44%2FB%2C+Bratislava%2C+Slovakia&format=json&limit=1.",
-    "source_note_ar": "المصدر الرسمي للجهة: https://spaceoffice.sk/about-us/؛ مصدر موضع الخريطة: https://nominatim.openstreetmap.org/search?q=Mlynsk%C3%A9+nivy+44%2FB%2C+Bratislava%2C+Slovakia&format=json&limit=1."
+    "source_note_ar": "المصدر الرسمي للجهة: https://spaceoffice.sk/about-us/؛ مصدر موضع الخريطة: https://nominatim.openstreetmap.org/search?q=Mlynsk%C3%A9+nivy+44%2FB%2C+Bratislava%2C+Slovakia&format=json&limit=1.",
+    "sectors_ar": "السياسة الفضائية والبحوث والتطبيقات الفضائية الوطنية"
   },
   {
     "id": "geocosmos",
@@ -9409,7 +9631,8 @@
     "source_note_en": "The Ministry page gives Geocosmos's Komitas Avenue 35/2 address, establishment decree and sole-shareholder status.",
     "source_note_fa": "منبع رسمی سازمان: https://hightech.gov.am/en/geokosmos-pb؛ منبع موقعیت نقشه‌ای: https://nominatim.openstreetmap.org/search?q=Komitas+Avenue+35%2F2%2C+Yerevan%2C+Armenia&format=json&limit=1.",
     "source_note_ar": "المصدر الرسمي للجهة: https://hightech.gov.am/en/geokosmos-pb؛ مصدر موضع الخريطة: https://nominatim.openstreetmap.org/search?q=Komitas+Avenue+35%2F2%2C+Yerevan%2C+Armenia&format=json&limit=1.",
-    "founded": 2017
+    "founded": 2017,
+    "sectors_ar": "تشغيل الأقمار الصناعية ورصد الأرض والخدمات الفضائية"
   },
   {
     "id": "anacom",
@@ -9469,7 +9692,8 @@
     "timeline_fa": [],
     "source_note_en": "Official ANACOM contact page publishes HQ coordinates 38°44'08.6\"N, 9°09'33.7\"W; its Space Authority page describes a transitional remit.",
     "source_note_fa": "منبع رسمی سازمان: https://www.anacom.pt/render.jsp?categoryId=408711؛ منبع موقعیت نقشه‌ای: https://www.anacom.pt/render.jsp?categoryId=282675.",
-    "source_note_ar": "المصدر الرسمي للجهة: https://www.anacom.pt/render.jsp?categoryId=408711؛ مصدر موضع الخريطة: https://www.anacom.pt/render.jsp?categoryId=282675."
+    "source_note_ar": "المصدر الرسمي للجهة: https://www.anacom.pt/render.jsp?categoryId=408711؛ مصدر موضع الخريطة: https://www.anacom.pt/render.jsp?categoryId=282675.",
+    "sectors_ar": "تنظيم أنشطة الفضاء والترخيص وإدارة الطيف الترددي"
   },
   {
     "id": "hakom",
@@ -9529,6 +9753,7 @@
     "timeline_fa": [],
     "source_note_en": "HAKOM's official CroCube notice documents its ITU/satellite-network regulatory role and states that the satellite launched from Vandenberg, USA. The official contact page gives Roberta Frangeša-Mihanovića 9, Zagreb; the mapped coordinate is only an approximate address-level bus-stop point.",
     "source_note_fa": "منبع رسمی سازمان: https://www.hakom.hr/en/croatia-s-first-satellite-in-space/11967؛ منبع موقعیت نقشه‌ای: https://nominatim.openstreetmap.org/search?q=Roberta+Frange%C5%A1a-Mihanovi%C4%87a+9%2C+Zagreb%2C+Croatia&format=json&limit=1.",
-    "source_note_ar": "المصدر الرسمي للجهة: https://www.hakom.hr/en/croatia-s-first-satellite-in-space/11967؛ مصدر موضع الخريطة: https://nominatim.openstreetmap.org/search?q=Roberta+Frange%C5%A1a-Mihanovi%C4%87a+9%2C+Zagreb%2C+Croatia&format=json&limit=1."
+    "source_note_ar": "المصدر الرسمي للجهة: https://www.hakom.hr/en/croatia-s-first-satellite-in-space/11967؛ مصدر موضع الخريطة: https://nominatim.openstreetmap.org/search?q=Roberta+Frange%C5%A1a-Mihanovi%C4%87a+9%2C+Zagreb%2C+Croatia&format=json&limit=1.",
+    "sectors_ar": "تنظيم أنشطة الفضاء والترخيص وإدارة الطيف الترددي"
   }
 ]

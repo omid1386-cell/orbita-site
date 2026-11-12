@@ -183,7 +183,8 @@
     "logo": "assets/img/logos/ihi-aerospace-logo.png",
     "logo_bg": "light",
     "entity_kind": "propulsion_business_or_supplier",
-    "count_as_independent_entity": true
+    "count_as_independent_entity": true,
+    "country_ar": "اليابان"
   },
   {
     "id": "rocketdyne",
@@ -290,7 +291,8 @@
     "location_ar": "المقر الرئيسي في جوبيتر، فلوريدا (إحداثيات الخريطة على مستوى المدينة وليست لمبنى بعينه)؛ ومراكز أخرى في دايتونا بيتش ومايسون وريدموند ولوس أنجلوس.",
     "logo": "assets/img/logos/rocketdyne-logo.png",
     "entity_kind": "propulsion_business_or_supplier",
-    "count_as_independent_entity": true
+    "count_as_independent_entity": true,
+    "country_ar": "الولايات المتحدة"
   },
   {
     "id": "l3harris",
@@ -431,7 +433,8 @@
     "location_ar": "المقر الرئيسي في ملبورن، فلوريدا (إحداثيات الخريطة على مستوى المدينة وليست لمبنى محدد). يدعم مركز التصنيع والتجميع في Canoga Park، كاليفورنيا برامج RS-25 والدفاع؛ وتجري اختبارات الإشعال الساخن في مركز Stennis الفضائي، ميسيسيبي.",
     "logo": "assets/img/logos/l3harris-logo.svg",
     "entity_kind": "propulsion_business_or_supplier",
-    "count_as_independent_entity": true
+    "count_as_independent_entity": true,
+    "country_ar": "الولايات المتحدة"
   },
   {
     "id": "ngpropulsion",
@@ -614,7 +617,8 @@
     ],
     "logo": "assets/img/logos/northrop-grumman-logo.png",
     "entity_kind": "organizational_unit",
-    "count_as_independent_entity": true
+    "count_as_independent_entity": true,
+    "country_ar": "الولايات المتحدة"
   },
   {
     "id": "ursamajor",
@@ -796,7 +800,8 @@
     ],
     "logo": "assets/img/logos/ursamajor-logo.png",
     "entity_kind": "propulsion_business_or_supplier",
-    "count_as_independent_entity": true
+    "count_as_independent_entity": true,
+    "country_ar": "الولايات المتحدة"
   },
   {
     "id": "impulse",
@@ -959,7 +964,8 @@
     ],
     "logo": "assets/img/logos/impulse-space-logo.svg",
     "entity_kind": "propulsion_business_or_supplier",
-    "count_as_independent_entity": true
+    "count_as_independent_entity": true,
+    "country_ar": "الولايات المتحدة"
   },
   {
     "id": "agile",
@@ -1081,7 +1087,8 @@
     "flagship_status_ar": "قيد التطوير والاختبار",
     "logo": "assets/img/logos/agile-logo.png",
     "entity_kind": "propulsion_business_or_supplier",
-    "count_as_independent_entity": true
+    "count_as_independent_entity": true,
+    "country_ar": "الولايات المتحدة"
   },
   {
     "id": "busek",
@@ -1231,7 +1238,8 @@
     "logo": "assets/img/logos/busek-logo.png",
     "logo_bg": "light",
     "entity_kind": "propulsion_business_or_supplier",
-    "count_as_independent_entity": true
+    "count_as_independent_entity": true,
+    "country_ar": "الولايات المتحدة"
   },
   {
     "id": "benchmark",
@@ -1395,7 +1403,8 @@
     ],
     "logo": "assets/img/logos/benchmark-logo.png",
     "entity_kind": "propulsion_business_or_supplier",
-    "count_as_independent_entity": true
+    "count_as_independent_entity": true,
+    "country_ar": "الولايات المتحدة"
   },
   {
     "id": "moog",
@@ -1537,7 +1546,8 @@
     ],
     "logo": "assets/img/logos/moog-logo.png",
     "entity_kind": "propulsion_business_or_supplier",
-    "count_as_independent_entity": true
+    "count_as_independent_entity": true,
+    "country_ar": "الولايات المتحدة"
   },
   {
     "id": "nammo",
@@ -1705,7 +1715,8 @@
     ],
     "logo": "assets/img/logos/nammo-logo.svg",
     "entity_kind": "propulsion_business_or_supplier",
-    "count_as_independent_entity": true
+    "count_as_independent_entity": true,
+    "country_ar": "النرويج"
   },
   {
     "id": "safran-vernon",
@@ -1894,7 +1905,8 @@
     ],
     "logo": "assets/img/logos/arianegroup-logo.svg",
     "entity_kind": "industrial_site",
-    "count_as_independent_entity": true
+    "count_as_independent_entity": true,
+    "country_ar": "فرنسا"
   },
   {
     "id": "exotrail",
@@ -2035,7 +2047,8 @@
     ],
     "logo": "assets/img/logos/exotrail-logo.svg",
     "entity_kind": "propulsion_business_or_supplier",
-    "count_as_independent_entity": true
+    "count_as_independent_entity": true,
+    "country_ar": "فرنسا"
   },
   {
     "id": "thrustme",
@@ -2176,7 +2189,8 @@
     "logo": "assets/img/logos/thrustme-logo.png",
     "logo_bg": "light",
     "entity_kind": "propulsion_business_or_supplier",
-    "count_as_independent_entity": true
+    "count_as_independent_entity": true,
+    "country_ar": "فرنسا"
   },
   {
     "id": "energomash",
@@ -2362,7 +2376,8 @@
     "logo": "assets/img/logos/roscosmos-parent-logo-2022.png",
     "logo_bg": "light",
     "entity_kind": "propulsion_business_or_supplier",
-    "count_as_independent_entity": true
+    "count_as_independent_entity": true,
+    "country_ar": "روسيا"
   },
   {
     "id": "kbkha",
@@ -2512,7 +2527,8 @@
     ],
     "logo": "assets/img/logos/kbkha-logo.svg",
     "entity_kind": "propulsion_business_or_supplier",
-    "count_as_independent_entity": true
+    "count_as_independent_entity": true,
+    "country_ar": "روسيا"
   },
   {
     "id": "bellatrix",
@@ -2656,7 +2672,8 @@
     ],
     "logo": "assets/img/logos/bellatrix-logo.png",
     "entity_kind": "propulsion_business_or_supplier",
-    "count_as_independent_entity": true
+    "count_as_independent_entity": true,
+    "country_ar": "الهند"
   },
   {
     "id": "paleblue",
@@ -2818,7 +2835,8 @@
     "flagship_status_ar": "مثبت في الطيران",
     "logo": "assets/img/logos/paleblue-logo.png",
     "entity_kind": "propulsion_business_or_supplier",
-    "count_as_independent_entity": true
+    "count_as_independent_entity": true,
+    "country_ar": "اليابان"
   },
   {
     "id": "dawn-aerospace",
@@ -2963,7 +2981,8 @@
     "logo": "assets/img/logos/dawn-aerospace-logo.png",
     "logo_bg": "light",
     "entity_kind": "propulsion_business_or_supplier",
-    "count_as_independent_entity": true
+    "count_as_independent_entity": true,
+    "country_ar": "نيوزيلندا / هولندا"
   },
   {
     "id": "spaceforest",
@@ -3100,7 +3119,8 @@
     "logo": "assets/img/logos/spaceforest-logo.svg",
     "logo_bg": "light",
     "entity_kind": "propulsion_business_or_supplier",
-    "count_as_independent_entity": true
+    "count_as_independent_entity": true,
+    "country_ar": "بولندا"
   },
   {
     "id": "phasefour",
@@ -3219,7 +3239,8 @@
     "flagship_status_ar": "تاريخي",
     "logo": "assets/img/logos/phasefour-logo.png",
     "entity_kind": "propulsion_business_or_supplier",
-    "count_as_independent_entity": true
+    "count_as_independent_entity": true,
+    "country_ar": "الولايات المتحدة"
   },
   {
     "id": "accion",
@@ -3337,7 +3358,8 @@
     "logo": "assets/img/logos/revolution-space-logo.png",
     "logo_bg": "light",
     "entity_kind": "propulsion_business_or_supplier",
-    "count_as_independent_entity": true
+    "count_as_independent_entity": true,
+    "country_ar": "الولايات المتحدة"
   },
   {
     "id": "bradford-ecaps",
@@ -3482,7 +3504,8 @@
     ],
     "logo": "assets/img/logos/bradford-space-logo.svg",
     "entity_kind": "propulsion_business_or_supplier",
-    "count_as_independent_entity": true
+    "count_as_independent_entity": true,
+    "country_ar": "السويد / هولندا"
   },
   {
     "id": "sitael",
@@ -3624,7 +3647,8 @@
     "logo": "assets/img/logos/sitael-logo.png",
     "logo_bg": "light",
     "entity_kind": "propulsion_business_or_supplier",
-    "count_as_independent_entity": true
+    "count_as_independent_entity": true,
+    "country_ar": "إيطاليا"
   },
   {
     "id": "okb-fakel",
@@ -3791,7 +3815,8 @@
     "logo": "assets/img/logos/roscosmos-parent-logo-2022.png",
     "logo_bg": "light",
     "entity_kind": "propulsion_business_or_supplier",
-    "count_as_independent_entity": true
+    "count_as_independent_entity": true,
+    "country_ar": "روسيا"
   },
   {
     "id": "lpsc-isro",
@@ -3976,7 +4001,8 @@
     "logo": "assets/img/logos/lpsc-logo.png",
     "logo_bg": "light",
     "entity_kind": "organizational_unit",
-    "count_as_independent_entity": true
+    "count_as_independent_entity": true,
+    "country_ar": "الهند"
   },
   {
     "id": "aalpt-china",
@@ -4160,7 +4186,8 @@
     "logo": "assets/img/logos/casc-parent-logo.png",
     "logo_bg": "light",
     "entity_kind": "organizational_unit",
-    "count_as_independent_entity": true
+    "count_as_independent_entity": true,
+    "country_ar": "الصين"
   },
   {
     "id": "aio-propulsion",
@@ -4357,7 +4384,8 @@
     "flagship_status_ar": "مذكور في تقارير عامة (المصدر محدود)",
     "site": "http://www.defanews.ir/sug/%D8%B3%D8%A7%D8%B2%D9%85%D8%A7%D9%86%20%D8%B5%D9%86%D8%A7%DB%8C%D8%B9%20%D9%87%D9%88%D8%A7%D9%81%D8%B6%D8%A7",
     "entity_kind": "propulsion_business_or_supplier",
-    "count_as_independent_entity": true
+    "count_as_independent_entity": true,
+    "country_ar": "إيران"
   },
   {
     "id": "blueorigin-engine",
@@ -4543,7 +4571,8 @@
     "logo": "assets/img/logos/blue-origin-logo.svg",
     "logo_bg": "light",
     "entity_kind": "organizational_unit",
-    "count_as_independent_entity": true
+    "count_as_independent_entity": true,
+    "country_ar": "الولايات المتحدة"
   },
   {
     "id": "spacex-engine",
@@ -4766,7 +4795,8 @@
     "flagship_status_ar": "مثبت في الطيران",
     "logo": "assets/img/logos/spacex-logo.svg",
     "entity_kind": "organizational_unit",
-    "count_as_independent_entity": true
+    "count_as_independent_entity": true,
+    "country_ar": "الولايات المتحدة"
   },
   {
     "id": "relativity-engine",
@@ -4949,7 +4979,8 @@
     ],
     "logo": "assets/img/logos/relativity-space-logo.png",
     "entity_kind": "organizational_unit",
-    "count_as_independent_entity": true
+    "count_as_independent_entity": true,
+    "country_ar": "الولايات المتحدة"
   },
   {
     "id": "casc-6th",
@@ -5059,7 +5090,8 @@
     "logo": "assets/img/logos/casc-parent-logo.png",
     "logo_bg": "light",
     "entity_kind": "alias_record",
-    "count_as_independent_entity": false
+    "count_as_independent_entity": false,
+    "country_ar": "الصين"
   },
   {
     "id": "enpulsion",
@@ -5229,7 +5261,8 @@
     ],
     "logo": "assets/img/logos/enpulsion-mark.svg",
     "entity_kind": "propulsion_business_or_supplier",
-    "count_as_independent_entity": true
+    "count_as_independent_entity": true,
+    "country_ar": "النمسا"
   },
   {
     "id": "morpheus-space",
@@ -5350,7 +5383,8 @@
     ],
     "logo": "assets/img/logos/morpheus-space-logo.png",
     "entity_kind": "propulsion_business_or_supplier",
-    "count_as_independent_entity": true
+    "count_as_independent_entity": true,
+    "country_ar": "ألمانيا / الولايات المتحدة"
   },
   {
     "id": "vacco",
@@ -5495,7 +5529,8 @@
     "logo": "assets/img/logos/vacco-logo.png",
     "logo_bg": "light",
     "entity_kind": "propulsion_business_or_supplier",
-    "count_as_independent_entity": true
+    "count_as_independent_entity": true,
+    "country_ar": "الولايات المتحدة"
   },
   {
     "id": "dlr-lampoldshausen",
@@ -5658,7 +5693,8 @@
     "logo": "assets/img/logos/dlr-logo.svg",
     "logo_bg": "light",
     "entity_kind": "research_facility",
-    "count_as_independent_entity": true
+    "count_as_independent_entity": true,
+    "country_ar": "ألمانيا"
   },
   {
     "id": "nasa-stennis",
@@ -5834,7 +5870,8 @@
     "org_type_ar": "مركز ناسا لاختبار محركات الصواريخ (الولايات المتحدة)",
     "logo": "assets/img/logos/nasa-logo.svg",
     "entity_kind": "research_facility",
-    "count_as_independent_entity": true
+    "count_as_independent_entity": true,
+    "country_ar": "الولايات المتحدة"
   },
   {
     "id": "airborne-eng",
@@ -5953,7 +5990,8 @@
     "org_type_ar": "مزود خدمات اختبار الدفع الصاروخي (المملكة المتحدة)",
     "logo": "assets/img/logos/airborne-eng-logo.svg",
     "entity_kind": "propulsion_business_or_supplier",
-    "count_as_independent_entity": true
+    "count_as_independent_entity": true,
+    "country_ar": "المملكة المتحدة"
   },
   {
     "id": "nasa-wstf",
@@ -6073,7 +6111,8 @@
     "org_type_ar": "منشأة ناسا لاختبار دفع المركبات الفضائية والمواد الخطرة (الولايات المتحدة)",
     "logo": "assets/img/logos/nasa-logo.svg",
     "entity_kind": "research_facility",
-    "count_as_independent_entity": true
+    "count_as_independent_entity": true,
+    "country_ar": "الولايات المتحدة"
   },
   {
     "id": "lpsc-test",
@@ -6217,7 +6256,8 @@
     "logo": "assets/img/logos/isro-parent-logo.png",
     "logo_bg": "light",
     "entity_kind": "research_facility",
-    "count_as_independent_entity": true
+    "count_as_independent_entity": true,
+    "country_ar": "الهند"
   },
   {
     "id": "asri-ukzn",
@@ -6952,7 +6992,8 @@
     ],
     "logo": "assets/img/logos/manastu-space-logo.svg",
     "entity_kind": "propulsion_business_or_supplier",
-    "count_as_independent_entity": true
+    "count_as_independent_entity": true,
+    "country_ar": "الهند"
   },
   {
     "cat": "propulsion",
@@ -7063,7 +7104,8 @@
     ],
     "logo": "assets/img/logos/spacefields-logo.png",
     "entity_kind": "propulsion_business_or_supplier",
-    "count_as_independent_entity": true
+    "count_as_independent_entity": true,
+    "country_ar": "الهند"
   },
   {
     "id": "hyprspace",
@@ -7098,20 +7140,20 @@
     "org_type_ar": "مطوّر للدفع الهجين ومركبات الإطلاق؛ نموذج شبه مداري ومركبة مدارية قيد التطوير",
     "status_en": "In development; Baguette One suborbital first flight planned for 2027",
     "status_fa": "در حال توسعه؛ نخستین پرواز زیرمداری Baguette One برای ۲۰۲۷ برنامه‌ریزی شده است",
-    "status_ar": "قيد التطوير؛ وأول رحلة شبه مدارية لـBaguette One مخططة لعام 2027",
+    "status_ar": "قيد التطوير؛ وخُطط لأول رحلة دون مدارية لـBaguette One في عام 2027",
     "first_launch_year": null,
     "site_ids": [],
     "mission_types_en": [
       "Suborbital technology demonstration",
-      "Orbital launcher development"
+      "Orbital launch-vehicle development"
     ],
     "mission_types_fa": [
       "نمایش فناوری زیرمداری",
       "توسعهٔ پرتابگر مداری"
     ],
     "mission_types_ar": [
-      "إظهار تقنيات شبه مدارية",
-      "تطوير مركبة إطلاق مدارية"
+      "استعراض التقنية دون المدارية",
+      "تطوير مركبات الإطلاق المدارية"
     ],
     "orbital_capabilities_en": [],
     "orbital_capabilities_fa": [],
@@ -7231,8 +7273,8 @@
     "timeline_ar": [
       {
         "year": 2018,
-        "title": "مرحلة موثقة: Lily engine development",
-        "desc": "تفاصيل المرحلة موثّقة في المصدر الأصلي؛ يجب التمييز بين الاختبار الأرضي والرحلة المدارية والخطة المستقبلية.",
+        "title": "الاختبار الأول لمحرك Lily",
+        "desc": "أُجري اختبار تقني للمحرك الهجين Lily قبل التسجيل الرسمي للشركة.",
         "source_url": "https://hypr-space.com/",
         "verification_status": "source_confirmed"
       },
@@ -7244,29 +7286,29 @@
       },
       {
         "year": 2019,
-        "title": "مرحلة موثقة: Company establishment",
-        "desc": "تفاصيل المرحلة موثّقة في المصدر الأصلي؛ يجب التمييز بين الاختبار الأرضي والرحلة المدارية والخطة المستقبلية.",
+        "title": "تأسيس HyPrSpace",
+        "desc": "واصل الفريق المؤسس تطوير المحرك الهجين ضمن شركة وتسجيل براءات الاختراع.",
         "source_url": "https://hypr-space.com/",
         "verification_status": "source_confirmed"
       },
       {
         "year": 2023,
-        "title": "مرحلة موثقة: France 2030 PADA1 award",
-        "desc": "تفاصيل المرحلة موثّقة في المصدر الأصلي؛ يجب التمييز بين الاختبار الأرضي والرحلة المدارية والخطة المستقبلية.",
+        "title": "دعم برنامج فرنسا 2030",
+        "desc": "أُعلن تمويل ائتلاف مشروع PADA1 بقيمة 35 مليون يورو؛ ولا يعني هذا المبلغ مبيعات محققة أو عمليات إطلاق منفذة.",
         "source_url": "https://www.hypr-space.com/hyprspace-secures-eu35m-in-funding-for-the-pada1-project.html",
         "verification_status": "source_confirmed"
       },
       {
         "year": 2024,
-        "title": "مرحلة موثقة: Terminator hot-fire milestone",
-        "desc": "تفاصيل المرحلة موثّقة في المصدر الأصلي؛ يجب التمييز بين الاختبار الأرضي والرحلة المدارية والخطة المستقبلية.",
+        "title": "اختبار محرك Terminator",
+        "desc": "أُجري اختبار احتراق لنموذج Terminator بالحجم الكامل ضمن برنامج تطوير المحرك الهجين.",
         "source_url": "https://hypr-space.com/",
         "verification_status": "source_confirmed"
       },
       {
         "year": 2026,
-        "title": "مرحلة موثقة: Baguette One launch-site plan",
-        "desc": "تفاصيل المرحلة موثّقة في المصدر الأصلي؛ يجب التمييز بين الاختبار الأرضي والرحلة المدارية والخطة المستقبلية.",
+        "title": "تحديد موقع إطلاق Baguette One المستقبلي",
+        "desc": "أعلنت الشركة ووزارة الدفاع الفرنسية موقع إطلاق مستقبليًا؛ ولم يكن إطلاقًا مُنجزًا حتى التاريخ المحدد.",
         "source_url": "https://hypr-space.com/baguette-one-to-launch-from-biscarrosse-in-2027.html",
         "verification_status": "source_confirmed"
       }
@@ -7400,13 +7442,13 @@
     "org_type_ar": "مطوّر لأنظمة الدفع الصاروخي ومفاهيم مركبات الإطلاق (ليس مشغّلًا)",
     "status_en": "Propulsion and launcher concepts in development; no verified orbital operations",
     "status_fa": "پیشران و طرح‌های پرتابگر در حال توسعه؛ عملیات مداری تأییدشده‌ای ثبت نشده است",
-    "status_ar": "أنظمة دفع ومفاهيم إطلاق قيد التطوير؛ ولا توجد عمليات مدارية مؤكدة",
+    "status_ar": "محركات ومفاهيم مركبات إطلاق قيد التطوير؛ ولم تُسجل عمليات مدارية مؤكدة",
     "first_launch_year": null,
     "site_ids": [],
     "mission_types_en": [
       "Rocket-propulsion development",
       "Suborbital launcher concept",
-      "Orbital launcher development (planned)"
+      "Planned orbital launch-vehicle development"
     ],
     "mission_types_fa": [
       "توسعهٔ پیشران موشکی",
@@ -7414,8 +7456,8 @@
       "توسعهٔ برنامه‌ریزی‌شدهٔ پرتابگر مداری"
     ],
     "mission_types_ar": [
-      "تطوير أنظمة الدفع الصاروخي",
-      "مفهوم مركبة إطلاق شبه مدارية",
+      "تطوير الدفع الصاروخي",
+      "تصور مبدئي لمركبة إطلاق دون مدارية",
       "تطوير مخطط لمركبة إطلاق مدارية"
     ],
     "orbital_capabilities_en": [],
@@ -7631,7 +7673,7 @@
     "org_type_ar": "مطوّر صواريخ شبه مدارية وأنظمة اختبار الدفع (في مرحلة التطوير)",
     "status_en": "ARDEA development and propulsion testing; no operational orbital-launch service stated",
     "status_fa": "توسعهٔ ARDEA و آزمون پیشران؛ خدمت عملیاتی پرتاب مداری اعلام نشده است",
-    "status_ar": "تطوير ARDEA واختبارات الدفع؛ ولم تُعلن خدمة إطلاق مدارية تشغيلية",
+    "status_ar": "تطوير ARDEA واختبارات الدفع؛ ولم تُعلن خدمة إطلاق مداري تشغيلية",
     "first_launch_year": null,
     "site_ids": [],
     "mission_types_en": [
@@ -7643,8 +7685,8 @@
       "آزمون موتور موشک هیبریدی"
     ],
     "mission_types_ar": [
-      "تطوير صاروخ شبه مداري",
-      "اختبار محركات صاروخية هجينة"
+      "تطوير صاروخ دون مداري",
+      "اختبار المحرك الصاروخي الهجين"
     ],
     "orbital_capabilities_en": [],
     "orbital_capabilities_fa": [],

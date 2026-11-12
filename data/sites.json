@@ -376,7 +376,8 @@
     "stats_total": 224,
     "stats_success": 222,
     "stats_fail": 2,
-    "stats_asof": "2026-10-21"
+    "stats_asof": "2026-10-21",
+    "country_ar": "الولايات المتحدة"
   },
   {
     "id": "ksc39b",
@@ -728,7 +729,8 @@
     "stats_total": 59,
     "stats_success": 58,
     "stats_fail": 1,
-    "stats_asof": "2026-10-21"
+    "stats_asof": "2026-10-21",
+    "country_ar": "الولايات المتحدة"
   },
   {
     "id": "ccsfs",
@@ -1106,7 +1108,8 @@
     "stats_total": 1133,
     "stats_success": 1052,
     "stats_fail": 81,
-    "stats_asof": "2026-10-21"
+    "stats_asof": "2026-10-21",
+    "country_ar": "الولايات المتحدة"
   },
   {
     "id": "vandenberg",
@@ -1459,7 +1462,8 @@
     "stats_total": 920,
     "stats_success": 849,
     "stats_fail": 71,
-    "stats_asof": "2026-10-24"
+    "stats_asof": "2026-10-24",
+    "country_ar": "الولايات المتحدة"
   },
   {
     "id": "starbase",
@@ -1834,7 +1838,8 @@
     "stats_total": 23,
     "stats_success": 15,
     "stats_fail": 8,
-    "stats_asof": "2026-10-21"
+    "stats_asof": "2026-10-21",
+    "country_ar": "الولايات المتحدة"
   },
   {
     "id": "wallops",
@@ -2061,7 +2066,8 @@
     "stats_total": 87,
     "stats_success": 77,
     "stats_fail": 10,
-    "stats_asof": "2026-10-21"
+    "stats_asof": "2026-10-21",
+    "country_ar": "الولايات المتحدة"
   },
   {
     "id": "kodiak",
@@ -2313,7 +2319,8 @@
     "stats_total": 9,
     "stats_success": 5,
     "stats_fail": 4,
-    "stats_asof": "2026-10-21"
+    "stats_asof": "2026-10-21",
+    "country_ar": "الولايات المتحدة"
   },
   {
     "id": "spaceportamerica",
@@ -2539,7 +2546,8 @@
     "stats_total": 4,
     "stats_success": 0,
     "stats_fail": 4,
-    "stats_asof": "2026-10-21"
+    "stats_asof": "2026-10-21",
+    "country_ar": "الولايات المتحدة"
   },
   {
     "id": "kwajalein",
@@ -2789,7 +2797,8 @@
     "stats_total": 5,
     "stats_success": 2,
     "stats_fail": 3,
-    "stats_asof": "2026-10-21"
+    "stats_asof": "2026-10-21",
+    "country_ar": "جزر مارشال"
   },
   {
     "id": "mahia",
@@ -3067,7 +3076,8 @@
     "stats_total": 85,
     "stats_success": 81,
     "stats_fail": 4,
-    "stats_asof": "2026-10-24"
+    "stats_asof": "2026-10-24",
+    "country_ar": "نيوزيلندا"
   },
   {
     "id": "kourou",
@@ -3469,7 +3479,8 @@
     "stats_total": 336,
     "stats_success": 317,
     "stats_fail": 19,
-    "stats_asof": "2026-10-22"
+    "stats_asof": "2026-10-22",
+    "country_ar": "غويانا الفرنسية"
   },
   {
     "id": "andoya",
@@ -3695,7 +3706,8 @@
     "stats_total": 2,
     "stats_success": 1,
     "stats_fail": 1,
-    "stats_asof": "2026-10-22"
+    "stats_asof": "2026-10-22",
+    "country_ar": "النرويج"
   },
   {
     "id": "esrange",
@@ -3921,7 +3933,8 @@
     "stats_total": 0,
     "stats_success": 0,
     "stats_fail": 0,
-    "stats_asof": "2026-10-22"
+    "stats_asof": "2026-10-22",
+    "country_ar": "السويد"
   },
   {
     "id": "saxavord",
@@ -4073,7 +4086,8 @@
     "stats_total": 0,
     "stats_success": 0,
     "stats_fail": 0,
-    "stats_asof": "2026-10-22"
+    "stats_asof": "2026-10-22",
+    "country_ar": "المملكة المتحدة"
   },
   {
     "id": "sutherland",
@@ -4229,7 +4243,8 @@
     "source_urls": [
       "https://www.hie.co.uk/news-and-blogs/news/2026/august/25/hie-acquires-assets-of-sutherland-spaceport-ltd/",
       "https://www.gov.uk/government/publications/brochure-a-guide-to-the-uks-commercial-spaceports/a-guide-to-the-uks-commercial-spaceports"
-    ]
+    ],
+    "country_ar": "المملكة المتحدة"
   },
   {
     "id": "elarenosillo",
@@ -4405,7 +4420,8 @@
     "stats_total": 1,
     "stats_success": 1,
     "stats_fail": 0,
-    "stats_asof": "2026-10-22"
+    "stats_asof": "2026-10-22",
+    "country_ar": "إسبانيا"
   },
   {
     "id": "malbusca",
@@ -4887,7 +4903,8 @@
     "stats_total": 1688,
     "stats_success": 1618,
     "stats_fail": 70,
-    "stats_asof": "2026-10-22"
+    "stats_asof": "2026-10-22",
+    "country_ar": "روسيا"
   },
   {
     "id": "baikonur",
@@ -5289,7 +5306,8 @@
     "stats_total": 1565,
     "stats_success": 1438,
     "stats_fail": 127,
-    "stats_asof": "2026-10-22"
+    "stats_asof": "2026-10-22",
+    "country_ar": "كازاخستان (مستأجر من روسيا)"
   },
   {
     "id": "vostochny",
@@ -5515,7 +5533,8 @@
     "stats_total": 21,
     "stats_success": 20,
     "stats_fail": 1,
-    "stats_asof": "2026-10-23"
+    "stats_asof": "2026-10-23",
+    "country_ar": "روسيا"
   },
   {
     "id": "kapyar",
@@ -5741,7 +5760,8 @@
     "stats_total": 101,
     "stats_success": 85,
     "stats_fail": 16,
-    "stats_asof": "2026-10-23"
+    "stats_asof": "2026-10-23",
+    "country_ar": "روسيا"
   },
   {
     "id": "jiuquan",
@@ -6118,7 +6138,8 @@
     "stats_total": 300,
     "stats_success": 277,
     "stats_fail": 23,
-    "stats_asof": "2026-10-24"
+    "stats_asof": "2026-10-24",
+    "country_ar": "الصين"
   },
   {
     "id": "taiyuan",
@@ -6372,7 +6393,8 @@
     "stats_total": 164,
     "stats_success": 157,
     "stats_fail": 7,
-    "stats_asof": "2026-10-24"
+    "stats_asof": "2026-10-24",
+    "country_ar": "الصين"
   },
   {
     "id": "xichang",
@@ -6623,7 +6645,8 @@
     "stats_total": 242,
     "stats_success": 231,
     "stats_fail": 11,
-    "stats_asof": "2026-10-23"
+    "stats_asof": "2026-10-23",
+    "country_ar": "الصين"
   },
   {
     "id": "wenchang",
@@ -7005,7 +7028,8 @@
     "stats_kind": "orbital",
     "stats_scope_en": "Government Pads 101 and 201 only (LL2 pads 175 and 176); excludes the separate commercial LC-1/LC-2 site. Cut-off: 2026-11-06.",
     "stats_scope_fa": "فقط پدهای دولتی ۱۰۱ و ۲۰۱ (پدهای ۱۷۵ و ۱۷۶ در LL2)؛ پایگاه تجاری LC-1/LC-2 جداست. برش: ۶ نوامبر ۲۰۲۶.",
-    "stats_scope_ar": "المنصتان الحكوميتان 101 و201 فقط (وسادتا LL2 رقم 175 و176)؛ ويُستبعد موقع LC-1/LC-2 التجاري المنفصل. حتى 6 نوفمبر 2026."
+    "stats_scope_ar": "المنصتان الحكوميتان 101 و201 فقط (وسادتا LL2 رقم 175 و176)؛ ويُستبعد موقع LC-1/LC-2 التجاري المنفصل. حتى 6 نوفمبر 2026.",
+    "country_ar": "الصين"
   },
   {
     "id": "haiyang",
@@ -7183,7 +7207,8 @@
     "stats_total": 29,
     "stats_success": 29,
     "stats_fail": 0,
-    "stats_asof": "2026-10-23"
+    "stats_asof": "2026-10-23",
+    "country_ar": "الصين"
   },
   {
     "id": "sriharikota",
@@ -7561,7 +7586,8 @@
     "stats_total": 105,
     "stats_success": 90,
     "stats_fail": 15,
-    "stats_asof": "2026-10-23"
+    "stats_asof": "2026-10-23",
+    "country_ar": "الهند"
   },
   {
     "id": "kulasekarapattinam",
@@ -7687,7 +7713,8 @@
     "stats_total": 0,
     "stats_success": 0,
     "stats_fail": 0,
-    "stats_asof": "2026-10-23"
+    "stats_asof": "2026-10-23",
+    "country_ar": "الهند"
   },
   {
     "id": "tanegashima",
@@ -8064,7 +8091,8 @@
     "stats_total": 100,
     "stats_success": 95,
     "stats_fail": 5,
-    "stats_asof": "2026-10-24"
+    "stats_asof": "2026-10-24",
+    "country_ar": "اليابان"
   },
   {
     "id": "uchinoura",
@@ -8290,7 +8318,8 @@
     "stats_total": 43,
     "stats_success": 33,
     "stats_fail": 10,
-    "stats_asof": "2026-10-24"
+    "stats_asof": "2026-10-24",
+    "country_ar": "اليابان"
   },
   {
     "id": "kii",
@@ -8440,7 +8469,8 @@
     "stats_total": 3,
     "stats_success": 0,
     "stats_fail": 3,
-    "stats_asof": "2026-10-24"
+    "stats_asof": "2026-10-24",
+    "country_ar": "اليابان"
   },
   {
     "id": "taiki",
@@ -8670,7 +8700,8 @@
     "stats_kind": "suborbital",
     "stats_scope_en": "MOMO suborbital flight attempts only; these are not orbital launches.",
     "stats_scope_fa": "فقط تلاش‌های پرواز زیرمداری MOMO؛ پرتاب مداری نیستند.",
-    "stats_scope_ar": "محاولات طيران MOMO شبه المدارية فقط؛ وليست إطلاقات مدارية."
+    "stats_scope_ar": "محاولات طيران MOMO شبه المدارية فقط؛ وليست إطلاقات مدارية.",
+    "country_ar": "اليابان"
   },
   {
     "id": "naro",
@@ -8973,7 +9004,8 @@
     "stats_kind": "orbital",
     "stats_scope_en": "Orbital attempts only. The LL2 raw location count of 9 includes a KSLV-TLV suborbital test, excluded here.",
     "stats_scope_fa": "فقط تلاش‌های مداری. شمار خام ۹تایی مکان در LL2 شامل آزمون زیرمداری KSLV-TLV است و اینجا کنار گذاشته شده.",
-    "stats_scope_ar": "محاولات مدارية فقط. يتضمن العدد الخام للموقع في LL2، وهو 9، اختبار KSLV-TLV شبه المداري المستبعد هنا."
+    "stats_scope_ar": "محاولات مدارية فقط. يتضمن العدد الخام للموقع في LL2، وهو 9، اختبار KSLV-TLV شبه المداري المستبعد هنا.",
+    "country_ar": "كوريا الجنوبية"
   },
   {
     "id": "sohae",
@@ -9224,7 +9256,8 @@
     "stats_total": 7,
     "stats_success": 3,
     "stats_fail": 4,
-    "stats_asof": "2026-10-24"
+    "stats_asof": "2026-10-24",
+    "country_ar": "كوريا الشمالية"
   },
   {
     "id": "palmachim",
@@ -9474,7 +9507,8 @@
     "stats_total": 13,
     "stats_success": 11,
     "stats_fail": 2,
-    "stats_asof": "2026-10-24"
+    "stats_asof": "2026-10-24",
+    "country_ar": "إسرائيل"
   },
   {
     "id": "imam-khomeini",
@@ -9876,7 +9910,8 @@
     "stats_total": 15,
     "stats_success": 6,
     "stats_fail": 9,
-    "stats_asof": "2026-10-24"
+    "stats_asof": "2026-10-24",
+    "country_ar": "إيران"
   },
   {
     "id": "shahroud",
@@ -10153,7 +10188,8 @@
     "stats_total": 6,
     "stats_success": 5,
     "stats_fail": 1,
-    "stats_asof": "2026-10-24"
+    "stats_asof": "2026-10-24",
+    "country_ar": "إيران"
   },
   {
     "id": "chabahar",
@@ -10299,7 +10335,8 @@
     "photo_caption_en": "The Chabahar coast; the Chabahar spaceport is under construction in this region",
     "photo_credit": "Nightryder84",
     "photo_license": "CC BY-SA 3.0",
-    "photo_source_url": "https://commons.wikimedia.org/wiki/File:Chabahar_coast.jpg"
+    "photo_source_url": "https://commons.wikimedia.org/wiki/File:Chabahar_coast.jpg",
+    "country_ar": "إيران"
   },
   {
     "id": "emamshahr",
@@ -10545,7 +10582,8 @@
     "photo_caption_en": "Launch of the Pishgam bio-capsule sounding rocket from the rail launcher of Iran's Kavoshgar range",
     "photo_credit": "Fars News",
     "photo_license": "CC BY 4.0",
-    "photo_source_url": "https://commons.wikimedia.org/wiki/File:Launch_and_recovery_of_Iranian_Kavoshgar-Pishgam_space_research_rocket_(04).jpg"
+    "photo_source_url": "https://commons.wikimedia.org/wiki/File:Launch_and_recovery_of_Iranian_Kavoshgar-Pishgam_space_research_rocket_(04).jpg",
+    "country_ar": "إيران"
   },
   {
     "id": "alcantara",
@@ -10768,7 +10806,8 @@
     "photo_caption_en": "Launch of a VSB-30 sounding rocket from the Alcântara Launch Center",
     "photo_credit": "Agência Brasil",
     "photo_license": "CC BY 3.0",
-    "photo_source_url": "https://commons.wikimedia.org/wiki/File:Lan%C3%A7amento_do_foguete_brasileiro_de_m%C3%A9dio_porte_VSB-30_V07_da_Base_de_Alc%C3%A2ntara.jpg"
+    "photo_source_url": "https://commons.wikimedia.org/wiki/File:Lan%C3%A7amento_do_foguete_brasileiro_de_m%C3%A9dio_porte_VSB-30_V07_da_Base_de_Alc%C3%A2ntara.jpg",
+    "country_ar": "البرازيل"
   },
   {
     "id": "woomera",
@@ -10991,7 +11030,8 @@
     "photo_caption_en": "Rocket on display at the Woomera rocket park",
     "photo_credit": "artq55",
     "photo_license": "CC BY-SA 2.0",
-    "photo_source_url": "https://commons.wikimedia.org/wiki/File:Black_Arrow.jpg"
+    "photo_source_url": "https://commons.wikimedia.org/wiki/File:Black_Arrow.jpg",
+    "country_ar": "أستراليا"
   },
   {
     "id": "bowen",
@@ -11137,7 +11177,8 @@
     "photo_caption_en": "Abbot Point; the Bowen Orbital Spaceport sits in this coastal precinct",
     "photo_credit": "WikkiMediaa",
     "photo_license": "CC BY-SA 4.0",
-    "photo_source_url": "https://commons.wikimedia.org/wiki/File:Abbot_Point_Terminal.jpg"
+    "photo_source_url": "https://commons.wikimedia.org/wiki/File:Abbot_Point_Terminal.jpg",
+    "country_ar": "أستراليا"
   },
   {
     "id": "arnhem",
@@ -11308,7 +11349,8 @@
     "photo_caption_en": "Aerial view of the Arnhem Space Centre grounds",
     "photo_credit": "NASA's Scientific Visualization Studio - NASA/WFF/Keith Koehler, KBR Wyle Services, LLC/Jo",
     "photo_license": "Public domain",
-    "photo_source_url": "https://commons.wikimedia.org/wiki/File:Australia_Sounding_Rocket_Campaign_Press_Kit_(SVS14164_-_DJI_0005_v2_Arnhem_Space_Center_ELA).jpg"
+    "photo_source_url": "https://commons.wikimedia.org/wiki/File:Australia_Sounding_Rocket_Campaign_Press_Kit_(SVS14164_-_DJI_0005_v2_Arnhem_Space_Center_ELA).jpg",
+    "country_ar": "أستراليا"
   },
   {
     "id": "koonibba",
@@ -11454,7 +11496,8 @@
     "photo_caption_en": "The Ceduna satellite earth station; the closest town to the Koonibba Test Range",
     "photo_credit": "Nachoman-au",
     "photo_license": "CC BY-SA 3.0",
-    "photo_source_url": "https://commons.wikimedia.org/wiki/File:Ceduna_OTC,_South_Australia.jpg"
+    "photo_source_url": "https://commons.wikimedia.org/wiki/File:Ceduna_OTC,_South_Australia.jpg",
+    "country_ar": "أستراليا"
   },
   {
     "id": "whalersway",
@@ -11600,7 +11643,8 @@
     "photo_caption_en": "Sleaford Bay on the Eyre Peninsula, adjacent to the Whalers Way complex",
     "photo_credit": "Captain Frank Hurley",
     "photo_license": "CC0",
-    "photo_source_url": "https://commons.wikimedia.org/wiki/File:Sleaford_Bay(GN05734).jpg"
+    "photo_source_url": "https://commons.wikimedia.org/wiki/File:Sleaford_Bay(GN05734).jpg",
+    "country_ar": "أستراليا"
   },
   {
     "id": "sanmarco",
@@ -11829,7 +11873,8 @@
     "target_orbits_ar": "مدار أرضي منخفض استوائي (إطلاقات تاريخية فقط؛ آخر إطلاق عام 1988)",
     "geo_analysis_fa": "نزدیکی سکوی سن مارکو به استوا، امکان تزریق ماهواره‌ها به مدارهای پایین با میل مداری کم را فراهم می‌کرد؛ پرتاب‌های ثبت‌شده از سکوی دریایی در مدار پایین زمینِ استوایی بودند. این سکو از ۱۹۸۸ پرتابی نداشته است. فعال‌بودن ایستگاه‌های زمینی Malindi به معنی فعال‌بودن سکوی پرتاب یا زیرساخت‌های موشکی نیست.",
     "geo_analysis_en": "San Marco’s near-equatorial location enabled low-inclination orbital insertions; recorded launches from the offshore platform reached equatorial low Earth orbit. The sea platform has not launched since 1988. Active Malindi ground stations do not mean the launch pad or rocket infrastructure is operational.",
-    "geo_analysis_ar": "أتاح موقع سان ماركو القريب من خط الاستواء إدخال الأقمار إلى مدارات منخفضة ذات ميل قليل؛ ووصلت الإطلاقات المسجلة من المنصة البحرية إلى مدار أرضي منخفض استوائي. لم تُجرَ أي عملية إطلاق من المنصة منذ 1988. ولا يعني نشاط محطات Malindi الأرضية أن منصة الإطلاق أو البنية الصاروخية ما زالت تشغيلية."
+    "geo_analysis_ar": "أتاح موقع سان ماركو القريب من خط الاستواء إدخال الأقمار إلى مدارات منخفضة ذات ميل قليل؛ ووصلت الإطلاقات المسجلة من المنصة البحرية إلى مدار أرضي منخفض استوائي. لم تُجرَ أي عملية إطلاق من المنصة منذ 1988. ولا يعني نشاط محطات Malindi الأرضية أن منصة الإطلاق أو البنية الصاروخية ما زالت تشغيلية.",
+    "country_ar": "كينيا"
   },
   {
     "id": "hammaguir",
@@ -12032,7 +12077,8 @@
     "target_orbits_ar": "مدار أرضي منخفض (إطلاقات Diamant المدارية التاريخية فقط)",
     "geo_analysis_fa": "حماگیر در حدود ۳۱ درجهٔ شمالی قرار دارد. پرتاب‌های مداری تاریخی Diamant به مدار پایین زمین و میل‌هایی نزدیک عرض جغرافیایی سایت رسیدند؛ مدرکی از پرتاب به GEO، مدار ماه یا مدار بین‌سیاره‌ای از این پایگاه وجود ندارد.",
     "geo_analysis_en": "Hammaguir lies at about 31° N. Its historical Diamant orbital launches reached low Earth orbit at inclinations near the site latitude; there is no evidence of GEO, lunar or interplanetary launches from this site.",
-    "geo_analysis_ar": "يقع حمّاقير عند نحو 31° شمالاً. وصلت إطلاقات Diamant المدارية التاريخية إلى مدار أرضي منخفض بميول قريبة من خط عرض الموقع؛ ولا يوجد دليل على إطلاقات إلى GEO أو القمر أو مدارات بين كوكبية من هذه القاعدة."
+    "geo_analysis_ar": "يقع حمّاقير عند نحو 31° شمالاً. وصلت إطلاقات Diamant المدارية التاريخية إلى مدار أرضي منخفض بميول قريبة من خط عرض الموقع؛ ولا يوجد دليل على إطلاقات إلى GEO أو القمر أو مدارات بين كوكبية من هذه القاعدة.",
+    "country_ar": "الجزائر"
   },
   {
     "id": "sea-launch",
@@ -12278,7 +12324,8 @@
     "photo_caption_en": "Night launch of a Zenit rocket from the Odyssey sea platform",
     "photo_credit": "jurvetson",
     "photo_license": "CC BY 2.0",
-    "photo_source_url": "https://commons.wikimedia.org/wiki/File:Sea_Launch_01.jpg"
+    "photo_source_url": "https://commons.wikimedia.org/wiki/File:Sea_Launch_01.jpg",
+    "country_ar": "دولي / المحيط الهادئ"
   },
   {
     "id": "vostochny-angara",
@@ -12424,7 +12471,8 @@
     "photo_caption_en": "Construction at Tsiolkovsky (formerly Uglegorsk), the support town of the Svobodny cosmodrome",
     "photo_credit": "Dima Ostrovsky",
     "photo_license": "CC BY 2.0",
-    "photo_source_url": "https://commons.wikimedia.org/wiki/File:Tsiolkovsky-cosmodrome-vostochny-july-2015-amur-oblast.jpg"
+    "photo_source_url": "https://commons.wikimedia.org/wiki/File:Tsiolkovsky-cosmodrome-vostochny-july-2015-amur-oblast.jpg",
+    "country_ar": "روسيا"
   },
   {
     "id": "jeju",
@@ -12545,7 +12593,8 @@
     "photo_caption_en": "The basalt cliffs of Jeju island, home of Hanwha's space test site",
     "photo_credit": "Bernard Gagnon",
     "photo_license": "CC0",
-    "photo_source_url": "https://commons.wikimedia.org/wiki/File:Daepo_Jusangjeolli_Cliff_02.jpg"
+    "photo_source_url": "https://commons.wikimedia.org/wiki/File:Daepo_Jusangjeolli_Cliff_02.jpg",
+    "country_ar": "كوريا الجنوبية"
   },
   {
     "id": "vandenberg-slc6",
@@ -12792,7 +12841,8 @@
     "photo_caption_en": "A Delta IV Heavy launching from Space Launch Complex 6, Vandenberg",
     "photo_credit": "U.S. Air Force photo/Joe Davila",
     "photo_license": "Public domain",
-    "photo_source_url": "https://commons.wikimedia.org/wiki/File:First_Delta_IV_Heavy_launch_from_SLC-6_at_Vandenberg_AFB.jpg"
+    "photo_source_url": "https://commons.wikimedia.org/wiki/File:First_Delta_IV_Heavy_launch_from_SLC-6_at_Vandenberg_AFB.jpg",
+    "country_ar": "الولايات المتحدة"
   },
   {
     "id": "lc36",
@@ -13038,7 +13088,8 @@
     "photo_caption_en": "Satellite view of the Cape Canaveral pad row, including Launch Complex 36",
     "photo_credit": "SpaceFrom.Space",
     "photo_license": "CC BY 2.0",
-    "photo_source_url": "https://commons.wikimedia.org/wiki/File:Cape_Canaveral_Launch_Pads_-_2023-10-29_(53342411352).jpg"
+    "photo_source_url": "https://commons.wikimedia.org/wiki/File:Cape_Canaveral_Launch_Pads_-_2023-10-29_(53342411352).jpg",
+    "country_ar": "الولايات المتحدة"
   },
   {
     "id": "corn-ranch",
@@ -13284,7 +13335,8 @@
     "photo_caption_en": "Official aerial map view of the Corn Ranch launch site, West Texas",
     "photo_credit": "USGS",
     "photo_license": "Public domain",
-    "photo_source_url": "https://commons.wikimedia.org/wiki/File:Corn_Ranch_Spaceport_National_Map_view.png"
+    "photo_source_url": "https://commons.wikimedia.org/wiki/File:Corn_Ranch_Spaceport_National_Map_view.png",
+    "country_ar": "الولايات المتحدة"
   },
   {
     "id": "mcgregor",
@@ -13455,7 +13507,8 @@
     "photo_caption_en": "Inside the McGregor test facility, with a flight-returned Dragon capsule",
     "photo_credit": "Bill Ingalls",
     "photo_license": "Public domain",
-    "photo_source_url": "https://commons.wikimedia.org/wiki/File:Bolden_and_Musk_thanked_the_more_than_150_SpaceX_employees.jpg"
+    "photo_source_url": "https://commons.wikimedia.org/wiki/File:Bolden_and_Musk_thanked_the_more_than_150_SpaceX_employees.jpg",
+    "country_ar": "الولايات المتحدة"
   },
   {
     "id": "stennis",
@@ -13652,7 +13705,8 @@
     "photo_caption_en": "Engine installation on a test stand at NASA Stennis Space Center",
     "photo_credit": "Danny Nowlin",
     "photo_license": "Public Domain",
-    "photo_source_url": "https://images.nasa.gov/details/SSC-20211101-s00289"
+    "photo_source_url": "https://images.nasa.gov/details/SSC-20211101-s00289",
+    "country_ar": "الولايات المتحدة"
   },
   {
     "id": "pad0a",
@@ -13874,7 +13928,8 @@
     "photo_caption_en": "An Antares rocket on Wallops Pad-0A at sunrise",
     "photo_credit": "Joel Kowsky",
     "photo_license": "Public domain",
-    "photo_source_url": "https://commons.wikimedia.org/wiki/File:Antares_Rocket_at_Sunrise,_October_26,_2014.jpg"
+    "photo_source_url": "https://commons.wikimedia.org/wiki/File:Antares_Rocket_at_Sunrise,_October_26,_2014.jpg",
+    "country_ar": "الولايات المتحدة"
   },
   {
     "id": "overberg",
@@ -14072,7 +14127,8 @@
     "stats_total": 0,
     "stats_success": 0,
     "stats_fail": 0,
-    "stats_asof": "2026-11-06"
+    "stats_asof": "2026-11-06",
+    "country_ar": "جنوب أفريقيا"
   },
   {
     "id": "djibouti-spaceport",
@@ -14177,7 +14233,8 @@
     "geo_analysis_fa": "نشان نقشه فقط منطقهٔ تقریبیِ مطرح‌شده در طرح را نشان می‌دهد. عرض جغرافیایی حدود ۱۱٫۹ درجهٔ شمالی به‌تنهایی وجود پایگاه، کریدور ایمن پرتاب یا توان مداری را ثابت نمی‌کند. تفاهم‌نامهٔ ۲۰۲۳ منقضی شد و هیچ‌یک از تأسیسات فهرست‌شده تأیید نشده‌اند.",
     "geo_analysis_en": "The map pin marks only the approximate region associated with the proposal. A latitude near 11.9° N does not by itself establish a site, a safe launch corridor, or orbital capability. The 2023 MoU lapsed, and none of the listed facilities has been verified.",
     "geo_analysis_ar": "يشير دبوس الخريطة إلى المنطقة التقريبية المرتبطة بالمقترح فقط. ولا يثبت خط عرض يقارب 11.9° شمالاً بحد ذاته وجود موقع أو ممر إطلاق آمن أو قدرة مدارية. انتهت مذكرة 2023، ولم يتم التحقق من أي من المرافق المدرجة.",
-    "photo_caption_ar": "ساحل أوبوك، المنطقة المرتبطة بمشروع الميناء الفضائي المقترح في مذكرة التفاهم المنتهية عام 2023"
+    "photo_caption_ar": "ساحل أوبوك، المنطقة المرتبطة بمشروع الميناء الفضائي المقترح في مذكرة التفاهم المنتهية عام 2023",
+    "country_ar": "جيبوتي"
   },
   {
     "id": "mojave",
@@ -14315,7 +14372,8 @@
     "photo_caption_en": "Aerial view of Mojave Air and Space Port, California (2009)",
     "photo_credit": "Ian Kluft",
     "photo_license": "CC BY-SA 3.0",
-    "photo_source_url": "https://commons.wikimedia.org/wiki/File:Kluft-photo-aerial-Mojave-Spaceport-Sept-2009-Img_0227.jpg"
+    "photo_source_url": "https://commons.wikimedia.org/wiki/File:Kluft-photo-aerial-Mojave-Spaceport-Sept-2009-Img_0227.jpg",
+    "country_ar": "الولايات المتحدة"
   },
   {
     "id": "cornwall",
@@ -14396,7 +14454,8 @@
     "photo_caption_en": "Newquay Cornwall Airport terminal, home of Spaceport Cornwall",
     "photo_credit": "Christian Lee",
     "photo_license": "Public domain",
-    "photo_source_url": "https://commons.wikimedia.org/wiki/File:Newquay_Cornwall_airport.jpg"
+    "photo_source_url": "https://commons.wikimedia.org/wiki/File:Newquay_Cornwall_airport.jpg",
+    "country_ar": "المملكة المتحدة"
   },
   {
     "id": "thumba",
@@ -14530,7 +14589,8 @@
     "photo_caption_en": "Sounding rocket preparation at Thumba (TERLS), 1960s",
     "photo_credit": "آرشیو تاریخی / Times of India",
     "photo_license": "Public domain",
-    "photo_source_url": "https://commons.wikimedia.org/wiki/File:TERLS-01.jpg"
+    "photo_source_url": "https://commons.wikimedia.org/wiki/File:TERLS-01.jpg",
+    "country_ar": "الهند"
   },
   {
     "id": "tonghae",
@@ -14663,7 +14723,8 @@
     "photo_caption_en": "NASA astronaut view (2007) of the Hwadae county coast, the Tonghae (Musudan-ri) site area",
     "photo_credit": "NASA / ISS Expedition 14",
     "photo_license": "Public domain (NASA)",
-    "photo_source_url": "https://commons.wikimedia.org/wiki/File:ISS014-E-16026_-_View_of_North_Korea.jpg"
+    "photo_source_url": "https://commons.wikimedia.org/wiki/File:ISS014-E-16026_-_View_of_North_Korea.jpg",
+    "country_ar": "كوريا الشمالية"
   },
   {
     "id": "yasny",
@@ -14794,7 +14855,8 @@
     "photo_caption_en": "General view of Yasny (Dombarovsky) launch base facilities, Russia",
     "photo_credit": "ISC Kosmotras",
     "photo_license": "CC BY 2.5",
-    "photo_source_url": "https://commons.wikimedia.org/wiki/File:General_View_snyi.jpg"
+    "photo_source_url": "https://commons.wikimedia.org/wiki/File:General_View_snyi.jpg",
+    "country_ar": "روسيا"
   },
   {
     "id": "white-sands",
@@ -14927,7 +14989,8 @@
     "photo_caption_en": "Historic V-2 launch gantry, Launch Complex 33, White Sands",
     "photo_credit": "HABS / کتابخانهٔ کنگره",
     "photo_license": "Public domain",
-    "photo_source_url": "https://commons.wikimedia.org/wiki/File:V-2_GANTRY,_LAUNCH_COMPLEX_33-_LOOKING_NORTH_-_White_Sands_Missile_Range,_V-2_Gantry_Crane,_White_Sands,_Dona_Ana_County,_NM_HAER_NM,7-WHSA,1A-1.tif"
+    "photo_source_url": "https://commons.wikimedia.org/wiki/File:V-2_GANTRY,_LAUNCH_COMPLEX_33-_LOOKING_NORTH_-_White_Sands_Missile_Range,_V-2_Gantry_Crane,_White_Sands,_Dona_Ana_County,_NM_HAER_NM,7-WHSA,1A-1.tif",
+    "country_ar": "الولايات المتحدة"
   },
   {
     "id": "etlaq",
@@ -15039,7 +15102,8 @@
     "photo_caption_en": "Duqm-1 lifting off from Etlaq Spaceport, December 2024",
     "photo_credit": "Etlaq Spaceport",
     "photo_license": "CC BY-SA 4.0",
-    "photo_source_url": "https://commons.wikimedia.org/wiki/File:Duqm-1_Mission_Launch_-_Etlaq_Spaceport.png"
+    "photo_source_url": "https://commons.wikimedia.org/wiki/File:Duqm-1_Mission_Launch_-_Etlaq_Spaceport.png",
+    "country_ar": "عُمان"
   },
   {
     "id": "somalia-spaceport",
