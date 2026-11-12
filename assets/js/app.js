@@ -517,7 +517,9 @@
   var markerFeatureCollection = { type: "FeatureCollection", features: [] };
   var markerPointsByKey = Object.create(null), markerClustersByKey = Object.create(null);
   var recoveryMarkersByKey = Object.create(null), markerImagePromises = Object.create(null), markerLayerEnsurePromise = null;
-  var markerZoomRefreshTimer = 0, markerZoomLastRefresh = 0, markerZoomRefreshInterval = 100;
+  // Debounce reclustering during camera motion; the previous 100ms source churn
+  // could overlap worker tile rebuilds and temporarily blank large marker groups.
+  var markerZoomRefreshTimer = 0, markerZoomRefreshInterval = 220;
   var markerHoverKey = "", markerHoverKind = "", pendingMarkerHoverKey = "", pendingMarkerHoverKind = "", markerHoverFrame = 0;
   var markerHoverEventsBound = false;
   var mapHoverTooltip = null;
@@ -1094,6 +1096,10 @@
   // Keep the primary online basemaps enabled in previews; failed online loads fall back to the local map.
   var BASEMODE = "online";
   var activeMapStyleMode = "", activeOfflineTheme = "", mapStyleRequestId = 0;
+  // A generation represents the style currently installed in MapLibre, not a
+  // still-pending style JSON fetch. Async image/layer jobs must match it.
+  var mapStyleGeneration = 0, mapStyleTransitionPending = false;
+  var mapStyleWatchdogTimer = 0, mapOverlayRepairTimer = 0;
   localStorage.setItem("orbita_base", "online");
 
   // Style-layer maxzoom is exclusive; 4.001 keeps coral hover visible through zoom 4.0.
@@ -1424,43 +1430,104 @@
       return localized;
     }).catch(function () { return null; });
   }
-  function afterStyleApply() {
+  function scheduleMapOverlayRepair(delay) {
     if (!map) return;
-    try { renderMarkers(); buildLabels(); buildCityLabels(); } catch (e) {}
-    setTimeout(function () {
-      try { renderMarkers(); buildLabels(); buildCityLabels(); } catch (e) {}
-    }, 300);
+    if (mapOverlayRepairTimer) clearTimeout(mapOverlayRepairTimer);
+    mapOverlayRepairTimer = setTimeout(function () {
+      mapOverlayRepairTimer = 0;
+      if (!map || mapStyleTransitionPending || !map.getStyle()) return;
+      // Do not perform full marker rebuilds here: reattach only missing layers.
+      if (!map.getLayer(COUNTRY_HIT_LAYER) && !map.getLayer("country-fill")) {
+        ensureCountryInteractionLayers(true);
+      }
+      var imagesMissing = Object.keys(MARKER_IMAGES).some(function (key) {
+        try { return !map.hasImage(MARKER_IMAGES[key]); } catch (e) { return true; }
+      });
+      if (!map.getSource(MARKER_SOURCE) || !map.getLayer(MARKER_POINT_LAYER) ||
+          !map.getLayer(MARKER_CLUSTER_CIRCLE_LAYER) || imagesMissing) {
+        ensureMarkerLayers(true);
+      }
+      syncCountryFeatureStates();
+      try { map.triggerRepaint(); } catch (e) {}
+    }, delay == null ? 150 : delay);
+  }
+  function afterStyleApply() {
+    if (!map || mapStyleTransitionPending) return;
+    try { renderMarkers(); buildLabels(); buildCityLabels(); } catch (e) {
+      console.warn("map overlay refresh:", e && e.message || e);
+    }
+    scheduleMapOverlayRepair(280);
+  }
+  function startMapStyleWatchdog(generation) {
+    if (mapStyleWatchdogTimer) clearTimeout(mapStyleWatchdogTimer);
+    mapStyleWatchdogTimer = setTimeout(function () {
+      mapStyleWatchdogTimer = 0;
+      if (!map || generation !== mapStyleGeneration || !mapStyleTransitionPending) return;
+      // A slow raster/vector tile does not necessarily mean a broken style.
+      // Repair overlays without discarding the current basemap or camera state.
+      var style = null;
+      try { style = map.getStyle(); map.resize(); map.triggerRepaint(); } catch (e) {}
+      if (style && style.layers && style.layers.length) {
+        mapStyleTransitionPending = false;
+        ensureCountryInteractionLayers(true);
+        ensureMarkerLayers(true);
+        afterStyleApply();
+      } else if (BASEMODE !== "offline") {
+        console.warn("map style stalled: switching to the existing local fallback");
+        useOfflineStyleFallback();
+      } else {
+        var status = document.getElementById("mapStatus");
+        if (status) {
+          status.textContent = "نمایش نقشه با مشکل مواجه شد؛ اتصال و مرورگر را بررسی کنید.";
+          status.style.display = "block";
+        }
+      }
+    }, 6500);
+  }
+  function installMapStyle(style, mode) {
+    if (!map) return;
+    var generation = ++mapStyleGeneration;
+    mapStyleTransitionPending = true;
+    // Never allow an image install started under the previous style to block or
+    // mutate the fresh style's marker source.
+    markerLayerEnsurePromise = null;
+    resetCountryInteractionStyleState();
+    activeMapStyleMode = mode;
+    activeOfflineTheme = mode === "offline" ? THEME : "";
+    if (mapOverlayRepairTimer) { clearTimeout(mapOverlayRepairTimer); mapOverlayRepairTimer = 0; }
+    try { map.setStyle(style, { diff: true }); }
+    catch (e) {
+      try { map.setStyle(style); }
+      catch (err) {
+        mapStyleTransitionPending = false;
+        console.warn("map style change failed:", err && err.message || err);
+        if (mode !== "offline") useOfflineStyleFallback();
+        return;
+      }
+    }
+    startMapStyleWatchdog(generation);
   }
   function useOfflineStyleFallback() {
     if (!map) return;
+    // Invalidate outstanding fetches, not just their map.setStyle callbacks.
+    ++mapStyleRequestId;
     BASEMODE = "offline";
     try { localStorage.setItem("orbita_base", "offline"); } catch (e) {}
     var baseButton = $("#baseBtn");
     if (baseButton && baseButton.querySelector("span")) baseButton.querySelector("span").textContent = t("base_offline");
-    resetCountryInteractionStyleState();
-    // Startup already paints this local style before trying the online basemap. Do not
-    // set it again on a failed online request: that re-fetches the large country source.
-    if (activeMapStyleMode !== "offline" || activeOfflineTheme !== THEME) {
-      var style = offlineStyle();
-      activeMapStyleMode = "offline";
-      activeOfflineTheme = THEME;
-      try { map.setStyle(style, { diff: true }); } catch (e) { map.setStyle(style); }
-      map.once("styledata", afterStyleApply);
+    if (activeMapStyleMode !== "offline" || activeOfflineTheme !== THEME || mapStyleTransitionPending) {
+      installMapStyle(offlineStyle(), "offline");
+    } else {
+      scheduleMapOverlayRepair(0);
     }
-    afterStyleApply();
   }
   function applyMapStyle() {
     if (!map) return;
     var requestId = ++mapStyleRequestId;
     if (BASEMODE === "offline") {
-      resetCountryInteractionStyleState();
-      if (activeMapStyleMode !== "offline" || activeOfflineTheme !== THEME) {
-        activeMapStyleMode = "offline";
-        activeOfflineTheme = THEME;
-        try { map.setStyle(offlineStyle(), { diff: true }); } catch (e) { map.setStyle(offlineStyle()); }
-        map.once("styledata", afterStyleApply);
-      }
-      afterStyleApply();
+      if (activeMapStyleMode !== "offline" || activeOfflineTheme !== THEME || mapStyleTransitionPending) {
+        installMapStyle(offlineStyle(), "offline");
+      } else scheduleMapOverlayRepair(0);
       return;
     }
     var requestedUrl = onlineStyleUrl(), requestedLang = LANG;
@@ -1468,13 +1535,7 @@
       if (!map || requestId !== mapStyleRequestId || BASEMODE === "offline" ||
           requestedUrl !== onlineStyleUrl() || requestedLang !== LANG) return;
       if (!st) { useOfflineStyleFallback(); return; }
-      resetCountryInteractionStyleState();
-      activeMapStyleMode = "online";
-      activeOfflineTheme = "";
-      var onlineStyle = withCountryInteractionSource(st);
-      try { map.setStyle(onlineStyle, { diff: true }); } catch (e) { map.setStyle(onlineStyle); }
-      map.once("styledata", afterStyleApply);
-      afterStyleApply();
+      installMapStyle(withCountryInteractionSource(st), "online");
     }).catch(function () {
       if (requestId === mapStyleRequestId && BASEMODE !== "offline") useOfflineStyleFallback();
     });
@@ -1826,11 +1887,11 @@
       }
       requestAnimationFrame(function () { if (map) { try { map.resize(); } catch (e) {} } });
     } catch (e) {}
-    /* faster manual zoom: ~2x wheel/trackpad rate, smooth animation preserved */
+    /* responsive, controlled wheel/trackpad zoom; no abrupt 2x camera acceleration */
     try {
       if (map.scrollZoom) {
-        if (map.scrollZoom.setWheelZoomRate) map.scrollZoom.setWheelZoomRate(1 / 225);
-        if (map.scrollZoom.setZoomRate) map.scrollZoom.setZoomRate(1 / 50);
+        if (map.scrollZoom.setWheelZoomRate) map.scrollZoom.setWheelZoomRate(1 / 370);
+        if (map.scrollZoom.setZoomRate) map.scrollZoom.setZoomRate(1 / 85);
       }
     } catch (e) {}
     /* mobile only: lock rotation & tilt (desktop keeps them) */
@@ -1853,12 +1914,23 @@
     // style.load fires after a basemap switch even while its remote tiles are still loading.
     // Install local country interaction layers then, instead of waiting for isStyleLoaded() (idle).
     map.on("style.load", function () {
+      mapStyleTransitionPending = false;
+      if (mapStyleWatchdogTimer) { clearTimeout(mapStyleWatchdogTimer); mapStyleWatchdogTimer = 0; }
+      countryFeatureStateNeedsSync = true;
       ensureCountryInteractionLayers(true);
       ensureMarkerLayers(true);
+      afterStyleApply();
+      var status = $("#mapStatus");
+      if (status) status.style.display = "none";
     });
-    map.on("styledata", function () {
-      if ($("#mapStatus")) $("#mapStatus").style.display = "none";
-      ensureCountryInteractionLayers();
+    // styledata can fire repeatedly before a style is usable; never build
+    // interaction layers against it. The style.load + idle hooks own recovery.
+    map.on("idle", function () {
+      if (!mapStyleTransitionPending && map.getStyle() &&
+          (!map.getSource(MARKER_SOURCE) || !map.getLayer(MARKER_POINT_LAYER) ||
+           (!map.getLayer(COUNTRY_HIT_LAYER) && !map.getLayer("country-fill")))) {
+        scheduleMapOverlayRepair(0);
+      }
     });
     map.on("sourcedata", function (e) {
       if (e && e.isSourceLoaded && (e.sourceId === COUNTRY_OVERLAY_SOURCE || e.sourceId === "countries")) {
@@ -1884,11 +1956,40 @@
         $("#coords").textContent = c.lat.toFixed(2) + ", " + c.lng.toFixed(2) + " · z" + map.getZoom().toFixed(1);
       });
     });
-    map.on("error", function (e) { 
-      console.warn("map:", (e && e.error && e.error.message) || e);
-      var statusEl = document.getElementById("mapStatus");
-      if (statusEl) statusEl.style.display = "none";
+    var tileErrorBurst = 0, tileErrorLastAt = 0;
+    map.on("error", function (e) {
+      var err = e && e.error, message = String(err && err.message || "");
+      console.warn("map:", message || e);
+      // Individual tile failures are harmless. When many remote tiles fail
+      // in one burst, the basemap can be entirely blank despite style.load.
+      var now = Date.now();
+      if (BASEMODE !== "offline" && activeMapStyleMode === "online" &&
+          /fetch|network|timeout|http|tile|403|404|429|503/i.test(message)) {
+        tileErrorBurst = (now - tileErrorLastAt > 12000) ? 1 : tileErrorBurst + 1;
+        tileErrorLastAt = now;
+        if (tileErrorBurst >= 10) {
+          tileErrorBurst = 0;
+          console.warn("map tiles repeatedly unavailable; using local map fallback");
+          useOfflineStyleFallback();
+          return;
+        }
+      }
+      if (!mapStyleTransitionPending) scheduleMapOverlayRepair(600);
     });
+    try {
+      var canvas = map.getCanvas();
+      canvas.addEventListener("webglcontextlost", function (event) {
+        if (event && event.preventDefault) event.preventDefault();
+        var status = document.getElementById("mapStatus");
+        if (status) { status.textContent = "در حال بازیابی نمایش نقشه…"; status.style.display = "block"; }
+      });
+      canvas.addEventListener("webglcontextrestored", function () {
+        var status = document.getElementById("mapStatus");
+        if (status) status.style.display = "none";
+        try { map.resize(); map.triggerRepaint(); } catch (e) {}
+        scheduleMapOverlayRepair(200);
+      });
+    } catch (e) {}
 
     // Country hover/click events are bound directly to country layers as each style loads.
   }
@@ -2228,24 +2329,29 @@
       [MARKER_IMAGES.recovery, svgRecovery(C.recovery)]
     ];
   }
-  function addMarkerImage(id, svg) {
+  function addMarkerImage(id, svg, generation) {
     if (!markerImagePromises[id]) {
       markerImagePromises[id] = new Promise(function (resolve) {
         var image = new Image();
         image.onload = function () { resolve(image); };
-        image.onerror = function () { console.warn("marker image failed:", id); resolve(null); };
+        image.onerror = function () {
+          // A transient SVG decode failure must not poison all later style swaps.
+          delete markerImagePromises[id];
+          console.warn("marker image failed:", id); resolve(null);
+        };
         image.src = "data:image/svg+xml;charset=utf-8," + encodeURIComponent(svg);
       });
     }
     return markerImagePromises[id].then(function (image) {
-      if (!image || !map) return;
+      if (!image || !map || generation !== mapStyleGeneration || mapStyleTransitionPending) return;
       try { if (!map.hasImage(id)) map.addImage(id, image, { pixelRatio: 2 }); }
       catch (e) { console.warn("marker image install:", id, e && e.message || e); }
     });
   }
-  function ensureMarkerImages() {
-    var staticJobs = markerImageSvgSpecs().map(function (spec) { return addMarkerImage(spec[0], markerSvgWithShadow(spec[1])); });
+  function ensureMarkerImages(generation) {
+    var staticJobs = markerImageSvgSpecs().map(function (spec) { return addMarkerImage(spec[0], markerSvgWithShadow(spec[1]), generation); });
     return Promise.all(staticJobs).then(function () {
+      if (generation !== mapStyleGeneration || mapStyleTransitionPending) return false;
       // Count labels are tiny and local: add them synchronously so a zoom-driven source update
       // never waits on an SVG image decode before displaying the new clusters.
       ensureCurrentClusterLabelImages();
@@ -2406,8 +2512,9 @@
     if (!map) return Promise.resolve(false);
     try { if (!force && map.isStyleLoaded && !map.isStyleLoaded()) return Promise.resolve(false); } catch (e) { return Promise.resolve(false); }
     if (markerLayerEnsurePromise) return markerLayerEnsurePromise;
-    markerLayerEnsurePromise = ensureMarkerImages().then(function () {
-      if (!map || !map.getStyle()) return false;
+    var generation = mapStyleGeneration;
+    var job = ensureMarkerImages(generation).then(function (imagesReady) {
+      if (!imagesReady || !map || generation !== mapStyleGeneration || mapStyleTransitionPending || !map.getStyle()) return false;
       if (!map.getSource(MARKER_SOURCE)) {
         map.addSource(MARKER_SOURCE, { type: "geojson", data: markerFeatureCollection, promoteId: "markerKey", maxzoom: 20 });
       }
@@ -2443,10 +2550,11 @@
       console.warn("marker source/layers:", e && e.message || e);
       return false;
     }).then(function (ok) {
-      markerLayerEnsurePromise = null;
+      if (markerLayerEnsurePromise === job) markerLayerEnsurePromise = null;
       return ok;
     });
-    return markerLayerEnsurePromise;
+    markerLayerEnsurePromise = job;
+    return job;
   }
   function markerFeature(p, sc) {
     var key = markerPointKey(p), lon = Number(p.o.lon), lat = Number(p.o.lat);
@@ -2575,26 +2683,23 @@
     return true;
   }
   var clusterZoomBound = false;
-  function markerZoomNow() { return window.performance && performance.now ? performance.now() : Date.now(); }
   function scheduleMarkerZoomRefresh(finalUpdate) {
     if (!map) return;
+    if (markerZoomRefreshTimer) { clearTimeout(markerZoomRefreshTimer); markerZoomRefreshTimer = 0; }
     if (finalUpdate) {
-      if (markerZoomRefreshTimer) clearTimeout(markerZoomRefreshTimer);
-      markerZoomRefreshTimer = 0;
-      markerZoomLastRefresh = markerZoomNow();
+      // Exactly one final, up-to-date clustering result after camera settles.
       renderMarkers();
       return;
     }
-    if (markerZoomRefreshTimer) return;
-    var wait = Math.max(0, markerZoomRefreshInterval - (markerZoomNow() - markerZoomLastRefresh));
+    // Keep existing rendered markers moving with the camera rather than sending
+    // a fresh large GeoJSON collection to a worker every 100ms during zoom.
     markerZoomRefreshTimer = setTimeout(function () {
       markerZoomRefreshTimer = 0;
-      markerZoomLastRefresh = markerZoomNow();
       renderMarkers();
-    }, wait);
+    }, markerZoomRefreshInterval);
   }
   function publishMarkerFeatureCollection() {
-    if (!map) return;
+    if (!map || mapStyleTransitionPending) return;
     var source = map.getSource(MARKER_SOURCE);
     if (source && source.setData) {
       // A source can exist while remote style tiles are still loading. Do not gate marker updates
