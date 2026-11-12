@@ -1,0 +1,42 @@
+﻿company_id,rocket_name,field,existing,candidate,evidence_url,reason
+firefly,Alpha,height_en,31.7 m,~29.8 m (GCAT; Firefly Alpha I),https://planet4589.org/space/gcat/data/tables/lv.html,existing value kept; not silently overwritten
+firefly,Alpha,height_fa,۳۱٫۷ متر,حدود ۲۹٫۸ متر (GCAT؛ Firefly Alpha I),https://planet4589.org/space/gcat/data/tables/lv.html,existing value kept; not silently overwritten
+avio,Vega C,height_en,35 m,~35 m (GCAT; Vega C),https://planet4589.org/space/gcat/data/tables/lv.html,existing value kept; not silently overwritten
+avio,Vega C,height_fa,۳۵ متر,حدود ۳۵ متر (GCAT؛ Vega C),https://planet4589.org/space/gcat/data/tables/lv.html,existing value kept; not silently overwritten
+avio,Vega C,mass_en,190 tonnes,~210 t (GCAT estimate; Vega C),https://planet4589.org/space/gcat/data/tables/lv.html,existing value kept; not silently overwritten
+avio,Vega C,mass_fa,۱۹۰ تن,حدود ۲۱۰ تن (برآورد GCAT؛ Vega C),https://planet4589.org/space/gcat/data/tables/lv.html,existing value kept; not silently overwritten
+isar,Spectrum,height_en,28 m,~28 m (GCAT; Spectrum),https://planet4589.org/space/gcat/data/tables/lv.html,existing value kept; not silently overwritten
+isar,Spectrum,height_fa,۲۸ متر,حدود ۲۸ متر (GCAT؛ Spectrum),https://planet4589.org/space/gcat/data/tables/lv.html,existing value kept; not silently overwritten
+isar,Spectrum,diameter_en,2 m,~2 m (GCAT; Spectrum),https://planet4589.org/space/gcat/data/tables/lv.html,existing value kept; not silently overwritten
+isar,Spectrum,diameter_fa,۲ متر,حدود ۲ متر (GCAT؛ Spectrum),https://planet4589.org/space/gcat/data/tables/lv.html,existing value kept; not silently overwritten
+isar,Spectrum,payload_leo_en,"Design target: 1,000 kg","~1,000 kg (GCAT approximate; Spectrum; not demonstrated capacity)",https://planet4589.org/space/gcat/data/tables/lv.html,existing value kept; not silently overwritten
+isar,Spectrum,payload_leo_fa,هدف طراحی: ۱۰۰۰ کیلوگرم,حدود ۱٬۰۰۰ کیلوگرم (برآورد GCAT، Spectrum؛ نه عملکرد اثبات‌شده),https://planet4589.org/space/gcat/data/tables/lv.html,existing value kept; not silently overwritten
+pldspace,MIURA 1,height_en,12.5 m,~12.7 m (GCAT; Miura 1),https://planet4589.org/space/gcat/data/tables/lv.html,existing value kept; not silently overwritten
+pldspace,MIURA 1,height_fa,۱۲٫۵ متر,حدود ۱۲٫۷ متر (GCAT؛ Miura 1),https://planet4589.org/space/gcat/data/tables/lv.html,existing value kept; not silently overwritten
+pldspace,MIURA 1,diameter_en,0.7 m,~0.7 m (GCAT; Miura 1),https://planet4589.org/space/gcat/data/tables/lv.html,existing value kept; not silently overwritten
+pldspace,MIURA 1,diameter_fa,۰٫۷ متر,حدود ۰٫۷ متر (GCAT؛ Miura 1),https://planet4589.org/space/gcat/data/tables/lv.html,existing value kept; not silently overwritten
+pldspace,MIURA 1,thrust_en,30 kN,~30 kN (GCAT approximate liftoff thrust; Miura 1),https://planet4589.org/space/gcat/data/tables/lv.html,existing value kept; not silently overwritten
+pldspace,MIURA 1,thrust_fa,۳۰ کیلونیوتن,حدود ۳۰ کیلونیوتن (رانش برخاست تخمینی GCAT؛ Miura 1),https://planet4589.org/space/gcat/data/tables/lv.html,existing value kept; not silently overwritten
+innospace,HANBIT-TLV,height_en,16.3 m,~16.3 m (GCAT; HANBIT-TLV),https://planet4589.org/space/gcat/data/tables/lv.html,existing value kept; not silently overwritten
+innospace,HANBIT-TLV,height_fa,۱۶٫۳ متر,حدود ۱۶٫۳ متر (GCAT؛ HANBIT-TLV),https://planet4589.org/space/gcat/data/tables/lv.html,existing value kept; not silently overwritten
+innospace,HANBIT-TLV,diameter_en,1 m,~1 m (GCAT; HANBIT-TLV),https://planet4589.org/space/gcat/data/tables/lv.html,existing value kept; not silently overwritten
+innospace,HANBIT-TLV,diameter_fa,۱ متر,حدود ۱ متر (GCAT؛ HANBIT-TLV),https://planet4589.org/space/gcat/data/tables/lv.html,existing value kept; not silently overwritten
+aio-iran,Simorgh (سیمرغ),height_en,26 m,~27 m (GCAT; Simorgh),https://planet4589.org/space/gcat/data/tables/lv.html,existing value kept; not silently overwritten
+aio-iran,Simorgh (سیمرغ),height_fa,۲۶ متر,حدود ۲۷ متر (GCAT؛ Simorgh),https://planet4589.org/space/gcat/data/tables/lv.html,existing value kept; not silently overwritten
+aio-iran,Simorgh (سیمرغ),thrust_en,"1,275 kN","~1,000 kN (GCAT approximate liftoff thrust; Simorgh)",https://planet4589.org/space/gcat/data/tables/lv.html,existing value kept; not silently overwritten
+aio-iran,Simorgh (سیمرغ),thrust_fa,"۱,۲۷۵ کیلونیوتن",حدود ۱٬۰۰۰ کیلونیوتن (رانش برخاست تخمینی GCAT؛ Simorgh),https://planet4589.org/space/gcat/data/tables/lv.html,existing value kept; not silently overwritten
+irgc-space,Qased (قاصد),height_en,18.8 m,~18 m (GCAT; Qased),https://planet4589.org/space/gcat/data/tables/lv.html,existing value kept; not silently overwritten
+irgc-space,Qased (قاصد),height_fa,۱۸.۸ متر,حدود ۱۸ متر (GCAT؛ Qased),https://planet4589.org/space/gcat/data/tables/lv.html,existing value kept; not silently overwritten
+irgc-space,Qased (قاصد),diameter_en,1.2 m,~1.25 m (GCAT; Qased),https://planet4589.org/space/gcat/data/tables/lv.html,existing value kept; not silently overwritten
+irgc-space,Qased (قاصد),diameter_fa,۱.۲ متر,حدود ۱٫۲۵ متر (GCAT؛ Qased),https://planet4589.org/space/gcat/data/tables/lv.html,existing value kept; not silently overwritten
+irgc-space,Qased (قاصد),mass_en,"16,000 kg",~19.4 t (GCAT estimate; Qased),https://planet4589.org/space/gcat/data/tables/lv.html,existing value kept; not silently overwritten
+irgc-space,Qased (قاصد),mass_fa,"۱۶,۰۰۰ کیلوگرم",حدود ۱۹٫۴ تن (برآورد GCAT؛ Qased),https://planet4589.org/space/gcat/data/tables/lv.html,existing value kept; not silently overwritten
+irgc-space,Qased (قاصد),thrust_en,290 kN,~255 kN (GCAT approximate liftoff thrust; Qased),https://planet4589.org/space/gcat/data/tables/lv.html,existing value kept; not silently overwritten
+irgc-space,Qased (قاصد),thrust_fa,۲۹۰ کیلونیوتن,حدود ۲۵۵ کیلونیوتن (رانش برخاست تخمینی GCAT؛ Qased),https://planet4589.org/space/gcat/data/tables/lv.html,existing value kept; not silently overwritten
+irgc-space,Qaem-100 (قائم ۱۰۰),height_en,16 m,~15 m (GCAT; Qaem-100),https://planet4589.org/space/gcat/data/tables/lv.html,existing value kept; not silently overwritten
+irgc-space,Qaem-100 (قائم ۱۰۰),height_fa,۱۶ متر,حدود ۱۵ متر (GCAT؛ Qaem-100),https://planet4589.org/space/gcat/data/tables/lv.html,existing value kept; not silently overwritten
+irgc-space,Qaem-100 (قائم ۱۰۰),diameter_en,1.3 m,~1.25 m (GCAT; Qaem-100),https://planet4589.org/space/gcat/data/tables/lv.html,existing value kept; not silently overwritten
+irgc-space,Qaem-100 (قائم ۱۰۰),diameter_fa,۱.۳ متر,حدود ۱٫۲۵ متر (GCAT؛ Qaem-100),https://planet4589.org/space/gcat/data/tables/lv.html,existing value kept; not silently overwritten
+irgc-space,Qaem-100 (قائم ۱۰۰),mass_en,"24,000 kg",~40 t (GCAT estimate; Qaem-100),https://planet4589.org/space/gcat/data/tables/lv.html,existing value kept; not silently overwritten
+irgc-space,Qaem-100 (قائم ۱۰۰),mass_fa,"۲۴,۰۰۰ کیلوگرم",حدود ۴۰ تن (برآورد GCAT؛ Qaem-100),https://planet4589.org/space/gcat/data/tables/lv.html,existing value kept; not silently overwritten
+spaceone,,stats,3,3,https://www.space.com/space-exploration/private-spaceflight/japan-startup-space-one-kairos-third-launch,existing scoped statistic retained

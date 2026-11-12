@@ -1,0 +1,695 @@
+﻿company_id,rocket_name,field,previous_value,new_value,evidence_url,action
+spacex,Falcon Heavy,height_en,,"""~69.2 m (GCAT; Falcon Heavy)""",https://planet4589.org/space/gcat/data/tables/lv.html,gcat_secondary_approximate
+spacex,Falcon Heavy,height_fa,,"""حدود ۶۹٫۲ متر (GCAT؛ Falcon Heavy)""",https://planet4589.org/space/gcat/data/tables/lv.html,gcat_secondary_approximate
+spacex,Falcon Heavy,diameter_en,,"""~3.65 m (GCAT; Falcon Heavy)""",https://planet4589.org/space/gcat/data/tables/lv.html,gcat_secondary_approximate
+spacex,Falcon Heavy,diameter_fa,,"""حدود ۳٫۶۵ متر (GCAT؛ Falcon Heavy)""",https://planet4589.org/space/gcat/data/tables/lv.html,gcat_secondary_approximate
+spacex,Falcon Heavy,mass_en,,"""~1400 t (GCAT estimate; Falcon Heavy)""",https://planet4589.org/space/gcat/data/tables/lv.html,gcat_secondary_approximate
+spacex,Falcon Heavy,mass_fa,,"""حدود ۱۴۰۰ تن (برآورد GCAT؛ Falcon Heavy)""",https://planet4589.org/space/gcat/data/tables/lv.html,gcat_secondary_approximate
+spacex,Falcon Heavy,payload_leo_en,,"""~54,400 kg (GCAT approximate; Falcon Heavy; not demonstrated capacity)""",https://planet4589.org/space/gcat/data/tables/lv.html,gcat_secondary_approximate
+spacex,Falcon Heavy,payload_leo_fa,,"""حدود ۵۴٬۴۰۰ کیلوگرم (برآورد GCAT، Falcon Heavy؛ نه عملکرد اثبات‌شده)""",https://planet4589.org/space/gcat/data/tables/lv.html,gcat_secondary_approximate
+spacex,Falcon Heavy,payload_gto_en,,"""~22,200 kg (GCAT estimate; Falcon Heavy)""",https://planet4589.org/space/gcat/data/tables/lv.html,gcat_secondary_approximate
+spacex,Falcon Heavy,payload_gto_fa,,"""حدود ۲۲٬۲۰۰ کیلوگرم (برآورد GCAT؛ Falcon Heavy)""",https://planet4589.org/space/gcat/data/tables/lv.html,gcat_secondary_approximate
+spacex,Falcon Heavy,thrust_en,,"""~17,000 kN (GCAT approximate liftoff thrust; Falcon Heavy)""",https://planet4589.org/space/gcat/data/tables/lv.html,gcat_secondary_approximate
+spacex,Falcon Heavy,thrust_fa,,"""حدود ۱۷٬۰۰۰ کیلونیوتن (رانش برخاست تخمینی GCAT؛ Falcon Heavy)""",https://planet4589.org/space/gcat/data/tables/lv.html,gcat_secondary_approximate
+spacex,Falcon Heavy,technical_data_note_fa,,"""مقادیر تکمیلی برگرفته از ردیف «Falcon Heavy» در GCAT هستند؛ برآوردی‌اند و به معنی عملکرد پروازی اثبات‌شده نیستند.""",https://planet4589.org/space/gcat/data/tables/lv.html,methodology_notice_added
+spacex,Starship / Super Heavy,height_en,,"""~121.3 m (GCAT; Starship V1.0)""",https://planet4589.org/space/gcat/data/tables/lv.html,gcat_secondary_approximate
+spacex,Starship / Super Heavy,height_fa,,"""حدود ۱۲۱٫۳ متر (GCAT؛ Starship V1.0)""",https://planet4589.org/space/gcat/data/tables/lv.html,gcat_secondary_approximate
+spacex,Starship / Super Heavy,diameter_en,,"""~9 m (GCAT; Starship V1.0)""",https://planet4589.org/space/gcat/data/tables/lv.html,gcat_secondary_approximate
+spacex,Starship / Super Heavy,diameter_fa,,"""حدود ۹ متر (GCAT؛ Starship V1.0)""",https://planet4589.org/space/gcat/data/tables/lv.html,gcat_secondary_approximate
+spacex,Starship / Super Heavy,mass_en,,"""~5020 t (GCAT estimate; Starship V1.0)""",https://planet4589.org/space/gcat/data/tables/lv.html,gcat_secondary_approximate
+spacex,Starship / Super Heavy,mass_fa,,"""حدود ۵۰۲۰ تن (برآورد GCAT؛ Starship V1.0)""",https://planet4589.org/space/gcat/data/tables/lv.html,gcat_secondary_approximate
+spacex,Starship / Super Heavy,thrust_en,,"""~72,500 kN (GCAT approximate liftoff thrust; Starship V1.0)""",https://planet4589.org/space/gcat/data/tables/lv.html,gcat_secondary_approximate
+spacex,Starship / Super Heavy,thrust_fa,,"""حدود ۷۲٬۵۰۰ کیلونیوتن (رانش برخاست تخمینی GCAT؛ Starship V1.0)""",https://planet4589.org/space/gcat/data/tables/lv.html,gcat_secondary_approximate
+spacex,Starship / Super Heavy,technical_data_note_fa,,"""مقادیر تکمیلی برگرفته از ردیف «Starship V1.0» در GCAT هستند؛ برآوردی‌اند و به معنی عملکرد پروازی اثبات‌شده نیستند.""",https://planet4589.org/space/gcat/data/tables/lv.html,methodology_notice_added
+ula,Vulcan Centaur,height_en,,"""~67 m (GCAT; Vulcan Centaur VC2S)""",https://planet4589.org/space/gcat/data/tables/lv.html,gcat_secondary_approximate
+ula,Vulcan Centaur,height_fa,,"""حدود ۶۷ متر (GCAT؛ Vulcan Centaur VC2S)""",https://planet4589.org/space/gcat/data/tables/lv.html,gcat_secondary_approximate
+ula,Vulcan Centaur,diameter_en,,"""~5.4 m (GCAT; Vulcan Centaur VC2S)""",https://planet4589.org/space/gcat/data/tables/lv.html,gcat_secondary_approximate
+ula,Vulcan Centaur,diameter_fa,,"""حدود ۵٫۴ متر (GCAT؛ Vulcan Centaur VC2S)""",https://planet4589.org/space/gcat/data/tables/lv.html,gcat_secondary_approximate
+ula,Vulcan Centaur,technical_data_note_fa,,"""مقادیر تکمیلی برگرفته از ردیف «Vulcan Centaur VC2S» در GCAT هستند؛ برآوردی‌اند و به معنی عملکرد پروازی اثبات‌شده نیستند.""",https://planet4589.org/space/gcat/data/tables/lv.html,methodology_notice_added
+blueorigin,New Shepard,height_en,,"""~15 m (GCAT; New Shepard)""",https://planet4589.org/space/gcat/data/tables/lv.html,gcat_secondary_approximate
+blueorigin,New Shepard,height_fa,,"""حدود ۱۵ متر (GCAT؛ New Shepard)""",https://planet4589.org/space/gcat/data/tables/lv.html,gcat_secondary_approximate
+blueorigin,New Shepard,diameter_en,,"""~3 m (GCAT; New Shepard)""",https://planet4589.org/space/gcat/data/tables/lv.html,gcat_secondary_approximate
+blueorigin,New Shepard,diameter_fa,,"""حدود ۳ متر (GCAT؛ New Shepard)""",https://planet4589.org/space/gcat/data/tables/lv.html,gcat_secondary_approximate
+blueorigin,New Shepard,mass_en,,"""~35 t (GCAT estimate; New Shepard)""",https://planet4589.org/space/gcat/data/tables/lv.html,gcat_secondary_approximate
+blueorigin,New Shepard,mass_fa,,"""حدود ۳۵ تن (برآورد GCAT؛ New Shepard)""",https://planet4589.org/space/gcat/data/tables/lv.html,gcat_secondary_approximate
+blueorigin,New Shepard,thrust_en,,"""~1,020 kN (GCAT approximate liftoff thrust; New Shepard)""",https://planet4589.org/space/gcat/data/tables/lv.html,gcat_secondary_approximate
+blueorigin,New Shepard,thrust_fa,,"""حدود ۱٬۰۲۰ کیلونیوتن (رانش برخاست تخمینی GCAT؛ New Shepard)""",https://planet4589.org/space/gcat/data/tables/lv.html,gcat_secondary_approximate
+blueorigin,New Shepard,technical_data_note_fa,,"""مقادیر تکمیلی برگرفته از ردیف «New Shepard» در GCAT هستند؛ برآوردی‌اند و به معنی عملکرد پروازی اثبات‌شده نیستند.""",https://planet4589.org/space/gcat/data/tables/lv.html,methodology_notice_added
+blueorigin,New Glenn,height_en,,"""~98 m (GCAT; New Glenn 7x2)""",https://planet4589.org/space/gcat/data/tables/lv.html,gcat_secondary_approximate
+blueorigin,New Glenn,height_fa,,"""حدود ۹۸ متر (GCAT؛ New Glenn 7x2)""",https://planet4589.org/space/gcat/data/tables/lv.html,gcat_secondary_approximate
+blueorigin,New Glenn,diameter_en,,"""~7 m (GCAT; New Glenn 7x2)""",https://planet4589.org/space/gcat/data/tables/lv.html,gcat_secondary_approximate
+blueorigin,New Glenn,diameter_fa,,"""حدود ۷ متر (GCAT؛ New Glenn 7x2)""",https://planet4589.org/space/gcat/data/tables/lv.html,gcat_secondary_approximate
+blueorigin,New Glenn,thrust_en,,"""~17,219 kN (GCAT approximate liftoff thrust; New Glenn 7x2)""",https://planet4589.org/space/gcat/data/tables/lv.html,gcat_secondary_approximate
+blueorigin,New Glenn,thrust_fa,,"""حدود ۱۷٬۲۱۹ کیلونیوتن (رانش برخاست تخمینی GCAT؛ New Glenn 7x2)""",https://planet4589.org/space/gcat/data/tables/lv.html,gcat_secondary_approximate
+blueorigin,New Glenn,technical_data_note_fa,,"""مقادیر تکمیلی برگرفته از ردیف «New Glenn 7x2» در GCAT هستند؛ برآوردی‌اند و به معنی عملکرد پروازی اثبات‌شده نیستند.""",https://planet4589.org/space/gcat/data/tables/lv.html,methodology_notice_added
+rocketlab,HASTE,height_en,,"""~17 m (GCAT; HASTE)""",https://planet4589.org/space/gcat/data/tables/lv.html,gcat_secondary_approximate
+rocketlab,HASTE,height_fa,,"""حدود ۱۷ متر (GCAT؛ HASTE)""",https://planet4589.org/space/gcat/data/tables/lv.html,gcat_secondary_approximate
+rocketlab,HASTE,diameter_en,,"""~1.2 m (GCAT; HASTE)""",https://planet4589.org/space/gcat/data/tables/lv.html,gcat_secondary_approximate
+rocketlab,HASTE,diameter_fa,,"""حدود ۱٫۲ متر (GCAT؛ HASTE)""",https://planet4589.org/space/gcat/data/tables/lv.html,gcat_secondary_approximate
+rocketlab,HASTE,mass_en,,"""~12.6 t (GCAT estimate; HASTE)""",https://planet4589.org/space/gcat/data/tables/lv.html,gcat_secondary_approximate
+rocketlab,HASTE,mass_fa,,"""حدود ۱۲٫۶ تن (برآورد GCAT؛ HASTE)""",https://planet4589.org/space/gcat/data/tables/lv.html,gcat_secondary_approximate
+rocketlab,HASTE,thrust_en,,"""~162 kN (GCAT approximate liftoff thrust; HASTE)""",https://planet4589.org/space/gcat/data/tables/lv.html,gcat_secondary_approximate
+rocketlab,HASTE,thrust_fa,,"""حدود ۱۶۲ کیلونیوتن (رانش برخاست تخمینی GCAT؛ HASTE)""",https://planet4589.org/space/gcat/data/tables/lv.html,gcat_secondary_approximate
+rocketlab,HASTE,technical_data_note_fa,,"""مقادیر تکمیلی برگرفته از ردیف «HASTE» در GCAT هستند؛ برآوردی‌اند و به معنی عملکرد پروازی اثبات‌شده نیستند.""",https://planet4589.org/space/gcat/data/tables/lv.html,methodology_notice_added
+rocketlab,Neutron,height_en,,"""~42.8 m (GCAT; Neutron)""",https://planet4589.org/space/gcat/data/tables/lv.html,gcat_secondary_approximate
+rocketlab,Neutron,height_fa,,"""حدود ۴۲٫۸ متر (GCAT؛ Neutron)""",https://planet4589.org/space/gcat/data/tables/lv.html,gcat_secondary_approximate
+rocketlab,Neutron,diameter_en,,"""~7 m (GCAT; Neutron)""",https://planet4589.org/space/gcat/data/tables/lv.html,gcat_secondary_approximate
+rocketlab,Neutron,diameter_fa,,"""حدود ۷ متر (GCAT؛ Neutron)""",https://planet4589.org/space/gcat/data/tables/lv.html,gcat_secondary_approximate
+rocketlab,Neutron,mass_en,,"""~480 t (GCAT estimate; Neutron)""",https://planet4589.org/space/gcat/data/tables/lv.html,gcat_secondary_approximate
+rocketlab,Neutron,mass_fa,,"""حدود ۴۸۰ تن (برآورد GCAT؛ Neutron)""",https://planet4589.org/space/gcat/data/tables/lv.html,gcat_secondary_approximate
+rocketlab,Neutron,thrust_en,,"""~6,570 kN (GCAT approximate liftoff thrust; Neutron)""",https://planet4589.org/space/gcat/data/tables/lv.html,gcat_secondary_approximate
+rocketlab,Neutron,thrust_fa,,"""حدود ۶٬۵۷۰ کیلونیوتن (رانش برخاست تخمینی GCAT؛ Neutron)""",https://planet4589.org/space/gcat/data/tables/lv.html,gcat_secondary_approximate
+rocketlab,Neutron,technical_data_note_fa,,"""مقادیر تکمیلی برگرفته از ردیف «Neutron» در GCAT هستند؛ برآوردی‌اند و به معنی عملکرد پروازی اثبات‌شده نیستند.""",https://planet4589.org/space/gcat/data/tables/lv.html,methodology_notice_added
+firefly,Alpha,diameter_en,,"""~1.82 m (GCAT; Firefly Alpha I)""",https://planet4589.org/space/gcat/data/tables/lv.html,gcat_secondary_approximate
+firefly,Alpha,diameter_fa,,"""حدود ۱٫۸۲ متر (GCAT؛ Firefly Alpha I)""",https://planet4589.org/space/gcat/data/tables/lv.html,gcat_secondary_approximate
+firefly,Alpha,mass_en,,"""~54.1 t (GCAT estimate; Firefly Alpha I)""",https://planet4589.org/space/gcat/data/tables/lv.html,gcat_secondary_approximate
+firefly,Alpha,mass_fa,,"""حدود ۵۴٫۱ تن (برآورد GCAT؛ Firefly Alpha I)""",https://planet4589.org/space/gcat/data/tables/lv.html,gcat_secondary_approximate
+firefly,Alpha,thrust_en,,"""~736 kN (GCAT approximate liftoff thrust; Firefly Alpha I)""",https://planet4589.org/space/gcat/data/tables/lv.html,gcat_secondary_approximate
+firefly,Alpha,thrust_fa,,"""حدود ۷۳۶ کیلونیوتن (رانش برخاست تخمینی GCAT؛ Firefly Alpha I)""",https://planet4589.org/space/gcat/data/tables/lv.html,gcat_secondary_approximate
+firefly,Alpha,technical_data_note_fa,,"""مقادیر تکمیلی برگرفته از ردیف «Firefly Alpha I» در GCAT هستند؛ برآوردی‌اند و به معنی عملکرد پروازی اثبات‌شده نیستند.""",https://planet4589.org/space/gcat/data/tables/lv.html,methodology_notice_added
+northrop,Antares 230+,height_en,,"""~42.5 m (GCAT; Antares 230+)""",https://planet4589.org/space/gcat/data/tables/lv.html,gcat_secondary_approximate
+northrop,Antares 230+,height_fa,,"""حدود ۴۲٫۵ متر (GCAT؛ Antares 230+)""",https://planet4589.org/space/gcat/data/tables/lv.html,gcat_secondary_approximate
+northrop,Antares 230+,diameter_en,,"""~3.9 m (GCAT; Antares 230+)""",https://planet4589.org/space/gcat/data/tables/lv.html,gcat_secondary_approximate
+northrop,Antares 230+,diameter_fa,,"""حدود ۳٫۹ متر (GCAT؛ Antares 230+)""",https://planet4589.org/space/gcat/data/tables/lv.html,gcat_secondary_approximate
+northrop,Antares 230+,mass_en,,"""~290 t (GCAT estimate; Antares 230+)""",https://planet4589.org/space/gcat/data/tables/lv.html,gcat_secondary_approximate
+northrop,Antares 230+,mass_fa,,"""حدود ۲۹۰ تن (برآورد GCAT؛ Antares 230+)""",https://planet4589.org/space/gcat/data/tables/lv.html,gcat_secondary_approximate
+northrop,Antares 230+,payload_leo_en,,"""~6,250 kg (GCAT approximate; Antares 230+; not demonstrated capacity)""",https://planet4589.org/space/gcat/data/tables/lv.html,gcat_secondary_approximate
+northrop,Antares 230+,payload_leo_fa,,"""حدود ۶٬۲۵۰ کیلوگرم (برآورد GCAT، Antares 230+؛ نه عملکرد اثبات‌شده)""",https://planet4589.org/space/gcat/data/tables/lv.html,gcat_secondary_approximate
+northrop,Antares 230+,thrust_en,,"""~3,844 kN (GCAT approximate liftoff thrust; Antares 230+)""",https://planet4589.org/space/gcat/data/tables/lv.html,gcat_secondary_approximate
+northrop,Antares 230+,thrust_fa,,"""حدود ۳٬۸۴۴ کیلونیوتن (رانش برخاست تخمینی GCAT؛ Antares 230+)""",https://planet4589.org/space/gcat/data/tables/lv.html,gcat_secondary_approximate
+northrop,Antares 230+,stages,,2,https://planet4589.org/space/gcat/data/tables/lv.html,gcat_secondary_approximate
+northrop,Antares 230+,technical_source_url,,"""https://planet4589.org/space/gcat/data/tables/lv.html""",https://planet4589.org/space/gcat/data/tables/lv.html,source_link_added
+northrop,Antares 230+,technical_data_note_fa,,"""مقادیر تکمیلی برگرفته از ردیف «Antares 230+» در GCAT هستند؛ برآوردی‌اند و به معنی عملکرد پروازی اثبات‌شده نیستند.""",https://planet4589.org/space/gcat/data/tables/lv.html,methodology_notice_added
+northrop,Minotaur I,height_en,,"""~19.2 m (GCAT; Minotaur I)""",https://planet4589.org/space/gcat/data/tables/lv.html,gcat_secondary_approximate
+northrop,Minotaur I,height_fa,,"""حدود ۱۹٫۲ متر (GCAT؛ Minotaur I)""",https://planet4589.org/space/gcat/data/tables/lv.html,gcat_secondary_approximate
+northrop,Minotaur I,diameter_en,,"""~1.68 m (GCAT; Minotaur I)""",https://planet4589.org/space/gcat/data/tables/lv.html,gcat_secondary_approximate
+northrop,Minotaur I,diameter_fa,,"""حدود ۱٫۶۸ متر (GCAT؛ Minotaur I)""",https://planet4589.org/space/gcat/data/tables/lv.html,gcat_secondary_approximate
+northrop,Minotaur I,mass_en,,"""~36.3 t (GCAT estimate; Minotaur I)""",https://planet4589.org/space/gcat/data/tables/lv.html,gcat_secondary_approximate
+northrop,Minotaur I,mass_fa,,"""حدود ۳۶٫۳ تن (برآورد GCAT؛ Minotaur I)""",https://planet4589.org/space/gcat/data/tables/lv.html,gcat_secondary_approximate
+northrop,Minotaur I,payload_leo_en,,"""~340 kg (GCAT approximate; Minotaur I; not demonstrated capacity)""",https://planet4589.org/space/gcat/data/tables/lv.html,gcat_secondary_approximate
+northrop,Minotaur I,payload_leo_fa,,"""حدود ۳۴۰ کیلوگرم (برآورد GCAT، Minotaur I؛ نه عملکرد اثبات‌شده)""",https://planet4589.org/space/gcat/data/tables/lv.html,gcat_secondary_approximate
+northrop,Minotaur I,thrust_en,,"""~892 kN (GCAT approximate liftoff thrust; Minotaur I)""",https://planet4589.org/space/gcat/data/tables/lv.html,gcat_secondary_approximate
+northrop,Minotaur I,thrust_fa,,"""حدود ۸۹۲ کیلونیوتن (رانش برخاست تخمینی GCAT؛ Minotaur I)""",https://planet4589.org/space/gcat/data/tables/lv.html,gcat_secondary_approximate
+northrop,Minotaur I,stages,,4,https://planet4589.org/space/gcat/data/tables/lv.html,gcat_secondary_approximate
+northrop,Minotaur I,technical_source_url,,"""https://planet4589.org/space/gcat/data/tables/lv.html""",https://planet4589.org/space/gcat/data/tables/lv.html,source_link_added
+northrop,Minotaur I,technical_data_note_fa,,"""مقادیر تکمیلی برگرفته از ردیف «Minotaur I» در GCAT هستند؛ برآوردی‌اند و به معنی عملکرد پروازی اثبات‌شده نیستند.""",https://planet4589.org/space/gcat/data/tables/lv.html,methodology_notice_added
+northrop,Pegasus XL,height_en,,"""~17.4 m (GCAT; Pegasus XL)""",https://planet4589.org/space/gcat/data/tables/lv.html,gcat_secondary_approximate
+northrop,Pegasus XL,height_fa,,"""حدود ۱۷٫۴ متر (GCAT؛ Pegasus XL)""",https://planet4589.org/space/gcat/data/tables/lv.html,gcat_secondary_approximate
+northrop,Pegasus XL,diameter_en,,"""~1.28 m (GCAT; Pegasus XL)""",https://planet4589.org/space/gcat/data/tables/lv.html,gcat_secondary_approximate
+northrop,Pegasus XL,diameter_fa,,"""حدود ۱٫۲۸ متر (GCAT؛ Pegasus XL)""",https://planet4589.org/space/gcat/data/tables/lv.html,gcat_secondary_approximate
+northrop,Pegasus XL,mass_en,,"""~23 t (GCAT estimate; Pegasus XL)""",https://planet4589.org/space/gcat/data/tables/lv.html,gcat_secondary_approximate
+northrop,Pegasus XL,mass_fa,,"""حدود ۲۳ تن (برآورد GCAT؛ Pegasus XL)""",https://planet4589.org/space/gcat/data/tables/lv.html,gcat_secondary_approximate
+northrop,Pegasus XL,payload_leo_en,,"""~440 kg (GCAT approximate; Pegasus XL; not demonstrated capacity)""",https://planet4589.org/space/gcat/data/tables/lv.html,gcat_secondary_approximate
+northrop,Pegasus XL,payload_leo_fa,,"""حدود ۴۴۰ کیلوگرم (برآورد GCAT، Pegasus XL؛ نه عملکرد اثبات‌شده)""",https://planet4589.org/space/gcat/data/tables/lv.html,gcat_secondary_approximate
+northrop,Pegasus XL,thrust_en,,"""~726 kN (GCAT approximate liftoff thrust; Pegasus XL)""",https://planet4589.org/space/gcat/data/tables/lv.html,gcat_secondary_approximate
+northrop,Pegasus XL,thrust_fa,,"""حدود ۷۲۶ کیلونیوتن (رانش برخاست تخمینی GCAT؛ Pegasus XL)""",https://planet4589.org/space/gcat/data/tables/lv.html,gcat_secondary_approximate
+northrop,Pegasus XL,technical_data_note_fa,,"""مقادیر تکمیلی برگرفته از ردیف «Pegasus XL» در GCAT هستند؛ برآوردی‌اند و به معنی عملکرد پروازی اثبات‌شده نیستند.""",https://planet4589.org/space/gcat/data/tables/lv.html,methodology_notice_added
+astra,Rocket 3 series,height_en,,"""~11.8 m (GCAT; Astra Rocket 3.3)""",https://planet4589.org/space/gcat/data/tables/lv.html,gcat_secondary_approximate
+astra,Rocket 3 series,height_fa,,"""حدود ۱۱٫۸ متر (GCAT؛ Astra Rocket 3.3)""",https://planet4589.org/space/gcat/data/tables/lv.html,gcat_secondary_approximate
+astra,Rocket 3 series,diameter_en,,"""~1.32 m (GCAT; Astra Rocket 3.3)""",https://planet4589.org/space/gcat/data/tables/lv.html,gcat_secondary_approximate
+astra,Rocket 3 series,diameter_fa,,"""حدود ۱٫۳۲ متر (GCAT؛ Astra Rocket 3.3)""",https://planet4589.org/space/gcat/data/tables/lv.html,gcat_secondary_approximate
+astra,Rocket 3 series,mass_en,,"""~11 t (GCAT estimate; Astra Rocket 3.3)""",https://planet4589.org/space/gcat/data/tables/lv.html,gcat_secondary_approximate
+astra,Rocket 3 series,mass_fa,,"""حدود ۱۱ تن (برآورد GCAT؛ Astra Rocket 3.3)""",https://planet4589.org/space/gcat/data/tables/lv.html,gcat_secondary_approximate
+astra,Rocket 3 series,thrust_en,,"""~140 kN (GCAT approximate liftoff thrust; Astra Rocket 3.3)""",https://planet4589.org/space/gcat/data/tables/lv.html,gcat_secondary_approximate
+astra,Rocket 3 series,thrust_fa,,"""حدود ۱۴۰ کیلونیوتن (رانش برخاست تخمینی GCAT؛ Astra Rocket 3.3)""",https://planet4589.org/space/gcat/data/tables/lv.html,gcat_secondary_approximate
+astra,Rocket 3 series,stages,,2,https://planet4589.org/space/gcat/data/tables/lv.html,gcat_secondary_approximate
+astra,Rocket 3 series,technical_source_url,,"""https://planet4589.org/space/gcat/data/tables/lv.html""",https://planet4589.org/space/gcat/data/tables/lv.html,source_link_added
+astra,Rocket 3 series,technical_data_note_fa,,"""مقادیر تکمیلی برگرفته از ردیف «Astra Rocket 3.3» در GCAT هستند؛ برآوردی‌اند و به معنی عملکرد پروازی اثبات‌شده نیستند.""",https://planet4589.org/space/gcat/data/tables/lv.html,methodology_notice_added
+arianespace,Ariane 5,height_en,,"""~57.7 m (GCAT; Ariane 5ECA)""",https://planet4589.org/space/gcat/data/tables/lv.html,gcat_secondary_approximate
+arianespace,Ariane 5,height_fa,,"""حدود ۵۷٫۷ متر (GCAT؛ Ariane 5ECA)""",https://planet4589.org/space/gcat/data/tables/lv.html,gcat_secondary_approximate
+arianespace,Ariane 5,diameter_en,,"""~5.4 m (GCAT; Ariane 5ECA)""",https://planet4589.org/space/gcat/data/tables/lv.html,gcat_secondary_approximate
+arianespace,Ariane 5,diameter_fa,,"""حدود ۵٫۴ متر (GCAT؛ Ariane 5ECA)""",https://planet4589.org/space/gcat/data/tables/lv.html,gcat_secondary_approximate
+arianespace,Ariane 5,thrust_en,,"""~11,400 kN (GCAT approximate liftoff thrust; Ariane 5ECA)""",https://planet4589.org/space/gcat/data/tables/lv.html,gcat_secondary_approximate
+arianespace,Ariane 5,thrust_fa,,"""حدود ۱۱٬۴۰۰ کیلونیوتن (رانش برخاست تخمینی GCAT؛ Ariane 5ECA)""",https://planet4589.org/space/gcat/data/tables/lv.html,gcat_secondary_approximate
+arianespace,Ariane 5,stages,,2,https://planet4589.org/space/gcat/data/tables/lv.html,gcat_secondary_approximate
+arianespace,Ariane 5,technical_data_note_fa,,"""مقادیر تکمیلی برگرفته از ردیف «Ariane 5ECA» در GCAT هستند؛ برآوردی‌اند و به معنی عملکرد پروازی اثبات‌شده نیستند.""",https://planet4589.org/space/gcat/data/tables/lv.html,methodology_notice_added
+arianespace,Ariane 6,height_en,,"""~60 m (GCAT; Ariane 62)""",https://planet4589.org/space/gcat/data/tables/lv.html,gcat_secondary_approximate
+arianespace,Ariane 6,height_fa,,"""حدود ۶۰ متر (GCAT؛ Ariane 62)""",https://planet4589.org/space/gcat/data/tables/lv.html,gcat_secondary_approximate
+arianespace,Ariane 6,diameter_en,,"""~5.4 m (GCAT; Ariane 62)""",https://planet4589.org/space/gcat/data/tables/lv.html,gcat_secondary_approximate
+arianespace,Ariane 6,diameter_fa,,"""حدود ۵٫۴ متر (GCAT؛ Ariane 62)""",https://planet4589.org/space/gcat/data/tables/lv.html,gcat_secondary_approximate
+arianespace,Ariane 6,technical_data_note_fa,,"""مقادیر تکمیلی برگرفته از ردیف «Ariane 62» در GCAT هستند؛ برآوردی‌اند و به معنی عملکرد پروازی اثبات‌شده نیستند.""",https://planet4589.org/space/gcat/data/tables/lv.html,methodology_notice_added
+arianespace,Vega C (service responsibilities transitioning to Avio),height_en,,"""~35 m (GCAT; Vega C)""",https://planet4589.org/space/gcat/data/tables/lv.html,gcat_secondary_approximate
+arianespace,Vega C (service responsibilities transitioning to Avio),height_fa,,"""حدود ۳۵ متر (GCAT؛ Vega C)""",https://planet4589.org/space/gcat/data/tables/lv.html,gcat_secondary_approximate
+arianespace,Vega C (service responsibilities transitioning to Avio),diameter_en,,"""~3.4 m (GCAT; Vega C)""",https://planet4589.org/space/gcat/data/tables/lv.html,gcat_secondary_approximate
+arianespace,Vega C (service responsibilities transitioning to Avio),diameter_fa,,"""حدود ۳٫۴ متر (GCAT؛ Vega C)""",https://planet4589.org/space/gcat/data/tables/lv.html,gcat_secondary_approximate
+arianespace,Vega C (service responsibilities transitioning to Avio),mass_en,,"""~210 t (GCAT estimate; Vega C)""",https://planet4589.org/space/gcat/data/tables/lv.html,gcat_secondary_approximate
+arianespace,Vega C (service responsibilities transitioning to Avio),mass_fa,,"""حدود ۲۱۰ تن (برآورد GCAT؛ Vega C)""",https://planet4589.org/space/gcat/data/tables/lv.html,gcat_secondary_approximate
+arianespace,Vega C (service responsibilities transitioning to Avio),stages,,4,https://planet4589.org/space/gcat/data/tables/lv.html,gcat_secondary_approximate
+arianespace,Vega C (service responsibilities transitioning to Avio),technical_source_url,,"""https://planet4589.org/space/gcat/data/tables/lv.html""",https://planet4589.org/space/gcat/data/tables/lv.html,source_link_added
+arianespace,Vega C (service responsibilities transitioning to Avio),technical_data_note_fa,,"""مقادیر تکمیلی برگرفته از ردیف «Vega C» در GCAT هستند؛ برآوردی‌اند و به معنی عملکرد پروازی اثبات‌شده نیستند.""",https://planet4589.org/space/gcat/data/tables/lv.html,methodology_notice_added
+arianegroup,Ariane 6 (industrial prime; operated by Arianespace),height_en,,"""~60 m (GCAT; Ariane 62)""",https://planet4589.org/space/gcat/data/tables/lv.html,gcat_secondary_approximate
+arianegroup,Ariane 6 (industrial prime; operated by Arianespace),height_fa,,"""حدود ۶۰ متر (GCAT؛ Ariane 62)""",https://planet4589.org/space/gcat/data/tables/lv.html,gcat_secondary_approximate
+arianegroup,Ariane 6 (industrial prime; operated by Arianespace),diameter_en,,"""~5.4 m (GCAT; Ariane 62)""",https://planet4589.org/space/gcat/data/tables/lv.html,gcat_secondary_approximate
+arianegroup,Ariane 6 (industrial prime; operated by Arianespace),diameter_fa,,"""حدود ۵٫۴ متر (GCAT؛ Ariane 62)""",https://planet4589.org/space/gcat/data/tables/lv.html,gcat_secondary_approximate
+arianegroup,Ariane 6 (industrial prime; operated by Arianespace),technical_data_note_fa,,"""مقادیر تکمیلی برگرفته از ردیف «Ariane 62» در GCAT هستند؛ برآوردی‌اند و به معنی عملکرد پروازی اثبات‌شده نیستند.""",https://planet4589.org/space/gcat/data/tables/lv.html,methodology_notice_added
+avio,Vega,height_en,,"""~30.1 m (GCAT; Vega)""",https://planet4589.org/space/gcat/data/tables/lv.html,gcat_secondary_approximate
+avio,Vega,height_fa,,"""حدود ۳۰٫۱ متر (GCAT؛ Vega)""",https://planet4589.org/space/gcat/data/tables/lv.html,gcat_secondary_approximate
+avio,Vega,diameter_en,,"""~3 m (GCAT; Vega)""",https://planet4589.org/space/gcat/data/tables/lv.html,gcat_secondary_approximate
+avio,Vega,diameter_fa,,"""حدود ۳ متر (GCAT؛ Vega)""",https://planet4589.org/space/gcat/data/tables/lv.html,gcat_secondary_approximate
+avio,Vega,mass_en,,"""~136.7 t (GCAT estimate; Vega)""",https://planet4589.org/space/gcat/data/tables/lv.html,gcat_secondary_approximate
+avio,Vega,mass_fa,,"""حدود ۱۳۶٫۷ تن (برآورد GCAT؛ Vega)""",https://planet4589.org/space/gcat/data/tables/lv.html,gcat_secondary_approximate
+avio,Vega,payload_leo_en,,"""~1,500 kg (GCAT approximate; Vega; not demonstrated capacity)""",https://planet4589.org/space/gcat/data/tables/lv.html,gcat_secondary_approximate
+avio,Vega,payload_leo_fa,,"""حدود ۱٬۵۰۰ کیلوگرم (برآورد GCAT، Vega؛ نه عملکرد اثبات‌شده)""",https://planet4589.org/space/gcat/data/tables/lv.html,gcat_secondary_approximate
+avio,Vega,thrust_en,,"""~2,974 kN (GCAT approximate liftoff thrust; Vega)""",https://planet4589.org/space/gcat/data/tables/lv.html,gcat_secondary_approximate
+avio,Vega,thrust_fa,,"""حدود ۲٬۹۷۴ کیلونیوتن (رانش برخاست تخمینی GCAT؛ Vega)""",https://planet4589.org/space/gcat/data/tables/lv.html,gcat_secondary_approximate
+avio,Vega,technical_data_note_fa,,"""مقادیر تکمیلی برگرفته از ردیف «Vega» در GCAT هستند؛ برآوردی‌اند و به معنی عملکرد پروازی اثبات‌شده نیستند.""",https://planet4589.org/space/gcat/data/tables/lv.html,methodology_notice_added
+avio,Vega C,diameter_en,,"""~3.4 m (GCAT; Vega C)""",https://planet4589.org/space/gcat/data/tables/lv.html,gcat_secondary_approximate
+avio,Vega C,diameter_fa,,"""حدود ۳٫۴ متر (GCAT؛ Vega C)""",https://planet4589.org/space/gcat/data/tables/lv.html,gcat_secondary_approximate
+avio,Vega C,technical_data_note_fa,,"""مقادیر تکمیلی برگرفته از ردیف «Vega C» در GCAT هستند؛ برآوردی‌اند و به معنی عملکرد پروازی اثبات‌شده نیستند.""",https://planet4589.org/space/gcat/data/tables/lv.html,methodology_notice_added
+isar,Spectrum,thrust_en,,"""~675 kN (GCAT approximate liftoff thrust; Spectrum)""",https://planet4589.org/space/gcat/data/tables/lv.html,gcat_secondary_approximate
+isar,Spectrum,thrust_fa,,"""حدود ۶۷۵ کیلونیوتن (رانش برخاست تخمینی GCAT؛ Spectrum)""",https://planet4589.org/space/gcat/data/tables/lv.html,gcat_secondary_approximate
+isar,Spectrum,technical_data_note_fa,,"""مقادیر تکمیلی برگرفته از ردیف «Spectrum» در GCAT هستند؛ برآوردی‌اند و به معنی عملکرد پروازی اثبات‌شده نیستند.""",https://planet4589.org/space/gcat/data/tables/lv.html,methodology_notice_added
+pldspace,MIURA 1,mass_en,,"""~2.6 t (GCAT estimate; Miura 1)""",https://planet4589.org/space/gcat/data/tables/lv.html,gcat_secondary_approximate
+pldspace,MIURA 1,mass_fa,,"""حدود ۲٫۶ تن (برآورد GCAT؛ Miura 1)""",https://planet4589.org/space/gcat/data/tables/lv.html,gcat_secondary_approximate
+pldspace,MIURA 1,technical_data_note_fa,,"""مقادیر تکمیلی برگرفته از ردیف «Miura 1» در GCAT هستند؛ برآوردی‌اند و به معنی عملکرد پروازی اثبات‌شده نیستند.""",https://planet4589.org/space/gcat/data/tables/lv.html,methodology_notice_added
+skyrora,Skylark L,height_en,,"""~11.7 m (GCAT; Skylark L)""",https://planet4589.org/space/gcat/data/tables/lv.html,gcat_secondary_approximate
+skyrora,Skylark L,height_fa,,"""حدود ۱۱٫۷ متر (GCAT؛ Skylark L)""",https://planet4589.org/space/gcat/data/tables/lv.html,gcat_secondary_approximate
+skyrora,Skylark L,diameter_en,,"""~0.7 m (GCAT; Skylark L)""",https://planet4589.org/space/gcat/data/tables/lv.html,gcat_secondary_approximate
+skyrora,Skylark L,diameter_fa,,"""حدود ۰٫۷ متر (GCAT؛ Skylark L)""",https://planet4589.org/space/gcat/data/tables/lv.html,gcat_secondary_approximate
+skyrora,Skylark L,stages,,1,https://planet4589.org/space/gcat/data/tables/lv.html,gcat_secondary_approximate
+skyrora,Skylark L,technical_source_url,,"""https://planet4589.org/space/gcat/data/tables/lv.html""",https://planet4589.org/space/gcat/data/tables/lv.html,source_link_added
+skyrora,Skylark L,technical_data_note_fa,,"""مقادیر تکمیلی برگرفته از ردیف «Skylark L» در GCAT هستند؛ برآوردی‌اند و به معنی عملکرد پروازی اثبات‌شده نیستند.""",https://planet4589.org/space/gcat/data/tables/lv.html,methodology_notice_added
+progress-rocket,Soyuz-2 family,height_en,,"""~50.7 m (GCAT; Soyuz-2-1A)""",https://planet4589.org/space/gcat/data/tables/lv.html,gcat_secondary_approximate
+progress-rocket,Soyuz-2 family,height_fa,,"""حدود ۵۰٫۷ متر (GCAT؛ Soyuz-2-1A)""",https://planet4589.org/space/gcat/data/tables/lv.html,gcat_secondary_approximate
+progress-rocket,Soyuz-2 family,diameter_en,,"""~2.95 m (GCAT; Soyuz-2-1A)""",https://planet4589.org/space/gcat/data/tables/lv.html,gcat_secondary_approximate
+progress-rocket,Soyuz-2 family,diameter_fa,,"""حدود ۲٫۹۵ متر (GCAT؛ Soyuz-2-1A)""",https://planet4589.org/space/gcat/data/tables/lv.html,gcat_secondary_approximate
+progress-rocket,Soyuz-2 family,mass_en,,"""~313 t (GCAT estimate; Soyuz-2-1A)""",https://planet4589.org/space/gcat/data/tables/lv.html,gcat_secondary_approximate
+progress-rocket,Soyuz-2 family,mass_fa,,"""حدود ۳۱۳ تن (برآورد GCAT؛ Soyuz-2-1A)""",https://planet4589.org/space/gcat/data/tables/lv.html,gcat_secondary_approximate
+progress-rocket,Soyuz-2 family,thrust_en,,"""~4,146 kN (GCAT approximate liftoff thrust; Soyuz-2-1A)""",https://planet4589.org/space/gcat/data/tables/lv.html,gcat_secondary_approximate
+progress-rocket,Soyuz-2 family,thrust_fa,,"""حدود ۴٬۱۴۶ کیلونیوتن (رانش برخاست تخمینی GCAT؛ Soyuz-2-1A)""",https://planet4589.org/space/gcat/data/tables/lv.html,gcat_secondary_approximate
+progress-rocket,Soyuz-2 family,stages,,2,https://planet4589.org/space/gcat/data/tables/lv.html,gcat_secondary_approximate
+progress-rocket,Soyuz-2 family,technical_source_url,,"""https://planet4589.org/space/gcat/data/tables/lv.html""",https://planet4589.org/space/gcat/data/tables/lv.html,source_link_added
+progress-rocket,Soyuz-2 family,technical_data_note_fa,,"""مقادیر تکمیلی برگرفته از ردیف «Soyuz-2-1A» در GCAT هستند؛ برآوردی‌اند و به معنی عملکرد پروازی اثبات‌شده نیستند.""",https://planet4589.org/space/gcat/data/tables/lv.html,methodology_notice_added
+progress-rocket,Soyuz-U (historical production),height_en,,"""~50.7 m (GCAT; Soyuz-U)""",https://planet4589.org/space/gcat/data/tables/lv.html,gcat_secondary_approximate
+progress-rocket,Soyuz-U (historical production),height_fa,,"""حدود ۵۰٫۷ متر (GCAT؛ Soyuz-U)""",https://planet4589.org/space/gcat/data/tables/lv.html,gcat_secondary_approximate
+progress-rocket,Soyuz-U (historical production),diameter_en,,"""~2.95 m (GCAT; Soyuz-U)""",https://planet4589.org/space/gcat/data/tables/lv.html,gcat_secondary_approximate
+progress-rocket,Soyuz-U (historical production),diameter_fa,,"""حدود ۲٫۹۵ متر (GCAT؛ Soyuz-U)""",https://planet4589.org/space/gcat/data/tables/lv.html,gcat_secondary_approximate
+progress-rocket,Soyuz-U (historical production),mass_en,,"""~310 t (GCAT estimate; Soyuz-U)""",https://planet4589.org/space/gcat/data/tables/lv.html,gcat_secondary_approximate
+progress-rocket,Soyuz-U (historical production),mass_fa,,"""حدود ۳۱۰ تن (برآورد GCAT؛ Soyuz-U)""",https://planet4589.org/space/gcat/data/tables/lv.html,gcat_secondary_approximate
+progress-rocket,Soyuz-U (historical production),payload_leo_en,,"""~7,200 kg (GCAT approximate; Soyuz-U; not demonstrated capacity)""",https://planet4589.org/space/gcat/data/tables/lv.html,gcat_secondary_approximate
+progress-rocket,Soyuz-U (historical production),payload_leo_fa,,"""حدود ۷٬۲۰۰ کیلوگرم (برآورد GCAT، Soyuz-U؛ نه عملکرد اثبات‌شده)""",https://planet4589.org/space/gcat/data/tables/lv.html,gcat_secondary_approximate
+progress-rocket,Soyuz-U (historical production),thrust_en,,"""~4,062 kN (GCAT approximate liftoff thrust; Soyuz-U)""",https://planet4589.org/space/gcat/data/tables/lv.html,gcat_secondary_approximate
+progress-rocket,Soyuz-U (historical production),thrust_fa,,"""حدود ۴٬۰۶۲ کیلونیوتن (رانش برخاست تخمینی GCAT؛ Soyuz-U)""",https://planet4589.org/space/gcat/data/tables/lv.html,gcat_secondary_approximate
+progress-rocket,Soyuz-U (historical production),stages,,2,https://planet4589.org/space/gcat/data/tables/lv.html,gcat_secondary_approximate
+progress-rocket,Soyuz-U (historical production),technical_source_url,,"""https://planet4589.org/space/gcat/data/tables/lv.html""",https://planet4589.org/space/gcat/data/tables/lv.html,source_link_added
+progress-rocket,Soyuz-U (historical production),technical_data_note_fa,,"""مقادیر تکمیلی برگرفته از ردیف «Soyuz-U» در GCAT هستند؛ برآوردی‌اند و به معنی عملکرد پروازی اثبات‌شده نیستند.""",https://planet4589.org/space/gcat/data/tables/lv.html,methodology_notice_added
+khrunichev,Proton-M,height_en,,"""~53 m (GCAT; Proton-M/Briz-M)""",https://planet4589.org/space/gcat/data/tables/lv.html,gcat_secondary_approximate
+khrunichev,Proton-M,height_fa,,"""حدود ۵۳ متر (GCAT؛ Proton-M/Briz-M)""",https://planet4589.org/space/gcat/data/tables/lv.html,gcat_secondary_approximate
+khrunichev,Proton-M,diameter_en,,"""~7.4 m (GCAT; Proton-M/Briz-M)""",https://planet4589.org/space/gcat/data/tables/lv.html,gcat_secondary_approximate
+khrunichev,Proton-M,diameter_fa,,"""حدود ۷٫۴ متر (GCAT؛ Proton-M/Briz-M)""",https://planet4589.org/space/gcat/data/tables/lv.html,gcat_secondary_approximate
+khrunichev,Proton-M,mass_en,,"""~712.8 t (GCAT estimate; Proton-M/Briz-M)""",https://planet4589.org/space/gcat/data/tables/lv.html,gcat_secondary_approximate
+khrunichev,Proton-M,mass_fa,,"""حدود ۷۱۲٫۸ تن (برآورد GCAT؛ Proton-M/Briz-M)""",https://planet4589.org/space/gcat/data/tables/lv.html,gcat_secondary_approximate
+khrunichev,Proton-M,thrust_en,,"""~10,000 kN (GCAT approximate liftoff thrust; Proton-M/Briz-M)""",https://planet4589.org/space/gcat/data/tables/lv.html,gcat_secondary_approximate
+khrunichev,Proton-M,thrust_fa,,"""حدود ۱۰٬۰۰۰ کیلونیوتن (رانش برخاست تخمینی GCAT؛ Proton-M/Briz-M)""",https://planet4589.org/space/gcat/data/tables/lv.html,gcat_secondary_approximate
+khrunichev,Proton-M,stages,,4,https://planet4589.org/space/gcat/data/tables/lv.html,gcat_secondary_approximate
+khrunichev,Proton-M,technical_source_url,,"""https://planet4589.org/space/gcat/data/tables/lv.html""",https://planet4589.org/space/gcat/data/tables/lv.html,source_link_added
+khrunichev,Proton-M,technical_data_note_fa,,"""مقادیر تکمیلی برگرفته از ردیف «Proton-M/Briz-M» در GCAT هستند؛ برآوردی‌اند و به معنی عملکرد پروازی اثبات‌شده نیستند.""",https://planet4589.org/space/gcat/data/tables/lv.html,methodology_notice_added
+khrunichev,Angara A5,diameter_en,,"""~2.9 m (GCAT; Angara A5)""",https://planet4589.org/space/gcat/data/tables/lv.html,gcat_secondary_approximate
+khrunichev,Angara A5,diameter_fa,,"""حدود ۲٫۹ متر (GCAT؛ Angara A5)""",https://planet4589.org/space/gcat/data/tables/lv.html,gcat_secondary_approximate
+khrunichev,Angara A5,mass_en,,"""~773 t (GCAT estimate; Angara A5)""",https://planet4589.org/space/gcat/data/tables/lv.html,gcat_secondary_approximate
+khrunichev,Angara A5,mass_fa,,"""حدود ۷۷۳ تن (برآورد GCAT؛ Angara A5)""",https://planet4589.org/space/gcat/data/tables/lv.html,gcat_secondary_approximate
+khrunichev,Angara A5,payload_leo_en,,"""~24,500 kg (GCAT approximate; Angara A5; not demonstrated capacity)""",https://planet4589.org/space/gcat/data/tables/lv.html,gcat_secondary_approximate
+khrunichev,Angara A5,payload_leo_fa,,"""حدود ۲۴٬۵۰۰ کیلوگرم (برآورد GCAT، Angara A5؛ نه عملکرد اثبات‌شده)""",https://planet4589.org/space/gcat/data/tables/lv.html,gcat_secondary_approximate
+khrunichev,Angara A5,payload_gto_en,,"""~5,400 kg (GCAT estimate; Angara A5)""",https://planet4589.org/space/gcat/data/tables/lv.html,gcat_secondary_approximate
+khrunichev,Angara A5,payload_gto_fa,,"""حدود ۵٬۴۰۰ کیلوگرم (برآورد GCAT؛ Angara A5)""",https://planet4589.org/space/gcat/data/tables/lv.html,gcat_secondary_approximate
+khrunichev,Angara A5,thrust_en,,"""~2,095 kN (GCAT approximate liftoff thrust; Angara A5)""",https://planet4589.org/space/gcat/data/tables/lv.html,gcat_secondary_approximate
+khrunichev,Angara A5,thrust_fa,,"""حدود ۲٬۰۹۵ کیلونیوتن (رانش برخاست تخمینی GCAT؛ Angara A5)""",https://planet4589.org/space/gcat/data/tables/lv.html,gcat_secondary_approximate
+khrunichev,Angara A5,stages,,3,https://planet4589.org/space/gcat/data/tables/lv.html,gcat_secondary_approximate
+khrunichev,Angara A5,technical_source_url,,"""https://planet4589.org/space/gcat/data/tables/lv.html""",https://planet4589.org/space/gcat/data/tables/lv.html,source_link_added
+khrunichev,Angara A5,technical_data_note_fa,,"""مقادیر تکمیلی برگرفته از ردیف «Angara A5» در GCAT هستند؛ برآوردی‌اند و به معنی عملکرد پروازی اثبات‌شده نیستند.""",https://planet4589.org/space/gcat/data/tables/lv.html,methodology_notice_added
+khrunichev,Angara 1.2,height_en,,"""~42.8 m (GCAT; Angara-1.2)""",https://planet4589.org/space/gcat/data/tables/lv.html,gcat_secondary_approximate
+khrunichev,Angara 1.2,height_fa,,"""حدود ۴۲٫۸ متر (GCAT؛ Angara-1.2)""",https://planet4589.org/space/gcat/data/tables/lv.html,gcat_secondary_approximate
+khrunichev,Angara 1.2,diameter_en,,"""~2.9 m (GCAT; Angara-1.2)""",https://planet4589.org/space/gcat/data/tables/lv.html,gcat_secondary_approximate
+khrunichev,Angara 1.2,diameter_fa,,"""حدود ۲٫۹ متر (GCAT؛ Angara-1.2)""",https://planet4589.org/space/gcat/data/tables/lv.html,gcat_secondary_approximate
+khrunichev,Angara 1.2,mass_en,,"""~171 t (GCAT estimate; Angara-1.2)""",https://planet4589.org/space/gcat/data/tables/lv.html,gcat_secondary_approximate
+khrunichev,Angara 1.2,mass_fa,,"""حدود ۱۷۱ تن (برآورد GCAT؛ Angara-1.2)""",https://planet4589.org/space/gcat/data/tables/lv.html,gcat_secondary_approximate
+khrunichev,Angara 1.2,thrust_en,,"""~2,095 kN (GCAT approximate liftoff thrust; Angara-1.2)""",https://planet4589.org/space/gcat/data/tables/lv.html,gcat_secondary_approximate
+khrunichev,Angara 1.2,thrust_fa,,"""حدود ۲٬۰۹۵ کیلونیوتن (رانش برخاست تخمینی GCAT؛ Angara-1.2)""",https://planet4589.org/space/gcat/data/tables/lv.html,gcat_secondary_approximate
+khrunichev,Angara 1.2,stages,,3,https://planet4589.org/space/gcat/data/tables/lv.html,gcat_secondary_approximate
+khrunichev,Angara 1.2,technical_source_url,,"""https://planet4589.org/space/gcat/data/tables/lv.html""",https://planet4589.org/space/gcat/data/tables/lv.html,source_link_added
+khrunichev,Angara 1.2,technical_data_note_fa,,"""مقادیر تکمیلی برگرفته از ردیف «Angara-1.2» در GCAT هستند؛ برآوردی‌اند و به معنی عملکرد پروازی اثبات‌شده نیستند.""",https://planet4589.org/space/gcat/data/tables/lv.html,methodology_notice_added
+energia,Energia (historical heavy-lift system),height_en,,"""~58.7 m (GCAT; Energiya)""",https://planet4589.org/space/gcat/data/tables/lv.html,gcat_secondary_approximate
+energia,Energia (historical heavy-lift system),height_fa,,"""حدود ۵۸٫۷ متر (GCAT؛ Energiya)""",https://planet4589.org/space/gcat/data/tables/lv.html,gcat_secondary_approximate
+energia,Energia (historical heavy-lift system),diameter_en,,"""~7.75 m (GCAT; Energiya)""",https://planet4589.org/space/gcat/data/tables/lv.html,gcat_secondary_approximate
+energia,Energia (historical heavy-lift system),diameter_fa,,"""حدود ۷٫۷۵ متر (GCAT؛ Energiya)""",https://planet4589.org/space/gcat/data/tables/lv.html,gcat_secondary_approximate
+energia,Energia (historical heavy-lift system),mass_en,,"""~2524 t (GCAT estimate; Energiya)""",https://planet4589.org/space/gcat/data/tables/lv.html,gcat_secondary_approximate
+energia,Energia (historical heavy-lift system),mass_fa,,"""حدود ۲۵۲۴ تن (برآورد GCAT؛ Energiya)""",https://planet4589.org/space/gcat/data/tables/lv.html,gcat_secondary_approximate
+energia,Energia (historical heavy-lift system),payload_leo_en,,"""~88,000 kg (GCAT approximate; Energiya; not demonstrated capacity)""",https://planet4589.org/space/gcat/data/tables/lv.html,gcat_secondary_approximate
+energia,Energia (historical heavy-lift system),payload_leo_fa,,"""حدود ۸۸٬۰۰۰ کیلوگرم (برآورد GCAT، Energiya؛ نه عملکرد اثبات‌شده)""",https://planet4589.org/space/gcat/data/tables/lv.html,gcat_secondary_approximate
+energia,Energia (historical heavy-lift system),thrust_en,,"""~35,139 kN (GCAT approximate liftoff thrust; Energiya)""",https://planet4589.org/space/gcat/data/tables/lv.html,gcat_secondary_approximate
+energia,Energia (historical heavy-lift system),thrust_fa,,"""حدود ۳۵٬۱۳۹ کیلونیوتن (رانش برخاست تخمینی GCAT؛ Energiya)""",https://planet4589.org/space/gcat/data/tables/lv.html,gcat_secondary_approximate
+energia,Energia (historical heavy-lift system),stages,,2,https://planet4589.org/space/gcat/data/tables/lv.html,gcat_secondary_approximate
+energia,Energia (historical heavy-lift system),technical_source_url,,"""https://planet4589.org/space/gcat/data/tables/lv.html""",https://planet4589.org/space/gcat/data/tables/lv.html,source_link_added
+energia,Energia (historical heavy-lift system),technical_data_note_fa,,"""مقادیر تکمیلی برگرفته از ردیف «Energiya» در GCAT هستند؛ برآوردی‌اند و به معنی عملکرد پروازی اثبات‌شده نیستند.""",https://planet4589.org/space/gcat/data/tables/lv.html,methodology_notice_added
+calt,Long March 5,height_en,,"""~59.5 m (GCAT; Chang Zheng 5)""",https://planet4589.org/space/gcat/data/tables/lv.html,gcat_secondary_approximate
+calt,Long March 5,height_fa,,"""حدود ۵۹٫۵ متر (GCAT؛ Chang Zheng 5)""",https://planet4589.org/space/gcat/data/tables/lv.html,gcat_secondary_approximate
+calt,Long March 5,diameter_en,,"""~5 m (GCAT; Chang Zheng 5)""",https://planet4589.org/space/gcat/data/tables/lv.html,gcat_secondary_approximate
+calt,Long March 5,diameter_fa,,"""حدود ۵ متر (GCAT؛ Chang Zheng 5)""",https://planet4589.org/space/gcat/data/tables/lv.html,gcat_secondary_approximate
+calt,Long March 5,mass_en,,"""~643 t (GCAT estimate; Chang Zheng 5)""",https://planet4589.org/space/gcat/data/tables/lv.html,gcat_secondary_approximate
+calt,Long March 5,mass_fa,,"""حدود ۶۴۳ تن (برآورد GCAT؛ Chang Zheng 5)""",https://planet4589.org/space/gcat/data/tables/lv.html,gcat_secondary_approximate
+calt,Long March 5,payload_leo_en,,"""~25,000 kg (GCAT approximate; Chang Zheng 5; not demonstrated capacity)""",https://planet4589.org/space/gcat/data/tables/lv.html,gcat_secondary_approximate
+calt,Long March 5,payload_leo_fa,,"""حدود ۲۵٬۰۰۰ کیلوگرم (برآورد GCAT، Chang Zheng 5؛ نه عملکرد اثبات‌شده)""",https://planet4589.org/space/gcat/data/tables/lv.html,gcat_secondary_approximate
+calt,Long March 5,payload_gto_en,,"""~14,000 kg (GCAT estimate; Chang Zheng 5)""",https://planet4589.org/space/gcat/data/tables/lv.html,gcat_secondary_approximate
+calt,Long March 5,payload_gto_fa,,"""حدود ۱۴٬۰۰۰ کیلوگرم (برآورد GCAT؛ Chang Zheng 5)""",https://planet4589.org/space/gcat/data/tables/lv.html,gcat_secondary_approximate
+calt,Long March 5,thrust_en,,"""~1,180 kN (GCAT approximate liftoff thrust; Chang Zheng 5)""",https://planet4589.org/space/gcat/data/tables/lv.html,gcat_secondary_approximate
+calt,Long March 5,thrust_fa,,"""حدود ۱٬۱۸۰ کیلونیوتن (رانش برخاست تخمینی GCAT؛ Chang Zheng 5)""",https://planet4589.org/space/gcat/data/tables/lv.html,gcat_secondary_approximate
+calt,Long March 5,stages,,2,https://planet4589.org/space/gcat/data/tables/lv.html,gcat_secondary_approximate
+calt,Long March 5,technical_source_url,,"""https://planet4589.org/space/gcat/data/tables/lv.html""",https://planet4589.org/space/gcat/data/tables/lv.html,source_link_added
+calt,Long March 5,technical_data_note_fa,,"""مقادیر تکمیلی برگرفته از ردیف «Chang Zheng 5» در GCAT هستند؛ برآوردی‌اند و به معنی عملکرد پروازی اثبات‌شده نیستند.""",https://planet4589.org/space/gcat/data/tables/lv.html,methodology_notice_added
+calt,Long March 7,height_en,,"""~53.1 m (GCAT; Chang Zheng 7)""",https://planet4589.org/space/gcat/data/tables/lv.html,gcat_secondary_approximate
+calt,Long March 7,height_fa,,"""حدود ۵۳٫۱ متر (GCAT؛ Chang Zheng 7)""",https://planet4589.org/space/gcat/data/tables/lv.html,gcat_secondary_approximate
+calt,Long March 7,diameter_en,,"""~3.35 m (GCAT; Chang Zheng 7)""",https://planet4589.org/space/gcat/data/tables/lv.html,gcat_secondary_approximate
+calt,Long March 7,diameter_fa,,"""حدود ۳٫۳۵ متر (GCAT؛ Chang Zheng 7)""",https://planet4589.org/space/gcat/data/tables/lv.html,gcat_secondary_approximate
+calt,Long March 7,mass_en,,"""~594 t (GCAT estimate; Chang Zheng 7)""",https://planet4589.org/space/gcat/data/tables/lv.html,gcat_secondary_approximate
+calt,Long March 7,mass_fa,,"""حدود ۵۹۴ تن (برآورد GCAT؛ Chang Zheng 7)""",https://planet4589.org/space/gcat/data/tables/lv.html,gcat_secondary_approximate
+calt,Long March 7,payload_leo_en,,"""~13,500 kg (GCAT approximate; Chang Zheng 7; not demonstrated capacity)""",https://planet4589.org/space/gcat/data/tables/lv.html,gcat_secondary_approximate
+calt,Long March 7,payload_leo_fa,,"""حدود ۱۳٬۵۰۰ کیلوگرم (برآورد GCAT، Chang Zheng 7؛ نه عملکرد اثبات‌شده)""",https://planet4589.org/space/gcat/data/tables/lv.html,gcat_secondary_approximate
+calt,Long March 7,payload_gto_en,,"""~7,000 kg (GCAT estimate; Chang Zheng 7)""",https://planet4589.org/space/gcat/data/tables/lv.html,gcat_secondary_approximate
+calt,Long March 7,payload_gto_fa,,"""حدود ۷٬۰۰۰ کیلوگرم (برآورد GCAT؛ Chang Zheng 7)""",https://planet4589.org/space/gcat/data/tables/lv.html,gcat_secondary_approximate
+calt,Long March 7,stages,,2,https://planet4589.org/space/gcat/data/tables/lv.html,gcat_secondary_approximate
+calt,Long March 7,technical_source_url,,"""https://planet4589.org/space/gcat/data/tables/lv.html""",https://planet4589.org/space/gcat/data/tables/lv.html,source_link_added
+calt,Long March 7,technical_data_note_fa,,"""مقادیر تکمیلی برگرفته از ردیف «Chang Zheng 7» در GCAT هستند؛ برآوردی‌اند و به معنی عملکرد پروازی اثبات‌شده نیستند.""",https://planet4589.org/space/gcat/data/tables/lv.html,methodology_notice_added
+calt,Long March 8 / 8A,height_en,,"""~53.1 m (GCAT; Chang Zheng 8)""",https://planet4589.org/space/gcat/data/tables/lv.html,gcat_secondary_approximate
+calt,Long March 8 / 8A,height_fa,,"""حدود ۵۳٫۱ متر (GCAT؛ Chang Zheng 8)""",https://planet4589.org/space/gcat/data/tables/lv.html,gcat_secondary_approximate
+calt,Long March 8 / 8A,diameter_en,,"""~3.35 m (GCAT; Chang Zheng 8)""",https://planet4589.org/space/gcat/data/tables/lv.html,gcat_secondary_approximate
+calt,Long March 8 / 8A,diameter_fa,,"""حدود ۳٫۳۵ متر (GCAT؛ Chang Zheng 8)""",https://planet4589.org/space/gcat/data/tables/lv.html,gcat_secondary_approximate
+calt,Long March 8 / 8A,thrust_en,,"""~4,800 kN (GCAT approximate liftoff thrust; Chang Zheng 8)""",https://planet4589.org/space/gcat/data/tables/lv.html,gcat_secondary_approximate
+calt,Long March 8 / 8A,thrust_fa,,"""حدود ۴٬۸۰۰ کیلونیوتن (رانش برخاست تخمینی GCAT؛ Chang Zheng 8)""",https://planet4589.org/space/gcat/data/tables/lv.html,gcat_secondary_approximate
+calt,Long March 8 / 8A,stages,,2,https://planet4589.org/space/gcat/data/tables/lv.html,gcat_secondary_approximate
+calt,Long March 8 / 8A,technical_source_url,,"""https://planet4589.org/space/gcat/data/tables/lv.html""",https://planet4589.org/space/gcat/data/tables/lv.html,source_link_added
+calt,Long March 8 / 8A,technical_data_note_fa,,"""مقادیر تکمیلی برگرفته از ردیف «Chang Zheng 8» در GCAT هستند؛ برآوردی‌اند و به معنی عملکرد پروازی اثبات‌شده نیستند.""",https://planet4589.org/space/gcat/data/tables/lv.html,methodology_notice_added
+sast,Long March 4 series,height_en,,"""~43.1 m (GCAT; Chang Zheng 4B)""",https://planet4589.org/space/gcat/data/tables/lv.html,gcat_secondary_approximate
+sast,Long March 4 series,height_fa,,"""حدود ۴۳٫۱ متر (GCAT؛ Chang Zheng 4B)""",https://planet4589.org/space/gcat/data/tables/lv.html,gcat_secondary_approximate
+sast,Long March 4 series,diameter_en,,"""~3.35 m (GCAT; Chang Zheng 4B)""",https://planet4589.org/space/gcat/data/tables/lv.html,gcat_secondary_approximate
+sast,Long March 4 series,diameter_fa,,"""حدود ۳٫۳۵ متر (GCAT؛ Chang Zheng 4B)""",https://planet4589.org/space/gcat/data/tables/lv.html,gcat_secondary_approximate
+sast,Long March 4 series,mass_en,,"""~254.4 t (GCAT estimate; Chang Zheng 4B)""",https://planet4589.org/space/gcat/data/tables/lv.html,gcat_secondary_approximate
+sast,Long March 4 series,mass_fa,,"""حدود ۲۵۴٫۴ تن (برآورد GCAT؛ Chang Zheng 4B)""",https://planet4589.org/space/gcat/data/tables/lv.html,gcat_secondary_approximate
+sast,Long March 4 series,thrust_en,,"""~2,962 kN (GCAT approximate liftoff thrust; Chang Zheng 4B)""",https://planet4589.org/space/gcat/data/tables/lv.html,gcat_secondary_approximate
+sast,Long March 4 series,thrust_fa,,"""حدود ۲٬۹۶۲ کیلونیوتن (رانش برخاست تخمینی GCAT؛ Chang Zheng 4B)""",https://planet4589.org/space/gcat/data/tables/lv.html,gcat_secondary_approximate
+sast,Long March 4 series,stages,,3,https://planet4589.org/space/gcat/data/tables/lv.html,gcat_secondary_approximate
+sast,Long March 4 series,technical_source_url,,"""https://planet4589.org/space/gcat/data/tables/lv.html""",https://planet4589.org/space/gcat/data/tables/lv.html,source_link_added
+sast,Long March 4 series,technical_data_note_fa,,"""مقادیر تکمیلی برگرفته از ردیف «Chang Zheng 4B» در GCAT هستند؛ برآوردی‌اند و به معنی عملکرد پروازی اثبات‌شده نیستند.""",https://planet4589.org/space/gcat/data/tables/lv.html,methodology_notice_added
+sast,Long March 6 series,height_en,,"""~29 m (GCAT; Chang Zheng 6)""",https://planet4589.org/space/gcat/data/tables/lv.html,gcat_secondary_approximate
+sast,Long March 6 series,height_fa,,"""حدود ۲۹ متر (GCAT؛ Chang Zheng 6)""",https://planet4589.org/space/gcat/data/tables/lv.html,gcat_secondary_approximate
+sast,Long March 6 series,diameter_en,,"""~3.35 m (GCAT; Chang Zheng 6)""",https://planet4589.org/space/gcat/data/tables/lv.html,gcat_secondary_approximate
+sast,Long March 6 series,diameter_fa,,"""حدود ۳٫۳۵ متر (GCAT؛ Chang Zheng 6)""",https://planet4589.org/space/gcat/data/tables/lv.html,gcat_secondary_approximate
+sast,Long March 6 series,mass_en,,"""~103 t (GCAT estimate; Chang Zheng 6)""",https://planet4589.org/space/gcat/data/tables/lv.html,gcat_secondary_approximate
+sast,Long March 6 series,mass_fa,,"""حدود ۱۰۳ تن (برآورد GCAT؛ Chang Zheng 6)""",https://planet4589.org/space/gcat/data/tables/lv.html,gcat_secondary_approximate
+sast,Long March 6 series,stages,,3,https://planet4589.org/space/gcat/data/tables/lv.html,gcat_secondary_approximate
+sast,Long March 6 series,technical_source_url,,"""https://planet4589.org/space/gcat/data/tables/lv.html""",https://planet4589.org/space/gcat/data/tables/lv.html,source_link_added
+sast,Long March 6 series,technical_data_note_fa,,"""مقادیر تکمیلی برگرفته از ردیف «Chang Zheng 6» در GCAT هستند؛ برآوردی‌اند و به معنی عملکرد پروازی اثبات‌شده نیستند.""",https://planet4589.org/space/gcat/data/tables/lv.html,methodology_notice_added
+sast,Jielong-3,height_en,,"""~31 m (GCAT; Jielong-3)""",https://planet4589.org/space/gcat/data/tables/lv.html,gcat_secondary_approximate
+sast,Jielong-3,height_fa,,"""حدود ۳۱ متر (GCAT؛ Jielong-3)""",https://planet4589.org/space/gcat/data/tables/lv.html,gcat_secondary_approximate
+sast,Jielong-3,diameter_en,,"""~2.65 m (GCAT; Jielong-3)""",https://planet4589.org/space/gcat/data/tables/lv.html,gcat_secondary_approximate
+sast,Jielong-3,diameter_fa,,"""حدود ۲٫۶۵ متر (GCAT؛ Jielong-3)""",https://planet4589.org/space/gcat/data/tables/lv.html,gcat_secondary_approximate
+sast,Jielong-3,mass_en,,"""~140 t (GCAT estimate; Jielong-3)""",https://planet4589.org/space/gcat/data/tables/lv.html,gcat_secondary_approximate
+sast,Jielong-3,mass_fa,,"""حدود ۱۴۰ تن (برآورد GCAT؛ Jielong-3)""",https://planet4589.org/space/gcat/data/tables/lv.html,gcat_secondary_approximate
+sast,Jielong-3,payload_leo_en,,"""~1,500 kg (GCAT approximate; Jielong-3; not demonstrated capacity)""",https://planet4589.org/space/gcat/data/tables/lv.html,gcat_secondary_approximate
+sast,Jielong-3,payload_leo_fa,,"""حدود ۱٬۵۰۰ کیلوگرم (برآورد GCAT، Jielong-3؛ نه عملکرد اثبات‌شده)""",https://planet4589.org/space/gcat/data/tables/lv.html,gcat_secondary_approximate
+sast,Jielong-3,stages,,4,https://planet4589.org/space/gcat/data/tables/lv.html,gcat_secondary_approximate
+sast,Jielong-3,technical_source_url,,"""https://planet4589.org/space/gcat/data/tables/lv.html""",https://planet4589.org/space/gcat/data/tables/lv.html,source_link_added
+sast,Jielong-3,technical_data_note_fa,,"""مقادیر تکمیلی برگرفته از ردیف «Jielong-3» در GCAT هستند؛ برآوردی‌اند و به معنی عملکرد پروازی اثبات‌شده نیستند.""",https://planet4589.org/space/gcat/data/tables/lv.html,methodology_notice_added
+expace,Kuaizhou-1A,height_en,,"""~20 m (GCAT; Kuaizhou-1A)""",https://planet4589.org/space/gcat/data/tables/lv.html,gcat_secondary_approximate
+expace,Kuaizhou-1A,height_fa,,"""حدود ۲۰ متر (GCAT؛ Kuaizhou-1A)""",https://planet4589.org/space/gcat/data/tables/lv.html,gcat_secondary_approximate
+expace,Kuaizhou-1A,diameter_en,,"""~1.35 m (GCAT; Kuaizhou-1A)""",https://planet4589.org/space/gcat/data/tables/lv.html,gcat_secondary_approximate
+expace,Kuaizhou-1A,diameter_fa,,"""حدود ۱٫۳۵ متر (GCAT؛ Kuaizhou-1A)""",https://planet4589.org/space/gcat/data/tables/lv.html,gcat_secondary_approximate
+expace,Kuaizhou-1A,mass_en,,"""~30 t (GCAT estimate; Kuaizhou-1A)""",https://planet4589.org/space/gcat/data/tables/lv.html,gcat_secondary_approximate
+expace,Kuaizhou-1A,mass_fa,,"""حدود ۳۰ تن (برآورد GCAT؛ Kuaizhou-1A)""",https://planet4589.org/space/gcat/data/tables/lv.html,gcat_secondary_approximate
+expace,Kuaizhou-1A,payload_leo_en,,"""~250 kg (GCAT approximate; Kuaizhou-1A; not demonstrated capacity)""",https://planet4589.org/space/gcat/data/tables/lv.html,gcat_secondary_approximate
+expace,Kuaizhou-1A,payload_leo_fa,,"""حدود ۲۵۰ کیلوگرم (برآورد GCAT، Kuaizhou-1A؛ نه عملکرد اثبات‌شده)""",https://planet4589.org/space/gcat/data/tables/lv.html,gcat_secondary_approximate
+expace,Kuaizhou-1A,stages,,4,https://planet4589.org/space/gcat/data/tables/lv.html,gcat_secondary_approximate
+expace,Kuaizhou-1A,technical_data_note_fa,,"""مقادیر تکمیلی برگرفته از ردیف «Kuaizhou-1A» در GCAT هستند؛ برآوردی‌اند و به معنی عملکرد پروازی اثبات‌شده نیستند.""",https://planet4589.org/space/gcat/data/tables/lv.html,methodology_notice_added
+landspace,Zhuque-2,height_en,,"""~49.5 m (GCAT; Zhuque-2)""",https://planet4589.org/space/gcat/data/tables/lv.html,gcat_secondary_approximate
+landspace,Zhuque-2,height_fa,,"""حدود ۴۹٫۵ متر (GCAT؛ Zhuque-2)""",https://planet4589.org/space/gcat/data/tables/lv.html,gcat_secondary_approximate
+landspace,Zhuque-2,diameter_en,,"""~3.35 m (GCAT; Zhuque-2)""",https://planet4589.org/space/gcat/data/tables/lv.html,gcat_secondary_approximate
+landspace,Zhuque-2,diameter_fa,,"""حدود ۳٫۳۵ متر (GCAT؛ Zhuque-2)""",https://planet4589.org/space/gcat/data/tables/lv.html,gcat_secondary_approximate
+landspace,Zhuque-2,mass_en,,"""~216 t (GCAT estimate; Zhuque-2)""",https://planet4589.org/space/gcat/data/tables/lv.html,gcat_secondary_approximate
+landspace,Zhuque-2,mass_fa,,"""حدود ۲۱۶ تن (برآورد GCAT؛ Zhuque-2)""",https://planet4589.org/space/gcat/data/tables/lv.html,gcat_secondary_approximate
+landspace,Zhuque-2,thrust_en,,"""~2,630 kN (GCAT approximate liftoff thrust; Zhuque-2)""",https://planet4589.org/space/gcat/data/tables/lv.html,gcat_secondary_approximate
+landspace,Zhuque-2,thrust_fa,,"""حدود ۲٬۶۳۰ کیلونیوتن (رانش برخاست تخمینی GCAT؛ Zhuque-2)""",https://planet4589.org/space/gcat/data/tables/lv.html,gcat_secondary_approximate
+landspace,Zhuque-2,stages,,2,https://planet4589.org/space/gcat/data/tables/lv.html,gcat_secondary_approximate
+landspace,Zhuque-2,technical_data_note_fa,,"""مقادیر تکمیلی برگرفته از ردیف «Zhuque-2» در GCAT هستند؛ برآوردی‌اند و به معنی عملکرد پروازی اثبات‌شده نیستند.""",https://planet4589.org/space/gcat/data/tables/lv.html,methodology_notice_added
+landspace,Zhuque-2E,height_en,,"""~49.5 m (GCAT; Zhuque-2E)""",https://planet4589.org/space/gcat/data/tables/lv.html,gcat_secondary_approximate
+landspace,Zhuque-2E,height_fa,,"""حدود ۴۹٫۵ متر (GCAT؛ Zhuque-2E)""",https://planet4589.org/space/gcat/data/tables/lv.html,gcat_secondary_approximate
+landspace,Zhuque-2E,diameter_en,,"""~3.35 m (GCAT; Zhuque-2E)""",https://planet4589.org/space/gcat/data/tables/lv.html,gcat_secondary_approximate
+landspace,Zhuque-2E,diameter_fa,,"""حدود ۳٫۳۵ متر (GCAT؛ Zhuque-2E)""",https://planet4589.org/space/gcat/data/tables/lv.html,gcat_secondary_approximate
+landspace,Zhuque-2E,mass_en,,"""~229 t (GCAT estimate; Zhuque-2E)""",https://planet4589.org/space/gcat/data/tables/lv.html,gcat_secondary_approximate
+landspace,Zhuque-2E,mass_fa,,"""حدود ۲۲۹ تن (برآورد GCAT؛ Zhuque-2E)""",https://planet4589.org/space/gcat/data/tables/lv.html,gcat_secondary_approximate
+landspace,Zhuque-2E,thrust_en,,"""~2,880 kN (GCAT approximate liftoff thrust; Zhuque-2E)""",https://planet4589.org/space/gcat/data/tables/lv.html,gcat_secondary_approximate
+landspace,Zhuque-2E,thrust_fa,,"""حدود ۲٬۸۸۰ کیلونیوتن (رانش برخاست تخمینی GCAT؛ Zhuque-2E)""",https://planet4589.org/space/gcat/data/tables/lv.html,gcat_secondary_approximate
+landspace,Zhuque-2E,stages,,2,https://planet4589.org/space/gcat/data/tables/lv.html,gcat_secondary_approximate
+landspace,Zhuque-2E,technical_source_url,,"""https://planet4589.org/space/gcat/data/tables/lv.html""",https://planet4589.org/space/gcat/data/tables/lv.html,source_link_added
+landspace,Zhuque-2E,technical_data_note_fa,,"""مقادیر تکمیلی برگرفته از ردیف «Zhuque-2E» در GCAT هستند؛ برآوردی‌اند و به معنی عملکرد پروازی اثبات‌شده نیستند.""",https://planet4589.org/space/gcat/data/tables/lv.html,methodology_notice_added
+landspace,Zhuque-3,height_en,,"""~66.1 m (GCAT; Zhuque-3)""",https://planet4589.org/space/gcat/data/tables/lv.html,gcat_secondary_approximate
+landspace,Zhuque-3,height_fa,,"""حدود ۶۶٫۱ متر (GCAT؛ Zhuque-3)""",https://planet4589.org/space/gcat/data/tables/lv.html,gcat_secondary_approximate
+landspace,Zhuque-3,diameter_en,,"""~4.5 m (GCAT; Zhuque-3)""",https://planet4589.org/space/gcat/data/tables/lv.html,gcat_secondary_approximate
+landspace,Zhuque-3,diameter_fa,,"""حدود ۴٫۵ متر (GCAT؛ Zhuque-3)""",https://planet4589.org/space/gcat/data/tables/lv.html,gcat_secondary_approximate
+landspace,Zhuque-3,mass_en,,"""~570 t (GCAT estimate; Zhuque-3)""",https://planet4589.org/space/gcat/data/tables/lv.html,gcat_secondary_approximate
+landspace,Zhuque-3,mass_fa,,"""حدود ۵۷۰ تن (برآورد GCAT؛ Zhuque-3)""",https://planet4589.org/space/gcat/data/tables/lv.html,gcat_secondary_approximate
+landspace,Zhuque-3,payload_leo_en,,"""~12,000 kg (GCAT approximate; Zhuque-3; not demonstrated capacity)""",https://planet4589.org/space/gcat/data/tables/lv.html,gcat_secondary_approximate
+landspace,Zhuque-3,payload_leo_fa,,"""حدود ۱۲٬۰۰۰ کیلوگرم (برآورد GCAT، Zhuque-3؛ نه عملکرد اثبات‌شده)""",https://planet4589.org/space/gcat/data/tables/lv.html,gcat_secondary_approximate
+landspace,Zhuque-3,thrust_en,,"""~7,542 kN (GCAT approximate liftoff thrust; Zhuque-3)""",https://planet4589.org/space/gcat/data/tables/lv.html,gcat_secondary_approximate
+landspace,Zhuque-3,thrust_fa,,"""حدود ۷٬۵۴۲ کیلونیوتن (رانش برخاست تخمینی GCAT؛ Zhuque-3)""",https://planet4589.org/space/gcat/data/tables/lv.html,gcat_secondary_approximate
+landspace,Zhuque-3,stages,,2,https://planet4589.org/space/gcat/data/tables/lv.html,gcat_secondary_approximate
+landspace,Zhuque-3,technical_source_url,,"""https://planet4589.org/space/gcat/data/tables/lv.html""",https://planet4589.org/space/gcat/data/tables/lv.html,source_link_added
+landspace,Zhuque-3,technical_data_note_fa,,"""مقادیر تکمیلی برگرفته از ردیف «Zhuque-3» در GCAT هستند؛ برآوردی‌اند و به معنی عملکرد پروازی اثبات‌شده نیستند.""",https://planet4589.org/space/gcat/data/tables/lv.html,methodology_notice_added
+ispace-cn,Hyperbola-1,height_en,,"""~24 m (GCAT; Shuang Quxian 1)""",https://planet4589.org/space/gcat/data/tables/lv.html,gcat_secondary_approximate
+ispace-cn,Hyperbola-1,height_fa,,"""حدود ۲۴ متر (GCAT؛ Shuang Quxian 1)""",https://planet4589.org/space/gcat/data/tables/lv.html,gcat_secondary_approximate
+ispace-cn,Hyperbola-1,diameter_en,,"""~1.4 m (GCAT; Shuang Quxian 1)""",https://planet4589.org/space/gcat/data/tables/lv.html,gcat_secondary_approximate
+ispace-cn,Hyperbola-1,diameter_fa,,"""حدود ۱٫۴ متر (GCAT؛ Shuang Quxian 1)""",https://planet4589.org/space/gcat/data/tables/lv.html,gcat_secondary_approximate
+ispace-cn,Hyperbola-1,mass_en,,"""~42 t (GCAT estimate; Shuang Quxian 1)""",https://planet4589.org/space/gcat/data/tables/lv.html,gcat_secondary_approximate
+ispace-cn,Hyperbola-1,mass_fa,,"""حدود ۴۲ تن (برآورد GCAT؛ Shuang Quxian 1)""",https://planet4589.org/space/gcat/data/tables/lv.html,gcat_secondary_approximate
+ispace-cn,Hyperbola-1,payload_leo_en,,"""~300 kg (GCAT approximate; Shuang Quxian 1; not demonstrated capacity)""",https://planet4589.org/space/gcat/data/tables/lv.html,gcat_secondary_approximate
+ispace-cn,Hyperbola-1,payload_leo_fa,,"""حدود ۳۰۰ کیلوگرم (برآورد GCAT، Shuang Quxian 1؛ نه عملکرد اثبات‌شده)""",https://planet4589.org/space/gcat/data/tables/lv.html,gcat_secondary_approximate
+ispace-cn,Hyperbola-1,thrust_en,,"""~555 kN (GCAT approximate liftoff thrust; Shuang Quxian 1)""",https://planet4589.org/space/gcat/data/tables/lv.html,gcat_secondary_approximate
+ispace-cn,Hyperbola-1,thrust_fa,,"""حدود ۵۵۵ کیلونیوتن (رانش برخاست تخمینی GCAT؛ Shuang Quxian 1)""",https://planet4589.org/space/gcat/data/tables/lv.html,gcat_secondary_approximate
+ispace-cn,Hyperbola-1,stages,,4,https://planet4589.org/space/gcat/data/tables/lv.html,gcat_secondary_approximate
+ispace-cn,Hyperbola-1,technical_source_url,,"""https://planet4589.org/space/gcat/data/tables/lv.html""",https://planet4589.org/space/gcat/data/tables/lv.html,source_link_added
+ispace-cn,Hyperbola-1,technical_data_note_fa,,"""مقادیر تکمیلی برگرفته از ردیف «Shuang Quxian 1» در GCAT هستند؛ برآوردی‌اند و به معنی عملکرد پروازی اثبات‌شده نیستند.""",https://planet4589.org/space/gcat/data/tables/lv.html,methodology_notice_added
+galactic-energy,Ceres-1,height_en,,"""~19 m (GCAT; Gushenxing 1)""",https://planet4589.org/space/gcat/data/tables/lv.html,gcat_secondary_approximate
+galactic-energy,Ceres-1,height_fa,,"""حدود ۱۹ متر (GCAT؛ Gushenxing 1)""",https://planet4589.org/space/gcat/data/tables/lv.html,gcat_secondary_approximate
+galactic-energy,Ceres-1,diameter_en,,"""~1.4 m (GCAT; Gushenxing 1)""",https://planet4589.org/space/gcat/data/tables/lv.html,gcat_secondary_approximate
+galactic-energy,Ceres-1,diameter_fa,,"""حدود ۱٫۴ متر (GCAT؛ Gushenxing 1)""",https://planet4589.org/space/gcat/data/tables/lv.html,gcat_secondary_approximate
+galactic-energy,Ceres-1,mass_en,,"""~30 t (GCAT estimate; Gushenxing 1)""",https://planet4589.org/space/gcat/data/tables/lv.html,gcat_secondary_approximate
+galactic-energy,Ceres-1,mass_fa,,"""حدود ۳۰ تن (برآورد GCAT؛ Gushenxing 1)""",https://planet4589.org/space/gcat/data/tables/lv.html,gcat_secondary_approximate
+galactic-energy,Ceres-1,payload_leo_en,,"""~350 kg (GCAT approximate; Gushenxing 1; not demonstrated capacity)""",https://planet4589.org/space/gcat/data/tables/lv.html,gcat_secondary_approximate
+galactic-energy,Ceres-1,payload_leo_fa,,"""حدود ۳۵۰ کیلوگرم (برآورد GCAT، Gushenxing 1؛ نه عملکرد اثبات‌شده)""",https://planet4589.org/space/gcat/data/tables/lv.html,gcat_secondary_approximate
+galactic-energy,Ceres-1,thrust_en,,"""~590 kN (GCAT approximate liftoff thrust; Gushenxing 1)""",https://planet4589.org/space/gcat/data/tables/lv.html,gcat_secondary_approximate
+galactic-energy,Ceres-1,thrust_fa,,"""حدود ۵۹۰ کیلونیوتن (رانش برخاست تخمینی GCAT؛ Gushenxing 1)""",https://planet4589.org/space/gcat/data/tables/lv.html,gcat_secondary_approximate
+galactic-energy,Ceres-1,stages,,4,https://planet4589.org/space/gcat/data/tables/lv.html,gcat_secondary_approximate
+galactic-energy,Ceres-1,technical_data_note_fa,,"""مقادیر تکمیلی برگرفته از ردیف «Gushenxing 1» در GCAT هستند؛ برآوردی‌اند و به معنی عملکرد پروازی اثبات‌شده نیستند.""",https://planet4589.org/space/gcat/data/tables/lv.html,methodology_notice_added
+galactic-energy,Ceres-1S,height_en,,"""~20 m (GCAT; Gushenxing 1 S)""",https://planet4589.org/space/gcat/data/tables/lv.html,gcat_secondary_approximate
+galactic-energy,Ceres-1S,height_fa,,"""حدود ۲۰ متر (GCAT؛ Gushenxing 1 S)""",https://planet4589.org/space/gcat/data/tables/lv.html,gcat_secondary_approximate
+galactic-energy,Ceres-1S,diameter_en,,"""~1.4 m (GCAT; Gushenxing 1 S)""",https://planet4589.org/space/gcat/data/tables/lv.html,gcat_secondary_approximate
+galactic-energy,Ceres-1S,diameter_fa,,"""حدود ۱٫۴ متر (GCAT؛ Gushenxing 1 S)""",https://planet4589.org/space/gcat/data/tables/lv.html,gcat_secondary_approximate
+galactic-energy,Ceres-1S,mass_en,,"""~33 t (GCAT estimate; Gushenxing 1 S)""",https://planet4589.org/space/gcat/data/tables/lv.html,gcat_secondary_approximate
+galactic-energy,Ceres-1S,mass_fa,,"""حدود ۳۳ تن (برآورد GCAT؛ Gushenxing 1 S)""",https://planet4589.org/space/gcat/data/tables/lv.html,gcat_secondary_approximate
+galactic-energy,Ceres-1S,payload_leo_en,,"""~350 kg (GCAT approximate; Gushenxing 1 S; not demonstrated capacity)""",https://planet4589.org/space/gcat/data/tables/lv.html,gcat_secondary_approximate
+galactic-energy,Ceres-1S,payload_leo_fa,,"""حدود ۳۵۰ کیلوگرم (برآورد GCAT، Gushenxing 1 S؛ نه عملکرد اثبات‌شده)""",https://planet4589.org/space/gcat/data/tables/lv.html,gcat_secondary_approximate
+galactic-energy,Ceres-1S,thrust_en,,"""~590 kN (GCAT approximate liftoff thrust; Gushenxing 1 S)""",https://planet4589.org/space/gcat/data/tables/lv.html,gcat_secondary_approximate
+galactic-energy,Ceres-1S,thrust_fa,,"""حدود ۵۹۰ کیلونیوتن (رانش برخاست تخمینی GCAT؛ Gushenxing 1 S)""",https://planet4589.org/space/gcat/data/tables/lv.html,gcat_secondary_approximate
+galactic-energy,Ceres-1S,stages,,4,https://planet4589.org/space/gcat/data/tables/lv.html,gcat_secondary_approximate
+galactic-energy,Ceres-1S,technical_source_url,,"""https://planet4589.org/space/gcat/data/tables/lv.html""",https://planet4589.org/space/gcat/data/tables/lv.html,source_link_added
+galactic-energy,Ceres-1S,technical_data_note_fa,,"""مقادیر تکمیلی برگرفته از ردیف «Gushenxing 1 S» در GCAT هستند؛ برآوردی‌اند و به معنی عملکرد پروازی اثبات‌شده نیستند.""",https://planet4589.org/space/gcat/data/tables/lv.html,methodology_notice_added
+space-pioneer,Tianlong-2,height_en,,"""~32.8 m (GCAT; Tianlong-2)""",https://planet4589.org/space/gcat/data/tables/lv.html,gcat_secondary_approximate
+space-pioneer,Tianlong-2,height_fa,,"""حدود ۳۲٫۸ متر (GCAT؛ Tianlong-2)""",https://planet4589.org/space/gcat/data/tables/lv.html,gcat_secondary_approximate
+space-pioneer,Tianlong-2,diameter_en,,"""~3.35 m (GCAT; Tianlong-2)""",https://planet4589.org/space/gcat/data/tables/lv.html,gcat_secondary_approximate
+space-pioneer,Tianlong-2,diameter_fa,,"""حدود ۳٫۳۵ متر (GCAT؛ Tianlong-2)""",https://planet4589.org/space/gcat/data/tables/lv.html,gcat_secondary_approximate
+space-pioneer,Tianlong-2,mass_en,,"""~150 t (GCAT estimate; Tianlong-2)""",https://planet4589.org/space/gcat/data/tables/lv.html,gcat_secondary_approximate
+space-pioneer,Tianlong-2,mass_fa,,"""حدود ۱۵۰ تن (برآورد GCAT؛ Tianlong-2)""",https://planet4589.org/space/gcat/data/tables/lv.html,gcat_secondary_approximate
+space-pioneer,Tianlong-2,payload_leo_en,,"""~2,000 kg (GCAT approximate; Tianlong-2; not demonstrated capacity)""",https://planet4589.org/space/gcat/data/tables/lv.html,gcat_secondary_approximate
+space-pioneer,Tianlong-2,payload_leo_fa,,"""حدود ۲٬۰۰۰ کیلوگرم (برآورد GCAT، Tianlong-2؛ نه عملکرد اثبات‌شده)""",https://planet4589.org/space/gcat/data/tables/lv.html,gcat_secondary_approximate
+space-pioneer,Tianlong-2,thrust_en,,"""~1,860 kN (GCAT approximate liftoff thrust; Tianlong-2)""",https://planet4589.org/space/gcat/data/tables/lv.html,gcat_secondary_approximate
+space-pioneer,Tianlong-2,thrust_fa,,"""حدود ۱٬۸۶۰ کیلونیوتن (رانش برخاست تخمینی GCAT؛ Tianlong-2)""",https://planet4589.org/space/gcat/data/tables/lv.html,gcat_secondary_approximate
+space-pioneer,Tianlong-2,stages,,3,https://planet4589.org/space/gcat/data/tables/lv.html,gcat_secondary_approximate
+space-pioneer,Tianlong-2,technical_source_url,,"""https://planet4589.org/space/gcat/data/tables/lv.html""",https://planet4589.org/space/gcat/data/tables/lv.html,source_link_added
+space-pioneer,Tianlong-2,technical_data_note_fa,,"""مقادیر تکمیلی برگرفته از ردیف «Tianlong-2» در GCAT هستند؛ برآوردی‌اند و به معنی عملکرد پروازی اثبات‌شده نیستند.""",https://planet4589.org/space/gcat/data/tables/lv.html,methodology_notice_added
+space-pioneer,Tianlong-3,height_en,,"""~71 m (GCAT; Tianlong-3)""",https://planet4589.org/space/gcat/data/tables/lv.html,gcat_secondary_approximate
+space-pioneer,Tianlong-3,height_fa,,"""حدود ۷۱ متر (GCAT؛ Tianlong-3)""",https://planet4589.org/space/gcat/data/tables/lv.html,gcat_secondary_approximate
+space-pioneer,Tianlong-3,diameter_en,,"""~3.8 m (GCAT; Tianlong-3)""",https://planet4589.org/space/gcat/data/tables/lv.html,gcat_secondary_approximate
+space-pioneer,Tianlong-3,diameter_fa,,"""حدود ۳٫۸ متر (GCAT؛ Tianlong-3)""",https://planet4589.org/space/gcat/data/tables/lv.html,gcat_secondary_approximate
+space-pioneer,Tianlong-3,mass_en,,"""~590 t (GCAT estimate; Tianlong-3)""",https://planet4589.org/space/gcat/data/tables/lv.html,gcat_secondary_approximate
+space-pioneer,Tianlong-3,mass_fa,,"""حدود ۵۹۰ تن (برآورد GCAT؛ Tianlong-3)""",https://planet4589.org/space/gcat/data/tables/lv.html,gcat_secondary_approximate
+space-pioneer,Tianlong-3,thrust_en,,"""~7,600 kN (GCAT approximate liftoff thrust; Tianlong-3)""",https://planet4589.org/space/gcat/data/tables/lv.html,gcat_secondary_approximate
+space-pioneer,Tianlong-3,thrust_fa,,"""حدود ۷٬۶۰۰ کیلونیوتن (رانش برخاست تخمینی GCAT؛ Tianlong-3)""",https://planet4589.org/space/gcat/data/tables/lv.html,gcat_secondary_approximate
+space-pioneer,Tianlong-3,stages,,2,https://planet4589.org/space/gcat/data/tables/lv.html,gcat_secondary_approximate
+space-pioneer,Tianlong-3,technical_source_url,,"""https://planet4589.org/space/gcat/data/tables/lv.html""",https://planet4589.org/space/gcat/data/tables/lv.html,source_link_added
+space-pioneer,Tianlong-3,technical_data_note_fa,,"""مقادیر تکمیلی برگرفته از ردیف «Tianlong-3» در GCAT هستند؛ برآوردی‌اند و به معنی عملکرد پروازی اثبات‌شده نیستند.""",https://planet4589.org/space/gcat/data/tables/lv.html,methodology_notice_added
+casspace,Lijian-1 / ZK-1A,height_en,,"""~50 m (GCAT; Lijian-1)""",https://planet4589.org/space/gcat/data/tables/lv.html,gcat_secondary_approximate
+casspace,Lijian-1 / ZK-1A,height_fa,,"""حدود ۵۰ متر (GCAT؛ Lijian-1)""",https://planet4589.org/space/gcat/data/tables/lv.html,gcat_secondary_approximate
+casspace,Lijian-1 / ZK-1A,diameter_en,,"""~2.65 m (GCAT; Lijian-1)""",https://planet4589.org/space/gcat/data/tables/lv.html,gcat_secondary_approximate
+casspace,Lijian-1 / ZK-1A,diameter_fa,,"""حدود ۲٫۶۵ متر (GCAT؛ Lijian-1)""",https://planet4589.org/space/gcat/data/tables/lv.html,gcat_secondary_approximate
+casspace,Lijian-1 / ZK-1A,mass_en,,"""~135 t (GCAT estimate; Lijian-1)""",https://planet4589.org/space/gcat/data/tables/lv.html,gcat_secondary_approximate
+casspace,Lijian-1 / ZK-1A,mass_fa,,"""حدود ۱۳۵ تن (برآورد GCAT؛ Lijian-1)""",https://planet4589.org/space/gcat/data/tables/lv.html,gcat_secondary_approximate
+casspace,Lijian-1 / ZK-1A,stages,,4,https://planet4589.org/space/gcat/data/tables/lv.html,gcat_secondary_approximate
+casspace,Lijian-1 / ZK-1A,technical_data_note_fa,,"""مقادیر تکمیلی برگرفته از ردیف «Lijian-1» در GCAT هستند؛ برآوردی‌اند و به معنی عملکرد پروازی اثبات‌شده نیستند.""",https://planet4589.org/space/gcat/data/tables/lv.html,methodology_notice_added
+casspace,Kinetica-2,height_en,,"""~56 m (GCAT; Lijian-2)""",https://planet4589.org/space/gcat/data/tables/lv.html,gcat_secondary_approximate
+casspace,Kinetica-2,height_fa,,"""حدود ۵۶ متر (GCAT؛ Lijian-2)""",https://planet4589.org/space/gcat/data/tables/lv.html,gcat_secondary_approximate
+casspace,Kinetica-2,diameter_en,,"""~3.35 m (GCAT; Lijian-2)""",https://planet4589.org/space/gcat/data/tables/lv.html,gcat_secondary_approximate
+casspace,Kinetica-2,diameter_fa,,"""حدود ۳٫۳۵ متر (GCAT؛ Lijian-2)""",https://planet4589.org/space/gcat/data/tables/lv.html,gcat_secondary_approximate
+casspace,Kinetica-2,mass_en,,"""~625 t (GCAT estimate; Lijian-2)""",https://planet4589.org/space/gcat/data/tables/lv.html,gcat_secondary_approximate
+casspace,Kinetica-2,mass_fa,,"""حدود ۶۲۵ تن (برآورد GCAT؛ Lijian-2)""",https://planet4589.org/space/gcat/data/tables/lv.html,gcat_secondary_approximate
+casspace,Kinetica-2,thrust_en,,"""~7,500 kN (GCAT approximate liftoff thrust; Lijian-2)""",https://planet4589.org/space/gcat/data/tables/lv.html,gcat_secondary_approximate
+casspace,Kinetica-2,thrust_fa,,"""حدود ۷٬۵۰۰ کیلونیوتن (رانش برخاست تخمینی GCAT؛ Lijian-2)""",https://planet4589.org/space/gcat/data/tables/lv.html,gcat_secondary_approximate
+casspace,Kinetica-2,stages,,2,https://planet4589.org/space/gcat/data/tables/lv.html,gcat_secondary_approximate
+casspace,Kinetica-2,technical_source_url,,"""https://planet4589.org/space/gcat/data/tables/lv.html""",https://planet4589.org/space/gcat/data/tables/lv.html,source_link_added
+casspace,Kinetica-2,technical_data_note_fa,,"""مقادیر تکمیلی برگرفته از ردیف «Lijian-2» در GCAT هستند؛ برآوردی‌اند و به معنی عملکرد پروازی اثبات‌شده نیستند.""",https://planet4589.org/space/gcat/data/tables/lv.html,methodology_notice_added
+mhi,H-IIA,height_en,,"""~53 m (GCAT; H-IIA 202)""",https://planet4589.org/space/gcat/data/tables/lv.html,gcat_secondary_approximate
+mhi,H-IIA,height_fa,,"""حدود ۵۳ متر (GCAT؛ H-IIA 202)""",https://planet4589.org/space/gcat/data/tables/lv.html,gcat_secondary_approximate
+mhi,H-IIA,diameter_en,,"""~4 m (GCAT; H-IIA 202)""",https://planet4589.org/space/gcat/data/tables/lv.html,gcat_secondary_approximate
+mhi,H-IIA,diameter_fa,,"""حدود ۴ متر (GCAT؛ H-IIA 202)""",https://planet4589.org/space/gcat/data/tables/lv.html,gcat_secondary_approximate
+mhi,H-IIA,mass_en,,"""~285 t (GCAT estimate; H-IIA 202)""",https://planet4589.org/space/gcat/data/tables/lv.html,gcat_secondary_approximate
+mhi,H-IIA,mass_fa,,"""حدود ۲۸۵ تن (برآورد GCAT؛ H-IIA 202)""",https://planet4589.org/space/gcat/data/tables/lv.html,gcat_secondary_approximate
+mhi,H-IIA,payload_leo_en,,"""~10,000 kg (GCAT approximate; H-IIA 202; not demonstrated capacity)""",https://planet4589.org/space/gcat/data/tables/lv.html,gcat_secondary_approximate
+mhi,H-IIA,payload_leo_fa,,"""حدود ۱۰٬۰۰۰ کیلوگرم (برآورد GCAT، H-IIA 202؛ نه عملکرد اثبات‌شده)""",https://planet4589.org/space/gcat/data/tables/lv.html,gcat_secondary_approximate
+mhi,H-IIA,thrust_en,,"""~5,600 kN (GCAT approximate liftoff thrust; H-IIA 202)""",https://planet4589.org/space/gcat/data/tables/lv.html,gcat_secondary_approximate
+mhi,H-IIA,thrust_fa,,"""حدود ۵٬۶۰۰ کیلونیوتن (رانش برخاست تخمینی GCAT؛ H-IIA 202)""",https://planet4589.org/space/gcat/data/tables/lv.html,gcat_secondary_approximate
+mhi,H-IIA,stages,,2,https://planet4589.org/space/gcat/data/tables/lv.html,gcat_secondary_approximate
+mhi,H-IIA,technical_data_note_fa,,"""مقادیر تکمیلی برگرفته از ردیف «H-IIA 202» در GCAT هستند؛ برآوردی‌اند و به معنی عملکرد پروازی اثبات‌شده نیستند.""",https://planet4589.org/space/gcat/data/tables/lv.html,methodology_notice_added
+mhi,H3,height_en,,"""~63 m (GCAT; H3-22L)""",https://planet4589.org/space/gcat/data/tables/lv.html,gcat_secondary_approximate
+mhi,H3,height_fa,,"""حدود ۶۳ متر (GCAT؛ H3-22L)""",https://planet4589.org/space/gcat/data/tables/lv.html,gcat_secondary_approximate
+mhi,H3,diameter_en,,"""~5.2 m (GCAT; H3-22L)""",https://planet4589.org/space/gcat/data/tables/lv.html,gcat_secondary_approximate
+mhi,H3,diameter_fa,,"""حدود ۵٫۲ متر (GCAT؛ H3-22L)""",https://planet4589.org/space/gcat/data/tables/lv.html,gcat_secondary_approximate
+mhi,H3,mass_en,,"""~420 t (GCAT estimate; H3-22L)""",https://planet4589.org/space/gcat/data/tables/lv.html,gcat_secondary_approximate
+mhi,H3,mass_fa,,"""حدود ۴۲۰ تن (برآورد GCAT؛ H3-22L)""",https://planet4589.org/space/gcat/data/tables/lv.html,gcat_secondary_approximate
+mhi,H3,thrust_en,,"""~2,442 kN (GCAT approximate liftoff thrust; H3-22L)""",https://planet4589.org/space/gcat/data/tables/lv.html,gcat_secondary_approximate
+mhi,H3,thrust_fa,,"""حدود ۲٬۴۴۲ کیلونیوتن (رانش برخاست تخمینی GCAT؛ H3-22L)""",https://planet4589.org/space/gcat/data/tables/lv.html,gcat_secondary_approximate
+mhi,H3,stages,,2,https://planet4589.org/space/gcat/data/tables/lv.html,gcat_secondary_approximate
+mhi,H3,technical_data_note_fa,,"""مقادیر تکمیلی برگرفته از ردیف «H3-22L» در GCAT هستند؛ برآوردی‌اند و به معنی عملکرد پروازی اثبات‌شده نیستند.""",https://planet4589.org/space/gcat/data/tables/lv.html,methodology_notice_added
+spaceone,KAIROS,height_en,,"""~18 m (GCAT; Kairos)""",https://planet4589.org/space/gcat/data/tables/lv.html,gcat_secondary_approximate
+spaceone,KAIROS,height_fa,,"""حدود ۱۸ متر (GCAT؛ Kairos)""",https://planet4589.org/space/gcat/data/tables/lv.html,gcat_secondary_approximate
+spaceone,KAIROS,diameter_en,,"""~1.35 m (GCAT; Kairos)""",https://planet4589.org/space/gcat/data/tables/lv.html,gcat_secondary_approximate
+spaceone,KAIROS,diameter_fa,,"""حدود ۱٫۳۵ متر (GCAT؛ Kairos)""",https://planet4589.org/space/gcat/data/tables/lv.html,gcat_secondary_approximate
+spaceone,KAIROS,mass_en,,"""~23 t (GCAT estimate; Kairos)""",https://planet4589.org/space/gcat/data/tables/lv.html,gcat_secondary_approximate
+spaceone,KAIROS,mass_fa,,"""حدود ۲۳ تن (برآورد GCAT؛ Kairos)""",https://planet4589.org/space/gcat/data/tables/lv.html,gcat_secondary_approximate
+spaceone,KAIROS,payload_leo_en,,"""~250 kg (GCAT approximate; Kairos; not demonstrated capacity)""",https://planet4589.org/space/gcat/data/tables/lv.html,gcat_secondary_approximate
+spaceone,KAIROS,payload_leo_fa,,"""حدود ۲۵۰ کیلوگرم (برآورد GCAT، Kairos؛ نه عملکرد اثبات‌شده)""",https://planet4589.org/space/gcat/data/tables/lv.html,gcat_secondary_approximate
+spaceone,KAIROS,stages,,4,https://planet4589.org/space/gcat/data/tables/lv.html,gcat_secondary_approximate
+spaceone,KAIROS,technical_data_note_fa,,"""مقادیر تکمیلی برگرفته از ردیف «Kairos» در GCAT هستند؛ برآوردی‌اند و به معنی عملکرد پروازی اثبات‌شده نیستند.""",https://planet4589.org/space/gcat/data/tables/lv.html,methodology_notice_added
+innospace,HANBIT-Nano,height_en,,"""~21.8 m (GCAT; HANBIT-NANO)""",https://planet4589.org/space/gcat/data/tables/lv.html,gcat_secondary_approximate
+innospace,HANBIT-Nano,height_fa,,"""حدود ۲۱٫۸ متر (GCAT؛ HANBIT-NANO)""",https://planet4589.org/space/gcat/data/tables/lv.html,gcat_secondary_approximate
+innospace,HANBIT-Nano,diameter_en,,"""~1.4 m (GCAT; HANBIT-NANO)""",https://planet4589.org/space/gcat/data/tables/lv.html,gcat_secondary_approximate
+innospace,HANBIT-Nano,diameter_fa,,"""حدود ۱٫۴ متر (GCAT؛ HANBIT-NANO)""",https://planet4589.org/space/gcat/data/tables/lv.html,gcat_secondary_approximate
+innospace,HANBIT-Nano,payload_leo_en,,"""~90 kg (GCAT approximate; HANBIT-NANO; not demonstrated capacity)""",https://planet4589.org/space/gcat/data/tables/lv.html,gcat_secondary_approximate
+innospace,HANBIT-Nano,payload_leo_fa,,"""حدود ۹۰ کیلوگرم (برآورد GCAT، HANBIT-NANO؛ نه عملکرد اثبات‌شده)""",https://planet4589.org/space/gcat/data/tables/lv.html,gcat_secondary_approximate
+innospace,HANBIT-Nano,thrust_en,,"""~245 kN (GCAT approximate liftoff thrust; HANBIT-NANO)""",https://planet4589.org/space/gcat/data/tables/lv.html,gcat_secondary_approximate
+innospace,HANBIT-Nano,thrust_fa,,"""حدود ۲۴۵ کیلونیوتن (رانش برخاست تخمینی GCAT؛ HANBIT-NANO)""",https://planet4589.org/space/gcat/data/tables/lv.html,gcat_secondary_approximate
+innospace,HANBIT-Nano,technical_data_note_fa,,"""مقادیر تکمیلی برگرفته از ردیف «HANBIT-NANO» در GCAT هستند؛ برآوردی‌اند و به معنی عملکرد پروازی اثبات‌شده نیستند.""",https://planet4589.org/space/gcat/data/tables/lv.html,methodology_notice_added
+innospace,HANBIT-TLV,mass_en,,"""~8.4 t (GCAT estimate; HANBIT-TLV)""",https://planet4589.org/space/gcat/data/tables/lv.html,gcat_secondary_approximate
+innospace,HANBIT-TLV,mass_fa,,"""حدود ۸٫۴ تن (برآورد GCAT؛ HANBIT-TLV)""",https://planet4589.org/space/gcat/data/tables/lv.html,gcat_secondary_approximate
+innospace,HANBIT-TLV,technical_data_note_fa,,"""مقادیر تکمیلی برگرفته از ردیف «HANBIT-TLV» در GCAT هستند؛ برآوردی‌اند و به معنی عملکرد پروازی اثبات‌شده نیستند.""",https://planet4589.org/space/gcat/data/tables/lv.html,methodology_notice_added
+iai,Shavit,height_en,,"""~17 m (GCAT; Shavit)""",https://planet4589.org/space/gcat/data/tables/lv.html,gcat_secondary_approximate
+iai,Shavit,height_fa,,"""حدود ۱۷ متر (GCAT؛ Shavit)""",https://planet4589.org/space/gcat/data/tables/lv.html,gcat_secondary_approximate
+iai,Shavit,diameter_en,,"""~1.35 m (GCAT; Shavit)""",https://planet4589.org/space/gcat/data/tables/lv.html,gcat_secondary_approximate
+iai,Shavit,diameter_fa,,"""حدود ۱٫۳۵ متر (GCAT؛ Shavit)""",https://planet4589.org/space/gcat/data/tables/lv.html,gcat_secondary_approximate
+iai,Shavit,mass_en,,"""~26 t (GCAT estimate; Shavit)""",https://planet4589.org/space/gcat/data/tables/lv.html,gcat_secondary_approximate
+iai,Shavit,mass_fa,,"""حدود ۲۶ تن (برآورد GCAT؛ Shavit)""",https://planet4589.org/space/gcat/data/tables/lv.html,gcat_secondary_approximate
+iai,Shavit,payload_leo_en,,"""~200 kg (GCAT approximate; Shavit; not demonstrated capacity)""",https://planet4589.org/space/gcat/data/tables/lv.html,gcat_secondary_approximate
+iai,Shavit,payload_leo_fa,,"""حدود ۲۰۰ کیلوگرم (برآورد GCAT، Shavit؛ نه عملکرد اثبات‌شده)""",https://planet4589.org/space/gcat/data/tables/lv.html,gcat_secondary_approximate
+iai,Shavit,thrust_en,,"""~610 kN (GCAT approximate liftoff thrust; Shavit)""",https://planet4589.org/space/gcat/data/tables/lv.html,gcat_secondary_approximate
+iai,Shavit,thrust_fa,,"""حدود ۶۱۰ کیلونیوتن (رانش برخاست تخمینی GCAT؛ Shavit)""",https://planet4589.org/space/gcat/data/tables/lv.html,gcat_secondary_approximate
+iai,Shavit,stages,,3,https://planet4589.org/space/gcat/data/tables/lv.html,gcat_secondary_approximate
+iai,Shavit,technical_source_url,,"""https://planet4589.org/space/gcat/data/tables/lv.html""",https://planet4589.org/space/gcat/data/tables/lv.html,source_link_added
+iai,Shavit,technical_data_note_fa,,"""مقادیر تکمیلی برگرفته از ردیف «Shavit» در GCAT هستند؛ برآوردی‌اند و به معنی عملکرد پروازی اثبات‌شده نیستند.""",https://planet4589.org/space/gcat/data/tables/lv.html,methodology_notice_added
+pivdenmash,Zenit-3SL (manufacturing heritage),height_en,,"""~59.6 m (GCAT; Zenit-3SL)""",https://planet4589.org/space/gcat/data/tables/lv.html,gcat_secondary_approximate
+pivdenmash,Zenit-3SL (manufacturing heritage),height_fa,,"""حدود ۵۹٫۶ متر (GCAT؛ Zenit-3SL)""",https://planet4589.org/space/gcat/data/tables/lv.html,gcat_secondary_approximate
+pivdenmash,Zenit-3SL (manufacturing heritage),diameter_en,,"""~3.9 m (GCAT; Zenit-3SL)""",https://planet4589.org/space/gcat/data/tables/lv.html,gcat_secondary_approximate
+pivdenmash,Zenit-3SL (manufacturing heritage),diameter_fa,,"""حدود ۳٫۹ متر (GCAT؛ Zenit-3SL)""",https://planet4589.org/space/gcat/data/tables/lv.html,gcat_secondary_approximate
+pivdenmash,Zenit-3SL (manufacturing heritage),mass_en,,"""~471 t (GCAT estimate; Zenit-3SL)""",https://planet4589.org/space/gcat/data/tables/lv.html,gcat_secondary_approximate
+pivdenmash,Zenit-3SL (manufacturing heritage),mass_fa,,"""حدود ۴۷۱ تن (برآورد GCAT؛ Zenit-3SL)""",https://planet4589.org/space/gcat/data/tables/lv.html,gcat_secondary_approximate
+pivdenmash,Zenit-3SL (manufacturing heritage),payload_gto_en,,"""~5,000 kg (GCAT estimate; Zenit-3SL)""",https://planet4589.org/space/gcat/data/tables/lv.html,gcat_secondary_approximate
+pivdenmash,Zenit-3SL (manufacturing heritage),payload_gto_fa,,"""حدود ۵٬۰۰۰ کیلوگرم (برآورد GCAT؛ Zenit-3SL)""",https://planet4589.org/space/gcat/data/tables/lv.html,gcat_secondary_approximate
+pivdenmash,Zenit-3SL (manufacturing heritage),thrust_en,,"""~7,259 kN (GCAT approximate liftoff thrust; Zenit-3SL)""",https://planet4589.org/space/gcat/data/tables/lv.html,gcat_secondary_approximate
+pivdenmash,Zenit-3SL (manufacturing heritage),thrust_fa,,"""حدود ۷٬۲۵۹ کیلونیوتن (رانش برخاست تخمینی GCAT؛ Zenit-3SL)""",https://planet4589.org/space/gcat/data/tables/lv.html,gcat_secondary_approximate
+pivdenmash,Zenit-3SL (manufacturing heritage),stages,,3,https://planet4589.org/space/gcat/data/tables/lv.html,gcat_secondary_approximate
+pivdenmash,Zenit-3SL (manufacturing heritage),technical_data_note_fa,,"""مقادیر تکمیلی برگرفته از ردیف «Zenit-3SL» در GCAT هستند؛ برآوردی‌اند و به معنی عملکرد پروازی اثبات‌شده نیستند.""",https://planet4589.org/space/gcat/data/tables/lv.html,methodology_notice_added
+pivdenne,Zenit (design heritage),height_en,,"""~57 m (GCAT; Zenit-2)""",https://planet4589.org/space/gcat/data/tables/lv.html,gcat_secondary_approximate
+pivdenne,Zenit (design heritage),height_fa,,"""حدود ۵۷ متر (GCAT؛ Zenit-2)""",https://planet4589.org/space/gcat/data/tables/lv.html,gcat_secondary_approximate
+pivdenne,Zenit (design heritage),diameter_en,,"""~3.9 m (GCAT; Zenit-2)""",https://planet4589.org/space/gcat/data/tables/lv.html,gcat_secondary_approximate
+pivdenne,Zenit (design heritage),diameter_fa,,"""حدود ۳٫۹ متر (GCAT؛ Zenit-2)""",https://planet4589.org/space/gcat/data/tables/lv.html,gcat_secondary_approximate
+pivdenne,Zenit (design heritage),mass_en,,"""~459 t (GCAT estimate; Zenit-2)""",https://planet4589.org/space/gcat/data/tables/lv.html,gcat_secondary_approximate
+pivdenne,Zenit (design heritage),mass_fa,,"""حدود ۴۵۹ تن (برآورد GCAT؛ Zenit-2)""",https://planet4589.org/space/gcat/data/tables/lv.html,gcat_secondary_approximate
+pivdenne,Zenit (design heritage),payload_leo_en,,"""~13,500 kg (GCAT approximate; Zenit-2; not demonstrated capacity)""",https://planet4589.org/space/gcat/data/tables/lv.html,gcat_secondary_approximate
+pivdenne,Zenit (design heritage),payload_leo_fa,,"""حدود ۱۳٬۵۰۰ کیلوگرم (برآورد GCAT، Zenit-2؛ نه عملکرد اثبات‌شده)""",https://planet4589.org/space/gcat/data/tables/lv.html,gcat_secondary_approximate
+pivdenne,Zenit (design heritage),thrust_en,,"""~7,259 kN (GCAT approximate liftoff thrust; Zenit-2)""",https://planet4589.org/space/gcat/data/tables/lv.html,gcat_secondary_approximate
+pivdenne,Zenit (design heritage),thrust_fa,,"""حدود ۷٬۲۵۹ کیلونیوتن (رانش برخاست تخمینی GCAT؛ Zenit-2)""",https://planet4589.org/space/gcat/data/tables/lv.html,gcat_secondary_approximate
+pivdenne,Zenit (design heritage),stages,,2,https://planet4589.org/space/gcat/data/tables/lv.html,gcat_secondary_approximate
+pivdenne,Zenit (design heritage),technical_data_note_fa,,"""مقادیر تکمیلی برگرفته از ردیف «Zenit-2» در GCAT هستند؛ برآوردی‌اند و به معنی عملکرد پروازی اثبات‌شده نیستند.""",https://planet4589.org/space/gcat/data/tables/lv.html,methodology_notice_added
+hanwha,Nuri / KSLV-II (tech transferred from KARI),height_en,,"""~47.2 m (GCAT; Nuri)""",https://planet4589.org/space/gcat/data/tables/lv.html,gcat_secondary_approximate
+hanwha,Nuri / KSLV-II (tech transferred from KARI),height_fa,,"""حدود ۴۷٫۲ متر (GCAT؛ Nuri)""",https://planet4589.org/space/gcat/data/tables/lv.html,gcat_secondary_approximate
+hanwha,Nuri / KSLV-II (tech transferred from KARI),diameter_en,,"""~3.5 m (GCAT; Nuri)""",https://planet4589.org/space/gcat/data/tables/lv.html,gcat_secondary_approximate
+hanwha,Nuri / KSLV-II (tech transferred from KARI),diameter_fa,,"""حدود ۳٫۵ متر (GCAT؛ Nuri)""",https://planet4589.org/space/gcat/data/tables/lv.html,gcat_secondary_approximate
+hanwha,Nuri / KSLV-II (tech transferred from KARI),mass_en,,"""~200 t (GCAT estimate; Nuri)""",https://planet4589.org/space/gcat/data/tables/lv.html,gcat_secondary_approximate
+hanwha,Nuri / KSLV-II (tech transferred from KARI),mass_fa,,"""حدود ۲۰۰ تن (برآورد GCAT؛ Nuri)""",https://planet4589.org/space/gcat/data/tables/lv.html,gcat_secondary_approximate
+hanwha,Nuri / KSLV-II (tech transferred from KARI),thrust_en,,"""~2,942 kN (GCAT approximate liftoff thrust; Nuri)""",https://planet4589.org/space/gcat/data/tables/lv.html,gcat_secondary_approximate
+hanwha,Nuri / KSLV-II (tech transferred from KARI),thrust_fa,,"""حدود ۲٬۹۴۲ کیلونیوتن (رانش برخاست تخمینی GCAT؛ Nuri)""",https://planet4589.org/space/gcat/data/tables/lv.html,gcat_secondary_approximate
+hanwha,Nuri / KSLV-II (tech transferred from KARI),stages,,3,https://planet4589.org/space/gcat/data/tables/lv.html,gcat_secondary_approximate
+hanwha,Nuri / KSLV-II (tech transferred from KARI),technical_source_url,,"""https://planet4589.org/space/gcat/data/tables/lv.html""",https://planet4589.org/space/gcat/data/tables/lv.html,source_link_added
+hanwha,Nuri / KSLV-II (tech transferred from KARI),technical_data_note_fa,,"""مقادیر تکمیلی برگرفته از ردیف «Nuri» در GCAT هستند؛ برآوردی‌اند و به معنی عملکرد پروازی اثبات‌شده نیستند.""",https://planet4589.org/space/gcat/data/tables/lv.html,methodology_notice_added
+skyroot,Vikram-I,height_en,,"""~24 m (GCAT; Vikram-1)""",https://planet4589.org/space/gcat/data/tables/lv.html,gcat_secondary_approximate
+skyroot,Vikram-I,height_fa,,"""حدود ۲۴ متر (GCAT؛ Vikram-1)""",https://planet4589.org/space/gcat/data/tables/lv.html,gcat_secondary_approximate
+skyroot,Vikram-I,diameter_en,,"""~1.7 m (GCAT; Vikram-1)""",https://planet4589.org/space/gcat/data/tables/lv.html,gcat_secondary_approximate
+skyroot,Vikram-I,diameter_fa,,"""حدود ۱٫۷ متر (GCAT؛ Vikram-1)""",https://planet4589.org/space/gcat/data/tables/lv.html,gcat_secondary_approximate
+skyroot,Vikram-I,thrust_en,,"""~1,200 kN (GCAT approximate liftoff thrust; Vikram-1)""",https://planet4589.org/space/gcat/data/tables/lv.html,gcat_secondary_approximate
+skyroot,Vikram-I,thrust_fa,,"""حدود ۱٬۲۰۰ کیلونیوتن (رانش برخاست تخمینی GCAT؛ Vikram-1)""",https://planet4589.org/space/gcat/data/tables/lv.html,gcat_secondary_approximate
+skyroot,Vikram-I,stages,,4,https://planet4589.org/space/gcat/data/tables/lv.html,gcat_secondary_approximate
+skyroot,Vikram-I,technical_data_note_fa,,"""مقادیر تکمیلی برگرفته از ردیف «Vikram-1» در GCAT هستند؛ برآوردی‌اند و به معنی عملکرد پروازی اثبات‌شده نیستند.""",https://planet4589.org/space/gcat/data/tables/lv.html,methodology_notice_added
+skyroot,Vikram-S,height_en,,"""~6 m (GCAT; Vikram-S)""",https://planet4589.org/space/gcat/data/tables/lv.html,gcat_secondary_approximate
+skyroot,Vikram-S,height_fa,,"""حدود ۶ متر (GCAT؛ Vikram-S)""",https://planet4589.org/space/gcat/data/tables/lv.html,gcat_secondary_approximate
+skyroot,Vikram-S,diameter_en,,"""~0.38 m (GCAT; Vikram-S)""",https://planet4589.org/space/gcat/data/tables/lv.html,gcat_secondary_approximate
+skyroot,Vikram-S,diameter_fa,,"""حدود ۰٫۳۸ متر (GCAT؛ Vikram-S)""",https://planet4589.org/space/gcat/data/tables/lv.html,gcat_secondary_approximate
+skyroot,Vikram-S,mass_en,,"""~0.5 t (GCAT estimate; Vikram-S)""",https://planet4589.org/space/gcat/data/tables/lv.html,gcat_secondary_approximate
+skyroot,Vikram-S,mass_fa,,"""حدود ۰٫۵ تن (برآورد GCAT؛ Vikram-S)""",https://planet4589.org/space/gcat/data/tables/lv.html,gcat_secondary_approximate
+skyroot,Vikram-S,thrust_en,,"""~70 kN (GCAT approximate liftoff thrust; Vikram-S)""",https://planet4589.org/space/gcat/data/tables/lv.html,gcat_secondary_approximate
+skyroot,Vikram-S,thrust_fa,,"""حدود ۷۰ کیلونیوتن (رانش برخاست تخمینی GCAT؛ Vikram-S)""",https://planet4589.org/space/gcat/data/tables/lv.html,gcat_secondary_approximate
+skyroot,Vikram-S,stages,,1,https://planet4589.org/space/gcat/data/tables/lv.html,gcat_secondary_approximate
+skyroot,Vikram-S,technical_data_note_fa,,"""مقادیر تکمیلی برگرفته از ردیف «Vikram-S» در GCAT هستند؛ برآوردی‌اند و به معنی عملکرد پروازی اثبات‌شده نیستند.""",https://planet4589.org/space/gcat/data/tables/lv.html,methodology_notice_added
+aio-iran,Simorgh (سیمرغ),technical_source_url,,"""https://planet4589.org/space/gcat/data/tables/lv.html""",https://planet4589.org/space/gcat/data/tables/lv.html,source_link_added
+aio-iran,Simorgh (سیمرغ),technical_data_note_fa,,"""مقادیر تکمیلی برگرفته از ردیف «Simorgh» در GCAT هستند؛ برآوردی‌اند و به معنی عملکرد پروازی اثبات‌شده نیستند.""",https://planet4589.org/space/gcat/data/tables/lv.html,methodology_notice_added
+irgc-space,Qased (قاصد),technical_source_url,,"""https://planet4589.org/space/gcat/data/tables/lv.html""",https://planet4589.org/space/gcat/data/tables/lv.html,source_link_added
+irgc-space,Qased (قاصد),technical_data_note_fa,,"""مقادیر تکمیلی برگرفته از ردیف «Qased» در GCAT هستند؛ برآوردی‌اند و به معنی عملکرد پروازی اثبات‌شده نیستند.""",https://planet4589.org/space/gcat/data/tables/lv.html,methodology_notice_added
+irgc-space,Qaem-100 (قائم ۱۰۰),technical_source_url,,"""https://planet4589.org/space/gcat/data/tables/lv.html""",https://planet4589.org/space/gcat/data/tables/lv.html,source_link_added
+irgc-space,Qaem-100 (قائم ۱۰۰),technical_data_note_fa,,"""مقادیر تکمیلی برگرفته از ردیف «Qaem-100» در GCAT هستند؛ برآوردی‌اند و به معنی عملکرد پروازی اثبات‌شده نیستند.""",https://planet4589.org/space/gcat/data/tables/lv.html,methodology_notice_added
+rocketlab,Electron,mass_en,,"""13,000 kg""",https://rocketlabcorp.com/launch/electron/,primary_manufacturer
+rocketlab,Electron,mass_fa,,"""۱۳٬۰۰۰ کیلوگرم""",https://rocketlabcorp.com/launch/electron/,primary_manufacturer
+rocketlab,Electron,payload_leo_en,"""300 kg (advertised)""","""300 kg (advertised LEO capability)""",https://rocketlabcorp.com/launch/electron/,primary_manufacturer
+rocketlab,Electron,payload_leo_fa,"""۳۰۰ کیلوگرم؛ ظرفیت اعلامی""","""۳۰۰ کیلوگرم (ظرفیت اعلامی مدار پایین)""",https://rocketlabcorp.com/launch/electron/,primary_manufacturer
+rocketlab,Electron,engine_type_en,,"""9 Rutherford engines + 1 vacuum Rutherford; optional Kick Stage""",https://rocketlabcorp.com/launch/electron/,primary_manufacturer
+rocketlab,Electron,engine_type_fa,,"""۹ موتور رادرفورد در مرحله اول + یک رادرفورد خلأ در مرحله دوم؛ مرحله تزریق اختیاری""",https://rocketlabcorp.com/launch/electron/,primary_manufacturer
+rocketlab,Electron,thrust_en,,"""190 kN (first-stage liftoff; manufacturer)""",https://rocketlabcorp.com/launch/electron/,primary_manufacturer
+rocketlab,Electron,thrust_fa,,"""۱۹۰ کیلونیوتن (رانش برخاست مرحله اول؛ سازنده)""",https://rocketlabcorp.com/launch/electron/,primary_manufacturer
+rocketlab,Electron,technical_data_note_fa,,"""مشخصات درج‌شده از صفحه فنی سازنده اخذ شده‌اند؛ ظرفیت اعلامی طراحی لزوماً عملکرد پروازی اثبات‌شده نیست.""",https://rocketlabcorp.com/launch/electron/,primary_manufacturer
+firefly,Alpha,height_en,"""31.7 m""","""31.7 m (current manufacturer configuration)""",https://fireflyspace.com/alpha/,primary_manufacturer
+firefly,Alpha,height_fa,"""۳۱٫۷ متر""","""۳۱٫۷ متر (پیکربندی جاری اعلامی سازنده)""",https://fireflyspace.com/alpha/,primary_manufacturer
+firefly,Alpha,payload_leo_fa,"""۱۰۳۰ کیلوگرم (مدار نزدیک زمین ۳۰۰ کیلومتری؛ اعلام شرکت)""","""۱٬۰۳۰ کیلوگرم (مدار پایین ۳۰۰ کیلومتر؛ اعلامی)""",https://fireflyspace.com/alpha/,primary_manufacturer
+firefly,Alpha,payload_sso_fa,"""۶۳۰ کیلوگرم (مدار خورشیدآهنگ ۵۰۰ کیلومتری)""","""۶۳۰ کیلوگرم (مدار خورشیدآهنگ ۵۰۰ کیلومتر؛ اعلامی)""",https://fireflyspace.com/alpha/,primary_manufacturer
+firefly,Alpha,technical_source_url,"""https://fireflyspace.com/missions/""","""https://fireflyspace.com/alpha/""",https://fireflyspace.com/alpha/,primary_manufacturer
+firefly,Alpha,technical_data_note_fa,"""مقادیر تکمیلی برگرفته از ردیف «Firefly Alpha I» در GCAT هستند؛ برآوردی‌اند و به معنی عملکرد پروازی اثبات‌شده نیستند.""","""مشخصات درج‌شده از صفحه فنی سازنده اخذ شده‌اند؛ ظرفیت اعلامی طراحی لزوماً عملکرد پروازی اثبات‌شده نیست.""",https://fireflyspace.com/alpha/,primary_manufacturer
+skyrora,Skyrora XL,height_fa,"""۲۲٫۷ متر؛ طراحی""","""۲۲٫۷ متر (طرح)""",https://skyrora.com/product/skyrora-xl/,primary_manufacturer
+skyrora,Skyrora XL,diameter_fa,"""۲٫۲ متر؛ طراحی""","""۲٫۲ متر (طرح)""",https://skyrora.com/product/skyrora-xl/,primary_manufacturer
+skyrora,Skyrora XL,mass_en,"""55,838 kg design lift-off mass""","""55,838 kg design liftoff mass""",https://skyrora.com/product/skyrora-xl/,primary_manufacturer
+skyrora,Skyrora XL,mass_fa,"""۵۵٬۸۳۸ کیلوگرم؛ جرم برخاست طراحی""","""۵۵٬۸۳۸ کیلوگرم (جرم برخاست طراحی)""",https://skyrora.com/product/skyrora-xl/,primary_manufacturer
+skyrora,Skyrora XL,payload_leo_en,"""up to 315 kg, design target""","""Up to 315 kg (design target)""",https://skyrora.com/product/skyrora-xl/,primary_manufacturer
+skyrora,Skyrora XL,payload_leo_fa,"""تا ۳۱۵ کیلوگرم؛ هدف طراحی""","""تا ۳۱۵ کیلوگرم (هدف طراحی)""",https://skyrora.com/product/skyrora-xl/,primary_manufacturer
+skyrora,Skyrora XL,engine_type_en,,"""9 Skyforce first-stage; 1 Skyforce upper-stage; 1 LEO third-stage engine""",https://skyrora.com/product/skyrora-xl/,primary_manufacturer
+skyrora,Skyrora XL,engine_type_fa,,"""۹ موتور اسکای‌فورس در مرحله اول؛ یک موتور اسکای‌فورس در مرحله دوم؛ یک موتور LEO در مرحله سوم""",https://skyrora.com/product/skyrora-xl/,primary_manufacturer
+skyrora,Skyrora XL,technical_data_note_fa,,"""مشخصات درج‌شده از صفحه فنی سازنده اخذ شده‌اند؛ ظرفیت اعلامی طراحی لزوماً عملکرد پروازی اثبات‌شده نیست.""",https://skyrora.com/product/skyrora-xl/,primary_manufacturer
+pldspace,MIURA 5,height_en,"""35.7 m""","""35.7 m (design)""",https://www.pldspace.com/en/miura-5.html,primary_manufacturer
+pldspace,MIURA 5,height_fa,"""۳۵٫۷ متر""","""۳۵٫۷ متر (طرح)""",https://www.pldspace.com/en/miura-5.html,primary_manufacturer
+pldspace,MIURA 5,engine_type_en,,"""5 TEPREL-C (stage 1) + 1 TEPREL-C vacuum (stage 2); optional kick stage""",https://www.pldspace.com/en/miura-5.html,primary_manufacturer
+pldspace,MIURA 5,engine_type_fa,,"""۵ موتور تپرل-سی در مرحله اول و ۱ موتور تپرل-سی خلأ در مرحله دوم؛ مرحله تزریق اختیاری""",https://www.pldspace.com/en/miura-5.html,primary_manufacturer
+pldspace,MIURA 5,propellant_en,"""Biokerosene / LOX""","""LOX / biokerosene""",https://www.pldspace.com/en/miura-5.html,primary_manufacturer
+pldspace,MIURA 5,propellant_fa,"""زیست‌نفت سفید / اکسیژن مایع""","""اکسیژن مایع / زیست‌نفت‌سفید""",https://www.pldspace.com/en/miura-5.html,primary_manufacturer
+pldspace,MIURA 5,reusability_en,,"""Designed for recoverable first stage""",https://www.pldspace.com/en/miura-5.html,primary_manufacturer
+pldspace,MIURA 5,reusability_fa,,"""طراحی‌شده برای بازیابی مرحله اول""",https://www.pldspace.com/en/miura-5.html,primary_manufacturer
+pldspace,MIURA 5,technical_data_note_fa,,"""مشخصات درج‌شده از صفحه فنی سازنده اخذ شده‌اند؛ ظرفیت اعلامی طراحی لزوماً عملکرد پروازی اثبات‌شده نیست.""",https://www.pldspace.com/en/miura-5.html,primary_manufacturer
+rfa,RFA ONE,height_en,"""30 m""","""30 m (manufacturer specification)""",https://www.rfa.space/rfa-one/,primary_manufacturer
+rfa,RFA ONE,height_fa,"""۳۰ متر""","""۳۰ متر (مشخصات سازنده)""",https://www.rfa.space/rfa-one/,primary_manufacturer
+rfa,RFA ONE,stages,,3,https://www.rfa.space/rfa-one/,primary_manufacturer
+rfa,RFA ONE,engine_type_en,,"""9 Helix first-stage engines + 1 Helix vacuum; Redshift third stage""",https://www.rfa.space/rfa-one/,primary_manufacturer
+rfa,RFA ONE,engine_type_fa,,"""۹ موتور هلیکس در مرحله اول + ۱ موتور هلیکس خلأ؛ مرحله سوم ردشیفت""",https://www.rfa.space/rfa-one/,primary_manufacturer
+rfa,RFA ONE,payload_sso_en,,"""1,300 kg to 500 km SSO (advertised)""",https://www.rfa.space/rfa-one/,primary_manufacturer
+rfa,RFA ONE,payload_sso_fa,,"""۱٬۳۰۰ کیلوگرم به مدار خورشیدآهنگ ۵۰۰ کیلومتر (اعلامی)""",https://www.rfa.space/rfa-one/,primary_manufacturer
+rfa,RFA ONE,payload_gto_en,,"""450 kg to GTO (advertised)""",https://www.rfa.space/rfa-one/,primary_manufacturer
+rfa,RFA ONE,payload_gto_fa,,"""۴۵۰ کیلوگرم به مدار انتقالی زمین‌آهنگ (اعلامی)""",https://www.rfa.space/rfa-one/,primary_manufacturer
+rfa,RFA ONE,technical_source_url,,"""https://www.rfa.space/rfa-one/""",https://www.rfa.space/rfa-one/,primary_manufacturer
+rfa,RFA ONE,technical_data_note_fa,,"""مشخصات درج‌شده از صفحه فنی سازنده اخذ شده‌اند؛ ظرفیت اعلامی طراحی لزوماً عملکرد پروازی اثبات‌شده نیست.""",https://www.rfa.space/rfa-one/,primary_manufacturer
+blueorigin,New Glenn,height_en,"""~98 m (GCAT; New Glenn 7x2)""","""98 m (manufacturer)""",https://www.blueorigin.com/new-glenn,primary_manufacturer
+blueorigin,New Glenn,height_fa,"""حدود ۹۸ متر (GCAT؛ New Glenn 7x2)""","""۹۸ متر (سازنده)""",https://www.blueorigin.com/new-glenn,primary_manufacturer
+blueorigin,New Glenn,diameter_en,"""~7 m (GCAT; New Glenn 7x2)""","""7 m (fairing diameter)""",https://www.blueorigin.com/new-glenn,primary_manufacturer
+blueorigin,New Glenn,diameter_fa,"""حدود ۷ متر (GCAT؛ New Glenn 7x2)""","""۷ متر (قطر محفظه محموله)""",https://www.blueorigin.com/new-glenn,primary_manufacturer
+blueorigin,New Glenn,engine_type_en,,"""7 BE-4 methane/LOX first-stage engines; 2 BE-3U LOX/LH2 upper-stage engines""",https://www.blueorigin.com/new-glenn,primary_manufacturer
+blueorigin,New Glenn,engine_type_fa,,"""۷ موتور بی‌ئی-۴ متان/اکسیژن مایع در مرحله اول؛ ۲ موتور بی‌ئی-۳یو هیدروژن/اکسیژن مایع در مرحله دوم""",https://www.blueorigin.com/new-glenn,primary_manufacturer
+blueorigin,New Glenn,reusability_en,"""Reusable first stage (design goal)""","""Recoverable first stage (design)""",https://www.blueorigin.com/new-glenn,primary_manufacturer
+blueorigin,New Glenn,reusability_fa,"""هدف طراحی: بازیابی و استفاده مجدد از مرحله اول""","""مرحله اول بازیابی‌پذیر (طراحی)""",https://www.blueorigin.com/new-glenn,primary_manufacturer
+blueorigin,New Glenn,technical_source_url,"""https://mcval.org/launches/launchers/bo""","""https://www.blueorigin.com/new-glenn""",https://www.blueorigin.com/new-glenn,primary_manufacturer
+blueorigin,New Glenn,technical_data_note_fa,"""مقادیر تکمیلی برگرفته از ردیف «New Glenn 7x2» در GCAT هستند؛ برآوردی‌اند و به معنی عملکرد پروازی اثبات‌شده نیستند.""","""مشخصات درج‌شده از صفحه فنی سازنده اخذ شده‌اند؛ ظرفیت اعلامی طراحی لزوماً عملکرد پروازی اثبات‌شده نیست.""",https://www.blueorigin.com/new-glenn,primary_manufacturer
+spacex,Falcon 9,diameter_en,"""3.7 m""","""3.7 m (SpaceX specification)""",https://new.spacex.com/vehicles/falcon-9,primary_manufacturer
+spacex,Falcon 9,diameter_fa,"""۳٫۷ متر""","""۳٫۷ متر (مشخصات اسپیس‌ایکس)""",https://new.spacex.com/vehicles/falcon-9,primary_manufacturer
+spacex,Falcon 9,mass_en,,"""549,054 kg (SpaceX nominal)""",https://new.spacex.com/vehicles/falcon-9,primary_manufacturer
+spacex,Falcon 9,mass_fa,,"""۵۴۹٬۰۵۴ کیلوگرم (جرم اسمی سازنده)""",https://new.spacex.com/vehicles/falcon-9,primary_manufacturer
+spacex,Falcon 9,payload_gto_en,,"""8,300 kg (advertised GTO capacity)""",https://new.spacex.com/vehicles/falcon-9,primary_manufacturer
+spacex,Falcon 9,payload_gto_fa,,"""۸٬۳۰۰ کیلوگرم (ظرفیت اعلامی GTO)""",https://new.spacex.com/vehicles/falcon-9,primary_manufacturer
+spacex,Falcon 9,engine_type_en,,"""9 Merlin 1D on stage 1; 1 Merlin Vacuum on stage 2""",https://new.spacex.com/vehicles/falcon-9,primary_manufacturer
+spacex,Falcon 9,engine_type_fa,,"""۹ موتور مرلین ۱دی در مرحله اول؛ یک مرلین خلأ در مرحله دوم""",https://new.spacex.com/vehicles/falcon-9,primary_manufacturer
+spacex,Falcon 9,propellant_en,"""LOX / RP-1""","""LOX / RP-1 (both stages)""",https://new.spacex.com/vehicles/falcon-9,primary_manufacturer
+spacex,Falcon 9,propellant_fa,"""اکسیژن مایع / نفت سفید RP-1""","""اکسیژن مایع / نفت سفید آرپی-۱ (هر دو مرحله)""",https://new.spacex.com/vehicles/falcon-9,primary_manufacturer
+spacex,Falcon 9,reusability_en,"""Reusable first stage""","""First-stage booster and payload fairings reusable""",https://new.spacex.com/vehicles/falcon-9,primary_manufacturer
+spacex,Falcon 9,reusability_fa,"""مرحله اول بازمصرف‌پذیر""","""مرحله اول و نیمه‌های محفظه محموله بازیابی و استفاده مجدد می‌شوند""",https://new.spacex.com/vehicles/falcon-9,primary_manufacturer
+spacex,Falcon 9 Block 5,engine_type_en,"""9 Merlin 1D Engines (Stage 1) + 1 Merlin Vacuum (Stage 2)""","""9 Merlin 1D on first stage; 1 Merlin Vacuum on upper stage (Falcon 9 family)""",https://new.spacex.com/vehicles/falcon-9,primary_manufacturer
+spacex,Falcon 9 Block 5,engine_type_fa,"""۹ موتور مرلین 1D (مرحله ۱) + ۱ مرلین خلاء (مرحله ۲)""","""۹ موتور مرلین ۱دی در مرحله نخست؛ یک موتور مرلین خلأ در مرحله فوقانی (خانواده فالکون ۹)""",https://new.spacex.com/vehicles/falcon-9,primary_manufacturer
+spacex,Falcon 9 Block 5,propellant_fa,"""LOX / RP-1""","""اکسیژن مایع / آرپی-۱""",https://new.spacex.com/vehicles/falcon-9,primary_manufacturer
+spacex,Falcon 9 Block 5,reusability_en,,"""Reusable first-stage booster; reusable payload fairings""",https://new.spacex.com/vehicles/falcon-9,primary_manufacturer
+spacex,Falcon 9 Block 5,reusability_fa,"""بازمصرف‌پذیر (مرحله اول بیش از ۲۰ بار)""","""مرحله نخست بازاستفاده‌پذیر؛ نیمه‌های محفظه محموله قابل بازیابی""",https://new.spacex.com/vehicles/falcon-9,primary_manufacturer
+spacex,Falcon Heavy,height_en,"""~69.2 m (GCAT; Falcon Heavy)""","""70 m (SpaceX specification)""",https://new.spacex.com/vehicles/falcon-heavy,primary_manufacturer
+spacex,Falcon Heavy,height_fa,"""حدود ۶۹٫۲ متر (GCAT؛ Falcon Heavy)""","""۷۰ متر (مشخصات اسپیس‌ایکس)""",https://new.spacex.com/vehicles/falcon-heavy,primary_manufacturer
+spacex,Falcon Heavy,mass_en,"""~1400 t (GCAT estimate; Falcon Heavy)""","""1,420,788 kg (SpaceX nominal)""",https://new.spacex.com/vehicles/falcon-heavy,primary_manufacturer
+spacex,Falcon Heavy,mass_fa,"""حدود ۱۴۰۰ تن (برآورد GCAT؛ Falcon Heavy)""","""۱٬۴۲۰٬۷۸۸ کیلوگرم (جرم اسمی سازنده)""",https://new.spacex.com/vehicles/falcon-heavy,primary_manufacturer
+spacex,Falcon Heavy,payload_leo_en,"""~54,400 kg (GCAT approximate; Falcon Heavy; not demonstrated capacity)""","""63,800 kg (advertised maximum; expendable architecture)""",https://new.spacex.com/vehicles/falcon-heavy,primary_manufacturer
+spacex,Falcon Heavy,payload_leo_fa,"""حدود ۵۴٬۴۰۰ کیلوگرم (برآورد GCAT، Falcon Heavy؛ نه عملکرد اثبات‌شده)""","""۶۳٬۸۰۰ کیلوگرم (حداکثر ظرفیت اعلامی در پیکربندی یک‌بارمصرف)""",https://new.spacex.com/vehicles/falcon-heavy,primary_manufacturer
+spacex,Falcon Heavy,payload_gto_en,"""~22,200 kg (GCAT estimate; Falcon Heavy)""","""26,700 kg (advertised GTO capacity)""",https://new.spacex.com/vehicles/falcon-heavy,primary_manufacturer
+spacex,Falcon Heavy,payload_gto_fa,"""حدود ۲۲٬۲۰۰ کیلوگرم (برآورد GCAT؛ Falcon Heavy)""","""۲۶٬۷۰۰ کیلوگرم (ظرفیت اعلامی GTO)""",https://new.spacex.com/vehicles/falcon-heavy,primary_manufacturer
+spacex,Falcon Heavy,engine_type_en,,"""27 Merlin engines across three first-stage cores; 1 Merlin Vacuum upper-stage engine""",https://new.spacex.com/vehicles/falcon-heavy,primary_manufacturer
+spacex,Falcon Heavy,engine_type_fa,,"""۲۷ موتور مرلین روی سه بوستر مرحله نخست؛ یک موتور مرلین خلأ در مرحله فوقانی""",https://new.spacex.com/vehicles/falcon-heavy,primary_manufacturer
+spacex,Falcon Heavy,propellant_fa,"""اکسیژن مایع / نفت سفید""","""اکسیژن مایع / آرپی-۱""",https://new.spacex.com/vehicles/falcon-heavy,primary_manufacturer
+spacex,Falcon Heavy,reusability_en,"""Reusable side boosters""","""Three first-stage cores designed for recovery; configuration-dependent""",https://new.spacex.com/vehicles/falcon-heavy,primary_manufacturer
+spacex,Falcon Heavy,reusability_fa,"""بوسترهای جانبی بازمصرف‌پذیر""","""سه بوستر مرحله اول برای بازیابی طراحی شده‌اند؛ وابسته به پیکربندی مأموریت""",https://new.spacex.com/vehicles/falcon-heavy,primary_manufacturer
+ula,Vulcan Centaur,engine_type_en,,"""2 BE-4 main engines (first stage); 2 RL10C (Centaur V); 0/2/4/6 GEM 63XL solid boosters by configuration""",https://www.ulalaunch.com/docs/default-source/rockets/2023_vulcan_user_guide.pdf,primary_manufacturer
+ula,Vulcan Centaur,engine_type_fa,,"""۲ موتور بی‌ئی-۴ در مرحله اصلی؛ ۲ موتور آرال-۱۰سی در سنتاور ۵؛ بسته به پیکربندی صفر، ۲، ۴ یا ۶ بوستر جامد GEM 63XL""",https://www.ulalaunch.com/docs/default-source/rockets/2023_vulcan_user_guide.pdf,primary_manufacturer
+ula,Vulcan Centaur,propellant_en,"""Methane/LOX first stage; hydrogen/LOX Centaur""","""LOX/LNG main stage; LOX/LH2 Centaur V; optional solid rocket boosters""",https://www.ulalaunch.com/docs/default-source/rockets/2023_vulcan_user_guide.pdf,primary_manufacturer
+ula,Vulcan Centaur,propellant_fa,"""متان/اکسیژن مایع در مرحله اول؛ هیدروژن/اکسیژن مایع در سنتاور""","""اکسیژن مایع/متان در مرحله اصلی؛ اکسیژن مایع/هیدروژن مایع در سنتاور ۵؛ بوستر جامد اختیاری""",https://www.ulalaunch.com/docs/default-source/rockets/2023_vulcan_user_guide.pdf,primary_manufacturer
+arianespace,Ariane 6,engine_type_en,,"""Vulcain 2.1 core engine; Vinci restartable upper-stage engine; 2 or 4 P120C solid boosters""",https://www.esa.int/Enabling_Support/Space_Transportation/Ariane/The_engines_of_Ariane_6,primary_manufacturer
+arianespace,Ariane 6,engine_type_fa,,"""موتور وولکن ۲٫۱ در مرحله اصلی؛ موتور چندبارروشن‌شونده وینچی در مرحله فوقانی؛ ۲ یا ۴ بوستر جامد پی-۱۲۰سی""",https://www.esa.int/Enabling_Support/Space_Transportation/Ariane/The_engines_of_Ariane_6,primary_manufacturer
+arianespace,Ariane 6,propellant_en,"""Liquid hydrogen / LOX core + solid boosters""","""LOX/LH2 liquid core and upper stage; P120C solid-propellant boosters""",https://www.esa.int/Enabling_Support/Space_Transportation/Ariane/The_engines_of_Ariane_6,primary_manufacturer
+arianespace,Ariane 6,propellant_fa,"""هیدروژن/اکسیژن مایع + بوستر جامد""","""اکسیژن مایع/هیدروژن مایع در مراحل اصلی و فوقانی؛ بوسترهای سوخت جامد پی-۱۲۰سی""",https://www.esa.int/Enabling_Support/Space_Transportation/Ariane/The_engines_of_Ariane_6,primary_manufacturer
+arianegroup,Ariane 6 (industrial prime; operated by Arianespace),engine_type_en,,"""Vulcain 2.1 core; Vinci restartable upper stage; 2 or 4 P120C boosters""",https://www.esa.int/Enabling_Support/Space_Transportation/Ariane/The_engines_of_Ariane_6,primary_manufacturer
+arianegroup,Ariane 6 (industrial prime; operated by Arianespace),engine_type_fa,,"""وولکن ۲٫۱ در مرحله اصلی، وینچی در مرحله فوقانی و ۲ یا ۴ بوستر جامد پی-۱۲۰سی""",https://www.esa.int/Enabling_Support/Space_Transportation/Ariane/The_engines_of_Ariane_6,primary_manufacturer
+arianegroup,Ariane 6 (industrial prime; operated by Arianespace),propellant_en,,"""LOX/LH2 core and upper stage; solid boosters""",https://www.esa.int/Enabling_Support/Space_Transportation/Ariane/The_engines_of_Ariane_6,primary_manufacturer
+arianegroup,Ariane 6 (industrial prime; operated by Arianespace),propellant_fa,,"""اکسیژن مایع/هیدروژن مایع در مراحل اصلی و فوقانی؛ بوستر سوخت جامد""",https://www.esa.int/Enabling_Support/Space_Transportation/Ariane/The_engines_of_Ariane_6,primary_manufacturer
+avio,Vega C,engine_type_en,,"""P120C (stage 1); Zefiro 40 (stage 2); Zefiro 9 (stage 3); liquid AVUM+ (stage 4)""",https://www.arianespace.com/app/uploads/sites/4/2024/10/Vega-C-users-manual-Issue-0-Revision-0.pdf,primary_manufacturer
+avio,Vega C,engine_type_fa,,"""پی-۱۲۰سی در مرحله ۱؛ زفیرو ۴۰ در مرحله ۲؛ زفیرو ۹ در مرحله ۳؛ آووم‌پلاس مایع در مرحله ۴""",https://www.arianespace.com/app/uploads/sites/4/2024/10/Vega-C-users-manual-Issue-0-Revision-0.pdf,primary_manufacturer
+avio,Vega C,propellant_en,,"""HTPB solid propellant in stages 1–3; NTO/UDMH in AVUM+""",https://www.arianespace.com/app/uploads/sites/4/2024/10/Vega-C-users-manual-Issue-0-Revision-0.pdf,primary_manufacturer
+avio,Vega C,propellant_fa,,"""پیشرانه جامد مبتنی بر HTPB در مراحل ۱ تا ۳؛ نیتروژن تترااکسید/دی‌متیل‌هیدرازین نامتقارن در آووم‌پلاس""",https://www.arianespace.com/app/uploads/sites/4/2024/10/Vega-C-users-manual-Issue-0-Revision-0.pdf,primary_manufacturer
+arianespace,Vega C (service responsibilities transitioning to Avio),engine_type_en,,"""P120C; Zefiro 40; Zefiro 9; AVUM+ liquid upper stage""",https://www.arianespace.com/app/uploads/sites/4/2024/10/Vega-C-users-manual-Issue-0-Revision-0.pdf,primary_manufacturer
+arianespace,Vega C (service responsibilities transitioning to Avio),engine_type_fa,,"""پی-۱۲۰سی؛ زفیرو ۴۰؛ زفیرو ۹؛ مرحله فوقانی مایع آووم‌پلاس""",https://www.arianespace.com/app/uploads/sites/4/2024/10/Vega-C-users-manual-Issue-0-Revision-0.pdf,primary_manufacturer
+arianespace,Vega C (service responsibilities transitioning to Avio),propellant_en,,"""Solid HTPB lower stages; NTO/UDMH AVUM+""",https://www.arianespace.com/app/uploads/sites/4/2024/10/Vega-C-users-manual-Issue-0-Revision-0.pdf,primary_manufacturer
+arianespace,Vega C (service responsibilities transitioning to Avio),propellant_fa,,"""پیشرانه جامد HTPB در سه مرحله نخست؛ NTO/UDMH در آووم‌پلاس""",https://www.arianespace.com/app/uploads/sites/4/2024/10/Vega-C-users-manual-Issue-0-Revision-0.pdf,primary_manufacturer
+rocketlab,Neutron,engine_type_en,,"""9 Archimedes oxygen-rich staged-combustion engines on first stage; 1 Archimedes Vacuum on upper stage (design)""",https://rocketlabcorp.com/launch/neutron/index.php,primary_manufacturer
+rocketlab,Neutron,engine_type_fa,,"""۹ موتور آرشمیدس چرخه احتراق مرحله‌ای غنی از اکسیدکننده در مرحله اول؛ یک آرشمیدس خلأ در مرحله دوم (طرح)""",https://rocketlabcorp.com/launch/neutron/index.php,primary_manufacturer
+rocketlab,Neutron,propellant_en,,"""Liquid oxygen / liquid methane (design)""",https://rocketlabcorp.com/launch/neutron/index.php,primary_manufacturer
+rocketlab,Neutron,propellant_fa,,"""اکسیژن مایع / متان مایع (طرح)""",https://rocketlabcorp.com/launch/neutron/index.php,primary_manufacturer
+rocketlab,Neutron,reusability_en,,"""First-stage recovery on offshore landing platform and captive reusable fairing (design; not yet flight-proven)""",https://rocketlabcorp.com/launch/neutron/index.php,primary_manufacturer
+rocketlab,Neutron,reusability_fa,,"""بازیابی مرحله نخست روی سکوی دریایی و محفظه محموله ثابت بازاستفاده‌پذیر (طرح؛ هنوز اثبات‌نشده در پرواز)""",https://rocketlabcorp.com/launch/neutron/index.php,primary_manufacturer
+firefly,Alpha,engine_type_en,,"""4 Reaver stage-one engines; 1 Lightning upper-stage engine; tap-off cycle""",https://fireflyspace.com/alpha/,primary_manufacturer
+firefly,Alpha,engine_type_fa,,"""۴ موتور ریور در مرحله نخست؛ یک موتور لایتنینگ در مرحله فوقانی؛ چرخه تپ‌آف""",https://fireflyspace.com/alpha/,primary_manufacturer
+firefly,Alpha,propellant_en,"""LOX / kerosene""","""Liquid oxygen / RP-1 kerosene""",https://fireflyspace.com/alpha/,primary_manufacturer
+firefly,Alpha,propellant_fa,"""اکسیژن مایع / نفت سفید""","""اکسیژن مایع / نفت سفید آرپی-۱""",https://fireflyspace.com/alpha/,primary_manufacturer
+blueorigin,New Glenn,propellant_en,"""LNG / LOX first stage""","""LOX/LNG first stage (BE-4); LOX/LH2 second stage (BE-3U)""",https://www.blueorigin.com/engines/be-3u,primary_manufacturer
+blueorigin,New Glenn,propellant_fa,"""گاز طبیعی مایع/اکسیژن مایع در مرحله اول""","""اکسیژن مایع/گاز طبیعی مایع در مرحله اول (بی‌ئی-۴)؛ اکسیژن مایع/هیدروژن مایع در مرحله دوم (بی‌ئی-۳یو)""",https://www.blueorigin.com/engines/be-3u,primary_manufacturer
+astra,,stats.total_launches,,7,https://devops.majbase.com/space-launches/companies/astra-space,bounded_statistical_update
+astra,,stats.success_launches,,2,https://devops.majbase.com/space-launches/companies/astra-space,bounded_statistical_update
+astra,,stats.failed_launches,,5,https://devops.majbase.com/space-launches/companies/astra-space,bounded_statistical_update
+astra,,stats.success_rate,,28.6,https://devops.majbase.com/space-launches/companies/astra-space,bounded_statistical_update
+astra,,stats.as_of,,"""2026-11-12""",https://devops.majbase.com/space-launches/companies/astra-space,bounded_statistical_update
+astra,,stats.source_url,,"""https://devops.majbase.com/space-launches/companies/astra-space""",https://devops.majbase.com/space-launches/companies/astra-space,bounded_statistical_update
+astra,,stats.verification_status,"""pending_aggregate""","""bounded_launch_family_count""",https://devops.majbase.com/space-launches/companies/astra-space,bounded_statistical_update
+astra,,stats.scope_fa,"""این آمار هنوز از فهرست مأموریت‌های معتبر، با تعریف ثابت «تلاش مداری/زیرمداری» و تاریخ مشخص، بازسازی نشده است؛ عدد نامعلوم به‌معنای صفر نیست.""","""تلاش‌های مداری خانواده Rocket 3 در سال‌های ۲۰۲۰ تا ۲۰۲۲ (بدون پروژه Rocket 4).""",https://devops.majbase.com/space-launches/companies/astra-space,bounded_statistical_update
+astra,,stats.scope_en,"""A date-bounded, vehicle-scoped and source-reconciled aggregate is not yet available. Unknown values do not mean zero.""","""Rocket 3 orbital attempts in 2020–2022 only, excluding Rocket 4.""",https://devops.majbase.com/space-launches/companies/astra-space,bounded_statistical_update
+astra,,stats.scope_ar,"""لا يتوفر إحصاء موثّق وشامل لرحلات الإطلاق ضمن نطاق زمني محدّد؛ لا تُختلق أرقام بديلة.""","""عدد محاولات الإطلاق المداري في نطاق محدد حتى 12 نوفمبر 2026، ولا يشمل النماذج قيد التطوير.""",https://devops.majbase.com/space-launches/companies/astra-space,bounded_statistical_update
+astra,,stats.total_label_fa,,"""تلاش‌های مداری ناوگان مشخص""",https://devops.majbase.com/space-launches/companies/astra-space,bounded_statistical_update
+astra,,stats.total_label_en,,"""Scoped orbital launch attempts""",https://devops.majbase.com/space-launches/companies/astra-space,bounded_statistical_update
+astra,,stats.total_label_ar,,"""محاولات الإطلاق المداري المسجلة""",https://devops.majbase.com/space-launches/companies/astra-space,bounded_statistical_update
+firefly,,stats.total_launches,,7,https://nextliftoff.com/stats?provider=firefly,bounded_statistical_update
+firefly,,stats.success_launches,,4,https://nextliftoff.com/stats?provider=firefly,bounded_statistical_update
+firefly,,stats.failed_launches,,3,https://nextliftoff.com/stats?provider=firefly,bounded_statistical_update
+firefly,,stats.success_rate,,57.1,https://nextliftoff.com/stats?provider=firefly,bounded_statistical_update
+firefly,,stats.as_of,,"""2026-11-12""",https://nextliftoff.com/stats?provider=firefly,bounded_statistical_update
+firefly,,stats.source_url,,"""https://nextliftoff.com/stats?provider=firefly""",https://nextliftoff.com/stats?provider=firefly,bounded_statistical_update
+firefly,,stats.verification_status,"""pending_aggregate""","""bounded_launch_family_count""",https://nextliftoff.com/stats?provider=firefly,bounded_statistical_update
+firefly,,stats.scope_fa,"""این آمار هنوز از فهرست مأموریت‌های معتبر، با تعریف ثابت «تلاش مداری/زیرمداری» و تاریخ مشخص، بازسازی نشده است؛ عدد نامعلوم به‌معنای صفر نیست.""","""تلاش‌های مداری پرتابگر آلفا در بازه ۲۰۲۱ تا ۱۲ نوامبر ۲۰۲۶؛ عدد به پروژه توسعه‌ای Eclipse تعمیم داده نمی‌شود.""",https://nextliftoff.com/stats?provider=firefly,bounded_statistical_update
+firefly,,stats.scope_en,"""A date-bounded, vehicle-scoped and source-reconciled aggregate is not yet available. Unknown values do not mean zero.""","""Alpha orbital launch attempts in 2021–12 Nov 2026; excludes development-only Eclipse.""",https://nextliftoff.com/stats?provider=firefly,bounded_statistical_update
+firefly,,stats.scope_ar,"""لا يتوفر إحصاء موثّق وشامل لرحلات الإطلاق ضمن نطاق زمني محدّد؛ لا تُختلق أرقام بديلة.""","""عدد محاولات الإطلاق المداري في نطاق محدد حتى 12 نوفمبر 2026، ولا يشمل النماذج قيد التطوير.""",https://nextliftoff.com/stats?provider=firefly,bounded_statistical_update
+firefly,,stats.total_label_fa,,"""تلاش‌های مداری ناوگان مشخص""",https://nextliftoff.com/stats?provider=firefly,bounded_statistical_update
+firefly,,stats.total_label_en,,"""Scoped orbital launch attempts""",https://nextliftoff.com/stats?provider=firefly,bounded_statistical_update
+firefly,,stats.total_label_ar,,"""محاولات الإطلاق المداري المسجلة""",https://nextliftoff.com/stats?provider=firefly,bounded_statistical_update
+aio-iran,Simorgh (سیمرغ),payload_gto_en,"""Commercial Launch Entity""",null,https://planet4589.org/space/gcat/data/tables/lv.html,remove_corrupted_nonnumeric_value

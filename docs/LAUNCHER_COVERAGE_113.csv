@@ -1,0 +1,114 @@
+﻿company_id,company_name,rocket,has_physical_details,has_payload,has_engine,technical_source,fields_with_source,review_priority
+spacex,SpaceX,Falcon 9,1,1,1,https://new.spacex.com/vehicles/falcon-9,12,normal
+spacex,SpaceX,Falcon Heavy,1,1,1,https://new.spacex.com/vehicles/falcon-heavy,17,normal
+spacex,SpaceX,Starship / Super Heavy,1,0,0,https://www.spacex.com/humanspaceflight,8,normal
+spacex,SpaceX,Falcon 1,0,0,0,https://www.spacex.com/humanspaceflight,0,high
+spacex,SpaceX,Falcon 9 Block 5,1,1,1,https://new.spacex.com/vehicles/falcon-9,5,normal
+ula,United Launch Alliance (ULA),Atlas V,0,0,0,https://www.ulalaunch.com/rockets/atlas-v,0,high
+ula,United Launch Alliance (ULA),Vulcan Centaur,1,0,1,https://newsroom.ulalaunch.com/releases/united-launch-alliance-successfully-launches-first-next-generation-vulcan-rocket,8,normal
+ula,United Launch Alliance (ULA),Delta IV Heavy,0,0,0,https://www.ulalaunch.com/rockets/delta-iv-heavy,0,high
+blueorigin,Blue Origin,New Shepard,1,0,0,https://www.blueorigin.com/fr-FR/news/first-developmental-test-flight-of-new-shepard,8,normal
+blueorigin,Blue Origin,New Glenn,1,0,1,https://www.blueorigin.com/new-glenn,12,normal
+rocketlab,Rocket Lab,Electron,1,1,1,https://rocketlabcorp.com/launch/electron/,8,normal
+rocketlab,Rocket Lab,HASTE,1,0,0,https://rocketlabcorp.com/launch/haste/,8,normal
+rocketlab,Rocket Lab,Neutron,1,1,1,https://rocketlabcorp.com/launch/neutron/,14,normal
+firefly,Firefly Aerospace,Alpha,1,1,1,https://fireflyspace.com/alpha/,14,normal
+firefly,Firefly Aerospace,Eclipse (with Northrop Grumman),1,1,0,https://fireflyspace.com/eclipse/,0,normal
+relativity,Relativity Space,Terran 1,0,0,0,https://www.relativityspace.com/terran-1,0,high
+relativity,Relativity Space,Terran R,1,1,0,https://www.relativityspace.com/press-release/2025/3/7/rycbar123,0,normal
+stoke,Stoke Space,Nova Pathfinder / Nova,0,0,0,https://www.stokespace.com/nova-block-2,0,high
+northrop,Northrop Grumman Space Systems,Antares 230+,1,1,0,https://planet4589.org/space/gcat/data/tables/lv.html,11,normal
+northrop,Northrop Grumman Space Systems,Antares 330,0,1,0,https://www.northropgrumman.com/space/antares/,0,normal
+northrop,Northrop Grumman Space Systems,Minotaur I,1,1,0,https://planet4589.org/space/gcat/data/tables/lv.html,11,normal
+northrop,Northrop Grumman Space Systems,Minotaur IV,0,0,0,,0,high
+northrop,Northrop Grumman Space Systems,Pegasus XL,1,1,0,https://www.northropgrumman.com/space/pegasus/,10,normal
+abl,Long Wall (formerly ABL Space Systems),RS1,0,1,0,https://ablspacesystems.com/,0,normal
+astra,Astra Space,Rocket 3 series,1,0,0,https://planet4589.org/space/gcat/data/tables/lv.html,9,normal
+astra,Astra Space,Rocket 4.0,0,1,0,,0,normal
+virgingalactic,Virgin Galactic,SpaceShipTwo / VSS Unity,0,0,0,,0,high
+virgingalactic,Virgin Galactic,Delta-class SpaceShip,0,0,0,,0,high
+boeing,"Boeing Defense, Space & Security",Delta IV (historical Boeing programme; subsequently ULA),0,0,0,,0,high
+lockheed,Lockheed Martin Space,Atlas V (historical Lockheed programme; subsequently ULA),0,0,0,,0,high
+arianespace,Arianespace,Ariane 5,1,1,0,https://newsroom.arianespace.com/a-franco-german-success-for-the-final-ariane-5-mission/,7,normal
+arianespace,Arianespace,Ariane 6,1,0,1,https://www.arianespace.com/launch-services/ariane-6/,8,normal
+arianespace,Arianespace,Vega C (service responsibilities transitioning to Avio),1,0,1,https://planet4589.org/space/gcat/data/tables/lv.html,11,normal
+arianegroup,ArianeGroup,Ariane 6 (industrial prime; operated by Arianespace),1,0,1,https://www.ariane.group/en/commercial-launchers/ariane-6/,8,normal
+avio,Avio,Vega,1,1,0,https://www.esa.int/Enabling_Support/Space_Transportation/Vega/,10,normal
+avio,Avio,Vega C,1,1,1,https://www.esa.int/Enabling_Support/Space_Transportation/Vega/,6,normal
+avio,Avio,Vega E,0,0,0,https://www.avio.com/vega-e,0,high
+isar,Isar Aerospace,Spectrum,1,1,0,https://www.esa.int/Enabling_Support/Space_Transportation/Boost/Isar_Aerospace_achieves_first_launch_to_orbit_from_continental_Europe,2,normal
+rfa,Rocket Factory Augsburg (RFA),RFA ONE,1,1,1,https://www.rfa.space/rfa-one/,9,normal
+hyimpulse,HyImpulse,SR75,1,0,0,https://hyimpulse.de/sr75,0,normal
+hyimpulse,HyImpulse,SL1,0,0,0,https://hyimpulse.de/,0,high
+orbex,Orbex,Prime,0,1,0,https://orbex.space/,0,normal
+skyrora,Skyrora,Skylark L,1,0,0,https://planet4589.org/space/gcat/data/tables/lv.html,5,normal
+skyrora,Skyrora,Skyrora XL,1,1,1,https://skyrora.com/product/skyrora-xl/,8,normal
+pldspace,PLD Space,MIURA 1,1,0,1,https://www.pldspace.com/en/miura-1.html,2,normal
+pldspace,PLD Space,MIURA 5,1,0,1,https://www.pldspace.com/en/miura-5.html,8,normal
+latitude,Latitude,Zephyr,0,0,0,,0,high
+maiaspace,MaiaSpace,Maia,1,1,0,https://www.maia-space.com/our-launcher/,0,normal
+progress-rocket,Progress Rocket Space Centre,Soyuz-2 family,1,0,0,https://planet4589.org/space/gcat/data/tables/lv.html,9,normal
+progress-rocket,Progress Rocket Space Centre,Soyuz-U (historical production),1,1,0,https://planet4589.org/space/gcat/data/tables/lv.html,11,normal
+khrunichev,Khrunichev Center,Proton-M,1,0,0,https://planet4589.org/space/gcat/data/tables/lv.html,9,normal
+khrunichev,Khrunichev Center,Angara A5,1,1,0,https://planet4589.org/space/gcat/data/tables/lv.html,11,normal
+khrunichev,Khrunichev Center,Angara 1.2,1,0,0,https://planet4589.org/space/gcat/data/tables/lv.html,9,normal
+energia,RSC Energia,Energia (historical heavy-lift system),1,1,0,https://planet4589.org/space/gcat/data/tables/lv.html,11,normal
+calt,CALT (China Academy of Launch Vehicle Technology),Long March 5,1,1,0,https://planet4589.org/space/gcat/data/tables/lv.html,13,normal
+calt,CALT (China Academy of Launch Vehicle Technology),Long March 7,1,1,0,https://planet4589.org/space/gcat/data/tables/lv.html,11,normal
+calt,CALT (China Academy of Launch Vehicle Technology),Long March 8 / 8A,1,0,0,https://planet4589.org/space/gcat/data/tables/lv.html,7,normal
+sast,SAST (Shanghai Academy of Spaceflight Technology),Long March 4 series,1,0,0,https://planet4589.org/space/gcat/data/tables/lv.html,9,normal
+sast,SAST (Shanghai Academy of Spaceflight Technology),Long March 6 series,1,0,0,https://planet4589.org/space/gcat/data/tables/lv.html,7,normal
+sast,SAST (Shanghai Academy of Spaceflight Technology),Jielong-3,1,1,0,https://planet4589.org/space/gcat/data/tables/lv.html,9,normal
+expace,ExPace / CASIC,Kuaizhou-1A,1,1,0,https://mcval.org/launches/launchers/ep,9,normal
+expace,ExPace / CASIC,Kuaizhou-11,0,0,0,,0,high
+landspace,LandSpace,Zhuque-2E,1,0,0,https://planet4589.org/space/gcat/data/tables/lv.html,9,normal
+landspace,LandSpace,Zhuque-2,1,0,0,https://mcval.org/launches/launchers/ls,9,normal
+landspace,LandSpace,Zhuque-3,1,1,0,https://planet4589.org/space/gcat/data/tables/lv.html,11,normal
+ispace-cn,i-Space (Beijing Interstellar Glory),Hyperbola-1,1,1,0,https://planet4589.org/space/gcat/data/tables/lv.html,11,normal
+galactic-energy,Galactic Energy,Ceres-2,0,0,0,,0,high
+galactic-energy,Galactic Energy,Ceres-1S,1,1,0,https://planet4589.org/space/gcat/data/tables/lv.html,11,normal
+galactic-energy,Galactic Energy,Ceres-1,1,1,0,https://mcval.org/launches/launchers/ge,11,normal
+galactic-energy,Galactic Energy,Pallas-1,0,0,0,,0,high
+space-pioneer,Space Pioneer (Tianbing),Tianlong-2,1,1,0,https://planet4589.org/space/gcat/data/tables/lv.html,11,normal
+space-pioneer,Space Pioneer (Tianbing),Tianlong-3,1,0,0,https://planet4589.org/space/gcat/data/tables/lv.html,9,normal
+orienspace,Orienspace,Gravity-1,0,0,0,,0,high
+orienspace,Orienspace,Gravity-2,0,0,0,,0,high
+deepblue,Deep Blue Aerospace,Nebula-1,0,0,0,,0,high
+deepblue,Deep Blue Aerospace,Nebula-2,0,0,0,,0,high
+casspace,CAS Space,Li Hong 1 (suborbital),0,0,0,,0,high
+casspace,CAS Space,Lijian-1 / ZK-1A,1,0,0,https://mcval.org/launches/launchers/cas,7,normal
+casspace,CAS Space,Kinetica-2,1,0,0,https://planet4589.org/space/gcat/data/tables/lv.html,9,normal
+skyroot,Skyroot Aerospace,Vikram-I,1,0,0,https://www.isro.gov.in/First_private_orbital_launch_lifts_from_Sriharikota.html,7,normal
+skyroot,Skyroot Aerospace,Vikram-S,1,0,0,https://www.isro.gov.in/mission_prarambh.html,9,normal
+skyroot,Skyroot Aerospace,Vikram-2,0,0,0,,0,high
+agnikul,Agnikul Cosmos,Agnibaan SOrTeD,0,0,0,https://www.isro.gov.in/Indian_private_players.html,0,high
+agnikul,Agnikul Cosmos,Agnibaan,0,0,0,,0,high
+mhi,Mitsubishi Heavy Industries,H-IIA,1,1,0,https://www.mhi.com/business/products-services/space-defense/launch-service/past-missions,11,normal
+mhi,Mitsubishi Heavy Industries,H3,1,0,0,https://global.jaxa.jp/projects/rockets/h3/,9,normal
+interstellar-jp,Interstellar Technologies,MOMO,0,0,0,https://www.istellartech.com/,0,high
+interstellar-jp,Interstellar Technologies,ZERO,0,0,0,,0,high
+spaceone,Space One,KAIROS,1,1,0,https://www.space-one.co.jp/,9,normal
+innospace,Innospace,HANBIT-TLV,1,0,0,https://www.innospc.com/shop_contents/myboard_read.htm?idx=301461&myboard_code=sub04_02,2,normal
+innospace,Innospace,HANBIT-Nano,1,1,0,https://www.innospc.com/shop_contents/myboard_read.htm?idx=937154&myboard_code=sub04_02&myboard_idx=64079,8,normal
+gilmour,Gilmour Space Technologies,Eris,0,0,0,,0,high
+iai,Israel Aerospace Industries,Shavit,1,1,0,https://planet4589.org/space/gcat/data/tables/lv.html,11,normal
+aio-iran,Aerospace Industries Organization (AIO),Simorgh (سیمرغ),1,1,1,https://planet4589.org/space/gcat/data/tables/lv.html,0,normal
+aio-iran,Aerospace Industries Organization (AIO),Safir-1B (سفیر ۱ب),1,1,1,,0,normal
+irgc-space,IRGC Aerospace Force – Space Division,Qaem-100 (قائم ۱۰۰),1,1,1,https://planet4589.org/space/gcat/data/tables/lv.html,0,normal
+irgc-space,IRGC Aerospace Force – Space Division,Qased (قاصد),1,1,1,https://planet4589.org/space/gcat/data/tables/lv.html,0,normal
+roketsan,Roketsan,SORS sounding-rocket family,0,0,0,,0,high
+pivdenmash,Pivdenmash (Yuzhmash),Zenit-3SL (manufacturing heritage),1,1,0,https://yuzhmash.com/en/about-company/milestones/,11,normal
+pivdenne,Pivdenne (Yuzhnoye) State Design Office,Zenit (design heritage),1,1,0,https://tubitak.gov.tr/tubitak_content_files/spaceworkshop/presentations/Lomachenkova.Olena.pdf,11,normal
+hanwha,Hanwha Aerospace,Nuri / KSLV-II (tech transferred from KARI),1,0,0,https://planet4589.org/space/gcat/data/tables/lv.html,9,normal
+perigee,Perigee Aerospace,Blue Whale 1,1,1,1,https://www.perigee.space/launch,0,normal
+space-epoch,Space Epoch,Yuanxingzhe-1,1,1,1,,0,normal
+nordspace,NordSpace,Taiga,0,0,0,https://www.nordspace.com/info,0,high
+nordspace,NordSpace,Tundra,0,0,0,,0,high
+etherealx,EtherealX,Razor Crest Mk-1,1,1,1,,0,normal
+phantomspace,Phantom Space,Daytona,0,1,0,,0,normal
+honda,Honda (Space Development),Reusable Rocket Experimental Hopper,1,0,0,,0,normal
+stellar-kinetics,Stellar Kinetics MCT,Kea-1,0,0,0,,0,high
+sirius-space-services,Sirius Space Services,SIRIUS 1,0,1,0,https://www.sirius-space.com/siriusrangeoflaunchers,0,normal
+sirius-space-services,Sirius Space Services,SIRIUS 13,0,1,0,https://www.sirius-space.com/siriusrangeoflaunchers,0,normal
+hyprspace,HyPrSpace,Baguette One,0,0,0,https://hypr-space.com/baguette-one-to-launch-from-biscarrosse-in-2027.html,0,high
+borospace,Borospace,ARDEA sounding-rocket family,0,0,0,https://www.linkedin.com/company/borospace,0,high

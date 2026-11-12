@@ -1,0 +1,78 @@
+﻿company_id,model,matched_variant,source_url,source_type,date
+spacex,Falcon Heavy,Falcon Heavy,https://planet4589.org/space/gcat/data/tables/lv.html,GCAT approximate estimates,2026-11-09
+spacex,Starship / Super Heavy,Starship V1.0,https://planet4589.org/space/gcat/data/tables/lv.html,GCAT approximate estimates,2026-11-09
+ula,Vulcan Centaur,Vulcan Centaur VC2S,https://planet4589.org/space/gcat/data/tables/lv.html,GCAT approximate estimates,2026-11-09
+blueorigin,New Shepard,New Shepard,https://planet4589.org/space/gcat/data/tables/lv.html,GCAT approximate estimates,2026-11-09
+blueorigin,New Glenn,New Glenn 7x2,https://planet4589.org/space/gcat/data/tables/lv.html,GCAT approximate estimates,2026-11-09
+rocketlab,HASTE,HASTE,https://planet4589.org/space/gcat/data/tables/lv.html,GCAT approximate estimates,2026-11-09
+rocketlab,Neutron,Neutron,https://planet4589.org/space/gcat/data/tables/lv.html,GCAT approximate estimates,2026-11-09
+firefly,Alpha,Firefly Alpha I,https://planet4589.org/space/gcat/data/tables/lv.html,GCAT approximate estimates,2026-11-09
+northrop,Antares 230+,Antares 230+,https://planet4589.org/space/gcat/data/tables/lv.html,GCAT approximate estimates,2026-11-09
+northrop,Minotaur I,Minotaur I,https://planet4589.org/space/gcat/data/tables/lv.html,GCAT approximate estimates,2026-11-09
+northrop,Pegasus XL,Pegasus XL,https://planet4589.org/space/gcat/data/tables/lv.html,GCAT approximate estimates,2026-11-09
+astra,Rocket 3 series,Astra Rocket 3.3,https://planet4589.org/space/gcat/data/tables/lv.html,GCAT approximate estimates,2026-11-09
+arianespace,Ariane 5,Ariane 5ECA,https://planet4589.org/space/gcat/data/tables/lv.html,GCAT approximate estimates,2026-11-09
+arianespace,Ariane 6,Ariane 62,https://planet4589.org/space/gcat/data/tables/lv.html,GCAT approximate estimates,2026-11-09
+arianespace,Vega C (service responsibilities transitioning to Avio),Vega C,https://planet4589.org/space/gcat/data/tables/lv.html,GCAT approximate estimates,2026-11-09
+arianegroup,Ariane 6 (industrial prime; operated by Arianespace),Ariane 62,https://planet4589.org/space/gcat/data/tables/lv.html,GCAT approximate estimates,2026-11-09
+avio,Vega,Vega,https://planet4589.org/space/gcat/data/tables/lv.html,GCAT approximate estimates,2026-11-09
+avio,Vega C,Vega C,https://planet4589.org/space/gcat/data/tables/lv.html,GCAT approximate estimates,2026-11-09
+isar,Spectrum,Spectrum,https://planet4589.org/space/gcat/data/tables/lv.html,GCAT approximate estimates,2026-11-09
+pldspace,MIURA 1,Miura 1,https://planet4589.org/space/gcat/data/tables/lv.html,GCAT approximate estimates,2026-11-09
+skyrora,Skylark L,Skylark L,https://planet4589.org/space/gcat/data/tables/lv.html,GCAT approximate estimates,2026-11-09
+progress-rocket,Soyuz-2 family,Soyuz-2-1A,https://planet4589.org/space/gcat/data/tables/lv.html,GCAT approximate estimates,2026-11-09
+progress-rocket,Soyuz-U (historical production),Soyuz-U,https://planet4589.org/space/gcat/data/tables/lv.html,GCAT approximate estimates,2026-11-09
+khrunichev,Proton-M,Proton-M/Briz-M,https://planet4589.org/space/gcat/data/tables/lv.html,GCAT approximate estimates,2026-11-09
+khrunichev,Angara A5,Angara A5,https://planet4589.org/space/gcat/data/tables/lv.html,GCAT approximate estimates,2026-11-09
+khrunichev,Angara 1.2,Angara-1.2,https://planet4589.org/space/gcat/data/tables/lv.html,GCAT approximate estimates,2026-11-09
+energia,Energia (historical heavy-lift system),Energiya,https://planet4589.org/space/gcat/data/tables/lv.html,GCAT approximate estimates,2026-11-09
+calt,Long March 5,Chang Zheng 5,https://planet4589.org/space/gcat/data/tables/lv.html,GCAT approximate estimates,2026-11-09
+calt,Long March 7,Chang Zheng 7,https://planet4589.org/space/gcat/data/tables/lv.html,GCAT approximate estimates,2026-11-09
+calt,Long March 8 / 8A,Chang Zheng 8,https://planet4589.org/space/gcat/data/tables/lv.html,GCAT approximate estimates,2026-11-09
+sast,Long March 4 series,Chang Zheng 4B,https://planet4589.org/space/gcat/data/tables/lv.html,GCAT approximate estimates,2026-11-09
+sast,Long March 6 series,Chang Zheng 6,https://planet4589.org/space/gcat/data/tables/lv.html,GCAT approximate estimates,2026-11-09
+sast,Jielong-3,Jielong-3,https://planet4589.org/space/gcat/data/tables/lv.html,GCAT approximate estimates,2026-11-09
+expace,Kuaizhou-1A,Kuaizhou-1A,https://planet4589.org/space/gcat/data/tables/lv.html,GCAT approximate estimates,2026-11-09
+landspace,Zhuque-2,Zhuque-2,https://planet4589.org/space/gcat/data/tables/lv.html,GCAT approximate estimates,2026-11-09
+landspace,Zhuque-2E,Zhuque-2E,https://planet4589.org/space/gcat/data/tables/lv.html,GCAT approximate estimates,2026-11-09
+landspace,Zhuque-3,Zhuque-3,https://planet4589.org/space/gcat/data/tables/lv.html,GCAT approximate estimates,2026-11-09
+ispace-cn,Hyperbola-1,Shuang Quxian 1,https://planet4589.org/space/gcat/data/tables/lv.html,GCAT approximate estimates,2026-11-09
+galactic-energy,Ceres-1,Gushenxing 1,https://planet4589.org/space/gcat/data/tables/lv.html,GCAT approximate estimates,2026-11-09
+galactic-energy,Ceres-1S,Gushenxing 1 S,https://planet4589.org/space/gcat/data/tables/lv.html,GCAT approximate estimates,2026-11-09
+space-pioneer,Tianlong-2,Tianlong-2,https://planet4589.org/space/gcat/data/tables/lv.html,GCAT approximate estimates,2026-11-09
+space-pioneer,Tianlong-3,Tianlong-3,https://planet4589.org/space/gcat/data/tables/lv.html,GCAT approximate estimates,2026-11-09
+casspace,Lijian-1 / ZK-1A,Lijian-1,https://planet4589.org/space/gcat/data/tables/lv.html,GCAT approximate estimates,2026-11-09
+casspace,Kinetica-2,Lijian-2,https://planet4589.org/space/gcat/data/tables/lv.html,GCAT approximate estimates,2026-11-09
+mhi,H-IIA,H-IIA 202,https://planet4589.org/space/gcat/data/tables/lv.html,GCAT approximate estimates,2026-11-09
+mhi,H3,H3-22L,https://planet4589.org/space/gcat/data/tables/lv.html,GCAT approximate estimates,2026-11-09
+spaceone,KAIROS,Kairos,https://planet4589.org/space/gcat/data/tables/lv.html,GCAT approximate estimates,2026-11-09
+innospace,HANBIT-Nano,HANBIT-NANO,https://planet4589.org/space/gcat/data/tables/lv.html,GCAT approximate estimates,2026-11-09
+innospace,HANBIT-TLV,HANBIT-TLV,https://planet4589.org/space/gcat/data/tables/lv.html,GCAT approximate estimates,2026-11-09
+iai,Shavit,Shavit,https://planet4589.org/space/gcat/data/tables/lv.html,GCAT approximate estimates,2026-11-09
+pivdenmash,Zenit-3SL (manufacturing heritage),Zenit-3SL,https://planet4589.org/space/gcat/data/tables/lv.html,GCAT approximate estimates,2026-11-09
+pivdenne,Zenit (design heritage),Zenit-2,https://planet4589.org/space/gcat/data/tables/lv.html,GCAT approximate estimates,2026-11-09
+hanwha,Nuri / KSLV-II (tech transferred from KARI),Nuri,https://planet4589.org/space/gcat/data/tables/lv.html,GCAT approximate estimates,2026-11-09
+skyroot,Vikram-I,Vikram-1,https://planet4589.org/space/gcat/data/tables/lv.html,GCAT approximate estimates,2026-11-09
+skyroot,Vikram-S,Vikram-S,https://planet4589.org/space/gcat/data/tables/lv.html,GCAT approximate estimates,2026-11-09
+aio-iran,Simorgh (سیمرغ),Simorgh,https://planet4589.org/space/gcat/data/tables/lv.html,GCAT approximate estimates,2026-11-09
+irgc-space,Qased (قاصد),Qased,https://planet4589.org/space/gcat/data/tables/lv.html,GCAT approximate estimates,2026-11-09
+irgc-space,Qaem-100 (قائم ۱۰۰),Qaem-100,https://planet4589.org/space/gcat/data/tables/lv.html,GCAT approximate estimates,2026-11-09
+rocketlab,Electron,Electron,https://rocketlabcorp.com/launch/electron/,manufacturer technical specifications,2026-11-12
+firefly,Alpha,Alpha,https://fireflyspace.com/alpha/,manufacturer technical specifications,2026-11-12
+skyrora,Skyrora XL,Skyrora XL,https://skyrora.com/product/skyrora-xl/,manufacturer technical specifications,2026-11-12
+pldspace,MIURA 5,MIURA 5,https://www.pldspace.com/en/miura-5.html,manufacturer technical specifications,2026-11-12
+rfa,RFA ONE,RFA ONE,https://www.rfa.space/rfa-one/,manufacturer technical specifications,2026-11-12
+blueorigin,New Glenn,New Glenn,https://www.blueorigin.com/new-glenn,manufacturer technical specifications,2026-11-12
+spacex,Falcon 9,Falcon 9,https://new.spacex.com/vehicles/falcon-9,manufacturer or national space agency official technical source,2026-11-12
+spacex,Falcon 9 Block 5,Falcon 9 Block 5,https://new.spacex.com/vehicles/falcon-9,manufacturer or national space agency official technical source,2026-11-12
+spacex,Falcon Heavy,Falcon Heavy,https://new.spacex.com/vehicles/falcon-heavy,manufacturer or national space agency official technical source,2026-11-12
+ula,Vulcan Centaur,Vulcan Centaur,https://www.ulalaunch.com/docs/default-source/rockets/2023_vulcan_user_guide.pdf,manufacturer or national space agency official technical source,2026-11-12
+arianespace,Ariane 6,Ariane 6,https://www.esa.int/Enabling_Support/Space_Transportation/Ariane/The_engines_of_Ariane_6,manufacturer or national space agency official technical source,2026-11-12
+arianegroup,Ariane 6 (industrial prime; operated by Arianespace),Ariane 6 (industrial prime; operated by Arianespace),https://www.esa.int/Enabling_Support/Space_Transportation/Ariane/The_engines_of_Ariane_6,manufacturer or national space agency official technical source,2026-11-12
+avio,Vega C,Vega C,https://www.arianespace.com/app/uploads/sites/4/2024/10/Vega-C-users-manual-Issue-0-Revision-0.pdf,manufacturer or national space agency official technical source,2026-11-12
+arianespace,Vega C (service responsibilities transitioning to Avio),Vega C (service responsibilities transitioning to Avio),https://www.arianespace.com/app/uploads/sites/4/2024/10/Vega-C-users-manual-Issue-0-Revision-0.pdf,manufacturer or national space agency official technical source,2026-11-12
+rocketlab,Neutron,Neutron,https://rocketlabcorp.com/launch/neutron/index.php,manufacturer or national space agency official technical source,2026-11-12
+firefly,Alpha,Alpha,https://fireflyspace.com/alpha/,manufacturer or national space agency official technical source,2026-11-12
+blueorigin,New Glenn,New Glenn,https://www.blueorigin.com/engines/be-3u,manufacturer or national space agency official technical source,2026-11-12
+astra,company scoped launch statistics,bounded rocket family,https://devops.majbase.com/space-launches/companies/astra-space,launch history independent,2026-11-12
+firefly,company scoped launch statistics,bounded rocket family,https://nextliftoff.com/stats?provider=firefly,launch history independent,2026-11-12

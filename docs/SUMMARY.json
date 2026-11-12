@@ -1,32 +1,18 @@
 {
-  "release_date": "2026-11-11",
-  "baseline": "ORBITA Launch Restored (266 master / 68 launcher records)",
-  "actual_launcher_records": 68,
-  "not_88_note": "This provided workspace contains 68 launch-company records, not 88.",
-  "other_entities_preserved": 198,
-  "previous_timeline_events": 81,
-  "current_timeline_events": 217,
-  "previous_fleet_entries": 107,
-  "current_fleet_entries": 113,
-  "companies_with_any_timeline": 67,
-  "companies_with_three_plus_timeline": 41,
-  "companies_with_pre2024_timeline": 62,
-  "timeline_status_counts": {
-    "source_confirmed": 125,
-    "legacy_source_not_rechecked": 27,
-    "legacy_not_independently_confirmed": 53,
-    "secondary_directory_context_not_event_verified": 11,
-    "secondary_historical_source": 1
-  },
-  "companies_with_any_fleet": 61,
-  "fleet_entries_with_source_link": 56,
-  "companies_with_sourced_scoped_numeric_launch_statistics": 23,
-  "companies_with_any_numeric_launch_statistics": 25,
-  "companies_with_founder_fa": 20,
-  "companies_with_ceo_fa": 22,
-  "companies_with_headquarters_city": 67,
-  "companies_with_country": 68,
-  "companies_with_founded_year": 60,
-  "test_result": "81 of 81 Node tests passed; 0 failed",
-  "scope": "Global map launch-company profile only; no orbital satellite catalogue or missions view changes"
+  "date": "2026-11-12",
+  "base": "ORBITA_Launch_Deep_Recovery_GitHub_READY_2026-11-11.zip",
+  "companies": 68,
+  "launchers": 113,
+  "data_field_modifications": 694,
+  "affected_companies": 35,
+  "affected_launcher_models": 64,
+  "unresolved_existing_value_disagreements_preserved": 41,
+  "fleet_with_physical_details": 73,
+  "fleet_with_payload_any": 50,
+  "fleet_with_engine_any": 23,
+  "original_input_sha256": {
+    "data/companies.json": "7cdb2a34ad199aab96d7e7844533b3f2eb3102b8d465936cc7700fce301f68bb",
+    "data/companies_launch.json": "77e7faafd877de3e8dea10484b637e83478839970dd04dfc4526df38e996d788",
+    "data/companies_propulsion.json": "bdb945930b20ae42ee895db8a0afb694dafa8611531755796a8493698280bfdf"
+  }
 }
