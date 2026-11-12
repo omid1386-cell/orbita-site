@@ -2122,6 +2122,23 @@
     var identity = o.id != null ? o.id : (o.en || o.name || "");
     return [p.kind || "point", p.cat || "", identity, o.lon, o.lat].join("|");
   }
+  // Stable membership fingerprint: never reuse cluster|0, cluster|1 etc. for unrelated groups.
+  // Two independent 32-bit hashes keep keys short even for large clusters.
+  // Sorting makes a cluster ID independent of the order in which data loads.
+  function stableClusterKey(points) {
+    var keys = points.map(markerPointKey).sort();
+    var a = 2166136261, b = 2246822519;
+    keys.forEach(function (key) {
+      // Length-delimit each identity so ["ab", "c"] != ["a", "bc"].
+      var part = key.length + ":" + key + ";";
+      for (var i = 0; i < part.length; i++) {
+        var code = part.charCodeAt(i);
+        a = Math.imul(a ^ code, 16777619) >>> 0;
+        b = Math.imul(b ^ code, 3266489917) >>> 0;
+      }
+    });
+    return "cluster|" + keys.length + "|" + a.toString(36) + "|" + b.toString(36);
+  }
   function markerIconImage(p) {
     if (p.cat === "recovery") return MARKER_IMAGES.recovery;
     if (p.cat === "satmaker") return MARKER_IMAGES.satmaker;
@@ -2408,7 +2425,9 @@
   }
   function markerInteractionLayerIds() {
     if (!map) return [];
-    return [MARKER_POINT_LAYER, MARKER_CLUSTER_LABEL_LAYER, MARKER_CLUSTER_CIRCLE_LAYER, MARKER_CLUSTER_HALO_LAYER]
+    // Include the enlarged hover artwork: otherwise its visible edge is clickable as a country.
+    return [MARKER_POINT_HOVER_LAYER, MARKER_CLUSTER_HOVER_LABEL_LAYER, MARKER_CLUSTER_HOVER_LAYER,
+      MARKER_POINT_LAYER, MARKER_CLUSTER_LABEL_LAYER, MARKER_CLUSTER_CIRCLE_LAYER, MARKER_CLUSTER_HALO_LAYER]
       .filter(function (id) { return !!map.getLayer(id); });
   }
   function interactionFeaturesAtPoint(point, includeCountry) {
@@ -2426,8 +2445,37 @@
     });
     return pointFeature || hits.find(function (f) { return f && f.properties && f.properties.markerKey; }) || null;
   }
+  // A narrow screen-space fallback for brief GeoJSON/style update gaps. Click-only: no
+  // geometry scanning on mousemove. Only current feature positions and installed layers qualify.
+  function markerFeatureNearPoint(point) {
+    if (!map || !map.project || !map.getLayer || !map.getLayer(MARKER_POINT_LAYER)) return null;
+    var best = null, bestDistance = Infinity;
+    (markerFeatureCollection.features || []).forEach(function (feature) {
+      var props = feature.properties || {};
+      var xy;
+      try { xy = map.project(feature.geometry.coordinates); } catch (err) { return; }
+      if (!xy || !Number.isFinite(xy.x) || !Number.isFinite(xy.y)) return;
+      var dx = point.x - xy.x, dy = point.y - xy.y, score;
+      if (props.markerType === "cluster") {
+        // MapLibre circle radius is measured from the cluster's geographic center.
+        var radius = Number(props.clusterHaloRadius) || 0;
+        if (dx * dx + dy * dy > (radius + 2) * (radius + 2)) return;
+        score = Math.hypot(dx, dy);
+      } else if (props.markerType === "point") {
+        // SVG pin: bottom-anchored artwork (30 x 38px), scaled with the map zoom.
+        var sc = Number(props.iconScale) || 0.8;
+        var hoverScale = props.markerKey === markerHoverKey ? 1.28 : 1;
+        var halfWidth = 15 * sc * hoverScale + 2;
+        var height = 38 * sc * hoverScale + 2;
+        if (Math.abs(dx) > halfWidth || dy > 3 || dy < -height) return;
+        score = Math.hypot(dx, dy + height * 0.5);
+      } else return;
+      if (score < bestDistance) { best = feature; bestDistance = score; }
+    });
+    return best;
+  }
   function markerFeatureAtPoint(point) {
-    return markerFeatureFromHits(interactionFeaturesAtPoint(point, false));
+    return markerFeatureFromHits(interactionFeaturesAtPoint(point, false)) || markerFeatureNearPoint(point);
   }
   function handleMarkerMapClick(e) {
     if (!map || !e || !e.point) return false;
@@ -2437,10 +2485,12 @@
     if (props.markerType === "cluster") {
       var members = markerClustersByKey[key];
       if (members && members.length) openClusterList(members);
+      // A rendered feature may belong to the previous zoom/filter snapshot.
+      // Absorb stale hits rather than opening an unrelated country's dossier.
       return true;
     }
     var point = markerPointsByKey[key];
-    if (!point) return false;
+    if (!point) return true; // stale point must never fall through to country selection
     var lngLat = [point.o.lon, point.o.lat];
     openDetail(point);
     map.flyTo({ center: lngLat, zoom: Math.max(map.getZoom(), 4.5), duration: 900 });
@@ -2522,7 +2572,7 @@
         var top = Object.keys(counts).sort(function (a, b) { return counts[b] - counts[a]; })[0];
         var color = C[top === "site" ? "site" : top] || C.launch;
         var count = group.pts.length, diameter = Math.round((count > 20 ? 38 : count > 8 ? 34 : 30) * sc);
-        var key = "cluster|" + index;
+        var key = stableClusterKey(group.pts);
         var countText = LANG === "fa" ? fmtNum(count) : String(count);
         var labelImage = clusterLabelImageId(count);
         clustersByKey[key] = group.pts.slice();

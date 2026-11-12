@@ -100,6 +100,6 @@ assert.equal(companyById['casc-6th'].logo_bg, companyById['aalpt-china'].logo_bg
 
 const html = fs.readFileSync(path.join(root, 'index.html'), 'utf8');
 assert.match(html, /window\.ORBITA_V = "20261023mapuk2";/);
-assert.match(html, /window\.ORBITA_APP_V = "20261111launch68deepappv3";/);
+assert.match(html, /window\.ORBITA_APP_V = "20261112markerpriorityclustersv1";/);
 
 console.log(`Verified ${Object.keys(expectedLogos).length} reviewed group-3 logo assignments across ${group3Ids.length} records; one remains unassigned.`);
