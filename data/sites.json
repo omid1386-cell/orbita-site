@@ -377,7 +377,8 @@
     "stats_success": 222,
     "stats_fail": 2,
     "stats_asof": "2026-10-21",
-    "country_ar": "الولايات المتحدة"
+    "country_ar": "الولايات المتحدة",
+    "photo_caption_ar": "منظر جوي للمنصة 39A مع صاروخ ساتورن 5 (حقبة أبولو)"
   },
   {
     "id": "ksc39b",
@@ -730,7 +731,8 @@
     "stats_success": 58,
     "stats_fail": 1,
     "stats_asof": "2026-10-21",
-    "country_ar": "الولايات المتحدة"
+    "country_ar": "الولايات المتحدة",
+    "photo_caption_ar": "صاروخ مهمة أرتميس 1 على المنصة 39B عند شروق الشمس"
   },
   {
     "id": "ccsfs",
@@ -1109,7 +1111,8 @@
     "stats_success": 1052,
     "stats_fail": 81,
     "stats_asof": "2026-10-21",
-    "country_ar": "الولايات المتحدة"
+    "country_ar": "الولايات المتحدة",
+    "photo_caption_ar": "منظر جوي لمجمع الإطلاق 40 في كيب كانافيرال"
   },
   {
     "id": "vandenberg",
@@ -1463,7 +1466,8 @@
     "stats_success": 849,
     "stats_fail": 71,
     "stats_asof": "2026-10-24",
-    "country_ar": "الولايات المتحدة"
+    "country_ar": "الولايات المتحدة",
+    "photo_caption_ar": "منظر لمنشآت مجمع الإطلاق 4 ومنطقة الهبوط في فاندنبرغ"
   },
   {
     "id": "starbase",
@@ -1839,7 +1843,8 @@
     "stats_success": 15,
     "stats_fail": 8,
     "stats_asof": "2026-10-21",
-    "country_ar": "الولايات المتحدة"
+    "country_ar": "الولايات المتحدة",
+    "photo_caption_ar": "منشآت الإطلاق في ستاربيس ببوكا تشيكا، تكساس"
   },
   {
     "id": "wallops",
@@ -2067,7 +2072,8 @@
     "stats_success": 77,
     "stats_fail": 10,
     "stats_asof": "2026-10-21",
-    "country_ar": "الولايات المتحدة"
+    "country_ar": "الولايات المتحدة",
+    "photo_caption_ar": "صاروخ أنتاريس على منصة الإطلاق في والوبس"
   },
   {
     "id": "kodiak",
@@ -2320,7 +2326,8 @@
     "stats_success": 5,
     "stats_fail": 4,
     "stats_asof": "2026-10-21",
-    "country_ar": "الولايات المتحدة"
+    "country_ar": "الولايات المتحدة",
+    "photo_caption_ar": "مبنى المعالجة والتجميع في مجمع المحيط الهادئ الفضائي، جزيرة كودياك"
   },
   {
     "id": "spaceportamerica",
@@ -2547,7 +2554,8 @@
     "stats_success": 0,
     "stats_fail": 4,
     "stats_asof": "2026-10-21",
-    "country_ar": "الولايات المتحدة"
+    "country_ar": "الولايات المتحدة",
+    "photo_caption_ar": "المحطة الرئيسية لميناء سبيسبورت أمريكا الفضائي ليلاً"
   },
   {
     "id": "kwajalein",
@@ -2798,7 +2806,8 @@
     "stats_success": 2,
     "stats_fail": 3,
     "stats_asof": "2026-10-21",
-    "country_ar": "جزر مارشال"
+    "country_ar": "جزر مارشال",
+    "photo_caption_ar": "إطلاق فالكون 1 من جزيرة أومليك (2009)"
   },
   {
     "id": "mahia",
@@ -3077,7 +3086,8 @@
     "stats_success": 81,
     "stats_fail": 4,
     "stats_asof": "2026-10-24",
-    "country_ar": "نيوزيلندا"
+    "country_ar": "نيوزيلندا",
+    "photo_caption_ar": "منظر جوي لمجمع الإطلاق 1 التابع لروكيت لاب في شبه جزيرة ماهيا"
   },
   {
     "id": "kourou",
@@ -3480,7 +3490,8 @@
     "stats_success": 317,
     "stats_fail": 19,
     "stats_asof": "2026-10-22",
-    "country_ar": "غويانا الفرنسية"
+    "country_ar": "غويانا الفرنسية",
+    "photo_caption_ar": "نقل صاروخ أريان 5 إلى منصة الإطلاق ELA-3 في كورو"
   },
   {
     "id": "andoya",
@@ -3707,7 +3718,8 @@
     "stats_success": 1,
     "stats_fail": 1,
     "stats_asof": "2026-10-22",
-    "country_ar": "النرويج"
+    "country_ar": "النرويج",
+    "photo_caption_ar": "منظر جوي لمنشآت ميناء أندويا الفضائي"
   },
   {
     "id": "esrange",
@@ -3934,7 +3946,8 @@
     "stats_success": 0,
     "stats_fail": 0,
     "stats_asof": "2026-10-22",
-    "country_ar": "السويد"
+    "country_ar": "السويد",
+    "photo_caption_ar": "صاروخ سبر على برج الإطلاق في إسرانج"
   },
   {
     "id": "saxavord",
@@ -4087,7 +4100,8 @@
     "stats_success": 0,
     "stats_fail": 0,
     "stats_asof": "2026-10-22",
-    "country_ar": "المملكة المتحدة"
+    "country_ar": "المملكة المتحدة",
+    "photo_caption_ar": "مدخل موقع ميناء ساكسافورد الفضائي قيد الإنشاء في جزيرة أونست"
   },
   {
     "id": "sutherland",
@@ -4244,7 +4258,9 @@
       "https://www.hie.co.uk/news-and-blogs/news/2026/august/25/hie-acquires-assets-of-sutherland-spaceport-ltd/",
       "https://www.gov.uk/government/publications/brochure-a-guide-to-the-uks-commercial-spaceports/a-guide-to-the-uks-commercial-spaceports"
     ],
-    "country_ar": "المملكة المتحدة"
+    "country_ar": "المملكة المتحدة",
+    "photo_caption_ar": "موقع منصة الإطلاق في ساذرلاند في سهل آ مهوان (قبل الإنشاء)",
+    "coordinate_note_ar": "استُخرجت الإحداثيات من دليل الموانئ الفضائية الرسمي الصادر عن حكومة المملكة المتحدة (نسخة 2023)؛ ويمثل المؤشر الموقع العام للمشروع لا منصة إطلاق تشغيلية مؤكدة."
   },
   {
     "id": "elarenosillo",
@@ -4421,7 +4437,8 @@
     "stats_success": 1,
     "stats_fail": 0,
     "stats_asof": "2026-10-22",
-    "country_ar": "إسبانيا"
+    "country_ar": "إسبانيا",
+    "photo_caption_ar": "إطلاق ليلي لصاروخ ميورا 1 من إل أرينوسيو"
   },
   {
     "id": "malbusca",
@@ -4904,7 +4921,8 @@
     "stats_success": 1618,
     "stats_fail": 70,
     "stats_asof": "2026-10-22",
-    "country_ar": "روسيا"
+    "country_ar": "روسيا",
+    "photo_caption_ar": "صاروخ أنغارا-1.2 على منصة الإطلاق في بليسيتسك"
   },
   {
     "id": "baikonur",
@@ -5307,7 +5325,8 @@
     "stats_success": 1438,
     "stats_fail": 127,
     "stats_asof": "2026-10-22",
-    "country_ar": "كازاخستان (مستأجر من روسيا)"
+    "country_ar": "كازاخستان (مستأجر من روسيا)",
+    "photo_caption_ar": "نصب صاروخ سويوز على منصة الإطلاق في بايكونور"
   },
   {
     "id": "vostochny",
@@ -5534,7 +5553,8 @@
     "stats_success": 20,
     "stats_fail": 1,
     "stats_asof": "2026-10-23",
-    "country_ar": "روسيا"
+    "country_ar": "روسيا",
+    "photo_caption_ar": "إطلاق سويوز-2.1A من فوستوتشني (1395 هـ.ش / 2016 م)"
   },
   {
     "id": "kapyar",
@@ -5761,7 +5781,8 @@
     "stats_success": 85,
     "stats_fail": 16,
     "stats_asof": "2026-10-23",
-    "country_ar": "روسيا"
+    "country_ar": "روسيا",
+    "photo_caption_ar": "إطلاق تجريبي من ميدان كابوستين يار كما شوهد من محطة الفضاء الدولية"
   },
   {
     "id": "jiuquan",
@@ -6139,7 +6160,8 @@
     "stats_success": 277,
     "stats_fail": 23,
     "stats_asof": "2026-10-24",
-    "country_ar": "الصين"
+    "country_ar": "الصين",
+    "photo_caption_ar": "مبنى التجميع العمودي في مركز جيوتشيوان للإطلاق"
   },
   {
     "id": "taiyuan",
@@ -6394,7 +6416,8 @@
     "stats_success": 157,
     "stats_fail": 7,
     "stats_asof": "2026-10-24",
-    "country_ar": "الصين"
+    "country_ar": "الصين",
+    "photo_caption_ar": "صورة رادارية ساتلية لمنشآت مركز تاييوان للإطلاق"
   },
   {
     "id": "xichang",
@@ -6646,7 +6669,8 @@
     "stats_success": 231,
     "stats_fail": 11,
     "stats_asof": "2026-10-23",
-    "country_ar": "الصين"
+    "country_ar": "الصين",
+    "photo_caption_ar": "إطلاق ليلي لصاروخ لونغ مارش 3B من شيتشانغ"
   },
   {
     "id": "wenchang",
@@ -7029,7 +7053,8 @@
     "stats_scope_en": "Government Pads 101 and 201 only (LL2 pads 175 and 176); excludes the separate commercial LC-1/LC-2 site. Cut-off: 2026-11-06.",
     "stats_scope_fa": "فقط پدهای دولتی ۱۰۱ و ۲۰۱ (پدهای ۱۷۵ و ۱۷۶ در LL2)؛ پایگاه تجاری LC-1/LC-2 جداست. برش: ۶ نوامبر ۲۰۲۶.",
     "stats_scope_ar": "المنصتان الحكوميتان 101 و201 فقط (وسادتا LL2 رقم 175 و176)؛ ويُستبعد موقع LC-1/LC-2 التجاري المنفصل. حتى 6 نوفمبر 2026.",
-    "country_ar": "الصين"
+    "country_ar": "الصين",
+    "photo_caption_ar": "نقل صاروخ لونغ مارش 5 إلى منصة الإطلاق في ونتشانغ"
   },
   {
     "id": "haiyang",
@@ -7208,7 +7233,8 @@
     "stats_success": 29,
     "stats_fail": 0,
     "stats_asof": "2026-10-23",
-    "country_ar": "الصين"
+    "country_ar": "الصين",
+    "photo_caption_ar": "إطلاق بحري لصاروخ جييلونغ-3 من منصة عائمة في البحر الأصفر"
   },
   {
     "id": "sriharikota",
@@ -7587,7 +7613,8 @@
     "stats_success": 90,
     "stats_fail": 15,
     "stats_asof": "2026-10-23",
-    "country_ar": "الهند"
+    "country_ar": "الهند",
+    "photo_caption_ar": "منصة الإطلاق الثانية في سريهاريكوتا مع صاروخ GSLV Mk III"
   },
   {
     "id": "kulasekarapattinam",
@@ -7714,7 +7741,8 @@
     "stats_success": 0,
     "stats_fail": 0,
     "stats_asof": "2026-10-23",
-    "country_ar": "الهند"
+    "country_ar": "الهند",
+    "photo_caption_ar": "ساحل تيروتشيندور قرب موقع إنشاء ميناء كولاسيكاراباتينام الفضائي"
   },
   {
     "id": "tanegashima",
@@ -8092,7 +8120,8 @@
     "stats_success": 95,
     "stats_fail": 5,
     "stats_asof": "2026-10-24",
-    "country_ar": "اليابان"
+    "country_ar": "اليابان",
+    "photo_caption_ar": "منصات الإطلاق في تانيغاشيما على ساحل المحيط الهادئ"
   },
   {
     "id": "uchinoura",
@@ -8319,7 +8348,8 @@
     "stats_success": 33,
     "stats_fail": 10,
     "stats_asof": "2026-10-24",
-    "country_ar": "اليابان"
+    "country_ar": "اليابان",
+    "photo_caption_ar": "منظر لمنشآت مركز أوتشينورا الفضائي فوق التلال الساحلية"
   },
   {
     "id": "kii",
@@ -8470,7 +8500,8 @@
     "stats_success": 0,
     "stats_fail": 3,
     "stats_asof": "2026-10-24",
-    "country_ar": "اليابان"
+    "country_ar": "اليابان",
+    "photo_caption_ar": "منظر جوي مشروح لميناء كي الفضائي قيد الإنشاء؛ موضع الإطلاق محدّد"
   },
   {
     "id": "taiki",
@@ -8701,7 +8732,8 @@
     "stats_scope_en": "MOMO suborbital flight attempts only; these are not orbital launches.",
     "stats_scope_fa": "فقط تلاش‌های پرواز زیرمداری MOMO؛ پرتاب مداری نیستند.",
     "stats_scope_ar": "محاولات طيران MOMO شبه المدارية فقط؛ وليست إطلاقات مدارية.",
-    "country_ar": "اليابان"
+    "country_ar": "اليابان",
+    "photo_caption_ar": "منظر جوي للمدرج ومنشآت ميناء تايكي الفضائي في هوكايدو"
   },
   {
     "id": "naro",
@@ -9005,7 +9037,8 @@
     "stats_scope_en": "Orbital attempts only. The LL2 raw location count of 9 includes a KSLV-TLV suborbital test, excluded here.",
     "stats_scope_fa": "فقط تلاش‌های مداری. شمار خام ۹تایی مکان در LL2 شامل آزمون زیرمداری KSLV-TLV است و اینجا کنار گذاشته شده.",
     "stats_scope_ar": "محاولات مدارية فقط. يتضمن العدد الخام للموقع في LL2، وهو 9، اختبار KSLV-TLV شبه المداري المستبعد هنا.",
-    "country_ar": "كوريا الجنوبية"
+    "country_ar": "كوريا الجنوبية",
+    "photo_caption_ar": "إطلاق صاروخ نوري من مركز نارو الفضائي"
   },
   {
     "id": "sohae",
@@ -9257,7 +9290,8 @@
     "stats_success": 3,
     "stats_fail": 4,
     "stats_asof": "2026-10-24",
-    "country_ar": "كوريا الشمالية"
+    "country_ar": "كوريا الشمالية",
+    "photo_caption_ar": "صاروخ أونها-3 على برج الإطلاق في سوهاي"
   },
   {
     "id": "palmachim",
@@ -9508,7 +9542,8 @@
     "stats_success": 11,
     "stats_fail": 2,
     "stats_asof": "2026-10-24",
-    "country_ar": "إسرائيل"
+    "country_ar": "إسرائيل",
+    "photo_caption_ar": "إطلاق ليلي لصاروخ شافيت (مهمة أوفيك 7) من بلماحيم"
   },
   {
     "id": "imam-khomeini",
@@ -9911,7 +9946,8 @@
     "stats_success": 6,
     "stats_fail": 9,
     "stats_asof": "2026-10-24",
-    "country_ar": "إيران"
+    "country_ar": "إيران",
+    "photo_caption_ar": "صاروخ سيمرغ في ميناء الإمام الخميني الفضائي الوطني، سمنان"
   },
   {
     "id": "shahroud",
@@ -10189,7 +10225,8 @@
     "stats_success": 5,
     "stats_fail": 1,
     "stats_asof": "2026-10-24",
-    "country_ar": "إيران"
+    "country_ar": "إيران",
+    "photo_caption_ar": "الإطلاق الأول لصاروخ قاصد من ميناء شاهرود الفضائي"
   },
   {
     "id": "chabahar",
@@ -10336,7 +10373,8 @@
     "photo_credit": "Nightryder84",
     "photo_license": "CC BY-SA 3.0",
     "photo_source_url": "https://commons.wikimedia.org/wiki/File:Chabahar_coast.jpg",
-    "country_ar": "إيران"
+    "country_ar": "إيران",
+    "photo_caption_ar": "ساحل تشابهار؛ يجري إنشاء ميناء تشابهار الفضائي في هذه المنطقة"
   },
   {
     "id": "emamshahr",
@@ -10583,7 +10621,8 @@
     "photo_credit": "Fars News",
     "photo_license": "CC BY 4.0",
     "photo_source_url": "https://commons.wikimedia.org/wiki/File:Launch_and_recovery_of_Iranian_Kavoshgar-Pishgam_space_research_rocket_(04).jpg",
-    "country_ar": "إيران"
+    "country_ar": "إيران",
+    "photo_caption_ar": "إطلاق المسبار الحيوي بيشغام من منصة سكك حديدية في منطقة برامج المسابر الإيرانية"
   },
   {
     "id": "alcantara",
@@ -10807,7 +10846,8 @@
     "photo_credit": "Agência Brasil",
     "photo_license": "CC BY 3.0",
     "photo_source_url": "https://commons.wikimedia.org/wiki/File:Lan%C3%A7amento_do_foguete_brasileiro_de_m%C3%A9dio_porte_VSB-30_V07_da_Base_de_Alc%C3%A2ntara.jpg",
-    "country_ar": "البرازيل"
+    "country_ar": "البرازيل",
+    "photo_caption_ar": "إطلاق صاروخ السبر VSB-30 من مركز ألكانتارا للإطلاق"
   },
   {
     "id": "woomera",
@@ -11031,7 +11071,8 @@
     "photo_credit": "artq55",
     "photo_license": "CC BY-SA 2.0",
     "photo_source_url": "https://commons.wikimedia.org/wiki/File:Black_Arrow.jpg",
-    "country_ar": "أستراليا"
+    "country_ar": "أستراليا",
+    "photo_caption_ar": "صاروخ معروض في حديقة الصواريخ بووميرا"
   },
   {
     "id": "bowen",
@@ -11178,7 +11219,8 @@
     "photo_credit": "WikkiMediaa",
     "photo_license": "CC BY-SA 4.0",
     "photo_source_url": "https://commons.wikimedia.org/wiki/File:Abbot_Point_Terminal.jpg",
-    "country_ar": "أستراليا"
+    "country_ar": "أستراليا",
+    "photo_caption_ar": "ميناء أبوت بوينت؛ تقع منصة بوين المدارية في المنطقة الساحلية نفسها"
   },
   {
     "id": "arnhem",
@@ -11350,7 +11392,8 @@
     "photo_credit": "NASA's Scientific Visualization Studio - NASA/WFF/Keith Koehler, KBR Wyle Services, LLC/Jo",
     "photo_license": "Public domain",
     "photo_source_url": "https://commons.wikimedia.org/wiki/File:Australia_Sounding_Rocket_Campaign_Press_Kit_(SVS14164_-_DJI_0005_v2_Arnhem_Space_Center_ELA).jpg",
-    "country_ar": "أستراليا"
+    "country_ar": "أستراليا",
+    "photo_caption_ar": "منظر جوي لموقع مركز أرنهيم الفضائي"
   },
   {
     "id": "koonibba",
@@ -11497,7 +11540,8 @@
     "photo_credit": "Nachoman-au",
     "photo_license": "CC BY-SA 3.0",
     "photo_source_url": "https://commons.wikimedia.org/wiki/File:Ceduna_OTC,_South_Australia.jpg",
-    "country_ar": "أستراليا"
+    "country_ar": "أستراليا",
+    "photo_caption_ar": "محطة سيدونا الأرضية للأقمار الصناعية؛ أقرب مدينة إلى موقع اختبارات كونيبا"
   },
   {
     "id": "whalersway",
@@ -11644,7 +11688,8 @@
     "photo_credit": "Captain Frank Hurley",
     "photo_license": "CC0",
     "photo_source_url": "https://commons.wikimedia.org/wiki/File:Sleaford_Bay(GN05734).jpg",
-    "country_ar": "أستراليا"
+    "country_ar": "أستراليا",
+    "photo_caption_ar": "ساحل خليج سليفورد في شبه جزيرة آير، بالقرب من موقع ويلرز واي"
   },
   {
     "id": "sanmarco",
@@ -11874,7 +11919,8 @@
     "geo_analysis_fa": "نزدیکی سکوی سن مارکو به استوا، امکان تزریق ماهواره‌ها به مدارهای پایین با میل مداری کم را فراهم می‌کرد؛ پرتاب‌های ثبت‌شده از سکوی دریایی در مدار پایین زمینِ استوایی بودند. این سکو از ۱۹۸۸ پرتابی نداشته است. فعال‌بودن ایستگاه‌های زمینی Malindi به معنی فعال‌بودن سکوی پرتاب یا زیرساخت‌های موشکی نیست.",
     "geo_analysis_en": "San Marco’s near-equatorial location enabled low-inclination orbital insertions; recorded launches from the offshore platform reached equatorial low Earth orbit. The sea platform has not launched since 1988. Active Malindi ground stations do not mean the launch pad or rocket infrastructure is operational.",
     "geo_analysis_ar": "أتاح موقع سان ماركو القريب من خط الاستواء إدخال الأقمار إلى مدارات منخفضة ذات ميل قليل؛ ووصلت الإطلاقات المسجلة من المنصة البحرية إلى مدار أرضي منخفض استوائي. لم تُجرَ أي عملية إطلاق من المنصة منذ 1988. ولا يعني نشاط محطات Malindi الأرضية أن منصة الإطلاق أو البنية الصاروخية ما زالت تشغيلية.",
-    "country_ar": "كينيا"
+    "country_ar": "كينيا",
+    "photo_caption_ar": "المنصة البحرية سان ماركو قبالة ساحل كينيا"
   },
   {
     "id": "hammaguir",
@@ -12078,7 +12124,8 @@
     "geo_analysis_fa": "حماگیر در حدود ۳۱ درجهٔ شمالی قرار دارد. پرتاب‌های مداری تاریخی Diamant به مدار پایین زمین و میل‌هایی نزدیک عرض جغرافیایی سایت رسیدند؛ مدرکی از پرتاب به GEO، مدار ماه یا مدار بین‌سیاره‌ای از این پایگاه وجود ندارد.",
     "geo_analysis_en": "Hammaguir lies at about 31° N. Its historical Diamant orbital launches reached low Earth orbit at inclinations near the site latitude; there is no evidence of GEO, lunar or interplanetary launches from this site.",
     "geo_analysis_ar": "يقع حمّاقير عند نحو 31° شمالاً. وصلت إطلاقات Diamant المدارية التاريخية إلى مدار أرضي منخفض بميول قريبة من خط عرض الموقع؛ ولا يوجد دليل على إطلاقات إلى GEO أو القمر أو مدارات بين كوكبية من هذه القاعدة.",
-    "country_ar": "الجزائر"
+    "country_ar": "الجزائر",
+    "photo_caption_ar": "صواريخ السبر فيرونيك وسنتور التي كانت تُطلق من حماقير (نماذج متحفية)"
   },
   {
     "id": "sea-launch",
@@ -12325,7 +12372,8 @@
     "photo_credit": "jurvetson",
     "photo_license": "CC BY 2.0",
     "photo_source_url": "https://commons.wikimedia.org/wiki/File:Sea_Launch_01.jpg",
-    "country_ar": "دولي / المحيط الهادئ"
+    "country_ar": "دولي / المحيط الهادئ",
+    "photo_caption_ar": "إطلاق ليلي لصاروخ زينيت من منصة أوديسي البحرية"
   },
   {
     "id": "vostochny-angara",
@@ -12472,7 +12520,8 @@
     "photo_credit": "Dima Ostrovsky",
     "photo_license": "CC BY 2.0",
     "photo_source_url": "https://commons.wikimedia.org/wiki/File:Tsiolkovsky-cosmodrome-vostochny-july-2015-amur-oblast.jpg",
-    "country_ar": "روسيا"
+    "country_ar": "روسيا",
+    "photo_caption_ar": "أعمال بناء مدينة تسيولكوفسكي (أوغليغورسك سابقاً)، المدينة الداعمة لقاعدة سفوبودني الفضائية"
   },
   {
     "id": "jeju",
@@ -12594,7 +12643,8 @@
     "photo_credit": "Bernard Gagnon",
     "photo_license": "CC0",
     "photo_source_url": "https://commons.wikimedia.org/wiki/File:Daepo_Jusangjeolli_Cliff_02.jpg",
-    "country_ar": "كوريا الجنوبية"
+    "country_ar": "كوريا الجنوبية",
+    "photo_caption_ar": "صخور البازلت على ساحل جيجو؛ تقع مواقع اختبارات هانوا الفضائية على الجزيرة نفسها"
   },
   {
     "id": "vandenberg-slc6",
@@ -12842,7 +12892,8 @@
     "photo_credit": "U.S. Air Force photo/Joe Davila",
     "photo_license": "Public domain",
     "photo_source_url": "https://commons.wikimedia.org/wiki/File:First_Delta_IV_Heavy_launch_from_SLC-6_at_Vandenberg_AFB.jpg",
-    "country_ar": "الولايات المتحدة"
+    "country_ar": "الولايات المتحدة",
+    "photo_caption_ar": "إطلاق دلتا 4 الثقيل من مجمع الإطلاق 6 في فاندنبرغ"
   },
   {
     "id": "lc36",
@@ -13089,7 +13140,8 @@
     "photo_credit": "SpaceFrom.Space",
     "photo_license": "CC BY 2.0",
     "photo_source_url": "https://commons.wikimedia.org/wiki/File:Cape_Canaveral_Launch_Pads_-_2023-10-29_(53342411352).jpg",
-    "country_ar": "الولايات المتحدة"
+    "country_ar": "الولايات المتحدة",
+    "photo_caption_ar": "صورة ساتلية لسلسلة منصات كيب كانافيرال؛ ومن بينها مجمع الإطلاق 36"
   },
   {
     "id": "corn-ranch",
@@ -13336,7 +13388,8 @@
     "photo_credit": "USGS",
     "photo_license": "Public domain",
     "photo_source_url": "https://commons.wikimedia.org/wiki/File:Corn_Ranch_Spaceport_National_Map_view.png",
-    "country_ar": "الولايات المتحدة"
+    "country_ar": "الولايات المتحدة",
+    "photo_caption_ar": "صورة جوية رسمية لقاعدة كورن رانش في صحراء غرب تكساس"
   },
   {
     "id": "mcgregor",
@@ -13508,7 +13561,8 @@
     "photo_credit": "Bill Ingalls",
     "photo_license": "Public domain",
     "photo_source_url": "https://commons.wikimedia.org/wiki/File:Bolden_and_Musk_thanked_the_more_than_150_SpaceX_employees.jpg",
-    "country_ar": "الولايات المتحدة"
+    "country_ar": "الولايات المتحدة",
+    "photo_caption_ar": "قاعة منشأة اختبارات ماكغريغور؛ كبسولة دراغون بعد عودتها من المدار"
   },
   {
     "id": "stennis",
@@ -13706,7 +13760,8 @@
     "photo_credit": "Danny Nowlin",
     "photo_license": "Public Domain",
     "photo_source_url": "https://images.nasa.gov/details/SSC-20211101-s00289",
-    "country_ar": "الولايات المتحدة"
+    "country_ar": "الولايات المتحدة",
+    "photo_caption_ar": "تركيب محرك على منشأة اختبار في مركز ستينيس التابع لناسا"
   },
   {
     "id": "pad0a",
@@ -13929,7 +13984,8 @@
     "photo_credit": "Joel Kowsky",
     "photo_license": "Public domain",
     "photo_source_url": "https://commons.wikimedia.org/wiki/File:Antares_Rocket_at_Sunrise,_October_26,_2014.jpg",
-    "country_ar": "الولايات المتحدة"
+    "country_ar": "الولايات المتحدة",
+    "photo_caption_ar": "صاروخ أنتاريس على منصة 0A في والوبس عند شروق الشمس"
   },
   {
     "id": "overberg",
@@ -14128,7 +14184,8 @@
     "stats_success": 0,
     "stats_fail": 0,
     "stats_asof": "2026-11-06",
-    "country_ar": "جنوب أفريقيا"
+    "country_ar": "جنوب أفريقيا",
+    "photo_caption_ar": "ساحل أرنيستون في منطقة أوفربرغ؛ يقع ميدان الاختبار في المنطقة نفسها"
   },
   {
     "id": "djibouti-spaceport",
@@ -14373,7 +14430,8 @@
     "photo_credit": "Ian Kluft",
     "photo_license": "CC BY-SA 3.0",
     "photo_source_url": "https://commons.wikimedia.org/wiki/File:Kluft-photo-aerial-Mojave-Spaceport-Sept-2009-Img_0227.jpg",
-    "country_ar": "الولايات المتحدة"
+    "country_ar": "الولايات المتحدة",
+    "photo_caption_ar": "منظر جوي لميناء موهافي الجوي والفضائي في كاليفورنيا (2009)"
   },
   {
     "id": "cornwall",
@@ -14455,7 +14513,8 @@
     "photo_credit": "Christian Lee",
     "photo_license": "Public domain",
     "photo_source_url": "https://commons.wikimedia.org/wiki/File:Newquay_Cornwall_airport.jpg",
-    "country_ar": "المملكة المتحدة"
+    "country_ar": "المملكة المتحدة",
+    "photo_caption_ar": "مبنى المسافرين في مطار نيوكواي كورنوال؛ يستضيف ميناء كورنوال الفضائي"
   },
   {
     "id": "thumba",
@@ -14590,7 +14649,8 @@
     "photo_credit": "آرشیو تاریخی / Times of India",
     "photo_license": "Public domain",
     "photo_source_url": "https://commons.wikimedia.org/wiki/File:TERLS-01.jpg",
-    "country_ar": "الهند"
+    "country_ar": "الهند",
+    "photo_caption_ar": "تجهيز صاروخ سبر في موقع ثومبا خلال ستينيات القرن العشرين"
   },
   {
     "id": "tonghae",
@@ -14724,7 +14784,8 @@
     "photo_credit": "NASA / ISS Expedition 14",
     "photo_license": "Public domain (NASA)",
     "photo_source_url": "https://commons.wikimedia.org/wiki/File:ISS014-E-16026_-_View_of_North_Korea.jpg",
-    "country_ar": "كوريا الشمالية"
+    "country_ar": "كوريا الشمالية",
+    "photo_caption_ar": "صورة التقطها رائد فضاء تابع لناسا (2007) لساحل مقاطعة هواداي؛ منطقة موقع تونغهاي (موسودان-ري)"
   },
   {
     "id": "yasny",
@@ -14856,7 +14917,8 @@
     "photo_credit": "ISC Kosmotras",
     "photo_license": "CC BY 2.5",
     "photo_source_url": "https://commons.wikimedia.org/wiki/File:General_View_snyi.jpg",
-    "country_ar": "روسيا"
+    "country_ar": "روسيا",
+    "photo_caption_ar": "منظر عام لمنشآت قاعدة ياسني (دومباروفسكي) في روسيا"
   },
   {
     "id": "white-sands",
@@ -14990,7 +15052,8 @@
     "photo_credit": "HABS / کتابخانهٔ کنگره",
     "photo_license": "Public domain",
     "photo_source_url": "https://commons.wikimedia.org/wiki/File:V-2_GANTRY,_LAUNCH_COMPLEX_33-_LOOKING_NORTH_-_White_Sands_Missile_Range,_V-2_Gantry_Crane,_White_Sands,_Dona_Ana_County,_NM_HAER_NM,7-WHSA,1A-1.tif",
-    "country_ar": "الولايات المتحدة"
+    "country_ar": "الولايات المتحدة",
+    "photo_caption_ar": "برج الإطلاق التاريخي لصاروخ V-2 في المجمع 33 بوایت ساندز"
   },
   {
     "id": "etlaq",
@@ -15103,7 +15166,8 @@
     "photo_credit": "Etlaq Spaceport",
     "photo_license": "CC BY-SA 4.0",
     "photo_source_url": "https://commons.wikimedia.org/wiki/File:Duqm-1_Mission_Launch_-_Etlaq_Spaceport.png",
-    "country_ar": "عُمان"
+    "country_ar": "عُمان",
+    "photo_caption_ar": "إقلاع صاروخ دقم-1 من ميناء إتلاق الفضائي في ديسمبر 2024"
   },
   {
     "id": "somalia-spaceport",

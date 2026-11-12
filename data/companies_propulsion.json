@@ -184,7 +184,30 @@
     "logo_bg": "light",
     "entity_kind": "propulsion_business_or_supplier",
     "count_as_independent_entity": true,
-    "country_ar": "اليابان"
+    "country_ar": "اليابان",
+    "org_type_ar": "مؤسسة متخصصة في الدفع الفضائي (اليابان)",
+    "propulsion_category_ar": "الدفع الصلب ودافعات المركبات الفضائية",
+    "propulsion_type_ar": "محركات صلبة ودافعات ثنائية الوقود",
+    "flagship_status_ar": "تشغيلي",
+    "test_history_ar": [
+      {
+        "year": "2013",
+        "title": "الرحلة الأولى لصاروخ إبسيلون (Epsilon)",
+        "desc": "بلغ صاروخ الإطلاق الصلب الياباني من الجيل الجديد مداره."
+      },
+      {
+        "year": "2023",
+        "title": "الإطلاق الأول لصاروخ H3",
+        "desc": "عملت معزّزات SRB-3 خلال الإطلاق الأول لصاروخ H3."
+      },
+      {
+        "year": "2024",
+        "title": "تكوينات معززات H3",
+        "desc": "تذكر JAXA تكوينات H3 بصفر أو اثنين أو أربعة معززات SRB-3؛ ولا تستخدم كل رحلة H3 هذه المعززات."
+      }
+    ],
+    "location_ar": "توميوكا، اليابان",
+    "location_en": "Tomioka, Japan"
   },
   {
     "id": "rocketdyne",
@@ -292,7 +315,11 @@
     "logo": "assets/img/logos/rocketdyne-logo.png",
     "entity_kind": "propulsion_business_or_supplier",
     "count_as_independent_entity": true,
-    "country_ar": "الولايات المتحدة"
+    "country_ar": "الولايات المتحدة",
+    "org_type_ar": "شركة للدفع والطاقة والإلكترونيات الفضائية؛ تخضع لسيطرة AE Industrial مع حصة أقلية لشركة L3Harris",
+    "propulsion_category_ar": "محركات المراحل العليا ودفع المركبات الفضائية",
+    "propulsion_type_ar": "محركات مبردة عميقاً بدورة التمدد وأنظمة دفع كيميائية وكهربائية للمركبات الفضائية",
+    "flagship_status_ar": "تشغيلي؛ تختلف المواصفات والاستخدامات بحسب الطراز"
   },
   {
     "id": "l3harris",
@@ -434,7 +461,23 @@
     "logo": "assets/img/logos/l3harris-logo.svg",
     "entity_kind": "propulsion_business_or_supplier",
     "count_as_independent_entity": true,
-    "country_ar": "الولايات المتحدة"
+    "country_ar": "الولايات المتحدة",
+    "org_type_ar": "شركة مساهمة عامة في قطاعي الطيران والفضاء والدفاع، ولديها برامج للدفع الفضائي والدفاعي",
+    "propulsion_category_ar": "المحركات السائلة والصلبة وأنظمة الدفع الدفاعية",
+    "propulsion_type_ar": "محركات سائلة مبردة عميقاً بدورة الاحتراق المرحلي ومحركات صلبة وأنظمة دفع دفاعية",
+    "flagship_status_ar": "تشغيلي في المرحلة الأساسية لصاروخ SLS التابع لناسا",
+    "test_history_ar": [
+      {
+        "year": "2021",
+        "title": "اختبار إشعال ساخن لمدة 500 ثانية للمحرك التطويري RS-25 رقم 0528",
+        "desc": "اختبرت NASA المحرك التطويري رقم 0528 في مركز Stennis الفضائي ضمن سلسلة من سبعة اختبارات لدعم تطوير وإنتاج محركات SLS المستقبلية؛ ولم يكن محرك إنتاج جديداً."
+      },
+      {
+        "year": "2025",
+        "title": "اختبار إشعال ساخن لمدة 500 ثانية لمحرك الإنتاج الجديد RS-25 رقم 20001",
+        "desc": "اختبرت NASA وL3Harris المحرك رقم 20001 في Stennis يوم 20 يونيو 2025 لمدة 500 ثانية وحتى مستوى قدرة 111%."
+      }
+    ]
   },
   {
     "id": "ngpropulsion",
@@ -618,7 +661,30 @@
     "logo": "assets/img/logos/northrop-grumman-logo.png",
     "entity_kind": "organizational_unit",
     "count_as_independent_entity": true,
-    "country_ar": "الولايات المتحدة"
+    "country_ar": "الولايات المتحدة",
+    "org_type_ar": "مؤسسة متخصصة في الدفع الفضائي (الولايات المتحدة)",
+    "propulsion_category_ar": "المحركات الصلبة والمعزّزات",
+    "propulsion_type_ar": "دفع صلب باستخدام غلاف مركّب",
+    "flagship_status_ar": "تشغيلي",
+    "test_history_ar": [
+      {
+        "year": "2020",
+        "title": "اختبار إشعال ثابت لمعزّز GEM 63XL",
+        "desc": "اجتاز المعزّز الممدّد لصاروخ Vulcan الاختبار الأرضي."
+      },
+      {
+        "year": "2022",
+        "title": "رحلة Artemis I",
+        "desc": "وفّرت المعزّزات ذات القطاعات الخمسة قوة الدفع لأول إطلاق لصاروخ SLS."
+      },
+      {
+        "year": "2024",
+        "title": "معزّز Vulcan من طراز GEM 63XL",
+        "desc": "استخدمت رحلات Vulcan معزّزات جديدة."
+      }
+    ],
+    "location_ar": "برومونتوري، يوتا، الولايات المتحدة",
+    "location_en": "Promontory, Utah, United States"
   },
   {
     "id": "ursamajor",
@@ -801,7 +867,30 @@
     "logo": "assets/img/logos/ursamajor-logo.png",
     "entity_kind": "propulsion_business_or_supplier",
     "count_as_independent_entity": true,
-    "country_ar": "الولايات المتحدة"
+    "country_ar": "الولايات المتحدة",
+    "org_type_ar": "مؤسسة متخصصة في الدفع الفضائي (الولايات المتحدة)",
+    "propulsion_category_ar": "محركات مركبات الإطلاق والطيران فرط الصوتي",
+    "propulsion_type_ar": "احتراق مرحلي غني بالأكسجين",
+    "flagship_status_ar": "تشغيلي — تسليم إنتاج متسلسل",
+    "test_history_ar": [
+      {
+        "year": "2022",
+        "title": "طلبية كبيرة من Phantom Space",
+        "desc": "تم طلب أكثر من 200 محرك هادلي وريبلي لصاروخ دايتونا."
+      },
+      {
+        "year": "2023",
+        "title": "بدء التسليم التسلسلي لمحركات Hadley",
+        "desc": "سُلّمت أول محركات Hadley المنتجة إلى عملاء الإطلاق والطيران الأسرع من الصوت."
+      },
+      {
+        "year": "2024",
+        "title": "رحلة اختبارية أسرع من الصوت",
+        "desc": "شغّل محرك Hadley مركبة Talon-A الأسرع من الصوت أثناء الرحلة."
+      }
+    ],
+    "location_ar": "بيرثود، كولورادو، الولايات المتحدة",
+    "location_en": "Berthoud, Colorado, United States"
   },
   {
     "id": "impulse",
@@ -965,7 +1054,25 @@
     "logo": "assets/img/logos/impulse-space-logo.svg",
     "entity_kind": "propulsion_business_or_supplier",
     "count_as_independent_entity": true,
-    "country_ar": "الولايات المتحدة"
+    "country_ar": "الولايات المتحدة",
+    "org_type_ar": "مؤسسة متخصصة في الدفع الفضائي (الولايات المتحدة)",
+    "propulsion_category_ar": "مركبات المناورة الفضائية ومحركاتها",
+    "propulsion_type_ar": "دافعات بوقود قابل للتخزين ومحرك لمرحلة دفع إضافية (Kick Stage)",
+    "flagship_status_ar": "قيد التطوير",
+    "test_history_ar": [
+      {
+        "year": "2023",
+        "title": "الرحلة الأولى لمركبة Mira",
+        "desc": "حلّقت مركبة Mira باستخدام دافعات Saiph."
+      },
+      {
+        "year": "2025",
+        "title": "اختبارات الإشعال الساخن لمحرك Deneb",
+        "desc": "تقدم اختبار محرك الميثالوكس."
+      }
+    ],
+    "location_ar": "ريدوندو بيتش، كاليفورنيا، الولايات المتحدة",
+    "location_en": "Redondo Beach, California, United States"
   },
   {
     "id": "agile",
@@ -1088,7 +1195,24 @@
     "logo": "assets/img/logos/agile-logo.png",
     "entity_kind": "propulsion_business_or_supplier",
     "count_as_independent_entity": true,
-    "country_ar": "الولايات المتحدة"
+    "country_ar": "الولايات المتحدة",
+    "org_type_ar": "مؤسسة متخصصة في الدفع الفضائي (الولايات المتحدة)",
+    "propulsion_category_ar": "دافعات مركبات الهبوط والمركبات الفضائية",
+    "propulsion_type_ar": "دافعات ثنائية الوقود مصنّعة بالطباعة ثلاثية الأبعاد",
+    "test_history_ar": [
+      {
+        "year": "2021",
+        "title": "بدء تشغيل موقع الاختبار في Durango",
+        "desc": "بدأ موقع الاختبار في Durango العمل."
+      },
+      {
+        "year": "2023",
+        "title": "مراجعة التصميم الحرج واختبارات الإشعال الساخن لمحرك A2200",
+        "desc": "أعلنت Agile استكمال مراجعة التصميم الحرج واختبارات الإشعال؛ ولا يعني ذلك أن محرك A2200 سُلّم إلى ispace."
+      }
+    ],
+    "location_ar": "دورانغو، كولورادو، الولايات المتحدة",
+    "location_en": "Durango, Colorado, United States"
   },
   {
     "id": "busek",
@@ -1239,7 +1363,25 @@
     "logo_bg": "light",
     "entity_kind": "propulsion_business_or_supplier",
     "count_as_independent_entity": true,
-    "country_ar": "الولايات المتحدة"
+    "country_ar": "الولايات المتحدة",
+    "org_type_ar": "مؤسسة متخصصة في الدفع الفضائي (الولايات المتحدة)",
+    "propulsion_category_ar": "الدافعات الكهربائية للأقمار الصناعية",
+    "propulsion_type_ar": "دافعات هول والدافعات الأيونية",
+    "flagship_status_ar": "قيد تصنيع وحدات مخصصة للطيران",
+    "test_history_ar": [
+      {
+        "year": "2010",
+        "title": "تطوّر عائلة دافعات Hall",
+        "desc": "بدأت حملات اختبار دافعات BHT في حجرة مفرغة."
+      },
+      {
+        "year": "2022",
+        "title": "الرحلة الأولى للدافع BIT-3",
+        "desc": "أُطلق قمران مكعّبان إلى القمر باستخدام دافعات تعمل باليود."
+      }
+    ],
+    "location_ar": "ناتيك، ماساتشوستس، الولايات المتحدة",
+    "location_en": "Natick, Massachusetts, United States"
   },
   {
     "id": "benchmark",
@@ -1404,7 +1546,25 @@
     "logo": "assets/img/logos/benchmark-logo.png",
     "entity_kind": "propulsion_business_or_supplier",
     "count_as_independent_entity": true,
-    "country_ar": "الولايات المتحدة"
+    "country_ar": "الولايات المتحدة",
+    "org_type_ar": "مؤسسة متخصصة في الدفع الفضائي (الولايات المتحدة)",
+    "propulsion_category_ar": "الدفع الأخضر والبلازمي",
+    "propulsion_type_ar": "دفع أخضر ثنائي الوقود وبلازما معدنية",
+    "flagship_status_ar": "تشغيلي",
+    "test_history_ar": [
+      {
+        "year": "2021",
+        "title": "الرحلات الأولى لمحركات Halcyon",
+        "desc": "وصلت أنظمة Halcyon إلى المدار."
+      },
+      {
+        "year": "2023",
+        "title": "إضافة دافع Xantus البلازمي إلى مجموعة المنتجات",
+        "desc": "انضم Xantus إلى المحفظة."
+      }
+    ],
+    "location_ar": "برلنغتون، فيرمونت، الولايات المتحدة",
+    "location_en": "Burlington, Vermont, United States"
   },
   {
     "id": "moog",
@@ -1547,7 +1707,25 @@
     "logo": "assets/img/logos/moog-logo.png",
     "entity_kind": "propulsion_business_or_supplier",
     "count_as_independent_entity": true,
-    "country_ar": "الولايات المتحدة"
+    "country_ar": "الولايات المتحدة",
+    "org_type_ar": "مؤسسة متخصصة في الدفع الفضائي (الولايات المتحدة)",
+    "propulsion_category_ar": "الدافعات التقليدية أحادية الوقود",
+    "propulsion_type_ar": "دافعات الهيدرازين وأنظمة الدفع المداري",
+    "flagship_status_ar": "تشغيلي",
+    "test_history_ar": [
+      {
+        "year": "1990",
+        "title": "مرحلة التوسع",
+        "desc": "أصبحت MONARCs عنصرًا أساسيًا في الأقمار الصناعية الغربية."
+      },
+      {
+        "year": "2020",
+        "title": "أنظمة دفع مدارية متكاملة",
+        "desc": "عرضت Moog منصات مدارية كاملة."
+      }
+    ],
+    "location_ar": "إيست أورورا، نيويورك، الولايات المتحدة",
+    "location_en": "East Aurora, New York, United States"
   },
   {
     "id": "nammo",
@@ -1716,7 +1894,25 @@
     "logo": "assets/img/logos/nammo-logo.svg",
     "entity_kind": "propulsion_business_or_supplier",
     "count_as_independent_entity": true,
-    "country_ar": "النرويج"
+    "country_ar": "النرويج",
+    "org_type_ar": "مؤسسة متخصصة في الدفع الفضائي (النرويج)",
+    "propulsion_category_ar": "محركات الأوج والمحركات الهجينة",
+    "propulsion_type_ar": "دافعات أحادية/ثنائية الوقود ومحركات هجينة",
+    "flagship_status_ar": "تشغيلي",
+    "test_history_ar": [
+      {
+        "year": "2016",
+        "title": "مناورة إدخال مسبار Juno إلى مدار المشتري",
+        "desc": "نفّذ LEROS 1b مناورة الإدخال المداري الحاسمة."
+      },
+      {
+        "year": "2018",
+        "title": "رحلة صاروخ Nucleus",
+        "desc": "بلغ صاروخ Nammo الهجين الفضاء بعد إطلاقه من أندويا."
+      }
+    ],
+    "location_ar": "راوفوس، النرويج",
+    "location_en": "Raufoss, Norway"
   },
   {
     "id": "safran-vernon",
@@ -1906,7 +2102,30 @@
     "logo": "assets/img/logos/arianegroup-logo.svg",
     "entity_kind": "industrial_site",
     "count_as_independent_entity": true,
-    "country_ar": "فرنسا"
+    "country_ar": "فرنسا",
+    "org_type_ar": "مؤسسة متخصصة في الدفع الفضائي (فرنسا)",
+    "propulsion_category_ar": "محركات عائلة أريان",
+    "propulsion_type_ar": "محركات هيدروجينية بدورة مولّد الغاز ودورة التمدد",
+    "flagship_status_ar": "تشغيلي",
+    "test_history_ar": [
+      {
+        "year": "2023",
+        "title": "اختبارات الإشعال الساخن لمحركات المراحل العليا",
+        "desc": "اكتملت اختبارات محرك Vinci والمرحلة العليا كاملةً في Lampoldshausen."
+      },
+      {
+        "year": "2024",
+        "title": "الرحلة الأولى لصاروخ Ariane 6",
+        "desc": "شغّل المحركان Vulcain 2.1 وVinci الرحلة الأولى."
+      },
+      {
+        "year": "2025",
+        "title": "نقل التجميع النهائي وقبول الطيران لمحرك Vinci",
+        "desc": "وقّعت ArianeGroup وDLR اتفاقاً في 24 أكتوبر 2025 لنقل التجميع النهائي ودمج الأنظمة واختبارات قبول الطيران لمحرك Vinci من Vernon إلى Lampoldshausen. ويظل تركيبه في المرحلة العليا في Bremen، بينما يستمر عمل التصميم والتقنيات الأساسية في Vernon."
+      }
+    ],
+    "location_ar": "فيرنون، فرنسا",
+    "location_en": "Vernon, France"
   },
   {
     "id": "exotrail",
@@ -2048,7 +2267,25 @@
     "logo": "assets/img/logos/exotrail-logo.svg",
     "entity_kind": "propulsion_business_or_supplier",
     "count_as_independent_entity": true,
-    "country_ar": "فرنسا"
+    "country_ar": "فرنسا",
+    "org_type_ar": "مؤسسة متخصصة في الدفع الفضائي (فرنسا)",
+    "propulsion_category_ar": "دافعات هول الصغيرة",
+    "propulsion_type_ar": "دافعات هول للأقمار الصناعية الصغيرة",
+    "flagship_status_ar": "تشغيلي",
+    "test_history_ar": [
+      {
+        "year": "2020",
+        "title": "الرحلة الأولى",
+        "desc": "أُجري اختبار إشعال لدافع Hall من Exotrail في المدار."
+      },
+      {
+        "year": "2023",
+        "title": "الرحلة الأولى لمركبة النقل المداري spacevan",
+        "desc": "تم إطلاق أول OTV للشركة."
+      }
+    ],
+    "location_ar": "ماسي، فرنسا",
+    "location_en": "Massy, France"
   },
   {
     "id": "thrustme",
@@ -2190,7 +2427,25 @@
     "logo_bg": "light",
     "entity_kind": "propulsion_business_or_supplier",
     "count_as_independent_entity": true,
-    "country_ar": "فرنسا"
+    "country_ar": "فرنسا",
+    "org_type_ar": "مؤسسة متخصصة في الدفع الفضائي (فرنسا)",
+    "propulsion_category_ar": "الدافعات الأيونية العاملة باليود",
+    "propulsion_type_ar": "دافع أيوني بشبكات تسريع يستخدم اليود وقوداً دافعاً",
+    "flagship_status_ar": "تشغيلي",
+    "test_history_ar": [
+      {
+        "year": "2019",
+        "title": "الرحلة الأولى لدافع I2T5",
+        "desc": "وصل أول نظام اليود للشركة إلى المدار."
+      },
+      {
+        "year": "2020",
+        "title": "إنجاز عالمي أول",
+        "desc": "نفّذ NPT30-I2 أول تشغيل لدافع أيوني يعمل باليود في العالم."
+      }
+    ],
+    "location_ar": "فيريير لو بويسون، فرنسا",
+    "location_en": "Verrières-le-Buisson, France"
   },
   {
     "id": "energomash",
@@ -2377,7 +2632,30 @@
     "logo_bg": "light",
     "entity_kind": "propulsion_business_or_supplier",
     "count_as_independent_entity": true,
-    "country_ar": "روسيا"
+    "country_ar": "روسيا",
+    "org_type_ar": "مؤسسة متخصصة في الدفع الفضائي (روسيا)",
+    "propulsion_category_ar": "محركات المرحلة الأولى العاملة بالكيروسين",
+    "propulsion_type_ar": "احتراق مرحلي غني بالأكسجين",
+    "flagship_status_ar": "تشغيلي",
+    "test_history_ar": [
+      {
+        "year": "2014",
+        "title": "الرحلة الأولى لصاروخ Angara",
+        "desc": "طار RD-191 في مهمة أنجارا الأولى."
+      },
+      {
+        "year": "2020",
+        "title": "انتهاء صادرات محرك RD-180",
+        "desc": "تم تسليم شحنات المحرك النهائية إلى الولايات المتحدة."
+      },
+      {
+        "year": "2024",
+        "title": "أول إطلاق لصاروخ Angara A5 الثقيل من فوستوتشني",
+        "desc": "أُطلق صاروخ Angara الثقيل للمرة الأولى من فوستوتشني."
+      }
+    ],
+    "location_ar": "خيمكي، روسيا",
+    "location_en": "Khimki, Russia"
   },
   {
     "id": "kbkha",
@@ -2528,7 +2806,25 @@
     "logo": "assets/img/logos/kbkha-logo.svg",
     "entity_kind": "propulsion_business_or_supplier",
     "count_as_independent_entity": true,
-    "country_ar": "روسيا"
+    "country_ar": "روسيا",
+    "org_type_ar": "مؤسسة متخصصة في الدفع الفضائي (روسيا)",
+    "propulsion_category_ar": "محركات المراحل العليا",
+    "propulsion_type_ar": "احتراق مرحلي بالكيروسين",
+    "flagship_status_ar": "تشغيلي",
+    "test_history_ar": [
+      {
+        "year": "2006",
+        "title": "بدء استخدام محرك RD-0124",
+        "desc": "أول رحلة على متن سويوز-2.1ب."
+      },
+      {
+        "year": "2014",
+        "title": "نسخة Angara بمحرك RD-0124A",
+        "desc": "حمل أول صاروخ Angara A5 محرك RD-0124A في رحلته الأولى."
+      }
+    ],
+    "location_ar": "فورونيج، روسيا",
+    "location_en": "Voronezh, Russia"
   },
   {
     "id": "bellatrix",
@@ -2673,7 +2969,25 @@
     "logo": "assets/img/logos/bellatrix-logo.png",
     "entity_kind": "propulsion_business_or_supplier",
     "count_as_independent_entity": true,
-    "country_ar": "الهند"
+    "country_ar": "الهند",
+    "org_type_ar": "مؤسسة متخصصة في الدفع الفضائي (الهند)",
+    "propulsion_category_ar": "دفع الأقمار الصناعية في الهند",
+    "propulsion_type_ar": "دافعات هول ودافعات خضراء أحادية الوقود",
+    "flagship_status_ar": "خضع لاختبار طيران",
+    "test_history_ar": [
+      {
+        "year": "2022",
+        "title": "اختبار نظام Rudra في المدار",
+        "desc": "شغّل نظام الدفع الأخضر على منصة POEM التابعة لـ ISRO."
+      },
+      {
+        "year": "2024",
+        "title": "تقدّم تطوير دافع ARKA",
+        "desc": "استمرت الاختبارات الأرضية لدافعات Hall."
+      }
+    ],
+    "location_ar": "بنغالورو، الهند",
+    "location_en": "Bengaluru, India"
   },
   {
     "id": "paleblue",
@@ -2836,7 +3150,29 @@
     "logo": "assets/img/logos/paleblue-logo.png",
     "entity_kind": "propulsion_business_or_supplier",
     "count_as_independent_entity": true,
-    "country_ar": "اليابان"
+    "country_ar": "اليابان",
+    "org_type_ar": "مؤسسة متخصصة في الدفع الفضائي (اليابان)",
+    "propulsion_category_ar": "دافعات تعمل بالماء",
+    "propulsion_type_ar": "دفع يستخدم الماء مادة دافعة",
+    "test_history_ar": [
+      {
+        "year": "2023",
+        "title": "تشغيل الدافع في المدار",
+        "desc": "اختُبر دافع الماء على قمر Sony الصناعي."
+      },
+      {
+        "year": "2024",
+        "title": "طلبات الإنتاج التسلسلي",
+        "desc": "وُقّعت عقود لتزويد مجموعات الأقمار الصناعية بأنظمة الدفع."
+      },
+      {
+        "year": "2026",
+        "title": "تشغيل KIR-X في المدار على RAISE-4",
+        "desc": "أعلنت Pale Blue نجاح تشغيل الدافع الأيوني المائي والدافع المقاومي المائي في وحدة KIR-X على RAISE-4 التابعة لـJAXA؛ وقد أُطلق القمر في ديسمبر 2025."
+      }
+    ],
+    "location_ar": "كاشيوا، اليابان",
+    "location_en": "Kashiwa, Japan"
   },
   {
     "id": "dawn-aerospace",
@@ -2982,7 +3318,25 @@
     "logo_bg": "light",
     "entity_kind": "propulsion_business_or_supplier",
     "count_as_independent_entity": true,
-    "country_ar": "نيوزيلندا / هولندا"
+    "country_ar": "نيوزيلندا / هولندا",
+    "org_type_ar": "مؤسسة متخصصة في الدفع الفضائي (نيوزيلندا / هولندا)",
+    "propulsion_category_ar": "الدفع الأخضر ثنائي الوقود",
+    "propulsion_type_ar": "دافعات تعمل بأكسيد النيتروز والبروبين",
+    "flagship_status_ar": "تشغيلي",
+    "test_history_ar": [
+      {
+        "year": "2021",
+        "title": "الرحلات الأولى لدافعات B20",
+        "desc": "وصلت محركات الدفع B20 إلى المدار."
+      },
+      {
+        "year": "2024",
+        "title": "تجاوز طائرة الفضاء Aurora سرعة الصوت",
+        "desc": "أصبح Mk-II Aurora أسرع من الصوت."
+      }
+    ],
+    "location_ar": "كرايستشيرش، نيوزيلندا / هولندا",
+    "location_en": "Christchurch, New Zealand / Netherlands"
   },
   {
     "id": "spaceforest",
@@ -3120,7 +3474,29 @@
     "logo_bg": "light",
     "entity_kind": "propulsion_business_or_supplier",
     "count_as_independent_entity": true,
-    "country_ar": "بولندا"
+    "country_ar": "بولندا",
+    "org_type_ar": "مؤسسة متخصصة في الدفع الفضائي (بولندا)",
+    "propulsion_category_ar": "المحركات الهجينة والصواريخ السبرية",
+    "propulsion_type_ar": "دفع هجين",
+    "test_history_ar": [
+      {
+        "year": "2023",
+        "title": "الرحلة الاختبارية الأولى لصاروخ Perun",
+        "desc": "أكمل الصاروخ الهجين البولندي رحلته التجريبية الأولى."
+      },
+      {
+        "year": "2024",
+        "title": "حملة اختبارات الارتفاع",
+        "desc": "استهدفت الرحلات اللاحقة بلوغ مدارات أعلى."
+      },
+      {
+        "year": "2026",
+        "title": "الرحلة الرابعة لـPERUN: التحقق من TVC والاستعادة",
+        "desc": "تحققت SpaceForest في 27 أغسطس 2026 في Ustka من تعديلات TVC بعد شذوذات الرحلة الثالثة واختبرت الملاحة/IMU والاستقلالية. فُعّل نظام إنهاء الرحلة واستُعيد الصاروخ داخل منطقة الاختبار؛ ولا يثبت ذلك خدمة تجارية أو إعادة طيران."
+      }
+    ],
+    "location_ar": "غدينيا، بولندا",
+    "location_en": "Gdynia, Poland"
   },
   {
     "id": "phasefour",
@@ -3240,7 +3616,24 @@
     "logo": "assets/img/logos/phasefour-logo.png",
     "entity_kind": "propulsion_business_or_supplier",
     "count_as_independent_entity": true,
-    "country_ar": "الولايات المتحدة"
+    "country_ar": "الولايات المتحدة",
+    "org_type_ar": "مؤسسة متخصصة في الدفع الفضائي (الولايات المتحدة)",
+    "propulsion_category_ar": "دافعات البلازما بالترددات الراديوية",
+    "propulsion_type_ar": "دافع بلازمي دون أقطاب كهربائية",
+    "test_history_ar": [
+      {
+        "year": "2021",
+        "title": "الرحلة الأولى لدافع Maxwell",
+        "desc": "وصلت وحدتان إلى المدار في رحلة مشاركة."
+      },
+      {
+        "year": "2023",
+        "title": "الوحدات المطوّرة التالية",
+        "desc": "يتم شحن الكتل التي تمت ترقيتها بأداء أعلى."
+      }
+    ],
+    "location_ar": "إل سيغوندو، الولايات المتحدة",
+    "location_en": "El Segundo, United States (per Persian record; source city field differs: Hawthorne)"
   },
   {
     "id": "accion",
@@ -3359,7 +3752,25 @@
     "logo_bg": "light",
     "entity_kind": "propulsion_business_or_supplier",
     "count_as_independent_entity": true,
-    "country_ar": "الولايات المتحدة"
+    "country_ar": "الولايات المتحدة",
+    "org_type_ar": "مؤسسة متخصصة في الدفع الفضائي (الولايات المتحدة)",
+    "propulsion_category_ar": "دافعات الرش الكهربائي",
+    "propulsion_type_ar": "دفع بالرش الكهربائي باستخدام سائل أيوني",
+    "flagship_status_ar": "خضع لاختبار طيران",
+    "test_history_ar": [
+      {
+        "year": "2017",
+        "title": "أول دافع TILE في المدار",
+        "desc": "طارت وحدة مبكرة على قمر مكعب (CubeSat)."
+      },
+      {
+        "year": "2021",
+        "title": "رحلة دافعي TILE 2 وTILE 3",
+        "desc": "أُطلقت أجيال جديدة ضمن رحلات إطلاق مشتركة."
+      }
+    ],
+    "location_ar": "بوسطن، الولايات المتحدة",
+    "location_en": "Boston, United States"
   },
   {
     "id": "bradford-ecaps",
@@ -3505,7 +3916,25 @@
     "logo": "assets/img/logos/bradford-space-logo.svg",
     "entity_kind": "propulsion_business_or_supplier",
     "count_as_independent_entity": true,
-    "country_ar": "السويد / هولندا"
+    "country_ar": "السويد / هولندا",
+    "org_type_ar": "مؤسسة متخصصة في الدفع الفضائي (السويد / هولندا)",
+    "propulsion_category_ar": "الدفع الأخضر أحادي الوقود في السويد",
+    "propulsion_type_ar": "دافعات خضراء أحادية الوقود من نوع HPGP",
+    "flagship_status_ar": "تشغيلي",
+    "test_history_ar": [
+      {
+        "year": "2010",
+        "title": "مهمة PRISMA",
+        "desc": "أول رحلة فضائية في العالم تستخدم مادة دافعة خضراء قائمة على ADN."
+      },
+      {
+        "year": "2016",
+        "title": "تزويد أسطول SkySat بالدوافع",
+        "desc": "طارت جميع SkySats باستخدام HPGP."
+      }
+    ],
+    "location_ar": "سولنا، السويد / هولندا",
+    "location_en": "Solna, Sweden / Netherlands"
   },
   {
     "id": "sitael",
@@ -3648,7 +4077,25 @@
     "logo_bg": "light",
     "entity_kind": "propulsion_business_or_supplier",
     "count_as_independent_entity": true,
-    "country_ar": "إيطاليا"
+    "country_ar": "إيطاليا",
+    "org_type_ar": "مؤسسة متخصصة في الدفع الفضائي (إيطاليا)",
+    "propulsion_category_ar": "دافعات هول الإيطالية",
+    "propulsion_type_ar": "دافعات هول بقدرات من منخفضة إلى عالية",
+    "flagship_status_ar": "خضع لاختبار طيران",
+    "test_history_ar": [
+      {
+        "year": "2022",
+        "title": "اعتماد دافع HT100",
+        "desc": "شُغّل الدافع خلال مهمة مدارية."
+      },
+      {
+        "year": "2024",
+        "title": "حملة اختبار دافع HT5k",
+        "desc": "استمرت اختبارات الفراغ للدوافع عالية القدرة."
+      }
+    ],
+    "location_ar": "مولا دي باري، إيطاليا",
+    "location_en": "Mola di Bari, Italy"
   },
   {
     "id": "okb-fakel",
@@ -3816,7 +4263,25 @@
     "logo_bg": "light",
     "entity_kind": "propulsion_business_or_supplier",
     "count_as_independent_entity": true,
-    "country_ar": "روسيا"
+    "country_ar": "روسيا",
+    "org_type_ar": "مؤسسة متخصصة في الدفع الفضائي (روسيا)",
+    "propulsion_category_ar": "دافعات هول الروسية",
+    "propulsion_type_ar": "دافع بلازمي ثابت (SPT)",
+    "flagship_status_ar": "تشغيلي",
+    "test_history_ar": [
+      {
+        "year": "1972",
+        "title": "أول دافع SPT في المدار",
+        "desc": "طار دافع Hall على متن القمر الصناعي Meteor."
+      },
+      {
+        "year": "1994",
+        "title": "دخول الأسواق العالمية",
+        "desc": "تم اعتماد SPT-100 على الأقمار الصناعية الغربية."
+      }
+    ],
+    "location_ar": "كالينينغراد، روسيا",
+    "location_en": "Kaliningrad, Russia"
   },
   {
     "id": "lpsc-isro",
@@ -4002,7 +4467,30 @@
     "logo_bg": "light",
     "entity_kind": "organizational_unit",
     "count_as_independent_entity": true,
-    "country_ar": "الهند"
+    "country_ar": "الهند",
+    "org_type_ar": "مؤسسة متخصصة في الدفع الفضائي (الهند)",
+    "propulsion_category_ar": "محركات مركبات الإطلاق الوطنية الهندية",
+    "propulsion_type_ar": "محركات بوقود ذاتي الاشتعال ومحركات هيدروجينية",
+    "flagship_status_ar": "تشغيلي",
+    "test_history_ar": [
+      {
+        "year": "2014",
+        "title": "نجاح محرك CE-7.5",
+        "desc": "وصلت مرحلة التبريد العميق المطوّرة محلياً لصاروخ GSLV إلى المدار."
+      },
+      {
+        "year": "2017",
+        "title": "الرحلة الأولى لمحرك CE-20",
+        "desc": "نفّذ صاروخ LVM3 أول رحلة بمحرك هيدروجيني مطوّر محلياً."
+      },
+      {
+        "year": "2023",
+        "title": "مهمة Chandrayaan-3",
+        "desc": "أدخل محرك CE-20 المهمة التاريخية المتجهة إلى القطب الجنوبي للقمر في مسارها."
+      }
+    ],
+    "location_ar": "فاليامالا، الهند",
+    "location_en": "Valiamala, India"
   },
   {
     "id": "aalpt-china",
@@ -4187,7 +4675,30 @@
     "logo_bg": "light",
     "entity_kind": "organizational_unit",
     "count_as_independent_entity": true,
-    "country_ar": "الصين"
+    "country_ar": "الصين",
+    "org_type_ar": "مؤسسة متخصصة في الدفع الفضائي (الصين)",
+    "propulsion_category_ar": "محركات مركبات الإطلاق الوطنية الصينية",
+    "propulsion_type_ar": "احتراق مرحلي بالكيروسين ومحركات هيدروجينية",
+    "flagship_status_ar": "تشغيلي",
+    "test_history_ar": [
+      {
+        "year": "2016",
+        "title": "الرحلة الأولى لصاروخ Long March 5",
+        "desc": "طار YF-77 وYF-100 معًا لأول مرة."
+      },
+      {
+        "year": "2020",
+        "title": "المهام الفضائية الرئيسية",
+        "desc": "زوّدت المحركات مهمتي Chang'e-5 إلى القمر وTianwen-1 إلى المريخ بالطاقة اللازمة للإطلاق."
+      },
+      {
+        "year": "2024",
+        "title": "جيل المهمات القمرية",
+        "desc": "استمر اختبار YF-100K للمركبة القمرية المأهولة LM-10."
+      }
+    ],
+    "location_ar": "شيآن، الصين",
+    "location_en": "Xi'an, China"
   },
   {
     "id": "aio-propulsion",
@@ -4385,7 +4896,29 @@
     "site": "http://www.defanews.ir/sug/%D8%B3%D8%A7%D8%B2%D9%85%D8%A7%D9%86%20%D8%B5%D9%86%D8%A7%DB%8C%D8%B9%20%D9%87%D9%88%D8%A7%D9%81%D8%B6%D8%A7",
     "entity_kind": "propulsion_business_or_supplier",
     "count_as_independent_entity": true,
-    "country_ar": "إيران"
+    "country_ar": "إيران",
+    "org_type_ar": "مؤسسة حكومية للدفع الفضائي والصاروخي",
+    "propulsion_category_ar": "المحركات الفضائية الثقيلة العاملة بالوقود السائل والصلب",
+    "propulsion_type_ar": "محركات وقود سائل (لتوليد الغاز والتحكم في التوجيه) ومعزّزات صلبة مركّبة",
+    "test_history_ar": [
+      {
+        "year": "2019",
+        "title": "تقرير عن اختبار سلمان الساخن (نسبة الاختبار إلى AIO غير مؤكدة)",
+        "desc": "لا تثبت المصادر التي روجعت أن AIO أجرت هذا الاختبار؛ وتنسب تحليلات مستقلة Salman إلى IRGC/SSJO. لا يُعد الاختبار نشاطاً مؤكداً لـAIO."
+      },
+      {
+        "year": "2022",
+        "title": "تقارير عن اختبار Zuljanah الساكن (دور AIO غير مؤكد مستقلاً)",
+        "desc": "توجد تقارير عن اختبار ساكن، لكن المصادر التي روجعت لا تثبت دور AIO الدقيق كمورد ولا معايير الاختبار التفصيلية."
+      },
+      {
+        "year": "2023",
+        "title": "ادعاء اختبار محرك سائل للمرحلة العليا (غير مؤكد)",
+        "desc": "لم تؤكد المصادر التي روجعت بصورة مستقلة موقع الاختبار أو مدته أو هوية المحرك أو نسبته إلى AIO؛ ويُحتفظ به كتقرير غير مؤكد فقط."
+      }
+    ],
+    "location_ar": "طهران والمنشآت الصناعية قرب موقعي الإطلاق في سمنان وشاهرود، إيران",
+    "location_en": "Tehran and industrial zones near launch facilities in Semnan and Shahroud, Iran"
   },
   {
     "id": "blueorigin-engine",
@@ -4572,7 +5105,30 @@
     "logo_bg": "light",
     "entity_kind": "organizational_unit",
     "count_as_independent_entity": true,
-    "country_ar": "الولايات المتحدة"
+    "country_ar": "الولايات المتحدة",
+    "org_type_ar": "مؤسسة متخصصة في الدفع الفضائي (الولايات المتحدة)",
+    "propulsion_category_ar": "محركات مركبات الإطلاق المتوسطة والثقيلة",
+    "propulsion_type_ar": "احتراق مرحلي غني بالأكسجين يعمل بالميثان ومحركات هيدروجينية",
+    "flagship_status_ar": "تشغيلي",
+    "test_history_ar": [
+      {
+        "year": "2019",
+        "title": "حملة اختبار محرك BE-4",
+        "desc": "بلغت حملة الاختبارات الساكنة في تكساس قوة الدفع الكاملة لمحرك BE-4."
+      },
+      {
+        "year": "2024",
+        "title": "الرحلة الأولى لصاروخ Vulcan",
+        "desc": "شغّل محركان BE-4 بنجاح الرحلة الأولى لصاروخ Vulcan."
+      },
+      {
+        "year": "2025",
+        "title": "الرحلة الأولى لصاروخ New Glenn",
+        "desc": "وضعت سبعة محركات BE-4 صاروخ New Glenn في المدار."
+      }
+    ],
+    "location_ar": "هانتسفيل، الولايات المتحدة",
+    "location_en": "Huntsville, United States"
   },
   {
     "id": "spacex-engine",
@@ -4796,7 +5352,34 @@
     "logo": "assets/img/logos/spacex-logo.svg",
     "entity_kind": "organizational_unit",
     "count_as_independent_entity": true,
-    "country_ar": "الولايات المتحدة"
+    "country_ar": "الولايات المتحدة",
+    "org_type_ar": "مؤسسة متخصصة في الدفع الفضائي (الولايات المتحدة)",
+    "propulsion_category_ar": "محركات فالكون وستارشيب القابلة لإعادة الاستخدام",
+    "propulsion_type_ar": "دورة مولّد غاز بالكيروسين واحتراق مرحلي كامل التدفق بالميثان",
+    "test_history_ar": [
+      {
+        "year": "2015",
+        "title": "أول هبوط للمرحلة الأولى من Falcon",
+        "desc": "أتاحت محركات Merlin تحقيق أول هبوط تاريخي للمرحلة الأولى."
+      },
+      {
+        "year": "2019",
+        "title": "الرحلة الحرة الأولى للمركبة Starhopper",
+        "desc": "أثبت محرك Raptor أداءه في أول رحلة حرة."
+      },
+      {
+        "year": "2024",
+        "title": "التقاط برج الإطلاق لمعزّز Super Heavy",
+        "desc": "وفّرت محركات Raptor الدفع لعودة معزّز Super Heavy والتقاطه."
+      },
+      {
+        "year": "2026",
+        "title": "Starship Flight 14: أول دخول مداري ونشر Starlink V3",
+        "desc": "في 28 سبتمبر 2026 دخلت Starship المدار للمرة الأولى ونشرت 26 قمراً من Starlink V3. وطار معزز Super Heavy مزوداً بـ33 محركاً من Raptor 3؛ وتوقف محرك واحد من المعزز أثناء الصعود."
+      }
+    ],
+    "location_ar": "ماكغريغور، الولايات المتحدة",
+    "location_en": "McGregor, United States"
   },
   {
     "id": "relativity-engine",
@@ -4980,7 +5563,30 @@
     "logo": "assets/img/logos/relativity-space-logo.png",
     "entity_kind": "organizational_unit",
     "count_as_independent_entity": true,
-    "country_ar": "الولايات المتحدة"
+    "country_ar": "الولايات المتحدة",
+    "org_type_ar": "مؤسسة متخصصة في الدفع الفضائي (الولايات المتحدة)",
+    "propulsion_category_ar": "محركات الميثان المصنعة بالطباعة ثلاثية الأبعاد",
+    "propulsion_type_ar": "محركات تعمل بالميثان ومصنّعة بالتقنيات الإضافية",
+    "flagship_status_ar": "قيد الاختبار",
+    "test_history_ar": [
+      {
+        "year": "2023",
+        "title": "رحلة صاروخ Terran 1",
+        "desc": "اجتاز الصاروخ المطبوع ثلاثي الأبعاد Max-Q لكنه لم يصل إلى مداره."
+      },
+      {
+        "year": "2024",
+        "title": "حملة اختبار محرك Aeon R",
+        "desc": "بدأت في مركز ستينيس سلسلة اختبارات الإشعال الساخن لمحرك Aeon R عالي الدفع."
+      },
+      {
+        "year": "2026",
+        "title": "دمج محركات Terran R واختبارات القبول",
+        "desc": "ذكر تحديث Relativity في أغسطس 2026 تركيب محركات Aeon R الثلاثة عشر عند سطح البحر للرحلة الأولى على هيكل الدفع وبدء اختبارات قبول محركات الرحلة الثانية. وكان خزان المرحلة الثانية لا يزال قيد الفحص قبل تركيب Aeon V."
+      }
+    ],
+    "location_ar": "لونغ بيتش، الولايات المتحدة",
+    "location_en": "Long Beach, United States"
   },
   {
     "id": "casc-6th",
@@ -5091,7 +5697,19 @@
     "logo_bg": "light",
     "entity_kind": "alias_record",
     "count_as_independent_entity": false,
-    "country_ar": "الصين"
+    "country_ar": "الصين",
+    "propulsion_category_ar": "المحركات الصاروخية السائلة الصينية (الأكاديمية نفسها للدفع)",
+    "propulsion_type_ar": "هذا الإدخال يخص أكاديمية الدفع الفضائي الصينية نفسها في شيآن",
+    "flagship_status_ar": "تشغيلي",
+    "test_history_ar": [
+      {
+        "year": "2015",
+        "title": "الرحلة الأولى لمحرك YF-115",
+        "desc": "ظهر محرك YF-115 للمرة الأولى على صاروخ Long March 6."
+      }
+    ],
+    "location_ar": "شيآن، الصين",
+    "location_en": "Xi'an, China"
   },
   {
     "id": "enpulsion",
@@ -5262,7 +5880,25 @@
     "logo": "assets/img/logos/enpulsion-mark.svg",
     "entity_kind": "propulsion_business_or_supplier",
     "count_as_independent_entity": true,
-    "country_ar": "النمسا"
+    "country_ar": "النمسا",
+    "org_type_ar": "مؤسسة متخصصة في الدفع الفضائي (النمسا)",
+    "propulsion_category_ar": "دافعات الانبعاث الأيوني بالمجال الكهربائي (FEEP) العاملة بالإنديوم",
+    "propulsion_type_ar": "دافع بالانبعاث الأيوني بالمجال الكهربائي (FEEP)",
+    "flagship_status_ar": "تشغيلي",
+    "test_history_ar": [
+      {
+        "year": "2018",
+        "title": "الرحلة الأولى لدافع IFM",
+        "desc": "طار محرك الإنديوم على قمر مكعب (CubeSat)."
+      },
+      {
+        "year": "2021",
+        "title": "بدء الإنتاج التسلسلي",
+        "desc": "بلغ الإنتاج عشرات الدافعات شهرياً."
+      }
+    ],
+    "location_ar": "فينر نويشتات، النمسا",
+    "location_en": "Wiener Neustadt, Austria"
   },
   {
     "id": "morpheus-space",
@@ -5384,7 +6020,25 @@
     "logo": "assets/img/logos/morpheus-space-logo.png",
     "entity_kind": "propulsion_business_or_supplier",
     "count_as_independent_entity": true,
-    "country_ar": "ألمانيا / الولايات المتحدة"
+    "country_ar": "ألمانيا / الولايات المتحدة",
+    "org_type_ar": "مؤسسة متخصصة في الدفع الفضائي (ألمانيا / الولايات المتحدة)",
+    "propulsion_category_ar": "دافعات FEEP الألمانية",
+    "propulsion_type_ar": "دفع بالانبعاث الأيوني بالمجال الكهربائي",
+    "flagship_status_ar": "تشغيلي",
+    "test_history_ar": [
+      {
+        "year": "2018",
+        "title": "الرحلة الأولى لدافع NanoFEEP",
+        "desc": "شُغّلت أول وحدة على القمر المكعّب UWE-4."
+      },
+      {
+        "year": "2023",
+        "title": "إطلاق دافع GO-2",
+        "desc": "ظهر الجيل التجاري المتكامل لأول مرة."
+      }
+    ],
+    "location_ar": "دريسدن، ألمانيا / الولايات المتحدة",
+    "location_en": "Dresden, Germany / United States"
   },
   {
     "id": "vacco",
@@ -5530,7 +6184,25 @@
     "logo_bg": "light",
     "entity_kind": "propulsion_business_or_supplier",
     "count_as_independent_entity": true,
-    "country_ar": "الولايات المتحدة"
+    "country_ar": "الولايات المتحدة",
+    "org_type_ar": "مؤسسة متخصصة في الدفع الفضائي (الولايات المتحدة)",
+    "propulsion_category_ar": "أنظمة الدفع الدقيق",
+    "propulsion_type_ar": "دفع بالغاز البارد وأنظمة دفع دقيق متكاملة",
+    "flagship_status_ar": "خضع لاختبار طيران",
+    "test_history_ar": [
+      {
+        "year": "2018",
+        "title": "مهمة MarCO إلى المريخ",
+        "desc": "أتاحت منظومة VACCO للغاز البارد التحليق التاريخي لمهمة MarCO."
+      },
+      {
+        "year": "2020",
+        "title": "تأهيل مجموعة أنظمة الدفع الخضراء",
+        "desc": "اجتازت أنظمة الدفع الخضراء أحادية الوقود مرحلة التأهيل."
+      }
+    ],
+    "location_ar": "ساوث إل مونتي، الولايات المتحدة",
+    "location_en": "South El Monte, United States"
   },
   {
     "id": "dlr-lampoldshausen",
@@ -5694,7 +6366,29 @@
     "logo_bg": "light",
     "entity_kind": "research_facility",
     "count_as_independent_entity": true,
-    "country_ar": "ألمانيا"
+    "country_ar": "ألمانيا",
+    "propulsion_category_ar": "مركز لاختبار المحركات الصاروخية",
+    "propulsion_type_ar": "منصات اختبار ثابتة (لا تصنّع المحركات، بل تختبرها)",
+    "flagship_status_ar": "نشط",
+    "test_history_ar": [
+      {
+        "year": "1963",
+        "title": "تأسيس مركز Lampoldshausen",
+        "desc": "أُنشئ مركز Lampoldshausen لدعم برنامج الفضاء الأوروبي."
+      },
+      {
+        "year": "2017",
+        "title": "اختبارات محرك Vulcain 2.1",
+        "desc": "بدأ تأهيل محرك Ariane 6."
+      },
+      {
+        "year": "2025",
+        "title": "انتقال التجميع النهائي واختبارات قبول Vinci إلى Lampoldshausen",
+        "desc": "ينقل اتفاق DLR وArianeGroup التجميع النهائي ودمج الأنظمة واختبارات قبول الطيران من Vernon؛ ويظل تركيب المرحلة العليا لـAriane 6 في Bremen."
+      }
+    ],
+    "location_ar": "هارتهاوزن، ألمانيا",
+    "location_en": "Hardthausen, Germany"
   },
   {
     "id": "nasa-stennis",
@@ -5871,7 +6565,24 @@
     "logo": "assets/img/logos/nasa-logo.svg",
     "entity_kind": "research_facility",
     "count_as_independent_entity": true,
-    "country_ar": "الولايات المتحدة"
+    "country_ar": "الولايات المتحدة",
+    "propulsion_category_ar": "مركز لاختبار المحركات الصاروخية",
+    "propulsion_type_ar": "أكبر مجمع لاختبار المحركات في الولايات المتحدة (لا يصنّع المحركات)",
+    "flagship_status_ar": "نشط",
+    "test_history_ar": [
+      {
+        "year": "1966",
+        "title": "اختبارات محركات Saturn",
+        "desc": "تم إثبات مراحل Saturn V لأبولو."
+      },
+      {
+        "year": "2021",
+        "title": "اختبار Green Run",
+        "desc": "أكملت المرحلة الأساسية لصاروخ SLS اختبار الإشعال الساخن الكامل."
+      }
+    ],
+    "location_ar": "مقاطعة هانكوك، الولايات المتحدة",
+    "location_en": "Hancock County, United States"
   },
   {
     "id": "airborne-eng",
@@ -5991,7 +6702,24 @@
     "logo": "assets/img/logos/airborne-eng-logo.svg",
     "entity_kind": "propulsion_business_or_supplier",
     "count_as_independent_entity": true,
-    "country_ar": "المملكة المتحدة"
+    "country_ar": "المملكة المتحدة",
+    "propulsion_category_ar": "خدمات اختبار المحركات",
+    "propulsion_type_ar": "اختبارات مستقلة للشركات الناشئة (لا يصنّع محركات تجارية)",
+    "flagship_status_ar": "نشط",
+    "test_history_ar": [
+      {
+        "year": "2009",
+        "title": "الانتقال إلى Westcott",
+        "desc": "انتقلت AEL إلى موقعها الحالي في Westcott Venture Park وحدّثت بنية اختبار الدفع."
+      },
+      {
+        "year": "2020",
+        "title": "توسّع الاختبارات لشركات الصواريخ الناشئة",
+        "desc": "توسعت الاختبارات لدعم شركات الصواريخ البريطانية الناشئة."
+      }
+    ],
+    "location_ar": "ويستكوت، المملكة المتحدة",
+    "location_en": "Westcott, United Kingdom"
   },
   {
     "id": "nasa-wstf",
@@ -6112,7 +6840,24 @@
     "logo": "assets/img/logos/nasa-logo.svg",
     "entity_kind": "research_facility",
     "count_as_independent_entity": true,
-    "country_ar": "الولايات المتحدة"
+    "country_ar": "الولايات المتحدة",
+    "propulsion_category_ar": "مركز اختبار الدافعات والمواد",
+    "propulsion_type_ar": "اختبار الدافعات ذات الوقود القابل للتخزين وسلامة المواد الدافعة (لا يصنّع المحركات)",
+    "flagship_status_ar": "نشط",
+    "test_history_ar": [
+      {
+        "year": "1964",
+        "title": "أول اختبار إشعال",
+        "desc": "اختير الموقع عام 1962 وبدأ البناء عام 1963؛ ويمثل عام 1964 أول اختبار إشعال، لا تاريخ تأسيس المنشأة."
+      },
+      {
+        "year": "2010",
+        "title": "اختبارات دافعات مركبة Orion",
+        "desc": "بدأ تأهيل دافعات مركبة Orion."
+      }
+    ],
+    "location_ar": "لاس كروسيس، الولايات المتحدة",
+    "location_en": "Las Cruces, United States"
   },
   {
     "id": "lpsc-test",
@@ -6257,7 +7002,24 @@
     "logo_bg": "light",
     "entity_kind": "research_facility",
     "count_as_independent_entity": true,
-    "country_ar": "الهند"
+    "country_ar": "الهند",
+    "propulsion_category_ar": "مركز اختبار محركات منظمة أبحاث الفضاء الهندية (ISRO)",
+    "propulsion_type_ar": "منصات اختبار ماهيندراغيري (تُصنّع المحركات في المنشأة الشقيقة)",
+    "flagship_status_ar": "نشط",
+    "test_history_ar": [
+      {
+        "year": "1985",
+        "title": "بدء تشغيل منشأة ماهيندراغيري",
+        "desc": "أصبحت منصات المحركات السائلة في الهند جاهزة للعمل."
+      },
+      {
+        "year": "2023",
+        "title": "اختبارات برنامج Gaganyaan",
+        "desc": "اعتُمدت المحركات للاستخدام في الرحلات المأهولة."
+      }
+    ],
+    "location_ar": "ماهيندراغيري، الهند",
+    "location_en": "Mahendragiri, India"
   },
   {
     "id": "asri-ukzn",
@@ -6336,7 +7098,11 @@
     "logo": "assets/img/logos/asri-ukzn-logo.png",
     "logo_bg": "light",
     "entity_kind": "academic_or_research",
-    "count_as_independent_entity": true
+    "count_as_independent_entity": true,
+    "propulsion_category_ar": "أبحاث الدفع الصاروخي ومنشآت الاختبار",
+    "propulsion_type_ar": "محركات سائلة وهجينة؛ وأنظمة للاختبارات الأرضية",
+    "location_ar": "ديربان، حرم هوارد الجامعي، جنوب أفريقيا",
+    "location_en": "Durban, Howard College Campus, South Africa"
   },
   {
     "id": "cstp-nasrda",
@@ -6413,7 +7179,11 @@
     "logo": "assets/img/logos/nasrda-logo.png",
     "logo_bg": "light",
     "entity_kind": "academic_or_research",
-    "count_as_independent_entity": true
+    "count_as_independent_entity": true,
+    "propulsion_category_ar": "المركز الوطني للبحث والتطوير في النقل الصاروخي والدفع",
+    "propulsion_type_ar": "محركات صاروخية صلبة وأبحاث أنظمة الإطلاق",
+    "location_ar": "إيبي، ولاية لاغوس (موقع تقريبي)، نيجيريا",
+    "location_en": "Epe, Lagos State (regional marker), Nigeria"
   },
   {
     "id": "solid-state-propulsion-za",
@@ -6493,7 +7263,11 @@
     "logo": "assets/img/logos/solid-state-propulsion-logo.png",
     "logo_bg": "light",
     "entity_kind": "academic_or_research",
-    "count_as_independent_entity": true
+    "count_as_independent_entity": true,
+    "propulsion_category_ar": "الدفع الكهربائي للأقمار الصناعية الصغيرة",
+    "propulsion_type_ar": "دافع كهربائي دقيق بقوس تفريغ فراغي يستخدم مادة دافعة معدنية صلبة",
+    "location_ar": "جوهانسبرغ، جنوب أفريقيا",
+    "location_en": "Johannesburg, South Africa"
   },
   {
     "id": "nakuja-project",
@@ -6568,7 +7342,11 @@
     "source_note_fa": "صفحه رسمی پروژه و گزارش مرتبط با KSA؛ ایزیولو میدان موقت آزمون بود، نه پایگاه دائمی فضایی.",
     "source_note_ar": "صفحة المشروع الرسمية وتقارير مرتبطة بـKSA؛ كان إيسيولو ميدان اختبار مؤقتاً لا ميناء فضائياً دائماً.",
     "entity_kind": "academic_or_research",
-    "count_as_independent_entity": true
+    "count_as_independent_entity": true,
+    "propulsion_category_ar": "بحث وتطوير جامعي للدفع والمركبات الصاروخية",
+    "propulsion_type_ar": "صواريخ سبر تعمل بالوقود الصلب؛ وتطوير منصة لاختبار محركات سائلة",
+    "location_ar": "جوجا، جامعة JKUAT، كينيا",
+    "location_en": "Juja, JKUAT University, Kenya"
   },
   {
     "id": "pyralink-aerospace",
@@ -6642,7 +7420,11 @@
     "site_ids": [],
     "location_fa": "محدوده کیپ‌تاون، آفریقای جنوبی",
     "entity_kind": "directory_only_unverified",
-    "count_as_independent_entity": true
+    "count_as_independent_entity": true,
+    "propulsion_category_ar": "تطوير الدفع الصاروخي والإطلاق (مستوى ثقة منخفض)",
+    "propulsion_type_ar": "محرك سائل/مركبة إطلاق مزعوم في القائمة؛ العتاد غير مؤكد",
+    "location_ar": "منطقة كيب تاون، جنوب أفريقيا",
+    "location_en": "Cape Town area, South Africa"
   },
   {
     "id": "deltav",
@@ -6767,7 +7549,12 @@
     ],
     "logo": "assets/img/logos/deltav-logo.png",
     "entity_kind": "propulsion_business_or_supplier",
-    "count_as_independent_entity": true
+    "count_as_independent_entity": true,
+    "org_type_ar": "شركة لتقنيات الدفع مدعومة حكومياً",
+    "propulsion_category_ar": "محركات الأوج والمحركات الهجينة",
+    "propulsion_type_ar": "دفع هجين",
+    "flagship_status_ar": "قيد التطوير",
+    "location_en": "Approximate city-area marker; office coordinates have not been verified."
   },
   {
     "cat": "propulsion",
@@ -6993,7 +7780,34 @@
     "logo": "assets/img/logos/manastu-space-logo.svg",
     "entity_kind": "propulsion_business_or_supplier",
     "count_as_independent_entity": true,
-    "country_ar": "الهند"
+    "country_ar": "الهند",
+    "org_type_ar": "شركة خاصة لتقنيات الدفع",
+    "propulsion_category_ar": "دفع الأقمار الصناعية الهندية",
+    "propulsion_type_ar": "دفع أخضر أحادي الوقود ودفع هجين",
+    "flagship_status_ar": "خضع لاختبار في الفضاء",
+    "test_history_ar": [
+      {
+        "year": "۲۰۲۳",
+        "title": "عرض Vyom 2U في المدار",
+        "desc": "تذكر Manastu عرض Vyom 2U في المدار على POEM-4."
+      },
+      {
+        "year": "۲۰۲۴",
+        "title": "معلم تسليم I-Booster",
+        "desc": "يُسجل إعلان التسليم كمعلم للعتاد لا رحلة مدارية."
+      },
+      {
+        "year": "۲۰۲۵",
+        "title": "اختبارات تأهيل Sharanga",
+        "desc": "ذُكرت اختبارات تأهيل؛ ولا يُدعى سجل طيران فضائي."
+      },
+      {
+        "year": "۲۰۲۶",
+        "title": "مواصلة تطوير الدفع",
+        "desc": "تصف الإعلانات العامة استمرار أعمال الدفع؛ ولا يُنسب إلى Manastu إطلاق إضافي."
+      }
+    ],
+    "location_en": "Approximate city-area marker; office coordinates have not been verified."
   },
   {
     "cat": "propulsion",
@@ -7105,7 +7919,19 @@
     "logo": "assets/img/logos/spacefields-logo.png",
     "entity_kind": "propulsion_business_or_supplier",
     "count_as_independent_entity": true,
-    "country_ar": "الهند"
+    "country_ar": "الهند",
+    "org_type_ar": "شركة خاصة لتقنيات الدفع",
+    "propulsion_category_ar": "المحركات الصلبة والمعزّزات",
+    "propulsion_type_ar": "محركات صلبة وتطوير دفع من نوع أيروسبايك (Aerospike)",
+    "flagship_status_ar": "في مرحلة الاختبارات الأرضية",
+    "test_history_ar": [
+      {
+        "year": "۲۰۲۵",
+        "title": "اختبار إشعال ساخن أرضي لمحرك aerospike",
+        "desc": "ذُكر إجراء اختبار إشعال ساخن في IISc Challakere؛ ولا يشير هذا السجل إلى رحلة أو إطلاق مداري."
+      }
+    ],
+    "location_en": "Approximate city-area marker; office coordinates have not been verified."
   },
   {
     "id": "hyprspace",
@@ -7929,7 +8755,8 @@
     "logo": "assets/img/logos/europropulsion-logo.png",
     "logo_bg": "light",
     "entity_kind": "propulsion_business_or_supplier",
-    "count_as_independent_entity": true
+    "count_as_independent_entity": true,
+    "org_type_ar": "جهة لتصميم المحركات الصاروخية الصلبة وتطويرها وتصنيعها وتجميعها النهائي"
   },
   {
     "id": "regulus-guyane",
@@ -8029,7 +8856,8 @@
     "logo": "assets/img/logos/regulus-logo.png",
     "logo_bg": "light",
     "entity_kind": "industrial_site",
-    "count_as_independent_entity": true
+    "count_as_independent_entity": true,
+    "org_type_ar": "مشغّل مصنع لإنتاج المواد الدافعة الصلبة"
   },
   {
     "id": "safran-spacecraft-propulsion",
@@ -8135,7 +8963,8 @@
     "logo": "assets/img/logos/safran-parent-logo.svg",
     "logo_bg": "light",
     "entity_kind": "organizational_unit",
-    "count_as_independent_entity": true
+    "count_as_independent_entity": true,
+    "org_type_ar": "جهة لتطوير أنظمة دفع المركبات الفضائية وتصنيعها واختبارها"
   },
   {
     "id": "ion-x",
@@ -8270,7 +9099,8 @@
     ],
     "logo": "assets/img/logos/ion-x-logo.svg",
     "entity_kind": "propulsion_business_or_supplier",
-    "count_as_independent_entity": true
+    "count_as_independent_entity": true,
+    "org_type_ar": "جهة لتطوير وتصنيع دافعات الرش الكهربائي المعتمدة على السوائل الأيونية"
   },
   {
     "id": "magdrive",
@@ -8403,7 +9233,15 @@
     "logo": "assets/img/logos/magdrive-logo.svg",
     "logo_bg": "light",
     "entity_kind": "propulsion_business_or_supplier",
-    "count_as_independent_entity": true
+    "count_as_independent_entity": true,
+    "org_type_ar": "جهة لتطوير أنظمة دفع المركبات الفضائية وإجراء عروض تقنية في المدار",
+    "test_history_ar": [
+      {
+        "year": "2026",
+        "title": "اكتمال العرض المداري Going Rogue",
+        "desc": "أفادت Magdrive بانتهاء المهمة. ويذكر تقرير مستقل أن النظام ولّد البلازما لكنه لم يناور بالمركبة الحاضنة."
+      }
+    ]
   },
   {
     "id": "pulsar-fusion",
@@ -8584,7 +9422,15 @@
     "source_note_ar": "أُدرجت بوصفها مطوراً للدفع؛ وفُصلت الدافعات المختبرة أرضياً عن أبحاث الاندماج المستقبلية.",
     "logo": "assets/img/logos/pulsar-fusion-logo.svg",
     "entity_kind": "propulsion_business_or_supplier",
-    "count_as_independent_entity": true
+    "count_as_independent_entity": true,
+    "org_type_ar": "شركة للدفع الفضائي تطوّر دافعات كهربائية وتجري أبحاثاً وتطويراً في الاندماج النووي",
+    "test_history_ar": [
+      {
+        "year": "2025",
+        "title": "حملات اختبار LeoBear في الفراغ المخبري",
+        "desc": "تصف تقارير Pulsar اختبارات أرضية بالكريبتون والزينون؛ ولم يثبت التشغيل المداري."
+      }
+    ]
   },
   {
     "id": "t4i",
@@ -8738,7 +9584,8 @@
     "founded": 2014,
     "logo": "assets/img/logos/t4i-logo.png",
     "entity_kind": "propulsion_business_or_supplier",
-    "count_as_independent_entity": true
+    "count_as_independent_entity": true,
+    "org_type_ar": "جهة لتطوير أنظمة الدفع الفضائي ودمجها وتصنيعها"
   },
   {
     "id": "pangea-propulsion",
@@ -8943,7 +9790,8 @@
     "logo": "assets/img/logos/pangea-propulsion-logo.svg",
     "logo_bg": "light",
     "entity_kind": "propulsion_business_or_supplier",
-    "count_as_independent_entity": true
+    "count_as_independent_entity": true,
+    "org_type_ar": "شركة دفع فضائي تمتلك قدرات صناعية للتصنيع والتكامل والتحقق من الأداء"
   },
   {
     "id": "miprons",
@@ -9071,7 +9919,8 @@
     "source_note_ar": "تمثل النقطة المقر التشغيلي الرسمي في كوليفيرو بدقة مركز البلدة؛ وتُذكر سيني منفصلة بوصفها مقر إيطاليا/المعلومات.",
     "logo": "assets/img/logos/miprons-logo.png",
     "entity_kind": "propulsion_business_or_supplier",
-    "count_as_independent_entity": true
+    "count_as_independent_entity": true,
+    "org_type_ar": "جهة لتطوير تقنيات الدفع الفضائي"
   },
   {
     "id": "ienai-space",
@@ -9220,7 +10069,15 @@
     "source_note_ar": "دليل ATHENA من الشركة مباشرة؛ ويستند العنوان المسجل إلى ملخص سجل إسباني يشير إلى إشعار BORME في 13 أكتوبر 2025، بينما تحدد OSM مقطع الشارع فقط.",
     "logo": "assets/img/logos/ienai-space-logo.svg",
     "entity_kind": "propulsion_business_or_supplier",
-    "count_as_independent_entity": true
+    "count_as_independent_entity": true,
+    "org_type_ar": "جهة لتطوير دافعات الرش الكهربائي للمركبات الفضائية",
+    "test_history_ar": [
+      {
+        "year": "2026",
+        "title": "وصول عتاد ATHENA NANO إلى المدار",
+        "desc": "أفادت IENAI بإطلاق ATHENA NANO على أول رحلة مدارية لـISAR Spectrum في سبتمبر 2026؛ ولم يؤكد المصدر تشغيل الدافع."
+      }
+    ]
   },
   {
     "id": "uec-kuznetsov",
@@ -9350,7 +10207,8 @@
     "logo": "assets/img/logos/rostech-parent-logo.svg",
     "logo_bg": "light",
     "entity_kind": "organizational_unit",
-    "count_as_independent_entity": true
+    "count_as_independent_entity": true,
+    "org_type_ar": "مصنّع محركات صاروخية (وليس مصمّم جميع المحركات التي ينتجها)"
   },
   {
     "id": "proton-pm",
@@ -9483,7 +10341,8 @@
     "logo": "assets/img/logos/proton-pm-logo.svg",
     "logo_bg": "light",
     "entity_kind": "propulsion_business_or_supplier",
-    "count_as_independent_entity": true
+    "count_as_independent_entity": true,
+    "org_type_ar": "مصنّع محركات صاروخية ومورّد مكوّنات؛ وليس الجهة المصممة لمحرك RD-191"
   },
   {
     "id": "niimash",
@@ -9582,7 +10441,8 @@
     "source_note_ar": "النقطة على مستوى المدينة والموقع شرق الحد التقليدي بين أوروبا وآسيا؛ ولا تُذكر إحداثيات دقيقة للمنشأة أو ادعاءات طيران لطراز محدد.",
     "logo": "assets/img/logos/niimash-logo.png",
     "entity_kind": "propulsion_business_or_supplier",
-    "count_as_independent_entity": true
+    "count_as_independent_entity": true,
+    "org_type_ar": "جهة لتطوير وتصنيع محركات الدفع المنخفض للمركبات الفضائية"
   },
   {
     "id": "kbhm-isayev",
@@ -9687,7 +10547,8 @@
     "logo": "assets/img/logos/roscosmos-parent-logo-2022.png",
     "logo_bg": "light",
     "entity_kind": "organizational_unit",
-    "count_as_independent_entity": true
+    "count_as_independent_entity": true,
+    "org_type_ar": "مكتب لتصميم أنظمة الدفع؛ الهوية المؤسسية الحالية غير محسومة"
   },
   {
     "id": "sets",
@@ -9817,7 +10678,8 @@
     "source_note_ar": "يُنسب تشغيل SPS-25 في المدار إلى تقرير SETS؛ ولا يصنف ST-25 مثبتاً في الطيران من دون مصدر يؤكد ذلك.",
     "logo": "assets/img/logos/sets-logo.svg",
     "entity_kind": "propulsion_business_or_supplier",
-    "count_as_independent_entity": true
+    "count_as_independent_entity": true,
+    "org_type_ar": "مصنّع دافعات وأنظمة دفع كهربائي للمركبات الفضائية"
   },
   {
     "id": "atd-aerospace-rs",
@@ -9921,7 +10783,8 @@
     "source_note_ar": "أُدرجت كمطور/مصنع للدفع مع اختبارات أرضية موثقة؛ ولا تصنف مورداً لمحرك مداري تشغيلي.",
     "logo": "assets/img/logos/atd-aerospace-rs-logo.png",
     "entity_kind": "propulsion_business_or_supplier",
-    "count_as_independent_entity": true
+    "count_as_independent_entity": true,
+    "org_type_ar": "جهة لتطوير وتصنيع محركات صاروخية في مرحلتي التطوير والاختبار"
   },
   {
     "id": "thaliana-space",
@@ -10044,6 +10907,14 @@
     "source_note_ar": "أُدرجت كشركة تطوير وتسويق للدفع؛ ولا تُعامل الاختبارات الجوية كتأهيل فراغي أو طيران.",
     "logo": "assets/img/logos/thaliana-space-logo.svg",
     "entity_kind": "propulsion_business_or_supplier",
-    "count_as_independent_entity": true
+    "count_as_independent_entity": true,
+    "org_type_ar": "شركة لتصميم تقنيات الدفع وتسويقها تجارياً",
+    "test_history_ar": [
+      {
+        "year": "2026",
+        "title": "اكتمال حملة الاختبار على منصة عند ضغط جوي",
+        "desc": "قال ILOT إن الاختبار في الظروف الجوية اكتمل في أبريل 2026؛ وكان اختبار الفراغ الخطوة المخططة التالية."
+      }
+    ]
   }
 ]

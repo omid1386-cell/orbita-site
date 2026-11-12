@@ -1,0 +1,25 @@
+﻿type,field,persian,arabic,fa_numbers,ar_numbers
+numeric_mismatch,companies_propulsion.json:ihi:test_history_ar[2].desc,JAXA برای H3 پیکربندی‌های صفر، دو یا چهار بوستر SRB-3 را ذکر می‌کند؛ همهٔ پروازهای H3 از SRB-3 استفاده نمی‌کنند.,تذكر JAXA تكوينات H3 بصفر أو اثنين أو أربعة معززات SRB-3؛ ولا تستخدم كل رحلة H3 هذه المعززات.,3;3;3;3,3;3;3
+numeric_mismatch,companies_propulsion.json:l3harris:test_history_ar[1].desc,ناسا و L3Harris در ۲۰ ژوئن ۲۰۲۵ موتور را در استنیس به مدت ۵۰۰ ثانیه و تا ۱۱۱٪ توان آزمودند.,اختبرت NASA وL3Harris المحرك رقم 20001 في Stennis يوم 20 يونيو 2025 لمدة 500 ثانية وحتى مستوى قدرة 111%.,111;20;2025;3;500,111;20;20001;2025;3;500
+numeric_mismatch,companies_propulsion.json:ngpropulsion:test_history_ar[1].title,پرواز آرتمیس ۱,رحلة Artemis I,1,
+numeric_mismatch,companies_propulsion.json:kbkha:test_history_ar[1].title,نسخهٔ آنگارا,نسخة Angara بمحرك RD-0124A,,0124
+numeric_mismatch,companies_propulsion.json:dawn-aerospace:test_history_ar[0].title,نخستین پروازها,الرحلات الأولى لدافعات B20,,20
+numeric_mismatch,companies_propulsion.json:dawn-aerospace:test_history_ar[1].desc,هواپیمای آرورا مارک ۲ از دیوار صوت گذشت.,أصبح Mk-II Aurora أسرع من الصوت.,2,
+numeric_mismatch,companies_propulsion.json:aalpt-china:test_history_ar[2].desc,آزمون‌های وای‌اف-۱۰۰کا برای موشک سرنشین‌دار ماه ادامه یافت.,استمر اختبار YF-100K للمركبة القمرية المأهولة LM-10.,100,10;100
+numeric_mismatch,companies_propulsion.json:blueorigin-engine:test_history_ar[0].desc,سری آزمون‌های استاتیک موتور متان‌سوز در تگزاس به رانش کامل رسید.,بلغت حملة الاختبارات الساكنة في تكساس قوة الدفع الكاملة لمحرك BE-4.,,4
+numeric_mismatch,companies_propulsion.json:relativity-engine:test_history_ar[2].desc,به‌روزرسانی اوت ۲۰۲۶ Relativity نصب هر ۱۳ موتور سطح‌دریایی Aeon R پرواز اول روی سازهٔ رانش و آغاز آزمون پذیرش موتورهای پرواز دوم را گزارش کرد. مخزن مرحلهٔ دوم هنوز پیش از نصب Aeon V بازرسی می‌شد.,ذكر تحديث Relativity في أغسطس 2026 تركيب محركات Aeon R الثلاثة عشر عند سطح البحر للرحلة الأولى على هيكل الدفع وبدء اختبارات قبول محركات الرحلة الثانية. وكان خزان المرحلة الثانية لا يزال قيد الفحص قبل تركيب Aeon V.,13;2026,2026
+numeric_mismatch,companies_propulsion.json:casc-6th:test_history_ar[0].title,پرواز نخست,الرحلة الأولى لمحرك YF-115,,115
+numeric_mismatch,companies_propulsion.json:nasa-stennis:test_history_ar[0].desc,مراحل غول‌پیکر ساترن ۵ برای آپولو آزموده شد.,تم إثبات مراحل Saturn V لأبولو.,5,
+numeric_mismatch,companies_satmaker.json:cubespace:future_plans_ar[1],گسترش دامنه به ماهواره‌های تا حدود ۱ تن,توسيع نطاق المنتجات للأقمار الصناعية حتى نحو طن واحد,1,
+numeric_mismatch,companies_satmaker.json:mt-aerospace:future_plans_ar[0],مخازن کامپوزیتی فیبوس برای بلاک ۲ آریان ۶,خزانات Phoebus المركّبة للنسخة الثانية من أريان 6,2;6,6
+numeric_mismatch,companies_satmaker.json:airbus-space:future_plans_ar[1],ساخت سکوهای لایهٔ نخست ایریس۲ تا ۲۰۲۹,بناء منصات الطبقة الأولى من IRIS² حتى 2029,2;2029,2029
+numeric_mismatch,companies_satmaker.json:thales-alenia:future_plans_ar[0],تحویل محموله‌های ۳۳۰ ماهوارهٔ ایریس۲,تسليم حمولات 330 قمراً صناعياً من IRIS²,2;330,330
+numeric_mismatch,companies_satmaker.json:york-space:future_plans_ar[0],ساخت ۶۲ ماهوارهٔ ترانش دو آلفا و ده فروند گاما,بناء 62 قمراً لشريحة Tranche 2 Alpha وعشرة أقمار من Gamma,62,2;62
+numeric_mismatch,companies_satmaker.json:york-space:future_plans_ar[2],کارزار پرتاب‌های ترانش دو از ۲۰۲۶ به بعد,حملة إطلاق Tranche 2 ابتداءً من 2026,2026,2;2026
+numeric_mismatch,companies_satmaker.json:iceye:future_plans_ar[0],صد ماهواره تولید در سال تا پایان ۲۰۲۷,إنتاج 100 قمر صناعي سنوياً بحلول نهاية 2027,2027,100;2027
+numeric_mismatch,companies_satmaker.json:iceye:future_plans_ar[1],بازدید زیر پانزده دقیقه با منظومهٔ کامل نسل چهار,زمن إعادة زيارة أقل من 15 دقيقة مع كوكبة الجيل الرابع الكاملة,,15
+numeric_mismatch,companies_satmaker.json:gomspace:customers_ar[3],مشتریان بیش از شصت کشور,عملاء من أكثر من 60 دولة,,60
+numeric_mismatch,companies_satmaker.json:cubespace:notable_missions_ar[2],بیش از ۱۰ منظومهٔ تجاری با سامانه‌های شرکت پرواز می‌کنند,أكثر من عشر كوكبات تجارية تستخدم أنظمة الشركة في الطيران,10,
+numeric_mismatch,companies_satmaker.json:kawasaki-prop:notable_missions_ar[0],دماغهٔ همهٔ پروازهای اچ‑۲ای تا بازنشستگی ۲۰۲۵ و همهٔ پروازهای اچ۳,أغطية الحمولة لجميع رحلات H-IIA حتى تقاعده في 2025 ولجميع رحلات H3,2;2025;3,2025;3
+numeric_mismatch,companies_satmaker.json:york-space:notable_missions_ar[0],استقرار ۲۱ ماهوارهٔ ترانش یک در یک پرتاب؛ سپتامبر ۲۰۲۵,نشر 21 قمراً من Tranche 1 في إطلاق واحد في سبتمبر 2025,2025;21,1;2025;21
+numeric_mismatch,sites.json:thumba:photo_caption_ar,آماده‌سازی راکت کاوشی در پایگاه تومبا، دههٔ ۱۹۶۰,تجهيز صاروخ سبر في موقع ثومبا خلال ستينيات القرن العشرين,1960,

@@ -1,64 +1,57 @@
 {
-  "base": "ORBITA_Tile_Continuity_Work/data",
-  "files": [
-    {
-      "file": "companies.json",
-      "records": 266,
-      "modified": true,
-      "original_sha256": "289052609373d48bcb0b6c2a997730c33b47e6af102669646802aa78564e2158",
-      "new_sha256": "b8c6a7d403334fa3ab7a53c4daeaf4686ac5479b43f45456e5029f2e13217a47"
+  "project": "ORBITA",
+  "date": "2026-11-12",
+  "purpose": "Arabic and English language correspondence to Persian reference",
+  "scope": "JSON data only",
+  "source": "ORBITA_Language_Consistency_Fix_2026-11-12.zip baseline",
+  "primary_field_edit_operations": 915,
+  "arabic_field_edit_operations": 766,
+  "english_field_edit_operations": 149,
+  "original_targeted_arabic_gaps": 506,
+  "targeted_gaps_remaining": 0,
+  "automated_tests_passed": 9,
+  "files": {
+    "data/companies.json": {
+      "baseline_sha256": "b8c6a7d403334fa3ab7a53c4daeaf4686ac5479b43f45456e5029f2e13217a47",
+      "updated_sha256": "de3c9daa2e913d95717d9971355fa078b21850bc3518fb2aad9460fff757e819",
+      "record_count": 266,
+      "record_ids_unchanged": true,
+      "bytes": 4350561
     },
-    {
-      "file": "companies_launch.json",
-      "records": 68,
-      "modified": true,
-      "original_sha256": "977fd0ed764b498aa8d8a2048041c8500223692594083f33cc8da0e2c0fa4216",
-      "new_sha256": "0c1e50c0b66ebd7c196b38e04e65b48a91fc59123ad5dc21b571024ece1b8dd9"
+    "data/companies_launch.json": {
+      "baseline_sha256": "0c1e50c0b66ebd7c196b38e04e65b48a91fc59123ad5dc21b571024ece1b8dd9",
+      "updated_sha256": "062addeddd7299c39e8c556f2fab20c7753c8d462407f0d654e2bc46b1be7091",
+      "record_count": 68,
+      "record_ids_unchanged": true,
+      "bytes": 1067068
     },
-    {
-      "file": "companies_agency.json",
-      "records": 96,
-      "modified": true,
-      "original_sha256": "9918ade6b5831c34b9effc4279a767500d068756e8e8da0a226a405b5d36f718",
-      "new_sha256": "d692b6d3e6c267c04e0306b25b3497f764085d82cc15f260854b6907a767901b"
+    "data/companies_agency.json": {
+      "baseline_sha256": "d692b6d3e6c267c04e0306b25b3497f764085d82cc15f260854b6907a767901b",
+      "updated_sha256": "03a9f2d6534c95dcba344af1fb6aefcd1797eb40ab7e456938376ef6bddadbc6",
+      "record_count": 96,
+      "record_ids_unchanged": true,
+      "bytes": 2007789
     },
-    {
-      "file": "companies_propulsion.json",
-      "records": 68,
-      "modified": true,
-      "original_sha256": "bdb945930b20ae42ee895db8a0afb694dafa8611531755796a8493698280bfdf",
-      "new_sha256": "57f970b6d213fbc07d6cfd84d93d7fc935d7c7024ff433a813308ce1a4da7a77"
+    "data/companies_propulsion.json": {
+      "baseline_sha256": "57f970b6d213fbc07d6cfd84d93d7fc935d7c7024ff433a813308ce1a4da7a77",
+      "updated_sha256": "87af75869ec4c4e4205bcd86cdb012835784fa02c64ca17bc467dcc6be67991e",
+      "record_count": 68,
+      "record_ids_unchanged": true,
+      "bytes": 799427
     },
-    {
-      "file": "companies_satmaker.json",
-      "records": 37,
-      "modified": true,
-      "original_sha256": "e01932816d743516e27d8030dea4b267160d5bd50540228916f178e64775245f",
-      "new_sha256": "337bfd20c2377d945154c8f4ce9a7344393285159f49aa6b073117adbc4d60c6"
+    "data/companies_satmaker.json": {
+      "baseline_sha256": "337bfd20c2377d945154c8f4ce9a7344393285159f49aa6b073117adbc4d60c6",
+      "updated_sha256": "bc85f5095f4cb7f9b1dfc3da2fc0548f49a0afe61b257dc544c94f4416fee115",
+      "record_count": 37,
+      "record_ids_unchanged": true,
+      "bytes": 532477
     },
-    {
-      "file": "sites.json",
-      "records": 79,
-      "modified": true,
-      "original_sha256": "e41dc07cd4ccff20355a08961a0916970c7ea794345969c10890800f8d3edbbd",
-      "new_sha256": "f5805114b64bc7083ab40a8560b68be4854e689ef1cf48e9f0270ea595a60f2e"
-    },
-    {
-      "file": "recovery_sites.json",
-      "records": 20,
-      "modified": false,
-      "original_sha256": "a22a2de67a679d89f33fc046890a5ee3d7794bbb3b36d05eb2f72f4ee8d4995d",
-      "new_sha256": "a22a2de67a679d89f33fc046890a5ee3d7794bbb3b36d05eb2f72f4ee8d4995d"
+    "data/sites.json": {
+      "baseline_sha256": "f5805114b64bc7083ab40a8560b68be4854e689ef1cf48e9f0270ea595a60f2e",
+      "updated_sha256": "6b372455d8febf40cb0c64a187594f16bdcec4873267c5942c6e033de9604d75",
+      "record_count": 79,
+      "record_ids_unchanged": true,
+      "bytes": 877332
     }
-  ],
-  "edited_files": [
-    "companies.json",
-    "companies_launch.json",
-    "companies_agency.json",
-    "companies_propulsion.json",
-    "companies_satmaker.json",
-    "sites.json"
-  ],
-  "change_operations": 2104,
-  "unresolved_field_gaps": 506
+  }
 }
