@@ -50,6 +50,8 @@ function setup() {
     getCountryAtLngLat: () => null,
     countryRecordFromSpatialMatch: () => null,
     setSelectedCountry: (name) => actions.push(['select-country', name]),
+    clearCountryHoverState: () => {},
+    clearMarkerHoverState: () => {},
     openDetail: (item) => actions.push(['detail', item]),
     openClusterList: (members) => actions.push(['cluster', members])
   };
@@ -146,4 +148,29 @@ test('country still opens normally if no marker is under the click', () => {
   ctx.handleCountryMapClick(event());
   assert.deepEqual(actions.map(a => a[0]), ['select-country', 'detail']);
   assert.equal(actions[1][1].country_en, 'Iran');
+});
+
+
+test('clicking a marker clears the country selection outline before opening its dossier', () => {
+  const { ctx, actions } = setup();
+  const iran = point('iran-1', 51, 35), key = ctx.markerPointKey(iran);
+  ctx.selectedCountryName = 'Iran';
+  ctx.markerPointsByKey[key] = iran;
+  ctx.map.queryRenderedFeatures = () => [feature(key, 'point', 51, 35)];
+  ctx.handleCountryMapClick(event());
+  assert.deepEqual(actions.map(a => a[0]), ['select-country', 'detail', 'fly']);
+  assert.equal(actions[0][1], '');
+  assert.equal(actions[1][1].o.id, 'iran-1');
+});
+
+test('clicking a cluster clears the previous country selection outline', () => {
+  const { ctx, actions } = setup();
+  const members = [point('iran-1', 51, 35), point('iran-2', 51.2, 35)];
+  const key = ctx.stableClusterKey(members);
+  ctx.selectedCountryName = 'Iran';
+  ctx.markerClustersByKey[key] = members;
+  ctx.map.queryRenderedFeatures = () => [feature(key, 'cluster', 51, 35)];
+  ctx.handleCountryMapClick(event());
+  assert.deepEqual(actions.map(a => a[0]), ['select-country', 'cluster']);
+  assert.equal(actions[0][1], '');
 });

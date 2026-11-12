@@ -520,6 +520,7 @@
   var markerZoomRefreshTimer = 0, markerZoomLastRefresh = 0, markerZoomRefreshInterval = 100;
   var markerHoverKey = "", markerHoverKind = "", pendingMarkerHoverKey = "", pendingMarkerHoverKind = "", markerHoverFrame = 0;
   var markerHoverEventsBound = false;
+  var mapHoverTooltip = null;
   var MAP_FILTERS_STORAGE_KEY = "orbita_map_filters_v1";
   var DEFAULT_MAP_FILTERS = { launch: true, propulsion: false, agency: true, satmaker: false, site: true, recovery: false };
   function readMapFilters() {
@@ -1229,6 +1230,8 @@
     if (!map || !map.getCanvas()) return;
     map.getCanvas().style.cursor = (hoveredCountryName || pendingHoveredCountryName || markerHoverKey || pendingMarkerHoverKey) ? "pointer" : "";
   }
+  // All mouse movements now pass through a single map-level resolver below.
+  // Per-layer movement listeners caused country/marker race conditions.
   function countryLayerMouseEnter() { syncMapCursor(); }
   function clearCountryHoverState() {
     if (countryHoverFrame) cancelAnimationFrame(countryHoverFrame);
@@ -1261,7 +1264,7 @@
   function clearMapInteractionHover() {
     clearCountryHoverState();
     clearMarkerHoverState();
-    if (map && map.getCanvas()) { map.getCanvas().title = ""; map.getCanvas().style.cursor = ""; }
+    if (map && map.getCanvas()) { map.getCanvas().removeAttribute("title"); map.getCanvas().style.cursor = ""; }
   }
   function bindCountryCanvasExit() {
     if (!map || countryCanvasExitBound) return;
@@ -1280,25 +1283,12 @@
     };
   }
   function unbindCountryInteractionEvents() {
-    if (!map || !countryInteractionEventLayer) return;
-    try {
-      map.off("mouseenter", countryInteractionEventLayer, countryLayerMouseEnter);
-      map.off("mousemove", countryInteractionEventLayer, countryLayerMouseMove);
-      map.off("mouseleave", countryInteractionEventLayer, countryLayerMouseLeave);
-    } catch (e) {}
+    // Only the layer reference changes on style reload. Map-level hover stays bound once.
     countryInteractionEventLayer = "";
   }
   function bindCountryInteractionEvents(layerId) {
-    if (!map || !layerId || countryInteractionEventLayer === layerId) return;
-    unbindCountryInteractionEvents();
-    try {
-      map.on("mouseenter", layerId, countryLayerMouseEnter);
-      map.on("mousemove", layerId, countryLayerMouseMove);
-      map.on("mouseleave", layerId, countryLayerMouseLeave);
-      countryInteractionEventLayer = layerId;
-    } catch (e) {
-      console.warn("country interaction events:", e && e.message || e);
-    }
+    if (!map || !layerId) return;
+    countryInteractionEventLayer = layerId;
   }
   function handleCountryMapClick(e) {
     if (!map || !e) return;
@@ -1316,6 +1306,7 @@
       record = countryRecordFromSpatialMatch(getCountryAtLngLat(e.lngLat.lng, e.lngLat.lat));
     }
     if (!record) { setSelectedCountry(""); return; }
+    clearMarkerHoverState();
     setSelectedCountry(record.en);
     openDetail({
       kind: "country", cat: "country",
@@ -1853,6 +1844,7 @@
       $("#mapStatus").style.display = "none";
       ensureCountryInteractionLayers();
       bindCountryCanvasExit();
+      bindMarkerHoverEvents();
       renderMarkers();
       loadCountryLabels().then(function (d) { if (d) buildLabels(); });
       fetch("assets/geo/cities.json?v=" + (window.ORBITA_V || "1")).then(function (r) { return r.json(); })
@@ -1874,9 +1866,10 @@
       }
     });
     map.on("click", handleCountryMapClick);
+    map.on("movestart", clearMapInteractionHover); // never leave a tooltip behind during a camera flight/pan
     var rafZoom = null;
     map.on("zoom", function () {
-      if (map.getZoom() >= COUNTRY_HOVER_MAX_ZOOM) clearCountryHoverState();
+      clearMapInteractionHover();
       if (rafZoom) cancelAnimationFrame(rafZoom);
       rafZoom = requestAnimationFrame(function () {
         zoomLabels();
@@ -2274,64 +2267,137 @@
         key && kind === "cluster" ? ["all", markerClusterFilter(), ["==", ["get", "markerKey"], key]] : markerNeverFilter());
     } catch (e) {}
   }
-  function setMapMarkerHover(key, kind) {
-    key = key || ""; kind = key ? kind : "";
-    if (key === markerHoverKey && kind === markerHoverKind) return;
-    markerHoverKey = key; markerHoverKind = kind;
-    setMarkerHoverFilters();
-    var canvas = map && map.getCanvas();
-    if (canvas) {
-      var point = markerPointsByKey[key], members = markerClustersByKey[key];
-      canvas.title = point ? (name(point.o) + (point.cat === "recovery" ? " — " + (LANG === "fa" ? "موقعیت مرجع" : "reference location") : ""))
-        : members ? (LANG === "fa" ? "مشاهده فهرست " + members.length + " مورد در این ناحیه" : "View list of " + members.length + " items in this area") : "";
+  function ensureMapHoverTooltip() {
+    if (!map || !map.getContainer) return null;
+    var container = map.getContainer();
+    if (!container) return null;
+    if (mapHoverTooltip && mapHoverTooltip.parentNode === container) return mapHoverTooltip;
+    var tip = document.createElement("div");
+    tip.className = "orbita-marker-tooltip";
+    tip.setAttribute("role", "tooltip");
+    tip.setAttribute("aria-hidden", "true");
+    tip.style.cssText = "position:absolute;z-index:30;display:none;pointer-events:none;" +
+      "max-width:min(340px,calc(100% - 16px));padding:7px 11px;border-radius:5px;" +
+      "color:#f6f9ff;background:#111f31;border:1px solid rgba(212,224,242,.48);" +
+      "box-shadow:0 3px 14px rgba(0,0,0,.35);font:500 13px/1.5 system-ui,sans-serif;" +
+      "white-space:normal;overflow-wrap:anywhere;text-align:start;";
+    tip.dir = LANG === "en" ? "ltr" : "rtl";
+    container.appendChild(tip);
+    mapHoverTooltip = tip;
+    return tip;
+  }
+  function mapHoverLabel(key, kind) {
+    if (!key) return "";
+    if (kind === "point") {
+      var p = markerPointsByKey[key];
+      return p ? (name(p.o) + (p.cat === "recovery" ?
+        (LANG === "fa" ? " — موقعیت مرجع" : " — reference location") : "")) : "";
     }
+    if (kind === "cluster") {
+      var members = markerClustersByKey[key];
+      return members && members.length ? markerClusterTitle(members.length) : "";
+    }
+    return "";
+  }
+  function positionMapHoverTooltip(point) {
+    if (!mapHoverTooltip || !point || mapHoverTooltip.style.display === "none") return;
+    var container = map && map.getContainer && map.getContainer();
+    if (!container) return;
+    var w = container.clientWidth || 0, h = container.clientHeight || 0;
+    var tipWidth = mapHoverTooltip.offsetWidth || 180;
+    var half = Math.min(tipWidth / 2 + 9, w / 2);
+    var x = Math.max(half, Math.min(w - half, Number(point.x) || 0));
+    var y = Math.max(10, Math.min(h - 10, Number(point.y) || 0));
+    mapHoverTooltip.style.left = x + "px";
+    var tipHeight = mapHoverTooltip.offsetHeight || 30;
+    if (y - tipHeight - 13 < 8) {
+      mapHoverTooltip.style.top = y + 18 + "px";
+      mapHoverTooltip.style.transform = "translate(-50%,0)";
+    } else {
+      mapHoverTooltip.style.top = y - 13 + "px";
+      mapHoverTooltip.style.transform = "translate(-50%,-100%)";
+    }
+  }
+  function hideMapHoverTooltip() {
+    if (!mapHoverTooltip) return;
+    mapHoverTooltip.textContent = "";
+    mapHoverTooltip.style.display = "none";
+    mapHoverTooltip.setAttribute("aria-hidden", "true");
+  }
+  function setMapMarkerHover(key, kind, screenPoint) {
+    key = key || ""; kind = key ? kind : "";
+    var label = mapHoverLabel(key, kind);
+    if (!label) { key = ""; kind = ""; }
+    if (key !== markerHoverKey || kind !== markerHoverKind) {
+      markerHoverKey = key; markerHoverKind = kind;
+      setMarkerHoverFilters();
+    }
+    // Never use canvas.title: the whole WebGL map shares one native tooltip, which
+    // can display SUPARCO (Pakistan) over an unrelated marker in Iran.
+    var canvas = map && map.getCanvas();
+    if (canvas) canvas.removeAttribute("title");
+    if (label) {
+      var tip = ensureMapHoverTooltip();
+      if (tip) {
+        tip.dir = LANG === "en" ? "ltr" : "rtl";
+        if (tip.textContent !== label) tip.textContent = label;
+        tip.style.display = "block";
+        tip.setAttribute("aria-hidden", "false");
+        positionMapHoverTooltip(screenPoint);
+      }
+    } else hideMapHoverTooltip();
     syncMapCursor();
   }
   function clearMarkerHoverState() {
     if (markerHoverFrame) cancelAnimationFrame(markerHoverFrame);
     markerHoverFrame = 0; pendingMarkerHoverKey = ""; pendingMarkerHoverKind = "";
     if (markerHoverKey) { markerHoverKey = ""; markerHoverKind = ""; setMarkerHoverFilters(); }
+    hideMapHoverTooltip();
     var canvas = map && map.getCanvas();
-    if (canvas) canvas.title = "";
+    if (canvas) canvas.removeAttribute("title");
     syncMapCursor();
   }
-  function markerLayerMouseMove(e) {
-    var feature = e && e.features && e.features[0];
-    var props = feature && feature.properties || {};
-    var key = props.markerKey || "";
-    if (!key) return;
-    pendingMarkerHoverKey = key;
-    pendingMarkerHoverKind = props.markerType === "cluster" ? "cluster" : "point";
-    if (hoveredCountryName || countryHoverFrame || pendingHoveredCountryName) clearCountryHoverState();
-    if (markerHoverFrame) return;
-    markerHoverFrame = requestAnimationFrame(function () {
-      markerHoverFrame = 0;
-      setMapMarkerHover(pendingMarkerHoverKey, pendingMarkerHoverKind);
+  // Resolve exactly one interaction target per mouse position. No per-layer
+  // mousemove/mouseleave listeners, so country and marker cannot race to set hover.
+  function handleUnifiedMapMouseMove(e) {
+    if (!map || !e || !e.point) return;
+    var hits = interactionFeaturesAtPoint(e.point, true);
+    var feature = markerFeatureFromHits(hits);
+    // Rendered stale features block the country hover, but can never display
+    // a title or open a dossier from a newer snapshot with the same coordinates.
+    if (feature) {
+      var props = feature.properties || {};
+      var kind = props.markerType === "cluster" ? "cluster" : "point";
+      var key = props.markerKey || "";
+      clearCountryHoverState();
+      setMapMarkerHover(key, kind, e.point);
+      return;
+    }
+    // Symbol images may have a visually interactive edge outside MapLibre's
+    // symbol collision box. A small projection-based fallback covers that edge.
+    // Only currently published features qualify; never reuse a stale rendered ID.
+    var nearest = markerFeatureNearPoint(e.point);
+    if (nearest) {
+      var np = nearest.properties || {};
+      clearCountryHoverState();
+      setMapMarkerHover(np.markerKey, np.markerType === "cluster" ? "cluster" : "point", e.point);
+      return;
+    }
+    if (markerHoverKey || pendingMarkerHoverKey) clearMarkerHoverState();
+    if (map.getZoom() >= COUNTRY_HOVER_MAX_ZOOM) { clearCountryHoverState(); return; }
+    var country = hits.find(function (f) {
+      return f && f.layer && f.layer.id === countryInteractionEventLayer;
     });
-  }
-  function markerLayerMouseLeave(e) {
-    var interactionHits = e && e.point ? interactionFeaturesAtPoint(e.point, true) : [];
-    var feature = markerFeatureFromHits(interactionHits);
-    if (feature) { markerLayerMouseMove({ features: [feature] }); return; }
-    clearMarkerHoverState();
-    var countryHits = interactionHits.filter(function (hit) {
-      return hit && hit.layer && hit.layer.id === countryInteractionEventLayer;
-    });
-    if (countryHits.length) {
-      countryLayerMouseMove({ features: countryHits });
-      if (map.getCanvas().style.cursor !== "pointer") syncMapCursor();
-    } else clearCountryHoverState();
+    var countryName = country && country.properties && country.properties.NAME || "";
+    if (countryHoverFrame) { cancelAnimationFrame(countryHoverFrame); countryHoverFrame = 0; }
+    pendingHoveredCountryName = "";
+    setHoveredCountry(countryName);
+    syncMapCursor();
   }
   function bindMarkerHoverEvents() {
     if (!map || markerHoverEventsBound) return;
-    try {
-      var clusterHoverLayer = map.getLayer(MARKER_CLUSTER_HALO_LAYER) ? MARKER_CLUSTER_HALO_LAYER : MARKER_CLUSTER_CIRCLE_LAYER;
-      map.on("mousemove", MARKER_POINT_LAYER, markerLayerMouseMove);
-      map.on("mouseleave", MARKER_POINT_LAYER, markerLayerMouseLeave);
-      map.on("mousemove", clusterHoverLayer, markerLayerMouseMove);
-      map.on("mouseleave", clusterHoverLayer, markerLayerMouseLeave);
-      markerHoverEventsBound = true;
-    } catch (e) { console.warn("marker hover events:", e && e.message || e); }
+    map.on("mousemove", handleUnifiedMapMouseMove);
+    markerHoverEventsBound = true;
   }
   function addMarkerLayerIfMissing(layer) {
     if (!map.getLayer(layer.id)) map.addLayer(layer);
@@ -2408,6 +2474,10 @@
     var el = document.createElement("div");
     el.className = "pin";
     el.setAttribute("role", "button"); el.tabIndex = 0;
+    el.addEventListener("pointerenter", function () {
+      clearCountryHoverState(); // DOM recovery pins sit above the MapLibre canvas.
+      clearMarkerHoverState();
+    });
     el.addEventListener("keydown", function (e) {
       if (e.key === "Enter" || e.key === " ") { e.preventDefault(); e.stopPropagation(); el.click(); }
     });
@@ -2416,6 +2486,8 @@
       var current = el.__orbitaRecoveryPoint;
       if (!current) return;
       var lngLat = [current.o.lon, current.o.lat];
+      if (selectedCountryName) setSelectedCountry("");
+      clearCountryHoverState();
       openDetail(current);
       map.flyTo({ center: lngLat, zoom: Math.max(map.getZoom(), 4.5), duration: 900 });
     });
@@ -2484,7 +2556,11 @@
     var props = feature.properties || {}, key = props.markerKey;
     if (props.markerType === "cluster") {
       var members = markerClustersByKey[key];
-      if (members && members.length) openClusterList(members);
+      if (members && members.length) {
+        if (selectedCountryName) setSelectedCountry("");
+        clearCountryHoverState();
+        openClusterList(members);
+      }
       // A rendered feature may belong to the previous zoom/filter snapshot.
       // Absorb stale hits rather than opening an unrelated country's dossier.
       return true;
@@ -2492,6 +2568,8 @@
     var point = markerPointsByKey[key];
     if (!point) return true; // stale point must never fall through to country selection
     var lngLat = [point.o.lon, point.o.lat];
+    if (selectedCountryName) setSelectedCountry("");
+    clearCountryHoverState();
     openDetail(point);
     map.flyTo({ center: lngLat, zoom: Math.max(map.getZoom(), 4.5), duration: 900 });
     return true;
