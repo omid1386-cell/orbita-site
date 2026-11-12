@@ -7122,31 +7122,153 @@
     "partners_en": [],
     "partners_fa": [],
     "partners_ar": [],
-    "rockets_fleet": [],
+    "rockets_fleet": [
+      {
+        "name": "Baguette One",
+        "status_fa": "در حال توسعه",
+        "status_en": "In development",
+        "maiden_flight": null,
+        "stages": 1,
+        "vehicle_summary_fa": "نمایشگر یک‌مرحله‌ای زیرمداری با ارتفاع ۱۰ متر و ظرفیت هدف حداکثر ۳۰۰ کیلوگرم محموله زیرمداری؛ این مقدار ظرفیت مدار خورشیدآهنگ نیست. نخستین پرواز طبق اعلام سپتامبر ۲۰۲۶ برای ۲۰۲۷ برنامه‌ریزی شده و تا تاریخ بازبینی انجام‌شده محسوب نمی‌شود.",
+        "vehicle_summary_en": "10-m single-stage suborbital demonstrator with up to 300 kg proposed suborbital payload, NOT a sun-synchronous orbital payload. First flight rescheduled for 2027 in the September 2026 official announcement; not yet flown at review.",
+        "technical_source_url": "https://hypr-space.com/baguette-one-to-launch-from-biscarrosse-in-2027.html",
+        "verification_status": "source_confirmed_for_listed_fields",
+        "total_launches": null,
+        "success_launches": null,
+        "failed_launches": null,
+        "payload_sso_fa": null,
+        "vehicle_summary_ar": "مركبة تجريبية دون مدارية بمرحلة واحدة وارتفاع 10 أمتار، بسعة تصميمية تصل إلى 300 كغ للحمولة دون المدارية؛ ليست قدرة على إيصال الحمولة إلى المدار الشمسي المتزامن. أُجلت الرحلة الأولى إلى 2027 وفق إعلان سبتمبر 2026، ولم تكن قد انطلقت عند المراجعة.",
+        "payload_sso_ar": null,
+        "payload_sso_en": null
+      }
+    ],
     "timeline_en": [
       {
+        "year": 2018,
+        "title": "Lily engine development",
+        "desc": "Lily hybrid engine testing predates formal company formation.",
+        "source_url": "https://hypr-space.com/",
+        "verification_status": "source_confirmed"
+      },
+      {
         "year": 2019,
-        "title_en": "Launch programme milestone",
-        "desc_en": "This archival milestone still requires independent primary-source verification.",
-        "source_url": null,
+        "title": "Workspace-reported founding year",
+        "desc": "Reported in the ORBITA workspace; corporate incorporation date needs primary evidence.",
         "verification_status": "legacy_not_independently_confirmed"
+      },
+      {
+        "year": 2019,
+        "title": "Company establishment",
+        "desc": "The team established Hybrid Propulsion for Space and pursued its engine patent.",
+        "source_url": "https://hypr-space.com/",
+        "verification_status": "source_confirmed"
+      },
+      {
+        "year": 2023,
+        "title": "France 2030 PADA1 award",
+        "desc": "The €35m PADA1 consortium project was announced; it is not a launch record.",
+        "source_url": "https://www.hypr-space.com/hyprspace-secures-eu35m-in-funding-for-the-pada1-project.html",
+        "verification_status": "source_confirmed"
+      },
+      {
+        "year": 2024,
+        "title": "Terminator hot-fire milestone",
+        "desc": "A full-scale Terminator propulsion test advanced the hybrid engine program.",
+        "source_url": "https://hypr-space.com/",
+        "verification_status": "source_confirmed"
+      },
+      {
+        "year": 2026,
+        "title": "Baguette One launch-site plan",
+        "desc": "The future launch site was announced; no actual Baguette One flight is implied.",
+        "source_url": "https://hypr-space.com/baguette-one-to-launch-from-biscarrosse-in-2027.html",
+        "verification_status": "source_confirmed"
       }
     ],
     "timeline_fa": [
       {
+        "year": 2018,
+        "title": "نخستین آزمون موتور Lily",
+        "desc": "آزمایش فناورانه موتور هیبریدی Lily پیش از ثبت رسمی شرکت انجام شد.",
+        "source_url": "https://hypr-space.com/",
+        "verification_status": "source_confirmed"
+      },
+      {
         "year": 2019,
-        "title": "سال تأسیس ثبت‌شده در پرونده",
-        "desc": "این سال از داده‌های موجود ORBITA بازیابی شده و هنوز با سند اولیه رسمی تطبیق نهایی نشده است.",
+        "title": "سال آغاز فعالیت ثبت‌شده در آرشیو",
+        "desc": "سال تأسیس از ورک‌اسپیس ORBITA بازیابی شده؛ تا تطبیق سند ثبت حقوقی، قطعی تلقی نشود.",
         "verification_status": "legacy_not_independently_confirmed"
+      },
+      {
+        "year": 2019,
+        "title": "تأسیس HyPrSpace",
+        "desc": "گروه مؤسس توسعه موتور هیبریدی را در قالب شرکت و ثبت اختراع پی گرفت.",
+        "source_url": "https://hypr-space.com/",
+        "verification_status": "source_confirmed"
+      },
+      {
+        "year": 2023,
+        "title": "حمایت برنامه فرانسه ۲۰۳۰",
+        "desc": "پروژه PADA1 با بودجه ۳۵ میلیون یورویی کنسرسیوم اعلام شد؛ این مبلغ به معنی فروش یا تحقق پرتاب نیست.",
+        "source_url": "https://www.hypr-space.com/hyprspace-secures-eu35m-in-funding-for-the-pada1-project.html",
+        "verification_status": "source_confirmed"
+      },
+      {
+        "year": 2024,
+        "title": "آزمون موتور Terminator",
+        "desc": "آزمون احتراق نمونه مقیاس کامل Terminator در برنامه توسعه موتور هیبریدی انجام شد.",
+        "source_url": "https://hypr-space.com/",
+        "verification_status": "source_confirmed"
+      },
+      {
+        "year": 2026,
+        "title": "تعیین محل پرتاب برنامه آتی Baguette One",
+        "desc": "شرکت و وزارت دفاع فرانسه محل پرتاب آتی را اعلام کردند؛ تا این تاریخ پرتاب انجام‌شده محسوب نمی‌شود.",
+        "source_url": "https://hypr-space.com/baguette-one-to-launch-from-biscarrosse-in-2027.html",
+        "verification_status": "source_confirmed"
       }
     ],
     "timeline_ar": [
       {
+        "year": 2018,
+        "title": "مرحلة موثقة: Lily engine development",
+        "desc": "تفاصيل المرحلة موثّقة في المصدر الأصلي؛ يجب التمييز بين الاختبار الأرضي والرحلة المدارية والخطة المستقبلية.",
+        "source_url": "https://hypr-space.com/",
+        "verification_status": "source_confirmed"
+      },
+      {
         "year": 2019,
-        "title_ar": "محطة في برنامج الإطلاق",
-        "desc_ar": "بيانات أرشيفية تتطلب التحقق المستقل.",
-        "source_url": null,
+        "title": "تاريخ تأسيس مسجل يحتاج للتحقق",
+        "desc": "السجل مأخوذ من بيانات المشروع ويحتاج إلى تحقق مستقل.",
         "verification_status": "legacy_not_independently_confirmed"
+      },
+      {
+        "year": 2019,
+        "title": "مرحلة موثقة: Company establishment",
+        "desc": "تفاصيل المرحلة موثّقة في المصدر الأصلي؛ يجب التمييز بين الاختبار الأرضي والرحلة المدارية والخطة المستقبلية.",
+        "source_url": "https://hypr-space.com/",
+        "verification_status": "source_confirmed"
+      },
+      {
+        "year": 2023,
+        "title": "مرحلة موثقة: France 2030 PADA1 award",
+        "desc": "تفاصيل المرحلة موثّقة في المصدر الأصلي؛ يجب التمييز بين الاختبار الأرضي والرحلة المدارية والخطة المستقبلية.",
+        "source_url": "https://www.hypr-space.com/hyprspace-secures-eu35m-in-funding-for-the-pada1-project.html",
+        "verification_status": "source_confirmed"
+      },
+      {
+        "year": 2024,
+        "title": "مرحلة موثقة: Terminator hot-fire milestone",
+        "desc": "تفاصيل المرحلة موثّقة في المصدر الأصلي؛ يجب التمييز بين الاختبار الأرضي والرحلة المدارية والخطة المستقبلية.",
+        "source_url": "https://hypr-space.com/",
+        "verification_status": "source_confirmed"
+      },
+      {
+        "year": 2026,
+        "title": "مرحلة موثقة: Baguette One launch-site plan",
+        "desc": "تفاصيل المرحلة موثّقة في المصدر الأصلي؛ يجب التمييز بين الاختبار الأرضي والرحلة المدارية والخطة المستقبلية.",
+        "source_url": "https://hypr-space.com/baguette-one-to-launch-from-biscarrosse-in-2027.html",
+        "verification_status": "source_confirmed"
       }
     ],
     "source_note_en": "Secondary propulsion membership on the existing HyPrSpace launch record; one company ID and one map marker only.",
@@ -7240,7 +7362,10 @@
     "launch_profile_review_date": "2026-11-11",
     "launch_sources": [],
     "fleet_scope_ar": "مركبات الإطلاق المرتبطة بالمؤسسة؛ لا يعني الإدراج ملكية حصرية أو حالة تشغيل راهنة. الحقول التقنية غير الموثقة تظل فارغة.",
-    "identity_verified_on": null
+    "identity_verified_on": null,
+    "timeline_scope_fa": "رویدادها از تاریخچه واقعی توسعه و پرواز گردآوری شده‌اند. آزمون زیرمداری، قرارداد، عملیات شرکت مادر و پرتاب مداری یکسان نیستند. هر رویدادِ بدون سند اولیه با برچسب بررسی نمایش داده می‌شود.",
+    "timeline_scope_en": "Historical milestones distinguish orbital flight, suborbital test, corporate agreements and parent-company heritage. Unsourced events are marked for review.",
+    "timeline_scope_ar": "تميّز الوقائع بين الإطلاق المداري والتجارب دون المدار والتاريخ المؤسسي؛ وتُوسم البيانات غير المؤكدة."
   },
   {
     "id": "otespace",
@@ -7306,26 +7431,24 @@
     "timeline_en": [
       {
         "year": 2022,
-        "title_en": "Launch programme milestone",
-        "desc_en": "This archival milestone still requires independent primary-source verification.",
-        "source_url": null,
+        "title": "Workspace-reported founding year",
+        "desc": "Reported in the ORBITA workspace; corporate incorporation date needs primary evidence.",
         "verification_status": "legacy_not_independently_confirmed"
       }
     ],
     "timeline_fa": [
       {
         "year": 2022,
-        "title": "سال تأسیس ثبت‌شده در پرونده",
-        "desc": "این سال از داده‌های موجود ORBITA بازیابی شده و هنوز با سند اولیه رسمی تطبیق نهایی نشده است.",
+        "title": "سال آغاز فعالیت ثبت‌شده در آرشیو",
+        "desc": "سال تأسیس از ورک‌اسپیس ORBITA بازیابی شده؛ تا تطبیق سند ثبت حقوقی، قطعی تلقی نشود.",
         "verification_status": "legacy_not_independently_confirmed"
       }
     ],
     "timeline_ar": [
       {
         "year": 2022,
-        "title_ar": "محطة في برنامج الإطلاق",
-        "desc_ar": "بيانات أرشيفية تتطلب التحقق المستقل.",
-        "source_url": null,
+        "title": "تاريخ تأسيس مسجل يحتاج للتحقق",
+        "desc": "السجل مأخوذ من بيانات المشروع ويحتاج إلى تحقق مستقل.",
         "verification_status": "legacy_not_independently_confirmed"
       }
     ],
@@ -7471,7 +7594,10 @@
     "launch_profile_review_date": "2026-11-11",
     "launch_sources": [],
     "fleet_scope_ar": "مركبات الإطلاق المرتبطة بالمؤسسة؛ لا يعني الإدراج ملكية حصرية أو حالة تشغيل راهنة. الحقول التقنية غير الموثقة تظل فارغة.",
-    "identity_verified_on": null
+    "identity_verified_on": null,
+    "timeline_scope_fa": "رویدادها از تاریخچه واقعی توسعه و پرواز گردآوری شده‌اند. آزمون زیرمداری، قرارداد، عملیات شرکت مادر و پرتاب مداری یکسان نیستند. هر رویدادِ بدون سند اولیه با برچسب بررسی نمایش داده می‌شود.",
+    "timeline_scope_en": "Historical milestones distinguish orbital flight, suborbital test, corporate agreements and parent-company heritage. Unsourced events are marked for review.",
+    "timeline_scope_ar": "تميّز الوقائع بين الإطلاق المداري والتجارب دون المدار والتاريخ المؤسسي؛ وتُوسم البيانات غير المؤكدة."
   },
   {
     "id": "borospace",
@@ -7529,7 +7655,23 @@
     "partners_en": [],
     "partners_fa": [],
     "partners_ar": [],
-    "rockets_fleet": [],
+    "rockets_fleet": [
+      {
+        "name": "ARDEA sounding-rocket family",
+        "status_fa": "در حال توسعه",
+        "status_en": "In development",
+        "maiden_flight": null,
+        "stages": null,
+        "vehicle_summary_fa": "خانواده آزمایشی زیرمداری در اسناد معرفی شرکت؛ جزئیات مراحل، رانش و پرواز انجام‌شده هنوز با سند فنی اولیه تأیید نشده است.",
+        "vehicle_summary_en": "A suborbital development family listed in the company profile; actual flights and technical parameters not independently verified.",
+        "technical_source_url": "https://www.linkedin.com/company/borospace",
+        "verification_status": "company_self_description_unverified_specs",
+        "total_launches": null,
+        "success_launches": null,
+        "failed_launches": null,
+        "vehicle_summary_ar": "مركبة ضمن برنامج الإطلاق لدى هذه الجهة. المعلومات التقنية متاحة في رابط المصدر؛ ولا تُعدّ سعة التصميم دليلاً على تنفيذ رحلة ناجحة."
+      }
+    ],
     "timeline_en": [],
     "timeline_fa": [],
     "timeline_ar": [],
@@ -7613,7 +7755,10 @@
     "launch_profile_review_date": "2026-11-11",
     "launch_sources": [],
     "fleet_scope_ar": "مركبات الإطلاق المرتبطة بالمؤسسة؛ لا يعني الإدراج ملكية حصرية أو حالة تشغيل راهنة. الحقول التقنية غير الموثقة تظل فارغة.",
-    "identity_verified_on": null
+    "identity_verified_on": null,
+    "timeline_scope_fa": "رویدادها از تاریخچه واقعی توسعه و پرواز گردآوری شده‌اند. آزمون زیرمداری، قرارداد، عملیات شرکت مادر و پرتاب مداری یکسان نیستند. هر رویدادِ بدون سند اولیه با برچسب بررسی نمایش داده می‌شود.",
+    "timeline_scope_en": "Historical milestones distinguish orbital flight, suborbital test, corporate agreements and parent-company heritage. Unsourced events are marked for review.",
+    "timeline_scope_ar": "تميّز الوقائع بين الإطلاق المداري والتجارب دون المدار والتاريخ المؤسسي؛ وتُوسم البيانات غير المؤكدة."
   },
   {
     "id": "europropulsion",

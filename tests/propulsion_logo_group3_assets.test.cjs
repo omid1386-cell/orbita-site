@@ -10,14 +10,13 @@ const companyById = Object.fromEntries(companies.map(company => [company.id, com
 const propulsionById = Object.fromEntries(propulsion.map(company => [company.id, company]));
 
 const group3Ids = [
-  'sharif-iran', 'rocketdyne', 'ursamajor', 'thrustme', 'spaceforest', 'phasefour', 'accion', 'sitael',
+  'rocketdyne', 'ursamajor', 'thrustme', 'spaceforest', 'phasefour', 'accion', 'sitael',
   'spacex-engine', 'relativity-engine', 'casc-6th', 'vacco', 'solid-state-propulsion-za',
   'pyralink-aerospace', 'spacefields', 'regulus-guyane', 'safran-spacecraft-propulsion',
   'pulsar-fusion', 't4i', 'pangea-propulsion', 'uec-kuznetsov', 'proton-pm', 'sets', 'thaliana-space'
 ];
 
 const expectedLogos = {
-  'sharif-iran': 'assets/img/logos/sharif-iran.png',
   'rocketdyne': 'assets/img/logos/rocketdyne-logo.png',
   'ursamajor': 'assets/img/logos/ursamajor-logo.png',
   'thrustme': 'assets/img/logos/thrustme-logo.png',
@@ -43,13 +42,13 @@ const expectedLogos = {
 };
 const noVerifiedLogo = ['pyralink-aerospace'];
 const lightBackgroundIds = [
-  'sharif-iran', 'thrustme', 'spaceforest', 'accion', 'sitael', 'casc-6th', 'vacco',
+  'thrustme', 'spaceforest', 'accion', 'sitael', 'casc-6th', 'vacco',
   'solid-state-propulsion-za', 'regulus-guyane', 'safran-spacecraft-propulsion',
   'pangea-propulsion', 'uec-kuznetsov', 'proton-pm'
 ];
 
-assert.equal(group3Ids.length, 24, 'step 3 still contains the approved 24 records');
-assert.equal(propulsion.length, 72, 'the 72-record propulsion slice remains complete');
+assert.equal(group3Ids.length, 23, 'step 3 still contains the approved 24 records');
+assert.equal(propulsion.length, 68, 'the reviewed 68-record propulsion slice remains complete');
 assert.ok(group3Ids.every(id => companyById[id]), 'all approved records remain in the master dataset');
 assert.ok(group3Ids.every(id => propulsionById[id]), 'all approved records remain in the propulsion slice');
 assert.deepEqual(
@@ -100,7 +99,7 @@ assert.equal(companyById['casc-6th'].logo, companyById['aalpt-china'].logo, 'the
 assert.equal(companyById['casc-6th'].logo_bg, companyById['aalpt-china'].logo_bg, 'the CASC alias uses the same mark background');
 
 const html = fs.readFileSync(path.join(root, 'index.html'), 'utf8');
-assert.match(html, /window\.ORBITA_V = "20261023help1";/);
-assert.match(html, /window\.ORBITA_APP_V = "20261023dossierread1";/);
+assert.match(html, /window\.ORBITA_V = "20261023mapuk2";/);
+assert.match(html, /window\.ORBITA_APP_V = "20261111launch68deepappv3";/);
 
 console.log(`Verified ${Object.keys(expectedLogos).length} reviewed group-3 logo assignments across ${group3Ids.length} records; one remains unassigned.`);

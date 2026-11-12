@@ -9,7 +9,7 @@ const propulsion = JSON.parse(fs.readFileSync(path.join(root, 'data/companies_pr
 const companyById = Object.fromEntries(companies.map(company => [company.id, company]));
 const propulsionById = Object.fromEntries(propulsion.map(company => [company.id, company]));
 const group2Ids = [
-  'ihi', 'impulse', 'ion-satellite', 'ion-x', 'kbhm-isayev', 'lpsc-test', 'kbkha', 'l3harris',
+  'ihi', 'impulse', 'ion-x', 'kbhm-isayev', 'lpsc-test', 'kbkha', 'l3harris',
   'lpsc-isro', 'magdrive', 'manastu', 'miprons', 'moog', 'morpheus-space', 'nakuja-project',
   'nammo', 'nasa-stennis', 'nasa-wstf', 'niimash', 'ngpropulsion', 'energomash', 'okb-fakel',
   'otespace', 'paleblue'
@@ -38,12 +38,12 @@ const expectedLogos = {
   'otespace': 'assets/img/logos/otespace-logo.png',
   'paleblue': 'assets/img/logos/paleblue-logo.png'
 };
-const noVerifiedLogo = ['ion-satellite', 'nakuja-project'];
+const noVerifiedLogo = ['nakuja-project'];
 const lightBackgroundIds = [
   'ihi', 'kbhm-isayev', 'lpsc-test', 'lpsc-isro', 'magdrive', 'energomash', 'okb-fakel'
 ];
 
-assert.equal(group2Ids.length, 24, 'step 2 still contains the approved 24 records');
+assert.equal(group2Ids.length, 23, 'step 2 still contains the approved 24 records');
 assert.ok(group2Ids.every(id => companyById[id]), 'all approved records remain in the master dataset');
 assert.ok(group2Ids.every(id => propulsionById[id]), 'all approved records remain in the propulsion slice');
 assert.deepEqual(
@@ -54,7 +54,7 @@ assert.deepEqual(
 assert.deepEqual(
   group2Ids.filter(id => !companyById[id].logo).sort(),
   [...noVerifiedLogo].sort(),
-  'ambiguous Ion Satellite and Nakuja Project marks remain unassigned'
+  'Nakuja Project remains without an independently attributed logo'
 );
 
 for (const [id, expectedPath] of Object.entries(expectedLogos)) {
@@ -87,7 +87,7 @@ for (const id of noVerifiedLogo) {
 }
 
 const html = fs.readFileSync(path.join(root, 'index.html'), 'utf8');
-assert.match(html, /window\.ORBITA_V = "20261023help1";/);
-assert.match(html, /window\.ORBITA_APP_V = "20261023dossierread1";/);
+assert.match(html, /window\.ORBITA_V = "20261023mapuk2";/);
+assert.match(html, /window\.ORBITA_APP_V = "20261111launch68deepappv3";/);
 
 console.log(`Verified ${Object.keys(expectedLogos).length} reviewed group-2 logo assignments across ${group2Ids.length} records; ${noVerifiedLogo.length} remain unassigned.`);

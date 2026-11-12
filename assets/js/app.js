@@ -4695,6 +4695,12 @@
       var rGto = techValue(v.payload_gto_ar || v.payload_gto_en || v.payload_gto_fa, "applicability") || "—";
       var dimText = "الارتفاع: " + esc(techValue(v.height_ar || v.height_en || v.height_fa) || "—") + " | القطر: " + esc(techValue(v.diameter_ar || v.diameter_en || v.diameter_fa) || "—") + " | الكتلة: " + esc(techValue(v.mass_ar || v.mass_en || v.mass_fa) || "—");
 
+      // Source-backed vehicle explanation in Arabic; avoid an empty name-only card.
+      var arOverview = v.vehicle_summary_ar || '';
+      if (!arOverview && v.vehicle_summary_en) arOverview = 'وصف فني موثق (بالإنجليزية): ' + v.vehicle_summary_en;
+      if (arOverview) h += '<div style="color:var(--text);font-size:10.5px;line-height:1.65;padding:8px 9px;margin:4px 0 8px;border-inline-start:2px solid var(--accent);background:rgba(56,189,248,.05);">' + esc(arOverview) + '</div>';
+      if (v.technical_source_url && /^https:\/\//.test(v.technical_source_url)) h += '<a href="' + esc(v.technical_source_url) + '" target="_blank" rel="noopener noreferrer" style="display:inline-block;color:var(--accent);font-size:9.5px;margin:3px 0 7px;text-decoration:underline;">المصدر الفني ↗</a>';
+
       // Rocket Tech Specs Grid (same two-column card as the Persian template).
       h += '<div style="display:grid; grid-template-columns:1fr 1fr; gap:6px; font-size:10.5px;">';
       h += '<div style="background:rgba(0,0,0,0.25); padding:5px 8px; border-radius:4px;"><b>عدد المراحل:</b> ' + esc(v.stages == null ? "—" : latinDigits(v.stages)) + '</div>';
@@ -4745,7 +4751,7 @@
         h += '<div style="background:rgba(0,0,0,0.25); border-right:3px solid #f59e0b; padding:6px 10px; border-radius:4px; font-size:10.5px;">';
         h += '<div style="font-weight:bold; color:var(--text);"><span style="color:var(--amber); font-family:monospace;">' + esc(latinDigits(item.year)) + ':</span> ' + esc(title) + '</div>';
         h += '<div style="color:var(--text); opacity:0.9; margin-top:2px; line-height:1.55;">' + esc(detail) + '</div>';
-        if (item.verification_status === 'legacy_not_independently_confirmed' || item.verification_status === 'source_pending') h += '<div style="color:var(--amber);font-size:9px;margin-top:4px;">يتطلب الحدث توثيق المصدر الأصلي</div>';
+        if (item.verification_status === 'legacy_not_independently_confirmed' || item.verification_status === 'source_pending' || item.verification_status === 'secondary_directory_context_not_event_verified' || item.verification_status === 'legacy_source_not_rechecked') h += '<div style="color:var(--amber);font-size:9px;margin-top:4px;">يتطلب الحدث توثيق المصدر الأصلي</div>';
         if (item.source_url && /^https:\/\//.test(item.source_url)) h += '<a href="' + esc(item.source_url) + '" target="_blank" rel="noopener noreferrer" style="color:var(--accent);font-size:9.5px;display:inline-block;margin-top:3px;">مصدر هذا الحدث ↗</a>';
         h += '</div>';
       });
@@ -5093,6 +5099,10 @@
           ("ارتفاع: " + esc(v.height_fa || "—") + " | قطر: " + esc(v.diameter_fa || "—") + " | جرم: " + esc(v.mass_fa || "—")) :
           ("Height: " + esc(v.height_en || v.height_fa || "—") + " | Diameter: " + esc(v.diameter_en || v.diameter_fa || "—") + " | Mass: " + esc(v.mass_en || v.mass_fa || "—"));
 
+        // Documented, launcher-specific technical context (never fabricate missing specifications).
+        var vehicleOverview = isFa ? (v.vehicle_summary_fa || '') : (v.vehicle_summary_en || v.vehicle_summary_fa || '');
+        if (vehicleOverview) h += '<div style="color:var(--text);font-size:10.5px;line-height:1.65;padding:8px 9px;margin:4px 0 8px;border-inline-start:2px solid var(--accent);background:rgba(56,189,248,.05);">' + esc(vehicleOverview) + '</div>';
+        if (v.technical_source_url && /^https:\/\//.test(v.technical_source_url)) h += '<a href="' + esc(v.technical_source_url) + '" target="_blank" rel="noopener noreferrer" style="display:inline-block;color:var(--accent);font-size:9.5px;margin:3px 0 7px;text-decoration:underline;">' + (isFa ? 'منبع توضیح فنی ↗' : 'Technical context source ↗') + '</a>';
         // Rocket Tech Specs Grid
         h += '<div style="display:grid; grid-template-columns:1fr 1fr; gap:6px; font-size:10.5px;">';
         h += '<div style="background:rgba(0,0,0,0.25); padding:5px 8px; border-radius:4px;"><b>' + (isFa ? "تعداد مراحل:" : "Stages:") + '</b> ' + esc(v.stages == null ? "—" : v.stages) + '</div>';
@@ -5156,7 +5166,7 @@
           h += '<div style="background:rgba(0,0,0,0.25); border-right:3px solid #f59e0b; padding:6px 10px; border-radius:4px; font-size:10.5px;">';
           h += '<div style="font-weight:bold; color:var(--text);"><span style="color:var(--amber); font-family:monospace;">' + esc(item.year) + ':</span> ' + esc(tTitle) + '</div>';
           h += '<div style="color:var(--text); opacity:0.9; margin-top:2px; line-height:1.55;">' + esc(tDesc) + '</div>';
-          if (item.verification_status === 'legacy_not_independently_confirmed' || item.verification_status === 'source_pending') h += '<div style="color:var(--amber);font-size:9px;margin-top:4px;">' + (isFa ? 'نیازمند تأیید منبع اولیه' : 'Primary-source verification pending') + '</div>';
+          if (item.verification_status === 'legacy_not_independently_confirmed' || item.verification_status === 'source_pending' || item.verification_status === 'secondary_directory_context_not_event_verified' || item.verification_status === 'legacy_source_not_rechecked') h += '<div style="color:var(--amber);font-size:9px;margin-top:4px;">' + (isFa ? 'نیازمند تأیید منبع اولیه' : 'Primary-source verification pending') + '</div>';
           if (item.source_url && /^https:\/\//.test(item.source_url)) h += '<a href="' + esc(item.source_url) + '" target="_blank" rel="noopener noreferrer" style="color:var(--accent);font-size:9.5px;display:inline-block;margin-top:3px;">' + (isFa ? 'سند این رویداد ↗' : 'Event source ↗') + '</a>';
           h += '</div>';
         });

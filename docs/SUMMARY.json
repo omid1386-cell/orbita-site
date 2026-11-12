@@ -1,0 +1,32 @@
+{
+  "release_date": "2026-11-11",
+  "baseline": "ORBITA Launch Restored (266 master / 68 launcher records)",
+  "actual_launcher_records": 68,
+  "not_88_note": "This provided workspace contains 68 launch-company records, not 88.",
+  "other_entities_preserved": 198,
+  "previous_timeline_events": 81,
+  "current_timeline_events": 217,
+  "previous_fleet_entries": 107,
+  "current_fleet_entries": 113,
+  "companies_with_any_timeline": 67,
+  "companies_with_three_plus_timeline": 41,
+  "companies_with_pre2024_timeline": 62,
+  "timeline_status_counts": {
+    "source_confirmed": 125,
+    "legacy_source_not_rechecked": 27,
+    "legacy_not_independently_confirmed": 53,
+    "secondary_directory_context_not_event_verified": 11,
+    "secondary_historical_source": 1
+  },
+  "companies_with_any_fleet": 61,
+  "fleet_entries_with_source_link": 56,
+  "companies_with_sourced_scoped_numeric_launch_statistics": 23,
+  "companies_with_any_numeric_launch_statistics": 25,
+  "companies_with_founder_fa": 20,
+  "companies_with_ceo_fa": 22,
+  "companies_with_headquarters_city": 67,
+  "companies_with_country": 68,
+  "companies_with_founded_year": 60,
+  "test_result": "81 of 81 Node tests passed; 0 failed",
+  "scope": "Global map launch-company profile only; no orbital satellite catalogue or missions view changes"
+}

@@ -1,0 +1,16 @@
+{
+  "release": "launch-deep-restore-2026-11-11",
+  "files": {
+    "assets/js/app.js": "4467480854dcb679a06a9f5ee4efe28ba1fe62977b06ef89bb8ef98be767c6f7",
+    "data/companies.json": "7cdb2a34ad199aab96d7e7844533b3f2eb3102b8d465936cc7700fce301f68bb",
+    "data/companies_launch.json": "77e7faafd877de3e8dea10484b637e83478839970dd04dfc4526df38e996d788",
+    "data/companies_propulsion.json": "bdb945930b20ae42ee895db8a0afb694dafa8611531755796a8493698280bfdf",
+    "index.html": "05a59b892e94847ab06f357bc655298e2efa9e3416efb1e53f96d78b6dec69c7",
+    "tests/cluster_label_startup.test.cjs": "63e7270bf1df62e44128866a1ee82280a6318a20b586e619407b10c1783cc706",
+    "tests/company_launch_ar.test.cjs": "f9dfacae9d93adf458386eef93c87fb7f67bfbd431f621cbdaac639acaf9307d",
+    "tests/launch_additions.test.cjs": "b10ce509fa2c8cead8c43c51b88b4e09a245beaab992ce4bd0a38a2546ef480b",
+    "tests/launch_deep_recovery.test.cjs": "417f024606094582ce20065a4d3e11097701c87e505782b96ac47bba5e996101",
+    "tests/propulsion_logo_group2_assets.test.cjs": "5d351f3dda9a821e71535ee5450dbcff40239e71ddbe979dd777702ab0cef98f",
+    "tests/propulsion_logo_group3_assets.test.cjs": "5db248f9da2f9679acb90083fa9c68ff500c1ff902feff7e10fff96214018414"
+  }
+}

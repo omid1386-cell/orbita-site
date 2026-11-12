@@ -1,0 +1,8 @@
+const test=require('node:test'),assert=require('node:assert/strict'),fs=require('node:fs'),path=require('node:path');
+const load=n=>JSON.parse(fs.readFileSync(path.join(__dirname,'..','data',n),'utf8'));
+const launch=load('companies_launch.json'),all=load('companies.json');const by=new Map(all.map(x=>[x.id,x]));
+test('68 unique launcher profiles retain critical identity',()=>{assert.equal(launch.length,68);assert.equal(new Set(launch.map(x=>x.id)).size,68);for(const c of launch){assert.ok(c.en);assert.ok(c.country);assert.ok(by.has(c.id));}});
+test('master and launch category match key cards',()=>{for(const c of launch){for(const k of ['stats','rockets_fleet','timeline_fa','timeline_en','timeline_ar'])assert.deepEqual(by.get(c.id)[k],c[k],c.id+':'+k);}});
+test('milestones are chronological and sources are valid HTTPS',()=>{for(const c of launch){let y=0;for(const t of c.timeline_fa){assert.ok(Number.isInteger(t.year));assert.ok(t.year>=y);y=t.year;if(t.verification_status==='source_confirmed')assert.match(t.source_url,/^https:\/\//);}}});
+test('selected restored historical milestones',()=>{for(const id of ['spacex','arianespace','blueorigin','rocketlab','firefly','pldspace','expace','landspace','mhi','northrop']){let c=launch.find(x=>x.id===id);assert.ok(c.timeline_fa.some(x=>x.year<=2023),id);assert.ok(c.timeline_fa.length>=3,id);}});
+test('no fabricated Gen-1 fleets and scoped metrics',()=>{for(const c of launch){for(const r of c.rockets_fleet||[])assert.doesNotMatch(r.name,/^Rocket .+ Gen-1$/);let s=c.stats||{};if(s.total_launches!==null&&s.total_launches!==undefined){assert.ok(s.scope_fa,c.id); if (s.verification_status==='scoped_source_confirmed') assert.ok(s.source_url,c.id);}}});

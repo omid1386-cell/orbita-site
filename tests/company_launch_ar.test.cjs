@@ -73,7 +73,7 @@ check(sharedRenderer.includes('var statsScopeText = isFa ? (stats.scope_fa || st
   !sharedRenderer.includes('v.reusability_en || "Expendable"') &&
   !sharedRenderer.includes('v.status_en || v.status_fa || "Operational"'),
   'the shared company renderer shows scope and dashes for unknown metrics instead of invented defaults');
-check(sharedRendererHash === '45301e7c4bef5790e6e9f925335c09c376280dc6e8fb154652fd8792adfa70e6',
+check(sharedRendererHash === '5e03fd984317e95d1d5eba69e3089a49c43a3e739b33604ed86338a5635c958b',
   'the shared Persian/English renderer is pinned to the reviewed no-defaults implementation');
 
 function makeRenderer(lang) {
