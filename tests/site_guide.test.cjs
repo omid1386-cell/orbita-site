@@ -28,14 +28,14 @@ const guideBinding = app.slice(guideStart, guideEnd);
 
 const guideTitleKeys = [
   'guide_title', 'guide_quick_title', 'guide_map_title', 'guide_search_title',
-  'guide_country_title', 'guide_projects_title', 'guide_companies_title',
+  'guide_country_title', 'guide_companies_title',
   'guide_site_title', 'guide_recovery_title', 'guide_next_title', 'guide_controls_title',
   'guide_report_title', 'guide_data_title', 'guide_scope_title', 'guide_sources_title',
   'guide_metrics_title', 'guide_limits_title', 'guide_glossary_title', 'guide_note'
 ];
 const guideBodyKeys = [
   'guide_quick_body', 'guide_map_body', 'guide_search_body', 'guide_country_body',
-  'guide_projects_body', 'guide_companies_body', 'guide_site_body', 'guide_recovery_body',
+  'guide_companies_body', 'guide_site_body', 'guide_recovery_body',
   'guide_next_body', 'guide_controls_body', 'guide_report_body', 'guide_data_body',
   'guide_scope_body', 'guide_sources_body', 'guide_metrics_body', 'guide_limits_body',
   'guide_glossary_body'
@@ -43,11 +43,11 @@ const guideBodyKeys = [
 const guideUiKeys = [
   'guide_search_label', 'guide_search_placeholder', 'guide_search_hint', 'guide_search_clear',
   'guide_tasks_title', 'guide_tasks_intro', 'guide_task_find_title', 'guide_task_find_body',
-  'guide_task_missions_title', 'guide_task_missions_body', 'guide_task_counts_title',
+  'guide_task_counts_title',
   'guide_task_counts_body', 'guide_results_heading', 'guide_results_count',
   'guide_no_results_title', 'guide_no_results_body', 'guide_suggestions_label',
-  'guide_suggest_map', 'guide_suggest_projects', 'guide_suggest_metrics',
-  'guide_topics_title', 'guide_topics_intro', 'guide_open_map', 'guide_open_projects',
+  'guide_suggest_map', 'guide_suggest_metrics',
+  'guide_topics_title', 'guide_topics_intro', 'guide_open_map',
   'guide_open_report', 'guide_site_tab_overview', 'guide_site_tab_history',
   'guide_site_tab_upcoming', 'guide_site_tab_analysis', 'guide_recovery_tab_overview',
   'guide_recovery_tab_history', 'guide_recovery_tab_upcoming'
@@ -75,7 +75,7 @@ test('the existing Help icon opens an accessible dialog with local search and ta
   assert.match(dialog, /id="siteGuideNoResults"[^>]*hidden/);
   assert.match(dialog, /id="siteGuideShortcuts"/);
   assert.match(dialog, /data-guide-open-topic="search"/);
-  assert.match(dialog, /data-guide-open-topic="projects"/);
+  assert.doesNotMatch(dialog, /data-guide-open-topic="projects"/);
   assert.match(dialog, /data-guide-open-topic="metrics"/);
   assert.match(dialog, /id="siteGuideClose"[^>]*data-i18n-aria-label="guide_close"/);
 });
@@ -83,12 +83,12 @@ test('the existing Help icon opens an accessible dialog with local search and ta
 test('the guide covers all current user-facing areas and gives each topic an identifying icon', () => {
   const topics = [...dialog.matchAll(/data-guide-topic="([^"]+)"/g)].map(m => m[1]);
   assert.deepEqual(topics, [
-    'quick', 'map', 'search', 'country', 'projects', 'companies', 'site', 'recovery',
+    'quick', 'map', 'search', 'country', 'companies', 'site', 'recovery',
     'next', 'controls', 'report', 'data', 'scope', 'sources', 'metrics', 'limits', 'glossary'
   ]);
   assert.equal((dialog.match(/class="site-guide-topic-icon" data-guide-icon=/g) || []).length, topics.length);
   assert.match(dialog, /data-guide-visual="map-categories"/);
-  assert.match(dialog, /data-guide-visual="missions-table"/);
+  assert.doesNotMatch(dialog, /data-guide-visual="missions-table"/);
   assert.match(dialog, /data-guide-visual="company-categories"/);
   assert.match(dialog, /data-guide-visual="site-tabs"/);
   assert.match(dialog, /data-guide-visual="recovery-tabs"/);
@@ -130,27 +130,27 @@ test('the Help search matches localized content and synonyms and offers alternat
   assert.match(guideBinding, /siteGuideSearchClear/);
   assert.match(dialog, /data-i18n="guide_no_results_title"/);
   assert.match(dialog, /data-guide-open-topic="map"[^>]*data-i18n="guide_suggest_map"/);
-  assert.match(dialog, /data-guide-open-topic="projects"[^>]*data-i18n="guide_suggest_projects"/);
+  assert.doesNotMatch(dialog, /data-guide-open-topic="projects"/);
   assert.match(dialog, /data-guide-open-topic="metrics"[^>]*data-i18n="guide_suggest_metrics"/);
 });
 
 test('guide actions open the matching app view without loading new data', () => {
   assert.match(dialog, /data-guide-command="map-search"/);
-  assert.match(dialog, /data-guide-command="missions"/);
+  assert.doesNotMatch(dialog, /data-guide-command="missions"/);
   assert.match(dialog, /data-guide-command="report"/);
   assert.match(guideBinding, /function openTopic\(key\)/);
   assert.match(guideBinding, /function runGuideCommand\(command\)/);
   assert.match(guideBinding, /\.tab\[data-view='map'\]/);
-  assert.match(guideBinding, /\.tab\[data-view='missions'\]/);
+  assert.doesNotMatch(guideBinding, /\.tab\[data-view='missions'\]/);
   assert.match(guideBinding, /#reportBtn/);
   assert.match(guideBinding, /openSide\(true\)/);
   assert.doesNotMatch(guideBinding, /map\.on\(|queryRenderedFeatures|renderMarkers\(|setData\(|fetch\(/,
     'Help navigation adds no map listeners, network fetches, or map-data rerenders');
 });
 
-test('expanded guide content accurately explains profiles, projects, sources, and limitations', () => {
+test('expanded guide content accurately explains map profiles, sources, and limitations', () => {
   const approvedBodyKeys = [
-    'guide_map_body', 'guide_search_body', 'guide_country_body', 'guide_projects_body',
+    'guide_map_body', 'guide_search_body', 'guide_country_body',
     'guide_companies_body', 'guide_site_body', 'guide_recovery_body', 'guide_next_body',
     'guide_controls_body', 'guide_report_body', 'guide_glossary_body'
   ];
@@ -160,20 +160,13 @@ test('expanded guide content accurately explains profiles, projects, sources, an
     for (const value of values) assert.doesNotMatch(value, /\*\*|`/, `${key} has no raw Markdown markers`);
     assert.doesNotMatch(values[2], /[پچژگکی]/, `${key} Arabic copy contains no Persian-only letters`);
   }
-  assert.deepEqual(localeValues('guide_projects_title'), ['پروژه‌های فضایی', 'Space Projects', 'المشاريع الفضائية']);
-  const projectsCopy = localeValues('guide_projects_body').join('\n');
-  assert.match(projectsCopy, /status|وضعیت|الحالة/i);
-  assert.match(projectsCopy, /sort|مرتب|ترتيب/i);
-  assert.match(projectsCopy, /Launch Library 2/);
-  assert.match(projectsCopy, /UTC/);
-  assert.match(projectsCopy, /upcoming-launch cards|کارت‌های پرتاب پیش‌رو|بطاقات الإطلاقات القادمة/i);
   const allApproved = approvedBodyKeys.map(localeValues).flat().join('\n');
   assert.match(allApproved, /Launch Library 2/);
   assert.match(allApproved, /The Space Devs/);
   assert.match(allApproved, /satellite manufacturers|سازندگان ماهواره|مصنّعو الأقمار الصناعية/);
   assert.match(allApproved, /manual|دستی|يدوية/);
   assert.match(allApproved, /UTC/);
-  assert.equal((dialog.match(/data-i18n="guide_projects_body"/g) || []).length, 1);
+  assert.equal((dialog.match(/data-i18n="guide_projects_body"/g) || []).length, 0);
 });
 
 test('coverage, sources, freshness, statuses, and location caveats match the local datasets', () => {
@@ -209,7 +202,7 @@ test('coverage, sources, freshness, statuses, and location caveats match the loc
   const metricsCopy = localeValues('guide_metrics_body').join('\n');
   assert.match(metricsCopy, /Go\/TBC\/TBD/);
   assert.match(metricsCopy, /TBA/);
-  assert.match(metricsCopy, /UTC/);
+  assert.doesNotMatch(metricsCopy, /Space Projects|فهرست پروژه‌ها|علامة المشاريع الفضائية/);
   assert.match(metricsCopy, /zero|صفر|الصفر/i,
     'zero or blank is explained as a data-coverage statement, not proof of absence');
   const locationCopy = localeValues('guide_limits_body').join('\n');

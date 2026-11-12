@@ -29,7 +29,7 @@ test('the detail-copy readability fix refreshes CSS and app assets without chang
   assert.match(html, /window\.ORBITA_V = "20261023mapuk2";/,
     'map and data assets receive a fresh token for the corrected P2 records');
   assert.match(html, /window\.ORBITA_CSS_V = "20261111identitywhite105v2";/);
-  assert.match(html, /window\.ORBITA_APP_V = "20261112mapstabilityv1";/);
+  assert.match(html, /window\.ORBITA_APP_V = "20261112maponlyv1";/);
   assert.match(html, /var ts = window\.ORBITA_CSS_V \|\| window\.ORBITA_V;[\s\S]*?link\.href = 'assets\/css\/app\.css\?_t=' \+ ts;/,
     'only the updated stylesheet receives its dedicated cache token');
   assert.match(html, /var ts = window\.ORBITA_APP_V \|\| window\.ORBITA_V \|\| Date\.now\(\);[\s\S]*?s\.src = 'assets\/js\/app\.js\?_t=' \+ ts;/,

@@ -27,7 +27,7 @@ test('wheel and trackpad zoom are responsive but below former 2x speed; both ori
  assert.match(app,/if \(MAP_STYLE === "sunny"\) return ONLINE_SUNNY_URL;/);
  assert.match(app,/return ONLINE_DARK_URL;/);
  assert.match(app,/else if \(MAP_STYLE === "sunny"\) MAP_STYLE = "osm";/);
- assert.match(html,/window\.ORBITA_APP_V = "20261112mapstabilityv1";/);
+ assert.match(html,/window\.ORBITA_APP_V = "20261112maponlyv1";/);
 });
 
 test('during rapid zoom only the latest debounced cluster refresh runs',()=>{

@@ -1,0 +1,1080 @@
+--- a/index.html
++++ b/index.html
+@@ -3,12 +3,12 @@
+ <head>
+ <meta charset="UTF-8" />
+ <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+-<meta name="description" content="سامانهٔ اطلاعات هوافضا: نقشهٔ جهانی پایگاه‌های پرتاب، پروژه‌های فضایی، و نمایش سه‌بعدی ماهواره‌های فعال در مدار زمین." />
++<meta name="description" content="سامانهٔ اطلاعات هوافضا: نقشهٔ جهانی شرکت‌های پرتاب، مجموعه‌های پیشرانش، سازمان‌های فضایی، سازندگان ماهواره، پایگاه‌های پرتاب و محل‌های فرود و بازیابی." />
+ <meta name="color-scheme" content="dark light" />
+ <meta name="theme-color" content="#0b1a2b" />
+ <meta property="og:type" content="website" />
+ <meta property="og:title" content="ORBITA — سامانهٔ اطلاعات هوافضا" />
+-<meta property="og:description" content="نقشهٔ جهانی پایگاه‌های پرتاب، پروژه‌های فضایی، و نمایش سه‌بعدی ماهواره‌های فعال در مدار زمین." />
++<meta property="og:description" content="نقشهٔ جهانی شرکت‌های پرتاب، مجموعه‌های پیشرانش، سازمان‌های فضایی، سازندگان ماهواره، پایگاه‌های پرتاب و محل‌های فرود و بازیابی." />
+ <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'%3E%3Ccircle cx='12' cy='12' r='6' fill='%232fd4a7'/%3E%3C/svg%3E" />
+ <title>ORBITA — سامانهٔ اطلاعات هوافضا</title>
+ <link rel="stylesheet" href="assets/vendor/maplibre-gl.css?v=3" />
+@@ -16,7 +16,7 @@
+   window.ORBITA_V = "20261023mapuk2";
+   window.ORBITA_COMPANIES_V = "20261111launch68deepv3";
+   window.ORBITA_CSS_V = "20261111identitywhite105v2";
+-  window.ORBITA_APP_V = "20261112mapstabilityv1";
++  window.ORBITA_APP_V = "20261112maponlyv1";
+   // Public API URL only; never place the Resend key or another secret here.
+   window.ORBITA_REPORT_API_URL = "https://orbita-report-api.onrender.com/api/report";
+   (function() {
+@@ -41,8 +41,7 @@
+ 
+   <nav class="tabs">
+     <button class="tab active" data-view="map"><span data-i18n="tab_map">نقشهٔ جهانی</span></button>
+-    <button class="tab" data-view="missions"><span data-i18n="tab_missions">پروژه‌های فضایی</span></button>
+-      </nav>
++  </nav>
+ 
+   <div class="topbar-actions">
+     <button id="langBtn" class="ghost-btn" title="Language" data-i18n-title="change_language" aria-label="Change language">EN</button>
+@@ -116,49 +115,7 @@
+   </section>
+ </main>
+ 
+-<!-- ============ MISSIONS VIEW ============ -->
+-<main id="view-missions" class="view">
+-  <div class="missions-wrap">
+-
+-    <div class="toolbar">
+-      <button id="upRefresh" class="icon-btn" title="بروزرسانی" data-i18n-title="refresh">
+-        <svg viewBox="0 0 24 24" width="17" height="17"><path fill="currentColor" d="M12 5V2L8 6l4 4V7a5 5 0 11-5 5H5a7 7 0 107-7z"/></svg>
+-      </button>
+-      <select id="fStatus" class="tb-select"></select>
+-      <select id="fOrbit" class="tb-select"></select>
+-      <select id="fType" class="tb-select"></select>
+-      <select id="fSort" class="tb-select"></select>
+-      <div class="tb-search">
+-        <svg viewBox="0 0 24 24" width="16" height="16"><path fill="currentColor" d="M10 2a8 8 0 105.3 14l4.4 4.4 1.4-1.4-4.4-4.4A8 8 0 0010 2zm0 2a6 6 0 110 12 6 6 0 010-12z"/></svg>
+-        <input id="mSearch" type="text" data-i18n-ph="ph_search_mission" placeholder="جستجو در نتایج بارگذاری‌شده..." />
+-      </div>
+-    </div>
+-
+-    <div class="tablewrap">
+-      <div class="thead">
+-        <span class="col-mission" data-i18n="th_mission">مأموریت / زمان UTC</span>
+-        <span class="col-rocket" data-i18n="th_rocket">پرتابگر</span>
+-        <span class="col-op" data-i18n="th_op">ارائه‌دهنده</span>
+-        <span class="col-orbit" data-i18n="th_orbit">مدار</span>
+-        <span class="col-loc" data-i18n="th_loc">کشور / پایگاه</span>
+-        <span class="col-res" data-i18n="th_result">نتیجه</span>
+-        <span class="col-x"></span>
+-      </div>
+-      <div id="missionRows"></div>
+-    </div>
+-
+-    <div class="upcoming">
+-      <div class="up-head">
+-        <span data-i18n="upcoming">پرتاب‌های پیش‌رو (زنده)</span>
+-        <span class="m-count"><b id="mCount">0</b> <span id="projectCountLabel" data-i18n="project">پروژه</span></span>
+-      </div>
+-      <div id="upList" class="up-list"><div class="up-empty" data-i18n="up_loading">در حال دریافت…</div></div>
+-    </div>
+-
+-  </div>
+-</main>
+-
+-<!-- ============ ORBIT (3D) VIEW ============ -->
++<!-- World Map is the only main view. -->
+ 
+ 
+ <dialog id="siteGuideDialog" class="site-guide-dialog" aria-labelledby="siteGuideTitle" aria-describedby="siteGuideIntro">
+@@ -203,11 +160,6 @@
+             <span class="site-guide-task-copy"><strong data-i18n="guide_task_find_title">پیدا کردن یک شرکت، پایگاه یا کشور</strong><small data-i18n="guide_task_find_body">راهنمای نقشه و جست‌وجوی فهرست</small></span>
+             <span class="site-guide-task-arrow" aria-hidden="true">↗</span>
+           </button>
+-          <button class="site-guide-task" type="button" data-guide-open-topic="projects">
+-            <span class="site-guide-task-icon" data-guide-icon="projects" aria-hidden="true"></span>
+-            <span class="site-guide-task-copy"><strong data-i18n="guide_task_missions_title">دیدن مأموریت‌ها و پرتاب‌های پیش‌رو</strong><small data-i18n="guide_task_missions_body">فیلترها، جدول و زمان‌بندی</small></span>
+-            <span class="site-guide-task-arrow" aria-hidden="true">↗</span>
+-          </button>
+           <button class="site-guide-task" type="button" data-guide-open-topic="metrics">
+             <span class="site-guide-task-icon" data-guide-icon="metrics" aria-hidden="true"></span>
+             <span class="site-guide-task-copy"><strong data-i18n="guide_task_counts_title">فهمیدن شمارش‌ها و وضعیت‌ها</strong><small data-i18n="guide_task_counts_body">معنی نشان‌ها، آمار و خانه‌های خالی</small></span>
+@@ -223,7 +175,6 @@
+         <p data-i18n="guide_no_results_body">عبارت دیگری را امتحان کن یا یکی از پیشنهادها را باز کن.</p>
+         <div class="site-guide-suggestion-list" data-i18n-aria-label="guide_suggestions_label" aria-label="پیشنهادهای راهنما">
+           <button type="button" data-guide-open-topic="map" data-i18n="guide_suggest_map">نقشه و دسته‌ها</button>
+-          <button type="button" data-guide-open-topic="projects" data-i18n="guide_suggest_projects">پروژه‌ها و پرتاب‌ها</button>
+           <button type="button" data-guide-open-topic="metrics" data-i18n="guide_suggest_metrics">شمارش‌ها و وضعیت‌ها</button>
+         </div>
+       </section>
+@@ -252,11 +203,6 @@
+         <details id="guide-topic-country" class="site-guide-section" data-guide-topic="country" data-guide-keywords="کشور شناسنامه آمار مراکز فعال active entities country profile country total nation ملف الدولة البلد المجموع الكيانات">
+           <summary><span class="site-guide-topic-icon" data-guide-icon="country" aria-hidden="true"></span><span class="site-guide-summary-copy"><strong data-i18n="guide_country_title">شناسنامهٔ کشور</strong><small class="site-guide-teaser" data-guide-teaser></small></span></summary>
+           <div class="site-guide-topic-body"><div class="site-guide-visual" data-guide-visual="country-profile" aria-hidden="true"></div><p class="site-guide-copy" data-i18n="guide_country_body"></p><div class="site-guide-topic-actions"><button type="button" data-guide-command="map-search" data-i18n="guide_open_map">رفتن به نقشه و بازکردن جست‌وجو</button></div></div>
+-        </details>
+-
+-        <details id="guide-topic-projects" class="site-guide-section" data-guide-topic="projects" data-guide-keywords="مأموریت پروژه فضایی پروژه‌های فضایی جدول فیلتر وضعیت مدار نوع مرتب سازی زمان utc پرتاب آینده پیش رو live upcoming launches space projects launch mission project table filters status orbit type sort refresh ll2 launch library 2 المهمة المشاريع الإطلاق القادم">
+-          <summary><span class="site-guide-topic-icon" data-guide-icon="projects" aria-hidden="true"></span><span class="site-guide-summary-copy"><strong data-i18n="guide_projects_title">پروژه‌های فضایی</strong><small class="site-guide-teaser" data-guide-teaser></small></span></summary>
+-          <div class="site-guide-topic-body"><div class="site-guide-visual" data-guide-visual="missions-table" aria-hidden="true"></div><p class="site-guide-copy" data-i18n="guide_projects_body"></p><div class="site-guide-topic-actions"><button type="button" data-guide-command="missions" data-i18n="guide_open_projects">رفتن به پروژه‌های فضایی</button></div></div>
+         </details>
+ 
+         <details id="guide-topic-companies" class="site-guide-section" data-guide-topic="companies" data-guide-keywords="شرکت سازمان آژانس پیشران پرتاب ماهواره پرونده زبانه موتور ناوگان برنامه تاریخچه profile company organization agency propulsion launch satellite manufacturer dossier tabs engines fleet programs history space agency الشركة المؤسسة الوكالة مصنع ملف المحركات">
+@@ -395,7 +341,7 @@
+             <div class="report-field">
+               <label for="reportRecord" data-i18n="report_record">نام یا شناسهٔ رکورد</label>
+               <input id="reportRecord" name="record" type="text" maxlength="180" required
+-                data-i18n-ph="report_record_ph" placeholder="نام شرکت، مأموریت، پایگاه یا شناسه" />
++                data-i18n-ph="report_record_ph" placeholder="نام شرکت، سازمان، پایگاه یا شناسه" />
+             </div>
+             <div class="report-field">
+               <label for="reportField" data-i18n="report_field">فیلد یا ادعای مورد اختلاف</label>
+--- a/assets/js/app.js
++++ b/assets/js/app.js
+@@ -1,6 +1,6 @@
+ /* ORBITA — Aerospace intelligence app (v2)
+    • professional SVG map markers   • horizontal layer bar
+-   • mission table with photos, orbit chips, chronological sort, live launches */
++   • world map, company/site/recovery profiles, and next-launch ticker */
+ (function () {
+   "use strict";
+ 
+@@ -12,23 +12,18 @@
+   /* ================= i18n ================= */
+   var I18N = {
+     fa: {
+-      tagline: "سامانهٔ اطلاعات هوافضا", change_language: "تغییر زبان", search: "جستجو", refresh: "به‌روزرسانی", tab_map: "نقشهٔ جهانی", tab_missions: "پروژه‌های فضایی",
++      tagline: "سامانهٔ اطلاعات هوافضا", change_language: "تغییر زبان", search: "جستجو", refresh: "به‌روزرسانی", tab_map: "نقشهٔ جهانی",
+       cat_launch: "شرکت‌های پرتاب", cat_propulsion: "شرکت‌های پیشران", cat_agency: "سازمان‌های فضایی",
+       cat_satmaker: "سازندگان ماهواره و قطعات",
+       cat_site: "پایگاه‌های پرتاب", cat_recovery: "فرود و بازیابی", results: "نتایج",
+-      ph_search_map: "جستجوی شرکت، پایگاه یا کشور...", ph_search_mission: "جستجو در نتایج بارگذاری‌شده...",
+-      project: "پروژه", upcoming: "پرتاب‌های پیش‌رو (زنده)", up_loading: "در حال دریافت از سرویس زندهٔ The Space Devs…",
++      ph_search_map: "جستجوی شرکت، پایگاه یا کشور...",
++      up_loading: "در حال دریافت از سرویس زندهٔ The Space Devs…",
+       loading_map: "در حال بارگذاری نقشه…", country: "کشور", city: "شهر", founded: "سال تأسیس",
+       website: "وب‌سایت", products: "محصولات و برنامه‌ها", operator: "بهره‌بردار", first_launch: "نخستین پرتاب",
+       pads: "سکوها", rockets: "پرتابگرها", status: "وضعیت", coords: "مختصات", provider: "ارائه‌دهنده",
+       rocket: "پرتابگر", orbit: "مدار", mtype: "نوع مأموریت", site: "پایگاه", pad: "سکو",
+       location: "مکان", date: "تاریخ", cost: "هزینهٔ برآوردی", en_desc: "شرح رسمی انگلیسی", all: "همه",
+-      f_type: "همهٔ انواع", f_status: "همه نتایج", f_orbit: "همه مدارها", no_res: "موردی یافت نشد",
+-      up_err: "دریافت داده‌های زنده ممکن نشد (نیازمند اینترنت).",
+-      th_mission: "مأموریت / زمان UTC", th_rocket: "پرتابگر", th_op: "ارائه‌دهنده", th_orbit: "مدار",
+-      th_loc: "کشور / پایگاه", th_result: "نتیجه",
+-      sort_near: "مرتب‌سازی: نزدیک‌ترین زمان", sort_new: "جدیدترین پرتاب در صدر",
+-      sort_old: "قدیمی‌ترین ← جدیدترین", sort_az: "الفبایی",
++      no_res: "موردی یافت نشد",
+       credit: "تصویر", show_map: "نمایش پایگاه روی نقشه", base_offline: "نقشهٔ آفلاین", base_online: "نقشهٔ آنلاین",
+       toggle_theme: "تغییر پوسته نقشه", style_dark: "پوسته ۱", style_sunny: "پوسته ۲", style_osm: "پوسته ۳",
+       tab_orbit: "مدار زمین", orbit_loading: "در حال آماده‌سازی کرهٔ زمین و محاسبهٔ مدارها…",
+@@ -48,9 +43,7 @@
+       p_dur: "مدت", p_max: "بیشترین ارتفاع", p_dir: "جهت", p_rng: "فاصله",
+       p_min: "دقیقه", p_sec: "ثانیه", eye: "قابل رؤیت",
+       next_launch: "پرتاب بعدی", watch_live: "پخش زنده", close: "بستن",
+-      src_curated: "پروندهٔ کامل", src_live: "تازه‌رسیده", mega_n: "پرتاب",
+       mega_list: "فهرست پرتاب‌های این منظومه",
+-      live_note: "این ردیف به‌صورت خودکار از پایگاه دادهٔ پرتاب‌های جهانی افزوده شده است. شرح تفصیلی فارسی برای آن هنوز نوشته نشده؛ مشخصات بالا ترجمه‌شده‌اند.",
+       pass_note: "محاسبه به‌صورت محلی و بدون اینترنت انجام می‌شود. دقت برای دو روز نخست بالاست.",
+       today: "امروز", tomorrow: "فردا", geo_err: "دریافت موقعیت ممکن نشد؛ شهر را دستی انتخاب کنید.",
+       my_loc: "موقعیت شما",
+@@ -59,15 +52,13 @@
+       guide_button: "راهنما", guide_title: "راهنمای استفاده از ORBITA", guide_kicker: "راهنمای سریع",
+       guide_intro: "هر بخش را با آیکون آشنایش پیدا کن؛ یا در عنوان‌ها، توضیح‌ها و واژه‌های هم‌معنی جست‌وجو کن.",
+       guide_close: "بستن راهنما", guide_quick_title: "شروع در چند گام",
+-      guide_quick_body: "دو نمای اصلی ORBITA، نقشهٔ جهانی و پروژه‌های فضایی هستند. برای یافتن یک شرکت، پایگاه یا کشور از نقشه و دسته‌ها استفاده کن؛ برای بررسی مأموریت‌ها، فیلترها و پرتاب‌های پیش‌رو به نمای پروژه‌ها برو.",
++      guide_quick_body: "ORBITA اکنون بر نقشهٔ جهانی متمرکز است. با روشن‌کردن دسته‌ها و جست‌وجوی نقشه، شرکت‌ها، سازمان‌ها، پایگاه‌ها و محل‌های فرود و بازیابی را پیدا کن و شناسنامه هر مورد را باز کن. اطلاعات پرتاب‌های پیش‌رو در شناسنامه پایگاه‌ها و نوار «پرتاب بعدی» در صورت دسترسی به داده نمایش داده می‌شود.",
+       guide_map_title: "نقشه، دسته‌ها و نشانگرها",
+       guide_map_body: "نقشه جای تقریبی رکوردهایی را نشان می‌دهد که دستهٔ مربوط به آن‌ها روشن است. دسته‌ها شامل شرکت‌های پرتاب، پیشرانش، آژانس‌ها، سازندگان ماهواره، پایگاه‌های پرتاب و فرود/بازیابی هستند. خاموش‌کردن یک دسته، نمایش آن را از نقشه و فهرست نتایج پنهان می‌کند؛ رکورد را حذف نمی‌کند.\n\nعدد کنار هر دسته شمار رکوردهای فهرست آن دسته است، نه تعداد مواردی که در محدودهٔ دید یا نتیجهٔ جست‌وجوی فعلی مانده‌اند و نه سرشماری کل جهان. هنگام بارگذاری، علامت انتظار دیده می‌شود؛ علامت خطا یعنی دادهٔ آن دسته بارگذاری نشده است.\n\nنشانگر منفرد یک رکورد را باز می‌کند؛ خوشه فقط چند رکورد نزدیک را برای خوانایی نقشه کنار هم نشان می‌دهد. برای دیدن محتویات خوشه آن را باز کنید. انتخاب کشور شناسنامهٔ همان کشور را می‌آورد؛ کلیک روی فضای خالی انتخاب کشور را پاک می‌کند.\n\nدکمهٔ پوسته ظاهر نقشه را عوض می‌کند؛ در UI فعلی دکمهٔ جداگانه‌ای برای جابه‌جایی دستی بین نقشهٔ آنلاین و آفلاین دیده نمی‌شود. اگر نقشهٔ برخط در دسترس نباشد، برنامه می‌تواند به نقشهٔ محلی برگردد.",
+       guide_search_title: "جست‌وجوی نقشه و فهرست نتایج",
+       guide_search_body: "جست‌وجوی نقشه برای پیدا کردن شرکت، پایگاه یا کشور است و نتیجه‌ها با دسته‌های روشن‌شده هماهنگ‌اند. میانبر Ctrl/⌘ + K جست‌وجوی نقشه را باز می‌کند. اگر موردی را نمی‌بینی، دسته‌های فعال و عبارت جست‌وجو را بررسی کن. پیدا نشدن نتیجه به‌تنهایی ثابت نمی‌کند که آن مورد در جهان وجود ندارد؛ ممکن است در دادهٔ فعلی ثبت نشده یا با فیلترها پنهان باشد.\n\nانتخاب مورد از نقشه یا فهرست، پروندهٔ آن را باز می‌کند. زوم و جابه‌جایی فقط محدودهٔ دید را تغییر می‌دهند؛ شمار کنار دسته، شمار نتیجه‌های قابل‌دیدن نیست.",
+       guide_country_title: "شناسنامهٔ کشور",
+       guide_country_body: "شناسنامهٔ کشور، رکوردهایی را که طبق تطبیق فعلی سامانه به کشور نسبت داده شده‌اند، در دسته‌های پیشرانش، پرتاب، آژانس‌ها، پایگاه‌ها و فرود/بازیابی گروه‌بندی می‌کند. عدد «مجموعه‌های فعال» جمع همین رکوردهای دسته‌بندی‌شده است؛ شمار رسمی زیرساخت کشور یا شمار قطعی تأسیساتِ در حال کار نیست و می‌تواند رکوردهای در ساخت، غیرفعال یا راکد را نیز دربرگیرد.\n\nصفر یا خالی یعنی در مجموعهٔ فعلی رکورد مطابقی نمایش داده نشده است؛ از آن نمی‌توان نبودن مورد را در دنیای واقعی نتیجه گرفت. سازندگان ماهواره در دستهٔ جداگانهٔ نقشه هستند، اما در جمع و زبانه‌های فعلی شناسنامهٔ کشور وارد نشده‌اند.\n\nشمارهای این صفحه را با تعداد شرکت‌های جهان، کل مأموریت‌های یک کشور یا تعداد قطعی تأسیسات فعال یکی نگیرید. آن‌ها خلاصهٔ رکوردهای حاضر در دسته‌های همین شناسنامه‌اند.",
+-      guide_projects_title: "پروژه‌های فضایی",
+-      guide_projects_body: "نمای پروژه‌های فضایی دو بخش جدا دارد: جدول مأموریت‌ها و فهرست پرتاب‌های پیش‌رو. جست‌وجو و فیلترهای وضعیت، مدار و نوع، فقط جدول را محدود می‌کنند؛ مرتب‌سازی ترتیب ردیف‌های همان جدول را عوض می‌کند و می‌تواند نزدیک‌ترین زمان، تازه‌ترین، قدیمی‌ترین یا ترتیب الفبایی را نشان دهد. گزینه‌های فیلتر از داده‌های بارگذاری‌شده ساخته می‌شوند.\n\nبرای دیدن جزئیات، ردیف جدول را باز کن. اگر پیوند نقشه در جزئیات موجود باشد، از همان‌جا پایگاه را روی نقشه ببین. زمان‌های دقیق جدول با UTC نمایش داده می‌شوند. نشان‌های «پروندهٔ کامل» و «تازه‌رسیده» نوع ورود یا گزینش رکورد را مشخص می‌کنند؛ تضمین کامل‌بودن جهانی نیستند. شمار کنار واژهٔ «پروژه» تعداد ردیف‌های جدول پس از فیلتر است، نه تعداد کارت‌های پرتاب پیش‌رو.\n\nفهرست پرتاب‌های پیش‌رو جدا از جدول است و از سرویس برخط Launch Library 2 می‌آید. دکمهٔ به‌روزرسانی فهرست آینده و پرتاب‌های تازه را دوباره می‌گیرد؛ به اینترنت نیاز دارد. زمان برنامه‌ریزی‌شده ممکن است تغییر کند و تضمین انجام پرتاب نیست.",
+       guide_companies_title: "پروندهٔ شرکت‌ها و سازمان‌ها",
+       guide_companies_body: "پرونده‌ها یک قالب واحد ندارند؛ زبانه‌ها بر اساس نوع نهاد فرق می‌کنند. در شرکت‌های پرتاب، زبانه‌ها دربارهٔ شناسنامه و آمار، ناوگان پرتابگرها و تاریخچه/شبکه‌اند. در شرکت‌های پیشرانش، بخش‌ها معماری و نوع پیشران، موتورهای معرفی‌شده و پیوند مأموریت، آزمون‌ها و نقشهٔ راه را پوشش می‌دهند. پروندهٔ آژانس‌ها شناسنامه و برنامه‌های اصلی، محصولات/برنامه‌ها و سیر تاریخی/شبکه را دارد؛ پروندهٔ سازندگان ماهواره شناسنامه/تخصص، محصولات/مشتری‌ها و کارنامه/آینده را نشان می‌دهد.\n\nفیلدهای یکسانی در همهٔ پرونده‌ها وجود ندارد. خانهٔ خالی یعنی این مقدار در پروندهٔ فعلی نمایش داده نشده، نه اینکه حتماً وجود خارجی ندارد. پیوند وب‌سایت نهاد یا منبع عکس را استناد مستقل به همهٔ مشخصات و آمار پرونده تلقی نکنید.",
+       guide_site_title: "پروندهٔ پایگاه پرتاب",
+@@ -79,11 +70,11 @@
+       guide_data_title: "اتصال و داده‌ها",
+       guide_data_body: "اگر نقشهٔ برخط در دسترس نباشد، سایت از نقشهٔ محلی استفاده می‌کند. دریافت اطلاعات زندهٔ پرتاب‌های پیش‌رو به اینترنت نیاز دارد؛ پوشش و زمان به‌روزرسانی داده‌ها ممکن است میان پرونده‌ها متفاوت باشد.",
+       guide_scope_title: "دامنهٔ پوشش",
+-      guide_scope_body: "فهرست شرکت‌ها و نهادها، پایگاه‌های پرتاب و رکوردهای پروژه/مأموریت، موارد ثبت‌شدهٔ فعلی در ORBITA هستند؛ آن‌ها را سرشماری کامل جهانی ندانید. مجموعهٔ فرود و بازیابی ۲۰ محل نماینده در چهار کشور و آب‌های بین‌المللی را با تاریخچهٔ منتخب پوشش می‌دهد، نه همهٔ محل‌ها و فرودها. نبودن یک مورد در فهرست، به‌تنهایی نشانهٔ نبودن آن در جهان نیست.",
++      guide_scope_body: "فهرست شرکت‌ها، سازمان‌ها و زیرساخت‌ها روی نقشه، فقط رکوردهای ثبت‌شدهٔ فعلی ORBITA را نشان می‌دهد و سرشماری کامل جهانی نیست. مجموعهٔ فرود و بازیابی ۲۰ محل نماینده در چهار کشور و آب‌های بین‌المللی را با تاریخچهٔ منتخب پوشش می‌دهد، نه همهٔ محل‌ها و فرودها. نبودن یک رکورد به‌تنهایی نشان‌دهنده نبود آن در جهان واقعی نیست.",
+       guide_sources_title: "منابع و تازگی داده‌ها",
+       guide_sources_body: "فهرست پرتاب‌های پیش‌رو بر پایهٔ دادهٔ The Space Devs است؛ برنامه برخی تاریخ‌ها و وضعیت‌ها را با Launch Library 2 هم‌زمان می‌کند. پنل همان فهرست، تاریخ به‌روزرسانی دادهٔ محلی و وضعیت هم‌زمان‌سازی را نشان می‌دهد. «فرودهای پیش‌رو» برداشت دستی از Launch Library 2 است، نه جریان زنده؛ تاریخ برداشت، یادداشت منبع و تاریخ به‌روزرسانی در همان زبانه دیده می‌شود. ردیف بی‌تاریخ یعنی مأموریت در صف است اما زمان‌نمای معتبر ندارد. پرونده‌های بازیابی پیوند منبع رویداد و تاریخ بررسی را نشان می‌دهند. برای شرکت‌ها، پایگاه‌ها و مأموریت‌های تاریخی، منبع و تاریخ بازبینیِ هر فیلد به‌صورت یکسان ثبت نشده؛ پیوند وب‌سایت یا اعتبار عکس الزاماً استناد به همهٔ مشخصات نیست.",
+       guide_metrics_title: "وضعیت‌ها و تفسیر شمارش‌ها",
+-      guide_metrics_body: "در فهرست پروژه‌ها، «موفق/موفقیت نسبی/ناموفق» نتیجهٔ مأموریت است؛ «پیش‌رو/توسعه/استقرار/در مسیر» وضعیت پروژه یا مأموریت است. وضعیت‌های پایگاه («فعال/غیرفعال/راکد/در دست ساخت») دربارهٔ تأسیسات‌اند و با نتیجهٔ پرتاب فرق دارند. در پرتاب‌های آینده، Go/TBC/TBD وضعیت برنامه طبق منبع است؛ نشان روز/ماه/فصل/TBA دقت تاریخ را جداگانه می‌گوید و هیچ‌کدام نتیجه را تضمین نمی‌کند. عدد شناسنامهٔ کشور جمع رکوردهای ثبت‌شده و منتسب به آن کشور در دسته‌های فعلی است؛ ممکن است موارد در ساخت، غیرفعال یا راکد را هم دربرگیرد، پس شمار دقیق تأسیسات عملیاتی یا سرشماری کامل جهانی نیست. صفر یا خالی یعنی مقدار/رکوردی در دادهٔ فعلی نمایش داده نشده، نه اثبات نبودن آن در جهان. زمان‌های دقیق در جدول مأموریت‌ها بر اساس UTC نمایش داده می‌شوند.",
++      guide_metrics_body: "وضعیت پایگاه (فعال، غیرفعال، راکد یا در دست ساخت) شرایط همان زیرساخت را توصیف می‌کند و با نتیجهٔ پرتاب متفاوت است. در فهرست پرتاب‌های پیش‌رو در شناسنامه پایگاه‌ها، Go/TBC/TBD وضعیت برنامه مطابق منبع است و برچسب روز/ماه/فصل/TBA دقت زمان را مشخص می‌کند؛ هیچ‌یک انجام پرتاب را تضمین نمی‌کند. عدد شناسنامه کشور، جمع رکوردهای ثبت‌شده و منتسب به آن کشور در دسته‌های فعلی است، نه شمار قطعی همه تأسیسات عملیاتی. صفر یا خالی نیز فقط به دادهٔ فعلی اشاره دارد.",
+       guide_limits_title: "دقت مکان، مرزها و عدم‌قطعیت",
+       guide_limits_body: "مختصات پرونده‌های بازیابی نقطهٔ مرجع/نماینده‌اند و لزوماً محل دقیق تماس یا عملیات نیستند؛ هدف اعلام‌شدهٔ فرود، محل واقعی تماس را ثابت نمی‌کند. این پرونده‌ها موقعیت زندهٔ شناورها یا محدودهٔ ایمنی را ارائه نمی‌کنند؛ یادداشت دقت و منبع مختصات را در هر پرونده ببینید. مرزهای کشور از Terrae 2026.10 بر پایهٔ نسخهٔ برداشت‌شدهٔ OpenStreetMap در ۲۸ سپتامبر ۲۰۲۶ گرفته شده‌اند. این مرزها مرجع جغرافیایی‌اند، نه مرز حقوقی قطعی؛ نواحی مورد اختلاف و نسخه‌های نقشه ممکن است تفاوت داشته باشند.",
+       guide_glossary_title: "واژه‌نامهٔ مشترک برای این بخش‌ها",
+@@ -100,8 +91,6 @@
+       guide_tasks_intro: "یک کار را انتخاب کن تا راهنمای همان قسمت باز شود.",
+       guide_task_find_title: "پیدا کردن شرکت، پایگاه یا کشور",
+       guide_task_find_body: "راهنمای نقشه و جست‌وجوی فهرست",
+-      guide_task_missions_title: "دیدن مأموریت‌ها و پرتاب‌های پیش‌رو",
+-      guide_task_missions_body: "فیلترها، جدول و زمان‌بندی",
+       guide_task_counts_title: "فهمیدن شمارش‌ها و وضعیت‌ها",
+       guide_task_counts_body: "معنی نشان‌ها، آمار و خانه‌های خالی",
+       guide_results_heading: "نتیجه‌های جست‌وجو",
+@@ -110,12 +99,10 @@
+       guide_no_results_body: "عبارت کوتاه‌تر یا یکی از پیشنهادهای زیر را امتحان کن.",
+       guide_suggestions_label: "پیشنهادهای راهنما",
+       guide_suggest_map: "نقشه و دسته‌ها",
+-      guide_suggest_projects: "پروژه‌ها و پرتاب‌ها",
+       guide_suggest_metrics: "شمارش‌ها و وضعیت‌ها",
+       guide_topics_title: "آشنایی با بخش‌های نرم‌افزار",
+       guide_topics_intro: "آیکون‌ها و پیش‌نمایش‌ها کمک می‌کنند بخش درست را بشناسی؛ تصویرها شماتیک‌اند و دادهٔ زنده نشان نمی‌دهند.",
+       guide_open_map: "رفتن به نقشه و بازکردن جست‌وجو",
+-      guide_open_projects: "رفتن به پروژه‌های فضایی",
+       guide_open_report: "بازکردن فرم گزارش",
+       guide_site_tab_overview: "شناسنامه و آمار",
+       guide_site_tab_history: "تاریخچهٔ پرتاب‌ها",
+@@ -133,7 +120,7 @@
+       report_bug_legend: "جزئیات ایراد فنی", report_expected: "رفتار مورد انتظار", report_expected_ph: "چه چیزی باید رخ می‌داد؟",
+       report_actual: "رفتار مشاهده‌شده", report_actual_ph: "چه اتفاقی افتاد؟", report_steps: "گام‌های بازتولید",
+       report_steps_ph: "مراحل را به‌ترتیب بنویسید.", report_data_legend: "جزئیات اختلاف علمی یا داده‌ای",
+-      report_record: "نام یا شناسهٔ رکورد", report_record_ph: "نام شرکت، مأموریت، پایگاه یا شناسه",
++      report_record: "نام یا شناسهٔ رکورد", report_record_ph: "نام شرکت، سازمان، پایگاه یا شناسه",
+       report_field: "فیلد یا ادعای مورد اختلاف", report_field_ph: "مثلاً مدار، تاریخ یا وضعیت",
+       report_current: "مقدار فعلی سایت", report_current_ph: "مقداری که اکنون در سایت دیده می‌شود",
+       report_suggested: "مقدار پیشنهادی", report_suggested_ph: "مقدار درست یا پیشنهادی شما",
+@@ -152,22 +139,18 @@
+       orbit_hint: "کشیدن = چرخش کره · چرخ موشی = بزرگ‌نمایی · کلیک روی هر نقطه = اطلاعات ماهواره"
+     },
+     en: {
+-      tagline: "Aerospace Intelligence Platform", change_language: "Change language", search: "Search", refresh: "Refresh", tab_map: "World Map", tab_missions: "Space Projects",
++      tagline: "Aerospace Intelligence Platform", change_language: "Change language", search: "Search", refresh: "Refresh", tab_map: "World Map",
+       cat_launch: "Launch companies", cat_propulsion: "Propulsion companies", cat_agency: "Space organizations",
+       cat_satmaker: "Satellite & component makers",
+       cat_site: "Launch sites", cat_recovery: "Landing & recovery", results: "Results",
+-      ph_search_map: "Search company, site or country...", ph_search_mission: "Search loaded results...",
+-      project: "projects", upcoming: "Upcoming launches (live)", up_loading: "Fetching from The Space Devs…",
++      ph_search_map: "Search company, site or country...",
++      up_loading: "Fetching from The Space Devs…",
+       loading_map: "Loading map…", country: "Country", city: "City", founded: "Founded",
+       website: "Website", products: "Products & programmes", operator: "Operator", first_launch: "First launch",
+       pads: "Pads", rockets: "Rockets", status: "Status", coords: "Coordinates", provider: "Provider",
+       rocket: "Launch vehicle", orbit: "Orbit", mtype: "Mission type", site: "Launch site", pad: "Pad",
+       location: "Location", date: "Date", cost: "Estimated cost", en_desc: "Full English description", all: "All",
+-      f_type: "All types", f_status: "All results", f_orbit: "All orbits", no_res: "No results",
+-      up_err: "Live data unavailable (internet required).",
+-      th_mission: "Mission / UTC time", th_rocket: "Launch vehicle", th_op: "Provider", th_orbit: "Orbit",
+-      th_loc: "Country / site", th_result: "Result",
+-      sort_near: "Sort: nearest date", sort_new: "Latest launch first", sort_old: "Oldest → newest", sort_az: "Alphabetical",
++      no_res: "No results",
+       credit: "Image", show_map: "Show launch site on map", base_offline: "Offline map", base_online: "Online map",
+       toggle_theme: "Toggle Map Style", style_dark: "Style 1", style_sunny: "Style 2", style_osm: "Style 3",
+       tab_orbit: "Earth Orbit", orbit_loading: "Preparing the globe and propagating orbits…",
+@@ -187,9 +170,7 @@
+       p_dur: "Duration", p_max: "Max elevation", p_dir: "Direction", p_rng: "Range",
+       p_min: "min", p_sec: "s", eye: "visible",
+       next_launch: "Next launch", watch_live: "Watch live", close: "Dismiss",
+-      src_curated: "Full file", src_live: "Newly added", mega_n: "launches",
+       mega_list: "Launches in this constellation",
+-      live_note: "This entry was imported automatically from the global launch database. A detailed write-up has not been added yet.",
+       pass_note: "Computed locally, no internet needed. Accuracy is best for the first two days.",
+       today: "Today", tomorrow: "Tomorrow", geo_err: "Location unavailable; pick a city manually.",
+       my_loc: "Your location",
+@@ -197,15 +178,13 @@
+       guide_button: "Guide", guide_title: "Using ORBITA", guide_kicker: "Quick guide",
+       guide_intro: "Find a part of the app by its familiar icon, or search titles, explanations, and related terms.",
+       guide_close: "Close guide", guide_quick_title: "Get started in a few steps",
+-      guide_quick_body: "ORBITA has two main views: World Map and Space Projects. Use the map and its categories to find a company, site, or country; use Space Projects for mission records, filters, and upcoming launches.",
++      guide_quick_body: "ORBITA now focuses on the World Map. Turn categories on and search the map to find companies, organizations, launch sites, and landing/recovery locations, then open their profiles. Upcoming launch information remains available in launch-site profiles and the next-launch ticker when data can be retrieved.",
+       guide_map_title: "Map, categories and markers",
+       guide_map_body: "The map shows the approximate locations of records in categories that are switched on. Categories include launch companies, propulsion companies, space organizations, satellite manufacturers, launch sites, and landing/recovery. Turning a category off hides its records from the map and results list; it does not delete them.\n\nThe number beside each category is the number of records in that category's list—not the number currently in view or matching the search, and not a worldwide census. An ellipsis appears while the data is loading; an exclamation mark means that category's data did not load.\n\nA single marker opens one record; a cluster groups nearby records to keep the map readable. Open a cluster to see its contents. Selecting a country opens its profile; clicking empty map space clears the country selection.\n\nThe map-style button changes the map's appearance. The current UI does not show a separate manual online/offline map switch. If the online basemap is unavailable, the app may fall back to the local map.",
+       guide_search_title: "Map search and results list",
+       guide_search_body: "Map search finds a company, launch site, or country, and follows the categories that are switched on. Press Ctrl/⌘ + K to open map search. If something is missing, check the active categories and search text. A missing result alone does not prove that the real-world item does not exist; it may not be recorded in the current data or may be hidden by filters.\n\nSelecting an item on the map or in the list opens its profile. Zooming and panning change only the view; the number beside a category is not the number of visible results.",
+       guide_country_title: "Country profile",
+       guide_country_body: "The country profile groups records that the app's current matching rules assign to that country: propulsion, launch, space organizations, launch sites, and landing/recovery. The figure labelled Active Entities is the sum of those grouped records. It is not an official count of national infrastructure or a definitive count of facilities currently operating, and it can include records marked under construction, inactive, or dormant.\n\nZero or blank means that no matching record is shown in the current dataset; it does not prove real-world absence. Satellite manufacturers appear in a separate map category but are not included in the current country-profile total or tabs.\n\nDo not treat these totals as a worldwide company count, a country's total number of missions, or a definitive count of active facilities. They summarize the records currently included in this profile.",
+-      guide_projects_title: "Space Projects",
+-      guide_projects_body: "Space Projects has two separate parts: the mission table and the upcoming-launch list. Search and the status, orbit, and type filters narrow the table; sorting only changes its row order and can show the nearest time, newest, oldest, or alphabetical order. Filter choices are built from the data that has loaded.\n\nOpen a table row to see its details. If a map link is available there, use it to show the site on the map. Exact table times are in UTC. The Curated and Newly Added badges distinguish how a row entered the dataset; they do not certify global completeness. The number beside Projects is the filtered table-row count, not the number of upcoming-launch cards.\n\nThe upcoming-launch list is separate from the table and comes from the online Launch Library 2 service. Refresh requests the upcoming list and recent imported launches again; an internet connection is needed. Schedules can change and do not guarantee that a launch will occur.",
+       guide_companies_title: "Company and organization profiles",
+       guide_companies_body: "Profiles do not use one template; their tabs depend on the type of organization. A launch-company profile covers overview and statistics, its rocket fleet, and history/network. A propulsion-company profile covers overview and architecture, engines and mission links, and test history/roadmap. An organization profile covers its overview and core role, programmes/services, and timeline/network. A satellite-manufacturer profile covers overview/specialty, products/customers, and track record/future.\n\nThe same fields are not present in every profile. An empty field means that value is not shown in the current record; it does not necessarily mean the real-world entity or value does not exist. A company website or photo-source link should not be treated as an independent citation for every profile detail and statistic.",
+       guide_site_title: "Launch-site profile",
+@@ -217,11 +196,11 @@
+       guide_data_title: "Connectivity and data",
+       guide_data_body: "If the online basemap is unavailable, the site uses its local map. Live upcoming-launch information requires internet access; data coverage and update timing can vary between records.",
+       guide_scope_title: "Coverage and scope",
+-      guide_scope_body: "The company/agency, launch-site and project/mission lists show records currently included in ORBITA; they are not a complete global census. The landing and recovery dataset covers 20 representative locations across four countries and international waters, with selected history—not every site or landing. A missing entry alone does not mean the real-world facility or event does not exist.",
++      guide_scope_body: "The companies, organizations, and infrastructure shown on the map are records currently included in ORBITA, not a complete global census. Landing and recovery data covers 20 representative locations across four countries and international waters, with selected history—not every site or landing. An absent record does not prove the real-world entity or event does not exist.",
+       guide_sources_title: "Sources and data freshness",
+       guide_sources_body: "Upcoming-launch records are based on The Space Devs; the app synchronizes some dates and statuses with Launch Library 2. That panel shows the local-data update date and live-sync status. The Upcoming Landings list is a manual Launch Library 2 snapshot, not a live feed; its snapshot/source note and local update date appear in the tab. An undated row is queued but has no credible timeline. Recovery dossiers show event-source links and review dates. Company, site and historical-mission records do not consistently store a source and review date for every field; a website link or photo credit is not necessarily a citation for every profile detail.",
+       guide_metrics_title: "Statuses and interpreting counts",
+-      guide_metrics_body: "In Space Projects, Success/Partial/Failure describe mission outcomes; Upcoming/Development/Deployment/Cruise describe a mission or program status. Active/Inactive/Dormant/Under construction describe a site, not a launch result. For upcoming launches, Go/TBC/TBD are schedule labels from the source; the day/month/quarter/TBA badge separately indicates date precision. None guarantees a launch outcome. A country-profile total sums current ORBITA records assigned to that country across categories; it may include under-construction, inactive or dormant entries, so it is neither a strict count of operating facilities nor a complete global census. Zero or blank means no matching record/value is shown in the current dataset, not proof of real-world absence. Exact times in the mission table are shown in UTC.",
++      guide_metrics_body: "Active, Inactive, Dormant, and Under construction describe a site, not the outcome of a launch. In launch-site profiles, Go/TBC/TBD are scheduling labels from the source, while day/month/quarter/TBA indicates date precision; none guarantees a launch. A country-profile total counts currently assigned ORBITA records across categories, not all operating facilities. Zero or blank indicates that no matching value is shown in current data, not proof of real-world absence.",
+       guide_limits_title: "Location accuracy, boundaries and uncertainty",
+       guide_limits_body: "Recovery coordinates are reference/representative points, not necessarily the exact touchdown or operation location. An intended landing target does not prove where a vehicle actually touched down. These dossiers do not provide live vessel positions or safety zones; check each record’s coordinate note and source. Country outlines use Terrae 2026.10 based on the 28 September 2026 OpenStreetMap snapshot. They are geographic reference data, not legally authoritative boundaries; disputed areas and map releases can differ.",
+       guide_glossary_title: "Shared glossary for these areas",
+@@ -238,8 +217,6 @@
+       guide_tasks_intro: "Choose a task to open the guide for that part of ORBITA.",
+       guide_task_find_title: "Find a company, site, or country",
+       guide_task_find_body: "Map categories and the results list",
+-      guide_task_missions_title: "Explore missions and upcoming launches",
+-      guide_task_missions_body: "Filters, table, and schedules",
+       guide_task_counts_title: "Understand counts and statuses",
+       guide_task_counts_body: "Badges, statistics, and blank values",
+       guide_results_heading: "Search results",
+@@ -248,12 +225,10 @@
+       guide_no_results_body: "Try a shorter phrase or open one of these suggestions.",
+       guide_suggestions_label: "Guide suggestions",
+       guide_suggest_map: "Map and categories",
+-      guide_suggest_projects: "Projects and launches",
+       guide_suggest_metrics: "Counts and statuses",
+       guide_topics_title: "Explore the parts of ORBITA",
+       guide_topics_intro: "Icons and previews help identify each area; the small illustrations are schematic, not live data.",
+       guide_open_map: "Open map search",
+-      guide_open_projects: "Open Space Projects",
+       guide_open_report: "Open the report form",
+       guide_site_tab_overview: "Overview & Stats",
+       guide_site_tab_history: "Launch History",
+@@ -271,7 +246,7 @@
+       report_bug_legend: "Technical bug details", report_expected: "Expected behavior", report_expected_ph: "What should have happened?",
+       report_actual: "Observed behavior", report_actual_ph: "What happened instead?", report_steps: "Steps to reproduce",
+       report_steps_ph: "List the steps in order.", report_data_legend: "Scientific or data issue details",
+-      report_record: "Record name or ID", report_record_ph: "Company, mission, site, or record ID",
++      report_record: "Record name or ID", report_record_ph: "Company, organization, launch site, or record ID",
+       report_field: "Disputed field or claim", report_field_ph: "For example, orbit, date, or status",
+       report_current: "Current site value", report_current_ph: "The value currently shown on the site",
+       report_suggested: "Suggested value", report_suggested_ph: "The correct or proposed value",
+@@ -291,22 +266,18 @@
+     },
+     ar: {
+       tagline: "منصة معلومات الفضاء والطيران", change_language: "تغيير اللغة", search: "بحث", refresh: "تحديث",
+-      tab_map: "الخريطة العالمية", tab_missions: "المشاريع الفضائية",
++      tab_map: "الخريطة العالمية",
+       cat_launch: "شركات الإطلاق", cat_propulsion: "شركات أنظمة الدفع", cat_agency: "الجهات الفضائية",
+       cat_satmaker: "مصنّعو الأقمار الصناعية ومكوّناتها",
+       cat_site: "مواقع الإطلاق", cat_recovery: "الهبوط والاستعادة", results: "النتائج",
+-      ph_search_map: "ابحث عن شركة أو موقع إطلاق أو دولة…", ph_search_mission: "ابحث في النتائج المحمّلة…",
+-      project: "مشروع", upcoming: "عمليات الإطلاق القادمة (بيانات مباشرة)", up_loading: "جارٍ جلب البيانات من خدمة The Space Devs المباشرة…",
++      ph_search_map: "ابحث عن شركة أو موقع إطلاق أو دولة…",
++      up_loading: "جارٍ جلب البيانات من خدمة The Space Devs المباشرة…",
+       loading_map: "جارٍ تحميل الخريطة…", country: "الدولة", city: "المدينة", founded: "سنة التأسيس",
+       website: "الموقع الإلكتروني", products: "المنتجات والبرامج", operator: "المشغّل", first_launch: "أول عملية إطلاق",
+       pads: "منصات الإطلاق", rockets: "صواريخ الإطلاق", status: "الحالة", coords: "الإحداثيات", provider: "الجهة المنفذة",
+       rocket: "مركبة الإطلاق", orbit: "المدار", mtype: "نوع المهمة", site: "موقع الإطلاق", pad: "منصة الإطلاق",
+       location: "الموقع", date: "التاريخ", cost: "التكلفة التقديرية", en_desc: "الوصف الرسمي باللغة الإنجليزية", all: "الكل",
+-      f_type: "جميع الأنواع", f_status: "جميع النتائج", f_orbit: "جميع المدارات", no_res: "لا توجد نتائج",
+-      up_err: "تعذّر تحميل البيانات المباشرة (يتطلب الاتصال بالإنترنت).",
+-      th_mission: "المهمة / التوقيت UTC", th_rocket: "مركبة الإطلاق", th_op: "الجهة المنفذة", th_orbit: "المدار",
+-      th_loc: "الدولة / موقع الإطلاق", th_result: "النتيجة",
+-      sort_near: "الترتيب: أقرب موعد", sort_new: "الأحدث إطلاقًا أولًا", sort_old: "من الأقدم إلى الأحدث", sort_az: "ترتيب أبجدي",
++      no_res: "لا توجد نتائج",
+       credit: "الصورة", show_map: "إظهار موقع الإطلاق على الخريطة", base_offline: "خريطة دون اتصال", base_online: "خريطة متصلة بالإنترنت",
+       toggle_theme: "تغيير نمط الخريطة", style_dark: "النمط 1", style_sunny: "النمط 2", style_osm: "النمط 3",
+       tab_orbit: "مدار الأرض", orbit_loading: "جارٍ تجهيز الكرة الأرضية وحساب المدارات…",
+@@ -326,9 +297,7 @@
+       p_dur: "المدة", p_max: "أقصى ارتفاع", p_dir: "الاتجاه", p_rng: "المسافة",
+       p_min: "د", p_sec: "ث", eye: "مرئي",
+       next_launch: "الإطلاق القادم", watch_live: "مشاهدة البث المباشر", close: "إغلاق",
+-      src_curated: "ملف موثّق", src_live: "مضاف حديثًا", mega_n: "إطلاقات",
+       mega_list: "الإطلاقات ضمن هذه الكوكبة",
+-      live_note: "لا يتوفر وصف عربي لهذا الإطلاق حالياً.",
+       pass_note: "يُحسب ذلك محليًا دون الحاجة إلى الإنترنت. تكون الدقة أفضل خلال اليومين الأولين.",
+       today: "اليوم", tomorrow: "غدًا", geo_err: "تعذّر تحديد الموقع؛ اختر مدينة يدويًا.",
+       my_loc: "موقعك",
+@@ -337,15 +306,13 @@
+       guide_button: "الدليل", guide_title: "دليل استخدام ORBITA", guide_kicker: "دليل سريع",
+       guide_intro: "اعثر على القسم من أيقونته المألوفة، أو ابحث في العناوين والشروح والكلمات ذات الصلة.",
+       guide_close: "إغلاق الدليل", guide_quick_title: "ابدأ في خطوات قليلة",
+-      guide_quick_body: "يضم ORBITA واجهتين رئيسيتين: الخريطة العالمية والمشاريع الفضائية. استخدم الخريطة وفئاتها للعثور على شركة أو موقع أو دولة؛ واستخدم المشاريع الفضائية للاطلاع على سجلات المهمات والمرشحات والإطلاقات القادمة.",
++      guide_quick_body: "يركز ORBITA الآن على الخريطة العالمية. فعّل الفئات واستخدم البحث للعثور على الشركات والمؤسسات ومواقع الإطلاق ومواقع الهبوط والاستعادة، ثم افتح ملفاتها. تظل بيانات الإطلاقات القادمة متاحة في ملفات مواقع الإطلاق وشريط الإطلاق القادم عند توفر المصدر.",
+       guide_map_title: "الخريطة والفئات والعلامات",
+       guide_map_body: "تعرض الخريطة المواقع التقريبية للسجلات ضمن الفئات المفعّلة. تشمل الفئات شركات الإطلاق، وشركات أنظمة الدفع، والجهات الفضائية، ومصنّعي الأقمار الصناعية، ومواقع الإطلاق، والهبوط والاستعادة. يؤدي إيقاف فئة إلى إخفاء سجلاتها عن الخريطة وقائمة النتائج؛ ولا يحذفها.\n\nالعدد بجوار كل فئة هو عدد السجلات في قائمتها، وليس عدد العناصر الظاهرة حالياً أو المطابقة للبحث، ولا إحصاءً عالمياً. تظهر علامة الحذف أثناء تحميل البيانات؛ وتعني علامة التعجب أن بيانات تلك الفئة لم تُحمّل.\n\nتفتح العلامة المنفردة سجلاً واحداً؛ وتجمع المجموعة سجلات متقاربة لتسهيل قراءة الخريطة. افتح المجموعة لعرض محتوياتها. يؤدي اختيار دولة إلى فتح ملفها؛ والنقر على مساحة فارغة من الخريطة يلغي اختيار الدولة.\n\nيغيّر زر نمط الخريطة مظهرها. لا تعرض الواجهة الحالية مفتاحاً منفصلاً للتبديل اليدوي بين الخريطة المتصلة وغير المتصلة. وإذا تعذّر تحميل خريطة الإنترنت، فقد يعود التطبيق إلى الخريطة المحلية.",
+       guide_search_title: "بحث الخريطة وقائمة النتائج",
+       guide_search_body: "يبحث بحث الخريطة عن شركة أو موقع إطلاق أو دولة، ويتبع الفئات المفعّلة. اضغط Ctrl/⌘ + K لفتح بحث الخريطة. إذا غاب عنصر، فتحقق من الفئات النشطة وعبارة البحث. عدم ظهور نتيجة لا يثبت وحده أن العنصر غير موجود في الواقع؛ فقد لا يكون مسجلاً في البيانات الحالية أو قد تخفيه المرشحات.\n\nيؤدي اختيار عنصر على الخريطة أو في القائمة إلى فتح ملفه. يغيّر التكبير والتحريك نطاق العرض فقط؛ والعدد بجوار الفئة ليس عدد النتائج الظاهرة.",
+       guide_country_title: "ملف الدولة",
+       guide_country_body: "يجمع ملف الدولة السجلات التي تنسبها قواعد المطابقة الحالية في التطبيق إلى الدولة ضمن فئات أنظمة الدفع والإطلاق والجهات الفضائية ومواقع الإطلاق والهبوط والاستعادة. والعدد الموسوم الكيانات النشطة هو مجموع هذه السجلات؛ وليس إحصاءً رسمياً للبنية التحتية الوطنية ولا عدّاً نهائياً للمنشآت العاملة حالياً. وقد يشمل سجلات قيد الإنشاء أو غير نشطة أو خاملة.\n\nيعني الصفر أو الحقل الفارغ عدم عرض سجل مطابق في مجموعة البيانات الحالية؛ ولا يثبت عدم وجوده في الواقع. يظهر مصنّعو الأقمار الصناعية ضمن فئة مستقلة على الخريطة، لكنهم غير مدرجين في المجموع أو التبويبات الحالية لملف الدولة.\n\nلا تعامل هذه الأعداد على أنها إجمالي الشركات في العالم، أو إجمالي مهمات الدولة، أو عدّ نهائي للمنشآت النشطة؛ فهي تلخص السجلات الموجودة حالياً في هذا الملف.",
+-      guide_projects_title: "المشاريع الفضائية",
+-      guide_projects_body: "تضم واجهة المشاريع الفضائية قسمين منفصلين: جدول المهمات وقائمة الإطلاقات القادمة. يقيّد البحث ومرشحات الحالة والمدار والنوع الجدول فقط؛ أما الترتيب فيغيّر ترتيب صفوف الجدول ويمكن أن يكون حسب أقرب موعد أو الأحدث أو الأقدم أو أبجدياً. تُبنى خيارات المرشحات من البيانات التي تم تحميلها.\n\nافتح صفاً في الجدول لعرض تفاصيله. وإذا توفر رابط للخريطة في التفاصيل، فاستخدمه لعرض الموقع عليها. الأوقات الدقيقة في الجدول بتوقيت UTC. تميّز شارتا موثّق ومضاف حديثاً طريقة إدراج السجل؛ ولا تضمنان اكتمال البيانات عالمياً. العدد بجوار كلمة المشاريع هو عدد صفوف الجدول بعد التصفية، وليس عدد بطاقات الإطلاقات القادمة.\n\nقائمة الإطلاقات القادمة منفصلة عن الجدول، وتُجلب من خدمة Launch Library 2 عبر الإنترنت. يعيد زر التحديث طلب القائمة القادمة والإطلاقات الحديثة المستوردة؛ ويلزم اتصال بالإنترنت. قد تتغير المواعيد، ولا تضمن الجدولة تنفيذ الإطلاق.",
+       guide_companies_title: "ملفات الشركات والمؤسسات",
+       guide_companies_body: "لا تتبع الملفات قالباً واحداً؛ إذ تختلف تبويباتها باختلاف نوع الجهة. يغطي ملف شركة الإطلاق النظرة العامة والإحصاءات، وأسطول الصواريخ، والسجل والشبكة. ويغطي ملف شركة أنظمة الدفع النظرة العامة والهندسة المعمارية، والمحركات وربط المهام، وسجل الاختبارات وخارطة الطريق. أما ملف الجهة الفضائية فيعرض نظرة عامة على دورها القانوني والعملي، والبرامج والخدمات، والخط الزمني والشبكة. ويعرض ملف مُصنّع الأقمار الصناعية النظرة العامة والتخصص، والمنتجات والعملاء، والسجل والآفاق المستقبلية.\n\nلا تظهر الحقول نفسها في جميع الملفات. ويعني الحقل الفارغ أن القيمة غير معروضة في السجل الحالي؛ ولا يعني بالضرورة أن الجهة أو القيمة غير موجودة في الواقع. ولا ينبغي اعتبار رابط موقع الجهة أو مصدر الصورة مرجعاً مستقلاً لكل تفاصيل الملف وإحصاءاته.",
+       guide_site_title: "ملف موقع الإطلاق",
+@@ -357,11 +324,11 @@
+       guide_data_title: "الاتصال والبيانات",
+       guide_data_body: "إذا تعذّر تحميل الخريطة المتصلة، يستخدم الموقع الخريطة المحلية. تتطلب معلومات الإطلاقات القادمة المباشرة اتصالاً بالإنترنت؛ وقد يختلف نطاق البيانات وموعد تحديثها بين السجلات.",
+       guide_scope_title: "نطاق التغطية",
+-      guide_scope_body: "تعرض قوائم الشركات والجهات الفضائية ومواقع الإطلاق وسجلات المشاريع/المهمات السجلات الموجودة حالياً في ORBITA، ولا تمثل إحصاءً عالمياً كاملاً. تغطي مجموعة الهبوط والاستعادة 20 موقعاً ممثلاً في أربع دول والمياه الدولية، مع سجل تاريخي مختار، لا جميع المواقع أو عمليات الهبوط. وغياب سجل لا يعني وحده أن المنشأة أو الحدث غير موجود في الواقع.",
++      guide_scope_body: "تعرض الخريطة سجلات الشركات والمؤسسات والبنية التحتية الموجودة حالياً في ORBITA، ولا تمثل إحصاءً عالمياً كاملاً. تغطي بيانات الهبوط والاستعادة 20 موقعاً ممثلاً في أربع دول والمياه الدولية، مع سجل تاريخي مختار، وليس جميع المواقع أو عمليات الهبوط. وغياب سجل لا يثبت عدم وجود الجهة أو الحدث في الواقع.",
+       guide_sources_title: "المصادر وحداثة البيانات",
+       guide_sources_body: "تعتمد سجلات الإطلاقات القادمة على بيانات The Space Devs؛ ويزامن التطبيق بعض التواريخ والحالات مع Launch Library 2. تعرض لوحة الإطلاقات تاريخ تحديث البيانات المحلية وحالة المزامنة المباشرة. قائمة حالات الهبوط القادمة لقطة يدوية من Launch Library 2 وليست تدفقاً مباشراً؛ ويظهر في علامة التبويب مصدر اللقطة وتاريخها وتاريخ التحديث المحلي. الصف بلا تاريخ يعني أن المهمة في قائمة الانتظار دون جدول زمني موثوق. تعرض ملفات الاستعادة روابط مصادر الأحداث وتواريخ المراجعة. أما سجلات الشركات والمواقع والمهمات التاريخية فلا تحفظ مصدراً وتاريخ مراجعة لكل حقل بصورة متسقة؛ ورابط الموقع الإلكتروني أو اعتماد الصورة ليس بالضرورة مصدراً لكل تفاصيل الملف.",
+       guide_metrics_title: "الحالات وتفسير الأعداد",
+-      guide_metrics_body: "في علامة المشاريع الفضائية، نجاح/نجاح جزئي/فشل يصف نتيجة المهمة؛ وقادم/قيد التطوير/قيد النشر/في طريقه يصف حالة المشروع أو المهمة. ونشط/غير نشط/خامل/قيد الإنشاء يصف حالة الموقع، لا نتيجة الإطلاق. في الإطلاقات القادمة، Go/TBC/TBD تسميات للجدول بحسب المصدر؛ وتوضح شارة اليوم/الشهر/الربع/TBA دقة الموعد بشكل منفصل. لا يضمن أي منها نتيجة الإطلاق. يجمع إجمالي ملف الدولة سجلات ORBITA الحالية المنسوبة إليها عبر الفئات؛ وقد يشمل سجلات قيد الإنشاء أو غير نشطة أو خاملة، لذلك لا يمثل عدداً دقيقاً للمنشآت العاملة ولا إحصاءً عالمياً كاملاً. الصفر أو الخانة الفارغة يعنيان أن السجل/القيمة المطابقة غير معروضة في البيانات الحالية، لا إثبات عدم وجودها في الواقع. تعرض الأوقات الدقيقة في جدول المهمات بتوقيت UTC.",
++      guide_metrics_body: "تصف حالات نشط/غير نشط/خامل/قيد الإنشاء حالة موقع الإطلاق وليس نتيجة إطلاق محدد. في ملفات مواقع الإطلاق، تشير Go/TBC/TBD إلى حالة الجدول من المصدر، وتوضح علامة اليوم/الشهر/الربع/TBA دقة الموعد؛ ولا يضمن أي منها حدوث الإطلاق. ويجمع ملف الدولة السجلات المسندة إليها في ORBITA، لا جميع المنشآت التشغيلية. أما الصفر أو الحقل الفارغ فيشير إلى البيانات الحالية، ولا يثبت عدم وجود الجهة في الواقع.",
+       guide_limits_title: "دقة المواقع والحدود وعدم اليقين",
+       guide_limits_body: "إحداثيات ملفات الهبوط والاستعادة نقاط مرجعية/تمثيلية، وليست بالضرورة موضع التماس أو التشغيل الدقيق. والهدف المعلن للهبوط لا يثبت أين هبطت المركبة فعلياً. لا تعرض هذه الملفات مواقع السفن مباشرة ولا مناطق السلامة؛ راجع ملاحظة الإحداثيات ومصدرها في كل سجل. تستخدم حدود الدول Terrae 2026.10 المبنية على لقطة OpenStreetMap بتاريخ 28 سبتمبر 2026. وهي بيانات مرجعية جغرافية وليست حدوداً قانونية معتمدة؛ وقد تختلف المناطق المتنازع عليها أو إصدارات الخرائط.",
+       guide_glossary_title: "مصطلحات مشتركة لهذه الأقسام",
+@@ -378,8 +345,6 @@
+       guide_tasks_intro: "اختر مهمة لفتح شرح القسم المناسب في ORBITA.",
+       guide_task_find_title: "العثور على شركة أو موقع أو دولة",
+       guide_task_find_body: "شرح الخريطة والفئات وقائمة النتائج",
+-      guide_task_missions_title: "استكشاف المهمات والإطلاقات القادمة",
+-      guide_task_missions_body: "المرشحات والجدول والمواعيد",
+       guide_task_counts_title: "فهم الأعداد والحالات",
+       guide_task_counts_body: "الشارات والإحصاءات والقيم الفارغة",
+       guide_results_heading: "نتائج البحث",
+@@ -388,12 +353,10 @@
+       guide_no_results_body: "جرّب عبارة أقصر أو افتح أحد الاقتراحات التالية.",
+       guide_suggestions_label: "اقتراحات الدليل",
+       guide_suggest_map: "الخريطة والفئات",
+-      guide_suggest_projects: "المشاريع والإطلاقات",
+       guide_suggest_metrics: "الأعداد والحالات",
+       guide_topics_title: "استكشف أقسام ORBITA",
+       guide_topics_intro: "تساعد الأيقونات والمعاينات على تمييز القسم؛ والرسوم التوضيحية تخطيطية ولا تعرض بيانات حية.",
+       guide_open_map: "فتح بحث الخريطة",
+-      guide_open_projects: "فتح المشاريع الفضائية",
+       guide_open_report: "فتح نموذج الإبلاغ",
+       guide_site_tab_overview: "نظرة عامة وإحصاءات",
+       guide_site_tab_history: "سجل الإطلاقات",
+@@ -411,7 +374,7 @@
+       report_bug_legend: "تفاصيل الخلل التقني", report_expected: "السلوك المتوقع", report_expected_ph: "ما الذي كان ينبغي أن يحدث؟",
+       report_actual: "السلوك الملحوظ", report_actual_ph: "ما الذي حدث فعلياً؟", report_steps: "خطوات إعادة المشكلة",
+       report_steps_ph: "اكتب الخطوات بالترتيب.", report_data_legend: "تفاصيل المشكلة العلمية أو مشكلة البيانات",
+-      report_record: "اسم السجل أو معرّفه", report_record_ph: "الشركة أو المهمة أو الموقع أو معرّف السجل",
++      report_record: "اسم السجل أو معرّفه", report_record_ph: "اسم شركة أو مؤسسة أو موقع إطلاق أو معرّف سجل",
+       report_field: "الحقل أو الادعاء محل الاختلاف", report_field_ph: "مثال: المدار أو التاريخ أو الحالة",
+       report_current: "القيمة الحالية في الموقع", report_current_ph: "القيمة المعروضة حالياً في الموقع",
+       report_suggested: "القيمة المقترحة", report_suggested_ph: "القيمة الصحيحة أو المقترحة",
+@@ -432,13 +395,13 @@
+   };
+   function t(k) { return (I18N[LANG] && I18N[LANG][k]) || (I18N.en && I18N.en[k]) || k; }
+ 
+-  var STATUS_FA = { success: "موفق", operational: "فعال / در بهره‌برداری", upcoming: "پیش‌رو", development: "در دست توسعه",
++  var STATUS_FA = { success: "موفق", operational: "فعال / در بهره‌برداری", development: "در دست توسعه",
+     cruise: "در مسیر", partial: "موفقیت نسبی", failure: "ناموفق", deployment: "در حال استقرار",
+     active: "فعال", inactive: "غیرفعال", dormant: "راکد", planned: "برنامه‌ریزی‌شده", unknown: "نامشخص", under_construction: "در دست ساخت" };
+-  var STATUS_EN = { success: "Success", operational: "Operational", upcoming: "Upcoming", development: "In development",
++  var STATUS_EN = { success: "Success", operational: "Operational", development: "In development",
+     cruise: "In cruise", partial: "Partial", failure: "Failure", deployment: "Deploying",
+     active: "Active", inactive: "Inactive", dormant: "Dormant", planned: "Planned", unknown: "Unknown", under_construction: "Under construction" };
+-  var STATUS_AR = { success: "نجاح", operational: "قيد التشغيل", upcoming: "قادم", development: "قيد التطوير",
++  var STATUS_AR = { success: "نجاح", operational: "قيد التشغيل", development: "قيد التطوير",
+     cruise: "في طريقه", partial: "نجاح جزئي", failure: "فشل", deployment: "قيد النشر",
+     active: "نشط", inactive: "غير نشط", dormant: "خامل", planned: "مخطط له", unknown: "غير محدد", under_construction: "قيد الإنشاء" };
+   function statusLabel(s) {
+@@ -510,7 +473,7 @@
+   }
+ 
+   /* ================= state ================= */
+-  var DATA = { companies: [], sites: [], missions: [], recoveries: [] };
++  var DATA = { companies: [], sites: [], recoveries: [] };
+   window.DATA = DATA;
+ 
+   var lastMarkerSig = "", map = null, mapResizeObserver = null;
+@@ -551,7 +514,6 @@
+   var COMPANY_CATEGORY_COUNTS = { launch: 68, propulsion: 68, agency: 96, satmaker: 37 };
+   var COMPANY_CATEGORY_STATE = { launch: "idle", propulsion: "idle", agency: "idle", satmaker: "idle" };
+   var COMPANY_CATEGORY_PROMISES = Object.create(null);
+-  var SORT = "new";   /* newest launch first — the user asked for this ordering */
+ 
+   var $ = function (s) { return document.querySelector(s) || null; };
+   function on(sel, ev, fn) { var el = document.querySelector(sel); if (el) el.addEventListener(ev, fn); }
+@@ -566,81 +528,6 @@
+     if (LANG === "fa") return o.fa_d || o.en_d || "";
+     if (LANG === "ar") return o.ar_d || (o.live ? "" : (o.en_d || ""));
+     return o.en_d || o.fa_d || "";
+-  }
+-
+-  /* ================= date parsing & sorting ================= */
+-  function missionTime(m) {
+-    var d = String(m.date || "");
+-    var planned = /upcoming|development|deployment/.test(m.status || "");
+-    var iso = d.match(/(\d{4})-(\d{2})-(\d{2})/);
+-    if (iso) return Date.UTC(+iso[1], +iso[2] - 1, +iso[3]);
+-    var ym = d.match(/(\d{4})-(\d{2})/);
+-    if (ym) return Date.UTC(+ym[1], +ym[2] - 1, 15);
+-    var range = d.match(/(\d{4})\s*[–-]\s*(\d{4})/);
+-    if (range) return Date.UTC(+range[1], planned ? 11 : 6, planned ? 31 : 1);
+-    var y = d.match(/(\d{4})/);
+-    if (y) return Date.UTC(+y[1], planned ? 11 : 6, planned ? 31 : 1);
+-    if (/late 2020s/i.test(d)) return Date.UTC(2029, 0, 1);
+-    if (/2030s/.test(d)) return Date.UTC(2034, 0, 1);
+-    return Date.UTC(2035, 0, 1);
+-  }
+-  function fmtDate(m) {
+-    var ts = missionTime(m), dt = new Date(ts);
+-    var hasDay = /\d{4}-\d{2}-\d{2}/.test(m.date);
+-    var mon = ["Jan", "Feb", "Mar", "Apr", "May", "Jun", "Jul", "Aug", "Sep", "Oct", "Nov", "Dec"][dt.getUTCMonth()];
+-    return hasDay ? (dt.getUTCDate() + " " + mon + " " + dt.getUTCFullYear() + " UTC") : String(m.date);
+-  }
+-  function relTime(m) {
+-    var diff = missionTime(m) - Date.now(), day = 86400000;
+-    var d = Math.round(Math.abs(diff) / day);
+-    if (LANG === "fa") {
+-      if (diff > 0) return d > 400 ? "حدود " + Math.round(d / 365) + " سال دیگر" : d + " روز دیگر";
+-      return d > 400 ? Math.round(d / 365) + " سال پیش" : d + " روز پیش";
+-    }
+-    if (LANG === "ar") {
+-      var years = Math.round(d / 365), useYears = d > 400, n = useYears ? years : d;
+-      var unit = useYears
+-        ? (n === 1 ? "سنة" : n === 2 ? "سنتين" : n >= 3 && n <= 10 ? "سنوات" : "سنة")
+-        : (n === 1 ? "يوم" : n === 2 ? "يومين" : n >= 3 && n <= 10 ? "أيام" : "يومًا");
+-      return diff > 0 ? "بعد " + (useYears ? "نحو " : "") + fmtNum(n) + " " + unit
+-                      : "قبل " + (useYears ? "نحو " : "") + fmtNum(n) + " " + unit;
+-    }
+-    if (diff > 0) return d > 400 ? "in ~" + Math.round(d / 365) + " yr" : "in " + d + " d";
+-    return d > 400 ? "about " + Math.round(d / 365) + " yr ago" : d + " d ago";
+-  }
+-  function sortMissions(list) {
+-    var now = Date.now();
+-    if (SORT === "near") {
+-      var fut = list.filter(function (m) { return missionTime(m) >= now; }).sort(function (a, b) { return missionTime(a) - missionTime(b); });
+-      var past = list.filter(function (m) { return missionTime(m) < now; }).sort(function (a, b) { return missionTime(b) - missionTime(a); });
+-      return fut.concat(past);
+-    }
+-    if (SORT === "new") {
+-      /* "newest first" must mean the most recent *actual* launch at the top.
+-         Not-yet-flown projects would otherwise bury today's launches under
+-         dates years in the future, so they are listed after the flown ones. */
+-      var flown = list.filter(function (m) { return missionTime(m) <= now; })
+-        .sort(function (a, b) { return missionTime(b) - missionTime(a); });
+-      var ahead = list.filter(function (m) { return missionTime(m) > now; })
+-        .sort(function (a, b) { return missionTime(a) - missionTime(b); });
+-      return flown.concat(ahead);
+-    }
+-    if (SORT === "old") return list.slice().sort(function (a, b) { return missionTime(a) - missionTime(b); });
+-    return list.slice().sort(function (a, b) { return name(a).localeCompare(name(b)); });
+-  }
+-
+-  /* ================= orbit classification ================= */
+-  function orbitInfo(o) {
+-    var s = String(o || "").toLowerCase();
+-    if (/l2|l1|halo|lagrang/.test(s)) return { k: "L1/L2", fa: "نقطهٔ لاگرانژ", c: "#a78bfa" };
+-    if (/lunar|moon|tli|nrho/.test(s)) return { k: "Lunar", fa: "مدار / سطح ماه", c: "#f5a524" };
+-    if (/mars|jupiter|asteroid|titan|mercury|comet|interstellar|kuiper|solar|helio|phobos|europa/.test(s))
+-      return { k: "Deep space", fa: "فضای عمیق", c: "#fb7185" };
+-    if (/sso|sun-sync/.test(s)) return { k: "SSO", fa: "مدار خورشیدآهنگ (SSO)", c: "#2fd4a7" };
+-    if (/gto|geo|geostation/.test(s)) return { k: "GTO/GEO", fa: "مدار زمین‌ثابت (GEO)", c: "#38bdf8" };
+-    if (/meo/.test(s)) return { k: "MEO", fa: "مدار میانی (MEO)", c: "#38bdf8" };
+-    if (/leo|low earth|suborbital|400|390/.test(s)) return { k: "LEO", fa: "مدار پایین زمین (LEO)", c: "#2fd4a7" };
+-    return { k: "Other", fa: "سایر", c: "#8ba3c4" };
+   }
+ 
+   var COUNTRY = [
+@@ -668,13 +555,13 @@
+ 
+     var pageMeta = LANG === "ar" ? {
+       title: "ORBITA — منصة معلومات الفضاء والطيران",
+-      description: "خريطة عالمية لمواقع الإطلاق والمشاريع الفضائية، مع عرض الأقمار الصناعية النشطة في مدار الأرض."
++      description: "خريطة عالمية للشركات والوكالات الفضائية ومواقع الإطلاق والهبوط والاستعادة."
+     } : LANG === "en" ? {
+       title: "ORBITA — Aerospace Intelligence Platform",
+-      description: "A global map of launch sites and space projects, with active satellites in Earth orbit."
++      description: "A global map of space companies, agencies, launch sites, and landing/recovery locations."
+     } : {
+       title: "ORBITA — سامانهٔ اطلاعات هوافضا",
+-      description: "سامانهٔ اطلاعات هوافضا: نقشهٔ جهانی پایگاه‌های پرتاب، پروژه‌های فضایی، و نمایش سه‌بعدی ماهواره‌های فعال در مدار زمین."
++      description: "سامانهٔ اطلاعات هوافضا: نقشهٔ جهانی شرکت‌ها، سازمان‌ها، پایگاه‌ها و محل‌های فرود و بازیابی."
+     };
+     document.title = pageMeta.title;
+     var description = $("meta[name=description]"); if (description) description.content = pageMeta.description;
+@@ -695,7 +582,7 @@
+     var previousLang = LANG;
+     LANG = LANG === "fa" ? "en" : LANG === "en" ? "ar" : "fa";
+     localStorage.setItem("orbita_lang", LANG);
+-    applyI18n(); buildLayerBar(); renderMarkers(); buildLabels(); buildCityLabels(); renderList(); buildFilters(); renderMissions();
++    applyI18n(); buildLayerBar(); renderMarkers(); buildLabels(); buildCityLabels(); renderList();
+     openDetail._renderToken = (openDetail._renderToken || 0) + 1;
+     var d = $("#detail"); if (d) d.classList.remove("open");
+     if (previousLang !== LANG && (previousLang === "ar" || LANG === "ar") && map && BASEMODE === "online") applyMapStyle();
+@@ -765,15 +652,13 @@
+     $$("[data-guide-visual]").forEach(function (box) {
+       var kind = box.getAttribute("data-guide-visual"), html = "";
+       if (kind === "start") {
+-        html = '<div class="site-guide-preview-views"><span class="is-active">' + guideSvg("map") + '<b>' + esc(t("tab_map")) + '</b></span><span>' + guideSvg("projects") + '<b>' + esc(t("tab_missions")) + '</b></span></div>';
++        html = '<div class="site-guide-preview-views"><span class="is-active">' + guideSvg("map") + '<b>' + esc(t("tab_map")) + '</b></span></div>';
+       } else if (kind === "map-categories") {
+         html = guideCategoryPreview(["launch", "propulsion", "agency", "satmaker", "site", "recovery"]);
+       } else if (kind === "map-search") {
+         html = '<div class="site-guide-preview-search"><span>' + guideSvg("search") + '<b>' + esc(t("ph_search_map")) + '</b></span><kbd>Ctrl/⌘ K</kbd></div>';
+       } else if (kind === "country-profile") {
+         html = '<div class="site-guide-preview-country"><span class="site-guide-country-icon">' + guideSvg("country") + '</span><b>' + esc(t("country")) + '</b><span class="site-guide-country-bars"><i></i><i></i><i></i></span><small>' + esc(t("cat_launch")) + ' · ' + esc(t("cat_propulsion")) + ' · ' + esc(t("cat_agency")) + '</small></div>';
+-      } else if (kind === "missions-table") {
+-        html = '<div class="site-guide-preview-missions"><div class="site-guide-preview-toolbar"><span>' + guideSvg("search") + '<b>' + esc(t("ph_search_mission")) + '</b></span><i>' + esc(t("status")) + '</i><i>' + esc(t("orbit")) + '</i><i>' + esc(t("mtype")) + '</i><i>' + esc(t("sort_az")) + '</i></div><div class="site-guide-preview-table">' + ["th_mission", "th_rocket", "th_op", "th_orbit"].map(function (key) { return '<span>' + esc(t(key)) + '</span>'; }).join("") + '</div></div>';
+       } else if (kind === "company-categories") {
+         html = guideCategoryPreview(["launch", "propulsion", "agency", "satmaker"]);
+       } else if (kind === "site-tabs") {
+@@ -856,8 +741,6 @@
+         if (command === "map-search") {
+           var mapTab = $(".tab[data-view='map']"); if (mapTab) mapTab.click();
+           openSide(true);
+-        } else if (command === "missions") {
+-          var missionsTab = $(".tab[data-view='missions']"); if (missionsTab) missionsTab.click();
+         } else if (command === "report") {
+           var reportTrigger = $("#reportBtn"); if (reportTrigger) reportTrigger.click();
+         }
+@@ -1073,17 +956,11 @@
+     if (map) applyMapStyle();
+   }
+   on("#themeBtn", "click", cycleMapStyle);
++  // Map is the only top-level view. Retain its tab for accessible map navigation.
+   $$(".tab").forEach(function (b) {
+     b.onclick = function () {
+-      $$(".tab").forEach(function (x) { x.classList.remove("active"); });
+-      b.classList.add("active");
+-      $$(".view").forEach(function (v) { v.classList.remove("active"); });
+-      $("#view-" + b.dataset.view).classList.add("active");
+-      if (b.dataset.view === "map" && map) setTimeout(function () { map.resize(); }, 60);
+-      if (b.dataset.view === "missions") ensureMissionViewData();
+-      if (b.dataset.view === "orbit") { 
+-
+-  bootOrbit(); } else if (window.ORBITA3D) { ORBITA3D.stop(); }
++      if (b.dataset.view !== "map") return;
++      if (map) setTimeout(function () { map.resize(); }, 60);
+     };
+   });
+ 
+@@ -10056,356 +9933,6 @@
+     if ((e.ctrlKey || e.metaKey) && e.key.toLowerCase() === "k") { e.preventDefault(); openSide(true); }
+   });
+ 
+-  /* ================= missions table ================= */
+-  function uniq(a) { return a.filter(function (v, i, s) { return v && s.indexOf(v) === i; }).sort(); }
+-
+-  function buildFilters() {
+-    /* filters cover curated projects and imported launches alike */
+-    var m = allMissions(), cur;
+-    // status
+-    cur = $("#fStatus").value;
+-    $("#fStatus").innerHTML = '<option value="">' + t("f_status") + "</option>" +
+-      uniq(m.map(function (x) { return x.status; })).map(function (v) {
+-        return '<option value="' + esc(v) + '">' + esc(statusLabel(v)) + "</option>"; }).join("");
+-    $("#fStatus").value = cur;
+-    // orbit groups
+-    cur = $("#fOrbit").value;
+-    var groups = uniq(m.map(function (x) { return orbitInfo(x.orbit).k; }));
+-    $("#fOrbit").innerHTML = '<option value="">' + t("f_orbit") + "</option>" +
+-      groups.map(function (g) {
+-        var f = m.find(function (x) { return orbitInfo(x.orbit).k === g; });
+-        return '<option value="' + esc(g) + '">' + esc(LANG === "fa" ? orbitInfo(f.orbit).fa : g) + "</option>"; }).join("");
+-    $("#fOrbit").value = cur;
+-    // type
+-    cur = $("#fType").value;
+-    $("#fType").innerHTML = '<option value="">' + t("f_type") + "</option>" +
+-      uniq(m.map(function (x) { return x.type_key || x.type; })).filter(function (v) { return v; })
+-        .map(function (v) {
+-          var f = m.find(function (x) { return (x.type_key || x.type) === v; });
+-          return '<option value="' + esc(v) + '">' + esc(LANG === "fa" ? f.type_fa : (f.type || v)) + "</option>"; }).join("");
+-    $("#fType").value = cur;
+-    // sort
+-    $("#fSort").innerHTML = ["near", "new", "old", "az"].map(function (s) {
+-      return '<option value="' + s + '"' + (SORT === s ? " selected" : "") + ">" + t("sort_" + s) + "</option>"; }).join("");
+-  }
+-
+-  function rowHTML(m) {
+-    var oi = orbitInfo(m.orbit);
+-    var orbTxt = LANG === "fa" ? (m.orbit_fa || oi.fa) : (oi.k || m.orbit);
+-    var country = LANG === "fa" && m.loc_fa ? m.loc_fa : countryOf(m.loc);
+-    var tag = m.mega
+-      ? '<span class="src-tag mega">' + fmtNum(m.kids.length) + " " + t("mega_n") + "</span>"
+-      : m.live ? '<span class="src-tag new">' + t("src_live") + "</span>"
+-               : '<span class="src-tag full">' + t("src_curated") + "</span>";
+-    return '<div class="mrow' + (m.live ? " is-live" : "") + '" data-id="' + esc(m.id) + '">' +
+-      '<div class="mrow-grid">' +
+-        '<div class="m-main">' +
+-          '<img class="m-thumb" loading="lazy" src="' + esc(m.img || "") + '" alt="" onerror="this.style.visibility=\'hidden\'"/>' +
+-          '<div class="m-txt">' +
+-            '<div class="t1"><bdi>' + esc(name(m)) + "</bdi>" + tag + "</div>" +
+-            '<div class="t2"><bdi>' + esc(m.en) + "</bdi>" + (m.rocket ? " | <bdi>" + esc(m.rocket) + "</bdi>" : "") + "</div>" +
+-            '<div class="t3">' + esc(fmtDate(m)) + " · " + esc(relTime(m)) + "</div>" +
+-            '<div class="t4"><bdi>' + esc(LANG === "fa" ? m.op : m.op_fa) + "</bdi></div>" +
+-          "</div></div>" +
+-        '<div class="cc c-rocket"><bdi>' + esc(m.rocket) + "</bdi></div>" +
+-        '<div class="cc c-op"><bdi>' + esc(LANG === "fa" ? m.op_fa : m.op) + "</bdi></div>" +
+-        '<div class="cc"><span class="orbit-chip" style="color:' + oi.c + ';border-color:' + oi.c + '55;background:' + oi.c + '1f">' +
+-          esc(orbTxt) + "</span></div>" +
+-        '<div class="cc two c-loc">' + esc(country) + "<small><bdi>" + esc(m.site) + "</bdi></small></div>" +
+-        '<div class="cc"><span class="badge b-' + esc(m.status) + '">' + esc(statusLabel(m.status)) + "</span></div>" +
+-        '<div><button class="exp-btn">›</button></div>' +
+-      "</div>" +
+-      '<div class="m-detail"></div></div>';
+-  }
+-
+-  function detailHTML(m) {
+-    var h = '<div class="det-2col"><div>' +
+-      '<img src="' + esc(m.img || "") + '" alt="" onerror="this.style.display=\'none\'"/>' +
+-      '<div style="font-size:10px;color:var(--muted);margin-top:6px">' + t("credit") + ': Wikimedia Commons</div></div><div>';
+-    h += '<div class="d-kicker">' + esc(LANG === "fa" ? m.type_fa : m.type) + "</div>";
+-    h += '<h3 class="d-title">' + esc(name(m)) + "</h3>";
+-    h += '<div class="d-sub">' + esc(LANG === "fa" ? m.en : m.fa) + "</div>";
+-    var dtxt = desc(m);
+-    if (dtxt) h += '<div class="d-desc">' + esc(dtxt) + "</div>";
+-    else if (m.live) h += '<div class="d-note">' + t("live_note") + "</div>";
+-    h += '<div class="grid2" style="grid-template-columns:repeat(auto-fit,minmax(150px,1fr))">';
+-    h += cell(t("provider"), LANG === "fa" ? m.op_fa : m.op);
+-    h += cell(t("rocket"), m.rocket, true);
+-    h += cell(t("orbit"), LANG === "fa" ? (m.orbit_fa || m.orbit) : m.orbit, !(LANG === "fa" && m.orbit_fa));
+-    h += cell(t("mtype"), LANG === "fa" ? m.type_fa : m.type);
+-    h += cell(t("site"), m.site, true);
+-    h += cell(t("pad"), m.pad, true);
+-    h += cell(t("location"), LANG === "fa" && m.loc_fa ? m.loc_fa : m.loc, !(LANG === "fa" && m.loc_fa));
+-    h += cell(t("date"), m.date, true);
+-    h += cell(t("cost"), m.cost && m.cost !== "—" ? m.cost : "", true);
+-    h += "</div>";
+-
+-    /* mega-constellation group: list the individual launches it folds */
+-    if (m.mega && m.kids && m.kids.length) {
+-      h += '<details class="acc"><summary>▸ ' + t("mega_list") + " (" + fmtNum(m.kids.length) + ")</summary><div class=\"in\">";
+-      h += '<div class="mega-list">' + m.kids.slice().sort(function (a, b) {
+-        return (b.date || "").localeCompare(a.date || "");
+-      }).map(function (k) {
+-        return '<div class="mk"><span class="mk-d">' + esc(k.date) + "</span>" +
+-          "<bdi>" + esc(k.en) + "</bdi>" +
+-          '<span class="mk-r"><bdi>' + esc(k.rocket) + "</bdi></span></div>";
+-      }).join("") + "</div></div></details>";
+-    }
+-
+-    var alt = LANG === "fa" ? m.en_d : m.fa_d;
+-    if (alt) {
+-      h += '<details class="acc"><summary>▸ ' + t("en_desc") + '</summary><div class="in"><div class="d-desc en"><bdi>' +
+-        esc(alt) + "</bdi></div></div></details>";
+-    }
+-    if (m.vid) {
+-      h += '<a class="ghost-btn watch" href="' + esc(m.vid) + '" target="_blank" rel="noopener noreferrer">' +
+-        t("watch_live") + "</a>";
+-    }
+-    h += '<button class="ghost-btn go-map" data-site="' + esc(m.site) + '">' + t("show_map") + "</button>";
+-    return h + "</div></div>";
+-  }
+-
+-  /* ================= live launch feed (last 90 days) ================= */
+-  /* Recent launches are pulled from The Space Devs, translated into Persian
+-     wherever the vocabulary is finite, cached locally so the app still works
+-     offline, and merged into the curated mission list. */
+-
+-  var LIVE = [], LIVE_TS = 0;
+-  var LIVE_TTL = 6 * 3600 * 1000;              // refresh at most every 6 hours
+-  var LIVE_DAYS = 90;
+-
+-  /* --- finite vocabularies get proper Persian --- */
+-  var MTYPE_FA = {
+-    "Communications": ["مخابراتی", "communications"],
+-    "Earth Science": ["علوم زمین", "earth-observation"],
+-    "Earth Observation": ["سنجش از دور", "earth-observation"],
+-    "Planetary Science": ["علوم سیاره‌ای", "planetary"],
+-    "Astrophysics": ["اخترفیزیک", "astrophysics"],
+-    "Heliophysics": ["فیزیک خورشید", "heliophysics"],
+-    "Human Exploration": ["پرواز سرنشین‌دار", "crewed"],
+-    "Resupply": ["باربری و تدارکات", "cargo"],
+-    "Test Flight": ["پرواز آزمایشی", "launch-system"],
+-    "Navigation": ["ناوبری", "navigation"],
+-    "Tourism": ["گردشگری فضایی", "crewed"],
+-    "Government/Top Secret": ["دولتی و طبقه‌بندی‌شده", "technology"],
+-    "Dedicated Rideshare": ["پرتاب اشتراکی", "technology"],
+-    "Suborbital": ["زیرمداری", "launch-system"],
+-    "Lunar Exploration": ["کاوش ماه", "lunar"],
+-    "Robotic Exploration": ["کاوش رباتیک", "deep-space"],
+-    "Technology": ["نمایش فناوری", "technology"],
+-    "Micro-gravity": ["پژوهش بی‌وزنی", "technology"]
+-  };
+-  var ORBIT_FA = {
+-    "Low Earth Orbit": "مدار پایین زمین",
+-    "Sun-Synchronous Orbit": "مدار خورشیدآهنگ",
+-    "Geostationary Transfer Orbit": "مدار انتقالی زمین‌ثابت",
+-    "Geosynchronous Orbit": "مدار زمین‌آهنگ",
+-    "Geostationary Orbit": "مدار زمین‌ثابت",
+-    "Medium Earth Orbit": "مدار میانی زمین",
+-    "Highly Elliptical Orbit": "مدار بیضوی کشیده",
+-    "Polar Orbit": "مدار قطبی",
+-    "Heliocentric Orbit": "مدار خورشیدمرکز",
+-    "Lunar Orbit": "مدار ماه",
+-    "Lunar Transfer Orbit": "مدار انتقالی ماه",
+-    "Suborbital": "زیرمداری",
+-    "Elliptical Orbit": "مدار بیضوی",
+-    "Trans Lunar Injection": "تزریق به مسیر ماه"
+-  };
+-  var LSTATUS_FA = {
+-    "Success": ["موفق", "success"],
+-    "Failure": ["ناموفق", "failure"],
+-    "Partial Failure": ["نیمه‌موفق", "partial"],
+-    "Go": ["برنامه‌ریزی‌شده", "upcoming"],
+-    "TBC": ["در انتظار تأیید", "upcoming"],
+-    "TBD": ["زمان نامعین", "upcoming"],
+-    "In Flight": ["در پرواز", "deployment"]
+-  };
+-  var COUNTRY_FA = {
+-    "United States of America": "ایالات متحده", "China": "چین", "Russia": "روسیه",
+-    "India": "هند", "Japan": "ژاپن", "France": "فرانسه", "French Guiana": "گویان فرانسه",
+-    "New Zealand": "نیوزیلند", "Kazakhstan": "قزاقستان", "Iran": "ایران",
+-    "South Korea": "کره جنوبی", "North Korea": "کره شمالی", "Israel": "اسرائیل",
+-    "United Kingdom": "بریتانیا", "Norway": "نروژ", "Australia": "استرالیا",
+-    "Brazil": "برزیل", "Italy": "ایتالیا", "Germany": "آلمان", "Spain": "اسپانیا"
+-  };
+-  var MEGA = [
+-    { re: /starlink/i, id: "mega-starlink", fa: "استارلینک", en: "Starlink" },
+-    { re: /oneweb/i, id: "mega-oneweb", fa: "وان‌وب", en: "OneWeb" },
+-    { re: /kuiper/i, id: "mega-kuiper", fa: "کویپر", en: "Kuiper" },
+-    { re: /qianfan|thousand sails|g60/i, id: "mega-qianfan", fa: "چیان‌فان", en: "Qianfan" },
+-    { re: /guowang|sat[- ]?net/i, id: "mega-guowang", fa: "گوووانگ", en: "Guowang" }
+-  ];
+-
+-  function faOf(map, key, fallback) {
+-    var v = map[key];
+-    if (!v) return fallback != null ? fallback : (key || "");
+-    return typeof v === "string" ? v : v[0];
+-  }
+-
+-  /* turn one API launch record into a mission-shaped object */
+-  function liveToMission(l) {
+-    var m = l.mission || {}, pad = l.pad || {}, loc = pad.location || {};
+-    var st = (l.status && l.status.abbrev) || "";
+-    var stf = LSTATUS_FA[st] || LSTATUS_FA[(l.status && l.status.name) || ""] || ["—", "operational"];
+-    var ty = m.type || "";
+-    var tyf = MTYPE_FA[ty] || [ty || "—", "technology"];
+-    var orb = (m.orbit && m.orbit.name) || "";
+-    var cty = (loc.country && loc.country.name) || loc.country_code || "";
+-    var prov = (l.launch_service_provider && l.launch_service_provider.name) || "";
+-    var rocket = (l.rocket && l.rocket.configuration &&
+-      (l.rocket.configuration.full_name || l.rocket.configuration.name)) || "";
+-    var img = (l.image && (l.image.thumbnail_url || l.image.image_url)) || "";
+-    return {
+-      id: "live-" + l.id,
+-      live: 1,                                  // marks an auto-imported row
+-      en: m.name || l.name || "",
+-      fa: m.name || l.name || "",               // no curated Persian name available
+-      op: prov, op_fa: provLabel(prov),
+-      rocket: rocket,
+-      orbit: orb, orbit_fa: faOf(ORBIT_FA, orb, orb),
+-      type: ty, type_fa: tyf[0], type_key: tyf[1],
+-      site: pad.name || "", pad: pad.name || "",
+-      loc: loc.name || "", loc_fa: faOf(COUNTRY_FA, cty, cty),
+-      lat: pad.latitude != null ? +pad.latitude : null,
+-      lon: pad.longitude != null ? +pad.longitude : null,
+-      status: stf[1], status_raw: st,
+-      date: (l.net || "").slice(0, 10),
+-      cost: "",
+-      en_d: m.description || "",
+-      fa_d: "",                                 // deliberately empty: no machine Persian
+-      img: img,
+-      vid: (function () {
+-        var v = l.vidURLs || [];
+-        for (var i = 0; i < v.length; i++) if (v[i] && v[i].url) return v[i].url;
+-        return "";
+-      })()
+-    };
+-  }
+-
+-  /* collapse repeated mega-constellation payloads into one expandable row */
+-  function foldMega(list) {
+-    var out = [], bucket = {};
+-    list.forEach(function (m) {
+-      var hit = null;
+-      for (var i = 0; i < MEGA.length; i++) {
+-        if (MEGA[i].re.test(m.en) || MEGA[i].re.test(m.fa)) { hit = MEGA[i]; break; }
+-      }
+-      if (!hit) { out.push(m); return; }
+-      if (!bucket[hit.id]) {
+-        bucket[hit.id] = {
+-          id: hit.id, live: 1, mega: 1, kids: [],
+-          en: hit.en, fa: hit.fa,
+-          op: m.op, op_fa: m.op_fa, rocket: m.rocket,
+-          orbit: m.orbit, orbit_fa: m.orbit_fa,
+-          type: m.type, type_fa: m.type_fa, type_key: m.type_key,
+-          site: m.site, pad: m.pad, loc: m.loc, loc_fa: m.loc_fa,
+-          lat: m.lat, lon: m.lon,
+-          status: "operational", date: m.date,
+-          cost: "", en_d: m.en_d, fa_d: "", img: m.img, vid: ""
+-        };
+-        out.push(bucket[hit.id]);
+-      }
+-      var g = bucket[hit.id];
+-      g.kids.push(m);
+-      if (m.date > g.date) { g.date = m.date; g.img = g.img || m.img; }
+-    });
+-    return out;
+-  }
+-
+-  function cacheLive(rows) {
+-    try {
+-      localStorage.setItem("orbita_live", JSON.stringify({ ts: Date.now(), rows: rows }));
+-    } catch (e) { /* quota: caching is best-effort */ }
+-  }
+-  function readLiveCache() {
+-    try {
+-      var c = JSON.parse(localStorage.getItem("orbita_live") || "null");
+-      if (c && c.rows && Array.isArray(c.rows)) { LIVE_TS = c.ts || 0; return c.rows; }
+-    } catch (e) {}
+-    return null;
+-  }
+-
+-  function loadLiveLaunches(force) {
+-    var cached = readLiveCache();
+-    if (cached && !force && (Date.now() - LIVE_TS) < LIVE_TTL) {
+-      LIVE = cached; buildFilters(); renderMissions(); return;
+-    }
+-    if (cached) { LIVE = cached; renderMissions(); }        // show stale data immediately
+-    var since = new Date(Date.now() - LIVE_DAYS * 86400000).toISOString().slice(0, 10);
+-    fetch("https://ll.thespacedevs.com/2.3.0/launches/previous/?limit=100&mode=detailed&net__gte=" + since)
+-      .then(function (r) { if (!r.ok) throw 0; return r.json(); })
+-      .then(function (d) {
+-        var rows = (d.results || []).map(liveToMission).filter(function (m) { return m.date; });
+-        if (!rows.length) return;
+-        LIVE = rows; LIVE_TS = Date.now();
+-        cacheLive(rows);
+-        buildFilters(); renderMissions();
+-      })
+-      .catch(function () { /* offline or throttled: keep whatever we have */ });
+-  }
+-
+-  /* curated projects + folded live rows, newest first */
+-  function allMissions() {
+-    var live = foldMega(LIVE);
+-    /* a curated entry always wins over an auto row for the same mission */
+-    var seen = {};
+-    DATA.missions.forEach(function (m) { seen[String(m.en || "").toLowerCase()] = 1; });
+-    live = live.filter(function (m) { return !seen[String(m.en || "").toLowerCase()]; });
+-    return DATA.missions.concat(live);
+-  }
+-
+-  function renderMissions() {
+-    var q = (($("#mSearch")||{}).value || "").trim().toLowerCase();
+-    var st = ($("#fStatus")||{}).value || "", ob = ($("#fOrbit")||{}).value || "", ty = ($("#fType")||{}).value || "";
+-    var list = allMissions().filter(function (m) {
+-      if (st && m.status !== st) return false;
+-      if (ob && orbitInfo(m.orbit).k !== ob) return false;
+-      if (ty && (m.type_key || m.type) !== ty) return false;
+-      if (!q) return true;
+-      return [m.en, m.fa, m.op, m.op_fa, m.rocket, m.orbit, m.orbit_fa, m.site, m.loc, m.loc_fa, m.en_d, m.fa_d]
+-        .join(" ").toLowerCase().indexOf(q) > -1;
+-    });
+-    list = sortMissions(list);
+-    $("#mCount").textContent = list.length;
+-    var projectLabel = $("#projectCountLabel");
+-    if (projectLabel) {
+-      var count = list.length;
+-      projectLabel.textContent = LANG !== "ar" ? t("project")
+-        : count === 0 ? "مشاريع" : count === 1 ? "مشروع" : count === 2 ? "مشروعان"
+-        : count <= 10 ? "مشاريع" : "مشروعًا";
+-    }
+-    $("#missionRows").innerHTML = list.map(rowHTML).join("") || '<div class="up-empty">' + t("no_res") + "</div>";
+-    $$("#missionRows .mrow").forEach(function (row) {
+-      row.querySelector(".mrow-grid").onclick = function () {
+-        var m = list.find(function (x) { return x.id === row.dataset.id; });
+-        if (!m) return;
+-        var body = row.querySelector(".m-detail");
+-        if (!row.classList.contains("open") && !body.innerHTML) body.innerHTML = detailHTML(m);
+-        row.classList.toggle("open");
+-        var go = body.querySelector(".go-map");
+-        if (go) go.onclick = function (e) {
+-          e.stopPropagation();
+-          /* auto rows carry their own pad coordinates */
+-          if (m.live && m.lat != null && m.lon != null) {
+-            goToPad({ name: m.pad || m.site, loc: m.loc, lat: m.lat, lon: m.lon });
+-            return;
+-          }
+-          var s = DATA.sites.find(function (x) { return (m.site || "").toLowerCase().indexOf(x.en.split(" –")[0].split(" (")[0].toLowerCase()) > -1; });
+-          $$(".tab")[0].click();
+-          if (s && map) { map.flyTo({ center: [s.lon, s.lat], zoom: 8, duration: 1400 }); openDetail({ kind: "site", cat: "site", o: s }); }
+-        };
+-      };
+-    });
+-  }
+-  ["mSearch", "fStatus", "fOrbit", "fType"].forEach(function (id) {
+-    on("#" + id, "input", renderMissions); on("#" + id, "change", renderMissions);
+-  });
+-  on("#fSort", "change", function () { SORT = this.value; renderMissions(); });
+-  on("#upRefresh", "click", function () { loadUpcoming(); loadLiveLaunches(true); renderMissions(); });
+-
+-  /* ================= live upcoming launches ================= */
+-  var UPCOMING = [];
+-
+   /* jump to a launch pad on the world map; falls back to the nearest known site */
+   function goToPad(pad) {
+     if (!pad || pad.lat == null || pad.lon == null) return false;
+@@ -10440,46 +9967,6 @@
+     return true;
+   }
+ 
+-  function loadUpcoming() {
+-    var box = $("#upList");
+-    box.innerHTML = '<div class="up-empty">' + t("up_loading") + "</div>";
+-    fetch("https://ll.thespacedevs.com/2.3.0/launches/upcoming/?limit=12&mode=detailed")
+-      .then(function (r) { if (!r.ok) throw 0; return r.json(); })
+-      .then(function (d) {
+-        var res = d.results || []; if (!res.length) throw 0;
+-        UPCOMING = res.map(function (l) {
+-          var pad = l.pad || {};
+-          var loc = pad.location || {};
+-          return {
+-            name: l.name || "",
+-            prov: (l.launch_service_provider && l.launch_service_provider.name) || "",
+-            net: l.net ? new Date(l.net).getTime() : null,
+-            exact: precRank(l.net_precision) >= 3,
+-            pad: (pad.latitude != null && pad.longitude != null) ? {
+-              name: pad.name || "", loc: loc.name || "",
+-              lat: +pad.latitude, lon: +pad.longitude
+-            } : null
+-          };
+-        });
+-        box.innerHTML = UPCOMING.map(function (l, i) {
+-          var when = l.net ? new Date(l.net) : null;
+-          var cd = l.net ? cdText(l.net - Date.now(), false) : "";
+-          return '<div class="up-card' + (l.pad ? " has-pad" : "") + '" data-i="' + i + '">' +
+-            "<b><bdi>" + esc(l.name) + "</bdi></b>" +
+-            "<span><bdi>" + esc(provLabel(l.prov)) + "</bdi></span>" +
+-            "<span>" + esc(when ? when.toISOString().slice(0, 16).replace("T", " ") + " UTC" : "TBD") + "</span>" +
+-            '<div class="cd">' + esc(cd) + "</div>" +
+-            (l.pad ? '<div class="up-pad"><svg viewBox="0 0 24 24" width="11" height="11"><path fill="currentColor" d="M12 2a7 7 0 00-7 7c0 5.2 7 13 7 13s7-7.8 7-13a7 7 0 00-7-7zm0 9.5A2.5 2.5 0 1112 6.5a2.5 2.5 0 010 5z"/></svg>' +
+-              "<bdi>" + esc(l.pad.loc || l.pad.name) + "</bdi></div>" : "") +
+-            "</div>";
+-        }).join("");
+-        $$("#upList .up-card.has-pad").forEach(function (el) {
+-          el.onclick = function () { goToPad(UPCOMING[+el.dataset.i].pad); };
+-        });
+-      })
+-      .catch(function () { box.innerHTML = '<div class="up-empty">' + t("up_err") + "</div>"; });
+-  }
+-
+   /* ================= next-launch ticker ================= */
+   /* Countdown honours the API's net_precision: a to-the-second clock is only
+      shown when the launch time is actually known to that resolution. */
+@@ -10853,9 +10340,8 @@
+   window.openDetail = openDetail;
+ 
+   /* ================= boot: local map first, core data in parallel, optional data on demand ================= */
+-  var LAYER_STATE = { sites: "idle", recoveries: "idle", missions: "idle" };
++  var LAYER_STATE = { sites: "idle", recoveries: "idle" };
+   var LAYER_PROMISES = Object.create(null);
+-  var missionViewLoadStarted = false;
+   function refreshMapUI() { buildLayerBar(); renderMarkers(); renderList(); }
+   function loadLayer(key, url, assign, after) {
+     if (LAYER_STATE[key] === "ready") return Promise.resolve(true);
+@@ -10936,19 +10422,6 @@
+       loadCompanyCategory("agency")
+     ]);
+   }
+-  function ensureMissionViewData() {
+-    if (missionViewLoadStarted) return;
+-    missionViewLoadStarted = true;
+-    if (LAYER_STATE.missions !== "ready") {
+-      var count = $("#mCount"), rows = $("#missionRows");
+-      if (count) count.textContent = "…";
+-      if (rows) rows.innerHTML = '<div class="up-empty">' + t("up_loading") + "</div>";
+-    }
+-    if (LAYER_STATE.sites !== "ready") BOOT_LOADERS.sites();
+-    BOOT_LOADERS.missions();
+-    loadUpcoming();
+-    loadLiveLaunches();
+-  }
+   var BOOT_LOADERS = {
+     sites: function () {
+       return loadLayer("sites", "data/sites.json?v=" + (window.ORBITA_V || "1"), function (j) { DATA.sites = j; });
+@@ -10957,10 +10430,6 @@
+       return loadLayer("recoveries", "data/recovery_sites.json", function (j) {
+         DATA.recoveries = j && Array.isArray(j.sites) ? j.sites.filter(validRecoverySite) : [];
+       });
+-    },
+-    missions: function () {
+-      return loadLayer("missions", "data/missions.json?v=" + (window.ORBITA_V || "1"), function (j) { DATA.missions = j; },
+-        function () { buildFilters(); renderMissions(); });
+     },
+     companies: function () {
+       return Promise.all(COMPANY_CATEGORY_KEYS.map(loadCompanyCategory));
+@@ -10972,7 +10441,7 @@
+     if (BOOT_LOADERS[k]) return BOOT_LOADERS[k]();
+   };
+   applyI18n();
+-  initMap(); buildLayerBar(); renderList(); buildFilters(); renderMissions();
++  initMap(); buildLayerBar(); renderList();
+   var initialMapLoads = [];
+   if (filters.site) initialMapLoads.push(BOOT_LOADERS.sites());
+   if (filters.recovery) initialMapLoads.push(BOOT_LOADERS.recoveries());

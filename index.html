@@ -3,12 +3,12 @@
 <head>
 <meta charset="UTF-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-<meta name="description" content="سامانهٔ اطلاعات هوافضا: نقشهٔ جهانی پایگاه‌های پرتاب، پروژه‌های فضایی، و نمایش سه‌بعدی ماهواره‌های فعال در مدار زمین." />
+<meta name="description" content="سامانهٔ اطلاعات هوافضا: نقشهٔ جهانی شرکت‌های پرتاب، مجموعه‌های پیشرانش، سازمان‌های فضایی، سازندگان ماهواره، پایگاه‌های پرتاب و محل‌های فرود و بازیابی." />
 <meta name="color-scheme" content="dark light" />
 <meta name="theme-color" content="#0b1a2b" />
 <meta property="og:type" content="website" />
 <meta property="og:title" content="ORBITA — سامانهٔ اطلاعات هوافضا" />
-<meta property="og:description" content="نقشهٔ جهانی پایگاه‌های پرتاب، پروژه‌های فضایی، و نمایش سه‌بعدی ماهواره‌های فعال در مدار زمین." />
+<meta property="og:description" content="نقشهٔ جهانی شرکت‌های پرتاب، مجموعه‌های پیشرانش، سازمان‌های فضایی، سازندگان ماهواره، پایگاه‌های پرتاب و محل‌های فرود و بازیابی." />
 <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'%3E%3Ccircle cx='12' cy='12' r='6' fill='%232fd4a7'/%3E%3C/svg%3E" />
 <title>ORBITA — سامانهٔ اطلاعات هوافضا</title>
 <link rel="stylesheet" href="assets/vendor/maplibre-gl.css?v=3" />
@@ -16,7 +16,7 @@
   window.ORBITA_V = "20261023mapuk2";
   window.ORBITA_COMPANIES_V = "20261111launch68deepv3";
   window.ORBITA_CSS_V = "20261111identitywhite105v2";
-  window.ORBITA_APP_V = "20261112mapstabilityv1";
+  window.ORBITA_APP_V = "20261112maponlyv1";
   // Public API URL only; never place the Resend key or another secret here.
   window.ORBITA_REPORT_API_URL = "https://orbita-report-api.onrender.com/api/report";
   (function() {
@@ -41,8 +41,7 @@
 
   <nav class="tabs">
     <button class="tab active" data-view="map"><span data-i18n="tab_map">نقشهٔ جهانی</span></button>
-    <button class="tab" data-view="missions"><span data-i18n="tab_missions">پروژه‌های فضایی</span></button>
-      </nav>
+  </nav>
 
   <div class="topbar-actions">
     <button id="langBtn" class="ghost-btn" title="Language" data-i18n-title="change_language" aria-label="Change language">EN</button>
@@ -116,49 +115,7 @@
   </section>
 </main>
 
-<!-- ============ MISSIONS VIEW ============ -->
-<main id="view-missions" class="view">
-  <div class="missions-wrap">
-
-    <div class="toolbar">
-      <button id="upRefresh" class="icon-btn" title="بروزرسانی" data-i18n-title="refresh">
-        <svg viewBox="0 0 24 24" width="17" height="17"><path fill="currentColor" d="M12 5V2L8 6l4 4V7a5 5 0 11-5 5H5a7 7 0 107-7z"/></svg>
-      </button>
-      <select id="fStatus" class="tb-select"></select>
-      <select id="fOrbit" class="tb-select"></select>
-      <select id="fType" class="tb-select"></select>
-      <select id="fSort" class="tb-select"></select>
-      <div class="tb-search">
-        <svg viewBox="0 0 24 24" width="16" height="16"><path fill="currentColor" d="M10 2a8 8 0 105.3 14l4.4 4.4 1.4-1.4-4.4-4.4A8 8 0 0010 2zm0 2a6 6 0 110 12 6 6 0 010-12z"/></svg>
-        <input id="mSearch" type="text" data-i18n-ph="ph_search_mission" placeholder="جستجو در نتایج بارگذاری‌شده..." />
-      </div>
-    </div>
-
-    <div class="tablewrap">
-      <div class="thead">
-        <span class="col-mission" data-i18n="th_mission">مأموریت / زمان UTC</span>
-        <span class="col-rocket" data-i18n="th_rocket">پرتابگر</span>
-        <span class="col-op" data-i18n="th_op">ارائه‌دهنده</span>
-        <span class="col-orbit" data-i18n="th_orbit">مدار</span>
-        <span class="col-loc" data-i18n="th_loc">کشور / پایگاه</span>
-        <span class="col-res" data-i18n="th_result">نتیجه</span>
-        <span class="col-x"></span>
-      </div>
-      <div id="missionRows"></div>
-    </div>
-
-    <div class="upcoming">
-      <div class="up-head">
-        <span data-i18n="upcoming">پرتاب‌های پیش‌رو (زنده)</span>
-        <span class="m-count"><b id="mCount">0</b> <span id="projectCountLabel" data-i18n="project">پروژه</span></span>
-      </div>
-      <div id="upList" class="up-list"><div class="up-empty" data-i18n="up_loading">در حال دریافت…</div></div>
-    </div>
-
-  </div>
-</main>
-
-<!-- ============ ORBIT (3D) VIEW ============ -->
+<!-- World Map is the only main view. -->
 
 
 <dialog id="siteGuideDialog" class="site-guide-dialog" aria-labelledby="siteGuideTitle" aria-describedby="siteGuideIntro">
@@ -203,11 +160,6 @@
             <span class="site-guide-task-copy"><strong data-i18n="guide_task_find_title">پیدا کردن یک شرکت، پایگاه یا کشور</strong><small data-i18n="guide_task_find_body">راهنمای نقشه و جست‌وجوی فهرست</small></span>
             <span class="site-guide-task-arrow" aria-hidden="true">↗</span>
           </button>
-          <button class="site-guide-task" type="button" data-guide-open-topic="projects">
-            <span class="site-guide-task-icon" data-guide-icon="projects" aria-hidden="true"></span>
-            <span class="site-guide-task-copy"><strong data-i18n="guide_task_missions_title">دیدن مأموریت‌ها و پرتاب‌های پیش‌رو</strong><small data-i18n="guide_task_missions_body">فیلترها، جدول و زمان‌بندی</small></span>
-            <span class="site-guide-task-arrow" aria-hidden="true">↗</span>
-          </button>
           <button class="site-guide-task" type="button" data-guide-open-topic="metrics">
             <span class="site-guide-task-icon" data-guide-icon="metrics" aria-hidden="true"></span>
             <span class="site-guide-task-copy"><strong data-i18n="guide_task_counts_title">فهمیدن شمارش‌ها و وضعیت‌ها</strong><small data-i18n="guide_task_counts_body">معنی نشان‌ها، آمار و خانه‌های خالی</small></span>
@@ -223,7 +175,6 @@
         <p data-i18n="guide_no_results_body">عبارت دیگری را امتحان کن یا یکی از پیشنهادها را باز کن.</p>
         <div class="site-guide-suggestion-list" data-i18n-aria-label="guide_suggestions_label" aria-label="پیشنهادهای راهنما">
           <button type="button" data-guide-open-topic="map" data-i18n="guide_suggest_map">نقشه و دسته‌ها</button>
-          <button type="button" data-guide-open-topic="projects" data-i18n="guide_suggest_projects">پروژه‌ها و پرتاب‌ها</button>
           <button type="button" data-guide-open-topic="metrics" data-i18n="guide_suggest_metrics">شمارش‌ها و وضعیت‌ها</button>
         </div>
       </section>
@@ -252,11 +203,6 @@
         <details id="guide-topic-country" class="site-guide-section" data-guide-topic="country" data-guide-keywords="کشور شناسنامه آمار مراکز فعال active entities country profile country total nation ملف الدولة البلد المجموع الكيانات">
           <summary><span class="site-guide-topic-icon" data-guide-icon="country" aria-hidden="true"></span><span class="site-guide-summary-copy"><strong data-i18n="guide_country_title">شناسنامهٔ کشور</strong><small class="site-guide-teaser" data-guide-teaser></small></span></summary>
           <div class="site-guide-topic-body"><div class="site-guide-visual" data-guide-visual="country-profile" aria-hidden="true"></div><p class="site-guide-copy" data-i18n="guide_country_body"></p><div class="site-guide-topic-actions"><button type="button" data-guide-command="map-search" data-i18n="guide_open_map">رفتن به نقشه و بازکردن جست‌وجو</button></div></div>
-        </details>
-
-        <details id="guide-topic-projects" class="site-guide-section" data-guide-topic="projects" data-guide-keywords="مأموریت پروژه فضایی پروژه‌های فضایی جدول فیلتر وضعیت مدار نوع مرتب سازی زمان utc پرتاب آینده پیش رو live upcoming launches space projects launch mission project table filters status orbit type sort refresh ll2 launch library 2 المهمة المشاريع الإطلاق القادم">
-          <summary><span class="site-guide-topic-icon" data-guide-icon="projects" aria-hidden="true"></span><span class="site-guide-summary-copy"><strong data-i18n="guide_projects_title">پروژه‌های فضایی</strong><small class="site-guide-teaser" data-guide-teaser></small></span></summary>
-          <div class="site-guide-topic-body"><div class="site-guide-visual" data-guide-visual="missions-table" aria-hidden="true"></div><p class="site-guide-copy" data-i18n="guide_projects_body"></p><div class="site-guide-topic-actions"><button type="button" data-guide-command="missions" data-i18n="guide_open_projects">رفتن به پروژه‌های فضایی</button></div></div>
         </details>
 
         <details id="guide-topic-companies" class="site-guide-section" data-guide-topic="companies" data-guide-keywords="شرکت سازمان آژانس پیشران پرتاب ماهواره پرونده زبانه موتور ناوگان برنامه تاریخچه profile company organization agency propulsion launch satellite manufacturer dossier tabs engines fleet programs history space agency الشركة المؤسسة الوكالة مصنع ملف المحركات">
@@ -395,7 +341,7 @@
             <div class="report-field">
               <label for="reportRecord" data-i18n="report_record">نام یا شناسهٔ رکورد</label>
               <input id="reportRecord" name="record" type="text" maxlength="180" required
-                data-i18n-ph="report_record_ph" placeholder="نام شرکت، مأموریت، پایگاه یا شناسه" />
+                data-i18n-ph="report_record_ph" placeholder="نام شرکت، سازمان، پایگاه یا شناسه" />
             </div>
             <div class="report-field">
               <label for="reportField" data-i18n="report_field">فیلد یا ادعای مورد اختلاف</label>
