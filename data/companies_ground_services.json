@@ -24,12 +24,16 @@
     "orbita_verified_profile": {
       "schema_version": 3,
       "profile_type": "ground_services",
-      "verified_on": "2026-11-12",
-      "review_scope": "Phase-3 evidence-led specialty dossier only; legacy data not recertified; no global coverage claim",
+      "verified_on": "2026-11-13",
+      "review_scope": {
+        "fa": "ارزیابی گزاره‌های منتخب بر اساس منابع رسمی موجود تا ۱۳ نوامبر ۲۰۲۶؛ نه ممیزی کامل همه مدل‌ها، ظرفیت‌های لحظه‌ای یا مشتریان. مشخصات مدل‌ها با شرایط مرجع منبع گزارش شده و نباید به سایر محصولات تعمیم یابد.",
+        "en": "Selected claims reviewed against available official sources as of 13 November 2026; this is not an audit of every product model, real-time capacity or customer. Model specifications retain their source reference conditions.",
+        "ar": "رُوجعت ادعاءات محددة وفق المصادر الرسمية المتاحة حتى ١٣ نوفمبر ٢٠٢٦؛ ولا يشمل ذلك جميع الطرز أو السعة الآنية أو العملاء. تُحفظ شروط القياس المرجعية لكل نموذج ولا تعمم على المنتجات الأخرى."
+      },
       "summary": {
-        "fa": "ارائه‌دهنده خدمات شبکه زمینی و تحویل داده برای مأموریت‌های ماهواره‌ای.",
-        "en": "Ground network and data-delivery services for satellite missions.",
-        "ar": "خدمات الشبكات الأرضية وتوزيع البيانات للمهمات الفضائية."
+        "fa": "کی‌ست اپراتور نروژی شبکه ایستگاه‌های زمینی و خدمات دریافت و تحویل داده ماهواره‌ای است. شبکه ترکیبی آن از ایستگاه‌های قطبی تا عرض‌های میانی گسترده است و خدمات کنترل ماهواره، دانلود داده و آماده‌سازی داده برای مشتریان را پوشش می‌دهد. آمار شبکه کل و زیرشبکه KSATlite باید جداگانه خوانده شود.",
+        "en": "Norway’s KSAT operates a distributed ground-station and satellite-data network. Its services span spacecraft command links, payload downlink and data delivery using polar and mid-latitude sites. The complete network’s counts must be kept separate from the KSATlite subnetwork figures.",
+        "ar": "تدير KSAT النرويجية شبكة محطات أرضية موزعة لخدمات قيادة الأقمار واستقبال الحمولات وتسليم البيانات عبر مواقع قطبية ومتوسطة العرض. ويجب التفريق بين أرقام الشبكة الكاملة وأرقام شبكة KSATlite الفرعية."
       },
       "sources": [
         {
@@ -49,6 +53,18 @@
           "title": "KSAT — KSATlite service",
           "url": "https://www.ksat.no/ground-network-services/ksatlite/",
           "checked_on": "2026-11-12"
+        },
+        {
+          "id": "ks_parent",
+          "title": "Kongsberg Group — KSAT satellite services and network size",
+          "url": "https://www.kongsberg.com/what-we-do/space/satellite-services/",
+          "checked_on": "2026-11-13"
+        },
+        {
+          "id": "ks_nasa",
+          "title": "NASA — Near Space Network ground-station partners",
+          "url": "https://www.nasa.gov/technology/space-comms/near-space-network-complexes/",
+          "checked_on": "2026-11-13"
         }
       ],
       "sections": [
@@ -65,6 +81,20 @@
               "source_ids": [
                 "ks_contact"
               ]
+            },
+            {
+              "fa": "برای یک اپراتور ماهواره، فقط نصب آنتن کافی نیست. زمان‌بندی گذر ماهواره، برقراری ارتباط تله‌متری و فرمان، دریافت داده محموله و انتقال امن داده تا مرکز پردازش، زنجیره خدمت را تشکیل می‌دهند. KSAT زیرساخت این مراحل را به‌صورت خدمات شبکه‌ای عرضه می‌کند و مالکیت آنتن لزوماً به معنی مالکیت ماهواره مشتری نیست.",
+              "en": "Operating an antenna is only part of the ground segment. Contact scheduling, telemetry and commanding, payload download and onward data delivery form a service chain. KSAT sells access to network infrastructure; owning an antenna does not mean owning the customer’s spacecraft.",
+              "ar": "تشمل الخدمة الأرضية أكثر من تشغيل هوائي: جدولة المرور والقياس عن بعد وإرسال الأوامر وتنزيل الحمولة ونقل البيانات. وتوفر KSAT هذه السلسلة كخدمة، ولا تعني ملكية الهوائي ملكية الأقمار التابعة للعملاء.",
+              "heading": {
+                "fa": "مدل خدمات زمینی چیست؟",
+                "en": "What a ground service provider delivers",
+                "ar": "ما الذي تقدمه خدمات الأرض؟"
+              },
+              "source_ids": [
+                "ks_net",
+                "ks_lite"
+              ]
             }
           ]
         },
@@ -78,6 +108,19 @@
               "fa": "KSATlite خدمات خودکار بخش زمینی را برای ارتباط ماهواره‌ای، زمان‌بندی گذرها و مدیریت جریان داده ارائه می‌کند.",
               "en": "KSATlite provides automated ground-segment services for satellite links, pass scheduling and data-flow management.",
               "ar": "توفّر KSATlite خدمات القطاع الأرضي المؤتمتة للاتصالات بالأقمار وجدولة المرور وإدارة تدفق البيانات.",
+              "source_ids": [
+                "ks_lite"
+              ]
+            },
+            {
+              "fa": "KSATlite برای ماهواره‌های کوچک و منظومه‌ها طراحی شده و مدیریت ارتباط، زمان‌بندی و جریان دریافت داده را ساده می‌کند. صفحه رسمی این زیرشبکه شمار آنتن‌ها و ارتباطات ماهانه را به‌صورت آمار خدمات KSATlite منتشر می‌کند؛ نباید آن را با تعداد آنتن‌های کل گروه یکی فرض کرد.",
+              "en": "KSATlite targets small satellites and constellations, simplifying contact scheduling and data flow. Its product page reports antenna and monthly-contact counts for that specific service, which must not be conflated with the wider KSAT corporate network totals.",
+              "ar": "تستهدف KSATlite الأقمار الصغيرة والكوكبات وتبسط جدولة الاتصالات وتدفق البيانات. تنشر صفحة الخدمة عدد الهوائيات والاتصالات الشهرية للشبكة الفرعية، ولا يجوز الخلط بينها وبين إجمالي شبكة الشركة.",
+              "heading": {
+                "fa": "KSATlite و مقیاس خودکارسازی",
+                "en": "KSATlite and automated scale",
+                "ar": "KSATlite وحجم الأتمتة"
+              },
               "source_ids": [
                 "ks_lite"
               ]
@@ -97,6 +140,19 @@
               "source_ids": [
                 "ks_net"
               ]
+            },
+            {
+              "fa": "ایستگاه‌های ترومسو و سوالبارد در شمال و TrollSat در جنوب، برای ماهواره‌های مدار قطبی و خورشیدآهنگ فرصت‌های تماس مکرر فراهم می‌کنند. این یک مزیت هندسی شبکه است، ولی تعداد تماس واقعی هر مأموریت تابع ارتفاع مدار، طراحی آنتن، زمان‌بندی و محدودیت‌های فرکانسی است.",
+              "en": "Tromsø, Svalbard and Antarctic TrollSat provide advantageous geometry for polar and Sun-synchronous orbit contacts. That is a network-level advantage; the actual passes supported for a mission depend on altitude, antenna allocation, schedule and frequency constraints.",
+              "ar": "توفر ترومسو وسفالبارد ومحطة TrollSat في القارة القطبية الجنوبية هندسة مناسبة لاتصالات متكررة مع المدارات القطبية والمزامنة للشمس. لكن عدد الاتصالات الفعلي يعتمد على المدار وتخصيص الهوائيات والجدولة والترددات.",
+              "heading": {
+                "fa": "مزیت هندسه ایستگاه‌های قطبی",
+                "en": "Why polar stations matter",
+                "ar": "أهمية محطات القطبين"
+              },
+              "source_ids": [
+                "ks_parent"
+              ]
             }
           ]
         },
@@ -113,6 +169,20 @@
               "source_ids": [
                 "ks_lite"
               ]
+            },
+            {
+              "fa": "گروه Kongsberg برای KSAT بیش از ۲۸۰ آنتن در ۲۶ محل در سراسر جهان گزارش می‌کند. این عدد بیانگر مقیاس زیرساخت اعلام‌شده در زمان انتشار است، نه اینکه یک مشتری بتواند همه آنتن‌ها را هم‌زمان رزرو کند یا کل شبکه همیشه بدون قطعی در دسترس باشد.",
+              "en": "Kongsberg describes KSAT as operating more than 280 antennas at 26 sites worldwide. This is the published scale of the network, not a promise that any individual client may reserve every antenna simultaneously or that availability is uninterrupted.",
+              "ar": "تذكر Kongsberg تشغيل أكثر من ٢٨٠ هوائياً في ٢٦ موقعاً عالمياً. ويصف ذلك حجم البنية المعلن، وليس ضماناً بأن عميلاً واحداً يستطيع حجز جميع الهوائيات أو أن التوافر مستمر بلا انقطاع.",
+              "heading": {
+                "fa": "تمایز ظرفیت شبکه از ظرفیت مشتری",
+                "en": "Network capacity vs. customer capacity",
+                "ar": "سعة الشبكة مقابل سعة العميل"
+              },
+              "source_ids": [
+                "ks_parent"
+              ],
+              "kind": "caution"
             }
           ]
         },
@@ -130,11 +200,66 @@
                 "ks_net",
                 "ks_lite"
               ]
+            },
+            {
+              "fa": "ناسا در فهرست Near Space Network، ایستگاه‌های تجاری KSAT در سنگاپور، سوالبارد و TrollSat را همراه با باندهای فرکانسی نمونه ثبت می‌کند. این شاهد نقش ایستگاه در زنجیره دریافت و کنترل را نشان می‌دهد، اما نباید به‌عنوان اثبات قرارداد همه مأموریت‌های ناسا با KSAT تفسیر شود.",
+              "en": "NASA’s Near Space Network list identifies commercial KSAT facilities in Singapore, Svalbard and TrollSat with sample supported bands. It demonstrates a recognized ground-network service role, not a claim that every NASA mission contracts with KSAT.",
+              "ar": "تدرج ناسا محطات KSAT التجارية في سنغافورة وسفالبارد وTrollSat ضمن شبكة Near Space Network مع نطاقات ترددها. ويثبت ذلك دوراً للشبكة الأرضية، لا تعاقد جميع مهمات ناسا مع KSAT.",
+              "heading": {
+                "fa": "جایگاه شریک تجاری در شبکه ناسا",
+                "en": "NASA network partner status",
+                "ar": "الشراكة ضمن شبكة ناسا"
+              },
+              "source_ids": [
+                "ks_nasa"
+              ]
             }
           ]
         }
       ],
-      "data_status": "verified_pilot"
+      "data_status": "verified_pilot",
+      "key_facts": [
+        {
+          "label": {
+            "fa": "شبکه جهانی",
+            "en": "Global network",
+            "ar": "الشبكة العالمية"
+          },
+          "value": {
+            "fa": "۲۸۰+ آنتن",
+            "en": "280+ antennas",
+            "ar": "أكثر من ٢٨٠ هوائياً"
+          },
+          "note": {
+            "fa": "عدد اعلام‌شده توسط گروه Kongsberg؛ تاریخ منبع ۲۰۲۶",
+            "en": "Kongsberg group description; source accessed 2026",
+            "ar": "العدد وفق شركة Kongsberg عند مراجعة ٢٠٢٦"
+          },
+          "source_ids": [
+            "ks_parent"
+          ]
+        },
+        {
+          "label": {
+            "fa": "حوزه خدمت",
+            "en": "Service scope",
+            "ar": "نطاق الخدمات"
+          },
+          "value": {
+            "fa": "TT&C / Downlink",
+            "en": "TT&C / Downlink",
+            "ar": "TT&C / Downlink"
+          },
+          "note": {
+            "fa": "تله‌متری و فرمان + دریافت محموله",
+            "en": "Command/telemetry and payload download",
+            "ar": "التحكم والقياس عن بعد وتنزيل بيانات الحمولة"
+          },
+          "source_ids": [
+            "ks_nasa"
+          ]
+        }
+      ]
     }
   }
 ]

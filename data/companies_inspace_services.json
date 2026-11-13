@@ -25,12 +25,16 @@
     "orbita_verified_profile": {
       "schema_version": 3,
       "profile_type": "inspace_services",
-      "verified_on": "2026-11-12",
-      "review_scope": "Phase-3 evidence-led specialty dossier only; legacy data not recertified; no global coverage claim",
+      "verified_on": "2026-11-13",
+      "review_scope": {
+        "fa": "ارزیابی گزاره‌های منتخب بر اساس منابع رسمی موجود تا ۱۳ نوامبر ۲۰۲۶؛ نه ممیزی کامل همه مدل‌ها، ظرفیت‌های لحظه‌ای یا مشتریان. مشخصات مدل‌ها با شرایط مرجع منبع گزارش شده و نباید به سایر محصولات تعمیم یابد.",
+        "en": "Selected claims reviewed against available official sources as of 13 November 2026; this is not an audit of every product model, real-time capacity or customer. Model specifications retain their source reference conditions.",
+        "ar": "رُوجعت ادعاءات محددة وفق المصادر الرسمية المتاحة حتى ١٣ نوفمبر ٢٠٢٦؛ ولا يشمل ذلك جميع الطرز أو السعة الآنية أو العملاء. تُحفظ شروط القياس المرجعية لكل نموذج ولا تعمم على المنتجات الأخرى."
+      },
       "summary": {
-        "fa": "انتقال مداری و استقرار ماهواره‌ها با حامل ION و توسعه خدمات آینده در مدار.",
-        "en": "Orbital transport and satellite deployment with ION, plus a roadmap for further in-orbit services.",
-        "ar": "نقل الأقمار ونشرها مداريّاً بواسطة ION مع خطط لخدمات مدارية أخرى."
+        "fa": "دی‌اوربیت شرکت ایتالیایی لجستیک فضایی است که با وسیله انتقال مداری ION Satellite Carrier خدمات حمل، نگهداری موقت و رهاسازی چند ماهواره در موقعیت‌های مداری موردنیاز مشتری ارائه می‌دهد. باید میان پرتاب با موشک حامل، انتقال درون‌مداری با ION و خدمات آینده‌نگر مانند سرویس‌دهی گسترده در مدار تفاوت گذاشت.",
+        "en": "Italy’s D-Orbit provides space logistics through its ION Satellite Carrier orbital transfer vehicle, hosting and deploying multiple customer spacecraft into planned orbital slots. Launch aboard a rocket, in-orbit deployment by ION and broader future servicing concepts are distinct services and maturity levels.",
+        "ar": "تقدم D-Orbit الإيطالية خدمات لوجستية فضائية عبر مركبة النقل المداري ION التي تحمل عدة أقمار وتنشرها في مواقع مدارية مخصصة. ويجب التمييز بين الإطلاق بالصاروخ والتوزيع في المدار وخدمات الصيانة المستقبلية."
       },
       "sources": [
         {
@@ -50,6 +54,12 @@
           "title": "Italian Trade Agency — D-Orbit company profile",
           "url": "https://www.ice.it/en/sites/default/files/inline-files/italian-participation-at-imdex-asia-2025.pdf",
           "checked_on": "2026-11-12"
+        },
+        {
+          "id": "do_brochure",
+          "title": "D-Orbit — ION transportation and hosted payload service brochure",
+          "url": "https://www.dorbit.space/media/4/37.pdf",
+          "checked_on": "2026-11-13"
         }
       ],
       "sections": [
@@ -74,6 +84,19 @@
               "source_ids": [
                 "do_location"
               ]
+            },
+            {
+              "fa": "موشک، مجموعه ماهواره‌ها را به مدار اولیه می‌رساند؛ ION پس از جدایش از موشک، می‌تواند محموله‌ها را طبق توالی مأموریت نگهداری و جداگانه آزاد کند. نقش دی‌اوربیت در این بخش، لجستیک مرحله پس از پرتاب است و نباید با داشتن ماهواره‌بر مداری مستقل اشتباه گرفته شود.",
+              "en": "A launch vehicle places the group of payloads into an initial orbit. After separation from the rocket, ION carries and releases satellites on its mission timeline. D-Orbit’s role is post-launch orbital logistics, not evidence that the company operates its own orbital launch rocket.",
+              "ar": "يوصل الصاروخ مجموعة الحمولات إلى مدار أولي؛ ثم تحمل ION الأقمار وتطلقها وفق تسلسل المهمة. ويقع دور الشركة في اللوجستيات اللاحقة للإطلاق، لا تشغيل صاروخ مداري خاص بها.",
+              "heading": {
+                "fa": "چه چیزی آن را از شرکت پرتاب جدا می‌کند؟",
+                "en": "What distinguishes an orbital carrier",
+                "ar": "الفرق عن مزود خدمة الإطلاق"
+              },
+              "source_ids": [
+                "do_brochure"
+              ]
             }
           ]
         },
@@ -89,6 +112,32 @@
               "ar": "تُستخدم مركبة ION Satellite Carrier لنقل الأقمار الصناعية ونشرها في مواقع مدارية مستهدفة.",
               "source_ids": [
                 "do_about"
+              ]
+            },
+            {
+              "fa": "ION چند فضاپیما را در محفظه‌ها یا جداکننده‌های مناسب حمل می‌کند و پس از رسیدن به شرایط برنامه‌ریزی‌شده، آن‌ها را در زمان‌های متفاوت رها می‌کند. این انعطاف می‌تواند بخشی از محدودیت‌های زمان و موقعیت جدایش مستقیم از موشک را کاهش دهد؛ ولی هر مشتری باید مشخصات مدار و تغییرات قابل دستیابی را جداگانه بررسی کند.",
+              "en": "ION carries multiple spacecraft in compatible dispensers and releases them individually against mission-specific conditions. This can reduce some limitations of direct launch-vehicle separation, but orbit targeting and achievable changes remain dependent on the contracted mission design.",
+              "ar": "تحمل ION عدة أقمار في موزعات متوافقة وتطلقها بشكل منفصل وفق شروط كل مهمة. قد يقلل ذلك قيود الفصل المباشر من الصاروخ، لكن المدارات الممكنة تعتمد على تصميم الرحلة المتعاقد عليها.",
+              "heading": {
+                "fa": "فرایند استقرار چندمحموله‌ای ION",
+                "en": "ION multi-payload deployment",
+                "ar": "نشر الحمولات المتعددة بواسطة ION"
+              },
+              "source_ids": [
+                "do_brochure"
+              ]
+            },
+            {
+              "fa": "در مدل میزبانی‌شده، آزمایش یا دستگاه مشتری از رابط مکانیکی، توان الکتریکی و تبادل داده خود ION بهره می‌گیرد و می‌تواند بدون ساخت یک باس ماهواره مستقل آزمایش شود. این خدمت با «تحویل ماهواره به مدار» فرق دارد، زیرا ابزار مشتری در طول عملیات بخشی از حامل باقی می‌ماند.",
+              "en": "For hosted payloads, an experiment connects to ION’s mechanical, electrical and data interfaces and can be operated without constructing a standalone spacecraft bus. This is not the same as deploying a free-flying customer satellite: the experiment remains part of the carrier.",
+              "ar": "تستخدم التجربة المستضافة واجهات ION الميكانيكية والكهربائية والبيانية دون الحاجة لبناء منصة قمر مستقلة. ويختلف ذلك عن إطلاق قمر حرّ؛ إذ تبقى التجربة جزءاً من المركبة الحاملة.",
+              "heading": {
+                "fa": "خدمات محموله میزبانی‌شده",
+                "en": "Hosted-payload services",
+                "ar": "خدمات الحمولات المستضافة"
+              },
+              "source_ids": [
+                "do_brochure"
               ]
             }
           ]
@@ -107,6 +156,19 @@
                 "do_about",
                 "do_home"
               ]
+            },
+            {
+              "fa": "برای سنجش تعداد مأموریت‌های ION، صرف جمله «خدمات مداری انجام شده» کافی نیست. لازم است هر پرواز با شناسه وسیله، تاریخ پرتاب، ماهواره‌های حمل‌شده و وضعیت رهاسازی پیوند بخورد. بروشور شرکت دامنه خدمات را توضیح می‌دهد، اما جایگزین فهرست کامل، مستقل و به‌روزرسانی‌شده پروازها نیست؛ این حوزه برای تکمیل آمار به دفتر وقایع اختصاصی نیاز دارد.",
+              "en": "The statement “orbital services have flown” is insufficient to calculate ION mission counts. Each flight should have a vehicle ID, launch date, carried spacecraft and deployment outcome. The company brochure defines services but is not a complete, independently reconciled flight register; a dedicated event ledger remains necessary.",
+              "ar": "لا يكفي القول إن خدمات ION قد نُفذت لحساب المهمات؛ إذ يلزم لكل رحلة معرف مركبة وتاريخ إطلاق وحمولات ونتائج النشر. تشرح النشرة الخدمات لكنها ليست سجلاً كاملاً ومستقلاً للرحلات؛ وتبقى الحاجة إلى سجل أحداث منفصل.",
+              "heading": {
+                "fa": "سابقه مأموریت در سطح وسیله",
+                "en": "Vehicle-level mission heritage",
+                "ar": "سجل المهمات على مستوى المركبة"
+              },
+              "source_ids": [
+                "do_brochure"
+              ]
             }
           ]
         },
@@ -124,6 +186,20 @@
                 "do_about",
                 "do_home"
               ]
+            },
+            {
+              "fa": "بروشور رسمی، خدمات رهاسازی ماهواره و میزبانی ابزار را در سبد قابل ارائه معرفی می‌کند. خدمات گسترده‌تری مانند تعمیر ماهواره، سوخت‌گیری یا جمع‌آوری انبوه پسماند، نیازمند مدرک مأموریت و فناوری مستقل‌اند و صرف وجود هدف راهبردی، به معنی تحقق آن‌ها نیست.",
+              "en": "The official material describes deployment and hosted-payload services as commercial offerings. Broader servicing claims—repair, refueling or large-scale debris removal—need separate vehicle- and mission-level evidence; an aspirational roadmap is not proof of completed orbital operations.",
+              "ar": "تعرض الوثائق الرسمية نشر الأقمار واستضافة الحمولات كخدمات متاحة. أما الصيانة الشاملة أو التزود بالوقود أو إزالة الحطام على نطاق واسع فتحتاج أدلة مستقلة على مستوى المركبة والمهمة؛ فالخطة ليست سجلاً منجزاً.",
+              "heading": {
+                "fa": "مرز خدمات اثبات‌شده و نقشه راه",
+                "en": "Operational offerings versus roadmap",
+                "ar": "الخدمات الحالية مقابل الخطط"
+              },
+              "source_ids": [
+                "do_brochure"
+              ],
+              "kind": "caution"
             }
           ]
         },
@@ -140,11 +216,66 @@
               "source_ids": [
                 "do_about"
               ]
+            },
+            {
+              "fa": "دی‌اوربیت در کنار ION، راهکارهای رهاساز مانند DPOD و DCUBE و خدمات تحلیل مأموریت و آزمون پذیرش را معرفی کرده است. بنابراین زنجیره ارزش آن تنها به «تاکسی فضایی» خلاصه نمی‌شود، بلکه از آماده‌سازی پرتاب و یکپارچه‌سازی تا رهاسازی نهایی امتداد دارد.",
+              "en": "Beyond ION, the company describes DPOD and DCUBE dispensers, mission analysis and acceptance-test support. Its value chain therefore covers more than an orbital “taxi”: payload integration, launch preparation, deployment hardware and in-orbit separation form a linked service offering.",
+              "ar": "إلى جانب ION، تعرض الشركة موزعات DPOD وDCUBE وخدمات تحليل المهمة واختبارات القبول. لذا يمتد نشاطها من تجهيز الحمولة ودمجها إلى معدات النشر والفصل النهائي في المدار.",
+              "heading": {
+                "fa": "ابزارهای مکمل مأموریت",
+                "en": "Supporting deployment hardware",
+                "ar": "معدات النشر المساندة"
+              },
+              "source_ids": [
+                "do_brochure"
+              ]
             }
           ]
         }
       ],
-      "data_status": "verified_pilot"
+      "data_status": "verified_pilot",
+      "key_facts": [
+        {
+          "label": {
+            "fa": "وسیله",
+            "en": "Orbital vehicle",
+            "ar": "المركبة المدارية"
+          },
+          "value": {
+            "fa": "ION",
+            "en": "ION",
+            "ar": "ION"
+          },
+          "note": {
+            "fa": "حمل و رهاسازی محموله در مدار",
+            "en": "Orbital transport and deployment",
+            "ar": "النقل والنشر داخل المدار"
+          },
+          "source_ids": [
+            "do_brochure"
+          ]
+        },
+        {
+          "label": {
+            "fa": "مدل خدمت",
+            "en": "Service model",
+            "ar": "نموذج الخدمة"
+          },
+          "value": {
+            "fa": "Hosted payload",
+            "en": "Hosted payload",
+            "ar": "حمولة مستضافة"
+          },
+          "note": {
+            "fa": "استقرار آزمایش روی باس حامل",
+            "en": "Operate experiments using the carrier bus",
+            "ar": "تشغيل التجارب على متن ناقل الحمولات"
+          },
+          "source_ids": [
+            "do_brochure"
+          ]
+        }
+      ]
     }
   }
 ]

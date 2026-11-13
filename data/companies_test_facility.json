@@ -24,12 +24,16 @@
     "orbita_verified_profile": {
       "schema_version": 3,
       "profile_type": "test_facility",
-      "verified_on": "2026-11-12",
-      "review_scope": "Phase-3 evidence-led specialty dossier only; legacy data not recertified; no global coverage claim",
+      "verified_on": "2026-11-13",
+      "review_scope": {
+        "fa": "ارزیابی گزاره‌های منتخب بر اساس منابع رسمی موجود تا ۱۳ نوامبر ۲۰۲۶؛ نه ممیزی کامل همه مدل‌ها، ظرفیت‌های لحظه‌ای یا مشتریان. مشخصات مدل‌ها با شرایط مرجع منبع گزارش شده و نباید به سایر محصولات تعمیم یابد.",
+        "en": "Selected claims reviewed against available official sources as of 13 November 2026; this is not an audit of every product model, real-time capacity or customer. Model specifications retain their source reference conditions.",
+        "ar": "رُوجعت ادعاءات محددة وفق المصادر الرسمية المتاحة حتى ١٣ نوفمبر ٢٠٢٦؛ ولا يشمل ذلك جميع الطرز أو السعة الآنية أو العملاء. تُحفظ شروط القياس المرجعية لكل نموذج ولا تعمم على المنتجات الأخرى."
+      },
       "summary": {
-        "fa": "تأسیسات اروپایی آزمون محیطی، شامل لرزش، صوت، خلأ حرارتی و سازگاری الکترومغناطیسی.",
-        "en": "European environmental testing facilities for vibration, acoustics, thermal vacuum and electromagnetic compatibility.",
-        "ar": "مرافق أوروبية لاختبار الاهتزاز والصوت والفراغ الحراري والتوافق الكهرومغناطيسي."
+        "fa": "مرکز آزمون ESTEC در نوردویک هلند، زیرساخت تأیید محیطی ماهواره‌ها و تجهیزات فضایی در مجموعه آژانس فضایی اروپاست. این مرکز آزمون‌های ارتعاش، صوت، خلأ حرارتی، سازگاری الکترومغناطیسی و اندازه‌گیری مشخصات فیزیکی را کنار هم ارائه می‌دهد؛ اپراتور آن European Test Services از طرف ESA است.",
+        "en": "The ESTEC Test Centre in Noordwijk is ESA’s environmental-verification infrastructure for spacecraft and payload hardware. It groups vibration, acoustic, thermal-vacuum, electromagnetic-compatibility and physical-property testing in one complex; European Test Services operates it on ESA’s behalf.",
+        "ar": "مركز اختبار ESTEC في نوردفايك بنية تابعة لوكالة الفضاء الأوروبية للتحقق البيئي من المركبات والأجهزة. يجمع اختبارات الاهتزاز والصوت والفراغ الحراري والتوافق الكهرومغناطيسي والخواص الفيزيائية، وتشغله European Test Services نيابة عن ESA."
       },
       "sources": [
         {
@@ -49,6 +53,18 @@
           "title": "ESA — ESTEC establishment",
           "url": "https://www.esa.int/establishment/about-us/meet-us/sites-and-establishments/esa-estec/esa-estec",
           "checked_on": "2026-11-12"
+        },
+        {
+          "id": "et_lss",
+          "title": "ESA — Large Space Simulator characteristics and historical missions",
+          "url": "https://www.esa.int/Enabling_Support/Space_Engineering_Technology/Test_centre/Large_Space_Simulator_LSS",
+          "checked_on": "2026-11-13"
+        },
+        {
+          "id": "et_lss_specs",
+          "title": "ESA Technology — Large Space Simulator technical parameters",
+          "url": "https://technology.esa.int/page/large-space-simulator",
+          "checked_on": "2026-11-13"
         }
       ],
       "sections": [
@@ -74,6 +90,19 @@
               "source_ids": [
                 "et_tech"
               ]
+            },
+            {
+              "fa": "پیش از پرتاب، سازه و زیرسامانه‌های یک ماهواره باید بارهای شدید مرحله پرتاب و شرایط خلأ و تابش خورشیدی را تحمل کنند. در ESTEC می‌توان ماهواره کامل را بین آزمایشگاه‌های مختلف جابه‌جا کرد تا آزمون‌های محیطی پشت سر هم انجام شوند؛ این ساختار جابه‌جایی و تنظیم دوباره نمونه آزمایشی را کاهش می‌دهد.",
+              "en": "Before launch, spacecraft hardware must withstand severe launcher loads and the thermal-vacuum environment of orbit. ESTEC provides facilities through which complete spacecraft can move for successive environmental tests, reducing handling and reconfiguration between test campaigns.",
+              "ar": "قبل الإطلاق ينبغي أن تتحمل الأجهزة أحمال الصاروخ وبيئة الفراغ والحرارة. يتيح ESTEC نقل مركبة كاملة بين تجهيزات الاختبار لإجراء سلسلة تجارب بيئية مع تقليل المناولة وإعادة الضبط بين الاختبارات.",
+              "heading": {
+                "fa": "چرخه آزمون یک ماهواره",
+                "en": "Spacecraft qualification workflow",
+                "ar": "تسلسل تأهيل المركبة"
+              },
+              "source_ids": [
+                "et_about"
+              ]
             }
           ]
         },
@@ -98,6 +127,33 @@
               "source_ids": [
                 "et_about"
               ]
+            },
+            {
+              "fa": "شبیه‌ساز فضایی بزرگ محفظه‌ای با ارتفاع حدود ۱۵ متر و قطر ۱۰ متر است که پمپ‌های خلأ، دیواره‌های سردشونده و چراغ‌های زنون برای بازتولید بخشی از شرایط حرارتی فضا دارد. ESA فشار معمول قابل دستیابی حدود ۵×۱۰⁻⁶ میلی‌بار را در مشخصات فنی معرفی می‌کند. این سامانه برای آزمون چرخه دما، موازنه حرارتی و بازشدن سازه‌ها در شرایط نماینده به کار می‌رود.",
+              "en": "The Large Space Simulator is approximately 15 m high and 10 m in diameter, with vacuum pumps, cooled shrouds and xenon-based solar illumination. ESA specifies typical vacuum levels around 5×10⁻⁶ mbar. Its uses include thermal balance, thermal-vacuum cycling and deployment tests under representative space conditions.",
+              "ar": "يبلغ ارتفاع محاكي الفضاء الكبير نحو ١٥ م وقطره ١٠ م، ويستخدم مضخات فراغ وجدراناً مبردة ومصابيح زينون لمحاكاة الشمس. وتحدد ESA ضغطاً نموذجياً يبلغ نحو ٥×١٠⁻⁶ مليبار. وتشمل الاستخدامات التوازن الحراري ودورات الفراغ ونشر الهياكل.",
+              "heading": {
+                "fa": "محفظه خلأ و خورشید مصنوعی",
+                "en": "Large Space Simulator and artificial Sun",
+                "ar": "محاكاة الفراغ والشمس"
+              },
+              "source_ids": [
+                "et_lss",
+                "et_lss_specs"
+              ]
+            },
+            {
+              "fa": "در آزمایش ارتعاش، شیکرها پاسخ سازه و تجهیزات را به بارهای مشابه پرتاب اندازه می‌گیرند. تأسیسات صوتی LEAF نیز صدای شدید میدان آکوستیکی پرتاب را شبیه‌سازی می‌کند. ESA برای شیکرهای مرکز رده‌هایی تا ۶۴۰ کیلو‌نیوتن و سامانه چندمحوره HYDRA را فهرست می‌کند؛ این اعداد ظرفیت تجهیزات مختلف‌اند، نه یک آزمون واحد.",
+              "en": "Shakers test structural response to launch-like dynamic loads, while the LEAF acoustic chamber recreates intense launch sound fields. ESA lists shaker classes up to 640 kN and the multi-axis HYDRA system. These describe different facilities, not a combined qualification level for every test article.",
+              "ar": "تحاكي أجهزة الهز الأحمال الديناميكية للإطلاق، وتعيد منشأة LEAF إنتاج الضجيج الصوتي الشديد. تُدرج ESA أجهزة اهتزاز حتى ٦٤٠ كيلو نيوتن ونظام HYDRA متعدد المحاور؛ وهذه قدرات مرافق مختلفة لا معياراً موحداً لكل تجربة.",
+              "heading": {
+                "fa": "تحریک ارتعاشی و آزمون صوتی",
+                "en": "Vibration and acoustic facilities",
+                "ar": "اختبارات الاهتزاز والصوت"
+              },
+              "source_ids": [
+                "et_tech"
+              ]
             }
           ]
         },
@@ -114,6 +170,20 @@
               "source_ids": [
                 "et_tech"
               ]
+            },
+            {
+              "fa": "ESA از محموله‌های Galileo، فضاپیمای بپی‌کلمبو، Envisat و فضاپیمای باری ATV به‌عنوان نمونه فعالیت مرکز نام می‌برد. ذکر نام مأموریت در سوابق مرکز، سهم آن در آزمون تجهیزات را نشان می‌دهد؛ با این حال برای نسبت‌دادن یک آزمون مشخص به مدل خاص باید گزارش کمپین همان مأموریت مطالعه شود.",
+              "en": "ESA cites Galileo spacecraft hardware, BepiColombo, Envisat and the ATV cargo spacecraft among the centre’s supported campaigns. A mission name establishes facility involvement at programme level; test-by-test attribution still requires the individual campaign record.",
+              "ar": "تذكر ESA أجهزة Galileo وBepiColombo وEnvisat ومركبة الشحن ATV ضمن الأعمال التي دعمها المركز. ويثبت ذلك مشاركة المنشأة على مستوى البرنامج، أما تفاصيل اختبار مكوّن بعينه فتحتاج تقرير حملته المحدد.",
+              "heading": {
+                "fa": "نمونه‌های مأموریتی ثبت‌شده",
+                "en": "Documented mission examples",
+                "ar": "أمثلة مهمات موثقة"
+              },
+              "source_ids": [
+                "et_tech"
+              ],
+              "kind": "missions"
             }
           ]
         },
@@ -130,6 +200,21 @@
               "source_ids": [
                 "et_about"
               ]
+            },
+            {
+              "fa": "شرکت در کمپین ارتعاش یا خلأ حرارتی به‌معنای تأیید تمام تجهیزات یک سازنده برای همه مأموریت‌ها نیست. هر آزمون با نمونه معین، استاندارد یا پروفایل بار مشخص و معیار پذیرش مخصوص انجام می‌شود. برای اعلام وضعیت «تأیید صلاحیت‌شده» باید گزارش آزمون و شرایط قبولی همان محصول در دسترس باشد، نه فقط نام مرکز آزمون.",
+              "en": "Passing through a vibration or thermal-vacuum facility does not qualify a manufacturer’s entire catalog for all missions. Each campaign uses a defined test article, loading profile and acceptance criterion. Any “qualified” designation needs the actual product-level test report and criteria, not simply the name of the facility.",
+              "ar": "إجراء اختبار اهتزاز أو فراغ حراري لا يؤهل كتالوج شركة بالكامل لكل المهام. لكل حملة نموذج واختبار أحمال ومعايير قبول محددة؛ ولا تثبت حالة «مؤهل» إلا بتقرير الاختبار وشروطه للمنتج المعني.",
+              "heading": {
+                "fa": "آزمون محیطی، گواهی عمومی نیست",
+                "en": "Environmental tests are not blanket certification",
+                "ar": "الاختبار البيئي ليس شهادة شاملة"
+              },
+              "source_ids": [
+                "et_tech",
+                "et_about"
+              ],
+              "kind": "caution"
             }
           ]
         },
@@ -146,11 +231,67 @@
               "source_ids": [
                 "et_tech"
               ]
+            },
+            {
+              "fa": "ETS مرکز آزمون را از طرف ESA بهره‌برداری می‌کند و خدمات آن تنها به پروژه‌های داخلی ESA محدود نیست؛ صنایع فضایی اروپا و برخی کاربردهای غیرفضایی نیز از ظرفیت آن استفاده می‌کنند. این تفکیک مهم است: مالک زیرساخت، بهره‌بردار قراردادی و مشتری آزمون، الزاماً یک شخصیت سازمانی نیستند.",
+              "en": "European Test Services operates the facility on behalf of ESA. Its environmental-test infrastructure is also available to European space-industry and some non-space users. The site owner, contracted operator and test customer are not necessarily the same legal entity.",
+              "ar": "تدير ETS المنشأة نيابة عن ESA وتقدم خدماتها أيضاً إلى الصناعة الفضائية الأوروبية وبعض القطاعات الأخرى. ويجب التمييز بين مالك البنية والمشغل المتعاقد وعميل الاختبار، فقد تكون كيانات مختلفة.",
+              "heading": {
+                "fa": "ساختار بهره‌برداری و مشتریان",
+                "en": "Operator and user base",
+                "ar": "المشغل والجهات المستفيدة"
+              },
+              "source_ids": [
+                "et_about",
+                "et_tech"
+              ]
             }
           ]
         }
       ],
-      "data_status": "verified_pilot"
+      "data_status": "verified_pilot",
+      "key_facts": [
+        {
+          "label": {
+            "fa": "شبیه‌ساز اصلی",
+            "en": "Large Space Simulator",
+            "ar": "المحاكي الفضائي الكبير"
+          },
+          "value": {
+            "fa": "۱۵ × ۱۰ m",
+            "en": "15 × 10 m",
+            "ar": "١٥ × ١٠ م"
+          },
+          "note": {
+            "fa": "ارتفاع × قطر محفظه استوانه‌ای؛ معرفی ESA",
+            "en": "Chamber height × diameter according to ESA",
+            "ar": "ارتفاع × قطر الحجرة وفق ESA"
+          },
+          "source_ids": [
+            "et_lss"
+          ]
+        },
+        {
+          "label": {
+            "fa": "آزمون",
+            "en": "Test families",
+            "ar": "أنواع الاختبارات"
+          },
+          "value": {
+            "fa": "ارتعاش / صوت / خلأ",
+            "en": "Vibration / acoustic / vacuum",
+            "ar": "اهتزاز / صوت / فراغ"
+          },
+          "note": {
+            "fa": "همراه با آزمون سازگاری الکترومغناطیسی",
+            "en": "Also electromagnetic-compatibility testing",
+            "ar": "بالإضافة إلى التوافق الكهرومغناطيسي"
+          },
+          "source_ids": [
+            "et_tech"
+          ]
+        }
+      ]
     },
     "linked_entities": [
       "esa"

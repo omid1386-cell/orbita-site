@@ -24,12 +24,16 @@
     "orbita_verified_profile": {
       "schema_version": 3,
       "profile_type": "ground_station",
-      "verified_on": "2026-11-12",
-      "review_scope": "Phase-3 evidence-led specialty dossier only; legacy data not recertified; no global coverage claim",
+      "verified_on": "2026-11-13",
+      "review_scope": {
+        "fa": "ارزیابی گزاره‌های منتخب بر اساس منابع رسمی موجود تا ۱۳ نوامبر ۲۰۲۶؛ نه ممیزی کامل همه مدل‌ها، ظرفیت‌های لحظه‌ای یا مشتریان. مشخصات مدل‌ها با شرایط مرجع منبع گزارش شده و نباید به سایر محصولات تعمیم یابد.",
+        "en": "Selected claims reviewed against available official sources as of 13 November 2026; this is not an audit of every product model, real-time capacity or customer. Model specifications retain their source reference conditions.",
+        "ar": "رُوجعت ادعاءات محددة وفق المصادر الرسمية المتاحة حتى ١٣ نوفمبر ٢٠٢٦؛ ولا يشمل ذلك جميع الطرز أو السعة الآنية أو العملاء. تُحفظ شروط القياس المرجعية لكل نموذج ولا تعمم على المنتجات الأخرى."
+      },
       "summary": {
-        "fa": "ایستگاه ۳۵متری شبکه ESTRACK با ارتباط باند X و دریافت باندهای K و Ka.",
-        "en": "35-metre ESTRACK antenna with X-band links and K/Ka-band reception.",
-        "ar": "هوائي ESTRACK بقطر 35 متراً لاتصالات نطاق X واستقبال نطاقَي K وKa."
+        "fa": "ایستگاه سبروس DSA-2 در استان آبیلای اسپانیا یکی از آنتن‌های ۳۵متری شبکه فضای دور ESTRACK آژانس فضایی اروپاست. نقش آن دریافت تله‌متری، ارسال فرمان و اندازه‌گیری رادیومتری از کاوشگرهای دوردست است؛ باندهای ارسال و دریافت آن یکسان نیستند و باید جداگانه ثبت شوند.",
+        "en": "Cebreros DSA-2 in Ávila, Spain is a 35 m antenna in ESA’s ESTRACK deep-space network. It supports spacecraft telemetry, commanding and radiometric tracking. Its transmit and receive capabilities differ by frequency band and should not be summarized as identical bidirectional coverage.",
+        "ar": "محطة سيبريروس DSA-2 في مقاطعة آفيلا الإسبانية هوائي قطره ٣٥ م ضمن شبكة ESTRACK للفضاء العميق. تدعم القياس عن بعد وإرسال الأوامر والتتبع الراديوي، وتختلف نطاقات الإرسال والاستقبال ويجب توثيقها منفصلة."
       },
       "sources": [
         {
@@ -55,6 +59,24 @@
           "title": "ESA — BepiColombo operations",
           "url": "https://www.esa.int/articles/about-us/directorates/operations/bepicolombo-operations",
           "checked_on": "2026-11-12"
+        },
+        {
+          "id": "ce_specs",
+          "title": "ESA — Technical Specifications of the Cebreros Antenna",
+          "url": "https://www.esa.int/esapub/bulletin/bulletin124/bul124f_warhout_martin.pdf",
+          "checked_on": "2026-11-13"
+        },
+        {
+          "id": "ce_detail",
+          "title": "ESA — Cebreros DSA 2 operations and equipment",
+          "url": "https://www.esa.int/cs/articles/about-us/directorates/operations/esa-ground-stations/cebreros-dsa-2",
+          "checked_on": "2026-11-13"
+        },
+        {
+          "id": "ce_opsportal",
+          "title": "ESA OPS — Cebreros ground station",
+          "url": "https://esoc.esa.int/cebreros",
+          "checked_on": "2026-11-13"
         }
       ],
       "sections": [
@@ -79,6 +101,20 @@
               "source_ids": [
                 "ce_geo"
               ]
+            },
+            {
+              "fa": "سبروس یک ایستگاه مستقل از مرکز کنترل مأموریت ESOC است؛ آنتن و تجهیزات رادیویی در اسپانیا قرار دارند و هماهنگی شبکه و عملیات مأموریت می‌تواند از دارمشتات انجام شود. بنابراین نقش «ایستگاه زمینی» و «مرکز کنترل» را نباید در ORBITA برای یک رکورد یکسان فرض کرد.",
+              "en": "Cebreros is a physical antenna site distinct from ESA’s ESOC mission control centre. Its RF hardware is in Spain, while network coordination and mission operations can be based in Darmstadt. The “ground station” and “mission control centre” categories refer to different physical and functional entities.",
+              "ar": "سيبريروس موقع هوائي فعلي منفصل عن مركز ESOC للتحكم بالمهمات. تقع معدات التردد الراديوي في إسبانيا، بينما تُنسق عمليات الشبكة من دارمشتات. لذا لا يجوز دمج فئة المحطة الأرضية وفئة مركز التحكم.",
+              "heading": {
+                "fa": "نقش در شبکه ESTRACK",
+                "en": "Role in the ESTRACK network",
+                "ar": "دورها في شبكة ESTRACK"
+              },
+              "source_ids": [
+                "ce_detail",
+                "ce_opsportal"
+              ]
             }
           ]
         },
@@ -95,6 +131,33 @@
               "source_ids": [
                 "ce_station"
               ]
+            },
+            {
+              "fa": "طبق مشخصات ESA، این ایستگاه ارسال و دریافت باند X و دریافت باندهای K و Ka را انجام می‌دهد. بخش RF دارای سامانه هدایت موج، تقویت‌کننده کم‌نویز و بخش ارسال توان‌بالاست. ثبت صرف عبارت «X/Ka» اطلاعات مهندسی کلیدی درباره جهت لینک و نقش هر باند را از بین می‌برد.",
+              "en": "ESA describes X-band transmission and reception, plus K- and Ka-band reception. RF hardware includes a beam-waveguide feed, low-noise receive amplification and high-power transmit chains. A shorthand such as “X/Ka station” obscures the critical direction and purpose of each link.",
+              "ar": "تصف ESA إرسالاً واستقبالاً في نطاق X واستقبالاً في K وKa، مع موجهات موج ومضخمات منخفضة الضوضاء وسلسلة إرسال عالية القدرة. والكتابة المختصرة X/Ka تخفي اتجاه الاتصال ودور كل نطاق.",
+              "heading": {
+                "fa": "چه باندهایی ارسال و دریافت می‌شوند؟",
+                "en": "Transmit and receive bands",
+                "ar": "نطاقات الإرسال والاستقبال"
+              },
+              "source_ids": [
+                "ce_detail",
+                "ce_specs"
+              ]
+            },
+            {
+              "fa": "گزارش فنی ESA قطر بازتابنده را ۳۵ متر، ارتفاع سازه را حدود ۴۰ متر و جرم کلی آن را نزدیک ۶۲۰ تن ثبت کرده است. حداکثر سرعت چرخش هر محور حدود یک درجه بر ثانیه و خطای نشانه‌روی طراحی‌شده ۰٫۰۰۶ درجه ذکر شده است. این اعداد از سند طراحی ایستگاه هستند و وضعیت لحظه‌ای عملکرد را تضمین نمی‌کنند.",
+              "en": "ESA’s technical bulletin specifies a 35 m reflector, approximately 40 m overall structure height and roughly 620 tonnes total mass. It lists a 1°/s axis slew rate and 0.006° pointing error. These are published technical specifications, not live operational measurements.",
+              "ar": "تذكر نشرة ESA عاكساً بقطر ٣٥ م وهيكلاً ارتفاعه نحو ٤٠ م وكتلة كلية تقارب ٦٢٠ طناً. وتحدد سرعة دوران درجة واحدة في الثانية وخطأ توجيه ٠٫٠٠٦ درجة. وهي مواصفات تصميم منشورة لا قياسات تشغيلية لحظية.",
+              "heading": {
+                "fa": "ابعاد، جرم و دقت نشانه‌روی",
+                "en": "Physical size and pointing",
+                "ar": "الأبعاد ودقة التوجيه"
+              },
+              "source_ids": [
+                "ce_specs"
+              ]
             }
           ]
         },
@@ -110,6 +173,20 @@
               "ar": "تذكر ESA دعم ثيبريروس لمهمات مثل Mars Express وBepiColombo وJuice؛ ولا تعني القائمة اتصالاً متصلاً في الزمن الحقيقي.",
               "source_ids": [
                 "ce_station"
+              ]
+            },
+            {
+              "fa": "سبروس علاوه بر انتقال داده، اندازه‌گیری داپلر و فاصله‌سنجی رادیویی را برای تعیین مسیر کاوشگرها انجام می‌دهد. این داده‌ها به تیم ناوبری کمک می‌کند اختلاف حرکت پیش‌بینی‌شده و واقعی را تشخیص دهد؛ ازاین‌رو آنتن فضای دور هم زیرساخت ارتباط است و هم بخشی از زنجیره تعیین مدار.",
+              "en": "Beyond telemetry delivery, Cebreros supports Doppler and radiometric range measurements that inform spacecraft navigation. Such measurements help flight-dynamics teams compare observed motion with the predicted trajectory; the station is both a communications link and a navigation-data sensor.",
+              "ar": "إلى جانب استقبال البيانات، تدعم سيبريروس قياسات دوبلر والمدى الراديوي لتحديد مسار المسبار. تساعد هذه القياسات فرق ديناميكيات الطيران على مقارنة الحركة المرصودة بالمسار المتوقع، فتكون المحطة رابط اتصال وأداة ملاحة أيضاً.",
+              "heading": {
+                "fa": "ردیابی و اندازه‌گیری رادیومتری",
+                "en": "Tracking and radiometric measurements",
+                "ar": "التتبع والقياسات الراديوية"
+              },
+              "source_ids": [
+                "ce_detail",
+                "ce_opsportal"
               ]
             }
           ]
@@ -128,6 +205,21 @@
                 "ce_station",
                 "ce_ops"
               ]
+            },
+            {
+              "fa": "قطر بزرگ آنتن به‌تنهایی تضمین تماس همیشگی با هر کاوشگر نیست. مسیر دید از زمین، وضعیت جو، فاصله تا فضاپیما، تداخل برنامه مأموریت‌ها و تخصیص زمان شبکه، بازه‌های تماس را تعیین می‌کنند. بنابراین نباید از مختصات ایستگاه یک «نقشه پوشش بلادرنگ» بدون داده افمریس و برنامه بهره‌برداری ساخت.",
+              "en": "A large dish does not guarantee uninterrupted contact with every probe. Line-of-sight geometry, atmosphere, range, competing mission schedules and network allocation determine usable passes. A real-time coverage map cannot be inferred from the station coordinates alone without ephemerides and operating schedules.",
+              "ar": "لا يضمن قطر الهوائي الكبير اتصالاً مستمراً بكل مسبار؛ إذ تحدد هندسة الرؤية والغلاف الجوي والمسافة والجدولة زمن الاتصال. ولا يمكن إنتاج خريطة تغطية فورية من إحداثيات المحطة وحدها دون بيانات المدار وجدول العمليات.",
+              "heading": {
+                "fa": "پوشش واقعی و زمان‌بندی تماس",
+                "en": "Actual visibility and scheduling",
+                "ar": "الرؤية الفعلية وجدولة الاتصال"
+              },
+              "source_ids": [
+                "ce_detail",
+                "ce_opsportal"
+              ],
+              "kind": "caution"
             }
           ]
         },
@@ -144,11 +236,67 @@
               "source_ids": [
                 "ce_open"
               ]
+            },
+            {
+              "fa": "ساخت ایستگاه در سال ۲۰۰۴ آغاز و افتتاح رسمی آن در سپتامبر ۲۰۰۵ انجام شد؛ نخستین سیگنال باند X از Venus Express در نوامبر همان سال دریافت شد. این تاریخچه، ارتباط آغاز بهره‌برداری آنتن با مأموریت زهره را مستند می‌کند و از تاریخ ساخت مرکز کنترل ESOC جداست.",
+              "en": "Construction began in 2004 and the station was inaugurated in September 2005. Its first X-band signal from Venus Express was received that November. This station timeline is distinct from the much earlier history of ESOC in Darmstadt.",
+              "ar": "بدأ البناء عام ٢٠٠٤ وافتُتحت المحطة في سبتمبر ٢٠٠٥، وتلقت أول إشارة X من Venus Express في نوفمبر من السنة نفسها. ويختلف تاريخ هذه المحطة عن تاريخ مركز ESOC الأقدم في دارمشتات.",
+              "heading": {
+                "fa": "شروع عملیات در ۲۰۰۵",
+                "en": "Commissioning and early operations",
+                "ar": "بداية التشغيل عام ٢٠٠٥"
+              },
+              "source_ids": [
+                "ce_detail",
+                "ce_open"
+              ]
             }
           ]
         }
       ],
-      "data_status": "verified_pilot"
+      "data_status": "verified_pilot",
+      "key_facts": [
+        {
+          "label": {
+            "fa": "قطر بازتابنده",
+            "en": "Dish diameter",
+            "ar": "قطر العاكس"
+          },
+          "value": {
+            "fa": "۳۵ متر",
+            "en": "35 metres",
+            "ar": "٣٥ متراً"
+          },
+          "note": {
+            "fa": "آنتن ارتباط فضای دور",
+            "en": "Deep-space communications antenna",
+            "ar": "هوائي اتصالات الفضاء العميق"
+          },
+          "source_ids": [
+            "ce_detail"
+          ]
+        },
+        {
+          "label": {
+            "fa": "ارتباط رادیویی",
+            "en": "RF coverage",
+            "ar": "التغطية الراديوية"
+          },
+          "value": {
+            "fa": "X Tx/Rx",
+            "en": "X Tx/Rx",
+            "ar": "X إرسال/استقبال"
+          },
+          "note": {
+            "fa": "دریافت K و Ka نیز مستند شده است",
+            "en": "K and Ka receive capability also listed",
+            "ar": "استقبال K وKa موثق أيضاً"
+          },
+          "source_ids": [
+            "ce_detail"
+          ]
+        }
+      ]
     },
     "linked_entities": [
       "esa",

@@ -174,12 +174,16 @@
     "orbita_verified_profile": {
       "schema_version": 3,
       "profile_type": "payloads",
-      "verified_on": "2026-11-12",
-      "review_scope": "Phase-3 evidence-led specialty dossier only; legacy data not recertified; no global coverage claim",
+      "verified_on": "2026-11-13",
+      "review_scope": {
+        "fa": "ارزیابی گزاره‌های منتخب بر اساس منابع رسمی موجود تا ۱۳ نوامبر ۲۰۲۶؛ نه ممیزی کامل همه مدل‌ها، ظرفیت‌های لحظه‌ای یا مشتریان. مشخصات مدل‌ها با شرایط مرجع منبع گزارش شده و نباید به سایر محصولات تعمیم یابد.",
+        "en": "Selected claims reviewed against available official sources as of 13 November 2026; this is not an audit of every product model, real-time capacity or customer. Model specifications retain their source reference conditions.",
+        "ar": "رُوجعت ادعاءات محددة وفق المصادر الرسمية المتاحة حتى ١٣ نوفمبر ٢٠٢٦؛ ولا يشمل ذلك جميع الطرز أو السعة الآنية أو العملاء. تُحفظ شروط القياس المرجعية لكل نموذج ولا تعمم على المنتجات الأخرى."
+      },
       "summary": {
-        "fa": "سازنده محموله‌های تصویربرداری الکترواپتیکی برای ماهواره‌ها؛ همچنین سازنده فضاپیمای کامل.",
-        "en": "Manufacturer of electro-optical satellite imaging payloads and complete spacecraft.",
-        "ar": "شركة مصنّعة لحمولات التصوير الكهروضوئي للأقمار الصناعية وللمركبات الفضائية الكاملة."
+        "fa": "دراگون‌فلای ایروسپیس تولیدکننده محموله‌های تصویربرداری برای ماهواره‌های کوچک است. دوربین DragonEye آن نمونه‌ای قابل ارزیابی است زیرا سازنده برای جرم، پهنای نوار تصویر، تفکیک مکانی، توان مصرفی و سابقه پرتاب مشخصات جداگانه منتشر کرده است؛ اعداد به ارتفاع و حالت تصویربرداری وابسته‌اند.",
+        "en": "Dragonfly Aerospace makes imaging payloads for small satellites. Its DragonEye instrument is useful for technical comparison because the manufacturer publishes separate mass, swath, spatial-resolution, power and flight-heritage figures, explicitly tied to observation altitude and imaging mode.",
+        "ar": "تصنّع دراغونفلاي حمـولات التصوير للأقمار الصغيرة. ويتيح جهاز DragonEye مقارنة هندسية لأنه يمتلك مواصفات منشورة للكتلة وعرض المسح والدقة المكانية والطاقة وسجل الإطلاق، وفق ارتفاع الرصد ونمط التصوير."
       },
       "sources": [
         {
@@ -199,6 +203,12 @@
           "title": "Dragonfly Aerospace — Camera roadmap",
           "url": "https://dragonflyaerospace.com/cameras-roadmap/",
           "checked_on": "2026-11-12"
+        },
+        {
+          "id": "df_detail",
+          "title": "Dragonfly Aerospace — DragonEye detailed technical specification",
+          "url": "https://dragonflyaerospace.com/smallsat-cameras/dragoneye/",
+          "checked_on": "2026-11-13"
         }
       ],
       "sections": [
@@ -214,6 +224,19 @@
               "ar": "تطوّر الشركة، ومقرّها ستيلينبوش بجنوب أفريقيا، كاميرات وحمولات تصوير للأقمار الصغيرة.",
               "source_ids": [
                 "df_camera"
+              ]
+            },
+            {
+              "fa": "ارزش افزوده این نقش، طراحی زنجیره اپتیکی و الکترونیک تصویربرداری است. دوربین باید به باس ماهواره متصل شود و توان، ارتباط داده، کنترل دما و پایداری نشانه‌روی مناسب دریافت کند. وجود شرکت در دو دسته به معنی دو شرکت مستقل نیست، بلکه نشان‌دهنده دو نقش صنعتی است.",
+              "en": "The payload role concerns optical design and imaging electronics. An imager still depends on a spacecraft bus for power, data handling, thermal control and stable pointing. Appearing in two categories means two industrial roles, not two independent companies.",
+              "ar": "يتمثل دور صانع الحمولة في تصميم البصريات وإلكترونيات التصوير. وتعتمد الكاميرا على منصة القمر للطاقة والبيانات والتحكم الحراري وتثبيت التوجيه. ولا يعني ظهور الشركة في فئتين وجود شركتين منفصلتين.",
+              "heading": {
+                "fa": "تفاوت سازنده محموله و سازنده ماهواره",
+                "en": "Payload maker vs. satellite maker",
+                "ar": "الفرق بين صانع الحمولة وصانع القمر"
+              },
+              "source_ids": [
+                "df_detail"
               ]
             }
           ]
@@ -239,6 +262,32 @@
               "source_ids": [
                 "df_camera"
               ]
+            },
+            {
+              "fa": "برگه DragonEye در ارتفاع ۵۰۰ کیلومتر، تفکیک ۱٫۴ متر در حالت پانکروماتیک و ۲٫۸ متر در حالت چندطیفی با ادغام پیکسل را اعلام می‌کند. پهنای نوار تصویر ۲۲٫۲ کیلومتر و ساختار حسگر شامل ۱۰ باند چندطیفی و یک باند پانکروماتیک است؛ این مقادیر باید همراه شرط ارتفاع ثبت شوند.",
+              "en": "At a 500 km reference altitude the DragonEye data sheet lists 1.4 m panchromatic and 2.8 m binned multispectral GSD, 22.2 km swath, ten multispectral bands and one panchromatic band. The altitude and binning condition must accompany any comparison of these numbers.",
+              "ar": "عند ارتفاع مرجعي ٥٠٠ كم، تحدد ورقة DragonEye دقة ١٫٤ م بانكروماتية و٢٫٨ م متعددة الأطياف بعد تجميع البكسلات، وعرض مسح ٢٢٫٢ كم، مع عشرة نطاقات متعددة الأطياف ونطاق بانكروماتي واحد. ويجب ذكر شروط الارتفاع والتجميع.",
+              "heading": {
+                "fa": "مشخصات اپتیکی DragonEye",
+                "en": "DragonEye optical characteristics",
+                "ar": "خصائص DragonEye البصرية"
+              },
+              "source_ids": [
+                "df_detail"
+              ]
+            },
+            {
+              "fa": "جرم مجموعه همراه با الکترونیک ۱۸ کیلوگرم است. توان مصرفی در حالت تصویربرداری کمتر از ۴۵ وات و در حالت خوانش کمتر از ۲۵ وات و تغذیه نامی ۲۸ ولت اعلام شده است. رابط چندگیگابیتی و LVDS و امکان فشرده‌سازی RAW/J2K به یکپارچه‌سازی محموله با سامانه داده ماهواره مربوط می‌شوند.",
+              "en": "The published camera-plus-electronics mass is 18 kg; imaging power is specified below 45 W, readout below 25 W, with 28 V DC input. Multi-gigabit and LVDS data interfaces, together with RAW/J2K compression options, are relevant to spacecraft bus integration.",
+              "ar": "تبلغ كتلة الكاميرا مع الإلكترونيات ١٨ كغ، والطاقة أقل من ٤٥ واط في التصوير و٢٥ واط في القراءة، بجهد ٢٨ فولت. وتُستخدم واجهات البيانات السريعة وLVDS وخيارات ضغط RAW/J2K عند دمج الحمولة مع منصة القمر.",
+              "heading": {
+                "fa": "توان، رابط داده و اندازه",
+                "en": "Power, data and physical integration",
+                "ar": "الطاقة وواجهات البيانات"
+              },
+              "source_ids": [
+                "df_detail"
+              ]
             }
           ]
         },
@@ -253,6 +302,20 @@
               "en": "EOSSAT-1 launched on 3 January 2023 with two DragonEye imagers, for agriculture and forestry monitoring.",
               "ar": "أُطلق القمر EOSSAT-1 في 3 يناير 2023 وعلى متنه كاميرتا DragonEye لرصد الزراعة والغابات.",
               "source_ids": [
+                "df_mission"
+              ]
+            },
+            {
+              "fa": "دراگون‌فلای اعلام می‌کند دو دوربین DragonEye در سال ۲۰۲۳ پرتاب شده‌اند و پرونده EOSSAT-1 را به این محصول پیوند می‌دهد. این مدرک سابقه پرتاب همین مدل را پشتیبانی می‌کند، نه همه دوربین‌های فهرست محصولات شرکت و نه الزاماً موفقیت همه شاخص‌های عملکرد مداری.",
+              "en": "Dragonfly reports two DragonEye imagers launched in 2023 and links the product to EOSSAT-1. This supports launch heritage for that model, not every camera in its catalog and not, on its own, a comprehensive independent measure of on-orbit imaging performance.",
+              "ar": "تذكر دراغونفلاي إطلاق كاميرتي DragonEye عام ٢٠٢٣ وتربط المنتج بالقمر EOSSAT-1. ويدعم ذلك سجل إطلاق الطراز نفسه، لا كل كاميرات الشركة ولا التحقق المستقل من جميع مؤشرات الأداء في المدار.",
+              "heading": {
+                "fa": "سابقه پرواز مشخص، نه عمومی",
+                "en": "Model-specific flight heritage",
+                "ar": "سجل طيران محدد للطراز"
+              },
+              "source_ids": [
+                "df_detail",
                 "df_mission"
               ]
             }
@@ -271,6 +334,19 @@
               "source_ids": [
                 "df_camera"
               ]
+            },
+            {
+              "fa": "رزولوشن زمینی DragonEye به ارتفاع تصویربرداری، هندسه دید و پردازش تصویر وابسته است. بنابراین مقادیر ۱٫۴ و ۲٫۸ متر باید با شرط ارتفاع ۵۰۰ کیلومتر و حالت تصویربرداری ثبت شوند؛ از عدد رزولوشن نمی‌توان کیفیت همه تصاویر یا دقت مکانی نهایی محصول مشتری را نتیجه گرفت.",
+              "en": "DragonEye GSD depends on imaging altitude, observation geometry and processing. The 1.4 m and 2.8 m figures must retain their 500 km altitude and imaging-mode conditions; nominal GSD alone does not establish the quality or geolocation accuracy of every customer image.",
+              "ar": "تعتمد الدقة الأرضية لـ DragonEye على الارتفاع وهندسة الرؤية والمعالجة. ويجب ربط قيمتي ١٫٤ و٢٫٨ م بارتفاع ٥٠٠ كم ونمط التصوير؛ فلا تثبت الدقة الاسمية جودة جميع الصور أو دقة تحديد المواقع النهائية.",
+              "heading": {
+                "fa": "شرایط اعلام مشخصات",
+                "en": "Reference conditions for performance",
+                "ar": "شروط المواصفات المرجعية"
+              },
+              "source_ids": [
+                "df_detail"
+              ]
             }
           ]
         },
@@ -287,11 +363,67 @@
               "source_ids": [
                 "df_roadmap"
               ]
+            },
+            {
+              "fa": "در تحلیل محموله‌ها، دوربین مرئی با دوربین فروسرخ یا چندطیفی نباید تنها با یک عدد «رزولوشن» مقایسه شود. ارتفاع مرجع، پهنای طیفی، پهنای نوار، نسبت جرم به توان و مرحله بلوغ فناوری باید برای هر مدل در جدول جدا درج شوند؛ نام مدل آینده دلیل بر سابقه پرواز نیست.",
+              "en": "Visible, infrared and multispectral imagers cannot be compared by a single “resolution” number. Reference altitude, spectral response, swath, mass, power and maturity should be recorded per model; an announced future model is not evidence of flight heritage.",
+              "ar": "لا يمكن مقارنة الكاميرات المرئية وتحت الحمراء ومتعددة الأطياف برقم دقة واحد. ويجب توثيق ارتفاع المرجع والنطاقات الطيفية وعرض المسح والكتلة والطاقة والنضج لكل طراز، فإعلان طراز مستقبلي ليس إثباتاً لطيرانه.",
+              "heading": {
+                "fa": "چگونه خانواده محصولات مقایسه می‌شود",
+                "en": "Comparing the product roadmap",
+                "ar": "كيفية مقارنة خارطة المنتجات"
+              },
+              "source_ids": [
+                "df_roadmap"
+              ],
+              "kind": "caution"
             }
           ]
         }
       ],
-      "data_status": "verified_pilot"
+      "data_status": "verified_pilot",
+      "key_facts": [
+        {
+          "label": {
+            "fa": "تفکیک زمینی",
+            "en": "GSD at 500 km",
+            "ar": "الدقة الأرضية عند ٥٠٠ كم"
+          },
+          "value": {
+            "fa": "۱٫۴ متر PAN",
+            "en": "1.4 m PAN",
+            "ar": "١٫٤ م بانكروماتي"
+          },
+          "note": {
+            "fa": "باند پانکروماتیک؛ چندطیفی ۲٫۸ متر",
+            "en": "Panchromatic; multispectral binned 2.8 m",
+            "ar": "بانكروماتي؛ متعدد الأطياف ٢٫٨ م"
+          },
+          "source_ids": [
+            "df_detail"
+          ]
+        },
+        {
+          "label": {
+            "fa": "جرم دوربین",
+            "en": "Camera mass",
+            "ar": "كتلة الكاميرا"
+          },
+          "value": {
+            "fa": "۱۸ kg",
+            "en": "18 kg",
+            "ar": "١٨ كغ"
+          },
+          "note": {
+            "fa": "با الکترونیک؛ طبق برگه محصول",
+            "en": "Including electronics, product specification",
+            "ar": "بما فيها الإلكترونيات وفق ورقة المنتج"
+          },
+          "source_ids": [
+            "df_detail"
+          ]
+        }
+      ]
     }
   }
 ]

@@ -10089,62 +10089,93 @@
     if (!obj) return "";
     return String(obj[LANG] || obj.en || obj.fa || "");
   }
+  // ORBITA quality pass: verified specialists use the established dossier tab,
+  // metrics, card and evidence patterns. Evidence is indexed once, never
+  // repeatedly rendered as a long URL/title under the editorial text.
   function renderVerifiedSpecialistProfile(p) {
     var o = p.o, pf = o.orbita_verified_profile;
     if (!pf || !Array.isArray(pf.sections)) return "";
-    var isLab = pf.profile_type === "university_space";
-    var hasPublishedLocation = o.coordinate_precision === "esa_published_station_coordinate";
     var role = layerName(pf.profile_type, true);
-    var logo = o.logo || "";
-    var label = LANG === "fa" ? {
-      type: "نشان اختصاصی ORBITA، نه لوگوی رسمی", since: "تأیید منابع", location: "موقعیت روی نقشه (حدودی)",
-      source: "منابع مستند", noData: "اطلاعات تأییدشده‌ای برای این مورد منتشر نشده است", parent: "وابستگی دانشگاهی", more: "جزئیات و مستندات", publishedLocation: "موقعیت منتشرشده توسط ESA (نه مرز تأسیسات)"
-    } : LANG === "ar" ? {
-      type: "رمز بصري خاص بـ ORBITA، وليس شعاراً رسمياً", since: "تاريخ مراجعة المصادر", location: "موقع تقريبي على الخريطة",
-      source: "المصادر الموثّقة", noData: "لا توجد معلومات موثّقة منشورة هنا", parent: "الجهة الجامعية", more: "التفاصيل والأدلة", publishedLocation: "موقع منشور من ESA (ليس حدود المنشأة)"
-    } : {
-      type: "ORBITA editorial mark, not an official logo", since: "Sources reviewed", location: "Approximate map location",
-      source: "Documented sources", noData: "No independently verified information published for this field", parent: "Parent institution", more: "Evidence and details", publishedLocation: "ESA-published station coordinates (not property boundaries)"
+    var isLab = pf.profile_type === "university_space";
+    var atEsaCoordinate = o.coordinate_precision === "esa_published_station_coordinate";
+    var tr = function(fa, en, ar) { return LANG === 'fa' ? fa : LANG === 'ar' ? ar : en; };
+    var labels = {
+      mark:tr("نشان طراحی‌شده ORBITA؛ لوگوی رسمی نیست", "ORBITA-designed mark; not an official logo", "رمز صممته ORBITA؛ ليس شعاراً رسمياً"),
+      evidence:tr("منابع و مدارک", "Sources & evidence", "المصادر والأدلة"),
+      source:tr("مدرک", "Source", "المصدر"),
+      check:tr("آخرین بررسی منابع", "Sources last reviewed", "آخر مراجعة للمصادر"),
+      location:tr("موقعیت نقشه تقریبی است", "Map location is approximate", "موقع الخريطة تقريبي"),
+      precise:tr("مختصات منتشرشده ESA؛ نه مرز تأسیسات", "ESA-published coordinates; not site boundaries", "إحداثيات نشرتها ESA؛ لا تحدد حدود المنشأة"),
+      parent:tr("نهاد مادر", "Parent institution", "المؤسسة الأم"),
+      noData:tr("داده مستند کافی برای این تب ثبت نشده است.", "Insufficient sourced data for this tab.", "لا تتوفر بيانات موثقة كافية لهذا التبويب."),
+      scope:tr("دامنه و محدودیت شواهد", "Evidence scope and limitations", "نطاق الأدلة وحدودها"),
+      editorial:tr("اطلاعات و تحلیل مستند", "Sourced technical overview", "نظرة تقنية مستندة"),
+      goHome:tr("وب‌سایت رسمی", "Official website", "الموقع الرسمي")
     };
-    var html = '<section class="verified-profile" data-scope="' + esc(pf.profile_type) + '">' +
-      '<header class="verified-profile-head">' + (logo ? '<img class="verified-profile-logo" src="' + esc(logo) + '" alt="" />' : '') +
-      '<div><p class="verified-profile-kind">' + esc(role) + '</p><h2 class="d-title">' + esc(name(o)) + '</h2>' +
-      '<p class="verified-profile-sub">' + esc(verifiedText(pf.summary) || desc(o)) + '</p><small class="verified-profile-editorial">' + esc(label.type) + '</small></div></header>';
-    html += '<div class="verified-profile-meta">' +
-      '<span><b>' + esc(t("country")) + ':</b> ' + esc(LANG === "fa" ? (o.country_fa || o.country) : LANG === "ar" ? (o.country_ar || o.country) : o.country) + '</span>' +
-      '<span><b>' + esc(t("city")) + ':</b> ' + esc(LANG === "fa" ? (o.city_fa || o.city) : LANG === "ar" ? (o.city_ar || o.city) : o.city) + '</span>' +
-      (isLab && o.parent_institution ? '<span><b>' + esc(label.parent) + ':</b> ' + esc(o.parent_institution) + '</span>' : '') +
-      '<span><b>' + esc(label.since) + ':</b> ' + esc(pf.verified_on) + '</span>' +
-      '<span>' + esc(hasPublishedLocation ? label.publishedLocation : label.location) + '</span></div>';
-    html += '<nav class="verified-tabs" role="tablist" aria-label="' + esc(role) + '">';
-    pf.sections.forEach(function (section, i) {
-      html += '<button class="verified-tab' + (i === 0 ? ' active' : '') + '" type="button" role="tab" data-verified-index="' + i + '" aria-selected="' + (i === 0 ? 'true' : 'false') + '">' + esc(verifiedText(section)) + '</button>';
+    var ids = Object.create(null), citedIds = [], byId = Object.create(null);
+    (pf.sources || []).forEach(function(src) {
+      if (!src || !src.id || !/^https:\/\//.test(src.url || '') || byId[src.id]) return;
+      byId[src.id] = src;
+    });
+    (pf.key_facts || []).forEach(function(fact) {
+      (fact.source_ids || []).forEach(function(id) {if (byId[id] && !ids[id]) {ids[id]=true;citedIds.push(id);}});
+    });
+    (pf.sections || []).forEach(function(sec) {
+      (sec.items || []).forEach(function(item) {
+        (item.source_ids || []).forEach(function(id) {
+          if (byId[id] && !ids[id]) { ids[id] = true; citedIds.push(id); }
+        });
+      });
+    });
+    citedIds.forEach(function(id,i){ids[id]=i+1;});
+    var html = '<section class="verified-profile verified-profile-v2" data-scope="' + esc(pf.profile_type) + '">';
+    html += '<header class="verified-profile-head"><div class="verified-profile-logo-wrap">' +
+      (o.logo ? '<img class="verified-profile-logo" src="'+esc(o.logo)+'" alt="" loading="lazy" />' : '<span class="verified-profile-logo-placeholder">◈</span>') +
+      '</div><div class="verified-profile-header-text"><p class="d-kicker">'+esc(role)+'</p>' +
+      '<h2 class="d-title">'+esc(name(o))+'</h2><p class="d-desc verified-profile-sub">' +
+      esc(verifiedText(pf.summary) || desc(o)) + '</p><small class="verified-profile-editorial">'+esc(labels.mark)+'</small></div></header>';
+    html += '<div class="grid2 verified-profile-overview">' +
+      '<div class="cell"><small>'+esc(t('country'))+'</small><b>'+esc(LANG==='fa'?(o.country_fa||o.country):LANG==='ar'?(o.country_ar||o.country):o.country)+'</b></div>' +
+      '<div class="cell"><small>'+esc(t('city'))+'</small><b>'+esc(LANG==='fa'?(o.city_fa||o.city):LANG==='ar'?(o.city_ar||o.city):o.city)+'</b></div>' +
+      (isLab && o.parent_institution ? '<div class="cell"><small>'+esc(labels.parent)+'</small><b>'+esc(o.parent_institution)+'</b></div>' : '') +
+      '<div class="cell"><small>'+esc(labels.check)+'</small><b>'+esc(pf.verified_on || '—')+'</b></div></div>';
+    if (Array.isArray(pf.key_facts) && pf.key_facts.length) {
+      html += '<div class="verified-highlights" aria-label="'+esc(labels.editorial)+'">';
+      pf.key_facts.forEach(function(fact){
+        html += '<div class="verified-highlight"><small>'+esc(verifiedText(fact.label))+'</small><strong dir="auto">'+esc(verifiedText(fact.value))+'</strong>'+
+          (fact.note ? '<span>'+esc(verifiedText(fact.note))+'</span>' : '')+ (fact.source_ids || []).filter(function(sid){return byId[sid] && ids[sid];}).map(function(sid){return '<a class="verified-citation" href="'+esc(byId[sid].url)+'" target="_blank" rel="noopener noreferrer" title="'+esc(byId[sid].title)+'">['+ids[sid]+']</a>';}).join('')+'</div>';
+      });
+      html += '</div>';
+    }
+    html += '<p class="verified-location-note">'+esc(atEsaCoordinate?labels.precise:labels.location)+'</p>';
+    html += '<nav class="site-tabs verified-tabs" role="tablist" aria-label="'+esc(role)+'">';
+    pf.sections.forEach(function(sec,i){
+      html += '<button class="site-tab-btn verified-tab'+(i===0?' active':'')+'" type="button" role="tab" id="verified-tab-'+i+'" aria-controls="verified-panel-'+i+'" data-verified-index="'+i+'" aria-selected="'+(i===0?'true':'false')+'" tabindex="'+(i===0?'0':'-1')+'">'+esc(verifiedText(sec))+'</button>';
     });
     html += '</nav>';
-    var sourceById = Object.create(null);
-    (pf.sources || []).forEach(function (source) { if (source && source.id) sourceById[source.id] = source; });
-    pf.sections.forEach(function (section, i) {
-      html += '<section class="verified-panel' + (i === 0 ? ' active' : '') + '" role="tabpanel" data-verified-panel="' + i + '"' + (i === 0 ? '' : ' hidden') + '>';
-      (section.items || []).forEach(function (item) {
-        var links = (item.source_ids || []).map(function (sourceId) {
-          var ref = sourceById[sourceId];
-          // Only allow plain https source URLs from the reviewed manifest; no JS URLs.
-          if (!ref || !/^https:\/\//.test(ref.url)) return '';
-          return '<a href="' + esc(ref.url) + '" target="_blank" rel="noopener noreferrer" title="' + esc(ref.title) + '">' + esc(ref.title) + ' ↗</a>';
-        }).filter(Boolean);
-        html += '<article class="verified-claim"><p>' + esc(verifiedText(item)) + '</p>' +
-          (links.length ? '<div class="verified-claim-sources">' + links.join(' · ') + '</div>' : '') + '</article>';
+    pf.sections.forEach(function(sec,i){
+      html += '<section class="site-tab-content verified-panel'+(i===0?' active':'')+'" id="verified-panel-'+i+'" aria-labelledby="verified-tab-'+i+'" role="tabpanel" data-verified-panel="'+i+'"'+(i===0?'':' hidden')+'>';
+      if (sec.intro && verifiedText(sec.intro)) html += '<p class="verified-section-intro">'+esc(verifiedText(sec.intro))+'</p>';
+      (sec.items || []).forEach(function(item,j){
+        var refs=(item.source_ids || []).filter(function(id){ return byId[id] && ids[id]; });
+        var kind=(item.kind||(['identity','technical','missions','operations','history'][i]||'technical'));
+        if (!/^(identity|technical|missions|operations|history|caution)$/.test(kind)) kind='technical';
+        html += '<article class="verified-claim verified-claim-'+kind+'">' +
+          (item.heading ? '<h3 class="verified-claim-heading">'+esc(verifiedText(item.heading))+'</h3>' : '') +
+          '<p class="verified-claim-copy">'+esc(verifiedText(item))+'</p>' +
+          (refs.length ? '<div class="verified-claim-sources" aria-label="'+esc(labels.evidence)+'">' + refs.map(function(id){
+             return '<a class="verified-citation" href="'+esc(byId[id].url)+'" target="_blank" rel="noopener noreferrer" title="'+esc(byId[id].title||labels.source)+'" aria-label="'+esc(labels.source)+' '+ids[id]+': '+esc(byId[id].title||'')+'">['+ids[id]+']</a>';
+          }).join('')+'</div>' : '') + '</article>';
       });
-      if (!(section.items || []).length) html += '<p>' + esc(label.noData) + '</p>';
+      if (!(sec.items || []).length) html+='<p class="verified-empty">'+esc(labels.noData)+'</p>';
       html += '</section>';
     });
-    var home = /^https:\/\//.test(o.site || '') ? o.site : '';
-    html += '<footer class="verified-profile-footer"><strong>' + esc(label.source) + '</strong>' +
-      '<div class="verified-all-sources">' + (pf.sources || []).filter(function (source) {return /^https:\/\//.test(source.url || '');}).map(function (source) {
-        return '<a href="' + esc(source.url) + '" target="_blank" rel="noopener noreferrer">' + esc(source.title) + '</a>';
-      }).join('') + '</div>' +
-      (home ? '<a class="verified-home" href="' + esc(home) + '" target="_blank" rel="noopener noreferrer">' + esc(t("website")) + ' ↗</a>' : '') +
-      '</footer></section>';
+    if (pf.review_scope && verifiedText(pf.review_scope))
+      html += '<aside class="verified-scope-note"><b>'+esc(labels.scope)+'</b><p>'+esc(verifiedText(pf.review_scope))+'</p></aside>';
+    html += '<footer class="verified-profile-footer"><details class="verified-sources-details"><summary>'+esc(labels.evidence)+' <span class="verified-source-count">'+citedIds.length+'</span></summary><ol class="verified-all-sources">'+
+      citedIds.map(function(id){ var src=byId[id];return '<li value="'+ids[id]+'"><a href="'+esc(src.url)+'" target="_blank" rel="noopener noreferrer">'+esc(src.title||src.url)+'</a>'+
+        (src.checked_on ? '<small> · '+esc(src.checked_on)+'</small>':'')+'</li>'; }).join('')+'</ol></details>'+
+      (/^https:\/\//.test(o.site||'') ? '<a class="verified-home" href="'+esc(o.site)+'" target="_blank" rel="noopener noreferrer">'+esc(labels.goHome)+' ↗</a>' : '') + '</footer></section>';
     return html;
   }
   function bindVerifiedSpecialistTabs() {
@@ -10152,11 +10183,30 @@
     if (!scope) return;
     var buttons = Array.prototype.slice.call(scope.querySelectorAll('[data-verified-index]'));
     var panels = Array.prototype.slice.call(scope.querySelectorAll('[data-verified-panel]'));
-    buttons.forEach(function (button) { button.addEventListener('click', function () {
-      var id = button.getAttribute('data-verified-index');
-      buttons.forEach(function (b) {var active = b === button; b.classList.toggle('active',active); b.setAttribute('aria-selected', String(active));});
-      panels.forEach(function (panel) {var active = panel.getAttribute('data-verified-panel') === id; panel.classList.toggle('active', active); panel.hidden = !active;});
-    }); });
+    function activate(button, focus) {
+      var id=button.getAttribute('data-verified-index');
+      buttons.forEach(function(b) {
+        var active=b===button;b.classList.toggle('active',active);
+        b.setAttribute('aria-selected', String(active));b.tabIndex=active?0:-1;
+      });
+      panels.forEach(function(panel) {
+        var active=panel.getAttribute('data-verified-panel')===id;
+        panel.classList.toggle('active',active);panel.hidden=!active;
+      });
+      if (focus) button.focus();
+    }
+    buttons.forEach(function(button,index) {
+      button.addEventListener('click',function(){activate(button,false);});
+      button.addEventListener('keydown',function(e) {
+        var next=index;
+        if (e.key==='Home') next=0;
+        else if (e.key==='End') next=buttons.length-1;
+        else if (e.key==='ArrowRight') next=(index+1)%buttons.length;
+        else if (e.key==='ArrowLeft') next=(index+buttons.length-1)%buttons.length;
+        else return;
+        e.preventDefault();activate(buttons[next],true);
+      });
+    });
   }
   // Phase 4: one evidence-backed graph for map entities, products and missions.
   // External nodes are NOT geolocated and never become map markers or new categories.

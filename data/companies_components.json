@@ -288,8 +288,12 @@
     "orbita_verified_profile": {
       "schema_version": 2,
       "profile_type": "components",
-      "verified_on": "2026-11-12",
-      "review_scope": "New specialist dossier only; preexisting category fields not recertified",
+      "verified_on": "2026-11-13",
+      "review_scope": {
+        "fa": "ارزیابی گزاره‌های منتخب بر اساس منابع رسمی موجود تا ۱۳ نوامبر ۲۰۲۶؛ نه ممیزی کامل همه مدل‌ها، ظرفیت‌های لحظه‌ای یا مشتریان. مشخصات مدل‌ها با شرایط مرجع منبع گزارش شده و نباید به سایر محصولات تعمیم یابد.",
+        "en": "Selected claims reviewed against available official sources as of 13 November 2026; this is not an audit of every product model, real-time capacity or customer. Model specifications retain their source reference conditions.",
+        "ar": "رُوجعت ادعاءات محددة وفق المصادر الرسمية المتاحة حتى ١٣ نوفمبر ٢٠٢٦؛ ولا يشمل ذلك جميع الطرز أو السعة الآنية أو العملاء. تُحفظ شروط القياس المرجعية لكل نموذج ولا تعمم على المنتجات الأخرى."
+      },
       "sources": [
         {
           "id": "cs_products",
@@ -308,6 +312,12 @@
           "title": "Stellenbosch University — CubeSpace history",
           "url": "https://www.su.ac.za/en/students/node/22289",
           "checked_on": "2026-11-12"
+        },
+        {
+          "id": "cs_gen2",
+          "title": "CubeSpace — CubeADCS Gen 2 product specification",
+          "url": "https://www.cubespace.co.za/uploads/a55e9627-9377-496b-800e-ecde36e3b21e.pdf",
+          "checked_on": "2026-11-13"
         }
       ],
       "sections": [
@@ -332,6 +342,20 @@
               "source_ids": [
                 "cs_su"
               ]
+            },
+            {
+              "fa": "در ماهواره‌های کوچک، تأمین ADCS تنها خرید یک حسگر نیست؛ بسته به نیاز دقت نشانه‌روی، داده حسگرها باید در رایانه کنترل وضعیت پردازش و به فرمان چرخ‌های عکس‌العملی یا عملگرهای مغناطیسی تبدیل شود. کیوب‌اسپیس این اجزا را به‌صورت قطعات مستقل یا راهکار یکپارچه عرضه می‌کند و انتخاب معماری به الزامات مأموریت وابسته است.",
+              "en": "Buying an ADCS for a small satellite is not merely buying a sensor: measurement data must be processed into pointing estimates and converted into commands for reaction wheels or magnetic actuators. CubeSpace offers both components and integrated solutions; system architecture depends on the mission pointing requirements.",
+              "ar": "لا يقتصر اقتناء نظام ADCS لقمر صغير على شراء مستشعر؛ إذ تُحوّل القياسات إلى تقديرات اتجاه وأوامر لعجلات رد الفعل أو المشغلات المغناطيسية. وتوفر الشركة مكونات منفصلة وحلولاً متكاملة وفق متطلبات دقة التوجيه للمهمة.",
+              "heading": {
+                "fa": "نقش صنعتی در زنجیره ماهواره",
+                "en": "Role in spacecraft supply chain",
+                "ar": "الدور في سلسلة توريد الأقمار"
+              },
+              "source_ids": [
+                "cs_products",
+                "cs_gen2"
+              ]
             }
           ]
         },
@@ -347,6 +371,32 @@
               "ar": "تشمل المنتجات أنظمة ADCS المتكاملة، وعجلات رد الفعل، وقضبان العزم المغناطيسي، ومقاييس المغناطيسية، وحساسات الشمس وأفق الأرض، ومتتبعات النجوم.",
               "source_ids": [
                 "cs_products"
+              ]
+            },
+            {
+              "fa": "در مشخصات نسل دوم CubeADCS، گزینه چهارچرخ با چیدمان هرمی توصیف شده است: چرخ‌ها با سرعت پایه کار می‌کنند و آرایش چهارعضوی می‌تواند در صورت ازکارافتادن یک چرخ، کنترل سه‌محوره را حفظ کند. این ویژگی مربوط به همان پیکربندی مستند است و نباید به تمام محصولات تعمیم داده شود.",
+              "en": "The Gen 2 specification describes a four-wheel pyramid configuration. Wheels are biased away from zero speed, and the four-wheel geometry retains three-axis control if one wheel fails. This is a capability of the documented configuration, not a claim about every CubeSpace product.",
+              "ar": "تصف وثيقة الجيل الثاني ترتيب أربع عجلات بشكل هرمي، مع إبقاء سرعتها بعيداً عن الصفر. ويسمح هذا الترتيب بالحفاظ على التحكم ثلاثي المحاور عند تعطل عجلة واحدة، وهي ميزة تخص التهيئة المحددة ولا تشمل جميع المنتجات.",
+              "heading": {
+                "fa": "معماری CubeADCS Gen 2",
+                "en": "CubeADCS Gen 2 architecture",
+                "ar": "بنية CubeADCS Gen 2"
+              },
+              "source_ids": [
+                "cs_gen2"
+              ]
+            },
+            {
+              "fa": "در پیکربندی مرجع، مغناطیس‌سنج CubeMag، دو ژیروسکوپ و حسگر دقیق خورشید CubeSense به‌کار می‌روند. حسگر زمین برای بهبود کارکرد در شرایط گرفت و ردیاب ستاره برای مأموریت‌های دقیق‌تر به‌صورت انتخابی معرفی شده‌اند. دقت نهایی سامانه بدون مشخصات همان پیکربندی و شرایط مداری قابل ادعا نیست.",
+              "en": "The reference package includes CubeMag, two gyroscopes and a fine CubeSense Sun sensor. An Earth sensor is optional for eclipse performance and a star tracker can be added where pointing requirements are tighter. Final system accuracy cannot be inferred without the selected configuration and orbital environment.",
+              "ar": "تضم الحزمة المرجعية مقياس مغناطيسية CubeMag وجيروسكوبين ومستشعر شمس دقيقاً CubeSense. ويمكن إضافة مستشعر الأرض لتحسين الأداء أثناء الخسوف أو متعقب نجوم للمهمات الأعلى دقة. ولا يمكن استنتاج الدقة النهائية من أسماء المكونات وحدها.",
+              "heading": {
+                "fa": "حسگرها و محدودیت انتخاب",
+                "en": "Sensors and selection trade-offs",
+                "ar": "المستشعرات ومفاضلات الاختيار"
+              },
+              "source_ids": [
+                "cs_gen2"
               ]
             }
           ]
@@ -364,6 +414,21 @@
               "source_ids": [
                 "cs_home"
               ]
+            },
+            {
+              "fa": "شرکت برای برخی محصولات خود سابقه استفاده مداری گزارش می‌کند؛ اما وجود نام «فضایی» در کاتالوگ به معنی پرواز هر مدل نیست. در ORBITA باید میان محصول عرضه‌شده، محصول آزمون‌شده و مدل پروازکرده تفکیک شود و برای سابقه هر مدل، مأموریت میزبان و مدرک اختصاصی ثبت گردد.",
+              "en": "The manufacturer reports on-orbit experience for parts of its portfolio, but the catalog does not prove that every listed variant has flown. ORBITA should distinguish catalog availability, qualification, and model-specific flight use, tying heritage to a named host mission whenever evidence exists.",
+              "ar": "تذكر الشركة استخدام بعض منتجاتها في المدار، لكن إدراج طراز في الكتالوج لا يثبت إطلاقه. يجب فصل حالة الإتاحة والاختبار والطيران لكل طراز وربط السجل بمهمة مضيفة محددة عندما تتوفر الأدلة.",
+              "heading": {
+                "fa": "الزام اثبات سابقه پرواز",
+                "en": "How flight heritage is assessed",
+                "ar": "كيفية إثبات التراث التشغيلي"
+              },
+              "source_ids": [
+                "cs_products",
+                "cs_home"
+              ],
+              "kind": "caution"
             }
           ]
         },
@@ -379,6 +444,19 @@
               "ar": "صُممت أنظمة ADCS للتكامل مع حواسيب المركبات الفضائية التابعة للعملاء ويمكن دمج عتاد جهات أخرى؛ ولا نورد عقود عملاء محددة هنا.",
               "source_ids": [
                 "cs_home"
+              ]
+            },
+            {
+              "fa": "راهکار ADCS باید با رایانه پرواز مشتری از نظر زمان‌بندی فرمان، تله‌متری حسگر، رابط داده و وضعیت ایمن سازگار باشد. وجود امکان استفاده از حسگر یا ردیاب ستاره طرف ثالث در مشخصات CubeADCS نشان می‌دهد آرایش نهایی تابع طراحی باس است و «محصول یکپارچه» را نباید به معنی مستقل‌بودن کامل از سایر سامانه‌های ماهواره دانست.",
+              "en": "An ADCS must match the customer flight computer in command timing, sensor telemetry, data interface and safe-mode behavior. The CubeADCS specification allows certain third-party trackers, demonstrating that the final layout depends on bus design; “integrated” does not mean independent of the rest of the spacecraft.",
+              "ar": "يجب أن يتوافق ADCS مع حاسوب القمر في توقيت الأوامر وبيانات المستشعرات والواجهات والوضع الآمن. وتسمح مواصفات CubeADCS بمتتبعات نجوم من أطراف أخرى، ما يؤكد أن التهيئة تعتمد على تصميم المنصة ولا تعمل بمعزل عن الأنظمة الأخرى.",
+              "heading": {
+                "fa": "یکپارچه‌سازی با رایانه ماهواره",
+                "en": "Integration with flight computers",
+                "ar": "الدمج مع حاسوب الطيران"
+              },
+              "source_ids": [
+                "cs_gen2"
               ]
             }
           ]
@@ -396,15 +474,70 @@
               "source_ids": [
                 "cs_su"
               ]
+            },
+            {
+              "fa": "ریشه دانشگاهی شرکت در منابع دانشگاه استلنبوش ذکر شده است. اهمیت این مسیر در انتقال تجربه تحقیقاتیِ کنترل وضعیت به تولید قطعات صنعتی است؛ اما همکاری دانشگاهی به‌تنهایی نشان‌دهنده مالکیت کنونی دانشگاه یا تأیید همه قابلیت‌های محصول نیست.",
+              "en": "Stellenbosch University documents the company’s academic origins. The transition illustrates how attitude-control research can become industrial hardware supply, but academic provenance alone does not establish current ownership or independently qualify every product claim.",
+              "ar": "توثق جامعة ستيلينبوش الجذور الأكاديمية للشركة؛ ويظهر ذلك انتقال خبرة التحكم في الاتجاه من البحث إلى تصنيع العتاد. لكن الأصل الجامعي لا يثبت الملكية الحالية أو تأهيل كل منتج بصورة مستقلة.",
+              "heading": {
+                "fa": "از دانشگاه به زنجیره تأمین",
+                "en": "From university to supplier",
+                "ar": "من الجامعة إلى سلسلة الإمداد"
+              },
+              "source_ids": [
+                "cs_su"
+              ]
             }
           ]
         }
       ],
       "summary": {
-        "fa": "تولیدکننده سامانه‌های تعیین و کنترل وضعیت ماهواره شامل ADCS، چرخ عکس‌العملی و ردیاب ستاره، مستقر در آفریقای جنوبی.",
-        "en": "South African manufacturer of satellite attitude-control systems, reaction wheels and star trackers.",
-        "ar": "شركة جنوب أفريقية لأنظمة التحكم في اتجاه الأقمار وعجلات رد الفعل ومتتبعات النجوم."
-      }
+        "fa": "کیوب‌اسپیس بر زیرسامانه‌های تعیین و کنترل وضعیت ماهواره تمرکز دارد: از حسگر خورشید و مغناطیس‌سنج تا چرخ عکس‌العملی و مجموعه یکپارچه کنترل سه‌محوره. اهمیت این شرکت در ارائه اجزایی است که وضعیت زاویه‌ای فضاپیما را اندازه‌گیری و اصلاح می‌کنند؛ نه در ساخت تمام اجزای یک ماهواره.",
+        "en": "CubeSpace specializes in satellite attitude determination and control: from Sun sensors and magnetometers to reaction wheels and integrated three-axis control assemblies. Its distinctive role is in measuring and correcting spacecraft orientation, not in building every spacecraft subsystem.",
+        "ar": "تتخصص كيوب سبيس في أنظمة تحديد وضعية الأقمار الصناعية والتحكم بها، بدءاً من مستشعرات الشمس والمغناطيسية ووصولاً إلى عجلات رد الفعل وأنظمة التحكم ثلاثية المحاور. ويتمثل دورها في قياس اتجاه المركبة وتصحيحه، لا تصنيع كل أنظمتها."
+      },
+      "key_facts": [
+        {
+          "label": {
+            "fa": "حوزه فناوری",
+            "en": "Technology",
+            "ar": "التخصص"
+          },
+          "value": {
+            "fa": "ADCS",
+            "en": "ADCS",
+            "ar": "ADCS"
+          },
+          "note": {
+            "fa": "کنترل وضعیت سه‌محوره",
+            "en": "Three-axis attitude control",
+            "ar": "التحكم في الاتجاه ثلاثي المحاور"
+          },
+          "source_ids": [
+            "cs_gen2"
+          ]
+        },
+        {
+          "label": {
+            "fa": "آرایش نمونه",
+            "en": "Example architecture",
+            "ar": "بنية نموذجية"
+          },
+          "value": {
+            "fa": "۴ چرخ",
+            "en": "4 wheels",
+            "ar": "٤ عجلات"
+          },
+          "note": {
+            "fa": "آرایش هرمی، با تحمل خرابی یک چرخ در پیکربندی معرفی‌شده",
+            "en": "Pyramid arrangement with one-wheel fault tolerance in documented configuration",
+            "ar": "تشكيل هرمي يحتمل تعطل عجلة واحدة في التهيئة الموثقة"
+          },
+          "source_ids": [
+            "cs_gen2"
+          ]
+        }
+      ]
     },
     "coordinate_precision": "city_approximation_existing"
   },
@@ -651,8 +784,12 @@
     "orbita_verified_profile": {
       "schema_version": 2,
       "profile_type": "components",
-      "verified_on": "2026-11-12",
-      "review_scope": "New specialist dossier only; preexisting category fields not recertified",
+      "verified_on": "2026-11-13",
+      "review_scope": {
+        "fa": "ارزیابی گزاره‌های منتخب بر اساس منابع رسمی موجود تا ۱۳ نوامبر ۲۰۲۶؛ نه ممیزی کامل همه مدل‌ها، ظرفیت‌های لحظه‌ای یا مشتریان. مشخصات مدل‌ها با شرایط مرجع منبع گزارش شده و نباید به سایر محصولات تعمیم یابد.",
+        "en": "Selected claims reviewed against available official sources as of 13 November 2026; this is not an audit of every product model, real-time capacity or customer. Model specifications retain their source reference conditions.",
+        "ar": "رُوجعت ادعاءات محددة وفق المصادر الرسمية المتاحة حتى ١٣ نوفمبر ٢٠٢٦؛ ولا يشمل ذلك جميع الطرز أو السعة الآنية أو العملاء. تُحفظ شروط القياس المرجعية لكل نموذج ولا تعمم على المنتجات الأخرى."
+      },
       "sources": [
         {
           "id": "bct_products",
@@ -671,6 +808,18 @@
           "title": "RTX — Reaction wheel production (Apr 2026)",
           "url": "https://www.rtx.com/news/news-center/2026/04/14/rtxs-blue-canyon-technologies-expands-reaction-wheel-production-capacity",
           "checked_on": "2026-11-12"
+        },
+        {
+          "id": "bct_wheels",
+          "title": "Blue Canyon Technologies — Reaction Wheels",
+          "url": "https://www.bluecanyontech.com/components/reaction-wheels/",
+          "checked_on": "2026-11-13"
+        },
+        {
+          "id": "bct_acq",
+          "title": "Blue Canyon — Raytheon acquisition completed, December 2020",
+          "url": "https://www.bluecanyontech.com/news/blue-canyon-technologies-announces-completion-of-acquisition-by-raytheon-technologies/",
+          "checked_on": "2026-11-13"
         }
       ],
       "sections": [
@@ -686,6 +835,19 @@
               "ar": "بلو كانيون تكنولوجيز شركة مقرها كولورادو تصنع الأقمار الصغيرة ومكوّنات التحكم في الاتجاه، وتتبع أعمال Raytheon ضمن RTX.",
               "source_ids": [
                 "rtx_2026"
+              ]
+            },
+            {
+              "fa": "شرکت در دسته «سازندگان ماهواره» با باس و سامانه‌های یکپارچه شناخته می‌شود، ولی در دسته «قطعات» باید ردیاب‌های ستاره و مجموعه چرخ‌های عکس‌العملی آن بررسی شوند. افزودن نقش دوم به شناسه موجود مانع می‌شود آمار شرکت‌ها با ساخت رکورد تکراری افزایش کاذب پیدا کند.",
+              "en": "In the satellite-manufacturer category the company is known for spacecraft buses; in components it is assessed for star trackers and reaction wheels. Linking both activities to the existing entity ID prevents an artificial increase in the company count.",
+              "ar": "تُعرف الشركة في فئة تصنيع الأقمار بمنصات المركبات، بينما تُدرس في فئة المكونات من خلال متتبعات النجوم وعجلات رد الفعل. وإسناد الدورين إلى سجل واحد يمنع تكرار الشركة وإحصاءها مرتين.",
+              "heading": {
+                "fa": "دو نقش متفاوت یک شرکت",
+                "en": "Two distinct industrial roles",
+                "ar": "دوران صناعيان مختلفان"
+              },
+              "source_ids": [
+                "bct_products"
               ]
             }
           ]
@@ -711,6 +873,32 @@
               "source_ids": [
                 "bct_rw16"
               ]
+            },
+            {
+              "fa": "در کاتالوگ سازنده، RWp015 با ظرفیت ذخیره تکانه ۰٫۰۱۵ نیوتن‌مترثانیه و جرم ۰٫۱۳ کیلوگرم عرضه می‌شود؛ در سوی دیگر RW16 تا ۱۶ نیوتن‌مترثانیه ذکر شده است. این اعداد، مشخصه مدل‌های متفاوت‌اند و به معنی عملکرد یکسان در همه باس‌ها نیستند.",
+              "en": "The manufacturer specifies RWp015 at 0.015 N·m·s momentum storage and 0.13 kg mass, while the RW16 model is listed at up to 16 N·m·s. These are distinct hardware models, not interchangeable performance claims across all buses.",
+              "ar": "تحدد الشركة لعجلة RWp015 زخماً مخزناً مقداره ٠٫٠١٥ نيوتن·متر·ثانية وكتلة ٠٫١٣ كغ، بينما تصل RW16 إلى ١٦ نيوتن·متر·ثانية. وهذه قيم لطرازات مختلفة ولا تعني أداءً موحداً على جميع المنصات.",
+              "heading": {
+                "fa": "تفکیک مدل‌های چرخ عکس‌العملی",
+                "en": "Reaction-wheel model comparisons",
+                "ar": "مقارنة طرز عجلات رد الفعل"
+              },
+              "source_ids": [
+                "bct_wheels"
+              ]
+            },
+            {
+              "fa": "ردیاب ستاره کوچک NST با ثبت الگوهای ستاره‌ای، وضعیت زاویه‌ای ماهواره را استخراج و به شکل کواترنیون در اختیار رایانه پرواز قرار می‌دهد. سازنده برای این خانواده کاتالوگ داخلی بیش از ۲۰ هزار ستاره و حساسیت تا قدر ظاهری ۷٫۵ را گزارش کرده است؛ دقت مأموریتی به نصب و شرایط نوری وابسته می‌ماند.",
+              "en": "The NST family estimates spacecraft attitude from star patterns and provides quaternion output to flight software. The company specifies an onboard catalog exceeding 20,000 stars and tracking to magnitude 7.5; actual mission pointing performance also depends on integration and lighting conditions.",
+              "ar": "تستنتج عائلة NST اتجاه المركبة من أنماط النجوم وترسل ناتجاً في صيغة رباعيات إلى الحاسوب. ويذكر المصنّع فهرساً داخلياً يزيد عن ٢٠ ألف نجم حتى القدر الظاهري ٧٫٥؛ لكن الدقة الفعلية تتأثر بالدمج والظروف الضوئية.",
+              "heading": {
+                "fa": "ردیاب ستاره و خروجی آن",
+                "en": "Star trackers and their output",
+                "ar": "متتبعات النجوم ومخرجاتها"
+              },
+              "source_ids": [
+                "bct_products"
+              ]
             }
           ]
         },
@@ -727,6 +915,20 @@
               "source_ids": [
                 "bct_products"
               ]
+            },
+            {
+              "fa": "در صفحه چرخ‌های عکس‌العملی، سازنده آمار ساخت و پرتاب را برای کل خانواده محصولات گزارش می‌کند. این آمار نباید به مدل RW16 یا هر چرخ خاص نسبت داده شود؛ برای هر مدل باید تعداد مأموریت‌های میزبان، شرایط محیطی و تاریخ انتشار عدد جداگانه بررسی شود.",
+              "en": "The reaction-wheel page reports manufactured and launched counts across the broader wheel portfolio. Those counts cannot be assigned to the RW16 or another individual model; model-level heritage requires named spacecraft, environmental context, and an as-of date.",
+              "ar": "تنشر صفحة العجلات أرقام التصنيع والإطلاق للمجموعة ككل، ولا يجوز نسبتها إلى RW16 أو إلى طراز محدد. ويتطلب إثبات سجل كل طراز أسماء المركبات وظروف استخدامها وتاريخ الأرقام.",
+              "heading": {
+                "fa": "اعداد سابقه ساخت با احتیاط",
+                "en": "Interpreting fleet numbers",
+                "ar": "قراءة أرقام السجل بحذر"
+              },
+              "source_ids": [
+                "bct_wheels"
+              ],
+              "kind": "caution"
             }
           ]
         },
@@ -742,6 +944,20 @@
               "ar": "أعلنت RTX في أبريل 2026 عن خطة لزيادة إنتاج عجلات رد الفعل؛ ولا تُعرض السعة المستهدفة بوصفها إنتاجاً محققاً.",
               "source_ids": [
                 "rtx_2026"
+              ]
+            },
+            {
+              "fa": "فروش چرخ عکس‌العملی یا ردیاب ستاره به معنی آن نیست که بلو کنیون همه زیرسامانه‌های ماهواره مشتری را ساخته است. در پرونده رابطه‌های زنجیره تأمین باید میان «سازنده قطعه»، «سازنده باس» و «مجری مأموریت» فرق گذاشت؛ گواه حضور یک چرخ در مدار، خودبه‌خود گواه موفقیت کل مأموریت نیست.",
+              "en": "A delivered wheel or star tracker does not imply that Blue Canyon built every subsystem on the customer spacecraft. Supply-chain records must distinguish component vendor, bus integrator and mission operator; evidence that a wheel flew is not automatic evidence of complete mission success.",
+              "ar": "لا يعني توريد عجلة أو متتبع نجوم أن Blue Canyon صنعت جميع أنظمة قمر العميل. يجب التمييز بين مورّد القطعة ومكامل المنصة ومشغل المهمة؛ فطيران مكوّن لا يثبت وحده نجاح المهمة كاملة.",
+              "heading": {
+                "fa": "از سازنده قطعه تا پیمانکار باس",
+                "en": "Component supplier versus bus prime",
+                "ar": "من مورّد المكوّن إلى مصنّع المنصة"
+              },
+              "source_ids": [
+                "bct_products",
+                "bct_wheels"
               ]
             }
           ]
@@ -759,15 +975,70 @@
               "source_ids": [
                 "rtx_2026"
               ]
+            },
+            {
+              "fa": "تملک بلو کنیون به‌وسیله Raytheon Technologies در دسامبر ۲۰۲۰ نهایی شد. بنابراین ثبت آن به‌عنوان «شرکت کاملاً مستقل» بدون اشاره به ساختار گروهی درست نیست؛ در عین حال، مالکیت مشترک نباید باعث ادغام شناسه محصولات یا حذف نام تجاری بلو کنیون شود.",
+              "en": "Raytheon Technologies completed its acquisition of Blue Canyon in December 2020. It should therefore not be portrayed as a standalone independent owner, but group ownership does not justify erasing its operating identity or merging its product records into a generic parent profile.",
+              "ar": "أُنجز استحواذ Raytheon Technologies على بلو كانيون في ديسمبر ٢٠٢٠. لذلك يجب توضيح انتمائها للمجموعة دون محو هويتها التشغيلية أو دمج منتجاتها آلياً في سجل الشركة الأم.",
+              "heading": {
+                "fa": "تغییر ساختار مالکیت",
+                "en": "Ownership history",
+                "ar": "تاريخ الملكية"
+              },
+              "source_ids": [
+                "bct_acq"
+              ]
             }
           ]
         }
       ],
       "summary": {
-        "fa": "تولیدکننده ماهواره کوچک و قطعات کنترل وضعیت، از جمله چرخ‌های عکس‌العملی و ردیاب‌های ستاره‌ای؛ بخشی از RTX.",
-        "en": "Small-satellite and attitude-control component manufacturer within RTX, including reaction wheels and star trackers.",
-        "ar": "شركة لصناعة الأقمار الصغيرة ومكوّنات التحكم في الاتجاه ضمن RTX، ومنها عجلات رد الفعل ومتتبعات النجوم."
-      }
+        "fa": "بلو کنیون تکنولوژیز هم سازنده باس ماهواره کوچک است و هم تأمین‌کننده تجهیزات کنترل وضعیت؛ از ردیاب ستاره تا چرخ عکس‌العملی. برای ارزیابی این شرکت، باید توان ساخت ماهواره را از عملکرد و سابقه پرواز هر خانواده قطعه جدا کرد.",
+        "en": "Blue Canyon Technologies builds small-satellite buses and supplies attitude-control components such as star trackers and reaction wheels. Its spacecraft manufacturing role should be assessed separately from the specifications and flight heritage of each component family.",
+        "ar": "تنتج بلو كانيون تكنولوجيز منصات أقمار صغيرة ومكونات التحكم في الاتجاه مثل متتبعات النجوم وعجلات رد الفعل. وينبغي تقييم دور تصنيع المركبات بمعزل عن مواصفات وتراث كل مجموعة من المكونات."
+      },
+      "key_facts": [
+        {
+          "label": {
+            "fa": "خانواده چرخ",
+            "en": "Wheel family",
+            "ar": "عائلة العجلات"
+          },
+          "value": {
+            "fa": "۰٫۰۱۵ تا ۱۶ N·m·s",
+            "en": "0.015–16 N·m·s",
+            "ar": "٠٫٠١٥–١٦ نيوتن·متر·ثانية"
+          },
+          "note": {
+            "fa": "دامنه لختی زاویه‌ایِ اعلام‌شده در سبد محصولات",
+            "en": "Published momentum-storage span across product lineup",
+            "ar": "نطاق الزخم الزاوي المعلن في عائلة المنتجات"
+          },
+          "source_ids": [
+            "bct_wheels"
+          ]
+        },
+        {
+          "label": {
+            "fa": "حسگر",
+            "en": "Star tracker",
+            "ar": "متتبع النجوم"
+          },
+          "value": {
+            "fa": "NST",
+            "en": "NST",
+            "ar": "NST"
+          },
+          "note": {
+            "fa": "ردیاب ستاره کوچک با کاتالوگ داخلی بیش از ۲۰ هزار ستاره",
+            "en": "Nano tracker with onboard catalog exceeding 20,000 stars",
+            "ar": "متتبع صغير يضم فهرساً داخلياً لأكثر من ٢٠ ألف نجم"
+          },
+          "source_ids": [
+            "bct_products"
+          ]
+        }
+      ]
     },
     "coordinate_precision": "city_approximation_existing"
   },
@@ -797,8 +1068,12 @@
     "orbita_verified_profile": {
       "schema_version": 2,
       "profile_type": "components",
-      "verified_on": "2026-11-12",
-      "review_scope": "New specialist dossier only; preexisting category fields not recertified",
+      "verified_on": "2026-11-13",
+      "review_scope": {
+        "fa": "ارزیابی گزاره‌های منتخب بر اساس منابع رسمی موجود تا ۱۳ نوامبر ۲۰۲۶؛ نه ممیزی کامل همه مدل‌ها، ظرفیت‌های لحظه‌ای یا مشتریان. مشخصات مدل‌ها با شرایط مرجع منبع گزارش شده و نباید به سایر محصولات تعمیم یابد.",
+        "en": "Selected claims reviewed against available official sources as of 13 November 2026; this is not an audit of every product model, real-time capacity or customer. Model specifications retain their source reference conditions.",
+        "ar": "رُوجعت ادعاءات محددة وفق المصادر الرسمية المتاحة حتى ١٣ نوفمبر ٢٠٢٦؛ ولا يشمل ذلك جميع الطرز أو السعة الآنية أو العملاء. تُحفظ شروط القياس المرجعية لكل نموذج ولا تعمم على المنتجات الأخرى."
+      },
       "sources": [
         {
           "id": "dhv_about",
@@ -823,6 +1098,18 @@
           "title": "International Astronautical Federation — DHV Technology",
           "url": "https://www.iafastro.org/membership/all-members/dhv-technology.html",
           "checked_on": "2026-11-12"
+        },
+        {
+          "id": "dhv_solutions",
+          "title": "DHV Technology — Power solutions portfolio",
+          "url": "https://dhvtechnology.com/solutions/",
+          "checked_on": "2026-11-13"
+        },
+        {
+          "id": "dhv_nasa_power",
+          "title": "NASA 2026 State of the Art: Small Satellite Power Systems",
+          "url": "https://www.nasa.gov/wp-content/uploads/2026/05/3-soa-power-2026-final.pdf?emrc=6acb83430f0d8",
+          "checked_on": "2026-11-13"
         }
       ],
       "sections": [
@@ -838,6 +1125,19 @@
               "ar": "DHV Technology شركة إسبانية مقرها مالقة تصنّع الألواح الشمسية وأنظمة الطاقة الكهربائية للتطبيقات الفضائية.",
               "source_ids": [
                 "dhv_about"
+              ]
+            },
+            {
+              "fa": "ماژول تولید توان باید با کنترل شارژ باتری، توزیع بار و حفاظت خطوط الکتریکی هماهنگ شود. محصولاتی چون EPS و PCDU مکمل آرایه خورشیدی‌اند؛ انتخاب آن‌ها به ولتاژ باس، بارهای گذرا، نیازهای مأموریت و رابط‌های مکانیکی و الکتریکی وابسته است.",
+              "en": "Generating power is only one step: batteries must be charged, loads distributed and electrical lines protected. EPS and PCDU hardware complement solar arrays, with selection depending on bus voltage, transient loads, mission demands and mechanical/electrical interfaces.",
+              "ar": "لا تكفي توليد الطاقة وحده؛ إذ يلزم شحن البطاريات وتوزيع الأحمال وحماية الخطوط. تكمل وحدات EPS وPCDU الألواح الشمسية، ويعتمد اختيارها على جهد المنصة والأحمال ومتطلبات المهمة والواجهات.",
+              "heading": {
+                "fa": "جایگاه در معماری باس ماهواره",
+                "en": "Position in spacecraft power architecture",
+                "ar": "موضعها في هندسة طاقة القمر"
+              },
+              "source_ids": [
+                "dhv_solutions"
               ]
             }
           ]
@@ -863,6 +1163,33 @@
               "source_ids": [
                 "dhv_smallsat"
               ]
+            },
+            {
+              "fa": "پنل‌های مخصوص کیوب‌ست می‌توانند روی بدنه نصب شوند یا پس از جدایش باز شوند؛ برای ماهواره‌های کوچک‌تر و بزرگ‌تر، شرکت از زیرلایه‌های مدار چاپی و سازه لانه‌زنبوری آلومینیومی با پوشش کامپوزیت استفاده می‌کند. ظرفیت توان را باید برای مدل معین و شرایط ابتدای عمر، نه به‌صورت عدد عمومی، ثبت کرد.",
+              "en": "CubeSat solar panels may be body-mounted or deploy after separation. SmallSat offerings include printed-circuit-board substrates and aluminium honeycomb structures with composite layers. Electrical output must be recorded by exact model and beginning-of-life conditions, not as a single catalog-wide number.",
+              "ar": "قد تُثبت ألواح كيوب سات على الجسم أو تُنشر بعد الانفصال؛ وتشمل الحلول ركائز لوحات الدوائر وهياكل الألمنيوم الخلوية مع طبقات مركبة. ويجب تسجيل القدرة لطراز محدد وتحت شروط بداية العمر لا كرقم عام.",
+              "heading": {
+                "fa": "پنل ثابت و آرایه بازشونده",
+                "en": "Body-mounted versus deployable arrays",
+                "ar": "الألواح الثابتة والمصفوفات القابلة للنشر"
+              },
+              "source_ids": [
+                "dhv_prod",
+                "dhv_solutions"
+              ]
+            },
+            {
+              "fa": "سامانه SADA آرایه خورشیدی را نسبت به خورشید می‌چرخاند و مسیر انتقال توان از بخش گردان به باس را فراهم می‌کند. در کنار آن، عایق چندلایه MLI برای کاهش تبادل حرارتی استفاده می‌شود. هر دو از نظر عملکرد با سلول خورشیدی تفاوت دارند و باید در شناسنامه به‌عنوان محصولات مستقل معرفی شوند.",
+              "en": "A SADA rotates an array to improve Sun orientation and provides a power path across the rotating interface. Multilayer insulation (MLI) instead limits thermal exchange. Neither is simply a solar cell, and both deserve separate component records in a mature product database.",
+              "ar": "تدير منظومة SADA المصفوفة باتجاه الشمس وتسمح بنقل الطاقة عبر الوصلة الدوارة، بينما يحد العزل متعدد الطبقات MLI من التبادل الحراري. وهما مكونان مختلفان عن الخلايا الشمسية ويستحقان سجلات مستقلة.",
+              "heading": {
+                "fa": "آرایه گرداننده و کنترل حرارت",
+                "en": "Solar array drive and thermal layers",
+                "ar": "توجيه الألواح وطبقات التحكم الحراري"
+              },
+              "source_ids": [
+                "dhv_prod"
+              ]
             }
           ]
         },
@@ -878,6 +1205,19 @@
               "ar": "يشير ملف عضوية الشركة لدى الاتحاد الدولي للملاحة الفضائية إلى استخدام منتجات DHV في المدار؛ ولا ننسب طرزاً محددة إلى بعثات بعينها هنا.",
               "source_ids": [
                 "dhv_iaf"
+              ]
+            },
+            {
+              "fa": "گزارش فناوری ماهواره کوچک ناسا برای سال ۲۰۲۶ چند مدل پنل DHV را با مشخصات مجزا مقایسه کرده است؛ برای مثال BMSA-066W به‌عنوان پنل بدنه‌نصب با توان ابتدای عمر ۶۶ وات ذکر می‌شود. این مقدار متعلق به همان مدل و جدول است، نه تضمین توان هر ماهواره مشتری.",
+              "en": "NASA’s 2026 small-satellite power review compares individual DHV panel models; for example, BMSA-066W is listed as a body-mounted panel at 66 W beginning-of-life output. That is a specific tabulated product figure, not a guarantee of power for every customer spacecraft.",
+              "ar": "يقارن تقرير ناسا لعام ٢٠٢٦ طرزاً محددة لألواح DHV؛ ويُدرج BMSA-066W كلوح مثبت على الجسم بقدرة ٦٦ واط عند بداية العمر. هذه قيمة للطراز في الجدول وليست ضماناً لقدرة كل قمر يستخدمه.",
+              "heading": {
+                "fa": "مشخصات مدل در گزارش ناسا",
+                "en": "Model-specific data in NASA review",
+                "ar": "مواصفات الطرز في مرجع ناسا"
+              },
+              "source_ids": [
+                "dhv_nasa_power"
               ]
             }
           ]
@@ -895,6 +1235,20 @@
               "source_ids": [
                 "dhv_about"
               ]
+            },
+            {
+              "fa": "شرکت طراحی سفارشی رابط‌های الکتریکی و مکانیکی آرایه‌های خورشیدی را بر اساس نیاز مأموریت عرضه می‌کند. برای مقایسه واقعی دو پیشنهاد باید ولتاژ باس، توان در آغاز و پایان عمر، شرایط دمایی، جرم و ابعاد بازشده بررسی شود؛ تنها نام «پنل خورشیدی فضایی» برای تصمیم مهندسی کافی نیست.",
+              "en": "The company offers mission-specific electrical and mechanical interfaces. Comparing two array offers requires bus voltage, beginning- and end-of-life power, temperature environment, mass and deployed geometry; calling both “space solar panels” is not an engineering-level comparison.",
+              "ar": "توفر الشركة واجهات كهربائية وميكانيكية مخصصة للمهمة. وتتطلب مقارنة عرضين دراسة جهد المنصة والقدرة عند بداية العمر ونهايته والحرارة والكتلة وأبعاد النشر؛ فالاسم العام «لوح شمسي فضائي» غير كافٍ.",
+              "heading": {
+                "fa": "رابط‌های سازگار با مأموریت",
+                "en": "Mission-specific electrical interfaces",
+                "ar": "الواجهات الكهربائية الخاصة بالمهمة"
+              },
+              "source_ids": [
+                "dhv_prod",
+                "dhv_solutions"
+              ]
             }
           ]
         },
@@ -911,15 +1265,72 @@
               "source_ids": [
                 "dhv_about"
               ]
+            },
+            {
+              "fa": "شرکت در معرفی رسمی خود آغاز فعالیت را به سال ۲۰۱۳ نسبت می‌دهد. توسعه سبد از صفحات خورشیدی به زیرسامانه‌های توزیع توان، گرداننده آرایه و کنترل حرارتی، نشان می‌دهد تحلیل صنعتی باید تحول سبد فناوری را دنبال کند؛ ولی معرفی یک محصول جدید به معنی اثبات پرواز همان محصول نیست.",
+              "en": "The company dates its operations to 2013. Its catalog now spans power distribution, solar-array actuation and thermal-control elements alongside panels, illustrating diversification. A new product listing, however, is not itself proof that the device has flown.",
+              "ar": "تؤرخ الشركة بداية عملها بعام ٢٠١٣، وتوسعت من الألواح إلى توزيع الطاقة وتوجيهها والعزل الحراري. ويُظهر ذلك تنوعاً تقنياً، لكن إدراج منتج جديد لا يعني تلقائياً أنه طار في المدار.",
+              "heading": {
+                "fa": "گسترش سبد از سال ۲۰۱۳",
+                "en": "Portfolio development since 2013",
+                "ar": "تطور المنتجات منذ ٢٠١٣"
+              },
+              "source_ids": [
+                "dhv_about",
+                "dhv_prod"
+              ],
+              "kind": "caution"
             }
           ]
         }
       ],
       "summary": {
-        "fa": "سازنده اسپانیایی پنل‌های خورشیدی و زیرسامانه‌های توان فضایی، از جمله EPS و PCDU، مستقر در مالاگا.",
-        "en": "Spanish space-power subsystem manufacturer of solar arrays, EPS, PCDU and related technologies; located in Málaga.",
-        "ar": "مصنّع إسباني للألواح الشمسية وأنظمة القدرة الفضائية، بما فيها EPS وPCDU، ومقره مالقة."
-      }
+        "fa": "دی‌اچ‌وی تکنولوژی در مالاگا، تأمین‌کننده زیرسامانه‌های انرژی ماهواره است. سبد آن فقط پنل خورشیدی نیست: آرایه‌های بازشونده، سامانه توان الکتریکی، واحد توزیع توان، سازوکار گرداننده آرایه و عایق چندلایه را نیز شامل می‌شود. این اجزا به تولید، کنترل، توزیع و نگهداری انرژی در فضاپیما کمک می‌کنند.",
+        "en": "Málaga-based DHV Technology supplies spacecraft electrical-power subsystems, not only solar panels. Its portfolio includes deployable arrays, EPS, PCDU, solar-array drives and multilayer insulation, addressing the generation, conditioning, distribution and thermal protection of spacecraft power hardware.",
+        "ar": "توفر DHV Technology في مالقة أنظمة الطاقة الكهربائية للمركبات الفضائية وليس الألواح الشمسية فقط؛ وتشمل منتجاتها المصفوفات القابلة للنشر ووحدات EPS وPCDU وآليات توجيه الألواح والعزل الحراري متعدد الطبقات."
+      },
+      "key_facts": [
+        {
+          "label": {
+            "fa": "محصول",
+            "en": "Product line",
+            "ar": "عائلة المنتج"
+          },
+          "value": {
+            "fa": "EPS / PCDU",
+            "en": "EPS / PCDU",
+            "ar": "EPS / PCDU"
+          },
+          "note": {
+            "fa": "کنترل و توزیع برق ماهواره",
+            "en": "Electrical power conditioning and distribution",
+            "ar": "تكييف وتوزيع القدرة الكهربائية"
+          },
+          "source_ids": [
+            "dhv_prod"
+          ]
+        },
+        {
+          "label": {
+            "fa": "اندازه پلتفرم",
+            "en": "CubeSat formats",
+            "ar": "أحجام كيوب سات"
+          },
+          "value": {
+            "fa": "1U–16U",
+            "en": "1U–16U",
+            "ar": "1U–16U"
+          },
+          "note": {
+            "fa": "طبق کاتالوگ پنل‌های استاندارد و سفارشی",
+            "en": "Catalog-supported standard/custom panel formats",
+            "ar": "أحجام الألواح القياسية والمخصصة حسب الكتالوج"
+          },
+          "source_ids": [
+            "dhv_prod"
+          ]
+        }
+      ]
     }
   }
 ]

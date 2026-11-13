@@ -24,12 +24,16 @@
     "orbita_verified_profile": {
       "schema_version": 3,
       "profile_type": "mission_control",
-      "verified_on": "2026-11-12",
-      "review_scope": "Phase-3 evidence-led specialty dossier only; legacy data not recertified; no global coverage claim",
+      "verified_on": "2026-11-13",
+      "review_scope": {
+        "fa": "ارزیابی گزاره‌های منتخب بر اساس منابع رسمی موجود تا ۱۳ نوامبر ۲۰۲۶؛ نه ممیزی کامل همه مدل‌ها، ظرفیت‌های لحظه‌ای یا مشتریان. مشخصات مدل‌ها با شرایط مرجع منبع گزارش شده و نباید به سایر محصولات تعمیم یابد.",
+        "en": "Selected claims reviewed against available official sources as of 13 November 2026; this is not an audit of every product model, real-time capacity or customer. Model specifications retain their source reference conditions.",
+        "ar": "رُوجعت ادعاءات محددة وفق المصادر الرسمية المتاحة حتى ١٣ نوفمبر ٢٠٢٦؛ ولا يشمل ذلك جميع الطرز أو السعة الآنية أو العملاء. تُحفظ شروط القياس المرجعية لكل نموذج ولا تعمم على المنتجات الأخرى."
+      },
       "summary": {
-        "fa": "مرکز کنترل مأموریت‌های رباتیک ESA و هماهنگ‌کننده شبکه ایستگاه‌های زمینی آن.",
-        "en": "Mission operations centre for ESA robotic spacecraft and coordination of its ground station network.",
-        "ar": "مركز عمليات مهمات ESA الروبوتية وتنسيق شبكة محطاتها الأرضية."
+        "fa": "مرکز عملیات فضایی اروپا ESOC در دارمشتات آلمان، مرکز کنترل مأموریت‌های فضایی ESA است. فعالیت آن فراتر از ارسال فرمان است: طرح‌ریزی عملیات، دینامیک پرواز، ناوبری، مدیریت شبکه ESTRACK و پایش وضعیت فضاپیما را به هم متصل می‌کند. تاریخ آغاز فعالیت عملیاتی مرکز به سال ۱۹۶۷ بازمی‌گردد.",
+        "en": "ESOC in Darmstadt is ESA’s spacecraft operations hub. Its remit extends beyond uplinking commands: mission planning, flight dynamics, navigation, the ESTRACK tracking network and spacecraft health operations are coordinated through linked ground-segment functions. It began operations in 1967.",
+        "ar": "مركز العمليات الفضائية الأوروبية ESOC في دارمشتات هو مركز تشغيل مركبات ESA، ولا يقتصر على إرسال الأوامر؛ بل يجمع تخطيط المهام وديناميكيات الطيران والملاحة وشبكة التتبع ESTRACK ومراقبة حالة المركبات. يعود تأسيسه التشغيلي إلى ١٩٦٧."
       },
       "sources": [
         {
@@ -49,6 +53,18 @@
           "title": "ESA — BepiColombo operations",
           "url": "https://www.esa.int/articles/about-us/directorates/operations/bepicolombo-operations",
           "checked_on": "2026-11-12"
+        },
+        {
+          "id": "es_history",
+          "title": "ESA ESOC Operations Portal — Detailed history since 1967",
+          "url": "https://esoc.esa.int/explore-our-history",
+          "checked_on": "2026-11-13"
+        },
+        {
+          "id": "es_legacy",
+          "title": "ESA — ESOC mission history",
+          "url": "https://www.esa.int/articles/about-us/directorates/operations/esoc-mission-history",
+          "checked_on": "2026-11-13"
         }
       ],
       "sections": [
@@ -64,6 +80,20 @@
               "ar": "ESOC هو مركز العمليات الفضائية لـESA في دارمشتات بألمانيا، ومركز رئيسي للعمليات منذ 1967.",
               "source_ids": [
                 "es_about"
+              ]
+            },
+            {
+              "fa": "در مرکز کنترل، دریافت تله‌متری وضعیت سامانه‌ها، طراحی توالی فرمان، برنامه‌ریزی مانور و ارزیابی نتایج در یک فرایند عملیاتی پیوسته انجام می‌شود. ESOC همچنین با تیم‌های ناوبری و ایستگاه‌های شبکه زمینی هماهنگ است. ساختمان کنترل و خود آنتن‌های دوردست، موجودیت‌های فیزیکی یکسانی نیستند.",
+              "en": "Mission control joins telemetry analysis, command sequencing, maneuver planning and assessment of spacecraft responses into a continuous operations workflow. ESOC works alongside flight-dynamics teams and remotely located tracking stations; the control rooms are not themselves the deep-space antennas.",
+              "ar": "يجمع مركز التحكم تحليل القياس عن بعد وتسلسل الأوامر وتخطيط المناورات وتقييم الاستجابة ضمن عملية متواصلة. ويتعاون ESOC مع فرق الملاحة ومحطات التتبع البعيدة؛ وغرف التحكم ليست الهوائيات الموجودة في المواقع الأخرى.",
+              "heading": {
+                "fa": "مفهوم مرکز کنترل مأموریت",
+                "en": "What mission control actually covers",
+                "ar": "ما الذي يشمله مركز التحكم؟"
+              },
+              "source_ids": [
+                "es_about",
+                "es_history"
               ]
             }
           ]
@@ -82,6 +112,19 @@
                 "es_faq",
                 "es_bepi"
               ]
+            },
+            {
+              "fa": "فهرست تاریخی ESA مجموعه‌ای از ماهواره‌های هواشناسی، سنجش زمین، علم نجوم و کاوشگرهای اعماق فضا را نشان می‌دهد. کنترل یک ماهواره سنجش زمین با مدیریت فضاپیمایی در مسیر سیاره دیگر یکسان نیست؛ زمان تأخیر مخابراتی، هندسه مدار و امکان مداخله لحظه‌ای باعث تفاوت روش عملیاتی می‌شوند.",
+              "en": "ESA’s operations history spans meteorology, Earth observation, astronomy and deep-space exploration. A low-Earth-orbit satellite and a planetary probe cannot use identical control workflows: communication delay, trajectory geometry and the ability to intervene in real time are very different.",
+              "ar": "يشمل سجل ESA أقمار الأرصاد ورصد الأرض والفلك والمسابير البعيدة. تختلف إدارة قمر في مدار منخفض عن مسبار كوكبي بسبب زمن تأخر الإشارة وهندسة المسار وإمكانية التدخل اللحظي.",
+              "heading": {
+                "fa": "تنوع مأموریت‌ها و رژیم‌های مداری",
+                "en": "Mission and orbit diversity",
+                "ar": "تنوع المهمات والمدارات"
+              },
+              "source_ids": [
+                "es_legacy"
+              ]
             }
           ]
         },
@@ -98,6 +141,20 @@
               "source_ids": [
                 "es_about",
                 "es_faq"
+              ]
+            },
+            {
+              "fa": "برای اجرای مانور، نخست مدار یا مسیر برآورد می‌شود، سپس تغییر سرعت و زمان فرمان محاسبه و با محدودیت‌های توان، ارتباط و پیشرانش هماهنگ می‌گردد. خدمات دینامیک پرواز ESOC بخشی از این زنجیره هستند و داده‌های فاصله‌سنجی و داپلر از ایستگاه‌هایی مانند سبروس ورودی مهم تعیین مدار محسوب می‌شوند.",
+              "en": "Operations planning starts with an orbit or trajectory estimate, then computes maneuvers subject to power, communication and propulsion limits. ESOC’s flight-dynamics function supports this cycle, drawing on range and Doppler observations from tracking stations such as Cebreros.",
+              "ar": "تبدأ المناورة بتقدير المدار أو المسار، ثم حساب تغيير السرعة وتوقيت الأمر ضمن قيود الطاقة والاتصالات والدفع. وتدعم ديناميكيات الطيران في ESOC هذه الدورة باستخدام قياسات المدى ودوبلر من محطات مثل سيبريروس.",
+              "heading": {
+                "fa": "دینامیک پرواز و ناوبری",
+                "en": "Flight dynamics and navigation",
+                "ar": "ديناميكيات الطيران والملاحة"
+              },
+              "source_ids": [
+                "es_about",
+                "es_history"
               ]
             }
           ]
@@ -116,6 +173,20 @@
                 "es_faq",
                 "es_bepi"
               ]
+            },
+            {
+              "fa": "ESOC در دارمشتات به‌عنوان گره فرماندهی و برنامه‌ریزی عمل می‌کند؛ ایستگاه‌های ESTRACK در نقاط جغرافیایی مختلف تماس رادیویی با فضاپیما را برقرار می‌کنند. همچنین مرکز عملیات شبکه برای تخصیص منابع و پایش ارتباطات نقش دارد. این روابط در ORBITA باید با پیوندهای سازمانی و عملیاتی نشان داده شوند، نه کپی یک شناسنامه برای هر آنتن.",
+              "en": "ESOC is the operational planning and control node in Darmstadt; distributed ESTRACK stations establish the RF links to spacecraft. Network operations coordinate and monitor those resources. ORBITA should represent these functions as linked entities rather than duplicating an identical dossier for every antenna.",
+              "ar": "يعمل ESOC كعقدة تخطيط وتحكم في دارمشتات، بينما تنشئ محطات ESTRACK المنتشرة روابط التردد الراديوي. وتنسق عمليات الشبكة هذه الموارد. وينبغي تمثيل العلاقة بروابط تشغيلية لا بنسخ سجل واحد لكل هوائي.",
+              "heading": {
+                "fa": "تفاوت مرکز کنترل و زیرساخت ارتباط",
+                "en": "Control centre versus ground network",
+                "ar": "التمييز بين مركز التحكم وشبكة الأرض"
+              },
+              "source_ids": [
+                "es_about",
+                "es_history"
+              ]
             }
           ]
         },
@@ -132,11 +203,66 @@
               "source_ids": [
                 "es_about"
               ]
+            },
+            {
+              "fa": "پیشینه ESOC به مرکز پردازش داده ESDAC در دهه ۱۹۶۰ می‌رسد؛ افتتاح رسمی آن در ۸ سپتامبر ۱۹۶۷ و کنترل ESRO-2B در مه ۱۹۶۸ ثبت شده است. در دهه‌های بعد مأموریت‌های شاخصی مانند Giotto در ۱۹۸۶، فرود Huygens بر تیتان در ۲۰۰۵ و Rosetta/Philae در ۲۰۱۴ به کارنامه عملیاتی آن افزوده شدند.",
+              "en": "ESOC grew from the ESDAC data-analysis centre of the 1960s, was inaugurated on 8 September 1967 and operated ESRO-2B in May 1968. Its later record includes Giotto’s 1986 comet encounter, the 2005 Huygens landing on Titan and the Rosetta/Philae comet landing in 2014.",
+              "ar": "تطور ESOC من مركز تحليل البيانات ESDAC في الستينيات، وافتتح في ٨ سبتمبر ١٩٦٧ وشغّل ESRO-2B في مايو ١٩٦٨. ومن إنجازاته اللاحقة مهمة Giotto عام ١٩٨٦ وهبوط Huygens على تيتان عام ٢٠٠٥ وهبوط Rosetta/Philae على مذنب عام ٢٠١٤.",
+              "heading": {
+                "fa": "از مرکز داده به عملیات اعماق فضا",
+                "en": "From data centre to planetary operations",
+                "ar": "من مركز بيانات إلى عمليات الكواكب"
+              },
+              "source_ids": [
+                "es_history"
+              ]
             }
           ]
         }
       ],
-      "data_status": "verified_pilot"
+      "data_status": "verified_pilot",
+      "key_facts": [
+        {
+          "label": {
+            "fa": "افتتاح رسمی",
+            "en": "Inauguration",
+            "ar": "الافتتاح"
+          },
+          "value": {
+            "fa": "۱۹۶۷",
+            "en": "1967",
+            "ar": "١٩٦٧"
+          },
+          "note": {
+            "fa": "۸ سپتامبر در دارمشتات",
+            "en": "8 September in Darmstadt",
+            "ar": "٨ سبتمبر في دارمشتات"
+          },
+          "source_ids": [
+            "es_history"
+          ]
+        },
+        {
+          "label": {
+            "fa": "اولین ماهواره کنترل‌شده",
+            "en": "First controlled satellite",
+            "ar": "أول قمر جرى التحكم به"
+          },
+          "value": {
+            "fa": "ESRO-2B",
+            "en": "ESRO-2B",
+            "ar": "ESRO-2B"
+          },
+          "note": {
+            "fa": "عملیات آغازین در مه ۱۹۶۸",
+            "en": "Early mission operations in May 1968",
+            "ar": "بداية العمليات في مايو ١٩٦٨"
+          },
+          "source_ids": [
+            "es_history"
+          ]
+        }
+      ]
     },
     "linked_entities": [
       "esa",

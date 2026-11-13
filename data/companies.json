@@ -23851,12 +23851,16 @@
     "orbita_verified_profile": {
       "schema_version": 3,
       "profile_type": "payloads",
-      "verified_on": "2026-11-12",
-      "review_scope": "Phase-3 evidence-led specialty dossier only; legacy data not recertified; no global coverage claim",
+      "verified_on": "2026-11-13",
+      "review_scope": {
+        "fa": "ارزیابی گزاره‌های منتخب بر اساس منابع رسمی موجود تا ۱۳ نوامبر ۲۰۲۶؛ نه ممیزی کامل همه مدل‌ها، ظرفیت‌های لحظه‌ای یا مشتریان. مشخصات مدل‌ها با شرایط مرجع منبع گزارش شده و نباید به سایر محصولات تعمیم یابد.",
+        "en": "Selected claims reviewed against available official sources as of 13 November 2026; this is not an audit of every product model, real-time capacity or customer. Model specifications retain their source reference conditions.",
+        "ar": "رُوجعت ادعاءات محددة وفق المصادر الرسمية المتاحة حتى ١٣ نوفمبر ٢٠٢٦؛ ولا يشمل ذلك جميع الطرز أو السعة الآنية أو العملاء. تُحفظ شروط القياس المرجعية لكل نموذج ولا تعمم على المنتجات الأخرى."
+      },
       "summary": {
-        "fa": "سازنده محموله‌های تصویربرداری الکترواپتیکی برای ماهواره‌ها؛ همچنین سازنده فضاپیمای کامل.",
-        "en": "Manufacturer of electro-optical satellite imaging payloads and complete spacecraft.",
-        "ar": "شركة مصنّعة لحمولات التصوير الكهروضوئي للأقمار الصناعية وللمركبات الفضائية الكاملة."
+        "fa": "دراگون‌فلای ایروسپیس تولیدکننده محموله‌های تصویربرداری برای ماهواره‌های کوچک است. دوربین DragonEye آن نمونه‌ای قابل ارزیابی است زیرا سازنده برای جرم، پهنای نوار تصویر، تفکیک مکانی، توان مصرفی و سابقه پرتاب مشخصات جداگانه منتشر کرده است؛ اعداد به ارتفاع و حالت تصویربرداری وابسته‌اند.",
+        "en": "Dragonfly Aerospace makes imaging payloads for small satellites. Its DragonEye instrument is useful for technical comparison because the manufacturer publishes separate mass, swath, spatial-resolution, power and flight-heritage figures, explicitly tied to observation altitude and imaging mode.",
+        "ar": "تصنّع دراغونفلاي حمـولات التصوير للأقمار الصغيرة. ويتيح جهاز DragonEye مقارنة هندسية لأنه يمتلك مواصفات منشورة للكتلة وعرض المسح والدقة المكانية والطاقة وسجل الإطلاق، وفق ارتفاع الرصد ونمط التصوير."
       },
       "sources": [
         {
@@ -23876,6 +23880,12 @@
           "title": "Dragonfly Aerospace — Camera roadmap",
           "url": "https://dragonflyaerospace.com/cameras-roadmap/",
           "checked_on": "2026-11-12"
+        },
+        {
+          "id": "df_detail",
+          "title": "Dragonfly Aerospace — DragonEye detailed technical specification",
+          "url": "https://dragonflyaerospace.com/smallsat-cameras/dragoneye/",
+          "checked_on": "2026-11-13"
         }
       ],
       "sections": [
@@ -23891,6 +23901,19 @@
               "ar": "تطوّر الشركة، ومقرّها ستيلينبوش بجنوب أفريقيا، كاميرات وحمولات تصوير للأقمار الصغيرة.",
               "source_ids": [
                 "df_camera"
+              ]
+            },
+            {
+              "fa": "ارزش افزوده این نقش، طراحی زنجیره اپتیکی و الکترونیک تصویربرداری است. دوربین باید به باس ماهواره متصل شود و توان، ارتباط داده، کنترل دما و پایداری نشانه‌روی مناسب دریافت کند. وجود شرکت در دو دسته به معنی دو شرکت مستقل نیست، بلکه نشان‌دهنده دو نقش صنعتی است.",
+              "en": "The payload role concerns optical design and imaging electronics. An imager still depends on a spacecraft bus for power, data handling, thermal control and stable pointing. Appearing in two categories means two industrial roles, not two independent companies.",
+              "ar": "يتمثل دور صانع الحمولة في تصميم البصريات وإلكترونيات التصوير. وتعتمد الكاميرا على منصة القمر للطاقة والبيانات والتحكم الحراري وتثبيت التوجيه. ولا يعني ظهور الشركة في فئتين وجود شركتين منفصلتين.",
+              "heading": {
+                "fa": "تفاوت سازنده محموله و سازنده ماهواره",
+                "en": "Payload maker vs. satellite maker",
+                "ar": "الفرق بين صانع الحمولة وصانع القمر"
+              },
+              "source_ids": [
+                "df_detail"
               ]
             }
           ]
@@ -23916,6 +23939,32 @@
               "source_ids": [
                 "df_camera"
               ]
+            },
+            {
+              "fa": "برگه DragonEye در ارتفاع ۵۰۰ کیلومتر، تفکیک ۱٫۴ متر در حالت پانکروماتیک و ۲٫۸ متر در حالت چندطیفی با ادغام پیکسل را اعلام می‌کند. پهنای نوار تصویر ۲۲٫۲ کیلومتر و ساختار حسگر شامل ۱۰ باند چندطیفی و یک باند پانکروماتیک است؛ این مقادیر باید همراه شرط ارتفاع ثبت شوند.",
+              "en": "At a 500 km reference altitude the DragonEye data sheet lists 1.4 m panchromatic and 2.8 m binned multispectral GSD, 22.2 km swath, ten multispectral bands and one panchromatic band. The altitude and binning condition must accompany any comparison of these numbers.",
+              "ar": "عند ارتفاع مرجعي ٥٠٠ كم، تحدد ورقة DragonEye دقة ١٫٤ م بانكروماتية و٢٫٨ م متعددة الأطياف بعد تجميع البكسلات، وعرض مسح ٢٢٫٢ كم، مع عشرة نطاقات متعددة الأطياف ونطاق بانكروماتي واحد. ويجب ذكر شروط الارتفاع والتجميع.",
+              "heading": {
+                "fa": "مشخصات اپتیکی DragonEye",
+                "en": "DragonEye optical characteristics",
+                "ar": "خصائص DragonEye البصرية"
+              },
+              "source_ids": [
+                "df_detail"
+              ]
+            },
+            {
+              "fa": "جرم مجموعه همراه با الکترونیک ۱۸ کیلوگرم است. توان مصرفی در حالت تصویربرداری کمتر از ۴۵ وات و در حالت خوانش کمتر از ۲۵ وات و تغذیه نامی ۲۸ ولت اعلام شده است. رابط چندگیگابیتی و LVDS و امکان فشرده‌سازی RAW/J2K به یکپارچه‌سازی محموله با سامانه داده ماهواره مربوط می‌شوند.",
+              "en": "The published camera-plus-electronics mass is 18 kg; imaging power is specified below 45 W, readout below 25 W, with 28 V DC input. Multi-gigabit and LVDS data interfaces, together with RAW/J2K compression options, are relevant to spacecraft bus integration.",
+              "ar": "تبلغ كتلة الكاميرا مع الإلكترونيات ١٨ كغ، والطاقة أقل من ٤٥ واط في التصوير و٢٥ واط في القراءة، بجهد ٢٨ فولت. وتُستخدم واجهات البيانات السريعة وLVDS وخيارات ضغط RAW/J2K عند دمج الحمولة مع منصة القمر.",
+              "heading": {
+                "fa": "توان، رابط داده و اندازه",
+                "en": "Power, data and physical integration",
+                "ar": "الطاقة وواجهات البيانات"
+              },
+              "source_ids": [
+                "df_detail"
+              ]
             }
           ]
         },
@@ -23930,6 +23979,20 @@
               "en": "EOSSAT-1 launched on 3 January 2023 with two DragonEye imagers, for agriculture and forestry monitoring.",
               "ar": "أُطلق القمر EOSSAT-1 في 3 يناير 2023 وعلى متنه كاميرتا DragonEye لرصد الزراعة والغابات.",
               "source_ids": [
+                "df_mission"
+              ]
+            },
+            {
+              "fa": "دراگون‌فلای اعلام می‌کند دو دوربین DragonEye در سال ۲۰۲۳ پرتاب شده‌اند و پرونده EOSSAT-1 را به این محصول پیوند می‌دهد. این مدرک سابقه پرتاب همین مدل را پشتیبانی می‌کند، نه همه دوربین‌های فهرست محصولات شرکت و نه الزاماً موفقیت همه شاخص‌های عملکرد مداری.",
+              "en": "Dragonfly reports two DragonEye imagers launched in 2023 and links the product to EOSSAT-1. This supports launch heritage for that model, not every camera in its catalog and not, on its own, a comprehensive independent measure of on-orbit imaging performance.",
+              "ar": "تذكر دراغونفلاي إطلاق كاميرتي DragonEye عام ٢٠٢٣ وتربط المنتج بالقمر EOSSAT-1. ويدعم ذلك سجل إطلاق الطراز نفسه، لا كل كاميرات الشركة ولا التحقق المستقل من جميع مؤشرات الأداء في المدار.",
+              "heading": {
+                "fa": "سابقه پرواز مشخص، نه عمومی",
+                "en": "Model-specific flight heritage",
+                "ar": "سجل طيران محدد للطراز"
+              },
+              "source_ids": [
+                "df_detail",
                 "df_mission"
               ]
             }
@@ -23948,6 +24011,19 @@
               "source_ids": [
                 "df_camera"
               ]
+            },
+            {
+              "fa": "رزولوشن زمینی DragonEye به ارتفاع تصویربرداری، هندسه دید و پردازش تصویر وابسته است. بنابراین مقادیر ۱٫۴ و ۲٫۸ متر باید با شرط ارتفاع ۵۰۰ کیلومتر و حالت تصویربرداری ثبت شوند؛ از عدد رزولوشن نمی‌توان کیفیت همه تصاویر یا دقت مکانی نهایی محصول مشتری را نتیجه گرفت.",
+              "en": "DragonEye GSD depends on imaging altitude, observation geometry and processing. The 1.4 m and 2.8 m figures must retain their 500 km altitude and imaging-mode conditions; nominal GSD alone does not establish the quality or geolocation accuracy of every customer image.",
+              "ar": "تعتمد الدقة الأرضية لـ DragonEye على الارتفاع وهندسة الرؤية والمعالجة. ويجب ربط قيمتي ١٫٤ و٢٫٨ م بارتفاع ٥٠٠ كم ونمط التصوير؛ فلا تثبت الدقة الاسمية جودة جميع الصور أو دقة تحديد المواقع النهائية.",
+              "heading": {
+                "fa": "شرایط اعلام مشخصات",
+                "en": "Reference conditions for performance",
+                "ar": "شروط المواصفات المرجعية"
+              },
+              "source_ids": [
+                "df_detail"
+              ]
             }
           ]
         },
@@ -23964,11 +24040,67 @@
               "source_ids": [
                 "df_roadmap"
               ]
+            },
+            {
+              "fa": "در تحلیل محموله‌ها، دوربین مرئی با دوربین فروسرخ یا چندطیفی نباید تنها با یک عدد «رزولوشن» مقایسه شود. ارتفاع مرجع، پهنای طیفی، پهنای نوار، نسبت جرم به توان و مرحله بلوغ فناوری باید برای هر مدل در جدول جدا درج شوند؛ نام مدل آینده دلیل بر سابقه پرواز نیست.",
+              "en": "Visible, infrared and multispectral imagers cannot be compared by a single “resolution” number. Reference altitude, spectral response, swath, mass, power and maturity should be recorded per model; an announced future model is not evidence of flight heritage.",
+              "ar": "لا يمكن مقارنة الكاميرات المرئية وتحت الحمراء ومتعددة الأطياف برقم دقة واحد. ويجب توثيق ارتفاع المرجع والنطاقات الطيفية وعرض المسح والكتلة والطاقة والنضج لكل طراز، فإعلان طراز مستقبلي ليس إثباتاً لطيرانه.",
+              "heading": {
+                "fa": "چگونه خانواده محصولات مقایسه می‌شود",
+                "en": "Comparing the product roadmap",
+                "ar": "كيفية مقارنة خارطة المنتجات"
+              },
+              "source_ids": [
+                "df_roadmap"
+              ],
+              "kind": "caution"
             }
           ]
         }
       ],
-      "data_status": "verified_pilot"
+      "data_status": "verified_pilot",
+      "key_facts": [
+        {
+          "label": {
+            "fa": "تفکیک زمینی",
+            "en": "GSD at 500 km",
+            "ar": "الدقة الأرضية عند ٥٠٠ كم"
+          },
+          "value": {
+            "fa": "۱٫۴ متر PAN",
+            "en": "1.4 m PAN",
+            "ar": "١٫٤ م بانكروماتي"
+          },
+          "note": {
+            "fa": "باند پانکروماتیک؛ چندطیفی ۲٫۸ متر",
+            "en": "Panchromatic; multispectral binned 2.8 m",
+            "ar": "بانكروماتي؛ متعدد الأطياف ٢٫٨ م"
+          },
+          "source_ids": [
+            "df_detail"
+          ]
+        },
+        {
+          "label": {
+            "fa": "جرم دوربین",
+            "en": "Camera mass",
+            "ar": "كتلة الكاميرا"
+          },
+          "value": {
+            "fa": "۱۸ kg",
+            "en": "18 kg",
+            "ar": "١٨ كغ"
+          },
+          "note": {
+            "fa": "با الکترونیک؛ طبق برگه محصول",
+            "en": "Including electronics, product specification",
+            "ar": "بما فيها الإلكترونيات وفق ورقة المنتج"
+          },
+          "source_ids": [
+            "df_detail"
+          ]
+        }
+      ]
     }
   },
   {
@@ -24695,8 +24827,12 @@
     "orbita_verified_profile": {
       "schema_version": 2,
       "profile_type": "components",
-      "verified_on": "2026-11-12",
-      "review_scope": "New specialist dossier only; preexisting category fields not recertified",
+      "verified_on": "2026-11-13",
+      "review_scope": {
+        "fa": "ارزیابی گزاره‌های منتخب بر اساس منابع رسمی موجود تا ۱۳ نوامبر ۲۰۲۶؛ نه ممیزی کامل همه مدل‌ها، ظرفیت‌های لحظه‌ای یا مشتریان. مشخصات مدل‌ها با شرایط مرجع منبع گزارش شده و نباید به سایر محصولات تعمیم یابد.",
+        "en": "Selected claims reviewed against available official sources as of 13 November 2026; this is not an audit of every product model, real-time capacity or customer. Model specifications retain their source reference conditions.",
+        "ar": "رُوجعت ادعاءات محددة وفق المصادر الرسمية المتاحة حتى ١٣ نوفمبر ٢٠٢٦؛ ولا يشمل ذلك جميع الطرز أو السعة الآنية أو العملاء. تُحفظ شروط القياس المرجعية لكل نموذج ولا تعمم على المنتجات الأخرى."
+      },
       "sources": [
         {
           "id": "cs_products",
@@ -24715,6 +24851,12 @@
           "title": "Stellenbosch University — CubeSpace history",
           "url": "https://www.su.ac.za/en/students/node/22289",
           "checked_on": "2026-11-12"
+        },
+        {
+          "id": "cs_gen2",
+          "title": "CubeSpace — CubeADCS Gen 2 product specification",
+          "url": "https://www.cubespace.co.za/uploads/a55e9627-9377-496b-800e-ecde36e3b21e.pdf",
+          "checked_on": "2026-11-13"
         }
       ],
       "sections": [
@@ -24739,6 +24881,20 @@
               "source_ids": [
                 "cs_su"
               ]
+            },
+            {
+              "fa": "در ماهواره‌های کوچک، تأمین ADCS تنها خرید یک حسگر نیست؛ بسته به نیاز دقت نشانه‌روی، داده حسگرها باید در رایانه کنترل وضعیت پردازش و به فرمان چرخ‌های عکس‌العملی یا عملگرهای مغناطیسی تبدیل شود. کیوب‌اسپیس این اجزا را به‌صورت قطعات مستقل یا راهکار یکپارچه عرضه می‌کند و انتخاب معماری به الزامات مأموریت وابسته است.",
+              "en": "Buying an ADCS for a small satellite is not merely buying a sensor: measurement data must be processed into pointing estimates and converted into commands for reaction wheels or magnetic actuators. CubeSpace offers both components and integrated solutions; system architecture depends on the mission pointing requirements.",
+              "ar": "لا يقتصر اقتناء نظام ADCS لقمر صغير على شراء مستشعر؛ إذ تُحوّل القياسات إلى تقديرات اتجاه وأوامر لعجلات رد الفعل أو المشغلات المغناطيسية. وتوفر الشركة مكونات منفصلة وحلولاً متكاملة وفق متطلبات دقة التوجيه للمهمة.",
+              "heading": {
+                "fa": "نقش صنعتی در زنجیره ماهواره",
+                "en": "Role in spacecraft supply chain",
+                "ar": "الدور في سلسلة توريد الأقمار"
+              },
+              "source_ids": [
+                "cs_products",
+                "cs_gen2"
+              ]
             }
           ]
         },
@@ -24754,6 +24910,32 @@
               "ar": "تشمل المنتجات أنظمة ADCS المتكاملة، وعجلات رد الفعل، وقضبان العزم المغناطيسي، ومقاييس المغناطيسية، وحساسات الشمس وأفق الأرض، ومتتبعات النجوم.",
               "source_ids": [
                 "cs_products"
+              ]
+            },
+            {
+              "fa": "در مشخصات نسل دوم CubeADCS، گزینه چهارچرخ با چیدمان هرمی توصیف شده است: چرخ‌ها با سرعت پایه کار می‌کنند و آرایش چهارعضوی می‌تواند در صورت ازکارافتادن یک چرخ، کنترل سه‌محوره را حفظ کند. این ویژگی مربوط به همان پیکربندی مستند است و نباید به تمام محصولات تعمیم داده شود.",
+              "en": "The Gen 2 specification describes a four-wheel pyramid configuration. Wheels are biased away from zero speed, and the four-wheel geometry retains three-axis control if one wheel fails. This is a capability of the documented configuration, not a claim about every CubeSpace product.",
+              "ar": "تصف وثيقة الجيل الثاني ترتيب أربع عجلات بشكل هرمي، مع إبقاء سرعتها بعيداً عن الصفر. ويسمح هذا الترتيب بالحفاظ على التحكم ثلاثي المحاور عند تعطل عجلة واحدة، وهي ميزة تخص التهيئة المحددة ولا تشمل جميع المنتجات.",
+              "heading": {
+                "fa": "معماری CubeADCS Gen 2",
+                "en": "CubeADCS Gen 2 architecture",
+                "ar": "بنية CubeADCS Gen 2"
+              },
+              "source_ids": [
+                "cs_gen2"
+              ]
+            },
+            {
+              "fa": "در پیکربندی مرجع، مغناطیس‌سنج CubeMag، دو ژیروسکوپ و حسگر دقیق خورشید CubeSense به‌کار می‌روند. حسگر زمین برای بهبود کارکرد در شرایط گرفت و ردیاب ستاره برای مأموریت‌های دقیق‌تر به‌صورت انتخابی معرفی شده‌اند. دقت نهایی سامانه بدون مشخصات همان پیکربندی و شرایط مداری قابل ادعا نیست.",
+              "en": "The reference package includes CubeMag, two gyroscopes and a fine CubeSense Sun sensor. An Earth sensor is optional for eclipse performance and a star tracker can be added where pointing requirements are tighter. Final system accuracy cannot be inferred without the selected configuration and orbital environment.",
+              "ar": "تضم الحزمة المرجعية مقياس مغناطيسية CubeMag وجيروسكوبين ومستشعر شمس دقيقاً CubeSense. ويمكن إضافة مستشعر الأرض لتحسين الأداء أثناء الخسوف أو متعقب نجوم للمهمات الأعلى دقة. ولا يمكن استنتاج الدقة النهائية من أسماء المكونات وحدها.",
+              "heading": {
+                "fa": "حسگرها و محدودیت انتخاب",
+                "en": "Sensors and selection trade-offs",
+                "ar": "المستشعرات ومفاضلات الاختيار"
+              },
+              "source_ids": [
+                "cs_gen2"
               ]
             }
           ]
@@ -24771,6 +24953,21 @@
               "source_ids": [
                 "cs_home"
               ]
+            },
+            {
+              "fa": "شرکت برای برخی محصولات خود سابقه استفاده مداری گزارش می‌کند؛ اما وجود نام «فضایی» در کاتالوگ به معنی پرواز هر مدل نیست. در ORBITA باید میان محصول عرضه‌شده، محصول آزمون‌شده و مدل پروازکرده تفکیک شود و برای سابقه هر مدل، مأموریت میزبان و مدرک اختصاصی ثبت گردد.",
+              "en": "The manufacturer reports on-orbit experience for parts of its portfolio, but the catalog does not prove that every listed variant has flown. ORBITA should distinguish catalog availability, qualification, and model-specific flight use, tying heritage to a named host mission whenever evidence exists.",
+              "ar": "تذكر الشركة استخدام بعض منتجاتها في المدار، لكن إدراج طراز في الكتالوج لا يثبت إطلاقه. يجب فصل حالة الإتاحة والاختبار والطيران لكل طراز وربط السجل بمهمة مضيفة محددة عندما تتوفر الأدلة.",
+              "heading": {
+                "fa": "الزام اثبات سابقه پرواز",
+                "en": "How flight heritage is assessed",
+                "ar": "كيفية إثبات التراث التشغيلي"
+              },
+              "source_ids": [
+                "cs_products",
+                "cs_home"
+              ],
+              "kind": "caution"
             }
           ]
         },
@@ -24786,6 +24983,19 @@
               "ar": "صُممت أنظمة ADCS للتكامل مع حواسيب المركبات الفضائية التابعة للعملاء ويمكن دمج عتاد جهات أخرى؛ ولا نورد عقود عملاء محددة هنا.",
               "source_ids": [
                 "cs_home"
+              ]
+            },
+            {
+              "fa": "راهکار ADCS باید با رایانه پرواز مشتری از نظر زمان‌بندی فرمان، تله‌متری حسگر، رابط داده و وضعیت ایمن سازگار باشد. وجود امکان استفاده از حسگر یا ردیاب ستاره طرف ثالث در مشخصات CubeADCS نشان می‌دهد آرایش نهایی تابع طراحی باس است و «محصول یکپارچه» را نباید به معنی مستقل‌بودن کامل از سایر سامانه‌های ماهواره دانست.",
+              "en": "An ADCS must match the customer flight computer in command timing, sensor telemetry, data interface and safe-mode behavior. The CubeADCS specification allows certain third-party trackers, demonstrating that the final layout depends on bus design; “integrated” does not mean independent of the rest of the spacecraft.",
+              "ar": "يجب أن يتوافق ADCS مع حاسوب القمر في توقيت الأوامر وبيانات المستشعرات والواجهات والوضع الآمن. وتسمح مواصفات CubeADCS بمتتبعات نجوم من أطراف أخرى، ما يؤكد أن التهيئة تعتمد على تصميم المنصة ولا تعمل بمعزل عن الأنظمة الأخرى.",
+              "heading": {
+                "fa": "یکپارچه‌سازی با رایانه ماهواره",
+                "en": "Integration with flight computers",
+                "ar": "الدمج مع حاسوب الطيران"
+              },
+              "source_ids": [
+                "cs_gen2"
               ]
             }
           ]
@@ -24803,15 +25013,70 @@
               "source_ids": [
                 "cs_su"
               ]
+            },
+            {
+              "fa": "ریشه دانشگاهی شرکت در منابع دانشگاه استلنبوش ذکر شده است. اهمیت این مسیر در انتقال تجربه تحقیقاتیِ کنترل وضعیت به تولید قطعات صنعتی است؛ اما همکاری دانشگاهی به‌تنهایی نشان‌دهنده مالکیت کنونی دانشگاه یا تأیید همه قابلیت‌های محصول نیست.",
+              "en": "Stellenbosch University documents the company’s academic origins. The transition illustrates how attitude-control research can become industrial hardware supply, but academic provenance alone does not establish current ownership or independently qualify every product claim.",
+              "ar": "توثق جامعة ستيلينبوش الجذور الأكاديمية للشركة؛ ويظهر ذلك انتقال خبرة التحكم في الاتجاه من البحث إلى تصنيع العتاد. لكن الأصل الجامعي لا يثبت الملكية الحالية أو تأهيل كل منتج بصورة مستقلة.",
+              "heading": {
+                "fa": "از دانشگاه به زنجیره تأمین",
+                "en": "From university to supplier",
+                "ar": "من الجامعة إلى سلسلة الإمداد"
+              },
+              "source_ids": [
+                "cs_su"
+              ]
             }
           ]
         }
       ],
       "summary": {
-        "fa": "تولیدکننده سامانه‌های تعیین و کنترل وضعیت ماهواره شامل ADCS، چرخ عکس‌العملی و ردیاب ستاره، مستقر در آفریقای جنوبی.",
-        "en": "South African manufacturer of satellite attitude-control systems, reaction wheels and star trackers.",
-        "ar": "شركة جنوب أفريقية لأنظمة التحكم في اتجاه الأقمار وعجلات رد الفعل ومتتبعات النجوم."
-      }
+        "fa": "کیوب‌اسپیس بر زیرسامانه‌های تعیین و کنترل وضعیت ماهواره تمرکز دارد: از حسگر خورشید و مغناطیس‌سنج تا چرخ عکس‌العملی و مجموعه یکپارچه کنترل سه‌محوره. اهمیت این شرکت در ارائه اجزایی است که وضعیت زاویه‌ای فضاپیما را اندازه‌گیری و اصلاح می‌کنند؛ نه در ساخت تمام اجزای یک ماهواره.",
+        "en": "CubeSpace specializes in satellite attitude determination and control: from Sun sensors and magnetometers to reaction wheels and integrated three-axis control assemblies. Its distinctive role is in measuring and correcting spacecraft orientation, not in building every spacecraft subsystem.",
+        "ar": "تتخصص كيوب سبيس في أنظمة تحديد وضعية الأقمار الصناعية والتحكم بها، بدءاً من مستشعرات الشمس والمغناطيسية ووصولاً إلى عجلات رد الفعل وأنظمة التحكم ثلاثية المحاور. ويتمثل دورها في قياس اتجاه المركبة وتصحيحه، لا تصنيع كل أنظمتها."
+      },
+      "key_facts": [
+        {
+          "label": {
+            "fa": "حوزه فناوری",
+            "en": "Technology",
+            "ar": "التخصص"
+          },
+          "value": {
+            "fa": "ADCS",
+            "en": "ADCS",
+            "ar": "ADCS"
+          },
+          "note": {
+            "fa": "کنترل وضعیت سه‌محوره",
+            "en": "Three-axis attitude control",
+            "ar": "التحكم في الاتجاه ثلاثي المحاور"
+          },
+          "source_ids": [
+            "cs_gen2"
+          ]
+        },
+        {
+          "label": {
+            "fa": "آرایش نمونه",
+            "en": "Example architecture",
+            "ar": "بنية نموذجية"
+          },
+          "value": {
+            "fa": "۴ چرخ",
+            "en": "4 wheels",
+            "ar": "٤ عجلات"
+          },
+          "note": {
+            "fa": "آرایش هرمی، با تحمل خرابی یک چرخ در پیکربندی معرفی‌شده",
+            "en": "Pyramid arrangement with one-wheel fault tolerance in documented configuration",
+            "ar": "تشكيل هرمي يحتمل تعطل عجلة واحدة في التهيئة الموثقة"
+          },
+          "source_ids": [
+            "cs_gen2"
+          ]
+        }
+      ]
     },
     "coordinate_precision": "city_approximation_existing"
   },
@@ -39469,8 +39734,12 @@
     "orbita_verified_profile": {
       "schema_version": 2,
       "profile_type": "components",
-      "verified_on": "2026-11-12",
-      "review_scope": "New specialist dossier only; preexisting category fields not recertified",
+      "verified_on": "2026-11-13",
+      "review_scope": {
+        "fa": "ارزیابی گزاره‌های منتخب بر اساس منابع رسمی موجود تا ۱۳ نوامبر ۲۰۲۶؛ نه ممیزی کامل همه مدل‌ها، ظرفیت‌های لحظه‌ای یا مشتریان. مشخصات مدل‌ها با شرایط مرجع منبع گزارش شده و نباید به سایر محصولات تعمیم یابد.",
+        "en": "Selected claims reviewed against available official sources as of 13 November 2026; this is not an audit of every product model, real-time capacity or customer. Model specifications retain their source reference conditions.",
+        "ar": "رُوجعت ادعاءات محددة وفق المصادر الرسمية المتاحة حتى ١٣ نوفمبر ٢٠٢٦؛ ولا يشمل ذلك جميع الطرز أو السعة الآنية أو العملاء. تُحفظ شروط القياس المرجعية لكل نموذج ولا تعمم على المنتجات الأخرى."
+      },
       "sources": [
         {
           "id": "bct_products",
@@ -39489,6 +39758,18 @@
           "title": "RTX — Reaction wheel production (Apr 2026)",
           "url": "https://www.rtx.com/news/news-center/2026/04/14/rtxs-blue-canyon-technologies-expands-reaction-wheel-production-capacity",
           "checked_on": "2026-11-12"
+        },
+        {
+          "id": "bct_wheels",
+          "title": "Blue Canyon Technologies — Reaction Wheels",
+          "url": "https://www.bluecanyontech.com/components/reaction-wheels/",
+          "checked_on": "2026-11-13"
+        },
+        {
+          "id": "bct_acq",
+          "title": "Blue Canyon — Raytheon acquisition completed, December 2020",
+          "url": "https://www.bluecanyontech.com/news/blue-canyon-technologies-announces-completion-of-acquisition-by-raytheon-technologies/",
+          "checked_on": "2026-11-13"
         }
       ],
       "sections": [
@@ -39504,6 +39785,19 @@
               "ar": "بلو كانيون تكنولوجيز شركة مقرها كولورادو تصنع الأقمار الصغيرة ومكوّنات التحكم في الاتجاه، وتتبع أعمال Raytheon ضمن RTX.",
               "source_ids": [
                 "rtx_2026"
+              ]
+            },
+            {
+              "fa": "شرکت در دسته «سازندگان ماهواره» با باس و سامانه‌های یکپارچه شناخته می‌شود، ولی در دسته «قطعات» باید ردیاب‌های ستاره و مجموعه چرخ‌های عکس‌العملی آن بررسی شوند. افزودن نقش دوم به شناسه موجود مانع می‌شود آمار شرکت‌ها با ساخت رکورد تکراری افزایش کاذب پیدا کند.",
+              "en": "In the satellite-manufacturer category the company is known for spacecraft buses; in components it is assessed for star trackers and reaction wheels. Linking both activities to the existing entity ID prevents an artificial increase in the company count.",
+              "ar": "تُعرف الشركة في فئة تصنيع الأقمار بمنصات المركبات، بينما تُدرس في فئة المكونات من خلال متتبعات النجوم وعجلات رد الفعل. وإسناد الدورين إلى سجل واحد يمنع تكرار الشركة وإحصاءها مرتين.",
+              "heading": {
+                "fa": "دو نقش متفاوت یک شرکت",
+                "en": "Two distinct industrial roles",
+                "ar": "دوران صناعيان مختلفان"
+              },
+              "source_ids": [
+                "bct_products"
               ]
             }
           ]
@@ -39529,6 +39823,32 @@
               "source_ids": [
                 "bct_rw16"
               ]
+            },
+            {
+              "fa": "در کاتالوگ سازنده، RWp015 با ظرفیت ذخیره تکانه ۰٫۰۱۵ نیوتن‌مترثانیه و جرم ۰٫۱۳ کیلوگرم عرضه می‌شود؛ در سوی دیگر RW16 تا ۱۶ نیوتن‌مترثانیه ذکر شده است. این اعداد، مشخصه مدل‌های متفاوت‌اند و به معنی عملکرد یکسان در همه باس‌ها نیستند.",
+              "en": "The manufacturer specifies RWp015 at 0.015 N·m·s momentum storage and 0.13 kg mass, while the RW16 model is listed at up to 16 N·m·s. These are distinct hardware models, not interchangeable performance claims across all buses.",
+              "ar": "تحدد الشركة لعجلة RWp015 زخماً مخزناً مقداره ٠٫٠١٥ نيوتن·متر·ثانية وكتلة ٠٫١٣ كغ، بينما تصل RW16 إلى ١٦ نيوتن·متر·ثانية. وهذه قيم لطرازات مختلفة ولا تعني أداءً موحداً على جميع المنصات.",
+              "heading": {
+                "fa": "تفکیک مدل‌های چرخ عکس‌العملی",
+                "en": "Reaction-wheel model comparisons",
+                "ar": "مقارنة طرز عجلات رد الفعل"
+              },
+              "source_ids": [
+                "bct_wheels"
+              ]
+            },
+            {
+              "fa": "ردیاب ستاره کوچک NST با ثبت الگوهای ستاره‌ای، وضعیت زاویه‌ای ماهواره را استخراج و به شکل کواترنیون در اختیار رایانه پرواز قرار می‌دهد. سازنده برای این خانواده کاتالوگ داخلی بیش از ۲۰ هزار ستاره و حساسیت تا قدر ظاهری ۷٫۵ را گزارش کرده است؛ دقت مأموریتی به نصب و شرایط نوری وابسته می‌ماند.",
+              "en": "The NST family estimates spacecraft attitude from star patterns and provides quaternion output to flight software. The company specifies an onboard catalog exceeding 20,000 stars and tracking to magnitude 7.5; actual mission pointing performance also depends on integration and lighting conditions.",
+              "ar": "تستنتج عائلة NST اتجاه المركبة من أنماط النجوم وترسل ناتجاً في صيغة رباعيات إلى الحاسوب. ويذكر المصنّع فهرساً داخلياً يزيد عن ٢٠ ألف نجم حتى القدر الظاهري ٧٫٥؛ لكن الدقة الفعلية تتأثر بالدمج والظروف الضوئية.",
+              "heading": {
+                "fa": "ردیاب ستاره و خروجی آن",
+                "en": "Star trackers and their output",
+                "ar": "متتبعات النجوم ومخرجاتها"
+              },
+              "source_ids": [
+                "bct_products"
+              ]
             }
           ]
         },
@@ -39545,6 +39865,20 @@
               "source_ids": [
                 "bct_products"
               ]
+            },
+            {
+              "fa": "در صفحه چرخ‌های عکس‌العملی، سازنده آمار ساخت و پرتاب را برای کل خانواده محصولات گزارش می‌کند. این آمار نباید به مدل RW16 یا هر چرخ خاص نسبت داده شود؛ برای هر مدل باید تعداد مأموریت‌های میزبان، شرایط محیطی و تاریخ انتشار عدد جداگانه بررسی شود.",
+              "en": "The reaction-wheel page reports manufactured and launched counts across the broader wheel portfolio. Those counts cannot be assigned to the RW16 or another individual model; model-level heritage requires named spacecraft, environmental context, and an as-of date.",
+              "ar": "تنشر صفحة العجلات أرقام التصنيع والإطلاق للمجموعة ككل، ولا يجوز نسبتها إلى RW16 أو إلى طراز محدد. ويتطلب إثبات سجل كل طراز أسماء المركبات وظروف استخدامها وتاريخ الأرقام.",
+              "heading": {
+                "fa": "اعداد سابقه ساخت با احتیاط",
+                "en": "Interpreting fleet numbers",
+                "ar": "قراءة أرقام السجل بحذر"
+              },
+              "source_ids": [
+                "bct_wheels"
+              ],
+              "kind": "caution"
             }
           ]
         },
@@ -39560,6 +39894,20 @@
               "ar": "أعلنت RTX في أبريل 2026 عن خطة لزيادة إنتاج عجلات رد الفعل؛ ولا تُعرض السعة المستهدفة بوصفها إنتاجاً محققاً.",
               "source_ids": [
                 "rtx_2026"
+              ]
+            },
+            {
+              "fa": "فروش چرخ عکس‌العملی یا ردیاب ستاره به معنی آن نیست که بلو کنیون همه زیرسامانه‌های ماهواره مشتری را ساخته است. در پرونده رابطه‌های زنجیره تأمین باید میان «سازنده قطعه»، «سازنده باس» و «مجری مأموریت» فرق گذاشت؛ گواه حضور یک چرخ در مدار، خودبه‌خود گواه موفقیت کل مأموریت نیست.",
+              "en": "A delivered wheel or star tracker does not imply that Blue Canyon built every subsystem on the customer spacecraft. Supply-chain records must distinguish component vendor, bus integrator and mission operator; evidence that a wheel flew is not automatic evidence of complete mission success.",
+              "ar": "لا يعني توريد عجلة أو متتبع نجوم أن Blue Canyon صنعت جميع أنظمة قمر العميل. يجب التمييز بين مورّد القطعة ومكامل المنصة ومشغل المهمة؛ فطيران مكوّن لا يثبت وحده نجاح المهمة كاملة.",
+              "heading": {
+                "fa": "از سازنده قطعه تا پیمانکار باس",
+                "en": "Component supplier versus bus prime",
+                "ar": "من مورّد المكوّن إلى مصنّع المنصة"
+              },
+              "source_ids": [
+                "bct_products",
+                "bct_wheels"
               ]
             }
           ]
@@ -39577,15 +39925,70 @@
               "source_ids": [
                 "rtx_2026"
               ]
+            },
+            {
+              "fa": "تملک بلو کنیون به‌وسیله Raytheon Technologies در دسامبر ۲۰۲۰ نهایی شد. بنابراین ثبت آن به‌عنوان «شرکت کاملاً مستقل» بدون اشاره به ساختار گروهی درست نیست؛ در عین حال، مالکیت مشترک نباید باعث ادغام شناسه محصولات یا حذف نام تجاری بلو کنیون شود.",
+              "en": "Raytheon Technologies completed its acquisition of Blue Canyon in December 2020. It should therefore not be portrayed as a standalone independent owner, but group ownership does not justify erasing its operating identity or merging its product records into a generic parent profile.",
+              "ar": "أُنجز استحواذ Raytheon Technologies على بلو كانيون في ديسمبر ٢٠٢٠. لذلك يجب توضيح انتمائها للمجموعة دون محو هويتها التشغيلية أو دمج منتجاتها آلياً في سجل الشركة الأم.",
+              "heading": {
+                "fa": "تغییر ساختار مالکیت",
+                "en": "Ownership history",
+                "ar": "تاريخ الملكية"
+              },
+              "source_ids": [
+                "bct_acq"
+              ]
             }
           ]
         }
       ],
       "summary": {
-        "fa": "تولیدکننده ماهواره کوچک و قطعات کنترل وضعیت، از جمله چرخ‌های عکس‌العملی و ردیاب‌های ستاره‌ای؛ بخشی از RTX.",
-        "en": "Small-satellite and attitude-control component manufacturer within RTX, including reaction wheels and star trackers.",
-        "ar": "شركة لصناعة الأقمار الصغيرة ومكوّنات التحكم في الاتجاه ضمن RTX، ومنها عجلات رد الفعل ومتتبعات النجوم."
-      }
+        "fa": "بلو کنیون تکنولوژیز هم سازنده باس ماهواره کوچک است و هم تأمین‌کننده تجهیزات کنترل وضعیت؛ از ردیاب ستاره تا چرخ عکس‌العملی. برای ارزیابی این شرکت، باید توان ساخت ماهواره را از عملکرد و سابقه پرواز هر خانواده قطعه جدا کرد.",
+        "en": "Blue Canyon Technologies builds small-satellite buses and supplies attitude-control components such as star trackers and reaction wheels. Its spacecraft manufacturing role should be assessed separately from the specifications and flight heritage of each component family.",
+        "ar": "تنتج بلو كانيون تكنولوجيز منصات أقمار صغيرة ومكونات التحكم في الاتجاه مثل متتبعات النجوم وعجلات رد الفعل. وينبغي تقييم دور تصنيع المركبات بمعزل عن مواصفات وتراث كل مجموعة من المكونات."
+      },
+      "key_facts": [
+        {
+          "label": {
+            "fa": "خانواده چرخ",
+            "en": "Wheel family",
+            "ar": "عائلة العجلات"
+          },
+          "value": {
+            "fa": "۰٫۰۱۵ تا ۱۶ N·m·s",
+            "en": "0.015–16 N·m·s",
+            "ar": "٠٫٠١٥–١٦ نيوتن·متر·ثانية"
+          },
+          "note": {
+            "fa": "دامنه لختی زاویه‌ایِ اعلام‌شده در سبد محصولات",
+            "en": "Published momentum-storage span across product lineup",
+            "ar": "نطاق الزخم الزاوي المعلن في عائلة المنتجات"
+          },
+          "source_ids": [
+            "bct_wheels"
+          ]
+        },
+        {
+          "label": {
+            "fa": "حسگر",
+            "en": "Star tracker",
+            "ar": "متتبع النجوم"
+          },
+          "value": {
+            "fa": "NST",
+            "en": "NST",
+            "ar": "NST"
+          },
+          "note": {
+            "fa": "ردیاب ستاره کوچک با کاتالوگ داخلی بیش از ۲۰ هزار ستاره",
+            "en": "Nano tracker with onboard catalog exceeding 20,000 stars",
+            "ar": "متتبع صغير يضم فهرساً داخلياً لأكثر من ٢٠ ألف نجم"
+          },
+          "source_ids": [
+            "bct_products"
+          ]
+        }
+      ]
     },
     "coordinate_precision": "city_approximation_existing"
   },
@@ -48412,8 +48815,12 @@
     "orbita_verified_profile": {
       "schema_version": 2,
       "profile_type": "components",
-      "verified_on": "2026-11-12",
-      "review_scope": "New specialist dossier only; preexisting category fields not recertified",
+      "verified_on": "2026-11-13",
+      "review_scope": {
+        "fa": "ارزیابی گزاره‌های منتخب بر اساس منابع رسمی موجود تا ۱۳ نوامبر ۲۰۲۶؛ نه ممیزی کامل همه مدل‌ها، ظرفیت‌های لحظه‌ای یا مشتریان. مشخصات مدل‌ها با شرایط مرجع منبع گزارش شده و نباید به سایر محصولات تعمیم یابد.",
+        "en": "Selected claims reviewed against available official sources as of 13 November 2026; this is not an audit of every product model, real-time capacity or customer. Model specifications retain their source reference conditions.",
+        "ar": "رُوجعت ادعاءات محددة وفق المصادر الرسمية المتاحة حتى ١٣ نوفمبر ٢٠٢٦؛ ولا يشمل ذلك جميع الطرز أو السعة الآنية أو العملاء. تُحفظ شروط القياس المرجعية لكل نموذج ولا تعمم على المنتجات الأخرى."
+      },
       "sources": [
         {
           "id": "dhv_about",
@@ -48438,6 +48845,18 @@
           "title": "International Astronautical Federation — DHV Technology",
           "url": "https://www.iafastro.org/membership/all-members/dhv-technology.html",
           "checked_on": "2026-11-12"
+        },
+        {
+          "id": "dhv_solutions",
+          "title": "DHV Technology — Power solutions portfolio",
+          "url": "https://dhvtechnology.com/solutions/",
+          "checked_on": "2026-11-13"
+        },
+        {
+          "id": "dhv_nasa_power",
+          "title": "NASA 2026 State of the Art: Small Satellite Power Systems",
+          "url": "https://www.nasa.gov/wp-content/uploads/2026/05/3-soa-power-2026-final.pdf?emrc=6acb83430f0d8",
+          "checked_on": "2026-11-13"
         }
       ],
       "sections": [
@@ -48453,6 +48872,19 @@
               "ar": "DHV Technology شركة إسبانية مقرها مالقة تصنّع الألواح الشمسية وأنظمة الطاقة الكهربائية للتطبيقات الفضائية.",
               "source_ids": [
                 "dhv_about"
+              ]
+            },
+            {
+              "fa": "ماژول تولید توان باید با کنترل شارژ باتری، توزیع بار و حفاظت خطوط الکتریکی هماهنگ شود. محصولاتی چون EPS و PCDU مکمل آرایه خورشیدی‌اند؛ انتخاب آن‌ها به ولتاژ باس، بارهای گذرا، نیازهای مأموریت و رابط‌های مکانیکی و الکتریکی وابسته است.",
+              "en": "Generating power is only one step: batteries must be charged, loads distributed and electrical lines protected. EPS and PCDU hardware complement solar arrays, with selection depending on bus voltage, transient loads, mission demands and mechanical/electrical interfaces.",
+              "ar": "لا تكفي توليد الطاقة وحده؛ إذ يلزم شحن البطاريات وتوزيع الأحمال وحماية الخطوط. تكمل وحدات EPS وPCDU الألواح الشمسية، ويعتمد اختيارها على جهد المنصة والأحمال ومتطلبات المهمة والواجهات.",
+              "heading": {
+                "fa": "جایگاه در معماری باس ماهواره",
+                "en": "Position in spacecraft power architecture",
+                "ar": "موضعها في هندسة طاقة القمر"
+              },
+              "source_ids": [
+                "dhv_solutions"
               ]
             }
           ]
@@ -48478,6 +48910,33 @@
               "source_ids": [
                 "dhv_smallsat"
               ]
+            },
+            {
+              "fa": "پنل‌های مخصوص کیوب‌ست می‌توانند روی بدنه نصب شوند یا پس از جدایش باز شوند؛ برای ماهواره‌های کوچک‌تر و بزرگ‌تر، شرکت از زیرلایه‌های مدار چاپی و سازه لانه‌زنبوری آلومینیومی با پوشش کامپوزیت استفاده می‌کند. ظرفیت توان را باید برای مدل معین و شرایط ابتدای عمر، نه به‌صورت عدد عمومی، ثبت کرد.",
+              "en": "CubeSat solar panels may be body-mounted or deploy after separation. SmallSat offerings include printed-circuit-board substrates and aluminium honeycomb structures with composite layers. Electrical output must be recorded by exact model and beginning-of-life conditions, not as a single catalog-wide number.",
+              "ar": "قد تُثبت ألواح كيوب سات على الجسم أو تُنشر بعد الانفصال؛ وتشمل الحلول ركائز لوحات الدوائر وهياكل الألمنيوم الخلوية مع طبقات مركبة. ويجب تسجيل القدرة لطراز محدد وتحت شروط بداية العمر لا كرقم عام.",
+              "heading": {
+                "fa": "پنل ثابت و آرایه بازشونده",
+                "en": "Body-mounted versus deployable arrays",
+                "ar": "الألواح الثابتة والمصفوفات القابلة للنشر"
+              },
+              "source_ids": [
+                "dhv_prod",
+                "dhv_solutions"
+              ]
+            },
+            {
+              "fa": "سامانه SADA آرایه خورشیدی را نسبت به خورشید می‌چرخاند و مسیر انتقال توان از بخش گردان به باس را فراهم می‌کند. در کنار آن، عایق چندلایه MLI برای کاهش تبادل حرارتی استفاده می‌شود. هر دو از نظر عملکرد با سلول خورشیدی تفاوت دارند و باید در شناسنامه به‌عنوان محصولات مستقل معرفی شوند.",
+              "en": "A SADA rotates an array to improve Sun orientation and provides a power path across the rotating interface. Multilayer insulation (MLI) instead limits thermal exchange. Neither is simply a solar cell, and both deserve separate component records in a mature product database.",
+              "ar": "تدير منظومة SADA المصفوفة باتجاه الشمس وتسمح بنقل الطاقة عبر الوصلة الدوارة، بينما يحد العزل متعدد الطبقات MLI من التبادل الحراري. وهما مكونان مختلفان عن الخلايا الشمسية ويستحقان سجلات مستقلة.",
+              "heading": {
+                "fa": "آرایه گرداننده و کنترل حرارت",
+                "en": "Solar array drive and thermal layers",
+                "ar": "توجيه الألواح وطبقات التحكم الحراري"
+              },
+              "source_ids": [
+                "dhv_prod"
+              ]
             }
           ]
         },
@@ -48493,6 +48952,19 @@
               "ar": "يشير ملف عضوية الشركة لدى الاتحاد الدولي للملاحة الفضائية إلى استخدام منتجات DHV في المدار؛ ولا ننسب طرزاً محددة إلى بعثات بعينها هنا.",
               "source_ids": [
                 "dhv_iaf"
+              ]
+            },
+            {
+              "fa": "گزارش فناوری ماهواره کوچک ناسا برای سال ۲۰۲۶ چند مدل پنل DHV را با مشخصات مجزا مقایسه کرده است؛ برای مثال BMSA-066W به‌عنوان پنل بدنه‌نصب با توان ابتدای عمر ۶۶ وات ذکر می‌شود. این مقدار متعلق به همان مدل و جدول است، نه تضمین توان هر ماهواره مشتری.",
+              "en": "NASA’s 2026 small-satellite power review compares individual DHV panel models; for example, BMSA-066W is listed as a body-mounted panel at 66 W beginning-of-life output. That is a specific tabulated product figure, not a guarantee of power for every customer spacecraft.",
+              "ar": "يقارن تقرير ناسا لعام ٢٠٢٦ طرزاً محددة لألواح DHV؛ ويُدرج BMSA-066W كلوح مثبت على الجسم بقدرة ٦٦ واط عند بداية العمر. هذه قيمة للطراز في الجدول وليست ضماناً لقدرة كل قمر يستخدمه.",
+              "heading": {
+                "fa": "مشخصات مدل در گزارش ناسا",
+                "en": "Model-specific data in NASA review",
+                "ar": "مواصفات الطرز في مرجع ناسا"
+              },
+              "source_ids": [
+                "dhv_nasa_power"
               ]
             }
           ]
@@ -48510,6 +48982,20 @@
               "source_ids": [
                 "dhv_about"
               ]
+            },
+            {
+              "fa": "شرکت طراحی سفارشی رابط‌های الکتریکی و مکانیکی آرایه‌های خورشیدی را بر اساس نیاز مأموریت عرضه می‌کند. برای مقایسه واقعی دو پیشنهاد باید ولتاژ باس، توان در آغاز و پایان عمر، شرایط دمایی، جرم و ابعاد بازشده بررسی شود؛ تنها نام «پنل خورشیدی فضایی» برای تصمیم مهندسی کافی نیست.",
+              "en": "The company offers mission-specific electrical and mechanical interfaces. Comparing two array offers requires bus voltage, beginning- and end-of-life power, temperature environment, mass and deployed geometry; calling both “space solar panels” is not an engineering-level comparison.",
+              "ar": "توفر الشركة واجهات كهربائية وميكانيكية مخصصة للمهمة. وتتطلب مقارنة عرضين دراسة جهد المنصة والقدرة عند بداية العمر ونهايته والحرارة والكتلة وأبعاد النشر؛ فالاسم العام «لوح شمسي فضائي» غير كافٍ.",
+              "heading": {
+                "fa": "رابط‌های سازگار با مأموریت",
+                "en": "Mission-specific electrical interfaces",
+                "ar": "الواجهات الكهربائية الخاصة بالمهمة"
+              },
+              "source_ids": [
+                "dhv_prod",
+                "dhv_solutions"
+              ]
             }
           ]
         },
@@ -48526,15 +49012,72 @@
               "source_ids": [
                 "dhv_about"
               ]
+            },
+            {
+              "fa": "شرکت در معرفی رسمی خود آغاز فعالیت را به سال ۲۰۱۳ نسبت می‌دهد. توسعه سبد از صفحات خورشیدی به زیرسامانه‌های توزیع توان، گرداننده آرایه و کنترل حرارتی، نشان می‌دهد تحلیل صنعتی باید تحول سبد فناوری را دنبال کند؛ ولی معرفی یک محصول جدید به معنی اثبات پرواز همان محصول نیست.",
+              "en": "The company dates its operations to 2013. Its catalog now spans power distribution, solar-array actuation and thermal-control elements alongside panels, illustrating diversification. A new product listing, however, is not itself proof that the device has flown.",
+              "ar": "تؤرخ الشركة بداية عملها بعام ٢٠١٣، وتوسعت من الألواح إلى توزيع الطاقة وتوجيهها والعزل الحراري. ويُظهر ذلك تنوعاً تقنياً، لكن إدراج منتج جديد لا يعني تلقائياً أنه طار في المدار.",
+              "heading": {
+                "fa": "گسترش سبد از سال ۲۰۱۳",
+                "en": "Portfolio development since 2013",
+                "ar": "تطور المنتجات منذ ٢٠١٣"
+              },
+              "source_ids": [
+                "dhv_about",
+                "dhv_prod"
+              ],
+              "kind": "caution"
             }
           ]
         }
       ],
       "summary": {
-        "fa": "سازنده اسپانیایی پنل‌های خورشیدی و زیرسامانه‌های توان فضایی، از جمله EPS و PCDU، مستقر در مالاگا.",
-        "en": "Spanish space-power subsystem manufacturer of solar arrays, EPS, PCDU and related technologies; located in Málaga.",
-        "ar": "مصنّع إسباني للألواح الشمسية وأنظمة القدرة الفضائية، بما فيها EPS وPCDU، ومقره مالقة."
-      }
+        "fa": "دی‌اچ‌وی تکنولوژی در مالاگا، تأمین‌کننده زیرسامانه‌های انرژی ماهواره است. سبد آن فقط پنل خورشیدی نیست: آرایه‌های بازشونده، سامانه توان الکتریکی، واحد توزیع توان، سازوکار گرداننده آرایه و عایق چندلایه را نیز شامل می‌شود. این اجزا به تولید، کنترل، توزیع و نگهداری انرژی در فضاپیما کمک می‌کنند.",
+        "en": "Málaga-based DHV Technology supplies spacecraft electrical-power subsystems, not only solar panels. Its portfolio includes deployable arrays, EPS, PCDU, solar-array drives and multilayer insulation, addressing the generation, conditioning, distribution and thermal protection of spacecraft power hardware.",
+        "ar": "توفر DHV Technology في مالقة أنظمة الطاقة الكهربائية للمركبات الفضائية وليس الألواح الشمسية فقط؛ وتشمل منتجاتها المصفوفات القابلة للنشر ووحدات EPS وPCDU وآليات توجيه الألواح والعزل الحراري متعدد الطبقات."
+      },
+      "key_facts": [
+        {
+          "label": {
+            "fa": "محصول",
+            "en": "Product line",
+            "ar": "عائلة المنتج"
+          },
+          "value": {
+            "fa": "EPS / PCDU",
+            "en": "EPS / PCDU",
+            "ar": "EPS / PCDU"
+          },
+          "note": {
+            "fa": "کنترل و توزیع برق ماهواره",
+            "en": "Electrical power conditioning and distribution",
+            "ar": "تكييف وتوزيع القدرة الكهربائية"
+          },
+          "source_ids": [
+            "dhv_prod"
+          ]
+        },
+        {
+          "label": {
+            "fa": "اندازه پلتفرم",
+            "en": "CubeSat formats",
+            "ar": "أحجام كيوب سات"
+          },
+          "value": {
+            "fa": "1U–16U",
+            "en": "1U–16U",
+            "ar": "1U–16U"
+          },
+          "note": {
+            "fa": "طبق کاتالوگ پنل‌های استاندارد و سفارشی",
+            "en": "Catalog-supported standard/custom panel formats",
+            "ar": "أحجام الألواح القياسية والمخصصة حسب الكتالوج"
+          },
+          "source_ids": [
+            "dhv_prod"
+          ]
+        }
+      ]
     }
   },
   {
@@ -48564,8 +49107,12 @@
     "orbita_verified_profile": {
       "schema_version": 2,
       "profile_type": "university_space",
-      "verified_on": "2026-11-12",
-      "review_scope": "New specialist dossier only; preexisting category fields not recertified",
+      "verified_on": "2026-11-13",
+      "review_scope": {
+        "fa": "ارزیابی گزاره‌های منتخب بر اساس منابع رسمی موجود تا ۱۳ نوامبر ۲۰۲۶؛ نه ممیزی کامل همه مدل‌ها، ظرفیت‌های لحظه‌ای یا مشتریان. مشخصات مدل‌ها با شرایط مرجع منبع گزارش شده و نباید به سایر محصولات تعمیم یابد.",
+        "en": "Selected claims reviewed against available official sources as of 13 November 2026; this is not an audit of every product model, real-time capacity or customer. Model specifications retain their source reference conditions.",
+        "ar": "رُوجعت ادعاءات محددة وفق المصادر الرسمية المتاحة حتى ١٣ نوفمبر ٢٠٢٦؛ ولا يشمل ذلك جميع الطرز أو السعة الآنية أو العملاء. تُحفظ شروط القياس المرجعية لكل نموذج ولا تعمم على المنتجات الأخرى."
+      },
       "sources": [
         {
           "id": "ssc_main",
@@ -48590,6 +49137,24 @@
           "title": "University of Surrey — Surrey Space Institute",
           "url": "https://www.surrey.ac.uk/surrey-space-institute",
           "checked_on": "2026-11-12"
+        },
+        {
+          "id": "ssc_debris",
+          "title": "University of Surrey — RemoveDEBRIS mission details",
+          "url": "https://www.surrey.ac.uk/surrey-space-centre/missions/removedebris",
+          "checked_on": "2026-11-13"
+        },
+        {
+          "id": "ssc_harpoon",
+          "title": "University of Surrey — Harpoon demonstration result",
+          "url": "https://www.surrey.ac.uk/news/harpoon-successfully-captures-space-debris",
+          "checked_on": "2026-11-13"
+        },
+        {
+          "id": "ssc_inflate",
+          "title": "University of Surrey — InflateSail mission",
+          "url": "https://www.surrey.ac.uk/surrey-space-centre/missions/inflatesail",
+          "checked_on": "2026-11-13"
         }
       ],
       "sections": [
@@ -48604,6 +49169,20 @@
               "en": "Surrey Space Centre is a space-engineering research centre at the University of Surrey in Guildford, UK, now part of the Surrey Space Institute.",
               "ar": "مركز سَري للفضاء مركز أبحاث هندسة فضائية تابع لجامعة سَري في غيلدفورد بالمملكة المتحدة، وهو حالياً جزء من معهد سَري للفضاء.",
               "source_ids": [
+                "ssc_main"
+              ]
+            },
+            {
+              "fa": "مرکز فضایی دانشگاه ساری یک واحد پژوهشی و آموزشی است، نه کارخانه تجاری ماهواره. سابقه تاریخی توسعه فناوری‌های ماهواره کوچک به تأسیس SSTL کمک کرد، اما داده‌های استخدام، مالکیت، محصولات تجاری و قراردادهای SSTL باید در شناسنامه شرکت نگهداری شوند. رابطه دانشگاه و شرکت در ORBITA پیوند است، نه ادغام.",
+              "en": "Surrey Space Centre is an academic research and teaching unit, not a commercial satellite factory. Its early small-satellite activity helped give rise to SSTL; however, SSTL contracts, ownership and industrial products belong to the separate company record. The connection is a documented relationship, not a merger.",
+              "ar": "مركز ساري وحدة بحث وتعليم، لا مصنع أقمار تجاري. ساهمت أعماله المبكرة في ظهور SSTL، لكن العقود والملكية والمنتجات التجارية تخص سجل الشركة المستقل. والصلة بينهما علاقة موثقة وليست دمجاً للكيانين.",
+              "heading": {
+                "fa": "مرز میان پژوهشگاه و شرکت صنعتی",
+                "en": "Academic centre versus industrial spin-out",
+                "ar": "التمييز بين المركز البحثي والشركة"
+              },
+              "source_ids": [
+                "ssc_about",
                 "ssc_main"
               ]
             }
@@ -48621,6 +49200,19 @@
               "ar": "تشمل المجالات هندسة الأقمار الصغيرة، والتحكم في الاتجاه والمدار، والدفع، والطاقة الكهربائية، والاتصالات والحمولات.",
               "source_ids": [
                 "ssc_about"
+              ]
+            },
+            {
+              "fa": "در InflateSail، پژوهشگران سازه بادشونده و بادبان افزایش پسار را برای پایان عمر ماهواره بررسی کردند. بادبان پس از بازشدن سطح مؤثر ماهواره را افزایش می‌دهد تا نیروی مقاومت جو در مدار پایین، افت ارتفاع را تسریع کند. این فناوری با «بازیابی کنترل‌شده» یا انتقال به مدار قبرستان یکسان نیست.",
+              "en": "InflateSail explored an inflatable structure and drag sail for spacecraft end-of-life disposal. Deployment increases the effective area exposed to residual atmospheric drag in low Earth orbit and accelerates altitude decay; it is not equivalent to controlled recovery or transfer to a graveyard orbit.",
+              "ar": "درست مهمة InflateSail بنية قابلة للنفخ وشراع مقاومة لمرحلة نهاية عمر القمر. يزيد النشر مساحة الاحتكاك بالغلاف الجوي الرقيق في المدار المنخفض لتسريع الهبوط؛ ولا يعادل ذلك الاستعادة المتحكم بها أو النقل إلى مدار مقبرة.",
+              "heading": {
+                "fa": "پژوهش فناوری خروج از مدار",
+                "en": "Research on deorbit technologies",
+                "ar": "أبحاث تقنيات الخروج من المدار"
+              },
+              "source_ids": [
+                "ssc_inflate"
               ]
             }
           ]
@@ -48646,6 +49238,33 @@
               "source_ids": [
                 "ssc_missions"
               ]
+            },
+            {
+              "fa": "در فهرست رسمی دانشگاه، STRaND-1 با تاریخ پرتاب ۲۵ فوریه ۲۰۱۳، DeOrbitSail در ۲۰۱۵، AlSat-1N در ۲۰۱۶ و InflateSail در ژوئن ۲۰۱۷ ثبت شده‌اند. این توالی نشان می‌دهد فعالیت دانشگاه از ساخت ماهواره آموزشی به نمایش فناوری‌های قابل‌گسترش و دفع پسماند مداری حرکت کرده است.",
+              "en": "Surrey’s official mission list records STRaND-1 launched on 25 February 2013, DeOrbitSail in 2015, AlSat-1N in 2016 and InflateSail in June 2017. Together they show progression from nanosatellite flight activity into deployable structures and orbital-debris mitigation research.",
+              "ar": "تسجل الجامعة إطلاق STRaND-1 في ٢٥ فبراير ٢٠١٣، ثم DeOrbitSail عام ٢٠١٥ وAlSat-1N عام ٢٠١٦ وInflateSail في يونيو ٢٠١٧. ويبرز التسلسل الانتقال نحو الهياكل القابلة للنشر والحد من الحطام المداري.",
+              "heading": {
+                "fa": "توالی مأموریت‌های واقعی",
+                "en": "Chronology of flight missions",
+                "ar": "تسلسل المهمات المنفذة"
+              },
+              "source_ids": [
+                "ssc_missions"
+              ]
+            },
+            {
+              "fa": "RemoveDEBRIS در سال ۲۰۱۸ از ایستگاه فضایی بین‌المللی مستقر شد. آزمایش‌های آن شامل گرفتن هدف شبیه‌سازی‌شده با تور، ناوبری مبتنی بر دوربین و لیدار و شلیک نیزه به هدف نصب‌شده بر بازو بود. دانشگاه ساری در فوریه ۲۰۱۹ موفقیت آزمایش نیزه را گزارش کرد؛ این اثبات عملی فناوری است، نه وجود سامانه عملیاتی جمع‌آوری زباله در مقیاس صنعتی.",
+              "en": "RemoveDEBRIS deployed from the ISS in 2018. Demonstrations included net capture of a surrogate target, camera/LiDAR navigation and a harpoon fired at a target carried on a boom. Surrey reported the harpoon test successful in February 2019; these are in-orbit technology demonstrations, not an operational debris-cleanup fleet.",
+              "ar": "نُشرت RemoveDEBRIS من محطة الفضاء الدولية عام ٢٠١٨ لتجربة التقاط هدف بشبكة والملاحة بالكاميرا والليدار والحربة. وأعلنت ساري نجاح تجربة الحربة في فبراير ٢٠١٩، وهي تجربة إثبات تقنية وليست أسطولاً تشغيلياً لإزالة الحطام.",
+              "heading": {
+                "fa": "RemoveDEBRIS؛ آزمون در مدار",
+                "en": "RemoveDEBRIS: orbital demonstration",
+                "ar": "RemoveDEBRIS: تجربة مدارية"
+              },
+              "source_ids": [
+                "ssc_debris",
+                "ssc_harpoon"
+              ]
             }
           ]
         },
@@ -48661,6 +49280,20 @@
               "ar": "بدأ نشاط الأقمار الصغيرة في جامعة سَري عام 1979 وأسهم في تأسيس شركة SSTL المنبثقة؛ وهي كيان منفصل عن هذا المركز البحثي.",
               "source_ids": [
                 "ssc_about"
+              ]
+            },
+            {
+              "fa": "پروژه RemoveDEBRIS نمونه‌ای از تولید خروجی پژوهشی قابل اندازه‌گیری است: آزمایش تور، سیستم دیداری مبتنی بر دوربین و لیدار، و آزمایش نیزه، داده واقعی در مدار تولید کردند. با این حال، نتایج هر زیرآزمایش باید مستقل خوانده شوند؛ موفقیت یکی از آزمایش‌ها به معنی بلوغ همه فناوری‌های حذف پسماند نیست.",
+              "en": "RemoveDEBRIS demonstrates the value of measurable academic research outputs: net capture, camera/LiDAR observations and a harpoon test produced in-orbit experimental data. Each test outcome must nevertheless be assessed separately; one successful demonstration does not mature every debris-removal technology at once.",
+              "ar": "تظهر RemoveDEBRIS مخرجات بحثية قابلة للقياس عبر تجارب الشبكة والرؤية بالكاميرا والليدار والحربة في المدار. لكن يجب تقييم نتيجة كل تجربة بشكل منفصل؛ فلا يعني نجاح اختبار واحد نضج كل تقنيات إزالة الحطام.",
+              "heading": {
+                "fa": "از نمونه آزمایشگاهی تا نمایش مداری",
+                "en": "From research hardware to orbital test",
+                "ar": "من النموذج البحثي إلى التجربة المدارية"
+              },
+              "source_ids": [
+                "ssc_debris",
+                "ssc_harpoon"
               ]
             }
           ]
@@ -48678,15 +49311,70 @@
               "source_ids": [
                 "ssc_about"
               ]
+            },
+            {
+              "fa": "در RemoveDEBRIS، دانشگاه ساری هماهنگی مأموریت و توسعه بخش‌هایی مانند بادبان و اهداف کیوب‌ست را بر عهده داشت، در حالی که تأمین باس بر عهده SSTL و توسعه تور و نیزه به‌ترتیب بر عهده تیم‌های ایرباس بود. این تفکیک برای نسبت‌دادن درست «سازنده محصول» به اعضای کنسرسیوم ضروری است.",
+              "en": "For RemoveDEBRIS, Surrey coordinated the mission and contributed CubeSat targets and the drag sail, while SSTL supplied the platform and Airbus teams worked on the net and harpoon. Credit for a demonstrated device must follow the actual consortium work package, not simply the project lead.",
+              "ar": "نسقت ساري المهمة وساهمت في الأهداف النانوية والشراع، في حين وفرت SSTL المنصة وتولت فرق من إيرباص الشبكة والحربة. ويجب إسناد تصنيع كل جهاز إلى الطرف المنفذ، لا إلى قائد المشروع تلقائياً.",
+              "heading": {
+                "fa": "کنسرسیوم و تفکیک سهم سازندگان",
+                "en": "Consortium and attribution",
+                "ar": "التحالف وتوزيع الأدوار"
+              },
+              "source_ids": [
+                "ssc_debris"
+              ]
             }
           ]
         }
       ],
       "summary": {
-        "fa": "مرکز پژوهشی مهندسی فضای دانشگاه ساری؛ فعال در فناوری‌های ماهواره‌های کوچک و مأموریت‌های فضایی.",
-        "en": "Space-engineering research centre at the University of Surrey; research and missions in small-satellite technologies.",
-        "ar": "مركز بحثي لهندسة الفضاء بجامعة سَري، يعمل في تقنيات الأقمار الصغيرة والمهمات الفضائية."
-      }
+        "fa": "مرکز فضایی دانشگاه ساری یک مرکز دانشگاهی در گیلدفورد است که پژوهش ساخت ماهواره کوچک، کنترل وضعیت و کاهش پسماند مداری را با مأموریت‌های واقعی پیوند داده است. پروژه‌های STRaND-1، InflateSail و RemoveDEBRIS نقاط قابل سنجش این سابقه‌اند؛ شرکت صنعتی SSTL با وجود پیوند تاریخی، شخصیت جداگانه‌ای دارد.",
+        "en": "The University of Surrey’s space centre connects academic small-satellite engineering, attitude control and debris-mitigation research to flown missions. STRaND-1, InflateSail and RemoveDEBRIS are documented milestones; SSTL is an industrial company with a related history but a distinct identity.",
+        "ar": "يربط مركز ساري الفضائي البحث الجامعي في الأقمار الصغيرة والتحكم في الاتجاه والحد من الحطام المداري بمهمات أُطلقت فعلاً، أبرزها STRaND-1 وInflateSail وRemoveDEBRIS. أما SSTL فهي شركة صناعية مستقلة رغم صلتها التاريخية بالمركز."
+      },
+      "key_facts": [
+        {
+          "label": {
+            "fa": "آغاز فعالیت",
+            "en": "Academic roots",
+            "ar": "الجذور البحثية"
+          },
+          "value": {
+            "fa": "۱۹۷۹",
+            "en": "1979",
+            "ar": "١٩٧٩"
+          },
+          "note": {
+            "fa": "آغاز فعالیت ماهواره کوچک در دانشگاه",
+            "en": "Early small-satellite work at Surrey",
+            "ar": "بداية أعمال الأقمار الصغيرة في ساري"
+          },
+          "source_ids": [
+            "ssc_missions"
+          ]
+        },
+        {
+          "label": {
+            "fa": "نمونه مأموریت",
+            "en": "Flight mission",
+            "ar": "مهمة فضائية"
+          },
+          "value": {
+            "fa": "RemoveDEBRIS",
+            "en": "RemoveDEBRIS",
+            "ar": "RemoveDEBRIS"
+          },
+          "note": {
+            "fa": "آزمون مداری تور، نیزه و ناوبری دیداری",
+            "en": "Net, harpoon and optical navigation demonstration",
+            "ar": "عرض تقنيات الشبكة والحربة والملاحة البصرية"
+          },
+          "source_ids": [
+            "ssc_debris"
+          ]
+        }
+      ]
     }
   },
   {
@@ -48716,8 +49404,12 @@
     "orbita_verified_profile": {
       "schema_version": 2,
       "profile_type": "university_space",
-      "verified_on": "2026-11-12",
-      "review_scope": "New specialist dossier only; preexisting category fields not recertified",
+      "verified_on": "2026-11-13",
+      "review_scope": {
+        "fa": "ارزیابی گزاره‌های منتخب بر اساس منابع رسمی موجود تا ۱۳ نوامبر ۲۰۲۶؛ نه ممیزی کامل همه مدل‌ها، ظرفیت‌های لحظه‌ای یا مشتریان. مشخصات مدل‌ها با شرایط مرجع منبع گزارش شده و نباید به سایر محصولات تعمیم یابد.",
+        "en": "Selected claims reviewed against available official sources as of 13 November 2026; this is not an audit of every product model, real-time capacity or customer. Model specifications retain their source reference conditions.",
+        "ar": "رُوجعت ادعاءات محددة وفق المصادر الرسمية المتاحة حتى ١٣ نوفمبر ٢٠٢٦؛ ولا يشمل ذلك جميع الطرز أو السعة الآنية أو العملاء. تُحفظ شروط القياس المرجعية لكل نموذج ولا تعمم على المنتجات الأخرى."
+      },
       "sources": [
         {
           "id": "slab_about",
@@ -48736,6 +49428,18 @@
           "title": "Stanford Aeronautics & Astronautics — SLAB",
           "url": "https://aa.stanford.edu/research-impact/labs-and-centers/space-rendezvous-laboratory",
           "checked_on": "2026-11-12"
+        },
+        {
+          "id": "slab_starfox",
+          "title": "Stanford SLAB — StarFOX optical navigation on Starling",
+          "url": "https://slab.stanford.edu/projects/starling",
+          "checked_on": "2026-11-13"
+        },
+        {
+          "id": "slab_visors",
+          "title": "Stanford SLAB — VISORS project and bus allocation",
+          "url": "https://slab.stanford.edu/projects/visors",
+          "checked_on": "2026-11-13"
         }
       ],
       "sections": [
@@ -48751,6 +49455,20 @@
               "ar": "مختبر الالتقاء الفضائي (SLAB) تابع لقسم الملاحة الجوية والفضائية بجامعة ستانفورد ويقوده سيموني داميـكو.",
               "source_ids": [
                 "slab_about"
+              ]
+            },
+            {
+              "fa": "برخلاف یک سازنده عمومی ماهواره، خروجی اصلی SLAB روش‌های تعیین مدار نسبی، برنامه‌ریزی مانور، جلوگیری از برخورد و هماهنگی چند فضاپیماست. در آرایش چندماهواره‌ای، اندازه‌گیری موقعیت و سرعت نسبی اغلب به اندازه اندازه‌گیری مدار مطلق اهمیت دارد؛ چون هدف علمی به هندسه میان ماهواره‌ها وابسته است.",
+              "en": "Rather than acting as a general spacecraft manufacturer, SLAB develops relative-state estimation, maneuver planning, collision avoidance and multi-agent coordination. In distributed architectures, knowing the geometry among satellites may be as important as knowing each absolute orbit, because the mission objective depends on their separation.",
+              "ar": "لا يعمل المختبر مصنّعاً عاماً للأقمار، بل يطور تقدير الحركة النسبية وتخطيط المناورات وتجنب الاصطدام والتنسيق بين المركبات. وفي الأنظمة الموزعة قد تكون هندسة الفصل بين الأقمار مهمة بقدر المدار المطلق.",
+              "heading": {
+                "fa": "موضوع پژوهش دقیقاً چیست؟",
+                "en": "What the laboratory studies",
+                "ar": "ما الموضوع البحثي؟"
+              },
+              "source_ids": [
+                "slab_about",
+                "slab_projects"
               ]
             }
           ]
@@ -48768,6 +49486,19 @@
               "source_ids": [
                 "slab_aa"
               ]
+            },
+            {
+              "fa": "در StarFOX، از تصویر دوربین‌های ردیاب ستاره برای کشف و دنبال‌کردن ماهواره‌های دیگر مجموعه Starling استفاده می‌شود. اندازه‌گیری زاویه دید به همراه مدل حرکت مداری، تخمین مدار نسبی و مطلق را ممکن می‌کند. بنابراین دوربینی که اصولاً برای تعیین وضعیت ماهواره ساخته شده، نقش حسگر ناوبری چندماهواره‌ای نیز می‌گیرد.",
+              "en": "StarFOX repurposes star-tracker images to detect and track other members of the Starling swarm. Bearing-angle observations combined with orbital-dynamics models enable absolute and relative orbit estimation. A sensor built for spacecraft attitude determination thus also becomes a distributed-spacecraft navigation instrument.",
+              "ar": "تستخدم StarFOX صور متتبعات النجوم لاكتشاف أعضاء سرب Starling الآخرين وتتبعهم. وتُدمج زوايا الرؤية مع نماذج الحركة المدارية لتقدير المدارات المطلقة والنسبية، فتتحول كاميرا تحديد الاتجاه إلى أداة ملاحة للسرب.",
+              "heading": {
+                "fa": "آزمایش StarFOX چگونه کار می‌کند؟",
+                "en": "How StarFOX works",
+                "ar": "كيف تعمل StarFOX؟"
+              },
+              "source_ids": [
+                "slab_starfox"
+              ]
             }
           ]
         },
@@ -48783,6 +49514,19 @@
               "ar": "تضم قائمة مشروعات المختبر تجربة الملاحة البصرية StarFOX على مهمة Starling التابعة لناسا وأعمال تصميم التوجيه والملاحة والتحكم لمهمة VISORS.",
               "source_ids": [
                 "slab_projects"
+              ]
+            },
+            {
+              "fa": "طرح VISORS از دو کیوب‌ست 6U تشکیل می‌شود: یکی محموله اپتیکی و دیگری آشکارساز را حمل می‌کند. برای عملکرد مانند یک تلسکوپ با فاصله کانونی مفهومی ۴۰ متر، موقعیت نسبی دو فضاپیما باید با دقت بسیار بالا کنترل شود. استنفورد مسئول توسعه الگوریتم‌های هدایت، ناوبری و کنترل است؛ باس فضاپیماها را Blue Canyon تأمین می‌کند.",
+              "en": "VISORS is designed around two 6U spacecraft, one carrying the optical element and the other a detector, forming a telescope with a 40 m design focal length. Precision relative positioning is central to its science concept. Stanford develops GN&C algorithms, while Blue Canyon supplies spacecraft buses; these are different contribution types.",
+              "ar": "يتألف تصميم VISORS من قمرين 6U يحمل أحدهما العنصر البصري والآخر الكاشف لتشكيل تلسكوب بطول بؤري تصميمي ٤٠ م. يتطلب ذلك ضبطاً دقيقاً للموقع النسبي؛ تطور ستانفورد خوارزميات التوجيه والملاحة فيما توفر Blue Canyon منصات القمرين.",
+              "heading": {
+                "fa": "VISORS و تلسکوپ توزیع‌شده",
+                "en": "VISORS distributed telescope",
+                "ar": "تلسكوب VISORS الموزع"
+              },
+              "source_ids": [
+                "slab_visors"
               ]
             }
           ]
@@ -48800,6 +49544,20 @@
               "source_ids": [
                 "slab_projects"
               ]
+            },
+            {
+              "fa": "الگوریتم‌های ناوبری نسبی باید با محدودیت‌های واقعی مانند نویز حسگر، هندسه دید، تأخیر داده و مصرف سوخت سازگار باشند. پروژه‌های SLAB حلقه بین مدل‌سازی دینامیک، نرم‌افزار پرواز، آزمایش و عملیات مأموریت را پوشش می‌دهند؛ ولی وجود الگوریتم در مقاله، به‌تنهایی اثبات اجرای موفق آن در مدار نیست.",
+              "en": "Relative-navigation algorithms must tolerate sensor noise, changing viewing geometry, data latency and propellant constraints. SLAB projects connect dynamical modeling, flight software, tests and mission operations. Publishing an algorithm is not, by itself, evidence that a specific algorithm has flown successfully.",
+              "ar": "يجب أن تتحمل خوارزميات الملاحة النسبية ضوضاء المستشعرات وتغير هندسة الرؤية وتأخير البيانات والوقود المحدود. وتربط مشروعات المختبر بين النمذجة والبرمجيات والتجارب؛ لكن نشر خوارزمية لا يثبت نجاحها في المدار.",
+              "heading": {
+                "fa": "چرا داده شبیه‌سازی کافی نیست؟",
+                "en": "Why simulation alone is not enough",
+                "ar": "لماذا لا تكفي المحاكاة؟"
+              },
+              "source_ids": [
+                "slab_projects"
+              ],
+              "kind": "caution"
             }
           ]
         },
@@ -48816,15 +49574,70 @@
               "source_ids": [
                 "slab_about"
               ]
+            },
+            {
+              "fa": "VISORS یک پروژه چندمؤسسه‌ای شامل دانشگاه‌های مختلف و مرکز گادرد ناساست. نقش استنفورد در GN&C از نقش سازنده باس، توسعه‌دهنده محموله اپتیکی یا تأمین‌کننده سامانه پرتاب جداست. در ORBITA چنین پیوندهایی باید به‌صورت «مشارکت در مأموریت» ثبت شوند، نه «مالکیت مشترک».",
+              "en": "VISORS brings together universities and NASA Goddard. Stanford’s GN&C work is distinct from the bus provider, optical payload team and launch organization. Such links belong in a mission-contribution graph, not under an invented common-ownership relationship.",
+              "ar": "تشارك جامعات عدة ومركز غودارد التابع لناسا في VISORS. ويختلف دور ستانفورد في GN&C عن مورّد المنصة أو مطور البصريات. وينبغي تسجيل العلاقة كمساهمة في مهمة لا كملكية مشتركة مفترضة.",
+              "heading": {
+                "fa": "شبکه همکاری VISORS",
+                "en": "VISORS collaboration structure",
+                "ar": "شبكة تعاون VISORS"
+              },
+              "source_ids": [
+                "slab_visors"
+              ]
             }
           ]
         }
       ],
       "summary": {
-        "fa": "آزمایشگاه پژوهشی دانشگاهی در حوزه سامانه‌های فضایی توزیع‌شده، دینامیک مداری و هدایت، ناوبری و کنترل.",
-        "en": "Academic research laboratory specializing in distributed space systems, astrodynamics and guidance, navigation and control.",
-        "ar": "مختبر بحثي جامعي متخصص في الأنظمة الفضائية الموزعة والديناميكا المدارية والتوجيه والملاحة والتحكم."
-      }
+        "fa": "آزمایشگاه ملاقات فضایی استنفورد بر هدایت، ناوبری و کنترل سامانه‌های چندماهواره‌ای تمرکز دارد. ارزش افزوده آن در الگوریتم‌هایی است که چند فضاپیما را به شکل یک سامانه هماهنگ به کار می‌گیرند؛ StarFOX در مأموریت Starling و پروژه VISORS از نمونه‌های مشخص این رویکرد هستند.",
+        "en": "Stanford’s Space Rendezvous Laboratory focuses on guidance, navigation and control for distributed spacecraft. Its contributions are algorithms that allow multiple spacecraft to operate as a coordinated system, with StarFOX on NASA’s Starling mission and the VISORS formation as concrete examples.",
+        "ar": "يركز مختبر اللقاء الفضائي في ستانفورد على التوجيه والملاحة والتحكم للمركبات الموزعة؛ ويطور خوارزميات تجعل عدة أقمار تعمل كنظام منسق. من تطبيقاته تجربة StarFOX في Starling ومشروع VISORS."
+      },
+      "key_facts": [
+        {
+          "label": {
+            "fa": "تجربه ناوبری",
+            "en": "Navigation experiment",
+            "ar": "تجربة الملاحة"
+          },
+          "value": {
+            "fa": "StarFOX",
+            "en": "StarFOX",
+            "ar": "StarFOX"
+          },
+          "note": {
+            "fa": "ناوبری نسبی اپتیکی در Starling",
+            "en": "Optical relative navigation on Starling",
+            "ar": "الملاحة النسبية البصرية في Starling"
+          },
+          "source_ids": [
+            "slab_starfox"
+          ]
+        },
+        {
+          "label": {
+            "fa": "معماری مطالعه",
+            "en": "VISORS design",
+            "ar": "تصميم VISORS"
+          },
+          "value": {
+            "fa": "۲ کیوب‌ست 6U",
+            "en": "2 × 6U CubeSats",
+            "ar": "قمران 6U"
+          },
+          "note": {
+            "fa": "تلسکوپ توزیع‌شده با فاصله کانونی مفهومی ۴۰ متر",
+            "en": "Distributed telescope with 40 m design focal length",
+            "ar": "تلسكوب موزع بطول بؤري تصميمي ٤٠ م"
+          },
+          "source_ids": [
+            "slab_visors"
+          ]
+        }
+      ]
     }
   },
   {
@@ -48852,12 +49665,16 @@
     "orbita_verified_profile": {
       "schema_version": 3,
       "profile_type": "ground_services",
-      "verified_on": "2026-11-12",
-      "review_scope": "Phase-3 evidence-led specialty dossier only; legacy data not recertified; no global coverage claim",
+      "verified_on": "2026-11-13",
+      "review_scope": {
+        "fa": "ارزیابی گزاره‌های منتخب بر اساس منابع رسمی موجود تا ۱۳ نوامبر ۲۰۲۶؛ نه ممیزی کامل همه مدل‌ها، ظرفیت‌های لحظه‌ای یا مشتریان. مشخصات مدل‌ها با شرایط مرجع منبع گزارش شده و نباید به سایر محصولات تعمیم یابد.",
+        "en": "Selected claims reviewed against available official sources as of 13 November 2026; this is not an audit of every product model, real-time capacity or customer. Model specifications retain their source reference conditions.",
+        "ar": "رُوجعت ادعاءات محددة وفق المصادر الرسمية المتاحة حتى ١٣ نوفمبر ٢٠٢٦؛ ولا يشمل ذلك جميع الطرز أو السعة الآنية أو العملاء. تُحفظ شروط القياس المرجعية لكل نموذج ولا تعمم على المنتجات الأخرى."
+      },
       "summary": {
-        "fa": "ارائه‌دهنده خدمات شبکه زمینی و تحویل داده برای مأموریت‌های ماهواره‌ای.",
-        "en": "Ground network and data-delivery services for satellite missions.",
-        "ar": "خدمات الشبكات الأرضية وتوزيع البيانات للمهمات الفضائية."
+        "fa": "کی‌ست اپراتور نروژی شبکه ایستگاه‌های زمینی و خدمات دریافت و تحویل داده ماهواره‌ای است. شبکه ترکیبی آن از ایستگاه‌های قطبی تا عرض‌های میانی گسترده است و خدمات کنترل ماهواره، دانلود داده و آماده‌سازی داده برای مشتریان را پوشش می‌دهد. آمار شبکه کل و زیرشبکه KSATlite باید جداگانه خوانده شود.",
+        "en": "Norway’s KSAT operates a distributed ground-station and satellite-data network. Its services span spacecraft command links, payload downlink and data delivery using polar and mid-latitude sites. The complete network’s counts must be kept separate from the KSATlite subnetwork figures.",
+        "ar": "تدير KSAT النرويجية شبكة محطات أرضية موزعة لخدمات قيادة الأقمار واستقبال الحمولات وتسليم البيانات عبر مواقع قطبية ومتوسطة العرض. ويجب التفريق بين أرقام الشبكة الكاملة وأرقام شبكة KSATlite الفرعية."
       },
       "sources": [
         {
@@ -48877,6 +49694,18 @@
           "title": "KSAT — KSATlite service",
           "url": "https://www.ksat.no/ground-network-services/ksatlite/",
           "checked_on": "2026-11-12"
+        },
+        {
+          "id": "ks_parent",
+          "title": "Kongsberg Group — KSAT satellite services and network size",
+          "url": "https://www.kongsberg.com/what-we-do/space/satellite-services/",
+          "checked_on": "2026-11-13"
+        },
+        {
+          "id": "ks_nasa",
+          "title": "NASA — Near Space Network ground-station partners",
+          "url": "https://www.nasa.gov/technology/space-comms/near-space-network-complexes/",
+          "checked_on": "2026-11-13"
         }
       ],
       "sections": [
@@ -48893,6 +49722,20 @@
               "source_ids": [
                 "ks_contact"
               ]
+            },
+            {
+              "fa": "برای یک اپراتور ماهواره، فقط نصب آنتن کافی نیست. زمان‌بندی گذر ماهواره، برقراری ارتباط تله‌متری و فرمان، دریافت داده محموله و انتقال امن داده تا مرکز پردازش، زنجیره خدمت را تشکیل می‌دهند. KSAT زیرساخت این مراحل را به‌صورت خدمات شبکه‌ای عرضه می‌کند و مالکیت آنتن لزوماً به معنی مالکیت ماهواره مشتری نیست.",
+              "en": "Operating an antenna is only part of the ground segment. Contact scheduling, telemetry and commanding, payload download and onward data delivery form a service chain. KSAT sells access to network infrastructure; owning an antenna does not mean owning the customer’s spacecraft.",
+              "ar": "تشمل الخدمة الأرضية أكثر من تشغيل هوائي: جدولة المرور والقياس عن بعد وإرسال الأوامر وتنزيل الحمولة ونقل البيانات. وتوفر KSAT هذه السلسلة كخدمة، ولا تعني ملكية الهوائي ملكية الأقمار التابعة للعملاء.",
+              "heading": {
+                "fa": "مدل خدمات زمینی چیست؟",
+                "en": "What a ground service provider delivers",
+                "ar": "ما الذي تقدمه خدمات الأرض؟"
+              },
+              "source_ids": [
+                "ks_net",
+                "ks_lite"
+              ]
             }
           ]
         },
@@ -48906,6 +49749,19 @@
               "fa": "KSATlite خدمات خودکار بخش زمینی را برای ارتباط ماهواره‌ای، زمان‌بندی گذرها و مدیریت جریان داده ارائه می‌کند.",
               "en": "KSATlite provides automated ground-segment services for satellite links, pass scheduling and data-flow management.",
               "ar": "توفّر KSATlite خدمات القطاع الأرضي المؤتمتة للاتصالات بالأقمار وجدولة المرور وإدارة تدفق البيانات.",
+              "source_ids": [
+                "ks_lite"
+              ]
+            },
+            {
+              "fa": "KSATlite برای ماهواره‌های کوچک و منظومه‌ها طراحی شده و مدیریت ارتباط، زمان‌بندی و جریان دریافت داده را ساده می‌کند. صفحه رسمی این زیرشبکه شمار آنتن‌ها و ارتباطات ماهانه را به‌صورت آمار خدمات KSATlite منتشر می‌کند؛ نباید آن را با تعداد آنتن‌های کل گروه یکی فرض کرد.",
+              "en": "KSATlite targets small satellites and constellations, simplifying contact scheduling and data flow. Its product page reports antenna and monthly-contact counts for that specific service, which must not be conflated with the wider KSAT corporate network totals.",
+              "ar": "تستهدف KSATlite الأقمار الصغيرة والكوكبات وتبسط جدولة الاتصالات وتدفق البيانات. تنشر صفحة الخدمة عدد الهوائيات والاتصالات الشهرية للشبكة الفرعية، ولا يجوز الخلط بينها وبين إجمالي شبكة الشركة.",
+              "heading": {
+                "fa": "KSATlite و مقیاس خودکارسازی",
+                "en": "KSATlite and automated scale",
+                "ar": "KSATlite وحجم الأتمتة"
+              },
               "source_ids": [
                 "ks_lite"
               ]
@@ -48925,6 +49781,19 @@
               "source_ids": [
                 "ks_net"
               ]
+            },
+            {
+              "fa": "ایستگاه‌های ترومسو و سوالبارد در شمال و TrollSat در جنوب، برای ماهواره‌های مدار قطبی و خورشیدآهنگ فرصت‌های تماس مکرر فراهم می‌کنند. این یک مزیت هندسی شبکه است، ولی تعداد تماس واقعی هر مأموریت تابع ارتفاع مدار، طراحی آنتن، زمان‌بندی و محدودیت‌های فرکانسی است.",
+              "en": "Tromsø, Svalbard and Antarctic TrollSat provide advantageous geometry for polar and Sun-synchronous orbit contacts. That is a network-level advantage; the actual passes supported for a mission depend on altitude, antenna allocation, schedule and frequency constraints.",
+              "ar": "توفر ترومسو وسفالبارد ومحطة TrollSat في القارة القطبية الجنوبية هندسة مناسبة لاتصالات متكررة مع المدارات القطبية والمزامنة للشمس. لكن عدد الاتصالات الفعلي يعتمد على المدار وتخصيص الهوائيات والجدولة والترددات.",
+              "heading": {
+                "fa": "مزیت هندسه ایستگاه‌های قطبی",
+                "en": "Why polar stations matter",
+                "ar": "أهمية محطات القطبين"
+              },
+              "source_ids": [
+                "ks_parent"
+              ]
             }
           ]
         },
@@ -48941,6 +49810,20 @@
               "source_ids": [
                 "ks_lite"
               ]
+            },
+            {
+              "fa": "گروه Kongsberg برای KSAT بیش از ۲۸۰ آنتن در ۲۶ محل در سراسر جهان گزارش می‌کند. این عدد بیانگر مقیاس زیرساخت اعلام‌شده در زمان انتشار است، نه اینکه یک مشتری بتواند همه آنتن‌ها را هم‌زمان رزرو کند یا کل شبکه همیشه بدون قطعی در دسترس باشد.",
+              "en": "Kongsberg describes KSAT as operating more than 280 antennas at 26 sites worldwide. This is the published scale of the network, not a promise that any individual client may reserve every antenna simultaneously or that availability is uninterrupted.",
+              "ar": "تذكر Kongsberg تشغيل أكثر من ٢٨٠ هوائياً في ٢٦ موقعاً عالمياً. ويصف ذلك حجم البنية المعلن، وليس ضماناً بأن عميلاً واحداً يستطيع حجز جميع الهوائيات أو أن التوافر مستمر بلا انقطاع.",
+              "heading": {
+                "fa": "تمایز ظرفیت شبکه از ظرفیت مشتری",
+                "en": "Network capacity vs. customer capacity",
+                "ar": "سعة الشبكة مقابل سعة العميل"
+              },
+              "source_ids": [
+                "ks_parent"
+              ],
+              "kind": "caution"
             }
           ]
         },
@@ -48958,11 +49841,66 @@
                 "ks_net",
                 "ks_lite"
               ]
+            },
+            {
+              "fa": "ناسا در فهرست Near Space Network، ایستگاه‌های تجاری KSAT در سنگاپور، سوالبارد و TrollSat را همراه با باندهای فرکانسی نمونه ثبت می‌کند. این شاهد نقش ایستگاه در زنجیره دریافت و کنترل را نشان می‌دهد، اما نباید به‌عنوان اثبات قرارداد همه مأموریت‌های ناسا با KSAT تفسیر شود.",
+              "en": "NASA’s Near Space Network list identifies commercial KSAT facilities in Singapore, Svalbard and TrollSat with sample supported bands. It demonstrates a recognized ground-network service role, not a claim that every NASA mission contracts with KSAT.",
+              "ar": "تدرج ناسا محطات KSAT التجارية في سنغافورة وسفالبارد وTrollSat ضمن شبكة Near Space Network مع نطاقات ترددها. ويثبت ذلك دوراً للشبكة الأرضية، لا تعاقد جميع مهمات ناسا مع KSAT.",
+              "heading": {
+                "fa": "جایگاه شریک تجاری در شبکه ناسا",
+                "en": "NASA network partner status",
+                "ar": "الشراكة ضمن شبكة ناسا"
+              },
+              "source_ids": [
+                "ks_nasa"
+              ]
             }
           ]
         }
       ],
-      "data_status": "verified_pilot"
+      "data_status": "verified_pilot",
+      "key_facts": [
+        {
+          "label": {
+            "fa": "شبکه جهانی",
+            "en": "Global network",
+            "ar": "الشبكة العالمية"
+          },
+          "value": {
+            "fa": "۲۸۰+ آنتن",
+            "en": "280+ antennas",
+            "ar": "أكثر من ٢٨٠ هوائياً"
+          },
+          "note": {
+            "fa": "عدد اعلام‌شده توسط گروه Kongsberg؛ تاریخ منبع ۲۰۲۶",
+            "en": "Kongsberg group description; source accessed 2026",
+            "ar": "العدد وفق شركة Kongsberg عند مراجعة ٢٠٢٦"
+          },
+          "source_ids": [
+            "ks_parent"
+          ]
+        },
+        {
+          "label": {
+            "fa": "حوزه خدمت",
+            "en": "Service scope",
+            "ar": "نطاق الخدمات"
+          },
+          "value": {
+            "fa": "TT&C / Downlink",
+            "en": "TT&C / Downlink",
+            "ar": "TT&C / Downlink"
+          },
+          "note": {
+            "fa": "تله‌متری و فرمان + دریافت محموله",
+            "en": "Command/telemetry and payload download",
+            "ar": "التحكم والقياس عن بعد وتنزيل بيانات الحمولة"
+          },
+          "source_ids": [
+            "ks_nasa"
+          ]
+        }
+      ]
     }
   },
   {
@@ -48991,12 +49929,16 @@
     "orbita_verified_profile": {
       "schema_version": 3,
       "profile_type": "inspace_services",
-      "verified_on": "2026-11-12",
-      "review_scope": "Phase-3 evidence-led specialty dossier only; legacy data not recertified; no global coverage claim",
+      "verified_on": "2026-11-13",
+      "review_scope": {
+        "fa": "ارزیابی گزاره‌های منتخب بر اساس منابع رسمی موجود تا ۱۳ نوامبر ۲۰۲۶؛ نه ممیزی کامل همه مدل‌ها، ظرفیت‌های لحظه‌ای یا مشتریان. مشخصات مدل‌ها با شرایط مرجع منبع گزارش شده و نباید به سایر محصولات تعمیم یابد.",
+        "en": "Selected claims reviewed against available official sources as of 13 November 2026; this is not an audit of every product model, real-time capacity or customer. Model specifications retain their source reference conditions.",
+        "ar": "رُوجعت ادعاءات محددة وفق المصادر الرسمية المتاحة حتى ١٣ نوفمبر ٢٠٢٦؛ ولا يشمل ذلك جميع الطرز أو السعة الآنية أو العملاء. تُحفظ شروط القياس المرجعية لكل نموذج ولا تعمم على المنتجات الأخرى."
+      },
       "summary": {
-        "fa": "انتقال مداری و استقرار ماهواره‌ها با حامل ION و توسعه خدمات آینده در مدار.",
-        "en": "Orbital transport and satellite deployment with ION, plus a roadmap for further in-orbit services.",
-        "ar": "نقل الأقمار ونشرها مداريّاً بواسطة ION مع خطط لخدمات مدارية أخرى."
+        "fa": "دی‌اوربیت شرکت ایتالیایی لجستیک فضایی است که با وسیله انتقال مداری ION Satellite Carrier خدمات حمل، نگهداری موقت و رهاسازی چند ماهواره در موقعیت‌های مداری موردنیاز مشتری ارائه می‌دهد. باید میان پرتاب با موشک حامل، انتقال درون‌مداری با ION و خدمات آینده‌نگر مانند سرویس‌دهی گسترده در مدار تفاوت گذاشت.",
+        "en": "Italy’s D-Orbit provides space logistics through its ION Satellite Carrier orbital transfer vehicle, hosting and deploying multiple customer spacecraft into planned orbital slots. Launch aboard a rocket, in-orbit deployment by ION and broader future servicing concepts are distinct services and maturity levels.",
+        "ar": "تقدم D-Orbit الإيطالية خدمات لوجستية فضائية عبر مركبة النقل المداري ION التي تحمل عدة أقمار وتنشرها في مواقع مدارية مخصصة. ويجب التمييز بين الإطلاق بالصاروخ والتوزيع في المدار وخدمات الصيانة المستقبلية."
       },
       "sources": [
         {
@@ -49016,6 +49958,12 @@
           "title": "Italian Trade Agency — D-Orbit company profile",
           "url": "https://www.ice.it/en/sites/default/files/inline-files/italian-participation-at-imdex-asia-2025.pdf",
           "checked_on": "2026-11-12"
+        },
+        {
+          "id": "do_brochure",
+          "title": "D-Orbit — ION transportation and hosted payload service brochure",
+          "url": "https://www.dorbit.space/media/4/37.pdf",
+          "checked_on": "2026-11-13"
         }
       ],
       "sections": [
@@ -49040,6 +49988,19 @@
               "source_ids": [
                 "do_location"
               ]
+            },
+            {
+              "fa": "موشک، مجموعه ماهواره‌ها را به مدار اولیه می‌رساند؛ ION پس از جدایش از موشک، می‌تواند محموله‌ها را طبق توالی مأموریت نگهداری و جداگانه آزاد کند. نقش دی‌اوربیت در این بخش، لجستیک مرحله پس از پرتاب است و نباید با داشتن ماهواره‌بر مداری مستقل اشتباه گرفته شود.",
+              "en": "A launch vehicle places the group of payloads into an initial orbit. After separation from the rocket, ION carries and releases satellites on its mission timeline. D-Orbit’s role is post-launch orbital logistics, not evidence that the company operates its own orbital launch rocket.",
+              "ar": "يوصل الصاروخ مجموعة الحمولات إلى مدار أولي؛ ثم تحمل ION الأقمار وتطلقها وفق تسلسل المهمة. ويقع دور الشركة في اللوجستيات اللاحقة للإطلاق، لا تشغيل صاروخ مداري خاص بها.",
+              "heading": {
+                "fa": "چه چیزی آن را از شرکت پرتاب جدا می‌کند؟",
+                "en": "What distinguishes an orbital carrier",
+                "ar": "الفرق عن مزود خدمة الإطلاق"
+              },
+              "source_ids": [
+                "do_brochure"
+              ]
             }
           ]
         },
@@ -49055,6 +50016,32 @@
               "ar": "تُستخدم مركبة ION Satellite Carrier لنقل الأقمار الصناعية ونشرها في مواقع مدارية مستهدفة.",
               "source_ids": [
                 "do_about"
+              ]
+            },
+            {
+              "fa": "ION چند فضاپیما را در محفظه‌ها یا جداکننده‌های مناسب حمل می‌کند و پس از رسیدن به شرایط برنامه‌ریزی‌شده، آن‌ها را در زمان‌های متفاوت رها می‌کند. این انعطاف می‌تواند بخشی از محدودیت‌های زمان و موقعیت جدایش مستقیم از موشک را کاهش دهد؛ ولی هر مشتری باید مشخصات مدار و تغییرات قابل دستیابی را جداگانه بررسی کند.",
+              "en": "ION carries multiple spacecraft in compatible dispensers and releases them individually against mission-specific conditions. This can reduce some limitations of direct launch-vehicle separation, but orbit targeting and achievable changes remain dependent on the contracted mission design.",
+              "ar": "تحمل ION عدة أقمار في موزعات متوافقة وتطلقها بشكل منفصل وفق شروط كل مهمة. قد يقلل ذلك قيود الفصل المباشر من الصاروخ، لكن المدارات الممكنة تعتمد على تصميم الرحلة المتعاقد عليها.",
+              "heading": {
+                "fa": "فرایند استقرار چندمحموله‌ای ION",
+                "en": "ION multi-payload deployment",
+                "ar": "نشر الحمولات المتعددة بواسطة ION"
+              },
+              "source_ids": [
+                "do_brochure"
+              ]
+            },
+            {
+              "fa": "در مدل میزبانی‌شده، آزمایش یا دستگاه مشتری از رابط مکانیکی، توان الکتریکی و تبادل داده خود ION بهره می‌گیرد و می‌تواند بدون ساخت یک باس ماهواره مستقل آزمایش شود. این خدمت با «تحویل ماهواره به مدار» فرق دارد، زیرا ابزار مشتری در طول عملیات بخشی از حامل باقی می‌ماند.",
+              "en": "For hosted payloads, an experiment connects to ION’s mechanical, electrical and data interfaces and can be operated without constructing a standalone spacecraft bus. This is not the same as deploying a free-flying customer satellite: the experiment remains part of the carrier.",
+              "ar": "تستخدم التجربة المستضافة واجهات ION الميكانيكية والكهربائية والبيانية دون الحاجة لبناء منصة قمر مستقلة. ويختلف ذلك عن إطلاق قمر حرّ؛ إذ تبقى التجربة جزءاً من المركبة الحاملة.",
+              "heading": {
+                "fa": "خدمات محموله میزبانی‌شده",
+                "en": "Hosted-payload services",
+                "ar": "خدمات الحمولات المستضافة"
+              },
+              "source_ids": [
+                "do_brochure"
               ]
             }
           ]
@@ -49073,6 +50060,19 @@
                 "do_about",
                 "do_home"
               ]
+            },
+            {
+              "fa": "برای سنجش تعداد مأموریت‌های ION، صرف جمله «خدمات مداری انجام شده» کافی نیست. لازم است هر پرواز با شناسه وسیله، تاریخ پرتاب، ماهواره‌های حمل‌شده و وضعیت رهاسازی پیوند بخورد. بروشور شرکت دامنه خدمات را توضیح می‌دهد، اما جایگزین فهرست کامل، مستقل و به‌روزرسانی‌شده پروازها نیست؛ این حوزه برای تکمیل آمار به دفتر وقایع اختصاصی نیاز دارد.",
+              "en": "The statement “orbital services have flown” is insufficient to calculate ION mission counts. Each flight should have a vehicle ID, launch date, carried spacecraft and deployment outcome. The company brochure defines services but is not a complete, independently reconciled flight register; a dedicated event ledger remains necessary.",
+              "ar": "لا يكفي القول إن خدمات ION قد نُفذت لحساب المهمات؛ إذ يلزم لكل رحلة معرف مركبة وتاريخ إطلاق وحمولات ونتائج النشر. تشرح النشرة الخدمات لكنها ليست سجلاً كاملاً ومستقلاً للرحلات؛ وتبقى الحاجة إلى سجل أحداث منفصل.",
+              "heading": {
+                "fa": "سابقه مأموریت در سطح وسیله",
+                "en": "Vehicle-level mission heritage",
+                "ar": "سجل المهمات على مستوى المركبة"
+              },
+              "source_ids": [
+                "do_brochure"
+              ]
             }
           ]
         },
@@ -49090,6 +50090,20 @@
                 "do_about",
                 "do_home"
               ]
+            },
+            {
+              "fa": "بروشور رسمی، خدمات رهاسازی ماهواره و میزبانی ابزار را در سبد قابل ارائه معرفی می‌کند. خدمات گسترده‌تری مانند تعمیر ماهواره، سوخت‌گیری یا جمع‌آوری انبوه پسماند، نیازمند مدرک مأموریت و فناوری مستقل‌اند و صرف وجود هدف راهبردی، به معنی تحقق آن‌ها نیست.",
+              "en": "The official material describes deployment and hosted-payload services as commercial offerings. Broader servicing claims—repair, refueling or large-scale debris removal—need separate vehicle- and mission-level evidence; an aspirational roadmap is not proof of completed orbital operations.",
+              "ar": "تعرض الوثائق الرسمية نشر الأقمار واستضافة الحمولات كخدمات متاحة. أما الصيانة الشاملة أو التزود بالوقود أو إزالة الحطام على نطاق واسع فتحتاج أدلة مستقلة على مستوى المركبة والمهمة؛ فالخطة ليست سجلاً منجزاً.",
+              "heading": {
+                "fa": "مرز خدمات اثبات‌شده و نقشه راه",
+                "en": "Operational offerings versus roadmap",
+                "ar": "الخدمات الحالية مقابل الخطط"
+              },
+              "source_ids": [
+                "do_brochure"
+              ],
+              "kind": "caution"
             }
           ]
         },
@@ -49106,11 +50120,66 @@
               "source_ids": [
                 "do_about"
               ]
+            },
+            {
+              "fa": "دی‌اوربیت در کنار ION، راهکارهای رهاساز مانند DPOD و DCUBE و خدمات تحلیل مأموریت و آزمون پذیرش را معرفی کرده است. بنابراین زنجیره ارزش آن تنها به «تاکسی فضایی» خلاصه نمی‌شود، بلکه از آماده‌سازی پرتاب و یکپارچه‌سازی تا رهاسازی نهایی امتداد دارد.",
+              "en": "Beyond ION, the company describes DPOD and DCUBE dispensers, mission analysis and acceptance-test support. Its value chain therefore covers more than an orbital “taxi”: payload integration, launch preparation, deployment hardware and in-orbit separation form a linked service offering.",
+              "ar": "إلى جانب ION، تعرض الشركة موزعات DPOD وDCUBE وخدمات تحليل المهمة واختبارات القبول. لذا يمتد نشاطها من تجهيز الحمولة ودمجها إلى معدات النشر والفصل النهائي في المدار.",
+              "heading": {
+                "fa": "ابزارهای مکمل مأموریت",
+                "en": "Supporting deployment hardware",
+                "ar": "معدات النشر المساندة"
+              },
+              "source_ids": [
+                "do_brochure"
+              ]
             }
           ]
         }
       ],
-      "data_status": "verified_pilot"
+      "data_status": "verified_pilot",
+      "key_facts": [
+        {
+          "label": {
+            "fa": "وسیله",
+            "en": "Orbital vehicle",
+            "ar": "المركبة المدارية"
+          },
+          "value": {
+            "fa": "ION",
+            "en": "ION",
+            "ar": "ION"
+          },
+          "note": {
+            "fa": "حمل و رهاسازی محموله در مدار",
+            "en": "Orbital transport and deployment",
+            "ar": "النقل والنشر داخل المدار"
+          },
+          "source_ids": [
+            "do_brochure"
+          ]
+        },
+        {
+          "label": {
+            "fa": "مدل خدمت",
+            "en": "Service model",
+            "ar": "نموذج الخدمة"
+          },
+          "value": {
+            "fa": "Hosted payload",
+            "en": "Hosted payload",
+            "ar": "حمولة مستضافة"
+          },
+          "note": {
+            "fa": "استقرار آزمایش روی باس حامل",
+            "en": "Operate experiments using the carrier bus",
+            "ar": "تشغيل التجارب على متن ناقل الحمولات"
+          },
+          "source_ids": [
+            "do_brochure"
+          ]
+        }
+      ]
     }
   },
   {
@@ -49138,12 +50207,16 @@
     "orbita_verified_profile": {
       "schema_version": 3,
       "profile_type": "test_facility",
-      "verified_on": "2026-11-12",
-      "review_scope": "Phase-3 evidence-led specialty dossier only; legacy data not recertified; no global coverage claim",
+      "verified_on": "2026-11-13",
+      "review_scope": {
+        "fa": "ارزیابی گزاره‌های منتخب بر اساس منابع رسمی موجود تا ۱۳ نوامبر ۲۰۲۶؛ نه ممیزی کامل همه مدل‌ها، ظرفیت‌های لحظه‌ای یا مشتریان. مشخصات مدل‌ها با شرایط مرجع منبع گزارش شده و نباید به سایر محصولات تعمیم یابد.",
+        "en": "Selected claims reviewed against available official sources as of 13 November 2026; this is not an audit of every product model, real-time capacity or customer. Model specifications retain their source reference conditions.",
+        "ar": "رُوجعت ادعاءات محددة وفق المصادر الرسمية المتاحة حتى ١٣ نوفمبر ٢٠٢٦؛ ولا يشمل ذلك جميع الطرز أو السعة الآنية أو العملاء. تُحفظ شروط القياس المرجعية لكل نموذج ولا تعمم على المنتجات الأخرى."
+      },
       "summary": {
-        "fa": "تأسیسات اروپایی آزمون محیطی، شامل لرزش، صوت، خلأ حرارتی و سازگاری الکترومغناطیسی.",
-        "en": "European environmental testing facilities for vibration, acoustics, thermal vacuum and electromagnetic compatibility.",
-        "ar": "مرافق أوروبية لاختبار الاهتزاز والصوت والفراغ الحراري والتوافق الكهرومغناطيسي."
+        "fa": "مرکز آزمون ESTEC در نوردویک هلند، زیرساخت تأیید محیطی ماهواره‌ها و تجهیزات فضایی در مجموعه آژانس فضایی اروپاست. این مرکز آزمون‌های ارتعاش، صوت، خلأ حرارتی، سازگاری الکترومغناطیسی و اندازه‌گیری مشخصات فیزیکی را کنار هم ارائه می‌دهد؛ اپراتور آن European Test Services از طرف ESA است.",
+        "en": "The ESTEC Test Centre in Noordwijk is ESA’s environmental-verification infrastructure for spacecraft and payload hardware. It groups vibration, acoustic, thermal-vacuum, electromagnetic-compatibility and physical-property testing in one complex; European Test Services operates it on ESA’s behalf.",
+        "ar": "مركز اختبار ESTEC في نوردفايك بنية تابعة لوكالة الفضاء الأوروبية للتحقق البيئي من المركبات والأجهزة. يجمع اختبارات الاهتزاز والصوت والفراغ الحراري والتوافق الكهرومغناطيسي والخواص الفيزيائية، وتشغله European Test Services نيابة عن ESA."
       },
       "sources": [
         {
@@ -49163,6 +50236,18 @@
           "title": "ESA — ESTEC establishment",
           "url": "https://www.esa.int/establishment/about-us/meet-us/sites-and-establishments/esa-estec/esa-estec",
           "checked_on": "2026-11-12"
+        },
+        {
+          "id": "et_lss",
+          "title": "ESA — Large Space Simulator characteristics and historical missions",
+          "url": "https://www.esa.int/Enabling_Support/Space_Engineering_Technology/Test_centre/Large_Space_Simulator_LSS",
+          "checked_on": "2026-11-13"
+        },
+        {
+          "id": "et_lss_specs",
+          "title": "ESA Technology — Large Space Simulator technical parameters",
+          "url": "https://technology.esa.int/page/large-space-simulator",
+          "checked_on": "2026-11-13"
         }
       ],
       "sections": [
@@ -49188,6 +50273,19 @@
               "source_ids": [
                 "et_tech"
               ]
+            },
+            {
+              "fa": "پیش از پرتاب، سازه و زیرسامانه‌های یک ماهواره باید بارهای شدید مرحله پرتاب و شرایط خلأ و تابش خورشیدی را تحمل کنند. در ESTEC می‌توان ماهواره کامل را بین آزمایشگاه‌های مختلف جابه‌جا کرد تا آزمون‌های محیطی پشت سر هم انجام شوند؛ این ساختار جابه‌جایی و تنظیم دوباره نمونه آزمایشی را کاهش می‌دهد.",
+              "en": "Before launch, spacecraft hardware must withstand severe launcher loads and the thermal-vacuum environment of orbit. ESTEC provides facilities through which complete spacecraft can move for successive environmental tests, reducing handling and reconfiguration between test campaigns.",
+              "ar": "قبل الإطلاق ينبغي أن تتحمل الأجهزة أحمال الصاروخ وبيئة الفراغ والحرارة. يتيح ESTEC نقل مركبة كاملة بين تجهيزات الاختبار لإجراء سلسلة تجارب بيئية مع تقليل المناولة وإعادة الضبط بين الاختبارات.",
+              "heading": {
+                "fa": "چرخه آزمون یک ماهواره",
+                "en": "Spacecraft qualification workflow",
+                "ar": "تسلسل تأهيل المركبة"
+              },
+              "source_ids": [
+                "et_about"
+              ]
             }
           ]
         },
@@ -49212,6 +50310,33 @@
               "source_ids": [
                 "et_about"
               ]
+            },
+            {
+              "fa": "شبیه‌ساز فضایی بزرگ محفظه‌ای با ارتفاع حدود ۱۵ متر و قطر ۱۰ متر است که پمپ‌های خلأ، دیواره‌های سردشونده و چراغ‌های زنون برای بازتولید بخشی از شرایط حرارتی فضا دارد. ESA فشار معمول قابل دستیابی حدود ۵×۱۰⁻⁶ میلی‌بار را در مشخصات فنی معرفی می‌کند. این سامانه برای آزمون چرخه دما، موازنه حرارتی و بازشدن سازه‌ها در شرایط نماینده به کار می‌رود.",
+              "en": "The Large Space Simulator is approximately 15 m high and 10 m in diameter, with vacuum pumps, cooled shrouds and xenon-based solar illumination. ESA specifies typical vacuum levels around 5×10⁻⁶ mbar. Its uses include thermal balance, thermal-vacuum cycling and deployment tests under representative space conditions.",
+              "ar": "يبلغ ارتفاع محاكي الفضاء الكبير نحو ١٥ م وقطره ١٠ م، ويستخدم مضخات فراغ وجدراناً مبردة ومصابيح زينون لمحاكاة الشمس. وتحدد ESA ضغطاً نموذجياً يبلغ نحو ٥×١٠⁻⁶ مليبار. وتشمل الاستخدامات التوازن الحراري ودورات الفراغ ونشر الهياكل.",
+              "heading": {
+                "fa": "محفظه خلأ و خورشید مصنوعی",
+                "en": "Large Space Simulator and artificial Sun",
+                "ar": "محاكاة الفراغ والشمس"
+              },
+              "source_ids": [
+                "et_lss",
+                "et_lss_specs"
+              ]
+            },
+            {
+              "fa": "در آزمایش ارتعاش، شیکرها پاسخ سازه و تجهیزات را به بارهای مشابه پرتاب اندازه می‌گیرند. تأسیسات صوتی LEAF نیز صدای شدید میدان آکوستیکی پرتاب را شبیه‌سازی می‌کند. ESA برای شیکرهای مرکز رده‌هایی تا ۶۴۰ کیلو‌نیوتن و سامانه چندمحوره HYDRA را فهرست می‌کند؛ این اعداد ظرفیت تجهیزات مختلف‌اند، نه یک آزمون واحد.",
+              "en": "Shakers test structural response to launch-like dynamic loads, while the LEAF acoustic chamber recreates intense launch sound fields. ESA lists shaker classes up to 640 kN and the multi-axis HYDRA system. These describe different facilities, not a combined qualification level for every test article.",
+              "ar": "تحاكي أجهزة الهز الأحمال الديناميكية للإطلاق، وتعيد منشأة LEAF إنتاج الضجيج الصوتي الشديد. تُدرج ESA أجهزة اهتزاز حتى ٦٤٠ كيلو نيوتن ونظام HYDRA متعدد المحاور؛ وهذه قدرات مرافق مختلفة لا معياراً موحداً لكل تجربة.",
+              "heading": {
+                "fa": "تحریک ارتعاشی و آزمون صوتی",
+                "en": "Vibration and acoustic facilities",
+                "ar": "اختبارات الاهتزاز والصوت"
+              },
+              "source_ids": [
+                "et_tech"
+              ]
             }
           ]
         },
@@ -49228,6 +50353,20 @@
               "source_ids": [
                 "et_tech"
               ]
+            },
+            {
+              "fa": "ESA از محموله‌های Galileo، فضاپیمای بپی‌کلمبو، Envisat و فضاپیمای باری ATV به‌عنوان نمونه فعالیت مرکز نام می‌برد. ذکر نام مأموریت در سوابق مرکز، سهم آن در آزمون تجهیزات را نشان می‌دهد؛ با این حال برای نسبت‌دادن یک آزمون مشخص به مدل خاص باید گزارش کمپین همان مأموریت مطالعه شود.",
+              "en": "ESA cites Galileo spacecraft hardware, BepiColombo, Envisat and the ATV cargo spacecraft among the centre’s supported campaigns. A mission name establishes facility involvement at programme level; test-by-test attribution still requires the individual campaign record.",
+              "ar": "تذكر ESA أجهزة Galileo وBepiColombo وEnvisat ومركبة الشحن ATV ضمن الأعمال التي دعمها المركز. ويثبت ذلك مشاركة المنشأة على مستوى البرنامج، أما تفاصيل اختبار مكوّن بعينه فتحتاج تقرير حملته المحدد.",
+              "heading": {
+                "fa": "نمونه‌های مأموریتی ثبت‌شده",
+                "en": "Documented mission examples",
+                "ar": "أمثلة مهمات موثقة"
+              },
+              "source_ids": [
+                "et_tech"
+              ],
+              "kind": "missions"
             }
           ]
         },
@@ -49244,6 +50383,21 @@
               "source_ids": [
                 "et_about"
               ]
+            },
+            {
+              "fa": "شرکت در کمپین ارتعاش یا خلأ حرارتی به‌معنای تأیید تمام تجهیزات یک سازنده برای همه مأموریت‌ها نیست. هر آزمون با نمونه معین، استاندارد یا پروفایل بار مشخص و معیار پذیرش مخصوص انجام می‌شود. برای اعلام وضعیت «تأیید صلاحیت‌شده» باید گزارش آزمون و شرایط قبولی همان محصول در دسترس باشد، نه فقط نام مرکز آزمون.",
+              "en": "Passing through a vibration or thermal-vacuum facility does not qualify a manufacturer’s entire catalog for all missions. Each campaign uses a defined test article, loading profile and acceptance criterion. Any “qualified” designation needs the actual product-level test report and criteria, not simply the name of the facility.",
+              "ar": "إجراء اختبار اهتزاز أو فراغ حراري لا يؤهل كتالوج شركة بالكامل لكل المهام. لكل حملة نموذج واختبار أحمال ومعايير قبول محددة؛ ولا تثبت حالة «مؤهل» إلا بتقرير الاختبار وشروطه للمنتج المعني.",
+              "heading": {
+                "fa": "آزمون محیطی، گواهی عمومی نیست",
+                "en": "Environmental tests are not blanket certification",
+                "ar": "الاختبار البيئي ليس شهادة شاملة"
+              },
+              "source_ids": [
+                "et_tech",
+                "et_about"
+              ],
+              "kind": "caution"
             }
           ]
         },
@@ -49260,11 +50414,67 @@
               "source_ids": [
                 "et_tech"
               ]
+            },
+            {
+              "fa": "ETS مرکز آزمون را از طرف ESA بهره‌برداری می‌کند و خدمات آن تنها به پروژه‌های داخلی ESA محدود نیست؛ صنایع فضایی اروپا و برخی کاربردهای غیرفضایی نیز از ظرفیت آن استفاده می‌کنند. این تفکیک مهم است: مالک زیرساخت، بهره‌بردار قراردادی و مشتری آزمون، الزاماً یک شخصیت سازمانی نیستند.",
+              "en": "European Test Services operates the facility on behalf of ESA. Its environmental-test infrastructure is also available to European space-industry and some non-space users. The site owner, contracted operator and test customer are not necessarily the same legal entity.",
+              "ar": "تدير ETS المنشأة نيابة عن ESA وتقدم خدماتها أيضاً إلى الصناعة الفضائية الأوروبية وبعض القطاعات الأخرى. ويجب التمييز بين مالك البنية والمشغل المتعاقد وعميل الاختبار، فقد تكون كيانات مختلفة.",
+              "heading": {
+                "fa": "ساختار بهره‌برداری و مشتریان",
+                "en": "Operator and user base",
+                "ar": "المشغل والجهات المستفيدة"
+              },
+              "source_ids": [
+                "et_about",
+                "et_tech"
+              ]
             }
           ]
         }
       ],
-      "data_status": "verified_pilot"
+      "data_status": "verified_pilot",
+      "key_facts": [
+        {
+          "label": {
+            "fa": "شبیه‌ساز اصلی",
+            "en": "Large Space Simulator",
+            "ar": "المحاكي الفضائي الكبير"
+          },
+          "value": {
+            "fa": "۱۵ × ۱۰ m",
+            "en": "15 × 10 m",
+            "ar": "١٥ × ١٠ م"
+          },
+          "note": {
+            "fa": "ارتفاع × قطر محفظه استوانه‌ای؛ معرفی ESA",
+            "en": "Chamber height × diameter according to ESA",
+            "ar": "ارتفاع × قطر الحجرة وفق ESA"
+          },
+          "source_ids": [
+            "et_lss"
+          ]
+        },
+        {
+          "label": {
+            "fa": "آزمون",
+            "en": "Test families",
+            "ar": "أنواع الاختبارات"
+          },
+          "value": {
+            "fa": "ارتعاش / صوت / خلأ",
+            "en": "Vibration / acoustic / vacuum",
+            "ar": "اهتزاز / صوت / فراغ"
+          },
+          "note": {
+            "fa": "همراه با آزمون سازگاری الکترومغناطیسی",
+            "en": "Also electromagnetic-compatibility testing",
+            "ar": "بالإضافة إلى التوافق الكهرومغناطيسي"
+          },
+          "source_ids": [
+            "et_tech"
+          ]
+        }
+      ]
     },
     "linked_entities": [
       "esa"
@@ -49295,12 +50505,16 @@
     "orbita_verified_profile": {
       "schema_version": 3,
       "profile_type": "ground_station",
-      "verified_on": "2026-11-12",
-      "review_scope": "Phase-3 evidence-led specialty dossier only; legacy data not recertified; no global coverage claim",
+      "verified_on": "2026-11-13",
+      "review_scope": {
+        "fa": "ارزیابی گزاره‌های منتخب بر اساس منابع رسمی موجود تا ۱۳ نوامبر ۲۰۲۶؛ نه ممیزی کامل همه مدل‌ها، ظرفیت‌های لحظه‌ای یا مشتریان. مشخصات مدل‌ها با شرایط مرجع منبع گزارش شده و نباید به سایر محصولات تعمیم یابد.",
+        "en": "Selected claims reviewed against available official sources as of 13 November 2026; this is not an audit of every product model, real-time capacity or customer. Model specifications retain their source reference conditions.",
+        "ar": "رُوجعت ادعاءات محددة وفق المصادر الرسمية المتاحة حتى ١٣ نوفمبر ٢٠٢٦؛ ولا يشمل ذلك جميع الطرز أو السعة الآنية أو العملاء. تُحفظ شروط القياس المرجعية لكل نموذج ولا تعمم على المنتجات الأخرى."
+      },
       "summary": {
-        "fa": "ایستگاه ۳۵متری شبکه ESTRACK با ارتباط باند X و دریافت باندهای K و Ka.",
-        "en": "35-metre ESTRACK antenna with X-band links and K/Ka-band reception.",
-        "ar": "هوائي ESTRACK بقطر 35 متراً لاتصالات نطاق X واستقبال نطاقَي K وKa."
+        "fa": "ایستگاه سبروس DSA-2 در استان آبیلای اسپانیا یکی از آنتن‌های ۳۵متری شبکه فضای دور ESTRACK آژانس فضایی اروپاست. نقش آن دریافت تله‌متری، ارسال فرمان و اندازه‌گیری رادیومتری از کاوشگرهای دوردست است؛ باندهای ارسال و دریافت آن یکسان نیستند و باید جداگانه ثبت شوند.",
+        "en": "Cebreros DSA-2 in Ávila, Spain is a 35 m antenna in ESA’s ESTRACK deep-space network. It supports spacecraft telemetry, commanding and radiometric tracking. Its transmit and receive capabilities differ by frequency band and should not be summarized as identical bidirectional coverage.",
+        "ar": "محطة سيبريروس DSA-2 في مقاطعة آفيلا الإسبانية هوائي قطره ٣٥ م ضمن شبكة ESTRACK للفضاء العميق. تدعم القياس عن بعد وإرسال الأوامر والتتبع الراديوي، وتختلف نطاقات الإرسال والاستقبال ويجب توثيقها منفصلة."
       },
       "sources": [
         {
@@ -49326,6 +50540,24 @@
           "title": "ESA — BepiColombo operations",
           "url": "https://www.esa.int/articles/about-us/directorates/operations/bepicolombo-operations",
           "checked_on": "2026-11-12"
+        },
+        {
+          "id": "ce_specs",
+          "title": "ESA — Technical Specifications of the Cebreros Antenna",
+          "url": "https://www.esa.int/esapub/bulletin/bulletin124/bul124f_warhout_martin.pdf",
+          "checked_on": "2026-11-13"
+        },
+        {
+          "id": "ce_detail",
+          "title": "ESA — Cebreros DSA 2 operations and equipment",
+          "url": "https://www.esa.int/cs/articles/about-us/directorates/operations/esa-ground-stations/cebreros-dsa-2",
+          "checked_on": "2026-11-13"
+        },
+        {
+          "id": "ce_opsportal",
+          "title": "ESA OPS — Cebreros ground station",
+          "url": "https://esoc.esa.int/cebreros",
+          "checked_on": "2026-11-13"
         }
       ],
       "sections": [
@@ -49350,6 +50582,20 @@
               "source_ids": [
                 "ce_geo"
               ]
+            },
+            {
+              "fa": "سبروس یک ایستگاه مستقل از مرکز کنترل مأموریت ESOC است؛ آنتن و تجهیزات رادیویی در اسپانیا قرار دارند و هماهنگی شبکه و عملیات مأموریت می‌تواند از دارمشتات انجام شود. بنابراین نقش «ایستگاه زمینی» و «مرکز کنترل» را نباید در ORBITA برای یک رکورد یکسان فرض کرد.",
+              "en": "Cebreros is a physical antenna site distinct from ESA’s ESOC mission control centre. Its RF hardware is in Spain, while network coordination and mission operations can be based in Darmstadt. The “ground station” and “mission control centre” categories refer to different physical and functional entities.",
+              "ar": "سيبريروس موقع هوائي فعلي منفصل عن مركز ESOC للتحكم بالمهمات. تقع معدات التردد الراديوي في إسبانيا، بينما تُنسق عمليات الشبكة من دارمشتات. لذا لا يجوز دمج فئة المحطة الأرضية وفئة مركز التحكم.",
+              "heading": {
+                "fa": "نقش در شبکه ESTRACK",
+                "en": "Role in the ESTRACK network",
+                "ar": "دورها في شبكة ESTRACK"
+              },
+              "source_ids": [
+                "ce_detail",
+                "ce_opsportal"
+              ]
             }
           ]
         },
@@ -49366,6 +50612,33 @@
               "source_ids": [
                 "ce_station"
               ]
+            },
+            {
+              "fa": "طبق مشخصات ESA، این ایستگاه ارسال و دریافت باند X و دریافت باندهای K و Ka را انجام می‌دهد. بخش RF دارای سامانه هدایت موج، تقویت‌کننده کم‌نویز و بخش ارسال توان‌بالاست. ثبت صرف عبارت «X/Ka» اطلاعات مهندسی کلیدی درباره جهت لینک و نقش هر باند را از بین می‌برد.",
+              "en": "ESA describes X-band transmission and reception, plus K- and Ka-band reception. RF hardware includes a beam-waveguide feed, low-noise receive amplification and high-power transmit chains. A shorthand such as “X/Ka station” obscures the critical direction and purpose of each link.",
+              "ar": "تصف ESA إرسالاً واستقبالاً في نطاق X واستقبالاً في K وKa، مع موجهات موج ومضخمات منخفضة الضوضاء وسلسلة إرسال عالية القدرة. والكتابة المختصرة X/Ka تخفي اتجاه الاتصال ودور كل نطاق.",
+              "heading": {
+                "fa": "چه باندهایی ارسال و دریافت می‌شوند؟",
+                "en": "Transmit and receive bands",
+                "ar": "نطاقات الإرسال والاستقبال"
+              },
+              "source_ids": [
+                "ce_detail",
+                "ce_specs"
+              ]
+            },
+            {
+              "fa": "گزارش فنی ESA قطر بازتابنده را ۳۵ متر، ارتفاع سازه را حدود ۴۰ متر و جرم کلی آن را نزدیک ۶۲۰ تن ثبت کرده است. حداکثر سرعت چرخش هر محور حدود یک درجه بر ثانیه و خطای نشانه‌روی طراحی‌شده ۰٫۰۰۶ درجه ذکر شده است. این اعداد از سند طراحی ایستگاه هستند و وضعیت لحظه‌ای عملکرد را تضمین نمی‌کنند.",
+              "en": "ESA’s technical bulletin specifies a 35 m reflector, approximately 40 m overall structure height and roughly 620 tonnes total mass. It lists a 1°/s axis slew rate and 0.006° pointing error. These are published technical specifications, not live operational measurements.",
+              "ar": "تذكر نشرة ESA عاكساً بقطر ٣٥ م وهيكلاً ارتفاعه نحو ٤٠ م وكتلة كلية تقارب ٦٢٠ طناً. وتحدد سرعة دوران درجة واحدة في الثانية وخطأ توجيه ٠٫٠٠٦ درجة. وهي مواصفات تصميم منشورة لا قياسات تشغيلية لحظية.",
+              "heading": {
+                "fa": "ابعاد، جرم و دقت نشانه‌روی",
+                "en": "Physical size and pointing",
+                "ar": "الأبعاد ودقة التوجيه"
+              },
+              "source_ids": [
+                "ce_specs"
+              ]
             }
           ]
         },
@@ -49381,6 +50654,20 @@
               "ar": "تذكر ESA دعم ثيبريروس لمهمات مثل Mars Express وBepiColombo وJuice؛ ولا تعني القائمة اتصالاً متصلاً في الزمن الحقيقي.",
               "source_ids": [
                 "ce_station"
+              ]
+            },
+            {
+              "fa": "سبروس علاوه بر انتقال داده، اندازه‌گیری داپلر و فاصله‌سنجی رادیویی را برای تعیین مسیر کاوشگرها انجام می‌دهد. این داده‌ها به تیم ناوبری کمک می‌کند اختلاف حرکت پیش‌بینی‌شده و واقعی را تشخیص دهد؛ ازاین‌رو آنتن فضای دور هم زیرساخت ارتباط است و هم بخشی از زنجیره تعیین مدار.",
+              "en": "Beyond telemetry delivery, Cebreros supports Doppler and radiometric range measurements that inform spacecraft navigation. Such measurements help flight-dynamics teams compare observed motion with the predicted trajectory; the station is both a communications link and a navigation-data sensor.",
+              "ar": "إلى جانب استقبال البيانات، تدعم سيبريروس قياسات دوبلر والمدى الراديوي لتحديد مسار المسبار. تساعد هذه القياسات فرق ديناميكيات الطيران على مقارنة الحركة المرصودة بالمسار المتوقع، فتكون المحطة رابط اتصال وأداة ملاحة أيضاً.",
+              "heading": {
+                "fa": "ردیابی و اندازه‌گیری رادیومتری",
+                "en": "Tracking and radiometric measurements",
+                "ar": "التتبع والقياسات الراديوية"
+              },
+              "source_ids": [
+                "ce_detail",
+                "ce_opsportal"
               ]
             }
           ]
@@ -49399,6 +50686,21 @@
                 "ce_station",
                 "ce_ops"
               ]
+            },
+            {
+              "fa": "قطر بزرگ آنتن به‌تنهایی تضمین تماس همیشگی با هر کاوشگر نیست. مسیر دید از زمین، وضعیت جو، فاصله تا فضاپیما، تداخل برنامه مأموریت‌ها و تخصیص زمان شبکه، بازه‌های تماس را تعیین می‌کنند. بنابراین نباید از مختصات ایستگاه یک «نقشه پوشش بلادرنگ» بدون داده افمریس و برنامه بهره‌برداری ساخت.",
+              "en": "A large dish does not guarantee uninterrupted contact with every probe. Line-of-sight geometry, atmosphere, range, competing mission schedules and network allocation determine usable passes. A real-time coverage map cannot be inferred from the station coordinates alone without ephemerides and operating schedules.",
+              "ar": "لا يضمن قطر الهوائي الكبير اتصالاً مستمراً بكل مسبار؛ إذ تحدد هندسة الرؤية والغلاف الجوي والمسافة والجدولة زمن الاتصال. ولا يمكن إنتاج خريطة تغطية فورية من إحداثيات المحطة وحدها دون بيانات المدار وجدول العمليات.",
+              "heading": {
+                "fa": "پوشش واقعی و زمان‌بندی تماس",
+                "en": "Actual visibility and scheduling",
+                "ar": "الرؤية الفعلية وجدولة الاتصال"
+              },
+              "source_ids": [
+                "ce_detail",
+                "ce_opsportal"
+              ],
+              "kind": "caution"
             }
           ]
         },
@@ -49415,11 +50717,67 @@
               "source_ids": [
                 "ce_open"
               ]
+            },
+            {
+              "fa": "ساخت ایستگاه در سال ۲۰۰۴ آغاز و افتتاح رسمی آن در سپتامبر ۲۰۰۵ انجام شد؛ نخستین سیگنال باند X از Venus Express در نوامبر همان سال دریافت شد. این تاریخچه، ارتباط آغاز بهره‌برداری آنتن با مأموریت زهره را مستند می‌کند و از تاریخ ساخت مرکز کنترل ESOC جداست.",
+              "en": "Construction began in 2004 and the station was inaugurated in September 2005. Its first X-band signal from Venus Express was received that November. This station timeline is distinct from the much earlier history of ESOC in Darmstadt.",
+              "ar": "بدأ البناء عام ٢٠٠٤ وافتُتحت المحطة في سبتمبر ٢٠٠٥، وتلقت أول إشارة X من Venus Express في نوفمبر من السنة نفسها. ويختلف تاريخ هذه المحطة عن تاريخ مركز ESOC الأقدم في دارمشتات.",
+              "heading": {
+                "fa": "شروع عملیات در ۲۰۰۵",
+                "en": "Commissioning and early operations",
+                "ar": "بداية التشغيل عام ٢٠٠٥"
+              },
+              "source_ids": [
+                "ce_detail",
+                "ce_open"
+              ]
             }
           ]
         }
       ],
-      "data_status": "verified_pilot"
+      "data_status": "verified_pilot",
+      "key_facts": [
+        {
+          "label": {
+            "fa": "قطر بازتابنده",
+            "en": "Dish diameter",
+            "ar": "قطر العاكس"
+          },
+          "value": {
+            "fa": "۳۵ متر",
+            "en": "35 metres",
+            "ar": "٣٥ متراً"
+          },
+          "note": {
+            "fa": "آنتن ارتباط فضای دور",
+            "en": "Deep-space communications antenna",
+            "ar": "هوائي اتصالات الفضاء العميق"
+          },
+          "source_ids": [
+            "ce_detail"
+          ]
+        },
+        {
+          "label": {
+            "fa": "ارتباط رادیویی",
+            "en": "RF coverage",
+            "ar": "التغطية الراديوية"
+          },
+          "value": {
+            "fa": "X Tx/Rx",
+            "en": "X Tx/Rx",
+            "ar": "X إرسال/استقبال"
+          },
+          "note": {
+            "fa": "دریافت K و Ka نیز مستند شده است",
+            "en": "K and Ka receive capability also listed",
+            "ar": "استقبال K وKa موثق أيضاً"
+          },
+          "source_ids": [
+            "ce_detail"
+          ]
+        }
+      ]
     },
     "linked_entities": [
       "esa",
@@ -49451,12 +50809,16 @@
     "orbita_verified_profile": {
       "schema_version": 3,
       "profile_type": "mission_control",
-      "verified_on": "2026-11-12",
-      "review_scope": "Phase-3 evidence-led specialty dossier only; legacy data not recertified; no global coverage claim",
+      "verified_on": "2026-11-13",
+      "review_scope": {
+        "fa": "ارزیابی گزاره‌های منتخب بر اساس منابع رسمی موجود تا ۱۳ نوامبر ۲۰۲۶؛ نه ممیزی کامل همه مدل‌ها، ظرفیت‌های لحظه‌ای یا مشتریان. مشخصات مدل‌ها با شرایط مرجع منبع گزارش شده و نباید به سایر محصولات تعمیم یابد.",
+        "en": "Selected claims reviewed against available official sources as of 13 November 2026; this is not an audit of every product model, real-time capacity or customer. Model specifications retain their source reference conditions.",
+        "ar": "رُوجعت ادعاءات محددة وفق المصادر الرسمية المتاحة حتى ١٣ نوفمبر ٢٠٢٦؛ ولا يشمل ذلك جميع الطرز أو السعة الآنية أو العملاء. تُحفظ شروط القياس المرجعية لكل نموذج ولا تعمم على المنتجات الأخرى."
+      },
       "summary": {
-        "fa": "مرکز کنترل مأموریت‌های رباتیک ESA و هماهنگ‌کننده شبکه ایستگاه‌های زمینی آن.",
-        "en": "Mission operations centre for ESA robotic spacecraft and coordination of its ground station network.",
-        "ar": "مركز عمليات مهمات ESA الروبوتية وتنسيق شبكة محطاتها الأرضية."
+        "fa": "مرکز عملیات فضایی اروپا ESOC در دارمشتات آلمان، مرکز کنترل مأموریت‌های فضایی ESA است. فعالیت آن فراتر از ارسال فرمان است: طرح‌ریزی عملیات، دینامیک پرواز، ناوبری، مدیریت شبکه ESTRACK و پایش وضعیت فضاپیما را به هم متصل می‌کند. تاریخ آغاز فعالیت عملیاتی مرکز به سال ۱۹۶۷ بازمی‌گردد.",
+        "en": "ESOC in Darmstadt is ESA’s spacecraft operations hub. Its remit extends beyond uplinking commands: mission planning, flight dynamics, navigation, the ESTRACK tracking network and spacecraft health operations are coordinated through linked ground-segment functions. It began operations in 1967.",
+        "ar": "مركز العمليات الفضائية الأوروبية ESOC في دارمشتات هو مركز تشغيل مركبات ESA، ولا يقتصر على إرسال الأوامر؛ بل يجمع تخطيط المهام وديناميكيات الطيران والملاحة وشبكة التتبع ESTRACK ومراقبة حالة المركبات. يعود تأسيسه التشغيلي إلى ١٩٦٧."
       },
       "sources": [
         {
@@ -49476,6 +50838,18 @@
           "title": "ESA — BepiColombo operations",
           "url": "https://www.esa.int/articles/about-us/directorates/operations/bepicolombo-operations",
           "checked_on": "2026-11-12"
+        },
+        {
+          "id": "es_history",
+          "title": "ESA ESOC Operations Portal — Detailed history since 1967",
+          "url": "https://esoc.esa.int/explore-our-history",
+          "checked_on": "2026-11-13"
+        },
+        {
+          "id": "es_legacy",
+          "title": "ESA — ESOC mission history",
+          "url": "https://www.esa.int/articles/about-us/directorates/operations/esoc-mission-history",
+          "checked_on": "2026-11-13"
         }
       ],
       "sections": [
@@ -49491,6 +50865,20 @@
               "ar": "ESOC هو مركز العمليات الفضائية لـESA في دارمشتات بألمانيا، ومركز رئيسي للعمليات منذ 1967.",
               "source_ids": [
                 "es_about"
+              ]
+            },
+            {
+              "fa": "در مرکز کنترل، دریافت تله‌متری وضعیت سامانه‌ها، طراحی توالی فرمان، برنامه‌ریزی مانور و ارزیابی نتایج در یک فرایند عملیاتی پیوسته انجام می‌شود. ESOC همچنین با تیم‌های ناوبری و ایستگاه‌های شبکه زمینی هماهنگ است. ساختمان کنترل و خود آنتن‌های دوردست، موجودیت‌های فیزیکی یکسانی نیستند.",
+              "en": "Mission control joins telemetry analysis, command sequencing, maneuver planning and assessment of spacecraft responses into a continuous operations workflow. ESOC works alongside flight-dynamics teams and remotely located tracking stations; the control rooms are not themselves the deep-space antennas.",
+              "ar": "يجمع مركز التحكم تحليل القياس عن بعد وتسلسل الأوامر وتخطيط المناورات وتقييم الاستجابة ضمن عملية متواصلة. ويتعاون ESOC مع فرق الملاحة ومحطات التتبع البعيدة؛ وغرف التحكم ليست الهوائيات الموجودة في المواقع الأخرى.",
+              "heading": {
+                "fa": "مفهوم مرکز کنترل مأموریت",
+                "en": "What mission control actually covers",
+                "ar": "ما الذي يشمله مركز التحكم؟"
+              },
+              "source_ids": [
+                "es_about",
+                "es_history"
               ]
             }
           ]
@@ -49509,6 +50897,19 @@
                 "es_faq",
                 "es_bepi"
               ]
+            },
+            {
+              "fa": "فهرست تاریخی ESA مجموعه‌ای از ماهواره‌های هواشناسی، سنجش زمین، علم نجوم و کاوشگرهای اعماق فضا را نشان می‌دهد. کنترل یک ماهواره سنجش زمین با مدیریت فضاپیمایی در مسیر سیاره دیگر یکسان نیست؛ زمان تأخیر مخابراتی، هندسه مدار و امکان مداخله لحظه‌ای باعث تفاوت روش عملیاتی می‌شوند.",
+              "en": "ESA’s operations history spans meteorology, Earth observation, astronomy and deep-space exploration. A low-Earth-orbit satellite and a planetary probe cannot use identical control workflows: communication delay, trajectory geometry and the ability to intervene in real time are very different.",
+              "ar": "يشمل سجل ESA أقمار الأرصاد ورصد الأرض والفلك والمسابير البعيدة. تختلف إدارة قمر في مدار منخفض عن مسبار كوكبي بسبب زمن تأخر الإشارة وهندسة المسار وإمكانية التدخل اللحظي.",
+              "heading": {
+                "fa": "تنوع مأموریت‌ها و رژیم‌های مداری",
+                "en": "Mission and orbit diversity",
+                "ar": "تنوع المهمات والمدارات"
+              },
+              "source_ids": [
+                "es_legacy"
+              ]
             }
           ]
         },
@@ -49525,6 +50926,20 @@
               "source_ids": [
                 "es_about",
                 "es_faq"
+              ]
+            },
+            {
+              "fa": "برای اجرای مانور، نخست مدار یا مسیر برآورد می‌شود، سپس تغییر سرعت و زمان فرمان محاسبه و با محدودیت‌های توان، ارتباط و پیشرانش هماهنگ می‌گردد. خدمات دینامیک پرواز ESOC بخشی از این زنجیره هستند و داده‌های فاصله‌سنجی و داپلر از ایستگاه‌هایی مانند سبروس ورودی مهم تعیین مدار محسوب می‌شوند.",
+              "en": "Operations planning starts with an orbit or trajectory estimate, then computes maneuvers subject to power, communication and propulsion limits. ESOC’s flight-dynamics function supports this cycle, drawing on range and Doppler observations from tracking stations such as Cebreros.",
+              "ar": "تبدأ المناورة بتقدير المدار أو المسار، ثم حساب تغيير السرعة وتوقيت الأمر ضمن قيود الطاقة والاتصالات والدفع. وتدعم ديناميكيات الطيران في ESOC هذه الدورة باستخدام قياسات المدى ودوبلر من محطات مثل سيبريروس.",
+              "heading": {
+                "fa": "دینامیک پرواز و ناوبری",
+                "en": "Flight dynamics and navigation",
+                "ar": "ديناميكيات الطيران والملاحة"
+              },
+              "source_ids": [
+                "es_about",
+                "es_history"
               ]
             }
           ]
@@ -49543,6 +50958,20 @@
                 "es_faq",
                 "es_bepi"
               ]
+            },
+            {
+              "fa": "ESOC در دارمشتات به‌عنوان گره فرماندهی و برنامه‌ریزی عمل می‌کند؛ ایستگاه‌های ESTRACK در نقاط جغرافیایی مختلف تماس رادیویی با فضاپیما را برقرار می‌کنند. همچنین مرکز عملیات شبکه برای تخصیص منابع و پایش ارتباطات نقش دارد. این روابط در ORBITA باید با پیوندهای سازمانی و عملیاتی نشان داده شوند، نه کپی یک شناسنامه برای هر آنتن.",
+              "en": "ESOC is the operational planning and control node in Darmstadt; distributed ESTRACK stations establish the RF links to spacecraft. Network operations coordinate and monitor those resources. ORBITA should represent these functions as linked entities rather than duplicating an identical dossier for every antenna.",
+              "ar": "يعمل ESOC كعقدة تخطيط وتحكم في دارمشتات، بينما تنشئ محطات ESTRACK المنتشرة روابط التردد الراديوي. وتنسق عمليات الشبكة هذه الموارد. وينبغي تمثيل العلاقة بروابط تشغيلية لا بنسخ سجل واحد لكل هوائي.",
+              "heading": {
+                "fa": "تفاوت مرکز کنترل و زیرساخت ارتباط",
+                "en": "Control centre versus ground network",
+                "ar": "التمييز بين مركز التحكم وشبكة الأرض"
+              },
+              "source_ids": [
+                "es_about",
+                "es_history"
+              ]
             }
           ]
         },
@@ -49559,11 +50988,66 @@
               "source_ids": [
                 "es_about"
               ]
+            },
+            {
+              "fa": "پیشینه ESOC به مرکز پردازش داده ESDAC در دهه ۱۹۶۰ می‌رسد؛ افتتاح رسمی آن در ۸ سپتامبر ۱۹۶۷ و کنترل ESRO-2B در مه ۱۹۶۸ ثبت شده است. در دهه‌های بعد مأموریت‌های شاخصی مانند Giotto در ۱۹۸۶، فرود Huygens بر تیتان در ۲۰۰۵ و Rosetta/Philae در ۲۰۱۴ به کارنامه عملیاتی آن افزوده شدند.",
+              "en": "ESOC grew from the ESDAC data-analysis centre of the 1960s, was inaugurated on 8 September 1967 and operated ESRO-2B in May 1968. Its later record includes Giotto’s 1986 comet encounter, the 2005 Huygens landing on Titan and the Rosetta/Philae comet landing in 2014.",
+              "ar": "تطور ESOC من مركز تحليل البيانات ESDAC في الستينيات، وافتتح في ٨ سبتمبر ١٩٦٧ وشغّل ESRO-2B في مايو ١٩٦٨. ومن إنجازاته اللاحقة مهمة Giotto عام ١٩٨٦ وهبوط Huygens على تيتان عام ٢٠٠٥ وهبوط Rosetta/Philae على مذنب عام ٢٠١٤.",
+              "heading": {
+                "fa": "از مرکز داده به عملیات اعماق فضا",
+                "en": "From data centre to planetary operations",
+                "ar": "من مركز بيانات إلى عمليات الكواكب"
+              },
+              "source_ids": [
+                "es_history"
+              ]
             }
           ]
         }
       ],
-      "data_status": "verified_pilot"
+      "data_status": "verified_pilot",
+      "key_facts": [
+        {
+          "label": {
+            "fa": "افتتاح رسمی",
+            "en": "Inauguration",
+            "ar": "الافتتاح"
+          },
+          "value": {
+            "fa": "۱۹۶۷",
+            "en": "1967",
+            "ar": "١٩٦٧"
+          },
+          "note": {
+            "fa": "۸ سپتامبر در دارمشتات",
+            "en": "8 September in Darmstadt",
+            "ar": "٨ سبتمبر في دارمشتات"
+          },
+          "source_ids": [
+            "es_history"
+          ]
+        },
+        {
+          "label": {
+            "fa": "اولین ماهواره کنترل‌شده",
+            "en": "First controlled satellite",
+            "ar": "أول قمر جرى التحكم به"
+          },
+          "value": {
+            "fa": "ESRO-2B",
+            "en": "ESRO-2B",
+            "ar": "ESRO-2B"
+          },
+          "note": {
+            "fa": "عملیات آغازین در مه ۱۹۶۸",
+            "en": "Early mission operations in May 1968",
+            "ar": "بداية العمليات في مايو ١٩٦٨"
+          },
+          "source_ids": [
+            "es_history"
+          ]
+        }
+      ]
     },
     "linked_entities": [
       "esa",

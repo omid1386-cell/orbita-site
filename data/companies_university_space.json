@@ -26,8 +26,12 @@
     "orbita_verified_profile": {
       "schema_version": 2,
       "profile_type": "university_space",
-      "verified_on": "2026-11-12",
-      "review_scope": "New specialist dossier only; preexisting category fields not recertified",
+      "verified_on": "2026-11-13",
+      "review_scope": {
+        "fa": "ارزیابی گزاره‌های منتخب بر اساس منابع رسمی موجود تا ۱۳ نوامبر ۲۰۲۶؛ نه ممیزی کامل همه مدل‌ها، ظرفیت‌های لحظه‌ای یا مشتریان. مشخصات مدل‌ها با شرایط مرجع منبع گزارش شده و نباید به سایر محصولات تعمیم یابد.",
+        "en": "Selected claims reviewed against available official sources as of 13 November 2026; this is not an audit of every product model, real-time capacity or customer. Model specifications retain their source reference conditions.",
+        "ar": "رُوجعت ادعاءات محددة وفق المصادر الرسمية المتاحة حتى ١٣ نوفمبر ٢٠٢٦؛ ولا يشمل ذلك جميع الطرز أو السعة الآنية أو العملاء. تُحفظ شروط القياس المرجعية لكل نموذج ولا تعمم على المنتجات الأخرى."
+      },
       "sources": [
         {
           "id": "ssc_main",
@@ -52,6 +56,24 @@
           "title": "University of Surrey — Surrey Space Institute",
           "url": "https://www.surrey.ac.uk/surrey-space-institute",
           "checked_on": "2026-11-12"
+        },
+        {
+          "id": "ssc_debris",
+          "title": "University of Surrey — RemoveDEBRIS mission details",
+          "url": "https://www.surrey.ac.uk/surrey-space-centre/missions/removedebris",
+          "checked_on": "2026-11-13"
+        },
+        {
+          "id": "ssc_harpoon",
+          "title": "University of Surrey — Harpoon demonstration result",
+          "url": "https://www.surrey.ac.uk/news/harpoon-successfully-captures-space-debris",
+          "checked_on": "2026-11-13"
+        },
+        {
+          "id": "ssc_inflate",
+          "title": "University of Surrey — InflateSail mission",
+          "url": "https://www.surrey.ac.uk/surrey-space-centre/missions/inflatesail",
+          "checked_on": "2026-11-13"
         }
       ],
       "sections": [
@@ -66,6 +88,20 @@
               "en": "Surrey Space Centre is a space-engineering research centre at the University of Surrey in Guildford, UK, now part of the Surrey Space Institute.",
               "ar": "مركز سَري للفضاء مركز أبحاث هندسة فضائية تابع لجامعة سَري في غيلدفورد بالمملكة المتحدة، وهو حالياً جزء من معهد سَري للفضاء.",
               "source_ids": [
+                "ssc_main"
+              ]
+            },
+            {
+              "fa": "مرکز فضایی دانشگاه ساری یک واحد پژوهشی و آموزشی است، نه کارخانه تجاری ماهواره. سابقه تاریخی توسعه فناوری‌های ماهواره کوچک به تأسیس SSTL کمک کرد، اما داده‌های استخدام، مالکیت، محصولات تجاری و قراردادهای SSTL باید در شناسنامه شرکت نگهداری شوند. رابطه دانشگاه و شرکت در ORBITA پیوند است، نه ادغام.",
+              "en": "Surrey Space Centre is an academic research and teaching unit, not a commercial satellite factory. Its early small-satellite activity helped give rise to SSTL; however, SSTL contracts, ownership and industrial products belong to the separate company record. The connection is a documented relationship, not a merger.",
+              "ar": "مركز ساري وحدة بحث وتعليم، لا مصنع أقمار تجاري. ساهمت أعماله المبكرة في ظهور SSTL، لكن العقود والملكية والمنتجات التجارية تخص سجل الشركة المستقل. والصلة بينهما علاقة موثقة وليست دمجاً للكيانين.",
+              "heading": {
+                "fa": "مرز میان پژوهشگاه و شرکت صنعتی",
+                "en": "Academic centre versus industrial spin-out",
+                "ar": "التمييز بين المركز البحثي والشركة"
+              },
+              "source_ids": [
+                "ssc_about",
                 "ssc_main"
               ]
             }
@@ -83,6 +119,19 @@
               "ar": "تشمل المجالات هندسة الأقمار الصغيرة، والتحكم في الاتجاه والمدار، والدفع، والطاقة الكهربائية، والاتصالات والحمولات.",
               "source_ids": [
                 "ssc_about"
+              ]
+            },
+            {
+              "fa": "در InflateSail، پژوهشگران سازه بادشونده و بادبان افزایش پسار را برای پایان عمر ماهواره بررسی کردند. بادبان پس از بازشدن سطح مؤثر ماهواره را افزایش می‌دهد تا نیروی مقاومت جو در مدار پایین، افت ارتفاع را تسریع کند. این فناوری با «بازیابی کنترل‌شده» یا انتقال به مدار قبرستان یکسان نیست.",
+              "en": "InflateSail explored an inflatable structure and drag sail for spacecraft end-of-life disposal. Deployment increases the effective area exposed to residual atmospheric drag in low Earth orbit and accelerates altitude decay; it is not equivalent to controlled recovery or transfer to a graveyard orbit.",
+              "ar": "درست مهمة InflateSail بنية قابلة للنفخ وشراع مقاومة لمرحلة نهاية عمر القمر. يزيد النشر مساحة الاحتكاك بالغلاف الجوي الرقيق في المدار المنخفض لتسريع الهبوط؛ ولا يعادل ذلك الاستعادة المتحكم بها أو النقل إلى مدار مقبرة.",
+              "heading": {
+                "fa": "پژوهش فناوری خروج از مدار",
+                "en": "Research on deorbit technologies",
+                "ar": "أبحاث تقنيات الخروج من المدار"
+              },
+              "source_ids": [
+                "ssc_inflate"
               ]
             }
           ]
@@ -108,6 +157,33 @@
               "source_ids": [
                 "ssc_missions"
               ]
+            },
+            {
+              "fa": "در فهرست رسمی دانشگاه، STRaND-1 با تاریخ پرتاب ۲۵ فوریه ۲۰۱۳، DeOrbitSail در ۲۰۱۵، AlSat-1N در ۲۰۱۶ و InflateSail در ژوئن ۲۰۱۷ ثبت شده‌اند. این توالی نشان می‌دهد فعالیت دانشگاه از ساخت ماهواره آموزشی به نمایش فناوری‌های قابل‌گسترش و دفع پسماند مداری حرکت کرده است.",
+              "en": "Surrey’s official mission list records STRaND-1 launched on 25 February 2013, DeOrbitSail in 2015, AlSat-1N in 2016 and InflateSail in June 2017. Together they show progression from nanosatellite flight activity into deployable structures and orbital-debris mitigation research.",
+              "ar": "تسجل الجامعة إطلاق STRaND-1 في ٢٥ فبراير ٢٠١٣، ثم DeOrbitSail عام ٢٠١٥ وAlSat-1N عام ٢٠١٦ وInflateSail في يونيو ٢٠١٧. ويبرز التسلسل الانتقال نحو الهياكل القابلة للنشر والحد من الحطام المداري.",
+              "heading": {
+                "fa": "توالی مأموریت‌های واقعی",
+                "en": "Chronology of flight missions",
+                "ar": "تسلسل المهمات المنفذة"
+              },
+              "source_ids": [
+                "ssc_missions"
+              ]
+            },
+            {
+              "fa": "RemoveDEBRIS در سال ۲۰۱۸ از ایستگاه فضایی بین‌المللی مستقر شد. آزمایش‌های آن شامل گرفتن هدف شبیه‌سازی‌شده با تور، ناوبری مبتنی بر دوربین و لیدار و شلیک نیزه به هدف نصب‌شده بر بازو بود. دانشگاه ساری در فوریه ۲۰۱۹ موفقیت آزمایش نیزه را گزارش کرد؛ این اثبات عملی فناوری است، نه وجود سامانه عملیاتی جمع‌آوری زباله در مقیاس صنعتی.",
+              "en": "RemoveDEBRIS deployed from the ISS in 2018. Demonstrations included net capture of a surrogate target, camera/LiDAR navigation and a harpoon fired at a target carried on a boom. Surrey reported the harpoon test successful in February 2019; these are in-orbit technology demonstrations, not an operational debris-cleanup fleet.",
+              "ar": "نُشرت RemoveDEBRIS من محطة الفضاء الدولية عام ٢٠١٨ لتجربة التقاط هدف بشبكة والملاحة بالكاميرا والليدار والحربة. وأعلنت ساري نجاح تجربة الحربة في فبراير ٢٠١٩، وهي تجربة إثبات تقنية وليست أسطولاً تشغيلياً لإزالة الحطام.",
+              "heading": {
+                "fa": "RemoveDEBRIS؛ آزمون در مدار",
+                "en": "RemoveDEBRIS: orbital demonstration",
+                "ar": "RemoveDEBRIS: تجربة مدارية"
+              },
+              "source_ids": [
+                "ssc_debris",
+                "ssc_harpoon"
+              ]
             }
           ]
         },
@@ -123,6 +199,20 @@
               "ar": "بدأ نشاط الأقمار الصغيرة في جامعة سَري عام 1979 وأسهم في تأسيس شركة SSTL المنبثقة؛ وهي كيان منفصل عن هذا المركز البحثي.",
               "source_ids": [
                 "ssc_about"
+              ]
+            },
+            {
+              "fa": "پروژه RemoveDEBRIS نمونه‌ای از تولید خروجی پژوهشی قابل اندازه‌گیری است: آزمایش تور، سیستم دیداری مبتنی بر دوربین و لیدار، و آزمایش نیزه، داده واقعی در مدار تولید کردند. با این حال، نتایج هر زیرآزمایش باید مستقل خوانده شوند؛ موفقیت یکی از آزمایش‌ها به معنی بلوغ همه فناوری‌های حذف پسماند نیست.",
+              "en": "RemoveDEBRIS demonstrates the value of measurable academic research outputs: net capture, camera/LiDAR observations and a harpoon test produced in-orbit experimental data. Each test outcome must nevertheless be assessed separately; one successful demonstration does not mature every debris-removal technology at once.",
+              "ar": "تظهر RemoveDEBRIS مخرجات بحثية قابلة للقياس عبر تجارب الشبكة والرؤية بالكاميرا والليدار والحربة في المدار. لكن يجب تقييم نتيجة كل تجربة بشكل منفصل؛ فلا يعني نجاح اختبار واحد نضج كل تقنيات إزالة الحطام.",
+              "heading": {
+                "fa": "از نمونه آزمایشگاهی تا نمایش مداری",
+                "en": "From research hardware to orbital test",
+                "ar": "من النموذج البحثي إلى التجربة المدارية"
+              },
+              "source_ids": [
+                "ssc_debris",
+                "ssc_harpoon"
               ]
             }
           ]
@@ -140,15 +230,70 @@
               "source_ids": [
                 "ssc_about"
               ]
+            },
+            {
+              "fa": "در RemoveDEBRIS، دانشگاه ساری هماهنگی مأموریت و توسعه بخش‌هایی مانند بادبان و اهداف کیوب‌ست را بر عهده داشت، در حالی که تأمین باس بر عهده SSTL و توسعه تور و نیزه به‌ترتیب بر عهده تیم‌های ایرباس بود. این تفکیک برای نسبت‌دادن درست «سازنده محصول» به اعضای کنسرسیوم ضروری است.",
+              "en": "For RemoveDEBRIS, Surrey coordinated the mission and contributed CubeSat targets and the drag sail, while SSTL supplied the platform and Airbus teams worked on the net and harpoon. Credit for a demonstrated device must follow the actual consortium work package, not simply the project lead.",
+              "ar": "نسقت ساري المهمة وساهمت في الأهداف النانوية والشراع، في حين وفرت SSTL المنصة وتولت فرق من إيرباص الشبكة والحربة. ويجب إسناد تصنيع كل جهاز إلى الطرف المنفذ، لا إلى قائد المشروع تلقائياً.",
+              "heading": {
+                "fa": "کنسرسیوم و تفکیک سهم سازندگان",
+                "en": "Consortium and attribution",
+                "ar": "التحالف وتوزيع الأدوار"
+              },
+              "source_ids": [
+                "ssc_debris"
+              ]
             }
           ]
         }
       ],
       "summary": {
-        "fa": "مرکز پژوهشی مهندسی فضای دانشگاه ساری؛ فعال در فناوری‌های ماهواره‌های کوچک و مأموریت‌های فضایی.",
-        "en": "Space-engineering research centre at the University of Surrey; research and missions in small-satellite technologies.",
-        "ar": "مركز بحثي لهندسة الفضاء بجامعة سَري، يعمل في تقنيات الأقمار الصغيرة والمهمات الفضائية."
-      }
+        "fa": "مرکز فضایی دانشگاه ساری یک مرکز دانشگاهی در گیلدفورد است که پژوهش ساخت ماهواره کوچک، کنترل وضعیت و کاهش پسماند مداری را با مأموریت‌های واقعی پیوند داده است. پروژه‌های STRaND-1، InflateSail و RemoveDEBRIS نقاط قابل سنجش این سابقه‌اند؛ شرکت صنعتی SSTL با وجود پیوند تاریخی، شخصیت جداگانه‌ای دارد.",
+        "en": "The University of Surrey’s space centre connects academic small-satellite engineering, attitude control and debris-mitigation research to flown missions. STRaND-1, InflateSail and RemoveDEBRIS are documented milestones; SSTL is an industrial company with a related history but a distinct identity.",
+        "ar": "يربط مركز ساري الفضائي البحث الجامعي في الأقمار الصغيرة والتحكم في الاتجاه والحد من الحطام المداري بمهمات أُطلقت فعلاً، أبرزها STRaND-1 وInflateSail وRemoveDEBRIS. أما SSTL فهي شركة صناعية مستقلة رغم صلتها التاريخية بالمركز."
+      },
+      "key_facts": [
+        {
+          "label": {
+            "fa": "آغاز فعالیت",
+            "en": "Academic roots",
+            "ar": "الجذور البحثية"
+          },
+          "value": {
+            "fa": "۱۹۷۹",
+            "en": "1979",
+            "ar": "١٩٧٩"
+          },
+          "note": {
+            "fa": "آغاز فعالیت ماهواره کوچک در دانشگاه",
+            "en": "Early small-satellite work at Surrey",
+            "ar": "بداية أعمال الأقمار الصغيرة في ساري"
+          },
+          "source_ids": [
+            "ssc_missions"
+          ]
+        },
+        {
+          "label": {
+            "fa": "نمونه مأموریت",
+            "en": "Flight mission",
+            "ar": "مهمة فضائية"
+          },
+          "value": {
+            "fa": "RemoveDEBRIS",
+            "en": "RemoveDEBRIS",
+            "ar": "RemoveDEBRIS"
+          },
+          "note": {
+            "fa": "آزمون مداری تور، نیزه و ناوبری دیداری",
+            "en": "Net, harpoon and optical navigation demonstration",
+            "ar": "عرض تقنيات الشبكة والحربة والملاحة البصرية"
+          },
+          "source_ids": [
+            "ssc_debris"
+          ]
+        }
+      ]
     }
   },
   {
@@ -178,8 +323,12 @@
     "orbita_verified_profile": {
       "schema_version": 2,
       "profile_type": "university_space",
-      "verified_on": "2026-11-12",
-      "review_scope": "New specialist dossier only; preexisting category fields not recertified",
+      "verified_on": "2026-11-13",
+      "review_scope": {
+        "fa": "ارزیابی گزاره‌های منتخب بر اساس منابع رسمی موجود تا ۱۳ نوامبر ۲۰۲۶؛ نه ممیزی کامل همه مدل‌ها، ظرفیت‌های لحظه‌ای یا مشتریان. مشخصات مدل‌ها با شرایط مرجع منبع گزارش شده و نباید به سایر محصولات تعمیم یابد.",
+        "en": "Selected claims reviewed against available official sources as of 13 November 2026; this is not an audit of every product model, real-time capacity or customer. Model specifications retain their source reference conditions.",
+        "ar": "رُوجعت ادعاءات محددة وفق المصادر الرسمية المتاحة حتى ١٣ نوفمبر ٢٠٢٦؛ ولا يشمل ذلك جميع الطرز أو السعة الآنية أو العملاء. تُحفظ شروط القياس المرجعية لكل نموذج ولا تعمم على المنتجات الأخرى."
+      },
       "sources": [
         {
           "id": "slab_about",
@@ -198,6 +347,18 @@
           "title": "Stanford Aeronautics & Astronautics — SLAB",
           "url": "https://aa.stanford.edu/research-impact/labs-and-centers/space-rendezvous-laboratory",
           "checked_on": "2026-11-12"
+        },
+        {
+          "id": "slab_starfox",
+          "title": "Stanford SLAB — StarFOX optical navigation on Starling",
+          "url": "https://slab.stanford.edu/projects/starling",
+          "checked_on": "2026-11-13"
+        },
+        {
+          "id": "slab_visors",
+          "title": "Stanford SLAB — VISORS project and bus allocation",
+          "url": "https://slab.stanford.edu/projects/visors",
+          "checked_on": "2026-11-13"
         }
       ],
       "sections": [
@@ -213,6 +374,20 @@
               "ar": "مختبر الالتقاء الفضائي (SLAB) تابع لقسم الملاحة الجوية والفضائية بجامعة ستانفورد ويقوده سيموني داميـكو.",
               "source_ids": [
                 "slab_about"
+              ]
+            },
+            {
+              "fa": "برخلاف یک سازنده عمومی ماهواره، خروجی اصلی SLAB روش‌های تعیین مدار نسبی، برنامه‌ریزی مانور، جلوگیری از برخورد و هماهنگی چند فضاپیماست. در آرایش چندماهواره‌ای، اندازه‌گیری موقعیت و سرعت نسبی اغلب به اندازه اندازه‌گیری مدار مطلق اهمیت دارد؛ چون هدف علمی به هندسه میان ماهواره‌ها وابسته است.",
+              "en": "Rather than acting as a general spacecraft manufacturer, SLAB develops relative-state estimation, maneuver planning, collision avoidance and multi-agent coordination. In distributed architectures, knowing the geometry among satellites may be as important as knowing each absolute orbit, because the mission objective depends on their separation.",
+              "ar": "لا يعمل المختبر مصنّعاً عاماً للأقمار، بل يطور تقدير الحركة النسبية وتخطيط المناورات وتجنب الاصطدام والتنسيق بين المركبات. وفي الأنظمة الموزعة قد تكون هندسة الفصل بين الأقمار مهمة بقدر المدار المطلق.",
+              "heading": {
+                "fa": "موضوع پژوهش دقیقاً چیست؟",
+                "en": "What the laboratory studies",
+                "ar": "ما الموضوع البحثي؟"
+              },
+              "source_ids": [
+                "slab_about",
+                "slab_projects"
               ]
             }
           ]
@@ -230,6 +405,19 @@
               "source_ids": [
                 "slab_aa"
               ]
+            },
+            {
+              "fa": "در StarFOX، از تصویر دوربین‌های ردیاب ستاره برای کشف و دنبال‌کردن ماهواره‌های دیگر مجموعه Starling استفاده می‌شود. اندازه‌گیری زاویه دید به همراه مدل حرکت مداری، تخمین مدار نسبی و مطلق را ممکن می‌کند. بنابراین دوربینی که اصولاً برای تعیین وضعیت ماهواره ساخته شده، نقش حسگر ناوبری چندماهواره‌ای نیز می‌گیرد.",
+              "en": "StarFOX repurposes star-tracker images to detect and track other members of the Starling swarm. Bearing-angle observations combined with orbital-dynamics models enable absolute and relative orbit estimation. A sensor built for spacecraft attitude determination thus also becomes a distributed-spacecraft navigation instrument.",
+              "ar": "تستخدم StarFOX صور متتبعات النجوم لاكتشاف أعضاء سرب Starling الآخرين وتتبعهم. وتُدمج زوايا الرؤية مع نماذج الحركة المدارية لتقدير المدارات المطلقة والنسبية، فتتحول كاميرا تحديد الاتجاه إلى أداة ملاحة للسرب.",
+              "heading": {
+                "fa": "آزمایش StarFOX چگونه کار می‌کند؟",
+                "en": "How StarFOX works",
+                "ar": "كيف تعمل StarFOX؟"
+              },
+              "source_ids": [
+                "slab_starfox"
+              ]
             }
           ]
         },
@@ -245,6 +433,19 @@
               "ar": "تضم قائمة مشروعات المختبر تجربة الملاحة البصرية StarFOX على مهمة Starling التابعة لناسا وأعمال تصميم التوجيه والملاحة والتحكم لمهمة VISORS.",
               "source_ids": [
                 "slab_projects"
+              ]
+            },
+            {
+              "fa": "طرح VISORS از دو کیوب‌ست 6U تشکیل می‌شود: یکی محموله اپتیکی و دیگری آشکارساز را حمل می‌کند. برای عملکرد مانند یک تلسکوپ با فاصله کانونی مفهومی ۴۰ متر، موقعیت نسبی دو فضاپیما باید با دقت بسیار بالا کنترل شود. استنفورد مسئول توسعه الگوریتم‌های هدایت، ناوبری و کنترل است؛ باس فضاپیماها را Blue Canyon تأمین می‌کند.",
+              "en": "VISORS is designed around two 6U spacecraft, one carrying the optical element and the other a detector, forming a telescope with a 40 m design focal length. Precision relative positioning is central to its science concept. Stanford develops GN&C algorithms, while Blue Canyon supplies spacecraft buses; these are different contribution types.",
+              "ar": "يتألف تصميم VISORS من قمرين 6U يحمل أحدهما العنصر البصري والآخر الكاشف لتشكيل تلسكوب بطول بؤري تصميمي ٤٠ م. يتطلب ذلك ضبطاً دقيقاً للموقع النسبي؛ تطور ستانفورد خوارزميات التوجيه والملاحة فيما توفر Blue Canyon منصات القمرين.",
+              "heading": {
+                "fa": "VISORS و تلسکوپ توزیع‌شده",
+                "en": "VISORS distributed telescope",
+                "ar": "تلسكوب VISORS الموزع"
+              },
+              "source_ids": [
+                "slab_visors"
               ]
             }
           ]
@@ -262,6 +463,20 @@
               "source_ids": [
                 "slab_projects"
               ]
+            },
+            {
+              "fa": "الگوریتم‌های ناوبری نسبی باید با محدودیت‌های واقعی مانند نویز حسگر، هندسه دید، تأخیر داده و مصرف سوخت سازگار باشند. پروژه‌های SLAB حلقه بین مدل‌سازی دینامیک، نرم‌افزار پرواز، آزمایش و عملیات مأموریت را پوشش می‌دهند؛ ولی وجود الگوریتم در مقاله، به‌تنهایی اثبات اجرای موفق آن در مدار نیست.",
+              "en": "Relative-navigation algorithms must tolerate sensor noise, changing viewing geometry, data latency and propellant constraints. SLAB projects connect dynamical modeling, flight software, tests and mission operations. Publishing an algorithm is not, by itself, evidence that a specific algorithm has flown successfully.",
+              "ar": "يجب أن تتحمل خوارزميات الملاحة النسبية ضوضاء المستشعرات وتغير هندسة الرؤية وتأخير البيانات والوقود المحدود. وتربط مشروعات المختبر بين النمذجة والبرمجيات والتجارب؛ لكن نشر خوارزمية لا يثبت نجاحها في المدار.",
+              "heading": {
+                "fa": "چرا داده شبیه‌سازی کافی نیست؟",
+                "en": "Why simulation alone is not enough",
+                "ar": "لماذا لا تكفي المحاكاة؟"
+              },
+              "source_ids": [
+                "slab_projects"
+              ],
+              "kind": "caution"
             }
           ]
         },
@@ -278,15 +493,70 @@
               "source_ids": [
                 "slab_about"
               ]
+            },
+            {
+              "fa": "VISORS یک پروژه چندمؤسسه‌ای شامل دانشگاه‌های مختلف و مرکز گادرد ناساست. نقش استنفورد در GN&C از نقش سازنده باس، توسعه‌دهنده محموله اپتیکی یا تأمین‌کننده سامانه پرتاب جداست. در ORBITA چنین پیوندهایی باید به‌صورت «مشارکت در مأموریت» ثبت شوند، نه «مالکیت مشترک».",
+              "en": "VISORS brings together universities and NASA Goddard. Stanford’s GN&C work is distinct from the bus provider, optical payload team and launch organization. Such links belong in a mission-contribution graph, not under an invented common-ownership relationship.",
+              "ar": "تشارك جامعات عدة ومركز غودارد التابع لناسا في VISORS. ويختلف دور ستانفورد في GN&C عن مورّد المنصة أو مطور البصريات. وينبغي تسجيل العلاقة كمساهمة في مهمة لا كملكية مشتركة مفترضة.",
+              "heading": {
+                "fa": "شبکه همکاری VISORS",
+                "en": "VISORS collaboration structure",
+                "ar": "شبكة تعاون VISORS"
+              },
+              "source_ids": [
+                "slab_visors"
+              ]
             }
           ]
         }
       ],
       "summary": {
-        "fa": "آزمایشگاه پژوهشی دانشگاهی در حوزه سامانه‌های فضایی توزیع‌شده، دینامیک مداری و هدایت، ناوبری و کنترل.",
-        "en": "Academic research laboratory specializing in distributed space systems, astrodynamics and guidance, navigation and control.",
-        "ar": "مختبر بحثي جامعي متخصص في الأنظمة الفضائية الموزعة والديناميكا المدارية والتوجيه والملاحة والتحكم."
-      }
+        "fa": "آزمایشگاه ملاقات فضایی استنفورد بر هدایت، ناوبری و کنترل سامانه‌های چندماهواره‌ای تمرکز دارد. ارزش افزوده آن در الگوریتم‌هایی است که چند فضاپیما را به شکل یک سامانه هماهنگ به کار می‌گیرند؛ StarFOX در مأموریت Starling و پروژه VISORS از نمونه‌های مشخص این رویکرد هستند.",
+        "en": "Stanford’s Space Rendezvous Laboratory focuses on guidance, navigation and control for distributed spacecraft. Its contributions are algorithms that allow multiple spacecraft to operate as a coordinated system, with StarFOX on NASA’s Starling mission and the VISORS formation as concrete examples.",
+        "ar": "يركز مختبر اللقاء الفضائي في ستانفورد على التوجيه والملاحة والتحكم للمركبات الموزعة؛ ويطور خوارزميات تجعل عدة أقمار تعمل كنظام منسق. من تطبيقاته تجربة StarFOX في Starling ومشروع VISORS."
+      },
+      "key_facts": [
+        {
+          "label": {
+            "fa": "تجربه ناوبری",
+            "en": "Navigation experiment",
+            "ar": "تجربة الملاحة"
+          },
+          "value": {
+            "fa": "StarFOX",
+            "en": "StarFOX",
+            "ar": "StarFOX"
+          },
+          "note": {
+            "fa": "ناوبری نسبی اپتیکی در Starling",
+            "en": "Optical relative navigation on Starling",
+            "ar": "الملاحة النسبية البصرية في Starling"
+          },
+          "source_ids": [
+            "slab_starfox"
+          ]
+        },
+        {
+          "label": {
+            "fa": "معماری مطالعه",
+            "en": "VISORS design",
+            "ar": "تصميم VISORS"
+          },
+          "value": {
+            "fa": "۲ کیوب‌ست 6U",
+            "en": "2 × 6U CubeSats",
+            "ar": "قمران 6U"
+          },
+          "note": {
+            "fa": "تلسکوپ توزیع‌شده با فاصله کانونی مفهومی ۴۰ متر",
+            "en": "Distributed telescope with 40 m design focal length",
+            "ar": "تلسكوب موزع بطول بؤري تصميمي ٤٠ م"
+          },
+          "source_ids": [
+            "slab_visors"
+          ]
+        }
+      ]
     }
   }
 ]
