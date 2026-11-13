@@ -1,0 +1,158 @@
+[
+  {
+    "id": "esa-cebreros-dsa2",
+    "cat": "ground_station",
+    "en": "ESA Cebreros Deep Space Antenna (DSA 2)",
+    "fa": "ایستگاه فضای دور سبروس (DSA 2)",
+    "ar": "محطة ثيبريروس للفضاء العميق (DSA 2)",
+    "country": "Spain",
+    "country_fa": "اسپانیا",
+    "country_ar": "إسبانيا",
+    "city": "Cebreros (Ávila)",
+    "city_fa": "سبروس (آبیلا)",
+    "city_ar": "ثيبريروس (آفيلا)",
+    "lat": 40.452689,
+    "lon": -4.36755,
+    "site": "https://www.esa.int/Enabling_Support/Operations/ESA_Ground_Stations/Cebreros_-_DSA_2",
+    "fa_d": "ایستگاه ۳۵متری ارتباط با مأموریت‌های اعماق فضا در شبکه ESTRACK آژانس فضایی اروپا.",
+    "en_d": "ESA ESTRACK 35-metre deep-space communications and tracking station in Spain.",
+    "ar_d": "محطة اتصالات وتتبع للفضاء العميق بهوائي قطره 35 متراً ضمن شبكة ESTRACK الأوروبية.",
+    "logo": "assets/logos/orbita/esa-cebreros-dsa2.svg",
+    "logo_kind": "orbita_editorial_nonofficial",
+    "orbita_marker_code": "CE",
+    "coordinate_precision": "esa_published_station_coordinate",
+    "orbita_verified_profile": {
+      "schema_version": 3,
+      "profile_type": "ground_station",
+      "verified_on": "2026-11-12",
+      "review_scope": "Phase-3 evidence-led specialty dossier only; legacy data not recertified; no global coverage claim",
+      "summary": {
+        "fa": "ایستگاه ۳۵متری شبکه ESTRACK با ارتباط باند X و دریافت باندهای K و Ka.",
+        "en": "35-metre ESTRACK antenna with X-band links and K/Ka-band reception.",
+        "ar": "هوائي ESTRACK بقطر 35 متراً لاتصالات نطاق X واستقبال نطاقَي K وKa."
+      },
+      "sources": [
+        {
+          "id": "ce_station",
+          "title": "ESA — Cebreros DSA 2",
+          "url": "https://www.esa.int/Enabling_Support/Operations/ESA_Ground_Stations/Cebreros_-_DSA_2",
+          "checked_on": "2026-11-12"
+        },
+        {
+          "id": "ce_geo",
+          "title": "ESA — Ground Stations Live (published location)",
+          "url": "https://www.esa.int/Enabling_Support/Operations/ESA_Ground_Stations/ESA_Ground_Stations_Live",
+          "checked_on": "2026-11-12"
+        },
+        {
+          "id": "ce_open",
+          "title": "ESA — Cebreros inauguration (2005)",
+          "url": "https://www.esa.int/Enabling_Support/Operations/ESA_Ground_Stations/Cebreros_inaugurated_ready_for_Venus_Express",
+          "checked_on": "2026-11-12"
+        },
+        {
+          "id": "ce_ops",
+          "title": "ESA — BepiColombo operations",
+          "url": "https://www.esa.int/articles/about-us/directorates/operations/bepicolombo-operations",
+          "checked_on": "2026-11-12"
+        }
+      ],
+      "sections": [
+        {
+          "id": "overview",
+          "fa": "شناسنامه ایستگاه",
+          "en": "Station profile",
+          "ar": "التعريف بالمحطة",
+          "items": [
+            {
+              "fa": "ایستگاه DSA 2 در نزدیکی سبروس استان آبیلای اسپانیا قرار دارد و دارای آنتن فضای دور با قطر ۳۵ متر است.",
+              "en": "DSA 2 is near Cebreros in Ávila, Spain, and hosts a 35 m deep-space dish.",
+              "ar": "تقع محطة DSA 2 قرب ثيبريروس بمقاطعة آفيلا في إسبانيا وتضم طبقاً للفضاء العميق قطره 35 m.",
+              "source_ids": [
+                "ce_station"
+              ]
+            },
+            {
+              "fa": "مختصات این رکورد از موقعیت منتشرشده ایستگاه توسط ESA گرفته شده است؛ مرز فیزیکی ملک یا محدوده حفاظتی نیست.",
+              "en": "Coordinates come from ESA’s published station location; they do not define property or security boundaries.",
+              "ar": "أُخذت الإحداثيات من الموقع الذي نشرته ESA للمحطة ولا تحدد حدود المنشأة أو نطاقات الحماية.",
+              "source_ids": [
+                "ce_geo"
+              ]
+            }
+          ]
+        },
+        {
+          "id": "equipment",
+          "fa": "تجهیزات و قابلیت ارتباطی",
+          "en": "Equipment & links",
+          "ar": "المعدات والاتصالات",
+          "items": [
+            {
+              "fa": "ایستگاه ارسال و دریافت باند X و دریافت باندهای K و Ka را ارائه می‌کند.",
+              "en": "The station supports X-band transmission and reception and K- and Ka-band reception.",
+              "ar": "تدعم المحطة الإرسال والاستقبال في نطاق X والاستقبال في نطاقَي K وKa.",
+              "source_ids": [
+                "ce_station"
+              ]
+            }
+          ]
+        },
+        {
+          "id": "missions",
+          "fa": "مأموریت‌ها و شبکه",
+          "en": "Missions & network",
+          "ar": "المهمات والشبكة",
+          "items": [
+            {
+              "fa": "ESA، سبروس را در پشتیبانی مأموریت‌های اعماق فضا مانند مارس اکسپرس، بپی‌کلمبو و جوس معرفی می‌کند؛ فهرست، نشانگر پشتیبانی مستمر در هر لحظه نیست.",
+              "en": "ESA identifies Cebreros as supporting missions such as Mars Express, BepiColombo and Juice; the list does not imply continuous live contact.",
+              "ar": "تذكر ESA دعم ثيبريروس لمهمات مثل Mars Express وBepiColombo وJuice؛ ولا تعني القائمة اتصالاً متصلاً في الزمن الحقيقي.",
+              "source_ids": [
+                "ce_station"
+              ]
+            }
+          ]
+        },
+        {
+          "id": "coverage",
+          "fa": "پوشش و ظرفیت",
+          "en": "Coverage & capacity",
+          "ar": "التغطية والسعة",
+          "items": [
+            {
+              "fa": "در ارتباط اعماق فضا، امکان ردیابی و ارتباط به هندسه مأموریت و برنامه زمان‌بندی وابسته است؛ این رکورد محدوده پوشش زنده را محاسبه نکرده است.",
+              "en": "Deep-space availability depends on mission geometry and scheduling; no real-time visibility footprint is computed in this profile.",
+              "ar": "تعتمد إتاحة اتصالات الفضاء العميق على هندسة المهمة وجدولتها؛ ولا يحسب الملف تغطية فورية.",
+              "source_ids": [
+                "ce_station",
+                "ce_ops"
+              ]
+            }
+          ]
+        },
+        {
+          "id": "history",
+          "fa": "تاریخچه و توسعه",
+          "en": "History & development",
+          "ar": "التاريخ والتطوير",
+          "items": [
+            {
+              "fa": "آنتن سبروس در ۲۸ سپتامبر ۲۰۰۵ افتتاح شد و برای پشتیبانی اولیه از ونوس اکسپرس آماده شده بود.",
+              "en": "The Cebreros antenna was inaugurated on 28 September 2005, in preparation for early Venus Express support.",
+              "ar": "افتُتح هوائي ثيبريروس في 28 سبتمبر 2005 استعداداً لدعم مهمة Venus Express.",
+              "source_ids": [
+                "ce_open"
+              ]
+            }
+          ]
+        }
+      ],
+      "data_status": "verified_pilot"
+    },
+    "linked_entities": [
+      "esa",
+      "esa-esoc"
+    ]
+  }
+]

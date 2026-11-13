@@ -1,0 +1,146 @@
+[
+  {
+    "id": "esa-esoc",
+    "cat": "mission_control",
+    "en": "ESA European Space Operations Centre (ESOC)",
+    "fa": "مرکز عملیات فضایی اروپا (اسوک)",
+    "ar": "المركز الأوروبي للعمليات الفضائية (ESOC)",
+    "country": "Germany",
+    "country_fa": "آلمان",
+    "country_ar": "ألمانيا",
+    "city": "Darmstadt",
+    "city_fa": "دارمشتات",
+    "city_ar": "دارمشتات",
+    "lat": 49.8728,
+    "lon": 8.6512,
+    "site": "https://www.esa.int/establishment/about-us/meet-us/sites-and-establishments/esa-esoc/esa-esoc",
+    "fa_d": "مرکز عملیات فضاپیما و مدیریت شبکه رهگیری آژانس فضایی اروپا در دارمشتات آلمان.",
+    "en_d": "ESA spacecraft operations and ground-tracking network control centre in Darmstadt, Germany.",
+    "ar_d": "مركز تشغيل المركبات الفضائية وإدارة شبكة التتبع الأرضي التابعة لـESA في دارمشتات بألمانيا.",
+    "logo": "assets/logos/orbita/esa-esoc.svg",
+    "logo_kind": "orbita_editorial_nonofficial",
+    "orbita_marker_code": "EO",
+    "coordinate_precision": "city_center_approximation",
+    "orbita_verified_profile": {
+      "schema_version": 3,
+      "profile_type": "mission_control",
+      "verified_on": "2026-11-12",
+      "review_scope": "Phase-3 evidence-led specialty dossier only; legacy data not recertified; no global coverage claim",
+      "summary": {
+        "fa": "مرکز کنترل مأموریت‌های رباتیک ESA و هماهنگ‌کننده شبکه ایستگاه‌های زمینی آن.",
+        "en": "Mission operations centre for ESA robotic spacecraft and coordination of its ground station network.",
+        "ar": "مركز عمليات مهمات ESA الروبوتية وتنسيق شبكة محطاتها الأرضية."
+      },
+      "sources": [
+        {
+          "id": "es_about",
+          "title": "ESA — ESOC overview and location",
+          "url": "https://www.esa.int/establishment/about-us/meet-us/sites-and-establishments/esa-esoc/esa-esoc",
+          "checked_on": "2026-11-12"
+        },
+        {
+          "id": "es_faq",
+          "title": "ESA — Mission Control FAQ",
+          "url": "https://www.esa.int/articles/about-us/directorates/operations/esa-mission-control-faq",
+          "checked_on": "2026-11-12"
+        },
+        {
+          "id": "es_bepi",
+          "title": "ESA — BepiColombo operations",
+          "url": "https://www.esa.int/articles/about-us/directorates/operations/bepicolombo-operations",
+          "checked_on": "2026-11-12"
+        }
+      ],
+      "sections": [
+        {
+          "id": "overview",
+          "fa": "شناسنامه مرکز",
+          "en": "Centre identity",
+          "ar": "التعريف بالمركز",
+          "items": [
+            {
+              "fa": "اسوک مرکز عملیات فضایی ESA در دارمشتات آلمان است و از سال ۱۹۶۷ پایگاه اصلی عملیات فضاپیماهای آن بوده است.",
+              "en": "ESOC is ESA’s space operations centre in Darmstadt, Germany, serving as a spacecraft operations hub since 1967.",
+              "ar": "ESOC هو مركز العمليات الفضائية لـESA في دارمشتات بألمانيا، ومركز رئيسي للعمليات منذ 1967.",
+              "source_ids": [
+                "es_about"
+              ]
+            }
+          ]
+        },
+        {
+          "id": "missions",
+          "fa": "مأموریت‌ها و ناوگان تحت کنترل",
+          "en": "Missions & spacecraft",
+          "ar": "المهمات والمركبات",
+          "items": [
+            {
+              "fa": "این مرکز عملیات فضاپیماهای رباتیک ESA را پشتیبانی می‌کند؛ برنامه بپی‌کلمبو نمونه‌ای از مأموریت‌های مستند آن است.",
+              "en": "The centre supports ESA robotic spacecraft operations; BepiColombo is one documented example.",
+              "ar": "يدعم المركز تشغيل مركبات ESA الروبوتية، وتُعد BepiColombo مثالاً موثقاً على ذلك.",
+              "source_ids": [
+                "es_faq",
+                "es_bepi"
+              ]
+            }
+          ]
+        },
+        {
+          "id": "operations",
+          "fa": "توانمندی‌های عملیاتی",
+          "en": "Operations capabilities",
+          "ar": "القدرات التشغيلية",
+          "items": [
+            {
+              "fa": "وظایف اسوک شامل کنترل فضاپیما، برنامه‌ریزی مأموریت، دینامیک پرواز و خدمات ناوبری است.",
+              "en": "ESOC functions include spacecraft control, mission operations planning, flight dynamics and navigation support.",
+              "ar": "تشمل مهام ESOC التحكم بالمركبات وتخطيط العمليات وديناميكيات الطيران ودعم الملاحة.",
+              "source_ids": [
+                "es_about",
+                "es_faq"
+              ]
+            }
+          ]
+        },
+        {
+          "id": "network",
+          "fa": "شبکه ارتباطی",
+          "en": "Ground segment network",
+          "ar": "شبكة الاتصالات الأرضية",
+          "items": [
+            {
+              "fa": "اسوک میزبان مرکز کنترل شبکه ESTRACK است و ایستگاه‌های زمینی آن، از جمله سبروس، در پشتیبانی ارتباطات مأموریت‌ها نقش دارند.",
+              "en": "ESOC hosts the ESTRACK control function; stations including Cebreros support mission communications.",
+              "ar": "يستضيف ESOC وظيفة التحكم بشبكة ESTRACK وتدعم محطات مثل ثيبريروس اتصالات المهمات.",
+              "source_ids": [
+                "es_faq",
+                "es_bepi"
+              ]
+            }
+          ]
+        },
+        {
+          "id": "history",
+          "fa": "تاریخچه و تحولات",
+          "en": "History & developments",
+          "ar": "التاريخ والتطور",
+          "items": [
+            {
+              "fa": "ESA آغاز نقش اسوک به‌عنوان مرکز عملیات فضایی را به سال ۱۹۶۷ نسبت می‌دهد؛ تحولات و مأموریت‌های آن از آن زمان ادامه یافته‌اند.",
+              "en": "ESA dates ESOC’s spacecraft operations role to 1967; its missions and functions have evolved since then.",
+              "ar": "تؤرّخ ESA دور ESOC في العمليات الفضائية منذ عام 1967، وتطورت مهماته ووظائفه منذ ذلك الوقت.",
+              "source_ids": [
+                "es_about"
+              ]
+            }
+          ]
+        }
+      ],
+      "data_status": "verified_pilot"
+    },
+    "linked_entities": [
+      "esa",
+      "esa-cebreros-dsa2"
+    ]
+  }
+]

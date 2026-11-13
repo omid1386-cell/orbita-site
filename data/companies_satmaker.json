@@ -163,7 +163,136 @@
         "title_ar": "إطلاق EOS SAT-1",
         "desc_ar": "أُطلق قمر رصد الأرض الذي صنعته الشركة في 3 يناير."
       }
-    ]
+    ],
+    "secondary_categories": [
+      "payloads"
+    ],
+    "logo": "assets/logos/orbita/dragonfly-space.svg",
+    "logo_kind": "orbita_editorial_nonofficial",
+    "orbita_marker_code": "DF",
+    "coordinate_precision": "city_approximation_existing",
+    "orbita_verified_profile": {
+      "schema_version": 3,
+      "profile_type": "payloads",
+      "verified_on": "2026-11-12",
+      "review_scope": "Phase-3 evidence-led specialty dossier only; legacy data not recertified; no global coverage claim",
+      "summary": {
+        "fa": "سازنده محموله‌های تصویربرداری الکترواپتیکی برای ماهواره‌ها؛ همچنین سازنده فضاپیمای کامل.",
+        "en": "Manufacturer of electro-optical satellite imaging payloads and complete spacecraft.",
+        "ar": "شركة مصنّعة لحمولات التصوير الكهروضوئي للأقمار الصناعية وللمركبات الفضائية الكاملة."
+      },
+      "sources": [
+        {
+          "id": "df_camera",
+          "title": "Dragonfly Aerospace — DragonEye imager",
+          "url": "https://dragonflyaerospace.com/smallsat-cameras/dragoneye/",
+          "checked_on": "2026-11-12"
+        },
+        {
+          "id": "df_mission",
+          "title": "Dragonfly Aerospace — EOSSAT-1 mission",
+          "url": "https://dragonflyaerospace.com/eossat-1/",
+          "checked_on": "2026-11-12"
+        },
+        {
+          "id": "df_roadmap",
+          "title": "Dragonfly Aerospace — Camera roadmap",
+          "url": "https://dragonflyaerospace.com/cameras-roadmap/",
+          "checked_on": "2026-11-12"
+        }
+      ],
+      "sections": [
+        {
+          "id": "overview",
+          "fa": "شناسنامه و حوزه فعالیت",
+          "en": "Identity & specialization",
+          "ar": "التعريف والتخصص",
+          "items": [
+            {
+              "fa": "این شرکت در استلن‌بوش آفریقای جنوبی، دوربین‌ها و محموله‌های تصویربرداری مناسب ماهواره‌های کوچک توسعه می‌دهد.",
+              "en": "Based in Stellenbosch, South Africa, the company develops imaging cameras and payloads for small satellites.",
+              "ar": "تطوّر الشركة، ومقرّها ستيلينبوش بجنوب أفريقيا، كاميرات وحمولات تصوير للأقمار الصغيرة.",
+              "source_ids": [
+                "df_camera"
+              ]
+            }
+          ]
+        },
+        {
+          "id": "catalog",
+          "fa": "کاتالوگ ابزارها",
+          "en": "Instrument catalogue",
+          "ar": "فهرس الأجهزة",
+          "items": [
+            {
+              "fa": "برای تصویربردار DragonEye، تفکیک زمینی در ارتفاع ۵۰۰ کیلومتر برابر ۱٫۴ متر پانکروماتیک و ۲٫۸ متر چندطیفی اعلام شده است.",
+              "en": "At 500 km altitude, DragonEye has published GSD figures of 1.4 m panchromatic and 2.8 m multispectral.",
+              "ar": "عند ارتفاع 500 km، تبلغ دقة العينة الأرضية المعلنة لكاميرا DragonEye مقدار 1.4 m بانكروماتياً و2.8 m متعدد الأطياف.",
+              "source_ids": [
+                "df_camera"
+              ]
+            },
+            {
+              "fa": "جرم اعلام‌شده دوربین DragonEye با الکترونیک ۱۸ کیلوگرم و پهنای برداشت آن در ارتفاع ۵۰۰ کیلومتر ۲۲٫۲ کیلومتر است.",
+              "en": "The stated DragonEye mass including electronics is 18 kg, with a 22.2 km swath at 500 km.",
+              "ar": "تبلغ الكتلة المعلنة لكاميرا DragonEye مع إلكترونياتها 18 kg، وعرض المسح 22.2 km عند ارتفاع 500 km.",
+              "source_ids": [
+                "df_camera"
+              ]
+            }
+          ]
+        },
+        {
+          "id": "missions",
+          "fa": "مأموریت‌ها و کاربردها",
+          "en": "Missions & applications",
+          "ar": "المهمات والاستخدامات",
+          "items": [
+            {
+              "fa": "ماهواره EOSSAT-1 با دو تصویربردار DragonEye در ۳ ژانویهٔ ۲۰۲۳ پرتاب شد و برای پایش کشاورزی و جنگل‌ها طراحی شده است.",
+              "en": "EOSSAT-1 launched on 3 January 2023 with two DragonEye imagers, for agriculture and forestry monitoring.",
+              "ar": "أُطلق القمر EOSSAT-1 في 3 يناير 2023 وعلى متنه كاميرتا DragonEye لرصد الزراعة والغابات.",
+              "source_ids": [
+                "df_mission"
+              ]
+            }
+          ]
+        },
+        {
+          "id": "readiness",
+          "fa": "بلوغ و عملکرد فناوری",
+          "en": "Readiness & performance",
+          "ar": "النضج والأداء التقني",
+          "items": [
+            {
+              "fa": "صفحه محصول سازنده، سابقه پروازی دو تصویربردار DragonEye را در سال ۲۰۲۳ ثبت کرده است؛ این ادعا به همین مدل محدود می‌شود.",
+              "en": "The manufacturer records two DragonEye imagers launched in 2023; the flight claim is specific to that model.",
+              "ar": "يسجّل المصنّع إطلاق كاميرتي DragonEye في عام 2023؛ ويخصّ هذا الادعاء هذا الطراز تحديداً.",
+              "source_ids": [
+                "df_camera"
+              ]
+            }
+          ]
+        },
+        {
+          "id": "development",
+          "fa": "توسعه و همکاری‌ها",
+          "en": "Development & collaborations",
+          "ar": "التطوير والتعاون",
+          "items": [
+            {
+              "fa": "نقشه راه تصویربردارهای شرکت شامل مدل‌هایی با کاربردهای متفاوت، از جمله DragonEye و دوربین‌های SWIR است؛ وضعیت تک‌تک مدل‌ها باید جداگانه خوانده شود.",
+              "en": "The camera roadmap includes distinct models such as DragonEye and SWIR imagers; each model’s status must be assessed separately.",
+              "ar": "تضمّ خارطة طريق الكاميرات طرازات مختلفة مثل DragonEye وكاميرات SWIR؛ ويجب تقييم حالة كل طراز على حدة.",
+              "source_ids": [
+                "df_roadmap"
+              ]
+            }
+          ]
+        }
+      ],
+      "data_status": "verified_pilot"
+    }
   },
   {
     "id": "simera-sense",
@@ -879,7 +1008,135 @@
       }
     ],
     "location_en": "Stellenbosch, South Africa",
-    "location_ar": "ستيلينبوش، جنوب أفريقيا"
+    "location_ar": "ستيلينبوش، جنوب أفريقيا",
+    "secondary_categories": [
+      "components"
+    ],
+    "logo": "assets/logos/orbita/cubespace.svg",
+    "logo_kind": "orbita_editorial_nonofficial",
+    "orbita_marker_code": "CS",
+    "orbita_verified_profile": {
+      "schema_version": 2,
+      "profile_type": "components",
+      "verified_on": "2026-11-12",
+      "review_scope": "New specialist dossier only; preexisting category fields not recertified",
+      "sources": [
+        {
+          "id": "cs_products",
+          "title": "CubeSpace — Products",
+          "url": "https://www.cubespace.co.za/products/",
+          "checked_on": "2026-11-12"
+        },
+        {
+          "id": "cs_home",
+          "title": "CubeSpace — Home and location",
+          "url": "https://www.cubespace.co.za/",
+          "checked_on": "2026-11-12"
+        },
+        {
+          "id": "cs_su",
+          "title": "Stellenbosch University — CubeSpace history",
+          "url": "https://www.su.ac.za/en/students/node/22289",
+          "checked_on": "2026-11-12"
+        }
+      ],
+      "sections": [
+        {
+          "id": "overview",
+          "fa": "شناسنامه و تخصص",
+          "en": "Identity & specialization",
+          "ar": "التعريف والتخصص",
+          "items": [
+            {
+              "fa": "سازنده سامانه‌های تعیین و کنترل وضعیت ماهواره (ADCS)، مستقر در استلن‌بوش آفریقای جنوبی.",
+              "en": "Manufacturer of satellite attitude determination and control systems (ADCS), based in Stellenbosch, South Africa.",
+              "ar": "شركة تصنع أنظمة تحديد اتجاه الأقمار الصناعية والتحكم فيه (ADCS)، ومقرها ستيلينبوش بجنوب أفريقيا.",
+              "source_ids": [
+                "cs_home"
+              ]
+            },
+            {
+              "fa": "بر اساس معرفی دانشگاه استلن‌بوش، این شرکت از فعالیت‌های دانشگاهی آن دانشگاه شکل گرفته است.",
+              "en": "Stellenbosch University identifies CubeSpace as a spin-out emerging from the university.",
+              "ar": "توضح جامعة ستيلينبوش أن شركة CubeSpace نشأت من نشاطها الجامعي.",
+              "source_ids": [
+                "cs_su"
+              ]
+            }
+          ]
+        },
+        {
+          "id": "products",
+          "fa": "محصولات و فناوری",
+          "en": "Products & technology",
+          "ar": "المنتجات والتقنية",
+          "items": [
+            {
+              "fa": "سبد محصول شامل سامانه یکپارچه ADCS، چرخ عکس‌العملی، میله گشتاور مغناطیسی، مغناطیس‌سنج، حسگر خورشید، حسگر افق زمین و ردیاب ستاره است.",
+              "en": "The portfolio includes turn-key ADCS, reaction wheels, magnetorquer rods, magnetometers, fine Sun sensors, Earth horizon sensors and star trackers.",
+              "ar": "تشمل المنتجات أنظمة ADCS المتكاملة، وعجلات رد الفعل، وقضبان العزم المغناطيسي، ومقاييس المغناطيسية، وحساسات الشمس وأفق الأرض، ومتتبعات النجوم.",
+              "source_ids": [
+                "cs_products"
+              ]
+            }
+          ]
+        },
+        {
+          "id": "heritage",
+          "fa": "سابقه پروازی",
+          "en": "Flight heritage",
+          "ar": "السجل الفضائي",
+          "items": [
+            {
+              "fa": "شرکت درباره سابقه استفاده مداری سامانه‌ها و قطعات خود گزارش منتشر کرده است؛ فهرست مأموریت‌های مستقل برای هر مدل در این نمونه تأیید نشده است.",
+              "en": "The company reports in-orbit use of its systems and components; a mission-by-model independent crosswalk has not been verified for this sample.",
+              "ar": "تعلن الشركة عن استخدام أنظمتها ومكوّناتها في المدار، لكن لم تُتحقق قائمة مستقلة تربط كل طراز بمهمة محددة في هذه العينة.",
+              "source_ids": [
+                "cs_home"
+              ]
+            }
+          ]
+        },
+        {
+          "id": "network",
+          "fa": "مشتریان و زنجیره تأمین",
+          "en": "Customers & supply chain",
+          "ar": "العملاء وسلسلة التوريد",
+          "items": [
+            {
+              "fa": "محصولات برای یکپارچه‌سازی با رایانه پرواز مشتری و حتی تجهیزات شخص ثالث طراحی شده‌اند؛ فهرست قراردادهای مشتریان در این نمونه منتشر نمی‌شود.",
+              "en": "The integrated ADCS is designed to interface with customer onboard computers and can incorporate third-party hardware; specific customer contracts are not asserted here.",
+              "ar": "صُممت أنظمة ADCS للتكامل مع حواسيب المركبات الفضائية التابعة للعملاء ويمكن دمج عتاد جهات أخرى؛ ولا نورد عقود عملاء محددة هنا.",
+              "source_ids": [
+                "cs_home"
+              ]
+            }
+          ]
+        },
+        {
+          "id": "timeline",
+          "fa": "تاریخچه و تحولات",
+          "en": "History & development",
+          "ar": "التاريخ والتطور",
+          "items": [
+            {
+              "fa": "دانشگاه استلن‌بوش در گزارشی در دسامبر ۲۰۲۴ منشأ دانشگاهی و روند رشد این شرکت را شرح داده است.",
+              "en": "In December 2024, Stellenbosch University published an account of CubeSpace’s university origins and growth.",
+              "ar": "نشرت جامعة ستيلينبوش في ديسمبر 2024 تقريراً عن نشأة الشركة الجامعية ونموها.",
+              "source_ids": [
+                "cs_su"
+              ]
+            }
+          ]
+        }
+      ],
+      "summary": {
+        "fa": "تولیدکننده سامانه‌های تعیین و کنترل وضعیت ماهواره شامل ADCS، چرخ عکس‌العملی و ردیاب ستاره، مستقر در آفریقای جنوبی.",
+        "en": "South African manufacturer of satellite attitude-control systems, reaction wheels and star trackers.",
+        "ar": "شركة جنوب أفريقية لأنظمة التحكم في اتجاه الأقمار وعجلات رد الفعل ومتتبعات النجوم."
+      }
+    },
+    "coordinate_precision": "city_approximation_existing"
   },
   {
     "id": "kongsberg-space",
@@ -6065,7 +6322,135 @@
     ],
     "location_en": "Lafayette, Colorado, United States",
     "location_ar": "لافاييت، كولورادو، الولايات المتحدة",
-    "city_ar": "لافاييت، كولورادو"
+    "city_ar": "لافاييت، كولورادو",
+    "secondary_categories": [
+      "components"
+    ],
+    "logo": "assets/logos/orbita/blue-canyon.svg",
+    "logo_kind": "orbita_editorial_nonofficial",
+    "orbita_marker_code": "BC",
+    "orbita_verified_profile": {
+      "schema_version": 2,
+      "profile_type": "components",
+      "verified_on": "2026-11-12",
+      "review_scope": "New specialist dossier only; preexisting category fields not recertified",
+      "sources": [
+        {
+          "id": "bct_products",
+          "title": "Blue Canyon Technologies — Components",
+          "url": "https://www.bluecanyontech.com/components/",
+          "checked_on": "2026-11-12"
+        },
+        {
+          "id": "bct_rw16",
+          "title": "Blue Canyon Technologies — RW16 (Apr 2025)",
+          "url": "https://www.bluecanyontech.com/news/rtxs-blue-canyon-technologies-introduces-new-reaction-wheel/",
+          "checked_on": "2026-11-12"
+        },
+        {
+          "id": "rtx_2026",
+          "title": "RTX — Reaction wheel production (Apr 2026)",
+          "url": "https://www.rtx.com/news/news-center/2026/04/14/rtxs-blue-canyon-technologies-expands-reaction-wheel-production-capacity",
+          "checked_on": "2026-11-12"
+        }
+      ],
+      "sections": [
+        {
+          "id": "overview",
+          "fa": "شناسنامه و تخصص",
+          "en": "Identity & specialization",
+          "ar": "التعريف والتخصص",
+          "items": [
+            {
+              "fa": "بلو کنیون تکنولوژیز سازنده ماهواره کوچک و زیرسامانه‌های کنترل وضعیت در کلرادو آمریکا و بخشی از کسب‌وکار ریثیونِ RTX است.",
+              "en": "Blue Canyon Technologies is a Colorado-based small-satellite and attitude-control component manufacturer within RTX’s Raytheon business.",
+              "ar": "بلو كانيون تكنولوجيز شركة مقرها كولورادو تصنع الأقمار الصغيرة ومكوّنات التحكم في الاتجاه، وتتبع أعمال Raytheon ضمن RTX.",
+              "source_ids": [
+                "rtx_2026"
+              ]
+            }
+          ]
+        },
+        {
+          "id": "products",
+          "fa": "محصولات و فناوری",
+          "en": "Products & technology",
+          "ar": "المنتجات والتقنية",
+          "items": [
+            {
+              "fa": "محصولات قطعه‌ای شرکت شامل ردیاب‌های ستاره‌ای نانویی و خانواده چرخ‌های عکس‌العملی است.",
+              "en": "Its spacecraft components include nano star trackers and reaction-wheel product families.",
+              "ar": "تشمل مكوّنات المركبات الفضائية متتبعات النجوم النانوية وعائلات عجلات رد الفعل.",
+              "source_ids": [
+                "bct_products"
+              ]
+            },
+            {
+              "fa": "چرخ عکس‌العملی RW16 معرفی‌شده در سال ۲۰۲۵ دارای ظرفیت ممان زاویه‌ای اسمی ۱۶ نیوتن‌مترثانیه است.",
+              "en": "The RW16 reaction wheel introduced in 2025 has a nominal momentum-storage capability of 16 N·m·s.",
+              "ar": "تتمتع عجلة رد الفعل RW16 التي أُعلن عنها عام 2025 بسعة زخم زاوي اسمية مقدارها 16 نيوتن متر ثانية.",
+              "source_ids": [
+                "bct_rw16"
+              ]
+            }
+          ]
+        },
+        {
+          "id": "heritage",
+          "fa": "سابقه پروازی",
+          "en": "Flight heritage",
+          "ar": "السجل الفضائي",
+          "items": [
+            {
+              "fa": "شرکت ردیاب ستاره‌ای نانویی خود را دارای سابقه پرواز معرفی می‌کند؛ برای هر شماره مدل، فهرست مستقل ماهواره‌های میزبان در این نمونه تأیید نشده است.",
+              "en": "The manufacturer describes its nano star tracker as flight-proven; model-by-model host satellites are not independently established in this sample.",
+              "ar": "تصف الشركة متتبع النجوم النانوي بأنه مُثبت الاستخدام في الفضاء؛ لكن لم تُوثق قائمة مستقلة بالأقمار المضيفة لكل طراز في هذه العينة.",
+              "source_ids": [
+                "bct_products"
+              ]
+            }
+          ]
+        },
+        {
+          "id": "network",
+          "fa": "مشتریان و زنجیره تأمین",
+          "en": "Customers & supply chain",
+          "ar": "العملاء وسلسلة التوريد",
+          "items": [
+            {
+              "fa": "RTX در آوریل ۲۰۲۶ از برنامه افزایش ظرفیت تولید چرخ‌های عکس‌العملی بلو کنیون خبر داد؛ ظرفیت هدف، عملکرد تولید تحقق‌یافته محسوب نمی‌شود.",
+              "en": "In April 2026, RTX announced a planned expansion of reaction-wheel manufacturing throughput; the target is not reported as achieved production.",
+              "ar": "أعلنت RTX في أبريل 2026 عن خطة لزيادة إنتاج عجلات رد الفعل؛ ولا تُعرض السعة المستهدفة بوصفها إنتاجاً محققاً.",
+              "source_ids": [
+                "rtx_2026"
+              ]
+            }
+          ]
+        },
+        {
+          "id": "timeline",
+          "fa": "تاریخچه و تحولات",
+          "en": "History & development",
+          "ar": "التاريخ والتطور",
+          "items": [
+            {
+              "fa": "شرکت در آوریل ۲۰۲۵ چرخ RW16 را معرفی کرد و در آوریل ۲۰۲۶ از توسعه ظرفیت تولید چرخ‌ها خبر داد.",
+              "en": "The company announced RW16 in April 2025 and disclosed capacity expansion plans in April 2026.",
+              "ar": "أعلنت الشركة عن RW16 في أبريل 2025 ثم عن خطط توسيع القدرة الإنتاجية في أبريل 2026.",
+              "source_ids": [
+                "rtx_2026"
+              ]
+            }
+          ]
+        }
+      ],
+      "summary": {
+        "fa": "تولیدکننده ماهواره کوچک و قطعات کنترل وضعیت، از جمله چرخ‌های عکس‌العملی و ردیاب‌های ستاره‌ای؛ بخشی از RTX.",
+        "en": "Small-satellite and attitude-control component manufacturer within RTX, including reaction wheels and star trackers.",
+        "ar": "شركة لصناعة الأقمار الصغيرة ومكوّنات التحكم في الاتجاه ضمن RTX، ومنها عجلات رد الفعل ومتتبعات النجوم."
+      }
+    },
+    "coordinate_precision": "city_approximation_existing"
   },
   {
     "id": "gomspace",

@@ -17,10 +17,12 @@
 <link rel="preconnect" href="https://api.jawg.io" crossorigin />
 <link rel="stylesheet" href="assets/vendor/maplibre-gl.css?v=3" />
 <script>
-  window.ORBITA_V = "20261023mapuk2";
-  window.ORBITA_COMPANIES_V = "20261111launch68deepv3";
-  window.ORBITA_CSS_V = "20261112tilecontinuitycssv1";
-  window.ORBITA_APP_V = "20261112tilecontinuityv1";
+  window.ORBITA_V = "20261113-r5-integrated";
+  window.ORBITA_APP_V = "20261113-r5-integrated";
+  window.ORBITA_CSS_V = "20261113-r5-integrated";
+  window.ORBITA_COMPANIES_V = "20261113-r5-integrated";
+
+
   // Public API URL only; never place the Resend key or another secret here.
   window.ORBITA_REPORT_API_URL = "https://orbita-report-api.onrender.com/api/report";
   (function() {
@@ -93,8 +95,33 @@
   <div id="map"></div>
   <div id="mapStatus" class="map-status" data-i18n="loading_map">در حال بارگذاری نقشه…</div>
 
-  <!-- horizontal layer bar -->
-  <div class="layerbar" id="layerbar"></div>
+  <!-- Phase 1: collapsible map-layer selector. The six original data feeds are unchanged. -->
+  <div class="layerbar" id="layerbar" role="group" aria-label="Map controls"></div>
+  <section id="layerPanel" class="layer-panel" aria-labelledby="layerPanelTitle" hidden>
+    <div class="layer-panel-grip" aria-hidden="true"></div>
+    <header class="layer-panel-head">
+      <div class="layer-panel-heading">
+        <h2 id="layerPanelTitle"></h2>
+        <span id="layerPanelSummary" class="layer-panel-summary" aria-live="polite"></span>
+      </div>
+      <div class="layer-panel-head-actions">
+        <button id="layerPanelSizeBtn" class="layer-mini-btn layer-size-btn" type="button" aria-label="Expand layer panel"></button>
+        <button id="layerPanelClose" class="layer-mini-btn" type="button" aria-label="Close layer panel">×</button>
+      </div>
+    </header>
+    <div class="layer-panel-body">
+      <label class="layer-search-label" for="layerSearch" id="layerSearchLabel"></label>
+      <input id="layerSearch" class="layer-search" type="search" autocomplete="off" spellcheck="false" />
+      <div class="layer-quick-actions">
+        <button id="layerSelectAll" type="button"></button>
+        <button id="layerSelectNone" type="button"></button>
+        <button id="layerReset" type="button"></button>
+      </div>
+      <p class="layer-panel-note" id="layerPanelNote"></p>
+      <div class="layer-groups" id="layerGroups"></div>
+      <p class="layer-no-match" id="layerNoMatch" hidden></p>
+    </div>
+  </section>
 
   <button id="sideOpen" class="fab" title="جستجو" data-i18n-title="search">
     <svg viewBox="0 0 24 24" width="18" height="18"><path fill="currentColor" d="M10 2a8 8 0 105.3 14l4.4 4.4 1.4-1.4-4.4-4.4A8 8 0 0010 2zm0 2a6 6 0 110 12 6 6 0 010-12z"/></svg>

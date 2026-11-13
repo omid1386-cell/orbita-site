@@ -1,0 +1,623 @@
+TAP version 13
+# Subtest: cluster labels use a single atlas readback and preserve their drawing style
+ok 1 - cluster labels use a single atlas readback and preserve their drawing style
+  ---
+  duration_ms: 1.091796
+  type: 'test'
+  ...
+# Subtest: the detail-copy readability fix refreshes CSS and app assets without changing the map/data cache
+ok 2 - the detail-copy readability fix refreshes CSS and app assets without changing the map/data cache
+  ---
+  duration_ms: 0.403537
+  type: 'test'
+  ...
+# Subtest: cluster keys are stable across ordering and never reused for different members
+ok 3 - cluster keys are stable across ordering and never reused for different members
+  ---
+  duration_ms: 3.504415
+  type: 'test'
+  ...
+# Subtest: hover-highlight and halo render layers count as marker click surfaces
+ok 4 - hover-highlight and halo render layers count as marker click surfaces
+  ---
+  duration_ms: 1.356046
+  type: 'test'
+  ...
+# Subtest: marker takes precedence over a country at the same point
+ok 5 - marker takes precedence over a country at the same point
+  ---
+  duration_ms: 1.018417
+  type: 'test'
+  ...
+# Subtest: a stale cluster ID cannot open an unrelated country or a new cluster
+ok 6 - a stale cluster ID cannot open an unrelated country or a new cluster
+  ---
+  duration_ms: 0.759614
+  type: 'test'
+  ...
+# Subtest: a stale point also cannot fall through and open a country
+ok 7 - a stale point also cannot fall through and open a country
+  ---
+  duration_ms: 0.612547
+  type: 'test'
+  ...
+# Subtest: a valid cluster opens only its own member list
+ok 8 - a valid cluster opens only its own member list
+  ---
+  duration_ms: 0.702519
+  type: 'test'
+  ...
+# Subtest: short data refresh gap still lets the visible icon win over country
+ok 9 - short data refresh gap still lets the visible icon win over country
+  ---
+  duration_ms: 0.708007
+  type: 'test'
+  ...
+# Subtest: country still opens normally if no marker is under the click
+ok 10 - country still opens normally if no marker is under the click
+  ---
+  duration_ms: 0.683442
+  type: 'test'
+  ...
+# Subtest: clicking a marker clears the country selection outline before opening its dossier
+ok 11 - clicking a marker clears the country selection outline before opening its dossier
+  ---
+  duration_ms: 1.138995
+  type: 'test'
+  ...
+# Subtest: clicking a cluster clears the previous country selection outline
+ok 12 - clicking a cluster clears the previous country selection outline
+  ---
+  duration_ms: 1.156531
+  type: 'test'
+  ...
+# Subtest: only World Map remains in top-level navigation
+ok 13 - only World Map remains in top-level navigation
+  ---
+  duration_ms: 0.975584
+  type: 'test'
+  ...
+# Subtest: projects HTML and filters are absent
+ok 14 - projects HTML and filters are absent
+  ---
+  duration_ms: 0.223191
+  type: 'test'
+  ...
+# Subtest: no mission list/data loader or previous-launch feed is retained
+ok 15 - no mission list/data loader or previous-launch feed is retained
+  ---
+  duration_ms: 2.29756
+  type: 'test'
+  ...
+# Subtest: map company, site and recovery data loaders are preserved
+ok 16 - map company, site and recovery data loaders are preserved
+  ---
+  duration_ms: 0.636982
+  type: 'test'
+  ...
+# Subtest: next launch ticker and site upcoming remain available
+ok 17 - next launch ticker and site upcoming remain available
+  ---
+  duration_ms: 1.632415
+  type: 'test'
+  ...
+# Subtest: hover and map stability code still exists
+ok 18 - hover and map stability code still exists
+  ---
+  duration_ms: 0.316168
+  type: 'test'
+  ...
+# Subtest: both original basemaps remain, third is removed
+ok 19 - both original basemaps remain, third is removed
+  ---
+  duration_ms: 0.912951
+  type: 'test'
+  ...
+# Subtest: Persian, English, Arabic guide describes single map view
+ok 20 - Persian, English, Arabic guide describes single map view
+  ---
+  duration_ms: 0.214358
+  type: 'test'
+  ...
+# Subtest: site guide, language, report controls and detail panel remain
+ok 21 - site guide, language, report controls and detail panel remain
+  ---
+  duration_ms: 0.476715
+  type: 'test'
+  ...
+# Subtest: meta description does not advertise removed projects or 3D view
+ok 22 - meta description does not advertise removed projects or 3D view
+  ---
+  duration_ms: 1.636191
+  type: 'test'
+  ...
+# Subtest: new JS cache key while scientific data/cache keys untouched
+ok 23 - new JS cache key while scientific data/cache keys untouched
+  ---
+  duration_ms: 0.234658
+  type: 'test'
+  ...
+# map: tile failed to fetch (503)
+# map: tile failed to fetch (503)
+# map: tile failed to fetch (503)
+# map: tile failed to fetch (503)
+# map: tile failed to fetch (503)
+# map: tile failed to fetch (503)
+# map: tile failed to fetch (503)
+# map: tile failed to fetch (503)
+# map: tile failed to fetch (503)
+# map: tile failed to fetch (503)
+# map tiles repeatedly unavailable; using local map fallback
+# Subtest: wheel and trackpad zoom are responsive but below former 2x speed; both original themes remain intact
+ok 24 - wheel and trackpad zoom are responsive but below former 2x speed; both original themes remain intact
+  ---
+  duration_ms: 1.225513
+  type: 'test'
+  ...
+# Subtest: during rapid zoom only the latest debounced cluster refresh runs
+ok 25 - during rapid zoom only the latest debounced cluster refresh runs
+  ---
+  duration_ms: 1.461953
+  type: 'test'
+  ...
+# Subtest: zoomend cancels pending work and publishes exactly one final snapshot
+ok 26 - zoomend cancels pending work and publishes exactly one final snapshot
+  ---
+  duration_ms: 2.979118
+  type: 'test'
+  ...
+# Subtest: source updates are suppressed only for the style transition, never permanently
+ok 27 - source updates are suppressed only for the style transition, never permanently
+  ---
+  duration_ms: 0.950607
+  type: 'test'
+  ...
+# Subtest: style changes invalidate old generations and preserve the selected camera & style
+ok 28 - style changes invalidate old generations and preserve the selected camera & style
+  ---
+  duration_ms: 1.192545
+  type: 'test'
+  ...
+# Subtest: late first-style JSON fetch cannot overwrite the most recent requested theme
+ok 29 - late first-style JSON fetch cannot overwrite the most recent requested theme
+  ---
+  duration_ms: 1.251952
+  type: 'test'
+  ...
+# Subtest: async marker-image completion for stale style cannot install source/layers
+ok 30 - async marker-image completion for stale style cannot install source/layers
+  ---
+  duration_ms: 1.397999
+  type: 'test'
+  ...
+# Subtest: style.load is recovery authority; styledata cannot rebuild markers prematurely
+ok 31 - style.load is recovery authority; styledata cannot rebuild markers prematurely
+  ---
+  duration_ms: 0.401744
+  type: 'test'
+  ...
+# Subtest: single failing online tile does not switch theme; repeated failures trigger existing offline fallback
+ok 32 - single failing online tile does not switch theme; repeated failures trigger existing offline fallback
+  ---
+  duration_ms: 5.490044
+  type: 'test'
+  ...
+# Subtest: screenshot regression: Tehran marker does not show previously hovered Pakistan SUPARCO tooltip
+ok 33 - screenshot regression: Tehran marker does not show previously hovered Pakistan SUPARCO tooltip
+  ---
+  duration_ms: 2.021311
+  type: 'test'
+  ...
+# Subtest: moving from Pakistan to Iran swaps both key and tooltip with no stale label
+ok 34 - moving from Pakistan to Iran swaps both key and tooltip with no stale label
+  ---
+  duration_ms: 0.641138
+  type: 'test'
+  ...
+# Subtest: moving on same icon updates tooltip position, without stale native title
+ok 35 - moving on same icon updates tooltip position, without stale native title
+  ---
+  duration_ms: 1.415074
+  type: 'test'
+  ...
+# Subtest: stale feature blocks the underlying country but never shows another entity title
+ok 36 - stale feature blocks the underlying country but never shows another entity title
+  ---
+  duration_ms: 0.672926
+  type: 'test'
+  ...
+# Subtest: country hover resumes when mouse leaves marker and enters empty country area
+ok 37 - country hover resumes when mouse leaves marker and enters empty country area
+  ---
+  duration_ms: 0.632656
+  type: 'test'
+  ...
+# Subtest: moving into open water clears all hover state and native title
+ok 38 - moving into open water clears all hover state and native title
+  ---
+  duration_ms: 0.671043
+  type: 'test'
+  ...
+# Subtest: cluster tooltip comes from current member list, not a reused cluster number
+ok 39 - cluster tooltip comes from current member list, not a reused cluster number
+  ---
+  duration_ms: 0.579297
+  type: 'test'
+  ...
+# Subtest: one map-wide mousemove listener only; no per-country or per-marker listeners
+ok 40 - one map-wide mousemove listener only; no per-country or per-marker listeners
+  ---
+  duration_ms: 1.824299
+  type: 'test'
+  ...
+# Subtest: tooltip text is inserted as textContent, not executable HTML
+ok 41 - tooltip text is inserted as textContent, not executable HTML
+  ---
+  duration_ms: 1.093058
+  type: 'test'
+  ...
+# Subtest: marker hover preserves original CSS/map-data version while only script version changes
+ok 42 - marker hover preserves original CSS/map-data version while only script version changes
+  ---
+  duration_ms: 0.476455
+  type: 'test'
+  ...
+# Subtest: 14 category definitions are unique, with six originals and exactly eight new categories
+ok 43 - 14 category definitions are unique, with six originals and exactly eight new categories
+  ---
+  duration_ms: 3.508732
+  type: 'test'
+  ...
+# Subtest: agreed space-test-facility name is used, not the narrower rocket/engine label
+ok 44 - agreed space-test-facility name is used, not the narrower rocket/engine label
+  ---
+  duration_ms: 1.072727
+  type: 'test'
+  ...
+# Subtest: all eight new categories default OFF and original defaults unchanged
+ok 45 - all eight new categories default OFF and original defaults unchanged
+  ---
+  duration_ms: 1.317129
+  type: 'test'
+  ...
+# Subtest: v1 settings migrate without losing any existing filter preference
+ok 46 - v1 settings migrate without losing any existing filter preference
+  ---
+  duration_ms: 0.809417
+  type: 'test'
+  ...
+# Subtest: v2 takes precedence, saves 14 keys, and mirrors old six for safe rollback
+ok 47 - v2 takes precedence, saves 14 keys, and mirrors old six for safe rollback
+  ---
+  duration_ms: 0.939059
+  type: 'test'
+  ...
+# Subtest: new category names and layer controls are localised in three languages
+ok 48 - new category names and layer controls are localised in three languages
+  ---
+  duration_ms: 1.742518
+  type: 'test'
+  ...
+# Subtest: eight opted-in categories use distinct sourced category files instead of placeholder URLs
+ok 49 - eight opted-in categories use distinct sourced category files instead of placeholder URLs
+  ---
+  duration_ms: 4.178954
+  type: 'test'
+  ...
+# Subtest: deduplication and multi-role company membership stay enabled
+ok 50 - deduplication and multi-role company membership stay enabled
+  ---
+  duration_ms: 0.349137
+  type: 'test'
+  ...
+# Subtest: new pin artwork uses category glyphs without replacing existing pin functions
+ok 51 - new pin artwork uses category glyphs without replacing existing pin functions
+  ---
+  duration_ms: 0.60821
+  type: 'test'
+  ...
+# Subtest: panel is collapsible, accessible, searchable, grouped, and has mobile bottom-sheet styles
+ok 52 - panel is collapsible, accessible, searchable, grouped, and has mobile bottom-sheet styles
+  ---
+  duration_ms: 0.612507
+  type: 'test'
+  ...
+# Subtest: the two original basemap URLs and map-only navigation remain unchanged
+ok 53 - the two original basemap URLs and map-only navigation remain unchanged
+  ---
+  duration_ms: 0.855686
+  type: 'test'
+  ...
+# Subtest: pilot counts and canonical record ids agree across all data slices
+ok 54 - pilot counts and canonical record ids agree across all data slices
+  ---
+  duration_ms: 3.486985
+  type: 'test'
+  ...
+# Subtest: existing six categories and geocoordinates are not modified
+ok 55 - existing six categories and geocoordinates are not modified
+  ---
+  duration_ms: 58.073845
+  type: 'test'
+  ...
+# Subtest: new claims all have direct https cited sources, three languages and safe identity assets
+ok 56 - new claims all have direct https cited sources, three languages and safe identity assets
+  ---
+  duration_ms: 0.772924
+  type: 'test'
+  ...
+# Subtest: loader, specific profile routing, three-language profile tabs and icon restoration are integrated
+ok 57 - loader, specific profile routing, three-language profile tabs and icon restoration are integrated
+  ---
+  duration_ms: 0.75681
+  type: 'test'
+  ...
+# Subtest: six new domains each have one actual official-source-supported pilot record
+ok 58 - six new domains each have one actual official-source-supported pilot record
+  ---
+  duration_ms: 6.445107
+  type: 'test'
+  ...
+# Subtest: five new canonical records; Dragonfly gains secondary payloads role without id duplication
+ok 59 - five new canonical records; Dragonfly gains secondary payloads role without id duplication
+  ---
+  duration_ms: 22.953015
+  type: 'test'
+  ...
+# Subtest: all new official pilot claims have explicit existing source IDs, 3 translations and no blank placeholder
+ok 60 - all new official pilot claims have explicit existing source IDs, 3 translations and no blank placeholder
+  ---
+  duration_ms: 2.580399
+  type: 'test'
+  ...
+# Subtest: one editable nonofficial ORBITA SVG mark per entity and map icon
+ok 61 - one editable nonofficial ORBITA SVG mark per entity and map icon
+  ---
+  duration_ms: 1.344149
+  type: 'test'
+  ...
+# Subtest: new six domains are wired to the delayed loader and localized five-tab profile renderer
+ok 62 - new six domains are wired to the delayed loader and localized five-tab profile renderer
+  ---
+  duration_ms: 1.24347
+  type: 'test'
+  ...
+# Subtest: unchanged basemap/legacy assets match historical hashes; 2 Arabic status syncs are intentionally exempt
+ok 63 - unchanged basemap/legacy assets match historical hashes; 2 Arabic status syncs are intentionally exempt
+  ---
+  duration_ms: 103.833458
+  type: 'test'
+  ...
+# Subtest: exact published Cebreros location and approximate city locations are distinguished
+ok 64 - exact published Cebreros location and approximate city locations are distinguished
+  ---
+  duration_ms: 0.377649
+  type: 'test'
+  ...
+# Subtest: graph has 24 evidenced directed edges, 14 existing entities, and 13 non-geographic assets
+ok 65 - graph has 24 evidenced directed edges, 14 existing entities, and 13 non-geographic assets
+  ---
+  duration_ms: 1.47303
+  type: 'test'
+  ...
+# Subtest: mission mediated links keep external objects off map and record roles explicitly
+ok 66 - mission mediated links keep external objects off map and record roles explicitly
+  ---
+  duration_ms: 0.192305
+  type: 'test'
+  ...
+# Subtest: original 274 records and scientific/country/geographic fields remain byte identical
+ok 67 - original 274 records and scientific/country/geographic fields remain byte identical
+  ---
+  duration_ms: 22.407318
+  type: 'test'
+  ...
+# Subtest: graph UI is lazy, navigable and reads only map-entity IDs as map dossiers
+ok 68 - graph UI is lazy, navigable and reads only map-entity IDs as map dossiers
+  ---
+  duration_ms: 1.870097
+  type: 'test'
+  ...
+# Subtest: graph renderer supports all three languages, role switch and indirect mission peers
+ok 69 - graph renderer supports all three languages, role switch and indirect mission peers
+  ---
+  duration_ms: 14.017633
+  type: 'test'
+  ...
+# Subtest: final release cache-busts all four JS/CSS/data asset domains exactly once
+ok 70 - final release cache-busts all four JS/CSS/data asset domains exactly once
+  ---
+  duration_ms: 1.133017
+  type: 'test'
+  ...
+# Subtest: current guide explicitly distinguishes 14 selectable categories from global coverage in FA, EN, AR
+ok 71 - current guide explicitly distinguishes 14 selectable categories from global coverage in FA, EN, AR
+  ---
+  duration_ms: 0.237932
+  type: 'test'
+  ...
+# Subtest: image fallback never embeds raw HTML SVG in a handler or refers to unreachable closure locals
+ok 72 - image fallback never embeds raw HTML SVG in a handler or refers to unreachable closure locals
+  ---
+  duration_ms: 1.860233
+  type: 'test'
+  ...
+# Subtest: no returned missions view or third Voyager style; approved basemaps preserved
+ok 73 - no returned missions view or third Voyager style; approved basemaps preserved
+  ---
+  duration_ms: 0.433261
+  type: 'test'
+  ...
+# Subtest: mobile and desktop layer selectors remain present
+ok 74 - mobile and desktop layer selectors remain present
+  ---
+  duration_ms: 0.299112
+  type: 'test'
+  ...
+# Subtest: new verified relationships and specialist SVGs coexist with all eight optional category feeds
+ok 75 - new verified relationships and specialist SVGs coexist with all eight optional category feeds
+  ---
+  duration_ms: 0.429426
+  type: 'test'
+  ...
+# PASS: the searchable Help center is localized, visual, accessible, and grounded in current app data.
+# Subtest: the existing Help icon opens an accessible dialog with local search and task shortcuts
+ok 76 - the existing Help icon opens an accessible dialog with local search and task shortcuts
+  ---
+  duration_ms: 1.066228
+  type: 'test'
+  ...
+# Subtest: the guide covers all current user-facing areas and gives each topic an identifying icon
+ok 77 - the guide covers all current user-facing areas and gives each topic an identifying icon
+  ---
+  duration_ms: 0.820154
+  type: 'test'
+  ...
+# Subtest: all Help text and controls are localized in Persian, English, and Arabic
+ok 78 - all Help text and controls are localized in Persian, English, and Arabic
+  ---
+  duration_ms: 20.908159
+  type: 'test'
+  ...
+# Subtest: the Help search matches localized content and synonyms and offers alternatives for an empty result
+ok 79 - the Help search matches localized content and synonyms and offers alternatives for an empty result
+  ---
+  duration_ms: 0.484487
+  type: 'test'
+  ...
+# Subtest: guide actions open the matching app view without loading new data
+ok 80 - guide actions open the matching app view without loading new data
+  ---
+  duration_ms: 0.264061
+  type: 'test'
+  ...
+# Subtest: expanded guide content accurately explains map profiles, sources, and limitations
+ok 81 - expanded guide content accurately explains map profiles, sources, and limitations
+  ---
+  duration_ms: 5.370898
+  type: 'test'
+  ...
+# Subtest: coverage, sources, freshness, statuses, and location caveats match the local datasets
+ok 82 - coverage, sources, freshness, statuses, and location caveats match the local datasets
+  ---
+  duration_ms: 2.148879
+  type: 'test'
+  ...
+# Subtest: opening and closing Help is keyboard accessible and restores focus
+ok 83 - opening and closing Help is keyboard accessible and restores focus
+  ---
+  duration_ms: 0.147748
+  type: 'test'
+  ...
+# Subtest: Help styling is responsive, visually identifies sections, and keeps its own scrolling
+ok 84 - Help styling is responsive, visually identifies sections, and keeps its own scrolling
+  ---
+  duration_ms: 0.866762
+  type: 'test'
+  ...
+# Subtest: viewport minimum zoom prevents white strips on large screens, without restricting phones
+ok 85 - viewport minimum zoom prevents white strips on large screens, without restricting phones
+  ---
+  duration_ms: 2.045426
+  type: 'test'
+  ...
+# Subtest: only applies min zoom when viewport width changes meaningfully
+ok 86 - only applies min zoom when viewport width changes meaningfully
+  ---
+  duration_ms: 0.641279
+  type: 'test'
+  ...
+# Subtest: resize observer and initial map load both resync viewport coverage
+ok 87 - resize observer and initial map load both resync viewport coverage
+  ---
+  duration_ms: 0.450666
+  type: 'test'
+  ...
+# Subtest: early connections cover both original providers; no altered tile URL/style data
+ok 88 - early connections cover both original providers; no altered tile URL/style data
+  ---
+  duration_ms: 0.22948
+  type: 'test'
+  ...
+# Subtest: visual fallback uses the exact sunny background and keeps existing color theme
+ok 89 - visual fallback uses the exact sunny background and keeps existing color theme
+  ---
+  duration_ms: 0.218093
+  type: 'test'
+  ...
+# Subtest: cache-busting changes only application assets; scientific sources remain stable
+ok 90 - cache-busting changes only application assets; scientific sources remain stable
+  ---
+  duration_ms: 1.361955
+  type: 'test'
+  ...
+# Subtest: smooth zoom settings and both original style choices remain unchanged
+ok 91 - smooth zoom settings and both original style choices remain unchanged
+  ---
+  duration_ms: 0.427873
+  type: 'test'
+  ...
+# map style stalled: switching to the existing local fallback
+# Subtest: only first and second basemap URLs survive byte-for-byte; no third Voyager style remains
+ok 92 - only first and second basemap URLs survive byte-for-byte; no third Voyager style remains
+  ---
+  duration_ms: 2.23038
+  type: 'test'
+  ...
+# Subtest: saved third style is migrated to the original second style without altering the theme
+ok 93 - saved third style is migrated to the original second style without altering the theme
+  ---
+  duration_ms: 1.310459
+  type: 'test'
+  ...
+# Subtest: style switch cycles dark and sunny only, retains original theme names
+ok 94 - style switch cycles dark and sunny only, retains original theme names
+  ---
+  duration_ms: 1.473481
+  type: 'test'
+  ...
+# Subtest: overlay completeness detects missing ANY layer, static pin, or dynamic cluster label
+ok 95 - overlay completeness detects missing ANY layer, static pin, or dynamic cluster label
+  ---
+  duration_ms: 1.247997
+  type: 'test'
+  ...
+# Subtest: repair runs only against matching generation and acknowledges complete markers
+ok 96 - repair runs only against matching generation and acknowledges complete markers
+  ---
+  duration_ms: 0.893903
+  type: 'test'
+  ...
+# Subtest: image decoder does not declare ready if an SVG is missing from the map image registry
+ok 97 - image decoder does not declare ready if an SVG is missing from the map image registry
+  ---
+  duration_ms: 0.769378
+  type: 'test'
+  ...
+# Subtest: style watchdog never treats a mere non-empty style JSON as fully ready
+ok 98 - style watchdog never treats a mere non-empty style JSON as fully ready
+  ---
+  duration_ms: 1.114799
+  type: 'test'
+  ...
+# Subtest: style change uses full swap for clean overlays while keeping original style object
+ok 99 - style change uses full swap for clean overlays while keeping original style object
+  ---
+  duration_ms: 0.166797
+  type: 'test'
+  ...
+# Subtest: map reacts to its own missing style images and ignores basemap sprite ids
+ok 100 - map reacts to its own missing style images and ignores basemap sprite ids
+  ---
+  duration_ms: 0.321856
+  type: 'test'
+  ...
+1..100
+# tests 100
+# suites 0
+# pass 100
+# fail 0
+# cancelled 0
+# skipped 0
+# todo 0
+# duration_ms 525.724294

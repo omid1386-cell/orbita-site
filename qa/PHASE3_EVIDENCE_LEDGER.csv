@@ -1,0 +1,20 @@
+﻿entity_id,category,source_id,source_title,url,checked_on,type
+dragonfly-space,payloads,df_camera,Dragonfly Aerospace — DragonEye imager,https://dragonflyaerospace.com/smallsat-cameras/dragoneye/,2026-11-12,operator_or_manufacturer_first_party
+dragonfly-space,payloads,df_mission,Dragonfly Aerospace — EOSSAT-1 mission,https://dragonflyaerospace.com/eossat-1/,2026-11-12,operator_or_manufacturer_first_party
+dragonfly-space,payloads,df_roadmap,Dragonfly Aerospace — Camera roadmap,https://dragonflyaerospace.com/cameras-roadmap/,2026-11-12,operator_or_manufacturer_first_party
+ksat-ground-services,ground_services,ks_contact,KSAT — Headquarters and contact,https://www.ksat.no/about-us/contact/,2026-11-12,operator_or_manufacturer_first_party
+ksat-ground-services,ground_services,ks_net,KSAT — Global Ground Station Network,https://www.ksat.no/ground-network-services/the-ksat-global-ground-station-network/,2026-11-12,operator_or_manufacturer_first_party
+ksat-ground-services,ground_services,ks_lite,KSAT — KSATlite service,https://www.ksat.no/ground-network-services/ksatlite/,2026-11-12,operator_or_manufacturer_first_party
+d-orbit,inspace_services,do_about,D-Orbit — About us,https://dorbit.space/about-us/,2026-11-12,operator_or_manufacturer_first_party
+d-orbit,inspace_services,do_home,D-Orbit — Solutions,https://dorbit.space/,2026-11-12,operator_or_manufacturer_first_party
+d-orbit,inspace_services,do_location,Italian Trade Agency — D-Orbit company profile,https://www.ice.it/en/sites/default/files/inline-files/italian-participation-at-imdex-asia-2025.pdf,2026-11-12,government_directory
+esa-estec-test-centre,test_facility,et_about,ESA — About ESTEC Test Centre,https://www.esa.int/Enabling_Support/Space_Engineering_Technology/Test_centre/About_ESTEC_Test_Centre,2026-11-12,space_agency_primary
+esa-estec-test-centre,test_facility,et_tech,ESA Technology — Test Centre facilities,https://technology.esa.int/lab/test-centre,2026-11-12,space_agency_primary
+esa-estec-test-centre,test_facility,et_estec,ESA — ESTEC establishment,https://www.esa.int/establishment/about-us/meet-us/sites-and-establishments/esa-estec/esa-estec,2026-11-12,space_agency_primary
+esa-cebreros-dsa2,ground_station,ce_station,ESA — Cebreros DSA 2,https://www.esa.int/Enabling_Support/Operations/ESA_Ground_Stations/Cebreros_-_DSA_2,2026-11-12,space_agency_primary
+esa-cebreros-dsa2,ground_station,ce_geo,ESA — Ground Stations Live (published location),https://www.esa.int/Enabling_Support/Operations/ESA_Ground_Stations/ESA_Ground_Stations_Live,2026-11-12,space_agency_primary
+esa-cebreros-dsa2,ground_station,ce_open,ESA — Cebreros inauguration (2005),https://www.esa.int/Enabling_Support/Operations/ESA_Ground_Stations/Cebreros_inaugurated_ready_for_Venus_Express,2026-11-12,space_agency_primary
+esa-cebreros-dsa2,ground_station,ce_ops,ESA — BepiColombo operations,https://www.esa.int/articles/about-us/directorates/operations/bepicolombo-operations,2026-11-12,space_agency_primary
+esa-esoc,mission_control,es_about,ESA — ESOC overview and location,https://www.esa.int/establishment/about-us/meet-us/sites-and-establishments/esa-esoc/esa-esoc,2026-11-12,space_agency_primary
+esa-esoc,mission_control,es_faq,ESA — Mission Control FAQ,https://www.esa.int/articles/about-us/directorates/operations/esa-mission-control-faq,2026-11-12,space_agency_primary
+esa-esoc,mission_control,es_bepi,ESA — BepiColombo operations,https://www.esa.int/articles/about-us/directorates/operations/bepicolombo-operations,2026-11-12,space_agency_primary

@@ -1,0 +1,150 @@
+[
+  {
+    "id": "d-orbit",
+    "cat": "inspace_services",
+    "en": "D-Orbit",
+    "fa": "دی‌اوربیت",
+    "ar": "دي-أوربيت",
+    "country": "Italy",
+    "country_fa": "ایتالیا",
+    "country_ar": "إيطاليا",
+    "city": "Fino Mornasco",
+    "city_fa": "فینو مورناسکو",
+    "city_ar": "فينو مورناسكو",
+    "lat": 45.746,
+    "lon": 9.05,
+    "site": "https://dorbit.space/",
+    "fa_d": "شرکت ایتالیایی لجستیک فضایی و انتقال مداری؛ توسعه‌دهنده و بهره‌بردار حامل مداری ION.",
+    "en_d": "Italian space-logistics and orbital-transportation company developing and operating ION Satellite Carrier.",
+    "ar_d": "شركة إيطالية للوجستيات الفضائية والنقل المداري تطوّر وتشغّل مركبة ION Satellite Carrier.",
+    "logo": "assets/logos/orbita/d-orbit.svg",
+    "logo_kind": "orbita_editorial_nonofficial",
+    "orbita_marker_code": "DO",
+    "coordinate_precision": "city_center_approximation",
+    "founded": 2011,
+    "orbita_verified_profile": {
+      "schema_version": 3,
+      "profile_type": "inspace_services",
+      "verified_on": "2026-11-12",
+      "review_scope": "Phase-3 evidence-led specialty dossier only; legacy data not recertified; no global coverage claim",
+      "summary": {
+        "fa": "انتقال مداری و استقرار ماهواره‌ها با حامل ION و توسعه خدمات آینده در مدار.",
+        "en": "Orbital transport and satellite deployment with ION, plus a roadmap for further in-orbit services.",
+        "ar": "نقل الأقمار ونشرها مداريّاً بواسطة ION مع خطط لخدمات مدارية أخرى."
+      },
+      "sources": [
+        {
+          "id": "do_about",
+          "title": "D-Orbit — About us",
+          "url": "https://dorbit.space/about-us/",
+          "checked_on": "2026-11-12"
+        },
+        {
+          "id": "do_home",
+          "title": "D-Orbit — Solutions",
+          "url": "https://dorbit.space/",
+          "checked_on": "2026-11-12"
+        },
+        {
+          "id": "do_location",
+          "title": "Italian Trade Agency — D-Orbit company profile",
+          "url": "https://www.ice.it/en/sites/default/files/inline-files/italian-participation-at-imdex-asia-2025.pdf",
+          "checked_on": "2026-11-12"
+        }
+      ],
+      "sections": [
+        {
+          "id": "overview",
+          "fa": "شناسنامه و خدمات",
+          "en": "Identity & services",
+          "ar": "التعريف والخدمات",
+          "items": [
+            {
+              "fa": "دی‌اوربیت در سال ۲۰۱۱ بنیان‌گذاری شد و فعالیت اصلی آن لجستیک فضایی و حمل‌ونقل در مدار است.",
+              "en": "D-Orbit was founded in 2011 and focuses on space logistics and orbital transportation.",
+              "ar": "تأسست D-Orbit عام 2011 وتركّز على الخدمات اللوجستية الفضائية والنقل في المدار.",
+              "source_ids": [
+                "do_about"
+              ]
+            },
+            {
+              "fa": "این شرکت در فینو مورناسکو ایتالیا معرفی شده است؛ نقطه نقشه در سطح شهر و نه درِ ساختمان ثبت شده است.",
+              "en": "The company is listed in Fino Mornasco, Italy; the map point represents the town, not a building entrance.",
+              "ar": "تُدرج الشركة في فينو مورناسكو بإيطاليا؛ وتمثّل نقطة الخريطة البلدة لا مدخل المبنى.",
+              "source_ids": [
+                "do_location"
+              ]
+            }
+          ]
+        },
+        {
+          "id": "fleet",
+          "fa": "ناوگان و سامانه‌ها",
+          "en": "Fleet & systems",
+          "ar": "الأسطول والأنظمة",
+          "items": [
+            {
+              "fa": "حامل مداری ION Satellite Carrier برای حمل ماهواره‌ها و رهاسازی آن‌ها در موقعیت‌های مداری هدف طراحی و استفاده می‌شود.",
+              "en": "The ION Satellite Carrier is used to transport satellites and deploy them into target orbital slots.",
+              "ar": "تُستخدم مركبة ION Satellite Carrier لنقل الأقمار الصناعية ونشرها في مواقع مدارية مستهدفة.",
+              "source_ids": [
+                "do_about"
+              ]
+            }
+          ]
+        },
+        {
+          "id": "missions",
+          "fa": "مأموریت‌های انجام‌شده",
+          "en": "Completed missions",
+          "ar": "المهمات المنفّذة",
+          "items": [
+            {
+              "fa": "وب‌سایت شرکت سابقه مأموریت‌های تجاری حمل‌ونقل مداری و استقرار ماهواره با ION را گزارش می‌کند؛ شمار متغیر مأموریت‌ها در این پرونده ثابت نشده است.",
+              "en": "The company reports commercial orbital transportation and satellite-deployment missions with ION; this dossier does not freeze a changing mission count.",
+              "ar": "تذكر الشركة مهمات تجارية للنقل المداري ونشر الأقمار باستخدام ION؛ ولا يثبت هذا الملف عدداً متغيّراً للمهمات.",
+              "source_ids": [
+                "do_about",
+                "do_home"
+              ]
+            }
+          ]
+        },
+        {
+          "id": "capabilities",
+          "fa": "قابلیت‌های مداری",
+          "en": "In-orbit capabilities",
+          "ar": "القدرات المدارية",
+          "items": [
+            {
+              "fa": "حمل محموله‌های میزبانی‌شده و استقرار ماهواره از خدمات معرفی‌شده است؛ سوخت‌گیری و سرویس‌دهی گسترده‌تر در نقشه راه شرکت مطرح‌اند و در اینجا عملیاتیِ اثبات‌شده تلقی نمی‌شوند.",
+              "en": "Hosted payloads and satellite deployment are marketed services; refuelling and broader servicing are roadmap capabilities, not counted here as demonstrated operational services.",
+              "ar": "استضافة الحمولات ونشر الأقمار من الخدمات المعروضة؛ أما التزوّد بالوقود والخدمة المدارية الأوسع فمن خطط التطوير ولا تُعدّ هنا خدمات مثبتة التشغيل.",
+              "source_ids": [
+                "do_about",
+                "do_home"
+              ]
+            }
+          ]
+        },
+        {
+          "id": "roadmap",
+          "fa": "برنامه توسعه و مشتریان",
+          "en": "Roadmap & customers",
+          "ar": "خارطة الطريق والعملاء",
+          "items": [
+            {
+              "fa": "دی‌اوربیت توسعه خدمات درون‌مداری مانند سرویس‌دهی و پشتیبانی پایان مأموریت را در برنامه خود توصیف می‌کند؛ جزئیات مشتریان صرفاً با مدارک مستقل ثبت می‌شوند.",
+              "en": "D-Orbit describes plans for in-orbit services and end-of-mission support; individual customer relations require their own supporting evidence.",
+              "ar": "تصف D-Orbit خططاً للخدمة في المدار ودعم نهاية المهمة؛ وتحتاج علاقات العملاء المحددة إلى أدلة مستقلة.",
+              "source_ids": [
+                "do_about"
+              ]
+            }
+          ]
+        }
+      ],
+      "data_status": "verified_pilot"
+    }
+  }
+]

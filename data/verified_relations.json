@@ -1,0 +1,525 @@
+{
+  "schema_version": 1,
+  "graph_scope": "documented_pilot_links_not_worldwide_graph",
+  "reviewed_on": "2026-11-12",
+  "provenance_policy": "Evidence from first-party operator, manufacturer, university or agency; scope limits are part of each edge.",
+  "nodes": [
+    {
+      "id": "cubespace",
+      "kind": "map_entity",
+      "category": "satmaker",
+      "fa": "کیوب‌اسپیس",
+      "en": "CubeSpace Satellite Systems",
+      "ar": "أنظمة الأقمار الصناعية CubeSpace"
+    },
+    {
+      "id": "blue-canyon",
+      "kind": "map_entity",
+      "category": "satmaker",
+      "fa": "بلو کنیون",
+      "en": "Blue Canyon Technologies",
+      "ar": "بلو كانيون للتقنيات"
+    },
+    {
+      "id": "dhv-technology",
+      "kind": "map_entity",
+      "category": "components",
+      "fa": "دی‌اچ‌وی تکنولوژی",
+      "en": "DHV Technology",
+      "ar": "دي إتش في تكنولوجي"
+    },
+    {
+      "id": "surrey-space-centre",
+      "kind": "map_entity",
+      "category": "university_space",
+      "fa": "مرکز فضایی دانشگاه ساری",
+      "en": "Surrey Space Centre",
+      "ar": "مركز سَري للفضاء"
+    },
+    {
+      "id": "stanford-space-rendezvous-lab",
+      "kind": "map_entity",
+      "category": "university_space",
+      "fa": "آزمایشگاه ملاقات فضایی دانشگاه استنفورد",
+      "en": "Stanford Space Rendezvous Laboratory (SLAB)",
+      "ar": "مختبر الالتقاء الفضائي بجامعة ستانفورد"
+    },
+    {
+      "id": "dragonfly-space",
+      "kind": "map_entity",
+      "category": "satmaker",
+      "fa": "دراگون‌فلای ایروسپیس",
+      "en": "Dragonfly Aerospace",
+      "ar": "دراغونفلاي إيروسبيس"
+    },
+    {
+      "id": "ksat-ground-services",
+      "kind": "map_entity",
+      "category": "ground_services",
+      "fa": "کُنگسبرگ ستلایت سرویسز (کی‌ست)",
+      "en": "Kongsberg Satellite Services (KSAT)",
+      "ar": "خدمات كونغسبيرغ للأقمار الصناعية (KSAT)"
+    },
+    {
+      "id": "d-orbit",
+      "kind": "map_entity",
+      "category": "inspace_services",
+      "fa": "دی‌اوربیت",
+      "en": "D-Orbit",
+      "ar": "دي-أوربيت"
+    },
+    {
+      "id": "esa-estec-test-centre",
+      "kind": "map_entity",
+      "category": "test_facility",
+      "fa": "مرکز آزمون استک آژانس فضایی اروپا",
+      "en": "ESA ESTEC Test Centre",
+      "ar": "مركز اختبارات ESTEC التابع لوكالة الفضاء الأوروبية"
+    },
+    {
+      "id": "esa-cebreros-dsa2",
+      "kind": "map_entity",
+      "category": "ground_station",
+      "fa": "ایستگاه فضای دور سبروس (DSA 2)",
+      "en": "ESA Cebreros Deep Space Antenna (DSA 2)",
+      "ar": "محطة ثيبريروس للفضاء العميق (DSA 2)"
+    },
+    {
+      "id": "esa-esoc",
+      "kind": "map_entity",
+      "category": "mission_control",
+      "fa": "مرکز عملیات فضایی اروپا (اسوک)",
+      "en": "ESA European Space Operations Centre (ESOC)",
+      "ar": "المركز الأوروبي للعمليات الفضائية (ESOC)"
+    },
+    {
+      "id": "esa",
+      "kind": "map_entity",
+      "category": "agency",
+      "fa": "آژانس فضایی اروپا",
+      "en": "European Space Agency (ESA)",
+      "ar": "وكالة الفضاء الأوروبية (ESA)"
+    },
+    {
+      "id": "sstl",
+      "kind": "map_entity",
+      "category": "satmaker",
+      "fa": "اس‌اس‌تی‌ال (سوری)",
+      "en": "Surrey Satellite Technology (SSTL)",
+      "ar": "ساري لتقنيات الأقمار الصناعية (SSTL)"
+    },
+    {
+      "id": "spacex",
+      "kind": "map_entity",
+      "category": "launch",
+      "fa": "اسپیس‌ایکس",
+      "en": "SpaceX",
+      "ar": "سبيس إكس"
+    },
+    {
+      "id": "product:cubespace-adcs",
+      "kind": "product",
+      "fa": "سامانه‌های کنترل وضعیت CubeSpace",
+      "en": "CubeSpace ADCS systems",
+      "ar": "أنظمة التحكم بالاتجاه من CubeSpace"
+    },
+    {
+      "id": "product:cubespace-startrackers",
+      "kind": "product",
+      "fa": "ردیاب‌های ستاره‌ای CubeSpace",
+      "en": "CubeSpace star trackers",
+      "ar": "متتبعات النجوم من CubeSpace"
+    },
+    {
+      "id": "product:blue-canyon-wheels",
+      "kind": "product",
+      "fa": "چرخ‌های عکس‌العملی Blue Canyon",
+      "en": "Blue Canyon reaction wheels",
+      "ar": "عجلات ردّ الفعل من Blue Canyon"
+    },
+    {
+      "id": "product:dhv-solar",
+      "kind": "product",
+      "fa": "پنل‌ها و آرایه‌های خورشیدی DHV",
+      "en": "DHV satellite solar panels and arrays",
+      "ar": "الألواح والمصفوفات الشمسية الفضائية من DHV"
+    },
+    {
+      "id": "product:dhv-pcdu",
+      "kind": "product",
+      "fa": "سامانه توان و واحد توزیع برق DHV",
+      "en": "DHV EPS and PCDU",
+      "ar": "نظام الطاقة ووحدة توزيع القدرة من DHV"
+    },
+    {
+      "id": "product:dragoneye",
+      "kind": "product",
+      "fa": "دوربین فضایی DragonEye",
+      "en": "DragonEye space imager",
+      "ar": "كاميرا التصوير الفضائي DragonEye"
+    },
+    {
+      "id": "mission:eossat-1",
+      "kind": "mission",
+      "fa": "ماهواره EOSSAT-1",
+      "en": "EOSSAT-1 satellite mission",
+      "ar": "مهمة القمر الصناعي EOSSAT-1"
+    },
+    {
+      "id": "service:ksatlite",
+      "kind": "service",
+      "fa": "خدمات زمینی KSATlite",
+      "en": "KSATlite ground services",
+      "ar": "خدمة المحطات الأرضية KSATlite"
+    },
+    {
+      "id": "vehicle:ion",
+      "kind": "vehicle",
+      "fa": "حامل مداری ION",
+      "en": "ION Satellite Carrier",
+      "ar": "ناقلة الأقمار المدارية ION"
+    },
+    {
+      "id": "mission:visors",
+      "kind": "mission",
+      "fa": "مأموریت VISORS",
+      "en": "VISORS mission",
+      "ar": "مهمة VISORS"
+    },
+    {
+      "id": "mission:starfox",
+      "kind": "mission",
+      "fa": "آزمایش StarFOX در مأموریت Starling",
+      "en": "StarFOX experiment on Starling",
+      "ar": "تجربة StarFOX ضمن مهمة Starling"
+    },
+    {
+      "id": "mission:strand-1",
+      "kind": "mission",
+      "fa": "ماهواره STRaND-1",
+      "en": "STRaND-1 satellite mission",
+      "ar": "مهمة القمر الصناعي STRaND-1"
+    },
+    {
+      "id": "mission:bepicolombo",
+      "kind": "mission",
+      "fa": "مأموریت بپی‌کلمبو",
+      "en": "BepiColombo mission",
+      "ar": "مهمة بيبي كولومبو"
+    }
+  ],
+  "edges": [
+    {
+      "id": "rel-001",
+      "from_id": "cubespace",
+      "to_id": "product:cubespace-adcs",
+      "relation_type": "manufactures",
+      "fa": "این شرکت سامانه‌های کنترل وضعیت ماهواره را در سبد محصولات خود ارائه می‌کند.",
+      "en": "The company offers satellite attitude determination and control systems in its product range.",
+      "ar": "تقدّم الشركة أنظمة تحديد الاتجاه والتحكم به ضمن منتجاتها.",
+      "source_url": "https://www.cubespace.co.za/products/",
+      "source_authority": "manufacturer_statement",
+      "checked_on": "2026-11-12",
+      "scope": "documented"
+    },
+    {
+      "id": "rel-002",
+      "from_id": "cubespace",
+      "to_id": "product:cubespace-startrackers",
+      "relation_type": "manufactures",
+      "fa": "ردیاب‌های ستاره‌ای از محصولات معرفی‌شده این شرکت هستند.",
+      "en": "Star trackers are listed among this company’s products.",
+      "ar": "متتبعات النجوم من المنتجات التي تعرضها هذه الشركة.",
+      "source_url": "https://www.cubespace.co.za/products/star-trackers/",
+      "source_authority": "manufacturer_statement",
+      "checked_on": "2026-11-12",
+      "scope": "documented"
+    },
+    {
+      "id": "rel-003",
+      "from_id": "blue-canyon",
+      "to_id": "product:blue-canyon-wheels",
+      "relation_type": "manufactures",
+      "fa": "بلو کنیون خانواده‌ای از چرخ‌های عکس‌العملی را معرفی و عرضه می‌کند.",
+      "en": "Blue Canyon publishes a range of reaction-wheel products.",
+      "ar": "تطرح بلو كانيون مجموعة من عجلات ردّ الفعل.",
+      "source_url": "https://www.bluecanyontech.com/components/reaction-wheels/",
+      "source_authority": "manufacturer_statement",
+      "checked_on": "2026-11-12",
+      "scope": "documented"
+    },
+    {
+      "id": "rel-004",
+      "from_id": "dhv-technology",
+      "to_id": "product:dhv-solar",
+      "relation_type": "manufactures",
+      "fa": "DHV پنل‌ها و آرایه‌های خورشیدی ویژه ماهواره‌ها عرضه می‌کند.",
+      "en": "DHV offers solar panels and arrays for satellites.",
+      "ar": "توفّر DHV ألواحاً ومصفوفات شمسية للأقمار الصناعية.",
+      "source_url": "https://dhvtechnology.com/products/",
+      "source_authority": "manufacturer_statement",
+      "checked_on": "2026-11-12",
+      "scope": "documented"
+    },
+    {
+      "id": "rel-005",
+      "from_id": "dhv-technology",
+      "to_id": "product:dhv-pcdu",
+      "relation_type": "manufactures",
+      "fa": "سامانه توان الکتریکی و واحد کنترل و توزیع توان در کاتالوگ DHV آمده است.",
+      "en": "EPS and PCDU products appear in DHV’s portfolio.",
+      "ar": "تشمل منتجات DHV أنظمة القدرة الكهربائية ووحدات تكييف القدرة وتوزيعها.",
+      "source_url": "https://dhvtechnology.com/products/",
+      "source_authority": "manufacturer_statement",
+      "checked_on": "2026-11-12",
+      "scope": "documented"
+    },
+    {
+      "id": "rel-006",
+      "from_id": "dragonfly-space",
+      "to_id": "product:dragoneye",
+      "relation_type": "manufactures",
+      "fa": "شرکت دراگون‌فلای سازنده دوربین‌های DragonEye است.",
+      "en": "Dragonfly Aerospace makes DragonEye imaging payloads.",
+      "ar": "تصنع دراغونفلاي أنظمة التصوير DragonEye.",
+      "source_url": "https://dragonflyaerospace.com/eossat-1/",
+      "source_authority": "manufacturer_statement",
+      "checked_on": "2026-11-12",
+      "scope": "documented"
+    },
+    {
+      "id": "rel-007",
+      "from_id": "product:dragoneye",
+      "to_id": "mission:eossat-1",
+      "relation_type": "installed_on",
+      "fa": "دو دوربین DragonEye در ماهواره EOSSAT-1 نصب شده‌اند.",
+      "en": "Two DragonEye imagers were installed aboard EOSSAT-1.",
+      "ar": "ثُبّتت كاميرتا DragonEye على القمر EOSSAT-1.",
+      "source_url": "https://dragonflyaerospace.com/eossat-1/",
+      "source_authority": "manufacturer_statement",
+      "checked_on": "2026-11-12",
+      "scope": "flight_documented"
+    },
+    {
+      "id": "rel-008",
+      "from_id": "dragonfly-space",
+      "to_id": "mission:eossat-1",
+      "relation_type": "built_satellite",
+      "fa": "دراگون‌فلای سازنده ماهواره تصویربرداری EOSSAT-1 است.",
+      "en": "Dragonfly Aerospace manufactured the EOSSAT-1 imaging satellite.",
+      "ar": "صنعت دراغونفلاي قمر التصوير EOSSAT-1.",
+      "source_url": "https://dragonflyaerospace.com/eossat-1/",
+      "source_authority": "manufacturer_statement",
+      "checked_on": "2026-11-12",
+      "scope": "flight_documented"
+    },
+    {
+      "id": "rel-009",
+      "from_id": "ksat-ground-services",
+      "to_id": "service:ksatlite",
+      "relation_type": "operates_service",
+      "fa": "KSAT سرویس خودکار بخش زمینی KSATlite را ارائه می‌دهد.",
+      "en": "KSAT provides the automated ground-segment service KSATlite.",
+      "ar": "توفّر KSAT خدمة القطاع الأرضي المؤتمتة KSATlite.",
+      "source_url": "https://www.ksat.no/ground-network-services/ksatlite/",
+      "source_authority": "operator_official",
+      "checked_on": "2026-11-12",
+      "scope": "documented"
+    },
+    {
+      "id": "rel-010",
+      "from_id": "d-orbit",
+      "to_id": "vehicle:ion",
+      "relation_type": "manufactures_operates",
+      "fa": "دی‌اوربیت از حامل مداری اختصاصی ION برای خدمات حمل و استقرار ماهواره استفاده می‌کند.",
+      "en": "D-Orbit uses its proprietary ION Satellite Carrier for orbital transportation and satellite deployment.",
+      "ar": "تستخدم D-Orbit ناقلة الأقمار المدارية الخاصة بها ION للنقل المداري ونشر الأقمار الصناعية.",
+      "source_url": "https://dorbit.space/about-us/",
+      "source_authority": "manufacturer_statement",
+      "checked_on": "2026-11-12",
+      "scope": "operational_vehicle"
+    },
+    {
+      "id": "rel-011",
+      "from_id": "stanford-space-rendezvous-lab",
+      "to_id": "mission:visors",
+      "relation_type": "gnc_development",
+      "fa": "آزمایشگاه استنفورد مسئول توسعه زیرسامانه هدایت، ناوبری و کنترل VISORS است.",
+      "en": "Stanford’s laboratory develops the VISORS guidance, navigation and control subsystem.",
+      "ar": "يطوّر مختبر ستانفورد نظام التوجيه والملاحة والتحكم لمهمة VISORS.",
+      "source_url": "https://slab.stanford.edu/projects/visors",
+      "source_authority": "academic_official",
+      "checked_on": "2026-11-12",
+      "scope": "mission_role"
+    },
+    {
+      "id": "rel-012",
+      "from_id": "blue-canyon",
+      "to_id": "mission:visors",
+      "relation_type": "spacecraft_bus_supplier",
+      "fa": "براساس گزارش دانشگاه استنفورد، بلو کنیون سازنده باس فضاپیماهای VISORS است.",
+      "en": "Stanford identifies Blue Canyon as the VISORS spacecraft-bus supplier.",
+      "ar": "تُعرّف ستانفورد بلو كانيون بأنها مورّد حافلات مركبات VISORS.",
+      "source_url": "https://slab.stanford.edu/projects/visors",
+      "source_authority": "academic_official",
+      "checked_on": "2026-11-12",
+      "scope": "mission_role"
+    },
+    {
+      "id": "rel-013",
+      "from_id": "stanford-space-rendezvous-lab",
+      "to_id": "mission:starfox",
+      "relation_type": "experiment_contributor",
+      "fa": "آزمایش StarFOX در مأموریت Starling ناسا از پروژه‌های رسمی آزمایشگاه استنفورد است.",
+      "en": "StarFOX on NASA’s Starling mission is listed among the Stanford lab’s flight experiments.",
+      "ar": "تُدرج تجربة StarFOX ضمن مهمة Starling التابعة لناسا في مشاريع مختبر ستانفورد.",
+      "source_url": "https://slab.stanford.edu/projects",
+      "source_authority": "academic_official",
+      "checked_on": "2026-11-12",
+      "scope": "mission_role"
+    },
+    {
+      "id": "rel-014",
+      "from_id": "surrey-space-centre",
+      "to_id": "sstl",
+      "relation_type": "mission_collaborator",
+      "fa": "مرکز فضایی ساری و SSTL در توسعه مأموریت STRaND-1 همکاری مستند دارند؛ این رابطه به معنی مالکیت امروزی نیست.",
+      "en": "Surrey Space Centre and SSTL collaborated on STRaND-1; this does not assert current ownership.",
+      "ar": "تعاون مركز ساري الفضائي وSSTL في مهمة STRaND-1؛ ولا يدل ذلك على ملكية حالية.",
+      "source_url": "https://www.surrey.ac.uk/surrey-space-centre/missions/strand-1",
+      "source_authority": "academic_official",
+      "checked_on": "2026-11-12",
+      "scope": "historical_project"
+    },
+    {
+      "id": "rel-015",
+      "from_id": "surrey-space-centre",
+      "to_id": "mission:strand-1",
+      "relation_type": "research_mission",
+      "fa": "مرکز فضایی ساری مأموریت تحقیقاتی STRaND-1 را به‌همراه SSTL توسعه داد.",
+      "en": "Surrey Space Centre developed STRaND-1 together with SSTL.",
+      "ar": "طوّر مركز ساري الفضائي مهمة STRaND-1 بالتعاون مع SSTL.",
+      "source_url": "https://www.surrey.ac.uk/surrey-space-centre/missions/strand-1",
+      "source_authority": "academic_official",
+      "checked_on": "2026-11-12",
+      "scope": "flight_documented"
+    },
+    {
+      "id": "rel-016",
+      "from_id": "sstl",
+      "to_id": "mission:strand-1",
+      "relation_type": "mission_collaborator",
+      "fa": "SSTL به‌عنوان همکار توسعه مأموریت STRaND-1 در منابع دانشگاه ساری ذکر شده است.",
+      "en": "The University of Surrey identifies SSTL as a STRaND-1 development partner.",
+      "ar": "تذكر جامعة ساري شركة SSTL شريكاً في تطوير STRaND-1.",
+      "source_url": "https://www.surrey.ac.uk/surrey-space-centre/missions/strand-1",
+      "source_authority": "academic_official",
+      "checked_on": "2026-11-12",
+      "scope": "historical_project"
+    },
+    {
+      "id": "rel-017",
+      "from_id": "esa",
+      "to_id": "esa-estec-test-centre",
+      "relation_type": "institutional_facility",
+      "fa": "مرکز آزمون ESTEC از زیرساخت‌های آزمون آژانس فضایی اروپاست و ETS آن را از طرف آژانس اداره می‌کند.",
+      "en": "ESTEC Test Centre is an ESA facility operated on the agency’s behalf by ETS.",
+      "ar": "مركز اختبار ESTEC منشأة تابعة للوكالة الأوروبية وتديرها ETS نيابةً عنها.",
+      "source_url": "https://technology.esa.int/lab/test-centre",
+      "source_authority": "institution_official",
+      "checked_on": "2026-11-12",
+      "scope": "documented"
+    },
+    {
+      "id": "rel-018",
+      "from_id": "esa",
+      "to_id": "esa-esoc",
+      "relation_type": "institutional_facility",
+      "fa": "ESOC مرکز عملیات فضایی آژانس فضایی اروپا در دارمشتات است.",
+      "en": "ESOC is ESA’s space operations centre in Darmstadt.",
+      "ar": "ESOC مركز العمليات الفضائية التابع لوكالة الفضاء الأوروبية في دارمشتات.",
+      "source_url": "https://www.esa.int/establishment/about-us/meet-us/sites-and-establishments/esa-esoc/esa-esoc",
+      "source_authority": "institution_official",
+      "checked_on": "2026-11-12",
+      "scope": "documented"
+    },
+    {
+      "id": "rel-019",
+      "from_id": "esa",
+      "to_id": "esa-cebreros-dsa2",
+      "relation_type": "ground_network_member",
+      "fa": "ایستگاه سبروس از شبکه ردیابی و ارتباطی آژانس فضایی اروپا است.",
+      "en": "Cebreros is an ESA deep-space ground station in the Estrack network.",
+      "ar": "محطة سيبريروس محطة أرضية للفضاء العميق ضمن شبكة إستراك التابعة للوكالة الأوروبية.",
+      "source_url": "https://www.esa.int/Enabling_Support/Operations/ESA_Ground_Stations/Estrack_ESA_s_global_ground_station_network",
+      "source_authority": "institution_official",
+      "checked_on": "2026-11-12",
+      "scope": "documented"
+    },
+    {
+      "id": "rel-020",
+      "from_id": "esa-esoc",
+      "to_id": "esa-cebreros-dsa2",
+      "relation_type": "remote_station_control",
+      "fa": "کنترل عملیات عادی ایستگاه سبروس از مرکز ESOC انجام می‌شود.",
+      "en": "Routine Cebreros station control is performed from ESOC.",
+      "ar": "تُدار عمليات محطة سيبريروس الاعتيادية من مركز ESOC.",
+      "source_url": "https://www.esa.int/Enabling_Support/Operations/ESA_Ground_Stations/Cebreros_-_DSA_2",
+      "source_authority": "institution_official",
+      "checked_on": "2026-11-12",
+      "scope": "operational_role_public"
+    },
+    {
+      "id": "rel-021",
+      "from_id": "esa-estec-test-centre",
+      "to_id": "mission:bepicolombo",
+      "relation_type": "mission_tested",
+      "fa": "سازه فضایی بپی‌کلمبو در سال ۲۰۱۷ در مرکز آزمون ESA آزمایش ارتعاشی را گذراند.",
+      "en": "BepiColombo underwent vibration testing at ESA’s test centre in 2017.",
+      "ar": "خضعت مركبة بيبي كولومبو لاختبار الاهتزاز في مركز اختبار الوكالة عام 2017.",
+      "source_url": "https://www.esa.int/ESA_Multimedia/Videos/2017/07/BepiColombo_vibration_test",
+      "source_authority": "institution_official",
+      "checked_on": "2026-11-12",
+      "scope": "historical_test"
+    },
+    {
+      "id": "rel-022",
+      "from_id": "esa-cebreros-dsa2",
+      "to_id": "mission:bepicolombo",
+      "relation_type": "ground_support",
+      "fa": "ایستگاه سبروس برای ارتباطات مأموریت بپی‌کلمبو در مرحله انتقال میان‌سیاره‌ای به کار گرفته شده است.",
+      "en": "Cebreros provides deep-space communications support for BepiColombo during its cruise.",
+      "ar": "توفّر محطة سيبريروس دعم الاتصالات الفضائية العميقة لمهمة بيبي كولومبو خلال الرحلة.",
+      "source_url": "https://www.esa.int/articles/about-us/directorates/operations/bepicolombo-operations",
+      "source_authority": "institution_official",
+      "checked_on": "2026-11-12",
+      "scope": "mission_role"
+    },
+    {
+      "id": "rel-023",
+      "from_id": "esa-esoc",
+      "to_id": "mission:bepicolombo",
+      "relation_type": "mission_control",
+      "fa": "ESOC مدیریت عملیات فضاپیمای بپی‌کلمبو را در طول سفر به عطارد بر عهده دارد.",
+      "en": "ESOC coordinates BepiColombo spacecraft operations during the cruise to Mercury.",
+      "ar": "ينسّق ESOC عمليات مركبة بيبي كولومبو خلال الرحلة إلى عطارد.",
+      "source_url": "https://www.esa.int/articles/about-us/directorates/operations/bepicolombo-operations",
+      "source_authority": "institution_official",
+      "checked_on": "2026-11-12",
+      "scope": "mission_role"
+    },
+    {
+      "id": "rel-024",
+      "from_id": "d-orbit",
+      "to_id": "spacex",
+      "relation_type": "documented_launch_service",
+      "fa": "دی‌اوربیت در اکتبر ۲۰۲۶ از پرتاب حامل ION خود با فالکون ۹ اسپیس‌ایکس در مأموریت Transporter-18 خبر داده است؛ این رابطه فقط همین پرتاب را پوشش می‌دهد.",
+      "en": "D-Orbit reports launching an ION vehicle on SpaceX Falcon 9 Transporter-18 in October 2026; the link is limited to that launch.",
+      "ar": "أعلنت D-Orbit إطلاق مركبة ION على صاروخ فالكون 9 من SpaceX في مهمة Transporter-18 خلال أكتوبر 2026؛ ويقتصر الربط على ذلك الإطلاق.",
+      "source_url": "https://dorbit.space/into-the-quiet-dark-october-2026/",
+      "source_authority": "manufacturer_statement",
+      "checked_on": "2026-11-12",
+      "scope": "single_launch_2026"
+    }
+  ]
+}

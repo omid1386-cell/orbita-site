@@ -1,0 +1,53 @@
+ACTUAL SCRIPTS 2 MAP OBJECT True MAP STATUS در حال بارگذاری نقشه…
+PASS desktop initial page has no uncaught errors: []
+PASS desktop panel trigger present
+PASS desktop map container present
+PASS desktop mocked map constructed
+PASS desktop panel opens
+CHECKBOX COUNT 18
+PASS desktop all 14 category toggles rendered
+PASS desktop approved facility title available
+PASS desktop state storage accessible
+PASS desktop select-all persists all 14 categories
+PASS desktop category search responds
+PASS desktop theme cycles through exactly 2 approved skins
+PASS desktop active language en
+PASS desktop active language ar
+PASS desktop active language fa
+PASS desktop source record for cubespace
+PASS desktop profile opens for cubespace
+PASS desktop detail content visible cubespace
+PASS desktop source record for surrey-space-centre
+PASS desktop profile opens for surrey-space-centre
+PASS desktop detail content visible surrey-space-centre
+PASS desktop source record for esa-esoc
+PASS desktop profile opens for esa-esoc
+PASS desktop detail content visible esa-esoc
+PASS desktop interactions have no uncaught errors: []
+ACTUAL SCRIPTS 2 MAP OBJECT True MAP STATUS در حال بارگذاری نقشه…
+PASS mobile initial page has no uncaught errors: []
+PASS mobile panel trigger present
+PASS mobile map container present
+PASS mobile mocked map constructed
+PASS mobile panel opens
+CHECKBOX COUNT 18
+PASS mobile all 14 category toggles rendered
+PASS mobile approved facility title available
+PASS mobile state storage accessible
+PASS mobile select-all persists all 14 categories
+PASS mobile category search responds
+PASS mobile theme cycles through exactly 2 approved skins
+PASS mobile active language en
+PASS mobile active language ar
+PASS mobile active language fa
+PASS mobile source record for cubespace
+PASS mobile profile opens for cubespace
+PASS mobile detail content visible cubespace
+PASS mobile source record for surrey-space-centre
+PASS mobile profile opens for surrey-space-centre
+PASS mobile detail content visible surrey-space-centre
+PASS mobile source record for esa-esoc
+PASS mobile profile opens for esa-esoc
+PASS mobile detail content visible esa-esoc
+PASS mobile interactions have no uncaught errors: []
+ALL PASS 48

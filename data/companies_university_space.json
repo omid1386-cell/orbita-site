@@ -1,0 +1,292 @@
+[
+  {
+    "id": "surrey-space-centre",
+    "cat": "university_space",
+    "en": "Surrey Space Centre",
+    "fa": "مرکز فضایی دانشگاه ساری",
+    "ar": "مركز سَري للفضاء",
+    "country": "United Kingdom",
+    "country_fa": "بریتانیا",
+    "country_ar": "المملكة المتحدة",
+    "city": "Guildford",
+    "city_fa": "گیلدفورد",
+    "city_ar": "غيلدفورد",
+    "lat": 51.2362,
+    "lon": -0.5704,
+    "coordinate_precision": "city_center_approximation",
+    "founded": null,
+    "parent_institution": "University of Surrey",
+    "site": "https://www.surrey.ac.uk/surrey-space-centre",
+    "en_d": "Space-engineering research centre at the University of Surrey; research and missions in small-satellite technologies.",
+    "fa_d": "مرکز پژوهشی مهندسی فضای دانشگاه ساری؛ فعال در فناوری‌های ماهواره‌های کوچک و مأموریت‌های فضایی.",
+    "ar_d": "مركز بحثي لهندسة الفضاء بجامعة سَري، يعمل في تقنيات الأقمار الصغيرة والمهمات الفضائية.",
+    "logo": "assets/logos/orbita/surrey-space-centre.svg",
+    "logo_kind": "orbita_editorial_nonofficial",
+    "orbita_marker_code": "SS",
+    "orbita_verified_profile": {
+      "schema_version": 2,
+      "profile_type": "university_space",
+      "verified_on": "2026-11-12",
+      "review_scope": "New specialist dossier only; preexisting category fields not recertified",
+      "sources": [
+        {
+          "id": "ssc_main",
+          "title": "University of Surrey — Surrey Space Centre",
+          "url": "https://www.surrey.ac.uk/surrey-space-centre",
+          "checked_on": "2026-11-12"
+        },
+        {
+          "id": "ssc_about",
+          "title": "University of Surrey — About Surrey Space Centre",
+          "url": "https://www.surrey.ac.uk/surrey-space-centre/about",
+          "checked_on": "2026-11-12"
+        },
+        {
+          "id": "ssc_missions",
+          "title": "University of Surrey — Space missions",
+          "url": "https://www.surrey.ac.uk/surrey-space-centre/missions",
+          "checked_on": "2026-11-12"
+        },
+        {
+          "id": "ssi",
+          "title": "University of Surrey — Surrey Space Institute",
+          "url": "https://www.surrey.ac.uk/surrey-space-institute",
+          "checked_on": "2026-11-12"
+        }
+      ],
+      "sections": [
+        {
+          "id": "overview",
+          "fa": "شناسنامه علمی",
+          "en": "Academic identity",
+          "ar": "الهوية الأكاديمية",
+          "items": [
+            {
+              "fa": "مرکز فضایی ساری یک مرکز پژوهشی مهندسی فضا در دانشگاه ساری، شهر گیلدفورد بریتانیاست و اکنون بخشی از مؤسسه فضایی ساری است.",
+              "en": "Surrey Space Centre is a space-engineering research centre at the University of Surrey in Guildford, UK, now part of the Surrey Space Institute.",
+              "ar": "مركز سَري للفضاء مركز أبحاث هندسة فضائية تابع لجامعة سَري في غيلدفورد بالمملكة المتحدة، وهو حالياً جزء من معهد سَري للفضاء.",
+              "source_ids": [
+                "ssc_main"
+              ]
+            }
+          ]
+        },
+        {
+          "id": "capabilities",
+          "fa": "توانمندی‌های پژوهشی",
+          "en": "Research capabilities",
+          "ar": "القدرات البحثية",
+          "items": [
+            {
+              "fa": "حوزه‌ها شامل مهندسی ماهواره کوچک، تعیین و کنترل وضعیت، پیشرانش، سامانه‌های توان، ارتباطات و محموله‌هاست.",
+              "en": "Research areas include small-satellite engineering, attitude/orbit control, propulsion, electrical power, communications and payloads.",
+              "ar": "تشمل المجالات هندسة الأقمار الصغيرة، والتحكم في الاتجاه والمدار، والدفع، والطاقة الكهربائية، والاتصالات والحمولات.",
+              "source_ids": [
+                "ssc_about"
+              ]
+            }
+          ]
+        },
+        {
+          "id": "missions",
+          "fa": "پروژه‌ها و مأموریت‌ها",
+          "en": "Projects & missions",
+          "ar": "المشروعات والمهمات",
+          "items": [
+            {
+              "fa": "دانشگاه مأموریت‌های STRaND-1، InflateSail و RemoveDEBRIS را در فهرست مأموریت‌های خود معرفی کرده است.",
+              "en": "The university lists STRaND-1, InflateSail and RemoveDEBRIS among the centre’s missions.",
+              "ar": "تدرج الجامعة مهمات STRaND-1 وInflateSail وRemoveDEBRIS ضمن مهمات المركز.",
+              "source_ids": [
+                "ssc_missions"
+              ]
+            },
+            {
+              "fa": "دانشگاه تاریخ پرتاب STRaND-1 را ۲۵ فوریه ۲۰۱۳ اعلام کرده است.",
+              "en": "The university gives 25 February 2013 as the launch date of STRaND-1.",
+              "ar": "تذكر الجامعة أن STRaND-1 أُطلق في 25 فبراير 2013.",
+              "source_ids": [
+                "ssc_missions"
+              ]
+            }
+          ]
+        },
+        {
+          "id": "results",
+          "fa": "دستاوردهای علمی و فناوری",
+          "en": "Scientific & technical outputs",
+          "ar": "المخرجات العلمية والتقنية",
+          "items": [
+            {
+              "fa": "فعالیت‌های پژوهشی دانشگاه ساری در ماهواره‌های کوچک از سال ۱۹۷۹ آغاز شد و به تأسیس شرکت زایشی SSTL منجر شد؛ SSTL موجودیتی مستقل از این مرکز است.",
+              "en": "Surrey’s small-satellite academic activities began in 1979 and led to the SSTL spin-out; SSTL is a distinct company, not this research-centre record.",
+              "ar": "بدأ نشاط الأقمار الصغيرة في جامعة سَري عام 1979 وأسهم في تأسيس شركة SSTL المنبثقة؛ وهي كيان منفصل عن هذا المركز البحثي.",
+              "source_ids": [
+                "ssc_about"
+              ]
+            }
+          ]
+        },
+        {
+          "id": "network",
+          "fa": "همکاری‌ها و تاریخچه",
+          "en": "Collaboration & history",
+          "ar": "التعاون والتاريخ",
+          "items": [
+            {
+              "fa": "دانشگاه در معرفی مرکز، همکاری پژوهشی بلندمدت با Surrey Satellite Technology Ltd را توضیح می‌دهد.",
+              "en": "The university documents a long-term research relationship with Surrey Satellite Technology Ltd.",
+              "ar": "توثق الجامعة علاقة بحثية طويلة الأمد مع شركة Surrey Satellite Technology Ltd.",
+              "source_ids": [
+                "ssc_about"
+              ]
+            }
+          ]
+        }
+      ],
+      "summary": {
+        "fa": "مرکز پژوهشی مهندسی فضای دانشگاه ساری؛ فعال در فناوری‌های ماهواره‌های کوچک و مأموریت‌های فضایی.",
+        "en": "Space-engineering research centre at the University of Surrey; research and missions in small-satellite technologies.",
+        "ar": "مركز بحثي لهندسة الفضاء بجامعة سَري، يعمل في تقنيات الأقمار الصغيرة والمهمات الفضائية."
+      }
+    }
+  },
+  {
+    "id": "stanford-space-rendezvous-lab",
+    "cat": "university_space",
+    "en": "Stanford Space Rendezvous Laboratory (SLAB)",
+    "fa": "آزمایشگاه ملاقات فضایی دانشگاه استنفورد",
+    "ar": "مختبر الالتقاء الفضائي بجامعة ستانفورد",
+    "country": "United States",
+    "country_fa": "ایالات متحده آمریکا",
+    "country_ar": "الولايات المتحدة",
+    "city": "Stanford, California",
+    "city_fa": "استنفورد، کالیفرنیا",
+    "city_ar": "ستانفورد، كاليفورنيا",
+    "lat": 37.4275,
+    "lon": -122.1697,
+    "coordinate_precision": "campus_center_approximation",
+    "founded": null,
+    "parent_institution": "Stanford University",
+    "site": "https://slab.stanford.edu/",
+    "en_d": "Academic research laboratory specializing in distributed space systems, astrodynamics and guidance, navigation and control.",
+    "fa_d": "آزمایشگاه پژوهشی دانشگاهی در حوزه سامانه‌های فضایی توزیع‌شده، دینامیک مداری و هدایت، ناوبری و کنترل.",
+    "ar_d": "مختبر بحثي جامعي متخصص في الأنظمة الفضائية الموزعة والديناميكا المدارية والتوجيه والملاحة والتحكم.",
+    "logo": "assets/logos/orbita/stanford-space-rendezvous-lab.svg",
+    "logo_kind": "orbita_editorial_nonofficial",
+    "orbita_marker_code": "SL",
+    "orbita_verified_profile": {
+      "schema_version": 2,
+      "profile_type": "university_space",
+      "verified_on": "2026-11-12",
+      "review_scope": "New specialist dossier only; preexisting category fields not recertified",
+      "sources": [
+        {
+          "id": "slab_about",
+          "title": "Stanford University — Space Rendezvous Laboratory",
+          "url": "https://slab.stanford.edu/",
+          "checked_on": "2026-11-12"
+        },
+        {
+          "id": "slab_projects",
+          "title": "Stanford Space Rendezvous Laboratory — Projects",
+          "url": "https://slab.stanford.edu/projects",
+          "checked_on": "2026-11-12"
+        },
+        {
+          "id": "slab_aa",
+          "title": "Stanford Aeronautics & Astronautics — SLAB",
+          "url": "https://aa.stanford.edu/research-impact/labs-and-centers/space-rendezvous-laboratory",
+          "checked_on": "2026-11-12"
+        }
+      ],
+      "sections": [
+        {
+          "id": "overview",
+          "fa": "شناسنامه علمی",
+          "en": "Academic identity",
+          "ar": "الهوية الأكاديمية",
+          "items": [
+            {
+              "fa": "آزمایشگاه ملاقات فضایی (SLAB) وابسته به گروه هوافضای دانشگاه استنفورد در کالیفرنیا و به سرپرستی سیمونه د‌آمیکو است.",
+              "en": "The Space Rendezvous Laboratory (SLAB) belongs to Stanford University’s Aeronautics and Astronautics department and is led by Simone D’Amico.",
+              "ar": "مختبر الالتقاء الفضائي (SLAB) تابع لقسم الملاحة الجوية والفضائية بجامعة ستانفورد ويقوده سيموني داميـكو.",
+              "source_ids": [
+                "slab_about"
+              ]
+            }
+          ]
+        },
+        {
+          "id": "capabilities",
+          "fa": "توانمندی‌های پژوهشی",
+          "en": "Research capabilities",
+          "ar": "القدرات البحثية",
+          "items": [
+            {
+              "fa": "پژوهش‌ها بر دینامیک مداری، هدایت، ناوبری و کنترل سامانه‌های فضایی توزیع‌شده، پرواز آرایشی و ملاقات و اتصال فضایی متمرکزند.",
+              "en": "Research addresses astrodynamics and guidance, navigation and control for distributed space systems, including formation flight and rendezvous and docking.",
+              "ar": "تركز الأبحاث على الديناميكا المدارية والتوجيه والملاحة والتحكم للأنظمة الفضائية الموزعة، بما فيها الطيران التشكّلي والالتقاء والالتحام.",
+              "source_ids": [
+                "slab_aa"
+              ]
+            }
+          ]
+        },
+        {
+          "id": "missions",
+          "fa": "پروژه‌ها و مأموریت‌ها",
+          "en": "Projects & missions",
+          "ar": "المشروعات والمهمات",
+          "items": [
+            {
+              "fa": "فهرست پروژه‌های آزمایشگاه شامل آزمایش ناوبری نوری StarFOX در مأموریت Starling ناسا و مشارکت در طراحی هدایت و ناوبری مأموریت VISORS است.",
+              "en": "Its project roster includes the StarFOX optical-navigation experiment on NASA’s Starling mission and GN&C design work for VISORS.",
+              "ar": "تضم قائمة مشروعات المختبر تجربة الملاحة البصرية StarFOX على مهمة Starling التابعة لناسا وأعمال تصميم التوجيه والملاحة والتحكم لمهمة VISORS.",
+              "source_ids": [
+                "slab_projects"
+              ]
+            }
+          ]
+        },
+        {
+          "id": "results",
+          "fa": "دستاوردهای علمی و فناوری",
+          "en": "Scientific & technical outputs",
+          "ar": "المخرجات العلمية والتقنية",
+          "items": [
+            {
+              "fa": "آزمایشگاه روش‌ها و نرم‌افزارهای ناوبری نسبی و تخمین وضعیت برای منظومه‌های چندماهواره‌ای توسعه می‌دهد؛ این عنوان به معنی موفقیت پروازی همه نمونه‌ها نیست.",
+              "en": "The lab develops relative-navigation and state-estimation methods and software for multi-spacecraft systems; this does not establish flight success for every prototype.",
+              "ar": "يطور المختبر أساليب وبرمجيات للملاحة النسبية وتقدير الحالة للأنظمة متعددة المركبات؛ ولا يعني ذلك نجاح جميع النماذج في الفضاء.",
+              "source_ids": [
+                "slab_projects"
+              ]
+            }
+          ]
+        },
+        {
+          "id": "network",
+          "fa": "همکاری‌ها و تاریخچه",
+          "en": "Collaboration & history",
+          "ar": "التعاون والتاريخ",
+          "items": [
+            {
+              "fa": "آزمایشگاه در ساختمان دوراند، شماره ۴۹۶ خیابان لومیتا مال در محوطه دانشگاه استنفورد معرفی شده است.",
+              "en": "SLAB identifies its location as the Durand Building at 496 Lomita Mall on Stanford’s campus.",
+              "ar": "يحدد المختبر موقعه في مبنى Durand عند 496 Lomita Mall في حرم جامعة ستانفورد.",
+              "source_ids": [
+                "slab_about"
+              ]
+            }
+          ]
+        }
+      ],
+      "summary": {
+        "fa": "آزمایشگاه پژوهشی دانشگاهی در حوزه سامانه‌های فضایی توزیع‌شده، دینامیک مداری و هدایت، ناوبری و کنترل.",
+        "en": "Academic research laboratory specializing in distributed space systems, astrodynamics and guidance, navigation and control.",
+        "ar": "مختبر بحثي جامعي متخصص في الأنظمة الفضائية الموزعة والديناميكا المدارية والتوجيه والملاحة والتحكم."
+      }
+    }
+  }
+]

@@ -54,13 +54,13 @@
       guide_close: "بستن راهنما", guide_quick_title: "شروع در چند گام",
       guide_quick_body: "ORBITA اکنون بر نقشهٔ جهانی متمرکز است. با روشن‌کردن دسته‌ها و جست‌وجوی نقشه، شرکت‌ها، سازمان‌ها، پایگاه‌ها و محل‌های فرود و بازیابی را پیدا کن و شناسنامه هر مورد را باز کن. اطلاعات پرتاب‌های پیش‌رو در شناسنامه پایگاه‌ها و نوار «پرتاب بعدی» در صورت دسترسی به داده نمایش داده می‌شود.",
       guide_map_title: "نقشه، دسته‌ها و نشانگرها",
-      guide_map_body: "نقشه جای تقریبی رکوردهایی را نشان می‌دهد که دستهٔ مربوط به آن‌ها روشن است. دسته‌ها شامل شرکت‌های پرتاب، پیشرانش، آژانس‌ها، سازندگان ماهواره، پایگاه‌های پرتاب و فرود/بازیابی هستند. خاموش‌کردن یک دسته، نمایش آن را از نقشه و فهرست نتایج پنهان می‌کند؛ رکورد را حذف نمی‌کند.\n\nعدد کنار هر دسته شمار رکوردهای فهرست آن دسته است، نه تعداد مواردی که در محدودهٔ دید یا نتیجهٔ جست‌وجوی فعلی مانده‌اند و نه سرشماری کل جهان. هنگام بارگذاری، علامت انتظار دیده می‌شود؛ علامت خطا یعنی دادهٔ آن دسته بارگذاری نشده است.\n\nنشانگر منفرد یک رکورد را باز می‌کند؛ خوشه فقط چند رکورد نزدیک را برای خوانایی نقشه کنار هم نشان می‌دهد. برای دیدن محتویات خوشه آن را باز کنید. انتخاب کشور شناسنامهٔ همان کشور را می‌آورد؛ کلیک روی فضای خالی انتخاب کشور را پاک می‌کند.\n\nدکمهٔ پوسته ظاهر نقشه را عوض می‌کند؛ در UI فعلی دکمهٔ جداگانه‌ای برای جابه‌جایی دستی بین نقشهٔ آنلاین و آفلاین دیده نمی‌شود. اگر نقشهٔ برخط در دسترس نباشد، برنامه می‌تواند به نقشهٔ محلی برگردد.",
+      guide_map_body: "نقشه جای تقریبی رکوردهایی را نشان می‌دهد که دستهٔ مربوط به آن‌ها روشن است. این نسخه ۱۴ دسته قابل انتخاب دارد: شش دسته پیشین و هشت حوزه جدید در بخش شرکت‌ها، دانشگاه‌ها و زیرساخت‌های فضایی. حوزه‌های جدید فعلاً با پرونده‌های نمونه آغاز شده‌اند و ادعای پوشش کامل جهانی ندارند. خاموش‌کردن یک دسته، نمایش آن را از نقشه و فهرست نتایج پنهان می‌کند؛ رکورد را حذف نمی‌کند.\n\nعدد کنار هر دسته شمار رکوردهای فهرست آن دسته است، نه تعداد مواردی که در محدودهٔ دید یا نتیجهٔ جست‌وجوی فعلی مانده‌اند و نه سرشماری کل جهان. هنگام بارگذاری، علامت انتظار دیده می‌شود؛ علامت خطا یعنی دادهٔ آن دسته بارگذاری نشده است.\n\nنشانگر منفرد یک رکورد را باز می‌کند؛ خوشه فقط چند رکورد نزدیک را برای خوانایی نقشه کنار هم نشان می‌دهد. برای دیدن محتویات خوشه آن را باز کنید. انتخاب کشور شناسنامهٔ همان کشور را می‌آورد؛ کلیک روی فضای خالی انتخاب کشور را پاک می‌کند.\n\nدکمهٔ پوسته ظاهر نقشه را عوض می‌کند؛ در UI فعلی دکمهٔ جداگانه‌ای برای جابه‌جایی دستی بین نقشهٔ آنلاین و آفلاین دیده نمی‌شود. اگر نقشهٔ برخط در دسترس نباشد، برنامه می‌تواند به نقشهٔ محلی برگردد.",
       guide_search_title: "جست‌وجوی نقشه و فهرست نتایج",
       guide_search_body: "جست‌وجوی نقشه برای پیدا کردن شرکت، پایگاه یا کشور است و نتیجه‌ها با دسته‌های روشن‌شده هماهنگ‌اند. میانبر Ctrl/⌘ + K جست‌وجوی نقشه را باز می‌کند. اگر موردی را نمی‌بینی، دسته‌های فعال و عبارت جست‌وجو را بررسی کن. پیدا نشدن نتیجه به‌تنهایی ثابت نمی‌کند که آن مورد در جهان وجود ندارد؛ ممکن است در دادهٔ فعلی ثبت نشده یا با فیلترها پنهان باشد.\n\nانتخاب مورد از نقشه یا فهرست، پروندهٔ آن را باز می‌کند. زوم و جابه‌جایی فقط محدودهٔ دید را تغییر می‌دهند؛ شمار کنار دسته، شمار نتیجه‌های قابل‌دیدن نیست.",
       guide_country_title: "شناسنامهٔ کشور",
       guide_country_body: "شناسنامهٔ کشور، رکوردهایی را که طبق تطبیق فعلی سامانه به کشور نسبت داده شده‌اند، در دسته‌های پیشرانش، پرتاب، آژانس‌ها، پایگاه‌ها و فرود/بازیابی گروه‌بندی می‌کند. عدد «مجموعه‌های فعال» جمع همین رکوردهای دسته‌بندی‌شده است؛ شمار رسمی زیرساخت کشور یا شمار قطعی تأسیساتِ در حال کار نیست و می‌تواند رکوردهای در ساخت، غیرفعال یا راکد را نیز دربرگیرد.\n\nصفر یا خالی یعنی در مجموعهٔ فعلی رکورد مطابقی نمایش داده نشده است؛ از آن نمی‌توان نبودن مورد را در دنیای واقعی نتیجه گرفت. سازندگان ماهواره در دستهٔ جداگانهٔ نقشه هستند، اما در جمع و زبانه‌های فعلی شناسنامهٔ کشور وارد نشده‌اند.\n\nشمارهای این صفحه را با تعداد شرکت‌های جهان، کل مأموریت‌های یک کشور یا تعداد قطعی تأسیسات فعال یکی نگیرید. آن‌ها خلاصهٔ رکوردهای حاضر در دسته‌های همین شناسنامه‌اند.",
       guide_companies_title: "پروندهٔ شرکت‌ها و سازمان‌ها",
-      guide_companies_body: "پرونده‌ها یک قالب واحد ندارند؛ زبانه‌ها بر اساس نوع نهاد فرق می‌کنند. در شرکت‌های پرتاب، زبانه‌ها دربارهٔ شناسنامه و آمار، ناوگان پرتابگرها و تاریخچه/شبکه‌اند. در شرکت‌های پیشرانش، بخش‌ها معماری و نوع پیشران، موتورهای معرفی‌شده و پیوند مأموریت، آزمون‌ها و نقشهٔ راه را پوشش می‌دهند. پروندهٔ آژانس‌ها شناسنامه و برنامه‌های اصلی، محصولات/برنامه‌ها و سیر تاریخی/شبکه را دارد؛ پروندهٔ سازندگان ماهواره شناسنامه/تخصص، محصولات/مشتری‌ها و کارنامه/آینده را نشان می‌دهد.\n\nفیلدهای یکسانی در همهٔ پرونده‌ها وجود ندارد. خانهٔ خالی یعنی این مقدار در پروندهٔ فعلی نمایش داده نشده، نه اینکه حتماً وجود خارجی ندارد. پیوند وب‌سایت نهاد یا منبع عکس را استناد مستقل به همهٔ مشخصات و آمار پرونده تلقی نکنید.",
+      guide_companies_body: "پرونده‌ها یک قالب واحد ندارند؛ زبانه‌ها بر اساس نوع نهاد فرق می‌کنند. در شرکت‌های پرتاب، زبانه‌ها دربارهٔ شناسنامه و آمار، ناوگان پرتابگرها و تاریخچه/شبکه‌اند. در شرکت‌های پیشرانش، بخش‌ها معماری و نوع پیشران، موتورهای معرفی‌شده و پیوند مأموریت، آزمون‌ها و نقشهٔ راه را پوشش می‌دهند. پروندهٔ آژانس‌ها شناسنامه و برنامه‌های اصلی، محصولات/برنامه‌ها و سیر تاریخی/شبکه را دارد؛ پروندهٔ سازندگان ماهواره شناسنامه/تخصص، محصولات/مشتری‌ها و کارنامه/آینده را نشان می‌دهد.\n\nحوزه‌های جدید پرونده‌های تخصصی پنج‌تب و پیوند منبع در کنار ادعاهای منتخب دارند. وجود این نمونه‌ها به معنی ثبت تمام فعالان جهانی هر حوزه نیست.\n\nفیلدهای یکسانی در همهٔ پرونده‌ها وجود ندارد. خانهٔ خالی یعنی این مقدار در پروندهٔ فعلی نمایش داده نشده، نه اینکه حتماً وجود خارجی ندارد. پیوند وب‌سایت نهاد یا منبع عکس را استناد مستقل به همهٔ مشخصات و آمار پرونده تلقی نکنید.",
       guide_site_title: "پروندهٔ پایگاه پرتاب",
       guide_site_body: "در زبانهٔ «شناسنامه و آمار»، کشور، بهره‌بردار، وضعیت پایگاه، نخستین پرتاب، سکوها، راکت‌ها، مختصات و شاخص‌های جغرافیایی نمایش داده می‌شوند. ارتفاع، فاصله از استوا و ازیموت ویژگی‌های مکانی/جهت پرتاب‌اند؛ «مدار هدف» به مدارهای موردنظر یا معرفی‌شده برای پایگاه اشاره دارد و تضمین نمی‌کند هر مأموریت به همان مدار برسد.\n\nآمار کل پرتاب، موفقیت/شکست و نمودار سالانه خلاصهٔ دادهٔ ثبت‌شدهٔ پایگاه‌اند. شمار آمار تجمیعی ممکن است با تعداد ردیف‌هایی که در تاریخچهٔ همین صفحه دیده می‌شود یکسان نباشد. در زبانهٔ «تاریخچه»، هر ردیف یک پرتاب ثبت‌شده است؛ بازکردن ردیف جزئیات فنی و تحلیل همان رویداد را نشان می‌دهد. وضعیت «موفق/ناموفق» نتیجهٔ پرتاب است، نه وضعیت کنونی پایگاه.\n\nزبانهٔ «پرتاب‌های پیشِ رو» از فهرست محلی The Space Devs استفاده می‌کند و برخی تاریخ‌ها/وضعیت‌ها را با Launch Library 2 همگام می‌کند. تاریخ‌ها ممکن است جابه‌جا شوند؛ تاریخ دادهٔ محلی و وضعیت همگام‌سازی را در همان پنل بخوانید. اگر پنل بگوید داده برای این پایگاه پوشش ندارد، آن را با «در حال حاضر پرتابی اعلام نشده» یکی نگیرید.\n\nزبانهٔ «تحلیل جغرافیا و زیرساخت» توضیح مکانی و چک‌لیست ثبت‌شدهٔ زیرساخت را می‌دهد؛ چک‌لیست به‌تنهایی پایش زنده یا تضمین آمادگی عملیاتی امروز نیست.",
       guide_recovery_title: "پروندهٔ فرود و بازیابی",
@@ -180,13 +180,13 @@
       guide_close: "Close guide", guide_quick_title: "Get started in a few steps",
       guide_quick_body: "ORBITA now focuses on the World Map. Turn categories on and search the map to find companies, organizations, launch sites, and landing/recovery locations, then open their profiles. Upcoming launch information remains available in launch-site profiles and the next-launch ticker when data can be retrieved.",
       guide_map_title: "Map, categories and markers",
-      guide_map_body: "The map shows the approximate locations of records in categories that are switched on. Categories include launch companies, propulsion companies, space organizations, satellite manufacturers, launch sites, and landing/recovery. Turning a category off hides its records from the map and results list; it does not delete them.\n\nThe number beside each category is the number of records in that category's list—not the number currently in view or matching the search, and not a worldwide census. An ellipsis appears while the data is loading; an exclamation mark means that category's data did not load.\n\nA single marker opens one record; a cluster groups nearby records to keep the map readable. Open a cluster to see its contents. Selecting a country opens its profile; clicking empty map space clears the country selection.\n\nThe map-style button changes the map's appearance. The current UI does not show a separate manual online/offline map switch. If the online basemap is unavailable, the app may fall back to the local map.",
+      guide_map_body: "The map shows approximate record locations for enabled categories. This release offers 14 selectable categories: the six original groups plus eight new industry, university and infrastructure areas. New categories currently contain verified pilot profiles rather than exhaustive worldwide coverage. Turning a category off hides its records from the map and results list; it does not delete them.\n\nThe number beside each category is the number of records in that category's list—not the number currently in view or matching the search, and not a worldwide census. An ellipsis appears while the data is loading; an exclamation mark means that category's data did not load.\n\nA single marker opens one record; a cluster groups nearby records to keep the map readable. Open a cluster to see its contents. Selecting a country opens its profile; clicking empty map space clears the country selection.\n\nThe map-style button changes the map's appearance. The current UI does not show a separate manual online/offline map switch. If the online basemap is unavailable, the app may fall back to the local map.",
       guide_search_title: "Map search and results list",
       guide_search_body: "Map search finds a company, launch site, or country, and follows the categories that are switched on. Press Ctrl/⌘ + K to open map search. If something is missing, check the active categories and search text. A missing result alone does not prove that the real-world item does not exist; it may not be recorded in the current data or may be hidden by filters.\n\nSelecting an item on the map or in the list opens its profile. Zooming and panning change only the view; the number beside a category is not the number of visible results.",
       guide_country_title: "Country profile",
       guide_country_body: "The country profile groups records that the app's current matching rules assign to that country: propulsion, launch, space organizations, launch sites, and landing/recovery. The figure labelled Active Entities is the sum of those grouped records. It is not an official count of national infrastructure or a definitive count of facilities currently operating, and it can include records marked under construction, inactive, or dormant.\n\nZero or blank means that no matching record is shown in the current dataset; it does not prove real-world absence. Satellite manufacturers appear in a separate map category but are not included in the current country-profile total or tabs.\n\nDo not treat these totals as a worldwide company count, a country's total number of missions, or a definitive count of active facilities. They summarize the records currently included in this profile.",
       guide_companies_title: "Company and organization profiles",
-      guide_companies_body: "Profiles do not use one template; their tabs depend on the type of organization. A launch-company profile covers overview and statistics, its rocket fleet, and history/network. A propulsion-company profile covers overview and architecture, engines and mission links, and test history/roadmap. An organization profile covers its overview and core role, programmes/services, and timeline/network. A satellite-manufacturer profile covers overview/specialty, products/customers, and track record/future.\n\nThe same fields are not present in every profile. An empty field means that value is not shown in the current record; it does not necessarily mean the real-world entity or value does not exist. A company website or photo-source link should not be treated as an independent citation for every profile detail and statistic.",
+      guide_companies_body: "Profiles do not use one template; their tabs depend on the type of organization. A launch-company profile covers overview and statistics, its rocket fleet, and history/network. A propulsion-company profile covers overview and architecture, engines and mission links, and test history/roadmap. An organization profile covers its overview and core role, programmes/services, and timeline/network. A satellite-manufacturer profile covers overview/specialty, products/customers, and track record/future.\n\nThe new specialist categories include five-tab pilot profiles and source links for selected claims; they are not an exhaustive worldwide directory.\n\nThe same fields are not present in every profile. An empty field means that value is not shown in the current record; it does not necessarily mean the real-world entity or value does not exist. A company website or photo-source link should not be treated as an independent citation for every profile detail and statistic.",
       guide_site_title: "Launch-site profile",
       guide_site_body: "The Overview & Stats tab shows the country, operator, site status, first launch, pads, rockets, coordinates, and geographic indicators. Altitude, distance from the equator, and launch azimuth describe location or launch direction. Target orbit refers to an orbit listed or intended for the site; it does not guarantee that every mission reaches that orbit.\n\nTotal launches, success/failure figures, and the annual chart summarize recorded data. An aggregate total may differ from the number of rows shown in the history on the same page. In History, each row is a recorded launch; opening it shows technical details and analysis for that event. Success/Failed is the launch outcome, not the site's current status.\n\nThe Upcoming tab uses a local list from The Space Devs and synchronizes some dates and statuses with Launch Library 2. Dates may move; check the local-data update date and synchronization status in that panel. If the panel says the site is not covered by the data, do not interpret that as “no launches have been announced.”\n\nThe Analysis & Infrastructure tab provides geographic context and a recorded infrastructure checklist. The checklist is not live monitoring and does not guarantee the site's operational readiness today.",
       guide_recovery_title: "Landing and recovery profile",
@@ -308,13 +308,13 @@
       guide_close: "إغلاق الدليل", guide_quick_title: "ابدأ في خطوات قليلة",
       guide_quick_body: "يركز ORBITA الآن على الخريطة العالمية. فعّل الفئات واستخدم البحث للعثور على الشركات والمؤسسات ومواقع الإطلاق ومواقع الهبوط والاستعادة، ثم افتح ملفاتها. تظل بيانات الإطلاقات القادمة متاحة في ملفات مواقع الإطلاق وشريط الإطلاق القادم عند توفر المصدر.",
       guide_map_title: "الخريطة والفئات والعلامات",
-      guide_map_body: "تعرض الخريطة المواقع التقريبية للسجلات ضمن الفئات المفعّلة. تشمل الفئات شركات الإطلاق، وشركات أنظمة الدفع، والجهات الفضائية، ومصنّعي الأقمار الصناعية، ومواقع الإطلاق، والهبوط والاستعادة. يؤدي إيقاف فئة إلى إخفاء سجلاتها عن الخريطة وقائمة النتائج؛ ولا يحذفها.\n\nالعدد بجوار كل فئة هو عدد السجلات في قائمتها، وليس عدد العناصر الظاهرة حالياً أو المطابقة للبحث، ولا إحصاءً عالمياً. تظهر علامة الحذف أثناء تحميل البيانات؛ وتعني علامة التعجب أن بيانات تلك الفئة لم تُحمّل.\n\nتفتح العلامة المنفردة سجلاً واحداً؛ وتجمع المجموعة سجلات متقاربة لتسهيل قراءة الخريطة. افتح المجموعة لعرض محتوياتها. يؤدي اختيار دولة إلى فتح ملفها؛ والنقر على مساحة فارغة من الخريطة يلغي اختيار الدولة.\n\nيغيّر زر نمط الخريطة مظهرها. لا تعرض الواجهة الحالية مفتاحاً منفصلاً للتبديل اليدوي بين الخريطة المتصلة وغير المتصلة. وإذا تعذّر تحميل خريطة الإنترنت، فقد يعود التطبيق إلى الخريطة المحلية.",
+      guide_map_body: "تعرض الخريطة المواقع التقريبية للسجلات ضمن الفئات المفعّلة. يتضمن هذا الإصدار 14 فئة قابلة للاختيار: الفئات الست الأصلية وثمانية مجالات جديدة للصناعة والجامعات والبنية التحتية الفضائية. تحتوي الفئات الجديدة حالياً على ملفات تجريبية موثقة، وليست حصراً عالمياً شاملاً. يؤدي إيقاف فئة إلى إخفاء سجلاتها عن الخريطة وقائمة النتائج؛ ولا يحذفها.\n\nالعدد بجوار كل فئة هو عدد السجلات في قائمتها، وليس عدد العناصر الظاهرة حالياً أو المطابقة للبحث، ولا إحصاءً عالمياً. تظهر علامة الحذف أثناء تحميل البيانات؛ وتعني علامة التعجب أن بيانات تلك الفئة لم تُحمّل.\n\nتفتح العلامة المنفردة سجلاً واحداً؛ وتجمع المجموعة سجلات متقاربة لتسهيل قراءة الخريطة. افتح المجموعة لعرض محتوياتها. يؤدي اختيار دولة إلى فتح ملفها؛ والنقر على مساحة فارغة من الخريطة يلغي اختيار الدولة.\n\nيغيّر زر نمط الخريطة مظهرها. لا تعرض الواجهة الحالية مفتاحاً منفصلاً للتبديل اليدوي بين الخريطة المتصلة وغير المتصلة. وإذا تعذّر تحميل خريطة الإنترنت، فقد يعود التطبيق إلى الخريطة المحلية.",
       guide_search_title: "بحث الخريطة وقائمة النتائج",
       guide_search_body: "يبحث بحث الخريطة عن شركة أو موقع إطلاق أو دولة، ويتبع الفئات المفعّلة. اضغط Ctrl/⌘ + K لفتح بحث الخريطة. إذا غاب عنصر، فتحقق من الفئات النشطة وعبارة البحث. عدم ظهور نتيجة لا يثبت وحده أن العنصر غير موجود في الواقع؛ فقد لا يكون مسجلاً في البيانات الحالية أو قد تخفيه المرشحات.\n\nيؤدي اختيار عنصر على الخريطة أو في القائمة إلى فتح ملفه. يغيّر التكبير والتحريك نطاق العرض فقط؛ والعدد بجوار الفئة ليس عدد النتائج الظاهرة.",
       guide_country_title: "ملف الدولة",
       guide_country_body: "يجمع ملف الدولة السجلات التي تنسبها قواعد المطابقة الحالية في التطبيق إلى الدولة ضمن فئات أنظمة الدفع والإطلاق والجهات الفضائية ومواقع الإطلاق والهبوط والاستعادة. والعدد الموسوم الكيانات النشطة هو مجموع هذه السجلات؛ وليس إحصاءً رسمياً للبنية التحتية الوطنية ولا عدّاً نهائياً للمنشآت العاملة حالياً. وقد يشمل سجلات قيد الإنشاء أو غير نشطة أو خاملة.\n\nيعني الصفر أو الحقل الفارغ عدم عرض سجل مطابق في مجموعة البيانات الحالية؛ ولا يثبت عدم وجوده في الواقع. يظهر مصنّعو الأقمار الصناعية ضمن فئة مستقلة على الخريطة، لكنهم غير مدرجين في المجموع أو التبويبات الحالية لملف الدولة.\n\nلا تعامل هذه الأعداد على أنها إجمالي الشركات في العالم، أو إجمالي مهمات الدولة، أو عدّ نهائي للمنشآت النشطة؛ فهي تلخص السجلات الموجودة حالياً في هذا الملف.",
       guide_companies_title: "ملفات الشركات والمؤسسات",
-      guide_companies_body: "لا تتبع الملفات قالباً واحداً؛ إذ تختلف تبويباتها باختلاف نوع الجهة. يغطي ملف شركة الإطلاق النظرة العامة والإحصاءات، وأسطول الصواريخ، والسجل والشبكة. ويغطي ملف شركة أنظمة الدفع النظرة العامة والهندسة المعمارية، والمحركات وربط المهام، وسجل الاختبارات وخارطة الطريق. أما ملف الجهة الفضائية فيعرض نظرة عامة على دورها القانوني والعملي، والبرامج والخدمات، والخط الزمني والشبكة. ويعرض ملف مُصنّع الأقمار الصناعية النظرة العامة والتخصص، والمنتجات والعملاء، والسجل والآفاق المستقبلية.\n\nلا تظهر الحقول نفسها في جميع الملفات. ويعني الحقل الفارغ أن القيمة غير معروضة في السجل الحالي؛ ولا يعني بالضرورة أن الجهة أو القيمة غير موجودة في الواقع. ولا ينبغي اعتبار رابط موقع الجهة أو مصدر الصورة مرجعاً مستقلاً لكل تفاصيل الملف وإحصاءاته.",
+      guide_companies_body: "لا تتبع الملفات قالباً واحداً؛ إذ تختلف تبويباتها باختلاف نوع الجهة. يغطي ملف شركة الإطلاق النظرة العامة والإحصاءات، وأسطول الصواريخ، والسجل والشبكة. ويغطي ملف شركة أنظمة الدفع النظرة العامة والهندسة المعمارية، والمحركات وربط المهام، وسجل الاختبارات وخارطة الطريق. أما ملف الجهة الفضائية فيعرض نظرة عامة على دورها القانوني والعملي، والبرامج والخدمات، والخط الزمني والشبكة. ويعرض ملف مُصنّع الأقمار الصناعية النظرة العامة والتخصص، والمنتجات والعملاء، والسجل والآفاق المستقبلية.\n\nتتضمن المجالات التخصصية الجديدة ملفات تجريبية من خمسة تبويبات وروابط مصادر لمعلومات محددة؛ ولا تمثل دليلاً عالمياً شاملاً.\n\nلا تظهر الحقول نفسها في جميع الملفات. ويعني الحقل الفارغ أن القيمة غير معروضة في السجل الحالي؛ ولا يعني بالضرورة أن الجهة أو القيمة غير موجودة في الواقع. ولا ينبغي اعتبار رابط موقع الجهة أو مصدر الصورة مرجعاً مستقلاً لكل تفاصيل الملف وإحصاءاته.",
       guide_site_title: "ملف موقع الإطلاق",
       guide_site_body: "يعرض تبويب نظرة عامة وإحصاءات الدولة والمشغّل وحالة الموقع وأول إطلاق ومنصات الإطلاق والصواريخ والإحداثيات والمؤشرات الجغرافية. يصف الارتفاع والمسافة عن خط الاستواء وسمت الإطلاق الموقع أو اتجاه الإطلاق. ويشير المدار المستهدف إلى مدار مدرج أو مقصود للموقع؛ ولا يضمن وصول كل مهمة إليه.\n\nيلخص إجمالي الإطلاقات وأعداد النجاح والإخفاق والرسم السنوي البيانات المسجلة. وقد يختلف الإجمالي المجمّع عن عدد الصفوف الظاهرة في سجل التاريخ في الصفحة نفسها. في تبويب سجل الإطلاقات يمثل كل صف إطلاقاً مسجلاً؛ ويعرض فتحه التفاصيل الفنية وتحليل ذلك الحدث. وتشير Success/Failed إلى نتيجة الإطلاق، لا إلى الحالة الحالية للموقع.\n\nيستخدم تبويب الإطلاقات القادمة قائمة محلية من The Space Devs، وتتم مزامنة بعض التواريخ والحالات مع Launch Library 2. وقد تتغير المواعيد؛ راجع تاريخ تحديث البيانات المحلية وحالة المزامنة في اللوحة نفسها. وإذا أفادت اللوحة بأن الموقع غير مشمول بالبيانات، فلا تفسر ذلك على أنه «لم يُعلن عن أي إطلاق».\n\nيعرض تبويب التحليل والبنية التحتية سياقاً جغرافياً وقائمة تحقق مسجلة للبنية التحتية. وهذه القائمة ليست رصداً مباشراً ولا تضمن الجاهزية التشغيلية للموقع اليوم.",
       guide_recovery_title: "ملف الهبوط والاستعادة",
@@ -463,7 +463,31 @@
       '<ellipse cx="15" cy="22.2" rx="7.2" ry="3.1" fill="none" stroke="#071827" stroke-width="1.8"/>' +
       '<path d="M15 20.4v3.6" stroke="#071827" stroke-width="1.4" stroke-linecap="round"/></svg>';
   }
+  // Concept-category pins for the eight new categories. These are NOT company logos.
+  var NEW_CATEGORY_COLORS = { components: "#234b83", payloads: "#e5bc00", ground_services: "#e72ca1",
+    inspace_services: "#06d73a", university_space: "#79ad14", test_facility: "#e44bc3",
+    ground_station: "#eb397e", mission_control: "#afcb09" };
+  Object.keys(NEW_CATEGORY_COLORS).forEach(function (key) { C[key] = NEW_CATEGORY_COLORS[key]; });
+  var NEW_CATEGORY_GLYPHS = {
+    components: '<rect x="10" y="11" width="10" height="10" rx="1.3"/><path d="M8 13h2m-2 5h2m10-5h2m-2 5h2M13 9v2m5-2v2m-5 10v2m5-2v2"/>',
+    payloads: '<circle cx="15" cy="15" r="4"/><path d="M7 15h4m8 0h4M15 7v4m0 8v4M8 8l3 3m8 8 3 3"/>',
+    ground_services: '<path d="M15 20V10m-5 12h10M11 23h8M15 10l-4 4m4-4 4 4"/><path d="M9 10q-5 5 0 10m12-10q5 5 0 10"/>',
+    inspace_services: '<circle cx="14" cy="16" r="5"/><path d="M8 9c6-5 12-3 14 3M19 21c-6 5-12 3-14-3M22 12l-4-1m-13 7 4 1"/>',
+    university_space: '<path d="M5 12l10-5 10 5-10 5zM9 16v4q6 4 12 0v-4M25 12v7"/>',
+    test_facility: '<path d="M12 7h6m-4 0v6l-5 9h12l-5-9V7M11 19h8"/>',
+    ground_station: '<path d="M10 21h10M15 21v-5M8 9q0 8 8 8m-8-8 9-4m-9 4 6 6M20 8q5 3 3 8"/>',
+    mission_control: '<rect x="7" y="8" width="16" height="12" rx="2"/><path d="M12 23h6m-3-3v3M10 15l3-3 3 3 4-4"/>'
+  };
+  function svgNewCategory(key) {
+    var color = C[key], glyph = NEW_CATEGORY_GLYPHS[key];
+    if (!color || !glyph) return "";
+    return '<svg width="30" height="38" viewBox="0 0 30 38" aria-hidden="true">' +
+      '<path d="M15 37C15 37 28 22.5 28 14A13 13 0 1 0 2 14C2 22.5 15 37 15 37Z" fill="' + color + '" stroke="#fff" stroke-opacity=".7" stroke-width="1.3"/>' +
+      '<g fill="none" stroke="#071827" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round">' + glyph + '</g></svg>';
+  }
+
   function iconFor(cat, status) {
+    if (NEW_CATEGORY_GLYPHS[cat]) return svgNewCategory(cat);
     if (cat === "recovery") return svgRecovery(C.recovery);
     if (cat === "satmaker") return svgSatmaker(C.satmaker);
     if (cat === "launch") return svgLaunch(C.launch);
@@ -486,14 +510,22 @@
   var markerHoverKey = "", markerHoverKind = "", pendingMarkerHoverKey = "", pendingMarkerHoverKind = "", markerHoverFrame = 0;
   var markerHoverEventsBound = false;
   var mapHoverTooltip = null;
+  // Retain the v1 legacy key so existing users and the rollback package retain their six filters.
   var MAP_FILTERS_STORAGE_KEY = "orbita_map_filters_v1";
-  var DEFAULT_MAP_FILTERS = { launch: true, propulsion: false, agency: true, satmaker: false, site: true, recovery: false };
+  var MAP_FILTERS_V2_STORAGE_KEY = "orbita_map_filters_v2";
+  var DEFAULT_MAP_FILTERS = {
+    launch: true, propulsion: false, agency: true, satmaker: false, site: true, recovery: false,
+    components: false, payloads: false, ground_services: false, inspace_services: false,
+    test_facility: false, ground_station: false, mission_control: false, university_space: false
+  };
+  var LEGACY_FILTER_KEYS = ["launch", "propulsion", "agency", "satmaker", "site", "recovery"];
   function readMapFilters() {
     var result = {};
     Object.keys(DEFAULT_MAP_FILTERS).forEach(function (key) { result[key] = DEFAULT_MAP_FILTERS[key]; });
     try {
-      var saved = JSON.parse(localStorage.getItem(MAP_FILTERS_STORAGE_KEY) || "null");
-      if (saved && typeof saved === "object") Object.keys(result).forEach(function (key) {
+      var modern = localStorage.getItem(MAP_FILTERS_V2_STORAGE_KEY);
+      var saved = JSON.parse(modern != null ? modern : (localStorage.getItem(MAP_FILTERS_STORAGE_KEY) || "null"));
+      if (saved && typeof saved === "object" && !Array.isArray(saved)) Object.keys(result).forEach(function (key) {
         if (typeof saved[key] === "boolean") result[key] = saved[key];
       });
     } catch (e) {}
@@ -501,19 +533,71 @@
   }
   var filters = readMapFilters();
   function saveMapFilters() {
-    try { localStorage.setItem(MAP_FILTERS_STORAGE_KEY, JSON.stringify(filters)); } catch (e) {}
+    try {
+      localStorage.setItem(MAP_FILTERS_V2_STORAGE_KEY, JSON.stringify(filters));
+      var legacy = {};
+      LEGACY_FILTER_KEYS.forEach(function (key) { legacy[key] = !!filters[key]; });
+      localStorage.setItem(MAP_FILTERS_STORAGE_KEY, JSON.stringify(legacy));
+    } catch (e) {}
   }
-  var COMPANY_CATEGORY_KEYS = ["launch", "propulsion", "agency", "satmaker"];
+  var COMPANY_CATEGORY_KEYS = ["launch", "propulsion", "agency", "satmaker", "components", "payloads", "ground_services", "inspace_services", "university_space", "test_facility", "ground_station", "mission_control"];
   var COMPANY_CATEGORY_FILES = {
     launch: "data/companies_launch.json",
     propulsion: "data/companies_propulsion.json",
     agency: "data/companies_agency.json",
-    satmaker: "data/companies_satmaker.json"
+    satmaker: "data/companies_satmaker.json",
+    components: "data/companies_components.json",
+    payloads: "data/companies_payloads.json",
+    ground_services: "data/companies_ground_services.json",
+    inspace_services: "data/companies_inspace_services.json",
+    university_space: "data/companies_university_space.json",
+    test_facility: "data/companies_test_facility.json",
+    ground_station: "data/companies_ground_station.json",
+    mission_control: "data/companies_mission_control.json"
   };
   // Category-slice rows; propulsion includes three explicit secondary memberships and one linked alias.
-  var COMPANY_CATEGORY_COUNTS = { launch: 68, propulsion: 68, agency: 96, satmaker: 37 };
-  var COMPANY_CATEGORY_STATE = { launch: "idle", propulsion: "idle", agency: "idle", satmaker: "idle" };
+  // Counts represent reviewed records in ORBITA, not a worldwide census.
+  var COMPANY_CATEGORY_COUNTS = { launch: 68, propulsion: 68, agency: 96, satmaker: 37,
+    components: 3, payloads: 1, ground_services: 1, inspace_services: 1,
+    university_space: 2, test_facility: 1, ground_station: 1, mission_control: 1 };
+  var COMPANY_CATEGORY_STATE = { launch: "idle", propulsion: "idle", agency: "idle", satmaker: "idle",
+    components: "idle", payloads: "idle", ground_services: "idle", inspace_services: "idle",
+    university_space: "idle", test_facility: "idle", ground_station: "idle", mission_control: "idle" };
   var COMPANY_CATEGORY_PROMISES = Object.create(null);
+
+  // Phase-3: all eight opt-in categories have sourced pilots, not exhaustive coverage.
+  // Keep the six existing keys/colours/markers intact. Category membership is a role,
+  // not a duplicate legal entity (see companyCategories / canonicalCompanyRecords).
+  var LAYER_CATEGORIES = [
+    { k: "launch", family: "companies", legacy: true },
+    { k: "propulsion", family: "companies", legacy: true },
+    { k: "satmaker", family: "companies", legacy: true },
+    { k: "components", family: "companies", short: { fa: "قطعات و زیرسامانه‌ها", en: "Components", ar: "المكوّنات والأنظمة الفرعية" }, full: { fa: "سازندگان قطعات و زیرسامانه‌های فضایی", en: "Space component and subsystem manufacturers", ar: "مصنّعو المكوّنات والأنظمة الفرعية الفضائية" } },
+    { k: "payloads", family: "companies", short: { fa: "محموله‌ها و ابزارها", en: "Payloads & instruments", ar: "الحمولات والأجهزة" }, full: { fa: "سازندگان محموله‌ها و ابزارهای فضایی", en: "Space payload and instrument manufacturers", ar: "مصنّعو الحمولات والأجهزة الفضائية" } },
+    { k: "ground_services", family: "companies", short: { fa: "خدمات زمینی و داده", en: "Ground & data services", ar: "الخدمات الأرضية والبيانات" }, full: { fa: "تجهیزات زمینی و خدمات ارتباط و داده", en: "Ground equipment, communications and data services", ar: "المعدات الأرضية وخدمات الاتصالات والبيانات" } },
+    { k: "inspace_services", family: "companies", short: { fa: "خدمات مداری", en: "In-space services", ar: "الخدمات المدارية" }, full: { fa: "حمل‌ونقل فضایی و خدمات مداری", en: "Space transportation and in-orbit services", ar: "النقل الفضائي والخدمات المدارية" } },
+    { k: "agency", family: "organizations", legacy: true },
+    { k: "university_space", family: "research", short: { fa: "دانشگاه‌ها و آزمایشگاه‌ها", en: "Universities & labs", ar: "الجامعات والمختبرات" }, full: { fa: "دانشگاه‌ها و آزمایشگاه‌های دانشگاهی فضایی", en: "Space-active universities and academic laboratories", ar: "الجامعات والمختبرات الجامعية العاملة في مجال الفضاء" } },
+    { k: "site", family: "infrastructure", legacy: true },
+    { k: "recovery", family: "infrastructure", legacy: true },
+    { k: "test_facility", family: "infrastructure", short: { fa: "تأسیسات آزمون فضایی", en: "Space test facilities", ar: "منشآت الاختبار الفضائي" }, full: { fa: "مراکز و تأسیسات آزمون فضایی", en: "Space testing and qualification facilities", ar: "مراكز ومنشآت الاختبار والتأهيل الفضائي" } },
+    { k: "ground_station", family: "infrastructure", short: { fa: "ایستگاه‌های زمینی", en: "Ground stations", ar: "المحطات الأرضية" }, full: { fa: "ایستگاه‌های زمینی ارتباط و ردیابی ماهواره", en: "Satellite communication and tracking ground stations", ar: "المحطات الأرضية لاتصالات الأقمار الصناعية وتتبعها" } },
+    { k: "mission_control", family: "infrastructure", short: { fa: "کنترل مأموریت", en: "Mission control", ar: "التحكم بالمهمات" }, full: { fa: "مراکز کنترل مأموریت و بهره‌برداری ماهواره", en: "Mission control and satellite operations centers", ar: "مراكز التحكم بالمهمات وتشغيل الأقمار الصناعية" } }
+  ];
+  var LAYER_GROUPS = ["companies", "organizations", "research", "infrastructure"];
+  var LAYER_CATEGORIES_BY_KEY = Object.create(null);
+  LAYER_CATEGORIES.forEach(function (entry) { LAYER_CATEGORIES_BY_KEY[entry.k] = entry; });
+  var LAYER_COPY = {
+    fa: { title: "مدیریت لایه‌ها", active: "لایه فعال از ۱۴ لایه", search: "جست‌وجوی لایه", all: "همه", none: "هیچ‌کدام", reset: "پیش‌فرض", close: "بستن پنل", expand: "گسترش پنل", shrink: "کوچک‌کردن پنل", pending: "در انتظار داده", note: "هر هشت حوزه جدید دارای نمونه‌های مستند هستند؛ تعداد رکوردها به‌معنای پوشش جهانی نیست.", no_match: "لایه‌ای با این نام پیدا نشد", companies: "شرکت‌ها", organizations: "سازمان‌ها", research: "دانشگاه و پژوهش", infrastructure: "زیرساخت‌های زمینی", recorded: "رکورد ثبت‌شده" },
+    en: { title: "Map layers", active: "active of 14 layers", search: "Search layers", all: "All", none: "None", reset: "Defaults", close: "Close layers", expand: "Expand panel", shrink: "Reduce panel", pending: "Awaiting data", note: "All eight new categories have sourced pilots; record counts are not a worldwide census.", no_match: "No matching layer", companies: "Companies", organizations: "Organizations", research: "Universities & research", infrastructure: "Ground infrastructure", recorded: "registered records" },
+    ar: { title: "طبقات الخريطة", active: "طبقة نشطة من أصل ١٤", search: "البحث عن طبقة", all: "الكل", none: "لا شيء", reset: "الإعدادات الافتراضية", close: "إغلاق اللوحة", expand: "توسيع اللوحة", shrink: "تصغير اللوحة", pending: "بانتظار البيانات", note: "تضمّ الفئات الجديدة الثماني ملفات نموذجية موثّقة، ولا تمثل الأعداد حصراً عالمياً.", no_match: "لا توجد طبقة مطابقة", companies: "الشركات", organizations: "المنظمات", research: "الجامعات والبحث", infrastructure: "البنية التحتية الأرضية", recorded: "سجلات مسجلة" }
+  };
+  function layerCopy(key) { return (LAYER_COPY[LANG] || LAYER_COPY.en)[key] || key; }
+  function layerName(key, full) {
+    var def = LAYER_CATEGORIES_BY_KEY[key];
+    if (def && !def.legacy) return (full ? def.full : def.short)[LANG] || (full ? def.full : def.short).en;
+    return t("cat_" + key);
+  }
 
   var $ = function (s) { return document.querySelector(s) || null; };
   function on(sel, ev, fn) { var el = document.querySelector(sel); if (el) el.addEventListener(ev, fn); }
@@ -1323,9 +1407,10 @@
     for (var i = 0; i < layers.length; i++) {
       try { if (!map.getLayer(layers[i])) return false; } catch (e) { return false; }
     }
-    if (!Object.keys(MARKER_IMAGES).every(function (key) {
-      try { return !!map.hasImage(MARKER_IMAGES[key]); } catch (e) { return false; }
-    })) return false;
+    if (!Object.keys(MARKER_IMAGES).map(function (key) { return MARKER_IMAGES[key]; })
+      .concat(verifiedEntityPinNames()).every(function (id) {
+        try { return !!map.hasImage(id); } catch (e) { return false; }
+      })) return false;
     // Cluster count labels are generated on demand rather than stored in MARKER_IMAGES.
     return (markerFeatureCollection.features || []).every(function (feature) {
       var props = feature && feature.properties;
@@ -1884,7 +1969,7 @@
     // Reconcile our own images only; do not interfere with either basemap's sprites.
     map.on("styleimagemissing", function (e) {
       if (!mapStyleTransitionPending && e && typeof e.id === "string" &&
-          /^(orbita-pin-|orbita-cluster-label-)/.test(e.id)) scheduleMapOverlayRepair(120);
+          /^(orbita-pin-|orbita-personal-|orbita-cluster-label-)/.test(e.id)) scheduleMapOverlayRepair(120);
     });
     map.on("click", handleCountryMapClick);
     map.on("movestart", clearMapInteractionHover); // never leave a tooltip behind during a camera flight/pan
@@ -2031,66 +2116,166 @@
     return String(n);
   }
   function updateLayerChipStatus(k) {
-    var chip = $(".cat-chip[data-cat='" + k + "']");
-    if (!chip) return;
-    var state = layerCategoryState(k), count = chip.querySelector(".n");
-    chip.setAttribute("aria-busy", String(state === "loading"));
-    if (count) count.textContent = layerCategoryCountText(k, chip.dataset.count || count.textContent);
+    // The old chip updater is now the panel-row updater; no entire panel reflow on fetch.
+    var row = document.querySelector('.layer-item[data-cat="' + k + '"]');
+    if (!row) return;
+    var n = row.querySelector(".layer-item-count"), state = layerCategoryState(k);
+    row.setAttribute("aria-busy", String(state === "loading"));
+    if (n) n.textContent = layerCategoryCountText(k, categoryRecordCount(k));
   }
-  function buildLayerBar() {
-    var focusedCategory = document.activeElement && document.activeElement.classList &&
-      document.activeElement.classList.contains("cat-chip") ? document.activeElement.dataset.cat : "";
-    var cats = [
-      { k: "launch", n: COMPANY_CATEGORY_COUNTS.launch },
-      { k: "propulsion", n: COMPANY_CATEGORY_COUNTS.propulsion },
-      { k: "agency", n: COMPANY_CATEGORY_COUNTS.agency },
-      { k: "satmaker", n: COMPANY_CATEGORY_COUNTS.satmaker },
-      { k: "site", n: 79 },
-      { k: "recovery", n: 20 }
-    ];
-    var html = cats.map(function (c) {
-      var state = layerCategoryState(c.k), isRecovery = c.k === "recovery";
-      var icon = iconFor(c.k, "active").replace(/width="3\d"/, 'width="18"').replace(/height="38"/, 'height="23"');
-      var colorKey = c.k === "site" ? "site" : c.k;
-      return '<button type="button" class="lchip cat-chip' + (isRecovery ? ' recovery-chip' : '') +
-        (filters[c.k] ? "" : " off") + '" title="' + t("cat_" + c.k) + '" data-cat="' + c.k +
-        '" data-count="' + c.n + '" aria-label="' + t("cat_" + c.k) + '" aria-pressed="' + String(!!filters[c.k]) +
-        '" aria-busy="' + String(state === "loading") + '" style="color:' + C[colorKey] + '">' +
-        '<span class="ic">' + icon + '</span>' +
-        '<span class="lb" style="color:var(--text)">' + t("cat_" + c.k) + '</span>' +
-        '<span class="n">' + layerCategoryCountText(c.k, c.n) + '</span></button>';
-    }).join("");
-    html += '<span class="chip-sep" aria-hidden="true"></span>';
-    html += '<button type="button" class="lchip style-chip" id="mapStyleChip" title="' + t("toggle_theme") + '">' +
-      '<span class="lb" style="color:var(--text)">' + t("style_" + MAP_STYLE) + '</span></button>';
-    $("#layerbar").innerHTML = html;
-
-    var scEl = $("#mapStyleChip");
-    if (scEl) {
-      scEl.onclick = function (e) {
-        if (e) { e.preventDefault(); e.stopPropagation(); }
-        cycleMapStyle();
-      };
-    }
-
-    $$(".cat-chip").forEach(function (el) {
-      el.onclick = function () {
-        var k = el.dataset.cat;
-        if (!k || typeof filters[k] !== "boolean") return;
-        filters[k] = !filters[k];
-        saveMapFilters();
-        el.classList.toggle("off", !filters[k]);
-        el.setAttribute("aria-pressed", String(filters[k]));
-        clusterMode = null;
-        if (filters[k]) ensureMapCategoryLoaded(k);
-        renderMarkers();
-        renderList();
+  function categoryRecordCount(k) {
+    if (k === "site") return DATA.sites.length || 79;
+    if (k === "recovery") return DATA.recoveries.length || 20;
+    if (COMPANY_CATEGORY_COUNTS[k] != null) return COMPANY_CATEGORY_COUNTS[k];
+    // No new data files are shipped in phase 1. Count only concrete loaded records.
+    return canonicalCompanyRecords().filter(function (company) { return companyBelongsToCategory(company, k); }).length;
+  }
+  function layerStatusText(category) {
+    return category.legacy ? "" : (categoryRecordCount(category.k) ? "" : layerCopy("pending"));
+  }
+  var layerPanelMode = "closed", layerPanelSearch = "";
+  function renderLayerPanel() {
+    var panel = $("#layerPanel"); if (!panel) return;
+    var total = LAYER_CATEGORIES.filter(function (item) { return !!filters[item.k]; }).length;
+    $("#layerPanelTitle").textContent = layerCopy("title");
+    $("#layerPanelSummary").textContent = fmtNum(total) + " " + layerCopy("active");
+    $("#layerSearchLabel").textContent = layerCopy("search");
+    $("#layerSearch").placeholder = layerCopy("search") + "…";
+    $("#layerSelectAll").textContent = layerCopy("all");
+    $("#layerSelectNone").textContent = layerCopy("none");
+    $("#layerReset").textContent = layerCopy("reset");
+    $("#layerPanelNote").textContent = layerCopy("note");
+    $("#layerNoMatch").textContent = layerCopy("no_match");
+    $("#layerPanelClose").setAttribute("aria-label", layerCopy("close"));
+    $("#layerPanelSizeBtn").setAttribute("aria-label", layerCopy(layerPanelMode === "expanded" ? "shrink" : "expand"));
+    $("#layerPanelSizeBtn").textContent = layerPanelMode === "expanded" ? "⌄" : "⌃";
+    var term = layerPanelSearch.toLocaleLowerCase().trim();
+    var html = "", visibleCount = 0;
+    LAYER_GROUPS.forEach(function (group) {
+      var members = LAYER_CATEGORIES.filter(function (item) { return item.family === group; });
+      var visible = members.filter(function (item) {
+        return !term || layerCopy(group).toLocaleLowerCase().includes(term) ||
+          layerName(item.k, true).toLocaleLowerCase().includes(term) ||
+          layerName(item.k, false).toLocaleLowerCase().includes(term);
+      });
+      if (!visible.length) return;
+      visibleCount += visible.length;
+      var allChecked = members.every(function (item) { return !!filters[item.k]; });
+      html += '<section class="layer-group" data-family="' + group + '">' +
+        '<div class="layer-group-head"><label class="layer-group-toggle">' +
+        '<input type="checkbox" data-group="' + group + '"' + (allChecked ? ' checked' : '') +
+        ' aria-label="' + esc(layerCopy(group)) + '" />' +
+        '<span>' + esc(layerCopy(group)) + '</span></label>' +
+        '<span class="layer-group-count">' + fmtNum(members.filter(function (item) { return filters[item.k]; }).length) + '/' + fmtNum(members.length) + '</span></div>';
+      visible.forEach(function (item) {
+        var count = categoryRecordCount(item.k), active = !!filters[item.k];
+        var icon = iconFor(item.k, "active").replace(/width="3\d"/, 'width="20"').replace(/height="38"/, 'height="25"');
+        html += '<label class="layer-item' + (active ? ' selected' : '') + '" data-cat="' + item.k + '" aria-busy="' +
+          String(layerCategoryState(item.k) === "loading") + '">' +
+          '<input type="checkbox" data-layer="' + item.k + '"' + (active ? ' checked' : '') +
+          ' aria-label="' + esc(layerName(item.k, true)) + '" />' +
+          '<span class="layer-item-icon" style="color:' + C[item.k] + '">' + icon + '</span>' +
+          '<span class="layer-item-text"><span class="layer-item-name">' + esc(layerName(item.k, false)) + '</span>' +
+          '<span class="layer-item-description">' + esc(layerStatusText(item) || layerName(item.k, true)) + '</span></span>' +
+          '<span class="layer-item-count" title="' + esc(layerCopy("recorded")) + '">' + esc(layerCategoryCountText(item.k, count)) + '</span></label>';
+      });
+      html += '</section>';
+    });
+    $("#layerGroups").innerHTML = html;
+    $("#layerNoMatch").hidden = visibleCount !== 0;
+    $$("#layerGroups [data-group]").forEach(function (input) {
+      var members = LAYER_CATEGORIES.filter(function (item) { return item.family === input.dataset.group; });
+      input.indeterminate = !input.checked && members.some(function (item) { return filters[item.k]; });
+      input.onchange = function () {
+        var patch = {};
+        members.forEach(function (item) { patch[item.k] = input.checked; });
+        setLayerFilters(patch, "group:" + input.dataset.group);
       };
     });
-    if (focusedCategory) {
-      var focusTarget = $(".cat-chip[data-cat='" + focusedCategory + "']");
-      if (focusTarget) focusTarget.focus();
+    $$("#layerGroups [data-layer]").forEach(function (input) {
+      input.onchange = function () {
+        var patch = {}; patch[input.dataset.layer] = input.checked;
+        setLayerFilters(patch, input.dataset.layer);
+      };
+    });
+  }
+  function setLayerFilters(patch, focusKey) {
+    var activated = [], changed = false;
+    Object.keys(patch).forEach(function (key) {
+      if (!Object.prototype.hasOwnProperty.call(DEFAULT_MAP_FILTERS, key) || typeof patch[key] !== "boolean") return;
+      if (filters[key] === patch[key]) return;
+      filters[key] = patch[key]; changed = true;
+      if (patch[key]) activated.push(key);
+    });
+    if (!changed) return;
+    saveMapFilters();
+    clusterMode = null;
+    activated.forEach(ensureMapCategoryLoaded);
+    renderMarkers(); renderList();
+    buildLayerBar();
+    if (focusKey) {
+      var selector = focusKey.indexOf("group:") === 0 ?
+        '[data-group="' + focusKey.slice(6) + '"]' : '[data-layer="' + focusKey + '"]';
+      var focusTarget = $("#layerGroups " + selector);
+      if (focusTarget) focusTarget.focus({ preventScroll: true });
     }
+  }
+  function setLayerPanelMode(mode, focusToggle) {
+    if (mode !== "closed" && mode !== "peek" && mode !== "expanded") return;
+    layerPanelMode = mode;
+    var panel = $("#layerPanel"), button = $("#layerPanelToggle");
+    if (!panel || !button) return;
+    panel.hidden = mode === "closed";
+    panel.dataset.mode = mode;
+    button.setAttribute("aria-expanded", String(mode !== "closed"));
+    button.classList.toggle("active", mode !== "closed");
+    if (mode !== "closed") renderLayerPanel();
+    if (focusToggle && mode === "closed") button.focus();
+  }
+  function buildLayerBar() {
+    var total = LAYER_CATEGORIES.filter(function (item) { return filters[item.k]; }).length;
+    var html = '<button type="button" class="lchip layer-panel-toggle" id="layerPanelToggle"' +
+      ' aria-controls="layerPanel" aria-expanded="' + String(layerPanelMode !== "closed") + '">' +
+      '<span class="layer-toggle-icon" aria-hidden="true">☷</span><span class="lb">' + esc(layerCopy("title")) + '</span>' +
+      '<span class="n">' + fmtNum(total) + '/' + fmtNum(LAYER_CATEGORIES.length) + '</span></button>' +
+      '<span class="chip-sep" aria-hidden="true"></span>' +
+      '<button type="button" class="lchip style-chip" id="mapStyleChip" title="' + esc(t("toggle_theme")) + '">' +
+      '<span class="lb" style="color:var(--text)">' + esc(t("style_" + MAP_STYLE)) + '</span></button>';
+    $("#layerbar").innerHTML = html;
+    var toggle = $("#layerPanelToggle");
+    toggle.setAttribute("aria-label", layerCopy("title") + " " + fmtNum(total));
+    toggle.onclick = function () { setLayerPanelMode(layerPanelMode === "closed" ? "peek" : "closed", false); };
+    $("#mapStyleChip").onclick = function (e) { if (e) { e.preventDefault(); e.stopPropagation(); } cycleMapStyle(); };
+    if (layerPanelMode !== "closed") renderLayerPanel();
+  }
+  function initLayerPanelControls() {
+    on("#layerPanelClose", "click", function () { setLayerPanelMode("closed", true); });
+    on("#layerPanelSizeBtn", "click", function () {
+      setLayerPanelMode(layerPanelMode === "expanded" ? "peek" : "expanded", false);
+    });
+    on("#layerSearch", "input", function () {
+      layerPanelSearch = this.value;
+      renderLayerPanel();
+    });
+    on("#layerSelectAll", "click", function () {
+      var patch = {}; LAYER_CATEGORIES.forEach(function (item) { patch[item.k] = true; });
+      setLayerFilters(patch);
+    });
+    on("#layerSelectNone", "click", function () {
+      var patch = {}; LAYER_CATEGORIES.forEach(function (item) { patch[item.k] = false; });
+      setLayerFilters(patch);
+    });
+    on("#layerReset", "click", function () { setLayerFilters(DEFAULT_MAP_FILTERS); });
+    document.addEventListener("keydown", function (e) {
+      if (e.key === "Escape" && layerPanelMode !== "closed") {
+        e.preventDefault(); setLayerPanelMode("closed", true);
+      }
+    });
+    document.addEventListener("pointerdown", function (e) {
+      if (layerPanelMode === "closed") return;
+      if ($( "#layerPanel" ).contains(e.target) || $( "#layerbar" ).contains(e.target)) return;
+      setLayerPanelMode("closed", false);
+    });
   }
   /* ---- marker sizing: compact at world zoom, full size when zoomed in ---- */
   var PIN_BASE = 0.8;              // 80% of the original artwork
@@ -2157,8 +2342,36 @@
     launch: "orbita-pin-launch", propulsion: "orbita-pin-propulsion",
     agency: "orbita-pin-agency", satmaker: "orbita-pin-satmaker",
     siteActive: "orbita-pin-site-active", siteInactive: "orbita-pin-site-inactive",
-    siteConstruction: "orbita-pin-site-construction", sitePlanned: "orbita-pin-site-planned", recovery: "orbita-pin-recovery"
+    siteConstruction: "orbita-pin-site-construction", sitePlanned: "orbita-pin-site-planned", recovery: "orbita-pin-recovery",
+    components: "orbita-pin-components", payloads: "orbita-pin-payloads", ground_services: "orbita-pin-ground-services",
+    inspace_services: "orbita-pin-inspace-services", university_space: "orbita-pin-university-space",
+    test_facility: "orbita-pin-test-facility", ground_station: "orbita-pin-ground-station",
+    mission_control: "orbita-pin-mission-control"
   };
+
+  // Editorial ORBITA map monograms for the eleven sourced pilot identities.
+  // They are distinct from both official company trademarks and category badges.
+  var VERIFIED_ENTITY_PINS = {
+    "cubespace": { id: "orbita-personal-cubespace", code: "CS", scope: "components" },
+    "blue-canyon": { id: "orbita-personal-blue-canyon", code: "BC", scope: "components" },
+    "dhv-technology": { id: "orbita-personal-dhv-technology", code: "DH", scope: "components" },
+    "surrey-space-centre": { id: "orbita-personal-surrey-space-centre", code: "SS", scope: "university_space" },
+    "stanford-space-rendezvous-lab": { id: "orbita-personal-stanford-space-rendezvous-lab", code: "SL", scope: "university_space" },
+    "dragonfly-space": { id: "orbita-personal-dragonfly-space", code: "DF", scope: "payloads" },
+    "ksat-ground-services": { id: "orbita-personal-ksat-ground-services", code: "KS", scope: "ground_services" },
+    "d-orbit": { id: "orbita-personal-d-orbit", code: "DO", scope: "inspace_services" },
+    "esa-estec-test-centre": { id: "orbita-personal-esa-estec-test-centre", code: "ET", scope: "test_facility" },
+    "esa-cebreros-dsa2": { id: "orbita-personal-esa-cebreros-dsa2", code: "CE", scope: "ground_station" },
+    "esa-esoc": { id: "orbita-personal-esa-esoc", code: "EO", scope: "mission_control" }
+  };
+  function svgVerifiedEntityPin(spec) {
+    var color = C[spec.scope], code = spec.code;
+    return '<svg width="30" height="38" viewBox="0 0 30 38" xmlns="http://www.w3.org/2000/svg">' +
+      '<path d="M15 37C15 37 28 22.5 28 14A13 13 0 1 0 2 14C2 22.5 15 37 15 37Z" fill="' + color + '" stroke="#fff" stroke-opacity=".7" stroke-width="1.3"/>' +
+      '<circle cx="15" cy="14.5" r="10" fill="#071827" stroke="#fff" stroke-opacity=".4" stroke-width=".8"/>' +
+      '<text x="15" y="17.5" text-anchor="middle" font-family="Arial,sans-serif" font-weight="800" font-size="8" fill="#fff">' + code + '</text></svg>';
+  }
+  function verifiedEntityPinNames() { return Object.keys(VERIFIED_ENTITY_PINS).map(function (k) { return VERIFIED_ENTITY_PINS[k].id; }); }
 
   function markerPointKey(p) {
     var o = p && p.o || {};
@@ -2183,6 +2396,9 @@
     return "cluster|" + keys.length + "|" + a.toString(36) + "|" + b.toString(36);
   }
   function markerIconImage(p) {
+    var identity = p.o && VERIFIED_ENTITY_PINS[String(p.o.id || "")];
+    if (identity && identity.scope === p.cat) return identity.id;
+    if (NEW_CATEGORY_GLYPHS[p.cat]) return MARKER_IMAGES[p.cat];
     if (p.cat === "recovery") return MARKER_IMAGES.recovery;
     if (p.cat === "satmaker") return MARKER_IMAGES.satmaker;
     if (p.cat === "launch") return MARKER_IMAGES.launch;
@@ -2276,7 +2492,12 @@
       [MARKER_IMAGES.siteConstruction, svgSite(C.siteWip)],
       [MARKER_IMAGES.sitePlanned, svgSite(C.sitePlanned)],
       [MARKER_IMAGES.recovery, svgRecovery(C.recovery)]
-    ];
+    ].concat(Object.keys(NEW_CATEGORY_GLYPHS).map(function (key) {
+      return [MARKER_IMAGES[key], svgNewCategory(key)];
+    })).concat(Object.keys(VERIFIED_ENTITY_PINS).map(function (key) {
+      var spec = VERIFIED_ENTITY_PINS[key];
+      return [spec.id, svgVerifiedEntityPin(spec)];
+    }));
   }
   function addMarkerImage(id, svg, generation) {
     if (!markerImagePromises[id]) {
@@ -2301,9 +2522,10 @@
     var staticJobs = markerImageSvgSpecs().map(function (spec) { return addMarkerImage(spec[0], markerSvgWithShadow(spec[1]), generation); });
     return Promise.all(staticJobs).then(function () {
       if (generation !== mapStyleGeneration || mapStyleTransitionPending || !map) return false;
-      var allPresent = Object.keys(MARKER_IMAGES).every(function (key) {
-        try { return !!map.hasImage(MARKER_IMAGES[key]); } catch (e) { return false; }
-      });
+      var allPresent = Object.keys(MARKER_IMAGES).map(function (key) { return MARKER_IMAGES[key]; })
+        .concat(verifiedEntityPinNames()).every(function (id) {
+          try { return !!map.hasImage(id); } catch (e) { return false; }
+        });
       if (!allPresent) return false;
       // Count labels are tiny and local: register them before publishing the clusters.
       ensureCurrentClusterLabelImages();
@@ -2755,11 +2977,26 @@
     renderList();
   };
 
+  // An image.onerror handler is compiled outside this closure's local scope.
+  // Build a safely encoded, self-contained fallback so neither apostrophes in
+  // SVG attributes nor inaccessible local variables break its JavaScript.
+  function fallbackLogoDataUri(glyph, color) {
+    var safeColor = /^#[0-9a-fA-F]{6}$/.test(color) ? color : "#38bdf8";
+    var svg = '<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100">' +
+      '<rect width="100" height="100" rx="20" fill="#090d16" stroke="' + safeColor + '" stroke-width="3"/>' +
+      '<text x="50" y="60" font-family="sans-serif" font-size="32" fill="' + safeColor + '" text-anchor="middle">' +
+      glyph + '</text></svg>';
+    return "data:image/svg+xml;charset=utf-8," + encodeURIComponent(svg).replace(/'/g, "%27");
+  }
+  function fallbackImageErrorAttribute(url) {
+    // Escaping into an HTML attribute is safe because the encoded data URL has no apostrophes.
+    return ' onerror="this.onerror=null;this.src=\'' + esc(url) + '\';"';
+  }
   function renderList() {
     var inCluster = !!clusterMode;
     var pts = inCluster ? clusterMode.pts : filteredPoints();
     $("#resCount").textContent = pts.length;
-    var defaultLogoSvg = "data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><rect width='100' height='100' rx='20' fill='%23090d16' stroke='%2338bdf8' stroke-width='3'/><text x='50' y='60' font-family='sans-serif' font-size='32' fill='%2338bdf8' text-anchor='middle'>🚀</text></svg>";
+    var defaultLogoSvg = fallbackLogoDataUri("🚀", "#38bdf8");
     var html = "";
     if (inCluster) {
       var n = pts.length;
@@ -2777,7 +3014,7 @@
       var logoHtml = "";
       if (logoSrc) {
         logoHtml = '<div style="width:26px; height:26px; border-radius:6px; background:' + logoBg + '; border:1px solid var(--line); display:flex; align-items:center; justify-content:center; flex:0 0 auto; overflow:hidden; padding:1px;">' +
-          '<img src="' + esc(logoSrc) + '" alt="' + esc(name(p.o)) + '" onerror="this.onerror=null; this.src=\'' + defaultLogoSvg + '\';" style="max-width:100%; max-height:100%; object-fit:contain;" />' +
+          '<img src="' + esc(logoSrc) + '" alt="' + esc(name(p.o)) + '"' + fallbackImageErrorAttribute(defaultLogoSvg) + ' style="max-width:100%; max-height:100%; object-fit:contain;" />' +
           '</div>';
       } else {
         var ic = iconFor(p.cat, p.o.status).replace(/width="3\d"/, 'width="17"').replace(/height="38"/, 'height="22"');
@@ -3663,7 +3900,7 @@
     var orgTypeStr = orgTypeArabic(o.org_type_en);
     var country = countryArabic(o.country);
     var city = arabicField(o.city_ar, "غير محدد");
-    var logoSrc = o.logo_data || o.logo || "data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><rect width='100' height='100' rx='20' fill='%23090d16' stroke='%2338bdf8' stroke-width='3'/><text x='50' y='60' font-family='sans-serif' font-size='32' fill='%2338bdf8' text-anchor='middle'>🏛️</text></svg>";
+    var logoSrc = o.logo_data || o.logo || fallbackLogoDataUri("🏛️", "#38bdf8");
 
     // Keep the exact Persian/English agency dossier structure; Arabic changes only the text and data fields.
     h += '<div class="d-head" style="display:flex; justify-content:space-between; align-items:center; gap:10px; margin-inline-end: 35px;">';
@@ -4709,7 +4946,7 @@
       }) || null;
     }
 
-    var defaultLogoSvg = "data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><rect width='100' height='100' rx='20' fill='%23090d16' stroke='%2338bdf8' stroke-width='3'/><text x='50' y='60' font-family='sans-serif' font-size='32' fill='%2338bdf8' text-anchor='middle'>🚀</text></svg>";
+    var defaultLogoSvg = fallbackLogoDataUri("🚀", "#38bdf8");
     var logoSrc = o.logo_data || o.logo || defaultLogoSvg;
     var orgTypeStr = ORG_AR[o.org_type_en] || arabicText(o.org_type_ar) || "شركة إطلاق فضائي";
     var stClass = "badge-private";
@@ -4721,7 +4958,7 @@
     h += '<div class="d-head" style="display:flex; justify-content:space-between; align-items:center; gap:10px; margin-inline-end: 35px;">';
     h += '<div style="display:flex; gap:10px; align-items:center; flex:1;">';
     h += '<div style="width:48px; height:48px; border-radius:8px; background:#000; border:1px solid var(--line); display:flex; align-items:center; justify-content:center; flex:0 0 auto; overflow:hidden; padding:2px;">';
-    h += '<img src="' + esc(logoSrc) + '" alt="' + esc(name(o)) + '" onerror="this.onerror=null; this.src=defaultLogoSvg;" style="max-width:100%; max-height:100%; object-fit:contain;" />';
+    h += '<img src="' + esc(logoSrc) + '" alt="' + esc(name(o)) + '"' + fallbackImageErrorAttribute(defaultLogoSvg) + ' style="max-width:100%; max-height:100%; object-fit:contain;" />';
     h += '</div>';
     h += '<div><div class="d-kicker">' + esc(o.en || o.fa || "") + '</div>';
     h += '<h2 class="d-title" style="margin:0;">' + esc(name(o)) + '</h2></div></div>';
@@ -4982,7 +5219,7 @@
     if ((o.org_type_fa || "").indexOf("دولتی") > -1 || (o.org_type_fa || "").indexOf("حاکمیتی") > -1 || (o.org_type_en || "").indexOf("State") > -1 || (o.org_type_en || "").indexOf("Government") > -1) stClass = "badge-gov";
 
     // Logo with graceful SVG fallback onerror
-    var defaultLogoSvg = "data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><rect width='100' height='100' rx='20' fill='%23090d16' stroke='%2338bdf8' stroke-width='3'/><text x='50' y='60' font-family='sans-serif' font-size='32' fill='%2338bdf8' text-anchor='middle'>🚀</text></svg>";
+    var defaultLogoSvg = fallbackLogoDataUri("🚀", "#38bdf8");
     var logoSrc = o.logo_data || o.logo || defaultLogoSvg;
 
     // Header with Title & Logo Image Tag & Org Type Badge
@@ -4990,7 +5227,7 @@
     
     h += '<div style="display:flex; gap:10px; align-items:center; flex:1;">';
     h += '<div style="width:48px; height:48px; border-radius:8px; background:#000; border:1px solid var(--line); display:flex; align-items:center; justify-content:center; flex:0 0 auto; overflow:hidden; padding:2px;">';
-    h += '<img src="' + esc(logoSrc) + '" alt="' + esc(name(o)) + '" onerror="this.onerror=null; this.src=defaultLogoSvg;" style="max-width:100%; max-height:100%; object-fit:contain;" />';
+    h += '<img src="' + esc(logoSrc) + '" alt="' + esc(name(o)) + '"' + fallbackImageErrorAttribute(defaultLogoSvg) + ' style="max-width:100%; max-height:100%; object-fit:contain;" />';
     h += '</div>';
     
     h += '<div><div class="d-kicker">' + esc(isFa ? (o.acronym_fa || o.en) : (o.en || o.fa)) + '</div>';
@@ -5774,13 +6011,13 @@
         var nameStr = isFa ? (item.fa || item.en) : (isAr ? (item.ar || item.en || item.fa) : (item.en || item.fa));
         var cityStr = isFa ? (item.city_fa || item.city || "—") : (isAr ? (item.city_ar || item.city || item.city_fa || "—") : (item.city || item.city_fa || "—"));
         var catStr = isFa ? (item.propulsion_category_fa || item.propulsion_category_en || "پیشرانه فضایی") : (isAr ? (item.propulsion_category_ar || "أنظمة الدفع الفضائي") : (item.propulsion_category_en || "Propulsion"));
-        var defaultLogo = "data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><rect width='100' height='100' rx='20' fill='%23090d16' stroke='%23f59e0b' stroke-width='3'/><text x='50' y='60' font-family='sans-serif' font-size='32' fill='%23f59e0b' text-anchor='middle'>⚙️</text></svg>";
+        var defaultLogo = fallbackLogoDataUri("⚙️", "#f59e0b");
         var logoSrc = item.logo_data || item.logo || defaultLogo;
 
         h += '<div style="background:var(--bg2); border:1px solid var(--line); border-radius:8px; padding:10px; display:flex; flex-direction:column; gap:6px;">';
         h += '<div style="display:flex; justify-content:space-between; align-items:center;">';
         h += '<div style="display:flex; align-items:center; gap:8px;">';
-        h += '<img src="' + esc(logoSrc) + '" alt="" onerror="this.src=defaultLogo;" style="width:28px; height:28px; object-fit:contain; border-radius:4px; background:#000; padding:1px; border:1px solid var(--line);" />';
+        h += '<img src="' + esc(logoSrc) + '" alt=""' + fallbackImageErrorAttribute(defaultLogo) + ' style="width:28px; height:28px; object-fit:contain; border-radius:4px; background:#000; padding:1px; border:1px solid var(--line);" />';
         h += '<div><b style="font-size:11.5px; color:var(--text);"><bdi>' + esc(nameStr) + '</bdi></b>';
         h += '<div style="font-size:9.5px; color:var(--muted);">📍 ' + esc(cityStr) + '</div></div>';
         h += '</div>';
@@ -5829,13 +6066,13 @@
         var nameStr = isFa ? (item.fa || item.en) : (isAr ? (item.ar || item.en || item.fa) : (item.en || item.fa));
         var cityStr = isFa ? (item.city_fa || item.city || "—") : (isAr ? (item.city_ar || item.city || item.city_fa || "—") : (item.city || item.city_fa || "—"));
         var orgStr = isFa ? (item.org_type_fa || "شرکت پرتاب تجاری") : (isAr ? (item.org_type_ar || "الجهة المنفذة للإطلاق") : (item.org_type_en || "Launch Provider"));
-        var defaultLogo = "data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><rect width='100' height='100' rx='20' fill='%23090d16' stroke='%2310b981' stroke-width='3'/><text x='50' y='60' font-family='sans-serif' font-size='32' fill='%2310b981' text-anchor='middle'>🚀</text></svg>";
+        var defaultLogo = fallbackLogoDataUri("🚀", "#10b981");
         var logoSrc = item.logo_data || item.logo || defaultLogo;
 
         h += '<div style="background:var(--bg2); border:1px solid var(--line); border-radius:8px; padding:10px; display:flex; flex-direction:column; gap:6px;">';
         h += '<div style="display:flex; justify-content:space-between; align-items:center;">';
         h += '<div style="display:flex; align-items:center; gap:8px;">';
-        h += '<img src="' + esc(logoSrc) + '" alt="" onerror="this.src=defaultLogo;" style="width:28px; height:28px; object-fit:contain; border-radius:4px; background:#000; padding:1px; border:1px solid var(--line);" />';
+        h += '<img src="' + esc(logoSrc) + '" alt=""' + fallbackImageErrorAttribute(defaultLogo) + ' style="width:28px; height:28px; object-fit:contain; border-radius:4px; background:#000; padding:1px; border:1px solid var(--line);" />';
         h += '<div><b style="font-size:11.5px; color:var(--text);"><bdi>' + esc(nameStr) + '</bdi></b>';
         h += '<div style="font-size:9.5px; color:var(--muted);">📍 ' + esc(cityStr) + '</div></div>';
         h += '</div>';
@@ -5884,13 +6121,13 @@
         var nameStr = isFa ? (item.fa || item.en) : (isAr ? (item.ar || item.en || item.fa) : (item.en || item.fa));
         var cityStr = isFa ? (item.city_fa || item.city || "—") : (isAr ? (item.city_ar || item.city || item.city_fa || "—") : (item.city || item.city_fa || "—"));
         var orgStr = isFa ? (item.org_type_fa || "سازمان فضایی دولتی") : (isAr ? (item.org_type_ar || "وكالة فضاء") : (item.org_type_en || "Space Agency"));
-        var defaultLogo = "data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><rect width='100' height='100' rx='20' fill='%23090d16' stroke='%2338bdf8' stroke-width='3'/><text x='50' y='60' font-family='sans-serif' font-size='32' fill='%2338bdf8' text-anchor='middle'>🏛️</text></svg>";
+        var defaultLogo = fallbackLogoDataUri("🏛️", "#38bdf8");
         var logoSrc = item.logo_data || item.logo || defaultLogo;
 
         h += '<div style="background:var(--bg2); border:1px solid var(--line); border-radius:8px; padding:10px; display:flex; flex-direction:column; gap:6px;">';
         h += '<div style="display:flex; justify-content:space-between; align-items:center;">';
         h += '<div style="display:flex; align-items:center; gap:8px;">';
-        h += '<img src="' + esc(logoSrc) + '" alt="" onerror="this.src=defaultLogo;" style="width:28px; height:28px; object-fit:contain; border-radius:4px; background:#000; padding:1px; border:1px solid var(--line);" />';
+        h += '<img src="' + esc(logoSrc) + '" alt=""' + fallbackImageErrorAttribute(defaultLogo) + ' style="width:28px; height:28px; object-fit:contain; border-radius:4px; background:#000; padding:1px; border:1px solid var(--line);" />';
         h += '<div><b style="font-size:11.5px; color:var(--text);"><bdi>' + esc(nameStr) + '</bdi></b>';
         h += '<div style="font-size:9.5px; color:var(--muted);">📍 ' + esc(cityStr) + '</div></div>';
         h += '</div>';
@@ -5996,7 +6233,7 @@
           var nameStr = isFa ? (item.fa || item.en) : (isAr ? (item.ar || item.en || item.fa) : (item.en || item.fa));
           var cityStr = isFa ? (item.city_fa || item.city || "—") : (isAr ? (item.city_ar || item.city || item.city_fa || "—") : (item.city || item.city_fa || "—"));
           var typeStr = isFa ? (recTypeFa[item.recovery_type] || "فرود و بازیابی") : (isAr ? (recTypeAr[item.recovery_type] || "الهبوط والاستعادة") : (recTypeEn[item.recovery_type] || "Recovery"));
-          var recIcon = "data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><rect width='100' height='100' rx='20' fill='%23090d16' stroke='%232dd4bf' stroke-width='3'/><text x='50' y='62' font-family='sans-serif' font-size='34' fill='%232dd4bf' text-anchor='middle'>🛬</text></svg>";
+          var recIcon = fallbackLogoDataUri("🛬", "#2dd4bf");
 
           h += '<div style="background:var(--bg2); border:1px solid var(--line); border-radius:8px; padding:10px; display:flex; flex-direction:column; gap:6px;">';
           h += '<div style="display:flex; justify-content:space-between; align-items:center;">';
@@ -6047,14 +6284,14 @@
     var orgTypeStr = isFa ? (o.org_type_fa || "سازمان فضایی / نهاد دولتی") : (o.org_type_en || o.org_type || "Space organization");
 
     // Logo with graceful SVG fallback
-    var defaultLogoSvg = "data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><rect width='100' height='100' rx='20' fill='%23090d16' stroke='%2338bdf8' stroke-width='3'/><text x='50' y='60' font-family='sans-serif' font-size='32' fill='%2338bdf8' text-anchor='middle'>🏛️</text></svg>";
+    var defaultLogoSvg = fallbackLogoDataUri("🏛️", "#38bdf8");
     var logoSrc = o.logo_data || o.logo || defaultLogoSvg;
 
     // Header
     h += '<div class="d-head" style="display:flex; justify-content:space-between; align-items:center; gap:10px; margin-inline-end: 35px;">';
     h += '<div style="display:flex; gap:10px; align-items:center; flex:1;">';
     h += '<div style="width:48px; height:48px; border-radius:8px; background:#000; border:1px solid var(--line); display:flex; align-items:center; justify-content:center; flex:0 0 auto; overflow:hidden; padding:2px;">';
-    h += '<img src="' + esc(logoSrc) + '" alt="' + esc(name(o)) + '" onerror="this.onerror=null; this.src=defaultLogoSvg;" style="max-width:100%; max-height:100%; object-fit:contain;" />';
+    h += '<img src="' + esc(logoSrc) + '" alt="' + esc(name(o)) + '"' + fallbackImageErrorAttribute(defaultLogoSvg) + ' style="max-width:100%; max-height:100%; object-fit:contain;" />';
     h += '</div>';
     h += '<div><div class="d-kicker">' + esc(t("cat_agency")) + '</div>';
     h += '<h2 class="d-title" style="margin:0;">' + esc(name(o)) + '</h2></div></div>';
@@ -9022,7 +9259,7 @@
     var orgTypeStr = orgTypeArabic(o.org_type_en, "جهة فضائية");
     var stClass = "badge-private";
     if ((o.org_type_fa || "").indexOf("دولتی") > -1 || (o.org_type_en || "").indexOf("State") > -1 || (o.org_type_en || "").indexOf("Government") > -1) stClass = "badge-gov";
-    var defaultLogoSvg = "data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><rect width='100' height='100' rx='20' fill='%23090d16' stroke='%23a3e635' stroke-width='3'/><text x='50' y='62' font-family='sans-serif' font-size='34' fill='%23a3e635' text-anchor='middle'>🛰</text></svg>";
+    var defaultLogoSvg = fallbackLogoDataUri("🛰", "#a3e635");
     var logoSrc = o.logo_data || o.logo || defaultLogoSvg;
 
     var localizedName = arabicField(o.ar, "شركة فضائية");
@@ -9236,7 +9473,7 @@
     var stClass = "badge-private";
     if ((o.org_type_fa || "").indexOf("دولتی") > -1 || (o.org_type_en || "").indexOf("State") > -1 || (o.org_type_en || "").indexOf("Government") > -1) stClass = "badge-gov";
 
-    var defaultLogoSvg = "data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><rect width='100' height='100' rx='20' fill='%23090d16' stroke='%23a3e635' stroke-width='3'/><text x='50' y='62' font-family='sans-serif' font-size='34' fill='%23a3e635' text-anchor='middle'>🛰</text></svg>";
+    var defaultLogoSvg = fallbackLogoDataUri("🛰", "#a3e635");
     var logoSrc = o.logo_data || o.logo || defaultLogoSvg;
 
     h += '<div class="d-head" style="display:flex; justify-content:space-between; align-items:center; gap:10px; margin-inline-end:35px;">';
@@ -9848,6 +10085,209 @@
       if (match && match[1] === tabId) { window.switchCompTab(tabId, buttons[i]); return; }
     }
   }
+  function verifiedText(obj) {
+    if (!obj) return "";
+    return String(obj[LANG] || obj.en || obj.fa || "");
+  }
+  function renderVerifiedSpecialistProfile(p) {
+    var o = p.o, pf = o.orbita_verified_profile;
+    if (!pf || !Array.isArray(pf.sections)) return "";
+    var isLab = pf.profile_type === "university_space";
+    var hasPublishedLocation = o.coordinate_precision === "esa_published_station_coordinate";
+    var role = layerName(pf.profile_type, true);
+    var logo = o.logo || "";
+    var label = LANG === "fa" ? {
+      type: "نشان اختصاصی ORBITA، نه لوگوی رسمی", since: "تأیید منابع", location: "موقعیت روی نقشه (حدودی)",
+      source: "منابع مستند", noData: "اطلاعات تأییدشده‌ای برای این مورد منتشر نشده است", parent: "وابستگی دانشگاهی", more: "جزئیات و مستندات", publishedLocation: "موقعیت منتشرشده توسط ESA (نه مرز تأسیسات)"
+    } : LANG === "ar" ? {
+      type: "رمز بصري خاص بـ ORBITA، وليس شعاراً رسمياً", since: "تاريخ مراجعة المصادر", location: "موقع تقريبي على الخريطة",
+      source: "المصادر الموثّقة", noData: "لا توجد معلومات موثّقة منشورة هنا", parent: "الجهة الجامعية", more: "التفاصيل والأدلة", publishedLocation: "موقع منشور من ESA (ليس حدود المنشأة)"
+    } : {
+      type: "ORBITA editorial mark, not an official logo", since: "Sources reviewed", location: "Approximate map location",
+      source: "Documented sources", noData: "No independently verified information published for this field", parent: "Parent institution", more: "Evidence and details", publishedLocation: "ESA-published station coordinates (not property boundaries)"
+    };
+    var html = '<section class="verified-profile" data-scope="' + esc(pf.profile_type) + '">' +
+      '<header class="verified-profile-head">' + (logo ? '<img class="verified-profile-logo" src="' + esc(logo) + '" alt="" />' : '') +
+      '<div><p class="verified-profile-kind">' + esc(role) + '</p><h2 class="d-title">' + esc(name(o)) + '</h2>' +
+      '<p class="verified-profile-sub">' + esc(verifiedText(pf.summary) || desc(o)) + '</p><small class="verified-profile-editorial">' + esc(label.type) + '</small></div></header>';
+    html += '<div class="verified-profile-meta">' +
+      '<span><b>' + esc(t("country")) + ':</b> ' + esc(LANG === "fa" ? (o.country_fa || o.country) : LANG === "ar" ? (o.country_ar || o.country) : o.country) + '</span>' +
+      '<span><b>' + esc(t("city")) + ':</b> ' + esc(LANG === "fa" ? (o.city_fa || o.city) : LANG === "ar" ? (o.city_ar || o.city) : o.city) + '</span>' +
+      (isLab && o.parent_institution ? '<span><b>' + esc(label.parent) + ':</b> ' + esc(o.parent_institution) + '</span>' : '') +
+      '<span><b>' + esc(label.since) + ':</b> ' + esc(pf.verified_on) + '</span>' +
+      '<span>' + esc(hasPublishedLocation ? label.publishedLocation : label.location) + '</span></div>';
+    html += '<nav class="verified-tabs" role="tablist" aria-label="' + esc(role) + '">';
+    pf.sections.forEach(function (section, i) {
+      html += '<button class="verified-tab' + (i === 0 ? ' active' : '') + '" type="button" role="tab" data-verified-index="' + i + '" aria-selected="' + (i === 0 ? 'true' : 'false') + '">' + esc(verifiedText(section)) + '</button>';
+    });
+    html += '</nav>';
+    var sourceById = Object.create(null);
+    (pf.sources || []).forEach(function (source) { if (source && source.id) sourceById[source.id] = source; });
+    pf.sections.forEach(function (section, i) {
+      html += '<section class="verified-panel' + (i === 0 ? ' active' : '') + '" role="tabpanel" data-verified-panel="' + i + '"' + (i === 0 ? '' : ' hidden') + '>';
+      (section.items || []).forEach(function (item) {
+        var links = (item.source_ids || []).map(function (sourceId) {
+          var ref = sourceById[sourceId];
+          // Only allow plain https source URLs from the reviewed manifest; no JS URLs.
+          if (!ref || !/^https:\/\//.test(ref.url)) return '';
+          return '<a href="' + esc(ref.url) + '" target="_blank" rel="noopener noreferrer" title="' + esc(ref.title) + '">' + esc(ref.title) + ' ↗</a>';
+        }).filter(Boolean);
+        html += '<article class="verified-claim"><p>' + esc(verifiedText(item)) + '</p>' +
+          (links.length ? '<div class="verified-claim-sources">' + links.join(' · ') + '</div>' : '') + '</article>';
+      });
+      if (!(section.items || []).length) html += '<p>' + esc(label.noData) + '</p>';
+      html += '</section>';
+    });
+    var home = /^https:\/\//.test(o.site || '') ? o.site : '';
+    html += '<footer class="verified-profile-footer"><strong>' + esc(label.source) + '</strong>' +
+      '<div class="verified-all-sources">' + (pf.sources || []).filter(function (source) {return /^https:\/\//.test(source.url || '');}).map(function (source) {
+        return '<a href="' + esc(source.url) + '" target="_blank" rel="noopener noreferrer">' + esc(source.title) + '</a>';
+      }).join('') + '</div>' +
+      (home ? '<a class="verified-home" href="' + esc(home) + '" target="_blank" rel="noopener noreferrer">' + esc(t("website")) + ' ↗</a>' : '') +
+      '</footer></section>';
+    return html;
+  }
+  function bindVerifiedSpecialistTabs() {
+    var scope = document.querySelector('#detailBody .verified-profile');
+    if (!scope) return;
+    var buttons = Array.prototype.slice.call(scope.querySelectorAll('[data-verified-index]'));
+    var panels = Array.prototype.slice.call(scope.querySelectorAll('[data-verified-panel]'));
+    buttons.forEach(function (button) { button.addEventListener('click', function () {
+      var id = button.getAttribute('data-verified-index');
+      buttons.forEach(function (b) {var active = b === button; b.classList.toggle('active',active); b.setAttribute('aria-selected', String(active));});
+      panels.forEach(function (panel) {var active = panel.getAttribute('data-verified-panel') === id; panel.classList.toggle('active', active); panel.hidden = !active;});
+    }); });
+  }
+  // Phase 4: one evidence-backed graph for map entities, products and missions.
+  // External nodes are NOT geolocated and never become map markers or new categories.
+  var verifiedRelationGraph = null, verifiedRelationLoadPromise = null;
+  function loadVerifiedRelationGraph() {
+    if (verifiedRelationGraph) return Promise.resolve(verifiedRelationGraph);
+    if (verifiedRelationLoadPromise) return verifiedRelationLoadPromise;
+    verifiedRelationLoadPromise = fetch('data/verified_relations.json?v=' + (window.ORBITA_APP_V || window.ORBITA_V || '1'))
+      .then(function (r) { if (!r.ok) throw new Error('Verified graph HTTP ' + r.status); return r.json(); })
+      .then(function (graph) {
+        if (!graph || graph.schema_version !== 1 || !Array.isArray(graph.nodes) || !Array.isArray(graph.edges)) throw new Error('Malformed verified graph');
+        var ids = Object.create(null);
+        graph.nodes.forEach(function (n) { if (!n || !n.id || ids[n.id]) throw new Error('Duplicate graph node'); ids[n.id] = n; });
+        graph.edges.forEach(function (e) { if (!e || !e.id || !ids[e.from_id] || !ids[e.to_id] || !/^https:\/\//.test(e.source_url || '')) throw new Error('Unreferenced graph edge'); });
+        verifiedRelationGraph = graph;
+        return graph;
+      }).catch(function (err) {
+        // The map and existing dossier must remain usable when the separate graph is missing.
+        console.warn('Verified relations unavailable:', err);
+        return null;
+      }).finally(function () { verifiedRelationLoadPromise = null; });
+    return verifiedRelationLoadPromise;
+  }
+  function graphCopy(key) {
+    var words = {
+      fa: { title: 'روابط مستند و شبکه', roles: 'نقش‌های تخصصی این موجودیت', source: 'منبع رابطه', connected: 'پرونده‌های مرتبط با همین محصول یا مأموریت', status: 'رابطه مستند؛ نه لزوماً همکاری مستقیم', explore: 'بازکردن پرونده', evidence: 'منشأ سند' },
+      en: { title: 'Documented relationships', roles: 'Specialist roles of this record', source: 'Relationship source', connected: 'Other records linked to the same product or mission', status: 'Documented link; not necessarily direct collaboration', explore: 'Open dossier', evidence: 'Evidence authority' },
+      ar: { title: 'العلاقات الموثّقة والشبكة', roles: 'الأدوار التخصصية لهذا السجل', source: 'مصدر العلاقة', connected: 'سجلات أخرى مرتبطة بالمنتج أو المهمة نفسها', status: 'رابط موثّق، ولا يعني بالضرورة تعاوناً مباشراً', explore: 'فتح الملف', evidence: 'جهة الدليل' }
+    };
+    return (words[LANG] || words.en)[key] || key;
+  }
+  function graphNodeName(node) { return node ? (node[LANG] || node.en || node.fa || node.id) : ''; }
+  function renderVerifiedConnections(p, graph) {
+    if (!p || !p.o || !p.o.id || !graph) return '';
+    var id = String(p.o.id), nodes = Object.create(null);
+    graph.nodes.forEach(function (node) { nodes[node.id] = node; });
+    if (!nodes[id] || nodes[id].kind !== 'map_entity') return '';
+    var edges = graph.edges.filter(function (edge) { return edge.from_id === id || edge.to_id === id; });
+    var roles = (p.o.orbita_verified_profile && Array.isArray(p.o.secondary_categories)) ?
+      [p.o.cat].concat(p.o.secondary_categories).filter(function (value, index, array) {
+        return array.indexOf(value) === index && (value === p.o.cat || value === p.o.orbita_verified_profile.profile_type);
+      }) : [];
+    if (!edges.length && roles.length < 2) return '';
+    var h = '<section class="verified-profile" data-orbita-graph="' + esc(id) + '" style="margin-top:14px">';
+    if (roles.length > 1) {
+      h += '<div class="verified-claim"><strong>' + esc(graphCopy('roles')) + '</strong><div class="verified-tabs" style="padding-top:8px">';
+      roles.forEach(function (cat) {
+        h += '<button type="button" class="verified-tab' + (cat === p.cat ? ' active' : '') + '" data-orbita-role="' + esc(cat) + '" aria-current="' + (cat === p.cat ? 'true' : 'false') + '">' + esc(layerName(cat, true)) + '</button>';
+      });
+      h += '</div></div>';
+    }
+    if (edges.length) {
+      h += '<div class="verified-profile-footer"><strong>' + esc(graphCopy('title')) + '</strong>' +
+        '<p class="verified-profile-editorial">' + esc(graphCopy('status')) + '</p>';
+      edges.forEach(function (edge) {
+        var otherId = edge.from_id === id ? edge.to_id : edge.from_id;
+        var other = nodes[otherId];
+        if (!other) return;
+        h += '<article class="verified-claim"><div style="display:flex;flex-wrap:wrap;align-items:center;gap:6px">' +
+          '<strong>' + esc(graphNodeName(other)) + '</strong>' +
+          '<span class="verified-profile-editorial">' + esc(other.kind === 'map_entity' ? layerName(other.category, false) : (other.kind === 'mission' ? (LANG === 'fa' ? 'مأموریت' : LANG === 'ar' ? 'مهمة' : 'Mission') : other.kind === 'product' ? (LANG === 'fa' ? 'محصول' : LANG === 'ar' ? 'منتج' : 'Product') : other.kind === 'vehicle' ? (LANG === 'fa' ? 'فضاپیما' : LANG === 'ar' ? 'مركبة' : 'Vehicle') : (LANG === 'fa' ? 'خدمت' : LANG === 'ar' ? 'خدمة' : 'Service'))) + '</span></div>' +
+          '<p>' + esc(verifiedText(edge)) + '</p>' +
+          '<div class="verified-claim-sources"><a href="' + esc(edge.source_url) + '" target="_blank" rel="noopener noreferrer">' + esc(graphCopy('source')) + ' ↗</a> · ' + esc(edge.scope) + '</div>';
+        if (other.kind === 'map_entity') {
+          h += '<button type="button" class="verified-tab" style="margin-top:8px" data-orbita-graph-entity="' + esc(otherId) + '">' + esc(graphCopy('explore')) + '</button>';
+        } else {
+          var siblings = [];
+          graph.edges.forEach(function (e) {
+            if (e.id === edge.id || (e.from_id !== otherId && e.to_id !== otherId)) return;
+            var candidate = e.from_id === otherId ? e.to_id : e.from_id;
+            if (candidate === id || !nodes[candidate] || nodes[candidate].kind !== 'map_entity' || siblings.indexOf(candidate) >= 0) return;
+            siblings.push(candidate);
+          });
+          if (siblings.length) {
+            h += '<div class="verified-profile-editorial" style="margin-top:7px">' + esc(graphCopy('connected')) + ':</div><div class="verified-tabs">';
+            siblings.slice(0, 6).forEach(function (candidate) {
+              h += '<button class="verified-tab" type="button" data-orbita-graph-entity="' + esc(candidate) + '">' + esc(graphNodeName(nodes[candidate])) + '</button>';
+            });
+            h += '</div>';
+          }
+        }
+        h += '</article>';
+      });
+      h += '</div>';
+    }
+    return h + '</section>';
+  }
+  function mountVerifiedConnections(p, token) {
+    if (!p || !p.o || !p.o.id) return;
+    var id = String(p.o.id);
+    // Only load relations for indexed pilots and two existing directly related dossiers.
+    var allowed = !!p.o.orbita_verified_profile || id === 'esa' || id === 'sstl' || id === 'spacex';
+    if (!allowed) return;
+    loadVerifiedRelationGraph().then(function (graph) {
+      if (!graph || token !== openDetail._renderToken) return;
+      var panel = document.getElementById('detail'), body = document.getElementById('detailBody');
+      if (!panel || !body || !panel.classList.contains('open')) return;
+      if (body.querySelector('[data-orbita-graph]')) return;
+      var html = renderVerifiedConnections(p, graph);
+      if (!html) return;
+      var container = document.createElement('div');
+      container.innerHTML = html;
+      body.appendChild(container.firstChild);
+    });
+  }
+  on('#detailBody', 'click', function (event) {
+    var element = event.target.closest('button[data-orbita-graph-entity],button[data-orbita-role]');
+    if (!element) return;
+    var role = element.getAttribute('data-orbita-role');
+    if (role) {
+      var scope = document.querySelector('#detailBody [data-orbita-graph]');
+      if (!scope) return;
+      var nodeId = scope.getAttribute('data-orbita-graph');
+      var row = (DATA.companies || []).find(function (r) { return String(r.id) === nodeId; });
+      if (!row || [row.cat].concat(row.secondary_categories || []).indexOf(role) < 0) return;
+      if (role !== row.cat && (!row.orbita_verified_profile || row.orbita_verified_profile.profile_type !== role)) return;
+      openDetail({ kind: 'company', cat: role, o: row });
+      return;
+    }
+    var id = element.getAttribute('data-orbita-graph-entity');
+    if (!verifiedRelationGraph) return;
+    var target = verifiedRelationGraph.nodes.find(function (node) { return node.id === id && node.kind === 'map_entity'; });
+    if (!target || !COMPANY_CATEGORY_FILES[target.category]) return;
+    var requestToken = openDetail._renderToken;
+    ensureMapCategoryLoaded(target.category).then(function (loaded) {
+      if (!loaded || requestToken !== openDetail._renderToken) return;
+      var row = (DATA.companies || []).find(function (r) { return String(r.id) === id; });
+      if (row) openDetail({kind:'company',cat:target.category,o:row});
+    });
+  });
+
   function openDetail(p) {
     if (!p) return;
     if (!p.o) {
@@ -9855,6 +10295,7 @@
     }
     openDetail._renderToken = (openDetail._renderToken || 0) + 1;
     var detailToken = openDetail._renderToken;
+    if (p.o && p.o.id) Promise.resolve().then(function () { mountVerifiedConnections(p, detailToken); });
     var cat = p.cat || (p.o ? p.o.cat : "");
     var kind = p.kind || cat;
 
@@ -9899,6 +10340,16 @@
 
 
 
+    // All new domain profiles share one evidenced, localized renderer; legacy dossiers stay unchanged.
+    if (p.o && p.o.orbita_verified_profile &&
+        LAYER_CATEGORIES_BY_KEY[cat] && !LAYER_CATEGORIES_BY_KEY[cat].legacy &&
+        p.o.orbita_verified_profile.profile_type === cat) {
+      $("#detailBody").innerHTML = renderVerifiedSpecialistProfile(p);
+      $("#detail").classList.add("open");
+      $("#detail").scrollTop = 0;
+      bindVerifiedSpecialistTabs();
+      return;
+    }
     if (cat === "satmaker" || (p.o && p.o.cat === "satmaker")) {
       $("#detailBody").innerHTML = renderSatmakerDetail(p);
       $("#detail").classList.add("open");
@@ -10516,6 +10967,7 @@
     if (BOOT_LOADERS[k]) return BOOT_LOADERS[k]();
   };
   applyI18n();
+  initLayerPanelControls();
   initMap(); buildLayerBar(); renderList();
   var initialMapLoads = [];
   if (filters.site) initialMapLoads.push(BOOT_LOADERS.sites());

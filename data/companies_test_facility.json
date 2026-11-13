@@ -1,0 +1,159 @@
+[
+  {
+    "id": "esa-estec-test-centre",
+    "cat": "test_facility",
+    "en": "ESA ESTEC Test Centre",
+    "fa": "مرکز آزمون استک آژانس فضایی اروپا",
+    "ar": "مركز اختبارات ESTEC التابع لوكالة الفضاء الأوروبية",
+    "country": "Netherlands",
+    "country_fa": "هلند",
+    "country_ar": "هولندا",
+    "city": "Noordwijk",
+    "city_fa": "نوردویک",
+    "city_ar": "نوردفايك",
+    "lat": 52.231,
+    "lon": 4.437,
+    "site": "https://www.esa.int/Enabling_Support/Space_Engineering_Technology/Test_centre",
+    "fa_d": "مرکز آزمون محیطی ماهواره‌ها و سخت‌افزار فضایی در تأسیسات استکِ هلند؛ این رکورد یک مرکز فیزیکی است، نه خود آژانس فضایی اروپا.",
+    "en_d": "Satellite and space-hardware environmental test facility at ESTEC, the Netherlands; a physical facility rather than the ESA agency record.",
+    "ar_d": "منشأة للاختبارات البيئية للأقمار والمعدات الفضائية في ESTEC بهولندا؛ وهي منشأة مادية وليست سجل الوكالة نفسها.",
+    "logo": "assets/logos/orbita/esa-estec-test-centre.svg",
+    "logo_kind": "orbita_editorial_nonofficial",
+    "orbita_marker_code": "ET",
+    "coordinate_precision": "city_center_approximation",
+    "orbita_verified_profile": {
+      "schema_version": 3,
+      "profile_type": "test_facility",
+      "verified_on": "2026-11-12",
+      "review_scope": "Phase-3 evidence-led specialty dossier only; legacy data not recertified; no global coverage claim",
+      "summary": {
+        "fa": "تأسیسات اروپایی آزمون محیطی، شامل لرزش، صوت، خلأ حرارتی و سازگاری الکترومغناطیسی.",
+        "en": "European environmental testing facilities for vibration, acoustics, thermal vacuum and electromagnetic compatibility.",
+        "ar": "مرافق أوروبية لاختبار الاهتزاز والصوت والفراغ الحراري والتوافق الكهرومغناطيسي."
+      },
+      "sources": [
+        {
+          "id": "et_about",
+          "title": "ESA — About ESTEC Test Centre",
+          "url": "https://www.esa.int/Enabling_Support/Space_Engineering_Technology/Test_centre/About_ESTEC_Test_Centre",
+          "checked_on": "2026-11-12"
+        },
+        {
+          "id": "et_tech",
+          "title": "ESA Technology — Test Centre facilities",
+          "url": "https://technology.esa.int/lab/test-centre",
+          "checked_on": "2026-11-12"
+        },
+        {
+          "id": "et_estec",
+          "title": "ESA — ESTEC establishment",
+          "url": "https://www.esa.int/establishment/about-us/meet-us/sites-and-establishments/esa-estec/esa-estec",
+          "checked_on": "2026-11-12"
+        }
+      ],
+      "sections": [
+        {
+          "id": "overview",
+          "fa": "شناسنامه تأسیسات",
+          "en": "Facility identity",
+          "ar": "تعريف المنشأة",
+          "items": [
+            {
+              "fa": "مرکز آزمون در مجموعه ESTEC واقع در نوردویک هلند قرار دارد؛ مختصات نمایش داده‌شده، نقطه مرجع شهری است.",
+              "en": "The Test Centre is located at ESA ESTEC in Noordwijk, the Netherlands; this map point is city-level only.",
+              "ar": "يقع مركز الاختبار في ESTEC بمدينة نوردفايك الهولندية؛ وتمثل نقطة الخريطة موقعاً مرجعياً على مستوى المدينة.",
+              "source_ids": [
+                "et_about",
+                "et_estec"
+              ]
+            },
+            {
+              "fa": "این مرکز به نمایندگی از ESA توسط European Test Services (ETS) اداره می‌شود.",
+              "en": "European Test Services (ETS) operates the centre on behalf of ESA.",
+              "ar": "تشغّل شركة European Test Services (ETS) المركز نيابةً عن وكالة الفضاء الأوروبية.",
+              "source_ids": [
+                "et_tech"
+              ]
+            }
+          ]
+        },
+        {
+          "id": "equipment",
+          "fa": "تجهیزات و ظرفیت آزمون",
+          "en": "Facilities & test capability",
+          "ar": "المرافق والقدرات الاختبارية",
+          "items": [
+            {
+              "fa": "تجهیزات مرکز شامل سامانه‌های آزمون ارتعاش، نویز صوتی، خلأ حرارتی و سازگاری الکترومغناطیسی است.",
+              "en": "Facilities include vibration, acoustic, thermal-vacuum and electromagnetic compatibility testing systems.",
+              "ar": "تشمل المرافق أنظمة اختبارات الاهتزاز والصوت والفراغ الحراري والتوافق الكهرومغناطيسي.",
+              "source_ids": [
+                "et_tech"
+              ]
+            },
+            {
+              "fa": "مرکز امکان جابه‌جایی سخت‌افزار تا سطح ماهواره کامل میان بخش‌های آزمون را فراهم می‌کند.",
+              "en": "The centre accommodates hardware up to complete spacecraft and allows movement between its test installations.",
+              "ar": "يستوعب المركز معدات تصل إلى مركبات فضائية كاملة ويتيح نقلها بين منشآت الاختبار.",
+              "source_ids": [
+                "et_about"
+              ]
+            }
+          ]
+        },
+        {
+          "id": "testing",
+          "fa": "آزمون‌ها و پروژه‌ها",
+          "en": "Testing & projects",
+          "ar": "الاختبارات والمشروعات",
+          "items": [
+            {
+              "fa": "آژانس فضایی اروپا به آزمون سخت‌افزار برنامه‌های ATV، گالیله و بپی‌کلمبو در این مرکز اشاره می‌کند؛ جزئیات هر آزمون باید در اسناد همان مأموریت بررسی شود.",
+              "en": "ESA cites ATV, Galileo and BepiColombo hardware among work supported by the facility; individual test campaigns require mission-specific evidence.",
+              "ar": "تذكر الوكالة دعم المركز لاختبارات معدات ATV وGalileo وBepiColombo؛ وتتطلب تفاصيل كل حملة وثائق المهمة المعنية.",
+              "source_ids": [
+                "et_tech"
+              ]
+            }
+          ]
+        },
+        {
+          "id": "standards",
+          "fa": "استانداردها و اعتبارسنجی",
+          "en": "Standards & qualification",
+          "ar": "المعايير والتأهيل",
+          "items": [
+            {
+              "fa": "این مرکز آزمون‌های محیطی را برای ارزیابی و صحه‌گذاری عملکرد سخت‌افزار انجام می‌دهد؛ در این نمونه گواهی صلاحیت مستقل برای تمام تجهیزات ادعا نشده است.",
+              "en": "The facility conducts environmental verification of spacecraft hardware; this dossier does not claim a blanket certification for every tested item.",
+              "ar": "تُجرى اختبارات بيئية للتحقق من المعدات الفضائية؛ ولا يدّعي هذا الملف اعتماداً شاملاً لكل قطعة مختبرة.",
+              "source_ids": [
+                "et_about"
+              ]
+            }
+          ]
+        },
+        {
+          "id": "history",
+          "fa": "تاریخچه و مشتریان",
+          "en": "History & customers",
+          "ar": "التاريخ والعملاء",
+          "items": [
+            {
+              "fa": "مرکز افزون بر برنامه‌های ESA، برای نیازهای صنعت اروپا نیز خدمات آزمون ارائه می‌کند؛ این پرونده فهرست کامل مشتریان را تأیید نمی‌کند.",
+              "en": "The centre also serves European industry beyond ESA projects; no exhaustive customer list is asserted in this pilot.",
+              "ar": "يقدّم المركز خدمات للصناعة الأوروبية خارج مشروعات الوكالة؛ ولا يؤكد هذا الملف قائمة شاملة بالعملاء.",
+              "source_ids": [
+                "et_tech"
+              ]
+            }
+          ]
+        }
+      ],
+      "data_status": "verified_pilot"
+    },
+    "linked_entities": [
+      "esa"
+    ]
+  }
+]

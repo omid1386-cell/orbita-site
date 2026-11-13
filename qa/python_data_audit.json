@@ -1,0 +1,20 @@
+{
+  "canonical_entities": 274,
+  "verified_pilot_profiles": 11,
+  "original_entities_preserved": 266,
+  "relations": 24,
+  "map_related_nodes": 14,
+  "nongeo_nodes": 13,
+  "new_logo_svgs": 11,
+  "new_category_counts": {
+    "components": 3,
+    "payloads": 1,
+    "ground_services": 1,
+    "inspace_services": 1,
+    "test_facility": 1,
+    "ground_station": 1,
+    "mission_control": 1,
+    "university_space": 2
+  },
+  "historical_baseline_compared": true
+}

@@ -1,0 +1,925 @@
+[
+  {
+    "id": "cubespace",
+    "cat": "satmaker",
+    "en": "CubeSpace Satellite Systems",
+    "fa": "کیوب‌اسپیس",
+    "country": "South Africa",
+    "country_fa": "آفریقای جنوبی",
+    "city": "Stellenbosch",
+    "city_fa": "استلن‌بوش",
+    "lat": -33.93,
+    "lon": 18.865,
+    "founded": 2014,
+    "site": "https://cubespace.co.za",
+    "products": [
+      "CubeADCS Gen2",
+      "CubeWheel Reaction Wheels",
+      "CubeSense Sun/Earth Sensor",
+      "CubeStar Star Tracker",
+      "CubeTorquer Magnetorquers"
+    ],
+    "en_d": "World-leading maker of attitude determination and control systems for small satellites. A Stellenbosch University spin-off with 470+ missions and 6,500+ components in orbit.",
+    "fa_d": "پیشتاز جهانی سامانه‌های تعیین و کنترل وضعیت برای ماهواره‌های کوچک. زادهٔ دانشگاه استلن‌بوش. بیش از ۴۷۰ مأموریت و ۶۵۰۰ قطعه در مدار.",
+    "future_plans_fa": [
+      "ادغام ردیاب ستارهٔ آریگای سدرن در بسته‌ها برای دقت اشاره‌گری بالاتر",
+      "گسترش دامنه به ماهواره‌های تا حدود ۱ تن",
+      "تولید سری برای منظومه‌ها"
+    ],
+    "future_plans_en": [
+      "Integrating Sodern's Auriga star tracker for higher pointing accuracy",
+      "Extending the range to satellites of about 1 ton",
+      "Series production for constellations"
+    ],
+    "linkedin": "https://www.linkedin.com/company/cubespace-adcs",
+    "org_type_fa": "شرکت خصوصی قطعه‌ساز فضایی (آفریقای جنوبی)",
+    "org_type_en": "Private space component maker (South Africa)",
+    "location_fa": "استلن‌بوش، آفریقای جنوبی",
+    "history_fa": "کیوب‌اسپیس از آزمایشگاه سامانه‌های الکترونیکی دانشگاه استلن‌بوش جوانه زد. کار تیم از سال ۲۰۱۳ درون دانشگاه آغاز شد. نخستین سامانه‌های کنترل وضعیت آن در سال ۲۰۱۴ با ماهواره‌های پیش‌آهنگ پروژهٔ کیوبی‌۵۰ به مدار رفتند. شرکت در سال ۲۰۱۷ به‌طور رسمی ثبت شد و تنها بر یک تخصص تمرکز کرد: تعیین و کنترل وضعیت. تاکنون بیش از ۵۰۰ سامانهٔ کامل و ۶۵۰۰ قطعهٔ آن در قالب بیش از ۴۷۰ مأموریت به مدار رفته‌اند. بیش از ۳۰۰ مشتری از ۳۰ کشور از محصولاتش استفاده می‌کنند. دفتر اروپایی شرکت در دوبلین و تیم فروش آمریکای آن در دنور مستقر است.",
+    "product_history_fa": "از یک پروژهٔ دانشگاهی تا پیشتاز بازار کنترل وضعیت ماهواره‌های کوچک. نسل دوم محصولات در سال ۲۰۲۲ عرضه شد و دامنهٔ کار را از نانوماهواره تا ریزماهواره گستراند.",
+    "notable_missions_fa": [
+      "های‌تی‌آی: کیوب‌ست ۶ یونیتی دانشگاه هاوایی با تصویربردار حرارتی؛ رهاسازی از ایستگاه فضایی در ۲۰۲۴",
+      "مأموریت مدار ماه در ۲۰۱۸ با قطعات کیوب‌اسپیس",
+      "بیش از ۱۰ منظومهٔ تجاری با سامانه‌های شرکت پرواز می‌کنند"
+    ],
+    "history_en": "CubeSpace grew out of the Electronic Systems Laboratory at Stellenbosch University. The team began inside the university in 2013. Its first attitude control systems reached orbit in 2014 on the QB50 precursor satellites. The company was formally incorporated in 2017 and focused on a single specialty: attitude determination and control. More than 500 complete systems and 6,500 components have flown on over 470 missions. It serves 300+ customers in more than 30 countries, with a European office in Dublin and US sales staff in Denver.",
+    "product_history_en": "From a university project to the leader in small-satellite attitude control. The Gen 2 line arrived in 2022 and stretched the range from nanosats to microsats.",
+    "notable_missions_en": [
+      "HyTI: the University of Hawai'i 6U CubeSat with a thermal imager; deployed from the ISS in 2024",
+      "A 2018 lunar-orbit mission flew CubeSpace components",
+      "More than 10 commercial constellations fly the company's systems"
+    ],
+    "maker_class_fa": "قطعه‌ساز زیرسامانه",
+    "maker_class_en": "Subsystem maker",
+    "specialty_fa": "تعیین و کنترل وضعیت ماهواره‌های ۱ کیلوگرمی تا حدود ۱ تنی",
+    "specialty_en": "Attitude determination & control for satellites from 1 kg to ~1 ton",
+    "flagship_product_fa": "کیوب‌ای‌دی‌سی‌اس نسل ۲",
+    "flagship_product_en": "CubeADCS Gen 2",
+    "flagship_product_status_fa": "عملیاتی",
+    "flagship_product_status_en": "Operational",
+    "flagship_product_app_fa": "کنترل وضعیت کامل در یک بسته؛ بیش از ۵۰۰ سامانه تحویل‌شده برای نانو و ریزماهواره‌ها",
+    "flagship_product_app_en": "Complete attitude control in one box; 500+ systems delivered for nano and microsatellites",
+    "product_lines_bilingual": [
+      {
+        "name_fa": "کیوب‌ای‌دی‌سی‌اس نسل ۲",
+        "name_en": "CubeADCS Gen 2",
+        "type_fa": "سامانهٔ یکپارچهٔ کنترل وضعیت",
+        "type_en": "Integrated ADCS unit",
+        "class_fa": "کیوب‌ست ۱ تا ۱۶ یونیت و ریزماهواره تا ۴۰۰ کیلوگرم",
+        "class_en": "1U–16U CubeSats and microsats up to 400 kg",
+        "status_fa": "عملیاتی",
+        "status_en": "Operational",
+        "used_on_fa": "صدها مأموریت دانشگاهی و تجاری در بیش از ۳۰ کشور",
+        "used_on_en": "Hundreds of academic and commercial missions in 30+ countries",
+        "engineering_desc_fa": "تا چهار چرخ عکس‌العملی و هفت حسگر با رایانه و الگوریتم کنترل در یک بستهٔ پیمانه‌ای. رابط مکانیکی و برقی آن به‌دلخواه مشتری تنظیم می‌شود.",
+        "engineering_desc_en": "Up to four reaction wheels and seven sensors with computer and control algorithms in one modular package. Mechanical and electrical interfaces adapt to the customer bus.",
+        "customer_ids": []
+      },
+      {
+        "name_fa": "چرخ عکس‌العملی کیوب‌ویل",
+        "name_en": "CubeWheel Reaction Wheels",
+        "type_fa": "چرخ عکس‌العملی",
+        "type_en": "Reaction wheel",
+        "class_fa": "از کیوب‌ست تا ماهوارهٔ ۴۰۰ کیلوگرمی",
+        "class_en": "From CubeSats up to 400 kg satellites",
+        "status_fa": "عملیاتی",
+        "status_en": "Operational",
+        "used_on_fa": "در مدار از ۲۰۱۴؛ صدها واحد تحویل‌شده",
+        "used_on_en": "In orbit since 2014; hundreds of units delivered",
+        "engineering_desc_fa": "خانوادهٔ چرخ در چند اندازه. گسترهٔ بزرگ‌تر در سال ۲۰۲۳ برای ریزماهواره‌ها معرفی شد.",
+        "engineering_desc_en": "A wheel family in several sizes. An extended range for microsats was announced in 2023.",
+        "customer_ids": []
+      },
+      {
+        "name_fa": "حسگر کیوب‌سنس",
+        "name_en": "CubeSense Sensor",
+        "type_fa": "حسگر دقیق خورشید و زمین",
+        "type_en": "Fine sun & Earth sensor",
+        "class_fa": "ماهواره‌های کوچک",
+        "class_en": "Small satellites",
+        "status_fa": "عملیاتی",
+        "status_en": "Operational",
+        "used_on_fa": "در مدار از ۲۰۱۴ روی ده‌ها مأموریت",
+        "used_on_en": "In orbit since 2014 on dozens of missions",
+        "engineering_desc_fa": "حسگر دوربین‌پایه برای یافتن سمت خورشید و لبهٔ زمین با دقت بالا.",
+        "engineering_desc_en": "A camera-based sensor that finds the sun vector and Earth limb with high accuracy.",
+        "customer_ids": []
+      },
+      {
+        "name_fa": "ردیاب ستارهٔ کیوب‌استار",
+        "name_en": "CubeStar Star Tracker",
+        "type_fa": "ردیاب ستاره",
+        "type_en": "Star tracker",
+        "class_fa": "کیوب‌ست و ریزماهواره",
+        "class_en": "CubeSats and microsats",
+        "status_fa": "عملیاتی",
+        "status_en": "Operational",
+        "used_on_fa": "در مدار از ۲۰۱۸",
+        "used_on_en": "In orbit since 2018",
+        "engineering_desc_fa": "ردیاب ستارهٔ جمع‌وجور برای اشاره‌گری دقیق. با همکاری شرکت فرانسوی سدرن، ردیاب آریگا نیز در بسته‌های شرکت ادغام می‌شود.",
+        "engineering_desc_en": "A compact star tracker for precise pointing. Through a partnership with France's Sodern, the Auriga tracker is also integrated into company bundles.",
+        "customer_ids": []
+      },
+      {
+        "name_fa": "مگنتورکر کیوب‌تورکر",
+        "name_en": "CubeTorquer Magnetorquers",
+        "type_fa": "عملگر مغناطیسی",
+        "type_en": "Magnetic actuator",
+        "class_fa": "کیوب‌ست‌ها",
+        "class_en": "CubeSats",
+        "status_fa": "عملیاتی",
+        "status_en": "Operational",
+        "used_on_fa": "در مدار از ۲۰۱۴؛ صدها واحد تحویل‌شده",
+        "used_on_en": "In orbit since 2014; hundreds of units delivered",
+        "engineering_desc_fa": "میله و سیم‌پیچ مغناطیسی برای میراسازی و کنترل چرخش با میدان زمین.",
+        "engineering_desc_en": "Magnetic rods and coils for detumbling and rotation control against Earth's field.",
+        "customer_ids": []
+      }
+    ],
+    "satellites_built_fa": "ماهوارهٔ کامل نمی‌سازد؛ سامانه‌هایش روی بیش از ۴۷۰ مأموریت و بیش از ۱۰ منظومه پرواز کرده‌اند.",
+    "satellites_built_en": "Builds no complete satellites; its systems have flown on 470+ missions and 10+ constellations.",
+    "customers_fa": [
+      "بیش از ۳۰۰ مشتری در ۳۰ کشور",
+      "دانشگاه هاوایی",
+      "منظومه‌های تجاری متعدد",
+      "سازندگان ریزماهواره تا ۴۰۰ کیلوگرم"
+    ],
+    "customers_en": [
+      "300+ customers in 30 countries",
+      "University of Hawai'i",
+      "Multiple commercial constellations",
+      "Microsat builders up to 400 kg"
+    ],
+    "milestones_fa": [
+      {
+        "year": "۲۰۱۴",
+        "title": "نخستین پرواز",
+        "desc": "دو سامانهٔ کنترل وضعیت با ماهواره‌های پیش‌آهنگ کیوبی‌۵۰ به مدار رفتند."
+      },
+      {
+        "year": "۲۰۱۷",
+        "title": "ثبت رسمی شرکت",
+        "desc": "جدایی از دانشگاه؛ تا همین سال به مشتریانی در همهٔ قاره‌ها تحویل داده بود."
+      },
+      {
+        "year": "۲۰۱۸",
+        "title": "رسیدن به ماه",
+        "desc": "قطعات کیوب‌ای‌دی‌سی‌اس در مأموریتی در مدار ماه کار کردند."
+      },
+      {
+        "year": "۲۰۲۲",
+        "title": "نسل دوم",
+        "desc": "خط محصول نسل ۲ عرضه شد و شرکت وارد بازار ریزماهواره‌ها شد."
+      },
+      {
+        "year": "۲۰۲۳",
+        "title": "ریزماهوارهٔ ۲۰۰ کیلوگرمی",
+        "desc": "نخستین سامانهٔ کنترل وضعیت برای ماهوارهٔ ۲۰۰ کیلوگرمی تحویل شد؛ گسترهٔ چرخ‌ها نیز بزرگ‌تر شد."
+      },
+      {
+        "year": "۲۰۲۴",
+        "title": "کارخانهٔ جدید",
+        "desc": "مجموعهٔ ۱۳۵۰ متری در استلن‌بوش گشوده شد و ظرفیت دو برابر شد. قرارداد سامانهٔ ماهوارهٔ ۴۰۰ کیلوگرمی هم امضا شد."
+      }
+    ],
+    "milestones_en": [
+      {
+        "year": "2014",
+        "title": "First flight",
+        "desc": "Two attitude control systems reached orbit on the QB50 precursor satellites."
+      },
+      {
+        "year": "2017",
+        "title": "Formal incorporation",
+        "desc": "Spun out of the university; by this year it had delivered to every continent."
+      },
+      {
+        "year": "2018",
+        "title": "Reaching the Moon",
+        "desc": "CubeADCS components operated on a mission in lunar orbit."
+      },
+      {
+        "year": "2022",
+        "title": "Gen 2",
+        "desc": "The Gen 2 product line launched and the company entered the microsat market."
+      },
+      {
+        "year": "2023",
+        "title": "200 kg microsat",
+        "desc": "First ADCS for a 200 kg satellite delivered; the wheel range was extended too."
+      },
+      {
+        "year": "2024",
+        "title": "New facility",
+        "desc": "A 1,350 m² facility opened in Stellenbosch, doubling capacity. A contract for a 400 kg satellite ADCS was signed."
+      }
+    ],
+    "ar": "أنظمة الأقمار الصناعية CubeSpace",
+    "ar_d": "شركة رائدة عالمياً في تصنيع أنظمة تحديد الوضع والتحكم فيه للأقمار الصغيرة. انبثقت عن جامعة ستيلينبوش، وشملت تجهيزاتها أكثر من 470 مهمة وأكثر من 6,500 مكوّن في المدار.",
+    "specialty_ar": "أنظمة تحديد الوضع والتحكم فيه للأقمار من كتلة 1 kg إلى نحو 1 ton",
+    "flagship_product_ar": "نظام CubeADCS للتحكم بالوضع، الجيل الثاني",
+    "flagship_product_app_ar": "تحكم كامل بوضع القمر في وحدة واحدة؛ سُلّم أكثر من 500 نظام للأقمار النانوية والمصغّرة.",
+    "satellites_built_ar": "لا تصنع أقماراً كاملة؛ وقد حلّقت أنظمتها في أكثر من 470 مهمة وعلى متن أكثر من 10 كوكبات.",
+    "maker_class_ar": "مصنّع أنظمة فرعية",
+    "satellite_industry_role": "component_or_payload_supplier",
+    "verified_role_en": "Attitude determination and control subsystem manufacturer",
+    "country_ar": "جنوب أفريقيا",
+    "city_ar": "ستيلينبوش",
+    "org_type_ar": "شركة خاصة لتصنيع مكونات الفضاء (جنوب أفريقيا)",
+    "history_ar": "نشأت CubeSpace من مختبر الأنظمة الإلكترونية في جامعة ستيلينبوش، وبدأ عمل الفريق داخل الجامعة عام 2013. وصلت أول أنظمة للتحكم في الاتجاه إلى المدار عام 2014 على الأقمار التمهيدية لمشروع QB50. سُجلت الشركة رسميًا عام 2017 وركزت على تخصص واحد، هو تحديد الاتجاه والتحكم فيه. وحتى الآن وصلت إلى المدار أكثر من 500 منظومة كاملة و6500 مكوّن تابع لها خلال أكثر من 470 مهمة. يستخدم منتجاتها أكثر من 300 عميل في 30 دولة. وللشركة مكتب أوروبي في دبلن وفريق مبيعات أمريكي في دنفر.",
+    "product_history_ar": "انتقلت الشركة من مشروع جامعي إلى موقع ريادي في سوق أنظمة التحكم في اتجاه الأقمار الصغيرة. وأطلقت الجيل الثاني من منتجاتها عام 2022، ووسّعت نطاقها من الأقمار النانوية إلى الأقمار الصغيرة جدًا.",
+    "flagship_product_status_ar": "تشغيلي",
+    "future_plans_ar": [
+      "دمج متعقب النجوم Auriga من شركة Sodern في الحزم لتحسين دقة التوجيه",
+      "توسيع نطاق المنتجات للأقمار الصناعية حتى نحو طن واحد",
+      "الإنتاج المتسلسل للكوكبات الساتلية"
+    ],
+    "customers_ar": [
+      "أكثر من 300 عميل في 30 دولة",
+      "جامعة هاواي",
+      "عدة كوكبات ساتلية تجارية",
+      "مصنّعو أقمار صناعية صغيرة تصل كتلتها إلى 400 كغ"
+    ],
+    "notable_missions_ar": [
+      "HyTI: قمر مكعبات بحجم 6U لجامعة هاواي مزوّد بمصوّر حراري؛ أُطلق من محطة الفضاء الدولية في 2024",
+      "مهمة في مدار القمر سنة 2018 استخدمت مكوّنات CubeSpace",
+      "أكثر من عشر كوكبات تجارية تستخدم أنظمة الشركة في الطيران"
+    ],
+    "milestones_ar": [
+      {
+        "year": "۲۰۱۴",
+        "title_ar": "أول رحلة",
+        "desc_ar": "وصل نظامان للتحكم بالاتجاه إلى المدار على أقمار تمهيدية لمشروع QB50."
+      },
+      {
+        "year": "۲۰۱۷",
+        "title_ar": "التسجيل الرسمي للشركة",
+        "desc_ar": "انفصلت عن الجامعة؛ وبحلول ذلك العام كانت قد سلّمت أنظمة إلى عملاء في جميع القارات."
+      },
+      {
+        "year": "۲۰۱۸",
+        "title_ar": "الوصول إلى القمر",
+        "desc_ar": "عملت مكوّنات CubeADCS في مهمة ضمن مدار القمر."
+      },
+      {
+        "year": "۲۰۲۲",
+        "title_ar": "الجيل الثاني",
+        "desc_ar": "طُرح خط منتجات الجيل الثاني ودخلت الشركة سوق الأقمار الصناعية الصغيرة."
+      },
+      {
+        "year": "۲۰۲۳",
+        "title_ar": "قمر صغير بكتلة 200 كغ",
+        "desc_ar": "تسليم أول نظام تحكم بالاتجاه لقمر كتلته 200 كغ؛ وتوسيع نطاق عجلات التوجيه."
+      },
+      {
+        "year": "۲۰۲۴",
+        "title_ar": "منشأة جديدة",
+        "desc_ar": "افتتاح منشأة بمساحة 1,350 م² في ستيلينبوش تضاعفت بها القدرة؛ وتوقيع عقد لنظام تحكم بالاتجاه لقمر بكتلة 400 كغ."
+      }
+    ],
+    "location_en": "Stellenbosch, South Africa",
+    "location_ar": "ستيلينبوش، جنوب أفريقيا",
+    "secondary_categories": [
+      "components"
+    ],
+    "logo": "assets/logos/orbita/cubespace.svg",
+    "logo_kind": "orbita_editorial_nonofficial",
+    "orbita_marker_code": "CS",
+    "orbita_verified_profile": {
+      "schema_version": 2,
+      "profile_type": "components",
+      "verified_on": "2026-11-12",
+      "review_scope": "New specialist dossier only; preexisting category fields not recertified",
+      "sources": [
+        {
+          "id": "cs_products",
+          "title": "CubeSpace — Products",
+          "url": "https://www.cubespace.co.za/products/",
+          "checked_on": "2026-11-12"
+        },
+        {
+          "id": "cs_home",
+          "title": "CubeSpace — Home and location",
+          "url": "https://www.cubespace.co.za/",
+          "checked_on": "2026-11-12"
+        },
+        {
+          "id": "cs_su",
+          "title": "Stellenbosch University — CubeSpace history",
+          "url": "https://www.su.ac.za/en/students/node/22289",
+          "checked_on": "2026-11-12"
+        }
+      ],
+      "sections": [
+        {
+          "id": "overview",
+          "fa": "شناسنامه و تخصص",
+          "en": "Identity & specialization",
+          "ar": "التعريف والتخصص",
+          "items": [
+            {
+              "fa": "سازنده سامانه‌های تعیین و کنترل وضعیت ماهواره (ADCS)، مستقر در استلن‌بوش آفریقای جنوبی.",
+              "en": "Manufacturer of satellite attitude determination and control systems (ADCS), based in Stellenbosch, South Africa.",
+              "ar": "شركة تصنع أنظمة تحديد اتجاه الأقمار الصناعية والتحكم فيه (ADCS)، ومقرها ستيلينبوش بجنوب أفريقيا.",
+              "source_ids": [
+                "cs_home"
+              ]
+            },
+            {
+              "fa": "بر اساس معرفی دانشگاه استلن‌بوش، این شرکت از فعالیت‌های دانشگاهی آن دانشگاه شکل گرفته است.",
+              "en": "Stellenbosch University identifies CubeSpace as a spin-out emerging from the university.",
+              "ar": "توضح جامعة ستيلينبوش أن شركة CubeSpace نشأت من نشاطها الجامعي.",
+              "source_ids": [
+                "cs_su"
+              ]
+            }
+          ]
+        },
+        {
+          "id": "products",
+          "fa": "محصولات و فناوری",
+          "en": "Products & technology",
+          "ar": "المنتجات والتقنية",
+          "items": [
+            {
+              "fa": "سبد محصول شامل سامانه یکپارچه ADCS، چرخ عکس‌العملی، میله گشتاور مغناطیسی، مغناطیس‌سنج، حسگر خورشید، حسگر افق زمین و ردیاب ستاره است.",
+              "en": "The portfolio includes turn-key ADCS, reaction wheels, magnetorquer rods, magnetometers, fine Sun sensors, Earth horizon sensors and star trackers.",
+              "ar": "تشمل المنتجات أنظمة ADCS المتكاملة، وعجلات رد الفعل، وقضبان العزم المغناطيسي، ومقاييس المغناطيسية، وحساسات الشمس وأفق الأرض، ومتتبعات النجوم.",
+              "source_ids": [
+                "cs_products"
+              ]
+            }
+          ]
+        },
+        {
+          "id": "heritage",
+          "fa": "سابقه پروازی",
+          "en": "Flight heritage",
+          "ar": "السجل الفضائي",
+          "items": [
+            {
+              "fa": "شرکت درباره سابقه استفاده مداری سامانه‌ها و قطعات خود گزارش منتشر کرده است؛ فهرست مأموریت‌های مستقل برای هر مدل در این نمونه تأیید نشده است.",
+              "en": "The company reports in-orbit use of its systems and components; a mission-by-model independent crosswalk has not been verified for this sample.",
+              "ar": "تعلن الشركة عن استخدام أنظمتها ومكوّناتها في المدار، لكن لم تُتحقق قائمة مستقلة تربط كل طراز بمهمة محددة في هذه العينة.",
+              "source_ids": [
+                "cs_home"
+              ]
+            }
+          ]
+        },
+        {
+          "id": "network",
+          "fa": "مشتریان و زنجیره تأمین",
+          "en": "Customers & supply chain",
+          "ar": "العملاء وسلسلة التوريد",
+          "items": [
+            {
+              "fa": "محصولات برای یکپارچه‌سازی با رایانه پرواز مشتری و حتی تجهیزات شخص ثالث طراحی شده‌اند؛ فهرست قراردادهای مشتریان در این نمونه منتشر نمی‌شود.",
+              "en": "The integrated ADCS is designed to interface with customer onboard computers and can incorporate third-party hardware; specific customer contracts are not asserted here.",
+              "ar": "صُممت أنظمة ADCS للتكامل مع حواسيب المركبات الفضائية التابعة للعملاء ويمكن دمج عتاد جهات أخرى؛ ولا نورد عقود عملاء محددة هنا.",
+              "source_ids": [
+                "cs_home"
+              ]
+            }
+          ]
+        },
+        {
+          "id": "timeline",
+          "fa": "تاریخچه و تحولات",
+          "en": "History & development",
+          "ar": "التاريخ والتطور",
+          "items": [
+            {
+              "fa": "دانشگاه استلن‌بوش در گزارشی در دسامبر ۲۰۲۴ منشأ دانشگاهی و روند رشد این شرکت را شرح داده است.",
+              "en": "In December 2024, Stellenbosch University published an account of CubeSpace’s university origins and growth.",
+              "ar": "نشرت جامعة ستيلينبوش في ديسمبر 2024 تقريراً عن نشأة الشركة الجامعية ونموها.",
+              "source_ids": [
+                "cs_su"
+              ]
+            }
+          ]
+        }
+      ],
+      "summary": {
+        "fa": "تولیدکننده سامانه‌های تعیین و کنترل وضعیت ماهواره شامل ADCS، چرخ عکس‌العملی و ردیاب ستاره، مستقر در آفریقای جنوبی.",
+        "en": "South African manufacturer of satellite attitude-control systems, reaction wheels and star trackers.",
+        "ar": "شركة جنوب أفريقية لأنظمة التحكم في اتجاه الأقمار وعجلات رد الفعل ومتتبعات النجوم."
+      }
+    },
+    "coordinate_precision": "city_approximation_existing"
+  },
+  {
+    "id": "blue-canyon",
+    "cat": "satmaker",
+    "en": "Blue Canyon Technologies",
+    "fa": "بلو کنیون",
+    "country": "United States",
+    "country_fa": "آمریکا",
+    "city": "Lafayette, Colorado",
+    "city_fa": "لافایت، کلرادو",
+    "lat": 39.9936,
+    "lon": -105.0897,
+    "founded": 2008,
+    "site": "https://www.bluecanyontech.com",
+    "products": [
+      "Saturn-200 Minisatellite Bus",
+      "CubeSat & ESPA Buses",
+      "Reaction Wheels & Star Trackers",
+      "Control Moment Gyroscopes"
+    ],
+    "fa_d": "سکوساز و قطعه‌ساز کلرادویی با بیش از ۹۰ فضاپیمای پرتاب‌شده. چرخ‌های عکس‌العملی و ردیاب‌های ستاره‌اش در صدها مأموریت پرواز کرده‌اند.",
+    "en_d": "Colorado bus and component maker with 90+ spacecraft launched. Its reaction wheels and star trackers have flown on hundreds of missions.",
+    "org_type_fa": "شرکت خصوصی زیرمجموعهٔ آرتی‌ایکس (آمریکا)",
+    "org_type_en": "Private company under RTX (USA)",
+    "location_fa": "لافایت، کلرادو، آمریکا",
+    "maker_class_fa": "سکوساز ماهوارهٔ کوچک و قطعه‌ساز",
+    "maker_class_en": "Smallsat bus and component maker",
+    "specialty_fa": "سکوهای کوچک دقیق و قطعات کنترل وضعیت",
+    "specialty_en": "Precision small buses and attitude-control components",
+    "history_fa": "بلو کنیون در سال ۲۰۰۸ در لافایت کلرادو بنیان گذاشته شد. کارش ساخت کامل ماهواره‌های کوچک و قطعات دقیق کنترل وضعیت است. چرخ‌های عکس‌العملی و ردیاب‌های ستاره‌اش در صدها مأموریت پرواز کرده‌اند. در پایان ۲۰۲۰ غول دفاعی ریتیان آن را خرید و شرکت زیر چتر آرتی‌ایکس رفت. تاکنون بیش از ۹۰ فضاپیما از خطوط آن پرتاب شده‌اند. در ژانویهٔ ۲۰۲۶ سکوی ساترن-۲۰۰ مأموریت پاندورا ناسا را به مدار برد. این مأموریت جو سیاره‌های فراخورشیدی را می‌کاود. در ژوئن ۲۰۲۶ شرکت کانادایی ام‌دی‌ای توافق کرد بلو کنیون را به ۶۲۰ میلیون دلار نقد بخرد. بسته‌شدن معامله به تأیید نهادهای ناظر تا پایان ۲۰۲۶ وابسته است.",
+    "history_en": "Blue Canyon was founded in 2008 in Lafayette, Colorado. It builds complete small satellites and precision attitude-control components. Its reaction wheels and star trackers have flown on hundreds of missions. In late 2020 defense giant Raytheon bought it, placing it under RTX. More than 90 spacecraft from its lines have launched so far. In January 2026 its Saturn-200 bus carried NASA's Pandora mission to orbit, a probe of exoplanet atmospheres. In June 2026 Canada's MDA Space agreed to buy Blue Canyon for 620 million dollars in cash. Closing awaits regulatory approval by the end of 2026.",
+    "product_history_fa": "از کیوب‌ست‌های سه‌یونیتی تا مینی‌ماهواره‌های ساترن؛ هفت خانوادهٔ سکو و بیش از ۳٬۸۰۰ قطعهٔ پروازی.",
+    "product_history_en": "From 3U CubeSats to Saturn minisatellites; seven bus families and over 3,800 flown components.",
+    "flagship_product_fa": "سکوی ساترن-۲۰۰",
+    "flagship_product_en": "Saturn-200 Bus",
+    "flagship_product_status_fa": "عملیاتی",
+    "flagship_product_status_en": "Operational",
+    "flagship_product_app_fa": "مینی‌ماهوارهٔ علمی و دفاعی؛ حامل مأموریت پاندورا ناسا",
+    "flagship_product_app_en": "Science and defense minisatellite; carried NASA's Pandora",
+    "product_lines_bilingual": [
+      {
+        "name_fa": "سکوهای ماهواره",
+        "name_en": "Satellite Buses",
+        "type_fa": "کیوب‌ست تا مینی‌ماهواره",
+        "type_en": "CubeSat to minisatellite",
+        "class_fa": "هفت خانواده از سه‌یونیت تا کلاس اسپا-گرانده",
+        "class_en": "Seven families, 3U to ESPA-Grande",
+        "status_fa": "عملیاتی",
+        "status_en": "Operational",
+        "used_on_fa": "بیش از ۹۰ فضاپیمای پرتاب‌شده",
+        "used_on_en": "90+ spacecraft launched",
+        "engineering_desc_fa": "اشاره‌گری بسیار دقیق در ابعاد کوچک. سکوی ساترن-۲۰۰ بزرگ‌ترین تلسکوپ تاریخ شرکت را حمل کرد.",
+        "engineering_desc_en": "Very fine pointing in small form factors. The Saturn-200 carried the company's largest telescope payload yet.",
+        "customer_ids": [
+          "nasa"
+        ]
+      },
+      {
+        "name_fa": "چرخ عکس‌العملی و ردیاب ستاره",
+        "name_en": "Reaction Wheels & Star Trackers",
+        "type_fa": "قطعات کنترل وضعیت",
+        "type_en": "Attitude-control components",
+        "class_fa": "بیش از ۳٬۸۰۰ قطعهٔ پروازی",
+        "class_en": "3,800+ flown components",
+        "status_fa": "عملیاتی",
+        "status_en": "Operational",
+        "used_on_fa": "صدها ماهوارهٔ تجاری و دولتی",
+        "used_on_en": "Hundreds of commercial and government satellites",
+        "engineering_desc_fa": "پرفروش‌ترین قطعات شرکت. خط تولید چرخ عکس‌العملی در ۲۰۲۶ گسترش یافت.",
+        "engineering_desc_en": "The company's best-selling parts. Reaction wheel production expanded in 2026.",
+        "customer_ids": []
+      },
+      {
+        "name_fa": "ژیروسکوپ گشتاور کنترلی",
+        "name_en": "Control Moment Gyroscopes",
+        "type_fa": "عملگر چابکی",
+        "type_en": "Agility actuator",
+        "class_fa": "برای ماهواره‌های تصویربردار چابک",
+        "class_en": "For agile imaging satellites",
+        "status_fa": "عملیاتی",
+        "status_en": "Operational",
+        "used_on_fa": "مأموریت‌های نیازمند چرخش سریع",
+        "used_on_en": "Missions needing rapid slews",
+        "engineering_desc_fa": "چرخش چندبرابر سریع‌تر از چرخ عکس‌العملی؛ ارزش هر عبور مداری را چند برابر می‌کند.",
+        "engineering_desc_en": "Slews several times faster than reaction wheels, multiplying the value of each orbital pass.",
+        "customer_ids": []
+      }
+    ],
+    "satellites_built_fa": "بیش از ۹۰ فضاپیمای پرتاب‌شده و بیش از ۳٬۸۰۰ قطعه در مدار؛ دو کارخانه در حومهٔ دنور.",
+    "satellites_built_en": "90+ spacecraft launched and 3,800+ components on orbit; two factories in the Denver area.",
+    "customers_fa": [
+      "ناسا",
+      "نیروی فضایی آمریکا",
+      "آزمایشگاه‌های ملی و دانشگاه‌ها",
+      "اپراتورهای تجاری"
+    ],
+    "customers_en": [
+      "NASA",
+      "US Space Force",
+      "National labs and universities",
+      "Commercial operators"
+    ],
+    "milestones_fa": [
+      {
+        "year": "۲۰۰۸",
+        "title": "بنیان‌گذاری",
+        "desc": "آغاز به کار در لافایت کلرادو با تمرکز بر قطعات کنترل وضعیت."
+      },
+      {
+        "year": "۲۰۲۰",
+        "title": "پیوستن به ریتیان",
+        "desc": "غول دفاعی آمریکا شرکت را خرید؛ بعدها زیر برند آرتی‌ایکس."
+      },
+      {
+        "year": "۲۰۲۶",
+        "title": "پرتاب پاندورا",
+        "desc": "ساترن-۲۰۰ مأموریت فراخورشیدی ناسا را برد؛ هشتادوهفتمین فضاپیمای شرکت."
+      },
+      {
+        "year": "۲۰۲۶",
+        "title": "گسترش تولید چرخ",
+        "desc": "ظرفیت خط تولید چرخ‌های عکس‌العملی افزایش یافت."
+      },
+      {
+        "year": "۲۰۲۶",
+        "title": "توافق فروش به ام‌دی‌ای",
+        "desc": "معاملهٔ نقدی ۶۲۰ میلیون دلاری؛ در انتظار تأیید ناظران."
+      }
+    ],
+    "milestones_en": [
+      {
+        "year": "2008",
+        "title": "Founded",
+        "desc": "Started in Lafayette, Colorado, focused on attitude-control components."
+      },
+      {
+        "year": "2020",
+        "title": "Joined Raytheon",
+        "desc": "The US defense giant acquired the company; later under the RTX brand."
+      },
+      {
+        "year": "2026",
+        "title": "Pandora launch",
+        "desc": "Saturn-200 carried NASA's exoplanet mission; the firm's 87th spacecraft."
+      },
+      {
+        "year": "2026",
+        "title": "Wheel production expanded",
+        "desc": "Reaction wheel manufacturing capacity increased."
+      },
+      {
+        "year": "2026",
+        "title": "MDA sale agreed",
+        "desc": "A 620 million dollar cash deal, pending regulatory approval."
+      }
+    ],
+    "notable_missions_fa": [
+      "پاندورا: کاوش جو سیاره‌های فراخورشیدی برای ناسا در ۲۰۲۶",
+      "ده‌ها کیوب‌ست علمی و دفاعی آمریکا",
+      "قطعات پروازی در صدها ماهوارهٔ دیگر سازندگان"
+    ],
+    "notable_missions_en": [
+      "Pandora: NASA exoplanet atmosphere probe in 2026",
+      "Dozens of US science and defense CubeSats",
+      "Flight components aboard hundreds of other makers' satellites"
+    ],
+    "future_plans_fa": [
+      "تکمیل فروش به ام‌دی‌ای تا پایان ۲۰۲۶",
+      "گسترش تولید انبوه قطعات کنترل وضعیت",
+      "سکوهای بزرگ‌تر برای منظومه‌های دفاعی"
+    ],
+    "future_plans_en": [
+      "Close the MDA sale by the end of 2026",
+      "Scale up attitude-control component production",
+      "Larger buses for defense constellations"
+    ],
+    "ar": "بلو كانيون للتقنيات",
+    "ar_d": "مصنّع لمنصات الأقمار ومكوّناتها في كولورادو؛ أطلق أكثر من 90 مركبة. حلّقت عجلات رد الفعل ومتعقبات النجوم التي يصنعها في مئات المهمات.",
+    "specialty_ar": "منصات أقمار صغيرة دقيقة ومكوّنات التحكم بالوضع",
+    "flagship_product_ar": "منصة Saturn-200",
+    "flagship_product_app_ar": "منصة علمية ودفاعية للأقمار المصغّرة؛ حملت مهمة NASA Pandora.",
+    "satellites_built_ar": "أُطلقت أكثر من 90 مركبة فضائية، وحلّق أكثر من 3,800 مكوّن؛ وتدير الشركة مصنعين في منطقة دنفر.",
+    "maker_class_ar": "مصنّع منصات ومكوّنات للأقمار الصغيرة",
+    "satellite_industry_role": "platform_and_subsystems",
+    "country_ar": "الولايات المتحدة",
+    "org_type_ar": "شركة خاصة تابعة لمجموعة RTX (الولايات المتحدة)",
+    "history_ar": "تأسست Blue Canyon عام 2008 في لافاييت بولاية كولورادو. تصنع الأقمار الصغيرة كاملةً ومكونات التحكم الدقيق في الاتجاه. حلقت عجلات رد الفعل ومتتبعات النجوم التابعة لها في مئات المهمات. اشترتها مجموعة Raytheon الدفاعية العملاقة في نهاية 2020 وأصبحت ضمن RTX. وأُطلق حتى الآن أكثر من 90 مركبة فضائية من خطوط إنتاجها. وفي يناير 2026 حملت منصتها Saturn-200 مهمة Pandora التابعة لناسا إلى المدار لدراسة أجواء الكواكب خارج المجموعة الشمسية. وفي يونيو 2026 وافقت شركة MDA الكندية على شراء Blue Canyon مقابل 620 مليون دولار نقدًا؛ ويعتمد إتمام الصفقة على موافقة الجهات التنظيمية حتى نهاية 2026.",
+    "product_history_ar": "تطورت منتجاتها من أقمار CubeSat ثلاثية الوحدات إلى الأقمار الصغيرة من فئة Saturn، وتشمل سبع عائلات منصات وأكثر من 3800 مكوّن مُستخدَم في الطيران.",
+    "flagship_product_status_ar": "تشغيلي",
+    "future_plans_ar": [
+      "استكمال صفقة البيع إلى MDA بحلول نهاية 2026",
+      "توسيع الإنتاج الكبير لمكوّنات التحكم بالاتجاه",
+      "منصات أكبر للكوكبات الدفاعية"
+    ],
+    "customers_ar": [
+      "ناسا",
+      "قوة الفضاء الأمريكية",
+      "المختبرات الوطنية والجامعات",
+      "المشغّلون التجاريون"
+    ],
+    "notable_missions_ar": [
+      "Pandora: دراسة أغلفة الكواكب الخارجية لصالح ناسا في 2026",
+      "عشرات الأقمار المكعبة العلمية والدفاعية الأمريكية",
+      "مكوّنات طيران على مئات الأقمار الصناعية التي بنتها جهات أخرى"
+    ],
+    "milestones_ar": [
+      {
+        "year": "۲۰۰۸",
+        "title_ar": "التأسيس",
+        "desc_ar": "بدأت الشركة في لافاييت بكولورادو مع التركيز على مكوّنات التحكم بالاتجاه."
+      },
+      {
+        "year": "۲۰۲۰",
+        "title_ar": "الانضمام إلى رايثيون",
+        "desc_ar": "استحوذت شركة الدفاع الأمريكية الكبرى على الشركة؛ وأصبحت لاحقاً ضمن علامة RTX."
+      },
+      {
+        "year": "۲۰۲۶",
+        "title_ar": "إطلاق Pandora",
+        "desc_ar": "حملت منصة Saturn-200 مهمة ناسا لدراسة الكواكب الخارجية؛ وكانت المركبة الفضائية رقم 87 للشركة."
+      },
+      {
+        "year": "۲۰۲۶",
+        "title_ar": "توسيع إنتاج العجلات",
+        "desc_ar": "زادت الطاقة الإنتاجية لعجلات رد الفعل."
+      },
+      {
+        "year": "۲۰۲۶",
+        "title_ar": "الاتفاق على البيع إلى MDA",
+        "desc_ar": "صفقة نقدية بقيمة 620 مليون دولار، رهن الموافقة التنظيمية."
+      }
+    ],
+    "location_en": "Lafayette, Colorado, United States",
+    "location_ar": "لافاييت، كولورادو، الولايات المتحدة",
+    "city_ar": "لافاييت، كولورادو",
+    "secondary_categories": [
+      "components"
+    ],
+    "logo": "assets/logos/orbita/blue-canyon.svg",
+    "logo_kind": "orbita_editorial_nonofficial",
+    "orbita_marker_code": "BC",
+    "orbita_verified_profile": {
+      "schema_version": 2,
+      "profile_type": "components",
+      "verified_on": "2026-11-12",
+      "review_scope": "New specialist dossier only; preexisting category fields not recertified",
+      "sources": [
+        {
+          "id": "bct_products",
+          "title": "Blue Canyon Technologies — Components",
+          "url": "https://www.bluecanyontech.com/components/",
+          "checked_on": "2026-11-12"
+        },
+        {
+          "id": "bct_rw16",
+          "title": "Blue Canyon Technologies — RW16 (Apr 2025)",
+          "url": "https://www.bluecanyontech.com/news/rtxs-blue-canyon-technologies-introduces-new-reaction-wheel/",
+          "checked_on": "2026-11-12"
+        },
+        {
+          "id": "rtx_2026",
+          "title": "RTX — Reaction wheel production (Apr 2026)",
+          "url": "https://www.rtx.com/news/news-center/2026/04/14/rtxs-blue-canyon-technologies-expands-reaction-wheel-production-capacity",
+          "checked_on": "2026-11-12"
+        }
+      ],
+      "sections": [
+        {
+          "id": "overview",
+          "fa": "شناسنامه و تخصص",
+          "en": "Identity & specialization",
+          "ar": "التعريف والتخصص",
+          "items": [
+            {
+              "fa": "بلو کنیون تکنولوژیز سازنده ماهواره کوچک و زیرسامانه‌های کنترل وضعیت در کلرادو آمریکا و بخشی از کسب‌وکار ریثیونِ RTX است.",
+              "en": "Blue Canyon Technologies is a Colorado-based small-satellite and attitude-control component manufacturer within RTX’s Raytheon business.",
+              "ar": "بلو كانيون تكنولوجيز شركة مقرها كولورادو تصنع الأقمار الصغيرة ومكوّنات التحكم في الاتجاه، وتتبع أعمال Raytheon ضمن RTX.",
+              "source_ids": [
+                "rtx_2026"
+              ]
+            }
+          ]
+        },
+        {
+          "id": "products",
+          "fa": "محصولات و فناوری",
+          "en": "Products & technology",
+          "ar": "المنتجات والتقنية",
+          "items": [
+            {
+              "fa": "محصولات قطعه‌ای شرکت شامل ردیاب‌های ستاره‌ای نانویی و خانواده چرخ‌های عکس‌العملی است.",
+              "en": "Its spacecraft components include nano star trackers and reaction-wheel product families.",
+              "ar": "تشمل مكوّنات المركبات الفضائية متتبعات النجوم النانوية وعائلات عجلات رد الفعل.",
+              "source_ids": [
+                "bct_products"
+              ]
+            },
+            {
+              "fa": "چرخ عکس‌العملی RW16 معرفی‌شده در سال ۲۰۲۵ دارای ظرفیت ممان زاویه‌ای اسمی ۱۶ نیوتن‌مترثانیه است.",
+              "en": "The RW16 reaction wheel introduced in 2025 has a nominal momentum-storage capability of 16 N·m·s.",
+              "ar": "تتمتع عجلة رد الفعل RW16 التي أُعلن عنها عام 2025 بسعة زخم زاوي اسمية مقدارها 16 نيوتن متر ثانية.",
+              "source_ids": [
+                "bct_rw16"
+              ]
+            }
+          ]
+        },
+        {
+          "id": "heritage",
+          "fa": "سابقه پروازی",
+          "en": "Flight heritage",
+          "ar": "السجل الفضائي",
+          "items": [
+            {
+              "fa": "شرکت ردیاب ستاره‌ای نانویی خود را دارای سابقه پرواز معرفی می‌کند؛ برای هر شماره مدل، فهرست مستقل ماهواره‌های میزبان در این نمونه تأیید نشده است.",
+              "en": "The manufacturer describes its nano star tracker as flight-proven; model-by-model host satellites are not independently established in this sample.",
+              "ar": "تصف الشركة متتبع النجوم النانوي بأنه مُثبت الاستخدام في الفضاء؛ لكن لم تُوثق قائمة مستقلة بالأقمار المضيفة لكل طراز في هذه العينة.",
+              "source_ids": [
+                "bct_products"
+              ]
+            }
+          ]
+        },
+        {
+          "id": "network",
+          "fa": "مشتریان و زنجیره تأمین",
+          "en": "Customers & supply chain",
+          "ar": "العملاء وسلسلة التوريد",
+          "items": [
+            {
+              "fa": "RTX در آوریل ۲۰۲۶ از برنامه افزایش ظرفیت تولید چرخ‌های عکس‌العملی بلو کنیون خبر داد؛ ظرفیت هدف، عملکرد تولید تحقق‌یافته محسوب نمی‌شود.",
+              "en": "In April 2026, RTX announced a planned expansion of reaction-wheel manufacturing throughput; the target is not reported as achieved production.",
+              "ar": "أعلنت RTX في أبريل 2026 عن خطة لزيادة إنتاج عجلات رد الفعل؛ ولا تُعرض السعة المستهدفة بوصفها إنتاجاً محققاً.",
+              "source_ids": [
+                "rtx_2026"
+              ]
+            }
+          ]
+        },
+        {
+          "id": "timeline",
+          "fa": "تاریخچه و تحولات",
+          "en": "History & development",
+          "ar": "التاريخ والتطور",
+          "items": [
+            {
+              "fa": "شرکت در آوریل ۲۰۲۵ چرخ RW16 را معرفی کرد و در آوریل ۲۰۲۶ از توسعه ظرفیت تولید چرخ‌ها خبر داد.",
+              "en": "The company announced RW16 in April 2025 and disclosed capacity expansion plans in April 2026.",
+              "ar": "أعلنت الشركة عن RW16 في أبريل 2025 ثم عن خطط توسيع القدرة الإنتاجية في أبريل 2026.",
+              "source_ids": [
+                "rtx_2026"
+              ]
+            }
+          ]
+        }
+      ],
+      "summary": {
+        "fa": "تولیدکننده ماهواره کوچک و قطعات کنترل وضعیت، از جمله چرخ‌های عکس‌العملی و ردیاب‌های ستاره‌ای؛ بخشی از RTX.",
+        "en": "Small-satellite and attitude-control component manufacturer within RTX, including reaction wheels and star trackers.",
+        "ar": "شركة لصناعة الأقمار الصغيرة ومكوّنات التحكم في الاتجاه ضمن RTX، ومنها عجلات رد الفعل ومتتبعات النجوم."
+      }
+    },
+    "coordinate_precision": "city_approximation_existing"
+  },
+  {
+    "id": "dhv-technology",
+    "cat": "components",
+    "en": "DHV Technology",
+    "fa": "دی‌اچ‌وی تکنولوژی",
+    "ar": "دي إتش في تكنولوجي",
+    "country": "Spain",
+    "country_fa": "اسپانیا",
+    "country_ar": "إسبانيا",
+    "city": "Málaga",
+    "city_fa": "مالاگا",
+    "city_ar": "مالقة",
+    "lat": 36.7213,
+    "lon": -4.4214,
+    "coordinate_precision": "city_center_approximation",
+    "founded": 2013,
+    "site": "https://dhvtechnology.com/",
+    "en_d": "Spanish space-power subsystem manufacturer of solar arrays, EPS, PCDU and related technologies; located in Málaga.",
+    "fa_d": "سازنده اسپانیایی پنل‌های خورشیدی و زیرسامانه‌های توان فضایی، از جمله EPS و PCDU، مستقر در مالاگا.",
+    "ar_d": "مصنّع إسباني للألواح الشمسية وأنظمة القدرة الفضائية، بما فيها EPS وPCDU، ومقره مالقة.",
+    "logo": "assets/logos/orbita/dhv-technology.svg",
+    "logo_kind": "orbita_editorial_nonofficial",
+    "orbita_marker_code": "DH",
+    "orbita_verified_profile": {
+      "schema_version": 2,
+      "profile_type": "components",
+      "verified_on": "2026-11-12",
+      "review_scope": "New specialist dossier only; preexisting category fields not recertified",
+      "sources": [
+        {
+          "id": "dhv_about",
+          "title": "DHV Technology — About",
+          "url": "https://dhvtechnology.com/about-us/",
+          "checked_on": "2026-11-12"
+        },
+        {
+          "id": "dhv_prod",
+          "title": "DHV Technology — Products",
+          "url": "https://dhvtechnology.com/products/",
+          "checked_on": "2026-11-12"
+        },
+        {
+          "id": "dhv_smallsat",
+          "title": "DHV Technology — SmallSat solar panels",
+          "url": "https://dhvtechnology.com/products/solar-panels-smallsats/",
+          "checked_on": "2026-11-12"
+        },
+        {
+          "id": "dhv_iaf",
+          "title": "International Astronautical Federation — DHV Technology",
+          "url": "https://www.iafastro.org/membership/all-members/dhv-technology.html",
+          "checked_on": "2026-11-12"
+        }
+      ],
+      "sections": [
+        {
+          "id": "overview",
+          "fa": "شناسنامه و تخصص",
+          "en": "Identity & specialization",
+          "ar": "التعريف والتخصص",
+          "items": [
+            {
+              "fa": "DHV Technology شرکت اسپانیایی مستقر در مالاگا و سازنده پنل‌های خورشیدی و زیرسامانه‌های توان برای کاربردهای فضایی است.",
+              "en": "DHV Technology is a Málaga-based Spanish manufacturer of solar panels and electrical-power subsystems for space applications.",
+              "ar": "DHV Technology شركة إسبانية مقرها مالقة تصنّع الألواح الشمسية وأنظمة الطاقة الكهربائية للتطبيقات الفضائية.",
+              "source_ids": [
+                "dhv_about"
+              ]
+            }
+          ]
+        },
+        {
+          "id": "products",
+          "fa": "محصولات و فناوری",
+          "en": "Products & technology",
+          "ar": "المنتجات والتقنية",
+          "items": [
+            {
+              "fa": "محصولات شامل پنل خورشیدی کیوب‌ست و ماهواره کوچک، سامانه توان الکتریکی (EPS)، واحد تنظیم و توزیع توان (PCDU)، عایق چندلایه (MLI) و محرک آرایه خورشیدی (SADA) است.",
+              "en": "Its portfolio covers CubeSat and SmallSat solar panels, EPS, PCDU, multilayer insulation (MLI) and solar array drive assemblies (SADA).",
+              "ar": "تشمل المنتجات ألواحاً شمسية لأقمار CubeSat وSmallSat وأنظمة القدرة EPS ووحدات PCDU والعزل متعدد الطبقات MLI وآليات توجيه المصفوفات الشمسية SADA.",
+              "source_ids": [
+                "dhv_prod"
+              ]
+            },
+            {
+              "fa": "شرکت برای پنل‌های ماهواره‌های کوچک، گونه‌های ثابت روی بدنه و بازشونده را معرفی می‌کند؛ مشخصات به پیکربندی محصول وابسته‌اند.",
+              "en": "For small satellites the company offers body-mounted and deployable solar arrays, with specifications dependent on configuration.",
+              "ar": "تقدم الشركة مصفوفات شمسية مثبتة على الهيكل أو قابلة للنشر للأقمار الصغيرة، وتختلف المواصفات حسب التكوين.",
+              "source_ids": [
+                "dhv_smallsat"
+              ]
+            }
+          ]
+        },
+        {
+          "id": "heritage",
+          "fa": "سابقه پروازی",
+          "en": "Flight heritage",
+          "ar": "السجل الفضائي",
+          "items": [
+            {
+              "fa": "فدراسیون بین‌المللی فضانوردی استفاده فضایی محصولات DHV را در معرفی عضویت این شرکت گزارش می‌کند؛ نام هر مأموریت و مدل محصول در این نمونه مستند نشده است.",
+              "en": "The International Astronautical Federation’s member profile reports use of DHV products on orbit; individual mission-to-product mappings are not asserted for this sample.",
+              "ar": "يشير ملف عضوية الشركة لدى الاتحاد الدولي للملاحة الفضائية إلى استخدام منتجات DHV في المدار؛ ولا ننسب طرزاً محددة إلى بعثات بعينها هنا.",
+              "source_ids": [
+                "dhv_iaf"
+              ]
+            }
+          ]
+        },
+        {
+          "id": "network",
+          "fa": "مشتریان و زنجیره تأمین",
+          "en": "Customers & supply chain",
+          "ar": "العملاء وسلسلة التوريد",
+          "items": [
+            {
+              "fa": "شرکت طراحی متناسب با نیاز مأموریت و یکپارچه‌سازی پنل و زیرسامانه توان را ارائه می‌دهد؛ نام مشتری بدون مدرک قرارداد ثبت نشده است.",
+              "en": "DHV offers mission-customized solar-array and power-subsystem design; no customer identity is inferred without a supporting contract or mission source.",
+              "ar": "توفر DHV تصميمات مخصصة للمهمة للألواح الشمسية وأنظمة القدرة، ولا نستنتج أسماء عملاء دون مصدر يدعمها.",
+              "source_ids": [
+                "dhv_about"
+              ]
+            }
+          ]
+        },
+        {
+          "id": "timeline",
+          "fa": "تاریخچه و تحولات",
+          "en": "History & development",
+          "ar": "التاريخ والتطور",
+          "items": [
+            {
+              "fa": "بر اساس سابقه منتشرشده شرکت، فعالیت DHV در اسپانیا در ژانویه ۲۰۱۳ آغاز شده است.",
+              "en": "The company’s published history dates its start in Spain to January 2013.",
+              "ar": "بحسب السجل المنشور للشركة، بدأت أنشطة DHV في إسبانيا في يناير 2013.",
+              "source_ids": [
+                "dhv_about"
+              ]
+            }
+          ]
+        }
+      ],
+      "summary": {
+        "fa": "سازنده اسپانیایی پنل‌های خورشیدی و زیرسامانه‌های توان فضایی، از جمله EPS و PCDU، مستقر در مالاگا.",
+        "en": "Spanish space-power subsystem manufacturer of solar arrays, EPS, PCDU and related technologies; located in Málaga.",
+        "ar": "مصنّع إسباني للألواح الشمسية وأنظمة القدرة الفضائية، بما فيها EPS وPCDU، ومقره مالقة."
+      }
+    }
+  }
+]

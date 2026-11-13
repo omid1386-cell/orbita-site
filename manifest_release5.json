@@ -1,0 +1,241 @@
+{
+  "release_name": "ORBITA final cumulative phase 1–5 deployment overlay",
+  "release_version": "20261113-r5-integrated",
+  "release_date": "2026-11-13",
+  "source": "ORBITA_S4_Workspace.zip plus phase-5 fixes and audits",
+  "no_live_deployment_performed": true,
+  "deployment_type": "copy_changed_files_into_existing_site; do_not_delete_untouched_files",
+  "deploy_files": [
+    {
+      "path": "index.html",
+      "sha256": "bf1f43e290bb2c4ba6fe3375a4f40e9db2910debb497e1bac9266855c7424161",
+      "bytes": 37415,
+      "action": "replace",
+      "expected_previous_sha256": "4e77dcf5f9e9d9bf3ea26a5ce97f7fe262578f989f76adbe3430e495cd7e736a"
+    },
+    {
+      "path": "assets/js/app.js",
+      "sha256": "812fe50b2ad98090f76b505b5d5e436a45292efce58b02d7d9b9cc6d2619acc7",
+      "bytes": 837693,
+      "action": "replace",
+      "expected_previous_sha256": "10ce95ee820bfa013ea0038e59ceb431d9103064a69bc1f227003459c6e51808"
+    },
+    {
+      "path": "assets/css/app.css",
+      "sha256": "663063239418beb79747c2f6c510d385837503fa609f036e5e0413511dcd55ec",
+      "bytes": 96654,
+      "action": "replace",
+      "expected_previous_sha256": "766725c3617016483efe81c99f1c37b31902e02bdb64b002a682899e463b020e"
+    },
+    {
+      "path": "data/companies.json",
+      "sha256": "1a45e9fe4628c88fd26e6b697fff15ddb3684ce26ff6d697e88d457fc7727708",
+      "bytes": 4435138,
+      "action": "replace",
+      "expected_previous_sha256": "de3c9daa2e913d95717d9971355fa078b21850bc3518fb2aad9460fff757e819"
+    },
+    {
+      "path": "data/companies_launch.json",
+      "sha256": "062addeddd7299c39e8c556f2fab20c7753c8d462407f0d654e2bc46b1be7091",
+      "bytes": 1067068,
+      "action": "replace",
+      "expected_previous_sha256": "062addeddd7299c39e8c556f2fab20c7753c8d462407f0d654e2bc46b1be7091"
+    },
+    {
+      "path": "data/companies_agency.json",
+      "sha256": "03a9f2d6534c95dcba344af1fb6aefcd1797eb40ab7e456938376ef6bddadbc6",
+      "bytes": 2007789,
+      "action": "replace",
+      "expected_previous_sha256": "03a9f2d6534c95dcba344af1fb6aefcd1797eb40ab7e456938376ef6bddadbc6"
+    },
+    {
+      "path": "data/companies_propulsion.json",
+      "sha256": "729781e32c6ec51faf59a5ca840b7668931a04ce62df7542e7268d39e288cbbb",
+      "bytes": 799519,
+      "action": "replace",
+      "expected_previous_sha256": "87af75869ec4c4e4205bcd86cdb012835784fa02c64ca17bc467dcc6be67991e"
+    },
+    {
+      "path": "data/companies_satmaker.json",
+      "sha256": "a2903117cc5eba65dccc649d2a5dadf890cfb3cc3a024c7ac6258f83ae895a45",
+      "bytes": 553369,
+      "action": "replace",
+      "expected_previous_sha256": "bc85f5095f4cb7f9b1dfc3da2fc0548f49a0afe61b257dc544c94f4416fee115"
+    },
+    {
+      "path": "data/sites.json",
+      "sha256": "6b372455d8febf40cb0c64a187594f16bdcec4873267c5942c6e033de9604d75",
+      "bytes": 877332,
+      "action": "replace",
+      "expected_previous_sha256": "6b372455d8febf40cb0c64a187594f16bdcec4873267c5942c6e033de9604d75"
+    },
+    {
+      "path": "data/companies_components.json",
+      "sha256": "f52a37e483a948bf45f0f7ec40152af966cfe799d42ce0307263ca6d939e4fa3",
+      "bytes": 56302,
+      "action": "add_or_replace",
+      "expected_previous_sha256": null
+    },
+    {
+      "path": "data/companies_payloads.json",
+      "sha256": "d382320ed2bf9a071bcced81b64eb3c5a0aa9dbcb5fde92960c20b927990f9dc",
+      "bytes": 18823,
+      "action": "add_or_replace",
+      "expected_previous_sha256": null
+    },
+    {
+      "path": "data/companies_ground_services.json",
+      "sha256": "5f324e3f310c8bd152ae4aae06596c1e28375ffb100b11ae424d7127e8093927",
+      "bytes": 7531,
+      "action": "add_or_replace",
+      "expected_previous_sha256": null
+    },
+    {
+      "path": "data/companies_inspace_services.json",
+      "sha256": "ad9c6ff27c640abb9d411b9238e2c18b60fb4d3b14983fd5754485ce92819042",
+      "bytes": 8008,
+      "action": "add_or_replace",
+      "expected_previous_sha256": null
+    },
+    {
+      "path": "data/companies_university_space.json",
+      "sha256": "33ff8f9f8cf0d3e04cc76d84a047312d6eb311c6523d07ddc130095017111f5c",
+      "bytes": 15929,
+      "action": "add_or_replace",
+      "expected_previous_sha256": null
+    },
+    {
+      "path": "data/companies_test_facility.json",
+      "sha256": "ecbdaf8b90d6653a6f52c17c55985441cdaf5d1a6e59a1f29ac678869a062aa1",
+      "bytes": 8842,
+      "action": "add_or_replace",
+      "expected_previous_sha256": null
+    },
+    {
+      "path": "data/companies_ground_station.json",
+      "sha256": "b9b214233006ccba7dd55a263b19b7145578cf416a35462794807cac99f130a4",
+      "bytes": 7929,
+      "action": "add_or_replace",
+      "expected_previous_sha256": null
+    },
+    {
+      "path": "data/companies_mission_control.json",
+      "sha256": "39499de050b4534dbf0e6a75f200be7149a8859ea3b4eed9aa6178e961f7df00",
+      "bytes": 7174,
+      "action": "add_or_replace",
+      "expected_previous_sha256": null
+    },
+    {
+      "path": "data/verified_relations.json",
+      "sha256": "4aa07253057f77ac6ca018b646f3ded0362dc212a74ac009e1c1122820259daf",
+      "bytes": 23860,
+      "action": "add_or_replace",
+      "expected_previous_sha256": null
+    },
+    {
+      "path": "assets/logos/orbita/blue-canyon.svg",
+      "sha256": "e54f6e24b45b649a01876921765804b59a37e5066e3385aa7cb69e01fe07eef8",
+      "bytes": 805,
+      "action": "add_or_replace",
+      "expected_previous_sha256": null
+    },
+    {
+      "path": "assets/logos/orbita/cubespace.svg",
+      "sha256": "4159bc6d90bf1129e9c6f1a1b1fa143d427ce298e0604b89ec4721c31a876a5b",
+      "bytes": 830,
+      "action": "add_or_replace",
+      "expected_previous_sha256": null
+    },
+    {
+      "path": "assets/logos/orbita/d-orbit.svg",
+      "sha256": "5341d00b81a90c4b7c6a51fc9103d78b70510acef9fadebe258fbeda9c37fdc5",
+      "bytes": 845,
+      "action": "add_or_replace",
+      "expected_previous_sha256": null
+    },
+    {
+      "path": "assets/logos/orbita/dhv-technology.svg",
+      "sha256": "f485769b100f4d3711561fa64fbc6ca8faf741d8890a3d1643992b3c50028834",
+      "bytes": 766,
+      "action": "add_or_replace",
+      "expected_previous_sha256": null
+    },
+    {
+      "path": "assets/logos/orbita/dragonfly-space.svg",
+      "sha256": "08dbbad87a16a7cf1d2087d7747ac8ef6da5b13f3ab7027fc3b812b7a1c2de04",
+      "bytes": 841,
+      "action": "add_or_replace",
+      "expected_previous_sha256": null
+    },
+    {
+      "path": "assets/logos/orbita/esa-cebreros-dsa2.svg",
+      "sha256": "2b18b5bf54d65ebf91302d7361c6bcfc81a007944d44871c7814185ed5a3ae40",
+      "bytes": 803,
+      "action": "add_or_replace",
+      "expected_previous_sha256": null
+    },
+    {
+      "path": "assets/logos/orbita/esa-esoc.svg",
+      "sha256": "2e96edc63491ec0ded357889539f0b7b874124405044fbe9250e173b0d710ac4",
+      "bytes": 818,
+      "action": "add_or_replace",
+      "expected_previous_sha256": null
+    },
+    {
+      "path": "assets/logos/orbita/esa-estec-test-centre.svg",
+      "sha256": "bd053dafba7254c667e237eacdb268cb5a060538ef701091ac5b149935280f56",
+      "bytes": 786,
+      "action": "add_or_replace",
+      "expected_previous_sha256": null
+    },
+    {
+      "path": "assets/logos/orbita/ksat-ground-services.svg",
+      "sha256": "9bc887a3975296edeca9a01f96a6500e96c9586888413da468668217e147e9bf",
+      "bytes": 805,
+      "action": "add_or_replace",
+      "expected_previous_sha256": null
+    },
+    {
+      "path": "assets/logos/orbita/stanford-space-rendezvous-lab.svg",
+      "sha256": "948678f8d218e1a5c7f79c3836f1fab916b3e0d35ecd90ff795e5e02591abf90",
+      "bytes": 888,
+      "action": "add_or_replace",
+      "expected_previous_sha256": null
+    },
+    {
+      "path": "assets/logos/orbita/surrey-space-centre.svg",
+      "sha256": "6497732dc7c5e5f08fef4c5afe70e216111bd96709072975dd736647bb40dbd6",
+      "bytes": 821,
+      "action": "add_or_replace",
+      "expected_previous_sha256": null
+    }
+  ],
+  "baseline_reference": "ORBITA_Tile_Continuity_Fix_2026-11-12.zip + ORBITA_Language_Verification_Complete_2026-11-12.zip (assumed local baseline)",
+  "protected_unchanged": {
+    "assets/geo/jawg_sunny.json": "17587ae6d62baa3355df26bae5fb91005a33222f0901552f125e89518c61661d",
+    "assets/vendor/maplibre-gl.js": "c46084df69bbaa995b301a515274a86ec53905c78459b80dccbc27a0c0b8d13b",
+    "assets/vendor/maplibre-gl.css": "731181d400d65a8b09d842f55b70bc4dc11010b15b8549e2c65a69d233fbdd2e",
+    "assets/geo/countries_simplified.json": "44fced7c0f4ed564a7451ca4d440fa4bea54d607d7ce95ec64aff1b21c80b58b",
+    "assets/geo/land.json": "74e32d31a1f9531a8531d9f5d7bf1b29c4ec94f87a006639e998e01be14f9156",
+    "assets/geo/labels.json": "53c3e64ddde2535b0be60c98fa66c2e4a3f7d4c28400008c70f963deb9de8f6f"
+  },
+  "statistical_scope": {
+    "canonical_map_entities": 274,
+    "initial_entities_preserved": 266,
+    "verified_pilot_specialist_profiles": 11,
+    "new_distinct_map_entities": 8,
+    "new_selectable_categories": 8,
+    "total_selectable_categories": 14,
+    "verified_graph_edges": 24,
+    "graph_map_nodes": 14,
+    "graph_nongeo_nodes": 13,
+    "new_editorial_svg_logos": 11
+  },
+  "known_limitations": [
+    "The browser sandbox blocked localhost HTTP and real WebGL, so the real basemap/tile behavior was not end-to-end validated.",
+    "Pilot data are selected examples, not comprehensive worldwide coverage.",
+    "Existing source snapshot lacks 93 referenced legacy local logo images; check deployed repository; safe fallback in JS is installed.",
+    "Some pre-existing data lack independently verified claims; this release does not re-verify all legacy records.",
+    "Review seven shared-website identity groups before any merging."
+  ]
+}

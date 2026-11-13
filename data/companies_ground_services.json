@@ -1,0 +1,140 @@
+[
+  {
+    "id": "ksat-ground-services",
+    "cat": "ground_services",
+    "en": "Kongsberg Satellite Services (KSAT)",
+    "fa": "کُنگسبرگ ستلایت سرویسز (کی‌ست)",
+    "ar": "خدمات كونغسبيرغ للأقمار الصناعية (KSAT)",
+    "country": "Norway",
+    "country_fa": "نروژ",
+    "country_ar": "النرويج",
+    "city": "Tromsø",
+    "city_fa": "ترومسو",
+    "city_ar": "ترومسو",
+    "lat": 69.6492,
+    "lon": 18.9553,
+    "site": "https://www.ksat.no/",
+    "fa_d": "شرکت نروژی ارائه‌دهنده خدمات شبکه ایستگاه زمینی، ارتباط با ماهواره‌ها و تحویل داده؛ این رکورد شرکت است، نه یک ایستگاه مشخص.",
+    "en_d": "Norwegian provider of ground-station network, satellite communications and data services; this record is the operator, not one station.",
+    "ar_d": "شركة نرويجية تقدّم خدمات شبكات المحطات الأرضية واتصالات الأقمار والبيانات؛ يمثّل هذا السجل المشغّل لا محطة بعينها.",
+    "logo": "assets/logos/orbita/ksat-ground-services.svg",
+    "logo_kind": "orbita_editorial_nonofficial",
+    "orbita_marker_code": "KS",
+    "coordinate_precision": "city_center_approximation",
+    "orbita_verified_profile": {
+      "schema_version": 3,
+      "profile_type": "ground_services",
+      "verified_on": "2026-11-12",
+      "review_scope": "Phase-3 evidence-led specialty dossier only; legacy data not recertified; no global coverage claim",
+      "summary": {
+        "fa": "ارائه‌دهنده خدمات شبکه زمینی و تحویل داده برای مأموریت‌های ماهواره‌ای.",
+        "en": "Ground network and data-delivery services for satellite missions.",
+        "ar": "خدمات الشبكات الأرضية وتوزيع البيانات للمهمات الفضائية."
+      },
+      "sources": [
+        {
+          "id": "ks_contact",
+          "title": "KSAT — Headquarters and contact",
+          "url": "https://www.ksat.no/about-us/contact/",
+          "checked_on": "2026-11-12"
+        },
+        {
+          "id": "ks_net",
+          "title": "KSAT — Global Ground Station Network",
+          "url": "https://www.ksat.no/ground-network-services/the-ksat-global-ground-station-network/",
+          "checked_on": "2026-11-12"
+        },
+        {
+          "id": "ks_lite",
+          "title": "KSAT — KSATlite service",
+          "url": "https://www.ksat.no/ground-network-services/ksatlite/",
+          "checked_on": "2026-11-12"
+        }
+      ],
+      "sections": [
+        {
+          "id": "overview",
+          "fa": "شناسنامه و مدل کسب‌وکار",
+          "en": "Identity & business model",
+          "ar": "التعريف ونموذج الأعمال",
+          "items": [
+            {
+              "fa": "دفتر مرکزی شرکت در ترومسو نروژ قرار دارد؛ موقعیت نمایش‌داده‌شده در نقشه، مرکز شهر است نه مکان دقیق دفتر.",
+              "en": "The company headquarters is in Tromsø, Norway; the plotted point is a city reference, not the office coordinates.",
+              "ar": "يقع المقر الرئيسي في ترومسو بالنرويج؛ وتمثل النقطة على الخريطة المدينة لا إحداثيات المكتب الدقيقة.",
+              "source_ids": [
+                "ks_contact"
+              ]
+            }
+          ]
+        },
+        {
+          "id": "services",
+          "fa": "محصولات و خدمات",
+          "en": "Products & services",
+          "ar": "المنتجات والخدمات",
+          "items": [
+            {
+              "fa": "KSATlite خدمات خودکار بخش زمینی را برای ارتباط ماهواره‌ای، زمان‌بندی گذرها و مدیریت جریان داده ارائه می‌کند.",
+              "en": "KSATlite provides automated ground-segment services for satellite links, pass scheduling and data-flow management.",
+              "ar": "توفّر KSATlite خدمات القطاع الأرضي المؤتمتة للاتصالات بالأقمار وجدولة المرور وإدارة تدفق البيانات.",
+              "source_ids": [
+                "ks_lite"
+              ]
+            }
+          ]
+        },
+        {
+          "id": "network",
+          "fa": "شبکه و پوشش",
+          "en": "Network & footprint",
+          "ar": "الشبكة والتغطية",
+          "items": [
+            {
+              "fa": "شبکه شرکت از ایستگاه‌های توزیع‌شده جغرافیایی برای پشتیبانی مدارهای قطبی و مایل استفاده می‌کند؛ این نقشه، پوشش لحظه‌ای یا همه ایستگاه‌های شبکه را ادعا نمی‌کند.",
+              "en": "The geographically distributed network serves polar and inclined orbits; this record does not imply real-time coverage or plot every station.",
+              "ar": "تخدم الشبكة الموزعة جغرافياً المدارات القطبية والمائلة؛ ولا يدّعي السجل عرض التغطية الآنية أو جميع محطات الشبكة.",
+              "source_ids": [
+                "ks_net"
+              ]
+            }
+          ]
+        },
+        {
+          "id": "capacity",
+          "fa": "عملکرد و ظرفیت",
+          "en": "Capability & capacity",
+          "ar": "القدرات والسعة",
+          "items": [
+            {
+              "fa": "در معرفی KSATlite، خدمات باند S برای ارسال و دریافت و باندهای X و Ka برای دریافت داده ذکر شده است؛ این قابلیت به همان سرویس مربوط است.",
+              "en": "The KSATlite service lists S-band uplink/downlink and X- and Ka-band downlink; this applies to that service, not every station.",
+              "ar": "تذكر خدمة KSATlite نطاق S للإرسال والاستقبال ونطاقَي X وKa للاستقبال؛ وتخص هذه الإمكانات الخدمة لا كل محطة.",
+              "source_ids": [
+                "ks_lite"
+              ]
+            }
+          ]
+        },
+        {
+          "id": "clients",
+          "fa": "مشتریان و شبکه عملیاتی",
+          "en": "Clients & operational links",
+          "ar": "العملاء والروابط التشغيلية",
+          "items": [
+            {
+              "fa": "KSAT شبکه‌ای از ایستگاه‌های خود و شرکای مرتبط را برای خدمات ارتباطی معرفی می‌کند؛ فهرست قراردادهای اختصاصی یا تمام مشتریان در این نمونه تأیید نشده است.",
+              "en": "KSAT describes a network combining its infrastructure with partners; this pilot does not verify an exhaustive client or contract roster.",
+              "ar": "تصف KSAT شبكة تجمع بنيتها التحتية مع شركائها؛ ولا تثبت هذه العينة قائمة شاملة بالعملاء أو العقود.",
+              "source_ids": [
+                "ks_net",
+                "ks_lite"
+              ]
+            }
+          ]
+        }
+      ],
+      "data_status": "verified_pilot"
+    }
+  }
+]

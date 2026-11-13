@@ -23840,7 +23840,136 @@
         "title_ar": "إطلاق EOS SAT-1",
         "desc_ar": "أُطلق قمر رصد الأرض الذي صنعته الشركة في 3 يناير."
       }
-    ]
+    ],
+    "secondary_categories": [
+      "payloads"
+    ],
+    "logo": "assets/logos/orbita/dragonfly-space.svg",
+    "logo_kind": "orbita_editorial_nonofficial",
+    "orbita_marker_code": "DF",
+    "coordinate_precision": "city_approximation_existing",
+    "orbita_verified_profile": {
+      "schema_version": 3,
+      "profile_type": "payloads",
+      "verified_on": "2026-11-12",
+      "review_scope": "Phase-3 evidence-led specialty dossier only; legacy data not recertified; no global coverage claim",
+      "summary": {
+        "fa": "سازنده محموله‌های تصویربرداری الکترواپتیکی برای ماهواره‌ها؛ همچنین سازنده فضاپیمای کامل.",
+        "en": "Manufacturer of electro-optical satellite imaging payloads and complete spacecraft.",
+        "ar": "شركة مصنّعة لحمولات التصوير الكهروضوئي للأقمار الصناعية وللمركبات الفضائية الكاملة."
+      },
+      "sources": [
+        {
+          "id": "df_camera",
+          "title": "Dragonfly Aerospace — DragonEye imager",
+          "url": "https://dragonflyaerospace.com/smallsat-cameras/dragoneye/",
+          "checked_on": "2026-11-12"
+        },
+        {
+          "id": "df_mission",
+          "title": "Dragonfly Aerospace — EOSSAT-1 mission",
+          "url": "https://dragonflyaerospace.com/eossat-1/",
+          "checked_on": "2026-11-12"
+        },
+        {
+          "id": "df_roadmap",
+          "title": "Dragonfly Aerospace — Camera roadmap",
+          "url": "https://dragonflyaerospace.com/cameras-roadmap/",
+          "checked_on": "2026-11-12"
+        }
+      ],
+      "sections": [
+        {
+          "id": "overview",
+          "fa": "شناسنامه و حوزه فعالیت",
+          "en": "Identity & specialization",
+          "ar": "التعريف والتخصص",
+          "items": [
+            {
+              "fa": "این شرکت در استلن‌بوش آفریقای جنوبی، دوربین‌ها و محموله‌های تصویربرداری مناسب ماهواره‌های کوچک توسعه می‌دهد.",
+              "en": "Based in Stellenbosch, South Africa, the company develops imaging cameras and payloads for small satellites.",
+              "ar": "تطوّر الشركة، ومقرّها ستيلينبوش بجنوب أفريقيا، كاميرات وحمولات تصوير للأقمار الصغيرة.",
+              "source_ids": [
+                "df_camera"
+              ]
+            }
+          ]
+        },
+        {
+          "id": "catalog",
+          "fa": "کاتالوگ ابزارها",
+          "en": "Instrument catalogue",
+          "ar": "فهرس الأجهزة",
+          "items": [
+            {
+              "fa": "برای تصویربردار DragonEye، تفکیک زمینی در ارتفاع ۵۰۰ کیلومتر برابر ۱٫۴ متر پانکروماتیک و ۲٫۸ متر چندطیفی اعلام شده است.",
+              "en": "At 500 km altitude, DragonEye has published GSD figures of 1.4 m panchromatic and 2.8 m multispectral.",
+              "ar": "عند ارتفاع 500 km، تبلغ دقة العينة الأرضية المعلنة لكاميرا DragonEye مقدار 1.4 m بانكروماتياً و2.8 m متعدد الأطياف.",
+              "source_ids": [
+                "df_camera"
+              ]
+            },
+            {
+              "fa": "جرم اعلام‌شده دوربین DragonEye با الکترونیک ۱۸ کیلوگرم و پهنای برداشت آن در ارتفاع ۵۰۰ کیلومتر ۲۲٫۲ کیلومتر است.",
+              "en": "The stated DragonEye mass including electronics is 18 kg, with a 22.2 km swath at 500 km.",
+              "ar": "تبلغ الكتلة المعلنة لكاميرا DragonEye مع إلكترونياتها 18 kg، وعرض المسح 22.2 km عند ارتفاع 500 km.",
+              "source_ids": [
+                "df_camera"
+              ]
+            }
+          ]
+        },
+        {
+          "id": "missions",
+          "fa": "مأموریت‌ها و کاربردها",
+          "en": "Missions & applications",
+          "ar": "المهمات والاستخدامات",
+          "items": [
+            {
+              "fa": "ماهواره EOSSAT-1 با دو تصویربردار DragonEye در ۳ ژانویهٔ ۲۰۲۳ پرتاب شد و برای پایش کشاورزی و جنگل‌ها طراحی شده است.",
+              "en": "EOSSAT-1 launched on 3 January 2023 with two DragonEye imagers, for agriculture and forestry monitoring.",
+              "ar": "أُطلق القمر EOSSAT-1 في 3 يناير 2023 وعلى متنه كاميرتا DragonEye لرصد الزراعة والغابات.",
+              "source_ids": [
+                "df_mission"
+              ]
+            }
+          ]
+        },
+        {
+          "id": "readiness",
+          "fa": "بلوغ و عملکرد فناوری",
+          "en": "Readiness & performance",
+          "ar": "النضج والأداء التقني",
+          "items": [
+            {
+              "fa": "صفحه محصول سازنده، سابقه پروازی دو تصویربردار DragonEye را در سال ۲۰۲۳ ثبت کرده است؛ این ادعا به همین مدل محدود می‌شود.",
+              "en": "The manufacturer records two DragonEye imagers launched in 2023; the flight claim is specific to that model.",
+              "ar": "يسجّل المصنّع إطلاق كاميرتي DragonEye في عام 2023؛ ويخصّ هذا الادعاء هذا الطراز تحديداً.",
+              "source_ids": [
+                "df_camera"
+              ]
+            }
+          ]
+        },
+        {
+          "id": "development",
+          "fa": "توسعه و همکاری‌ها",
+          "en": "Development & collaborations",
+          "ar": "التطوير والتعاون",
+          "items": [
+            {
+              "fa": "نقشه راه تصویربردارهای شرکت شامل مدل‌هایی با کاربردهای متفاوت، از جمله DragonEye و دوربین‌های SWIR است؛ وضعیت تک‌تک مدل‌ها باید جداگانه خوانده شود.",
+              "en": "The camera roadmap includes distinct models such as DragonEye and SWIR imagers; each model’s status must be assessed separately.",
+              "ar": "تضمّ خارطة طريق الكاميرات طرازات مختلفة مثل DragonEye وكاميرات SWIR؛ ويجب تقييم حالة كل طراز على حدة.",
+              "source_ids": [
+                "df_roadmap"
+              ]
+            }
+          ]
+        }
+      ],
+      "data_status": "verified_pilot"
+    }
   },
   {
     "id": "simera-sense",
@@ -24556,7 +24685,135 @@
       }
     ],
     "location_en": "Stellenbosch, South Africa",
-    "location_ar": "ستيلينبوش، جنوب أفريقيا"
+    "location_ar": "ستيلينبوش، جنوب أفريقيا",
+    "secondary_categories": [
+      "components"
+    ],
+    "logo": "assets/logos/orbita/cubespace.svg",
+    "logo_kind": "orbita_editorial_nonofficial",
+    "orbita_marker_code": "CS",
+    "orbita_verified_profile": {
+      "schema_version": 2,
+      "profile_type": "components",
+      "verified_on": "2026-11-12",
+      "review_scope": "New specialist dossier only; preexisting category fields not recertified",
+      "sources": [
+        {
+          "id": "cs_products",
+          "title": "CubeSpace — Products",
+          "url": "https://www.cubespace.co.za/products/",
+          "checked_on": "2026-11-12"
+        },
+        {
+          "id": "cs_home",
+          "title": "CubeSpace — Home and location",
+          "url": "https://www.cubespace.co.za/",
+          "checked_on": "2026-11-12"
+        },
+        {
+          "id": "cs_su",
+          "title": "Stellenbosch University — CubeSpace history",
+          "url": "https://www.su.ac.za/en/students/node/22289",
+          "checked_on": "2026-11-12"
+        }
+      ],
+      "sections": [
+        {
+          "id": "overview",
+          "fa": "شناسنامه و تخصص",
+          "en": "Identity & specialization",
+          "ar": "التعريف والتخصص",
+          "items": [
+            {
+              "fa": "سازنده سامانه‌های تعیین و کنترل وضعیت ماهواره (ADCS)، مستقر در استلن‌بوش آفریقای جنوبی.",
+              "en": "Manufacturer of satellite attitude determination and control systems (ADCS), based in Stellenbosch, South Africa.",
+              "ar": "شركة تصنع أنظمة تحديد اتجاه الأقمار الصناعية والتحكم فيه (ADCS)، ومقرها ستيلينبوش بجنوب أفريقيا.",
+              "source_ids": [
+                "cs_home"
+              ]
+            },
+            {
+              "fa": "بر اساس معرفی دانشگاه استلن‌بوش، این شرکت از فعالیت‌های دانشگاهی آن دانشگاه شکل گرفته است.",
+              "en": "Stellenbosch University identifies CubeSpace as a spin-out emerging from the university.",
+              "ar": "توضح جامعة ستيلينبوش أن شركة CubeSpace نشأت من نشاطها الجامعي.",
+              "source_ids": [
+                "cs_su"
+              ]
+            }
+          ]
+        },
+        {
+          "id": "products",
+          "fa": "محصولات و فناوری",
+          "en": "Products & technology",
+          "ar": "المنتجات والتقنية",
+          "items": [
+            {
+              "fa": "سبد محصول شامل سامانه یکپارچه ADCS، چرخ عکس‌العملی، میله گشتاور مغناطیسی، مغناطیس‌سنج، حسگر خورشید، حسگر افق زمین و ردیاب ستاره است.",
+              "en": "The portfolio includes turn-key ADCS, reaction wheels, magnetorquer rods, magnetometers, fine Sun sensors, Earth horizon sensors and star trackers.",
+              "ar": "تشمل المنتجات أنظمة ADCS المتكاملة، وعجلات رد الفعل، وقضبان العزم المغناطيسي، ومقاييس المغناطيسية، وحساسات الشمس وأفق الأرض، ومتتبعات النجوم.",
+              "source_ids": [
+                "cs_products"
+              ]
+            }
+          ]
+        },
+        {
+          "id": "heritage",
+          "fa": "سابقه پروازی",
+          "en": "Flight heritage",
+          "ar": "السجل الفضائي",
+          "items": [
+            {
+              "fa": "شرکت درباره سابقه استفاده مداری سامانه‌ها و قطعات خود گزارش منتشر کرده است؛ فهرست مأموریت‌های مستقل برای هر مدل در این نمونه تأیید نشده است.",
+              "en": "The company reports in-orbit use of its systems and components; a mission-by-model independent crosswalk has not been verified for this sample.",
+              "ar": "تعلن الشركة عن استخدام أنظمتها ومكوّناتها في المدار، لكن لم تُتحقق قائمة مستقلة تربط كل طراز بمهمة محددة في هذه العينة.",
+              "source_ids": [
+                "cs_home"
+              ]
+            }
+          ]
+        },
+        {
+          "id": "network",
+          "fa": "مشتریان و زنجیره تأمین",
+          "en": "Customers & supply chain",
+          "ar": "العملاء وسلسلة التوريد",
+          "items": [
+            {
+              "fa": "محصولات برای یکپارچه‌سازی با رایانه پرواز مشتری و حتی تجهیزات شخص ثالث طراحی شده‌اند؛ فهرست قراردادهای مشتریان در این نمونه منتشر نمی‌شود.",
+              "en": "The integrated ADCS is designed to interface with customer onboard computers and can incorporate third-party hardware; specific customer contracts are not asserted here.",
+              "ar": "صُممت أنظمة ADCS للتكامل مع حواسيب المركبات الفضائية التابعة للعملاء ويمكن دمج عتاد جهات أخرى؛ ولا نورد عقود عملاء محددة هنا.",
+              "source_ids": [
+                "cs_home"
+              ]
+            }
+          ]
+        },
+        {
+          "id": "timeline",
+          "fa": "تاریخچه و تحولات",
+          "en": "History & development",
+          "ar": "التاريخ والتطور",
+          "items": [
+            {
+              "fa": "دانشگاه استلن‌بوش در گزارشی در دسامبر ۲۰۲۴ منشأ دانشگاهی و روند رشد این شرکت را شرح داده است.",
+              "en": "In December 2024, Stellenbosch University published an account of CubeSpace’s university origins and growth.",
+              "ar": "نشرت جامعة ستيلينبوش في ديسمبر 2024 تقريراً عن نشأة الشركة الجامعية ونموها.",
+              "source_ids": [
+                "cs_su"
+              ]
+            }
+          ]
+        }
+      ],
+      "summary": {
+        "fa": "تولیدکننده سامانه‌های تعیین و کنترل وضعیت ماهواره شامل ADCS، چرخ عکس‌العملی و ردیاب ستاره، مستقر در آفریقای جنوبی.",
+        "en": "South African manufacturer of satellite attitude-control systems, reaction wheels and star trackers.",
+        "ar": "شركة جنوب أفريقية لأنظمة التحكم في اتجاه الأقمار وعجلات رد الفعل ومتتبعات النجوم."
+      }
+    },
+    "coordinate_precision": "city_approximation_existing"
   },
   {
     "id": "phasefour",
@@ -39202,7 +39459,135 @@
     ],
     "location_en": "Lafayette, Colorado, United States",
     "location_ar": "لافاييت، كولورادو، الولايات المتحدة",
-    "city_ar": "لافاييت، كولورادو"
+    "city_ar": "لافاييت، كولورادو",
+    "secondary_categories": [
+      "components"
+    ],
+    "logo": "assets/logos/orbita/blue-canyon.svg",
+    "logo_kind": "orbita_editorial_nonofficial",
+    "orbita_marker_code": "BC",
+    "orbita_verified_profile": {
+      "schema_version": 2,
+      "profile_type": "components",
+      "verified_on": "2026-11-12",
+      "review_scope": "New specialist dossier only; preexisting category fields not recertified",
+      "sources": [
+        {
+          "id": "bct_products",
+          "title": "Blue Canyon Technologies — Components",
+          "url": "https://www.bluecanyontech.com/components/",
+          "checked_on": "2026-11-12"
+        },
+        {
+          "id": "bct_rw16",
+          "title": "Blue Canyon Technologies — RW16 (Apr 2025)",
+          "url": "https://www.bluecanyontech.com/news/rtxs-blue-canyon-technologies-introduces-new-reaction-wheel/",
+          "checked_on": "2026-11-12"
+        },
+        {
+          "id": "rtx_2026",
+          "title": "RTX — Reaction wheel production (Apr 2026)",
+          "url": "https://www.rtx.com/news/news-center/2026/04/14/rtxs-blue-canyon-technologies-expands-reaction-wheel-production-capacity",
+          "checked_on": "2026-11-12"
+        }
+      ],
+      "sections": [
+        {
+          "id": "overview",
+          "fa": "شناسنامه و تخصص",
+          "en": "Identity & specialization",
+          "ar": "التعريف والتخصص",
+          "items": [
+            {
+              "fa": "بلو کنیون تکنولوژیز سازنده ماهواره کوچک و زیرسامانه‌های کنترل وضعیت در کلرادو آمریکا و بخشی از کسب‌وکار ریثیونِ RTX است.",
+              "en": "Blue Canyon Technologies is a Colorado-based small-satellite and attitude-control component manufacturer within RTX’s Raytheon business.",
+              "ar": "بلو كانيون تكنولوجيز شركة مقرها كولورادو تصنع الأقمار الصغيرة ومكوّنات التحكم في الاتجاه، وتتبع أعمال Raytheon ضمن RTX.",
+              "source_ids": [
+                "rtx_2026"
+              ]
+            }
+          ]
+        },
+        {
+          "id": "products",
+          "fa": "محصولات و فناوری",
+          "en": "Products & technology",
+          "ar": "المنتجات والتقنية",
+          "items": [
+            {
+              "fa": "محصولات قطعه‌ای شرکت شامل ردیاب‌های ستاره‌ای نانویی و خانواده چرخ‌های عکس‌العملی است.",
+              "en": "Its spacecraft components include nano star trackers and reaction-wheel product families.",
+              "ar": "تشمل مكوّنات المركبات الفضائية متتبعات النجوم النانوية وعائلات عجلات رد الفعل.",
+              "source_ids": [
+                "bct_products"
+              ]
+            },
+            {
+              "fa": "چرخ عکس‌العملی RW16 معرفی‌شده در سال ۲۰۲۵ دارای ظرفیت ممان زاویه‌ای اسمی ۱۶ نیوتن‌مترثانیه است.",
+              "en": "The RW16 reaction wheel introduced in 2025 has a nominal momentum-storage capability of 16 N·m·s.",
+              "ar": "تتمتع عجلة رد الفعل RW16 التي أُعلن عنها عام 2025 بسعة زخم زاوي اسمية مقدارها 16 نيوتن متر ثانية.",
+              "source_ids": [
+                "bct_rw16"
+              ]
+            }
+          ]
+        },
+        {
+          "id": "heritage",
+          "fa": "سابقه پروازی",
+          "en": "Flight heritage",
+          "ar": "السجل الفضائي",
+          "items": [
+            {
+              "fa": "شرکت ردیاب ستاره‌ای نانویی خود را دارای سابقه پرواز معرفی می‌کند؛ برای هر شماره مدل، فهرست مستقل ماهواره‌های میزبان در این نمونه تأیید نشده است.",
+              "en": "The manufacturer describes its nano star tracker as flight-proven; model-by-model host satellites are not independently established in this sample.",
+              "ar": "تصف الشركة متتبع النجوم النانوي بأنه مُثبت الاستخدام في الفضاء؛ لكن لم تُوثق قائمة مستقلة بالأقمار المضيفة لكل طراز في هذه العينة.",
+              "source_ids": [
+                "bct_products"
+              ]
+            }
+          ]
+        },
+        {
+          "id": "network",
+          "fa": "مشتریان و زنجیره تأمین",
+          "en": "Customers & supply chain",
+          "ar": "العملاء وسلسلة التوريد",
+          "items": [
+            {
+              "fa": "RTX در آوریل ۲۰۲۶ از برنامه افزایش ظرفیت تولید چرخ‌های عکس‌العملی بلو کنیون خبر داد؛ ظرفیت هدف، عملکرد تولید تحقق‌یافته محسوب نمی‌شود.",
+              "en": "In April 2026, RTX announced a planned expansion of reaction-wheel manufacturing throughput; the target is not reported as achieved production.",
+              "ar": "أعلنت RTX في أبريل 2026 عن خطة لزيادة إنتاج عجلات رد الفعل؛ ولا تُعرض السعة المستهدفة بوصفها إنتاجاً محققاً.",
+              "source_ids": [
+                "rtx_2026"
+              ]
+            }
+          ]
+        },
+        {
+          "id": "timeline",
+          "fa": "تاریخچه و تحولات",
+          "en": "History & development",
+          "ar": "التاريخ والتطور",
+          "items": [
+            {
+              "fa": "شرکت در آوریل ۲۰۲۵ چرخ RW16 را معرفی کرد و در آوریل ۲۰۲۶ از توسعه ظرفیت تولید چرخ‌ها خبر داد.",
+              "en": "The company announced RW16 in April 2025 and disclosed capacity expansion plans in April 2026.",
+              "ar": "أعلنت الشركة عن RW16 في أبريل 2025 ثم عن خطط توسيع القدرة الإنتاجية في أبريل 2026.",
+              "source_ids": [
+                "rtx_2026"
+              ]
+            }
+          ]
+        }
+      ],
+      "summary": {
+        "fa": "تولیدکننده ماهواره کوچک و قطعات کنترل وضعیت، از جمله چرخ‌های عکس‌العملی و ردیاب‌های ستاره‌ای؛ بخشی از RTX.",
+        "en": "Small-satellite and attitude-control component manufacturer within RTX, including reaction wheels and star trackers.",
+        "ar": "شركة لصناعة الأقمار الصغيرة ومكوّنات التحكم في الاتجاه ضمن RTX، ومنها عجلات رد الفعل ومتتبعات النجوم."
+      }
+    },
+    "coordinate_precision": "city_approximation_existing"
   },
   {
     "id": "gomspace",
@@ -47999,6 +48384,1190 @@
     ],
     "aliases": [
       "Thrane & Thrane A/S"
+    ]
+  },
+  {
+    "id": "dhv-technology",
+    "cat": "components",
+    "en": "DHV Technology",
+    "fa": "دی‌اچ‌وی تکنولوژی",
+    "ar": "دي إتش في تكنولوجي",
+    "country": "Spain",
+    "country_fa": "اسپانیا",
+    "country_ar": "إسبانيا",
+    "city": "Málaga",
+    "city_fa": "مالاگا",
+    "city_ar": "مالقة",
+    "lat": 36.7213,
+    "lon": -4.4214,
+    "coordinate_precision": "city_center_approximation",
+    "founded": 2013,
+    "site": "https://dhvtechnology.com/",
+    "en_d": "Spanish space-power subsystem manufacturer of solar arrays, EPS, PCDU and related technologies; located in Málaga.",
+    "fa_d": "سازنده اسپانیایی پنل‌های خورشیدی و زیرسامانه‌های توان فضایی، از جمله EPS و PCDU، مستقر در مالاگا.",
+    "ar_d": "مصنّع إسباني للألواح الشمسية وأنظمة القدرة الفضائية، بما فيها EPS وPCDU، ومقره مالقة.",
+    "logo": "assets/logos/orbita/dhv-technology.svg",
+    "logo_kind": "orbita_editorial_nonofficial",
+    "orbita_marker_code": "DH",
+    "orbita_verified_profile": {
+      "schema_version": 2,
+      "profile_type": "components",
+      "verified_on": "2026-11-12",
+      "review_scope": "New specialist dossier only; preexisting category fields not recertified",
+      "sources": [
+        {
+          "id": "dhv_about",
+          "title": "DHV Technology — About",
+          "url": "https://dhvtechnology.com/about-us/",
+          "checked_on": "2026-11-12"
+        },
+        {
+          "id": "dhv_prod",
+          "title": "DHV Technology — Products",
+          "url": "https://dhvtechnology.com/products/",
+          "checked_on": "2026-11-12"
+        },
+        {
+          "id": "dhv_smallsat",
+          "title": "DHV Technology — SmallSat solar panels",
+          "url": "https://dhvtechnology.com/products/solar-panels-smallsats/",
+          "checked_on": "2026-11-12"
+        },
+        {
+          "id": "dhv_iaf",
+          "title": "International Astronautical Federation — DHV Technology",
+          "url": "https://www.iafastro.org/membership/all-members/dhv-technology.html",
+          "checked_on": "2026-11-12"
+        }
+      ],
+      "sections": [
+        {
+          "id": "overview",
+          "fa": "شناسنامه و تخصص",
+          "en": "Identity & specialization",
+          "ar": "التعريف والتخصص",
+          "items": [
+            {
+              "fa": "DHV Technology شرکت اسپانیایی مستقر در مالاگا و سازنده پنل‌های خورشیدی و زیرسامانه‌های توان برای کاربردهای فضایی است.",
+              "en": "DHV Technology is a Málaga-based Spanish manufacturer of solar panels and electrical-power subsystems for space applications.",
+              "ar": "DHV Technology شركة إسبانية مقرها مالقة تصنّع الألواح الشمسية وأنظمة الطاقة الكهربائية للتطبيقات الفضائية.",
+              "source_ids": [
+                "dhv_about"
+              ]
+            }
+          ]
+        },
+        {
+          "id": "products",
+          "fa": "محصولات و فناوری",
+          "en": "Products & technology",
+          "ar": "المنتجات والتقنية",
+          "items": [
+            {
+              "fa": "محصولات شامل پنل خورشیدی کیوب‌ست و ماهواره کوچک، سامانه توان الکتریکی (EPS)، واحد تنظیم و توزیع توان (PCDU)، عایق چندلایه (MLI) و محرک آرایه خورشیدی (SADA) است.",
+              "en": "Its portfolio covers CubeSat and SmallSat solar panels, EPS, PCDU, multilayer insulation (MLI) and solar array drive assemblies (SADA).",
+              "ar": "تشمل المنتجات ألواحاً شمسية لأقمار CubeSat وSmallSat وأنظمة القدرة EPS ووحدات PCDU والعزل متعدد الطبقات MLI وآليات توجيه المصفوفات الشمسية SADA.",
+              "source_ids": [
+                "dhv_prod"
+              ]
+            },
+            {
+              "fa": "شرکت برای پنل‌های ماهواره‌های کوچک، گونه‌های ثابت روی بدنه و بازشونده را معرفی می‌کند؛ مشخصات به پیکربندی محصول وابسته‌اند.",
+              "en": "For small satellites the company offers body-mounted and deployable solar arrays, with specifications dependent on configuration.",
+              "ar": "تقدم الشركة مصفوفات شمسية مثبتة على الهيكل أو قابلة للنشر للأقمار الصغيرة، وتختلف المواصفات حسب التكوين.",
+              "source_ids": [
+                "dhv_smallsat"
+              ]
+            }
+          ]
+        },
+        {
+          "id": "heritage",
+          "fa": "سابقه پروازی",
+          "en": "Flight heritage",
+          "ar": "السجل الفضائي",
+          "items": [
+            {
+              "fa": "فدراسیون بین‌المللی فضانوردی استفاده فضایی محصولات DHV را در معرفی عضویت این شرکت گزارش می‌کند؛ نام هر مأموریت و مدل محصول در این نمونه مستند نشده است.",
+              "en": "The International Astronautical Federation’s member profile reports use of DHV products on orbit; individual mission-to-product mappings are not asserted for this sample.",
+              "ar": "يشير ملف عضوية الشركة لدى الاتحاد الدولي للملاحة الفضائية إلى استخدام منتجات DHV في المدار؛ ولا ننسب طرزاً محددة إلى بعثات بعينها هنا.",
+              "source_ids": [
+                "dhv_iaf"
+              ]
+            }
+          ]
+        },
+        {
+          "id": "network",
+          "fa": "مشتریان و زنجیره تأمین",
+          "en": "Customers & supply chain",
+          "ar": "العملاء وسلسلة التوريد",
+          "items": [
+            {
+              "fa": "شرکت طراحی متناسب با نیاز مأموریت و یکپارچه‌سازی پنل و زیرسامانه توان را ارائه می‌دهد؛ نام مشتری بدون مدرک قرارداد ثبت نشده است.",
+              "en": "DHV offers mission-customized solar-array and power-subsystem design; no customer identity is inferred without a supporting contract or mission source.",
+              "ar": "توفر DHV تصميمات مخصصة للمهمة للألواح الشمسية وأنظمة القدرة، ولا نستنتج أسماء عملاء دون مصدر يدعمها.",
+              "source_ids": [
+                "dhv_about"
+              ]
+            }
+          ]
+        },
+        {
+          "id": "timeline",
+          "fa": "تاریخچه و تحولات",
+          "en": "History & development",
+          "ar": "التاريخ والتطور",
+          "items": [
+            {
+              "fa": "بر اساس سابقه منتشرشده شرکت، فعالیت DHV در اسپانیا در ژانویه ۲۰۱۳ آغاز شده است.",
+              "en": "The company’s published history dates its start in Spain to January 2013.",
+              "ar": "بحسب السجل المنشور للشركة، بدأت أنشطة DHV في إسبانيا في يناير 2013.",
+              "source_ids": [
+                "dhv_about"
+              ]
+            }
+          ]
+        }
+      ],
+      "summary": {
+        "fa": "سازنده اسپانیایی پنل‌های خورشیدی و زیرسامانه‌های توان فضایی، از جمله EPS و PCDU، مستقر در مالاگا.",
+        "en": "Spanish space-power subsystem manufacturer of solar arrays, EPS, PCDU and related technologies; located in Málaga.",
+        "ar": "مصنّع إسباني للألواح الشمسية وأنظمة القدرة الفضائية، بما فيها EPS وPCDU، ومقره مالقة."
+      }
+    }
+  },
+  {
+    "id": "surrey-space-centre",
+    "cat": "university_space",
+    "en": "Surrey Space Centre",
+    "fa": "مرکز فضایی دانشگاه ساری",
+    "ar": "مركز سَري للفضاء",
+    "country": "United Kingdom",
+    "country_fa": "بریتانیا",
+    "country_ar": "المملكة المتحدة",
+    "city": "Guildford",
+    "city_fa": "گیلدفورد",
+    "city_ar": "غيلدفورد",
+    "lat": 51.2362,
+    "lon": -0.5704,
+    "coordinate_precision": "city_center_approximation",
+    "founded": null,
+    "parent_institution": "University of Surrey",
+    "site": "https://www.surrey.ac.uk/surrey-space-centre",
+    "en_d": "Space-engineering research centre at the University of Surrey; research and missions in small-satellite technologies.",
+    "fa_d": "مرکز پژوهشی مهندسی فضای دانشگاه ساری؛ فعال در فناوری‌های ماهواره‌های کوچک و مأموریت‌های فضایی.",
+    "ar_d": "مركز بحثي لهندسة الفضاء بجامعة سَري، يعمل في تقنيات الأقمار الصغيرة والمهمات الفضائية.",
+    "logo": "assets/logos/orbita/surrey-space-centre.svg",
+    "logo_kind": "orbita_editorial_nonofficial",
+    "orbita_marker_code": "SS",
+    "orbita_verified_profile": {
+      "schema_version": 2,
+      "profile_type": "university_space",
+      "verified_on": "2026-11-12",
+      "review_scope": "New specialist dossier only; preexisting category fields not recertified",
+      "sources": [
+        {
+          "id": "ssc_main",
+          "title": "University of Surrey — Surrey Space Centre",
+          "url": "https://www.surrey.ac.uk/surrey-space-centre",
+          "checked_on": "2026-11-12"
+        },
+        {
+          "id": "ssc_about",
+          "title": "University of Surrey — About Surrey Space Centre",
+          "url": "https://www.surrey.ac.uk/surrey-space-centre/about",
+          "checked_on": "2026-11-12"
+        },
+        {
+          "id": "ssc_missions",
+          "title": "University of Surrey — Space missions",
+          "url": "https://www.surrey.ac.uk/surrey-space-centre/missions",
+          "checked_on": "2026-11-12"
+        },
+        {
+          "id": "ssi",
+          "title": "University of Surrey — Surrey Space Institute",
+          "url": "https://www.surrey.ac.uk/surrey-space-institute",
+          "checked_on": "2026-11-12"
+        }
+      ],
+      "sections": [
+        {
+          "id": "overview",
+          "fa": "شناسنامه علمی",
+          "en": "Academic identity",
+          "ar": "الهوية الأكاديمية",
+          "items": [
+            {
+              "fa": "مرکز فضایی ساری یک مرکز پژوهشی مهندسی فضا در دانشگاه ساری، شهر گیلدفورد بریتانیاست و اکنون بخشی از مؤسسه فضایی ساری است.",
+              "en": "Surrey Space Centre is a space-engineering research centre at the University of Surrey in Guildford, UK, now part of the Surrey Space Institute.",
+              "ar": "مركز سَري للفضاء مركز أبحاث هندسة فضائية تابع لجامعة سَري في غيلدفورد بالمملكة المتحدة، وهو حالياً جزء من معهد سَري للفضاء.",
+              "source_ids": [
+                "ssc_main"
+              ]
+            }
+          ]
+        },
+        {
+          "id": "capabilities",
+          "fa": "توانمندی‌های پژوهشی",
+          "en": "Research capabilities",
+          "ar": "القدرات البحثية",
+          "items": [
+            {
+              "fa": "حوزه‌ها شامل مهندسی ماهواره کوچک، تعیین و کنترل وضعیت، پیشرانش، سامانه‌های توان، ارتباطات و محموله‌هاست.",
+              "en": "Research areas include small-satellite engineering, attitude/orbit control, propulsion, electrical power, communications and payloads.",
+              "ar": "تشمل المجالات هندسة الأقمار الصغيرة، والتحكم في الاتجاه والمدار، والدفع، والطاقة الكهربائية، والاتصالات والحمولات.",
+              "source_ids": [
+                "ssc_about"
+              ]
+            }
+          ]
+        },
+        {
+          "id": "missions",
+          "fa": "پروژه‌ها و مأموریت‌ها",
+          "en": "Projects & missions",
+          "ar": "المشروعات والمهمات",
+          "items": [
+            {
+              "fa": "دانشگاه مأموریت‌های STRaND-1، InflateSail و RemoveDEBRIS را در فهرست مأموریت‌های خود معرفی کرده است.",
+              "en": "The university lists STRaND-1, InflateSail and RemoveDEBRIS among the centre’s missions.",
+              "ar": "تدرج الجامعة مهمات STRaND-1 وInflateSail وRemoveDEBRIS ضمن مهمات المركز.",
+              "source_ids": [
+                "ssc_missions"
+              ]
+            },
+            {
+              "fa": "دانشگاه تاریخ پرتاب STRaND-1 را ۲۵ فوریه ۲۰۱۳ اعلام کرده است.",
+              "en": "The university gives 25 February 2013 as the launch date of STRaND-1.",
+              "ar": "تذكر الجامعة أن STRaND-1 أُطلق في 25 فبراير 2013.",
+              "source_ids": [
+                "ssc_missions"
+              ]
+            }
+          ]
+        },
+        {
+          "id": "results",
+          "fa": "دستاوردهای علمی و فناوری",
+          "en": "Scientific & technical outputs",
+          "ar": "المخرجات العلمية والتقنية",
+          "items": [
+            {
+              "fa": "فعالیت‌های پژوهشی دانشگاه ساری در ماهواره‌های کوچک از سال ۱۹۷۹ آغاز شد و به تأسیس شرکت زایشی SSTL منجر شد؛ SSTL موجودیتی مستقل از این مرکز است.",
+              "en": "Surrey’s small-satellite academic activities began in 1979 and led to the SSTL spin-out; SSTL is a distinct company, not this research-centre record.",
+              "ar": "بدأ نشاط الأقمار الصغيرة في جامعة سَري عام 1979 وأسهم في تأسيس شركة SSTL المنبثقة؛ وهي كيان منفصل عن هذا المركز البحثي.",
+              "source_ids": [
+                "ssc_about"
+              ]
+            }
+          ]
+        },
+        {
+          "id": "network",
+          "fa": "همکاری‌ها و تاریخچه",
+          "en": "Collaboration & history",
+          "ar": "التعاون والتاريخ",
+          "items": [
+            {
+              "fa": "دانشگاه در معرفی مرکز، همکاری پژوهشی بلندمدت با Surrey Satellite Technology Ltd را توضیح می‌دهد.",
+              "en": "The university documents a long-term research relationship with Surrey Satellite Technology Ltd.",
+              "ar": "توثق الجامعة علاقة بحثية طويلة الأمد مع شركة Surrey Satellite Technology Ltd.",
+              "source_ids": [
+                "ssc_about"
+              ]
+            }
+          ]
+        }
+      ],
+      "summary": {
+        "fa": "مرکز پژوهشی مهندسی فضای دانشگاه ساری؛ فعال در فناوری‌های ماهواره‌های کوچک و مأموریت‌های فضایی.",
+        "en": "Space-engineering research centre at the University of Surrey; research and missions in small-satellite technologies.",
+        "ar": "مركز بحثي لهندسة الفضاء بجامعة سَري، يعمل في تقنيات الأقمار الصغيرة والمهمات الفضائية."
+      }
+    }
+  },
+  {
+    "id": "stanford-space-rendezvous-lab",
+    "cat": "university_space",
+    "en": "Stanford Space Rendezvous Laboratory (SLAB)",
+    "fa": "آزمایشگاه ملاقات فضایی دانشگاه استنفورد",
+    "ar": "مختبر الالتقاء الفضائي بجامعة ستانفورد",
+    "country": "United States",
+    "country_fa": "ایالات متحده آمریکا",
+    "country_ar": "الولايات المتحدة",
+    "city": "Stanford, California",
+    "city_fa": "استنفورد، کالیفرنیا",
+    "city_ar": "ستانفورد، كاليفورنيا",
+    "lat": 37.4275,
+    "lon": -122.1697,
+    "coordinate_precision": "campus_center_approximation",
+    "founded": null,
+    "parent_institution": "Stanford University",
+    "site": "https://slab.stanford.edu/",
+    "en_d": "Academic research laboratory specializing in distributed space systems, astrodynamics and guidance, navigation and control.",
+    "fa_d": "آزمایشگاه پژوهشی دانشگاهی در حوزه سامانه‌های فضایی توزیع‌شده، دینامیک مداری و هدایت، ناوبری و کنترل.",
+    "ar_d": "مختبر بحثي جامعي متخصص في الأنظمة الفضائية الموزعة والديناميكا المدارية والتوجيه والملاحة والتحكم.",
+    "logo": "assets/logos/orbita/stanford-space-rendezvous-lab.svg",
+    "logo_kind": "orbita_editorial_nonofficial",
+    "orbita_marker_code": "SL",
+    "orbita_verified_profile": {
+      "schema_version": 2,
+      "profile_type": "university_space",
+      "verified_on": "2026-11-12",
+      "review_scope": "New specialist dossier only; preexisting category fields not recertified",
+      "sources": [
+        {
+          "id": "slab_about",
+          "title": "Stanford University — Space Rendezvous Laboratory",
+          "url": "https://slab.stanford.edu/",
+          "checked_on": "2026-11-12"
+        },
+        {
+          "id": "slab_projects",
+          "title": "Stanford Space Rendezvous Laboratory — Projects",
+          "url": "https://slab.stanford.edu/projects",
+          "checked_on": "2026-11-12"
+        },
+        {
+          "id": "slab_aa",
+          "title": "Stanford Aeronautics & Astronautics — SLAB",
+          "url": "https://aa.stanford.edu/research-impact/labs-and-centers/space-rendezvous-laboratory",
+          "checked_on": "2026-11-12"
+        }
+      ],
+      "sections": [
+        {
+          "id": "overview",
+          "fa": "شناسنامه علمی",
+          "en": "Academic identity",
+          "ar": "الهوية الأكاديمية",
+          "items": [
+            {
+              "fa": "آزمایشگاه ملاقات فضایی (SLAB) وابسته به گروه هوافضای دانشگاه استنفورد در کالیفرنیا و به سرپرستی سیمونه د‌آمیکو است.",
+              "en": "The Space Rendezvous Laboratory (SLAB) belongs to Stanford University’s Aeronautics and Astronautics department and is led by Simone D’Amico.",
+              "ar": "مختبر الالتقاء الفضائي (SLAB) تابع لقسم الملاحة الجوية والفضائية بجامعة ستانفورد ويقوده سيموني داميـكو.",
+              "source_ids": [
+                "slab_about"
+              ]
+            }
+          ]
+        },
+        {
+          "id": "capabilities",
+          "fa": "توانمندی‌های پژوهشی",
+          "en": "Research capabilities",
+          "ar": "القدرات البحثية",
+          "items": [
+            {
+              "fa": "پژوهش‌ها بر دینامیک مداری، هدایت، ناوبری و کنترل سامانه‌های فضایی توزیع‌شده، پرواز آرایشی و ملاقات و اتصال فضایی متمرکزند.",
+              "en": "Research addresses astrodynamics and guidance, navigation and control for distributed space systems, including formation flight and rendezvous and docking.",
+              "ar": "تركز الأبحاث على الديناميكا المدارية والتوجيه والملاحة والتحكم للأنظمة الفضائية الموزعة، بما فيها الطيران التشكّلي والالتقاء والالتحام.",
+              "source_ids": [
+                "slab_aa"
+              ]
+            }
+          ]
+        },
+        {
+          "id": "missions",
+          "fa": "پروژه‌ها و مأموریت‌ها",
+          "en": "Projects & missions",
+          "ar": "المشروعات والمهمات",
+          "items": [
+            {
+              "fa": "فهرست پروژه‌های آزمایشگاه شامل آزمایش ناوبری نوری StarFOX در مأموریت Starling ناسا و مشارکت در طراحی هدایت و ناوبری مأموریت VISORS است.",
+              "en": "Its project roster includes the StarFOX optical-navigation experiment on NASA’s Starling mission and GN&C design work for VISORS.",
+              "ar": "تضم قائمة مشروعات المختبر تجربة الملاحة البصرية StarFOX على مهمة Starling التابعة لناسا وأعمال تصميم التوجيه والملاحة والتحكم لمهمة VISORS.",
+              "source_ids": [
+                "slab_projects"
+              ]
+            }
+          ]
+        },
+        {
+          "id": "results",
+          "fa": "دستاوردهای علمی و فناوری",
+          "en": "Scientific & technical outputs",
+          "ar": "المخرجات العلمية والتقنية",
+          "items": [
+            {
+              "fa": "آزمایشگاه روش‌ها و نرم‌افزارهای ناوبری نسبی و تخمین وضعیت برای منظومه‌های چندماهواره‌ای توسعه می‌دهد؛ این عنوان به معنی موفقیت پروازی همه نمونه‌ها نیست.",
+              "en": "The lab develops relative-navigation and state-estimation methods and software for multi-spacecraft systems; this does not establish flight success for every prototype.",
+              "ar": "يطور المختبر أساليب وبرمجيات للملاحة النسبية وتقدير الحالة للأنظمة متعددة المركبات؛ ولا يعني ذلك نجاح جميع النماذج في الفضاء.",
+              "source_ids": [
+                "slab_projects"
+              ]
+            }
+          ]
+        },
+        {
+          "id": "network",
+          "fa": "همکاری‌ها و تاریخچه",
+          "en": "Collaboration & history",
+          "ar": "التعاون والتاريخ",
+          "items": [
+            {
+              "fa": "آزمایشگاه در ساختمان دوراند، شماره ۴۹۶ خیابان لومیتا مال در محوطه دانشگاه استنفورد معرفی شده است.",
+              "en": "SLAB identifies its location as the Durand Building at 496 Lomita Mall on Stanford’s campus.",
+              "ar": "يحدد المختبر موقعه في مبنى Durand عند 496 Lomita Mall في حرم جامعة ستانفورد.",
+              "source_ids": [
+                "slab_about"
+              ]
+            }
+          ]
+        }
+      ],
+      "summary": {
+        "fa": "آزمایشگاه پژوهشی دانشگاهی در حوزه سامانه‌های فضایی توزیع‌شده، دینامیک مداری و هدایت، ناوبری و کنترل.",
+        "en": "Academic research laboratory specializing in distributed space systems, astrodynamics and guidance, navigation and control.",
+        "ar": "مختبر بحثي جامعي متخصص في الأنظمة الفضائية الموزعة والديناميكا المدارية والتوجيه والملاحة والتحكم."
+      }
+    }
+  },
+  {
+    "id": "ksat-ground-services",
+    "cat": "ground_services",
+    "en": "Kongsberg Satellite Services (KSAT)",
+    "fa": "کُنگسبرگ ستلایت سرویسز (کی‌ست)",
+    "ar": "خدمات كونغسبيرغ للأقمار الصناعية (KSAT)",
+    "country": "Norway",
+    "country_fa": "نروژ",
+    "country_ar": "النرويج",
+    "city": "Tromsø",
+    "city_fa": "ترومسو",
+    "city_ar": "ترومسو",
+    "lat": 69.6492,
+    "lon": 18.9553,
+    "site": "https://www.ksat.no/",
+    "fa_d": "شرکت نروژی ارائه‌دهنده خدمات شبکه ایستگاه زمینی، ارتباط با ماهواره‌ها و تحویل داده؛ این رکورد شرکت است، نه یک ایستگاه مشخص.",
+    "en_d": "Norwegian provider of ground-station network, satellite communications and data services; this record is the operator, not one station.",
+    "ar_d": "شركة نرويجية تقدّم خدمات شبكات المحطات الأرضية واتصالات الأقمار والبيانات؛ يمثّل هذا السجل المشغّل لا محطة بعينها.",
+    "logo": "assets/logos/orbita/ksat-ground-services.svg",
+    "logo_kind": "orbita_editorial_nonofficial",
+    "orbita_marker_code": "KS",
+    "coordinate_precision": "city_center_approximation",
+    "orbita_verified_profile": {
+      "schema_version": 3,
+      "profile_type": "ground_services",
+      "verified_on": "2026-11-12",
+      "review_scope": "Phase-3 evidence-led specialty dossier only; legacy data not recertified; no global coverage claim",
+      "summary": {
+        "fa": "ارائه‌دهنده خدمات شبکه زمینی و تحویل داده برای مأموریت‌های ماهواره‌ای.",
+        "en": "Ground network and data-delivery services for satellite missions.",
+        "ar": "خدمات الشبكات الأرضية وتوزيع البيانات للمهمات الفضائية."
+      },
+      "sources": [
+        {
+          "id": "ks_contact",
+          "title": "KSAT — Headquarters and contact",
+          "url": "https://www.ksat.no/about-us/contact/",
+          "checked_on": "2026-11-12"
+        },
+        {
+          "id": "ks_net",
+          "title": "KSAT — Global Ground Station Network",
+          "url": "https://www.ksat.no/ground-network-services/the-ksat-global-ground-station-network/",
+          "checked_on": "2026-11-12"
+        },
+        {
+          "id": "ks_lite",
+          "title": "KSAT — KSATlite service",
+          "url": "https://www.ksat.no/ground-network-services/ksatlite/",
+          "checked_on": "2026-11-12"
+        }
+      ],
+      "sections": [
+        {
+          "id": "overview",
+          "fa": "شناسنامه و مدل کسب‌وکار",
+          "en": "Identity & business model",
+          "ar": "التعريف ونموذج الأعمال",
+          "items": [
+            {
+              "fa": "دفتر مرکزی شرکت در ترومسو نروژ قرار دارد؛ موقعیت نمایش‌داده‌شده در نقشه، مرکز شهر است نه مکان دقیق دفتر.",
+              "en": "The company headquarters is in Tromsø, Norway; the plotted point is a city reference, not the office coordinates.",
+              "ar": "يقع المقر الرئيسي في ترومسو بالنرويج؛ وتمثل النقطة على الخريطة المدينة لا إحداثيات المكتب الدقيقة.",
+              "source_ids": [
+                "ks_contact"
+              ]
+            }
+          ]
+        },
+        {
+          "id": "services",
+          "fa": "محصولات و خدمات",
+          "en": "Products & services",
+          "ar": "المنتجات والخدمات",
+          "items": [
+            {
+              "fa": "KSATlite خدمات خودکار بخش زمینی را برای ارتباط ماهواره‌ای، زمان‌بندی گذرها و مدیریت جریان داده ارائه می‌کند.",
+              "en": "KSATlite provides automated ground-segment services for satellite links, pass scheduling and data-flow management.",
+              "ar": "توفّر KSATlite خدمات القطاع الأرضي المؤتمتة للاتصالات بالأقمار وجدولة المرور وإدارة تدفق البيانات.",
+              "source_ids": [
+                "ks_lite"
+              ]
+            }
+          ]
+        },
+        {
+          "id": "network",
+          "fa": "شبکه و پوشش",
+          "en": "Network & footprint",
+          "ar": "الشبكة والتغطية",
+          "items": [
+            {
+              "fa": "شبکه شرکت از ایستگاه‌های توزیع‌شده جغرافیایی برای پشتیبانی مدارهای قطبی و مایل استفاده می‌کند؛ این نقشه، پوشش لحظه‌ای یا همه ایستگاه‌های شبکه را ادعا نمی‌کند.",
+              "en": "The geographically distributed network serves polar and inclined orbits; this record does not imply real-time coverage or plot every station.",
+              "ar": "تخدم الشبكة الموزعة جغرافياً المدارات القطبية والمائلة؛ ولا يدّعي السجل عرض التغطية الآنية أو جميع محطات الشبكة.",
+              "source_ids": [
+                "ks_net"
+              ]
+            }
+          ]
+        },
+        {
+          "id": "capacity",
+          "fa": "عملکرد و ظرفیت",
+          "en": "Capability & capacity",
+          "ar": "القدرات والسعة",
+          "items": [
+            {
+              "fa": "در معرفی KSATlite، خدمات باند S برای ارسال و دریافت و باندهای X و Ka برای دریافت داده ذکر شده است؛ این قابلیت به همان سرویس مربوط است.",
+              "en": "The KSATlite service lists S-band uplink/downlink and X- and Ka-band downlink; this applies to that service, not every station.",
+              "ar": "تذكر خدمة KSATlite نطاق S للإرسال والاستقبال ونطاقَي X وKa للاستقبال؛ وتخص هذه الإمكانات الخدمة لا كل محطة.",
+              "source_ids": [
+                "ks_lite"
+              ]
+            }
+          ]
+        },
+        {
+          "id": "clients",
+          "fa": "مشتریان و شبکه عملیاتی",
+          "en": "Clients & operational links",
+          "ar": "العملاء والروابط التشغيلية",
+          "items": [
+            {
+              "fa": "KSAT شبکه‌ای از ایستگاه‌های خود و شرکای مرتبط را برای خدمات ارتباطی معرفی می‌کند؛ فهرست قراردادهای اختصاصی یا تمام مشتریان در این نمونه تأیید نشده است.",
+              "en": "KSAT describes a network combining its infrastructure with partners; this pilot does not verify an exhaustive client or contract roster.",
+              "ar": "تصف KSAT شبكة تجمع بنيتها التحتية مع شركائها؛ ولا تثبت هذه العينة قائمة شاملة بالعملاء أو العقود.",
+              "source_ids": [
+                "ks_net",
+                "ks_lite"
+              ]
+            }
+          ]
+        }
+      ],
+      "data_status": "verified_pilot"
+    }
+  },
+  {
+    "id": "d-orbit",
+    "cat": "inspace_services",
+    "en": "D-Orbit",
+    "fa": "دی‌اوربیت",
+    "ar": "دي-أوربيت",
+    "country": "Italy",
+    "country_fa": "ایتالیا",
+    "country_ar": "إيطاليا",
+    "city": "Fino Mornasco",
+    "city_fa": "فینو مورناسکو",
+    "city_ar": "فينو مورناسكو",
+    "lat": 45.746,
+    "lon": 9.05,
+    "site": "https://dorbit.space/",
+    "fa_d": "شرکت ایتالیایی لجستیک فضایی و انتقال مداری؛ توسعه‌دهنده و بهره‌بردار حامل مداری ION.",
+    "en_d": "Italian space-logistics and orbital-transportation company developing and operating ION Satellite Carrier.",
+    "ar_d": "شركة إيطالية للوجستيات الفضائية والنقل المداري تطوّر وتشغّل مركبة ION Satellite Carrier.",
+    "logo": "assets/logos/orbita/d-orbit.svg",
+    "logo_kind": "orbita_editorial_nonofficial",
+    "orbita_marker_code": "DO",
+    "coordinate_precision": "city_center_approximation",
+    "founded": 2011,
+    "orbita_verified_profile": {
+      "schema_version": 3,
+      "profile_type": "inspace_services",
+      "verified_on": "2026-11-12",
+      "review_scope": "Phase-3 evidence-led specialty dossier only; legacy data not recertified; no global coverage claim",
+      "summary": {
+        "fa": "انتقال مداری و استقرار ماهواره‌ها با حامل ION و توسعه خدمات آینده در مدار.",
+        "en": "Orbital transport and satellite deployment with ION, plus a roadmap for further in-orbit services.",
+        "ar": "نقل الأقمار ونشرها مداريّاً بواسطة ION مع خطط لخدمات مدارية أخرى."
+      },
+      "sources": [
+        {
+          "id": "do_about",
+          "title": "D-Orbit — About us",
+          "url": "https://dorbit.space/about-us/",
+          "checked_on": "2026-11-12"
+        },
+        {
+          "id": "do_home",
+          "title": "D-Orbit — Solutions",
+          "url": "https://dorbit.space/",
+          "checked_on": "2026-11-12"
+        },
+        {
+          "id": "do_location",
+          "title": "Italian Trade Agency — D-Orbit company profile",
+          "url": "https://www.ice.it/en/sites/default/files/inline-files/italian-participation-at-imdex-asia-2025.pdf",
+          "checked_on": "2026-11-12"
+        }
+      ],
+      "sections": [
+        {
+          "id": "overview",
+          "fa": "شناسنامه و خدمات",
+          "en": "Identity & services",
+          "ar": "التعريف والخدمات",
+          "items": [
+            {
+              "fa": "دی‌اوربیت در سال ۲۰۱۱ بنیان‌گذاری شد و فعالیت اصلی آن لجستیک فضایی و حمل‌ونقل در مدار است.",
+              "en": "D-Orbit was founded in 2011 and focuses on space logistics and orbital transportation.",
+              "ar": "تأسست D-Orbit عام 2011 وتركّز على الخدمات اللوجستية الفضائية والنقل في المدار.",
+              "source_ids": [
+                "do_about"
+              ]
+            },
+            {
+              "fa": "این شرکت در فینو مورناسکو ایتالیا معرفی شده است؛ نقطه نقشه در سطح شهر و نه درِ ساختمان ثبت شده است.",
+              "en": "The company is listed in Fino Mornasco, Italy; the map point represents the town, not a building entrance.",
+              "ar": "تُدرج الشركة في فينو مورناسكو بإيطاليا؛ وتمثّل نقطة الخريطة البلدة لا مدخل المبنى.",
+              "source_ids": [
+                "do_location"
+              ]
+            }
+          ]
+        },
+        {
+          "id": "fleet",
+          "fa": "ناوگان و سامانه‌ها",
+          "en": "Fleet & systems",
+          "ar": "الأسطول والأنظمة",
+          "items": [
+            {
+              "fa": "حامل مداری ION Satellite Carrier برای حمل ماهواره‌ها و رهاسازی آن‌ها در موقعیت‌های مداری هدف طراحی و استفاده می‌شود.",
+              "en": "The ION Satellite Carrier is used to transport satellites and deploy them into target orbital slots.",
+              "ar": "تُستخدم مركبة ION Satellite Carrier لنقل الأقمار الصناعية ونشرها في مواقع مدارية مستهدفة.",
+              "source_ids": [
+                "do_about"
+              ]
+            }
+          ]
+        },
+        {
+          "id": "missions",
+          "fa": "مأموریت‌های انجام‌شده",
+          "en": "Completed missions",
+          "ar": "المهمات المنفّذة",
+          "items": [
+            {
+              "fa": "وب‌سایت شرکت سابقه مأموریت‌های تجاری حمل‌ونقل مداری و استقرار ماهواره با ION را گزارش می‌کند؛ شمار متغیر مأموریت‌ها در این پرونده ثابت نشده است.",
+              "en": "The company reports commercial orbital transportation and satellite-deployment missions with ION; this dossier does not freeze a changing mission count.",
+              "ar": "تذكر الشركة مهمات تجارية للنقل المداري ونشر الأقمار باستخدام ION؛ ولا يثبت هذا الملف عدداً متغيّراً للمهمات.",
+              "source_ids": [
+                "do_about",
+                "do_home"
+              ]
+            }
+          ]
+        },
+        {
+          "id": "capabilities",
+          "fa": "قابلیت‌های مداری",
+          "en": "In-orbit capabilities",
+          "ar": "القدرات المدارية",
+          "items": [
+            {
+              "fa": "حمل محموله‌های میزبانی‌شده و استقرار ماهواره از خدمات معرفی‌شده است؛ سوخت‌گیری و سرویس‌دهی گسترده‌تر در نقشه راه شرکت مطرح‌اند و در اینجا عملیاتیِ اثبات‌شده تلقی نمی‌شوند.",
+              "en": "Hosted payloads and satellite deployment are marketed services; refuelling and broader servicing are roadmap capabilities, not counted here as demonstrated operational services.",
+              "ar": "استضافة الحمولات ونشر الأقمار من الخدمات المعروضة؛ أما التزوّد بالوقود والخدمة المدارية الأوسع فمن خطط التطوير ولا تُعدّ هنا خدمات مثبتة التشغيل.",
+              "source_ids": [
+                "do_about",
+                "do_home"
+              ]
+            }
+          ]
+        },
+        {
+          "id": "roadmap",
+          "fa": "برنامه توسعه و مشتریان",
+          "en": "Roadmap & customers",
+          "ar": "خارطة الطريق والعملاء",
+          "items": [
+            {
+              "fa": "دی‌اوربیت توسعه خدمات درون‌مداری مانند سرویس‌دهی و پشتیبانی پایان مأموریت را در برنامه خود توصیف می‌کند؛ جزئیات مشتریان صرفاً با مدارک مستقل ثبت می‌شوند.",
+              "en": "D-Orbit describes plans for in-orbit services and end-of-mission support; individual customer relations require their own supporting evidence.",
+              "ar": "تصف D-Orbit خططاً للخدمة في المدار ودعم نهاية المهمة؛ وتحتاج علاقات العملاء المحددة إلى أدلة مستقلة.",
+              "source_ids": [
+                "do_about"
+              ]
+            }
+          ]
+        }
+      ],
+      "data_status": "verified_pilot"
+    }
+  },
+  {
+    "id": "esa-estec-test-centre",
+    "cat": "test_facility",
+    "en": "ESA ESTEC Test Centre",
+    "fa": "مرکز آزمون استک آژانس فضایی اروپا",
+    "ar": "مركز اختبارات ESTEC التابع لوكالة الفضاء الأوروبية",
+    "country": "Netherlands",
+    "country_fa": "هلند",
+    "country_ar": "هولندا",
+    "city": "Noordwijk",
+    "city_fa": "نوردویک",
+    "city_ar": "نوردفايك",
+    "lat": 52.231,
+    "lon": 4.437,
+    "site": "https://www.esa.int/Enabling_Support/Space_Engineering_Technology/Test_centre",
+    "fa_d": "مرکز آزمون محیطی ماهواره‌ها و سخت‌افزار فضایی در تأسیسات استکِ هلند؛ این رکورد یک مرکز فیزیکی است، نه خود آژانس فضایی اروپا.",
+    "en_d": "Satellite and space-hardware environmental test facility at ESTEC, the Netherlands; a physical facility rather than the ESA agency record.",
+    "ar_d": "منشأة للاختبارات البيئية للأقمار والمعدات الفضائية في ESTEC بهولندا؛ وهي منشأة مادية وليست سجل الوكالة نفسها.",
+    "logo": "assets/logos/orbita/esa-estec-test-centre.svg",
+    "logo_kind": "orbita_editorial_nonofficial",
+    "orbita_marker_code": "ET",
+    "coordinate_precision": "city_center_approximation",
+    "orbita_verified_profile": {
+      "schema_version": 3,
+      "profile_type": "test_facility",
+      "verified_on": "2026-11-12",
+      "review_scope": "Phase-3 evidence-led specialty dossier only; legacy data not recertified; no global coverage claim",
+      "summary": {
+        "fa": "تأسیسات اروپایی آزمون محیطی، شامل لرزش، صوت، خلأ حرارتی و سازگاری الکترومغناطیسی.",
+        "en": "European environmental testing facilities for vibration, acoustics, thermal vacuum and electromagnetic compatibility.",
+        "ar": "مرافق أوروبية لاختبار الاهتزاز والصوت والفراغ الحراري والتوافق الكهرومغناطيسي."
+      },
+      "sources": [
+        {
+          "id": "et_about",
+          "title": "ESA — About ESTEC Test Centre",
+          "url": "https://www.esa.int/Enabling_Support/Space_Engineering_Technology/Test_centre/About_ESTEC_Test_Centre",
+          "checked_on": "2026-11-12"
+        },
+        {
+          "id": "et_tech",
+          "title": "ESA Technology — Test Centre facilities",
+          "url": "https://technology.esa.int/lab/test-centre",
+          "checked_on": "2026-11-12"
+        },
+        {
+          "id": "et_estec",
+          "title": "ESA — ESTEC establishment",
+          "url": "https://www.esa.int/establishment/about-us/meet-us/sites-and-establishments/esa-estec/esa-estec",
+          "checked_on": "2026-11-12"
+        }
+      ],
+      "sections": [
+        {
+          "id": "overview",
+          "fa": "شناسنامه تأسیسات",
+          "en": "Facility identity",
+          "ar": "تعريف المنشأة",
+          "items": [
+            {
+              "fa": "مرکز آزمون در مجموعه ESTEC واقع در نوردویک هلند قرار دارد؛ مختصات نمایش داده‌شده، نقطه مرجع شهری است.",
+              "en": "The Test Centre is located at ESA ESTEC in Noordwijk, the Netherlands; this map point is city-level only.",
+              "ar": "يقع مركز الاختبار في ESTEC بمدينة نوردفايك الهولندية؛ وتمثل نقطة الخريطة موقعاً مرجعياً على مستوى المدينة.",
+              "source_ids": [
+                "et_about",
+                "et_estec"
+              ]
+            },
+            {
+              "fa": "این مرکز به نمایندگی از ESA توسط European Test Services (ETS) اداره می‌شود.",
+              "en": "European Test Services (ETS) operates the centre on behalf of ESA.",
+              "ar": "تشغّل شركة European Test Services (ETS) المركز نيابةً عن وكالة الفضاء الأوروبية.",
+              "source_ids": [
+                "et_tech"
+              ]
+            }
+          ]
+        },
+        {
+          "id": "equipment",
+          "fa": "تجهیزات و ظرفیت آزمون",
+          "en": "Facilities & test capability",
+          "ar": "المرافق والقدرات الاختبارية",
+          "items": [
+            {
+              "fa": "تجهیزات مرکز شامل سامانه‌های آزمون ارتعاش، نویز صوتی، خلأ حرارتی و سازگاری الکترومغناطیسی است.",
+              "en": "Facilities include vibration, acoustic, thermal-vacuum and electromagnetic compatibility testing systems.",
+              "ar": "تشمل المرافق أنظمة اختبارات الاهتزاز والصوت والفراغ الحراري والتوافق الكهرومغناطيسي.",
+              "source_ids": [
+                "et_tech"
+              ]
+            },
+            {
+              "fa": "مرکز امکان جابه‌جایی سخت‌افزار تا سطح ماهواره کامل میان بخش‌های آزمون را فراهم می‌کند.",
+              "en": "The centre accommodates hardware up to complete spacecraft and allows movement between its test installations.",
+              "ar": "يستوعب المركز معدات تصل إلى مركبات فضائية كاملة ويتيح نقلها بين منشآت الاختبار.",
+              "source_ids": [
+                "et_about"
+              ]
+            }
+          ]
+        },
+        {
+          "id": "testing",
+          "fa": "آزمون‌ها و پروژه‌ها",
+          "en": "Testing & projects",
+          "ar": "الاختبارات والمشروعات",
+          "items": [
+            {
+              "fa": "آژانس فضایی اروپا به آزمون سخت‌افزار برنامه‌های ATV، گالیله و بپی‌کلمبو در این مرکز اشاره می‌کند؛ جزئیات هر آزمون باید در اسناد همان مأموریت بررسی شود.",
+              "en": "ESA cites ATV, Galileo and BepiColombo hardware among work supported by the facility; individual test campaigns require mission-specific evidence.",
+              "ar": "تذكر الوكالة دعم المركز لاختبارات معدات ATV وGalileo وBepiColombo؛ وتتطلب تفاصيل كل حملة وثائق المهمة المعنية.",
+              "source_ids": [
+                "et_tech"
+              ]
+            }
+          ]
+        },
+        {
+          "id": "standards",
+          "fa": "استانداردها و اعتبارسنجی",
+          "en": "Standards & qualification",
+          "ar": "المعايير والتأهيل",
+          "items": [
+            {
+              "fa": "این مرکز آزمون‌های محیطی را برای ارزیابی و صحه‌گذاری عملکرد سخت‌افزار انجام می‌دهد؛ در این نمونه گواهی صلاحیت مستقل برای تمام تجهیزات ادعا نشده است.",
+              "en": "The facility conducts environmental verification of spacecraft hardware; this dossier does not claim a blanket certification for every tested item.",
+              "ar": "تُجرى اختبارات بيئية للتحقق من المعدات الفضائية؛ ولا يدّعي هذا الملف اعتماداً شاملاً لكل قطعة مختبرة.",
+              "source_ids": [
+                "et_about"
+              ]
+            }
+          ]
+        },
+        {
+          "id": "history",
+          "fa": "تاریخچه و مشتریان",
+          "en": "History & customers",
+          "ar": "التاريخ والعملاء",
+          "items": [
+            {
+              "fa": "مرکز افزون بر برنامه‌های ESA، برای نیازهای صنعت اروپا نیز خدمات آزمون ارائه می‌کند؛ این پرونده فهرست کامل مشتریان را تأیید نمی‌کند.",
+              "en": "The centre also serves European industry beyond ESA projects; no exhaustive customer list is asserted in this pilot.",
+              "ar": "يقدّم المركز خدمات للصناعة الأوروبية خارج مشروعات الوكالة؛ ولا يؤكد هذا الملف قائمة شاملة بالعملاء.",
+              "source_ids": [
+                "et_tech"
+              ]
+            }
+          ]
+        }
+      ],
+      "data_status": "verified_pilot"
+    },
+    "linked_entities": [
+      "esa"
+    ]
+  },
+  {
+    "id": "esa-cebreros-dsa2",
+    "cat": "ground_station",
+    "en": "ESA Cebreros Deep Space Antenna (DSA 2)",
+    "fa": "ایستگاه فضای دور سبروس (DSA 2)",
+    "ar": "محطة ثيبريروس للفضاء العميق (DSA 2)",
+    "country": "Spain",
+    "country_fa": "اسپانیا",
+    "country_ar": "إسبانيا",
+    "city": "Cebreros (Ávila)",
+    "city_fa": "سبروس (آبیلا)",
+    "city_ar": "ثيبريروس (آفيلا)",
+    "lat": 40.452689,
+    "lon": -4.36755,
+    "site": "https://www.esa.int/Enabling_Support/Operations/ESA_Ground_Stations/Cebreros_-_DSA_2",
+    "fa_d": "ایستگاه ۳۵متری ارتباط با مأموریت‌های اعماق فضا در شبکه ESTRACK آژانس فضایی اروپا.",
+    "en_d": "ESA ESTRACK 35-metre deep-space communications and tracking station in Spain.",
+    "ar_d": "محطة اتصالات وتتبع للفضاء العميق بهوائي قطره 35 متراً ضمن شبكة ESTRACK الأوروبية.",
+    "logo": "assets/logos/orbita/esa-cebreros-dsa2.svg",
+    "logo_kind": "orbita_editorial_nonofficial",
+    "orbita_marker_code": "CE",
+    "coordinate_precision": "esa_published_station_coordinate",
+    "orbita_verified_profile": {
+      "schema_version": 3,
+      "profile_type": "ground_station",
+      "verified_on": "2026-11-12",
+      "review_scope": "Phase-3 evidence-led specialty dossier only; legacy data not recertified; no global coverage claim",
+      "summary": {
+        "fa": "ایستگاه ۳۵متری شبکه ESTRACK با ارتباط باند X و دریافت باندهای K و Ka.",
+        "en": "35-metre ESTRACK antenna with X-band links and K/Ka-band reception.",
+        "ar": "هوائي ESTRACK بقطر 35 متراً لاتصالات نطاق X واستقبال نطاقَي K وKa."
+      },
+      "sources": [
+        {
+          "id": "ce_station",
+          "title": "ESA — Cebreros DSA 2",
+          "url": "https://www.esa.int/Enabling_Support/Operations/ESA_Ground_Stations/Cebreros_-_DSA_2",
+          "checked_on": "2026-11-12"
+        },
+        {
+          "id": "ce_geo",
+          "title": "ESA — Ground Stations Live (published location)",
+          "url": "https://www.esa.int/Enabling_Support/Operations/ESA_Ground_Stations/ESA_Ground_Stations_Live",
+          "checked_on": "2026-11-12"
+        },
+        {
+          "id": "ce_open",
+          "title": "ESA — Cebreros inauguration (2005)",
+          "url": "https://www.esa.int/Enabling_Support/Operations/ESA_Ground_Stations/Cebreros_inaugurated_ready_for_Venus_Express",
+          "checked_on": "2026-11-12"
+        },
+        {
+          "id": "ce_ops",
+          "title": "ESA — BepiColombo operations",
+          "url": "https://www.esa.int/articles/about-us/directorates/operations/bepicolombo-operations",
+          "checked_on": "2026-11-12"
+        }
+      ],
+      "sections": [
+        {
+          "id": "overview",
+          "fa": "شناسنامه ایستگاه",
+          "en": "Station profile",
+          "ar": "التعريف بالمحطة",
+          "items": [
+            {
+              "fa": "ایستگاه DSA 2 در نزدیکی سبروس استان آبیلای اسپانیا قرار دارد و دارای آنتن فضای دور با قطر ۳۵ متر است.",
+              "en": "DSA 2 is near Cebreros in Ávila, Spain, and hosts a 35 m deep-space dish.",
+              "ar": "تقع محطة DSA 2 قرب ثيبريروس بمقاطعة آفيلا في إسبانيا وتضم طبقاً للفضاء العميق قطره 35 m.",
+              "source_ids": [
+                "ce_station"
+              ]
+            },
+            {
+              "fa": "مختصات این رکورد از موقعیت منتشرشده ایستگاه توسط ESA گرفته شده است؛ مرز فیزیکی ملک یا محدوده حفاظتی نیست.",
+              "en": "Coordinates come from ESA’s published station location; they do not define property or security boundaries.",
+              "ar": "أُخذت الإحداثيات من الموقع الذي نشرته ESA للمحطة ولا تحدد حدود المنشأة أو نطاقات الحماية.",
+              "source_ids": [
+                "ce_geo"
+              ]
+            }
+          ]
+        },
+        {
+          "id": "equipment",
+          "fa": "تجهیزات و قابلیت ارتباطی",
+          "en": "Equipment & links",
+          "ar": "المعدات والاتصالات",
+          "items": [
+            {
+              "fa": "ایستگاه ارسال و دریافت باند X و دریافت باندهای K و Ka را ارائه می‌کند.",
+              "en": "The station supports X-band transmission and reception and K- and Ka-band reception.",
+              "ar": "تدعم المحطة الإرسال والاستقبال في نطاق X والاستقبال في نطاقَي K وKa.",
+              "source_ids": [
+                "ce_station"
+              ]
+            }
+          ]
+        },
+        {
+          "id": "missions",
+          "fa": "مأموریت‌ها و شبکه",
+          "en": "Missions & network",
+          "ar": "المهمات والشبكة",
+          "items": [
+            {
+              "fa": "ESA، سبروس را در پشتیبانی مأموریت‌های اعماق فضا مانند مارس اکسپرس، بپی‌کلمبو و جوس معرفی می‌کند؛ فهرست، نشانگر پشتیبانی مستمر در هر لحظه نیست.",
+              "en": "ESA identifies Cebreros as supporting missions such as Mars Express, BepiColombo and Juice; the list does not imply continuous live contact.",
+              "ar": "تذكر ESA دعم ثيبريروس لمهمات مثل Mars Express وBepiColombo وJuice؛ ولا تعني القائمة اتصالاً متصلاً في الزمن الحقيقي.",
+              "source_ids": [
+                "ce_station"
+              ]
+            }
+          ]
+        },
+        {
+          "id": "coverage",
+          "fa": "پوشش و ظرفیت",
+          "en": "Coverage & capacity",
+          "ar": "التغطية والسعة",
+          "items": [
+            {
+              "fa": "در ارتباط اعماق فضا، امکان ردیابی و ارتباط به هندسه مأموریت و برنامه زمان‌بندی وابسته است؛ این رکورد محدوده پوشش زنده را محاسبه نکرده است.",
+              "en": "Deep-space availability depends on mission geometry and scheduling; no real-time visibility footprint is computed in this profile.",
+              "ar": "تعتمد إتاحة اتصالات الفضاء العميق على هندسة المهمة وجدولتها؛ ولا يحسب الملف تغطية فورية.",
+              "source_ids": [
+                "ce_station",
+                "ce_ops"
+              ]
+            }
+          ]
+        },
+        {
+          "id": "history",
+          "fa": "تاریخچه و توسعه",
+          "en": "History & development",
+          "ar": "التاريخ والتطوير",
+          "items": [
+            {
+              "fa": "آنتن سبروس در ۲۸ سپتامبر ۲۰۰۵ افتتاح شد و برای پشتیبانی اولیه از ونوس اکسپرس آماده شده بود.",
+              "en": "The Cebreros antenna was inaugurated on 28 September 2005, in preparation for early Venus Express support.",
+              "ar": "افتُتح هوائي ثيبريروس في 28 سبتمبر 2005 استعداداً لدعم مهمة Venus Express.",
+              "source_ids": [
+                "ce_open"
+              ]
+            }
+          ]
+        }
+      ],
+      "data_status": "verified_pilot"
+    },
+    "linked_entities": [
+      "esa",
+      "esa-esoc"
+    ]
+  },
+  {
+    "id": "esa-esoc",
+    "cat": "mission_control",
+    "en": "ESA European Space Operations Centre (ESOC)",
+    "fa": "مرکز عملیات فضایی اروپا (اسوک)",
+    "ar": "المركز الأوروبي للعمليات الفضائية (ESOC)",
+    "country": "Germany",
+    "country_fa": "آلمان",
+    "country_ar": "ألمانيا",
+    "city": "Darmstadt",
+    "city_fa": "دارمشتات",
+    "city_ar": "دارمشتات",
+    "lat": 49.8728,
+    "lon": 8.6512,
+    "site": "https://www.esa.int/establishment/about-us/meet-us/sites-and-establishments/esa-esoc/esa-esoc",
+    "fa_d": "مرکز عملیات فضاپیما و مدیریت شبکه رهگیری آژانس فضایی اروپا در دارمشتات آلمان.",
+    "en_d": "ESA spacecraft operations and ground-tracking network control centre in Darmstadt, Germany.",
+    "ar_d": "مركز تشغيل المركبات الفضائية وإدارة شبكة التتبع الأرضي التابعة لـESA في دارمشتات بألمانيا.",
+    "logo": "assets/logos/orbita/esa-esoc.svg",
+    "logo_kind": "orbita_editorial_nonofficial",
+    "orbita_marker_code": "EO",
+    "coordinate_precision": "city_center_approximation",
+    "orbita_verified_profile": {
+      "schema_version": 3,
+      "profile_type": "mission_control",
+      "verified_on": "2026-11-12",
+      "review_scope": "Phase-3 evidence-led specialty dossier only; legacy data not recertified; no global coverage claim",
+      "summary": {
+        "fa": "مرکز کنترل مأموریت‌های رباتیک ESA و هماهنگ‌کننده شبکه ایستگاه‌های زمینی آن.",
+        "en": "Mission operations centre for ESA robotic spacecraft and coordination of its ground station network.",
+        "ar": "مركز عمليات مهمات ESA الروبوتية وتنسيق شبكة محطاتها الأرضية."
+      },
+      "sources": [
+        {
+          "id": "es_about",
+          "title": "ESA — ESOC overview and location",
+          "url": "https://www.esa.int/establishment/about-us/meet-us/sites-and-establishments/esa-esoc/esa-esoc",
+          "checked_on": "2026-11-12"
+        },
+        {
+          "id": "es_faq",
+          "title": "ESA — Mission Control FAQ",
+          "url": "https://www.esa.int/articles/about-us/directorates/operations/esa-mission-control-faq",
+          "checked_on": "2026-11-12"
+        },
+        {
+          "id": "es_bepi",
+          "title": "ESA — BepiColombo operations",
+          "url": "https://www.esa.int/articles/about-us/directorates/operations/bepicolombo-operations",
+          "checked_on": "2026-11-12"
+        }
+      ],
+      "sections": [
+        {
+          "id": "overview",
+          "fa": "شناسنامه مرکز",
+          "en": "Centre identity",
+          "ar": "التعريف بالمركز",
+          "items": [
+            {
+              "fa": "اسوک مرکز عملیات فضایی ESA در دارمشتات آلمان است و از سال ۱۹۶۷ پایگاه اصلی عملیات فضاپیماهای آن بوده است.",
+              "en": "ESOC is ESA’s space operations centre in Darmstadt, Germany, serving as a spacecraft operations hub since 1967.",
+              "ar": "ESOC هو مركز العمليات الفضائية لـESA في دارمشتات بألمانيا، ومركز رئيسي للعمليات منذ 1967.",
+              "source_ids": [
+                "es_about"
+              ]
+            }
+          ]
+        },
+        {
+          "id": "missions",
+          "fa": "مأموریت‌ها و ناوگان تحت کنترل",
+          "en": "Missions & spacecraft",
+          "ar": "المهمات والمركبات",
+          "items": [
+            {
+              "fa": "این مرکز عملیات فضاپیماهای رباتیک ESA را پشتیبانی می‌کند؛ برنامه بپی‌کلمبو نمونه‌ای از مأموریت‌های مستند آن است.",
+              "en": "The centre supports ESA robotic spacecraft operations; BepiColombo is one documented example.",
+              "ar": "يدعم المركز تشغيل مركبات ESA الروبوتية، وتُعد BepiColombo مثالاً موثقاً على ذلك.",
+              "source_ids": [
+                "es_faq",
+                "es_bepi"
+              ]
+            }
+          ]
+        },
+        {
+          "id": "operations",
+          "fa": "توانمندی‌های عملیاتی",
+          "en": "Operations capabilities",
+          "ar": "القدرات التشغيلية",
+          "items": [
+            {
+              "fa": "وظایف اسوک شامل کنترل فضاپیما، برنامه‌ریزی مأموریت، دینامیک پرواز و خدمات ناوبری است.",
+              "en": "ESOC functions include spacecraft control, mission operations planning, flight dynamics and navigation support.",
+              "ar": "تشمل مهام ESOC التحكم بالمركبات وتخطيط العمليات وديناميكيات الطيران ودعم الملاحة.",
+              "source_ids": [
+                "es_about",
+                "es_faq"
+              ]
+            }
+          ]
+        },
+        {
+          "id": "network",
+          "fa": "شبکه ارتباطی",
+          "en": "Ground segment network",
+          "ar": "شبكة الاتصالات الأرضية",
+          "items": [
+            {
+              "fa": "اسوک میزبان مرکز کنترل شبکه ESTRACK است و ایستگاه‌های زمینی آن، از جمله سبروس، در پشتیبانی ارتباطات مأموریت‌ها نقش دارند.",
+              "en": "ESOC hosts the ESTRACK control function; stations including Cebreros support mission communications.",
+              "ar": "يستضيف ESOC وظيفة التحكم بشبكة ESTRACK وتدعم محطات مثل ثيبريروس اتصالات المهمات.",
+              "source_ids": [
+                "es_faq",
+                "es_bepi"
+              ]
+            }
+          ]
+        },
+        {
+          "id": "history",
+          "fa": "تاریخچه و تحولات",
+          "en": "History & developments",
+          "ar": "التاريخ والتطور",
+          "items": [
+            {
+              "fa": "ESA آغاز نقش اسوک به‌عنوان مرکز عملیات فضایی را به سال ۱۹۶۷ نسبت می‌دهد؛ تحولات و مأموریت‌های آن از آن زمان ادامه یافته‌اند.",
+              "en": "ESA dates ESOC’s spacecraft operations role to 1967; its missions and functions have evolved since then.",
+              "ar": "تؤرّخ ESA دور ESOC في العمليات الفضائية منذ عام 1967، وتطورت مهماته ووظائفه منذ ذلك الوقت.",
+              "source_ids": [
+                "es_about"
+              ]
+            }
+          ]
+        }
+      ],
+      "data_status": "verified_pilot"
+    },
+    "linked_entities": [
+      "esa",
+      "esa-cebreros-dsa2"
     ]
   }
 ]
