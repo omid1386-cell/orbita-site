@@ -558,8 +558,8 @@
   // Category-slice rows; propulsion includes three explicit secondary memberships and one linked alias.
   // Counts represent reviewed records in ORBITA, not a worldwide census.
   var COMPANY_CATEGORY_COUNTS = { launch: 68, propulsion: 68, agency: 96, satmaker: 37,
-    components: 15, payloads: 1, ground_services: 1, inspace_services: 3,
-    university_space: 4, test_facility: 2, ground_station: 15, mission_control: 3 };
+    components: 19, payloads: 3, ground_services: 3, inspace_services: 4,
+    university_space: 5, test_facility: 4, ground_station: 16, mission_control: 4 };
   var COMPANY_CATEGORY_STATE = { launch: "idle", propulsion: "idle", agency: "idle", satmaker: "idle",
     components: "idle", payloads: "idle", ground_services: "idle", inspace_services: "idle",
     university_space: "idle", test_facility: "idle", ground_station: "idle", mission_control: "idle" };
@@ -10172,24 +10172,23 @@
       });
     });
     citedIds.forEach(function(id,i){ids[id]=i+1;});
-    var verifiedLogoSrc = o.logo_data || o.logo;
-    // Existing verified dossiers remain unchanged. The 33 stage-5 editorial
-    // image assets use local PNG files; a self-contained fallback prevents an
-    // empty logo if an asset was omitted by GitHub upload or served incorrectly.
-    var verifiedLogoFallback = fallbackLogoDataUri(
-      /^[A-Za-z0-9]{1,3}$/.test(o.orbita_marker_code || '') ? o.orbita_marker_code : '◈', '#D7AA58');
     var html = '<section class="verified-profile verified-profile-v2" data-scope="' + esc(pf.profile_type) + '">';
+    var isFourteen = o.orbita_release_note && o.orbita_release_note.batch === 'RASPEHR_14_STEP5';
+    var brandIdentifier = String(o.brand_text_identifier || '').slice(0, 8);
+    var headerLogo = o.logo ? '<img class="verified-profile-logo" src="'+esc(o.logo)+'" alt="" loading="eager" />' :
+      (isFourteen && brandIdentifier ? '<span class="verified-brand-identifier" aria-label="'+esc(o.en)+'">'+esc(brandIdentifier)+'</span>' : '<span class="verified-profile-logo-placeholder">◈</span>');
     html += '<header class="verified-profile-head"><div class="verified-profile-logo-wrap">' +
-      (verifiedLogoSrc ? '<img class="verified-profile-logo" src="'+esc(verifiedLogoSrc)+'" alt="" loading="eager" decoding="async"' +
-        (o.logo_kind === 'orbita_editorial_nonofficial' ? fallbackImageErrorAttribute(verifiedLogoFallback) : '') + ' />' :
-        '<span class="verified-profile-logo-placeholder">◈</span>') +
+      headerLogo +
       '</div><div class="verified-profile-header-text"><p class="d-kicker">'+esc(role)+'</p>' +
       '<h2 class="d-title">'+esc(name(o))+'</h2><p class="d-desc verified-profile-sub">' +
-      esc(verifiedText(pf.summary) || desc(o)) + '</p><small class="verified-profile-editorial">'+esc(labels.mark)+'</small></div></header>';
+      esc(verifiedText(pf.summary) || desc(o)) + '</p>' +
+      (isFourteen ? '<small class="verified-profile-editorial">'+esc(o.logo ? tr('نشان سازمان مادر','Parent organization emblem','شعار الجهة الأم') :
+       tr('شناسه نوشتاری؛ لوگوی رسمی هنوز ثبت نشده','Typographic identifier; official logo not yet provided','معرّف نصّي؛ لم يُدرج الشعار الرسمي بعد'))+'</small>' :
+       '<small class="verified-profile-editorial">'+esc(labels.mark)+'</small>') + '</div></header>';
     html += '<div class="grid2 verified-profile-overview">' +
       '<div class="cell"><small>'+esc(t('country'))+'</small><b>'+esc(LANG==='fa'?(o.country_fa||o.country):LANG==='ar'?(o.country_ar||o.country):o.country)+'</b></div>' +
       '<div class="cell"><small>'+esc(t('city'))+'</small><b>'+esc(LANG==='fa'?(o.city_fa||o.city):LANG==='ar'?(o.city_ar||o.city):o.city)+'</b></div>' +
-      (isLab && o.parent_institution ? '<div class="cell"><small>'+esc(labels.parent)+'</small><b>'+esc(o.parent_institution)+'</b></div>' : '') +
+      ((isLab || isFourteen) && o.parent_institution ? '<div class="cell"><small>'+esc(labels.parent)+'</small><b>'+esc(o.parent_institution)+'</b></div>' : '') +
       '<div class="cell"><small>'+esc(labels.check)+'</small><b>'+esc(pf.verified_on || '—')+'</b></div></div>';
     if (Array.isArray(pf.key_facts) && pf.key_facts.length) {
       html += '<div class="verified-highlights" aria-label="'+esc(labels.editorial)+'">';
@@ -10199,7 +10198,10 @@
       });
       html += '</div>';
     }
-    html += '<p class="verified-location-note">'+esc(atEsaCoordinate?labels.precise:labels.location)+'</p>';
+    var locationNote = o.coordinate_precision === 'official_published_13m_antenna_1A_not_station_centre' ?
+      tr('مختصات آنتن ثبت‌شده NOAA؛ نه مرکز کل مجموعه', 'NOAA-published antenna coordinates; not the complex centre', 'إحداثيات هوائي منشورة من NOAA؛ وليست مركز الموقع') :
+      (atEsaCoordinate ? labels.precise : labels.location);
+    html += '<p class="verified-location-note">'+esc(locationNote)+'</p>';
     html += '<nav class="site-tabs verified-tabs" role="tablist" aria-label="'+esc(role)+'">';
     pf.sections.forEach(function(sec,i){
       html += '<button class="site-tab-btn verified-tab'+(i===0?' active':'')+'" type="button" role="tab" id="verified-tab-'+i+'" aria-controls="verified-panel-'+i+'" data-verified-index="'+i+'" aria-selected="'+(i===0?'true':'false')+'" tabindex="'+(i===0?'0':'-1')+'">'+esc(verifiedText(sec))+'</button>';
@@ -10225,10 +10227,9 @@
       if (!(sec.items || []).length) html+='<p class="verified-empty">'+esc(labels.noData)+'</p>';
       html += '</section>';
     });
-    // The 33 newly added stage-5 dossiers do not show the lengthy
-    // 'Evidence scope and limitations' card. Keep review_scope in the research
-    // data for editors; do not change the 11 approved reference dossiers.
-    if (o.id.indexOf('orbita-') !== 0 && pf.review_scope && verifiedText(pf.review_scope))
+    // Research-only scope notes are never shown on added records.
+    // The original eleven reference profiles retain their pre-existing layout.
+    if (!o.orbita_release_note && !pf.hide_evidence_scope_in_ui && pf.review_scope && verifiedText(pf.review_scope))
       html += '<aside class="verified-scope-note"><b>'+esc(labels.scope)+'</b><p>'+esc(verifiedText(pf.review_scope))+'</p></aside>';
     html += '<footer class="verified-profile-footer"><details class="verified-sources-details"><summary>'+esc(labels.evidence)+' <span class="verified-source-count">'+citedIds.length+'</span></summary><ol class="verified-all-sources">'+
       citedIds.map(function(id){ var src=byId[id];return '<li value="'+ids[id]+'"><a href="'+esc(src.url)+'" target="_blank" rel="noopener noreferrer">'+esc(src.title||src.url)+'</a>'+

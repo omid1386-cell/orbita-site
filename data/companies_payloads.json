@@ -425,5 +425,504 @@
         }
       ]
     }
+  },
+  {
+    "id": "raspehr-0043-satlantis",
+    "cat": "payloads",
+    "en": "SATLANTIS",
+    "fa": "ستلنتیس",
+    "ar": "ساتلانتيس",
+    "country": "Spain",
+    "country_fa": "اسپانیا",
+    "country_ar": "إسبانيا",
+    "city": "Leioa / Bilbao",
+    "city_fa": "لیوا / بیلبائو",
+    "city_ar": "ليوا / بلباو",
+    "lat": 43.327,
+    "lon": -2.982,
+    "coordinate_precision": "approximate_city_official_address",
+    "coordinates_are_exact_site_gps": false,
+    "address": "University Science Park, Sede Bld, Floor 2, 48940 Leioa-Bilbao, Spain",
+    "address_evidence_url": "https://www.satlantis.com/contact/",
+    "site": "https://www.satlantis.com/",
+    "fa_d": "SATLANTIS شرکت فعال در سنجش‌ازدور فضایی و سازنده دوربین‌های ماهواره‌ای iSIM است. ماموریت‌های MANTIS، HORACIO و GARAI-B نمونه‌هایی از کاربرد واقعی تجهیزات آن‌اند.",
+    "en_d": "SATLANTIS develops satellite optical payloads and end-to-end Earth observation solutions built around its iSIM cameras. MANTIS, HORACIO and GARAI-B provide documented mission examples.",
+    "ar_d": "تطور SATLANTIS حمولات بصرية وحلولاً متكاملة لرصد الأرض تعتمد على كاميرات iSIM. وتشمل أمثلة المهمات الموثقة MANTIS وHORACIO وGARAI-B.",
+    "org_type_fa": "سازنده محموله و ابزار فضایی",
+    "org_type_en": "Space payloads and instruments",
+    "org_type_ar": "حمولات وأجهزة فضائية",
+    "parent_institution": "",
+    "logo": "",
+    "logo_kind": "no_verified_official_logo",
+    "brand_text_identifier": "SAT",
+    "orbita_verified_profile": {
+      "schema_version": 3,
+      "profile_type": "payloads",
+      "summary": {
+        "fa": "SATLANTIS شرکت فعال در سنجش‌ازدور فضایی و سازنده دوربین‌های ماهواره‌ای iSIM است. ماموریت‌های MANTIS، HORACIO و GARAI-B نمونه‌هایی از کاربرد واقعی تجهیزات آن‌اند.",
+        "en": "SATLANTIS develops satellite optical payloads and end-to-end Earth observation solutions built around its iSIM cameras. MANTIS, HORACIO and GARAI-B provide documented mission examples.",
+        "ar": "تطور SATLANTIS حمولات بصرية وحلولاً متكاملة لرصد الأرض تعتمد على كاميرات iSIM. وتشمل أمثلة المهمات الموثقة MANTIS وHORACIO وGARAI-B."
+      },
+      "sources": [
+        {
+          "url": "https://www.satlantis.com/e2e-solutions/",
+          "provenance_types": [
+            "ADDITIONAL_OFFICIAL_WEB_RESEARCH_2026_11_13"
+          ],
+          "id": "SRC-0e807f77f939",
+          "title": "www.satlantis.com — e2e-solutions"
+        },
+        {
+          "url": "https://www.satlantis.com/space-cameras/",
+          "provenance_types": [
+            "S3_325_CLAIMS_INHERITED"
+          ],
+          "id": "SRC-bfe7643c1744",
+          "title": "www.satlantis.com — space-cameras"
+        },
+        {
+          "id": "NEW24-0e807f77f939",
+          "url": "https://www.satlantis.com/e2e-solutions/",
+          "title": "www.satlantis.com — ",
+          "provenance_types": [
+            "STEP2_24_INDEPENDENT_OFFICIAL_WEB_VERIFICATION_2026_11_13"
+          ]
+        },
+        {
+          "id": "NEW24-0b7fd6c84c5b",
+          "url": "https://www.satlantis.com/flight-heritage-2/",
+          "title": "www.satlantis.com — ",
+          "provenance_types": [
+            "STEP2_24_INDEPENDENT_OFFICIAL_WEB_VERIFICATION_2026_11_13"
+          ]
+        },
+        {
+          "id": "NEW24-c295135b745c",
+          "url": "https://www.satlantis.com/garai-b-innosat-unamuno-successfully-launched/",
+          "title": "www.satlantis.com — ",
+          "provenance_types": [
+            "STEP2_24_INDEPENDENT_OFFICIAL_WEB_VERIFICATION_2026_11_13"
+          ]
+        },
+        {
+          "id": "STAGE3-c851891b03a9",
+          "url": "https://www.satlantis.com/about-us/",
+          "title": "Official primary evidence from stage-3 audit",
+          "provenance_types": [
+            "STAGE3_PRIMARY_SOURCE_IDENTITY_RECHECK"
+          ]
+        },
+        {
+          "id": "STAGE3-7072c0ec06a0",
+          "url": "https://www.satlantis.com/",
+          "title": "Official primary evidence from stage-3 audit",
+          "provenance_types": [
+            "STAGE3_PRIMARY_SOURCE_IDENTITY_RECHECK"
+          ]
+        },
+        {
+          "id": "STAGE3-c62be3a1e2e2",
+          "url": "https://www.satlantis.com/contact/",
+          "title": "Official primary evidence from stage-3 audit",
+          "provenance_types": [
+            "STAGE3_PRIMARY_SOURCE_IDENTITY_RECHECK"
+          ]
+        }
+      ],
+      "sections": [
+        {
+          "id": "overview",
+          "fa": "شناسنامه و حوزه فعالیت",
+          "en": "Identity & specialization",
+          "ar": "التعريف والتخصص",
+          "items": [
+            {
+              "fa": "SATLANTIS سازنده محموله‌های اپتیکی مرئی و فروسرخ و راهکارهای تصویربرداری با وضوح بالا برای ماهواره‌های کوچک است. فعالیت محموله، پلتفرم ماهواره، خدمات تصویربرداری و پردازش داده باید در شناسنامه از هم تفکیک شود.",
+              "en": "SATLANTIS manufactures high-resolution visible and infrared payloads for small satellites and provides related imaging solutions. Its camera products, complete satellite configurations, operations and downstream data services are distinct business functions.",
+              "ar": "تصنع SATLANTIS حمولات تصوير بصري وتحت أحمر عالية الدقة للأقمار الصغيرة، وتقدم حلولاً للتصوير. ويجب التمييز بين الكاميرات ومنصات الأقمار الكاملة وتشغيلها وخدمات البيانات اللاحقة.",
+              "kind": "editorially_localized_verified_source_section",
+              "source_ids": [
+                "SRC-bfe7643c1744",
+                "NEW24-0e807f77f939",
+                "STAGE3-c851891b03a9",
+                "STAGE3-7072c0ec06a0",
+                "STAGE3-c62be3a1e2e2"
+              ],
+              "localization": "FACTUAL_SECTION_EQUIVALENCE_FA_EN_AR"
+            }
+          ]
+        },
+        {
+          "id": "catalog",
+          "fa": "کاتالوگ ابزارها",
+          "en": "Instrument catalogue",
+          "ar": "فهرس الأجهزة",
+          "items": [
+            {
+              "fa": "خانواده iSIM شامل iSIM-90 و iSIM-170 برای باندهای VNIR و SWIR است. پیکربندی ۱۲/۱۶U مبتنی بر iSIM-90 با چهار باند مرئی و شش باند فروسرخ، GSD اعلامی حدود ۲ تا ۳ متر و پهنای پوشش حدود ۱۴ کیلومتر معرفی می‌شود. طرح ریزماهواره‌ای حدود ۱۱۵ کیلوگرمی با ترکیب iSIM-170 و iSIM-90، GSD حدود ۱ تا ۳ متر و نرخ پایین‌دست پیشنهادی ۵۸۰ مگابیت‌برثانیه دارد. این اعداد وابسته به طرح، مدار و ارتفاع‌اند.",
+              "en": "The iSIM family includes iSIM-90 and iSIM-170 instruments covering VNIR and SWIR imaging. A proposed 12/16U iSIM-90 configuration offers four visible and six infrared bands, approximately 2–3 m GSD and about a 14 km swath. A roughly 115 kg microsatellite concept combines iSIM-170 and iSIM-90 with a proposed 1–3 m GSD and 580 Mb/s downlink. These specifications depend on satellite configuration and orbital altitude.",
+              "ar": "تشمل عائلة iSIM جهازَي iSIM-90 وiSIM-170 للتصوير في نطاقَي VNIR وSWIR. ويُعرض تصميم 12/16U بكاميرا iSIM-90 بأربع قنوات مرئية وست قنوات تحت حمراء، مع GSD بنحو 2–3 أمتار وعرض مسح يقارب 14 كم. كما يجمع مفهوم قمر صغير كتلته نحو 115 كغ كاميرتَي iSIM-170 وiSIM-90 بدقة أرضية مقترحة 1–3 أمتار وسرعة تنزيل 580 ميغابت/ثانية. وتعتمد هذه الأرقام على التكوين والارتفاع المداري.",
+              "kind": "editorially_localized_verified_source_section",
+              "source_ids": [
+                "SRC-bfe7643c1744",
+                "SRC-0e807f77f939",
+                "NEW24-0e807f77f939",
+                "STAGE3-c851891b03a9",
+                "STAGE3-7072c0ec06a0",
+                "STAGE3-c62be3a1e2e2"
+              ],
+              "localization": "FACTUAL_SECTION_EQUIVALENCE_FA_EN_AR"
+            }
+          ]
+        },
+        {
+          "id": "missions",
+          "fa": "مأموریت‌ها و کاربردها",
+          "en": "Missions & applications",
+          "ar": "المهمات والاستخدامات",
+          "items": [
+            {
+              "fa": "محموله iSIM-90 در مأموریت MANTIS در ۱۱ نوامبر ۲۰۲۳ و در HORACIO در ۴ مارس ۲۰۲۴ پرتاب شد. ماهواره GARAI-B / INNOSAT UNAMUNO با دوربین‌های iSIM-90 و iSIM-170 در ۳۰ مارس ۲۰۲۶ با مأموریت Transporter-16 پرتاب شد؛ پلتفرم آن ساخت OHB Sweden بود.",
+              "en": "An iSIM-90 payload launched on MANTIS on 11 November 2023 and another on HORACIO on 4 March 2024. GARAI-B / INNOSAT UNAMUNO, carrying iSIM-90 and iSIM-170 cameras, launched with Transporter-16 on 30 March 2026; its satellite platform was built by OHB Sweden.",
+              "ar": "أُطلقت حمولة iSIM-90 على MANTIS في 11 نوفمبر 2023 وعلى HORACIO في 4 مارس 2024. وأُطلق القمر GARAI-B / INNOSAT UNAMUNO المزود بكاميرتَي iSIM-90 وiSIM-170 ضمن Transporter-16 في 30 مارس 2026؛ وصنعت OHB Sweden منصة القمر.",
+              "kind": "editorially_localized_verified_source_section",
+              "source_ids": [
+                "NEW24-0b7fd6c84c5b",
+                "NEW24-c295135b745c",
+                "STAGE3-c851891b03a9",
+                "STAGE3-7072c0ec06a0",
+                "STAGE3-c62be3a1e2e2"
+              ],
+              "localization": "FACTUAL_SECTION_EQUIVALENCE_FA_EN_AR"
+            }
+          ]
+        },
+        {
+          "id": "readiness",
+          "fa": "بلوغ و عملکرد فناوری",
+          "en": "Readiness & performance",
+          "ar": "النضج والأداء التقني",
+          "items": [
+            {
+              "fa": "برای استفاده عملیاتی از مشخصات iSIM باید مدل، تعداد کانال‌ها، ارتفاع مدار و نسخه پیکربندی مشخص باشد. توان وضوح و لینک ارائه‌شده در بروشور، به‌خودی‌خود عملکرد اندازه‌گیری‌شده هر مأموریت نیست.",
+              "en": "Operational interpretation of iSIM specifications requires a defined model, spectral-channel configuration, orbit altitude and system revision. Brochure resolution and downlink figures are design claims, not automatically measured performance for every mission.",
+              "ar": "يتطلب تفسير مواصفات iSIM تشغيلياً تحديد الطراز وعدد القنوات الطيفية والارتفاع المداري وإصدار المنظومة. فأرقام الدقة والربط الواردة في الكتيبات هي مواصفات تصميمية وليست بالضرورة أداءً مقاساً لكل مهمة.",
+              "kind": "editorially_localized_verified_source_section",
+              "source_ids": [
+                "NEW24-0e807f77f939",
+                "STAGE3-c851891b03a9",
+                "STAGE3-7072c0ec06a0",
+                "STAGE3-c62be3a1e2e2"
+              ],
+              "localization": "FACTUAL_SECTION_EQUIVALENCE_FA_EN_AR"
+            }
+          ]
+        },
+        {
+          "id": "development",
+          "fa": "توسعه و همکاری‌ها",
+          "en": "Development & collaborations",
+          "ar": "التطوير والتعاون",
+          "items": [
+            {
+              "fa": "شرکت در ۲۰۱۳ فعالیت اولیه خود را در آمریکا آغاز کرد و از ۲۰۱۴ مرکز اصلی فعالیت خود را در منطقه بیلبائو اسپانیا مستقر ساخت. توسعه محموله‌های iSIM و مأموریت‌های جدید باید با تاریخ و مدل هر محصول ثبت شود.",
+              "en": "The company began its initial operations in the United States in 2013 and established its main base in the Bilbao area of Spain in 2014. Later iSIM payload developments and missions need model-specific, dated records.",
+              "ar": "بدأت الشركة نشاطها الأولي في الولايات المتحدة عام 2013، وأقامت مركز عملها الرئيسي في منطقة بلباو بإسبانيا في 2014. وينبغي توثيق تطوير حمولات iSIM والمهمات اللاحقة بحسب الطراز والتاريخ.",
+              "kind": "editorially_localized_verified_source_section",
+              "source_ids": [
+                "STAGE3-c851891b03a9",
+                "STAGE3-7072c0ec06a0",
+                "STAGE3-c62be3a1e2e2"
+              ],
+              "localization": "FACTUAL_SECTION_EQUIVALENCE_FA_EN_AR"
+            }
+          ]
+        }
+      ],
+      "key_facts": [],
+      "verified_on": "2026-11-13",
+      "hide_evidence_scope_in_ui": true,
+      "release_status": "EDITORIAL_RESEARCH_PREVIEW_NEEDS_FINAL_EXPERT_SIGNOFF",
+      "inventory_id": "DISC-0043",
+      "geo_source_url": "https://www.satlantis.com/contact/",
+      "geo_precision": "approximate_city_official_address"
+    },
+    "orbita_release_note": {
+      "release_date": "2026-11-13",
+      "inventory_id": "DISC-0043",
+      "status": "EDITORIAL_PREVIEW",
+      "batch": "RASPEHR_14_STEP5",
+      "expert_review_pending": true,
+      "language_parity": "FA_EN_AR_SECTION_DETAIL",
+      "geo_precision": "approximate_city_official_address",
+      "logo_status": "typographic_name_only"
+    }
+  },
+  {
+    "id": "raspehr-0046-scanway",
+    "cat": "payloads",
+    "en": "Scanway",
+    "fa": "اسکن‌وی",
+    "ar": "سكانواي",
+    "country": "Poland",
+    "country_fa": "لهستان",
+    "country_ar": "بولندا",
+    "city": "Wrocław",
+    "city_fa": "وروتسواف",
+    "city_ar": "فروتسواف",
+    "lat": 51.113,
+    "lon": 16.967,
+    "coordinate_precision": "approximate_neighbourhood_official_address",
+    "coordinates_are_exact_site_gps": false,
+    "address": "ul. Strzegomska 140A, 54-429 Wrocław, Poland",
+    "address_evidence_url": "https://scanway.pl/en/contact/",
+    "site": "https://scanway.pl/en/",
+    "fa_d": "Scanway S.A. شرکت لهستانی سازنده محموله‌های اپتیکی SOP و دوربین‌های فضایی SCS است. مأموریت‌های STAR VIBE، EagleEye و YPSat سوابق متفاوتی در نمایش فناوری و کاربرد تجهیزات آن دارند.",
+    "en_d": "Scanway S.A. is a Polish space-optics company producing SOP optical payloads and SCS camera systems. STAR VIBE, EagleEye and YPSat illustrate different stages of technology demonstration and application.",
+    "ar_d": "تُنتج Scanway S.A. البولندية حمولات بصرية من عائلة SOP وأنظمة كاميرات فضائية SCS. وتوضح مهمات STAR VIBE وEagleEye وYPSat مراحل مختلفة من عرض التقنية واستخدامها.",
+    "org_type_fa": "سازنده محموله و ابزار فضایی",
+    "org_type_en": "Space payloads and instruments",
+    "org_type_ar": "حمولات وأجهزة فضائية",
+    "parent_institution": "",
+    "logo": "",
+    "logo_kind": "no_verified_official_logo",
+    "brand_text_identifier": "SC",
+    "orbita_verified_profile": {
+      "schema_version": 3,
+      "profile_type": "payloads",
+      "summary": {
+        "fa": "Scanway S.A. شرکت لهستانی سازنده محموله‌های اپتیکی SOP و دوربین‌های فضایی SCS است. مأموریت‌های STAR VIBE، EagleEye و YPSat سوابق متفاوتی در نمایش فناوری و کاربرد تجهیزات آن دارند.",
+        "en": "Scanway S.A. is a Polish space-optics company producing SOP optical payloads and SCS camera systems. STAR VIBE, EagleEye and YPSat illustrate different stages of technology demonstration and application.",
+        "ar": "تُنتج Scanway S.A. البولندية حمولات بصرية من عائلة SOP وأنظمة كاميرات فضائية SCS. وتوضح مهمات STAR VIBE وEagleEye وYPSat مراحل مختلفة من عرض التقنية واستخدامها."
+      },
+      "sources": [
+        {
+          "url": "https://scanway.pl/en/for-investors/company-profile/",
+          "provenance_types": [
+            "S3_325_CLAIMS_INHERITED"
+          ],
+          "id": "SRC-852fe44d8ba6",
+          "title": "scanway.pl — en/for-investors/company-profile"
+        },
+        {
+          "url": "https://scanway.pl/en/space-cameras/",
+          "provenance_types": [
+            "S3_325_CLAIMS_INHERITED"
+          ],
+          "id": "SRC-9fa24852eb24",
+          "title": "scanway.pl — en/space-cameras"
+        },
+        {
+          "url": "https://scanway.pl/en/space-cameras/scanway-optical-payload/",
+          "provenance_types": [
+            "S3_325_CLAIMS_INHERITED"
+          ],
+          "id": "SRC-ca8b564411a9",
+          "title": "scanway.pl — en/space-cameras/scanway-optical-payload"
+        },
+        {
+          "url": "https://scanway.pl/en/for-investors/espi-current-reports/",
+          "provenance_types": [
+            "STEP2_COMPLETION_99_OFFICIAL_WEB_RESEARCH"
+          ],
+          "id": "WEB-5873d1f9368e",
+          "title": "scanway.pl — en/for-investors/espi-current-reports"
+        },
+        {
+          "url": "https://scanway.pl/en/space-cameras/",
+          "provenance_types": [
+            "STEP2_COMPLETION_2026_11_13_OFFICIAL_WEB_RESEARCH"
+          ],
+          "id": "WEB-9fa24852eb24",
+          "title": "scanway.pl — en/space-cameras"
+        },
+        {
+          "id": "NEW24-852fe44d8ba6",
+          "url": "https://scanway.pl/en/for-investors/company-profile/",
+          "title": "scanway.pl — ",
+          "provenance_types": [
+            "STEP2_24_INDEPENDENT_OFFICIAL_WEB_VERIFICATION_2026_11_13"
+          ]
+        },
+        {
+          "id": "NEW24-be12883a916b",
+          "url": "https://scanway.pl/en/missions/eagleeye/",
+          "title": "scanway.pl — ",
+          "provenance_types": [
+            "STEP2_24_INDEPENDENT_OFFICIAL_WEB_VERIFICATION_2026_11_13"
+          ]
+        },
+        {
+          "id": "NEW24-d22d24a777f1",
+          "url": "https://scanway.pl/en/space-cameras/missions/",
+          "title": "scanway.pl — ",
+          "provenance_types": [
+            "STEP2_24_INDEPENDENT_OFFICIAL_WEB_VERIFICATION_2026_11_13"
+          ]
+        },
+        {
+          "id": "NEW24-e8ed062cb7f4",
+          "url": "https://scanway.pl/en/scanway-raises-pln-76-4-million-to-scale-operations-in-response-to-growing-market-demand/",
+          "title": "scanway.pl — ",
+          "provenance_types": [
+            "STEP2_24_INDEPENDENT_OFFICIAL_WEB_VERIFICATION_2026_11_13"
+          ]
+        },
+        {
+          "id": "STAGE3-add3bc6f206a",
+          "url": "https://polsa.gov.pl/aktywnosci/bezpieczenstwo-kosmiczne/indeks-obiektow-kosmicznych/",
+          "title": "Official primary evidence from stage-3 audit",
+          "provenance_types": [
+            "STAGE3_PRIMARY_SOURCE_IDENTITY_RECHECK"
+          ]
+        },
+        {
+          "id": "STAGE4-f4d3167a2539",
+          "url": "https://scanway.pl/en/media/",
+          "title": "Scanway official company registration and downloadable logo page",
+          "provenance_types": [
+            "STAGE4_PRIMARY_PAGE_CHECK_2026_11_13"
+          ]
+        },
+        {
+          "id": "STAGE4-aec5bac08644",
+          "url": "https://scanway.pl/en/scanway-s-a-s-rebranding-a-new-visual-story-and-a-symbolic-step-into-the-next-stage-of-development/",
+          "title": "Scanway official 2025 rebranding",
+          "provenance_types": [
+            "STAGE4_PRIMARY_PAGE_CHECK_2026_11_13"
+          ]
+        }
+      ],
+      "sections": [
+        {
+          "id": "overview",
+          "fa": "شناسنامه و حوزه فعالیت",
+          "en": "Identity & specialization",
+          "ar": "التعريف والتخصص",
+          "items": [
+            {
+              "fa": "Scanway S.A. شرکت ثبت‌شده در لهستان با شماره KRS 0000997696 و دفتر Wrocław است. این شرکت در تصویربرداری اپتیکی برای سنجش‌ازدور و پایش خود فضاپیما فعالیت دارد. نام حقوقی فعلی S.A. از اسناد قدیمی با ساختار Sp. z o.o. تفکیک می‌شود.",
+              "en": "Scanway S.A. is a Polish company registered under KRS 0000997696 and based in Wrocław. It develops optical systems for Earth observation and spacecraft self-inspection. The current S.A. legal form should be distinguished from older records issued as Sp. z o.o.",
+              "ar": "Scanway S.A. شركة بولندية مسجلة تحت رقم KRS 0000997696 ومقرها فروتسواف. تطور أنظمة بصرية لرصد الأرض والفحص الذاتي للمركبات الفضائية. وينبغي فصل الصيغة القانونية الحالية S.A. عن الوثائق القديمة باسم Sp. z o.o.",
+              "kind": "editorially_localized_verified_source_section",
+              "source_ids": [
+                "SRC-9fa24852eb24",
+                "NEW24-852fe44d8ba6",
+                "STAGE3-add3bc6f206a",
+                "STAGE4-f4d3167a2539",
+                "STAGE4-aec5bac08644"
+              ],
+              "localization": "FACTUAL_SECTION_EQUIVALENCE_FA_EN_AR"
+            }
+          ]
+        },
+        {
+          "id": "catalog",
+          "fa": "کاتالوگ ابزارها",
+          "en": "Instrument catalogue",
+          "ar": "فهرس الأجهزة",
+          "items": [
+            {
+              "fa": "سبد Scanway شامل محموله‌های SOP و دوربین‌های SCS است. ابزار SOP200 برای EagleEye دارای دهانه ۲۰۰ میلی‌متری و ابعاد تقریبی ۴۳۰×۳۵۰×۳۰۰ میلی‌متر است؛ GSD هدف حدود ۱٫۷۵ متر از ارتفاع ۵۰۰ کیلومتر معرفی شده است. این مشخصات هدف طراحی‌اند و نباید به تمام پلتفرم‌ها تعمیم داده شوند.",
+              "en": "Scanway’s product lines include SOP optical payloads and SCS camera systems. The SOP200 associated with EagleEye has a 200 mm aperture and a reported envelope of roughly 430 × 350 × 300 mm; a target ground sampling distance of approximately 1.75 m is stated for 500 km altitude. These are configuration-specific design targets.",
+              "ar": "تضم منتجات Scanway حمولات SOP البصرية وأنظمة كاميرات SCS. وتبلغ فتحة أداة SOP200 المرتبطة بـEagleEye نحو 200 مم وأبعادها 430×350×300 مم تقريباً، مع GSD مستهدف يبلغ نحو 1.75 متر عند ارتفاع 500 كم. وهذه أهداف تصميم تخص التكوين المحدد.",
+              "kind": "editorially_localized_verified_source_section",
+              "source_ids": [
+                "SRC-ca8b564411a9",
+                "NEW24-be12883a916b",
+                "STAGE3-add3bc6f206a",
+                "STAGE4-f4d3167a2539",
+                "STAGE4-aec5bac08644"
+              ],
+              "localization": "FACTUAL_SECTION_EQUIVALENCE_FA_EN_AR"
+            }
+          ]
+        },
+        {
+          "id": "missions",
+          "fa": "مأموریت‌ها و کاربردها",
+          "en": "Missions & applications",
+          "ar": "المهمات والاستخدامات",
+          "items": [
+            {
+              "fa": "مأموریت STAR VIBE در ۳ ژانویه ۲۰۲۳ با Transporter-6 پرتاب شد و ابزارهای تصویربرداری زمین و پایش ماهواره را در مدار آزمود. دوربین‌های Scanway در YPSat برای ثبت جدایش پوشش و آزادسازی محموله در پرواز نخست Ariane 6 به‌کار رفتند. شرکت فعال‌شدن دوربین‌های PIAST-S1/S2 پس از پرتاب ۲۸ نوامبر ۲۰۲۵ را گزارش کرده است.",
+              "en": "STAR VIBE launched on 3 January 2023 with Transporter-6 and tested Earth imaging and satellite self-inspection optics in orbit. Scanway cameras on YPSat documented fairing separation and payload release during the first Ariane 6 flight. The company reported activation of cameras on PIAST-S1/S2 after their 28 November 2025 launch.",
+              "ar": "أُطلقت STAR VIBE في 3 يناير 2023 ضمن Transporter-6 واختبرت تصوير الأرض والفحص البصري الذاتي للقمر في المدار. وسجلت كاميرات Scanway على YPSat انفصال غطاء الحمولة وإطلاقها في الرحلة الأولى لصاروخ Ariane 6. وأعلنت الشركة تشغيل كاميرات PIAST-S1/S2 عقب إطلاقهما في 28 نوفمبر 2025.",
+              "kind": "editorially_localized_verified_source_section",
+              "source_ids": [
+                "SRC-852fe44d8ba6",
+                "WEB-5873d1f9368e",
+                "WEB-9fa24852eb24",
+                "NEW24-852fe44d8ba6",
+                "NEW24-d22d24a777f1",
+                "STAGE3-add3bc6f206a",
+                "STAGE4-f4d3167a2539",
+                "STAGE4-aec5bac08644"
+              ],
+              "localization": "FACTUAL_SECTION_EQUIVALENCE_FA_EN_AR"
+            }
+          ]
+        },
+        {
+          "id": "readiness",
+          "fa": "بلوغ و عملکرد فناوری",
+          "en": "Readiness & performance",
+          "ar": "النضج والأداء التقني",
+          "items": [
+            {
+              "fa": "مفهوم تصویربرداری ماه MANI در مرحله مطالعاتی معرفی شده و در فهرست مأموریت‌های پرتاب‌شده Scanway قرار نمی‌گیرد. شاخص‌های وضوح و وزن محموله باید با مدل و مدار مربوط تطبیق داده شوند.",
+              "en": "The MANI lunar-imaging concept remains a development study and is not counted among Scanway’s launched missions. Resolution and payload-mass claims must be tied to the relevant model and orbital design.",
+              "ar": "ما يزال مفهوم MANI لتصوير القمر في مرحلة الدراسة، ولا يُدرج ضمن مهمات Scanway المطلَقة. ويجب ربط بيانات الدقة وكتلة الحمولة بالطراز والتصميم المداري المعنيين.",
+              "kind": "editorially_localized_verified_source_section",
+              "source_ids": [
+                "NEW24-d22d24a777f1",
+                "STAGE3-add3bc6f206a",
+                "STAGE4-f4d3167a2539",
+                "STAGE4-aec5bac08644"
+              ],
+              "localization": "FACTUAL_SECTION_EQUIVALENCE_FA_EN_AR"
+            }
+          ]
+        },
+        {
+          "id": "development",
+          "fa": "توسعه و همکاری‌ها",
+          "en": "Development & collaborations",
+          "ar": "التطوير والتعاون",
+          "items": [
+            {
+              "fa": "شرکت پس از تغییر ساختار حقوقی، از ۲۷ مارس ۲۰۲۶ در بازار اصلی بورس ورشو حضور دارد. Scanway در اوت ۲۰۲۵ هویت بصری جدیدی معرفی کرد و فعالیت صنعتی خود را از سامانه‌های دید ماشین به محموله‌های فضایی گسترش داد.",
+              "en": "After changes to its corporate structure, Scanway began trading on the Warsaw Stock Exchange main market on 27 March 2026. The company introduced a new brand identity in August 2025 while expanding its optical engineering activities from machine vision into space payloads.",
+              "ar": "بعد تغييرات في هيكلها القانوني، بدأت Scanway التداول في السوق الرئيسية لبورصة وارسو في 27 مارس 2026. وقدمت هوية بصرية جديدة في أغسطس 2025 مع توسيع نشاط الهندسة البصرية من الرؤية الآلية إلى الحمولات الفضائية.",
+              "kind": "editorially_localized_verified_source_section",
+              "source_ids": [
+                "NEW24-e8ed062cb7f4",
+                "STAGE3-add3bc6f206a",
+                "STAGE4-f4d3167a2539",
+                "STAGE4-aec5bac08644"
+              ],
+              "localization": "FACTUAL_SECTION_EQUIVALENCE_FA_EN_AR"
+            }
+          ]
+        }
+      ],
+      "key_facts": [],
+      "verified_on": "2026-11-13",
+      "hide_evidence_scope_in_ui": true,
+      "release_status": "EDITORIAL_RESEARCH_PREVIEW_NEEDS_FINAL_EXPERT_SIGNOFF",
+      "inventory_id": "DISC-0046",
+      "geo_source_url": "https://scanway.pl/en/contact/",
+      "geo_precision": "approximate_neighbourhood_official_address"
+    },
+    "orbita_release_note": {
+      "release_date": "2026-11-13",
+      "inventory_id": "DISC-0046",
+      "status": "EDITORIAL_PREVIEW",
+      "batch": "RASPEHR_14_STEP5",
+      "expert_review_pending": true,
+      "language_parity": "FA_EN_AR_SECTION_DETAIL",
+      "geo_precision": "approximate_neighbourhood_official_address",
+      "logo_status": "typographic_name_only"
+    }
   }
 ]

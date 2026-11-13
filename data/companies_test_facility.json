@@ -320,7 +320,7 @@
     "org_type_en": "Space testing facility",
     "org_type_ar": "منشأة اختبار فضائي",
     "parent_institution": "Instituto Nacional de Pesquisas Espaciais (INPE)",
-    "logo": "assets/logos/orbita/orbita-inpe-lit.png",
+    "logo": "assets/logos/orbita/orbita-inpe-lit.svg",
     "logo_kind": "orbita_editorial_nonofficial",
     "orbita_marker_code": "LI",
     "orbita_verified_profile": {
@@ -634,6 +634,399 @@
         "Check mission-by-mission flight heritage and distinguish proposals from achieved missions",
         "Prepare verified FA/EN/AR and map metadata only after science review"
       ]
+    }
+  },
+  {
+    "id": "raspehr-0106-isro-isite-satellite-integration-an",
+    "cat": "test_facility",
+    "en": "ISRO ISITE Satellite Integration and Test Establishment",
+    "fa": "مرکز یکپارچه‌سازی و آزمون ماهواره ایسرو (ISITE)",
+    "ar": "منشأة إيسرو لتكامل واختبار الأقمار الصناعية",
+    "country": "India",
+    "country_fa": "هند",
+    "country_ar": "الهند",
+    "city": "Bengaluru (Marathahalli)",
+    "city_fa": "بنگلور (ماراتهالی)",
+    "city_ar": "بنغالورو (ماراثاهالي)",
+    "lat": 12.957,
+    "lon": 77.697,
+    "coordinate_precision": "approximate_neighbourhood_official_facility_address",
+    "coordinates_are_exact_site_gps": false,
+    "address": "ISITE, Karthik Nagar, Doddanekkundi, Marathahalli Outer Ring Road, Bengaluru 560037, India",
+    "address_evidence_url": "https://www.isro.gov.in/URSC.html",
+    "site": "https://www.isro.gov.in/URSC.html",
+    "fa_d": "ISITE تأسیسات یکپارچه‌سازی و آزمون ماهواره در بنگلور و وابسته به مرکز URSC سازمان فضایی هند است، نه یک شرکت مستقل. محفظه خلأحرارتی ۶٫۵متری و سامانه ارتعاش ۲۹تنی از تجهیزات شاخص آن‌اند.",
+    "en_d": "ISITE is ISRO’s satellite integration and test facility in Bengaluru, operated within the U R Rao Satellite Centre (URSC), not a separate company. Major facilities include a 6.5 m thermal-vacuum chamber and a 29-tonne vibration test system.",
+    "ar_d": "ISITE منشأة دمج واختبار أقمار صناعية في بنغالورو تتبع مركز U R Rao (URSC) ضمن ISRO، وليست شركة مستقلة. تضم غرفة فراغ حراري بقطر 6.5 أمتار ونظام اختبار اهتزاز بقدرة 29 طناً.",
+    "org_type_fa": "تأسیسات آزمون فضایی",
+    "org_type_en": "Space test facility",
+    "org_type_ar": "منشأة لاختبارات الفضاء",
+    "parent_institution": "ISRO / U R Rao Satellite Centre (URSC)",
+    "logo": "assets/img/logos/isro-parent-logo.png",
+    "logo_kind": "official_parent_organization_logo",
+    "brand_text_identifier": "ISRO",
+    "orbita_verified_profile": {
+      "schema_version": 3,
+      "profile_type": "test_facility",
+      "summary": {
+        "fa": "ISITE تأسیسات یکپارچه‌سازی و آزمون ماهواره در بنگلور و وابسته به مرکز URSC سازمان فضایی هند است، نه یک شرکت مستقل. محفظه خلأحرارتی ۶٫۵متری و سامانه ارتعاش ۲۹تنی از تجهیزات شاخص آن‌اند.",
+        "en": "ISITE is ISRO’s satellite integration and test facility in Bengaluru, operated within the U R Rao Satellite Centre (URSC), not a separate company. Major facilities include a 6.5 m thermal-vacuum chamber and a 29-tonne vibration test system.",
+        "ar": "ISITE منشأة دمج واختبار أقمار صناعية في بنغالورو تتبع مركز U R Rao (URSC) ضمن ISRO، وليست شركة مستقلة. تضم غرفة فراغ حراري بقطر 6.5 أمتار ونظام اختبار اهتزاز بقدرة 29 طناً."
+      },
+      "sources": [
+        {
+          "url": "https://www.isro.gov.in/URSC.html",
+          "provenance_types": [
+            "S3_325_CLAIMS_INHERITED"
+          ],
+          "id": "SRC-cfe46cd24661",
+          "title": "www.isro.gov.in — URSC.html"
+        },
+        {
+          "url": "https://www.isro.gov.in/URSC.html",
+          "provenance_types": [
+            "STEP2_COMPLETION_2026_11_13_OFFICIAL_WEB_RESEARCH"
+          ],
+          "id": "WEB-cfe46cd24661",
+          "title": "www.isro.gov.in — URSC.html"
+        },
+        {
+          "id": "UPG-6cdd9f4d7ac3",
+          "title": "www.ursc.gov.in | /isac-evolution.jsp",
+          "url": "https://www.ursc.gov.in/isac-evolution.jsp",
+          "evidence_status": "PRIMARY_OFFICIAL_SITE_RESEARCHED_2026_11_13"
+        },
+        {
+          "id": "UPG-cfe46cd24661",
+          "title": "www.isro.gov.in | /URSC.html",
+          "url": "https://www.isro.gov.in/URSC.html",
+          "evidence_status": "PRIMARY_OFFICIAL_SITE_RESEARCHED_2026_11_13"
+        },
+        {
+          "id": "NEW24-cfe46cd24661",
+          "url": "https://www.isro.gov.in/URSC.html",
+          "title": "www.isro.gov.in — URSC.html",
+          "provenance_types": [
+            "STEP2_24_INDEPENDENT_OFFICIAL_WEB_VERIFICATION_2026_11_13"
+          ]
+        },
+        {
+          "id": "STAGE3-529996cf3bd6",
+          "url": "https://eproc.isro.gov.in/common/viewDocument?id=ff808181953fff38019545c1ed6e11ae&indentId=IS2025000049",
+          "title": "Official primary evidence from stage-3 audit",
+          "provenance_types": [
+            "STAGE3_PRIMARY_SOURCE_IDENTITY_RECHECK"
+          ]
+        }
+      ],
+      "sections": [
+        {
+          "id": "overview",
+          "fa": "شناسنامه تأسیسات",
+          "en": "Facility identity",
+          "ar": "تعريف المنشأة",
+          "items": [
+            {
+              "fa": "Satellite Integration and Test Establishment یا ISITE مرکز یکپارچه‌سازی و آزمون ماهواره‌های سازمان فضایی هند در بنگلور است. از نظر اداری به URSC و سپس ISRO وابسته است؛ ثبت شرکت حقوقی جدا برای آن اشتباه خواهد بود.",
+              "en": "The Satellite Integration and Test Establishment (ISITE) integrates and tests Indian Space Research Organisation spacecraft in Bengaluru. Administratively it belongs to URSC within ISRO and must not be registered as a separate commercial company.",
+              "ar": "تقوم منشأة Satellite Integration and Test Establishment (ISITE) بدمج واختبار مركبات منظمة أبحاث الفضاء الهندية في بنغالورو. وتتبع إدارياً URSC ضمن ISRO، ولا تُسجل شركة تجارية مستقلة.",
+              "kind": "editorially_localized_verified_source_section",
+              "source_ids": [
+                "SRC-cfe46cd24661",
+                "UPG-cfe46cd24661",
+                "NEW24-cfe46cd24661",
+                "STAGE3-529996cf3bd6"
+              ],
+              "localization": "FACTUAL_SECTION_EQUIVALENCE_FA_EN_AR"
+            }
+          ]
+        },
+        {
+          "id": "equipment",
+          "fa": "تجهیزات و ظرفیت آزمون",
+          "en": "Facilities & test capability",
+          "ar": "المرافق والقدرات الاختبارية",
+          "items": [
+            {
+              "fa": "تجهیزات اصلی شامل اتاق‌های تمیز، محفظه خلأ حرارتی به قطر ۶٫۵ متر، سامانه آزمون ارتعاش با ظرفیت ۲۹ تن، تجهیزات آزمون آکوستیک و تأسیسات فشرده آزمون آنتن است. منابع رسمی از ظرفیت تولید و استانداردسازی برخی زیرسامانه‌ها نیز نام می‌برند، اما این قابلیت به معنی ساخت همه تجهیزات ماهواره در محل نیست.",
+              "en": "Major equipment comprises clean rooms, a 6.5 m thermal-vacuum chamber, a 29-tonne vibration test system, acoustic testing and a compact antenna test facility. Official descriptions also mention production and standardization of selected subsystems; they do not establish manufacture of all spacecraft hardware on site.",
+              "ar": "تشمل المعدات الرئيسية غرفاً نظيفة وغرفة فراغ حراري بقطر 6.5 أمتار ومنظومة اهتزاز بسعة 29 طناً ومرافق اختبار صوتي واختبار الهوائيات المدمج. وتذكر المصادر الرسمية إنتاج بعض الأنظمة الفرعية وتوحيدها، وليس تصنيع جميع مكونات القمر في الموقع.",
+              "kind": "editorially_localized_verified_source_section",
+              "source_ids": [
+                "WEB-cfe46cd24661",
+                "UPG-cfe46cd24661",
+                "NEW24-cfe46cd24661",
+                "STAGE3-529996cf3bd6"
+              ],
+              "localization": "FACTUAL_SECTION_EQUIVALENCE_FA_EN_AR"
+            }
+          ]
+        },
+        {
+          "id": "testing",
+          "fa": "آزمون‌ها و پروژه‌ها",
+          "en": "Testing & projects",
+          "ar": "الاختبارات والمشروعات",
+          "items": [
+            {
+              "fa": "یکپارچه‌سازی و آزمون ماهواره‌های مخابراتی و ناوبری URSC در ISITE انجام می‌شود. برنامه آزمون به‌صورت ترکیبی از کنترل سازه‌ای، ارتعاشی، صوتی، حرارتی-خلأ و ویژگی آنتن‌ها تعریف می‌شود؛ ظرفیت هر دستگاه از نمونه و پیکربندی آزمون مستقل است.",
+              "en": "ISITE performs integration and testing of URSC communications and navigation satellites. Its test chain includes structural, vibration, acoustic, thermal-vacuum and antenna performance checks; equipment limits are specific to each test article and setup.",
+              "ar": "تنجز ISITE دمج واختبار أقمار الاتصالات والملاحة التابعة لـURSC. وتشمل سلسلة الاختبارات البنية والاهتزاز والصوت والفراغ الحراري وأداء الهوائيات، مع تحديد حدود كل جهاز وفق العينة وإعداد الاختبار.",
+              "kind": "editorially_localized_verified_source_section",
+              "source_ids": [
+                "SRC-cfe46cd24661",
+                "UPG-cfe46cd24661",
+                "NEW24-cfe46cd24661",
+                "STAGE3-529996cf3bd6"
+              ],
+              "localization": "FACTUAL_SECTION_EQUIVALENCE_FA_EN_AR"
+            }
+          ]
+        },
+        {
+          "id": "standards",
+          "fa": "استانداردها و اعتبارسنجی",
+          "en": "Standards & qualification",
+          "ar": "المعايير والتأهيل",
+          "items": [
+            {
+              "fa": "ISITE به‌عنوان تأسیسات آزمون URSC با آزمایشگاه LEOS در Peenya یکسان نیست. نتیجه آزمون و گواهی صلاحیت هر ماهواره باید از مدارک همان مأموریت استخراج شود، نه فقط از قابلیت تجهیزات تأسیسات.",
+              "en": "ISITE is a URSC test facility and is distinct from the LEOS laboratory in Peenya. Spacecraft qualification results must come from the relevant mission test reports rather than being inferred solely from facility capabilities.",
+              "ar": "ISITE منشأة اختبار ضمن URSC وتختلف عن مختبر LEOS في بينيا. وينبغي أخذ نتائج التأهيل لكل قمر من تقارير اختبار مهمته، لا استنتاجها من قدرات المنشأة وحدها.",
+              "kind": "editorially_localized_verified_source_section",
+              "source_ids": [
+                "WEB-cfe46cd24661",
+                "UPG-cfe46cd24661",
+                "STAGE3-529996cf3bd6"
+              ],
+              "localization": "FACTUAL_SECTION_EQUIVALENCE_FA_EN_AR"
+            }
+          ]
+        },
+        {
+          "id": "history",
+          "fa": "تاریخچه و مشتریان",
+          "en": "History & customers",
+          "ar": "التاريخ والعملاء",
+          "items": [
+            {
+              "fa": "ISITE در سال ۲۰۰۶ برای توسعه ظرفیت یکپارچه‌سازی و آزمون، به‌ویژه ماهواره‌های مخابراتی پرتوان، ایجاد شد. این مجموعه در سایتی حدود ۱۱۰ ایکر و تقریباً هشت کیلومتر دورتر از پردیس تاریخی مرکز ماهواره‌ای هند توسعه یافت؛ تاریخ ایجاد آن با تاریخ تأسیس URSC یکسان نیست.",
+              "en": "ISITE was established in 2006 to expand integration and test capacity, especially for high-power communications satellites. The roughly 110-acre site was developed about eight kilometres from the former main satellite-centre campus. The facility’s establishment date is distinct from URSC’s institutional history.",
+              "ar": "أُنشئت ISITE عام 2006 لتوسيع قدرات الدمج والاختبار، خاصة لأقمار الاتصالات عالية القدرة. وطُوّر الموقع على مساحة نحو 110 أفدنة وعلى بُعد يقارب ثمانية كيلومترات من المقر التاريخي لمركز الأقمار. ويختلف تاريخ المنشأة عن تاريخ تأسيس URSC.",
+              "kind": "editorially_localized_verified_source_section",
+              "source_ids": [
+                "UPG-6cdd9f4d7ac3",
+                "NEW24-cfe46cd24661",
+                "STAGE3-529996cf3bd6"
+              ],
+              "localization": "FACTUAL_SECTION_EQUIVALENCE_FA_EN_AR"
+            }
+          ]
+        }
+      ],
+      "key_facts": [],
+      "verified_on": "2026-11-13",
+      "hide_evidence_scope_in_ui": true,
+      "release_status": "EDITORIAL_RESEARCH_PREVIEW_NEEDS_FINAL_EXPERT_SIGNOFF",
+      "inventory_id": "DISC-0106",
+      "geo_source_url": "https://www.isro.gov.in/URSC.html",
+      "geo_precision": "approximate_neighbourhood_official_facility_address"
+    },
+    "orbita_release_note": {
+      "release_date": "2026-11-13",
+      "inventory_id": "DISC-0106",
+      "status": "EDITORIAL_PREVIEW",
+      "batch": "RASPEHR_14_STEP5",
+      "expert_review_pending": true,
+      "language_parity": "FA_EN_AR_SECTION_DETAIL",
+      "geo_precision": "approximate_neighbourhood_official_facility_address",
+      "logo_status": "official_parent_org"
+    }
+  },
+  {
+    "id": "raspehr-0113-nasa-in-space-propulsion-facility",
+    "cat": "test_facility",
+    "en": "NASA In-Space Propulsion Facility",
+    "fa": "تأسیسات آزمون پیشرانش در فضا ناسا",
+    "ar": "منشأة ناسا لاختبار الدفع الفضائي",
+    "country": "United States",
+    "country_fa": "ایالات متحده آمریکا",
+    "country_ar": "الولايات المتحدة الأمريكية",
+    "city": "Sandusky",
+    "city_fa": "سنداسکی",
+    "city_ar": "ساندوسكي",
+    "lat": 41.379,
+    "lon": -82.657,
+    "coordinate_precision": "approximate_campus_not_b2_chamber",
+    "coordinates_are_exact_site_gps": false,
+    "address": "Neil A. Armstrong Test Facility, 6100 Columbus Avenue, Sandusky, Ohio 44870, USA",
+    "address_evidence_url": "https://www.nasa.gov/centers-and-facilities/glenn/in-space-propulsion-facility/",
+    "site": "https://www.nasa.gov/centers-and-facilities/glenn/in-space-propulsion-facility/",
+    "fa_d": "تأسیسات In-Space Propulsion Facility ناسا در مجموعه آزمایشی نیل آرمسترانگ در سانداسکی اوهایو برای آزمون موتور و مرحله بالایی پرتابگر تحت شرایط شبیه‌سازی‌شده ارتفاع و خلأ ساخته شده است؛ این محل شرکت یا پایگاه پرتاب نیست.",
+    "en_d": "NASA’s In-Space Propulsion Facility at the Neil Armstrong Test Facility in Sandusky, Ohio, is a ground test site for rocket engines and upper stages under simulated altitude and vacuum conditions—not a company or launch site.",
+    "ar_d": "منشأة In-Space Propulsion التابعة لناسا في مجمع Neil Armstrong بمدينة ساندسكي، أوهايو، هي موقع اختبار أرضي للمحركات والمراحل العليا في ظروف ارتفاع وفراغ محاكية، وليست شركة أو موقع إطلاق.",
+    "org_type_fa": "تأسیسات آزمون فضایی",
+    "org_type_en": "Space test facility",
+    "org_type_ar": "منشأة لاختبارات الفضاء",
+    "parent_institution": "NASA / Glenn Research Center / Neil Armstrong Test Facility",
+    "logo": "assets/img/logos/nasa-logo.svg",
+    "logo_kind": "official_parent_organization_logo",
+    "brand_text_identifier": "NASA",
+    "orbita_verified_profile": {
+      "schema_version": 3,
+      "profile_type": "test_facility",
+      "summary": {
+        "fa": "تأسیسات In-Space Propulsion Facility ناسا در مجموعه آزمایشی نیل آرمسترانگ در سانداسکی اوهایو برای آزمون موتور و مرحله بالایی پرتابگر تحت شرایط شبیه‌سازی‌شده ارتفاع و خلأ ساخته شده است؛ این محل شرکت یا پایگاه پرتاب نیست.",
+        "en": "NASA’s In-Space Propulsion Facility at the Neil Armstrong Test Facility in Sandusky, Ohio, is a ground test site for rocket engines and upper stages under simulated altitude and vacuum conditions—not a company or launch site.",
+        "ar": "منشأة In-Space Propulsion التابعة لناسا في مجمع Neil Armstrong بمدينة ساندسكي، أوهايو، هي موقع اختبار أرضي للمحركات والمراحل العليا في ظروف ارتفاع وفراغ محاكية، وليست شركة أو موقع إطلاق."
+      },
+      "sources": [
+        {
+          "url": "https://www.nasa.gov/centers-and-facilities/glenn/in-space-propulsion-facility/",
+          "provenance_types": [
+            "S3_325_CLAIMS_INHERITED"
+          ],
+          "id": "SRC-3a6f231336f7",
+          "title": "www.nasa.gov — centers-and-facilities/glenn/in-space-propulsion-facility"
+        },
+        {
+          "url": "https://www.nasa.gov/directorates/space-operations/rpt/propulsion-test-capabilities/test-capabilities-grc-isp/",
+          "provenance_types": [
+            "ADDITIONAL_OFFICIAL_WEB_RESEARCH_2026_11_13"
+          ],
+          "id": "SRC-d381f3aa4434",
+          "title": "www.nasa.gov — directorates/space-operations/rpt/propulsion-test-capabilities/test-capabilities-grc-isp"
+        },
+        {
+          "url": "https://www.nasa.gov/centers-and-facilities/glenn/in-space-propulsion-facility/",
+          "provenance_types": [
+            "STEP2_COMPLETION_2026_11_13_OFFICIAL_WEB_RESEARCH"
+          ],
+          "id": "WEB-3a6f231336f7",
+          "title": "www.nasa.gov — centers-and-facilities/glenn/in-space-propulsion-facility"
+        },
+        {
+          "id": "NEW24-3a6f231336f7",
+          "url": "https://www.nasa.gov/centers-and-facilities/glenn/in-space-propulsion-facility/",
+          "title": "www.nasa.gov — ",
+          "provenance_types": [
+            "STEP2_24_INDEPENDENT_OFFICIAL_WEB_VERIFICATION_2026_11_13"
+          ]
+        }
+      ],
+      "sections": [
+        {
+          "id": "overview",
+          "fa": "شناسنامه تأسیسات",
+          "en": "Facility identity",
+          "ar": "تعريف المنشأة",
+          "items": [
+            {
+              "fa": "تأسیسات ISP در مجموعه Neil Armstrong Test Facility متعلق به NASA Glenn قرار دارد. برای شبیه‌سازی شرایط مأموریت موتور و مرحله فوقانی به کار می‌رود و از Space Environments Complex هم‌مکان اما متفاوت است.",
+              "en": "The ISP facility is part of NASA Glenn’s Neil Armstrong Test Facility complex. It simulates flight environments for upper-stage engines and propulsion hardware. It is distinct from the co-located Space Environments Complex.",
+              "ar": "تقع منشأة ISP ضمن مجمع Neil Armstrong التابع لمركز NASA Glenn. وتحاكي ظروف الرحلة لمحركات المراحل العليا ومعدات الدفع. وهي مستقلة وظيفياً عن Space Environments Complex الموجودة في المجمع نفسه.",
+              "kind": "editorially_localized_verified_source_section",
+              "source_ids": [
+                "SRC-3a6f231336f7",
+                "NEW24-3a6f231336f7"
+              ],
+              "localization": "FACTUAL_SECTION_EQUIVALENCE_FA_EN_AR"
+            }
+          ]
+        },
+        {
+          "id": "equipment",
+          "fa": "تجهیزات و ظرفیت آزمون",
+          "en": "Facilities & test capability",
+          "ar": "المرافق والقدرات الاختبارية",
+          "items": [
+            {
+              "fa": "محفظه عمودی خلأ ISP قطر ۳۸ فوت و ارتفاع ۶۲ فوت دارد؛ حجم آزمون مفید آن حدود ۳۳ فوت قطر و ۵۵ فوت ارتفاع است. از سرمایش نیتروژن مایع، گرم‌کن‌های مادون‌قرمز و سامانه تخلیه چندمرحله‌ای برای رسیدن به شرایط فشار و دمای شبیه‌سازی‌شده استفاده می‌شود.",
+              "en": "The vertical ISP vacuum chamber is 38 ft in diameter and 62 ft tall, with a usable test envelope about 33 ft in diameter by 55 ft high. Liquid-nitrogen cooling, infrared heaters and multi-stage exhaust pumping reproduce selected pressure and thermal environments.",
+              "ar": "يبلغ قطر غرفة الفراغ العمودية في ISP نحو 38 قدماً وارتفاعها 62 قدماً، بينما يبلغ الحيز الاختباري المفيد نحو 33 قدماً قطراً و55 قدماً ارتفاعاً. وتُستخدم مبردات النيتروجين السائل وسخانات الأشعة تحت الحمراء وأنظمة ضخ متعددة المراحل لمحاكاة ظروف الضغط والحرارة.",
+              "kind": "editorially_localized_verified_source_section",
+              "source_ids": [
+                "WEB-3a6f231336f7",
+                "NEW24-3a6f231336f7"
+              ],
+              "localization": "FACTUAL_SECTION_EQUIVALENCE_FA_EN_AR"
+            }
+          ]
+        },
+        {
+          "id": "testing",
+          "fa": "آزمون‌ها و پروژه‌ها",
+          "en": "Testing & projects",
+          "ar": "الاختبارات والمشروعات",
+          "items": [
+            {
+              "fa": "براساس مشخصات طراحی منتشرشده ناسا، توان آزمون موتور تا رانش اسمی حدود ۱۰۰هزار و حداکثر ۴۰۰هزار پوندنیرو، با دوره احتراق تا ۶۰۰ ثانیه گزارش شده است. این اعداد ظرفیت معرفی‌شده تجهیزات‌اند و به‌تنهایی وضعیت آماده‌به‌کاری روزانه یا نتیجه یک آزمون واقعی را نشان نمی‌دهند.",
+              "en": "NASA’s published design figures describe nominal thrust testing around 100,000 lbf, up to 400,000 lbf maximum and firing durations of up to 600 seconds. These are stated facility capabilities, not evidence of current day-to-day operational readiness or outcomes of a particular test.",
+              "ar": "تصف مواصفات التصميم المنشورة من ناسا قدرة اختبار دفع اسمية تقارب 100 ألف رطل-قوة وحداً أقصى 400 ألف رطل-قوة وفترات تشغيل حتى 600 ثانية. وهي قدرات معلنة للمرفق، لا إثبات لجاهزيته التشغيلية اليومية أو نتيجة اختبار بعينه.",
+              "kind": "editorially_localized_verified_source_section",
+              "source_ids": [
+                "SRC-3a6f231336f7",
+                "SRC-d381f3aa4434",
+                "NEW24-3a6f231336f7"
+              ],
+              "localization": "FACTUAL_SECTION_EQUIVALENCE_FA_EN_AR"
+            }
+          ]
+        },
+        {
+          "id": "standards",
+          "fa": "استانداردها و اعتبارسنجی",
+          "en": "Standards & qualification",
+          "ar": "المعايير والتأهيل",
+          "items": [
+            {
+              "fa": "برای ثبت یک آزمون در بانک رَسپهر باید موتور یا مرحله آزمایش‌شده، شرایط شبیه‌سازی، تاریخ اجرا و نتیجه تأییدشده مشخص باشد. وجود محفظه خلأ یا امکان احتراق ثابت، مجوز انتساب صلاحیت پروازی به تمام موتورها نیست.",
+              "en": "Any test record should identify the engine or stage, simulated conditions, test date and documented result. The existence of vacuum and hot-fire capability does not establish flight qualification for every engine tested there.",
+              "ar": "يجب أن يحدد أي سجل اختبار المحرك أو المرحلة وظروف المحاكاة وتاريخ التنفيذ والنتيجة الموثقة. ولا تعني قدرة الفراغ أو الاحتراق الثابت تأهيلاً للطيران لكل محرك يُختبر في الموقع.",
+              "kind": "editorially_localized_verified_source_section",
+              "source_ids": [
+                "SRC-3a6f231336f7"
+              ],
+              "localization": "FACTUAL_SECTION_EQUIVALENCE_FA_EN_AR"
+            }
+          ]
+        },
+        {
+          "id": "history",
+          "fa": "تاریخچه و مشتریان",
+          "en": "History & customers",
+          "ar": "التاريخ والعملاء",
+          "items": [
+            {
+              "fa": "ناسا سابقه بیش از ۱۰۰ آزمون احتراق موتور RL10 مرتبط با توسعه مرحله Centaur و آزمون‌های برنامه Delta III را برای این مجموعه نقل کرده است. این سابقه مربوط به آزمون زمینی است، نه پرتاب از تأسیسات ISP.",
+              "en": "NASA reports more than 100 RL10 hot-fire tests associated with Centaur upper-stage development, as well as work linked to the Delta III programme. This is ground-test heritage, not launches from the ISP facility.",
+              "ar": "تذكر ناسا أكثر من 100 اختبار احتراق لمحرك RL10 مرتبط بتطوير المرحلة العليا Centaur، وأعمالاً مرتبطة ببرنامج Delta III. وهذا سجل اختبار أرضي وليس إطلاقات من منشأة ISP.",
+              "kind": "editorially_localized_verified_source_section",
+              "source_ids": [
+                "NEW24-3a6f231336f7"
+              ],
+              "localization": "FACTUAL_SECTION_EQUIVALENCE_FA_EN_AR"
+            }
+          ]
+        }
+      ],
+      "key_facts": [],
+      "verified_on": "2026-11-13",
+      "hide_evidence_scope_in_ui": true,
+      "release_status": "EDITORIAL_RESEARCH_PREVIEW_NEEDS_FINAL_EXPERT_SIGNOFF",
+      "inventory_id": "DISC-0113",
+      "geo_source_url": "https://www.nasa.gov/centers-and-facilities/glenn/in-space-propulsion-facility/",
+      "geo_precision": "approximate_campus_not_b2_chamber"
+    },
+    "orbita_release_note": {
+      "release_date": "2026-11-13",
+      "inventory_id": "DISC-0113",
+      "status": "EDITORIAL_PREVIEW",
+      "batch": "RASPEHR_14_STEP5",
+      "expert_review_pending": true,
+      "language_parity": "FA_EN_AR_SECTION_DETAIL",
+      "geo_precision": "approximate_campus_not_b2_chamber",
+      "logo_status": "official_parent_org"
     }
   }
 ]

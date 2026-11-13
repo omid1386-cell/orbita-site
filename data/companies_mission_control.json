@@ -292,7 +292,7 @@
     "org_type_en": "Mission operations centre",
     "org_type_ar": "مركز عمليات المهمات",
     "parent_institution": "German Aerospace Center (DLR)",
-    "logo": "assets/logos/orbita/orbita-dlr-gsoc.png",
+    "logo": "assets/logos/orbita/orbita-dlr-gsoc.svg",
     "logo_kind": "orbita_editorial_nonofficial",
     "orbita_marker_code": "GS",
     "orbita_verified_profile": {
@@ -653,7 +653,7 @@
     "org_type_en": "Mission operations centre",
     "org_type_ar": "مركز عمليات المهمات",
     "parent_institution": "German Aerospace Center (DLR) / GSOC",
-    "logo": "assets/logos/orbita/orbita-dlr-columbus-control.png",
+    "logo": "assets/logos/orbita/orbita-dlr-columbus-control.svg",
     "logo_kind": "orbita_editorial_nonofficial",
     "orbita_marker_code": "CO",
     "orbita_verified_profile": {
@@ -991,6 +991,193 @@
         "Check mission-by-mission flight heritage and distinguish proposals from achieved missions",
         "Prepare verified FA/EN/AR and map metadata only after science review"
       ]
+    }
+  },
+  {
+    "id": "raspehr-0157-isro-istrac-mission-operations",
+    "cat": "mission_control",
+    "en": "ISRO ISTRAC Mission Operations",
+    "fa": "مرکز عملیات مأموریت ایستراک ایسرو",
+    "ar": "مركز عمليات المهمات ISTRAC التابع لإيسرو",
+    "country": "India",
+    "country_fa": "هند",
+    "country_ar": "الهند",
+    "city": "Bengaluru (Peenya)",
+    "city_fa": "بنگلور (پینیا)",
+    "city_ar": "بنغالورو (بينيا)",
+    "lat": 13.034,
+    "lon": 77.518,
+    "coordinate_precision": "approximate_neighbourhood_official_address",
+    "coordinates_are_exact_site_gps": false,
+    "address": "Plot No. 12 & 13, 3rd Main, 2nd Phase, Peenya Industrial Area, Bengaluru 560058, India",
+    "address_evidence_url": "https://www.isro.gov.in/ISTRAC.html",
+    "site": "https://www.isro.gov.in/ISTRAC.html",
+    "fa_d": "ISTRAC مجموعه تله‌متری، رهگیری و فرمان‌دهی سازمان فضایی هند است و عملیات بسیاری از ماهواره‌ها و مأموریت‌های علمی را پشتیبانی می‌کند. «Mission Operations» بخشی از این مجموعه است، نه شخصیت حقوقی جدید.",
+    "en_d": "ISRO’s Telemetry, Tracking and Command Network (ISTRAC) supports spacecraft operations, launch tracking and scientific missions. Its mission-operations function is part of ISTRAC, not a new legal entity.",
+    "ar_d": "تدعم شبكة القياس عن بعد والتتبع والقيادة الهندية ISTRAC عمليات الأقمار وتتبع الإطلاقات والمهمات العلمية. ووظيفة «عمليات المهمات» جزء من ISTRAC وليست كياناً قانونياً جديداً.",
+    "org_type_fa": "مرکز عملیات مأموریت",
+    "org_type_en": "Mission operations centre",
+    "org_type_ar": "مركز عمليات المهمات",
+    "parent_institution": "ISRO",
+    "logo": "assets/img/logos/isro-parent-logo.png",
+    "logo_kind": "official_parent_organization_logo",
+    "brand_text_identifier": "ISRO",
+    "orbita_verified_profile": {
+      "schema_version": 3,
+      "profile_type": "mission_control",
+      "summary": {
+        "fa": "ISTRAC مجموعه تله‌متری، رهگیری و فرمان‌دهی سازمان فضایی هند است و عملیات بسیاری از ماهواره‌ها و مأموریت‌های علمی را پشتیبانی می‌کند. «Mission Operations» بخشی از این مجموعه است، نه شخصیت حقوقی جدید.",
+        "en": "ISRO’s Telemetry, Tracking and Command Network (ISTRAC) supports spacecraft operations, launch tracking and scientific missions. Its mission-operations function is part of ISTRAC, not a new legal entity.",
+        "ar": "تدعم شبكة القياس عن بعد والتتبع والقيادة الهندية ISTRAC عمليات الأقمار وتتبع الإطلاقات والمهمات العلمية. ووظيفة «عمليات المهمات» جزء من ISTRAC وليست كياناً قانونياً جديداً."
+      },
+      "sources": [
+        {
+          "url": "https://www.isro.gov.in/ISTRAC.html",
+          "provenance_types": [
+            "S3_325_CLAIMS_INHERITED",
+            "ADDITIONAL_OFFICIAL_WEB_RESEARCH_2026_11_13"
+          ],
+          "id": "SRC-dc156a06c9cf",
+          "title": "www.isro.gov.in — ISTRAC.html"
+        },
+        {
+          "url": "https://www.isro.gov.in/media_isro/pdf/AnnualReport/Annual_Report_2024_25_Eng.pdf",
+          "provenance_types": [
+            "ADDITIONAL_OFFICIAL_WEB_RESEARCH_2026_11_13"
+          ],
+          "id": "SRC-e763606a328f",
+          "title": "www.isro.gov.in — media_isro/pdf/AnnualReport/Annual_Report_2024_25_Eng.pdf"
+        },
+        {
+          "id": "NEW24-dc156a06c9cf",
+          "url": "https://www.isro.gov.in/ISTRAC.html",
+          "title": "www.isro.gov.in — ISTRAC.html",
+          "provenance_types": [
+            "STEP2_24_INDEPENDENT_OFFICIAL_WEB_VERIFICATION_2026_11_13"
+          ]
+        },
+        {
+          "id": "NEW24-7ce3cde35e7a",
+          "url": "https://www.isro.gov.in/ISRO_EN/mission_groundsegment.html",
+          "title": "www.isro.gov.in — mission_groundsegment.html",
+          "provenance_types": [
+            "STEP2_24_INDEPENDENT_OFFICIAL_WEB_VERIFICATION_2026_11_13"
+          ]
+        }
+      ],
+      "sections": [
+        {
+          "id": "overview",
+          "fa": "شناسنامه مرکز",
+          "en": "Centre identity",
+          "ar": "التعريف بالمركز",
+          "items": [
+            {
+              "fa": "ISTRAC زیرمجموعه رسمی ISRO است و مرکز اصلی آن در Peenya بنگلور قرار دارد. عملیات مأموریت، ایستگاه‌های TT&C، شبکه فضای دوردست و مراکز کنترل باید در بانک اطلاعاتی به‌صورت نقش‌ها و مکان‌های وابسته ثبت شوند.",
+              "en": "ISTRAC is an official ISRO organisation with its main centre in Peenya, Bengaluru. Mission operations, TT&C stations, deep-space links and individual control centres are related functions or facilities, not automatically separate companies.",
+              "ar": "ISTRAC جهة رسمية تابعة لـISRO ويقع مركزها الرئيسي في بينيا بمدينة بنغالورو. وتُسجل عمليات المهمات ومحطات TT&C وروابط الفضاء البعيد ومراكز التحكم كوظائف أو مرافق مترابطة، لا كشركات منفصلة تلقائياً.",
+              "kind": "editorially_localized_verified_source_section",
+              "source_ids": [
+                "SRC-dc156a06c9cf",
+                "NEW24-dc156a06c9cf"
+              ],
+              "localization": "FACTUAL_SECTION_EQUIVALENCE_FA_EN_AR"
+            }
+          ]
+        },
+        {
+          "id": "missions",
+          "fa": "مأموریت‌ها و ناوگان تحت کنترل",
+          "en": "Missions & spacecraft",
+          "ar": "المهمات والمركبات",
+          "items": [
+            {
+              "fa": "در معماری مأموریت Mars Orbiter، کنترل مدارگرد پس از جدایی از پرتابگر از بنگلور هدایت می‌شد و ایستگاه‌های همکار جهانی برای استمرار تماس به کار رفتند. مسئولیت عملیاتی شبکه باید از سازندگی ماهواره یا مالکیت آنتن‌های شریک تفکیک شود.",
+              "en": "For the Mars Orbiter Mission, spacecraft control after launch-vehicle separation was directed from Bengaluru, with international partner stations supporting communications coverage. Ground operations should not be confused with spacecraft manufacturing or ownership of partner antennas.",
+              "ar": "في مهمة Mars Orbiter تولى مركز بنغالورو التحكم بالمركبة بعد انفصالها عن الصاروخ، وساعدت محطات شريكة دولية في تغطية الاتصالات. ويجب عدم الخلط بين التشغيل الأرضي وتصنيع المركبة أو امتلاك هوائيات الشركاء.",
+              "kind": "editorially_localized_verified_source_section",
+              "source_ids": [
+                "NEW24-7ce3cde35e7a"
+              ],
+              "localization": "FACTUAL_SECTION_EQUIVALENCE_FA_EN_AR"
+            }
+          ]
+        },
+        {
+          "id": "operations",
+          "fa": "توانمندی‌های عملیاتی",
+          "en": "Operations capabilities",
+          "ar": "القدرات التشغيلية",
+          "items": [
+            {
+              "fa": "وظایف ISTRAC شامل رهگیری پرتابگر تا تزریق ماهواره، تعیین اولیه مدار، دریافت تله‌متری، ارسال فرمان و عملیات ماهواره‌های سنجش‌ازدور و علمی است. زیرساخت آن شامل اتاق‌های کنترل، تجهیزات رایانشی، ذخیره‌سازی، ارتباط داده و ایستگاه‌های TT&C است؛ مرکز کنترل واحد با کل شبکه یکی نیست.",
+              "en": "ISTRAC tracks launch vehicles through satellite injection, supports initial orbit determination, receives telemetry, transmits commands and operates Earth observation and science missions. Its infrastructure includes control rooms, computing, data storage, communications links and TT&C stations; one control centre is not the entire network.",
+              "ar": "تشمل مهام ISTRAC تتبع الصواريخ حتى حقن الأقمار وتحديد المدار الأولي واستقبال القياس عن بعد وإرسال الأوامر وتشغيل أقمار رصد الأرض والبعثات العلمية. وتضم البنية غرف تحكم وحوسبة وتخزين بيانات وروابط اتصالات ومحطات TT&C؛ ولا يمثل مركز واحد الشبكة بأكملها.",
+              "kind": "editorially_localized_verified_source_section",
+              "source_ids": [
+                "SRC-dc156a06c9cf",
+                "NEW24-dc156a06c9cf",
+                "NEW24-7ce3cde35e7a"
+              ],
+              "localization": "FACTUAL_SECTION_EQUIVALENCE_FA_EN_AR"
+            }
+          ]
+        },
+        {
+          "id": "network",
+          "fa": "شبکه ارتباطی",
+          "en": "Ground segment network",
+          "ar": "شبكة الاتصالات الأرضية",
+          "items": [
+            {
+              "fa": "شبکه ISTRAC از بنگلور و ایستگاه‌هایی در Lucknow، Mauritius، Sriharikota، Port Blair، Thiruvananthapuram، Brunei و Biak بهره می‌گیرد. طبق گزارش سالانه ۲۰۲۴–۲۰۲۵ ISRO، Mission Operations Complex در بنگلور پشتیبانی شبانه‌روزی مأموریت‌های سنجش‌ازدور، علمی و سیاره‌ای را بر عهده دارد.",
+              "en": "The ISTRAC network includes Bengaluru and stations or facilities at Lucknow, Mauritius, Sriharikota, Port Blair, Thiruvananthapuram, Brunei and Biak. ISRO’s 2024–2025 report describes Bengaluru’s Mission Operations Complex as supporting Earth observation, scientific and planetary missions around the clock.",
+              "ar": "تضم شبكة ISTRAC بنغالورو ومحطات أو مرافق في لكناو وموريشيوس وسريهاريكوتا وبورت بلير وتيروفانانثابورام وبروناي وبياك. ويصف تقرير ISRO لعام 2024–2025 مجمع عمليات المهمات في بنغالورو بأنه يدعم بعثات رصد الأرض والعلوم والكواكب على مدار الساعة.",
+              "kind": "editorially_localized_verified_source_section",
+              "source_ids": [
+                "SRC-e763606a328f",
+                "NEW24-dc156a06c9cf"
+              ],
+              "localization": "FACTUAL_SECTION_EQUIVALENCE_FA_EN_AR"
+            }
+          ]
+        },
+        {
+          "id": "history",
+          "fa": "تاریخچه و تحولات",
+          "en": "History & developments",
+          "ar": "التاريخ والتطور",
+          "items": [
+            {
+              "fa": "ساختار مأموریتی ISTRAC در طول توسعه برنامه پرتاب و ماهواره‌های سنجش‌ازدور هند گسترش یافته است. برای ثبت تاریخ دقیق تأسیس یک ساختمان یا مرکز کنترل مستقل باید سند مربوط به همان واحد یافت شود؛ تاریخ شکل‌گیری ISRO را نمی‌توان به آن نسبت داد.",
+              "en": "ISTRAC’s mission-operations role has expanded alongside India’s launch and remote-sensing programmes. A date for an individual control building requires that unit’s own record; ISRO’s founding date cannot be reused as its establishment date.",
+              "ar": "توسّع دور ISTRAC التشغيلي مع برامج الإطلاق والاستشعار عن بعد الهندية. ويحتاج تحديد تاريخ إنشاء مبنى تحكم منفرد إلى وثيقته الخاصة، ولا يجوز نسب تاريخ تأسيس ISRO إليه.",
+              "kind": "editorially_localized_verified_source_section",
+              "source_ids": [
+                "SRC-dc156a06c9cf"
+              ],
+              "localization": "FACTUAL_SECTION_EQUIVALENCE_FA_EN_AR"
+            }
+          ]
+        }
+      ],
+      "key_facts": [],
+      "verified_on": "2026-11-13",
+      "hide_evidence_scope_in_ui": true,
+      "release_status": "EDITORIAL_RESEARCH_PREVIEW_NEEDS_FINAL_EXPERT_SIGNOFF",
+      "inventory_id": "DISC-0157",
+      "geo_source_url": "https://www.isro.gov.in/ISTRAC.html",
+      "geo_precision": "approximate_neighbourhood_official_address"
+    },
+    "orbita_release_note": {
+      "release_date": "2026-11-13",
+      "inventory_id": "DISC-0157",
+      "status": "EDITORIAL_PREVIEW",
+      "batch": "RASPEHR_14_STEP5",
+      "expert_review_pending": true,
+      "language_parity": "FA_EN_AR_SECTION_DETAIL",
+      "geo_precision": "approximate_neighbourhood_official_address",
+      "logo_status": "official_parent_org"
     }
   }
 ]

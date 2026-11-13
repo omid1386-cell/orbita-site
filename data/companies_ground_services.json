@@ -261,5 +261,478 @@
         }
       ]
     }
+  },
+  {
+    "id": "raspehr-0057-leaf-space",
+    "cat": "ground_services",
+    "en": "Leaf Space",
+    "fa": "لیف اسپیس",
+    "ar": "ليف سبيس",
+    "country": "Italy",
+    "country_fa": "ایتالیا",
+    "country_ar": "إيطاليا",
+    "city": "Lomazzo",
+    "city_fa": "لومازو",
+    "city_ar": "لومازو",
+    "lat": 45.694,
+    "lon": 9.035,
+    "coordinate_precision": "approximate_city_official_address",
+    "coordinates_are_exact_site_gps": false,
+    "address": "Via Cavour 2, ComoNext, Lomazzo (CO) 22074, Italy",
+    "address_evidence_url": "https://business.esa.int/business-network/leaf-space-srl",
+    "site": "https://leaf.space/",
+    "fa_d": "Leaf Space شرکت ایتالیایی ارائه‌دهنده خدمات شبکه ایستگاه‌های زمینی برای ماهواره‌هاست. خدمات Leaf Line، Leaf Key و Leaf Hosting نقش‌های متفاوتی در ارتباط، ایستگاه اختصاصی و میزبانی تجهیزات دارند.",
+    "en_d": "Leaf Space is an Italian ground-segment services company. Leaf Line, Leaf Key and Leaf Hosting cover different needs: shared satellite connectivity, dedicated managed stations and equipment hosting.",
+    "ar_d": "Leaf Space شركة إيطالية لخدمات القطاع الأرضي للأقمار الصناعية. وتلبي خدمات Leaf Line وLeaf Key وLeaf Hosting احتياجات مختلفة: الاتصال المشترك والمحطات المخصصة المُدارة واستضافة المعدات.",
+    "org_type_fa": "خدمات و تجهیزات زمینی ماهواره",
+    "org_type_en": "Ground segment services",
+    "org_type_ar": "خدمات القطاع الأرضي",
+    "parent_institution": "",
+    "logo": "",
+    "logo_kind": "no_verified_official_logo",
+    "brand_text_identifier": "LEAF",
+    "orbita_verified_profile": {
+      "schema_version": 3,
+      "profile_type": "ground_services",
+      "summary": {
+        "fa": "Leaf Space شرکت ایتالیایی ارائه‌دهنده خدمات شبکه ایستگاه‌های زمینی برای ماهواره‌هاست. خدمات Leaf Line، Leaf Key و Leaf Hosting نقش‌های متفاوتی در ارتباط، ایستگاه اختصاصی و میزبانی تجهیزات دارند.",
+        "en": "Leaf Space is an Italian ground-segment services company. Leaf Line, Leaf Key and Leaf Hosting cover different needs: shared satellite connectivity, dedicated managed stations and equipment hosting.",
+        "ar": "Leaf Space شركة إيطالية لخدمات القطاع الأرضي للأقمار الصناعية. وتلبي خدمات Leaf Line وLeaf Key وLeaf Hosting احتياجات مختلفة: الاتصال المشترك والمحطات المخصصة المُدارة واستضافة المعدات."
+      },
+      "sources": [
+        {
+          "url": "https://leaf.space/leaf-hosting/",
+          "provenance_types": [
+            "ADDITIONAL_OFFICIAL_WEB_RESEARCH_2026_11_13"
+          ],
+          "id": "SRC-0e0e8955ea79",
+          "title": "leaf.space — leaf-hosting"
+        },
+        {
+          "url": "https://www.nasa.gov/smallsat-institute/sst-soa/ground-data-systems-and-mission-operations/",
+          "provenance_types": [
+            "S3_325_CLAIMS_INHERITED"
+          ],
+          "id": "SRC-a63129425a9d",
+          "title": "www.nasa.gov — smallsat-institute/sst-soa/ground-data-systems-and-mission-operations"
+        },
+        {
+          "id": "NEW24-ed8755907a86",
+          "url": "https://leaf.space/leaf-line/",
+          "title": "leaf.space — ",
+          "provenance_types": [
+            "STEP2_24_INDEPENDENT_OFFICIAL_WEB_VERIFICATION_2026_11_13"
+          ]
+        },
+        {
+          "id": "NEW24-d9a2942ca104",
+          "url": "https://leaf.space/leaf-key/",
+          "title": "leaf.space — ",
+          "provenance_types": [
+            "STEP2_24_INDEPENDENT_OFFICIAL_WEB_VERIFICATION_2026_11_13"
+          ]
+        },
+        {
+          "id": "NEW24-0e0e8955ea79",
+          "url": "https://leaf.space/leaf-hosting/",
+          "title": "leaf.space — ",
+          "provenance_types": [
+            "STEP2_24_INDEPENDENT_OFFICIAL_WEB_VERIFICATION_2026_11_13"
+          ]
+        },
+        {
+          "id": "NEW24-d2a2b00d92ba",
+          "url": "https://leaf.space/leaf-space-unveils-leaf-key-and-leaf-hosting-expanding-ground-segment-beyond-leaf-line/",
+          "title": "leaf.space — ",
+          "provenance_types": [
+            "STEP2_24_INDEPENDENT_OFFICIAL_WEB_VERIFICATION_2026_11_13"
+          ]
+        },
+        {
+          "id": "STAGE3-5c301fda5342",
+          "url": "https://leaf.space/",
+          "title": "Official primary evidence from stage-3 audit",
+          "provenance_types": [
+            "STAGE3_PRIMARY_SOURCE_IDENTITY_RECHECK"
+          ]
+        },
+        {
+          "id": "STAGE3-cf238b98d41a",
+          "url": "https://leaf.space/who-we-are/",
+          "title": "Official primary evidence from stage-3 audit",
+          "provenance_types": [
+            "STAGE3_PRIMARY_SOURCE_IDENTITY_RECHECK"
+          ]
+        },
+        {
+          "id": "STAGE3-a414a1cda2e5",
+          "url": "https://business.esa.int/business-network/leaf-space-srl",
+          "title": "Official primary evidence from stage-3 audit",
+          "provenance_types": [
+            "STAGE3_PRIMARY_SOURCE_IDENTITY_RECHECK"
+          ]
+        },
+        {
+          "id": "STAGE3-a1e2625d95d5",
+          "url": "https://leaf.space/?trk=public_profile__reactions-text",
+          "title": "Official primary evidence from stage-3 audit",
+          "provenance_types": [
+            "STAGE3_PRIMARY_SOURCE_IDENTITY_RECHECK"
+          ]
+        }
+      ],
+      "sections": [
+        {
+          "id": "overview",
+          "fa": "شناسنامه و مدل کسب‌وکار",
+          "en": "Identity & business model",
+          "ar": "التعريف ونموذج الأعمال",
+          "items": [
+            {
+              "fa": "Leaf Space از ۲۰۱۴ خدمات ارتباط ماهواره‌ای زمینی ارائه می‌کند و در اسناد خدمات تجاری زمین‌به‌فضا نیز معرفی شده است. دفتر کنونی اعلام‌شده در میلان را نباید با نشانی تاریخی Lomazzo در مدارک قدیمی یکی دانست.",
+              "en": "Leaf Space has provided satellite ground-segment services since 2014 and appears in relevant commercial ground-services assessments. Its current Milan address must not be confused with the historical Lomazzo address appearing in older documents.",
+              "ar": "تقدم Leaf Space خدمات الاتصالات الأرضية للأقمار منذ 2014 وترد في دراسات الخدمات الأرضية التجارية. ويجب عدم الخلط بين عنوانها الحالي في ميلانو وعنوان لومادزو التاريخي الوارد في وثائق أقدم.",
+              "kind": "editorially_localized_verified_source_section",
+              "source_ids": [
+                "SRC-a63129425a9d",
+                "STAGE3-5c301fda5342",
+                "STAGE3-cf238b98d41a",
+                "STAGE3-a414a1cda2e5",
+                "STAGE3-a1e2625d95d5"
+              ],
+              "localization": "FACTUAL_SECTION_EQUIVALENCE_FA_EN_AR"
+            }
+          ]
+        },
+        {
+          "id": "services",
+          "fa": "محصولات و خدمات",
+          "en": "Products & services",
+          "ar": "المنتجات والخدمات",
+          "items": [
+            {
+              "fa": "Leaf Line خدمات TT&C و دریافت داده محموله را با API، زمان‌بندی خودکار و شبکه آنتن‌های مشترک ارائه می‌کند. Leaf Key ایستگاه اختصاصیِ مدیریت‌شده با قطر آنتن سفارشی حدود ۱٫۸ تا ۱۳ متر در باندهای S، X و Ka فراهم می‌کند. Leaf Hosting نیز زیرساخت مکان، برق، اتصال، نگهداشت سطح اول و کمک به مجوزهای فرکانسی برای تجهیزات مشتری را فراهم می‌سازد.",
+              "en": "Leaf Line provides TT&C and payload downlinks through APIs, automated scheduling and a shared antenna network. Leaf Key provides dedicated managed stations with configurable antennas approximately 1.8–13 m in diameter across S, X and Ka bands. Leaf Hosting supplies sites, power, connectivity, first-level maintenance and support for frequency licensing for customer-owned equipment.",
+              "ar": "تقدم Leaf Line القياس عن بعد والتحكم واستقبال بيانات الحمولة عبر واجهات API وجدولة آلية وشبكة هوائيات مشتركة. وتوفر Leaf Key محطات مُدارة مخصصة بهوائيات قابلة للتخصيص بأقطار نحو 1.8–13 متراً في نطاقات S وX وKa. أما Leaf Hosting فتوفّر المواقع والطاقة والاتصال والصيانة الأولية والمساعدة في تراخيص الترددات لمعدات العملاء.",
+              "kind": "editorially_localized_verified_source_section",
+              "source_ids": [
+                "SRC-a63129425a9d",
+                "SRC-0e0e8955ea79",
+                "NEW24-ed8755907a86",
+                "NEW24-d9a2942ca104",
+                "STAGE3-5c301fda5342",
+                "STAGE3-cf238b98d41a",
+                "STAGE3-a414a1cda2e5",
+                "STAGE3-a1e2625d95d5"
+              ],
+              "localization": "FACTUAL_SECTION_EQUIVALENCE_FA_EN_AR"
+            }
+          ]
+        },
+        {
+          "id": "network",
+          "fa": "شبکه و پوشش",
+          "en": "Network & footprint",
+          "ar": "الشبكة والتغطية",
+          "items": [
+            {
+              "fa": "در صفحات مختلف Leaf Space ارقام متغیر شبکه دیده می‌شود: یک صفحه ۱۹ سایت و ۲۶ آنتن فعال را برای خدمات Hosting معرفی کرده و صفحه Leaf Line در زمان بررسی حدود ۴۰ آنتن فعال را نشان می‌داد. آمار سرویس‌های متفاوت نباید در یک عدد ثابت و بدون تاریخ ادغام شود؛ مالکیت آنتن مشتری در Hosting مستقل است.",
+              "en": "Leaf Space pages describe different, time-sensitive network snapshots: one Hosting page listed 19 sites and 26 active antennas, while a Leaf Line page displayed approximately 40 active antennas at review time. These figures refer to different service scopes and dates and must not be combined as a single fixed network total. Hosted customer antennas remain separately owned.",
+              "ar": "تعرض صفحات Leaf Space أرقاماً متغيرة للشبكة: ذكرت صفحة الاستضافة 19 موقعاً و26 هوائياً عاملاً، بينما أظهرت صفحة Leaf Line نحو 40 هوائياً عاملاً وقت المراجعة. تخص الأرقام نطاقات خدمية وفترات مختلفة، فلا تُدمج في رقم ثابت واحد. وتبقى ملكية هوائيات العملاء المستضافة مستقلة.",
+              "kind": "editorially_localized_verified_source_section",
+              "source_ids": [
+                "SRC-0e0e8955ea79",
+                "NEW24-0e0e8955ea79",
+                "STAGE3-5c301fda5342",
+                "STAGE3-cf238b98d41a",
+                "STAGE3-a414a1cda2e5",
+                "STAGE3-a1e2625d95d5"
+              ],
+              "localization": "FACTUAL_SECTION_EQUIVALENCE_FA_EN_AR"
+            }
+          ]
+        },
+        {
+          "id": "capacity",
+          "fa": "عملکرد و ظرفیت",
+          "en": "Capability & capacity",
+          "ar": "القدرات والسعة",
+          "items": [
+            {
+              "fa": "توان عملیاتی Leaf Line به شمار آنتن‌های در دسترس، هندسه گذر ماهواره، باند فرکانسی و ظرفیت شبکه وابسته است؛ آمار حدود ۴۰ آنتنِ زمان بررسی، شاخص تاریخی است و باید همراه تاریخ ثبت شود. پروتکل‌هایی مانند CCSDS و DVB-S2 در فهرست سازگاری خدمات شرکت آمده‌اند.",
+              "en": "Leaf Line capacity depends on antenna availability, satellite pass geometry, frequency bands and network configuration. The roughly 40-antenna figure is a time-specific snapshot. The company lists compatibility with standards such as CCSDS and DVB-S2.",
+              "ar": "تعتمد قدرة Leaf Line على توفر الهوائيات وهندسة مرور القمر والنطاقات الترددية والشبكة. ويُعد رقم نحو 40 هوائياً لقطة زمنية. وتذكر الشركة التوافق مع بروتوكولات مثل CCSDS وDVB-S2.",
+              "kind": "editorially_localized_verified_source_section",
+              "source_ids": [
+                "NEW24-ed8755907a86",
+                "STAGE3-5c301fda5342",
+                "STAGE3-cf238b98d41a",
+                "STAGE3-a414a1cda2e5",
+                "STAGE3-a1e2625d95d5"
+              ],
+              "localization": "FACTUAL_SECTION_EQUIVALENCE_FA_EN_AR"
+            }
+          ]
+        },
+        {
+          "id": "clients",
+          "fa": "مشتریان و شبکه عملیاتی",
+          "en": "Clients & operational links",
+          "ar": "العملاء والروابط التشغيلية",
+          "items": [
+            {
+              "fa": "تا نوامبر ۲۰۲۵، سه مدل سرویس Leaf Line، Leaf Key و Leaf Hosting به‌طور مجزا معرفی شده بودند. در خدمات Hosting، مشتری می‌تواند آنتن خود را در مکان میزبان نصب کند؛ در Leaf Line ظرفیت شبکه مشترک را استفاده می‌کند.",
+              "en": "By November 2025, Leaf Line, Leaf Key and Leaf Hosting had been presented as separate service models. Hosting customers may deploy their own antennas at managed sites, whereas Leaf Line customers access shared network capacity.",
+              "ar": "بحلول نوفمبر 2025 قُدمت Leaf Line وLeaf Key وLeaf Hosting بوصفها نماذج خدمة منفصلة. يستطيع عميل الاستضافة تركيب هوائيه في موقع مُدار، فيما يستخدم عميل Leaf Line سعة الشبكة المشتركة.",
+              "kind": "editorially_localized_verified_source_section",
+              "source_ids": [
+                "NEW24-d2a2b00d92ba",
+                "STAGE3-5c301fda5342",
+                "STAGE3-cf238b98d41a",
+                "STAGE3-a414a1cda2e5",
+                "STAGE3-a1e2625d95d5"
+              ],
+              "localization": "FACTUAL_SECTION_EQUIVALENCE_FA_EN_AR"
+            }
+          ]
+        }
+      ],
+      "key_facts": [],
+      "verified_on": "2026-11-13",
+      "hide_evidence_scope_in_ui": true,
+      "release_status": "EDITORIAL_RESEARCH_PREVIEW_NEEDS_FINAL_EXPERT_SIGNOFF",
+      "inventory_id": "DISC-0057",
+      "geo_source_url": "https://business.esa.int/business-network/leaf-space-srl",
+      "geo_precision": "approximate_city_official_address"
+    },
+    "orbita_release_note": {
+      "release_date": "2026-11-13",
+      "inventory_id": "DISC-0057",
+      "status": "EDITORIAL_PREVIEW",
+      "batch": "RASPEHR_14_STEP5",
+      "expert_review_pending": true,
+      "language_parity": "FA_EN_AR_SECTION_DETAIL",
+      "geo_precision": "approximate_city_official_address",
+      "logo_status": "typographic_name_only"
+    }
+  },
+  {
+    "id": "raspehr-0062-infostellar",
+    "cat": "ground_services",
+    "en": "Infostellar",
+    "fa": "اینفوستلار",
+    "ar": "إنفوستيلار",
+    "country": "Japan",
+    "country_fa": "ژاپن",
+    "country_ar": "اليابان",
+    "city": "Tokyo",
+    "city_fa": "توکیو",
+    "city_ar": "طوكيو",
+    "lat": 35.6895,
+    "lon": 139.7,
+    "coordinate_precision": "approximate_city_only_current_office_unconfirmed",
+    "coordinates_are_exact_site_gps": false,
+    "address": "Tokyo, Japan — exact current office pending confirmation",
+    "address_evidence_url": "https://www.infostellar.net/",
+    "site": "https://www.infostellar.net/",
+    "fa_d": "Infostellar شرکت ژاپنی ارائه‌دهنده دسترسی ابری به ایستگاه‌های زمینی با سامانه StellarStation است. از اول ژوئیه ۲۰۲۶ این شرکت زیرمجموعه صددرصدی Mitsubishi Electric محسوب می‌شود.",
+    "en_d": "Infostellar is a Japanese provider of cloud-based ground-station access through its StellarStation platform. It became a wholly owned subsidiary of Mitsubishi Electric on 1 July 2026.",
+    "ar_d": "Infostellar شركة يابانية تتيح الوصول السحابي إلى المحطات الأرضية عبر منصة StellarStation. وأصبحت شركة تابعة مملوكة بالكامل لـMitsubishi Electric في 1 يوليو 2026.",
+    "org_type_fa": "خدمات و تجهیزات زمینی ماهواره",
+    "org_type_en": "Ground segment services",
+    "org_type_ar": "خدمات القطاع الأرضي",
+    "parent_institution": "Mitsubishi Electric Corporation (since July 2026)",
+    "logo": "",
+    "logo_kind": "no_verified_official_logo",
+    "brand_text_identifier": "INF",
+    "orbita_verified_profile": {
+      "schema_version": 3,
+      "profile_type": "ground_services",
+      "summary": {
+        "fa": "Infostellar شرکت ژاپنی ارائه‌دهنده دسترسی ابری به ایستگاه‌های زمینی با سامانه StellarStation است. از اول ژوئیه ۲۰۲۶ این شرکت زیرمجموعه صددرصدی Mitsubishi Electric محسوب می‌شود.",
+        "en": "Infostellar is a Japanese provider of cloud-based ground-station access through its StellarStation platform. It became a wholly owned subsidiary of Mitsubishi Electric on 1 July 2026.",
+        "ar": "Infostellar شركة يابانية تتيح الوصول السحابي إلى المحطات الأرضية عبر منصة StellarStation. وأصبحت شركة تابعة مملوكة بالكامل لـMitsubishi Electric في 1 يوليو 2026."
+      },
+      "sources": [
+        {
+          "url": "https://www.nasa.gov/smallsat-institute/sst-soa/ground-data-systems-and-mission-operations/",
+          "provenance_types": [
+            "S3_325_CLAIMS_INHERITED"
+          ],
+          "id": "SRC-a63129425a9d",
+          "title": "www.nasa.gov — smallsat-institute/sst-soa/ground-data-systems-and-mission-operations"
+        },
+        {
+          "url": "https://www.infostellar.net/news/SATIO_integration",
+          "provenance_types": [
+            "STEP2_COMPLETION_99_OFFICIAL_WEB_RESEARCH"
+          ],
+          "id": "WEB-09ee12b2b2a6",
+          "title": "www.infostellar.net — news/SATIO_integration"
+        },
+        {
+          "url": "https://www.infostellar.net/",
+          "provenance_types": [
+            "STEP2_COMPLETION_99_OFFICIAL_WEB_RESEARCH"
+          ],
+          "id": "WEB-9d632b944992",
+          "title": "www.infostellar.net — home"
+        },
+        {
+          "id": "NEW24-1cf55a8ecfc1",
+          "url": "https://www.infostellar.net/news/upStoKw0",
+          "title": "www.infostellar.net — upStoKw0",
+          "provenance_types": [
+            "STEP2_24_INDEPENDENT_OFFICIAL_WEB_VERIFICATION_2026_11_13"
+          ]
+        },
+        {
+          "id": "NEW24-9d632b944992",
+          "url": "https://www.infostellar.net/",
+          "title": "www.infostellar.net — ",
+          "provenance_types": [
+            "STEP2_24_INDEPENDENT_OFFICIAL_WEB_VERIFICATION_2026_11_13"
+          ]
+        },
+        {
+          "id": "NEW24-c44f6c7c7ed0",
+          "url": "https://guide.stellarstation.com/FAQ.html",
+          "title": "guide.stellarstation.com — FAQ.html",
+          "provenance_types": [
+            "STEP2_24_INDEPENDENT_OFFICIAL_WEB_VERIFICATION_2026_11_13"
+          ]
+        },
+        {
+          "id": "NEW24-cccdf5c559b9",
+          "url": "https://www.infostellar.net/news/melco-acquires-infostellar",
+          "title": "www.infostellar.net — melco-acquires-infostellar",
+          "provenance_types": [
+            "STEP2_24_INDEPENDENT_OFFICIAL_WEB_VERIFICATION_2026_11_13"
+          ]
+        },
+        {
+          "id": "NEW24-565f750e7823",
+          "url": "https://www.infostellar.net/news/new-satcoms-gateway",
+          "title": "www.infostellar.net — new-satcoms-gateway",
+          "provenance_types": [
+            "STEP2_24_INDEPENDENT_OFFICIAL_WEB_VERIFICATION_2026_11_13"
+          ]
+        }
+      ],
+      "sections": [
+        {
+          "id": "overview",
+          "fa": "شناسنامه و مدل کسب‌وکار",
+          "en": "Identity & business model",
+          "ar": "التعريف ونموذج الأعمال",
+          "items": [
+            {
+              "fa": "Infostellar در ژانویه ۲۰۱۶ در توکیو تأسیس شد و خدمات بخش زمینی ماهواره را به‌صورت ابری گسترش داد. شخصیت حقوقی و برند این شرکت پس از تملک ۲۰۲۶ از Mitsubishi Electric مستقل در شناسنامه باقی می‌ماند، ولی مالکیت آن درج می‌شود.",
+              "en": "Infostellar was founded in Tokyo in January 2016 and developed cloud-enabled satellite ground-segment services. Its legal identity and brand remain separately described after the 2026 acquisition, with Mitsubishi Electric recorded as parent.",
+              "ar": "تأسست Infostellar في طوكيو في يناير 2016 وطورت خدمات القطاع الأرضي السحابية للأقمار. وتُعرض هويتها القانونية وعلامتها بشكل منفصل بعد استحواذ 2026، مع تسجيل Mitsubishi Electric شركةً أمّاً.",
+              "kind": "editorially_localized_verified_source_section",
+              "source_ids": [
+                "SRC-a63129425a9d",
+                "NEW24-1cf55a8ecfc1"
+              ],
+              "localization": "FACTUAL_SECTION_EQUIVALENCE_FA_EN_AR"
+            }
+          ]
+        },
+        {
+          "id": "services",
+          "fa": "محصولات و خدمات",
+          "en": "Products & services",
+          "ar": "المنتجات والخدمات",
+          "items": [
+            {
+              "fa": "پلتفرم StellarStation دسترسی زمان‌بندی‌شده به آنتن‌های شبکه‌ای از اپراتورهای گوناگون را برای uplink، downlink و TT&C فراهم می‌کند. باندهای V/UHF، S، X و Ka در فهرست سرویس آمده‌اند. دسترسی ابری به این شبکه با مالکیت فیزیکی تمام ایستگاه‌های آن یکسان نیست.",
+              "en": "StellarStation schedules access to antennas operated by different partners for uplink, downlink and TT&C. Advertised RF services span V/UHF, S, X and Ka bands. Cloud orchestration of this network does not imply physical ownership of all connected stations.",
+              "ar": "تنظم StellarStation الوصول المجدول إلى هوائيات شركاء مختلفين للوصلات الصاعدة والهابطة والقياس والتحكم TT&C. وتشمل الخدمات نطاقات V/UHF وS وX وKa. ولا تعني إدارة الشبكة سحابياً امتلاك جميع محطاتها فعلياً.",
+              "kind": "editorially_localized_verified_source_section",
+              "source_ids": [
+                "SRC-a63129425a9d",
+                "WEB-9d632b944992",
+                "NEW24-9d632b944992"
+              ],
+              "localization": "FACTUAL_SECTION_EQUIVALENCE_FA_EN_AR"
+            }
+          ]
+        },
+        {
+          "id": "network",
+          "fa": "شبکه و پوشش",
+          "en": "Network & footprint",
+          "ar": "الشبكة والتغطية",
+          "items": [
+            {
+              "fa": "در اطلاعیه مارس ۲۰۲۵ شبکه StellarStation شامل ۲۸ ایستگاه اعلام شده بود؛ این تعداد یک آمار تاریخی است. تأسیسات Taiki در ژاپن یکی از نقاط عملیاتی/میزبانی است و نباید موقعیت کل شبکه فرض شود. مالک کامل شرکت از ژوئیه ۲۰۲۶ Mitsubishi Electric است.",
+              "en": "A March 2025 announcement described 28 stations in the StellarStation network; that number is a historical snapshot. The Taiki facility in Japan supports particular hosting and gateway functions, not the geographic location of the entire network. Mitsubishi Electric has owned all shares since July 2026.",
+              "ar": "ذكر إعلان في مارس 2025 أن شبكة StellarStation تضم 28 محطة؛ وهو رقم تاريخي. تؤدي منشأة Taiki اليابانية مهام استضافة وبوابة محددة، ولا تمثل موقع الشبكة العالمية بأكملها. وتمتلك Mitsubishi Electric جميع الأسهم منذ يوليو 2026.",
+              "kind": "editorially_localized_verified_source_section",
+              "source_ids": [
+                "WEB-09ee12b2b2a6",
+                "NEW24-cccdf5c559b9",
+                "NEW24-565f750e7823"
+              ],
+              "localization": "FACTUAL_SECTION_EQUIVALENCE_FA_EN_AR"
+            }
+          ]
+        },
+        {
+          "id": "capacity",
+          "fa": "عملکرد و ظرفیت",
+          "en": "Capability & capacity",
+          "ar": "القدرات والسعة",
+          "items": [
+            {
+              "fa": "طبق راهنمای فنی شرکت، ارتباطات بی‌درنگ با نرخ‌های کمتر از حدود ۵۰ مگابیت‌برثانیه معمولاً قابل اتکاتر توصیف شده‌اند؛ تحقق نرخ بالاتر به مودم، لینک زمینی و پیکربندی مأموریت وابسته است. این رقم سقف فنی ثابت برای تمام ایستگاه‌ها نیست.",
+              "en": "Company technical guidance describes real-time links below roughly 50 Mb/s as commonly more practical; higher data rates depend on modem capability, terrestrial backhaul and mission configuration. This is not a universal network throughput ceiling.",
+              "ar": "تصف الإرشادات التقنية للشركة الوصلات الآنية الأقل من نحو 50 ميغابت/ثانية بأنها أكثر عملية عادةً؛ أما المعدلات الأعلى فتعتمد على المودم وشبكة النقل الأرضية وتكوين المهمة. وليس هذا الرقم سقفاً ثابتاً لكل المحطات.",
+              "kind": "editorially_localized_verified_source_section",
+              "source_ids": [
+                "NEW24-c44f6c7c7ed0"
+              ],
+              "localization": "FACTUAL_SECTION_EQUIVALENCE_FA_EN_AR"
+            }
+          ]
+        },
+        {
+          "id": "clients",
+          "fa": "مشتریان و شبکه عملیاتی",
+          "en": "Clients & operational links",
+          "ar": "العملاء والروابط التشغيلية",
+          "items": [
+            {
+              "fa": "StellarStation برای اپراتورهای ماهواره، مأموریت‌های سنجش‌ازدور و منظومه‌ها فرصت‌های تماس و مدیریت واحد ایستگاه‌های شریک را فراهم می‌کند. مشتریان از یک رابط مرکزی استفاده می‌کنند، اما مجوزها و تجهیزات ایستگاه‌ها در اختیار اپراتورهای مربوط باقی می‌مانند.",
+              "en": "StellarStation serves satellite operators, Earth observation missions and constellations through a centralized interface for partner-station contacts. Ground-site permissions and infrastructure remain with the relevant operators unless separately contracted.",
+              "ar": "تخدم StellarStation مشغلي الأقمار ومهمات رصد الأرض والكوكبات عبر واجهة موحدة لاتصالات محطات الشركاء. وتبقى تراخيص المواقع الأرضية وبنيتها لدى الجهات المشغلة ما لم يُنص تعاقدياً على خلاف ذلك.",
+              "kind": "editorially_localized_verified_source_section",
+              "source_ids": [
+                "WEB-9d632b944992"
+              ],
+              "localization": "FACTUAL_SECTION_EQUIVALENCE_FA_EN_AR"
+            }
+          ]
+        }
+      ],
+      "key_facts": [],
+      "verified_on": "2026-11-13",
+      "hide_evidence_scope_in_ui": true,
+      "release_status": "EDITORIAL_RESEARCH_PREVIEW_NEEDS_FINAL_EXPERT_SIGNOFF",
+      "inventory_id": "DISC-0062",
+      "geo_source_url": "https://www.infostellar.net/",
+      "geo_precision": "approximate_city_only_current_office_unconfirmed"
+    },
+    "orbita_release_note": {
+      "release_date": "2026-11-13",
+      "inventory_id": "DISC-0062",
+      "status": "EDITORIAL_PREVIEW",
+      "batch": "RASPEHR_14_STEP5",
+      "expert_review_pending": true,
+      "language_parity": "FA_EN_AR_SECTION_DETAIL",
+      "geo_precision": "approximate_city_only_current_office_unconfirmed",
+      "logo_status": "typographic_name_only"
+    }
   }
 ]

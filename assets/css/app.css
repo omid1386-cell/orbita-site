@@ -1561,3 +1561,6 @@ img.d-flag--globe{width:40px;height:40px;min-width:40px;max-width:40px;padding:0
 :root[data-theme="light"] .verified-profile-v2[data-scope="mission_control"]{--v-hi:#755098}
 
 .verified-profile-v2 .verified-highlight .verified-citation{align-self:flex-start;max-width:fit-content;margin-top:4px}
+
+/* RASPEHR stage-5: typographic identifiers are not corporate logos. */
+.verified-profile-v2 .verified-brand-identifier{display:grid;place-items:center;text-align:center;max-width:100%;width:100%;height:100%;font:800 clamp(11px,1.3vw,15px)/1.1 system-ui,Arial,sans-serif;letter-spacing:.015em;color:var(--v-hi);overflow-wrap:anywhere;user-select:none}

@@ -1216,8 +1216,8 @@
     "country_fa": "ژاپن",
     "city": "Tokyo / Tsukuba",
     "city_fa": "توکیو / تسوکوبا",
-    "lat": 35.6808078,
-    "lon": 139.5584341,
+    "lat": 36.0655,
+    "lon": 140.13,
     "founded": 2003,
     "site": "https://www.jaxa.jp",
     "en_d": "Japan's space agency: H3 and Epsilon launchers, sample-return missions (Hayabusa), lunar landers (SLIM), and ISS Kibo module.",
@@ -1409,9 +1409,7 @@
         "year": "2024",
         "text_ar": "هبطت SLIM على بُعد نحو 55 m من هدفها القمري، محققة دقة ضمن نطاق 100 m."
       }
-    ],
-    "coordinate_precision": "approximate_headquarters_geocode",
-    "coordinate_reference_url": "https://global.jaxa.jp/about/centers/"
+    ]
   },
   {
     "id": "kari",
@@ -51079,7 +51077,7 @@
     "org_type_en": "Space components and subsystems",
     "org_type_ar": "مصنّع مكونات وأنظمة فرعية فضائية",
     "parent_institution": "",
-    "logo": "assets/logos/orbita/orbita-addnics.png",
+    "logo": "assets/logos/orbita/orbita-addnics.svg",
     "logo_kind": "orbita_editorial_nonofficial",
     "orbita_marker_code": "AD",
     "orbita_verified_profile": {
@@ -51501,7 +51499,7 @@
     "org_type_en": "Space components and subsystems",
     "org_type_ar": "مصنّع مكونات وأنظمة فرعية فضائية",
     "parent_institution": "",
-    "logo": "assets/logos/orbita/orbita-alouette.png",
+    "logo": "assets/logos/orbita/orbita-alouette.svg",
     "logo_kind": "orbita_editorial_nonofficial",
     "orbita_marker_code": "AL",
     "orbita_verified_profile": {
@@ -51873,7 +51871,7 @@
     "org_type_en": "Space components and subsystems",
     "org_type_ar": "مصنّع مكونات وأنظمة فرعية فضائية",
     "parent_institution": "",
-    "logo": "assets/logos/orbita/orbita-arkedge-space.png",
+    "logo": "assets/logos/orbita/orbita-arkedge-space.svg",
     "logo_kind": "orbita_editorial_nonofficial",
     "orbita_marker_code": "AE",
     "orbita_verified_profile": {
@@ -52287,7 +52285,7 @@
     "org_type_en": "Space components and subsystems",
     "org_type_ar": "مصنّع مكونات وأنظمة فرعية فضائية",
     "parent_institution": "",
-    "logo": "assets/logos/orbita/orbita-arumotech.png",
+    "logo": "assets/logos/orbita/orbita-arumotech.svg",
     "logo_kind": "orbita_editorial_nonofficial",
     "orbita_marker_code": "AT",
     "orbita_verified_profile": {
@@ -52597,7 +52595,7 @@
     "org_type_en": "Space components and subsystems",
     "org_type_ar": "مصنّع مكونات وأنظمة فرعية فضائية",
     "parent_institution": "",
-    "logo": "assets/logos/orbita/orbita-astrex.png",
+    "logo": "assets/logos/orbita/orbita-astrex.svg",
     "logo_kind": "orbita_editorial_nonofficial",
     "orbita_marker_code": "AX",
     "orbita_verified_profile": {
@@ -53031,7 +53029,7 @@
     "org_type_en": "Space components and subsystems",
     "org_type_ar": "مصنّع مكونات وأنظمة فرعية فضائية",
     "parent_institution": "",
-    "logo": "assets/logos/orbita/orbita-composite-tailors.png",
+    "logo": "assets/logos/orbita/orbita-composite-tailors.svg",
     "logo_kind": "orbita_editorial_nonofficial",
     "orbita_marker_code": "CT",
     "orbita_verified_profile": {
@@ -53403,7 +53401,7 @@
     "org_type_en": "Space components and subsystems",
     "org_type_ar": "مصنّع مكونات وأنظمة فرعية فضائية",
     "parent_institution": "",
-    "logo": "assets/logos/orbita/orbita-cosmobloom.png",
+    "logo": "assets/logos/orbita/orbita-cosmobloom.svg",
     "logo_kind": "orbita_editorial_nonofficial",
     "orbita_marker_code": "CB",
     "orbita_verified_profile": {
@@ -53832,7 +53830,7 @@
     "org_type_en": "Space components and subsystems",
     "org_type_ar": "مصنّع مكونات وأنظمة فرعية فضائية",
     "parent_institution": "",
-    "logo": "assets/logos/orbita/orbita-eagle-industry.png",
+    "logo": "assets/logos/orbita/orbita-eagle-industry.svg",
     "logo_kind": "orbita_editorial_nonofficial",
     "orbita_marker_code": "EI",
     "orbita_verified_profile": {
@@ -54175,7 +54173,7 @@
     "org_type_en": "Space components and subsystems",
     "org_type_ar": "مصنّع مكونات وأنظمة فرعية فضائية",
     "parent_institution": "",
-    "logo": "assets/logos/orbita/orbita-genesia.png",
+    "logo": "assets/logos/orbita/orbita-genesia.svg",
     "logo_kind": "orbita_editorial_nonofficial",
     "orbita_marker_code": "GE",
     "orbita_verified_profile": {
@@ -54542,7 +54540,7 @@
     "org_type_en": "Space components and subsystems",
     "org_type_ar": "مصنّع مكونات وأنظمة فرعية فضائية",
     "parent_institution": "",
-    "logo": "assets/logos/orbita/orbita-nanobridge-semiconductor.png",
+    "logo": "assets/logos/orbita/orbita-nanobridge-semiconductor.svg",
     "logo_kind": "orbita_editorial_nonofficial",
     "orbita_marker_code": "NB",
     "orbita_verified_profile": {
@@ -54915,7 +54913,7 @@
     "org_type_en": "Space components and subsystems",
     "org_type_ar": "مصنّع مكونات وأنظمة فرعية فضائية",
     "parent_institution": "",
-    "logo": "assets/logos/orbita/orbita-nec-space-technologies.png",
+    "logo": "assets/logos/orbita/orbita-nec-space-technologies.svg",
     "logo_kind": "orbita_editorial_nonofficial",
     "orbita_marker_code": "NE",
     "orbita_verified_profile": {
@@ -55303,7 +55301,7 @@
     "org_type_en": "Space components and subsystems",
     "org_type_ar": "مصنّع مكونات وأنظمة فرعية فضائية",
     "parent_institution": "",
-    "logo": "assets/logos/orbita/orbita-arcsec.png",
+    "logo": "assets/logos/orbita/orbita-arcsec.svg",
     "logo_kind": "orbita_editorial_nonofficial",
     "orbita_marker_code": "AR",
     "orbita_verified_profile": {
@@ -55701,7 +55699,7 @@
     "org_type_en": "In-space services",
     "org_type_ar": "شركة خدمات فضائية ومدارية",
     "parent_institution": "Intuitive Machines, Inc.",
-    "logo": "assets/logos/orbita/orbita-intuitive-machines.png",
+    "logo": "assets/logos/orbita/orbita-intuitive-machines.svg",
     "logo_kind": "orbita_editorial_nonofficial",
     "orbita_marker_code": "IM",
     "orbita_verified_profile": {
@@ -56073,7 +56071,7 @@
     "org_type_en": "In-space services",
     "org_type_ar": "شركة خدمات فضائية ومدارية",
     "parent_institution": "Astroscale Holdings Inc.",
-    "logo": "assets/logos/orbita/orbita-astroscale.png",
+    "logo": "assets/logos/orbita/orbita-astroscale.svg",
     "logo_kind": "orbita_editorial_nonofficial",
     "orbita_marker_code": "AS",
     "orbita_verified_profile": {
@@ -56494,7 +56492,7 @@
     "org_type_en": "Space testing facility",
     "org_type_ar": "منشأة اختبار فضائي",
     "parent_institution": "Instituto Nacional de Pesquisas Espaciais (INPE)",
-    "logo": "assets/logos/orbita/orbita-inpe-lit.png",
+    "logo": "assets/logos/orbita/orbita-inpe-lit.svg",
     "logo_kind": "orbita_editorial_nonofficial",
     "orbita_marker_code": "LI",
     "orbita_verified_profile": {
@@ -56833,7 +56831,7 @@
     "org_type_en": "Satellite ground station",
     "org_type_ar": "محطة أرضية للاتصالات الفضائية",
     "parent_institution": "Kongsberg Satellite Services (KSAT)",
-    "logo": "assets/logos/orbita/orbita-ksat-svalbard.png",
+    "logo": "assets/logos/orbita/orbita-ksat-svalbard.svg",
     "logo_kind": "orbita_editorial_nonofficial",
     "orbita_marker_code": "SV",
     "orbita_verified_profile": {
@@ -57203,7 +57201,7 @@
     "org_type_en": "Satellite ground station",
     "org_type_ar": "محطة أرضية للاتصالات الفضائية",
     "parent_institution": "Kongsberg Satellite Services (KSAT)",
-    "logo": "assets/logos/orbita/orbita-ksat-trollsat.png",
+    "logo": "assets/logos/orbita/orbita-ksat-trollsat.svg",
     "logo_kind": "orbita_editorial_nonofficial",
     "orbita_marker_code": "TR",
     "orbita_verified_profile": {
@@ -57587,7 +57585,7 @@
     "org_type_en": "Satellite ground station",
     "org_type_ar": "محطة أرضية للاتصالات الفضائية",
     "parent_institution": "Swedish Space Corporation (SSC)",
-    "logo": "assets/logos/orbita/orbita-ssc-kiruna.png",
+    "logo": "assets/logos/orbita/orbita-ssc-kiruna.svg",
     "logo_kind": "orbita_editorial_nonofficial",
     "orbita_marker_code": "SK",
     "orbita_verified_profile": {
@@ -57952,7 +57950,7 @@
     "org_type_en": "Satellite ground station",
     "org_type_ar": "محطة أرضية للاتصالات الفضائية",
     "parent_institution": "Swedish Space Corporation (SSC)",
-    "logo": "assets/logos/orbita/orbita-ssc-santiago.png",
+    "logo": "assets/logos/orbita/orbita-ssc-santiago.svg",
     "logo_kind": "orbita_editorial_nonofficial",
     "orbita_marker_code": "SC",
     "orbita_verified_profile": {
@@ -58311,7 +58309,7 @@
     "org_type_en": "Satellite ground station",
     "org_type_ar": "محطة أرضية للاتصالات الفضائية",
     "parent_institution": "Swedish Space Corporation (SSC) — Dongara/WASC identity review open",
-    "logo": "assets/logos/orbita/orbita-ssc-dongara.png",
+    "logo": "assets/logos/orbita/orbita-ssc-dongara.svg",
     "logo_kind": "orbita_editorial_nonofficial",
     "orbita_marker_code": "DG",
     "orbita_verified_profile": {
@@ -58662,7 +58660,7 @@
     "org_type_en": "Satellite ground station",
     "org_type_ar": "محطة أرضية للاتصالات الفضائية",
     "parent_institution": "Swedish Space Corporation (SSC)",
-    "logo": "assets/logos/orbita/orbita-ssc-south-point.png",
+    "logo": "assets/logos/orbita/orbita-ssc-south-point.svg",
     "logo_kind": "orbita_editorial_nonofficial",
     "orbita_marker_code": "SP",
     "orbita_verified_profile": {
@@ -59041,7 +59039,7 @@
     "org_type_en": "Satellite ground station",
     "org_type_ar": "محطة أرضية للاتصالات الفضائية",
     "parent_institution": "NASA",
-    "logo": "assets/logos/orbita/orbita-nasa-wallops-ground.png",
+    "logo": "assets/logos/orbita/orbita-nasa-wallops-ground.svg",
     "logo_kind": "orbita_editorial_nonofficial",
     "orbita_marker_code": "WG",
     "orbita_verified_profile": {
@@ -59369,7 +59367,7 @@
     "org_type_en": "Satellite ground station",
     "org_type_ar": "محطة أرضية للاتصالات الفضائية",
     "parent_institution": "European Space Agency (ESA) / ESTRACK",
-    "logo": "assets/logos/orbita/orbita-esa-new-norcia.png",
+    "logo": "assets/logos/orbita/orbita-esa-new-norcia.svg",
     "logo_kind": "orbita_editorial_nonofficial",
     "orbita_marker_code": "NN",
     "orbita_verified_profile": {
@@ -59736,7 +59734,7 @@
     "org_type_en": "Satellite ground station",
     "org_type_ar": "محطة أرضية للاتصالات الفضائية",
     "parent_institution": "European Space Agency (ESA) / ESTRACK",
-    "logo": "assets/logos/orbita/orbita-esa-malargue.png",
+    "logo": "assets/logos/orbita/orbita-esa-malargue.svg",
     "logo_kind": "orbita_editorial_nonofficial",
     "orbita_marker_code": "ML",
     "orbita_verified_profile": {
@@ -60122,7 +60120,7 @@
     "org_type_en": "Satellite ground station",
     "org_type_ar": "محطة أرضية للاتصالات الفضائية",
     "parent_institution": "European Space Agency (ESA) / ESTRACK",
-    "logo": "assets/logos/orbita/orbita-esa-kiruna.png",
+    "logo": "assets/logos/orbita/orbita-esa-kiruna.svg",
     "logo_kind": "orbita_editorial_nonofficial",
     "orbita_marker_code": "EK",
     "orbita_verified_profile": {
@@ -60495,7 +60493,7 @@
     "org_type_en": "Satellite ground station",
     "org_type_ar": "محطة أرضية للاتصالات الفضائية",
     "parent_institution": "European Space Agency (ESA) / ESTRACK",
-    "logo": "assets/logos/orbita/orbita-esa-santa-maria.png",
+    "logo": "assets/logos/orbita/orbita-esa-santa-maria.svg",
     "logo_kind": "orbita_editorial_nonofficial",
     "orbita_marker_code": "SM",
     "orbita_verified_profile": {
@@ -60855,7 +60853,7 @@
     "org_type_en": "Satellite ground station",
     "org_type_ar": "محطة أرضية للاتصالات الفضائية",
     "parent_institution": "NASA / Jet Propulsion Laboratory",
-    "logo": "assets/logos/orbita/orbita-nasa-goldstone.png",
+    "logo": "assets/logos/orbita/orbita-nasa-goldstone.svg",
     "logo_kind": "orbita_editorial_nonofficial",
     "orbita_marker_code": "GO",
     "orbita_verified_profile": {
@@ -61206,7 +61204,7 @@
     "org_type_en": "Satellite ground station",
     "org_type_ar": "محطة أرضية للاتصالات الفضائية",
     "parent_institution": "NASA / Jet Propulsion Laboratory",
-    "logo": "assets/logos/orbita/orbita-nasa-madrid.png",
+    "logo": "assets/logos/orbita/orbita-nasa-madrid.svg",
     "logo_kind": "orbita_editorial_nonofficial",
     "orbita_marker_code": "MD",
     "orbita_verified_profile": {
@@ -61556,7 +61554,7 @@
     "org_type_en": "Satellite ground station",
     "org_type_ar": "محطة أرضية للاتصالات الفضائية",
     "parent_institution": "NASA / Jet Propulsion Laboratory",
-    "logo": "assets/logos/orbita/orbita-nasa-canberra.png",
+    "logo": "assets/logos/orbita/orbita-nasa-canberra.svg",
     "logo_kind": "orbita_editorial_nonofficial",
     "orbita_marker_code": "CA",
     "orbita_verified_profile": {
@@ -61926,7 +61924,7 @@
     "org_type_en": "Mission operations centre",
     "org_type_ar": "مركز عمليات المهمات",
     "parent_institution": "German Aerospace Center (DLR)",
-    "logo": "assets/logos/orbita/orbita-dlr-gsoc.png",
+    "logo": "assets/logos/orbita/orbita-dlr-gsoc.svg",
     "logo_kind": "orbita_editorial_nonofficial",
     "orbita_marker_code": "GS",
     "orbita_verified_profile": {
@@ -62287,7 +62285,7 @@
     "org_type_en": "Mission operations centre",
     "org_type_ar": "مركز عمليات المهمات",
     "parent_institution": "German Aerospace Center (DLR) / GSOC",
-    "logo": "assets/logos/orbita/orbita-dlr-columbus-control.png",
+    "logo": "assets/logos/orbita/orbita-dlr-columbus-control.svg",
     "logo_kind": "orbita_editorial_nonofficial",
     "orbita_marker_code": "CO",
     "orbita_verified_profile": {
@@ -62650,7 +62648,7 @@
     "org_type_en": "University space laboratory",
     "org_type_ar": "مختبر فضائي جامعي",
     "parent_institution": "Nanyang Technological University (NTU)",
-    "logo": "assets/logos/orbita/orbita-ntu-satellite-research.png",
+    "logo": "assets/logos/orbita/orbita-ntu-satellite-research.svg",
     "logo_kind": "orbita_editorial_nonofficial",
     "orbita_marker_code": "NT",
     "orbita_verified_profile": {
@@ -63043,7 +63041,7 @@
     "org_type_en": "University space laboratory",
     "org_type_ar": "مختبر فضائي جامعي",
     "parent_institution": "Delft University of Technology (TU Delft)",
-    "logo": "assets/logos/orbita/orbita-delfi-space-lab.png",
+    "logo": "assets/logos/orbita/orbita-delfi-space-lab.svg",
     "logo_kind": "orbita_editorial_nonofficial",
     "orbita_marker_code": "DF",
     "orbita_verified_profile": {
@@ -63390,6 +63388,3052 @@
         "Check mission-by-mission flight heritage and distinguish proposals from achieved missions",
         "Prepare verified FA/EN/AR and map metadata only after science review"
       ]
+    }
+  },
+  {
+    "id": "raspehr-0012-idemitsu-kosan-co-ltd",
+    "cat": "components",
+    "en": "Idemitsu Kosan Co., Ltd.",
+    "fa": "ایدمیتسو کوسان",
+    "ar": "إيديميتسو كوسان",
+    "country": "Japan",
+    "country_fa": "ژاپن",
+    "country_ar": "اليابان",
+    "city": "Tokyo (Otemachi)",
+    "city_fa": "توکیو (اوته‌ماچی)",
+    "city_ar": "طوكيو (أوتيماتشي)",
+    "lat": 35.6868,
+    "lon": 139.7631,
+    "coordinate_precision": "approximate_neighbourhood_official_address",
+    "coordinates_are_exact_site_gps": false,
+    "address": "1-2-1 Otemachi, Chiyoda-ku, Tokyo 100-8321, Japan",
+    "address_evidence_url": "https://www.idemitsu.com/en/company/network/index.html",
+    "site": "https://www.idemitsu.com/",
+    "fa_d": "ایدِمیتسو کوسان شرکت ژاپنی فعال در پژوهش سلول‌های خورشیدی لایه‌نازک CIGS است. کاربرد فضایی نسل‌های قدیمی در MDS-1 و XI-V مستند است؛ فناوری‌های جدید و بازده آزمایشگاهی را نباید با عملکرد عملیاتی در مدار یکسان گرفت.",
+    "en_d": "Idemitsu Kosan is a Japanese company researching thin-film CIGS solar cells. Earlier generations flew as technology demonstrations on MDS-1 and XI-V; newer designs and laboratory efficiencies must not be equated with proven in-orbit performance.",
+    "ar_d": "إيديميتسو كوسان شركة يابانية تبحث في الخلايا الشمسية الرقيقة من نوع CIGS. استُخدمت أجيال سابقة في تجارب فضائية على MDS-1 وXI-V؛ ولا يجوز مساواة التصاميم الحديثة وكفاءات المختبر بأداء مثبت في المدار.",
+    "org_type_fa": "سازنده قطعات و زیرسامانه‌های فضایی",
+    "org_type_en": "Space components and subsystems",
+    "org_type_ar": "مكونات وأنظمة فرعية فضائية",
+    "parent_institution": "",
+    "logo": "",
+    "logo_kind": "no_verified_official_logo",
+    "brand_text_identifier": "IDE",
+    "orbita_verified_profile": {
+      "schema_version": 2,
+      "profile_type": "components",
+      "summary": {
+        "fa": "ایدِمیتسو کوسان شرکت ژاپنی فعال در پژوهش سلول‌های خورشیدی لایه‌نازک CIGS است. کاربرد فضایی نسل‌های قدیمی در MDS-1 و XI-V مستند است؛ فناوری‌های جدید و بازده آزمایشگاهی را نباید با عملکرد عملیاتی در مدار یکسان گرفت.",
+        "en": "Idemitsu Kosan is a Japanese company researching thin-film CIGS solar cells. Earlier generations flew as technology demonstrations on MDS-1 and XI-V; newer designs and laboratory efficiencies must not be equated with proven in-orbit performance.",
+        "ar": "إيديميتسو كوسان شركة يابانية تبحث في الخلايا الشمسية الرقيقة من نوع CIGS. استُخدمت أجيال سابقة في تجارب فضائية على MDS-1 وXI-V؛ ولا يجوز مساواة التصاميم الحديثة وكفاءات المختبر بأداء مثبت في المدار."
+      },
+      "sources": [
+        {
+          "url": "https://aerospacebiz.jaxa.jp/japanese-space-industry/Japanese-Space-Components-and-Parts-Catalog-2025.pdf",
+          "provenance_types": [
+            "S3_325_CLAIMS_INHERITED",
+            "STEP2_C01_BATCH01_DEEP_RESEARCH"
+          ],
+          "id": "SRC-77587d276a4d",
+          "title": "aerospacebiz.jaxa.jp — japanese-space-industry/Japanese-Space-Components-and-Parts-Catalog-2025.pdf"
+        },
+        {
+          "url": "https://www.idemitsu.com/en/company/rd/cigs/index.html",
+          "provenance_types": [
+            "S3_325_CLAIMS_INHERITED"
+          ],
+          "id": "SRC-ed1ecc4c8884",
+          "title": "www.idemitsu.com — en/company/rd/cigs/index.html"
+        },
+        {
+          "url": "https://www.idemitsu.com/en/company/rd/cigs/index.html",
+          "provenance_types": [
+            "STEP2_COMPLETION_2026_11_13_OFFICIAL_WEB_RESEARCH"
+          ],
+          "id": "WEB-ed1ecc4c8884",
+          "title": "www.idemitsu.com — en/company/rd/cigs/index.html"
+        },
+        {
+          "id": "NEW24-ed1ecc4c8884",
+          "url": "https://www.idemitsu.com/en/company/rd/cigs/index.html",
+          "title": "www.idemitsu.com — index.html",
+          "provenance_types": [
+            "STEP2_24_INDEPENDENT_OFFICIAL_WEB_VERIFICATION_2026_11_13"
+          ]
+        }
+      ],
+      "sections": [
+        {
+          "id": "overview",
+          "fa": "شناسنامه و تخصص",
+          "en": "Identity & specialization",
+          "ar": "التعريف والتخصص",
+          "items": [
+            {
+              "fa": "ایدمیتسو کوسان یک شرکت صنعتی و پژوهشی ژاپنی است که در رَسپهر به دلیل توسعه فناوری توان الکتریکی فضایی، به‌ویژه سلول خورشیدی CIGS، معرفی می‌شود. حضور در کاتالوگ قطعات فضایی ژاپن به‌تنهایی نشانه سابقه پرواز مدل‌های جدید نیست.",
+              "en": "Idemitsu Kosan is a Japanese industrial and research company included for its space-power technology, particularly CIGS solar cells. A listing in Japan’s space components catalogue does not independently prove the flight heritage of its current products.",
+              "ar": "إيديميتسو كوسان شركة صناعية وبحثية يابانية تُدرج لتقنياتها في توليد الطاقة الفضائية، وخاصة خلايا CIGS الشمسية. ولا يثبت ورودها في دليل المكونات الفضائية الياباني سجل طيران طرازاتها الحالية.",
+              "kind": "editorially_localized_verified_source_section",
+              "source_ids": [
+                "SRC-77587d276a4d"
+              ],
+              "localization": "FACTUAL_SECTION_EQUIVALENCE_FA_EN_AR"
+            }
+          ]
+        },
+        {
+          "id": "products",
+          "fa": "محصولات و فناوری",
+          "en": "Products & technology",
+          "ar": "المنتجات والتقنية",
+          "items": [
+            {
+              "fa": "توسعه سلول‌های خورشیدی لایه‌نازک CIGS مقاوم‌تر در برابر تابش، محور برنامه فضایی شرکت است. در سال ۲۰۲۵ استفاده نمایشی از سلول فضایی در سامانه SDX محموله HTV-X1 و فناوری مشابه در BOTAN اعلام شد. بازده ۲۳٫۳۵٪ مربوط به آزمون زمینی AM1.5 در ۲۰۱۹ است، نه بازده اثبات‌شده در مدار.",
+              "en": "Its space programme focuses on radiation-tolerant, thin-film CIGS photovoltaic cells. In 2025 the company announced a demonstration in the SDX system carried by HTV-X1 and related technology for BOTAN. The reported 23.35% efficiency was measured in a terrestrial AM1.5 test in 2019, not as demonstrated orbital efficiency.",
+              "ar": "يركز البرنامج الفضائي للشركة على خلايا CIGS الكهروضوئية الرقيقة المقاومة للإشعاع. وفي 2025 أعلنت عرضاً تجريبياً ضمن منظومة SDX على حمولة HTV-X1 وتقنية مرتبطة بمشروع BOTAN. أما كفاءة 23.35% فقيست في اختبار أرضي وفق AM1.5 عام 2019، وليست كفاءة مثبتة في المدار.",
+              "kind": "editorially_localized_verified_source_section",
+              "source_ids": [
+                "SRC-ed1ecc4c8884",
+                "WEB-ed1ecc4c8884",
+                "NEW24-ed1ecc4c8884"
+              ],
+              "localization": "FACTUAL_SECTION_EQUIVALENCE_FA_EN_AR"
+            }
+          ]
+        },
+        {
+          "id": "heritage",
+          "fa": "سابقه پروازی",
+          "en": "Flight heritage",
+          "ar": "السجل الفضائي",
+          "items": [
+            {
+              "fa": "شاركت أجيال تاریخی سلول‌های CIGS این شرکت در نمایش‌های فضایی ماهواره MDS-1 در سال ۲۰۰۲ و کیوب‌ست XI-V دانشگاه توکیو در سال ۲۰۰۵. این سابقه به نسل‌های یادشده تعلق دارد و عملکرد نسل تازه را تضمین نمی‌کند.",
+              "en": "Earlier CIGS cell generations were demonstrated aboard MDS-1 in 2002 and the University of Tokyo’s XI-V CubeSat in 2005. These missions document historical hardware demonstrations, not automatic qualification of newer generations.",
+              "ar": "اختُبرت أجيال سابقة من خلايا CIGS على القمر MDS-1 في 2002 وعلى القمر المكعب XI-V لجامعة طوكيو في 2005. وتوثّق المهمتان الأجيال التاريخية فقط، ولا تمنح الأجيال الجديدة تأهيلاً تلقائياً.",
+              "kind": "editorially_localized_verified_source_section",
+              "source_ids": [
+                "WEB-ed1ecc4c8884",
+                "NEW24-ed1ecc4c8884"
+              ],
+              "localization": "FACTUAL_SECTION_EQUIVALENCE_FA_EN_AR"
+            }
+          ]
+        },
+        {
+          "id": "network",
+          "fa": "مشتریان و زنجیره تأمین",
+          "en": "Customers & supply chain",
+          "ar": "العملاء وسلسلة التوريد",
+          "items": [
+            {
+              "fa": "ایدمیتسو در سال ۲۰۲۵ همکاری با Source Energy Company را برای توسعه آرایه‌های خورشیدی نسل آینده بازار فضا اعلام کرد. اعلام همکاری به‌خودی‌خود نشان‌دهنده تولید تجاری یا استقرار عملیاتی آن آرایه‌ها نیست.",
+              "en": "In 2025 Idemitsu announced a collaboration with Source Energy Company to develop next-generation solar arrays for the space market. The agreement alone does not establish commercial delivery or operational deployment.",
+              "ar": "أعلنت إيديميتسو في 2025 تعاوناً مع Source Energy Company لتطوير مصفوفات شمسية من الجيل التالي للسوق الفضائية. ولا يثبت إعلان التعاون وحده بدء التسليم التجاري أو التشغيل الفعلي.",
+              "kind": "editorially_localized_verified_source_section",
+              "source_ids": [
+                "NEW24-ed1ecc4c8884"
+              ],
+              "localization": "FACTUAL_SECTION_EQUIVALENCE_FA_EN_AR"
+            }
+          ]
+        },
+        {
+          "id": "timeline",
+          "fa": "تاریخچه و تحولات",
+          "en": "History & development",
+          "ar": "التاريخ والتطور",
+          "items": [
+            {
+              "fa": "پژوهش CIGS شرکت از ۱۹۹۳ آغاز شد؛ نمایش‌های فضایی MDS-1 و XI-V به‌ترتیب در ۲۰۰۲ و ۲۰۰۵ انجام شدند. تولید تجاری زمینی CIGS در ۲۰۲۲ متوقف شد، اما پژوهش کاربرد فضایی در مجموعه تحقیقاتی Sodegaura ادامه یافت؛ این دو مسیر باید از هم تفکیک شوند.",
+              "en": "Its CIGS research began in 1993, followed by space demonstrations in 2002 (MDS-1) and 2005 (XI-V). Commercial terrestrial CIGS production ended in 2022, while research into space applications continued at Sodegaura; those activities must be distinguished.",
+              "ar": "بدأت أبحاث CIGS في 1993، ثم جرت التجارب الفضائية في 2002 على MDS-1 و2005 على XI-V. توقف الإنتاج التجاري الأرضي للخلايا في 2022، فيما استمر بحث التطبيقات الفضائية في سوديغاورا؛ وهما مساران مختلفان.",
+              "kind": "editorially_localized_verified_source_section",
+              "source_ids": [
+                "WEB-ed1ecc4c8884",
+                "NEW24-ed1ecc4c8884"
+              ],
+              "localization": "FACTUAL_SECTION_EQUIVALENCE_FA_EN_AR"
+            }
+          ]
+        }
+      ],
+      "key_facts": [],
+      "verified_on": "2026-11-13",
+      "hide_evidence_scope_in_ui": true,
+      "release_status": "EDITORIAL_RESEARCH_PREVIEW_NEEDS_FINAL_EXPERT_SIGNOFF",
+      "inventory_id": "DISC-0012",
+      "geo_source_url": "https://www.idemitsu.com/en/company/network/index.html",
+      "geo_precision": "approximate_neighbourhood_official_address"
+    },
+    "orbita_release_note": {
+      "release_date": "2026-11-13",
+      "inventory_id": "DISC-0012",
+      "status": "EDITORIAL_PREVIEW",
+      "batch": "RASPEHR_14_STEP5",
+      "expert_review_pending": true,
+      "language_parity": "FA_EN_AR_SECTION_DETAIL",
+      "geo_precision": "approximate_neighbourhood_official_address",
+      "logo_status": "typographic_name_only"
+    }
+  },
+  {
+    "id": "raspehr-0019-meisei-electric-co-ltd",
+    "cat": "components",
+    "en": "MEISEI ELECTRIC CO., LTD.",
+    "fa": "میسه الکتریک",
+    "ar": "ميسيه إلكتريك",
+    "country": "Japan",
+    "country_fa": "ژاپن",
+    "country_ar": "اليابان",
+    "city": "Isesaki (Naganuma)",
+    "city_fa": "ایسه‌ساکی (ناگانوما)",
+    "city_ar": "إيسيساكي (ناغانوما)",
+    "lat": 36.289,
+    "lon": 139.205,
+    "coordinate_precision": "approximate_city_official_address",
+    "coordinates_are_exact_site_gps": false,
+    "address": "2223 Naganumamachi, Isesaki-shi, Gunma 372-8585, Japan",
+    "address_evidence_url": "https://www.meisei.co.jp/english/aboutus/outline",
+    "site": "https://www.meisei.co.jp/english/",
+    "fa_d": "میسه‌ای الکتریک شرکت ژاپنی سازنده ابزار فضایی، حسگرها و تجهیزات مخابراتی است که در ۱۹۳۸ تأسیس شد. NOHMI BOSAI از ۲۰۲۶ مالک کامل آن است؛ IHI مالک پیشین بود.",
+    "en_d": "Meisei Electric, established in Japan in 1938, develops space instruments, sensors and communications equipment. NOHMI BOSAI became its wholly owning parent in 2026; IHI was the former parent.",
+    "ar_d": "ميسَي إلكتريك شركة يابانية تأسست عام 1938 وتطور أجهزة فضائية ومستشعرات ومعدات اتصالات. أصبحت NOHMI BOSAI الشركة المالكة بالكامل في 2026، بعدما كانت تابعة لـIHI.",
+    "org_type_fa": "سازنده قطعات و زیرسامانه‌های فضایی",
+    "org_type_en": "Space components and subsystems",
+    "org_type_ar": "مكونات وأنظمة فرعية فضائية",
+    "parent_institution": "NOHMI BOSAI Co., Ltd. (2026)",
+    "logo": "",
+    "logo_kind": "no_verified_official_logo",
+    "brand_text_identifier": "ME",
+    "orbita_verified_profile": {
+      "schema_version": 2,
+      "profile_type": "components",
+      "summary": {
+        "fa": "میسه‌ای الکتریک شرکت ژاپنی سازنده ابزار فضایی، حسگرها و تجهیزات مخابراتی است که در ۱۹۳۸ تأسیس شد. NOHMI BOSAI از ۲۰۲۶ مالک کامل آن است؛ IHI مالک پیشین بود.",
+        "en": "Meisei Electric, established in Japan in 1938, develops space instruments, sensors and communications equipment. NOHMI BOSAI became its wholly owning parent in 2026; IHI was the former parent.",
+        "ar": "ميسَي إلكتريك شركة يابانية تأسست عام 1938 وتطور أجهزة فضائية ومستشعرات ومعدات اتصالات. أصبحت NOHMI BOSAI الشركة المالكة بالكامل في 2026، بعدما كانت تابعة لـIHI."
+      },
+      "sources": [
+        {
+          "url": "https://www.meisei.co.jp/english/products/products_category/space/satellite-components",
+          "provenance_types": [
+            "S3_325_CLAIMS_INHERITED"
+          ],
+          "id": "SRC-1cdd850b49ef",
+          "title": "www.meisei.co.jp — english/products/products_category/space/satellite-components"
+        },
+        {
+          "url": "https://aerospacebiz.jaxa.jp/japanese-space-industry/Japanese-Space-Components-and-Parts-Catalog-2025.pdf",
+          "provenance_types": [
+            "S3_325_CLAIMS_INHERITED",
+            "STEP2_C01_BATCH01_DEEP_RESEARCH"
+          ],
+          "id": "SRC-77587d276a4d",
+          "title": "aerospacebiz.jaxa.jp — japanese-space-industry/Japanese-Space-Components-and-Parts-Catalog-2025.pdf"
+        },
+        {
+          "url": "https://aerospacebiz.jaxa.jp/japanese-space-industry/detail/meisei-electric-co-ltd/",
+          "provenance_types": [
+            "STEP2_COMPLETION_99_OFFICIAL_WEB_RESEARCH"
+          ],
+          "id": "WEB-e3f3ad895ba7",
+          "title": "aerospacebiz.jaxa.jp — japanese-space-industry/detail/meisei-electric-co-ltd"
+        },
+        {
+          "id": "NEW24-6d7eacd6d767",
+          "url": "https://www.meisei.co.jp/english/products/space/satellite-components/p1381",
+          "title": "www.meisei.co.jp — p1381",
+          "provenance_types": [
+            "STEP2_24_INDEPENDENT_OFFICIAL_WEB_VERIFICATION_2026_11_13"
+          ]
+        },
+        {
+          "id": "NEW24-1cdd850b49ef",
+          "url": "https://www.meisei.co.jp/english/products/products_category/space/satellite-components",
+          "title": "www.meisei.co.jp — satellite-components",
+          "provenance_types": [
+            "STEP2_24_INDEPENDENT_OFFICIAL_WEB_VERIFICATION_2026_11_13"
+          ]
+        },
+        {
+          "id": "STAGE3-fbb3244e02a5",
+          "url": "https://www.meisei.co.jp/english/aboutus/outline",
+          "title": "Official primary evidence from stage-3 audit",
+          "provenance_types": [
+            "STAGE3_PRIMARY_SOURCE_IDENTITY_RECHECK"
+          ]
+        },
+        {
+          "id": "STAGE3-f1fdf358e6ad",
+          "url": "https://www.meisei.co.jp/english/aboutus/history/",
+          "title": "Official primary evidence from stage-3 audit",
+          "provenance_types": [
+            "STAGE3_PRIMARY_SOURCE_IDENTITY_RECHECK"
+          ]
+        },
+        {
+          "id": "STAGE3-35e4262f83b5",
+          "url": "https://www.meisei.co.jp/english/wp-content/uploads/2025/10/%E3%80%88MSPA4-096_M2007%E3%80%89High-Speed-X-Band-Transmitter-MTX-540X.pdf",
+          "title": "Official primary evidence from stage-3 audit",
+          "provenance_types": [
+            "STAGE3_PRIMARY_SOURCE_IDENTITY_RECHECK"
+          ]
+        }
+      ],
+      "sections": [
+        {
+          "id": "overview",
+          "fa": "شناسنامه و تخصص",
+          "en": "Identity & specialization",
+          "ar": "التعريف والتخصص",
+          "items": [
+            {
+              "fa": "شرکت Meisei Electric در ۲۰ فوریه ۱۹۳۸ تأسیس شد و مقر/کارخانه اصلی آن در ایسِساکی استان گونماست. این مجموعه ابزار سنجش و مخابرات فضایی، تجهیزات علمی و اجزای کنترل وضعیت تولید می‌کند. مالک کنونی آن NOHMI BOSAI است، نه IHI.",
+              "en": "Meisei Electric was incorporated on 20 February 1938 and operates its headquarters and main plant in Isesaki, Gunma. It makes spaceborne sensors, communications and scientific instruments, and selected attitude-control components. Its current parent is NOHMI BOSAI, not IHI.",
+              "ar": "تأسست Meisei Electric في 20 فبراير 1938، ويقع مقرها ومصنعها الرئيسي في إيسيساكي بمحافظة غونما. تنتج أجهزة استشعار واتصالات وأدوات علمية فضائية ومكونات محددة للتحكم في الاتجاه. مالكتها الحالية NOHMI BOSAI وليست IHI.",
+              "kind": "editorially_localized_verified_source_section",
+              "source_ids": [
+                "SRC-77587d276a4d",
+                "NEW24-1cdd850b49ef",
+                "STAGE3-fbb3244e02a5",
+                "STAGE3-f1fdf358e6ad",
+                "STAGE3-35e4262f83b5"
+              ],
+              "localization": "FACTUAL_SECTION_EQUIVALENCE_FA_EN_AR"
+            }
+          ]
+        },
+        {
+          "id": "products",
+          "fa": "محصولات و فناوری",
+          "en": "Products & technology",
+          "ar": "المنتجات والتقنية",
+          "items": [
+            {
+              "fa": "سبد فضایی میسه‌ای شامل فرستنده باند X مدل MTX-540X، منابع ولتاژ بالای علمی تا حدود ±۵۰۰۰ ولت، مغناطیس‌گشتاوردهنده، طیف‌سنج‌های مرئی/فروسرخ/فرابنفش و آشکارساز ذرات و تابش است. در اسناد MTX-540X نرخ‌های ۵۲۲ و ۵۳۸ مگابیت‌برثانیه دیده می‌شود؛ تا تعیین نسخه دیتاشیت، نرخ نهایی این مدل در شناسنامه عمومی درج نمی‌شود. فرکانس ۸۰۲۵ تا ۸۴۰۰ مگاهرتز، توان حدود ۲۲ وات و جرم حدود ۱٫۳ کیلوگرم به مشخصات منتشرشده این خانواده نسبت داده می‌شوند، نه همه تجهیزات شرکت.",
+              "en": "The space portfolio includes the MTX-540X X-band transmitter, scientific high-voltage supplies up to approximately ±5,000 V, magnetic torquers, visible/infrared/ultraviolet spectrometers, and particle or radiation detectors. Documents give conflicting MTX-540X data rates of 522 and 538 Mb/s; no single rate is presented as final without identifying the datasheet revision. Published specifications for the transmitter family include 8,025–8,400 MHz, approximately 22 W consumption and about 1.3 kg mass; these values do not apply to all Meisei devices.",
+              "ar": "تشمل المنتجات الفضائية مرسل النطاق X من طراز MTX-540X ومزوّدات الجهد العالي للأدوات العلمية حتى نحو ±5000 فولت، وعزوم التحكم المغناطيسي، ومطيافات الضوء المرئي وتحت الأحمر وفوق البنفسجي، وكواشف الجسيمات والإشعاع. تورد الوثائق معدلَي 522 و538 ميغابت/ثانية للمرسل؛ لذلك لا نعتمد رقماً نهائياً قبل تحديد إصدار ورقة المواصفات. وتشمل المواصفات المنشورة لهذه العائلة 8025–8400 ميغاهرتز ونحو 22 واط وكتلة 1.3 كغ، ولا تُعمّم على جميع الأجهزة.",
+              "kind": "editorially_localized_verified_source_section",
+              "source_ids": [
+                "SRC-1cdd850b49ef",
+                "WEB-e3f3ad895ba7",
+                "NEW24-6d7eacd6d767",
+                "NEW24-1cdd850b49ef",
+                "STAGE3-fbb3244e02a5",
+                "STAGE3-f1fdf358e6ad",
+                "STAGE3-35e4262f83b5"
+              ],
+              "localization": "FACTUAL_SECTION_EQUIVALENCE_FA_EN_AR"
+            }
+          ]
+        },
+        {
+          "id": "heritage",
+          "fa": "سابقه پروازی",
+          "en": "Flight heritage",
+          "ar": "السجل الفضائي",
+          "items": [
+            {
+              "fa": "کاتالوگ فضایی ژاپن به پرتاب بیش از ۳۰۰۰ قطعه ساخت Meisei اشاره می‌کند؛ این رقم تجمیعی است. تاریخچه شرکت مشارکت در کاوشگر Hayabusa2، ماهواره علمی Arase، نمایش ارتباط بی‌سیم بین دو فضاپیما در ۲۰۲۰ و فرودگر ماه SLIM در ۲۰۲۴ را ثبت کرده است؛ برای هر مأموریت باید ابزار مربوط جدا مشخص شود.",
+              "en": "Japan’s space-industry catalogue cites more than 3,000 Meisei-made pieces of hardware launched into space, a company-wide aggregate rather than model-by-model qualification. Company history records contributions to Hayabusa2, the Arase science probe, a 2020 inter-spacecraft wireless demonstration and the 2024 SLIM lunar lander; specific instrument assignments require mission-level identification.",
+              "ar": "يشير الدليل الصناعي الفضائي الياباني إلى إطلاق أكثر من 3000 قطعة من إنتاج Meisei، وهو رقم تجميعي لا تأهيل لكل طراز. ويسجل تاريخ الشركة مساهمات في Hayabusa2 ومسبار Arase وتجربة اتصال لاسلكي بين مركبتين في 2020 وهابط القمر SLIM في 2024، مع ضرورة تحديد الجهاز الخاص بكل مهمة.",
+              "kind": "editorially_localized_verified_source_section",
+              "source_ids": [
+                "WEB-e3f3ad895ba7",
+                "STAGE3-fbb3244e02a5",
+                "STAGE3-f1fdf358e6ad",
+                "STAGE3-35e4262f83b5"
+              ],
+              "localization": "FACTUAL_SECTION_EQUIVALENCE_FA_EN_AR"
+            }
+          ]
+        },
+        {
+          "id": "network",
+          "fa": "مشتریان و زنجیره تأمین",
+          "en": "Customers & supply chain",
+          "ar": "العملاء وسلسلة التوريد",
+          "items": [
+            {
+              "fa": "Meisei در ۲۰۱۲ به گروه IHI پیوست، در ۲۰۲۱ مالکیت کامل آن به IHI رسید و بنا بر تاریخچه رسمی، در ۲۰۲۶ NOHMI BOSAI مالک صددرصدی شد. مشتریان و شبکه مأموریت‌های فضایی باید از این زنجیره تاریخی مالکیت جدا نگهداری شوند.",
+              "en": "Meisei joined the IHI group in 2012 and became wholly owned by IHI in 2021. Its official history states that NOHMI BOSAI became the wholly owning parent in 2026. Mission partnerships should not be confused with this changing ownership chain.",
+              "ar": "انضمت Meisei إلى مجموعة IHI في 2012 وأصبحت مملوكة لها بالكامل في 2021. وتذكر سجلاتها الرسمية أن NOHMI BOSAI أصبحت مالكتها بالكامل في 2026. ويجب فصل شركاء المهمات الفضائية عن تسلسل الملكية هذا.",
+              "kind": "editorially_localized_verified_source_section",
+              "source_ids": [
+                "STAGE3-fbb3244e02a5",
+                "STAGE3-f1fdf358e6ad",
+                "STAGE3-35e4262f83b5"
+              ],
+              "localization": "FACTUAL_SECTION_EQUIVALENCE_FA_EN_AR"
+            }
+          ]
+        },
+        {
+          "id": "timeline",
+          "fa": "تاریخچه و تحولات",
+          "en": "History & development",
+          "ar": "التاريخ والتطور",
+          "items": [
+            {
+              "fa": "۱۹۳۸: تأسیس حقوقی شرکت. ۲۰۱۲: ورود به گروه IHI. ۲۰۱۴: مشارکت در تجهیزات Hayabusa2. ۲۰۱۶: مشارکت در Arase. ۲۰۲۰: نمایش ارتباط WLAN بین فضاپیماها. ۲۰۲۴: مشارکت در فرود موفق SLIM. ۲۰۲۶: انتقال مالکیت کامل به NOHMI BOSAI.",
+              "en": "1938: incorporation. 2012: entry into the IHI group. 2014: Hayabusa2 equipment contribution. 2016: Arase instruments. 2020: inter-spacecraft WLAN demonstration. 2024: contribution to SLIM’s lunar landing. 2026: transfer of full ownership to NOHMI BOSAI.",
+              "ar": "1938: التأسيس القانوني. 2012: الانضمام إلى مجموعة IHI. 2014: المساهمة بمعدات Hayabusa2. 2016: أدوات Arase. 2020: تجربة WLAN بين مركبتين فضائيتين. 2024: المساهمة في هبوط SLIM القمري. 2026: انتقال الملكية الكاملة إلى NOHMI BOSAI.",
+              "kind": "editorially_localized_verified_source_section",
+              "source_ids": [
+                "STAGE3-fbb3244e02a5",
+                "STAGE3-f1fdf358e6ad",
+                "STAGE3-35e4262f83b5"
+              ],
+              "localization": "FACTUAL_SECTION_EQUIVALENCE_FA_EN_AR"
+            }
+          ]
+        }
+      ],
+      "key_facts": [],
+      "verified_on": "2026-11-13",
+      "hide_evidence_scope_in_ui": true,
+      "release_status": "EDITORIAL_RESEARCH_PREVIEW_NEEDS_FINAL_EXPERT_SIGNOFF",
+      "inventory_id": "DISC-0019",
+      "geo_source_url": "https://www.meisei.co.jp/english/aboutus/outline",
+      "geo_precision": "approximate_city_official_address"
+    },
+    "orbita_release_note": {
+      "release_date": "2026-11-13",
+      "inventory_id": "DISC-0019",
+      "status": "EDITORIAL_PREVIEW",
+      "batch": "RASPEHR_14_STEP5",
+      "expert_review_pending": true,
+      "language_parity": "FA_EN_AR_SECTION_DETAIL",
+      "geo_precision": "approximate_city_official_address",
+      "logo_status": "typographic_name_only"
+    }
+  },
+  {
+    "id": "raspehr-0023-mitsubishi-electric-corporation",
+    "cat": "components",
+    "en": "Mitsubishi Electric Corporation",
+    "fa": "میتسوبیشی الکتریک",
+    "ar": "ميتسوبيشي إلكتريك",
+    "country": "Japan",
+    "country_fa": "ژاپن",
+    "country_ar": "اليابان",
+    "city": "Tokyo (Marunouchi)",
+    "city_fa": "توکیو (مارونواوچی)",
+    "city_ar": "طوكيو (مارونوتشي)",
+    "lat": 35.679,
+    "lon": 139.764,
+    "coordinate_precision": "approximate_neighbourhood_official_address",
+    "coordinates_are_exact_site_gps": false,
+    "address": "Tokyo Building, 2-7-3 Marunouchi, Chiyoda-ku, Tokyo 100-8310, Japan",
+    "address_evidence_url": "https://www.mitsubishielectric.com/en/about/corporate-data/",
+    "site": "https://www.mitsubishielectric.com/",
+    "fa_d": "میتسوبیشی الکتریک شرکت ژاپنی فعال در ساخت سامانه‌های فضایی، زیرسامانه‌های توان و تجهیزات مخابراتی است. این شرکت از Mitsubishi Heavy Industries مستقل است و از ژوئیه ۲۰۲۶ مالک کامل Infostellar محسوب می‌شود.",
+    "en_d": "Mitsubishi Electric is a Japanese manufacturer of space systems, electrical-power subsystems and communications hardware. It is legally distinct from Mitsubishi Heavy Industries and became the sole owner of Infostellar in July 2026.",
+    "ar_d": "ميتسوبيشي إلكتريك شركة يابانية تصنع أنظمة فضائية ومكونات الطاقة والاتصالات. وهي كيان مستقل عن Mitsubishi Heavy Industries، وأصبحت المالكة الكاملة لشركة Infostellar في يوليو 2026.",
+    "org_type_fa": "سازنده قطعات و زیرسامانه‌های فضایی",
+    "org_type_en": "Space components and subsystems",
+    "org_type_ar": "مكونات وأنظمة فرعية فضائية",
+    "parent_institution": "",
+    "logo": "",
+    "logo_kind": "no_verified_official_logo",
+    "brand_text_identifier": "MEL",
+    "orbita_verified_profile": {
+      "schema_version": 2,
+      "profile_type": "components",
+      "summary": {
+        "fa": "میتسوبیشی الکتریک شرکت ژاپنی فعال در ساخت سامانه‌های فضایی، زیرسامانه‌های توان و تجهیزات مخابراتی است. این شرکت از Mitsubishi Heavy Industries مستقل است و از ژوئیه ۲۰۲۶ مالک کامل Infostellar محسوب می‌شود.",
+        "en": "Mitsubishi Electric is a Japanese manufacturer of space systems, electrical-power subsystems and communications hardware. It is legally distinct from Mitsubishi Heavy Industries and became the sole owner of Infostellar in July 2026.",
+        "ar": "ميتسوبيشي إلكتريك شركة يابانية تصنع أنظمة فضائية ومكونات الطاقة والاتصالات. وهي كيان مستقل عن Mitsubishi Heavy Industries، وأصبحت المالكة الكاملة لشركة Infostellar في يوليو 2026."
+      },
+      "sources": [
+        {
+          "url": "https://www.mitsubishielectric.com/bu/space/satellite_components/",
+          "provenance_types": [
+            "S3_325_CLAIMS_INHERITED"
+          ],
+          "id": "SRC-0f02e7f43e65",
+          "title": "www.mitsubishielectric.com — bu/space/satellite_components"
+        },
+        {
+          "url": "https://aerospacebiz.jaxa.jp/japanese-space-industry/Japanese-Space-Components-and-Parts-Catalog-2025.pdf",
+          "provenance_types": [
+            "S3_325_CLAIMS_INHERITED",
+            "STEP2_C01_BATCH01_DEEP_RESEARCH"
+          ],
+          "id": "SRC-77587d276a4d",
+          "title": "aerospacebiz.jaxa.jp — japanese-space-industry/Japanese-Space-Components-and-Parts-Catalog-2025.pdf"
+        },
+        {
+          "url": "https://aerospacebiz.jaxa.jp/japanese-space-industry/detail/mitsubishi-electric-corporation/",
+          "provenance_types": [
+            "STEP2_COMPLETION_99_OFFICIAL_WEB_RESEARCH"
+          ],
+          "id": "WEB-45b11a8ca7ff",
+          "title": "aerospacebiz.jaxa.jp — japanese-space-industry/detail/mitsubishi-electric-corporation"
+        },
+        {
+          "id": "NEW24-0f02e7f43e65",
+          "url": "https://www.mitsubishielectric.com/bu/space/satellite_components/",
+          "title": "www.mitsubishielectric.com — ",
+          "provenance_types": [
+            "STEP2_24_INDEPENDENT_OFFICIAL_WEB_VERIFICATION_2026_11_13"
+          ]
+        },
+        {
+          "id": "NEW24-cccdf5c559b9",
+          "url": "https://www.infostellar.net/news/melco-acquires-infostellar",
+          "title": "www.infostellar.net — melco-acquires-infostellar",
+          "provenance_types": [
+            "STEP2_24_INDEPENDENT_OFFICIAL_WEB_VERIFICATION_2026_11_13"
+          ]
+        },
+        {
+          "id": "STAGE3-e35705f577e6",
+          "url": "https://www.mitsubishielectric.com/bu/space/satellite/",
+          "title": "Official primary evidence from stage-3 audit",
+          "provenance_types": [
+            "STAGE3_PRIMARY_SOURCE_IDENTITY_RECHECK"
+          ]
+        }
+      ],
+      "sections": [
+        {
+          "id": "overview",
+          "fa": "شناسنامه و تخصص",
+          "en": "Identity & specialization",
+          "ar": "التعريف والتخصص",
+          "items": [
+            {
+              "fa": "میتسوبیشی الکتریک در حوزه قطعات ماهواره‌ای و همچنین طراحی، یکپارچه‌سازی و آزمون ماهواره کامل فعالیت دارد. نباید آن را با Mitsubishi Heavy Industries یا زیرمجموعه جدید آن، Infostellar، یک موجودیت واحد فرض کرد.",
+              "en": "Mitsubishi Electric supplies spacecraft components and also designs, integrates and tests complete satellites. It must not be merged with Mitsubishi Heavy Industries or with its newly acquired subsidiary Infostellar.",
+              "ar": "تزوّد Mitsubishi Electric الأقمار بمكونات متنوعة وتصمم وتدمج وتختبر أقماراً كاملة أيضاً. ولا ينبغي دمجها مع Mitsubishi Heavy Industries أو مع الشركة التابعة المستحوذ عليها حديثاً Infostellar.",
+              "kind": "editorially_localized_verified_source_section",
+              "source_ids": [
+                "SRC-77587d276a4d",
+                "STAGE3-e35705f577e6"
+              ],
+              "localization": "FACTUAL_SECTION_EQUIVALENCE_FA_EN_AR"
+            }
+          ]
+        },
+        {
+          "id": "products",
+          "fa": "محصولات و فناوری",
+          "en": "Products & technology",
+          "ar": "المنتجات والتقنية",
+          "items": [
+            {
+              "fa": "محصولات فضایی شامل پنل و آرایه خورشیدی، پنل‌های سازه‌ای و حرارتی، باتری لیتیوم‌یون، هیت‌پایپ، زیرسامانه توزیع توان و تجهیزات مخابراتی است. شرکت پلتفرم مخابراتی ماهواره DS2000 و امکانات مونتاژ و آزمون ماهواره را نیز ارائه می‌کند. مجموعه Sagami در کاناگاوا طبق معرفی سازنده حدود ۷۷۵۰۰ فوت‌مربع فضای یکپارچه‌سازی و آزمون تجهیزات سازه‌ای و توان دارد.",
+              "en": "Space products include solar panels and arrays, structural and thermal panels, lithium-ion batteries, heat pipes, power-distribution subsystems and communications components. The company also offers the DS2000 satellite communications platform and spacecraft assembly/integration/test capabilities. Its Sagami site in Kanagawa is described as having approximately 77,500 square feet of integration and test space for relevant structures and power hardware.",
+              "ar": "تشمل المنتجات الفضائية الألواح والمصفوفات الشمسية والهياكل الحرارية والإنشائية وبطاريات الليثيوم أيون وأنابيب الحرارة وتوزيع الطاقة ومكونات الاتصالات. وتقدم الشركة منصة الاتصالات الفضائية DS2000 وقدرات تجميع الأقمار وتكاملها واختبارها. وتذكر مصادر الشركة مساحة تقارب 77500 قدم مربعة للاختبارات والتكامل في موقع ساغامي بمحافظة كاناغاوا.",
+              "kind": "editorially_localized_verified_source_section",
+              "source_ids": [
+                "SRC-0f02e7f43e65",
+                "WEB-45b11a8ca7ff",
+                "NEW24-0f02e7f43e65",
+                "STAGE3-e35705f577e6"
+              ],
+              "localization": "FACTUAL_SECTION_EQUIVALENCE_FA_EN_AR"
+            }
+          ]
+        },
+        {
+          "id": "heritage",
+          "fa": "سابقه پروازی",
+          "en": "Flight heritage",
+          "ar": "السجل الفضائي",
+          "items": [
+            {
+              "fa": "شرکت اعلام می‌کند تجهیزات فضایی آن در بیش از ۶۵۰ برنامه فضایی مشتریان در مدار پایین، میانی، زمین‌آهنگ و محیط ماه به کار رفته‌اند. این عدد ادعای تجمیعی شرکت است و شمار پرواز تک‌تک مدل‌ها یا شمار ماهواره‌های تولیدی را نشان نمی‌دهد.",
+              "en": "The manufacturer reports that its space products have participated in more than 650 customer space programmes spanning LEO, MEO, GEO and lunar environments. This is a company-wide claim, not a model-specific flight count or the number of complete satellites manufactured.",
+              "ar": "تذكر الشركة أن منتجاتها الفضائية شاركت في أكثر من 650 برنامجاً فضائياً للعملاء في مدارات LEO وMEO وGEO والبيئة القمرية. وهذا رقم إجمالي للشركة، وليس عدد رحلات كل طراز أو عدد الأقمار الكاملة المصنّعة.",
+              "kind": "editorially_localized_verified_source_section",
+              "source_ids": [
+                "SRC-0f02e7f43e65",
+                "WEB-45b11a8ca7ff",
+                "NEW24-0f02e7f43e65",
+                "STAGE3-e35705f577e6"
+              ],
+              "localization": "FACTUAL_SECTION_EQUIVALENCE_FA_EN_AR"
+            }
+          ]
+        },
+        {
+          "id": "network",
+          "fa": "مشتریان و زنجیره تأمین",
+          "en": "Customers & supply chain",
+          "ar": "العملاء وسلسلة التوريد",
+          "items": [
+            {
+              "fa": "میتسوبیشی الکتریک همه سهام Infostellar را در اول ژوئیه ۲۰۲۶ خریداری کرد؛ Infostellar با پلتفرم خدمات زمینی StellarStation زیرمجموعه صددرصدی این شرکت است. این رابطه باید به‌صورت مادر–زیرمجموعه ثبت شود، نه ادغام دو شناسنامه.",
+              "en": "Mitsubishi Electric acquired all shares of Infostellar on 1 July 2026. Infostellar and its StellarStation ground-services platform remain a separately identified wholly owned subsidiary; the proper relationship is parent–subsidiary, not a merged profile.",
+              "ar": "استحوذت Mitsubishi Electric على جميع أسهم Infostellar في 1 يوليو 2026. وتظل Infostellar ومنصتها الأرضية StellarStation كياناً تابعاً مملوكاً بالكامل، ولذلك تسجل العلاقة أمّاً وشركة تابعة وليس ملفاً واحداً مدمجاً.",
+              "kind": "editorially_localized_verified_source_section",
+              "source_ids": [
+                "NEW24-cccdf5c559b9",
+                "STAGE3-e35705f577e6"
+              ],
+              "localization": "FACTUAL_SECTION_EQUIVALENCE_FA_EN_AR"
+            }
+          ]
+        },
+        {
+          "id": "timeline",
+          "fa": "تاریخچه و تحولات",
+          "en": "History & development",
+          "ar": "التاريخ والتطور",
+          "items": [
+            {
+              "fa": "فعالیت مجموعه در تأمین تجهیزات فضایی از دهه ۱۹۷۰ ثبت شده است. در اول ژوئیه ۲۰۲۶ با تملک کامل Infostellar، حضور مستقیم آن در خدمات دسترسی شبکه ایستگاه‌های زمینی توسعه یافت.",
+              "en": "The company’s space-hardware supply history extends back to the 1970s. On 1 July 2026 it expanded its direct ground-segment service business by wholly acquiring Infostellar.",
+              "ar": "تعود خبرة الشركة في توريد العتاد الفضائي إلى سبعينيات القرن الماضي. وفي 1 يوليو 2026 وسّعت نشاطها المباشر في خدمات القطاع الأرضي عبر الاستحواذ الكامل على Infostellar.",
+              "kind": "editorially_localized_verified_source_section",
+              "source_ids": [
+                "NEW24-0f02e7f43e65",
+                "STAGE3-e35705f577e6"
+              ],
+              "localization": "FACTUAL_SECTION_EQUIVALENCE_FA_EN_AR"
+            }
+          ]
+        }
+      ],
+      "key_facts": [],
+      "verified_on": "2026-11-13",
+      "hide_evidence_scope_in_ui": true,
+      "release_status": "EDITORIAL_RESEARCH_PREVIEW_NEEDS_FINAL_EXPERT_SIGNOFF",
+      "inventory_id": "DISC-0023",
+      "geo_source_url": "https://www.mitsubishielectric.com/en/about/corporate-data/",
+      "geo_precision": "approximate_neighbourhood_official_address"
+    },
+    "orbita_release_note": {
+      "release_date": "2026-11-13",
+      "inventory_id": "DISC-0023",
+      "status": "EDITORIAL_PREVIEW",
+      "batch": "RASPEHR_14_STEP5",
+      "expert_review_pending": true,
+      "language_parity": "FA_EN_AR_SECTION_DETAIL",
+      "geo_precision": "approximate_neighbourhood_official_address",
+      "logo_status": "typographic_name_only"
+    }
+  },
+  {
+    "id": "raspehr-0041-3d-plus",
+    "cat": "components",
+    "en": "3D PLUS",
+    "fa": "تری‌دی پلاس",
+    "ar": "ثري دي بلس",
+    "country": "France",
+    "country_fa": "فرانسه",
+    "country_ar": "فرنسا",
+    "city": "Buc",
+    "city_fa": "بوک",
+    "city_ar": "بوك",
+    "lat": 48.776,
+    "lon": 2.134,
+    "coordinate_precision": "approximate_city_official_address",
+    "coordinates_are_exact_site_gps": false,
+    "address": "408 Rue Hélène Boucher-ZI, 78530 Buc, France",
+    "address_evidence_url": "https://www.3d-plus.com/who-we-are/",
+    "site": "https://www.3d-plus.com/",
+    "fa_d": "3D PLUS SAS شرکت فرانسوی مستقر در Buc و وابسته به HEICO است که از ۱۹۹۵ در بسته‌بندی الکترونیک سه‌بعدی و حافظه مقاوم در برابر تابش برای مأموریت‌های فضایی فعالیت دارد.",
+    "en_d": "3D PLUS SAS is a HEICO-owned French company based in Buc, specializing since 1995 in three-dimensional electronics packaging and radiation-tolerant memory for space missions.",
+    "ar_d": "3D PLUS SAS شركة فرنسية مقرها بوك وتابعة لمجموعة HEICO، ومتخصصة منذ 1995 في التغليف الإلكتروني ثلاثي الأبعاد والذاكرة المقاومة للإشعاع للبعثات الفضائية.",
+    "org_type_fa": "سازنده قطعات و زیرسامانه‌های فضایی",
+    "org_type_en": "Space components and subsystems",
+    "org_type_ar": "مكونات وأنظمة فرعية فضائية",
+    "parent_institution": "HEICO Corporation",
+    "logo": "",
+    "logo_kind": "no_verified_official_logo",
+    "brand_text_identifier": "3D+",
+    "orbita_verified_profile": {
+      "schema_version": 2,
+      "profile_type": "components",
+      "summary": {
+        "fa": "3D PLUS SAS شرکت فرانسوی مستقر در Buc و وابسته به HEICO است که از ۱۹۹۵ در بسته‌بندی الکترونیک سه‌بعدی و حافظه مقاوم در برابر تابش برای مأموریت‌های فضایی فعالیت دارد.",
+        "en": "3D PLUS SAS is a HEICO-owned French company based in Buc, specializing since 1995 in three-dimensional electronics packaging and radiation-tolerant memory for space missions.",
+        "ar": "3D PLUS SAS شركة فرنسية مقرها بوك وتابعة لمجموعة HEICO، ومتخصصة منذ 1995 في التغليف الإلكتروني ثلاثي الأبعاد والذاكرة المقاومة للإشعاع للبعثات الفضائية."
+      },
+      "sources": [
+        {
+          "url": "https://www.3d-plus.com/products/high-density-nand-flash-memory-for-space-applications/",
+          "provenance_types": [
+            "ADDITIONAL_OFFICIAL_WEB_RESEARCH_2026_11_13"
+          ],
+          "id": "SRC-b15d44214027",
+          "title": "www.3d-plus.com — products/high-density-nand-flash-memory-for-space-applications"
+        },
+        {
+          "url": "https://www.3d-plus.com/products/space-radiation-tolerant-mram/",
+          "provenance_types": [
+            "S3_325_CLAIMS_INHERITED",
+            "ADDITIONAL_OFFICIAL_WEB_RESEARCH_2026_11_13"
+          ],
+          "id": "SRC-e9b692ff40eb",
+          "title": "www.3d-plus.com — products/space-radiation-tolerant-mram"
+        },
+        {
+          "id": "NEW24-07f233d5762f",
+          "url": "https://www.3d-plus.com/who-we-are/",
+          "title": "www.3d-plus.com — ",
+          "provenance_types": [
+            "STEP2_24_INDEPENDENT_OFFICIAL_WEB_VERIFICATION_2026_11_13"
+          ]
+        },
+        {
+          "id": "NEW24-b15d44214027",
+          "url": "https://www.3d-plus.com/products/high-density-nand-flash-memory-for-space-applications/",
+          "title": "www.3d-plus.com — ",
+          "provenance_types": [
+            "STEP2_24_INDEPENDENT_OFFICIAL_WEB_VERIFICATION_2026_11_13"
+          ]
+        },
+        {
+          "id": "NEW24-302bfd8ff6e6",
+          "url": "https://www.3d-plus.com/flight-heritage/",
+          "title": "www.3d-plus.com — ",
+          "provenance_types": [
+            "STEP2_24_INDEPENDENT_OFFICIAL_WEB_VERIFICATION_2026_11_13"
+          ]
+        },
+        {
+          "id": "STAGE3-cbd67ae7020d",
+          "url": "https://heico.com/heico-subsidiaries/",
+          "title": "Official primary evidence from stage-3 audit",
+          "provenance_types": [
+            "STAGE3_PRIMARY_SOURCE_IDENTITY_RECHECK"
+          ]
+        }
+      ],
+      "sections": [
+        {
+          "id": "overview",
+          "fa": "شناسنامه و تخصص",
+          "en": "Identity & specialization",
+          "ar": "التعريف والتخصص",
+          "items": [
+            {
+              "fa": "3D PLUS یک شرکت حقوقی فرانسوی با شماره ثبت RCS Versailles 402 523 088 است که ماژول‌های الکترونیکی سه‌بعدی و سامانه در بسته (SiP) برای فضا و محیط‌های سخت تولید می‌کند. واحد آمریکایی و مالک HEICO از شناسنامه شرکت فرانسوی تفکیک می‌شوند.",
+              "en": "3D PLUS is a French legal entity registered under RCS Versailles 402 523 088. It manufactures three-dimensional electronic modules and system-in-package (SiP) solutions for space and harsh environments. Its US presence and parent HEICO are distinct entities.",
+              "ar": "3D PLUS كيان قانوني فرنسي مسجل برقم RCS Versailles 402 523 088. تنتج وحدات إلكترونية ثلاثية الأبعاد وحلول النظام داخل الحزمة (SiP) للفضاء والبيئات القاسية، مع فصل فرعها الأمريكي والشركة الأم HEICO عن الكيان الفرنسي.",
+              "kind": "editorially_localized_verified_source_section",
+              "source_ids": [
+                "NEW24-07f233d5762f",
+                "STAGE3-cbd67ae7020d"
+              ],
+              "localization": "FACTUAL_SECTION_EQUIVALENCE_FA_EN_AR"
+            }
+          ]
+        },
+        {
+          "id": "products",
+          "fa": "محصولات و فناوری",
+          "en": "Products & technology",
+          "ar": "المنتجات والتقنية",
+          "items": [
+            {
+              "fa": "در خانواده حافظه مقاوم به تابش، ماژول‌های MRAM با تغذیه ۳٫۳ ولت و گذرگاه داده ۸ تا ۴۰ بیت عرضه می‌شوند. برای یک خانواده مشخص، تحمل دز کل بیش از ۵۰ krad(Si) و آستانه LET برای جلوگیری از قفل‌شدگی SEL بیش از ۸۵ MeV·cm²/mg گزارش شده است. خانواده NAND با ONFI 4.2 / NV-DDR3 و سرعت رابط تا ۶۰۰ مگاهرتز معرفی شده؛ مشخصات ۲۵ krad و LET 62.5 به حالت p-SLC آن تعلق دارد. وضعیت مدل مهندسی و صلاحیت پرواز نباید مخلوط شود.",
+              "en": "Its radiation-tolerant memory range includes 3.3 V MRAM modules with 8–40-bit data buses. For a specified family, documented characteristics include total ionizing dose above 50 krad(Si) and an SEL threshold above LET 85 MeV·cm²/mg. A separate NAND family uses ONFI 4.2 / NV-DDR3, with an interface rate up to 600 MHz; the 25 krad and LET 62.5 figures apply to its specified p-SLC condition. Engineering samples are not synonymous with flight-qualified units.",
+              "ar": "تضم الذاكرة المقاومة للإشعاع وحدات MRAM بجهد 3.3 فولت وناقل بيانات من 8 إلى 40 بت. وتُذكر لعائلة محددة قدرة تحمّل جرعة كلية تزيد على 50 krad(Si) وحدّ LET لمقاومة الانغلاق SEL يفوق 85 MeV·cm²/mg. أما عائلة NAND فتستخدم ONFI 4.2 / NV-DDR3 بسرعة واجهة حتى 600 ميغاهرتز؛ وتخص أرقام 25 krad وLET 62.5 وضع p-SLC المحدد. ولا تُعد العينات الهندسية مساوية للوحدات المؤهلة للطيران.",
+              "kind": "editorially_localized_verified_source_section",
+              "source_ids": [
+                "SRC-e9b692ff40eb",
+                "SRC-b15d44214027",
+                "NEW24-07f233d5762f",
+                "NEW24-b15d44214027",
+                "STAGE3-cbd67ae7020d"
+              ],
+              "localization": "FACTUAL_SECTION_EQUIVALENCE_FA_EN_AR"
+            }
+          ]
+        },
+        {
+          "id": "heritage",
+          "fa": "سابقه پروازی",
+          "en": "Flight heritage",
+          "ar": "السجل الفضائي",
+          "items": [
+            {
+              "fa": "شرکت نمونه‌های کاربرد خانواده MRAM در مأموریت‌هایی مانند Sentinel-2، GLONASS و KompSat-6 را معرفی کرده است. همچنین از بیش از ۲۲۰هزار ماژول در فضا و بیش از ۲۵ سال سابقه مأموریتی بدون خرابی گزارش‌شده سخن می‌گوید؛ این‌ها ادعاهای تجمیعی سازنده‌اند و باید برای هر قطعه جدا کنترل شوند.",
+              "en": "The company names Sentinel-2, GLONASS and KompSat-6 among applications of its MRAM family. It also claims more than 220,000 modules in space and over 25 years of mission heritage without reported failures. These are aggregated manufacturer statements and require model-level verification before assignment to individual parts.",
+              "ar": "تذكر الشركة مهمات مثل Sentinel-2 وGLONASS وKompSat-6 بين تطبيقات عائلة MRAM. كما تعلن وجود أكثر من 220 ألف وحدة في الفضاء وسجل مهمات يتجاوز 25 عاماً بلا أعطال مُبلّغ عنها. وهذه تصريحات إجمالية من الشركة وتتطلب تحققاً على مستوى طراز المكوّن.",
+              "kind": "editorially_localized_verified_source_section",
+              "source_ids": [
+                "SRC-e9b692ff40eb",
+                "NEW24-302bfd8ff6e6",
+                "STAGE3-cbd67ae7020d"
+              ],
+              "localization": "FACTUAL_SECTION_EQUIVALENCE_FA_EN_AR"
+            }
+          ]
+        },
+        {
+          "id": "network",
+          "fa": "مشتریان و زنجیره تأمین",
+          "en": "Customers & supply chain",
+          "ar": "العملاء وسلسلة التوريد",
+          "items": [
+            {
+              "fa": "3D PLUS بخشی از گروه HEICO است. فناوری آن در زنجیره تأمین الکترونیک فضایی و ساخت ماژول برای محیط‌های پرتویی به‌کار می‌رود؛ دفتر/واحد 3D PLUS USA و شرکت فرانسوی نباید در نقشه یک رکورد یکسان تلقی شوند.",
+              "en": "3D PLUS belongs to the HEICO group and supplies space-electronics modules for radiation-exposed environments. The French legal company and 3D PLUS USA must remain distinguishable in the industry network.",
+              "ar": "تتبع 3D PLUS لمجموعة HEICO وتورد وحدات إلكترونيات فضائية للبيئات المعرضة للإشعاع. ويجب التمييز بين الكيان الفرنسي وفرع 3D PLUS USA في شبكة الصناعة.",
+              "kind": "editorially_localized_verified_source_section",
+              "source_ids": [
+                "STAGE3-cbd67ae7020d"
+              ],
+              "localization": "FACTUAL_SECTION_EQUIVALENCE_FA_EN_AR"
+            }
+          ]
+        },
+        {
+          "id": "timeline",
+          "fa": "تاریخچه و تحولات",
+          "en": "History & development",
+          "ar": "التاريخ والتطور",
+          "items": [
+            {
+              "fa": "۱۹۹۵: آغاز فعالیت 3D PLUS. ۲۰۰۴: دریافت صلاحیت از ESA طبق تاریخچه شرکت. ۲۰۲۲: تملک مجموعه TRAD. در ۲۰۲۶ نسل‌های جدید حافظه NAND و نمونه‌های مهندسی معرفی و زمان‌بندی شدند؛ زمان‌بندی معرفی با پرواز واقعی برابر نیست.",
+              "en": "1995: start of 3D PLUS operations. 2004: ESA qualification cited in company history. 2022: acquisition of TRAD. In 2026 new NAND memory devices and engineering-sample schedules were announced; a product roadmap does not establish a flown unit.",
+              "ar": "1995: بدء نشاط 3D PLUS. 2004: التأهيل من ESA وفق تاريخ الشركة. 2022: الاستحواذ على TRAD. في 2026 أُعلن عن أجهزة NAND جديدة وخطط عينات هندسية؛ ولا يعني جدول المنتجات أنها طارت فعلياً.",
+              "kind": "editorially_localized_verified_source_section",
+              "source_ids": [
+                "NEW24-07f233d5762f",
+                "STAGE3-cbd67ae7020d"
+              ],
+              "localization": "FACTUAL_SECTION_EQUIVALENCE_FA_EN_AR"
+            }
+          ]
+        }
+      ],
+      "key_facts": [],
+      "verified_on": "2026-11-13",
+      "hide_evidence_scope_in_ui": true,
+      "release_status": "EDITORIAL_RESEARCH_PREVIEW_NEEDS_FINAL_EXPERT_SIGNOFF",
+      "inventory_id": "DISC-0041",
+      "geo_source_url": "https://www.3d-plus.com/who-we-are/",
+      "geo_precision": "approximate_city_official_address"
+    },
+    "orbita_release_note": {
+      "release_date": "2026-11-13",
+      "inventory_id": "DISC-0041",
+      "status": "EDITORIAL_PREVIEW",
+      "batch": "RASPEHR_14_STEP5",
+      "expert_review_pending": true,
+      "language_parity": "FA_EN_AR_SECTION_DETAIL",
+      "geo_precision": "approximate_city_official_address",
+      "logo_status": "typographic_name_only"
+    }
+  },
+  {
+    "id": "raspehr-0043-satlantis",
+    "cat": "payloads",
+    "en": "SATLANTIS",
+    "fa": "ستلنتیس",
+    "ar": "ساتلانتيس",
+    "country": "Spain",
+    "country_fa": "اسپانیا",
+    "country_ar": "إسبانيا",
+    "city": "Leioa / Bilbao",
+    "city_fa": "لیوا / بیلبائو",
+    "city_ar": "ليوا / بلباو",
+    "lat": 43.327,
+    "lon": -2.982,
+    "coordinate_precision": "approximate_city_official_address",
+    "coordinates_are_exact_site_gps": false,
+    "address": "University Science Park, Sede Bld, Floor 2, 48940 Leioa-Bilbao, Spain",
+    "address_evidence_url": "https://www.satlantis.com/contact/",
+    "site": "https://www.satlantis.com/",
+    "fa_d": "SATLANTIS شرکت فعال در سنجش‌ازدور فضایی و سازنده دوربین‌های ماهواره‌ای iSIM است. ماموریت‌های MANTIS، HORACIO و GARAI-B نمونه‌هایی از کاربرد واقعی تجهیزات آن‌اند.",
+    "en_d": "SATLANTIS develops satellite optical payloads and end-to-end Earth observation solutions built around its iSIM cameras. MANTIS, HORACIO and GARAI-B provide documented mission examples.",
+    "ar_d": "تطور SATLANTIS حمولات بصرية وحلولاً متكاملة لرصد الأرض تعتمد على كاميرات iSIM. وتشمل أمثلة المهمات الموثقة MANTIS وHORACIO وGARAI-B.",
+    "org_type_fa": "سازنده محموله و ابزار فضایی",
+    "org_type_en": "Space payloads and instruments",
+    "org_type_ar": "حمولات وأجهزة فضائية",
+    "parent_institution": "",
+    "logo": "",
+    "logo_kind": "no_verified_official_logo",
+    "brand_text_identifier": "SAT",
+    "orbita_verified_profile": {
+      "schema_version": 3,
+      "profile_type": "payloads",
+      "summary": {
+        "fa": "SATLANTIS شرکت فعال در سنجش‌ازدور فضایی و سازنده دوربین‌های ماهواره‌ای iSIM است. ماموریت‌های MANTIS، HORACIO و GARAI-B نمونه‌هایی از کاربرد واقعی تجهیزات آن‌اند.",
+        "en": "SATLANTIS develops satellite optical payloads and end-to-end Earth observation solutions built around its iSIM cameras. MANTIS, HORACIO and GARAI-B provide documented mission examples.",
+        "ar": "تطور SATLANTIS حمولات بصرية وحلولاً متكاملة لرصد الأرض تعتمد على كاميرات iSIM. وتشمل أمثلة المهمات الموثقة MANTIS وHORACIO وGARAI-B."
+      },
+      "sources": [
+        {
+          "url": "https://www.satlantis.com/e2e-solutions/",
+          "provenance_types": [
+            "ADDITIONAL_OFFICIAL_WEB_RESEARCH_2026_11_13"
+          ],
+          "id": "SRC-0e807f77f939",
+          "title": "www.satlantis.com — e2e-solutions"
+        },
+        {
+          "url": "https://www.satlantis.com/space-cameras/",
+          "provenance_types": [
+            "S3_325_CLAIMS_INHERITED"
+          ],
+          "id": "SRC-bfe7643c1744",
+          "title": "www.satlantis.com — space-cameras"
+        },
+        {
+          "id": "NEW24-0e807f77f939",
+          "url": "https://www.satlantis.com/e2e-solutions/",
+          "title": "www.satlantis.com — ",
+          "provenance_types": [
+            "STEP2_24_INDEPENDENT_OFFICIAL_WEB_VERIFICATION_2026_11_13"
+          ]
+        },
+        {
+          "id": "NEW24-0b7fd6c84c5b",
+          "url": "https://www.satlantis.com/flight-heritage-2/",
+          "title": "www.satlantis.com — ",
+          "provenance_types": [
+            "STEP2_24_INDEPENDENT_OFFICIAL_WEB_VERIFICATION_2026_11_13"
+          ]
+        },
+        {
+          "id": "NEW24-c295135b745c",
+          "url": "https://www.satlantis.com/garai-b-innosat-unamuno-successfully-launched/",
+          "title": "www.satlantis.com — ",
+          "provenance_types": [
+            "STEP2_24_INDEPENDENT_OFFICIAL_WEB_VERIFICATION_2026_11_13"
+          ]
+        },
+        {
+          "id": "STAGE3-c851891b03a9",
+          "url": "https://www.satlantis.com/about-us/",
+          "title": "Official primary evidence from stage-3 audit",
+          "provenance_types": [
+            "STAGE3_PRIMARY_SOURCE_IDENTITY_RECHECK"
+          ]
+        },
+        {
+          "id": "STAGE3-7072c0ec06a0",
+          "url": "https://www.satlantis.com/",
+          "title": "Official primary evidence from stage-3 audit",
+          "provenance_types": [
+            "STAGE3_PRIMARY_SOURCE_IDENTITY_RECHECK"
+          ]
+        },
+        {
+          "id": "STAGE3-c62be3a1e2e2",
+          "url": "https://www.satlantis.com/contact/",
+          "title": "Official primary evidence from stage-3 audit",
+          "provenance_types": [
+            "STAGE3_PRIMARY_SOURCE_IDENTITY_RECHECK"
+          ]
+        }
+      ],
+      "sections": [
+        {
+          "id": "overview",
+          "fa": "شناسنامه و حوزه فعالیت",
+          "en": "Identity & specialization",
+          "ar": "التعريف والتخصص",
+          "items": [
+            {
+              "fa": "SATLANTIS سازنده محموله‌های اپتیکی مرئی و فروسرخ و راهکارهای تصویربرداری با وضوح بالا برای ماهواره‌های کوچک است. فعالیت محموله، پلتفرم ماهواره، خدمات تصویربرداری و پردازش داده باید در شناسنامه از هم تفکیک شود.",
+              "en": "SATLANTIS manufactures high-resolution visible and infrared payloads for small satellites and provides related imaging solutions. Its camera products, complete satellite configurations, operations and downstream data services are distinct business functions.",
+              "ar": "تصنع SATLANTIS حمولات تصوير بصري وتحت أحمر عالية الدقة للأقمار الصغيرة، وتقدم حلولاً للتصوير. ويجب التمييز بين الكاميرات ومنصات الأقمار الكاملة وتشغيلها وخدمات البيانات اللاحقة.",
+              "kind": "editorially_localized_verified_source_section",
+              "source_ids": [
+                "SRC-bfe7643c1744",
+                "NEW24-0e807f77f939",
+                "STAGE3-c851891b03a9",
+                "STAGE3-7072c0ec06a0",
+                "STAGE3-c62be3a1e2e2"
+              ],
+              "localization": "FACTUAL_SECTION_EQUIVALENCE_FA_EN_AR"
+            }
+          ]
+        },
+        {
+          "id": "catalog",
+          "fa": "کاتالوگ ابزارها",
+          "en": "Instrument catalogue",
+          "ar": "فهرس الأجهزة",
+          "items": [
+            {
+              "fa": "خانواده iSIM شامل iSIM-90 و iSIM-170 برای باندهای VNIR و SWIR است. پیکربندی ۱۲/۱۶U مبتنی بر iSIM-90 با چهار باند مرئی و شش باند فروسرخ، GSD اعلامی حدود ۲ تا ۳ متر و پهنای پوشش حدود ۱۴ کیلومتر معرفی می‌شود. طرح ریزماهواره‌ای حدود ۱۱۵ کیلوگرمی با ترکیب iSIM-170 و iSIM-90، GSD حدود ۱ تا ۳ متر و نرخ پایین‌دست پیشنهادی ۵۸۰ مگابیت‌برثانیه دارد. این اعداد وابسته به طرح، مدار و ارتفاع‌اند.",
+              "en": "The iSIM family includes iSIM-90 and iSIM-170 instruments covering VNIR and SWIR imaging. A proposed 12/16U iSIM-90 configuration offers four visible and six infrared bands, approximately 2–3 m GSD and about a 14 km swath. A roughly 115 kg microsatellite concept combines iSIM-170 and iSIM-90 with a proposed 1–3 m GSD and 580 Mb/s downlink. These specifications depend on satellite configuration and orbital altitude.",
+              "ar": "تشمل عائلة iSIM جهازَي iSIM-90 وiSIM-170 للتصوير في نطاقَي VNIR وSWIR. ويُعرض تصميم 12/16U بكاميرا iSIM-90 بأربع قنوات مرئية وست قنوات تحت حمراء، مع GSD بنحو 2–3 أمتار وعرض مسح يقارب 14 كم. كما يجمع مفهوم قمر صغير كتلته نحو 115 كغ كاميرتَي iSIM-170 وiSIM-90 بدقة أرضية مقترحة 1–3 أمتار وسرعة تنزيل 580 ميغابت/ثانية. وتعتمد هذه الأرقام على التكوين والارتفاع المداري.",
+              "kind": "editorially_localized_verified_source_section",
+              "source_ids": [
+                "SRC-bfe7643c1744",
+                "SRC-0e807f77f939",
+                "NEW24-0e807f77f939",
+                "STAGE3-c851891b03a9",
+                "STAGE3-7072c0ec06a0",
+                "STAGE3-c62be3a1e2e2"
+              ],
+              "localization": "FACTUAL_SECTION_EQUIVALENCE_FA_EN_AR"
+            }
+          ]
+        },
+        {
+          "id": "missions",
+          "fa": "مأموریت‌ها و کاربردها",
+          "en": "Missions & applications",
+          "ar": "المهمات والاستخدامات",
+          "items": [
+            {
+              "fa": "محموله iSIM-90 در مأموریت MANTIS در ۱۱ نوامبر ۲۰۲۳ و در HORACIO در ۴ مارس ۲۰۲۴ پرتاب شد. ماهواره GARAI-B / INNOSAT UNAMUNO با دوربین‌های iSIM-90 و iSIM-170 در ۳۰ مارس ۲۰۲۶ با مأموریت Transporter-16 پرتاب شد؛ پلتفرم آن ساخت OHB Sweden بود.",
+              "en": "An iSIM-90 payload launched on MANTIS on 11 November 2023 and another on HORACIO on 4 March 2024. GARAI-B / INNOSAT UNAMUNO, carrying iSIM-90 and iSIM-170 cameras, launched with Transporter-16 on 30 March 2026; its satellite platform was built by OHB Sweden.",
+              "ar": "أُطلقت حمولة iSIM-90 على MANTIS في 11 نوفمبر 2023 وعلى HORACIO في 4 مارس 2024. وأُطلق القمر GARAI-B / INNOSAT UNAMUNO المزود بكاميرتَي iSIM-90 وiSIM-170 ضمن Transporter-16 في 30 مارس 2026؛ وصنعت OHB Sweden منصة القمر.",
+              "kind": "editorially_localized_verified_source_section",
+              "source_ids": [
+                "NEW24-0b7fd6c84c5b",
+                "NEW24-c295135b745c",
+                "STAGE3-c851891b03a9",
+                "STAGE3-7072c0ec06a0",
+                "STAGE3-c62be3a1e2e2"
+              ],
+              "localization": "FACTUAL_SECTION_EQUIVALENCE_FA_EN_AR"
+            }
+          ]
+        },
+        {
+          "id": "readiness",
+          "fa": "بلوغ و عملکرد فناوری",
+          "en": "Readiness & performance",
+          "ar": "النضج والأداء التقني",
+          "items": [
+            {
+              "fa": "برای استفاده عملیاتی از مشخصات iSIM باید مدل، تعداد کانال‌ها، ارتفاع مدار و نسخه پیکربندی مشخص باشد. توان وضوح و لینک ارائه‌شده در بروشور، به‌خودی‌خود عملکرد اندازه‌گیری‌شده هر مأموریت نیست.",
+              "en": "Operational interpretation of iSIM specifications requires a defined model, spectral-channel configuration, orbit altitude and system revision. Brochure resolution and downlink figures are design claims, not automatically measured performance for every mission.",
+              "ar": "يتطلب تفسير مواصفات iSIM تشغيلياً تحديد الطراز وعدد القنوات الطيفية والارتفاع المداري وإصدار المنظومة. فأرقام الدقة والربط الواردة في الكتيبات هي مواصفات تصميمية وليست بالضرورة أداءً مقاساً لكل مهمة.",
+              "kind": "editorially_localized_verified_source_section",
+              "source_ids": [
+                "NEW24-0e807f77f939",
+                "STAGE3-c851891b03a9",
+                "STAGE3-7072c0ec06a0",
+                "STAGE3-c62be3a1e2e2"
+              ],
+              "localization": "FACTUAL_SECTION_EQUIVALENCE_FA_EN_AR"
+            }
+          ]
+        },
+        {
+          "id": "development",
+          "fa": "توسعه و همکاری‌ها",
+          "en": "Development & collaborations",
+          "ar": "التطوير والتعاون",
+          "items": [
+            {
+              "fa": "شرکت در ۲۰۱۳ فعالیت اولیه خود را در آمریکا آغاز کرد و از ۲۰۱۴ مرکز اصلی فعالیت خود را در منطقه بیلبائو اسپانیا مستقر ساخت. توسعه محموله‌های iSIM و مأموریت‌های جدید باید با تاریخ و مدل هر محصول ثبت شود.",
+              "en": "The company began its initial operations in the United States in 2013 and established its main base in the Bilbao area of Spain in 2014. Later iSIM payload developments and missions need model-specific, dated records.",
+              "ar": "بدأت الشركة نشاطها الأولي في الولايات المتحدة عام 2013، وأقامت مركز عملها الرئيسي في منطقة بلباو بإسبانيا في 2014. وينبغي توثيق تطوير حمولات iSIM والمهمات اللاحقة بحسب الطراز والتاريخ.",
+              "kind": "editorially_localized_verified_source_section",
+              "source_ids": [
+                "STAGE3-c851891b03a9",
+                "STAGE3-7072c0ec06a0",
+                "STAGE3-c62be3a1e2e2"
+              ],
+              "localization": "FACTUAL_SECTION_EQUIVALENCE_FA_EN_AR"
+            }
+          ]
+        }
+      ],
+      "key_facts": [],
+      "verified_on": "2026-11-13",
+      "hide_evidence_scope_in_ui": true,
+      "release_status": "EDITORIAL_RESEARCH_PREVIEW_NEEDS_FINAL_EXPERT_SIGNOFF",
+      "inventory_id": "DISC-0043",
+      "geo_source_url": "https://www.satlantis.com/contact/",
+      "geo_precision": "approximate_city_official_address"
+    },
+    "orbita_release_note": {
+      "release_date": "2026-11-13",
+      "inventory_id": "DISC-0043",
+      "status": "EDITORIAL_PREVIEW",
+      "batch": "RASPEHR_14_STEP5",
+      "expert_review_pending": true,
+      "language_parity": "FA_EN_AR_SECTION_DETAIL",
+      "geo_precision": "approximate_city_official_address",
+      "logo_status": "typographic_name_only"
+    }
+  },
+  {
+    "id": "raspehr-0046-scanway",
+    "cat": "payloads",
+    "en": "Scanway",
+    "fa": "اسکن‌وی",
+    "ar": "سكانواي",
+    "country": "Poland",
+    "country_fa": "لهستان",
+    "country_ar": "بولندا",
+    "city": "Wrocław",
+    "city_fa": "وروتسواف",
+    "city_ar": "فروتسواف",
+    "lat": 51.113,
+    "lon": 16.967,
+    "coordinate_precision": "approximate_neighbourhood_official_address",
+    "coordinates_are_exact_site_gps": false,
+    "address": "ul. Strzegomska 140A, 54-429 Wrocław, Poland",
+    "address_evidence_url": "https://scanway.pl/en/contact/",
+    "site": "https://scanway.pl/en/",
+    "fa_d": "Scanway S.A. شرکت لهستانی سازنده محموله‌های اپتیکی SOP و دوربین‌های فضایی SCS است. مأموریت‌های STAR VIBE، EagleEye و YPSat سوابق متفاوتی در نمایش فناوری و کاربرد تجهیزات آن دارند.",
+    "en_d": "Scanway S.A. is a Polish space-optics company producing SOP optical payloads and SCS camera systems. STAR VIBE, EagleEye and YPSat illustrate different stages of technology demonstration and application.",
+    "ar_d": "تُنتج Scanway S.A. البولندية حمولات بصرية من عائلة SOP وأنظمة كاميرات فضائية SCS. وتوضح مهمات STAR VIBE وEagleEye وYPSat مراحل مختلفة من عرض التقنية واستخدامها.",
+    "org_type_fa": "سازنده محموله و ابزار فضایی",
+    "org_type_en": "Space payloads and instruments",
+    "org_type_ar": "حمولات وأجهزة فضائية",
+    "parent_institution": "",
+    "logo": "",
+    "logo_kind": "no_verified_official_logo",
+    "brand_text_identifier": "SC",
+    "orbita_verified_profile": {
+      "schema_version": 3,
+      "profile_type": "payloads",
+      "summary": {
+        "fa": "Scanway S.A. شرکت لهستانی سازنده محموله‌های اپتیکی SOP و دوربین‌های فضایی SCS است. مأموریت‌های STAR VIBE، EagleEye و YPSat سوابق متفاوتی در نمایش فناوری و کاربرد تجهیزات آن دارند.",
+        "en": "Scanway S.A. is a Polish space-optics company producing SOP optical payloads and SCS camera systems. STAR VIBE, EagleEye and YPSat illustrate different stages of technology demonstration and application.",
+        "ar": "تُنتج Scanway S.A. البولندية حمولات بصرية من عائلة SOP وأنظمة كاميرات فضائية SCS. وتوضح مهمات STAR VIBE وEagleEye وYPSat مراحل مختلفة من عرض التقنية واستخدامها."
+      },
+      "sources": [
+        {
+          "url": "https://scanway.pl/en/for-investors/company-profile/",
+          "provenance_types": [
+            "S3_325_CLAIMS_INHERITED"
+          ],
+          "id": "SRC-852fe44d8ba6",
+          "title": "scanway.pl — en/for-investors/company-profile"
+        },
+        {
+          "url": "https://scanway.pl/en/space-cameras/",
+          "provenance_types": [
+            "S3_325_CLAIMS_INHERITED"
+          ],
+          "id": "SRC-9fa24852eb24",
+          "title": "scanway.pl — en/space-cameras"
+        },
+        {
+          "url": "https://scanway.pl/en/space-cameras/scanway-optical-payload/",
+          "provenance_types": [
+            "S3_325_CLAIMS_INHERITED"
+          ],
+          "id": "SRC-ca8b564411a9",
+          "title": "scanway.pl — en/space-cameras/scanway-optical-payload"
+        },
+        {
+          "url": "https://scanway.pl/en/for-investors/espi-current-reports/",
+          "provenance_types": [
+            "STEP2_COMPLETION_99_OFFICIAL_WEB_RESEARCH"
+          ],
+          "id": "WEB-5873d1f9368e",
+          "title": "scanway.pl — en/for-investors/espi-current-reports"
+        },
+        {
+          "url": "https://scanway.pl/en/space-cameras/",
+          "provenance_types": [
+            "STEP2_COMPLETION_2026_11_13_OFFICIAL_WEB_RESEARCH"
+          ],
+          "id": "WEB-9fa24852eb24",
+          "title": "scanway.pl — en/space-cameras"
+        },
+        {
+          "id": "NEW24-852fe44d8ba6",
+          "url": "https://scanway.pl/en/for-investors/company-profile/",
+          "title": "scanway.pl — ",
+          "provenance_types": [
+            "STEP2_24_INDEPENDENT_OFFICIAL_WEB_VERIFICATION_2026_11_13"
+          ]
+        },
+        {
+          "id": "NEW24-be12883a916b",
+          "url": "https://scanway.pl/en/missions/eagleeye/",
+          "title": "scanway.pl — ",
+          "provenance_types": [
+            "STEP2_24_INDEPENDENT_OFFICIAL_WEB_VERIFICATION_2026_11_13"
+          ]
+        },
+        {
+          "id": "NEW24-d22d24a777f1",
+          "url": "https://scanway.pl/en/space-cameras/missions/",
+          "title": "scanway.pl — ",
+          "provenance_types": [
+            "STEP2_24_INDEPENDENT_OFFICIAL_WEB_VERIFICATION_2026_11_13"
+          ]
+        },
+        {
+          "id": "NEW24-e8ed062cb7f4",
+          "url": "https://scanway.pl/en/scanway-raises-pln-76-4-million-to-scale-operations-in-response-to-growing-market-demand/",
+          "title": "scanway.pl — ",
+          "provenance_types": [
+            "STEP2_24_INDEPENDENT_OFFICIAL_WEB_VERIFICATION_2026_11_13"
+          ]
+        },
+        {
+          "id": "STAGE3-add3bc6f206a",
+          "url": "https://polsa.gov.pl/aktywnosci/bezpieczenstwo-kosmiczne/indeks-obiektow-kosmicznych/",
+          "title": "Official primary evidence from stage-3 audit",
+          "provenance_types": [
+            "STAGE3_PRIMARY_SOURCE_IDENTITY_RECHECK"
+          ]
+        },
+        {
+          "id": "STAGE4-f4d3167a2539",
+          "url": "https://scanway.pl/en/media/",
+          "title": "Scanway official company registration and downloadable logo page",
+          "provenance_types": [
+            "STAGE4_PRIMARY_PAGE_CHECK_2026_11_13"
+          ]
+        },
+        {
+          "id": "STAGE4-aec5bac08644",
+          "url": "https://scanway.pl/en/scanway-s-a-s-rebranding-a-new-visual-story-and-a-symbolic-step-into-the-next-stage-of-development/",
+          "title": "Scanway official 2025 rebranding",
+          "provenance_types": [
+            "STAGE4_PRIMARY_PAGE_CHECK_2026_11_13"
+          ]
+        }
+      ],
+      "sections": [
+        {
+          "id": "overview",
+          "fa": "شناسنامه و حوزه فعالیت",
+          "en": "Identity & specialization",
+          "ar": "التعريف والتخصص",
+          "items": [
+            {
+              "fa": "Scanway S.A. شرکت ثبت‌شده در لهستان با شماره KRS 0000997696 و دفتر Wrocław است. این شرکت در تصویربرداری اپتیکی برای سنجش‌ازدور و پایش خود فضاپیما فعالیت دارد. نام حقوقی فعلی S.A. از اسناد قدیمی با ساختار Sp. z o.o. تفکیک می‌شود.",
+              "en": "Scanway S.A. is a Polish company registered under KRS 0000997696 and based in Wrocław. It develops optical systems for Earth observation and spacecraft self-inspection. The current S.A. legal form should be distinguished from older records issued as Sp. z o.o.",
+              "ar": "Scanway S.A. شركة بولندية مسجلة تحت رقم KRS 0000997696 ومقرها فروتسواف. تطور أنظمة بصرية لرصد الأرض والفحص الذاتي للمركبات الفضائية. وينبغي فصل الصيغة القانونية الحالية S.A. عن الوثائق القديمة باسم Sp. z o.o.",
+              "kind": "editorially_localized_verified_source_section",
+              "source_ids": [
+                "SRC-9fa24852eb24",
+                "NEW24-852fe44d8ba6",
+                "STAGE3-add3bc6f206a",
+                "STAGE4-f4d3167a2539",
+                "STAGE4-aec5bac08644"
+              ],
+              "localization": "FACTUAL_SECTION_EQUIVALENCE_FA_EN_AR"
+            }
+          ]
+        },
+        {
+          "id": "catalog",
+          "fa": "کاتالوگ ابزارها",
+          "en": "Instrument catalogue",
+          "ar": "فهرس الأجهزة",
+          "items": [
+            {
+              "fa": "سبد Scanway شامل محموله‌های SOP و دوربین‌های SCS است. ابزار SOP200 برای EagleEye دارای دهانه ۲۰۰ میلی‌متری و ابعاد تقریبی ۴۳۰×۳۵۰×۳۰۰ میلی‌متر است؛ GSD هدف حدود ۱٫۷۵ متر از ارتفاع ۵۰۰ کیلومتر معرفی شده است. این مشخصات هدف طراحی‌اند و نباید به تمام پلتفرم‌ها تعمیم داده شوند.",
+              "en": "Scanway’s product lines include SOP optical payloads and SCS camera systems. The SOP200 associated with EagleEye has a 200 mm aperture and a reported envelope of roughly 430 × 350 × 300 mm; a target ground sampling distance of approximately 1.75 m is stated for 500 km altitude. These are configuration-specific design targets.",
+              "ar": "تضم منتجات Scanway حمولات SOP البصرية وأنظمة كاميرات SCS. وتبلغ فتحة أداة SOP200 المرتبطة بـEagleEye نحو 200 مم وأبعادها 430×350×300 مم تقريباً، مع GSD مستهدف يبلغ نحو 1.75 متر عند ارتفاع 500 كم. وهذه أهداف تصميم تخص التكوين المحدد.",
+              "kind": "editorially_localized_verified_source_section",
+              "source_ids": [
+                "SRC-ca8b564411a9",
+                "NEW24-be12883a916b",
+                "STAGE3-add3bc6f206a",
+                "STAGE4-f4d3167a2539",
+                "STAGE4-aec5bac08644"
+              ],
+              "localization": "FACTUAL_SECTION_EQUIVALENCE_FA_EN_AR"
+            }
+          ]
+        },
+        {
+          "id": "missions",
+          "fa": "مأموریت‌ها و کاربردها",
+          "en": "Missions & applications",
+          "ar": "المهمات والاستخدامات",
+          "items": [
+            {
+              "fa": "مأموریت STAR VIBE در ۳ ژانویه ۲۰۲۳ با Transporter-6 پرتاب شد و ابزارهای تصویربرداری زمین و پایش ماهواره را در مدار آزمود. دوربین‌های Scanway در YPSat برای ثبت جدایش پوشش و آزادسازی محموله در پرواز نخست Ariane 6 به‌کار رفتند. شرکت فعال‌شدن دوربین‌های PIAST-S1/S2 پس از پرتاب ۲۸ نوامبر ۲۰۲۵ را گزارش کرده است.",
+              "en": "STAR VIBE launched on 3 January 2023 with Transporter-6 and tested Earth imaging and satellite self-inspection optics in orbit. Scanway cameras on YPSat documented fairing separation and payload release during the first Ariane 6 flight. The company reported activation of cameras on PIAST-S1/S2 after their 28 November 2025 launch.",
+              "ar": "أُطلقت STAR VIBE في 3 يناير 2023 ضمن Transporter-6 واختبرت تصوير الأرض والفحص البصري الذاتي للقمر في المدار. وسجلت كاميرات Scanway على YPSat انفصال غطاء الحمولة وإطلاقها في الرحلة الأولى لصاروخ Ariane 6. وأعلنت الشركة تشغيل كاميرات PIAST-S1/S2 عقب إطلاقهما في 28 نوفمبر 2025.",
+              "kind": "editorially_localized_verified_source_section",
+              "source_ids": [
+                "SRC-852fe44d8ba6",
+                "WEB-5873d1f9368e",
+                "WEB-9fa24852eb24",
+                "NEW24-852fe44d8ba6",
+                "NEW24-d22d24a777f1",
+                "STAGE3-add3bc6f206a",
+                "STAGE4-f4d3167a2539",
+                "STAGE4-aec5bac08644"
+              ],
+              "localization": "FACTUAL_SECTION_EQUIVALENCE_FA_EN_AR"
+            }
+          ]
+        },
+        {
+          "id": "readiness",
+          "fa": "بلوغ و عملکرد فناوری",
+          "en": "Readiness & performance",
+          "ar": "النضج والأداء التقني",
+          "items": [
+            {
+              "fa": "مفهوم تصویربرداری ماه MANI در مرحله مطالعاتی معرفی شده و در فهرست مأموریت‌های پرتاب‌شده Scanway قرار نمی‌گیرد. شاخص‌های وضوح و وزن محموله باید با مدل و مدار مربوط تطبیق داده شوند.",
+              "en": "The MANI lunar-imaging concept remains a development study and is not counted among Scanway’s launched missions. Resolution and payload-mass claims must be tied to the relevant model and orbital design.",
+              "ar": "ما يزال مفهوم MANI لتصوير القمر في مرحلة الدراسة، ولا يُدرج ضمن مهمات Scanway المطلَقة. ويجب ربط بيانات الدقة وكتلة الحمولة بالطراز والتصميم المداري المعنيين.",
+              "kind": "editorially_localized_verified_source_section",
+              "source_ids": [
+                "NEW24-d22d24a777f1",
+                "STAGE3-add3bc6f206a",
+                "STAGE4-f4d3167a2539",
+                "STAGE4-aec5bac08644"
+              ],
+              "localization": "FACTUAL_SECTION_EQUIVALENCE_FA_EN_AR"
+            }
+          ]
+        },
+        {
+          "id": "development",
+          "fa": "توسعه و همکاری‌ها",
+          "en": "Development & collaborations",
+          "ar": "التطوير والتعاون",
+          "items": [
+            {
+              "fa": "شرکت پس از تغییر ساختار حقوقی، از ۲۷ مارس ۲۰۲۶ در بازار اصلی بورس ورشو حضور دارد. Scanway در اوت ۲۰۲۵ هویت بصری جدیدی معرفی کرد و فعالیت صنعتی خود را از سامانه‌های دید ماشین به محموله‌های فضایی گسترش داد.",
+              "en": "After changes to its corporate structure, Scanway began trading on the Warsaw Stock Exchange main market on 27 March 2026. The company introduced a new brand identity in August 2025 while expanding its optical engineering activities from machine vision into space payloads.",
+              "ar": "بعد تغييرات في هيكلها القانوني، بدأت Scanway التداول في السوق الرئيسية لبورصة وارسو في 27 مارس 2026. وقدمت هوية بصرية جديدة في أغسطس 2025 مع توسيع نشاط الهندسة البصرية من الرؤية الآلية إلى الحمولات الفضائية.",
+              "kind": "editorially_localized_verified_source_section",
+              "source_ids": [
+                "NEW24-e8ed062cb7f4",
+                "STAGE3-add3bc6f206a",
+                "STAGE4-f4d3167a2539",
+                "STAGE4-aec5bac08644"
+              ],
+              "localization": "FACTUAL_SECTION_EQUIVALENCE_FA_EN_AR"
+            }
+          ]
+        }
+      ],
+      "key_facts": [],
+      "verified_on": "2026-11-13",
+      "hide_evidence_scope_in_ui": true,
+      "release_status": "EDITORIAL_RESEARCH_PREVIEW_NEEDS_FINAL_EXPERT_SIGNOFF",
+      "inventory_id": "DISC-0046",
+      "geo_source_url": "https://scanway.pl/en/contact/",
+      "geo_precision": "approximate_neighbourhood_official_address"
+    },
+    "orbita_release_note": {
+      "release_date": "2026-11-13",
+      "inventory_id": "DISC-0046",
+      "status": "EDITORIAL_PREVIEW",
+      "batch": "RASPEHR_14_STEP5",
+      "expert_review_pending": true,
+      "language_parity": "FA_EN_AR_SECTION_DETAIL",
+      "geo_precision": "approximate_neighbourhood_official_address",
+      "logo_status": "typographic_name_only"
+    }
+  },
+  {
+    "id": "raspehr-0057-leaf-space",
+    "cat": "ground_services",
+    "en": "Leaf Space",
+    "fa": "لیف اسپیس",
+    "ar": "ليف سبيس",
+    "country": "Italy",
+    "country_fa": "ایتالیا",
+    "country_ar": "إيطاليا",
+    "city": "Lomazzo",
+    "city_fa": "لومازو",
+    "city_ar": "لومازو",
+    "lat": 45.694,
+    "lon": 9.035,
+    "coordinate_precision": "approximate_city_official_address",
+    "coordinates_are_exact_site_gps": false,
+    "address": "Via Cavour 2, ComoNext, Lomazzo (CO) 22074, Italy",
+    "address_evidence_url": "https://business.esa.int/business-network/leaf-space-srl",
+    "site": "https://leaf.space/",
+    "fa_d": "Leaf Space شرکت ایتالیایی ارائه‌دهنده خدمات شبکه ایستگاه‌های زمینی برای ماهواره‌هاست. خدمات Leaf Line، Leaf Key و Leaf Hosting نقش‌های متفاوتی در ارتباط، ایستگاه اختصاصی و میزبانی تجهیزات دارند.",
+    "en_d": "Leaf Space is an Italian ground-segment services company. Leaf Line, Leaf Key and Leaf Hosting cover different needs: shared satellite connectivity, dedicated managed stations and equipment hosting.",
+    "ar_d": "Leaf Space شركة إيطالية لخدمات القطاع الأرضي للأقمار الصناعية. وتلبي خدمات Leaf Line وLeaf Key وLeaf Hosting احتياجات مختلفة: الاتصال المشترك والمحطات المخصصة المُدارة واستضافة المعدات.",
+    "org_type_fa": "خدمات و تجهیزات زمینی ماهواره",
+    "org_type_en": "Ground segment services",
+    "org_type_ar": "خدمات القطاع الأرضي",
+    "parent_institution": "",
+    "logo": "",
+    "logo_kind": "no_verified_official_logo",
+    "brand_text_identifier": "LEAF",
+    "orbita_verified_profile": {
+      "schema_version": 3,
+      "profile_type": "ground_services",
+      "summary": {
+        "fa": "Leaf Space شرکت ایتالیایی ارائه‌دهنده خدمات شبکه ایستگاه‌های زمینی برای ماهواره‌هاست. خدمات Leaf Line، Leaf Key و Leaf Hosting نقش‌های متفاوتی در ارتباط، ایستگاه اختصاصی و میزبانی تجهیزات دارند.",
+        "en": "Leaf Space is an Italian ground-segment services company. Leaf Line, Leaf Key and Leaf Hosting cover different needs: shared satellite connectivity, dedicated managed stations and equipment hosting.",
+        "ar": "Leaf Space شركة إيطالية لخدمات القطاع الأرضي للأقمار الصناعية. وتلبي خدمات Leaf Line وLeaf Key وLeaf Hosting احتياجات مختلفة: الاتصال المشترك والمحطات المخصصة المُدارة واستضافة المعدات."
+      },
+      "sources": [
+        {
+          "url": "https://leaf.space/leaf-hosting/",
+          "provenance_types": [
+            "ADDITIONAL_OFFICIAL_WEB_RESEARCH_2026_11_13"
+          ],
+          "id": "SRC-0e0e8955ea79",
+          "title": "leaf.space — leaf-hosting"
+        },
+        {
+          "url": "https://www.nasa.gov/smallsat-institute/sst-soa/ground-data-systems-and-mission-operations/",
+          "provenance_types": [
+            "S3_325_CLAIMS_INHERITED"
+          ],
+          "id": "SRC-a63129425a9d",
+          "title": "www.nasa.gov — smallsat-institute/sst-soa/ground-data-systems-and-mission-operations"
+        },
+        {
+          "id": "NEW24-ed8755907a86",
+          "url": "https://leaf.space/leaf-line/",
+          "title": "leaf.space — ",
+          "provenance_types": [
+            "STEP2_24_INDEPENDENT_OFFICIAL_WEB_VERIFICATION_2026_11_13"
+          ]
+        },
+        {
+          "id": "NEW24-d9a2942ca104",
+          "url": "https://leaf.space/leaf-key/",
+          "title": "leaf.space — ",
+          "provenance_types": [
+            "STEP2_24_INDEPENDENT_OFFICIAL_WEB_VERIFICATION_2026_11_13"
+          ]
+        },
+        {
+          "id": "NEW24-0e0e8955ea79",
+          "url": "https://leaf.space/leaf-hosting/",
+          "title": "leaf.space — ",
+          "provenance_types": [
+            "STEP2_24_INDEPENDENT_OFFICIAL_WEB_VERIFICATION_2026_11_13"
+          ]
+        },
+        {
+          "id": "NEW24-d2a2b00d92ba",
+          "url": "https://leaf.space/leaf-space-unveils-leaf-key-and-leaf-hosting-expanding-ground-segment-beyond-leaf-line/",
+          "title": "leaf.space — ",
+          "provenance_types": [
+            "STEP2_24_INDEPENDENT_OFFICIAL_WEB_VERIFICATION_2026_11_13"
+          ]
+        },
+        {
+          "id": "STAGE3-5c301fda5342",
+          "url": "https://leaf.space/",
+          "title": "Official primary evidence from stage-3 audit",
+          "provenance_types": [
+            "STAGE3_PRIMARY_SOURCE_IDENTITY_RECHECK"
+          ]
+        },
+        {
+          "id": "STAGE3-cf238b98d41a",
+          "url": "https://leaf.space/who-we-are/",
+          "title": "Official primary evidence from stage-3 audit",
+          "provenance_types": [
+            "STAGE3_PRIMARY_SOURCE_IDENTITY_RECHECK"
+          ]
+        },
+        {
+          "id": "STAGE3-a414a1cda2e5",
+          "url": "https://business.esa.int/business-network/leaf-space-srl",
+          "title": "Official primary evidence from stage-3 audit",
+          "provenance_types": [
+            "STAGE3_PRIMARY_SOURCE_IDENTITY_RECHECK"
+          ]
+        },
+        {
+          "id": "STAGE3-a1e2625d95d5",
+          "url": "https://leaf.space/?trk=public_profile__reactions-text",
+          "title": "Official primary evidence from stage-3 audit",
+          "provenance_types": [
+            "STAGE3_PRIMARY_SOURCE_IDENTITY_RECHECK"
+          ]
+        }
+      ],
+      "sections": [
+        {
+          "id": "overview",
+          "fa": "شناسنامه و مدل کسب‌وکار",
+          "en": "Identity & business model",
+          "ar": "التعريف ونموذج الأعمال",
+          "items": [
+            {
+              "fa": "Leaf Space از ۲۰۱۴ خدمات ارتباط ماهواره‌ای زمینی ارائه می‌کند و در اسناد خدمات تجاری زمین‌به‌فضا نیز معرفی شده است. دفتر کنونی اعلام‌شده در میلان را نباید با نشانی تاریخی Lomazzo در مدارک قدیمی یکی دانست.",
+              "en": "Leaf Space has provided satellite ground-segment services since 2014 and appears in relevant commercial ground-services assessments. Its current Milan address must not be confused with the historical Lomazzo address appearing in older documents.",
+              "ar": "تقدم Leaf Space خدمات الاتصالات الأرضية للأقمار منذ 2014 وترد في دراسات الخدمات الأرضية التجارية. ويجب عدم الخلط بين عنوانها الحالي في ميلانو وعنوان لومادزو التاريخي الوارد في وثائق أقدم.",
+              "kind": "editorially_localized_verified_source_section",
+              "source_ids": [
+                "SRC-a63129425a9d",
+                "STAGE3-5c301fda5342",
+                "STAGE3-cf238b98d41a",
+                "STAGE3-a414a1cda2e5",
+                "STAGE3-a1e2625d95d5"
+              ],
+              "localization": "FACTUAL_SECTION_EQUIVALENCE_FA_EN_AR"
+            }
+          ]
+        },
+        {
+          "id": "services",
+          "fa": "محصولات و خدمات",
+          "en": "Products & services",
+          "ar": "المنتجات والخدمات",
+          "items": [
+            {
+              "fa": "Leaf Line خدمات TT&C و دریافت داده محموله را با API، زمان‌بندی خودکار و شبکه آنتن‌های مشترک ارائه می‌کند. Leaf Key ایستگاه اختصاصیِ مدیریت‌شده با قطر آنتن سفارشی حدود ۱٫۸ تا ۱۳ متر در باندهای S، X و Ka فراهم می‌کند. Leaf Hosting نیز زیرساخت مکان، برق، اتصال، نگهداشت سطح اول و کمک به مجوزهای فرکانسی برای تجهیزات مشتری را فراهم می‌سازد.",
+              "en": "Leaf Line provides TT&C and payload downlinks through APIs, automated scheduling and a shared antenna network. Leaf Key provides dedicated managed stations with configurable antennas approximately 1.8–13 m in diameter across S, X and Ka bands. Leaf Hosting supplies sites, power, connectivity, first-level maintenance and support for frequency licensing for customer-owned equipment.",
+              "ar": "تقدم Leaf Line القياس عن بعد والتحكم واستقبال بيانات الحمولة عبر واجهات API وجدولة آلية وشبكة هوائيات مشتركة. وتوفر Leaf Key محطات مُدارة مخصصة بهوائيات قابلة للتخصيص بأقطار نحو 1.8–13 متراً في نطاقات S وX وKa. أما Leaf Hosting فتوفّر المواقع والطاقة والاتصال والصيانة الأولية والمساعدة في تراخيص الترددات لمعدات العملاء.",
+              "kind": "editorially_localized_verified_source_section",
+              "source_ids": [
+                "SRC-a63129425a9d",
+                "SRC-0e0e8955ea79",
+                "NEW24-ed8755907a86",
+                "NEW24-d9a2942ca104",
+                "STAGE3-5c301fda5342",
+                "STAGE3-cf238b98d41a",
+                "STAGE3-a414a1cda2e5",
+                "STAGE3-a1e2625d95d5"
+              ],
+              "localization": "FACTUAL_SECTION_EQUIVALENCE_FA_EN_AR"
+            }
+          ]
+        },
+        {
+          "id": "network",
+          "fa": "شبکه و پوشش",
+          "en": "Network & footprint",
+          "ar": "الشبكة والتغطية",
+          "items": [
+            {
+              "fa": "در صفحات مختلف Leaf Space ارقام متغیر شبکه دیده می‌شود: یک صفحه ۱۹ سایت و ۲۶ آنتن فعال را برای خدمات Hosting معرفی کرده و صفحه Leaf Line در زمان بررسی حدود ۴۰ آنتن فعال را نشان می‌داد. آمار سرویس‌های متفاوت نباید در یک عدد ثابت و بدون تاریخ ادغام شود؛ مالکیت آنتن مشتری در Hosting مستقل است.",
+              "en": "Leaf Space pages describe different, time-sensitive network snapshots: one Hosting page listed 19 sites and 26 active antennas, while a Leaf Line page displayed approximately 40 active antennas at review time. These figures refer to different service scopes and dates and must not be combined as a single fixed network total. Hosted customer antennas remain separately owned.",
+              "ar": "تعرض صفحات Leaf Space أرقاماً متغيرة للشبكة: ذكرت صفحة الاستضافة 19 موقعاً و26 هوائياً عاملاً، بينما أظهرت صفحة Leaf Line نحو 40 هوائياً عاملاً وقت المراجعة. تخص الأرقام نطاقات خدمية وفترات مختلفة، فلا تُدمج في رقم ثابت واحد. وتبقى ملكية هوائيات العملاء المستضافة مستقلة.",
+              "kind": "editorially_localized_verified_source_section",
+              "source_ids": [
+                "SRC-0e0e8955ea79",
+                "NEW24-0e0e8955ea79",
+                "STAGE3-5c301fda5342",
+                "STAGE3-cf238b98d41a",
+                "STAGE3-a414a1cda2e5",
+                "STAGE3-a1e2625d95d5"
+              ],
+              "localization": "FACTUAL_SECTION_EQUIVALENCE_FA_EN_AR"
+            }
+          ]
+        },
+        {
+          "id": "capacity",
+          "fa": "عملکرد و ظرفیت",
+          "en": "Capability & capacity",
+          "ar": "القدرات والسعة",
+          "items": [
+            {
+              "fa": "توان عملیاتی Leaf Line به شمار آنتن‌های در دسترس، هندسه گذر ماهواره، باند فرکانسی و ظرفیت شبکه وابسته است؛ آمار حدود ۴۰ آنتنِ زمان بررسی، شاخص تاریخی است و باید همراه تاریخ ثبت شود. پروتکل‌هایی مانند CCSDS و DVB-S2 در فهرست سازگاری خدمات شرکت آمده‌اند.",
+              "en": "Leaf Line capacity depends on antenna availability, satellite pass geometry, frequency bands and network configuration. The roughly 40-antenna figure is a time-specific snapshot. The company lists compatibility with standards such as CCSDS and DVB-S2.",
+              "ar": "تعتمد قدرة Leaf Line على توفر الهوائيات وهندسة مرور القمر والنطاقات الترددية والشبكة. ويُعد رقم نحو 40 هوائياً لقطة زمنية. وتذكر الشركة التوافق مع بروتوكولات مثل CCSDS وDVB-S2.",
+              "kind": "editorially_localized_verified_source_section",
+              "source_ids": [
+                "NEW24-ed8755907a86",
+                "STAGE3-5c301fda5342",
+                "STAGE3-cf238b98d41a",
+                "STAGE3-a414a1cda2e5",
+                "STAGE3-a1e2625d95d5"
+              ],
+              "localization": "FACTUAL_SECTION_EQUIVALENCE_FA_EN_AR"
+            }
+          ]
+        },
+        {
+          "id": "clients",
+          "fa": "مشتریان و شبکه عملیاتی",
+          "en": "Clients & operational links",
+          "ar": "العملاء والروابط التشغيلية",
+          "items": [
+            {
+              "fa": "تا نوامبر ۲۰۲۵، سه مدل سرویس Leaf Line، Leaf Key و Leaf Hosting به‌طور مجزا معرفی شده بودند. در خدمات Hosting، مشتری می‌تواند آنتن خود را در مکان میزبان نصب کند؛ در Leaf Line ظرفیت شبکه مشترک را استفاده می‌کند.",
+              "en": "By November 2025, Leaf Line, Leaf Key and Leaf Hosting had been presented as separate service models. Hosting customers may deploy their own antennas at managed sites, whereas Leaf Line customers access shared network capacity.",
+              "ar": "بحلول نوفمبر 2025 قُدمت Leaf Line وLeaf Key وLeaf Hosting بوصفها نماذج خدمة منفصلة. يستطيع عميل الاستضافة تركيب هوائيه في موقع مُدار، فيما يستخدم عميل Leaf Line سعة الشبكة المشتركة.",
+              "kind": "editorially_localized_verified_source_section",
+              "source_ids": [
+                "NEW24-d2a2b00d92ba",
+                "STAGE3-5c301fda5342",
+                "STAGE3-cf238b98d41a",
+                "STAGE3-a414a1cda2e5",
+                "STAGE3-a1e2625d95d5"
+              ],
+              "localization": "FACTUAL_SECTION_EQUIVALENCE_FA_EN_AR"
+            }
+          ]
+        }
+      ],
+      "key_facts": [],
+      "verified_on": "2026-11-13",
+      "hide_evidence_scope_in_ui": true,
+      "release_status": "EDITORIAL_RESEARCH_PREVIEW_NEEDS_FINAL_EXPERT_SIGNOFF",
+      "inventory_id": "DISC-0057",
+      "geo_source_url": "https://business.esa.int/business-network/leaf-space-srl",
+      "geo_precision": "approximate_city_official_address"
+    },
+    "orbita_release_note": {
+      "release_date": "2026-11-13",
+      "inventory_id": "DISC-0057",
+      "status": "EDITORIAL_PREVIEW",
+      "batch": "RASPEHR_14_STEP5",
+      "expert_review_pending": true,
+      "language_parity": "FA_EN_AR_SECTION_DETAIL",
+      "geo_precision": "approximate_city_official_address",
+      "logo_status": "typographic_name_only"
+    }
+  },
+  {
+    "id": "raspehr-0062-infostellar",
+    "cat": "ground_services",
+    "en": "Infostellar",
+    "fa": "اینفوستلار",
+    "ar": "إنفوستيلار",
+    "country": "Japan",
+    "country_fa": "ژاپن",
+    "country_ar": "اليابان",
+    "city": "Tokyo",
+    "city_fa": "توکیو",
+    "city_ar": "طوكيو",
+    "lat": 35.6895,
+    "lon": 139.7,
+    "coordinate_precision": "approximate_city_only_current_office_unconfirmed",
+    "coordinates_are_exact_site_gps": false,
+    "address": "Tokyo, Japan — exact current office pending confirmation",
+    "address_evidence_url": "https://www.infostellar.net/",
+    "site": "https://www.infostellar.net/",
+    "fa_d": "Infostellar شرکت ژاپنی ارائه‌دهنده دسترسی ابری به ایستگاه‌های زمینی با سامانه StellarStation است. از اول ژوئیه ۲۰۲۶ این شرکت زیرمجموعه صددرصدی Mitsubishi Electric محسوب می‌شود.",
+    "en_d": "Infostellar is a Japanese provider of cloud-based ground-station access through its StellarStation platform. It became a wholly owned subsidiary of Mitsubishi Electric on 1 July 2026.",
+    "ar_d": "Infostellar شركة يابانية تتيح الوصول السحابي إلى المحطات الأرضية عبر منصة StellarStation. وأصبحت شركة تابعة مملوكة بالكامل لـMitsubishi Electric في 1 يوليو 2026.",
+    "org_type_fa": "خدمات و تجهیزات زمینی ماهواره",
+    "org_type_en": "Ground segment services",
+    "org_type_ar": "خدمات القطاع الأرضي",
+    "parent_institution": "Mitsubishi Electric Corporation (since July 2026)",
+    "logo": "",
+    "logo_kind": "no_verified_official_logo",
+    "brand_text_identifier": "INF",
+    "orbita_verified_profile": {
+      "schema_version": 3,
+      "profile_type": "ground_services",
+      "summary": {
+        "fa": "Infostellar شرکت ژاپنی ارائه‌دهنده دسترسی ابری به ایستگاه‌های زمینی با سامانه StellarStation است. از اول ژوئیه ۲۰۲۶ این شرکت زیرمجموعه صددرصدی Mitsubishi Electric محسوب می‌شود.",
+        "en": "Infostellar is a Japanese provider of cloud-based ground-station access through its StellarStation platform. It became a wholly owned subsidiary of Mitsubishi Electric on 1 July 2026.",
+        "ar": "Infostellar شركة يابانية تتيح الوصول السحابي إلى المحطات الأرضية عبر منصة StellarStation. وأصبحت شركة تابعة مملوكة بالكامل لـMitsubishi Electric في 1 يوليو 2026."
+      },
+      "sources": [
+        {
+          "url": "https://www.nasa.gov/smallsat-institute/sst-soa/ground-data-systems-and-mission-operations/",
+          "provenance_types": [
+            "S3_325_CLAIMS_INHERITED"
+          ],
+          "id": "SRC-a63129425a9d",
+          "title": "www.nasa.gov — smallsat-institute/sst-soa/ground-data-systems-and-mission-operations"
+        },
+        {
+          "url": "https://www.infostellar.net/news/SATIO_integration",
+          "provenance_types": [
+            "STEP2_COMPLETION_99_OFFICIAL_WEB_RESEARCH"
+          ],
+          "id": "WEB-09ee12b2b2a6",
+          "title": "www.infostellar.net — news/SATIO_integration"
+        },
+        {
+          "url": "https://www.infostellar.net/",
+          "provenance_types": [
+            "STEP2_COMPLETION_99_OFFICIAL_WEB_RESEARCH"
+          ],
+          "id": "WEB-9d632b944992",
+          "title": "www.infostellar.net — home"
+        },
+        {
+          "id": "NEW24-1cf55a8ecfc1",
+          "url": "https://www.infostellar.net/news/upStoKw0",
+          "title": "www.infostellar.net — upStoKw0",
+          "provenance_types": [
+            "STEP2_24_INDEPENDENT_OFFICIAL_WEB_VERIFICATION_2026_11_13"
+          ]
+        },
+        {
+          "id": "NEW24-9d632b944992",
+          "url": "https://www.infostellar.net/",
+          "title": "www.infostellar.net — ",
+          "provenance_types": [
+            "STEP2_24_INDEPENDENT_OFFICIAL_WEB_VERIFICATION_2026_11_13"
+          ]
+        },
+        {
+          "id": "NEW24-c44f6c7c7ed0",
+          "url": "https://guide.stellarstation.com/FAQ.html",
+          "title": "guide.stellarstation.com — FAQ.html",
+          "provenance_types": [
+            "STEP2_24_INDEPENDENT_OFFICIAL_WEB_VERIFICATION_2026_11_13"
+          ]
+        },
+        {
+          "id": "NEW24-cccdf5c559b9",
+          "url": "https://www.infostellar.net/news/melco-acquires-infostellar",
+          "title": "www.infostellar.net — melco-acquires-infostellar",
+          "provenance_types": [
+            "STEP2_24_INDEPENDENT_OFFICIAL_WEB_VERIFICATION_2026_11_13"
+          ]
+        },
+        {
+          "id": "NEW24-565f750e7823",
+          "url": "https://www.infostellar.net/news/new-satcoms-gateway",
+          "title": "www.infostellar.net — new-satcoms-gateway",
+          "provenance_types": [
+            "STEP2_24_INDEPENDENT_OFFICIAL_WEB_VERIFICATION_2026_11_13"
+          ]
+        }
+      ],
+      "sections": [
+        {
+          "id": "overview",
+          "fa": "شناسنامه و مدل کسب‌وکار",
+          "en": "Identity & business model",
+          "ar": "التعريف ونموذج الأعمال",
+          "items": [
+            {
+              "fa": "Infostellar در ژانویه ۲۰۱۶ در توکیو تأسیس شد و خدمات بخش زمینی ماهواره را به‌صورت ابری گسترش داد. شخصیت حقوقی و برند این شرکت پس از تملک ۲۰۲۶ از Mitsubishi Electric مستقل در شناسنامه باقی می‌ماند، ولی مالکیت آن درج می‌شود.",
+              "en": "Infostellar was founded in Tokyo in January 2016 and developed cloud-enabled satellite ground-segment services. Its legal identity and brand remain separately described after the 2026 acquisition, with Mitsubishi Electric recorded as parent.",
+              "ar": "تأسست Infostellar في طوكيو في يناير 2016 وطورت خدمات القطاع الأرضي السحابية للأقمار. وتُعرض هويتها القانونية وعلامتها بشكل منفصل بعد استحواذ 2026، مع تسجيل Mitsubishi Electric شركةً أمّاً.",
+              "kind": "editorially_localized_verified_source_section",
+              "source_ids": [
+                "SRC-a63129425a9d",
+                "NEW24-1cf55a8ecfc1"
+              ],
+              "localization": "FACTUAL_SECTION_EQUIVALENCE_FA_EN_AR"
+            }
+          ]
+        },
+        {
+          "id": "services",
+          "fa": "محصولات و خدمات",
+          "en": "Products & services",
+          "ar": "المنتجات والخدمات",
+          "items": [
+            {
+              "fa": "پلتفرم StellarStation دسترسی زمان‌بندی‌شده به آنتن‌های شبکه‌ای از اپراتورهای گوناگون را برای uplink، downlink و TT&C فراهم می‌کند. باندهای V/UHF، S، X و Ka در فهرست سرویس آمده‌اند. دسترسی ابری به این شبکه با مالکیت فیزیکی تمام ایستگاه‌های آن یکسان نیست.",
+              "en": "StellarStation schedules access to antennas operated by different partners for uplink, downlink and TT&C. Advertised RF services span V/UHF, S, X and Ka bands. Cloud orchestration of this network does not imply physical ownership of all connected stations.",
+              "ar": "تنظم StellarStation الوصول المجدول إلى هوائيات شركاء مختلفين للوصلات الصاعدة والهابطة والقياس والتحكم TT&C. وتشمل الخدمات نطاقات V/UHF وS وX وKa. ولا تعني إدارة الشبكة سحابياً امتلاك جميع محطاتها فعلياً.",
+              "kind": "editorially_localized_verified_source_section",
+              "source_ids": [
+                "SRC-a63129425a9d",
+                "WEB-9d632b944992",
+                "NEW24-9d632b944992"
+              ],
+              "localization": "FACTUAL_SECTION_EQUIVALENCE_FA_EN_AR"
+            }
+          ]
+        },
+        {
+          "id": "network",
+          "fa": "شبکه و پوشش",
+          "en": "Network & footprint",
+          "ar": "الشبكة والتغطية",
+          "items": [
+            {
+              "fa": "در اطلاعیه مارس ۲۰۲۵ شبکه StellarStation شامل ۲۸ ایستگاه اعلام شده بود؛ این تعداد یک آمار تاریخی است. تأسیسات Taiki در ژاپن یکی از نقاط عملیاتی/میزبانی است و نباید موقعیت کل شبکه فرض شود. مالک کامل شرکت از ژوئیه ۲۰۲۶ Mitsubishi Electric است.",
+              "en": "A March 2025 announcement described 28 stations in the StellarStation network; that number is a historical snapshot. The Taiki facility in Japan supports particular hosting and gateway functions, not the geographic location of the entire network. Mitsubishi Electric has owned all shares since July 2026.",
+              "ar": "ذكر إعلان في مارس 2025 أن شبكة StellarStation تضم 28 محطة؛ وهو رقم تاريخي. تؤدي منشأة Taiki اليابانية مهام استضافة وبوابة محددة، ولا تمثل موقع الشبكة العالمية بأكملها. وتمتلك Mitsubishi Electric جميع الأسهم منذ يوليو 2026.",
+              "kind": "editorially_localized_verified_source_section",
+              "source_ids": [
+                "WEB-09ee12b2b2a6",
+                "NEW24-cccdf5c559b9",
+                "NEW24-565f750e7823"
+              ],
+              "localization": "FACTUAL_SECTION_EQUIVALENCE_FA_EN_AR"
+            }
+          ]
+        },
+        {
+          "id": "capacity",
+          "fa": "عملکرد و ظرفیت",
+          "en": "Capability & capacity",
+          "ar": "القدرات والسعة",
+          "items": [
+            {
+              "fa": "طبق راهنمای فنی شرکت، ارتباطات بی‌درنگ با نرخ‌های کمتر از حدود ۵۰ مگابیت‌برثانیه معمولاً قابل اتکاتر توصیف شده‌اند؛ تحقق نرخ بالاتر به مودم، لینک زمینی و پیکربندی مأموریت وابسته است. این رقم سقف فنی ثابت برای تمام ایستگاه‌ها نیست.",
+              "en": "Company technical guidance describes real-time links below roughly 50 Mb/s as commonly more practical; higher data rates depend on modem capability, terrestrial backhaul and mission configuration. This is not a universal network throughput ceiling.",
+              "ar": "تصف الإرشادات التقنية للشركة الوصلات الآنية الأقل من نحو 50 ميغابت/ثانية بأنها أكثر عملية عادةً؛ أما المعدلات الأعلى فتعتمد على المودم وشبكة النقل الأرضية وتكوين المهمة. وليس هذا الرقم سقفاً ثابتاً لكل المحطات.",
+              "kind": "editorially_localized_verified_source_section",
+              "source_ids": [
+                "NEW24-c44f6c7c7ed0"
+              ],
+              "localization": "FACTUAL_SECTION_EQUIVALENCE_FA_EN_AR"
+            }
+          ]
+        },
+        {
+          "id": "clients",
+          "fa": "مشتریان و شبکه عملیاتی",
+          "en": "Clients & operational links",
+          "ar": "العملاء والروابط التشغيلية",
+          "items": [
+            {
+              "fa": "StellarStation برای اپراتورهای ماهواره، مأموریت‌های سنجش‌ازدور و منظومه‌ها فرصت‌های تماس و مدیریت واحد ایستگاه‌های شریک را فراهم می‌کند. مشتریان از یک رابط مرکزی استفاده می‌کنند، اما مجوزها و تجهیزات ایستگاه‌ها در اختیار اپراتورهای مربوط باقی می‌مانند.",
+              "en": "StellarStation serves satellite operators, Earth observation missions and constellations through a centralized interface for partner-station contacts. Ground-site permissions and infrastructure remain with the relevant operators unless separately contracted.",
+              "ar": "تخدم StellarStation مشغلي الأقمار ومهمات رصد الأرض والكوكبات عبر واجهة موحدة لاتصالات محطات الشركاء. وتبقى تراخيص المواقع الأرضية وبنيتها لدى الجهات المشغلة ما لم يُنص تعاقدياً على خلاف ذلك.",
+              "kind": "editorially_localized_verified_source_section",
+              "source_ids": [
+                "WEB-9d632b944992"
+              ],
+              "localization": "FACTUAL_SECTION_EQUIVALENCE_FA_EN_AR"
+            }
+          ]
+        }
+      ],
+      "key_facts": [],
+      "verified_on": "2026-11-13",
+      "hide_evidence_scope_in_ui": true,
+      "release_status": "EDITORIAL_RESEARCH_PREVIEW_NEEDS_FINAL_EXPERT_SIGNOFF",
+      "inventory_id": "DISC-0062",
+      "geo_source_url": "https://www.infostellar.net/",
+      "geo_precision": "approximate_city_only_current_office_unconfirmed"
+    },
+    "orbita_release_note": {
+      "release_date": "2026-11-13",
+      "inventory_id": "DISC-0062",
+      "status": "EDITORIAL_PREVIEW",
+      "batch": "RASPEHR_14_STEP5",
+      "expert_review_pending": true,
+      "language_parity": "FA_EN_AR_SECTION_DETAIL",
+      "geo_precision": "approximate_city_only_current_office_unconfirmed",
+      "logo_status": "typographic_name_only"
+    }
+  },
+  {
+    "id": "raspehr-0091-momentus",
+    "cat": "inspace_services",
+    "en": "Momentus",
+    "fa": "مومنتوس",
+    "ar": "مومنتوس",
+    "country": "United States",
+    "country_fa": "ایالات متحده آمریکا",
+    "country_ar": "الولايات المتحدة الأمريكية",
+    "city": "San Jose",
+    "city_fa": "سن‌خوزه",
+    "city_ar": "سان خوسيه",
+    "lat": 37.366,
+    "lon": -121.907,
+    "coordinate_precision": "approximate_neighbourhood_official_filing_address",
+    "coordinates_are_exact_site_gps": false,
+    "address": "1762 Automation Parkway, San Jose, CA 95131, USA",
+    "address_evidence_url": "https://www.sec.gov/Archives/edgar/data/1781162/000114036126015951/ny20070923x1_s3.htm",
+    "site": "https://www.momentus.space/",
+    "fa_d": "Momentus Inc. شرکت آمریکایی فعال در خدمات انتقال مداری، استقرار محموله و میزبانی آزمایش‌هاست. وسیله Vigoride-7 در مارس ۲۰۲۶ پرتاب شد؛ برنامه Vigoride-8 برای ۲۰۲۷، مأموریت انجام‌شده نیست.",
+    "en_d": "Momentus Inc. is a US company providing in-space transportation, payload hosting and technology demonstrations. Vigoride-7 launched in March 2026, whereas Vigoride-8 remains a planned 2027 mission.",
+    "ar_d": "Momentus Inc. شركة أمريكية لخدمات النقل داخل المدار واستضافة الحمولات وعروض التقنية. أُطلقت Vigoride-7 في مارس 2026، في حين تبقى Vigoride-8 مهمة مخططاً لها لعام 2027.",
+    "org_type_fa": "شرکت خدمات مداری",
+    "org_type_en": "In-space services",
+    "org_type_ar": "خدمات فضائية مدارية",
+    "parent_institution": "",
+    "logo": "",
+    "logo_kind": "no_verified_official_logo",
+    "brand_text_identifier": "MOM",
+    "orbita_verified_profile": {
+      "schema_version": 3,
+      "profile_type": "inspace_services",
+      "summary": {
+        "fa": "Momentus Inc. شرکت آمریکایی فعال در خدمات انتقال مداری، استقرار محموله و میزبانی آزمایش‌هاست. وسیله Vigoride-7 در مارس ۲۰۲۶ پرتاب شد؛ برنامه Vigoride-8 برای ۲۰۲۷، مأموریت انجام‌شده نیست.",
+        "en": "Momentus Inc. is a US company providing in-space transportation, payload hosting and technology demonstrations. Vigoride-7 launched in March 2026, whereas Vigoride-8 remains a planned 2027 mission.",
+        "ar": "Momentus Inc. شركة أمريكية لخدمات النقل داخل المدار واستضافة الحمولات وعروض التقنية. أُطلقت Vigoride-7 في مارس 2026، في حين تبقى Vigoride-8 مهمة مخططاً لها لعام 2027."
+      },
+      "sources": [
+        {
+          "url": "https://www.nasa.gov/smallsat-institute/sst-soa/integration-launch-and-deployment/",
+          "provenance_types": [
+            "S3_325_CLAIMS_INHERITED"
+          ],
+          "id": "SRC-0dd6be18823b",
+          "title": "www.nasa.gov — smallsat-institute/sst-soa/integration-launch-and-deployment"
+        },
+        {
+          "url": "https://investors.momentus.space/news-releases/news-release-details/momentus-delivering-orbit-success-vigoride-7-maneuvers-cleanly",
+          "provenance_types": [
+            "STEP2_COMPLETION_99_OFFICIAL_WEB_RESEARCH"
+          ],
+          "id": "WEB-880deafaf1e7",
+          "title": "investors.momentus.space — news-releases/news-release-details/momentus-delivering-orbit-success-vigoride-7-maneuvers-"
+        },
+        {
+          "url": "https://investors.momentus.space/news-releases/news-release-details/momentus-demonstrates-ai-enabled-lidar-and-imaging-suite-during",
+          "provenance_types": [
+            "STEP2_COMPLETION_99_OFFICIAL_WEB_RESEARCH"
+          ],
+          "id": "WEB-a8b4281a5415",
+          "title": "investors.momentus.space — news-releases/news-release-details/momentus-demonstrates-ai-enabled-lidar-and-imaging-suit"
+        },
+        {
+          "url": "https://investors.momentus.space/news-releases/news-release-details/mission-update-momentus-vigoride-7-orbital-service-vehicle",
+          "provenance_types": [
+            "STEP2_COMPLETION_99_OFFICIAL_WEB_RESEARCH"
+          ],
+          "id": "WEB-ff0b34001c80",
+          "title": "investors.momentus.space — news-releases/news-release-details/mission-update-momentus-vigoride-7-orbital-service-vehi"
+        },
+        {
+          "id": "NEW24-ff0b34001c80",
+          "url": "https://investors.momentus.space/news-releases/news-release-details/mission-update-momentus-vigoride-7-orbital-service-vehicle",
+          "title": "investors.momentus.space — mission-update-momentus-vigoride-7-orbital-service-vehicle",
+          "provenance_types": [
+            "STEP2_24_INDEPENDENT_OFFICIAL_WEB_VERIFICATION_2026_11_13"
+          ]
+        },
+        {
+          "id": "NEW24-880deafaf1e7",
+          "url": "https://investors.momentus.space/news-releases/news-release-details/momentus-delivering-orbit-success-vigoride-7-maneuvers-cleanly",
+          "title": "investors.momentus.space — momentus-delivering-orbit-success-vigoride-7-maneuvers-cleanly",
+          "provenance_types": [
+            "STEP2_24_INDEPENDENT_OFFICIAL_WEB_VERIFICATION_2026_11_13"
+          ]
+        },
+        {
+          "id": "NEW24-4a88017df9af",
+          "url": "https://investors.momentus.space/news-releases/news-release-details/fully-booked-momentus-mission-advances-through-preliminary/",
+          "title": "investors.momentus.space — ",
+          "provenance_types": [
+            "STEP2_24_INDEPENDENT_OFFICIAL_WEB_VERIFICATION_2026_11_13"
+          ]
+        },
+        {
+          "id": "NEW24-2c8d3d6515fb",
+          "url": "https://investors.momentus.space/news-releases/news-release-details/momentus-reports-strong-progress-space-robotic-assembly-under-us",
+          "title": "investors.momentus.space — momentus-reports-strong-progress-space-robotic-assembly-under-us",
+          "provenance_types": [
+            "STEP2_24_INDEPENDENT_OFFICIAL_WEB_VERIFICATION_2026_11_13"
+          ]
+        },
+        {
+          "id": "STAGE3-8ba4f62a5815",
+          "url": "https://investors.momentus.space/news-releases/news-release-details/momentus-launches-vigoride-7-orbital-service-vehicle-spacex",
+          "title": "Official primary evidence from stage-3 audit",
+          "provenance_types": [
+            "STAGE3_PRIMARY_SOURCE_IDENTITY_RECHECK"
+          ]
+        },
+        {
+          "id": "STAGE3-a6c0752aa049",
+          "url": "https://investors.momentus.space/investor-relations/",
+          "title": "Official primary evidence from stage-3 audit",
+          "provenance_types": [
+            "STAGE3_PRIMARY_SOURCE_IDENTITY_RECHECK"
+          ]
+        },
+        {
+          "id": "STAGE3-e9157cf92f3c",
+          "url": "https://www.sec.gov/Archives/edgar/data/1781162/000162828026055624/R8.htm",
+          "title": "Official primary evidence from stage-3 audit",
+          "provenance_types": [
+            "STAGE3_PRIMARY_SOURCE_IDENTITY_RECHECK"
+          ]
+        }
+      ],
+      "sections": [
+        {
+          "id": "overview",
+          "fa": "شناسنامه و خدمات",
+          "en": "Identity & services",
+          "ar": "التعريف والخدمات",
+          "items": [
+            {
+              "fa": "Momentus توسعه‌دهنده وسایل خدمات مداری Vigoride برای حمل و استقرار محموله‌ها و آزمون فناوری‌های درون‌مداری است. وجود سکوی عملیاتی به معنی انجام‌شدن تمام مأموریت‌های برنامه‌ریزی‌شده یا خدمات تجاری وعده‌داده‌شده نیست.",
+              "en": "Momentus develops the Vigoride in-space service-vehicle family for payload delivery, hosted experiments and orbital technology demonstration. A flown platform does not establish completion of every planned experiment or promised commercial service.",
+              "ar": "تطور Momentus عائلة مركبات الخدمة المدارية Vigoride لتوصيل الحمولات واستضافة التجارب وعرض التقنيات في المدار. ولا يعني إطلاق المنصة اكتمال جميع التجارب المخطط لها أو الخدمات التجارية المعلنة.",
+              "kind": "editorially_localized_verified_source_section",
+              "source_ids": [
+                "SRC-0dd6be18823b",
+                "STAGE3-8ba4f62a5815",
+                "STAGE3-a6c0752aa049",
+                "STAGE3-e9157cf92f3c"
+              ],
+              "localization": "FACTUAL_SECTION_EQUIVALENCE_FA_EN_AR"
+            }
+          ]
+        },
+        {
+          "id": "fleet",
+          "fa": "ناوگان و سامانه‌ها",
+          "en": "Fleet & systems",
+          "ar": "الأسطول والأنظمة",
+          "items": [
+            {
+              "fa": "Vigoride-7 در مأموریت Transporter-16 در ۳۰ مارس ۲۰۲۶ پرتاب شد و پس از استقرار، آرایه خورشیدی حدود ۱٫۶ کیلوواتی آن باز شد. طبق گزارش ۳۰ ژوئیه ۲۰۲۶، دو پیشران الکتروحرارتی مایکروویوی MET با آب به‌عنوان پیشرانه در بیش از ۵۰ مانور، ارتفاع مداری را تقریباً ۲۰ کیلومتر کاهش دادند. این اعداد به Vigoride-7 و تاریخ گزارش تعلق دارند.",
+              "en": "Vigoride-7 launched aboard Transporter-16 on 30 March 2026 and deployed solar arrays rated at roughly 1.6 kW. A 30 July 2026 company report described over 50 manoeuvres using two microwave electrothermal (MET) thrusters with water propellant, lowering orbital altitude by approximately 20 km. These performance figures are specific to Vigoride-7 and the reporting date.",
+              "ar": "أُطلقت Vigoride-7 ضمن Transporter-16 في 30 مارس 2026 ونشرت مصفوفات شمسية بقدرة تقارب 1.6 كيلوواط. ووصف تقرير الشركة بتاريخ 30 يوليو 2026 أكثر من 50 مناورة باستخدام دافعين كهروحراريين بالميكروويف MET يعملان بالماء، مع خفض الارتفاع المداري نحو 20 كم. وتخص هذه الأرقام Vigoride-7 وتاريخ التقرير.",
+              "kind": "editorially_localized_verified_source_section",
+              "source_ids": [
+                "WEB-880deafaf1e7",
+                "NEW24-ff0b34001c80",
+                "STAGE3-8ba4f62a5815",
+                "STAGE3-a6c0752aa049",
+                "STAGE3-e9157cf92f3c"
+              ],
+              "localization": "FACTUAL_SECTION_EQUIVALENCE_FA_EN_AR"
+            }
+          ]
+        },
+        {
+          "id": "missions",
+          "fa": "مأموریت‌های انجام‌شده",
+          "en": "Completed missions",
+          "ar": "المهمات المنفّذة",
+          "items": [
+            {
+              "fa": "Vigoride-7 حامل ۱۰ محموله دولتی و تجاری معرفی شد؛ حمل محموله با موفقیت همه آزمون‌ها یکی نیست. شرکت در سپتامبر ۲۰۲۶ نمایش عملیات ملاقات و نزدیکی با کیوب‌ست ناسا R5-S10 را گزارش کرد؛ این دستاورد معادل اتصال یا سوخت‌رسانی نیست. در ۱۲ نوامبر ۲۰۲۶ نیز پیشرفت اولیه نمایش مونتاژ سازه ASTRA مؤسسه Caltech اعلام شد، نه خاتمه کل آزمایش.",
+              "en": "Vigoride-7 carried ten government and commercial payloads, but payload carriage does not imply successful completion of every experiment. In September 2026 the company reported proximity-operations demonstrations involving NASA’s R5-S10 CubeSat; these did not establish docking or refuelling. On 12 November 2026 it reported initial progress on Caltech’s ASTRA structure-assembly demonstration, not full mission completion.",
+              "ar": "حملت Vigoride-7 عشر حمولات حكومية وتجارية، لكن حملها لا يعني نجاح كل تجربة. وفي سبتمبر 2026 أعلنت الشركة عرض عمليات الاقتراب من مكعب ناسا R5-S10، وهو ليس التحاماً أو تزويداً بالوقود. وفي 12 نوفمبر 2026 أعلنت تقدماً أولياً في تجربة تجميع هيكل ASTRA التابعة لـCaltech، وليس إنجاز التجربة بالكامل.",
+              "kind": "editorially_localized_verified_source_section",
+              "source_ids": [
+                "SRC-0dd6be18823b",
+                "WEB-ff0b34001c80",
+                "WEB-a8b4281a5415",
+                "NEW24-ff0b34001c80",
+                "NEW24-2c8d3d6515fb",
+                "STAGE3-8ba4f62a5815",
+                "STAGE3-a6c0752aa049",
+                "STAGE3-e9157cf92f3c"
+              ],
+              "localization": "FACTUAL_SECTION_EQUIVALENCE_FA_EN_AR"
+            }
+          ]
+        },
+        {
+          "id": "capabilities",
+          "fa": "قابلیت‌های مداری",
+          "en": "In-orbit capabilities",
+          "ar": "القدرات المدارية",
+          "items": [
+            {
+              "fa": "پیشرانش MET با پیشرانه آب، مانورهای مداری کنترل‌شده Vigoride-7 را ممکن کرده است. گزارش بیش از ۵۰ مانور و کاهش نزدیک ۲۰ کیلومتری ارتفاع مدار یک نتیجه گزارش‌شده مأموریت در ژوئیه ۲۰۲۶ است؛ نباید آن را به تمام ناوگان تعمیم داد.",
+              "en": "Water-propelled MET thrusters supported controlled orbital manoeuvres by Vigoride-7. The reported 50-plus manoeuvres and nearly 20 km altitude decrease describe the mission’s status in July 2026 and cannot be generalized to every Vigoride vehicle.",
+              "ar": "سمحت دافعات MET العاملة بالماء بتنفيذ مناورات مدارية مضبوطة بواسطة Vigoride-7. ويصف تقرير أكثر من 50 مناورة وخفض ارتفاع يقارب 20 كم حالة المهمة في يوليو 2026، ولا يُعمم على جميع مركبات Vigoride.",
+              "kind": "editorially_localized_verified_source_section",
+              "source_ids": [
+                "NEW24-880deafaf1e7",
+                "STAGE3-8ba4f62a5815",
+                "STAGE3-a6c0752aa049",
+                "STAGE3-e9157cf92f3c"
+              ],
+              "localization": "FACTUAL_SECTION_EQUIVALENCE_FA_EN_AR"
+            }
+          ]
+        },
+        {
+          "id": "roadmap",
+          "fa": "برنامه توسعه و مشتریان",
+          "en": "Roadmap & customers",
+          "ar": "خارطة الطريق والعملاء",
+          "items": [
+            {
+              "fa": "برای Vigoride-8 سال ۲۰۲۷ هدف‌گذاری شده و مرور طراحی اولیه آن در آوریل ۲۰۲۶ انجام شده است. این وضعیت «برنامه‌ریزی‌شده» است؛ نباید در فهرست پرتاب‌ها یا عملیات موفق قرار گیرد.",
+              "en": "Vigoride-8 was targeted for 2027, with a preliminary design review completed in April 2026. It remains a planned mission and must not be listed as a completed launch or operation.",
+              "ar": "خُطط لإطلاق Vigoride-8 في 2027 بعد إنجاز مراجعة التصميم الأولية في أبريل 2026. وتبقى مهمة مستقبلية ولا تُدرج ضمن الإطلاقات أو العمليات المنجزة.",
+              "kind": "editorially_localized_verified_source_section",
+              "source_ids": [
+                "NEW24-4a88017df9af",
+                "STAGE3-8ba4f62a5815",
+                "STAGE3-a6c0752aa049",
+                "STAGE3-e9157cf92f3c"
+              ],
+              "localization": "FACTUAL_SECTION_EQUIVALENCE_FA_EN_AR"
+            }
+          ]
+        }
+      ],
+      "key_facts": [],
+      "verified_on": "2026-11-13",
+      "hide_evidence_scope_in_ui": true,
+      "release_status": "EDITORIAL_RESEARCH_PREVIEW_NEEDS_FINAL_EXPERT_SIGNOFF",
+      "inventory_id": "DISC-0091",
+      "geo_source_url": "https://www.sec.gov/Archives/edgar/data/1781162/000114036126015951/ny20070923x1_s3.htm",
+      "geo_precision": "approximate_neighbourhood_official_filing_address"
+    },
+    "orbita_release_note": {
+      "release_date": "2026-11-13",
+      "inventory_id": "DISC-0091",
+      "status": "EDITORIAL_PREVIEW",
+      "batch": "RASPEHR_14_STEP5",
+      "expert_review_pending": true,
+      "language_parity": "FA_EN_AR_SECTION_DETAIL",
+      "geo_precision": "approximate_neighbourhood_official_filing_address",
+      "logo_status": "typographic_name_only"
+    }
+  },
+  {
+    "id": "raspehr-0106-isro-isite-satellite-integration-an",
+    "cat": "test_facility",
+    "en": "ISRO ISITE Satellite Integration and Test Establishment",
+    "fa": "مرکز یکپارچه‌سازی و آزمون ماهواره ایسرو (ISITE)",
+    "ar": "منشأة إيسرو لتكامل واختبار الأقمار الصناعية",
+    "country": "India",
+    "country_fa": "هند",
+    "country_ar": "الهند",
+    "city": "Bengaluru (Marathahalli)",
+    "city_fa": "بنگلور (ماراتهالی)",
+    "city_ar": "بنغالورو (ماراثاهالي)",
+    "lat": 12.957,
+    "lon": 77.697,
+    "coordinate_precision": "approximate_neighbourhood_official_facility_address",
+    "coordinates_are_exact_site_gps": false,
+    "address": "ISITE, Karthik Nagar, Doddanekkundi, Marathahalli Outer Ring Road, Bengaluru 560037, India",
+    "address_evidence_url": "https://www.isro.gov.in/URSC.html",
+    "site": "https://www.isro.gov.in/URSC.html",
+    "fa_d": "ISITE تأسیسات یکپارچه‌سازی و آزمون ماهواره در بنگلور و وابسته به مرکز URSC سازمان فضایی هند است، نه یک شرکت مستقل. محفظه خلأحرارتی ۶٫۵متری و سامانه ارتعاش ۲۹تنی از تجهیزات شاخص آن‌اند.",
+    "en_d": "ISITE is ISRO’s satellite integration and test facility in Bengaluru, operated within the U R Rao Satellite Centre (URSC), not a separate company. Major facilities include a 6.5 m thermal-vacuum chamber and a 29-tonne vibration test system.",
+    "ar_d": "ISITE منشأة دمج واختبار أقمار صناعية في بنغالورو تتبع مركز U R Rao (URSC) ضمن ISRO، وليست شركة مستقلة. تضم غرفة فراغ حراري بقطر 6.5 أمتار ونظام اختبار اهتزاز بقدرة 29 طناً.",
+    "org_type_fa": "تأسیسات آزمون فضایی",
+    "org_type_en": "Space test facility",
+    "org_type_ar": "منشأة لاختبارات الفضاء",
+    "parent_institution": "ISRO / U R Rao Satellite Centre (URSC)",
+    "logo": "assets/img/logos/isro-parent-logo.png",
+    "logo_kind": "official_parent_organization_logo",
+    "brand_text_identifier": "ISRO",
+    "orbita_verified_profile": {
+      "schema_version": 3,
+      "profile_type": "test_facility",
+      "summary": {
+        "fa": "ISITE تأسیسات یکپارچه‌سازی و آزمون ماهواره در بنگلور و وابسته به مرکز URSC سازمان فضایی هند است، نه یک شرکت مستقل. محفظه خلأحرارتی ۶٫۵متری و سامانه ارتعاش ۲۹تنی از تجهیزات شاخص آن‌اند.",
+        "en": "ISITE is ISRO’s satellite integration and test facility in Bengaluru, operated within the U R Rao Satellite Centre (URSC), not a separate company. Major facilities include a 6.5 m thermal-vacuum chamber and a 29-tonne vibration test system.",
+        "ar": "ISITE منشأة دمج واختبار أقمار صناعية في بنغالورو تتبع مركز U R Rao (URSC) ضمن ISRO، وليست شركة مستقلة. تضم غرفة فراغ حراري بقطر 6.5 أمتار ونظام اختبار اهتزاز بقدرة 29 طناً."
+      },
+      "sources": [
+        {
+          "url": "https://www.isro.gov.in/URSC.html",
+          "provenance_types": [
+            "S3_325_CLAIMS_INHERITED"
+          ],
+          "id": "SRC-cfe46cd24661",
+          "title": "www.isro.gov.in — URSC.html"
+        },
+        {
+          "url": "https://www.isro.gov.in/URSC.html",
+          "provenance_types": [
+            "STEP2_COMPLETION_2026_11_13_OFFICIAL_WEB_RESEARCH"
+          ],
+          "id": "WEB-cfe46cd24661",
+          "title": "www.isro.gov.in — URSC.html"
+        },
+        {
+          "id": "UPG-6cdd9f4d7ac3",
+          "title": "www.ursc.gov.in | /isac-evolution.jsp",
+          "url": "https://www.ursc.gov.in/isac-evolution.jsp",
+          "evidence_status": "PRIMARY_OFFICIAL_SITE_RESEARCHED_2026_11_13"
+        },
+        {
+          "id": "UPG-cfe46cd24661",
+          "title": "www.isro.gov.in | /URSC.html",
+          "url": "https://www.isro.gov.in/URSC.html",
+          "evidence_status": "PRIMARY_OFFICIAL_SITE_RESEARCHED_2026_11_13"
+        },
+        {
+          "id": "NEW24-cfe46cd24661",
+          "url": "https://www.isro.gov.in/URSC.html",
+          "title": "www.isro.gov.in — URSC.html",
+          "provenance_types": [
+            "STEP2_24_INDEPENDENT_OFFICIAL_WEB_VERIFICATION_2026_11_13"
+          ]
+        },
+        {
+          "id": "STAGE3-529996cf3bd6",
+          "url": "https://eproc.isro.gov.in/common/viewDocument?id=ff808181953fff38019545c1ed6e11ae&indentId=IS2025000049",
+          "title": "Official primary evidence from stage-3 audit",
+          "provenance_types": [
+            "STAGE3_PRIMARY_SOURCE_IDENTITY_RECHECK"
+          ]
+        }
+      ],
+      "sections": [
+        {
+          "id": "overview",
+          "fa": "شناسنامه تأسیسات",
+          "en": "Facility identity",
+          "ar": "تعريف المنشأة",
+          "items": [
+            {
+              "fa": "Satellite Integration and Test Establishment یا ISITE مرکز یکپارچه‌سازی و آزمون ماهواره‌های سازمان فضایی هند در بنگلور است. از نظر اداری به URSC و سپس ISRO وابسته است؛ ثبت شرکت حقوقی جدا برای آن اشتباه خواهد بود.",
+              "en": "The Satellite Integration and Test Establishment (ISITE) integrates and tests Indian Space Research Organisation spacecraft in Bengaluru. Administratively it belongs to URSC within ISRO and must not be registered as a separate commercial company.",
+              "ar": "تقوم منشأة Satellite Integration and Test Establishment (ISITE) بدمج واختبار مركبات منظمة أبحاث الفضاء الهندية في بنغالورو. وتتبع إدارياً URSC ضمن ISRO، ولا تُسجل شركة تجارية مستقلة.",
+              "kind": "editorially_localized_verified_source_section",
+              "source_ids": [
+                "SRC-cfe46cd24661",
+                "UPG-cfe46cd24661",
+                "NEW24-cfe46cd24661",
+                "STAGE3-529996cf3bd6"
+              ],
+              "localization": "FACTUAL_SECTION_EQUIVALENCE_FA_EN_AR"
+            }
+          ]
+        },
+        {
+          "id": "equipment",
+          "fa": "تجهیزات و ظرفیت آزمون",
+          "en": "Facilities & test capability",
+          "ar": "المرافق والقدرات الاختبارية",
+          "items": [
+            {
+              "fa": "تجهیزات اصلی شامل اتاق‌های تمیز، محفظه خلأ حرارتی به قطر ۶٫۵ متر، سامانه آزمون ارتعاش با ظرفیت ۲۹ تن، تجهیزات آزمون آکوستیک و تأسیسات فشرده آزمون آنتن است. منابع رسمی از ظرفیت تولید و استانداردسازی برخی زیرسامانه‌ها نیز نام می‌برند، اما این قابلیت به معنی ساخت همه تجهیزات ماهواره در محل نیست.",
+              "en": "Major equipment comprises clean rooms, a 6.5 m thermal-vacuum chamber, a 29-tonne vibration test system, acoustic testing and a compact antenna test facility. Official descriptions also mention production and standardization of selected subsystems; they do not establish manufacture of all spacecraft hardware on site.",
+              "ar": "تشمل المعدات الرئيسية غرفاً نظيفة وغرفة فراغ حراري بقطر 6.5 أمتار ومنظومة اهتزاز بسعة 29 طناً ومرافق اختبار صوتي واختبار الهوائيات المدمج. وتذكر المصادر الرسمية إنتاج بعض الأنظمة الفرعية وتوحيدها، وليس تصنيع جميع مكونات القمر في الموقع.",
+              "kind": "editorially_localized_verified_source_section",
+              "source_ids": [
+                "WEB-cfe46cd24661",
+                "UPG-cfe46cd24661",
+                "NEW24-cfe46cd24661",
+                "STAGE3-529996cf3bd6"
+              ],
+              "localization": "FACTUAL_SECTION_EQUIVALENCE_FA_EN_AR"
+            }
+          ]
+        },
+        {
+          "id": "testing",
+          "fa": "آزمون‌ها و پروژه‌ها",
+          "en": "Testing & projects",
+          "ar": "الاختبارات والمشروعات",
+          "items": [
+            {
+              "fa": "یکپارچه‌سازی و آزمون ماهواره‌های مخابراتی و ناوبری URSC در ISITE انجام می‌شود. برنامه آزمون به‌صورت ترکیبی از کنترل سازه‌ای، ارتعاشی، صوتی، حرارتی-خلأ و ویژگی آنتن‌ها تعریف می‌شود؛ ظرفیت هر دستگاه از نمونه و پیکربندی آزمون مستقل است.",
+              "en": "ISITE performs integration and testing of URSC communications and navigation satellites. Its test chain includes structural, vibration, acoustic, thermal-vacuum and antenna performance checks; equipment limits are specific to each test article and setup.",
+              "ar": "تنجز ISITE دمج واختبار أقمار الاتصالات والملاحة التابعة لـURSC. وتشمل سلسلة الاختبارات البنية والاهتزاز والصوت والفراغ الحراري وأداء الهوائيات، مع تحديد حدود كل جهاز وفق العينة وإعداد الاختبار.",
+              "kind": "editorially_localized_verified_source_section",
+              "source_ids": [
+                "SRC-cfe46cd24661",
+                "UPG-cfe46cd24661",
+                "NEW24-cfe46cd24661",
+                "STAGE3-529996cf3bd6"
+              ],
+              "localization": "FACTUAL_SECTION_EQUIVALENCE_FA_EN_AR"
+            }
+          ]
+        },
+        {
+          "id": "standards",
+          "fa": "استانداردها و اعتبارسنجی",
+          "en": "Standards & qualification",
+          "ar": "المعايير والتأهيل",
+          "items": [
+            {
+              "fa": "ISITE به‌عنوان تأسیسات آزمون URSC با آزمایشگاه LEOS در Peenya یکسان نیست. نتیجه آزمون و گواهی صلاحیت هر ماهواره باید از مدارک همان مأموریت استخراج شود، نه فقط از قابلیت تجهیزات تأسیسات.",
+              "en": "ISITE is a URSC test facility and is distinct from the LEOS laboratory in Peenya. Spacecraft qualification results must come from the relevant mission test reports rather than being inferred solely from facility capabilities.",
+              "ar": "ISITE منشأة اختبار ضمن URSC وتختلف عن مختبر LEOS في بينيا. وينبغي أخذ نتائج التأهيل لكل قمر من تقارير اختبار مهمته، لا استنتاجها من قدرات المنشأة وحدها.",
+              "kind": "editorially_localized_verified_source_section",
+              "source_ids": [
+                "WEB-cfe46cd24661",
+                "UPG-cfe46cd24661",
+                "STAGE3-529996cf3bd6"
+              ],
+              "localization": "FACTUAL_SECTION_EQUIVALENCE_FA_EN_AR"
+            }
+          ]
+        },
+        {
+          "id": "history",
+          "fa": "تاریخچه و مشتریان",
+          "en": "History & customers",
+          "ar": "التاريخ والعملاء",
+          "items": [
+            {
+              "fa": "ISITE در سال ۲۰۰۶ برای توسعه ظرفیت یکپارچه‌سازی و آزمون، به‌ویژه ماهواره‌های مخابراتی پرتوان، ایجاد شد. این مجموعه در سایتی حدود ۱۱۰ ایکر و تقریباً هشت کیلومتر دورتر از پردیس تاریخی مرکز ماهواره‌ای هند توسعه یافت؛ تاریخ ایجاد آن با تاریخ تأسیس URSC یکسان نیست.",
+              "en": "ISITE was established in 2006 to expand integration and test capacity, especially for high-power communications satellites. The roughly 110-acre site was developed about eight kilometres from the former main satellite-centre campus. The facility’s establishment date is distinct from URSC’s institutional history.",
+              "ar": "أُنشئت ISITE عام 2006 لتوسيع قدرات الدمج والاختبار، خاصة لأقمار الاتصالات عالية القدرة. وطُوّر الموقع على مساحة نحو 110 أفدنة وعلى بُعد يقارب ثمانية كيلومترات من المقر التاريخي لمركز الأقمار. ويختلف تاريخ المنشأة عن تاريخ تأسيس URSC.",
+              "kind": "editorially_localized_verified_source_section",
+              "source_ids": [
+                "UPG-6cdd9f4d7ac3",
+                "NEW24-cfe46cd24661",
+                "STAGE3-529996cf3bd6"
+              ],
+              "localization": "FACTUAL_SECTION_EQUIVALENCE_FA_EN_AR"
+            }
+          ]
+        }
+      ],
+      "key_facts": [],
+      "verified_on": "2026-11-13",
+      "hide_evidence_scope_in_ui": true,
+      "release_status": "EDITORIAL_RESEARCH_PREVIEW_NEEDS_FINAL_EXPERT_SIGNOFF",
+      "inventory_id": "DISC-0106",
+      "geo_source_url": "https://www.isro.gov.in/URSC.html",
+      "geo_precision": "approximate_neighbourhood_official_facility_address"
+    },
+    "orbita_release_note": {
+      "release_date": "2026-11-13",
+      "inventory_id": "DISC-0106",
+      "status": "EDITORIAL_PREVIEW",
+      "batch": "RASPEHR_14_STEP5",
+      "expert_review_pending": true,
+      "language_parity": "FA_EN_AR_SECTION_DETAIL",
+      "geo_precision": "approximate_neighbourhood_official_facility_address",
+      "logo_status": "official_parent_org"
+    }
+  },
+  {
+    "id": "raspehr-0113-nasa-in-space-propulsion-facility",
+    "cat": "test_facility",
+    "en": "NASA In-Space Propulsion Facility",
+    "fa": "تأسیسات آزمون پیشرانش در فضا ناسا",
+    "ar": "منشأة ناسا لاختبار الدفع الفضائي",
+    "country": "United States",
+    "country_fa": "ایالات متحده آمریکا",
+    "country_ar": "الولايات المتحدة الأمريكية",
+    "city": "Sandusky",
+    "city_fa": "سنداسکی",
+    "city_ar": "ساندوسكي",
+    "lat": 41.379,
+    "lon": -82.657,
+    "coordinate_precision": "approximate_campus_not_b2_chamber",
+    "coordinates_are_exact_site_gps": false,
+    "address": "Neil A. Armstrong Test Facility, 6100 Columbus Avenue, Sandusky, Ohio 44870, USA",
+    "address_evidence_url": "https://www.nasa.gov/centers-and-facilities/glenn/in-space-propulsion-facility/",
+    "site": "https://www.nasa.gov/centers-and-facilities/glenn/in-space-propulsion-facility/",
+    "fa_d": "تأسیسات In-Space Propulsion Facility ناسا در مجموعه آزمایشی نیل آرمسترانگ در سانداسکی اوهایو برای آزمون موتور و مرحله بالایی پرتابگر تحت شرایط شبیه‌سازی‌شده ارتفاع و خلأ ساخته شده است؛ این محل شرکت یا پایگاه پرتاب نیست.",
+    "en_d": "NASA’s In-Space Propulsion Facility at the Neil Armstrong Test Facility in Sandusky, Ohio, is a ground test site for rocket engines and upper stages under simulated altitude and vacuum conditions—not a company or launch site.",
+    "ar_d": "منشأة In-Space Propulsion التابعة لناسا في مجمع Neil Armstrong بمدينة ساندسكي، أوهايو، هي موقع اختبار أرضي للمحركات والمراحل العليا في ظروف ارتفاع وفراغ محاكية، وليست شركة أو موقع إطلاق.",
+    "org_type_fa": "تأسیسات آزمون فضایی",
+    "org_type_en": "Space test facility",
+    "org_type_ar": "منشأة لاختبارات الفضاء",
+    "parent_institution": "NASA / Glenn Research Center / Neil Armstrong Test Facility",
+    "logo": "assets/img/logos/nasa-logo.svg",
+    "logo_kind": "official_parent_organization_logo",
+    "brand_text_identifier": "NASA",
+    "orbita_verified_profile": {
+      "schema_version": 3,
+      "profile_type": "test_facility",
+      "summary": {
+        "fa": "تأسیسات In-Space Propulsion Facility ناسا در مجموعه آزمایشی نیل آرمسترانگ در سانداسکی اوهایو برای آزمون موتور و مرحله بالایی پرتابگر تحت شرایط شبیه‌سازی‌شده ارتفاع و خلأ ساخته شده است؛ این محل شرکت یا پایگاه پرتاب نیست.",
+        "en": "NASA’s In-Space Propulsion Facility at the Neil Armstrong Test Facility in Sandusky, Ohio, is a ground test site for rocket engines and upper stages under simulated altitude and vacuum conditions—not a company or launch site.",
+        "ar": "منشأة In-Space Propulsion التابعة لناسا في مجمع Neil Armstrong بمدينة ساندسكي، أوهايو، هي موقع اختبار أرضي للمحركات والمراحل العليا في ظروف ارتفاع وفراغ محاكية، وليست شركة أو موقع إطلاق."
+      },
+      "sources": [
+        {
+          "url": "https://www.nasa.gov/centers-and-facilities/glenn/in-space-propulsion-facility/",
+          "provenance_types": [
+            "S3_325_CLAIMS_INHERITED"
+          ],
+          "id": "SRC-3a6f231336f7",
+          "title": "www.nasa.gov — centers-and-facilities/glenn/in-space-propulsion-facility"
+        },
+        {
+          "url": "https://www.nasa.gov/directorates/space-operations/rpt/propulsion-test-capabilities/test-capabilities-grc-isp/",
+          "provenance_types": [
+            "ADDITIONAL_OFFICIAL_WEB_RESEARCH_2026_11_13"
+          ],
+          "id": "SRC-d381f3aa4434",
+          "title": "www.nasa.gov — directorates/space-operations/rpt/propulsion-test-capabilities/test-capabilities-grc-isp"
+        },
+        {
+          "url": "https://www.nasa.gov/centers-and-facilities/glenn/in-space-propulsion-facility/",
+          "provenance_types": [
+            "STEP2_COMPLETION_2026_11_13_OFFICIAL_WEB_RESEARCH"
+          ],
+          "id": "WEB-3a6f231336f7",
+          "title": "www.nasa.gov — centers-and-facilities/glenn/in-space-propulsion-facility"
+        },
+        {
+          "id": "NEW24-3a6f231336f7",
+          "url": "https://www.nasa.gov/centers-and-facilities/glenn/in-space-propulsion-facility/",
+          "title": "www.nasa.gov — ",
+          "provenance_types": [
+            "STEP2_24_INDEPENDENT_OFFICIAL_WEB_VERIFICATION_2026_11_13"
+          ]
+        }
+      ],
+      "sections": [
+        {
+          "id": "overview",
+          "fa": "شناسنامه تأسیسات",
+          "en": "Facility identity",
+          "ar": "تعريف المنشأة",
+          "items": [
+            {
+              "fa": "تأسیسات ISP در مجموعه Neil Armstrong Test Facility متعلق به NASA Glenn قرار دارد. برای شبیه‌سازی شرایط مأموریت موتور و مرحله فوقانی به کار می‌رود و از Space Environments Complex هم‌مکان اما متفاوت است.",
+              "en": "The ISP facility is part of NASA Glenn’s Neil Armstrong Test Facility complex. It simulates flight environments for upper-stage engines and propulsion hardware. It is distinct from the co-located Space Environments Complex.",
+              "ar": "تقع منشأة ISP ضمن مجمع Neil Armstrong التابع لمركز NASA Glenn. وتحاكي ظروف الرحلة لمحركات المراحل العليا ومعدات الدفع. وهي مستقلة وظيفياً عن Space Environments Complex الموجودة في المجمع نفسه.",
+              "kind": "editorially_localized_verified_source_section",
+              "source_ids": [
+                "SRC-3a6f231336f7",
+                "NEW24-3a6f231336f7"
+              ],
+              "localization": "FACTUAL_SECTION_EQUIVALENCE_FA_EN_AR"
+            }
+          ]
+        },
+        {
+          "id": "equipment",
+          "fa": "تجهیزات و ظرفیت آزمون",
+          "en": "Facilities & test capability",
+          "ar": "المرافق والقدرات الاختبارية",
+          "items": [
+            {
+              "fa": "محفظه عمودی خلأ ISP قطر ۳۸ فوت و ارتفاع ۶۲ فوت دارد؛ حجم آزمون مفید آن حدود ۳۳ فوت قطر و ۵۵ فوت ارتفاع است. از سرمایش نیتروژن مایع، گرم‌کن‌های مادون‌قرمز و سامانه تخلیه چندمرحله‌ای برای رسیدن به شرایط فشار و دمای شبیه‌سازی‌شده استفاده می‌شود.",
+              "en": "The vertical ISP vacuum chamber is 38 ft in diameter and 62 ft tall, with a usable test envelope about 33 ft in diameter by 55 ft high. Liquid-nitrogen cooling, infrared heaters and multi-stage exhaust pumping reproduce selected pressure and thermal environments.",
+              "ar": "يبلغ قطر غرفة الفراغ العمودية في ISP نحو 38 قدماً وارتفاعها 62 قدماً، بينما يبلغ الحيز الاختباري المفيد نحو 33 قدماً قطراً و55 قدماً ارتفاعاً. وتُستخدم مبردات النيتروجين السائل وسخانات الأشعة تحت الحمراء وأنظمة ضخ متعددة المراحل لمحاكاة ظروف الضغط والحرارة.",
+              "kind": "editorially_localized_verified_source_section",
+              "source_ids": [
+                "WEB-3a6f231336f7",
+                "NEW24-3a6f231336f7"
+              ],
+              "localization": "FACTUAL_SECTION_EQUIVALENCE_FA_EN_AR"
+            }
+          ]
+        },
+        {
+          "id": "testing",
+          "fa": "آزمون‌ها و پروژه‌ها",
+          "en": "Testing & projects",
+          "ar": "الاختبارات والمشروعات",
+          "items": [
+            {
+              "fa": "براساس مشخصات طراحی منتشرشده ناسا، توان آزمون موتور تا رانش اسمی حدود ۱۰۰هزار و حداکثر ۴۰۰هزار پوندنیرو، با دوره احتراق تا ۶۰۰ ثانیه گزارش شده است. این اعداد ظرفیت معرفی‌شده تجهیزات‌اند و به‌تنهایی وضعیت آماده‌به‌کاری روزانه یا نتیجه یک آزمون واقعی را نشان نمی‌دهند.",
+              "en": "NASA’s published design figures describe nominal thrust testing around 100,000 lbf, up to 400,000 lbf maximum and firing durations of up to 600 seconds. These are stated facility capabilities, not evidence of current day-to-day operational readiness or outcomes of a particular test.",
+              "ar": "تصف مواصفات التصميم المنشورة من ناسا قدرة اختبار دفع اسمية تقارب 100 ألف رطل-قوة وحداً أقصى 400 ألف رطل-قوة وفترات تشغيل حتى 600 ثانية. وهي قدرات معلنة للمرفق، لا إثبات لجاهزيته التشغيلية اليومية أو نتيجة اختبار بعينه.",
+              "kind": "editorially_localized_verified_source_section",
+              "source_ids": [
+                "SRC-3a6f231336f7",
+                "SRC-d381f3aa4434",
+                "NEW24-3a6f231336f7"
+              ],
+              "localization": "FACTUAL_SECTION_EQUIVALENCE_FA_EN_AR"
+            }
+          ]
+        },
+        {
+          "id": "standards",
+          "fa": "استانداردها و اعتبارسنجی",
+          "en": "Standards & qualification",
+          "ar": "المعايير والتأهيل",
+          "items": [
+            {
+              "fa": "برای ثبت یک آزمون در بانک رَسپهر باید موتور یا مرحله آزمایش‌شده، شرایط شبیه‌سازی، تاریخ اجرا و نتیجه تأییدشده مشخص باشد. وجود محفظه خلأ یا امکان احتراق ثابت، مجوز انتساب صلاحیت پروازی به تمام موتورها نیست.",
+              "en": "Any test record should identify the engine or stage, simulated conditions, test date and documented result. The existence of vacuum and hot-fire capability does not establish flight qualification for every engine tested there.",
+              "ar": "يجب أن يحدد أي سجل اختبار المحرك أو المرحلة وظروف المحاكاة وتاريخ التنفيذ والنتيجة الموثقة. ولا تعني قدرة الفراغ أو الاحتراق الثابت تأهيلاً للطيران لكل محرك يُختبر في الموقع.",
+              "kind": "editorially_localized_verified_source_section",
+              "source_ids": [
+                "SRC-3a6f231336f7"
+              ],
+              "localization": "FACTUAL_SECTION_EQUIVALENCE_FA_EN_AR"
+            }
+          ]
+        },
+        {
+          "id": "history",
+          "fa": "تاریخچه و مشتریان",
+          "en": "History & customers",
+          "ar": "التاريخ والعملاء",
+          "items": [
+            {
+              "fa": "ناسا سابقه بیش از ۱۰۰ آزمون احتراق موتور RL10 مرتبط با توسعه مرحله Centaur و آزمون‌های برنامه Delta III را برای این مجموعه نقل کرده است. این سابقه مربوط به آزمون زمینی است، نه پرتاب از تأسیسات ISP.",
+              "en": "NASA reports more than 100 RL10 hot-fire tests associated with Centaur upper-stage development, as well as work linked to the Delta III programme. This is ground-test heritage, not launches from the ISP facility.",
+              "ar": "تذكر ناسا أكثر من 100 اختبار احتراق لمحرك RL10 مرتبط بتطوير المرحلة العليا Centaur، وأعمالاً مرتبطة ببرنامج Delta III. وهذا سجل اختبار أرضي وليس إطلاقات من منشأة ISP.",
+              "kind": "editorially_localized_verified_source_section",
+              "source_ids": [
+                "NEW24-3a6f231336f7"
+              ],
+              "localization": "FACTUAL_SECTION_EQUIVALENCE_FA_EN_AR"
+            }
+          ]
+        }
+      ],
+      "key_facts": [],
+      "verified_on": "2026-11-13",
+      "hide_evidence_scope_in_ui": true,
+      "release_status": "EDITORIAL_RESEARCH_PREVIEW_NEEDS_FINAL_EXPERT_SIGNOFF",
+      "inventory_id": "DISC-0113",
+      "geo_source_url": "https://www.nasa.gov/centers-and-facilities/glenn/in-space-propulsion-facility/",
+      "geo_precision": "approximate_campus_not_b2_chamber"
+    },
+    "orbita_release_note": {
+      "release_date": "2026-11-13",
+      "inventory_id": "DISC-0113",
+      "status": "EDITORIAL_PREVIEW",
+      "batch": "RASPEHR_14_STEP5",
+      "expert_review_pending": true,
+      "language_parity": "FA_EN_AR_SECTION_DETAIL",
+      "geo_precision": "approximate_campus_not_b2_chamber",
+      "logo_status": "official_parent_org"
+    }
+  },
+  {
+    "id": "raspehr-0131-noaa-fairbanks-command-and-data-acq",
+    "cat": "ground_station",
+    "en": "NOAA Fairbanks Command and Data Acquisition Station",
+    "fa": "ایستگاه دریافت و فرمان فربنکس نوآ",
+    "ar": "محطة فيربانكس لاستقبال البيانات والأوامر التابعة لـ NOAA",
+    "country": "United States",
+    "country_fa": "ایالات متحده آمریکا",
+    "country_ar": "الولايات المتحدة الأمريكية",
+    "city": "Fairbanks",
+    "city_fa": "فربنکس",
+    "city_ar": "فيربانكس",
+    "lat": 64.974,
+    "lon": -147.50989,
+    "coordinate_precision": "official_published_13m_antenna_1A_not_station_centre",
+    "coordinates_are_exact_site_gps": false,
+    "address": "Fairbanks Command and Data Acquisition Station, 1300 Eisele Road, Fairbanks AK 99712, USA",
+    "address_evidence_url": "https://www.nesdis.noaa.gov/about/our-offices/office-of-satellite-and-product-operations-ospo/fairbanks-command-and-data-acquisition-station-fcdas",
+    "site": "https://www.nesdis.noaa.gov/about/our-offices/office-of-satellite-and-product-operations-ospo/fairbanks-command-and-data-acquisition-station-fcdas",
+    "fa_d": "ایستگاه دولتی Fairbanks CDAS تابع NOAA/NESDIS در آلاسکا، مرکز مهم دریافت داده و ارسال فرمان به ماهواره‌های مدار قطبی است. این ایستگاه یک تأسیسات فیزیکی است و مالکیت آن با نقش پشتیبانی از مأموریت‌های ناسا نباید اشتباه شود.",
+    "en_d": "NOAA/NESDIS’s Fairbanks Command and Data Acquisition Station in Alaska is a major ground facility for polar-orbiting satellite data reception and commanding. It is a physical government station, not a NASA-owned facility simply because it supports NASA missions.",
+    "ar_d": "محطة Fairbanks لجمع البيانات والقيادة في ألاسكا منشأة حكومية تابعة لـNOAA/NESDIS لاستقبال بيانات الأقمار القطبية وإرسال الأوامر. وهي محطة فعلية لا تصبح ملكاً لناسا لمجرد دعمها مهمات ناسا.",
+    "org_type_fa": "ایستگاه زمینی فضایی",
+    "org_type_en": "Satellite ground station",
+    "org_type_ar": "محطة أرضية فضائية",
+    "parent_institution": "NOAA / NESDIS",
+    "logo": "",
+    "logo_kind": "no_verified_official_logo",
+    "brand_text_identifier": "NOAA",
+    "orbita_verified_profile": {
+      "schema_version": 3,
+      "profile_type": "ground_station",
+      "summary": {
+        "fa": "ایستگاه دولتی Fairbanks CDAS تابع NOAA/NESDIS در آلاسکا، مرکز مهم دریافت داده و ارسال فرمان به ماهواره‌های مدار قطبی است. این ایستگاه یک تأسیسات فیزیکی است و مالکیت آن با نقش پشتیبانی از مأموریت‌های ناسا نباید اشتباه شود.",
+        "en": "NOAA/NESDIS’s Fairbanks Command and Data Acquisition Station in Alaska is a major ground facility for polar-orbiting satellite data reception and commanding. It is a physical government station, not a NASA-owned facility simply because it supports NASA missions.",
+        "ar": "محطة Fairbanks لجمع البيانات والقيادة في ألاسكا منشأة حكومية تابعة لـNOAA/NESDIS لاستقبال بيانات الأقمار القطبية وإرسال الأوامر. وهي محطة فعلية لا تصبح ملكاً لناسا لمجرد دعمها مهمات ناسا."
+      },
+      "sources": [
+        {
+          "url": "https://www.nasa.gov/technology/space-comms/near-space-network-complexes/",
+          "provenance_types": [
+            "S3_325_CLAIMS_INHERITED"
+          ],
+          "id": "SRC-f3e873c95599",
+          "title": "www.nasa.gov — technology/space-comms/near-space-network-complexes"
+        },
+        {
+          "url": "https://www.nasa.gov/technology/space-comms/near-space-network-complexes/",
+          "provenance_types": [
+            "STEP2_COMPLETION_2026_11_13_OFFICIAL_WEB_RESEARCH"
+          ],
+          "id": "WEB-f3e873c95599",
+          "title": "www.nasa.gov — technology/space-comms/near-space-network-complexes"
+        },
+        {
+          "id": "UPG-2d8dc860440c",
+          "title": "www.nesdis.noaa.gov | roduct-operations-ospo/fairbanks-command-and-data-acquisition-station-fcdas",
+          "url": "https://www.nesdis.noaa.gov/about/our-offices/office-of-satellite-and-product-operations-ospo/fairbanks-command-and-data-acquisition-station-fcdas",
+          "evidence_status": "PRIMARY_OFFICIAL_SITE_RESEARCHED_2026_11_13"
+        },
+        {
+          "id": "UPG-f3e873c95599",
+          "title": "www.nasa.gov | /technology/space-comms/near-space-network-complexes/",
+          "url": "https://www.nasa.gov/technology/space-comms/near-space-network-complexes/",
+          "evidence_status": "PRIMARY_OFFICIAL_SITE_RESEARCHED_2026_11_13"
+        },
+        {
+          "id": "NEW24-2d8dc860440c",
+          "url": "https://www.nesdis.noaa.gov/about/our-offices/office-of-satellite-and-product-operations-ospo/fairbanks-command-and-data-acquisition-station-fcdas",
+          "title": "www.nesdis.noaa.gov — fairbanks-command-and-data-acquisition-station-fcdas",
+          "provenance_types": [
+            "STEP2_24_INDEPENDENT_OFFICIAL_WEB_VERIFICATION_2026_11_13"
+          ]
+        }
+      ],
+      "sections": [
+        {
+          "id": "overview",
+          "fa": "شناسنامه ایستگاه",
+          "en": "Station profile",
+          "ar": "التعريف بالمحطة",
+          "items": [
+            {
+              "fa": "ایستگاه Fairbanks Command and Data Acquisition Station یا FCDAS متعلق به NOAA/NESDIS است و به‌صورت شبانه‌روزی دریافت داده، فرمان‌دهی و توزیع اطلاعات ماهواره‌های محیطی را انجام می‌دهد. این مرکز در Gilmore Creek نزدیک Fairbanks آلاسکا قرار دارد.",
+              "en": "The Fairbanks Command and Data Acquisition Station (FCDAS) is operated under NOAA/NESDIS. It receives, commands and distributes environmental-satellite data around the clock from its Gilmore Creek site near Fairbanks, Alaska.",
+              "ar": "تعمل محطة Fairbanks Command and Data Acquisition Station (FCDAS) ضمن NOAA/NESDIS، وتستقبل بيانات الأقمار البيئية وتصدر الأوامر وتوزع البيانات على مدار الساعة من موقع غيلمور كريك قرب فيربانكس في ألاسكا.",
+              "kind": "editorially_localized_verified_source_section",
+              "source_ids": [
+                "SRC-f3e873c95599",
+                "UPG-2d8dc860440c",
+                "NEW24-2d8dc860440c"
+              ],
+              "localization": "FACTUAL_SECTION_EQUIVALENCE_FA_EN_AR"
+            }
+          ]
+        },
+        {
+          "id": "equipment",
+          "fa": "تجهیزات و قابلیت ارتباطی",
+          "en": "Equipment & links",
+          "ar": "المعدات والاتصالات",
+          "items": [
+            {
+              "fa": "محوطه ایستگاه حدود ۷۲۰۰ ایکر وسعت دارد و به فیبر نوری پرظرفیت و برق اضطراری مجهز است. NOAA نه آنتن فعال را در معرفی خود ثبت کرده و از جمله آنتن‌های ۲۶، ۲۱ و ۱۳ متری و تجهیزات باندهای L، S، X و Ka را معرفی می‌کند؛ مختصات آنتن‌ها جداگانه فهرست شده است.",
+              "en": "The site spans approximately 7,200 acres and includes high-bandwidth fibre links and backup power. NOAA lists nine active antennas in its station description, including 26 m, 21 m and 13 m dishes and L-, S-, X- and Ka-band equipment. Individual antenna coordinates are catalogued separately.",
+              "ar": "تبلغ مساحة الموقع نحو 7200 فدان ويضم وصلات ألياف ضوئية عالية السعة وطاقة احتياطية. وتذكر NOAA تسعة هوائيات عاملة، منها أطباق 26 و21 و13 متراً ومعدات نطاقات L وS وX وKa. وتُنشر إحداثيات كل هوائي بصورة مستقلة.",
+              "kind": "editorially_localized_verified_source_section",
+              "source_ids": [
+                "UPG-2d8dc860440c",
+                "UPG-f3e873c95599",
+                "NEW24-2d8dc860440c"
+              ],
+              "localization": "FACTUAL_SECTION_EQUIVALENCE_FA_EN_AR"
+            }
+          ]
+        },
+        {
+          "id": "missions",
+          "fa": "مأموریت‌ها و شبکه",
+          "en": "Missions & network",
+          "ar": "المهمات والشبكة",
+          "items": [
+            {
+              "fa": "FCDAS در دهه‌های گذشته از مأموریت‌های TIROS و نسل‌های اولیه Landsat پشتیبانی کرده است. براساس داده NOAA برای ۲۰۲۲، این مرکز خدمات ۱۷ ماهواره در ۱۰ مأموریت را ارائه می‌کرد. پشتیبانی از Deep Space Climate Observatory و نقش پشتیبان Wallops نیز در منابع رسمی آمده است.",
+              "en": "Historical operations supported TIROS and early Landsat missions. NOAA’s 2022 snapshot records support for 17 satellites across ten missions. The station also supports the Deep Space Climate Observatory and provides backup capability for Wallops.",
+              "ar": "دعمت المحطة تاريخياً مهمات TIROS وأجيال Landsat المبكرة. وتذكر بيانات NOAA لعام 2022 دعم 17 قمراً ضمن عشر مهمات. وتدعم كذلك Deep Space Climate Observatory وتؤدي دور محطة احتياطية لمحطة Wallops.",
+              "kind": "editorially_localized_verified_source_section",
+              "source_ids": [
+                "UPG-2d8dc860440c",
+                "NEW24-2d8dc860440c"
+              ],
+              "localization": "FACTUAL_SECTION_EQUIVALENCE_FA_EN_AR"
+            }
+          ]
+        },
+        {
+          "id": "coverage",
+          "fa": "پوشش و ظرفیت",
+          "en": "Coverage & capacity",
+          "ar": "التغطية والسعة",
+          "items": [
+            {
+              "fa": "تمرکز اصلی FCDAS بر ماهواره‌های مدار قطبی است و با شبکه زمینی پرظرفیت و آنتن‌های متعدد پوشش ایجاد می‌کند. نرخ موفقیت دریافت ۹۹٫۹۹٪ که NOAA منتشر کرده، فقط به سال ۲۰۲۲ مربوط است. مختصات یک آنتن مانند 13m 1/A نماینده نقطه دقیق مرکز کل مجموعه نیست.",
+              "en": "FCDAS primarily serves polar-orbiting spacecraft through multiple antennas and terrestrial backhaul. NOAA reported a 99.99% capture success rate for 2022 only. Coordinates for one antenna, such as 13 m 1/A, must not be mislabelled as the exact geographic centre of the entire site.",
+              "ar": "تخدم FCDAS أساساً الأقمار القطبية عبر عدة هوائيات وشبكة نقل أرضية. وأعلنت NOAA معدل نجاح استقبال بلغ 99.99% لعام 2022 فقط. ولا تمثل إحداثيات هوائي بعينه، مثل 13m 1/A، المركز الجغرافي الدقيق للمجمع بأكمله.",
+              "kind": "editorially_localized_verified_source_section",
+              "source_ids": [
+                "WEB-f3e873c95599",
+                "UPG-2d8dc860440c",
+                "NEW24-2d8dc860440c"
+              ],
+              "localization": "FACTUAL_SECTION_EQUIVALENCE_FA_EN_AR"
+            }
+          ]
+        },
+        {
+          "id": "history",
+          "fa": "تاریخچه و توسعه",
+          "en": "History & development",
+          "ar": "التاريخ والتطوير",
+          "items": [
+            {
+              "fa": "ایستگاه از ۱۹۶۲ در مأموریت‌های فضایی و هواشناسی فعالیت داشته است. آنتن ۲۶متری آن زمانی برای اندازه‌گیری‌های ژئودزی VLBI به‌کار می‌رفت؛ این کارکرد تاریخی با مأموریت فعلی دریافت داده و فرمان‌دهی متفاوت است.",
+              "en": "The station has served space and meteorological missions since 1962. Its 26 m antenna previously supported geodetic very-long-baseline interferometry (VLBI); that historical role differs from present-day satellite TT&C and data acquisition.",
+              "ar": "تعمل المحطة في المهمات الفضائية والأرصاد منذ 1962. وقد استخدم هوائيها البالغ 26 متراً سابقاً في قياسات الجيوديسيا بتداخل الخط القاعدي الطويل جداً VLBI؛ وهو دور تاريخي يختلف عن تلقي البيانات والتحكم الحالي.",
+              "kind": "editorially_localized_verified_source_section",
+              "source_ids": [
+                "SRC-f3e873c95599",
+                "UPG-2d8dc860440c",
+                "NEW24-2d8dc860440c"
+              ],
+              "localization": "FACTUAL_SECTION_EQUIVALENCE_FA_EN_AR"
+            }
+          ]
+        }
+      ],
+      "key_facts": [],
+      "verified_on": "2026-11-13",
+      "hide_evidence_scope_in_ui": true,
+      "release_status": "EDITORIAL_RESEARCH_PREVIEW_NEEDS_FINAL_EXPERT_SIGNOFF",
+      "inventory_id": "DISC-0131",
+      "geo_source_url": "https://www.nesdis.noaa.gov/about/our-offices/office-of-satellite-and-product-operations-ospo/fairbanks-command-and-data-acquisition-station-fcdas",
+      "geo_precision": "official_published_13m_antenna_1A_not_station_centre"
+    },
+    "orbita_release_note": {
+      "release_date": "2026-11-13",
+      "inventory_id": "DISC-0131",
+      "status": "EDITORIAL_PREVIEW",
+      "batch": "RASPEHR_14_STEP5",
+      "expert_review_pending": true,
+      "language_parity": "FA_EN_AR_SECTION_DETAIL",
+      "geo_precision": "official_published_13m_antenna_1A_not_station_centre",
+      "logo_status": "typographic_name_only"
+    }
+  },
+  {
+    "id": "raspehr-0157-isro-istrac-mission-operations",
+    "cat": "mission_control",
+    "en": "ISRO ISTRAC Mission Operations",
+    "fa": "مرکز عملیات مأموریت ایستراک ایسرو",
+    "ar": "مركز عمليات المهمات ISTRAC التابع لإيسرو",
+    "country": "India",
+    "country_fa": "هند",
+    "country_ar": "الهند",
+    "city": "Bengaluru (Peenya)",
+    "city_fa": "بنگلور (پینیا)",
+    "city_ar": "بنغالورو (بينيا)",
+    "lat": 13.034,
+    "lon": 77.518,
+    "coordinate_precision": "approximate_neighbourhood_official_address",
+    "coordinates_are_exact_site_gps": false,
+    "address": "Plot No. 12 & 13, 3rd Main, 2nd Phase, Peenya Industrial Area, Bengaluru 560058, India",
+    "address_evidence_url": "https://www.isro.gov.in/ISTRAC.html",
+    "site": "https://www.isro.gov.in/ISTRAC.html",
+    "fa_d": "ISTRAC مجموعه تله‌متری، رهگیری و فرمان‌دهی سازمان فضایی هند است و عملیات بسیاری از ماهواره‌ها و مأموریت‌های علمی را پشتیبانی می‌کند. «Mission Operations» بخشی از این مجموعه است، نه شخصیت حقوقی جدید.",
+    "en_d": "ISRO’s Telemetry, Tracking and Command Network (ISTRAC) supports spacecraft operations, launch tracking and scientific missions. Its mission-operations function is part of ISTRAC, not a new legal entity.",
+    "ar_d": "تدعم شبكة القياس عن بعد والتتبع والقيادة الهندية ISTRAC عمليات الأقمار وتتبع الإطلاقات والمهمات العلمية. ووظيفة «عمليات المهمات» جزء من ISTRAC وليست كياناً قانونياً جديداً.",
+    "org_type_fa": "مرکز عملیات مأموریت",
+    "org_type_en": "Mission operations centre",
+    "org_type_ar": "مركز عمليات المهمات",
+    "parent_institution": "ISRO",
+    "logo": "assets/img/logos/isro-parent-logo.png",
+    "logo_kind": "official_parent_organization_logo",
+    "brand_text_identifier": "ISRO",
+    "orbita_verified_profile": {
+      "schema_version": 3,
+      "profile_type": "mission_control",
+      "summary": {
+        "fa": "ISTRAC مجموعه تله‌متری، رهگیری و فرمان‌دهی سازمان فضایی هند است و عملیات بسیاری از ماهواره‌ها و مأموریت‌های علمی را پشتیبانی می‌کند. «Mission Operations» بخشی از این مجموعه است، نه شخصیت حقوقی جدید.",
+        "en": "ISRO’s Telemetry, Tracking and Command Network (ISTRAC) supports spacecraft operations, launch tracking and scientific missions. Its mission-operations function is part of ISTRAC, not a new legal entity.",
+        "ar": "تدعم شبكة القياس عن بعد والتتبع والقيادة الهندية ISTRAC عمليات الأقمار وتتبع الإطلاقات والمهمات العلمية. ووظيفة «عمليات المهمات» جزء من ISTRAC وليست كياناً قانونياً جديداً."
+      },
+      "sources": [
+        {
+          "url": "https://www.isro.gov.in/ISTRAC.html",
+          "provenance_types": [
+            "S3_325_CLAIMS_INHERITED",
+            "ADDITIONAL_OFFICIAL_WEB_RESEARCH_2026_11_13"
+          ],
+          "id": "SRC-dc156a06c9cf",
+          "title": "www.isro.gov.in — ISTRAC.html"
+        },
+        {
+          "url": "https://www.isro.gov.in/media_isro/pdf/AnnualReport/Annual_Report_2024_25_Eng.pdf",
+          "provenance_types": [
+            "ADDITIONAL_OFFICIAL_WEB_RESEARCH_2026_11_13"
+          ],
+          "id": "SRC-e763606a328f",
+          "title": "www.isro.gov.in — media_isro/pdf/AnnualReport/Annual_Report_2024_25_Eng.pdf"
+        },
+        {
+          "id": "NEW24-dc156a06c9cf",
+          "url": "https://www.isro.gov.in/ISTRAC.html",
+          "title": "www.isro.gov.in — ISTRAC.html",
+          "provenance_types": [
+            "STEP2_24_INDEPENDENT_OFFICIAL_WEB_VERIFICATION_2026_11_13"
+          ]
+        },
+        {
+          "id": "NEW24-7ce3cde35e7a",
+          "url": "https://www.isro.gov.in/ISRO_EN/mission_groundsegment.html",
+          "title": "www.isro.gov.in — mission_groundsegment.html",
+          "provenance_types": [
+            "STEP2_24_INDEPENDENT_OFFICIAL_WEB_VERIFICATION_2026_11_13"
+          ]
+        }
+      ],
+      "sections": [
+        {
+          "id": "overview",
+          "fa": "شناسنامه مرکز",
+          "en": "Centre identity",
+          "ar": "التعريف بالمركز",
+          "items": [
+            {
+              "fa": "ISTRAC زیرمجموعه رسمی ISRO است و مرکز اصلی آن در Peenya بنگلور قرار دارد. عملیات مأموریت، ایستگاه‌های TT&C، شبکه فضای دوردست و مراکز کنترل باید در بانک اطلاعاتی به‌صورت نقش‌ها و مکان‌های وابسته ثبت شوند.",
+              "en": "ISTRAC is an official ISRO organisation with its main centre in Peenya, Bengaluru. Mission operations, TT&C stations, deep-space links and individual control centres are related functions or facilities, not automatically separate companies.",
+              "ar": "ISTRAC جهة رسمية تابعة لـISRO ويقع مركزها الرئيسي في بينيا بمدينة بنغالورو. وتُسجل عمليات المهمات ومحطات TT&C وروابط الفضاء البعيد ومراكز التحكم كوظائف أو مرافق مترابطة، لا كشركات منفصلة تلقائياً.",
+              "kind": "editorially_localized_verified_source_section",
+              "source_ids": [
+                "SRC-dc156a06c9cf",
+                "NEW24-dc156a06c9cf"
+              ],
+              "localization": "FACTUAL_SECTION_EQUIVALENCE_FA_EN_AR"
+            }
+          ]
+        },
+        {
+          "id": "missions",
+          "fa": "مأموریت‌ها و ناوگان تحت کنترل",
+          "en": "Missions & spacecraft",
+          "ar": "المهمات والمركبات",
+          "items": [
+            {
+              "fa": "در معماری مأموریت Mars Orbiter، کنترل مدارگرد پس از جدایی از پرتابگر از بنگلور هدایت می‌شد و ایستگاه‌های همکار جهانی برای استمرار تماس به کار رفتند. مسئولیت عملیاتی شبکه باید از سازندگی ماهواره یا مالکیت آنتن‌های شریک تفکیک شود.",
+              "en": "For the Mars Orbiter Mission, spacecraft control after launch-vehicle separation was directed from Bengaluru, with international partner stations supporting communications coverage. Ground operations should not be confused with spacecraft manufacturing or ownership of partner antennas.",
+              "ar": "في مهمة Mars Orbiter تولى مركز بنغالورو التحكم بالمركبة بعد انفصالها عن الصاروخ، وساعدت محطات شريكة دولية في تغطية الاتصالات. ويجب عدم الخلط بين التشغيل الأرضي وتصنيع المركبة أو امتلاك هوائيات الشركاء.",
+              "kind": "editorially_localized_verified_source_section",
+              "source_ids": [
+                "NEW24-7ce3cde35e7a"
+              ],
+              "localization": "FACTUAL_SECTION_EQUIVALENCE_FA_EN_AR"
+            }
+          ]
+        },
+        {
+          "id": "operations",
+          "fa": "توانمندی‌های عملیاتی",
+          "en": "Operations capabilities",
+          "ar": "القدرات التشغيلية",
+          "items": [
+            {
+              "fa": "وظایف ISTRAC شامل رهگیری پرتابگر تا تزریق ماهواره، تعیین اولیه مدار، دریافت تله‌متری، ارسال فرمان و عملیات ماهواره‌های سنجش‌ازدور و علمی است. زیرساخت آن شامل اتاق‌های کنترل، تجهیزات رایانشی، ذخیره‌سازی، ارتباط داده و ایستگاه‌های TT&C است؛ مرکز کنترل واحد با کل شبکه یکی نیست.",
+              "en": "ISTRAC tracks launch vehicles through satellite injection, supports initial orbit determination, receives telemetry, transmits commands and operates Earth observation and science missions. Its infrastructure includes control rooms, computing, data storage, communications links and TT&C stations; one control centre is not the entire network.",
+              "ar": "تشمل مهام ISTRAC تتبع الصواريخ حتى حقن الأقمار وتحديد المدار الأولي واستقبال القياس عن بعد وإرسال الأوامر وتشغيل أقمار رصد الأرض والبعثات العلمية. وتضم البنية غرف تحكم وحوسبة وتخزين بيانات وروابط اتصالات ومحطات TT&C؛ ولا يمثل مركز واحد الشبكة بأكملها.",
+              "kind": "editorially_localized_verified_source_section",
+              "source_ids": [
+                "SRC-dc156a06c9cf",
+                "NEW24-dc156a06c9cf",
+                "NEW24-7ce3cde35e7a"
+              ],
+              "localization": "FACTUAL_SECTION_EQUIVALENCE_FA_EN_AR"
+            }
+          ]
+        },
+        {
+          "id": "network",
+          "fa": "شبکه ارتباطی",
+          "en": "Ground segment network",
+          "ar": "شبكة الاتصالات الأرضية",
+          "items": [
+            {
+              "fa": "شبکه ISTRAC از بنگلور و ایستگاه‌هایی در Lucknow، Mauritius، Sriharikota، Port Blair، Thiruvananthapuram، Brunei و Biak بهره می‌گیرد. طبق گزارش سالانه ۲۰۲۴–۲۰۲۵ ISRO، Mission Operations Complex در بنگلور پشتیبانی شبانه‌روزی مأموریت‌های سنجش‌ازدور، علمی و سیاره‌ای را بر عهده دارد.",
+              "en": "The ISTRAC network includes Bengaluru and stations or facilities at Lucknow, Mauritius, Sriharikota, Port Blair, Thiruvananthapuram, Brunei and Biak. ISRO’s 2024–2025 report describes Bengaluru’s Mission Operations Complex as supporting Earth observation, scientific and planetary missions around the clock.",
+              "ar": "تضم شبكة ISTRAC بنغالورو ومحطات أو مرافق في لكناو وموريشيوس وسريهاريكوتا وبورت بلير وتيروفانانثابورام وبروناي وبياك. ويصف تقرير ISRO لعام 2024–2025 مجمع عمليات المهمات في بنغالورو بأنه يدعم بعثات رصد الأرض والعلوم والكواكب على مدار الساعة.",
+              "kind": "editorially_localized_verified_source_section",
+              "source_ids": [
+                "SRC-e763606a328f",
+                "NEW24-dc156a06c9cf"
+              ],
+              "localization": "FACTUAL_SECTION_EQUIVALENCE_FA_EN_AR"
+            }
+          ]
+        },
+        {
+          "id": "history",
+          "fa": "تاریخچه و تحولات",
+          "en": "History & developments",
+          "ar": "التاريخ والتطور",
+          "items": [
+            {
+              "fa": "ساختار مأموریتی ISTRAC در طول توسعه برنامه پرتاب و ماهواره‌های سنجش‌ازدور هند گسترش یافته است. برای ثبت تاریخ دقیق تأسیس یک ساختمان یا مرکز کنترل مستقل باید سند مربوط به همان واحد یافت شود؛ تاریخ شکل‌گیری ISRO را نمی‌توان به آن نسبت داد.",
+              "en": "ISTRAC’s mission-operations role has expanded alongside India’s launch and remote-sensing programmes. A date for an individual control building requires that unit’s own record; ISRO’s founding date cannot be reused as its establishment date.",
+              "ar": "توسّع دور ISTRAC التشغيلي مع برامج الإطلاق والاستشعار عن بعد الهندية. ويحتاج تحديد تاريخ إنشاء مبنى تحكم منفرد إلى وثيقته الخاصة، ولا يجوز نسب تاريخ تأسيس ISRO إليه.",
+              "kind": "editorially_localized_verified_source_section",
+              "source_ids": [
+                "SRC-dc156a06c9cf"
+              ],
+              "localization": "FACTUAL_SECTION_EQUIVALENCE_FA_EN_AR"
+            }
+          ]
+        }
+      ],
+      "key_facts": [],
+      "verified_on": "2026-11-13",
+      "hide_evidence_scope_in_ui": true,
+      "release_status": "EDITORIAL_RESEARCH_PREVIEW_NEEDS_FINAL_EXPERT_SIGNOFF",
+      "inventory_id": "DISC-0157",
+      "geo_source_url": "https://www.isro.gov.in/ISTRAC.html",
+      "geo_precision": "approximate_neighbourhood_official_address"
+    },
+    "orbita_release_note": {
+      "release_date": "2026-11-13",
+      "inventory_id": "DISC-0157",
+      "status": "EDITORIAL_PREVIEW",
+      "batch": "RASPEHR_14_STEP5",
+      "expert_review_pending": true,
+      "language_parity": "FA_EN_AR_SECTION_DETAIL",
+      "geo_precision": "approximate_neighbourhood_official_address",
+      "logo_status": "official_parent_org"
+    }
+  },
+  {
+    "id": "raspehr-0179-space-technology-research-laborator",
+    "cat": "university_space",
+    "en": "Space Technology Research Laboratory (SpaceLab) — UFSC",
+    "fa": "آزمایشگاه فناوری فضایی دانشگاه فدرال سانتا کاتارینا",
+    "ar": "مختبر تكنولوجيا الفضاء في جامعة سانتا كاتارينا الفيدرالية",
+    "country": "Brazil",
+    "country_fa": "برزیل",
+    "country_ar": "البرازيل",
+    "city": "Florianópolis",
+    "city_fa": "فلوریانوپولیس",
+    "city_ar": "فلوريانوبوليس",
+    "lat": -27.602,
+    "lon": -48.518,
+    "coordinate_precision": "approximate_university_campus_official_address",
+    "coordinates_are_exact_site_gps": false,
+    "address": "R. Delfino Conti, s/n, Trindade, Florianópolis, SC 88040-900, Brazil",
+    "address_evidence_url": "https://spacelab.ufsc.br/",
+    "site": "https://spacelab.ufsc.br/",
+    "fa_d": "آزمایشگاه SpaceLab بخشی از دانشگاه فدرال سانتا کاتارینا در برزیل است و در توسعه کیوب‌ست‌ها و زیرسامانه‌های فضایی فعالیت دارد. FloripaSat-1 در دسامبر ۲۰۱۹ پرتاب شد؛ FloripaSat-2A/2B در اسناد بررسی‌شده هنوز برنامه آینده بودند.",
+    "en_d": "SpaceLab is a research laboratory at Brazil’s Federal University of Santa Catarina (UFSC), developing CubeSats and spacecraft subsystems. FloripaSat-1 launched in December 2019; the reviewed sources still described FloripaSat-2A/2B as awaiting launch.",
+    "ar_d": "SpaceLab مختبر بحثي في الجامعة الاتحادية لسانتا كاتارينا بالبرازيل يطور أقمار CubeSat وأنظمتها الفرعية. أُطلق FloripaSat-1 في ديسمبر 2019، بينما وصفت المصادر المراجعة FloripaSat-2A/2B بأنهما بانتظار الإطلاق.",
+    "org_type_fa": "آزمایشگاه فضایی دانشگاهی",
+    "org_type_en": "University space laboratory",
+    "org_type_ar": "مختبر جامعي لتكنولوجيا الفضاء",
+    "parent_institution": "Federal University of Santa Catarina (UFSC)",
+    "logo": "",
+    "logo_kind": "no_verified_official_logo",
+    "brand_text_identifier": "UFSC",
+    "orbita_verified_profile": {
+      "schema_version": 2,
+      "profile_type": "university_space",
+      "summary": {
+        "fa": "آزمایشگاه SpaceLab بخشی از دانشگاه فدرال سانتا کاتارینا در برزیل است و در توسعه کیوب‌ست‌ها و زیرسامانه‌های فضایی فعالیت دارد. FloripaSat-1 در دسامبر ۲۰۱۹ پرتاب شد؛ FloripaSat-2A/2B در اسناد بررسی‌شده هنوز برنامه آینده بودند.",
+        "en": "SpaceLab is a research laboratory at Brazil’s Federal University of Santa Catarina (UFSC), developing CubeSats and spacecraft subsystems. FloripaSat-1 launched in December 2019; the reviewed sources still described FloripaSat-2A/2B as awaiting launch.",
+        "ar": "SpaceLab مختبر بحثي في الجامعة الاتحادية لسانتا كاتارينا بالبرازيل يطور أقمار CubeSat وأنظمتها الفرعية. أُطلق FloripaSat-1 في ديسمبر 2019، بينما وصفت المصادر المراجعة FloripaSat-2A/2B بأنهما بانتظار الإطلاق."
+      },
+      "sources": [
+        {
+          "url": "https://floripasat.ufsc.br/",
+          "provenance_types": [
+            "S3_325_CLAIMS_INHERITED"
+          ],
+          "id": "SRC-43d9b07eeda2",
+          "title": "floripasat.ufsc.br — home"
+        },
+        {
+          "url": "https://spacelab.ufsc.br/",
+          "provenance_types": [
+            "S3_325_CLAIMS_INHERITED"
+          ],
+          "id": "SRC-9b62f01374e8",
+          "title": "spacelab.ufsc.br — home"
+        },
+        {
+          "url": "https://spacelab.ufsc.br/projects/",
+          "provenance_types": [
+            "STEP2_COMPLETION_99_OFFICIAL_WEB_RESEARCH"
+          ],
+          "id": "WEB-3381a85b03a6",
+          "title": "spacelab.ufsc.br — projects"
+        },
+        {
+          "id": "NEW24-3381a85b03a6",
+          "url": "https://spacelab.ufsc.br/projects/",
+          "title": "spacelab.ufsc.br — ",
+          "provenance_types": [
+            "STEP2_24_INDEPENDENT_OFFICIAL_WEB_VERIFICATION_2026_11_13"
+          ]
+        },
+        {
+          "id": "NEW24-43d9b07eeda2",
+          "url": "https://floripasat.ufsc.br/",
+          "title": "floripasat.ufsc.br — ",
+          "provenance_types": [
+            "STEP2_24_INDEPENDENT_OFFICIAL_WEB_VERIFICATION_2026_11_13"
+          ]
+        },
+        {
+          "id": "STAGE3-0b70856c5593",
+          "url": "https://seccps.ufsc.br/SpaceLab",
+          "title": "Official primary evidence from stage-3 audit",
+          "provenance_types": [
+            "STAGE3_PRIMARY_SOURCE_IDENTITY_RECHECK"
+          ]
+        }
+      ],
+      "sections": [
+        {
+          "id": "overview",
+          "fa": "شناسنامه علمی",
+          "en": "Academic identity",
+          "ar": "الهوية الأكاديمية",
+          "items": [
+            {
+              "fa": "Space Technology Research Laboratory یا SpaceLab یک آزمایشگاه دانشگاهی وابسته به UFSC در فلوریانوپلیس است؛ شناسنامه آن باید در گروه دانشگاه‌ها و آزمایشگاه‌ها باقی بماند و شرکت مستقل تلقی نشود.",
+              "en": "The Space Technology Research Laboratory (SpaceLab) is part of UFSC in Florianópolis. It belongs in the university and laboratory category and should not be represented as a separately incorporated company.",
+              "ar": "مختبر Space Technology Research Laboratory (SpaceLab) جزء من UFSC في فلوريانوبوليس. ويندرج ضمن الجامعات والمختبرات، لا بوصفه شركة ذات شخصية قانونية مستقلة.",
+              "kind": "editorially_localized_verified_source_section",
+              "source_ids": [
+                "SRC-9b62f01374e8",
+                "NEW24-3381a85b03a6",
+                "STAGE3-0b70856c5593"
+              ],
+              "localization": "FACTUAL_SECTION_EQUIVALENCE_FA_EN_AR"
+            }
+          ]
+        },
+        {
+          "id": "capabilities",
+          "fa": "توانمندی‌های پژوهشی",
+          "en": "Research capabilities",
+          "ar": "القدرات البحثية",
+          "items": [
+            {
+              "fa": "پژوهشگاه بر طراحی، ساخت و یکپارچه‌سازی کیوب‌ست و زیرسامانه‌هایی مانند تأمین و توزیع توان EPS، رایانه و داده OBDH، مخابرات TT&C و کنترل وضعیت کار می‌کند. این توانمندی‌ها در طراحی FloripaSat-1 و برنامه‌های بعدی توسعه یافته‌اند.",
+              "en": "The laboratory designs and integrates CubeSats and subsystems such as electrical power (EPS), on-board data handling (OBDH), TT&C communications and attitude control. These capabilities were developed through FloripaSat-1 and follow-on projects.",
+              "ar": "يصمم المختبر أقمار CubeSat ويدمج أنظمة الطاقة EPS ومعالجة البيانات على المتن OBDH واتصالات TT&C والتحكم بالاتجاه. وقد طُورت هذه القدرات في FloripaSat-1 ومشاريع لاحقة.",
+              "kind": "editorially_localized_verified_source_section",
+              "source_ids": [
+                "WEB-3381a85b03a6",
+                "NEW24-43d9b07eeda2",
+                "STAGE3-0b70856c5593"
+              ],
+              "localization": "FACTUAL_SECTION_EQUIVALENCE_FA_EN_AR"
+            }
+          ]
+        },
+        {
+          "id": "missions",
+          "fa": "پروژه‌ها و مأموریت‌ها",
+          "en": "Projects & missions",
+          "ar": "المشروعات والمهمات",
+          "items": [
+            {
+              "fa": "FloripaSat-1 یک کیوب‌ست آموزشی ۱U بود که در ۲۰ دسامبر ۲۰۱۹ پرتاب شد. پروژه‌های FloripaSat-2A و FloripaSat-2B در منابع بررسی‌شده با وضعیت در انتظار پرتاب معرفی می‌شوند. Payload-XL برای مأموریت GOMX-5 با FPGA مقاوم به تابش BRAVE NG-Large از NanoXplore در حال توسعه معرفی شده بود؛ برای ثبت نتیجه پرواز به مدرک مستقل نیاز است.",
+              "en": "FloripaSat-1 was a 1U educational CubeSat launched on 20 December 2019. The reviewed SpaceLab sources listed FloripaSat-2A and FloripaSat-2B as awaiting launch. Payload-XL, using NanoXplore’s radiation-tolerant BRAVE NG-Large FPGA for the GOMX-5 programme, was described as a development effort; an actual flight result requires separate evidence.",
+              "ar": "كان FloripaSat-1 قمراً تعليمياً مكعباً 1U أُطلق في 20 ديسمبر 2019. وأدرجت مصادر SpaceLab المراجعة مشروعي FloripaSat-2A وFloripaSat-2B بصفة «بانتظار الإطلاق». ووُصفت حمولة Payload-XL التي تستخدم FPGA من عائلة BRAVE NG-Large المقاومة للإشعاع من NanoXplore لمشروع GOMX-5 بأنها قيد التطوير، وتحتاج نتيجة الطيران إلى دليل منفصل.",
+              "kind": "editorially_localized_verified_source_section",
+              "source_ids": [
+                "SRC-43d9b07eeda2",
+                "WEB-3381a85b03a6",
+                "NEW24-3381a85b03a6",
+                "STAGE3-0b70856c5593"
+              ],
+              "localization": "FACTUAL_SECTION_EQUIVALENCE_FA_EN_AR"
+            }
+          ]
+        },
+        {
+          "id": "results",
+          "fa": "دستاوردهای علمی و فناوری",
+          "en": "Scientific & technical outputs",
+          "ar": "المخرجات العلمية والتقنية",
+          "items": [
+            {
+              "fa": "تطوير Payload-XL برای GOMX-5 توان پژوهشی در الکترونیک مقاوم به تابش و طراحی محموله را نشان می‌دهد، اما دستاورد آزمایشگاهی یا آماده‌سازی سخت‌افزار با دریافت داده واقعی از مدار برابر نیست.",
+              "en": "Payload-XL development for GOMX-5 demonstrates work on radiation-tolerant electronics and payload engineering. Laboratory progress or a completed prototype is not the same as confirmed receipt of in-orbit mission data.",
+              "ar": "يدل تطوير Payload-XL لمهمة GOMX-5 على نشاط في الإلكترونيات المقاومة للإشعاع وهندسة الحمولات. ولا يساوي التقدم المختبري أو اكتمال نموذج أولي الحصولَ على بيانات مؤكدة من المدار.",
+              "kind": "editorially_localized_verified_source_section",
+              "source_ids": [
+                "NEW24-3381a85b03a6",
+                "STAGE3-0b70856c5593"
+              ],
+              "localization": "FACTUAL_SECTION_EQUIVALENCE_FA_EN_AR"
+            }
+          ]
+        },
+        {
+          "id": "network",
+          "fa": "همکاری‌ها و تاریخچه",
+          "en": "Collaboration & history",
+          "ar": "التعاون والتاريخ",
+          "items": [
+            {
+              "fa": "SpaceLab در پردیس Trindade دانشگاه UFSC مستقر است و در توسعه ماهواره‌های دانشجویی و پروژه‌های فضایی با شرکای دانشگاهی و صنعتی و برنامه‌های مرتبط با ESA همکاری پژوهشی دارد. وضعیت حقوقی آزمایشگاه تابع دانشگاه است.",
+              "en": "SpaceLab is based on UFSC’s Trindade campus and collaborates with academic and industry partners on student satellites and projects related to ESA programmes. Its institutional identity derives from UFSC rather than a separate corporate registration.",
+              "ar": "يقع SpaceLab في حرم تريندادي بجامعة UFSC ويتعاون مع شركاء أكاديميين وصناعيين في أقمار طلابية ومشاريع مرتبطة ببرامج ESA. وتستمد هويته المؤسسية من الجامعة لا من تسجيل شركة مستقلة.",
+              "kind": "editorially_localized_verified_source_section",
+              "source_ids": [
+                "NEW24-3381a85b03a6",
+                "STAGE3-0b70856c5593"
+              ],
+              "localization": "FACTUAL_SECTION_EQUIVALENCE_FA_EN_AR"
+            }
+          ]
+        }
+      ],
+      "key_facts": [],
+      "verified_on": "2026-11-13",
+      "hide_evidence_scope_in_ui": true,
+      "release_status": "EDITORIAL_RESEARCH_PREVIEW_NEEDS_FINAL_EXPERT_SIGNOFF",
+      "inventory_id": "DISC-0179",
+      "geo_source_url": "https://spacelab.ufsc.br/",
+      "geo_precision": "approximate_university_campus_official_address"
+    },
+    "orbita_release_note": {
+      "release_date": "2026-11-13",
+      "inventory_id": "DISC-0179",
+      "status": "EDITORIAL_PREVIEW",
+      "batch": "RASPEHR_14_STEP5",
+      "expert_review_pending": true,
+      "language_parity": "FA_EN_AR_SECTION_DETAIL",
+      "geo_precision": "approximate_university_campus_official_address",
+      "logo_status": "typographic_name_only"
     }
   }
 ]

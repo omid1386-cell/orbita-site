@@ -1356,7 +1356,7 @@
     "org_type_en": "Space components and subsystems",
     "org_type_ar": "مصنّع مكونات وأنظمة فرعية فضائية",
     "parent_institution": "",
-    "logo": "assets/logos/orbita/orbita-addnics.png",
+    "logo": "assets/logos/orbita/orbita-addnics.svg",
     "logo_kind": "orbita_editorial_nonofficial",
     "orbita_marker_code": "AD",
     "orbita_verified_profile": {
@@ -1778,7 +1778,7 @@
     "org_type_en": "Space components and subsystems",
     "org_type_ar": "مصنّع مكونات وأنظمة فرعية فضائية",
     "parent_institution": "",
-    "logo": "assets/logos/orbita/orbita-alouette.png",
+    "logo": "assets/logos/orbita/orbita-alouette.svg",
     "logo_kind": "orbita_editorial_nonofficial",
     "orbita_marker_code": "AL",
     "orbita_verified_profile": {
@@ -2150,7 +2150,7 @@
     "org_type_en": "Space components and subsystems",
     "org_type_ar": "مصنّع مكونات وأنظمة فرعية فضائية",
     "parent_institution": "",
-    "logo": "assets/logos/orbita/orbita-arkedge-space.png",
+    "logo": "assets/logos/orbita/orbita-arkedge-space.svg",
     "logo_kind": "orbita_editorial_nonofficial",
     "orbita_marker_code": "AE",
     "orbita_verified_profile": {
@@ -2564,7 +2564,7 @@
     "org_type_en": "Space components and subsystems",
     "org_type_ar": "مصنّع مكونات وأنظمة فرعية فضائية",
     "parent_institution": "",
-    "logo": "assets/logos/orbita/orbita-arumotech.png",
+    "logo": "assets/logos/orbita/orbita-arumotech.svg",
     "logo_kind": "orbita_editorial_nonofficial",
     "orbita_marker_code": "AT",
     "orbita_verified_profile": {
@@ -2874,7 +2874,7 @@
     "org_type_en": "Space components and subsystems",
     "org_type_ar": "مصنّع مكونات وأنظمة فرعية فضائية",
     "parent_institution": "",
-    "logo": "assets/logos/orbita/orbita-astrex.png",
+    "logo": "assets/logos/orbita/orbita-astrex.svg",
     "logo_kind": "orbita_editorial_nonofficial",
     "orbita_marker_code": "AX",
     "orbita_verified_profile": {
@@ -3308,7 +3308,7 @@
     "org_type_en": "Space components and subsystems",
     "org_type_ar": "مصنّع مكونات وأنظمة فرعية فضائية",
     "parent_institution": "",
-    "logo": "assets/logos/orbita/orbita-composite-tailors.png",
+    "logo": "assets/logos/orbita/orbita-composite-tailors.svg",
     "logo_kind": "orbita_editorial_nonofficial",
     "orbita_marker_code": "CT",
     "orbita_verified_profile": {
@@ -3680,7 +3680,7 @@
     "org_type_en": "Space components and subsystems",
     "org_type_ar": "مصنّع مكونات وأنظمة فرعية فضائية",
     "parent_institution": "",
-    "logo": "assets/logos/orbita/orbita-cosmobloom.png",
+    "logo": "assets/logos/orbita/orbita-cosmobloom.svg",
     "logo_kind": "orbita_editorial_nonofficial",
     "orbita_marker_code": "CB",
     "orbita_verified_profile": {
@@ -4109,7 +4109,7 @@
     "org_type_en": "Space components and subsystems",
     "org_type_ar": "مصنّع مكونات وأنظمة فرعية فضائية",
     "parent_institution": "",
-    "logo": "assets/logos/orbita/orbita-eagle-industry.png",
+    "logo": "assets/logos/orbita/orbita-eagle-industry.svg",
     "logo_kind": "orbita_editorial_nonofficial",
     "orbita_marker_code": "EI",
     "orbita_verified_profile": {
@@ -4452,7 +4452,7 @@
     "org_type_en": "Space components and subsystems",
     "org_type_ar": "مصنّع مكونات وأنظمة فرعية فضائية",
     "parent_institution": "",
-    "logo": "assets/logos/orbita/orbita-genesia.png",
+    "logo": "assets/logos/orbita/orbita-genesia.svg",
     "logo_kind": "orbita_editorial_nonofficial",
     "orbita_marker_code": "GE",
     "orbita_verified_profile": {
@@ -4819,7 +4819,7 @@
     "org_type_en": "Space components and subsystems",
     "org_type_ar": "مصنّع مكونات وأنظمة فرعية فضائية",
     "parent_institution": "",
-    "logo": "assets/logos/orbita/orbita-nanobridge-semiconductor.png",
+    "logo": "assets/logos/orbita/orbita-nanobridge-semiconductor.svg",
     "logo_kind": "orbita_editorial_nonofficial",
     "orbita_marker_code": "NB",
     "orbita_verified_profile": {
@@ -5192,7 +5192,7 @@
     "org_type_en": "Space components and subsystems",
     "org_type_ar": "مصنّع مكونات وأنظمة فرعية فضائية",
     "parent_institution": "",
-    "logo": "assets/logos/orbita/orbita-nec-space-technologies.png",
+    "logo": "assets/logos/orbita/orbita-nec-space-technologies.svg",
     "logo_kind": "orbita_editorial_nonofficial",
     "orbita_marker_code": "NE",
     "orbita_verified_profile": {
@@ -5580,7 +5580,7 @@
     "org_type_en": "Space components and subsystems",
     "org_type_ar": "مصنّع مكونات وأنظمة فرعية فضائية",
     "parent_institution": "",
-    "logo": "assets/logos/orbita/orbita-arcsec.png",
+    "logo": "assets/logos/orbita/orbita-arcsec.svg",
     "logo_kind": "orbita_editorial_nonofficial",
     "orbita_marker_code": "AR",
     "orbita_verified_profile": {
@@ -5953,6 +5953,840 @@
         "Check mission-by-mission flight heritage and distinguish proposals from achieved missions",
         "Prepare verified FA/EN/AR and map metadata only after science review"
       ]
+    }
+  },
+  {
+    "id": "raspehr-0012-idemitsu-kosan-co-ltd",
+    "cat": "components",
+    "en": "Idemitsu Kosan Co., Ltd.",
+    "fa": "ایدمیتسو کوسان",
+    "ar": "إيديميتسو كوسان",
+    "country": "Japan",
+    "country_fa": "ژاپن",
+    "country_ar": "اليابان",
+    "city": "Tokyo (Otemachi)",
+    "city_fa": "توکیو (اوته‌ماچی)",
+    "city_ar": "طوكيو (أوتيماتشي)",
+    "lat": 35.6868,
+    "lon": 139.7631,
+    "coordinate_precision": "approximate_neighbourhood_official_address",
+    "coordinates_are_exact_site_gps": false,
+    "address": "1-2-1 Otemachi, Chiyoda-ku, Tokyo 100-8321, Japan",
+    "address_evidence_url": "https://www.idemitsu.com/en/company/network/index.html",
+    "site": "https://www.idemitsu.com/",
+    "fa_d": "ایدِمیتسو کوسان شرکت ژاپنی فعال در پژوهش سلول‌های خورشیدی لایه‌نازک CIGS است. کاربرد فضایی نسل‌های قدیمی در MDS-1 و XI-V مستند است؛ فناوری‌های جدید و بازده آزمایشگاهی را نباید با عملکرد عملیاتی در مدار یکسان گرفت.",
+    "en_d": "Idemitsu Kosan is a Japanese company researching thin-film CIGS solar cells. Earlier generations flew as technology demonstrations on MDS-1 and XI-V; newer designs and laboratory efficiencies must not be equated with proven in-orbit performance.",
+    "ar_d": "إيديميتسو كوسان شركة يابانية تبحث في الخلايا الشمسية الرقيقة من نوع CIGS. استُخدمت أجيال سابقة في تجارب فضائية على MDS-1 وXI-V؛ ولا يجوز مساواة التصاميم الحديثة وكفاءات المختبر بأداء مثبت في المدار.",
+    "org_type_fa": "سازنده قطعات و زیرسامانه‌های فضایی",
+    "org_type_en": "Space components and subsystems",
+    "org_type_ar": "مكونات وأنظمة فرعية فضائية",
+    "parent_institution": "",
+    "logo": "",
+    "logo_kind": "no_verified_official_logo",
+    "brand_text_identifier": "IDE",
+    "orbita_verified_profile": {
+      "schema_version": 2,
+      "profile_type": "components",
+      "summary": {
+        "fa": "ایدِمیتسو کوسان شرکت ژاپنی فعال در پژوهش سلول‌های خورشیدی لایه‌نازک CIGS است. کاربرد فضایی نسل‌های قدیمی در MDS-1 و XI-V مستند است؛ فناوری‌های جدید و بازده آزمایشگاهی را نباید با عملکرد عملیاتی در مدار یکسان گرفت.",
+        "en": "Idemitsu Kosan is a Japanese company researching thin-film CIGS solar cells. Earlier generations flew as technology demonstrations on MDS-1 and XI-V; newer designs and laboratory efficiencies must not be equated with proven in-orbit performance.",
+        "ar": "إيديميتسو كوسان شركة يابانية تبحث في الخلايا الشمسية الرقيقة من نوع CIGS. استُخدمت أجيال سابقة في تجارب فضائية على MDS-1 وXI-V؛ ولا يجوز مساواة التصاميم الحديثة وكفاءات المختبر بأداء مثبت في المدار."
+      },
+      "sources": [
+        {
+          "url": "https://aerospacebiz.jaxa.jp/japanese-space-industry/Japanese-Space-Components-and-Parts-Catalog-2025.pdf",
+          "provenance_types": [
+            "S3_325_CLAIMS_INHERITED",
+            "STEP2_C01_BATCH01_DEEP_RESEARCH"
+          ],
+          "id": "SRC-77587d276a4d",
+          "title": "aerospacebiz.jaxa.jp — japanese-space-industry/Japanese-Space-Components-and-Parts-Catalog-2025.pdf"
+        },
+        {
+          "url": "https://www.idemitsu.com/en/company/rd/cigs/index.html",
+          "provenance_types": [
+            "S3_325_CLAIMS_INHERITED"
+          ],
+          "id": "SRC-ed1ecc4c8884",
+          "title": "www.idemitsu.com — en/company/rd/cigs/index.html"
+        },
+        {
+          "url": "https://www.idemitsu.com/en/company/rd/cigs/index.html",
+          "provenance_types": [
+            "STEP2_COMPLETION_2026_11_13_OFFICIAL_WEB_RESEARCH"
+          ],
+          "id": "WEB-ed1ecc4c8884",
+          "title": "www.idemitsu.com — en/company/rd/cigs/index.html"
+        },
+        {
+          "id": "NEW24-ed1ecc4c8884",
+          "url": "https://www.idemitsu.com/en/company/rd/cigs/index.html",
+          "title": "www.idemitsu.com — index.html",
+          "provenance_types": [
+            "STEP2_24_INDEPENDENT_OFFICIAL_WEB_VERIFICATION_2026_11_13"
+          ]
+        }
+      ],
+      "sections": [
+        {
+          "id": "overview",
+          "fa": "شناسنامه و تخصص",
+          "en": "Identity & specialization",
+          "ar": "التعريف والتخصص",
+          "items": [
+            {
+              "fa": "ایدمیتسو کوسان یک شرکت صنعتی و پژوهشی ژاپنی است که در رَسپهر به دلیل توسعه فناوری توان الکتریکی فضایی، به‌ویژه سلول خورشیدی CIGS، معرفی می‌شود. حضور در کاتالوگ قطعات فضایی ژاپن به‌تنهایی نشانه سابقه پرواز مدل‌های جدید نیست.",
+              "en": "Idemitsu Kosan is a Japanese industrial and research company included for its space-power technology, particularly CIGS solar cells. A listing in Japan’s space components catalogue does not independently prove the flight heritage of its current products.",
+              "ar": "إيديميتسو كوسان شركة صناعية وبحثية يابانية تُدرج لتقنياتها في توليد الطاقة الفضائية، وخاصة خلايا CIGS الشمسية. ولا يثبت ورودها في دليل المكونات الفضائية الياباني سجل طيران طرازاتها الحالية.",
+              "kind": "editorially_localized_verified_source_section",
+              "source_ids": [
+                "SRC-77587d276a4d"
+              ],
+              "localization": "FACTUAL_SECTION_EQUIVALENCE_FA_EN_AR"
+            }
+          ]
+        },
+        {
+          "id": "products",
+          "fa": "محصولات و فناوری",
+          "en": "Products & technology",
+          "ar": "المنتجات والتقنية",
+          "items": [
+            {
+              "fa": "توسعه سلول‌های خورشیدی لایه‌نازک CIGS مقاوم‌تر در برابر تابش، محور برنامه فضایی شرکت است. در سال ۲۰۲۵ استفاده نمایشی از سلول فضایی در سامانه SDX محموله HTV-X1 و فناوری مشابه در BOTAN اعلام شد. بازده ۲۳٫۳۵٪ مربوط به آزمون زمینی AM1.5 در ۲۰۱۹ است، نه بازده اثبات‌شده در مدار.",
+              "en": "Its space programme focuses on radiation-tolerant, thin-film CIGS photovoltaic cells. In 2025 the company announced a demonstration in the SDX system carried by HTV-X1 and related technology for BOTAN. The reported 23.35% efficiency was measured in a terrestrial AM1.5 test in 2019, not as demonstrated orbital efficiency.",
+              "ar": "يركز البرنامج الفضائي للشركة على خلايا CIGS الكهروضوئية الرقيقة المقاومة للإشعاع. وفي 2025 أعلنت عرضاً تجريبياً ضمن منظومة SDX على حمولة HTV-X1 وتقنية مرتبطة بمشروع BOTAN. أما كفاءة 23.35% فقيست في اختبار أرضي وفق AM1.5 عام 2019، وليست كفاءة مثبتة في المدار.",
+              "kind": "editorially_localized_verified_source_section",
+              "source_ids": [
+                "SRC-ed1ecc4c8884",
+                "WEB-ed1ecc4c8884",
+                "NEW24-ed1ecc4c8884"
+              ],
+              "localization": "FACTUAL_SECTION_EQUIVALENCE_FA_EN_AR"
+            }
+          ]
+        },
+        {
+          "id": "heritage",
+          "fa": "سابقه پروازی",
+          "en": "Flight heritage",
+          "ar": "السجل الفضائي",
+          "items": [
+            {
+              "fa": "شاركت أجيال تاریخی سلول‌های CIGS این شرکت در نمایش‌های فضایی ماهواره MDS-1 در سال ۲۰۰۲ و کیوب‌ست XI-V دانشگاه توکیو در سال ۲۰۰۵. این سابقه به نسل‌های یادشده تعلق دارد و عملکرد نسل تازه را تضمین نمی‌کند.",
+              "en": "Earlier CIGS cell generations were demonstrated aboard MDS-1 in 2002 and the University of Tokyo’s XI-V CubeSat in 2005. These missions document historical hardware demonstrations, not automatic qualification of newer generations.",
+              "ar": "اختُبرت أجيال سابقة من خلايا CIGS على القمر MDS-1 في 2002 وعلى القمر المكعب XI-V لجامعة طوكيو في 2005. وتوثّق المهمتان الأجيال التاريخية فقط، ولا تمنح الأجيال الجديدة تأهيلاً تلقائياً.",
+              "kind": "editorially_localized_verified_source_section",
+              "source_ids": [
+                "WEB-ed1ecc4c8884",
+                "NEW24-ed1ecc4c8884"
+              ],
+              "localization": "FACTUAL_SECTION_EQUIVALENCE_FA_EN_AR"
+            }
+          ]
+        },
+        {
+          "id": "network",
+          "fa": "مشتریان و زنجیره تأمین",
+          "en": "Customers & supply chain",
+          "ar": "العملاء وسلسلة التوريد",
+          "items": [
+            {
+              "fa": "ایدمیتسو در سال ۲۰۲۵ همکاری با Source Energy Company را برای توسعه آرایه‌های خورشیدی نسل آینده بازار فضا اعلام کرد. اعلام همکاری به‌خودی‌خود نشان‌دهنده تولید تجاری یا استقرار عملیاتی آن آرایه‌ها نیست.",
+              "en": "In 2025 Idemitsu announced a collaboration with Source Energy Company to develop next-generation solar arrays for the space market. The agreement alone does not establish commercial delivery or operational deployment.",
+              "ar": "أعلنت إيديميتسو في 2025 تعاوناً مع Source Energy Company لتطوير مصفوفات شمسية من الجيل التالي للسوق الفضائية. ولا يثبت إعلان التعاون وحده بدء التسليم التجاري أو التشغيل الفعلي.",
+              "kind": "editorially_localized_verified_source_section",
+              "source_ids": [
+                "NEW24-ed1ecc4c8884"
+              ],
+              "localization": "FACTUAL_SECTION_EQUIVALENCE_FA_EN_AR"
+            }
+          ]
+        },
+        {
+          "id": "timeline",
+          "fa": "تاریخچه و تحولات",
+          "en": "History & development",
+          "ar": "التاريخ والتطور",
+          "items": [
+            {
+              "fa": "پژوهش CIGS شرکت از ۱۹۹۳ آغاز شد؛ نمایش‌های فضایی MDS-1 و XI-V به‌ترتیب در ۲۰۰۲ و ۲۰۰۵ انجام شدند. تولید تجاری زمینی CIGS در ۲۰۲۲ متوقف شد، اما پژوهش کاربرد فضایی در مجموعه تحقیقاتی Sodegaura ادامه یافت؛ این دو مسیر باید از هم تفکیک شوند.",
+              "en": "Its CIGS research began in 1993, followed by space demonstrations in 2002 (MDS-1) and 2005 (XI-V). Commercial terrestrial CIGS production ended in 2022, while research into space applications continued at Sodegaura; those activities must be distinguished.",
+              "ar": "بدأت أبحاث CIGS في 1993، ثم جرت التجارب الفضائية في 2002 على MDS-1 و2005 على XI-V. توقف الإنتاج التجاري الأرضي للخلايا في 2022، فيما استمر بحث التطبيقات الفضائية في سوديغاورا؛ وهما مساران مختلفان.",
+              "kind": "editorially_localized_verified_source_section",
+              "source_ids": [
+                "WEB-ed1ecc4c8884",
+                "NEW24-ed1ecc4c8884"
+              ],
+              "localization": "FACTUAL_SECTION_EQUIVALENCE_FA_EN_AR"
+            }
+          ]
+        }
+      ],
+      "key_facts": [],
+      "verified_on": "2026-11-13",
+      "hide_evidence_scope_in_ui": true,
+      "release_status": "EDITORIAL_RESEARCH_PREVIEW_NEEDS_FINAL_EXPERT_SIGNOFF",
+      "inventory_id": "DISC-0012",
+      "geo_source_url": "https://www.idemitsu.com/en/company/network/index.html",
+      "geo_precision": "approximate_neighbourhood_official_address"
+    },
+    "orbita_release_note": {
+      "release_date": "2026-11-13",
+      "inventory_id": "DISC-0012",
+      "status": "EDITORIAL_PREVIEW",
+      "batch": "RASPEHR_14_STEP5",
+      "expert_review_pending": true,
+      "language_parity": "FA_EN_AR_SECTION_DETAIL",
+      "geo_precision": "approximate_neighbourhood_official_address",
+      "logo_status": "typographic_name_only"
+    }
+  },
+  {
+    "id": "raspehr-0019-meisei-electric-co-ltd",
+    "cat": "components",
+    "en": "MEISEI ELECTRIC CO., LTD.",
+    "fa": "میسه الکتریک",
+    "ar": "ميسيه إلكتريك",
+    "country": "Japan",
+    "country_fa": "ژاپن",
+    "country_ar": "اليابان",
+    "city": "Isesaki (Naganuma)",
+    "city_fa": "ایسه‌ساکی (ناگانوما)",
+    "city_ar": "إيسيساكي (ناغانوما)",
+    "lat": 36.289,
+    "lon": 139.205,
+    "coordinate_precision": "approximate_city_official_address",
+    "coordinates_are_exact_site_gps": false,
+    "address": "2223 Naganumamachi, Isesaki-shi, Gunma 372-8585, Japan",
+    "address_evidence_url": "https://www.meisei.co.jp/english/aboutus/outline",
+    "site": "https://www.meisei.co.jp/english/",
+    "fa_d": "میسه‌ای الکتریک شرکت ژاپنی سازنده ابزار فضایی، حسگرها و تجهیزات مخابراتی است که در ۱۹۳۸ تأسیس شد. NOHMI BOSAI از ۲۰۲۶ مالک کامل آن است؛ IHI مالک پیشین بود.",
+    "en_d": "Meisei Electric, established in Japan in 1938, develops space instruments, sensors and communications equipment. NOHMI BOSAI became its wholly owning parent in 2026; IHI was the former parent.",
+    "ar_d": "ميسَي إلكتريك شركة يابانية تأسست عام 1938 وتطور أجهزة فضائية ومستشعرات ومعدات اتصالات. أصبحت NOHMI BOSAI الشركة المالكة بالكامل في 2026، بعدما كانت تابعة لـIHI.",
+    "org_type_fa": "سازنده قطعات و زیرسامانه‌های فضایی",
+    "org_type_en": "Space components and subsystems",
+    "org_type_ar": "مكونات وأنظمة فرعية فضائية",
+    "parent_institution": "NOHMI BOSAI Co., Ltd. (2026)",
+    "logo": "",
+    "logo_kind": "no_verified_official_logo",
+    "brand_text_identifier": "ME",
+    "orbita_verified_profile": {
+      "schema_version": 2,
+      "profile_type": "components",
+      "summary": {
+        "fa": "میسه‌ای الکتریک شرکت ژاپنی سازنده ابزار فضایی، حسگرها و تجهیزات مخابراتی است که در ۱۹۳۸ تأسیس شد. NOHMI BOSAI از ۲۰۲۶ مالک کامل آن است؛ IHI مالک پیشین بود.",
+        "en": "Meisei Electric, established in Japan in 1938, develops space instruments, sensors and communications equipment. NOHMI BOSAI became its wholly owning parent in 2026; IHI was the former parent.",
+        "ar": "ميسَي إلكتريك شركة يابانية تأسست عام 1938 وتطور أجهزة فضائية ومستشعرات ومعدات اتصالات. أصبحت NOHMI BOSAI الشركة المالكة بالكامل في 2026، بعدما كانت تابعة لـIHI."
+      },
+      "sources": [
+        {
+          "url": "https://www.meisei.co.jp/english/products/products_category/space/satellite-components",
+          "provenance_types": [
+            "S3_325_CLAIMS_INHERITED"
+          ],
+          "id": "SRC-1cdd850b49ef",
+          "title": "www.meisei.co.jp — english/products/products_category/space/satellite-components"
+        },
+        {
+          "url": "https://aerospacebiz.jaxa.jp/japanese-space-industry/Japanese-Space-Components-and-Parts-Catalog-2025.pdf",
+          "provenance_types": [
+            "S3_325_CLAIMS_INHERITED",
+            "STEP2_C01_BATCH01_DEEP_RESEARCH"
+          ],
+          "id": "SRC-77587d276a4d",
+          "title": "aerospacebiz.jaxa.jp — japanese-space-industry/Japanese-Space-Components-and-Parts-Catalog-2025.pdf"
+        },
+        {
+          "url": "https://aerospacebiz.jaxa.jp/japanese-space-industry/detail/meisei-electric-co-ltd/",
+          "provenance_types": [
+            "STEP2_COMPLETION_99_OFFICIAL_WEB_RESEARCH"
+          ],
+          "id": "WEB-e3f3ad895ba7",
+          "title": "aerospacebiz.jaxa.jp — japanese-space-industry/detail/meisei-electric-co-ltd"
+        },
+        {
+          "id": "NEW24-6d7eacd6d767",
+          "url": "https://www.meisei.co.jp/english/products/space/satellite-components/p1381",
+          "title": "www.meisei.co.jp — p1381",
+          "provenance_types": [
+            "STEP2_24_INDEPENDENT_OFFICIAL_WEB_VERIFICATION_2026_11_13"
+          ]
+        },
+        {
+          "id": "NEW24-1cdd850b49ef",
+          "url": "https://www.meisei.co.jp/english/products/products_category/space/satellite-components",
+          "title": "www.meisei.co.jp — satellite-components",
+          "provenance_types": [
+            "STEP2_24_INDEPENDENT_OFFICIAL_WEB_VERIFICATION_2026_11_13"
+          ]
+        },
+        {
+          "id": "STAGE3-fbb3244e02a5",
+          "url": "https://www.meisei.co.jp/english/aboutus/outline",
+          "title": "Official primary evidence from stage-3 audit",
+          "provenance_types": [
+            "STAGE3_PRIMARY_SOURCE_IDENTITY_RECHECK"
+          ]
+        },
+        {
+          "id": "STAGE3-f1fdf358e6ad",
+          "url": "https://www.meisei.co.jp/english/aboutus/history/",
+          "title": "Official primary evidence from stage-3 audit",
+          "provenance_types": [
+            "STAGE3_PRIMARY_SOURCE_IDENTITY_RECHECK"
+          ]
+        },
+        {
+          "id": "STAGE3-35e4262f83b5",
+          "url": "https://www.meisei.co.jp/english/wp-content/uploads/2025/10/%E3%80%88MSPA4-096_M2007%E3%80%89High-Speed-X-Band-Transmitter-MTX-540X.pdf",
+          "title": "Official primary evidence from stage-3 audit",
+          "provenance_types": [
+            "STAGE3_PRIMARY_SOURCE_IDENTITY_RECHECK"
+          ]
+        }
+      ],
+      "sections": [
+        {
+          "id": "overview",
+          "fa": "شناسنامه و تخصص",
+          "en": "Identity & specialization",
+          "ar": "التعريف والتخصص",
+          "items": [
+            {
+              "fa": "شرکت Meisei Electric در ۲۰ فوریه ۱۹۳۸ تأسیس شد و مقر/کارخانه اصلی آن در ایسِساکی استان گونماست. این مجموعه ابزار سنجش و مخابرات فضایی، تجهیزات علمی و اجزای کنترل وضعیت تولید می‌کند. مالک کنونی آن NOHMI BOSAI است، نه IHI.",
+              "en": "Meisei Electric was incorporated on 20 February 1938 and operates its headquarters and main plant in Isesaki, Gunma. It makes spaceborne sensors, communications and scientific instruments, and selected attitude-control components. Its current parent is NOHMI BOSAI, not IHI.",
+              "ar": "تأسست Meisei Electric في 20 فبراير 1938، ويقع مقرها ومصنعها الرئيسي في إيسيساكي بمحافظة غونما. تنتج أجهزة استشعار واتصالات وأدوات علمية فضائية ومكونات محددة للتحكم في الاتجاه. مالكتها الحالية NOHMI BOSAI وليست IHI.",
+              "kind": "editorially_localized_verified_source_section",
+              "source_ids": [
+                "SRC-77587d276a4d",
+                "NEW24-1cdd850b49ef",
+                "STAGE3-fbb3244e02a5",
+                "STAGE3-f1fdf358e6ad",
+                "STAGE3-35e4262f83b5"
+              ],
+              "localization": "FACTUAL_SECTION_EQUIVALENCE_FA_EN_AR"
+            }
+          ]
+        },
+        {
+          "id": "products",
+          "fa": "محصولات و فناوری",
+          "en": "Products & technology",
+          "ar": "المنتجات والتقنية",
+          "items": [
+            {
+              "fa": "سبد فضایی میسه‌ای شامل فرستنده باند X مدل MTX-540X، منابع ولتاژ بالای علمی تا حدود ±۵۰۰۰ ولت، مغناطیس‌گشتاوردهنده، طیف‌سنج‌های مرئی/فروسرخ/فرابنفش و آشکارساز ذرات و تابش است. در اسناد MTX-540X نرخ‌های ۵۲۲ و ۵۳۸ مگابیت‌برثانیه دیده می‌شود؛ تا تعیین نسخه دیتاشیت، نرخ نهایی این مدل در شناسنامه عمومی درج نمی‌شود. فرکانس ۸۰۲۵ تا ۸۴۰۰ مگاهرتز، توان حدود ۲۲ وات و جرم حدود ۱٫۳ کیلوگرم به مشخصات منتشرشده این خانواده نسبت داده می‌شوند، نه همه تجهیزات شرکت.",
+              "en": "The space portfolio includes the MTX-540X X-band transmitter, scientific high-voltage supplies up to approximately ±5,000 V, magnetic torquers, visible/infrared/ultraviolet spectrometers, and particle or radiation detectors. Documents give conflicting MTX-540X data rates of 522 and 538 Mb/s; no single rate is presented as final without identifying the datasheet revision. Published specifications for the transmitter family include 8,025–8,400 MHz, approximately 22 W consumption and about 1.3 kg mass; these values do not apply to all Meisei devices.",
+              "ar": "تشمل المنتجات الفضائية مرسل النطاق X من طراز MTX-540X ومزوّدات الجهد العالي للأدوات العلمية حتى نحو ±5000 فولت، وعزوم التحكم المغناطيسي، ومطيافات الضوء المرئي وتحت الأحمر وفوق البنفسجي، وكواشف الجسيمات والإشعاع. تورد الوثائق معدلَي 522 و538 ميغابت/ثانية للمرسل؛ لذلك لا نعتمد رقماً نهائياً قبل تحديد إصدار ورقة المواصفات. وتشمل المواصفات المنشورة لهذه العائلة 8025–8400 ميغاهرتز ونحو 22 واط وكتلة 1.3 كغ، ولا تُعمّم على جميع الأجهزة.",
+              "kind": "editorially_localized_verified_source_section",
+              "source_ids": [
+                "SRC-1cdd850b49ef",
+                "WEB-e3f3ad895ba7",
+                "NEW24-6d7eacd6d767",
+                "NEW24-1cdd850b49ef",
+                "STAGE3-fbb3244e02a5",
+                "STAGE3-f1fdf358e6ad",
+                "STAGE3-35e4262f83b5"
+              ],
+              "localization": "FACTUAL_SECTION_EQUIVALENCE_FA_EN_AR"
+            }
+          ]
+        },
+        {
+          "id": "heritage",
+          "fa": "سابقه پروازی",
+          "en": "Flight heritage",
+          "ar": "السجل الفضائي",
+          "items": [
+            {
+              "fa": "کاتالوگ فضایی ژاپن به پرتاب بیش از ۳۰۰۰ قطعه ساخت Meisei اشاره می‌کند؛ این رقم تجمیعی است. تاریخچه شرکت مشارکت در کاوشگر Hayabusa2، ماهواره علمی Arase، نمایش ارتباط بی‌سیم بین دو فضاپیما در ۲۰۲۰ و فرودگر ماه SLIM در ۲۰۲۴ را ثبت کرده است؛ برای هر مأموریت باید ابزار مربوط جدا مشخص شود.",
+              "en": "Japan’s space-industry catalogue cites more than 3,000 Meisei-made pieces of hardware launched into space, a company-wide aggregate rather than model-by-model qualification. Company history records contributions to Hayabusa2, the Arase science probe, a 2020 inter-spacecraft wireless demonstration and the 2024 SLIM lunar lander; specific instrument assignments require mission-level identification.",
+              "ar": "يشير الدليل الصناعي الفضائي الياباني إلى إطلاق أكثر من 3000 قطعة من إنتاج Meisei، وهو رقم تجميعي لا تأهيل لكل طراز. ويسجل تاريخ الشركة مساهمات في Hayabusa2 ومسبار Arase وتجربة اتصال لاسلكي بين مركبتين في 2020 وهابط القمر SLIM في 2024، مع ضرورة تحديد الجهاز الخاص بكل مهمة.",
+              "kind": "editorially_localized_verified_source_section",
+              "source_ids": [
+                "WEB-e3f3ad895ba7",
+                "STAGE3-fbb3244e02a5",
+                "STAGE3-f1fdf358e6ad",
+                "STAGE3-35e4262f83b5"
+              ],
+              "localization": "FACTUAL_SECTION_EQUIVALENCE_FA_EN_AR"
+            }
+          ]
+        },
+        {
+          "id": "network",
+          "fa": "مشتریان و زنجیره تأمین",
+          "en": "Customers & supply chain",
+          "ar": "العملاء وسلسلة التوريد",
+          "items": [
+            {
+              "fa": "Meisei در ۲۰۱۲ به گروه IHI پیوست، در ۲۰۲۱ مالکیت کامل آن به IHI رسید و بنا بر تاریخچه رسمی، در ۲۰۲۶ NOHMI BOSAI مالک صددرصدی شد. مشتریان و شبکه مأموریت‌های فضایی باید از این زنجیره تاریخی مالکیت جدا نگهداری شوند.",
+              "en": "Meisei joined the IHI group in 2012 and became wholly owned by IHI in 2021. Its official history states that NOHMI BOSAI became the wholly owning parent in 2026. Mission partnerships should not be confused with this changing ownership chain.",
+              "ar": "انضمت Meisei إلى مجموعة IHI في 2012 وأصبحت مملوكة لها بالكامل في 2021. وتذكر سجلاتها الرسمية أن NOHMI BOSAI أصبحت مالكتها بالكامل في 2026. ويجب فصل شركاء المهمات الفضائية عن تسلسل الملكية هذا.",
+              "kind": "editorially_localized_verified_source_section",
+              "source_ids": [
+                "STAGE3-fbb3244e02a5",
+                "STAGE3-f1fdf358e6ad",
+                "STAGE3-35e4262f83b5"
+              ],
+              "localization": "FACTUAL_SECTION_EQUIVALENCE_FA_EN_AR"
+            }
+          ]
+        },
+        {
+          "id": "timeline",
+          "fa": "تاریخچه و تحولات",
+          "en": "History & development",
+          "ar": "التاريخ والتطور",
+          "items": [
+            {
+              "fa": "۱۹۳۸: تأسیس حقوقی شرکت. ۲۰۱۲: ورود به گروه IHI. ۲۰۱۴: مشارکت در تجهیزات Hayabusa2. ۲۰۱۶: مشارکت در Arase. ۲۰۲۰: نمایش ارتباط WLAN بین فضاپیماها. ۲۰۲۴: مشارکت در فرود موفق SLIM. ۲۰۲۶: انتقال مالکیت کامل به NOHMI BOSAI.",
+              "en": "1938: incorporation. 2012: entry into the IHI group. 2014: Hayabusa2 equipment contribution. 2016: Arase instruments. 2020: inter-spacecraft WLAN demonstration. 2024: contribution to SLIM’s lunar landing. 2026: transfer of full ownership to NOHMI BOSAI.",
+              "ar": "1938: التأسيس القانوني. 2012: الانضمام إلى مجموعة IHI. 2014: المساهمة بمعدات Hayabusa2. 2016: أدوات Arase. 2020: تجربة WLAN بين مركبتين فضائيتين. 2024: المساهمة في هبوط SLIM القمري. 2026: انتقال الملكية الكاملة إلى NOHMI BOSAI.",
+              "kind": "editorially_localized_verified_source_section",
+              "source_ids": [
+                "STAGE3-fbb3244e02a5",
+                "STAGE3-f1fdf358e6ad",
+                "STAGE3-35e4262f83b5"
+              ],
+              "localization": "FACTUAL_SECTION_EQUIVALENCE_FA_EN_AR"
+            }
+          ]
+        }
+      ],
+      "key_facts": [],
+      "verified_on": "2026-11-13",
+      "hide_evidence_scope_in_ui": true,
+      "release_status": "EDITORIAL_RESEARCH_PREVIEW_NEEDS_FINAL_EXPERT_SIGNOFF",
+      "inventory_id": "DISC-0019",
+      "geo_source_url": "https://www.meisei.co.jp/english/aboutus/outline",
+      "geo_precision": "approximate_city_official_address"
+    },
+    "orbita_release_note": {
+      "release_date": "2026-11-13",
+      "inventory_id": "DISC-0019",
+      "status": "EDITORIAL_PREVIEW",
+      "batch": "RASPEHR_14_STEP5",
+      "expert_review_pending": true,
+      "language_parity": "FA_EN_AR_SECTION_DETAIL",
+      "geo_precision": "approximate_city_official_address",
+      "logo_status": "typographic_name_only"
+    }
+  },
+  {
+    "id": "raspehr-0023-mitsubishi-electric-corporation",
+    "cat": "components",
+    "en": "Mitsubishi Electric Corporation",
+    "fa": "میتسوبیشی الکتریک",
+    "ar": "ميتسوبيشي إلكتريك",
+    "country": "Japan",
+    "country_fa": "ژاپن",
+    "country_ar": "اليابان",
+    "city": "Tokyo (Marunouchi)",
+    "city_fa": "توکیو (مارونواوچی)",
+    "city_ar": "طوكيو (مارونوتشي)",
+    "lat": 35.679,
+    "lon": 139.764,
+    "coordinate_precision": "approximate_neighbourhood_official_address",
+    "coordinates_are_exact_site_gps": false,
+    "address": "Tokyo Building, 2-7-3 Marunouchi, Chiyoda-ku, Tokyo 100-8310, Japan",
+    "address_evidence_url": "https://www.mitsubishielectric.com/en/about/corporate-data/",
+    "site": "https://www.mitsubishielectric.com/",
+    "fa_d": "میتسوبیشی الکتریک شرکت ژاپنی فعال در ساخت سامانه‌های فضایی، زیرسامانه‌های توان و تجهیزات مخابراتی است. این شرکت از Mitsubishi Heavy Industries مستقل است و از ژوئیه ۲۰۲۶ مالک کامل Infostellar محسوب می‌شود.",
+    "en_d": "Mitsubishi Electric is a Japanese manufacturer of space systems, electrical-power subsystems and communications hardware. It is legally distinct from Mitsubishi Heavy Industries and became the sole owner of Infostellar in July 2026.",
+    "ar_d": "ميتسوبيشي إلكتريك شركة يابانية تصنع أنظمة فضائية ومكونات الطاقة والاتصالات. وهي كيان مستقل عن Mitsubishi Heavy Industries، وأصبحت المالكة الكاملة لشركة Infostellar في يوليو 2026.",
+    "org_type_fa": "سازنده قطعات و زیرسامانه‌های فضایی",
+    "org_type_en": "Space components and subsystems",
+    "org_type_ar": "مكونات وأنظمة فرعية فضائية",
+    "parent_institution": "",
+    "logo": "",
+    "logo_kind": "no_verified_official_logo",
+    "brand_text_identifier": "MEL",
+    "orbita_verified_profile": {
+      "schema_version": 2,
+      "profile_type": "components",
+      "summary": {
+        "fa": "میتسوبیشی الکتریک شرکت ژاپنی فعال در ساخت سامانه‌های فضایی، زیرسامانه‌های توان و تجهیزات مخابراتی است. این شرکت از Mitsubishi Heavy Industries مستقل است و از ژوئیه ۲۰۲۶ مالک کامل Infostellar محسوب می‌شود.",
+        "en": "Mitsubishi Electric is a Japanese manufacturer of space systems, electrical-power subsystems and communications hardware. It is legally distinct from Mitsubishi Heavy Industries and became the sole owner of Infostellar in July 2026.",
+        "ar": "ميتسوبيشي إلكتريك شركة يابانية تصنع أنظمة فضائية ومكونات الطاقة والاتصالات. وهي كيان مستقل عن Mitsubishi Heavy Industries، وأصبحت المالكة الكاملة لشركة Infostellar في يوليو 2026."
+      },
+      "sources": [
+        {
+          "url": "https://www.mitsubishielectric.com/bu/space/satellite_components/",
+          "provenance_types": [
+            "S3_325_CLAIMS_INHERITED"
+          ],
+          "id": "SRC-0f02e7f43e65",
+          "title": "www.mitsubishielectric.com — bu/space/satellite_components"
+        },
+        {
+          "url": "https://aerospacebiz.jaxa.jp/japanese-space-industry/Japanese-Space-Components-and-Parts-Catalog-2025.pdf",
+          "provenance_types": [
+            "S3_325_CLAIMS_INHERITED",
+            "STEP2_C01_BATCH01_DEEP_RESEARCH"
+          ],
+          "id": "SRC-77587d276a4d",
+          "title": "aerospacebiz.jaxa.jp — japanese-space-industry/Japanese-Space-Components-and-Parts-Catalog-2025.pdf"
+        },
+        {
+          "url": "https://aerospacebiz.jaxa.jp/japanese-space-industry/detail/mitsubishi-electric-corporation/",
+          "provenance_types": [
+            "STEP2_COMPLETION_99_OFFICIAL_WEB_RESEARCH"
+          ],
+          "id": "WEB-45b11a8ca7ff",
+          "title": "aerospacebiz.jaxa.jp — japanese-space-industry/detail/mitsubishi-electric-corporation"
+        },
+        {
+          "id": "NEW24-0f02e7f43e65",
+          "url": "https://www.mitsubishielectric.com/bu/space/satellite_components/",
+          "title": "www.mitsubishielectric.com — ",
+          "provenance_types": [
+            "STEP2_24_INDEPENDENT_OFFICIAL_WEB_VERIFICATION_2026_11_13"
+          ]
+        },
+        {
+          "id": "NEW24-cccdf5c559b9",
+          "url": "https://www.infostellar.net/news/melco-acquires-infostellar",
+          "title": "www.infostellar.net — melco-acquires-infostellar",
+          "provenance_types": [
+            "STEP2_24_INDEPENDENT_OFFICIAL_WEB_VERIFICATION_2026_11_13"
+          ]
+        },
+        {
+          "id": "STAGE3-e35705f577e6",
+          "url": "https://www.mitsubishielectric.com/bu/space/satellite/",
+          "title": "Official primary evidence from stage-3 audit",
+          "provenance_types": [
+            "STAGE3_PRIMARY_SOURCE_IDENTITY_RECHECK"
+          ]
+        }
+      ],
+      "sections": [
+        {
+          "id": "overview",
+          "fa": "شناسنامه و تخصص",
+          "en": "Identity & specialization",
+          "ar": "التعريف والتخصص",
+          "items": [
+            {
+              "fa": "میتسوبیشی الکتریک در حوزه قطعات ماهواره‌ای و همچنین طراحی، یکپارچه‌سازی و آزمون ماهواره کامل فعالیت دارد. نباید آن را با Mitsubishi Heavy Industries یا زیرمجموعه جدید آن، Infostellar، یک موجودیت واحد فرض کرد.",
+              "en": "Mitsubishi Electric supplies spacecraft components and also designs, integrates and tests complete satellites. It must not be merged with Mitsubishi Heavy Industries or with its newly acquired subsidiary Infostellar.",
+              "ar": "تزوّد Mitsubishi Electric الأقمار بمكونات متنوعة وتصمم وتدمج وتختبر أقماراً كاملة أيضاً. ولا ينبغي دمجها مع Mitsubishi Heavy Industries أو مع الشركة التابعة المستحوذ عليها حديثاً Infostellar.",
+              "kind": "editorially_localized_verified_source_section",
+              "source_ids": [
+                "SRC-77587d276a4d",
+                "STAGE3-e35705f577e6"
+              ],
+              "localization": "FACTUAL_SECTION_EQUIVALENCE_FA_EN_AR"
+            }
+          ]
+        },
+        {
+          "id": "products",
+          "fa": "محصولات و فناوری",
+          "en": "Products & technology",
+          "ar": "المنتجات والتقنية",
+          "items": [
+            {
+              "fa": "محصولات فضایی شامل پنل و آرایه خورشیدی، پنل‌های سازه‌ای و حرارتی، باتری لیتیوم‌یون، هیت‌پایپ، زیرسامانه توزیع توان و تجهیزات مخابراتی است. شرکت پلتفرم مخابراتی ماهواره DS2000 و امکانات مونتاژ و آزمون ماهواره را نیز ارائه می‌کند. مجموعه Sagami در کاناگاوا طبق معرفی سازنده حدود ۷۷۵۰۰ فوت‌مربع فضای یکپارچه‌سازی و آزمون تجهیزات سازه‌ای و توان دارد.",
+              "en": "Space products include solar panels and arrays, structural and thermal panels, lithium-ion batteries, heat pipes, power-distribution subsystems and communications components. The company also offers the DS2000 satellite communications platform and spacecraft assembly/integration/test capabilities. Its Sagami site in Kanagawa is described as having approximately 77,500 square feet of integration and test space for relevant structures and power hardware.",
+              "ar": "تشمل المنتجات الفضائية الألواح والمصفوفات الشمسية والهياكل الحرارية والإنشائية وبطاريات الليثيوم أيون وأنابيب الحرارة وتوزيع الطاقة ومكونات الاتصالات. وتقدم الشركة منصة الاتصالات الفضائية DS2000 وقدرات تجميع الأقمار وتكاملها واختبارها. وتذكر مصادر الشركة مساحة تقارب 77500 قدم مربعة للاختبارات والتكامل في موقع ساغامي بمحافظة كاناغاوا.",
+              "kind": "editorially_localized_verified_source_section",
+              "source_ids": [
+                "SRC-0f02e7f43e65",
+                "WEB-45b11a8ca7ff",
+                "NEW24-0f02e7f43e65",
+                "STAGE3-e35705f577e6"
+              ],
+              "localization": "FACTUAL_SECTION_EQUIVALENCE_FA_EN_AR"
+            }
+          ]
+        },
+        {
+          "id": "heritage",
+          "fa": "سابقه پروازی",
+          "en": "Flight heritage",
+          "ar": "السجل الفضائي",
+          "items": [
+            {
+              "fa": "شرکت اعلام می‌کند تجهیزات فضایی آن در بیش از ۶۵۰ برنامه فضایی مشتریان در مدار پایین، میانی، زمین‌آهنگ و محیط ماه به کار رفته‌اند. این عدد ادعای تجمیعی شرکت است و شمار پرواز تک‌تک مدل‌ها یا شمار ماهواره‌های تولیدی را نشان نمی‌دهد.",
+              "en": "The manufacturer reports that its space products have participated in more than 650 customer space programmes spanning LEO, MEO, GEO and lunar environments. This is a company-wide claim, not a model-specific flight count or the number of complete satellites manufactured.",
+              "ar": "تذكر الشركة أن منتجاتها الفضائية شاركت في أكثر من 650 برنامجاً فضائياً للعملاء في مدارات LEO وMEO وGEO والبيئة القمرية. وهذا رقم إجمالي للشركة، وليس عدد رحلات كل طراز أو عدد الأقمار الكاملة المصنّعة.",
+              "kind": "editorially_localized_verified_source_section",
+              "source_ids": [
+                "SRC-0f02e7f43e65",
+                "WEB-45b11a8ca7ff",
+                "NEW24-0f02e7f43e65",
+                "STAGE3-e35705f577e6"
+              ],
+              "localization": "FACTUAL_SECTION_EQUIVALENCE_FA_EN_AR"
+            }
+          ]
+        },
+        {
+          "id": "network",
+          "fa": "مشتریان و زنجیره تأمین",
+          "en": "Customers & supply chain",
+          "ar": "العملاء وسلسلة التوريد",
+          "items": [
+            {
+              "fa": "میتسوبیشی الکتریک همه سهام Infostellar را در اول ژوئیه ۲۰۲۶ خریداری کرد؛ Infostellar با پلتفرم خدمات زمینی StellarStation زیرمجموعه صددرصدی این شرکت است. این رابطه باید به‌صورت مادر–زیرمجموعه ثبت شود، نه ادغام دو شناسنامه.",
+              "en": "Mitsubishi Electric acquired all shares of Infostellar on 1 July 2026. Infostellar and its StellarStation ground-services platform remain a separately identified wholly owned subsidiary; the proper relationship is parent–subsidiary, not a merged profile.",
+              "ar": "استحوذت Mitsubishi Electric على جميع أسهم Infostellar في 1 يوليو 2026. وتظل Infostellar ومنصتها الأرضية StellarStation كياناً تابعاً مملوكاً بالكامل، ولذلك تسجل العلاقة أمّاً وشركة تابعة وليس ملفاً واحداً مدمجاً.",
+              "kind": "editorially_localized_verified_source_section",
+              "source_ids": [
+                "NEW24-cccdf5c559b9",
+                "STAGE3-e35705f577e6"
+              ],
+              "localization": "FACTUAL_SECTION_EQUIVALENCE_FA_EN_AR"
+            }
+          ]
+        },
+        {
+          "id": "timeline",
+          "fa": "تاریخچه و تحولات",
+          "en": "History & development",
+          "ar": "التاريخ والتطور",
+          "items": [
+            {
+              "fa": "فعالیت مجموعه در تأمین تجهیزات فضایی از دهه ۱۹۷۰ ثبت شده است. در اول ژوئیه ۲۰۲۶ با تملک کامل Infostellar، حضور مستقیم آن در خدمات دسترسی شبکه ایستگاه‌های زمینی توسعه یافت.",
+              "en": "The company’s space-hardware supply history extends back to the 1970s. On 1 July 2026 it expanded its direct ground-segment service business by wholly acquiring Infostellar.",
+              "ar": "تعود خبرة الشركة في توريد العتاد الفضائي إلى سبعينيات القرن الماضي. وفي 1 يوليو 2026 وسّعت نشاطها المباشر في خدمات القطاع الأرضي عبر الاستحواذ الكامل على Infostellar.",
+              "kind": "editorially_localized_verified_source_section",
+              "source_ids": [
+                "NEW24-0f02e7f43e65",
+                "STAGE3-e35705f577e6"
+              ],
+              "localization": "FACTUAL_SECTION_EQUIVALENCE_FA_EN_AR"
+            }
+          ]
+        }
+      ],
+      "key_facts": [],
+      "verified_on": "2026-11-13",
+      "hide_evidence_scope_in_ui": true,
+      "release_status": "EDITORIAL_RESEARCH_PREVIEW_NEEDS_FINAL_EXPERT_SIGNOFF",
+      "inventory_id": "DISC-0023",
+      "geo_source_url": "https://www.mitsubishielectric.com/en/about/corporate-data/",
+      "geo_precision": "approximate_neighbourhood_official_address"
+    },
+    "orbita_release_note": {
+      "release_date": "2026-11-13",
+      "inventory_id": "DISC-0023",
+      "status": "EDITORIAL_PREVIEW",
+      "batch": "RASPEHR_14_STEP5",
+      "expert_review_pending": true,
+      "language_parity": "FA_EN_AR_SECTION_DETAIL",
+      "geo_precision": "approximate_neighbourhood_official_address",
+      "logo_status": "typographic_name_only"
+    }
+  },
+  {
+    "id": "raspehr-0041-3d-plus",
+    "cat": "components",
+    "en": "3D PLUS",
+    "fa": "تری‌دی پلاس",
+    "ar": "ثري دي بلس",
+    "country": "France",
+    "country_fa": "فرانسه",
+    "country_ar": "فرنسا",
+    "city": "Buc",
+    "city_fa": "بوک",
+    "city_ar": "بوك",
+    "lat": 48.776,
+    "lon": 2.134,
+    "coordinate_precision": "approximate_city_official_address",
+    "coordinates_are_exact_site_gps": false,
+    "address": "408 Rue Hélène Boucher-ZI, 78530 Buc, France",
+    "address_evidence_url": "https://www.3d-plus.com/who-we-are/",
+    "site": "https://www.3d-plus.com/",
+    "fa_d": "3D PLUS SAS شرکت فرانسوی مستقر در Buc و وابسته به HEICO است که از ۱۹۹۵ در بسته‌بندی الکترونیک سه‌بعدی و حافظه مقاوم در برابر تابش برای مأموریت‌های فضایی فعالیت دارد.",
+    "en_d": "3D PLUS SAS is a HEICO-owned French company based in Buc, specializing since 1995 in three-dimensional electronics packaging and radiation-tolerant memory for space missions.",
+    "ar_d": "3D PLUS SAS شركة فرنسية مقرها بوك وتابعة لمجموعة HEICO، ومتخصصة منذ 1995 في التغليف الإلكتروني ثلاثي الأبعاد والذاكرة المقاومة للإشعاع للبعثات الفضائية.",
+    "org_type_fa": "سازنده قطعات و زیرسامانه‌های فضایی",
+    "org_type_en": "Space components and subsystems",
+    "org_type_ar": "مكونات وأنظمة فرعية فضائية",
+    "parent_institution": "HEICO Corporation",
+    "logo": "",
+    "logo_kind": "no_verified_official_logo",
+    "brand_text_identifier": "3D+",
+    "orbita_verified_profile": {
+      "schema_version": 2,
+      "profile_type": "components",
+      "summary": {
+        "fa": "3D PLUS SAS شرکت فرانسوی مستقر در Buc و وابسته به HEICO است که از ۱۹۹۵ در بسته‌بندی الکترونیک سه‌بعدی و حافظه مقاوم در برابر تابش برای مأموریت‌های فضایی فعالیت دارد.",
+        "en": "3D PLUS SAS is a HEICO-owned French company based in Buc, specializing since 1995 in three-dimensional electronics packaging and radiation-tolerant memory for space missions.",
+        "ar": "3D PLUS SAS شركة فرنسية مقرها بوك وتابعة لمجموعة HEICO، ومتخصصة منذ 1995 في التغليف الإلكتروني ثلاثي الأبعاد والذاكرة المقاومة للإشعاع للبعثات الفضائية."
+      },
+      "sources": [
+        {
+          "url": "https://www.3d-plus.com/products/high-density-nand-flash-memory-for-space-applications/",
+          "provenance_types": [
+            "ADDITIONAL_OFFICIAL_WEB_RESEARCH_2026_11_13"
+          ],
+          "id": "SRC-b15d44214027",
+          "title": "www.3d-plus.com — products/high-density-nand-flash-memory-for-space-applications"
+        },
+        {
+          "url": "https://www.3d-plus.com/products/space-radiation-tolerant-mram/",
+          "provenance_types": [
+            "S3_325_CLAIMS_INHERITED",
+            "ADDITIONAL_OFFICIAL_WEB_RESEARCH_2026_11_13"
+          ],
+          "id": "SRC-e9b692ff40eb",
+          "title": "www.3d-plus.com — products/space-radiation-tolerant-mram"
+        },
+        {
+          "id": "NEW24-07f233d5762f",
+          "url": "https://www.3d-plus.com/who-we-are/",
+          "title": "www.3d-plus.com — ",
+          "provenance_types": [
+            "STEP2_24_INDEPENDENT_OFFICIAL_WEB_VERIFICATION_2026_11_13"
+          ]
+        },
+        {
+          "id": "NEW24-b15d44214027",
+          "url": "https://www.3d-plus.com/products/high-density-nand-flash-memory-for-space-applications/",
+          "title": "www.3d-plus.com — ",
+          "provenance_types": [
+            "STEP2_24_INDEPENDENT_OFFICIAL_WEB_VERIFICATION_2026_11_13"
+          ]
+        },
+        {
+          "id": "NEW24-302bfd8ff6e6",
+          "url": "https://www.3d-plus.com/flight-heritage/",
+          "title": "www.3d-plus.com — ",
+          "provenance_types": [
+            "STEP2_24_INDEPENDENT_OFFICIAL_WEB_VERIFICATION_2026_11_13"
+          ]
+        },
+        {
+          "id": "STAGE3-cbd67ae7020d",
+          "url": "https://heico.com/heico-subsidiaries/",
+          "title": "Official primary evidence from stage-3 audit",
+          "provenance_types": [
+            "STAGE3_PRIMARY_SOURCE_IDENTITY_RECHECK"
+          ]
+        }
+      ],
+      "sections": [
+        {
+          "id": "overview",
+          "fa": "شناسنامه و تخصص",
+          "en": "Identity & specialization",
+          "ar": "التعريف والتخصص",
+          "items": [
+            {
+              "fa": "3D PLUS یک شرکت حقوقی فرانسوی با شماره ثبت RCS Versailles 402 523 088 است که ماژول‌های الکترونیکی سه‌بعدی و سامانه در بسته (SiP) برای فضا و محیط‌های سخت تولید می‌کند. واحد آمریکایی و مالک HEICO از شناسنامه شرکت فرانسوی تفکیک می‌شوند.",
+              "en": "3D PLUS is a French legal entity registered under RCS Versailles 402 523 088. It manufactures three-dimensional electronic modules and system-in-package (SiP) solutions for space and harsh environments. Its US presence and parent HEICO are distinct entities.",
+              "ar": "3D PLUS كيان قانوني فرنسي مسجل برقم RCS Versailles 402 523 088. تنتج وحدات إلكترونية ثلاثية الأبعاد وحلول النظام داخل الحزمة (SiP) للفضاء والبيئات القاسية، مع فصل فرعها الأمريكي والشركة الأم HEICO عن الكيان الفرنسي.",
+              "kind": "editorially_localized_verified_source_section",
+              "source_ids": [
+                "NEW24-07f233d5762f",
+                "STAGE3-cbd67ae7020d"
+              ],
+              "localization": "FACTUAL_SECTION_EQUIVALENCE_FA_EN_AR"
+            }
+          ]
+        },
+        {
+          "id": "products",
+          "fa": "محصولات و فناوری",
+          "en": "Products & technology",
+          "ar": "المنتجات والتقنية",
+          "items": [
+            {
+              "fa": "در خانواده حافظه مقاوم به تابش، ماژول‌های MRAM با تغذیه ۳٫۳ ولت و گذرگاه داده ۸ تا ۴۰ بیت عرضه می‌شوند. برای یک خانواده مشخص، تحمل دز کل بیش از ۵۰ krad(Si) و آستانه LET برای جلوگیری از قفل‌شدگی SEL بیش از ۸۵ MeV·cm²/mg گزارش شده است. خانواده NAND با ONFI 4.2 / NV-DDR3 و سرعت رابط تا ۶۰۰ مگاهرتز معرفی شده؛ مشخصات ۲۵ krad و LET 62.5 به حالت p-SLC آن تعلق دارد. وضعیت مدل مهندسی و صلاحیت پرواز نباید مخلوط شود.",
+              "en": "Its radiation-tolerant memory range includes 3.3 V MRAM modules with 8–40-bit data buses. For a specified family, documented characteristics include total ionizing dose above 50 krad(Si) and an SEL threshold above LET 85 MeV·cm²/mg. A separate NAND family uses ONFI 4.2 / NV-DDR3, with an interface rate up to 600 MHz; the 25 krad and LET 62.5 figures apply to its specified p-SLC condition. Engineering samples are not synonymous with flight-qualified units.",
+              "ar": "تضم الذاكرة المقاومة للإشعاع وحدات MRAM بجهد 3.3 فولت وناقل بيانات من 8 إلى 40 بت. وتُذكر لعائلة محددة قدرة تحمّل جرعة كلية تزيد على 50 krad(Si) وحدّ LET لمقاومة الانغلاق SEL يفوق 85 MeV·cm²/mg. أما عائلة NAND فتستخدم ONFI 4.2 / NV-DDR3 بسرعة واجهة حتى 600 ميغاهرتز؛ وتخص أرقام 25 krad وLET 62.5 وضع p-SLC المحدد. ولا تُعد العينات الهندسية مساوية للوحدات المؤهلة للطيران.",
+              "kind": "editorially_localized_verified_source_section",
+              "source_ids": [
+                "SRC-e9b692ff40eb",
+                "SRC-b15d44214027",
+                "NEW24-07f233d5762f",
+                "NEW24-b15d44214027",
+                "STAGE3-cbd67ae7020d"
+              ],
+              "localization": "FACTUAL_SECTION_EQUIVALENCE_FA_EN_AR"
+            }
+          ]
+        },
+        {
+          "id": "heritage",
+          "fa": "سابقه پروازی",
+          "en": "Flight heritage",
+          "ar": "السجل الفضائي",
+          "items": [
+            {
+              "fa": "شرکت نمونه‌های کاربرد خانواده MRAM در مأموریت‌هایی مانند Sentinel-2، GLONASS و KompSat-6 را معرفی کرده است. همچنین از بیش از ۲۲۰هزار ماژول در فضا و بیش از ۲۵ سال سابقه مأموریتی بدون خرابی گزارش‌شده سخن می‌گوید؛ این‌ها ادعاهای تجمیعی سازنده‌اند و باید برای هر قطعه جدا کنترل شوند.",
+              "en": "The company names Sentinel-2, GLONASS and KompSat-6 among applications of its MRAM family. It also claims more than 220,000 modules in space and over 25 years of mission heritage without reported failures. These are aggregated manufacturer statements and require model-level verification before assignment to individual parts.",
+              "ar": "تذكر الشركة مهمات مثل Sentinel-2 وGLONASS وKompSat-6 بين تطبيقات عائلة MRAM. كما تعلن وجود أكثر من 220 ألف وحدة في الفضاء وسجل مهمات يتجاوز 25 عاماً بلا أعطال مُبلّغ عنها. وهذه تصريحات إجمالية من الشركة وتتطلب تحققاً على مستوى طراز المكوّن.",
+              "kind": "editorially_localized_verified_source_section",
+              "source_ids": [
+                "SRC-e9b692ff40eb",
+                "NEW24-302bfd8ff6e6",
+                "STAGE3-cbd67ae7020d"
+              ],
+              "localization": "FACTUAL_SECTION_EQUIVALENCE_FA_EN_AR"
+            }
+          ]
+        },
+        {
+          "id": "network",
+          "fa": "مشتریان و زنجیره تأمین",
+          "en": "Customers & supply chain",
+          "ar": "العملاء وسلسلة التوريد",
+          "items": [
+            {
+              "fa": "3D PLUS بخشی از گروه HEICO است. فناوری آن در زنجیره تأمین الکترونیک فضایی و ساخت ماژول برای محیط‌های پرتویی به‌کار می‌رود؛ دفتر/واحد 3D PLUS USA و شرکت فرانسوی نباید در نقشه یک رکورد یکسان تلقی شوند.",
+              "en": "3D PLUS belongs to the HEICO group and supplies space-electronics modules for radiation-exposed environments. The French legal company and 3D PLUS USA must remain distinguishable in the industry network.",
+              "ar": "تتبع 3D PLUS لمجموعة HEICO وتورد وحدات إلكترونيات فضائية للبيئات المعرضة للإشعاع. ويجب التمييز بين الكيان الفرنسي وفرع 3D PLUS USA في شبكة الصناعة.",
+              "kind": "editorially_localized_verified_source_section",
+              "source_ids": [
+                "STAGE3-cbd67ae7020d"
+              ],
+              "localization": "FACTUAL_SECTION_EQUIVALENCE_FA_EN_AR"
+            }
+          ]
+        },
+        {
+          "id": "timeline",
+          "fa": "تاریخچه و تحولات",
+          "en": "History & development",
+          "ar": "التاريخ والتطور",
+          "items": [
+            {
+              "fa": "۱۹۹۵: آغاز فعالیت 3D PLUS. ۲۰۰۴: دریافت صلاحیت از ESA طبق تاریخچه شرکت. ۲۰۲۲: تملک مجموعه TRAD. در ۲۰۲۶ نسل‌های جدید حافظه NAND و نمونه‌های مهندسی معرفی و زمان‌بندی شدند؛ زمان‌بندی معرفی با پرواز واقعی برابر نیست.",
+              "en": "1995: start of 3D PLUS operations. 2004: ESA qualification cited in company history. 2022: acquisition of TRAD. In 2026 new NAND memory devices and engineering-sample schedules were announced; a product roadmap does not establish a flown unit.",
+              "ar": "1995: بدء نشاط 3D PLUS. 2004: التأهيل من ESA وفق تاريخ الشركة. 2022: الاستحواذ على TRAD. في 2026 أُعلن عن أجهزة NAND جديدة وخطط عينات هندسية؛ ولا يعني جدول المنتجات أنها طارت فعلياً.",
+              "kind": "editorially_localized_verified_source_section",
+              "source_ids": [
+                "NEW24-07f233d5762f",
+                "STAGE3-cbd67ae7020d"
+              ],
+              "localization": "FACTUAL_SECTION_EQUIVALENCE_FA_EN_AR"
+            }
+          ]
+        }
+      ],
+      "key_facts": [],
+      "verified_on": "2026-11-13",
+      "hide_evidence_scope_in_ui": true,
+      "release_status": "EDITORIAL_RESEARCH_PREVIEW_NEEDS_FINAL_EXPERT_SIGNOFF",
+      "inventory_id": "DISC-0041",
+      "geo_source_url": "https://www.3d-plus.com/who-we-are/",
+      "geo_precision": "approximate_city_official_address"
+    },
+    "orbita_release_note": {
+      "release_date": "2026-11-13",
+      "inventory_id": "DISC-0041",
+      "status": "EDITORIAL_PREVIEW",
+      "batch": "RASPEHR_14_STEP5",
+      "expert_review_pending": true,
+      "language_parity": "FA_EN_AR_SECTION_DETAIL",
+      "geo_precision": "approximate_city_official_address",
+      "logo_status": "typographic_name_only"
     }
   }
 ]

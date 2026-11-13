@@ -326,7 +326,7 @@
     "org_type_en": "Satellite ground station",
     "org_type_ar": "محطة أرضية للاتصالات الفضائية",
     "parent_institution": "Kongsberg Satellite Services (KSAT)",
-    "logo": "assets/logos/orbita/orbita-ksat-svalbard.png",
+    "logo": "assets/logos/orbita/orbita-ksat-svalbard.svg",
     "logo_kind": "orbita_editorial_nonofficial",
     "orbita_marker_code": "SV",
     "orbita_verified_profile": {
@@ -696,7 +696,7 @@
     "org_type_en": "Satellite ground station",
     "org_type_ar": "محطة أرضية للاتصالات الفضائية",
     "parent_institution": "Kongsberg Satellite Services (KSAT)",
-    "logo": "assets/logos/orbita/orbita-ksat-trollsat.png",
+    "logo": "assets/logos/orbita/orbita-ksat-trollsat.svg",
     "logo_kind": "orbita_editorial_nonofficial",
     "orbita_marker_code": "TR",
     "orbita_verified_profile": {
@@ -1080,7 +1080,7 @@
     "org_type_en": "Satellite ground station",
     "org_type_ar": "محطة أرضية للاتصالات الفضائية",
     "parent_institution": "Swedish Space Corporation (SSC)",
-    "logo": "assets/logos/orbita/orbita-ssc-kiruna.png",
+    "logo": "assets/logos/orbita/orbita-ssc-kiruna.svg",
     "logo_kind": "orbita_editorial_nonofficial",
     "orbita_marker_code": "SK",
     "orbita_verified_profile": {
@@ -1445,7 +1445,7 @@
     "org_type_en": "Satellite ground station",
     "org_type_ar": "محطة أرضية للاتصالات الفضائية",
     "parent_institution": "Swedish Space Corporation (SSC)",
-    "logo": "assets/logos/orbita/orbita-ssc-santiago.png",
+    "logo": "assets/logos/orbita/orbita-ssc-santiago.svg",
     "logo_kind": "orbita_editorial_nonofficial",
     "orbita_marker_code": "SC",
     "orbita_verified_profile": {
@@ -1804,7 +1804,7 @@
     "org_type_en": "Satellite ground station",
     "org_type_ar": "محطة أرضية للاتصالات الفضائية",
     "parent_institution": "Swedish Space Corporation (SSC) — Dongara/WASC identity review open",
-    "logo": "assets/logos/orbita/orbita-ssc-dongara.png",
+    "logo": "assets/logos/orbita/orbita-ssc-dongara.svg",
     "logo_kind": "orbita_editorial_nonofficial",
     "orbita_marker_code": "DG",
     "orbita_verified_profile": {
@@ -2155,7 +2155,7 @@
     "org_type_en": "Satellite ground station",
     "org_type_ar": "محطة أرضية للاتصالات الفضائية",
     "parent_institution": "Swedish Space Corporation (SSC)",
-    "logo": "assets/logos/orbita/orbita-ssc-south-point.png",
+    "logo": "assets/logos/orbita/orbita-ssc-south-point.svg",
     "logo_kind": "orbita_editorial_nonofficial",
     "orbita_marker_code": "SP",
     "orbita_verified_profile": {
@@ -2534,7 +2534,7 @@
     "org_type_en": "Satellite ground station",
     "org_type_ar": "محطة أرضية للاتصالات الفضائية",
     "parent_institution": "NASA",
-    "logo": "assets/logos/orbita/orbita-nasa-wallops-ground.png",
+    "logo": "assets/logos/orbita/orbita-nasa-wallops-ground.svg",
     "logo_kind": "orbita_editorial_nonofficial",
     "orbita_marker_code": "WG",
     "orbita_verified_profile": {
@@ -2862,7 +2862,7 @@
     "org_type_en": "Satellite ground station",
     "org_type_ar": "محطة أرضية للاتصالات الفضائية",
     "parent_institution": "European Space Agency (ESA) / ESTRACK",
-    "logo": "assets/logos/orbita/orbita-esa-new-norcia.png",
+    "logo": "assets/logos/orbita/orbita-esa-new-norcia.svg",
     "logo_kind": "orbita_editorial_nonofficial",
     "orbita_marker_code": "NN",
     "orbita_verified_profile": {
@@ -3229,7 +3229,7 @@
     "org_type_en": "Satellite ground station",
     "org_type_ar": "محطة أرضية للاتصالات الفضائية",
     "parent_institution": "European Space Agency (ESA) / ESTRACK",
-    "logo": "assets/logos/orbita/orbita-esa-malargue.png",
+    "logo": "assets/logos/orbita/orbita-esa-malargue.svg",
     "logo_kind": "orbita_editorial_nonofficial",
     "orbita_marker_code": "ML",
     "orbita_verified_profile": {
@@ -3615,7 +3615,7 @@
     "org_type_en": "Satellite ground station",
     "org_type_ar": "محطة أرضية للاتصالات الفضائية",
     "parent_institution": "European Space Agency (ESA) / ESTRACK",
-    "logo": "assets/logos/orbita/orbita-esa-kiruna.png",
+    "logo": "assets/logos/orbita/orbita-esa-kiruna.svg",
     "logo_kind": "orbita_editorial_nonofficial",
     "orbita_marker_code": "EK",
     "orbita_verified_profile": {
@@ -3988,7 +3988,7 @@
     "org_type_en": "Satellite ground station",
     "org_type_ar": "محطة أرضية للاتصالات الفضائية",
     "parent_institution": "European Space Agency (ESA) / ESTRACK",
-    "logo": "assets/logos/orbita/orbita-esa-santa-maria.png",
+    "logo": "assets/logos/orbita/orbita-esa-santa-maria.svg",
     "logo_kind": "orbita_editorial_nonofficial",
     "orbita_marker_code": "SM",
     "orbita_verified_profile": {
@@ -4348,7 +4348,7 @@
     "org_type_en": "Satellite ground station",
     "org_type_ar": "محطة أرضية للاتصالات الفضائية",
     "parent_institution": "NASA / Jet Propulsion Laboratory",
-    "logo": "assets/logos/orbita/orbita-nasa-goldstone.png",
+    "logo": "assets/logos/orbita/orbita-nasa-goldstone.svg",
     "logo_kind": "orbita_editorial_nonofficial",
     "orbita_marker_code": "GO",
     "orbita_verified_profile": {
@@ -4699,7 +4699,7 @@
     "org_type_en": "Satellite ground station",
     "org_type_ar": "محطة أرضية للاتصالات الفضائية",
     "parent_institution": "NASA / Jet Propulsion Laboratory",
-    "logo": "assets/logos/orbita/orbita-nasa-madrid.png",
+    "logo": "assets/logos/orbita/orbita-nasa-madrid.svg",
     "logo_kind": "orbita_editorial_nonofficial",
     "orbita_marker_code": "MD",
     "orbita_verified_profile": {
@@ -5049,7 +5049,7 @@
     "org_type_en": "Satellite ground station",
     "org_type_ar": "محطة أرضية للاتصالات الفضائية",
     "parent_institution": "NASA / Jet Propulsion Laboratory",
-    "logo": "assets/logos/orbita/orbita-nasa-canberra.png",
+    "logo": "assets/logos/orbita/orbita-nasa-canberra.svg",
     "logo_kind": "orbita_editorial_nonofficial",
     "orbita_marker_code": "CA",
     "orbita_verified_profile": {
@@ -5394,6 +5394,201 @@
         "Check mission-by-mission flight heritage and distinguish proposals from achieved missions",
         "Prepare verified FA/EN/AR and map metadata only after science review"
       ]
+    }
+  },
+  {
+    "id": "raspehr-0131-noaa-fairbanks-command-and-data-acq",
+    "cat": "ground_station",
+    "en": "NOAA Fairbanks Command and Data Acquisition Station",
+    "fa": "ایستگاه دریافت و فرمان فربنکس نوآ",
+    "ar": "محطة فيربانكس لاستقبال البيانات والأوامر التابعة لـ NOAA",
+    "country": "United States",
+    "country_fa": "ایالات متحده آمریکا",
+    "country_ar": "الولايات المتحدة الأمريكية",
+    "city": "Fairbanks",
+    "city_fa": "فربنکس",
+    "city_ar": "فيربانكس",
+    "lat": 64.974,
+    "lon": -147.50989,
+    "coordinate_precision": "official_published_13m_antenna_1A_not_station_centre",
+    "coordinates_are_exact_site_gps": false,
+    "address": "Fairbanks Command and Data Acquisition Station, 1300 Eisele Road, Fairbanks AK 99712, USA",
+    "address_evidence_url": "https://www.nesdis.noaa.gov/about/our-offices/office-of-satellite-and-product-operations-ospo/fairbanks-command-and-data-acquisition-station-fcdas",
+    "site": "https://www.nesdis.noaa.gov/about/our-offices/office-of-satellite-and-product-operations-ospo/fairbanks-command-and-data-acquisition-station-fcdas",
+    "fa_d": "ایستگاه دولتی Fairbanks CDAS تابع NOAA/NESDIS در آلاسکا، مرکز مهم دریافت داده و ارسال فرمان به ماهواره‌های مدار قطبی است. این ایستگاه یک تأسیسات فیزیکی است و مالکیت آن با نقش پشتیبانی از مأموریت‌های ناسا نباید اشتباه شود.",
+    "en_d": "NOAA/NESDIS’s Fairbanks Command and Data Acquisition Station in Alaska is a major ground facility for polar-orbiting satellite data reception and commanding. It is a physical government station, not a NASA-owned facility simply because it supports NASA missions.",
+    "ar_d": "محطة Fairbanks لجمع البيانات والقيادة في ألاسكا منشأة حكومية تابعة لـNOAA/NESDIS لاستقبال بيانات الأقمار القطبية وإرسال الأوامر. وهي محطة فعلية لا تصبح ملكاً لناسا لمجرد دعمها مهمات ناسا.",
+    "org_type_fa": "ایستگاه زمینی فضایی",
+    "org_type_en": "Satellite ground station",
+    "org_type_ar": "محطة أرضية فضائية",
+    "parent_institution": "NOAA / NESDIS",
+    "logo": "",
+    "logo_kind": "no_verified_official_logo",
+    "brand_text_identifier": "NOAA",
+    "orbita_verified_profile": {
+      "schema_version": 3,
+      "profile_type": "ground_station",
+      "summary": {
+        "fa": "ایستگاه دولتی Fairbanks CDAS تابع NOAA/NESDIS در آلاسکا، مرکز مهم دریافت داده و ارسال فرمان به ماهواره‌های مدار قطبی است. این ایستگاه یک تأسیسات فیزیکی است و مالکیت آن با نقش پشتیبانی از مأموریت‌های ناسا نباید اشتباه شود.",
+        "en": "NOAA/NESDIS’s Fairbanks Command and Data Acquisition Station in Alaska is a major ground facility for polar-orbiting satellite data reception and commanding. It is a physical government station, not a NASA-owned facility simply because it supports NASA missions.",
+        "ar": "محطة Fairbanks لجمع البيانات والقيادة في ألاسكا منشأة حكومية تابعة لـNOAA/NESDIS لاستقبال بيانات الأقمار القطبية وإرسال الأوامر. وهي محطة فعلية لا تصبح ملكاً لناسا لمجرد دعمها مهمات ناسا."
+      },
+      "sources": [
+        {
+          "url": "https://www.nasa.gov/technology/space-comms/near-space-network-complexes/",
+          "provenance_types": [
+            "S3_325_CLAIMS_INHERITED"
+          ],
+          "id": "SRC-f3e873c95599",
+          "title": "www.nasa.gov — technology/space-comms/near-space-network-complexes"
+        },
+        {
+          "url": "https://www.nasa.gov/technology/space-comms/near-space-network-complexes/",
+          "provenance_types": [
+            "STEP2_COMPLETION_2026_11_13_OFFICIAL_WEB_RESEARCH"
+          ],
+          "id": "WEB-f3e873c95599",
+          "title": "www.nasa.gov — technology/space-comms/near-space-network-complexes"
+        },
+        {
+          "id": "UPG-2d8dc860440c",
+          "title": "www.nesdis.noaa.gov | roduct-operations-ospo/fairbanks-command-and-data-acquisition-station-fcdas",
+          "url": "https://www.nesdis.noaa.gov/about/our-offices/office-of-satellite-and-product-operations-ospo/fairbanks-command-and-data-acquisition-station-fcdas",
+          "evidence_status": "PRIMARY_OFFICIAL_SITE_RESEARCHED_2026_11_13"
+        },
+        {
+          "id": "UPG-f3e873c95599",
+          "title": "www.nasa.gov | /technology/space-comms/near-space-network-complexes/",
+          "url": "https://www.nasa.gov/technology/space-comms/near-space-network-complexes/",
+          "evidence_status": "PRIMARY_OFFICIAL_SITE_RESEARCHED_2026_11_13"
+        },
+        {
+          "id": "NEW24-2d8dc860440c",
+          "url": "https://www.nesdis.noaa.gov/about/our-offices/office-of-satellite-and-product-operations-ospo/fairbanks-command-and-data-acquisition-station-fcdas",
+          "title": "www.nesdis.noaa.gov — fairbanks-command-and-data-acquisition-station-fcdas",
+          "provenance_types": [
+            "STEP2_24_INDEPENDENT_OFFICIAL_WEB_VERIFICATION_2026_11_13"
+          ]
+        }
+      ],
+      "sections": [
+        {
+          "id": "overview",
+          "fa": "شناسنامه ایستگاه",
+          "en": "Station profile",
+          "ar": "التعريف بالمحطة",
+          "items": [
+            {
+              "fa": "ایستگاه Fairbanks Command and Data Acquisition Station یا FCDAS متعلق به NOAA/NESDIS است و به‌صورت شبانه‌روزی دریافت داده، فرمان‌دهی و توزیع اطلاعات ماهواره‌های محیطی را انجام می‌دهد. این مرکز در Gilmore Creek نزدیک Fairbanks آلاسکا قرار دارد.",
+              "en": "The Fairbanks Command and Data Acquisition Station (FCDAS) is operated under NOAA/NESDIS. It receives, commands and distributes environmental-satellite data around the clock from its Gilmore Creek site near Fairbanks, Alaska.",
+              "ar": "تعمل محطة Fairbanks Command and Data Acquisition Station (FCDAS) ضمن NOAA/NESDIS، وتستقبل بيانات الأقمار البيئية وتصدر الأوامر وتوزع البيانات على مدار الساعة من موقع غيلمور كريك قرب فيربانكس في ألاسكا.",
+              "kind": "editorially_localized_verified_source_section",
+              "source_ids": [
+                "SRC-f3e873c95599",
+                "UPG-2d8dc860440c",
+                "NEW24-2d8dc860440c"
+              ],
+              "localization": "FACTUAL_SECTION_EQUIVALENCE_FA_EN_AR"
+            }
+          ]
+        },
+        {
+          "id": "equipment",
+          "fa": "تجهیزات و قابلیت ارتباطی",
+          "en": "Equipment & links",
+          "ar": "المعدات والاتصالات",
+          "items": [
+            {
+              "fa": "محوطه ایستگاه حدود ۷۲۰۰ ایکر وسعت دارد و به فیبر نوری پرظرفیت و برق اضطراری مجهز است. NOAA نه آنتن فعال را در معرفی خود ثبت کرده و از جمله آنتن‌های ۲۶، ۲۱ و ۱۳ متری و تجهیزات باندهای L، S، X و Ka را معرفی می‌کند؛ مختصات آنتن‌ها جداگانه فهرست شده است.",
+              "en": "The site spans approximately 7,200 acres and includes high-bandwidth fibre links and backup power. NOAA lists nine active antennas in its station description, including 26 m, 21 m and 13 m dishes and L-, S-, X- and Ka-band equipment. Individual antenna coordinates are catalogued separately.",
+              "ar": "تبلغ مساحة الموقع نحو 7200 فدان ويضم وصلات ألياف ضوئية عالية السعة وطاقة احتياطية. وتذكر NOAA تسعة هوائيات عاملة، منها أطباق 26 و21 و13 متراً ومعدات نطاقات L وS وX وKa. وتُنشر إحداثيات كل هوائي بصورة مستقلة.",
+              "kind": "editorially_localized_verified_source_section",
+              "source_ids": [
+                "UPG-2d8dc860440c",
+                "UPG-f3e873c95599",
+                "NEW24-2d8dc860440c"
+              ],
+              "localization": "FACTUAL_SECTION_EQUIVALENCE_FA_EN_AR"
+            }
+          ]
+        },
+        {
+          "id": "missions",
+          "fa": "مأموریت‌ها و شبکه",
+          "en": "Missions & network",
+          "ar": "المهمات والشبكة",
+          "items": [
+            {
+              "fa": "FCDAS در دهه‌های گذشته از مأموریت‌های TIROS و نسل‌های اولیه Landsat پشتیبانی کرده است. براساس داده NOAA برای ۲۰۲۲، این مرکز خدمات ۱۷ ماهواره در ۱۰ مأموریت را ارائه می‌کرد. پشتیبانی از Deep Space Climate Observatory و نقش پشتیبان Wallops نیز در منابع رسمی آمده است.",
+              "en": "Historical operations supported TIROS and early Landsat missions. NOAA’s 2022 snapshot records support for 17 satellites across ten missions. The station also supports the Deep Space Climate Observatory and provides backup capability for Wallops.",
+              "ar": "دعمت المحطة تاريخياً مهمات TIROS وأجيال Landsat المبكرة. وتذكر بيانات NOAA لعام 2022 دعم 17 قمراً ضمن عشر مهمات. وتدعم كذلك Deep Space Climate Observatory وتؤدي دور محطة احتياطية لمحطة Wallops.",
+              "kind": "editorially_localized_verified_source_section",
+              "source_ids": [
+                "UPG-2d8dc860440c",
+                "NEW24-2d8dc860440c"
+              ],
+              "localization": "FACTUAL_SECTION_EQUIVALENCE_FA_EN_AR"
+            }
+          ]
+        },
+        {
+          "id": "coverage",
+          "fa": "پوشش و ظرفیت",
+          "en": "Coverage & capacity",
+          "ar": "التغطية والسعة",
+          "items": [
+            {
+              "fa": "تمرکز اصلی FCDAS بر ماهواره‌های مدار قطبی است و با شبکه زمینی پرظرفیت و آنتن‌های متعدد پوشش ایجاد می‌کند. نرخ موفقیت دریافت ۹۹٫۹۹٪ که NOAA منتشر کرده، فقط به سال ۲۰۲۲ مربوط است. مختصات یک آنتن مانند 13m 1/A نماینده نقطه دقیق مرکز کل مجموعه نیست.",
+              "en": "FCDAS primarily serves polar-orbiting spacecraft through multiple antennas and terrestrial backhaul. NOAA reported a 99.99% capture success rate for 2022 only. Coordinates for one antenna, such as 13 m 1/A, must not be mislabelled as the exact geographic centre of the entire site.",
+              "ar": "تخدم FCDAS أساساً الأقمار القطبية عبر عدة هوائيات وشبكة نقل أرضية. وأعلنت NOAA معدل نجاح استقبال بلغ 99.99% لعام 2022 فقط. ولا تمثل إحداثيات هوائي بعينه، مثل 13m 1/A، المركز الجغرافي الدقيق للمجمع بأكمله.",
+              "kind": "editorially_localized_verified_source_section",
+              "source_ids": [
+                "WEB-f3e873c95599",
+                "UPG-2d8dc860440c",
+                "NEW24-2d8dc860440c"
+              ],
+              "localization": "FACTUAL_SECTION_EQUIVALENCE_FA_EN_AR"
+            }
+          ]
+        },
+        {
+          "id": "history",
+          "fa": "تاریخچه و توسعه",
+          "en": "History & development",
+          "ar": "التاريخ والتطوير",
+          "items": [
+            {
+              "fa": "ایستگاه از ۱۹۶۲ در مأموریت‌های فضایی و هواشناسی فعالیت داشته است. آنتن ۲۶متری آن زمانی برای اندازه‌گیری‌های ژئودزی VLBI به‌کار می‌رفت؛ این کارکرد تاریخی با مأموریت فعلی دریافت داده و فرمان‌دهی متفاوت است.",
+              "en": "The station has served space and meteorological missions since 1962. Its 26 m antenna previously supported geodetic very-long-baseline interferometry (VLBI); that historical role differs from present-day satellite TT&C and data acquisition.",
+              "ar": "تعمل المحطة في المهمات الفضائية والأرصاد منذ 1962. وقد استخدم هوائيها البالغ 26 متراً سابقاً في قياسات الجيوديسيا بتداخل الخط القاعدي الطويل جداً VLBI؛ وهو دور تاريخي يختلف عن تلقي البيانات والتحكم الحالي.",
+              "kind": "editorially_localized_verified_source_section",
+              "source_ids": [
+                "SRC-f3e873c95599",
+                "UPG-2d8dc860440c",
+                "NEW24-2d8dc860440c"
+              ],
+              "localization": "FACTUAL_SECTION_EQUIVALENCE_FA_EN_AR"
+            }
+          ]
+        }
+      ],
+      "key_facts": [],
+      "verified_on": "2026-11-13",
+      "hide_evidence_scope_in_ui": true,
+      "release_status": "EDITORIAL_RESEARCH_PREVIEW_NEEDS_FINAL_EXPERT_SIGNOFF",
+      "inventory_id": "DISC-0131",
+      "geo_source_url": "https://www.nesdis.noaa.gov/about/our-offices/office-of-satellite-and-product-operations-ospo/fairbanks-command-and-data-acquisition-station-fcdas",
+      "geo_precision": "official_published_13m_antenna_1A_not_station_centre"
+    },
+    "orbita_release_note": {
+      "release_date": "2026-11-13",
+      "inventory_id": "DISC-0131",
+      "status": "EDITORIAL_PREVIEW",
+      "batch": "RASPEHR_14_STEP5",
+      "expert_review_pending": true,
+      "language_parity": "FA_EN_AR_SECTION_DETAIL",
+      "geo_precision": "official_published_13m_antenna_1A_not_station_centre",
+      "logo_status": "typographic_name_only"
     }
   }
 ]

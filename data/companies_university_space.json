@@ -582,7 +582,7 @@
     "org_type_en": "University space laboratory",
     "org_type_ar": "مختبر فضائي جامعي",
     "parent_institution": "Nanyang Technological University (NTU)",
-    "logo": "assets/logos/orbita/orbita-ntu-satellite-research.png",
+    "logo": "assets/logos/orbita/orbita-ntu-satellite-research.svg",
     "logo_kind": "orbita_editorial_nonofficial",
     "orbita_marker_code": "NT",
     "orbita_verified_profile": {
@@ -975,7 +975,7 @@
     "org_type_en": "University space laboratory",
     "org_type_ar": "مختبر فضائي جامعي",
     "parent_institution": "Delft University of Technology (TU Delft)",
-    "logo": "assets/logos/orbita/orbita-delfi-space-lab.png",
+    "logo": "assets/logos/orbita/orbita-delfi-space-lab.svg",
     "logo_kind": "orbita_editorial_nonofficial",
     "orbita_marker_code": "DF",
     "orbita_verified_profile": {
@@ -1322,6 +1322,213 @@
         "Check mission-by-mission flight heritage and distinguish proposals from achieved missions",
         "Prepare verified FA/EN/AR and map metadata only after science review"
       ]
+    }
+  },
+  {
+    "id": "raspehr-0179-space-technology-research-laborator",
+    "cat": "university_space",
+    "en": "Space Technology Research Laboratory (SpaceLab) — UFSC",
+    "fa": "آزمایشگاه فناوری فضایی دانشگاه فدرال سانتا کاتارینا",
+    "ar": "مختبر تكنولوجيا الفضاء في جامعة سانتا كاتارينا الفيدرالية",
+    "country": "Brazil",
+    "country_fa": "برزیل",
+    "country_ar": "البرازيل",
+    "city": "Florianópolis",
+    "city_fa": "فلوریانوپولیس",
+    "city_ar": "فلوريانوبوليس",
+    "lat": -27.602,
+    "lon": -48.518,
+    "coordinate_precision": "approximate_university_campus_official_address",
+    "coordinates_are_exact_site_gps": false,
+    "address": "R. Delfino Conti, s/n, Trindade, Florianópolis, SC 88040-900, Brazil",
+    "address_evidence_url": "https://spacelab.ufsc.br/",
+    "site": "https://spacelab.ufsc.br/",
+    "fa_d": "آزمایشگاه SpaceLab بخشی از دانشگاه فدرال سانتا کاتارینا در برزیل است و در توسعه کیوب‌ست‌ها و زیرسامانه‌های فضایی فعالیت دارد. FloripaSat-1 در دسامبر ۲۰۱۹ پرتاب شد؛ FloripaSat-2A/2B در اسناد بررسی‌شده هنوز برنامه آینده بودند.",
+    "en_d": "SpaceLab is a research laboratory at Brazil’s Federal University of Santa Catarina (UFSC), developing CubeSats and spacecraft subsystems. FloripaSat-1 launched in December 2019; the reviewed sources still described FloripaSat-2A/2B as awaiting launch.",
+    "ar_d": "SpaceLab مختبر بحثي في الجامعة الاتحادية لسانتا كاتارينا بالبرازيل يطور أقمار CubeSat وأنظمتها الفرعية. أُطلق FloripaSat-1 في ديسمبر 2019، بينما وصفت المصادر المراجعة FloripaSat-2A/2B بأنهما بانتظار الإطلاق.",
+    "org_type_fa": "آزمایشگاه فضایی دانشگاهی",
+    "org_type_en": "University space laboratory",
+    "org_type_ar": "مختبر جامعي لتكنولوجيا الفضاء",
+    "parent_institution": "Federal University of Santa Catarina (UFSC)",
+    "logo": "",
+    "logo_kind": "no_verified_official_logo",
+    "brand_text_identifier": "UFSC",
+    "orbita_verified_profile": {
+      "schema_version": 2,
+      "profile_type": "university_space",
+      "summary": {
+        "fa": "آزمایشگاه SpaceLab بخشی از دانشگاه فدرال سانتا کاتارینا در برزیل است و در توسعه کیوب‌ست‌ها و زیرسامانه‌های فضایی فعالیت دارد. FloripaSat-1 در دسامبر ۲۰۱۹ پرتاب شد؛ FloripaSat-2A/2B در اسناد بررسی‌شده هنوز برنامه آینده بودند.",
+        "en": "SpaceLab is a research laboratory at Brazil’s Federal University of Santa Catarina (UFSC), developing CubeSats and spacecraft subsystems. FloripaSat-1 launched in December 2019; the reviewed sources still described FloripaSat-2A/2B as awaiting launch.",
+        "ar": "SpaceLab مختبر بحثي في الجامعة الاتحادية لسانتا كاتارينا بالبرازيل يطور أقمار CubeSat وأنظمتها الفرعية. أُطلق FloripaSat-1 في ديسمبر 2019، بينما وصفت المصادر المراجعة FloripaSat-2A/2B بأنهما بانتظار الإطلاق."
+      },
+      "sources": [
+        {
+          "url": "https://floripasat.ufsc.br/",
+          "provenance_types": [
+            "S3_325_CLAIMS_INHERITED"
+          ],
+          "id": "SRC-43d9b07eeda2",
+          "title": "floripasat.ufsc.br — home"
+        },
+        {
+          "url": "https://spacelab.ufsc.br/",
+          "provenance_types": [
+            "S3_325_CLAIMS_INHERITED"
+          ],
+          "id": "SRC-9b62f01374e8",
+          "title": "spacelab.ufsc.br — home"
+        },
+        {
+          "url": "https://spacelab.ufsc.br/projects/",
+          "provenance_types": [
+            "STEP2_COMPLETION_99_OFFICIAL_WEB_RESEARCH"
+          ],
+          "id": "WEB-3381a85b03a6",
+          "title": "spacelab.ufsc.br — projects"
+        },
+        {
+          "id": "NEW24-3381a85b03a6",
+          "url": "https://spacelab.ufsc.br/projects/",
+          "title": "spacelab.ufsc.br — ",
+          "provenance_types": [
+            "STEP2_24_INDEPENDENT_OFFICIAL_WEB_VERIFICATION_2026_11_13"
+          ]
+        },
+        {
+          "id": "NEW24-43d9b07eeda2",
+          "url": "https://floripasat.ufsc.br/",
+          "title": "floripasat.ufsc.br — ",
+          "provenance_types": [
+            "STEP2_24_INDEPENDENT_OFFICIAL_WEB_VERIFICATION_2026_11_13"
+          ]
+        },
+        {
+          "id": "STAGE3-0b70856c5593",
+          "url": "https://seccps.ufsc.br/SpaceLab",
+          "title": "Official primary evidence from stage-3 audit",
+          "provenance_types": [
+            "STAGE3_PRIMARY_SOURCE_IDENTITY_RECHECK"
+          ]
+        }
+      ],
+      "sections": [
+        {
+          "id": "overview",
+          "fa": "شناسنامه علمی",
+          "en": "Academic identity",
+          "ar": "الهوية الأكاديمية",
+          "items": [
+            {
+              "fa": "Space Technology Research Laboratory یا SpaceLab یک آزمایشگاه دانشگاهی وابسته به UFSC در فلوریانوپلیس است؛ شناسنامه آن باید در گروه دانشگاه‌ها و آزمایشگاه‌ها باقی بماند و شرکت مستقل تلقی نشود.",
+              "en": "The Space Technology Research Laboratory (SpaceLab) is part of UFSC in Florianópolis. It belongs in the university and laboratory category and should not be represented as a separately incorporated company.",
+              "ar": "مختبر Space Technology Research Laboratory (SpaceLab) جزء من UFSC في فلوريانوبوليس. ويندرج ضمن الجامعات والمختبرات، لا بوصفه شركة ذات شخصية قانونية مستقلة.",
+              "kind": "editorially_localized_verified_source_section",
+              "source_ids": [
+                "SRC-9b62f01374e8",
+                "NEW24-3381a85b03a6",
+                "STAGE3-0b70856c5593"
+              ],
+              "localization": "FACTUAL_SECTION_EQUIVALENCE_FA_EN_AR"
+            }
+          ]
+        },
+        {
+          "id": "capabilities",
+          "fa": "توانمندی‌های پژوهشی",
+          "en": "Research capabilities",
+          "ar": "القدرات البحثية",
+          "items": [
+            {
+              "fa": "پژوهشگاه بر طراحی، ساخت و یکپارچه‌سازی کیوب‌ست و زیرسامانه‌هایی مانند تأمین و توزیع توان EPS، رایانه و داده OBDH، مخابرات TT&C و کنترل وضعیت کار می‌کند. این توانمندی‌ها در طراحی FloripaSat-1 و برنامه‌های بعدی توسعه یافته‌اند.",
+              "en": "The laboratory designs and integrates CubeSats and subsystems such as electrical power (EPS), on-board data handling (OBDH), TT&C communications and attitude control. These capabilities were developed through FloripaSat-1 and follow-on projects.",
+              "ar": "يصمم المختبر أقمار CubeSat ويدمج أنظمة الطاقة EPS ومعالجة البيانات على المتن OBDH واتصالات TT&C والتحكم بالاتجاه. وقد طُورت هذه القدرات في FloripaSat-1 ومشاريع لاحقة.",
+              "kind": "editorially_localized_verified_source_section",
+              "source_ids": [
+                "WEB-3381a85b03a6",
+                "NEW24-43d9b07eeda2",
+                "STAGE3-0b70856c5593"
+              ],
+              "localization": "FACTUAL_SECTION_EQUIVALENCE_FA_EN_AR"
+            }
+          ]
+        },
+        {
+          "id": "missions",
+          "fa": "پروژه‌ها و مأموریت‌ها",
+          "en": "Projects & missions",
+          "ar": "المشروعات والمهمات",
+          "items": [
+            {
+              "fa": "FloripaSat-1 یک کیوب‌ست آموزشی ۱U بود که در ۲۰ دسامبر ۲۰۱۹ پرتاب شد. پروژه‌های FloripaSat-2A و FloripaSat-2B در منابع بررسی‌شده با وضعیت در انتظار پرتاب معرفی می‌شوند. Payload-XL برای مأموریت GOMX-5 با FPGA مقاوم به تابش BRAVE NG-Large از NanoXplore در حال توسعه معرفی شده بود؛ برای ثبت نتیجه پرواز به مدرک مستقل نیاز است.",
+              "en": "FloripaSat-1 was a 1U educational CubeSat launched on 20 December 2019. The reviewed SpaceLab sources listed FloripaSat-2A and FloripaSat-2B as awaiting launch. Payload-XL, using NanoXplore’s radiation-tolerant BRAVE NG-Large FPGA for the GOMX-5 programme, was described as a development effort; an actual flight result requires separate evidence.",
+              "ar": "كان FloripaSat-1 قمراً تعليمياً مكعباً 1U أُطلق في 20 ديسمبر 2019. وأدرجت مصادر SpaceLab المراجعة مشروعي FloripaSat-2A وFloripaSat-2B بصفة «بانتظار الإطلاق». ووُصفت حمولة Payload-XL التي تستخدم FPGA من عائلة BRAVE NG-Large المقاومة للإشعاع من NanoXplore لمشروع GOMX-5 بأنها قيد التطوير، وتحتاج نتيجة الطيران إلى دليل منفصل.",
+              "kind": "editorially_localized_verified_source_section",
+              "source_ids": [
+                "SRC-43d9b07eeda2",
+                "WEB-3381a85b03a6",
+                "NEW24-3381a85b03a6",
+                "STAGE3-0b70856c5593"
+              ],
+              "localization": "FACTUAL_SECTION_EQUIVALENCE_FA_EN_AR"
+            }
+          ]
+        },
+        {
+          "id": "results",
+          "fa": "دستاوردهای علمی و فناوری",
+          "en": "Scientific & technical outputs",
+          "ar": "المخرجات العلمية والتقنية",
+          "items": [
+            {
+              "fa": "تطوير Payload-XL برای GOMX-5 توان پژوهشی در الکترونیک مقاوم به تابش و طراحی محموله را نشان می‌دهد، اما دستاورد آزمایشگاهی یا آماده‌سازی سخت‌افزار با دریافت داده واقعی از مدار برابر نیست.",
+              "en": "Payload-XL development for GOMX-5 demonstrates work on radiation-tolerant electronics and payload engineering. Laboratory progress or a completed prototype is not the same as confirmed receipt of in-orbit mission data.",
+              "ar": "يدل تطوير Payload-XL لمهمة GOMX-5 على نشاط في الإلكترونيات المقاومة للإشعاع وهندسة الحمولات. ولا يساوي التقدم المختبري أو اكتمال نموذج أولي الحصولَ على بيانات مؤكدة من المدار.",
+              "kind": "editorially_localized_verified_source_section",
+              "source_ids": [
+                "NEW24-3381a85b03a6",
+                "STAGE3-0b70856c5593"
+              ],
+              "localization": "FACTUAL_SECTION_EQUIVALENCE_FA_EN_AR"
+            }
+          ]
+        },
+        {
+          "id": "network",
+          "fa": "همکاری‌ها و تاریخچه",
+          "en": "Collaboration & history",
+          "ar": "التعاون والتاريخ",
+          "items": [
+            {
+              "fa": "SpaceLab در پردیس Trindade دانشگاه UFSC مستقر است و در توسعه ماهواره‌های دانشجویی و پروژه‌های فضایی با شرکای دانشگاهی و صنعتی و برنامه‌های مرتبط با ESA همکاری پژوهشی دارد. وضعیت حقوقی آزمایشگاه تابع دانشگاه است.",
+              "en": "SpaceLab is based on UFSC’s Trindade campus and collaborates with academic and industry partners on student satellites and projects related to ESA programmes. Its institutional identity derives from UFSC rather than a separate corporate registration.",
+              "ar": "يقع SpaceLab في حرم تريندادي بجامعة UFSC ويتعاون مع شركاء أكاديميين وصناعيين في أقمار طلابية ومشاريع مرتبطة ببرامج ESA. وتستمد هويته المؤسسية من الجامعة لا من تسجيل شركة مستقلة.",
+              "kind": "editorially_localized_verified_source_section",
+              "source_ids": [
+                "NEW24-3381a85b03a6",
+                "STAGE3-0b70856c5593"
+              ],
+              "localization": "FACTUAL_SECTION_EQUIVALENCE_FA_EN_AR"
+            }
+          ]
+        }
+      ],
+      "key_facts": [],
+      "verified_on": "2026-11-13",
+      "hide_evidence_scope_in_ui": true,
+      "release_status": "EDITORIAL_RESEARCH_PREVIEW_NEEDS_FINAL_EXPERT_SIGNOFF",
+      "inventory_id": "DISC-0179",
+      "geo_source_url": "https://spacelab.ufsc.br/",
+      "geo_precision": "approximate_university_campus_official_address"
+    },
+    "orbita_release_note": {
+      "release_date": "2026-11-13",
+      "inventory_id": "DISC-0179",
+      "status": "EDITORIAL_PREVIEW",
+      "batch": "RASPEHR_14_STEP5",
+      "expert_review_pending": true,
+      "language_parity": "FA_EN_AR_SECTION_DETAIL",
+      "geo_precision": "approximate_university_campus_official_address",
+      "logo_status": "typographic_name_only"
     }
   }
 ]

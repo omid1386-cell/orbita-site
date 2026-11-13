@@ -301,7 +301,7 @@
     "org_type_en": "In-space services",
     "org_type_ar": "شركة خدمات فضائية ومدارية",
     "parent_institution": "Intuitive Machines, Inc.",
-    "logo": "assets/logos/orbita/orbita-intuitive-machines.png",
+    "logo": "assets/logos/orbita/orbita-intuitive-machines.svg",
     "logo_kind": "orbita_editorial_nonofficial",
     "orbita_marker_code": "IM",
     "orbita_verified_profile": {
@@ -673,7 +673,7 @@
     "org_type_en": "In-space services",
     "org_type_ar": "شركة خدمات فضائية ومدارية",
     "parent_institution": "Astroscale Holdings Inc.",
-    "logo": "assets/logos/orbita/orbita-astroscale.png",
+    "logo": "assets/logos/orbita/orbita-astroscale.svg",
     "logo_kind": "orbita_editorial_nonofficial",
     "orbita_marker_code": "AS",
     "orbita_verified_profile": {
@@ -1069,6 +1069,264 @@
         "Check mission-by-mission flight heritage and distinguish proposals from achieved missions",
         "Prepare verified FA/EN/AR and map metadata only after science review"
       ]
+    }
+  },
+  {
+    "id": "raspehr-0091-momentus",
+    "cat": "inspace_services",
+    "en": "Momentus",
+    "fa": "مومنتوس",
+    "ar": "مومنتوس",
+    "country": "United States",
+    "country_fa": "ایالات متحده آمریکا",
+    "country_ar": "الولايات المتحدة الأمريكية",
+    "city": "San Jose",
+    "city_fa": "سن‌خوزه",
+    "city_ar": "سان خوسيه",
+    "lat": 37.366,
+    "lon": -121.907,
+    "coordinate_precision": "approximate_neighbourhood_official_filing_address",
+    "coordinates_are_exact_site_gps": false,
+    "address": "1762 Automation Parkway, San Jose, CA 95131, USA",
+    "address_evidence_url": "https://www.sec.gov/Archives/edgar/data/1781162/000114036126015951/ny20070923x1_s3.htm",
+    "site": "https://www.momentus.space/",
+    "fa_d": "Momentus Inc. شرکت آمریکایی فعال در خدمات انتقال مداری، استقرار محموله و میزبانی آزمایش‌هاست. وسیله Vigoride-7 در مارس ۲۰۲۶ پرتاب شد؛ برنامه Vigoride-8 برای ۲۰۲۷، مأموریت انجام‌شده نیست.",
+    "en_d": "Momentus Inc. is a US company providing in-space transportation, payload hosting and technology demonstrations. Vigoride-7 launched in March 2026, whereas Vigoride-8 remains a planned 2027 mission.",
+    "ar_d": "Momentus Inc. شركة أمريكية لخدمات النقل داخل المدار واستضافة الحمولات وعروض التقنية. أُطلقت Vigoride-7 في مارس 2026، في حين تبقى Vigoride-8 مهمة مخططاً لها لعام 2027.",
+    "org_type_fa": "شرکت خدمات مداری",
+    "org_type_en": "In-space services",
+    "org_type_ar": "خدمات فضائية مدارية",
+    "parent_institution": "",
+    "logo": "",
+    "logo_kind": "no_verified_official_logo",
+    "brand_text_identifier": "MOM",
+    "orbita_verified_profile": {
+      "schema_version": 3,
+      "profile_type": "inspace_services",
+      "summary": {
+        "fa": "Momentus Inc. شرکت آمریکایی فعال در خدمات انتقال مداری، استقرار محموله و میزبانی آزمایش‌هاست. وسیله Vigoride-7 در مارس ۲۰۲۶ پرتاب شد؛ برنامه Vigoride-8 برای ۲۰۲۷، مأموریت انجام‌شده نیست.",
+        "en": "Momentus Inc. is a US company providing in-space transportation, payload hosting and technology demonstrations. Vigoride-7 launched in March 2026, whereas Vigoride-8 remains a planned 2027 mission.",
+        "ar": "Momentus Inc. شركة أمريكية لخدمات النقل داخل المدار واستضافة الحمولات وعروض التقنية. أُطلقت Vigoride-7 في مارس 2026، في حين تبقى Vigoride-8 مهمة مخططاً لها لعام 2027."
+      },
+      "sources": [
+        {
+          "url": "https://www.nasa.gov/smallsat-institute/sst-soa/integration-launch-and-deployment/",
+          "provenance_types": [
+            "S3_325_CLAIMS_INHERITED"
+          ],
+          "id": "SRC-0dd6be18823b",
+          "title": "www.nasa.gov — smallsat-institute/sst-soa/integration-launch-and-deployment"
+        },
+        {
+          "url": "https://investors.momentus.space/news-releases/news-release-details/momentus-delivering-orbit-success-vigoride-7-maneuvers-cleanly",
+          "provenance_types": [
+            "STEP2_COMPLETION_99_OFFICIAL_WEB_RESEARCH"
+          ],
+          "id": "WEB-880deafaf1e7",
+          "title": "investors.momentus.space — news-releases/news-release-details/momentus-delivering-orbit-success-vigoride-7-maneuvers-"
+        },
+        {
+          "url": "https://investors.momentus.space/news-releases/news-release-details/momentus-demonstrates-ai-enabled-lidar-and-imaging-suite-during",
+          "provenance_types": [
+            "STEP2_COMPLETION_99_OFFICIAL_WEB_RESEARCH"
+          ],
+          "id": "WEB-a8b4281a5415",
+          "title": "investors.momentus.space — news-releases/news-release-details/momentus-demonstrates-ai-enabled-lidar-and-imaging-suit"
+        },
+        {
+          "url": "https://investors.momentus.space/news-releases/news-release-details/mission-update-momentus-vigoride-7-orbital-service-vehicle",
+          "provenance_types": [
+            "STEP2_COMPLETION_99_OFFICIAL_WEB_RESEARCH"
+          ],
+          "id": "WEB-ff0b34001c80",
+          "title": "investors.momentus.space — news-releases/news-release-details/mission-update-momentus-vigoride-7-orbital-service-vehi"
+        },
+        {
+          "id": "NEW24-ff0b34001c80",
+          "url": "https://investors.momentus.space/news-releases/news-release-details/mission-update-momentus-vigoride-7-orbital-service-vehicle",
+          "title": "investors.momentus.space — mission-update-momentus-vigoride-7-orbital-service-vehicle",
+          "provenance_types": [
+            "STEP2_24_INDEPENDENT_OFFICIAL_WEB_VERIFICATION_2026_11_13"
+          ]
+        },
+        {
+          "id": "NEW24-880deafaf1e7",
+          "url": "https://investors.momentus.space/news-releases/news-release-details/momentus-delivering-orbit-success-vigoride-7-maneuvers-cleanly",
+          "title": "investors.momentus.space — momentus-delivering-orbit-success-vigoride-7-maneuvers-cleanly",
+          "provenance_types": [
+            "STEP2_24_INDEPENDENT_OFFICIAL_WEB_VERIFICATION_2026_11_13"
+          ]
+        },
+        {
+          "id": "NEW24-4a88017df9af",
+          "url": "https://investors.momentus.space/news-releases/news-release-details/fully-booked-momentus-mission-advances-through-preliminary/",
+          "title": "investors.momentus.space — ",
+          "provenance_types": [
+            "STEP2_24_INDEPENDENT_OFFICIAL_WEB_VERIFICATION_2026_11_13"
+          ]
+        },
+        {
+          "id": "NEW24-2c8d3d6515fb",
+          "url": "https://investors.momentus.space/news-releases/news-release-details/momentus-reports-strong-progress-space-robotic-assembly-under-us",
+          "title": "investors.momentus.space — momentus-reports-strong-progress-space-robotic-assembly-under-us",
+          "provenance_types": [
+            "STEP2_24_INDEPENDENT_OFFICIAL_WEB_VERIFICATION_2026_11_13"
+          ]
+        },
+        {
+          "id": "STAGE3-8ba4f62a5815",
+          "url": "https://investors.momentus.space/news-releases/news-release-details/momentus-launches-vigoride-7-orbital-service-vehicle-spacex",
+          "title": "Official primary evidence from stage-3 audit",
+          "provenance_types": [
+            "STAGE3_PRIMARY_SOURCE_IDENTITY_RECHECK"
+          ]
+        },
+        {
+          "id": "STAGE3-a6c0752aa049",
+          "url": "https://investors.momentus.space/investor-relations/",
+          "title": "Official primary evidence from stage-3 audit",
+          "provenance_types": [
+            "STAGE3_PRIMARY_SOURCE_IDENTITY_RECHECK"
+          ]
+        },
+        {
+          "id": "STAGE3-e9157cf92f3c",
+          "url": "https://www.sec.gov/Archives/edgar/data/1781162/000162828026055624/R8.htm",
+          "title": "Official primary evidence from stage-3 audit",
+          "provenance_types": [
+            "STAGE3_PRIMARY_SOURCE_IDENTITY_RECHECK"
+          ]
+        }
+      ],
+      "sections": [
+        {
+          "id": "overview",
+          "fa": "شناسنامه و خدمات",
+          "en": "Identity & services",
+          "ar": "التعريف والخدمات",
+          "items": [
+            {
+              "fa": "Momentus توسعه‌دهنده وسایل خدمات مداری Vigoride برای حمل و استقرار محموله‌ها و آزمون فناوری‌های درون‌مداری است. وجود سکوی عملیاتی به معنی انجام‌شدن تمام مأموریت‌های برنامه‌ریزی‌شده یا خدمات تجاری وعده‌داده‌شده نیست.",
+              "en": "Momentus develops the Vigoride in-space service-vehicle family for payload delivery, hosted experiments and orbital technology demonstration. A flown platform does not establish completion of every planned experiment or promised commercial service.",
+              "ar": "تطور Momentus عائلة مركبات الخدمة المدارية Vigoride لتوصيل الحمولات واستضافة التجارب وعرض التقنيات في المدار. ولا يعني إطلاق المنصة اكتمال جميع التجارب المخطط لها أو الخدمات التجارية المعلنة.",
+              "kind": "editorially_localized_verified_source_section",
+              "source_ids": [
+                "SRC-0dd6be18823b",
+                "STAGE3-8ba4f62a5815",
+                "STAGE3-a6c0752aa049",
+                "STAGE3-e9157cf92f3c"
+              ],
+              "localization": "FACTUAL_SECTION_EQUIVALENCE_FA_EN_AR"
+            }
+          ]
+        },
+        {
+          "id": "fleet",
+          "fa": "ناوگان و سامانه‌ها",
+          "en": "Fleet & systems",
+          "ar": "الأسطول والأنظمة",
+          "items": [
+            {
+              "fa": "Vigoride-7 در مأموریت Transporter-16 در ۳۰ مارس ۲۰۲۶ پرتاب شد و پس از استقرار، آرایه خورشیدی حدود ۱٫۶ کیلوواتی آن باز شد. طبق گزارش ۳۰ ژوئیه ۲۰۲۶، دو پیشران الکتروحرارتی مایکروویوی MET با آب به‌عنوان پیشرانه در بیش از ۵۰ مانور، ارتفاع مداری را تقریباً ۲۰ کیلومتر کاهش دادند. این اعداد به Vigoride-7 و تاریخ گزارش تعلق دارند.",
+              "en": "Vigoride-7 launched aboard Transporter-16 on 30 March 2026 and deployed solar arrays rated at roughly 1.6 kW. A 30 July 2026 company report described over 50 manoeuvres using two microwave electrothermal (MET) thrusters with water propellant, lowering orbital altitude by approximately 20 km. These performance figures are specific to Vigoride-7 and the reporting date.",
+              "ar": "أُطلقت Vigoride-7 ضمن Transporter-16 في 30 مارس 2026 ونشرت مصفوفات شمسية بقدرة تقارب 1.6 كيلوواط. ووصف تقرير الشركة بتاريخ 30 يوليو 2026 أكثر من 50 مناورة باستخدام دافعين كهروحراريين بالميكروويف MET يعملان بالماء، مع خفض الارتفاع المداري نحو 20 كم. وتخص هذه الأرقام Vigoride-7 وتاريخ التقرير.",
+              "kind": "editorially_localized_verified_source_section",
+              "source_ids": [
+                "WEB-880deafaf1e7",
+                "NEW24-ff0b34001c80",
+                "STAGE3-8ba4f62a5815",
+                "STAGE3-a6c0752aa049",
+                "STAGE3-e9157cf92f3c"
+              ],
+              "localization": "FACTUAL_SECTION_EQUIVALENCE_FA_EN_AR"
+            }
+          ]
+        },
+        {
+          "id": "missions",
+          "fa": "مأموریت‌های انجام‌شده",
+          "en": "Completed missions",
+          "ar": "المهمات المنفّذة",
+          "items": [
+            {
+              "fa": "Vigoride-7 حامل ۱۰ محموله دولتی و تجاری معرفی شد؛ حمل محموله با موفقیت همه آزمون‌ها یکی نیست. شرکت در سپتامبر ۲۰۲۶ نمایش عملیات ملاقات و نزدیکی با کیوب‌ست ناسا R5-S10 را گزارش کرد؛ این دستاورد معادل اتصال یا سوخت‌رسانی نیست. در ۱۲ نوامبر ۲۰۲۶ نیز پیشرفت اولیه نمایش مونتاژ سازه ASTRA مؤسسه Caltech اعلام شد، نه خاتمه کل آزمایش.",
+              "en": "Vigoride-7 carried ten government and commercial payloads, but payload carriage does not imply successful completion of every experiment. In September 2026 the company reported proximity-operations demonstrations involving NASA’s R5-S10 CubeSat; these did not establish docking or refuelling. On 12 November 2026 it reported initial progress on Caltech’s ASTRA structure-assembly demonstration, not full mission completion.",
+              "ar": "حملت Vigoride-7 عشر حمولات حكومية وتجارية، لكن حملها لا يعني نجاح كل تجربة. وفي سبتمبر 2026 أعلنت الشركة عرض عمليات الاقتراب من مكعب ناسا R5-S10، وهو ليس التحاماً أو تزويداً بالوقود. وفي 12 نوفمبر 2026 أعلنت تقدماً أولياً في تجربة تجميع هيكل ASTRA التابعة لـCaltech، وليس إنجاز التجربة بالكامل.",
+              "kind": "editorially_localized_verified_source_section",
+              "source_ids": [
+                "SRC-0dd6be18823b",
+                "WEB-ff0b34001c80",
+                "WEB-a8b4281a5415",
+                "NEW24-ff0b34001c80",
+                "NEW24-2c8d3d6515fb",
+                "STAGE3-8ba4f62a5815",
+                "STAGE3-a6c0752aa049",
+                "STAGE3-e9157cf92f3c"
+              ],
+              "localization": "FACTUAL_SECTION_EQUIVALENCE_FA_EN_AR"
+            }
+          ]
+        },
+        {
+          "id": "capabilities",
+          "fa": "قابلیت‌های مداری",
+          "en": "In-orbit capabilities",
+          "ar": "القدرات المدارية",
+          "items": [
+            {
+              "fa": "پیشرانش MET با پیشرانه آب، مانورهای مداری کنترل‌شده Vigoride-7 را ممکن کرده است. گزارش بیش از ۵۰ مانور و کاهش نزدیک ۲۰ کیلومتری ارتفاع مدار یک نتیجه گزارش‌شده مأموریت در ژوئیه ۲۰۲۶ است؛ نباید آن را به تمام ناوگان تعمیم داد.",
+              "en": "Water-propelled MET thrusters supported controlled orbital manoeuvres by Vigoride-7. The reported 50-plus manoeuvres and nearly 20 km altitude decrease describe the mission’s status in July 2026 and cannot be generalized to every Vigoride vehicle.",
+              "ar": "سمحت دافعات MET العاملة بالماء بتنفيذ مناورات مدارية مضبوطة بواسطة Vigoride-7. ويصف تقرير أكثر من 50 مناورة وخفض ارتفاع يقارب 20 كم حالة المهمة في يوليو 2026، ولا يُعمم على جميع مركبات Vigoride.",
+              "kind": "editorially_localized_verified_source_section",
+              "source_ids": [
+                "NEW24-880deafaf1e7",
+                "STAGE3-8ba4f62a5815",
+                "STAGE3-a6c0752aa049",
+                "STAGE3-e9157cf92f3c"
+              ],
+              "localization": "FACTUAL_SECTION_EQUIVALENCE_FA_EN_AR"
+            }
+          ]
+        },
+        {
+          "id": "roadmap",
+          "fa": "برنامه توسعه و مشتریان",
+          "en": "Roadmap & customers",
+          "ar": "خارطة الطريق والعملاء",
+          "items": [
+            {
+              "fa": "برای Vigoride-8 سال ۲۰۲۷ هدف‌گذاری شده و مرور طراحی اولیه آن در آوریل ۲۰۲۶ انجام شده است. این وضعیت «برنامه‌ریزی‌شده» است؛ نباید در فهرست پرتاب‌ها یا عملیات موفق قرار گیرد.",
+              "en": "Vigoride-8 was targeted for 2027, with a preliminary design review completed in April 2026. It remains a planned mission and must not be listed as a completed launch or operation.",
+              "ar": "خُطط لإطلاق Vigoride-8 في 2027 بعد إنجاز مراجعة التصميم الأولية في أبريل 2026. وتبقى مهمة مستقبلية ولا تُدرج ضمن الإطلاقات أو العمليات المنجزة.",
+              "kind": "editorially_localized_verified_source_section",
+              "source_ids": [
+                "NEW24-4a88017df9af",
+                "STAGE3-8ba4f62a5815",
+                "STAGE3-a6c0752aa049",
+                "STAGE3-e9157cf92f3c"
+              ],
+              "localization": "FACTUAL_SECTION_EQUIVALENCE_FA_EN_AR"
+            }
+          ]
+        }
+      ],
+      "key_facts": [],
+      "verified_on": "2026-11-13",
+      "hide_evidence_scope_in_ui": true,
+      "release_status": "EDITORIAL_RESEARCH_PREVIEW_NEEDS_FINAL_EXPERT_SIGNOFF",
+      "inventory_id": "DISC-0091",
+      "geo_source_url": "https://www.sec.gov/Archives/edgar/data/1781162/000114036126015951/ny20070923x1_s3.htm",
+      "geo_precision": "approximate_neighbourhood_official_filing_address"
+    },
+    "orbita_release_note": {
+      "release_date": "2026-11-13",
+      "inventory_id": "DISC-0091",
+      "status": "EDITORIAL_PREVIEW",
+      "batch": "RASPEHR_14_STEP5",
+      "expert_review_pending": true,
+      "language_parity": "FA_EN_AR_SECTION_DETAIL",
+      "geo_precision": "approximate_neighbourhood_official_filing_address",
+      "logo_status": "typographic_name_only"
     }
   }
 ]
