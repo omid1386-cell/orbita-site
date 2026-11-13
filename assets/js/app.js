@@ -1820,10 +1820,8 @@
   }
   function initMap() {
     clearBrokenPreviewMapHash();
-    setTimeout(function() {
-      var el = document.getElementById("mapStatus");
-      if (el) el.style.display = "none";
-    }, 2000);
+    // Keep mapStatus visible until the first map style frame is rendered.
+    // This avoids hiding the only loading feedback while the basemap is pending.
     if (typeof maplibregl === "undefined") { $("#mapStatus").textContent = "MapLibre failed to load."; return; }
     /* correct Persian/Arabic/Hebrew shaping: load RTL plugin before map creation */
     try {
@@ -1929,6 +1927,7 @@
     map.addControl(new maplibregl.FullscreenControl(), "bottom-right");
     map.addControl(new maplibregl.ScaleControl({ unit: "metric" }), "bottom-left");
 
+    var raspehrSplashFrameHooked = false;
     map.on("load", function () {
       try { map.resize(); maintainWorldCoverage(); } catch (e) {}
       // Release the branded overlay after the first usable map, not after a timer.
@@ -1945,6 +1944,19 @@
     // style.load fires after a basemap switch even while its remote tiles are still loading.
     // Install local country interaction layers then, instead of waiting for isStyleLoaded() (idle).
     map.on("style.load", function () {
+      // Release the branded splash after the first rendered frame of the initial
+      // map style. Do not wait for all remote tiles or secondary data sources.
+      if (!raspehrSplashFrameHooked) {
+        raspehrSplashFrameHooked = true;
+        map.once("render", function () {
+          var firstFrameStatus = $("#mapStatus");
+          if (firstFrameStatus) firstFrameStatus.style.display = "none";
+          if (window.RASPEHR_READY) {
+            requestAnimationFrame(function () { window.RASPEHR_READY(); });
+          }
+        });
+        try { map.triggerRepaint(); } catch (e) {}
+      }
       var generation = mapStyleGeneration;
       mapStyleTransitionPending = false;
       if (mapStyleWatchdogTimer) { clearTimeout(mapStyleWatchdogTimer); mapStyleWatchdogTimer = 0; }
@@ -1959,8 +1971,6 @@
           afterStyleApply();
         } else scheduleMapOverlayRepair(250);
       }).catch(function () { scheduleMapOverlayRepair(400); });
-      var status = $("#mapStatus");
-      if (status) status.style.display = "none";
     });
     // styledata can fire repeatedly before a style is usable; never build
     // interaction layers against it. The style.load + idle hooks own recovery.
