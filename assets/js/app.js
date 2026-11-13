@@ -1487,7 +1487,7 @@
           status.style.display = "block";
         }
       }
-    }, (typeof raspehrStartupNotified !== "undefined" && !raspehrStartupNotified) ? 4500 : 6500);
+    }, 6500);
   }
   function installMapStyle(style, mode) {
     if (!map) return;
@@ -1518,7 +1518,6 @@
   }
   function useOfflineStyleFallback() {
     if (!map) return;
-    if (typeof clearRaspehrInitialStyleFetch === "function") clearRaspehrInitialStyleFetch();
     // Invalidate outstanding fetches, not just their map.setStyle callbacks.
     ++mapStyleRequestId;
     BASEMODE = "offline";
@@ -1544,7 +1543,6 @@
     fetchOnlineStyle().then(function (st) {
       if (!map || requestId !== mapStyleRequestId || BASEMODE === "offline" ||
           requestedUrl !== onlineStyleUrl() || requestedLang !== LANG) return;
-      if (typeof clearRaspehrInitialStyleFetch === "function") clearRaspehrInitialStyleFetch();
       if (!st) { useOfflineStyleFallback(); return; }
       installMapStyle(withCountryInteractionSource(st), "online");
     }).catch(function () {
@@ -1820,54 +1818,12 @@
       window.history.replaceState(null, "", window.location.pathname + window.location.search);
     }
   }
-  // Startup must satisfy ALL prerequisites before the splash is dismissed.
-  // A visible map should already include the active data, marker images and tiles.
-  var raspehrInitialDataReady = false;
-  var raspehrInitialLabelsReady = false;
-  var raspehrInitialStyleFetchPending = false;
-  var raspehrInitialStyleFetchTimer = 0;
-  var raspehrFirstMapLoadSeen = false;
-  var raspehrReadyPaintPending = false;
-  var raspehrStartupNotified = false;
-  function raspehrMapVisuallyReady() {
-    if (raspehrStartupNotified || !map || !raspehrFirstMapLoadSeen ||
-        !raspehrInitialDataReady || raspehrInitialStyleFetchPending ||
-        mapStyleTransitionPending || !map.getStyle()) return false;
-    try {
-      if (!map.isStyleLoaded() || !map.areTilesLoaded()) return false;
-      if (activeMapStyleMode === "offline" && !raspehrInitialLabelsReady) return false;
-      if (!markerOverlayIsComplete()) return false;
-      return true;
-    } catch (e) { return false; }
-  }
-  function checkRaspehrStartupReadiness() {
-    if (!raspehrMapVisuallyReady() || raspehrReadyPaintPending) return;
-    raspehrReadyPaintPending = true;
-    // One additional map render ensures source/layer updates are painted.
-    map.once("render", function () {
-      raspehrReadyPaintPending = false;
-      if (!raspehrMapVisuallyReady()) return;
-      requestAnimationFrame(function () {
-        if (!raspehrMapVisuallyReady()) return;
-        raspehrStartupNotified = true;
-        var status = $("#mapStatus");
-        if (status) status.style.display = "none";
-        if (window.RASPEHR_READY) window.RASPEHR_READY();
-      });
-    });
-    try { map.triggerRepaint(); } catch (e) { raspehrReadyPaintPending = false; }
-  }
-  function clearRaspehrInitialStyleFetch() {
-    raspehrInitialStyleFetchPending = false;
-    if (raspehrInitialStyleFetchTimer) {
-      clearTimeout(raspehrInitialStyleFetchTimer);
-      raspehrInitialStyleFetchTimer = 0;
-    }
-  }
   function initMap() {
     clearBrokenPreviewMapHash();
-    // Keep mapStatus visible until the first map style frame is rendered.
-    // This avoids hiding the only loading feedback while the basemap is pending.
+    setTimeout(function() {
+      var el = document.getElementById("mapStatus");
+      if (el) el.style.display = "none";
+    }, 2000);
     if (typeof maplibregl === "undefined") { $("#mapStatus").textContent = "MapLibre failed to load."; return; }
     /* correct Persian/Arabic/Hebrew shaping: load RTL plugin before map creation */
     try {
@@ -1883,18 +1839,7 @@
       createMap(withCountryInteractionSource(cs), "online");
     } else {
       createMap(offlineStyle(), "offline");
-      if (BASEMODE !== "offline") {
-        raspehrInitialStyleFetchPending = true;
-        // A delayed online style must not postpone the first usable map forever.
-        // If the network style is slow, retain the already loading local basemap.
-        raspehrInitialStyleFetchTimer = setTimeout(function () {
-          if (!raspehrInitialStyleFetchPending) return;
-          clearRaspehrInitialStyleFetch();
-          useOfflineStyleFallback();
-          checkRaspehrStartupReadiness();
-        }, 2500);
-        applyMapStyle();
-      }
+      if (BASEMODE !== "offline") applyMapStyle();
     }
   }
 
@@ -1985,18 +1930,13 @@
     map.addControl(new maplibregl.ScaleControl({ unit: "metric" }), "bottom-left");
 
     map.on("load", function () {
-      raspehrFirstMapLoadSeen = true;
       try { map.resize(); maintainWorldCoverage(); } catch (e) {}
+      $("#mapStatus").style.display = "none";
       ensureCountryInteractionLayers();
       bindCountryCanvasExit();
       bindMarkerHoverEvents();
       renderMarkers();
-      checkRaspehrStartupReadiness();
-      loadCountryLabels().then(function (d) {
-        if (d) buildLabels();
-        raspehrInitialLabelsReady = true;
-        checkRaspehrStartupReadiness();
-      });
+      loadCountryLabels().then(function (d) { if (d) buildLabels(); });
       fetch("assets/geo/cities.json?v=" + (window.ORBITA_V || "1")).then(function (r) { return r.json(); })
         .then(function (d) { CITIES = d; buildCityLabels(); }).catch(function () {});
     });
@@ -2015,9 +1955,10 @@
         if (ready && markerOverlayIsComplete()) {
           overlayRepairAttempts = 0;
           afterStyleApply();
-          checkRaspehrStartupReadiness();
         } else scheduleMapOverlayRepair(250);
       }).catch(function () { scheduleMapOverlayRepair(400); });
+      var status = $("#mapStatus");
+      if (status) status.style.display = "none";
     });
     // styledata can fire repeatedly before a style is usable; never build
     // interaction layers against it. The style.load + idle hooks own recovery.
@@ -2027,7 +1968,6 @@
            (!map.getLayer(COUNTRY_HIT_LAYER) && !map.getLayer("country-fill")))) {
         scheduleMapOverlayRepair(0);
       }
-      checkRaspehrStartupReadiness();
     });
     map.on("sourcedata", function (e) {
       if (e && e.isSourceLoaded && (e.sourceId === COUNTRY_OVERLAY_SOURCE || e.sourceId === "countries")) {
@@ -11192,9 +11132,6 @@
     if (filters[category]) initialMapLoads.push(loadCompanyCategorySummary(category));
   });
   Promise.all(initialMapLoads).then(function () {
-    raspehrInitialDataReady = true;
-    renderMarkers();
-    checkRaspehrStartupReadiness();
     /* Non-critical panels start only after the first map data work has settled. */
     var idle = window.requestIdleCallback || function (fn) { return setTimeout(fn, 900); };
     idle(function () { loadNextLaunch(); loadSiteUpcomingData(); }, { timeout: 2500 });
