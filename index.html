@@ -7,24 +7,47 @@
 <meta name="color-scheme" content="dark light" />
 <meta name="theme-color" content="#0b1a2b" />
 <meta property="og:type" content="website" />
-<meta property="og:title" content="ORBITA — سامانهٔ اطلاعات هوافضا" />
+<meta property="og:title" content="رَسپهر — اطلس تعاملی صنعت فضایی جهان" />
 <meta property="og:description" content="نقشهٔ جهانی شرکت‌های پرتاب، مجموعه‌های پیشرانش، سازمان‌های فضایی، سازندگان ماهواره، پایگاه‌های پرتاب و محل‌های فرود و بازیابی." />
 <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'%3E%3Ccircle cx='12' cy='12' r='6' fill='%232fd4a7'/%3E%3C/svg%3E" />
-<title>ORBITA — سامانهٔ اطلاعات هوافضا</title>
+<title>رَسپهر | RASPEHR — اطلس تعاملی صنعت فضایی جهان</title>
 <!-- Resolve basemap hosts early so the first zoom does not pay DNS/TLS setup latency. -->
 <link rel="preconnect" href="https://basemaps.cartocdn.com" crossorigin />
 <link rel="preconnect" href="https://tile.jawg.io" crossorigin />
 <link rel="preconnect" href="https://api.jawg.io" crossorigin />
+<link rel="preload" as="image" href="assets/brand/espash-full.png" />
+<style id="raspehrSplashCritical">
+#raspehrSplash{position:fixed;inset:0;z-index:10000;background:radial-gradient(ellipse at 50% 38%,#163348 0%,#0b1d2e 43%,#07121e 100%);display:grid;place-items:center;color:#f4f7fa;opacity:1;transition:opacity .38s ease;direction:rtl;overflow:auto}
+#raspehrSplash.raspehr-complete{opacity:0;pointer-events:none}
+.raspehr-stage{width:min(92vw,870px);min-height:min(90vh,620px);padding:34px 16px 48px;display:flex;flex-direction:column;align-items:center;justify-content:center;text-align:center;gap:15px}
+.raspehr-espash{display:block;width:min(100%,760px);height:auto;object-fit:contain;opacity:0;animation:raspehr-appear .62s ease forwards}
+.raspehr-gold-line{width:min(55vw,230px);height:1px;background:linear-gradient(90deg,transparent,#e8b619,transparent);opacity:0;animation:raspehr-appear .55s .35s ease forwards}
+.raspehr-title{font-family:Tahoma,Arial,sans-serif;font-weight:800;font-size:clamp(35px,7vw,62px);line-height:1.25;color:#f0bb17;margin:3px 0 0;letter-spacing:.02em;opacity:0;animation:raspehr-appear .65s .42s ease forwards}
+.raspehr-latin{font-family:system-ui,Arial,sans-serif;font-size:clamp(14px,2.5vw,18px);letter-spacing:.28em;font-weight:550;color:#eef2f5;opacity:0;animation:raspehr-appear .65s .56s ease forwards}
+.raspehr-desc{font-size:clamp(13px,2vw,17px);color:#bdccd7;line-height:1.9;opacity:0;animation:raspehr-appear .65s .67s ease forwards}
+.raspehr-orbit{width:150px;height:34px;margin-top:6px;position:relative;opacity:0;animation:raspehr-appear .65s .7s ease forwards}
+.raspehr-orbit:before{content:"";position:absolute;inset:11px 4px 8px;border:1px solid #278e9a;border-radius:50%;transform:rotate(-12deg)}
+.raspehr-orbit:after{content:"";position:absolute;left:40%;top:4px;width:8px;height:8px;background:#e8b619;box-shadow:0 0 11px #e8b619;transform-origin:18px 10px;border-radius:50%;animation:raspehr-pulse 1.7s ease-in-out infinite alternate}
+.raspehr-status{font-family:Tahoma,Arial,sans-serif;color:#91a8ba;font-size:12px}
+#raspehrSkip{background:#143344;color:#e7edf1;border:1px solid #44838b;padding:9px 23px;border-radius:8px;cursor:pointer;font-size:12px}
+#raspehrSkip[hidden],#raspehrLongLoad[hidden]{display:none}
+#raspehrLongLoad{max-width:410px;line-height:1.8}
+@keyframes raspehr-appear{to{opacity:1;transform:translateY(0)}from{opacity:0;transform:translateY(9px)}}
+@keyframes raspehr-pulse{to{opacity:.58;transform:translateX(16px)}from{opacity:1;transform:translateX(-8px)}}
+@media(prefers-reduced-motion:reduce){#raspehrSplash,.raspehr-espash,.raspehr-gold-line,.raspehr-title,.raspehr-latin,.raspehr-desc,.raspehr-orbit,.raspehr-orbit:after{animation:none;transition:none;opacity:1}}
+@media(max-width:540px){.raspehr-stage{min-height:100vh;gap:11px;padding:22px 12px}.raspehr-espash{width:100%;max-width:450px}.raspehr-title{margin-top:15px}}
+</style>
 <link rel="stylesheet" href="assets/vendor/maplibre-gl.css?v=3" />
-<link rel="stylesheet" href="assets/css/app.css?_t=20261113-raspehr-speed-v1" />
+<link rel="stylesheet" href="assets/css/app.css?_t=20261113-raspehr-speed-splash-v1" />
 <!-- Ordered defer scripts download in parallel instead of creating a network waterfall. -->
+<script defer src="assets/js/raspehr-splash.js?v=20261113-speed-v1"></script>
 <script defer src="assets/vendor/maplibre-gl.js?v=3"></script>
-<script defer src="assets/js/app.js?_t=20261113-raspehr-speed-v1"></script>
+<script defer src="assets/js/app.js?_t=20261113-raspehr-speed-splash-v1"></script>
 <script>
-  window.ORBITA_V = "20261113-raspehr-speed-v1";
-  window.ORBITA_APP_V = "20261113-raspehr-speed-v1";
-  window.ORBITA_CSS_V = "20261113-raspehr-speed-v1";
-  window.ORBITA_COMPANIES_V = "20261113-raspehr-speed-v1";
+  window.ORBITA_V = "20261113-raspehr-speed-splash-v1";
+  window.ORBITA_APP_V = "20261113-raspehr-speed-splash-v1";
+  window.ORBITA_CSS_V = "20261113-raspehr-speed-splash-v1";
+  window.ORBITA_COMPANIES_V = "20261113-raspehr-speed-splash-v1";
 
 
   // Public API URL only; never place the Resend key or another secret here.
@@ -34,13 +57,30 @@
 </head>
 <body>
 
+<!-- RASPEHR belongs to ESPASH. Complete source logo preserved unmodified. -->
+<section id="raspehrSplash" role="status" aria-label="در حال آماده‌سازی رَسپهر" aria-live="polite">
+  <div class="raspehr-stage">
+    <img class="raspehr-espash" src="assets/brand/espash-full.png" width="2048" height="361"
+         alt="اسپاش — پایگاه خبری صنعت فضایی ایران" decoding="async" fetchpriority="high" />
+    <span class="raspehr-gold-line" aria-hidden="true"></span>
+    <h1 class="raspehr-title">رَسپهر</h1>
+    <div class="raspehr-latin" dir="ltr">RASPEHR</div>
+    <div class="raspehr-desc">اطلس تعاملی صنعت فضایی جهان</div>
+    <!-- Author/byline area is reserved; content will be provided by the owner. -->
+    <div class="raspehr-orbit" aria-hidden="true"></div>
+    <div class="raspehr-status">در حال آماده‌سازی نقشه و اطلاعات فضایی…</div>
+    <small id="raspehrLongLoad" hidden>اگر بارگذاری طولانی شد، می‌توانید مستقیماً وارد نقشه شوید.</small>
+    <button id="raspehrSkip" type="button" hidden>نمایش نقشه</button>
+  </div>
+</section>
+
 <header class="topbar">
   <div class="logo">
     <svg viewBox="0 0 24 24" width="26" height="26" aria-hidden="true">
       <ellipse cx="12" cy="12" rx="10" ry="4" fill="none" stroke="currentColor" stroke-width="1.4" transform="rotate(-25 12 12)"/>
       <circle cx="12" cy="12" r="4.6" fill="currentColor"/>
     </svg>
-    <div><b>ORBITA</b><small data-i18n="tagline">سامانهٔ اطلاعات هوافضا</small></div>
+    <div><b>RASPEHR</b><small data-i18n="tagline">سامانهٔ اطلاعات هوافضا</small></div>
   </div>
 
   <nav class="tabs">
