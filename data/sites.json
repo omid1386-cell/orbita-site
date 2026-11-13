@@ -11076,7 +11076,11 @@
   "photo_license": "CC BY-SA 2.0",
   "photo_source_url": "https://commons.wikimedia.org/wiki/File:Black_Arrow.jpg",
   "country_ar": "أستراليا",
-  "photo_caption_ar": "صاروخ معروض في حديقة الصواريخ بووميرا"
+  "photo_caption_ar": "صاروخ معروض في حديقة الصواريخ بووميرا",
+  "stats_total": 6,
+  "stats_success": 2,
+  "stats_fail": 4,
+  "stats_asof": "2026-11-13"
  },
  {
   "id": "bowen",
