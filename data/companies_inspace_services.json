@@ -301,7 +301,7 @@
     "org_type_en": "In-space services",
     "org_type_ar": "شركة خدمات فضائية ومدارية",
     "parent_institution": "Intuitive Machines, Inc.",
-    "logo": "assets/logos/orbita/orbita-intuitive-machines.svg",
+    "logo": "assets/logos/orbita/orbita-intuitive-machines.png",
     "logo_kind": "orbita_editorial_nonofficial",
     "orbita_marker_code": "IM",
     "orbita_verified_profile": {
@@ -673,7 +673,7 @@
     "org_type_en": "In-space services",
     "org_type_ar": "شركة خدمات فضائية ومدارية",
     "parent_institution": "Astroscale Holdings Inc.",
-    "logo": "assets/logos/orbita/orbita-astroscale.svg",
+    "logo": "assets/logos/orbita/orbita-astroscale.png",
     "logo_kind": "orbita_editorial_nonofficial",
     "orbita_marker_code": "AS",
     "orbita_verified_profile": {

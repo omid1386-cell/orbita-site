@@ -1216,8 +1216,8 @@
     "country_fa": "ژاپن",
     "city": "Tokyo / Tsukuba",
     "city_fa": "توکیو / تسوکوبا",
-    "lat": 36.0655,
-    "lon": 140.13,
+    "lat": 35.6808078,
+    "lon": 139.5584341,
     "founded": 2003,
     "site": "https://www.jaxa.jp",
     "en_d": "Japan's space agency: H3 and Epsilon launchers, sample-return missions (Hayabusa), lunar landers (SLIM), and ISS Kibo module.",
@@ -1409,7 +1409,9 @@
         "year": "2024",
         "text_ar": "هبطت SLIM على بُعد نحو 55 m من هدفها القمري، محققة دقة ضمن نطاق 100 m."
       }
-    ]
+    ],
+    "coordinate_precision": "approximate_headquarters_geocode",
+    "coordinate_reference_url": "https://global.jaxa.jp/about/centers/"
   },
   {
     "id": "kari",

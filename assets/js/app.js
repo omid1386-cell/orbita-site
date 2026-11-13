@@ -10172,9 +10172,17 @@
       });
     });
     citedIds.forEach(function(id,i){ids[id]=i+1;});
+    var verifiedLogoSrc = o.logo_data || o.logo;
+    // Existing verified dossiers remain unchanged. The 33 stage-5 editorial
+    // image assets use local PNG files; a self-contained fallback prevents an
+    // empty logo if an asset was omitted by GitHub upload or served incorrectly.
+    var verifiedLogoFallback = fallbackLogoDataUri(
+      /^[A-Za-z0-9]{1,3}$/.test(o.orbita_marker_code || '') ? o.orbita_marker_code : '◈', '#D7AA58');
     var html = '<section class="verified-profile verified-profile-v2" data-scope="' + esc(pf.profile_type) + '">';
     html += '<header class="verified-profile-head"><div class="verified-profile-logo-wrap">' +
-      (o.logo ? '<img class="verified-profile-logo" src="'+esc(o.logo)+'" alt="" loading="lazy" />' : '<span class="verified-profile-logo-placeholder">◈</span>') +
+      (verifiedLogoSrc ? '<img class="verified-profile-logo" src="'+esc(verifiedLogoSrc)+'" alt="" loading="eager" decoding="async"' +
+        (o.logo_kind === 'orbita_editorial_nonofficial' ? fallbackImageErrorAttribute(verifiedLogoFallback) : '') + ' />' :
+        '<span class="verified-profile-logo-placeholder">◈</span>') +
       '</div><div class="verified-profile-header-text"><p class="d-kicker">'+esc(role)+'</p>' +
       '<h2 class="d-title">'+esc(name(o))+'</h2><p class="d-desc verified-profile-sub">' +
       esc(verifiedText(pf.summary) || desc(o)) + '</p><small class="verified-profile-editorial">'+esc(labels.mark)+'</small></div></header>';
@@ -10217,7 +10225,10 @@
       if (!(sec.items || []).length) html+='<p class="verified-empty">'+esc(labels.noData)+'</p>';
       html += '</section>';
     });
-    if (pf.review_scope && verifiedText(pf.review_scope))
+    // The 33 newly added stage-5 dossiers do not show the lengthy
+    // 'Evidence scope and limitations' card. Keep review_scope in the research
+    // data for editors; do not change the 11 approved reference dossiers.
+    if (o.id.indexOf('orbita-') !== 0 && pf.review_scope && verifiedText(pf.review_scope))
       html += '<aside class="verified-scope-note"><b>'+esc(labels.scope)+'</b><p>'+esc(verifiedText(pf.review_scope))+'</p></aside>';
     html += '<footer class="verified-profile-footer"><details class="verified-sources-details"><summary>'+esc(labels.evidence)+' <span class="verified-source-count">'+citedIds.length+'</span></summary><ol class="verified-all-sources">'+
       citedIds.map(function(id){ var src=byId[id];return '<li value="'+ids[id]+'"><a href="'+esc(src.url)+'" target="_blank" rel="noopener noreferrer">'+esc(src.title||src.url)+'</a>'+

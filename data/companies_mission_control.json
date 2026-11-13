@@ -292,7 +292,7 @@
     "org_type_en": "Mission operations centre",
     "org_type_ar": "مركز عمليات المهمات",
     "parent_institution": "German Aerospace Center (DLR)",
-    "logo": "assets/logos/orbita/orbita-dlr-gsoc.svg",
+    "logo": "assets/logos/orbita/orbita-dlr-gsoc.png",
     "logo_kind": "orbita_editorial_nonofficial",
     "orbita_marker_code": "GS",
     "orbita_verified_profile": {
@@ -653,7 +653,7 @@
     "org_type_en": "Mission operations centre",
     "org_type_ar": "مركز عمليات المهمات",
     "parent_institution": "German Aerospace Center (DLR) / GSOC",
-    "logo": "assets/logos/orbita/orbita-dlr-columbus-control.svg",
+    "logo": "assets/logos/orbita/orbita-dlr-columbus-control.png",
     "logo_kind": "orbita_editorial_nonofficial",
     "orbita_marker_code": "CO",
     "orbita_verified_profile": {

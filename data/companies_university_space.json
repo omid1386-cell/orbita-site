@@ -582,7 +582,7 @@
     "org_type_en": "University space laboratory",
     "org_type_ar": "مختبر فضائي جامعي",
     "parent_institution": "Nanyang Technological University (NTU)",
-    "logo": "assets/logos/orbita/orbita-ntu-satellite-research.svg",
+    "logo": "assets/logos/orbita/orbita-ntu-satellite-research.png",
     "logo_kind": "orbita_editorial_nonofficial",
     "orbita_marker_code": "NT",
     "orbita_verified_profile": {
@@ -975,7 +975,7 @@
     "org_type_en": "University space laboratory",
     "org_type_ar": "مختبر فضائي جامعي",
     "parent_institution": "Delft University of Technology (TU Delft)",
-    "logo": "assets/logos/orbita/orbita-delfi-space-lab.svg",
+    "logo": "assets/logos/orbita/orbita-delfi-space-lab.png",
     "logo_kind": "orbita_editorial_nonofficial",
     "orbita_marker_code": "DF",
     "orbita_verified_profile": {

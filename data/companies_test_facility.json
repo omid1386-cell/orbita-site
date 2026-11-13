@@ -320,7 +320,7 @@
     "org_type_en": "Space testing facility",
     "org_type_ar": "منشأة اختبار فضائي",
     "parent_institution": "Instituto Nacional de Pesquisas Espaciais (INPE)",
-    "logo": "assets/logos/orbita/orbita-inpe-lit.svg",
+    "logo": "assets/logos/orbita/orbita-inpe-lit.png",
     "logo_kind": "orbita_editorial_nonofficial",
     "orbita_marker_code": "LI",
     "orbita_verified_profile": {

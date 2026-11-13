@@ -1216,8 +1216,8 @@
     "country_fa": "ژاپن",
     "city": "Tokyo / Tsukuba",
     "city_fa": "توکیو / تسوکوبا",
-    "lat": 36.0655,
-    "lon": 140.13,
+    "lat": 35.6808078,
+    "lon": 139.5584341,
     "founded": 2003,
     "site": "https://www.jaxa.jp",
     "en_d": "Japan's space agency: H3 and Epsilon launchers, sample-return missions (Hayabusa), lunar landers (SLIM), and ISS Kibo module.",
@@ -1409,7 +1409,9 @@
         "year": "2024",
         "text_ar": "هبطت SLIM على بُعد نحو 55 m من هدفها القمري، محققة دقة ضمن نطاق 100 m."
       }
-    ]
+    ],
+    "coordinate_precision": "approximate_headquarters_geocode",
+    "coordinate_reference_url": "https://global.jaxa.jp/about/centers/"
   },
   {
     "id": "kari",
@@ -51077,7 +51079,7 @@
     "org_type_en": "Space components and subsystems",
     "org_type_ar": "مصنّع مكونات وأنظمة فرعية فضائية",
     "parent_institution": "",
-    "logo": "assets/logos/orbita/orbita-addnics.svg",
+    "logo": "assets/logos/orbita/orbita-addnics.png",
     "logo_kind": "orbita_editorial_nonofficial",
     "orbita_marker_code": "AD",
     "orbita_verified_profile": {
@@ -51499,7 +51501,7 @@
     "org_type_en": "Space components and subsystems",
     "org_type_ar": "مصنّع مكونات وأنظمة فرعية فضائية",
     "parent_institution": "",
-    "logo": "assets/logos/orbita/orbita-alouette.svg",
+    "logo": "assets/logos/orbita/orbita-alouette.png",
     "logo_kind": "orbita_editorial_nonofficial",
     "orbita_marker_code": "AL",
     "orbita_verified_profile": {
@@ -51871,7 +51873,7 @@
     "org_type_en": "Space components and subsystems",
     "org_type_ar": "مصنّع مكونات وأنظمة فرعية فضائية",
     "parent_institution": "",
-    "logo": "assets/logos/orbita/orbita-arkedge-space.svg",
+    "logo": "assets/logos/orbita/orbita-arkedge-space.png",
     "logo_kind": "orbita_editorial_nonofficial",
     "orbita_marker_code": "AE",
     "orbita_verified_profile": {
@@ -52285,7 +52287,7 @@
     "org_type_en": "Space components and subsystems",
     "org_type_ar": "مصنّع مكونات وأنظمة فرعية فضائية",
     "parent_institution": "",
-    "logo": "assets/logos/orbita/orbita-arumotech.svg",
+    "logo": "assets/logos/orbita/orbita-arumotech.png",
     "logo_kind": "orbita_editorial_nonofficial",
     "orbita_marker_code": "AT",
     "orbita_verified_profile": {
@@ -52595,7 +52597,7 @@
     "org_type_en": "Space components and subsystems",
     "org_type_ar": "مصنّع مكونات وأنظمة فرعية فضائية",
     "parent_institution": "",
-    "logo": "assets/logos/orbita/orbita-astrex.svg",
+    "logo": "assets/logos/orbita/orbita-astrex.png",
     "logo_kind": "orbita_editorial_nonofficial",
     "orbita_marker_code": "AX",
     "orbita_verified_profile": {
@@ -53029,7 +53031,7 @@
     "org_type_en": "Space components and subsystems",
     "org_type_ar": "مصنّع مكونات وأنظمة فرعية فضائية",
     "parent_institution": "",
-    "logo": "assets/logos/orbita/orbita-composite-tailors.svg",
+    "logo": "assets/logos/orbita/orbita-composite-tailors.png",
     "logo_kind": "orbita_editorial_nonofficial",
     "orbita_marker_code": "CT",
     "orbita_verified_profile": {
@@ -53401,7 +53403,7 @@
     "org_type_en": "Space components and subsystems",
     "org_type_ar": "مصنّع مكونات وأنظمة فرعية فضائية",
     "parent_institution": "",
-    "logo": "assets/logos/orbita/orbita-cosmobloom.svg",
+    "logo": "assets/logos/orbita/orbita-cosmobloom.png",
     "logo_kind": "orbita_editorial_nonofficial",
     "orbita_marker_code": "CB",
     "orbita_verified_profile": {
@@ -53830,7 +53832,7 @@
     "org_type_en": "Space components and subsystems",
     "org_type_ar": "مصنّع مكونات وأنظمة فرعية فضائية",
     "parent_institution": "",
-    "logo": "assets/logos/orbita/orbita-eagle-industry.svg",
+    "logo": "assets/logos/orbita/orbita-eagle-industry.png",
     "logo_kind": "orbita_editorial_nonofficial",
     "orbita_marker_code": "EI",
     "orbita_verified_profile": {
@@ -54173,7 +54175,7 @@
     "org_type_en": "Space components and subsystems",
     "org_type_ar": "مصنّع مكونات وأنظمة فرعية فضائية",
     "parent_institution": "",
-    "logo": "assets/logos/orbita/orbita-genesia.svg",
+    "logo": "assets/logos/orbita/orbita-genesia.png",
     "logo_kind": "orbita_editorial_nonofficial",
     "orbita_marker_code": "GE",
     "orbita_verified_profile": {
@@ -54540,7 +54542,7 @@
     "org_type_en": "Space components and subsystems",
     "org_type_ar": "مصنّع مكونات وأنظمة فرعية فضائية",
     "parent_institution": "",
-    "logo": "assets/logos/orbita/orbita-nanobridge-semiconductor.svg",
+    "logo": "assets/logos/orbita/orbita-nanobridge-semiconductor.png",
     "logo_kind": "orbita_editorial_nonofficial",
     "orbita_marker_code": "NB",
     "orbita_verified_profile": {
@@ -54913,7 +54915,7 @@
     "org_type_en": "Space components and subsystems",
     "org_type_ar": "مصنّع مكونات وأنظمة فرعية فضائية",
     "parent_institution": "",
-    "logo": "assets/logos/orbita/orbita-nec-space-technologies.svg",
+    "logo": "assets/logos/orbita/orbita-nec-space-technologies.png",
     "logo_kind": "orbita_editorial_nonofficial",
     "orbita_marker_code": "NE",
     "orbita_verified_profile": {
@@ -55301,7 +55303,7 @@
     "org_type_en": "Space components and subsystems",
     "org_type_ar": "مصنّع مكونات وأنظمة فرعية فضائية",
     "parent_institution": "",
-    "logo": "assets/logos/orbita/orbita-arcsec.svg",
+    "logo": "assets/logos/orbita/orbita-arcsec.png",
     "logo_kind": "orbita_editorial_nonofficial",
     "orbita_marker_code": "AR",
     "orbita_verified_profile": {
@@ -55699,7 +55701,7 @@
     "org_type_en": "In-space services",
     "org_type_ar": "شركة خدمات فضائية ومدارية",
     "parent_institution": "Intuitive Machines, Inc.",
-    "logo": "assets/logos/orbita/orbita-intuitive-machines.svg",
+    "logo": "assets/logos/orbita/orbita-intuitive-machines.png",
     "logo_kind": "orbita_editorial_nonofficial",
     "orbita_marker_code": "IM",
     "orbita_verified_profile": {
@@ -56071,7 +56073,7 @@
     "org_type_en": "In-space services",
     "org_type_ar": "شركة خدمات فضائية ومدارية",
     "parent_institution": "Astroscale Holdings Inc.",
-    "logo": "assets/logos/orbita/orbita-astroscale.svg",
+    "logo": "assets/logos/orbita/orbita-astroscale.png",
     "logo_kind": "orbita_editorial_nonofficial",
     "orbita_marker_code": "AS",
     "orbita_verified_profile": {
@@ -56492,7 +56494,7 @@
     "org_type_en": "Space testing facility",
     "org_type_ar": "منشأة اختبار فضائي",
     "parent_institution": "Instituto Nacional de Pesquisas Espaciais (INPE)",
-    "logo": "assets/logos/orbita/orbita-inpe-lit.svg",
+    "logo": "assets/logos/orbita/orbita-inpe-lit.png",
     "logo_kind": "orbita_editorial_nonofficial",
     "orbita_marker_code": "LI",
     "orbita_verified_profile": {
@@ -56831,7 +56833,7 @@
     "org_type_en": "Satellite ground station",
     "org_type_ar": "محطة أرضية للاتصالات الفضائية",
     "parent_institution": "Kongsberg Satellite Services (KSAT)",
-    "logo": "assets/logos/orbita/orbita-ksat-svalbard.svg",
+    "logo": "assets/logos/orbita/orbita-ksat-svalbard.png",
     "logo_kind": "orbita_editorial_nonofficial",
     "orbita_marker_code": "SV",
     "orbita_verified_profile": {
@@ -57201,7 +57203,7 @@
     "org_type_en": "Satellite ground station",
     "org_type_ar": "محطة أرضية للاتصالات الفضائية",
     "parent_institution": "Kongsberg Satellite Services (KSAT)",
-    "logo": "assets/logos/orbita/orbita-ksat-trollsat.svg",
+    "logo": "assets/logos/orbita/orbita-ksat-trollsat.png",
     "logo_kind": "orbita_editorial_nonofficial",
     "orbita_marker_code": "TR",
     "orbita_verified_profile": {
@@ -57585,7 +57587,7 @@
     "org_type_en": "Satellite ground station",
     "org_type_ar": "محطة أرضية للاتصالات الفضائية",
     "parent_institution": "Swedish Space Corporation (SSC)",
-    "logo": "assets/logos/orbita/orbita-ssc-kiruna.svg",
+    "logo": "assets/logos/orbita/orbita-ssc-kiruna.png",
     "logo_kind": "orbita_editorial_nonofficial",
     "orbita_marker_code": "SK",
     "orbita_verified_profile": {
@@ -57950,7 +57952,7 @@
     "org_type_en": "Satellite ground station",
     "org_type_ar": "محطة أرضية للاتصالات الفضائية",
     "parent_institution": "Swedish Space Corporation (SSC)",
-    "logo": "assets/logos/orbita/orbita-ssc-santiago.svg",
+    "logo": "assets/logos/orbita/orbita-ssc-santiago.png",
     "logo_kind": "orbita_editorial_nonofficial",
     "orbita_marker_code": "SC",
     "orbita_verified_profile": {
@@ -58309,7 +58311,7 @@
     "org_type_en": "Satellite ground station",
     "org_type_ar": "محطة أرضية للاتصالات الفضائية",
     "parent_institution": "Swedish Space Corporation (SSC) — Dongara/WASC identity review open",
-    "logo": "assets/logos/orbita/orbita-ssc-dongara.svg",
+    "logo": "assets/logos/orbita/orbita-ssc-dongara.png",
     "logo_kind": "orbita_editorial_nonofficial",
     "orbita_marker_code": "DG",
     "orbita_verified_profile": {
@@ -58660,7 +58662,7 @@
     "org_type_en": "Satellite ground station",
     "org_type_ar": "محطة أرضية للاتصالات الفضائية",
     "parent_institution": "Swedish Space Corporation (SSC)",
-    "logo": "assets/logos/orbita/orbita-ssc-south-point.svg",
+    "logo": "assets/logos/orbita/orbita-ssc-south-point.png",
     "logo_kind": "orbita_editorial_nonofficial",
     "orbita_marker_code": "SP",
     "orbita_verified_profile": {
@@ -59039,7 +59041,7 @@
     "org_type_en": "Satellite ground station",
     "org_type_ar": "محطة أرضية للاتصالات الفضائية",
     "parent_institution": "NASA",
-    "logo": "assets/logos/orbita/orbita-nasa-wallops-ground.svg",
+    "logo": "assets/logos/orbita/orbita-nasa-wallops-ground.png",
     "logo_kind": "orbita_editorial_nonofficial",
     "orbita_marker_code": "WG",
     "orbita_verified_profile": {
@@ -59367,7 +59369,7 @@
     "org_type_en": "Satellite ground station",
     "org_type_ar": "محطة أرضية للاتصالات الفضائية",
     "parent_institution": "European Space Agency (ESA) / ESTRACK",
-    "logo": "assets/logos/orbita/orbita-esa-new-norcia.svg",
+    "logo": "assets/logos/orbita/orbita-esa-new-norcia.png",
     "logo_kind": "orbita_editorial_nonofficial",
     "orbita_marker_code": "NN",
     "orbita_verified_profile": {
@@ -59734,7 +59736,7 @@
     "org_type_en": "Satellite ground station",
     "org_type_ar": "محطة أرضية للاتصالات الفضائية",
     "parent_institution": "European Space Agency (ESA) / ESTRACK",
-    "logo": "assets/logos/orbita/orbita-esa-malargue.svg",
+    "logo": "assets/logos/orbita/orbita-esa-malargue.png",
     "logo_kind": "orbita_editorial_nonofficial",
     "orbita_marker_code": "ML",
     "orbita_verified_profile": {
@@ -60120,7 +60122,7 @@
     "org_type_en": "Satellite ground station",
     "org_type_ar": "محطة أرضية للاتصالات الفضائية",
     "parent_institution": "European Space Agency (ESA) / ESTRACK",
-    "logo": "assets/logos/orbita/orbita-esa-kiruna.svg",
+    "logo": "assets/logos/orbita/orbita-esa-kiruna.png",
     "logo_kind": "orbita_editorial_nonofficial",
     "orbita_marker_code": "EK",
     "orbita_verified_profile": {
@@ -60493,7 +60495,7 @@
     "org_type_en": "Satellite ground station",
     "org_type_ar": "محطة أرضية للاتصالات الفضائية",
     "parent_institution": "European Space Agency (ESA) / ESTRACK",
-    "logo": "assets/logos/orbita/orbita-esa-santa-maria.svg",
+    "logo": "assets/logos/orbita/orbita-esa-santa-maria.png",
     "logo_kind": "orbita_editorial_nonofficial",
     "orbita_marker_code": "SM",
     "orbita_verified_profile": {
@@ -60853,7 +60855,7 @@
     "org_type_en": "Satellite ground station",
     "org_type_ar": "محطة أرضية للاتصالات الفضائية",
     "parent_institution": "NASA / Jet Propulsion Laboratory",
-    "logo": "assets/logos/orbita/orbita-nasa-goldstone.svg",
+    "logo": "assets/logos/orbita/orbita-nasa-goldstone.png",
     "logo_kind": "orbita_editorial_nonofficial",
     "orbita_marker_code": "GO",
     "orbita_verified_profile": {
@@ -61204,7 +61206,7 @@
     "org_type_en": "Satellite ground station",
     "org_type_ar": "محطة أرضية للاتصالات الفضائية",
     "parent_institution": "NASA / Jet Propulsion Laboratory",
-    "logo": "assets/logos/orbita/orbita-nasa-madrid.svg",
+    "logo": "assets/logos/orbita/orbita-nasa-madrid.png",
     "logo_kind": "orbita_editorial_nonofficial",
     "orbita_marker_code": "MD",
     "orbita_verified_profile": {
@@ -61554,7 +61556,7 @@
     "org_type_en": "Satellite ground station",
     "org_type_ar": "محطة أرضية للاتصالات الفضائية",
     "parent_institution": "NASA / Jet Propulsion Laboratory",
-    "logo": "assets/logos/orbita/orbita-nasa-canberra.svg",
+    "logo": "assets/logos/orbita/orbita-nasa-canberra.png",
     "logo_kind": "orbita_editorial_nonofficial",
     "orbita_marker_code": "CA",
     "orbita_verified_profile": {
@@ -61924,7 +61926,7 @@
     "org_type_en": "Mission operations centre",
     "org_type_ar": "مركز عمليات المهمات",
     "parent_institution": "German Aerospace Center (DLR)",
-    "logo": "assets/logos/orbita/orbita-dlr-gsoc.svg",
+    "logo": "assets/logos/orbita/orbita-dlr-gsoc.png",
     "logo_kind": "orbita_editorial_nonofficial",
     "orbita_marker_code": "GS",
     "orbita_verified_profile": {
@@ -62285,7 +62287,7 @@
     "org_type_en": "Mission operations centre",
     "org_type_ar": "مركز عمليات المهمات",
     "parent_institution": "German Aerospace Center (DLR) / GSOC",
-    "logo": "assets/logos/orbita/orbita-dlr-columbus-control.svg",
+    "logo": "assets/logos/orbita/orbita-dlr-columbus-control.png",
     "logo_kind": "orbita_editorial_nonofficial",
     "orbita_marker_code": "CO",
     "orbita_verified_profile": {
@@ -62648,7 +62650,7 @@
     "org_type_en": "University space laboratory",
     "org_type_ar": "مختبر فضائي جامعي",
     "parent_institution": "Nanyang Technological University (NTU)",
-    "logo": "assets/logos/orbita/orbita-ntu-satellite-research.svg",
+    "logo": "assets/logos/orbita/orbita-ntu-satellite-research.png",
     "logo_kind": "orbita_editorial_nonofficial",
     "orbita_marker_code": "NT",
     "orbita_verified_profile": {
@@ -63041,7 +63043,7 @@
     "org_type_en": "University space laboratory",
     "org_type_ar": "مختبر فضائي جامعي",
     "parent_institution": "Delft University of Technology (TU Delft)",
-    "logo": "assets/logos/orbita/orbita-delfi-space-lab.svg",
+    "logo": "assets/logos/orbita/orbita-delfi-space-lab.png",
     "logo_kind": "orbita_editorial_nonofficial",
     "orbita_marker_code": "DF",
     "orbita_verified_profile": {

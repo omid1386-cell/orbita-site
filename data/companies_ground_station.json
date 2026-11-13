@@ -326,7 +326,7 @@
     "org_type_en": "Satellite ground station",
     "org_type_ar": "محطة أرضية للاتصالات الفضائية",
     "parent_institution": "Kongsberg Satellite Services (KSAT)",
-    "logo": "assets/logos/orbita/orbita-ksat-svalbard.svg",
+    "logo": "assets/logos/orbita/orbita-ksat-svalbard.png",
     "logo_kind": "orbita_editorial_nonofficial",
     "orbita_marker_code": "SV",
     "orbita_verified_profile": {
@@ -696,7 +696,7 @@
     "org_type_en": "Satellite ground station",
     "org_type_ar": "محطة أرضية للاتصالات الفضائية",
     "parent_institution": "Kongsberg Satellite Services (KSAT)",
-    "logo": "assets/logos/orbita/orbita-ksat-trollsat.svg",
+    "logo": "assets/logos/orbita/orbita-ksat-trollsat.png",
     "logo_kind": "orbita_editorial_nonofficial",
     "orbita_marker_code": "TR",
     "orbita_verified_profile": {
@@ -1080,7 +1080,7 @@
     "org_type_en": "Satellite ground station",
     "org_type_ar": "محطة أرضية للاتصالات الفضائية",
     "parent_institution": "Swedish Space Corporation (SSC)",
-    "logo": "assets/logos/orbita/orbita-ssc-kiruna.svg",
+    "logo": "assets/logos/orbita/orbita-ssc-kiruna.png",
     "logo_kind": "orbita_editorial_nonofficial",
     "orbita_marker_code": "SK",
     "orbita_verified_profile": {
@@ -1445,7 +1445,7 @@
     "org_type_en": "Satellite ground station",
     "org_type_ar": "محطة أرضية للاتصالات الفضائية",
     "parent_institution": "Swedish Space Corporation (SSC)",
-    "logo": "assets/logos/orbita/orbita-ssc-santiago.svg",
+    "logo": "assets/logos/orbita/orbita-ssc-santiago.png",
     "logo_kind": "orbita_editorial_nonofficial",
     "orbita_marker_code": "SC",
     "orbita_verified_profile": {
@@ -1804,7 +1804,7 @@
     "org_type_en": "Satellite ground station",
     "org_type_ar": "محطة أرضية للاتصالات الفضائية",
     "parent_institution": "Swedish Space Corporation (SSC) — Dongara/WASC identity review open",
-    "logo": "assets/logos/orbita/orbita-ssc-dongara.svg",
+    "logo": "assets/logos/orbita/orbita-ssc-dongara.png",
     "logo_kind": "orbita_editorial_nonofficial",
     "orbita_marker_code": "DG",
     "orbita_verified_profile": {
@@ -2155,7 +2155,7 @@
     "org_type_en": "Satellite ground station",
     "org_type_ar": "محطة أرضية للاتصالات الفضائية",
     "parent_institution": "Swedish Space Corporation (SSC)",
-    "logo": "assets/logos/orbita/orbita-ssc-south-point.svg",
+    "logo": "assets/logos/orbita/orbita-ssc-south-point.png",
     "logo_kind": "orbita_editorial_nonofficial",
     "orbita_marker_code": "SP",
     "orbita_verified_profile": {
@@ -2534,7 +2534,7 @@
     "org_type_en": "Satellite ground station",
     "org_type_ar": "محطة أرضية للاتصالات الفضائية",
     "parent_institution": "NASA",
-    "logo": "assets/logos/orbita/orbita-nasa-wallops-ground.svg",
+    "logo": "assets/logos/orbita/orbita-nasa-wallops-ground.png",
     "logo_kind": "orbita_editorial_nonofficial",
     "orbita_marker_code": "WG",
     "orbita_verified_profile": {
@@ -2862,7 +2862,7 @@
     "org_type_en": "Satellite ground station",
     "org_type_ar": "محطة أرضية للاتصالات الفضائية",
     "parent_institution": "European Space Agency (ESA) / ESTRACK",
-    "logo": "assets/logos/orbita/orbita-esa-new-norcia.svg",
+    "logo": "assets/logos/orbita/orbita-esa-new-norcia.png",
     "logo_kind": "orbita_editorial_nonofficial",
     "orbita_marker_code": "NN",
     "orbita_verified_profile": {
@@ -3229,7 +3229,7 @@
     "org_type_en": "Satellite ground station",
     "org_type_ar": "محطة أرضية للاتصالات الفضائية",
     "parent_institution": "European Space Agency (ESA) / ESTRACK",
-    "logo": "assets/logos/orbita/orbita-esa-malargue.svg",
+    "logo": "assets/logos/orbita/orbita-esa-malargue.png",
     "logo_kind": "orbita_editorial_nonofficial",
     "orbita_marker_code": "ML",
     "orbita_verified_profile": {
@@ -3615,7 +3615,7 @@
     "org_type_en": "Satellite ground station",
     "org_type_ar": "محطة أرضية للاتصالات الفضائية",
     "parent_institution": "European Space Agency (ESA) / ESTRACK",
-    "logo": "assets/logos/orbita/orbita-esa-kiruna.svg",
+    "logo": "assets/logos/orbita/orbita-esa-kiruna.png",
     "logo_kind": "orbita_editorial_nonofficial",
     "orbita_marker_code": "EK",
     "orbita_verified_profile": {
@@ -3988,7 +3988,7 @@
     "org_type_en": "Satellite ground station",
     "org_type_ar": "محطة أرضية للاتصالات الفضائية",
     "parent_institution": "European Space Agency (ESA) / ESTRACK",
-    "logo": "assets/logos/orbita/orbita-esa-santa-maria.svg",
+    "logo": "assets/logos/orbita/orbita-esa-santa-maria.png",
     "logo_kind": "orbita_editorial_nonofficial",
     "orbita_marker_code": "SM",
     "orbita_verified_profile": {
@@ -4348,7 +4348,7 @@
     "org_type_en": "Satellite ground station",
     "org_type_ar": "محطة أرضية للاتصالات الفضائية",
     "parent_institution": "NASA / Jet Propulsion Laboratory",
-    "logo": "assets/logos/orbita/orbita-nasa-goldstone.svg",
+    "logo": "assets/logos/orbita/orbita-nasa-goldstone.png",
     "logo_kind": "orbita_editorial_nonofficial",
     "orbita_marker_code": "GO",
     "orbita_verified_profile": {
@@ -4699,7 +4699,7 @@
     "org_type_en": "Satellite ground station",
     "org_type_ar": "محطة أرضية للاتصالات الفضائية",
     "parent_institution": "NASA / Jet Propulsion Laboratory",
-    "logo": "assets/logos/orbita/orbita-nasa-madrid.svg",
+    "logo": "assets/logos/orbita/orbita-nasa-madrid.png",
     "logo_kind": "orbita_editorial_nonofficial",
     "orbita_marker_code": "MD",
     "orbita_verified_profile": {
@@ -5049,7 +5049,7 @@
     "org_type_en": "Satellite ground station",
     "org_type_ar": "محطة أرضية للاتصالات الفضائية",
     "parent_institution": "NASA / Jet Propulsion Laboratory",
-    "logo": "assets/logos/orbita/orbita-nasa-canberra.svg",
+    "logo": "assets/logos/orbita/orbita-nasa-canberra.png",
     "logo_kind": "orbita_editorial_nonofficial",
     "orbita_marker_code": "CA",
     "orbita_verified_profile": {
