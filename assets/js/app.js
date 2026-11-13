@@ -564,6 +564,15 @@
     components: "idle", payloads: "idle", ground_services: "idle", inspace_services: "idle",
     university_space: "idle", test_facility: "idle", ground_station: "idle", mission_control: "idle" };
   var COMPANY_CATEGORY_PROMISES = Object.create(null);
+  // Fast-start map summaries: full dossiers are fetched only when a visitor opens
+  // a company/country profile. Keep original JSON files and category slices intact.
+  var COMPANY_MAP_SUMMARY_FILES = {
+    launch: "data/companies_launch_map.json",
+    agency: "data/companies_agency_map.json"
+  };
+  var COMPANY_MAP_SUMMARY_PROMISES = Object.create(null);
+  var COMPANY_CATEGORY_FULL_READY = Object.create(null);
+
 
   // Phase-3: all eight opt-in categories have sourced pilots, not exhaustive coverage.
   // Keep the six existing keys/colours/markers intact. Category membership is a role,
@@ -10381,6 +10390,29 @@
     }
     openDetail._renderToken = (openDetail._renderToken || 0) + 1;
     var detailToken = openDetail._renderToken;
+    if (p.o && p.o.__orbita_fast_summary) {
+      var summaryId = String(p.o.id), summaryCategory = p.cat || p.o.cat;
+      var panel = $("#detail"), body = $("#detailBody");
+      if (panel && body) {
+        panel.classList.add("open");
+        body.innerHTML = '<div class="up-empty" role="status">' +
+          (LANG === "fa" ? "در حال دریافت شناسنامهٔ کامل…" :
+            LANG === "ar" ? "جارٍ تحميل الملف الكامل…" : "Loading full profile…") + '</div>';
+      }
+      loadCompanyCategory(summaryCategory).then(function (ok) {
+        if (detailToken !== openDetail._renderToken) return;
+        var full = (DATA.companies || []).find(function (row) { return String(row.id) === summaryId; });
+        if (ok && full && !full.__orbita_fast_summary) {
+          openDetail({ kind: "company", cat: summaryCategory, o: full });
+        } else if (body) {
+          body.innerHTML = '<div class="up-empty" role="alert">' +
+            (LANG === "fa" ? "دریافت شناسنامه انجام نشد؛ پس از بررسی اتصال دوباره انتخاب کنید." :
+              LANG === "ar" ? "تعذر تحميل الملف. يرجى المحاولة مجددًا." :
+              "Profile unavailable. Please check your connection and try again.") + '</div>';
+        }
+      });
+      return;
+    }
     if (p.o && p.o.id) Promise.resolve().then(function () { mountVerifiedConnections(p, detailToken); });
     var cat = p.cat || (p.o ? p.o.cat : "");
     var kind = p.kind || cat;
@@ -10983,18 +11015,55 @@
     return request;
   }
   function mergeCompanyCategoryRows(rows) {
-    var merged = (DATA.companies || []).slice(), seen = Object.create(null);
-    merged.forEach(function (c) { if (c && c.id != null) seen[String(c.id)] = true; });
+    var merged = (DATA.companies || []).slice(), indices = Object.create(null);
+    merged.forEach(function (c, i) { if (c && c.id != null) indices[String(c.id)] = i; });
     rows.forEach(function (c) {
-      if (!c || c.id == null || seen[String(c.id)]) return;
-      seen[String(c.id)] = true;
+      if (!c || c.id == null) return;
+      var key = String(c.id), index = indices[key];
+      if (index !== undefined) {
+        // Upgrade only a lightweight preview to a complete record; never overwrite
+        // an already loaded original record with a preview or secondary membership.
+        if (merged[index].__orbita_fast_summary && !c.__orbita_fast_summary) merged[index] = c;
+        return;
+      }
+      indices[key] = merged.length;
       merged.push(c);
     });
     DATA.companies = merged;
   }
+  function loadCompanyCategorySummary(category) {
+    var file = COMPANY_MAP_SUMMARY_FILES[category];
+    if (!file) return loadCompanyCategory(category);
+    if (COMPANY_CATEGORY_FULL_READY[category]) return Promise.resolve(true);
+    if (COMPANY_MAP_SUMMARY_PROMISES[category]) return COMPANY_MAP_SUMMARY_PROMISES[category];
+    COMPANY_CATEGORY_STATE[category] = "loading";
+    updateLayerChipStatus(category);
+    var request = fetch(file + "?v=" + (window.ORBITA_COMPANIES_V || window.ORBITA_V || "1"))
+      .then(function (r) { if (!r.ok) throw new Error("HTTP " + r.status); return r.json(); })
+      .then(function (rows) {
+        if (!Array.isArray(rows)) throw new Error("Invalid map summary");
+        // A rapid click can initiate a full dossier request before this one ends.
+        // Never downgrade complete records when that happens.
+        if (!COMPANY_CATEGORY_FULL_READY[category]) mergeCompanyCategoryRows(rows);
+        COMPANY_CATEGORY_STATE[category] = "ready";
+        updateLayerChipStatus(category);
+        refreshMapUI();
+        return true;
+      })
+      .catch(function (error) {
+        console.warn("map summary " + category + ":", error);
+        // Older deployments without summary files remain fully functional.
+        return loadCompanyCategory(category);
+      })
+      .finally(function () { COMPANY_MAP_SUMMARY_PROMISES[category] = null; });
+    COMPANY_MAP_SUMMARY_PROMISES[category] = request;
+    return request;
+  }
   function loadCompanyCategory(category) {
     if (!COMPANY_CATEGORY_FILES[category]) return Promise.resolve(false);
-    if (COMPANY_CATEGORY_STATE[category] === "ready") return Promise.resolve(true);
+    // 'ready' might refer to the map summary; opening details must still fetch
+    // the full category once, without performing duplicate requests.
+    if (COMPANY_CATEGORY_FULL_READY[category]) return Promise.resolve(true);
     if (COMPANY_CATEGORY_PROMISES[category]) return COMPANY_CATEGORY_PROMISES[category];
     COMPANY_CATEGORY_STATE[category] = "loading";
     updateLayerChipStatus(category);
@@ -11004,6 +11073,7 @@
       .then(function (rows) {
         if (!Array.isArray(rows)) throw new Error("Invalid company category data");
         mergeCompanyCategoryRows(rows);
+        COMPANY_CATEGORY_FULL_READY[category] = true;
         COMPANY_CATEGORY_STATE[category] = "ready";
         COMPANY_CATEGORY_PROMISES[category] = null;
         refreshMapUI();
@@ -11059,7 +11129,7 @@
   if (filters.site) initialMapLoads.push(BOOT_LOADERS.sites());
   if (filters.recovery) initialMapLoads.push(BOOT_LOADERS.recoveries());
   COMPANY_CATEGORY_KEYS.forEach(function (category) {
-    if (filters[category]) initialMapLoads.push(loadCompanyCategory(category));
+    if (filters[category]) initialMapLoads.push(loadCompanyCategorySummary(category));
   });
   Promise.all(initialMapLoads).then(function () {
     /* Non-critical panels start only after the first map data work has settled. */
