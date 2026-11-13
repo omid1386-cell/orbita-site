@@ -296,5 +296,344 @@
     "linked_entities": [
       "esa"
     ]
+  },
+  {
+    "id": "orbita-inpe-lit",
+    "cat": "test_facility",
+    "en": "INPE Laboratório de Integração e Testes (LIT)",
+    "fa": "آزمایشگاه یکپارچه‌سازی و آزمون اینپه",
+    "ar": "مختبر التكامل والاختبار التابع لـ INPE",
+    "country": "Brazil",
+    "country_fa": "برزیل",
+    "country_ar": "البرازيل",
+    "city": "São José dos Campos",
+    "city_fa": "سائو ژوزه دوس کامپوس",
+    "city_ar": "ساو جوزيه دوس كامبوس",
+    "lat": -23.209,
+    "lon": -45.86,
+    "coordinate_precision": "approximate_campus_area",
+    "site": "https://www.gov.br/inpe/pt-br/",
+    "en_d": "INPE's Laboratório de Integração e Testes (LIT) is a Brazilian government satellite integration and environmental-test facility, not a separately incorporated company. It should be related to its parent institute as a facility.",
+    "fa_d": "آزمایشگاه یکپارچه‌سازی و آزمون INPE امکانات آزمون محیطی و یکپارچه‌سازی سامانه‌های فضایی دارد.",
+    "ar_d": "مختبر التكامل والاختبار LIT التابع لمعهد INPE هو منشأة حكومية برازيلية لتكامل الأقمار واختبارها بيئياً، وليس شركة مستقلة قانونياً. وينبغي ربطه بالمعهد الأم بوصفه منشأة تابعة.",
+    "org_type_fa": "تأسیسات آزمون فضایی",
+    "org_type_en": "Space testing facility",
+    "org_type_ar": "منشأة اختبار فضائي",
+    "parent_institution": "Instituto Nacional de Pesquisas Espaciais (INPE)",
+    "logo": "assets/logos/orbita/orbita-inpe-lit.svg",
+    "logo_kind": "orbita_editorial_nonofficial",
+    "orbita_marker_code": "LI",
+    "orbita_verified_profile": {
+      "schema_version": 3,
+      "profile_type": "test_facility",
+      "summary": {
+        "fa": "آزمایشگاه یکپارچه‌سازی و آزمون INPE امکانات آزمون محیطی و یکپارچه‌سازی سامانه‌های فضایی دارد.",
+        "en": "INPE's Laboratório de Integração e Testes (LIT) is a Brazilian government satellite integration and environmental-test facility, not a separately incorporated company. It should be related to its parent institute as a facility.",
+        "ar": "مختبر التكامل والاختبار LIT التابع لمعهد INPE هو منشأة حكومية برازيلية لتكامل الأقمار واختبارها بيئياً، وليس شركة مستقلة قانونياً. وينبغي ربطه بالمعهد الأم بوصفه منشأة تابعة."
+      },
+      "review_scope": {
+        "fa": "نسخه نمایشی پژوهشی ORBITA بر پایه منابع درج‌شده. ارزیابی ادعاها و ثبت حقوقی همه زیرمجموعه‌ها هنوز نهایی نیست؛ مختصات برخی نشان‌ها تقریبی است. در فارسی، متن تفصیلی مستند و در انگلیسی و عربی خلاصه تخصصی هر تب نمایش داده می‌شود؛ خلاصه‌ها جایگزین ترجمه کامل همه گزاره‌ها نیستند.",
+        "en": "ORBITA research preview, based on listed sources. Complete legal, operator and claim-by-claim checks remain open. Some map positions are approximate. English and Arabic provide sourced section-level synopses; full individual Persian research statements are not yet translated one by one.",
+        "ar": "نسخة بحثية تجريبية من ORBITA تستند إلى المصادر المدرجة. لا تزال مراجعة الهويات القانونية والمشغّلين وجميع الادعاءات غير مكتملة، وبعض مواقع الخريطة تقريبية. تعرض الإنجليزية والعربية ملخصات موثّقة لكل تبويب، لا ترجمة كاملة لكل بند من البحث الفارسي."
+      },
+      "sources": [
+        {
+          "url": "https://www.gov.br/inpe/pt-br/area-conhecimento/montagem-integracao-e-testes",
+          "provenance_types": [
+            "S3_325_CLAIMS_INHERITED"
+          ],
+          "id": "SRC-33c5820b16cd",
+          "title": "www.gov.br — inpe/pt-br/area-conhecimento/montagem-integracao-e-testes"
+        },
+        {
+          "url": "https://www.gov.br/inpe/pt-br/acesso-a-informacao/perguntas-frequentes/principais-produtos-e-servicos-do-inpe/integracao-e-testes/o-local-onde-os-satelites",
+          "provenance_types": [
+            "S3_325_CLAIMS_INHERITED"
+          ],
+          "id": "SRC-3ca2f99929fb",
+          "title": "www.gov.br — inpe/pt-br/acesso-a-informacao/perguntas-frequentes/principais-produtos-e-servicos-do-inpe"
+        },
+        {
+          "url": "https://www.gov.br/inpe/pt-br/acesso-a-informacao/perguntas-frequentes/principais-produtos-e-servicos-do-inpe/integracao-e-testes/quais-sao-os-laboratorios-que",
+          "provenance_types": [
+            "STEP2_COMPLETION_99_OFFICIAL_WEB_RESEARCH"
+          ],
+          "id": "WEB-262b635ba0be",
+          "title": "www.gov.br — inpe/pt-br/acesso-a-informacao/perguntas-frequentes/principais-produtos-e-servicos-do-inpe"
+        },
+        {
+          "url": "https://www.gov.br/inpe/pt-br/area-conhecimento/montagem-integracao-e-testes/laboratorio-vacuo-termico",
+          "provenance_types": [
+            "STEP2_COMPLETION_99_OFFICIAL_WEB_RESEARCH"
+          ],
+          "id": "WEB-3a932b8a92ee",
+          "title": "www.gov.br — inpe/pt-br/area-conhecimento/montagem-integracao-e-testes/laboratorio-vacuo-termico"
+        },
+        {
+          "url": "https://www.gov.br/inpe/pt-br/area-conhecimento/montagem-integracao-e-testes/laboratorio-de-medidas-de-antenas",
+          "provenance_types": [
+            "STEP2_COMPLETION_99_OFFICIAL_WEB_RESEARCH"
+          ],
+          "id": "WEB-575b303059fc",
+          "title": "www.gov.br — inpe/pt-br/area-conhecimento/montagem-integracao-e-testes/laboratorio-de-medidas-de-antena"
+        },
+        {
+          "id": "UPG-5e5e55401f47",
+          "title": "www.cbers.inpe.br | /hotsite/",
+          "url": "https://www.cbers.inpe.br/hotsite/",
+          "evidence_status": "PRIMARY_OFFICIAL_SITE_RESEARCHED_2026_11_13"
+        }
+      ],
+      "sections": [
+        {
+          "id": "overview",
+          "fa": "شناسنامه تأسیسات",
+          "en": "Facility identity",
+          "ar": "تعريف المنشأة",
+          "items": [
+            {
+              "fa": "",
+              "en": "INPE's Laboratório de Integração e Testes (LIT) is a Brazilian government satellite integration and environmental-test facility, not a separately incorporated company. It should be related to its parent institute as a facility.",
+              "ar": "مختبر التكامل والاختبار LIT التابع لمعهد INPE هو منشأة حكومية برازيلية لتكامل الأقمار واختبارها بيئياً، وليس شركة مستقلة قانونياً. وينبغي ربطه بالمعهد الأم بوصفه منشأة تابعة.",
+              "kind": "technical",
+              "source_ids": [
+                "SRC-33c5820b16cd",
+                "UPG-5e5e55401f47"
+              ],
+              "show_langs": [
+                "en",
+                "ar"
+              ],
+              "editorial_scope": "EN_AR_SECTION_SYNOPSIS_NOT_FULL_CLAIM_PARITY"
+            },
+            {
+              "fa": "آزمایشگاه یکپارچه‌سازی و آزمون INPE امکانات آزمون محیطی و یکپارچه‌سازی سامانه‌های فضایی دارد.",
+              "en": "",
+              "ar": "",
+              "kind": "identity",
+              "source_ids": [
+                "SRC-33c5820b16cd"
+              ],
+              "show_langs": [
+                "fa"
+              ],
+              "editorial_scope": "FA_ORIGINAL_SOURCED_RESEARCH"
+            },
+            {
+              "fa": "LIT تأسیسات سازمان دولتی INPE است؛ در داده ORBITA باید رابطه «facility_of:INPE» تعریف شود و شخصیت حقوقی جداگانه فرض نشود.",
+              "en": "",
+              "ar": "",
+              "kind": "verified_research_supplement",
+              "source_ids": [
+                "UPG-5e5e55401f47"
+              ],
+              "show_langs": [
+                "fa"
+              ],
+              "editorial_scope": "FA_ORIGINAL_SOURCED_RESEARCH"
+            }
+          ]
+        },
+        {
+          "id": "equipment",
+          "fa": "تجهیزات و ظرفیت آزمون",
+          "en": "Facilities & test capability",
+          "ar": "المرافق والقدرات الاختبارية",
+          "items": [
+            {
+              "fa": "",
+              "en": "LIT reports thermal-vacuum chambers including 3×3 m, 1×1 m and approximately 250-litre units, together with a larger 6×8 m chamber. Antenna-characterization infrastructure includes an 80 m range and 40 m transmitter tower supporting roughly 400 MHz–23.6 GHz; equipment-level capability must not be generalized beyond the cited source.",
+              "ar": "يضم LIT غرف تفريغ حراري منها وحدات 3×3 م و1×1 م ونحو 250 لتراً، إضافة إلى غرفة أكبر 6×8 م. وتتضمن بنية قياس الهوائيات ميداناً بطول 80 م وبرج إرسال بارتفاع 40 م يدعمان تقريباً 400 ميغاهرتز إلى 23.6 غيغاهرتز؛ ولا يجوز تعميم قدرة جهاز بعينه خارج ما توثقه المصادر.",
+              "kind": "technical",
+              "source_ids": [
+                "WEB-3a932b8a92ee",
+                "WEB-575b303059fc"
+              ],
+              "show_langs": [
+                "en",
+                "ar"
+              ],
+              "editorial_scope": "EN_AR_SECTION_SYNOPSIS_NOT_FULL_CLAIM_PARITY"
+            },
+            {
+              "fa": "آزمایشگاه LIT مؤسسه INPE برزیل محفظه خلأحرارتی ۳×۳ متر برای ماهواره‌های کوچک‌تر، محفظه‌های ۱×۱ متر و ۲۵۰ لیتر برای زیرسامانه‌ها و محفظه بزرگ شش‌درهشت متر در اختیار دارد.",
+              "en": "",
+              "ar": "",
+              "kind": "technical",
+              "source_ids": [
+                "WEB-3a932b8a92ee"
+              ],
+              "show_langs": [
+                "fa"
+              ],
+              "editorial_scope": "FA_ORIGINAL_SOURCED_RESEARCH"
+            },
+            {
+              "fa": "زیرساخت آزمون آنتن LIT شامل میدان اندازه‌گیری ۸۰متری و برج فرستنده ۴۰متری است که سنجش آنتن در بازه ۴۰۰ مگاهرتز تا ۲۳٫۶ گیگاهرتز را پشتیبانی می‌کند.",
+              "en": "",
+              "ar": "",
+              "kind": "technical",
+              "source_ids": [
+                "WEB-575b303059fc"
+              ],
+              "show_langs": [
+                "fa"
+              ],
+              "editorial_scope": "FA_ORIGINAL_SOURCED_RESEARCH"
+            }
+          ]
+        },
+        {
+          "id": "testing",
+          "fa": "آزمون‌ها و پروژه‌ها",
+          "en": "Testing & projects",
+          "ar": "الاختبارات والمشروعات",
+          "items": [
+            {
+              "fa": "",
+              "en": "The laboratory offers thermal-vacuum, vibration, acoustic, mass-property and electromagnetic-compatibility testing for spacecraft and subsystems. Each test type belongs to a particular laboratory setup and its rated capacity.",
+              "ar": "يقدم المختبر اختبارات الفراغ الحراري والاهتزاز والصوت والخصائص الكتلية والتوافق الكهرومغناطيسي للمركبات وأنظمتها الفرعية. ويرتبط كل نوع اختبار بتجهيز مختبري معين وحدود قدرة محددة.",
+              "kind": "technical",
+              "source_ids": [
+                "SRC-3ca2f99929fb"
+              ],
+              "show_langs": [
+                "en",
+                "ar"
+              ],
+              "editorial_scope": "EN_AR_SECTION_SYNOPSIS_NOT_FULL_CLAIM_PARITY"
+            },
+            {
+              "fa": "آزمایشگاه LIT برزیل شامل آزمون‌های خلأ حرارتی، ارتعاش، آکوستیک و سازگاری الکترومغناطیسی است.",
+              "en": "",
+              "ar": "",
+              "kind": "operations",
+              "source_ids": [
+                "SRC-3ca2f99929fb"
+              ],
+              "show_langs": [
+                "fa"
+              ],
+              "editorial_scope": "FA_ORIGINAL_SOURCED_RESEARCH"
+            }
+          ]
+        },
+        {
+          "id": "standards",
+          "fa": "استانداردها و اعتبارسنجی",
+          "en": "Standards & qualification",
+          "ar": "المعايير والتأهيل",
+          "items": [
+            {
+              "fa": "",
+              "en": "The facility includes electromagnetic interference/compatibility, vibration, thermal-vacuum and component-reliability capabilities. The presence of these tests alone does not establish independent accreditation to every international standard; applicable certificates must be documented separately.",
+              "ar": "تضم المنشأة إمكانات قياس التداخل والتوافق الكهرومغناطيسي والاهتزاز والفراغ الحراري وموثوقية المكونات. ولا يثبت وجود هذه الاختبارات وحده الاعتماد المستقل لكل معيار دولي؛ إذ يلزم توثيق الشهادات المطبقة بصورة منفصلة.",
+              "kind": "technical",
+              "source_ids": [
+                "WEB-262b635ba0be"
+              ],
+              "show_langs": [
+                "en",
+                "ar"
+              ],
+              "editorial_scope": "EN_AR_SECTION_SYNOPSIS_NOT_FULL_CLAIM_PARITY"
+            },
+            {
+              "fa": "در LIT آزمایش‌های ارتعاش، خلأحرارتی، خواص جرمی، تداخل و سازگاری الکترومغناطیسی و قابلیت اطمینان قطعه در مجموعه آزمایشگاه‌های تخصصی انجام می‌شوند.",
+              "en": "",
+              "ar": "",
+              "kind": "technical",
+              "source_ids": [
+                "WEB-262b635ba0be"
+              ],
+              "show_langs": [
+                "fa"
+              ],
+              "editorial_scope": "FA_ORIGINAL_SOURCED_RESEARCH"
+            }
+          ]
+        },
+        {
+          "id": "history",
+          "fa": "تاریخچه و مشتریان",
+          "en": "History & customers",
+          "ar": "التاريخ والعملاء",
+          "items": [
+            {
+              "fa": "",
+              "en": "INPE's LIT was inaugurated in 1987 following infrastructure investment during 1983–1987. It subsequently supported Brazil's satellite-testing chain, including the broader CBERS cooperation framework established in 1988; institutional history must not be confused with individual spacecraft test acceptance.",
+              "ar": "افتتح مختبر LIT التابع لـINPE في 1987 عقب استثمارات بنية تحتية خلال 1983–1987. ثم دعم سلسلة اختبار الأقمار البرازيلية، بما فيها إطار تعاون CBERS الذي تأسس في 1988؛ ويجب عدم الخلط بين التاريخ المؤسسي واعتماد الاختبار لكل مركبة على حدة.",
+              "kind": "technical",
+              "source_ids": [
+                "UPG-5e5e55401f47"
+              ],
+              "show_langs": [
+                "en",
+                "ar"
+              ],
+              "editorial_scope": "EN_AR_SECTION_SYNOPSIS_NOT_FULL_CLAIM_PARITY"
+            },
+            {
+              "fa": "آزمایشگاه یکپارچه‌سازی و آزمون INPE در ۱۹۸۷ افتتاح شد؛ این تاریخ در خط زمان رسمی برنامه CBERS منتشر شده است.",
+              "en": "",
+              "ar": "",
+              "kind": "verified_research_supplement",
+              "source_ids": [
+                "UPG-5e5e55401f47"
+              ],
+              "show_langs": [
+                "fa"
+              ],
+              "editorial_scope": "FA_ORIGINAL_SOURCED_RESEARCH"
+            },
+            {
+              "fa": "سرمایه‌گذاری زیرساختی برای این آزمایشگاه در چارچوب مأموریت فضایی کامل برزیل، در فاصله ۱۹۸۳ تا ۱۹۸۷ انجام شد.",
+              "en": "",
+              "ar": "",
+              "kind": "verified_research_supplement",
+              "source_ids": [
+                "UPG-5e5e55401f47"
+              ],
+              "show_langs": [
+                "fa"
+              ],
+              "editorial_scope": "FA_ORIGINAL_SOURCED_RESEARCH"
+            },
+            {
+              "fa": "برنامه ماهواره‌ای CBERS بر پایه توافق همکاری برزیل و چین در ۱۹۸۸ توسعه یافت و LIT در زنجیره ملی آزمایش ماهواره‌ها نقش زیرساختی داشته است.",
+              "en": "",
+              "ar": "",
+              "kind": "verified_research_supplement",
+              "source_ids": [
+                "UPG-5e5e55401f47"
+              ],
+              "show_langs": [
+                "fa"
+              ],
+              "editorial_scope": "FA_ORIGINAL_SOURCED_RESEARCH"
+            }
+          ]
+        }
+      ],
+      "key_facts": [],
+      "verified_on": "2026-11-13",
+      "release_status": "RESEARCH_PREVIEW_EDITORIAL_NOT_FINAL_VERIFICATION",
+      "source_inventory_id": "DISC-0109",
+      "stage5_persian_detailed_items": 9
+    },
+    "orbita_release_note": {
+      "release_date": "2026-11-13",
+      "inventory_id": "DISC-0109",
+      "status": "RESEARCH_PREVIEW",
+      "expert_review_pending": true,
+      "language_parity": "FA_FULL_EN_AR_CONDENSED",
+      "geo_precision": "approximate_campus_area",
+      "unresolved_tasks": [
+        "Confirm legal identity and current operator if not already independently documented",
+        "Obtain facility/device model-specific technical sheets and dated operational history",
+        "Check mission-by-mission flight heritage and distinguish proposals from achieved missions",
+        "Prepare verified FA/EN/AR and map metadata only after science review"
+      ]
+    }
   }
 ]

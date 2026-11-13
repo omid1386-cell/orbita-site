@@ -558,8 +558,8 @@
   // Category-slice rows; propulsion includes three explicit secondary memberships and one linked alias.
   // Counts represent reviewed records in ORBITA, not a worldwide census.
   var COMPANY_CATEGORY_COUNTS = { launch: 68, propulsion: 68, agency: 96, satmaker: 37,
-    components: 3, payloads: 1, ground_services: 1, inspace_services: 1,
-    university_space: 2, test_facility: 1, ground_station: 1, mission_control: 1 };
+    components: 15, payloads: 1, ground_services: 1, inspace_services: 3,
+    university_space: 4, test_facility: 2, ground_station: 15, mission_control: 3 };
   var COMPANY_CATEGORY_STATE = { launch: "idle", propulsion: "idle", agency: "idle", satmaker: "idle",
     components: "idle", payloads: "idle", ground_services: "idle", inspace_services: "idle",
     university_space: "idle", test_facility: "idle", ground_station: "idle", mission_control: "idle" };
@@ -2362,7 +2362,40 @@
     "d-orbit": { id: "orbita-personal-d-orbit", code: "DO", scope: "inspace_services" },
     "esa-estec-test-centre": { id: "orbita-personal-esa-estec-test-centre", code: "ET", scope: "test_facility" },
     "esa-cebreros-dsa2": { id: "orbita-personal-esa-cebreros-dsa2", code: "CE", scope: "ground_station" },
-    "esa-esoc": { id: "orbita-personal-esa-esoc", code: "EO", scope: "mission_control" }
+    "esa-esoc": { id: "orbita-personal-esa-esoc", code: "EO", scope: "mission_control" },
+    "orbita-addnics": { id: "orbita-personal-orbita-addnics", code: "AD", scope: "components" },
+    "orbita-alouette": { id: "orbita-personal-orbita-alouette", code: "AL", scope: "components" },
+    "orbita-arkedge-space": { id: "orbita-personal-orbita-arkedge-space", code: "AE", scope: "components" },
+    "orbita-arumotech": { id: "orbita-personal-orbita-arumotech", code: "AT", scope: "components" },
+    "orbita-astrex": { id: "orbita-personal-orbita-astrex", code: "AX", scope: "components" },
+    "orbita-composite-tailors": { id: "orbita-personal-orbita-composite-tailors", code: "CT", scope: "components" },
+    "orbita-cosmobloom": { id: "orbita-personal-orbita-cosmobloom", code: "CB", scope: "components" },
+    "orbita-eagle-industry": { id: "orbita-personal-orbita-eagle-industry", code: "EI", scope: "components" },
+    "orbita-genesia": { id: "orbita-personal-orbita-genesia", code: "GE", scope: "components" },
+    "orbita-nanobridge-semiconductor": { id: "orbita-personal-orbita-nanobridge-semiconductor", code: "NB", scope: "components" },
+    "orbita-nec-space-technologies": { id: "orbita-personal-orbita-nec-space-technologies", code: "NE", scope: "components" },
+    "orbita-arcsec": { id: "orbita-personal-orbita-arcsec", code: "AR", scope: "components" },
+    "orbita-intuitive-machines": { id: "orbita-personal-orbita-intuitive-machines", code: "IM", scope: "inspace_services" },
+    "orbita-astroscale": { id: "orbita-personal-orbita-astroscale", code: "AS", scope: "inspace_services" },
+    "orbita-inpe-lit": { id: "orbita-personal-orbita-inpe-lit", code: "LI", scope: "test_facility" },
+    "orbita-ksat-svalbard": { id: "orbita-personal-orbita-ksat-svalbard", code: "SV", scope: "ground_station" },
+    "orbita-ksat-trollsat": { id: "orbita-personal-orbita-ksat-trollsat", code: "TR", scope: "ground_station" },
+    "orbita-ssc-kiruna": { id: "orbita-personal-orbita-ssc-kiruna", code: "SK", scope: "ground_station" },
+    "orbita-ssc-santiago": { id: "orbita-personal-orbita-ssc-santiago", code: "SC", scope: "ground_station" },
+    "orbita-ssc-dongara": { id: "orbita-personal-orbita-ssc-dongara", code: "DG", scope: "ground_station" },
+    "orbita-ssc-south-point": { id: "orbita-personal-orbita-ssc-south-point", code: "SP", scope: "ground_station" },
+    "orbita-nasa-wallops-ground": { id: "orbita-personal-orbita-nasa-wallops-ground", code: "WG", scope: "ground_station" },
+    "orbita-esa-new-norcia": { id: "orbita-personal-orbita-esa-new-norcia", code: "NN", scope: "ground_station" },
+    "orbita-esa-malargue": { id: "orbita-personal-orbita-esa-malargue", code: "ML", scope: "ground_station" },
+    "orbita-esa-kiruna": { id: "orbita-personal-orbita-esa-kiruna", code: "EK", scope: "ground_station" },
+    "orbita-esa-santa-maria": { id: "orbita-personal-orbita-esa-santa-maria", code: "SM", scope: "ground_station" },
+    "orbita-nasa-goldstone": { id: "orbita-personal-orbita-nasa-goldstone", code: "GO", scope: "ground_station" },
+    "orbita-nasa-madrid": { id: "orbita-personal-orbita-nasa-madrid", code: "MD", scope: "ground_station" },
+    "orbita-nasa-canberra": { id: "orbita-personal-orbita-nasa-canberra", code: "CA", scope: "ground_station" },
+    "orbita-dlr-gsoc": { id: "orbita-personal-orbita-dlr-gsoc", code: "GS", scope: "mission_control" },
+    "orbita-dlr-columbus-control": { id: "orbita-personal-orbita-dlr-columbus-control", code: "CO", scope: "mission_control" },
+    "orbita-ntu-satellite-research": { id: "orbita-personal-orbita-ntu-satellite-research", code: "NT", scope: "university_space" },
+    "orbita-delfi-space-lab": { id: "orbita-personal-orbita-delfi-space-lab", code: "DF", scope: "university_space" }
   };
   function svgVerifiedEntityPin(spec) {
     var color = C[spec.scope], code = spec.code;
@@ -10157,6 +10190,9 @@
       html += '<section class="site-tab-content verified-panel'+(i===0?' active':'')+'" id="verified-panel-'+i+'" aria-labelledby="verified-tab-'+i+'" role="tabpanel" data-verified-panel="'+i+'"'+(i===0?'':' hidden')+'>';
       if (sec.intro && verifiedText(sec.intro)) html += '<p class="verified-section-intro">'+esc(verifiedText(sec.intro))+'</p>';
       (sec.items || []).forEach(function(item,j){
+        // Stage-5 provisional entries retain full sourced Persian research; EN/AR
+        // have condensed human-edited sections. Older eleven profiles are untouched.
+        if (Array.isArray(item.show_langs) && item.show_langs.indexOf(LANG) < 0) return;
         var refs=(item.source_ids || []).filter(function(id){ return byId[id] && ids[id]; });
         var kind=(item.kind||(['identity','technical','missions','operations','history'][i]||'technical'));
         if (!/^(identity|technical|missions|operations|history|caution)$/.test(kind)) kind='technical';

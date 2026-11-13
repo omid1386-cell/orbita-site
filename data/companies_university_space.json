@@ -558,5 +558,770 @@
         }
       ]
     }
+  },
+  {
+    "id": "orbita-ntu-satellite-research",
+    "cat": "university_space",
+    "en": "Satellite Research Centre — Nanyang Technological University",
+    "fa": "مرکز پژوهش ماهواره دانشگاه نانیانگ",
+    "ar": "مركز أبحاث الأقمار الصناعية بجامعة نانيانغ",
+    "country": "Singapore",
+    "country_fa": "سنگاپور",
+    "country_ar": "سنغافورة",
+    "city": "Nanyang Technological University, Singapore",
+    "city_fa": "دانشگاه فناوری نانیانگ، سنگاپور",
+    "city_ar": "جامعة نانيانغ التكنولوجية، سنغافورة",
+    "lat": 1.348,
+    "lon": 103.683,
+    "coordinate_precision": "approximate_university_campus",
+    "site": "https://www.ntu.edu.sg/sarc/home",
+    "en_d": "The Satellite Research Centre (SaRC) at Nanyang Technological University is a Singapore academic unit for spacecraft design, assembly, testing and operation, rather than an independent satellite company. The university satellite programme began earlier than this organizational center.",
+    "fa_d": "مرکز تحقیقات ماهواره‌ای NTU سنگاپور دارای فعالیت طراحی، ساخت، آزمون و بهره‌برداری ماهواره است.",
+    "ar_d": "مركز أبحاث الأقمار الصناعية SaRC في جامعة نانيانغ التقنية وحدة أكاديمية سنغافورية لتصميم المركبات وتجميعها واختبارها وتشغيلها، وليس شركة أقمار مستقلة. وبدأ برنامج الأقمار الجامعي قبل إنشاء هذا المركز التنظيمي.",
+    "org_type_fa": "آزمایشگاه و مرکز پژوهشی دانشگاهی",
+    "org_type_en": "University space laboratory",
+    "org_type_ar": "مختبر فضائي جامعي",
+    "parent_institution": "Nanyang Technological University (NTU)",
+    "logo": "assets/logos/orbita/orbita-ntu-satellite-research.svg",
+    "logo_kind": "orbita_editorial_nonofficial",
+    "orbita_marker_code": "NT",
+    "orbita_verified_profile": {
+      "schema_version": 3,
+      "profile_type": "university_space",
+      "summary": {
+        "fa": "مرکز تحقیقات ماهواره‌ای NTU سنگاپور دارای فعالیت طراحی، ساخت، آزمون و بهره‌برداری ماهواره است.",
+        "en": "The Satellite Research Centre (SaRC) at Nanyang Technological University is a Singapore academic unit for spacecraft design, assembly, testing and operation, rather than an independent satellite company. The university satellite programme began earlier than this organizational center.",
+        "ar": "مركز أبحاث الأقمار الصناعية SaRC في جامعة نانيانغ التقنية وحدة أكاديمية سنغافورية لتصميم المركبات وتجميعها واختبارها وتشغيلها، وليس شركة أقمار مستقلة. وبدأ برنامج الأقمار الجامعي قبل إنشاء هذا المركز التنظيمي."
+      },
+      "review_scope": {
+        "fa": "نسخه نمایشی پژوهشی ORBITA بر پایه منابع درج‌شده. ارزیابی ادعاها و ثبت حقوقی همه زیرمجموعه‌ها هنوز نهایی نیست؛ مختصات برخی نشان‌ها تقریبی است. در فارسی، متن تفصیلی مستند و در انگلیسی و عربی خلاصه تخصصی هر تب نمایش داده می‌شود؛ خلاصه‌ها جایگزین ترجمه کامل همه گزاره‌ها نیستند.",
+        "en": "ORBITA research preview, based on listed sources. Complete legal, operator and claim-by-claim checks remain open. Some map positions are approximate. English and Arabic provide sourced section-level synopses; full individual Persian research statements are not yet translated one by one.",
+        "ar": "نسخة بحثية تجريبية من ORBITA تستند إلى المصادر المدرجة. لا تزال مراجعة الهويات القانونية والمشغّلين وجميع الادعاءات غير مكتملة، وبعض مواقع الخريطة تقريبية. تعرض الإنجليزية والعربية ملخصات موثّقة لكل تبويب، لا ترجمة كاملة لكل بند من البحث الفارسي."
+      },
+      "sources": [
+        {
+          "url": "https://www.ntu.edu.sg/sarc/home",
+          "provenance_types": [
+            "S3_325_CLAIMS_INHERITED"
+          ],
+          "id": "SRC-6a1474176aa6",
+          "title": "www.ntu.edu.sg — sarc/home"
+        },
+        {
+          "url": "https://www.ntu.edu.sg/sarc/research-capabilities/satellites/velox-i-nano-satellite",
+          "provenance_types": [
+            "STEP2_COMPLETION_99_OFFICIAL_WEB_RESEARCH"
+          ],
+          "id": "WEB-06c955ea20e6",
+          "title": "www.ntu.edu.sg — sarc/research-capabilities/satellites/velox-i-nano-satellite"
+        },
+        {
+          "url": "https://www.ntu.edu.sg/sarc/research-capabilities/satellites",
+          "provenance_types": [
+            "STEP2_COMPLETION_99_OFFICIAL_WEB_RESEARCH"
+          ],
+          "id": "WEB-3e179d80e5d9",
+          "title": "www.ntu.edu.sg — sarc/research-capabilities/satellites"
+        },
+        {
+          "url": "https://www.ntu.edu.sg/sarc/research-capabilities/satellites/velox-am",
+          "provenance_types": [
+            "STEP2_COMPLETION_99_OFFICIAL_WEB_RESEARCH"
+          ],
+          "id": "WEB-8fd9b199410e",
+          "title": "www.ntu.edu.sg — sarc/research-capabilities/satellites/velox-am"
+        },
+        {
+          "id": "UPG-7a27e36f46bc",
+          "title": "www.ntu.edu.sg | /sarc",
+          "url": "https://www.ntu.edu.sg/sarc",
+          "evidence_status": "PRIMARY_OFFICIAL_SITE_RESEARCHED_2026_11_13"
+        },
+        {
+          "id": "UPG-3e179d80e5d9",
+          "title": "www.ntu.edu.sg | /sarc/research-capabilities/satellites",
+          "url": "https://www.ntu.edu.sg/sarc/research-capabilities/satellites",
+          "evidence_status": "PRIMARY_OFFICIAL_SITE_RESEARCHED_2026_11_13"
+        },
+        {
+          "id": "UPG-b5690f5d1e41",
+          "title": "www.ntu.edu.sg | /sarc/research-capabilities/satellites/aoba-velox-iii",
+          "url": "https://www.ntu.edu.sg/sarc/research-capabilities/satellites/aoba-velox-iii",
+          "evidence_status": "PRIMARY_OFFICIAL_SITE_RESEARCHED_2026_11_13"
+        },
+        {
+          "id": "UPG-eeb922413ee1",
+          "title": "www.ntu.edu.sg | /sarc/about-us/milestones",
+          "url": "https://www.ntu.edu.sg/sarc/about-us/milestones",
+          "evidence_status": "PRIMARY_OFFICIAL_SITE_RESEARCHED_2026_11_13"
+        }
+      ],
+      "sections": [
+        {
+          "id": "overview",
+          "fa": "شناسنامه علمی",
+          "en": "Academic identity",
+          "ar": "الهوية الأكاديمية",
+          "items": [
+            {
+              "fa": "",
+              "en": "The Satellite Research Centre (SaRC) at Nanyang Technological University is a Singapore academic unit for spacecraft design, assembly, testing and operation, rather than an independent satellite company. The university satellite programme began earlier than this organizational center.",
+              "ar": "مركز أبحاث الأقمار الصناعية SaRC في جامعة نانيانغ التقنية وحدة أكاديمية سنغافورية لتصميم المركبات وتجميعها واختبارها وتشغيلها، وليس شركة أقمار مستقلة. وبدأ برنامج الأقمار الجامعي قبل إنشاء هذا المركز التنظيمي.",
+              "kind": "technical",
+              "source_ids": [
+                "SRC-6a1474176aa6",
+                "UPG-eeb922413ee1",
+                "WEB-8fd9b199410e"
+              ],
+              "show_langs": [
+                "en",
+                "ar"
+              ],
+              "editorial_scope": "EN_AR_SECTION_SYNOPSIS_NOT_FULL_CLAIM_PARITY"
+            },
+            {
+              "fa": "مرکز تحقیقات ماهواره‌ای NTU سنگاپور دارای فعالیت طراحی، ساخت، آزمون و بهره‌برداری ماهواره است.",
+              "en": "",
+              "ar": "",
+              "kind": "identity",
+              "source_ids": [
+                "SRC-6a1474176aa6"
+              ],
+              "show_langs": [
+                "fa"
+              ],
+              "editorial_scope": "FA_ORIGINAL_SOURCED_RESEARCH"
+            },
+            {
+              "fa": "ماهواره پژوهشی VELOX-AM در ژوئیه ۲۰۲۳ با هدف آزمون چاپ سه‌بعدی قطعات و مواد تغییر فاز در مدار پرتاب شد؛ تاریخ و مشخصات باید در سطح مأموریت حفظ شوند.",
+              "en": "",
+              "ar": "",
+              "kind": "identity",
+              "source_ids": [
+                "WEB-8fd9b199410e"
+              ],
+              "show_langs": [
+                "fa"
+              ],
+              "editorial_scope": "FA_ORIGINAL_SOURCED_RESEARCH"
+            },
+            {
+              "fa": "ریشه برنامه ماهواره‌ای NTU به پروژه Merlion در ۱۹۹۶ و راه‌اندازی مرکز پژوهشی ماهواره در ۱۹۹۹ بازمی‌گردد؛ این تاریخ‌ها جایگزین ثبت حقوقی دانشگاه NTU نیستند.",
+              "en": "",
+              "ar": "",
+              "kind": "verified_research_supplement",
+              "source_ids": [
+                "UPG-eeb922413ee1"
+              ],
+              "show_langs": [
+                "fa"
+              ],
+              "editorial_scope": "FA_ORIGINAL_SOURCED_RESEARCH"
+            }
+          ]
+        },
+        {
+          "id": "capabilities",
+          "fa": "توانمندی‌های پژوهشی",
+          "en": "Research capabilities",
+          "ar": "القدرات البحثية",
+          "items": [
+            {
+              "fa": "",
+              "en": "The 3U VELOX-I spacecraft had a mass of about 4.1 kg and three-axis attitude stabilization. The AOBA VELOX-III technology spacecraft was around 2.3 kg, with a 437.375 MHz UHF downlink; numbers belong to these specific missions rather than universal SaRC products.",
+              "ar": "بلغت كتلة المركبة VELOX-I من فئة 3U نحو 4.1 كغ، مع تثبيت اتجاه ثلاثي المحاور. وبلغت كتلة المركبة التقنية AOBA VELOX-III نحو 2.3 كغ مع وصلة هابطة UHF بتردد 437.375 ميغاهرتز؛ وتخص هذه الأرقام المهمات المحددة لا منتجات عامة للمركز.",
+              "kind": "technical",
+              "source_ids": [
+                "UPG-b5690f5d1e41",
+                "WEB-06c955ea20e6"
+              ],
+              "show_langs": [
+                "en",
+                "ar"
+              ],
+              "editorial_scope": "EN_AR_SECTION_SYNOPSIS_NOT_FULL_CLAIM_PARITY"
+            },
+            {
+              "fa": "ماهواره VELOX-I از نوع ۳U و جرم آن حدود ۴٫۱ کیلوگرم بوده و سامانه پایدارسازی سه‌محوره با چرخ عکس‌العملی، سنسور خورشید و مغناطیس‌ساز داشته است.",
+              "en": "",
+              "ar": "",
+              "kind": "technical",
+              "source_ids": [
+                "WEB-06c955ea20e6"
+              ],
+              "show_langs": [
+                "fa"
+              ],
+              "editorial_scope": "FA_ORIGINAL_SOURCED_RESEARCH"
+            },
+            {
+              "fa": "ماهواره AOBA VELOX-III جرمی حدود ۲٫۳ کیلوگرم، مدار هدف ۴۰۰ کیلومتر و بسامد پایین‌رو UHF برابر ۴۳۷٫۳۷۵ مگاهرتز داشت؛ اعداد مشخصاً مربوط به این مأموریت‌اند.",
+              "en": "",
+              "ar": "",
+              "kind": "verified_research_supplement",
+              "source_ids": [
+                "UPG-b5690f5d1e41"
+              ],
+              "show_langs": [
+                "fa"
+              ],
+              "editorial_scope": "FA_ORIGINAL_SOURCED_RESEARCH"
+            }
+          ]
+        },
+        {
+          "id": "missions",
+          "fa": "پروژه‌ها و مأموریت‌ها",
+          "en": "Projects & missions",
+          "ar": "المشروعات والمهمات",
+          "items": [
+            {
+              "fa": "",
+              "en": "SaRC reports designing, building, testing and operating thirteen satellites by 2025. Its mission history includes X-SAT (105 kg; launched April 2011), VELOX-II (6U; launched December 2015), VELOX-I, SCOOB-I and VELOX-AM, a 2023 in-orbit additive-manufacturing/materials experiment.",
+              "ar": "يذكر SaRC تصميم وبناء واختبار وتشغيل ثلاثة عشر قمراً حتى 2025. وتشمل مهماته X-SAT (105 كغ؛ أطلق في أبريل 2011) وVELOX-II (فئة 6U؛ أطلق في ديسمبر 2015) وVELOX-I وSCOOB-I وVELOX-AM، وهي تجربة مدارية للطباعة الإضافية والمواد عام 2023.",
+              "kind": "technical",
+              "source_ids": [
+                "SRC-6a1474176aa6",
+                "UPG-3e179d80e5d9",
+                "WEB-3e179d80e5d9"
+              ],
+              "show_langs": [
+                "en",
+                "ar"
+              ],
+              "editorial_scope": "EN_AR_SECTION_SYNOPSIS_NOT_FULL_CLAIM_PARITY"
+            },
+            {
+              "fa": "مرکز تحقیقات ماهواره‌ای NTU می‌گوید تا سال ۲۰۲۵ طراحی، ساخت، آزمون و بهره‌برداری از ۱۳ ماهواره را انجام داده است.",
+              "en": "",
+              "ar": "",
+              "kind": "missions",
+              "source_ids": [
+                "SRC-6a1474176aa6"
+              ],
+              "show_langs": [
+                "fa"
+              ],
+              "editorial_scope": "FA_ORIGINAL_SOURCED_RESEARCH"
+            },
+            {
+              "fa": "مرکز پژوهشی SaRC دانشگاه نانیانگ در معرفی رسمی خود مأموریت‌های X-SAT، VELOX-I، VELOX-II، SCOOB-I و VELOX-AM را در میان مأموریت‌های پرتاب‌شده نام می‌برد.",
+              "en": "",
+              "ar": "",
+              "kind": "missions",
+              "source_ids": [
+                "WEB-3e179d80e5d9"
+              ],
+              "show_langs": [
+                "fa"
+              ],
+              "editorial_scope": "FA_ORIGINAL_SOURCED_RESEARCH"
+            },
+            {
+              "fa": "ماهواره تصویربرداری X-SAT با جرم حدود ۱۰۵ کیلوگرم در ۲۰ آوریل ۲۰۱۱ و ماهواره ۶U مخابرات میان‌ماهواره‌ای VELOX-II در ۱۶ دسامبر ۲۰۱۵ پرتاب شدند.",
+              "en": "",
+              "ar": "",
+              "kind": "verified_research_supplement",
+              "source_ids": [
+                "UPG-3e179d80e5d9"
+              ],
+              "show_langs": [
+                "fa"
+              ],
+              "editorial_scope": "FA_ORIGINAL_SOURCED_RESEARCH"
+            }
+          ]
+        },
+        {
+          "id": "results",
+          "fa": "دستاوردهای علمی و فناوری",
+          "en": "Scientific & technical outputs",
+          "ar": "المخرجات العلمية والتقنية",
+          "items": [
+            {
+              "fa": "",
+              "en": "The academic programme demonstrated small-satellite attitude-control, plasma-propulsion and intersatellite communications technologies. AOBA VELOX-III was developed with Kyushu Institute of Technology and deployed from the ISS in January 2017; mission-specific outcomes must not be generalized to all satellites.",
+              "ar": "عرض البرنامج الأكاديمي تقنيات التحكم في اتجاه الأقمار الصغيرة والدفع بالبلازما والاتصال بين الأقمار. وطُورت AOBA VELOX-III بالتعاون مع معهد كيوشو للتكنولوجيا ونُشرت من محطة الفضاء الدولية في يناير 2017؛ ولا تعمم نتائج مهمة بعينها على جميع الأقمار.",
+              "kind": "technical",
+              "source_ids": [
+                "UPG-7a27e36f46bc",
+                "UPG-b5690f5d1e41"
+              ],
+              "show_langs": [
+                "en",
+                "ar"
+              ],
+              "editorial_scope": "EN_AR_SECTION_SYNOPSIS_NOT_FULL_CLAIM_PARITY"
+            },
+            {
+              "fa": "مرکز SaRC سنگاپور تا سال ۲۰۲۵ تعداد ۱۳ ماهواره طراحی، ساخت، آزمون و بهره‌برداری کرده بود؛ این آمار تجمیعی مرکز دانشگاهی است.",
+              "en": "",
+              "ar": "",
+              "kind": "verified_research_supplement",
+              "source_ids": [
+                "UPG-7a27e36f46bc"
+              ],
+              "show_langs": [
+                "fa"
+              ],
+              "editorial_scope": "FA_ORIGINAL_SOURCED_RESEARCH"
+            },
+            {
+              "fa": "ماهواره AOBA VELOX-III با پیشران پالسی پلاسما در همکاری دانشگاه NTU و مؤسسه فناوری کیوشو توسعه یافت و در ژانویه ۲۰۱۷ از ایستگاه فضایی بین‌المللی رها شد.",
+              "en": "",
+              "ar": "",
+              "kind": "verified_research_supplement",
+              "source_ids": [
+                "UPG-b5690f5d1e41"
+              ],
+              "show_langs": [
+                "fa"
+              ],
+              "editorial_scope": "FA_ORIGINAL_SOURCED_RESEARCH"
+            }
+          ]
+        },
+        {
+          "id": "network",
+          "fa": "همکاری‌ها و تاریخچه",
+          "en": "Collaboration & history",
+          "ar": "التعاون والتاريخ",
+          "items": [
+            {
+              "fa": "",
+              "en": "SaRC uses UHF/VHF ground links and automated spacecraft control facilities. A joint S4TIN laboratory with Thales Alenia Space and Thales Solutions Asia was established in 2015; university, industrial and satellite-project identities must be kept distinct.",
+              "ar": "يستخدم SaRC وصلات أرضية UHF/VHF ومرافق تحكم آلي بالأقمار. وأُنشئ المختبر المشترك S4TIN مع Thales Alenia Space وThales Solutions Asia في 2015؛ ويجب الفصل بين هوية الجامعة والشركات الصناعية ومشروعات الأقمار.",
+              "kind": "technical",
+              "source_ids": [
+                "UPG-7a27e36f46bc",
+                "UPG-eeb922413ee1"
+              ],
+              "show_langs": [
+                "en",
+                "ar"
+              ],
+              "editorial_scope": "EN_AR_SECTION_SYNOPSIS_NOT_FULL_CLAIM_PARITY"
+            },
+            {
+              "fa": "مرکز SaRC برای عملیات ماهواره‌ای از ایستگاه‌های زمینی UHF/VHF و مرکز کنترل خودکار ۲۴ساعته استفاده می‌کند.",
+              "en": "",
+              "ar": "",
+              "kind": "verified_research_supplement",
+              "source_ids": [
+                "UPG-7a27e36f46bc"
+              ],
+              "show_langs": [
+                "fa"
+              ],
+              "editorial_scope": "FA_ORIGINAL_SOURCED_RESEARCH"
+            },
+            {
+              "fa": "مرکز SaRC در سال ۲۰۱۵ آزمایشگاه مشترک S4TIN را با Thales Alenia Space و Thales Solutions Asia ایجاد کرد.",
+              "en": "",
+              "ar": "",
+              "kind": "verified_research_supplement",
+              "source_ids": [
+                "UPG-eeb922413ee1"
+              ],
+              "show_langs": [
+                "fa"
+              ],
+              "editorial_scope": "FA_ORIGINAL_SOURCED_RESEARCH"
+            }
+          ]
+        }
+      ],
+      "key_facts": [],
+      "verified_on": "2026-11-13",
+      "release_status": "RESEARCH_PREVIEW_EDITORIAL_NOT_FINAL_VERIFICATION",
+      "source_inventory_id": "DISC-0172",
+      "stage5_persian_detailed_items": 12
+    },
+    "orbita_release_note": {
+      "release_date": "2026-11-13",
+      "inventory_id": "DISC-0172",
+      "status": "RESEARCH_PREVIEW",
+      "expert_review_pending": true,
+      "language_parity": "FA_FULL_EN_AR_CONDENSED",
+      "geo_precision": "approximate_university_campus",
+      "unresolved_tasks": [
+        "Confirm legal identity and current operator if not already independently documented",
+        "Obtain facility/device model-specific technical sheets and dated operational history",
+        "Check mission-by-mission flight heritage and distinguish proposals from achieved missions",
+        "Prepare verified FA/EN/AR and map metadata only after science review"
+      ]
+    }
+  },
+  {
+    "id": "orbita-delfi-space-lab",
+    "cat": "university_space",
+    "en": "Delfi Space Laboratory — TU Delft",
+    "fa": "آزمایشگاه فضایی دلفی، دانشگاه دلفت",
+    "ar": "مختبر دلفي الفضائي بجامعة دلفت",
+    "country": "Netherlands",
+    "country_fa": "هلند",
+    "country_ar": "هولندا",
+    "city": "TU Delft, Delft",
+    "city_fa": "دانشگاه دلفت، دلفت",
+    "city_ar": "جامعة دلفت للتكنولوجيا، دلفت",
+    "lat": 51.999,
+    "lon": 4.374,
+    "coordinate_precision": "approximate_university_campus",
+    "site": "https://www.tudelft.nl/en/ae/organisation/departments/space-engineering/facilities/delfi-space-laboratory",
+    "en_d": "TU Delft's Delfi Space Laboratory was established in 2022 within its Aerospace Engineering faculty, although the Delfi satellite programme dates to 2004. The laboratory is an academic facility, not a company, and earlier missions belong to the broader university programme.",
+    "fa_d": "آزمایشگاه دلفی دانشگاه فناوری دلفت زیرساخت طراحی، ساخت، آزمون و آماده‌سازی ماهواره‌های کوچک دارد.",
+    "ar_d": "تأسس مختبر Delfi Space Laboratory بجامعة دلفت التقنية في 2022 ضمن كلية هندسة الطيران والفضاء، رغم أن برنامج أقمار Delfi يعود إلى 2004. والمختبر منشأة أكاديمية لا شركة؛ وتنتمي المهمات السابقة إلى البرنامج الجامعي الأوسع.",
+    "org_type_fa": "آزمایشگاه و مرکز پژوهشی دانشگاهی",
+    "org_type_en": "University space laboratory",
+    "org_type_ar": "مختبر فضائي جامعي",
+    "parent_institution": "Delft University of Technology (TU Delft)",
+    "logo": "assets/logos/orbita/orbita-delfi-space-lab.svg",
+    "logo_kind": "orbita_editorial_nonofficial",
+    "orbita_marker_code": "DF",
+    "orbita_verified_profile": {
+      "schema_version": 3,
+      "profile_type": "university_space",
+      "summary": {
+        "fa": "آزمایشگاه دلفی دانشگاه فناوری دلفت زیرساخت طراحی، ساخت، آزمون و آماده‌سازی ماهواره‌های کوچک دارد.",
+        "en": "TU Delft's Delfi Space Laboratory was established in 2022 within its Aerospace Engineering faculty, although the Delfi satellite programme dates to 2004. The laboratory is an academic facility, not a company, and earlier missions belong to the broader university programme.",
+        "ar": "تأسس مختبر Delfi Space Laboratory بجامعة دلفت التقنية في 2022 ضمن كلية هندسة الطيران والفضاء، رغم أن برنامج أقمار Delfi يعود إلى 2004. والمختبر منشأة أكاديمية لا شركة؛ وتنتمي المهمات السابقة إلى البرنامج الجامعي الأوسع."
+      },
+      "review_scope": {
+        "fa": "نسخه نمایشی پژوهشی ORBITA بر پایه منابع درج‌شده. ارزیابی ادعاها و ثبت حقوقی همه زیرمجموعه‌ها هنوز نهایی نیست؛ مختصات برخی نشان‌ها تقریبی است. در فارسی، متن تفصیلی مستند و در انگلیسی و عربی خلاصه تخصصی هر تب نمایش داده می‌شود؛ خلاصه‌ها جایگزین ترجمه کامل همه گزاره‌ها نیستند.",
+        "en": "ORBITA research preview, based on listed sources. Complete legal, operator and claim-by-claim checks remain open. Some map positions are approximate. English and Arabic provide sourced section-level synopses; full individual Persian research statements are not yet translated one by one.",
+        "ar": "نسخة بحثية تجريبية من ORBITA تستند إلى المصادر المدرجة. لا تزال مراجعة الهويات القانونية والمشغّلين وجميع الادعاءات غير مكتملة، وبعض مواقع الخريطة تقريبية. تعرض الإنجليزية والعربية ملخصات موثّقة لكل تبويب، لا ترجمة كاملة لكل بند من البحث الفارسي."
+      },
+      "sources": [
+        {
+          "url": "https://www.tudelft.nl/en/ae/organisation/departments/space-engineering/facilities/delfi-space-laboratory",
+          "provenance_types": [
+            "S3_325_CLAIMS_INHERITED"
+          ],
+          "id": "SRC-a3ccb6815417",
+          "title": "www.tudelft.nl — en/ae/organisation/departments/space-engineering/facilities/delfi-space-laboratory"
+        },
+        {
+          "url": "https://www.tudelft.nl/lr/delfi-space/delfi-n3xt",
+          "provenance_types": [
+            "STEP2_COMPLETION_99_OFFICIAL_WEB_RESEARCH"
+          ],
+          "id": "WEB-5b0085097768",
+          "title": "www.tudelft.nl — lr/delfi-space/delfi-n3xt"
+        },
+        {
+          "url": "https://www.tudelft.nl/en/over-tu-delft/voor-pers/press-kits/satellieten/visit-us",
+          "provenance_types": [
+            "STEP2_COMPLETION_99_OFFICIAL_WEB_RESEARCH"
+          ],
+          "id": "WEB-5ef53cc99742",
+          "title": "www.tudelft.nl — en/over-tu-delft/voor-pers/press-kits/satellieten/visit-us"
+        },
+        {
+          "url": "https://www.tudelft.nl/en/2023/lr/the-delft-satellite-delfi-c3-has-come-to-its-end",
+          "provenance_types": [
+            "STEP2_COMPLETION_99_OFFICIAL_WEB_RESEARCH"
+          ],
+          "id": "WEB-6f33681ebd25",
+          "title": "www.tudelft.nl — en/2023/lr/the-delft-satellite-delfi-c3-has-come-to-its-end"
+        },
+        {
+          "id": "UPG-5ef53cc99742",
+          "title": "www.tudelft.nl | /en/over-tu-delft/voor-pers/press-kits/satellieten/visit-us",
+          "url": "https://www.tudelft.nl/en/over-tu-delft/voor-pers/press-kits/satellieten/visit-us",
+          "evidence_status": "PRIMARY_OFFICIAL_SITE_RESEARCHED_2026_11_13"
+        },
+        {
+          "id": "UPG-de7872c66c5c",
+          "title": "www.tudelft.nl | /lr/delfi-space/delfi-c3",
+          "url": "https://www.tudelft.nl/lr/delfi-space/delfi-c3",
+          "evidence_status": "PRIMARY_OFFICIAL_SITE_RESEARCHED_2026_11_13"
+        },
+        {
+          "id": "UPG-9779fe48a632",
+          "title": "www.tudelft.nl | /lr/delfi-space/delfi-program",
+          "url": "https://www.tudelft.nl/lr/delfi-space/delfi-program",
+          "evidence_status": "PRIMARY_OFFICIAL_SITE_RESEARCHED_2026_11_13"
+        }
+      ],
+      "sections": [
+        {
+          "id": "overview",
+          "fa": "شناسنامه علمی",
+          "en": "Academic identity",
+          "ar": "الهوية الأكاديمية",
+          "items": [
+            {
+              "fa": "",
+              "en": "TU Delft's Delfi Space Laboratory was established in 2022 within its Aerospace Engineering faculty, although the Delfi satellite programme dates to 2004. The laboratory is an academic facility, not a company, and earlier missions belong to the broader university programme.",
+              "ar": "تأسس مختبر Delfi Space Laboratory بجامعة دلفت التقنية في 2022 ضمن كلية هندسة الطيران والفضاء، رغم أن برنامج أقمار Delfi يعود إلى 2004. والمختبر منشأة أكاديمية لا شركة؛ وتنتمي المهمات السابقة إلى البرنامج الجامعي الأوسع.",
+              "kind": "technical",
+              "source_ids": [
+                "SRC-a3ccb6815417",
+                "UPG-5ef53cc99742",
+                "WEB-5ef53cc99742"
+              ],
+              "show_langs": [
+                "en",
+                "ar"
+              ],
+              "editorial_scope": "EN_AR_SECTION_SYNOPSIS_NOT_FULL_CLAIM_PARITY"
+            },
+            {
+              "fa": "آزمایشگاه دلفی دانشگاه فناوری دلفت زیرساخت طراحی، ساخت، آزمون و آماده‌سازی ماهواره‌های کوچک دارد.",
+              "en": "",
+              "ar": "",
+              "kind": "identity",
+              "source_ids": [
+                "SRC-a3ccb6815417"
+              ],
+              "show_langs": [
+                "fa"
+              ],
+              "editorial_scope": "FA_ORIGINAL_SOURCED_RESEARCH"
+            },
+            {
+              "fa": "آزمایشگاه Delfi Space در دانشگاه فناوری دلفت در سال ۲۰۲۲ تأسیس شد، هرچند برنامه ماهواره‌ای Delfi-C3 و Delfi-n3Xt سال‌ها پیش از آن آغاز شده بود؛ تاریخ برنامه و تاریخ واحد سازمانی جدا هستند.",
+              "en": "",
+              "ar": "",
+              "kind": "identity",
+              "source_ids": [
+                "WEB-5ef53cc99742"
+              ],
+              "show_langs": [
+                "fa"
+              ],
+              "editorial_scope": "FA_ORIGINAL_SOURCED_RESEARCH"
+            },
+            {
+              "fa": "آزمایشگاه Delfi Space Laboratory دانشگاه فناوری دلفت در ۲۰۲۲ تأسیس شد، در حالی که برنامه ماهواره‌ای Delfi از نوامبر ۲۰۰۴ آغاز شده بود.",
+              "en": "",
+              "ar": "",
+              "kind": "verified_research_supplement",
+              "source_ids": [
+                "UPG-5ef53cc99742"
+              ],
+              "show_langs": [
+                "fa"
+              ],
+              "editorial_scope": "FA_ORIGINAL_SOURCED_RESEARCH"
+            }
+          ]
+        },
+        {
+          "id": "capabilities",
+          "fa": "توانمندی‌های پژوهشی",
+          "en": "Research capabilities",
+          "ar": "القدرات البحثية",
+          "items": [
+            {
+              "fa": "",
+              "en": "The laboratory provides cleanroom, workshop, spacecraft design, integration and testing facilities for small-satellite research. These are laboratory capabilities, not a claim that every Delft satellite was constructed within the laboratory founded in 2022.",
+              "ar": "يوفر المختبر غرفة نظيفة وورشة عمل ومرافق تصميم ودمج واختبار للمركبات الصغيرة والبحث فيها. وهذه قدرات مختبرية، وليست ادعاءً بأن كل أقمار دلفت صُنعت داخل المختبر الذي تأسس عام 2022.",
+              "kind": "technical",
+              "source_ids": [
+                "SRC-a3ccb6815417",
+                "UPG-5ef53cc99742"
+              ],
+              "show_langs": [
+                "en",
+                "ar"
+              ],
+              "editorial_scope": "EN_AR_SECTION_SYNOPSIS_NOT_FULL_CLAIM_PARITY"
+            },
+            {
+              "fa": "آزمایشگاه Delfi دانشگاه فناوری دلفت برای طراحی، ساخت، آزمون و آماده‌سازی ماهواره کوچک فعالیت دارد.",
+              "en": "",
+              "ar": "",
+              "kind": "technical",
+              "source_ids": [
+                "SRC-a3ccb6815417"
+              ],
+              "show_langs": [
+                "fa"
+              ],
+              "editorial_scope": "FA_ORIGINAL_SOURCED_RESEARCH"
+            },
+            {
+              "fa": "آزمایشگاه Delfi Space در دانشکده مهندسی هوافضای TU Delft واقع است و امکانات اتاق تمیز و کارگاه برای پژوهش، ساخت و آزمون ماهواره‌های کوچک دارد.",
+              "en": "",
+              "ar": "",
+              "kind": "verified_research_supplement",
+              "source_ids": [
+                "UPG-5ef53cc99742"
+              ],
+              "show_langs": [
+                "fa"
+              ],
+              "editorial_scope": "FA_ORIGINAL_SOURCED_RESEARCH"
+            }
+          ]
+        },
+        {
+          "id": "missions",
+          "fa": "پروژه‌ها و مأموریت‌ها",
+          "en": "Projects & missions",
+          "ar": "المشروعات والمهمات",
+          "items": [
+            {
+              "fa": "",
+              "en": "The 3U Delfi-C3 (about 2.2 kg) launched on 28 April 2008 and reentered in November 2023 after more than fifteen years; it is no longer operational. Delfi-n3Xt launched in November 2013 and lost contact after roughly three months following its principal technology objectives.",
+              "ar": "أُطلق Delfi-C3 من فئة 3U بكتلة نحو 2.2 كغ في 28 أبريل 2008، وعاد إلى الغلاف الجوي في نوفمبر 2023 بعد أكثر من خمسة عشر عاماً؛ ولم يعد عاملاً. وأُطلق Delfi-n3Xt في نوفمبر 2013 وفُقد الاتصال به بعد نحو ثلاثة أشهر عقب تحقيق أهدافه التقنية الرئيسية.",
+              "kind": "technical",
+              "source_ids": [
+                "UPG-de7872c66c5c",
+                "WEB-5b0085097768",
+                "WEB-6f33681ebd25"
+              ],
+              "show_langs": [
+                "en",
+                "ar"
+              ],
+              "editorial_scope": "EN_AR_SECTION_SYNOPSIS_NOT_FULL_CLAIM_PARITY"
+            },
+            {
+              "fa": "Delfi-C3 یک کیوب‌ست ۳U حدود ۲٫۲ کیلوگرمی بود که در ۲۰۰۸ پرتاب و در نوامبر ۲۰۲۳ پس از بیش از ۱۵ سال وارد جو زمین شد؛ نباید اکنون «عملیاتی» معرفی شود.",
+              "en": "",
+              "ar": "",
+              "kind": "missions",
+              "source_ids": [
+                "WEB-6f33681ebd25"
+              ],
+              "show_langs": [
+                "fa"
+              ],
+              "editorial_scope": "FA_ORIGINAL_SOURCED_RESEARCH"
+            },
+            {
+              "fa": "Delfi-n3Xt در نوامبر ۲۰۱۳ پرتاب شد و پس از حدود سه ماه انجام اهداف اصلی، ارتباط خود را از دست داد؛ پروژه نمایش پیشران ریزمقیاس و کنترل وضعیت داشت.",
+              "en": "",
+              "ar": "",
+              "kind": "missions",
+              "source_ids": [
+                "WEB-5b0085097768"
+              ],
+              "show_langs": [
+                "fa"
+              ],
+              "editorial_scope": "FA_ORIGINAL_SOURCED_RESEARCH"
+            },
+            {
+              "fa": "Delfi-C3 یک کیوب‌ست سه‌واحدی با جرم ۲٫۲ کیلوگرم و توان الکتریکی اعلام‌شده ۲٫۴ وات بود که در ۲۸ آوریل ۲۰۰۸ پرتاب شد؛ این مأموریت پیش از تأسیس آزمایشگاه فعلی آغاز شده است.",
+              "en": "",
+              "ar": "",
+              "kind": "verified_research_supplement",
+              "source_ids": [
+                "UPG-de7872c66c5c"
+              ],
+              "show_langs": [
+                "fa"
+              ],
+              "editorial_scope": "FA_ORIGINAL_SOURCED_RESEARCH"
+            }
+          ]
+        },
+        {
+          "id": "results",
+          "fa": "دستاوردهای علمی و فناوری",
+          "en": "Scientific & technical outputs",
+          "ar": "المخرجات العلمية والتقنية",
+          "items": [
+            {
+              "fa": "",
+              "en": "TU Delft describes Delfi-C3 demonstrations involving thin-film solar cells, an independent sun sensor, electrical power and radio transceiver subsystems. The 2008 achievements are the heritage of the Delfi university programme, not of a laboratory founded fourteen years later.",
+              "ar": "تصف جامعة دلفت عروض Delfi-C3 التي شملت خلايا شمسية رقيقة ومستشعر شمس مستقل ونظام طاقة كهربائية ووحدة إرسال واستقبال لاسلكية. وتنتمي إنجازات 2008 إلى إرث برنامج Delfi الجامعي، لا إلى مختبر تأسس بعد ذلك بأربعة عشر عاماً.",
+              "kind": "technical",
+              "source_ids": [
+                "UPG-de7872c66c5c"
+              ],
+              "show_langs": [
+                "en",
+                "ar"
+              ],
+              "editorial_scope": "EN_AR_SECTION_SYNOPSIS_NOT_FULL_CLAIM_PARITY"
+            },
+            {
+              "fa": "TU Delft ماموریت Delfi-C3 را نمایش موفق پیل خورشیدی لایه نازک، حسگر مستقل خورشید، زیرسامانه توان الکتریکی و فرستنده-گیرنده رادیویی معرفی می‌کند.",
+              "en": "",
+              "ar": "",
+              "kind": "verified_research_supplement",
+              "source_ids": [
+                "UPG-de7872c66c5c"
+              ],
+              "show_langs": [
+                "fa"
+              ],
+              "editorial_scope": "FA_ORIGINAL_SOURCED_RESEARCH"
+            },
+            {
+              "fa": "Delfi-C3 به گفته TU Delft مأموریت موفقی بوده است؛ باید سابقه آن در «میراث برنامه دانشگاه» ثبت شود، نه به‌عنوان مأموریتی که آزمایشگاه تأسیس‌شده در ۲۰۲۲ اجرا کرده است.",
+              "en": "",
+              "ar": "",
+              "kind": "verified_research_supplement",
+              "source_ids": [
+                "UPG-de7872c66c5c"
+              ],
+              "show_langs": [
+                "fa"
+              ],
+              "editorial_scope": "FA_ORIGINAL_SOURCED_RESEARCH"
+            }
+          ]
+        },
+        {
+          "id": "network",
+          "fa": "همکاری‌ها و تاریخچه",
+          "en": "Collaboration & history",
+          "ar": "التعاون والتاريخ",
+          "items": [
+            {
+              "fa": "",
+              "en": "The Delfi programme combines education, technology demonstration and small-satellite platform development through university–industry collaboration. Partner links require programme-specific documentation and should not be treated as ownership of the laboratory.",
+              "ar": "يجمع برنامج Delfi بين التعليم وعرض التكنولوجيا وتطوير منصات الأقمار الصغيرة بالتعاون بين الجامعة والصناعة. وتتطلب علاقات الشركاء وثائق محددة لكل برنامج، ولا تعني ملكيتهم للمختبر.",
+              "kind": "technical",
+              "source_ids": [
+                "UPG-9779fe48a632"
+              ],
+              "show_langs": [
+                "en",
+                "ar"
+              ],
+              "editorial_scope": "EN_AR_SECTION_SYNOPSIS_NOT_FULL_CLAIM_PARITY"
+            },
+            {
+              "fa": "برنامه Delfi سه هدف آموزشی، نمایش فناوری و توسعه گذرگاه ماهواره کوچک دارد و با مؤسسات بیرونی و صنایع فضایی همکاری می‌کند.",
+              "en": "",
+              "ar": "",
+              "kind": "verified_research_supplement",
+              "source_ids": [
+                "UPG-9779fe48a632"
+              ],
+              "show_langs": [
+                "fa"
+              ],
+              "editorial_scope": "FA_ORIGINAL_SOURCED_RESEARCH"
+            }
+          ]
+        }
+      ],
+      "key_facts": [],
+      "verified_on": "2026-11-13",
+      "release_status": "RESEARCH_PREVIEW_EDITORIAL_NOT_FINAL_VERIFICATION",
+      "source_inventory_id": "DISC-0174",
+      "stage5_persian_detailed_items": 11
+    },
+    "orbita_release_note": {
+      "release_date": "2026-11-13",
+      "inventory_id": "DISC-0174",
+      "status": "RESEARCH_PREVIEW",
+      "expert_review_pending": true,
+      "language_parity": "FA_FULL_EN_AR_CONDENSED",
+      "geo_precision": "approximate_university_campus",
+      "unresolved_tasks": [
+        "Confirm legal identity and current operator if not already independently documented",
+        "Obtain facility/device model-specific technical sheets and dated operational history",
+        "Check mission-by-mission flight heritage and distinguish proposals from achieved missions",
+        "Prepare verified FA/EN/AR and map metadata only after science review"
+      ]
+    }
   }
 ]

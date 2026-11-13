@@ -268,5 +268,729 @@
       "esa",
       "esa-cebreros-dsa2"
     ]
+  },
+  {
+    "id": "orbita-dlr-gsoc",
+    "cat": "mission_control",
+    "en": "DLR German Space Operations Center (GSOC)",
+    "fa": "مرکز عملیات فضایی آلمان (GSOC)",
+    "ar": "المركز الألماني للعمليات الفضائية",
+    "country": "Germany",
+    "country_fa": "آلمان",
+    "country_ar": "ألمانيا",
+    "city": "Oberpfaffenhofen",
+    "city_fa": "اوبرفافنهوفن",
+    "city_ar": "أوبرفافنهوفن",
+    "lat": 48.086,
+    "lon": 11.279,
+    "coordinate_precision": "approximate_shared_dlr_campus",
+    "site": "https://www.dlr.de/en/",
+    "en_d": "The German Space Operations Center (GSOC), located at DLR's Oberpfaffenhofen site, provides spacecraft operations and human-spaceflight support. It is an organizational operations center, not a separate incorporated company or every DLR laboratory combined.",
+    "fa_d": "مرکز عملیات فضایی آلمان در اوبرفافنهوفن کنترل ماهواره و پشتیبانی مأموریت‌های سرنشین‌دار انجام می‌دهد.",
+    "ar_d": "مركز العمليات الفضائية الألماني GSOC في موقع DLR بأوبرفافنهوفن يوفر تشغيل المركبات الفضائية ودعم الرحلات المأهولة. وهو مركز عمليات ضمن مؤسسة وليس شركة مستقلة أو مجموع مختبرات DLR كلها.",
+    "org_type_fa": "مرکز کنترل مأموریت",
+    "org_type_en": "Mission operations centre",
+    "org_type_ar": "مركز عمليات المهمات",
+    "parent_institution": "German Aerospace Center (DLR)",
+    "logo": "assets/logos/orbita/orbita-dlr-gsoc.svg",
+    "logo_kind": "orbita_editorial_nonofficial",
+    "orbita_marker_code": "GS",
+    "orbita_verified_profile": {
+      "schema_version": 3,
+      "profile_type": "mission_control",
+      "summary": {
+        "fa": "مرکز عملیات فضایی آلمان در اوبرفافنهوفن کنترل ماهواره و پشتیبانی مأموریت‌های سرنشین‌دار انجام می‌دهد.",
+        "en": "The German Space Operations Center (GSOC), located at DLR's Oberpfaffenhofen site, provides spacecraft operations and human-spaceflight support. It is an organizational operations center, not a separate incorporated company or every DLR laboratory combined.",
+        "ar": "مركز العمليات الفضائية الألماني GSOC في موقع DLR بأوبرفافنهوفن يوفر تشغيل المركبات الفضائية ودعم الرحلات المأهولة. وهو مركز عمليات ضمن مؤسسة وليس شركة مستقلة أو مجموع مختبرات DLR كلها."
+      },
+      "review_scope": {
+        "fa": "نسخه نمایشی پژوهشی ORBITA بر پایه منابع درج‌شده. ارزیابی ادعاها و ثبت حقوقی همه زیرمجموعه‌ها هنوز نهایی نیست؛ مختصات برخی نشان‌ها تقریبی است. در فارسی، متن تفصیلی مستند و در انگلیسی و عربی خلاصه تخصصی هر تب نمایش داده می‌شود؛ خلاصه‌ها جایگزین ترجمه کامل همه گزاره‌ها نیستند.",
+        "en": "ORBITA research preview, based on listed sources. Complete legal, operator and claim-by-claim checks remain open. Some map positions are approximate. English and Arabic provide sourced section-level synopses; full individual Persian research statements are not yet translated one by one.",
+        "ar": "نسخة بحثية تجريبية من ORBITA تستند إلى المصادر المدرجة. لا تزال مراجعة الهويات القانونية والمشغّلين وجميع الادعاءات غير مكتملة، وبعض مواقع الخريطة تقريبية. تعرض الإنجليزية والعربية ملخصات موثّقة لكل تبويب، لا ترجمة كاملة لكل بند من البحث الفارسي."
+      },
+      "sources": [
+        {
+          "url": "https://www.dlr.de/en/research-and-transfer/projects-and-missions/iss/the-german-space-operations-center",
+          "provenance_types": [
+            "S3_325_CLAIMS_INHERITED",
+            "ADDITIONAL_OFFICIAL_WEB_RESEARCH_2026_11_13"
+          ],
+          "id": "SRC-7de67e8d0712",
+          "title": "www.dlr.de — en/research-and-transfer/projects-and-missions/iss/the-german-space-operations-center"
+        },
+        {
+          "id": "UPG-7de67e8d0712",
+          "title": "www.dlr.de | h-and-transfer/projects-and-missions/iss/the-german-space-operations-center",
+          "url": "https://www.dlr.de/en/research-and-transfer/projects-and-missions/iss/the-german-space-operations-center",
+          "evidence_status": "PRIMARY_OFFICIAL_SITE_RESEARCHED_2026_11_13"
+        },
+        {
+          "id": "UPG-01541145eb36",
+          "title": "www.dlr.de | /en/rb/about-us/space-operations-and-astronaut-training",
+          "url": "https://www.dlr.de/en/rb/about-us/space-operations-and-astronaut-training",
+          "evidence_status": "PRIMARY_OFFICIAL_SITE_RESEARCHED_2026_11_13"
+        },
+        {
+          "id": "UPG-0cca3cfd4695",
+          "title": "www.dlr.de | /en/rb/research-operation/missions",
+          "url": "https://www.dlr.de/en/rb/research-operation/missions",
+          "evidence_status": "PRIMARY_OFFICIAL_SITE_RESEARCHED_2026_11_13"
+        }
+      ],
+      "sections": [
+        {
+          "id": "overview",
+          "fa": "شناسنامه مرکز",
+          "en": "Centre identity",
+          "ar": "التعريف بالمركز",
+          "items": [
+            {
+              "fa": "",
+              "en": "The German Space Operations Center (GSOC), located at DLR's Oberpfaffenhofen site, provides spacecraft operations and human-spaceflight support. It is an organizational operations center, not a separate incorporated company or every DLR laboratory combined.",
+              "ar": "مركز العمليات الفضائية الألماني GSOC في موقع DLR بأوبرفافنهوفن يوفر تشغيل المركبات الفضائية ودعم الرحلات المأهولة. وهو مركز عمليات ضمن مؤسسة وليس شركة مستقلة أو مجموع مختبرات DLR كلها.",
+              "kind": "technical",
+              "source_ids": [
+                "SRC-7de67e8d0712",
+                "UPG-01541145eb36"
+              ],
+              "show_langs": [
+                "en",
+                "ar"
+              ],
+              "editorial_scope": "EN_AR_SECTION_SYNOPSIS_NOT_FULL_CLAIM_PARITY"
+            },
+            {
+              "fa": "مرکز عملیات فضایی آلمان در اوبرفافنهوفن کنترل ماهواره و پشتیبانی مأموریت‌های سرنشین‌دار انجام می‌دهد.",
+              "en": "",
+              "ar": "",
+              "kind": "identity",
+              "source_ids": [
+                "SRC-7de67e8d0712"
+              ],
+              "show_langs": [
+                "fa"
+              ],
+              "editorial_scope": "FA_ORIGINAL_SOURCED_RESEARCH"
+            },
+            {
+              "fa": "مرکز عملیات فضایی GSOC در تشکیلات DLR Space Operations and Astronaut Training فعالیت دارد و شناسنامه‌اش باید از آزمایشگاه‌ها و سایر مراکز DLR تفکیک شود.",
+              "en": "",
+              "ar": "",
+              "kind": "verified_research_supplement",
+              "source_ids": [
+                "UPG-01541145eb36"
+              ],
+              "show_langs": [
+                "fa"
+              ],
+              "editorial_scope": "FA_ORIGINAL_SOURCED_RESEARCH"
+            }
+          ]
+        },
+        {
+          "id": "missions",
+          "fa": "مأموریت‌ها و ناوگان تحت کنترل",
+          "en": "Missions & spacecraft",
+          "ar": "المهمات والمركبات",
+          "items": [
+            {
+              "fa": "",
+              "en": "GSOC has managed or supported missions including TerraSAR-X (launched 2007), TanDEM-X (2010), EnMAP (2022), GRACE, CHAMP and BIRD. The operational status of each satellite must be dated and verified independently.",
+              "ar": "أدار GSOC أو دعم مهمات منها TerraSAR-X (أطلقت في 2007) وTanDEM-X (2010) وEnMAP (2022) وGRACE وCHAMP وBIRD. ويجب تأريخ حالة تشغيل كل قمر والتحقق منها بصورة مستقلة.",
+              "kind": "technical",
+              "source_ids": [
+                "UPG-7de67e8d0712"
+              ],
+              "show_langs": [
+                "en",
+                "ar"
+              ],
+              "editorial_scope": "EN_AR_SECTION_SYNOPSIS_NOT_FULL_CLAIM_PARITY"
+            },
+            {
+              "fa": "از مأموریت‌های عملیاتی یا تاریخی GSOC می‌توان TerraSAR-X، TanDEM-X، EnMAP، GRACE، CHAMP و BIRD را نام برد؛ وضعیت عملیاتی هر ماهواره باید با تاریخ ثبت شود.",
+              "en": "",
+              "ar": "",
+              "kind": "verified_research_supplement",
+              "source_ids": [
+                "UPG-7de67e8d0712"
+              ],
+              "show_langs": [
+                "fa"
+              ],
+              "editorial_scope": "FA_ORIGINAL_SOURCED_RESEARCH"
+            },
+            {
+              "fa": "DLR پرتاب TerraSAR-X در ۱۵ ژوئن ۲۰۰۷، TanDEM-X در ۲۱ ژوئن ۲۰۱۰ و EnMAP در ۱ آوریل ۲۰۲۲ را در سابقه عملیاتی GSOC ذکر می‌کند.",
+              "en": "",
+              "ar": "",
+              "kind": "verified_research_supplement",
+              "source_ids": [
+                "UPG-7de67e8d0712"
+              ],
+              "show_langs": [
+                "fa"
+              ],
+              "editorial_scope": "FA_ORIGINAL_SOURCED_RESEARCH"
+            }
+          ]
+        },
+        {
+          "id": "operations",
+          "fa": "توانمندی‌های عملیاتی",
+          "en": "Operations capabilities",
+          "ar": "القدرات التشغيلية",
+          "items": [
+            {
+              "fa": "",
+              "en": "Its functions include satellite subsystem monitoring, orbit determination/prediction, manoeuvre planning, spacecraft command, data reception and distribution, and ground-segment operations engineering. Satellite control and crewed-mission support are distinct service areas.",
+              "ar": "تشمل وظائفه مراقبة أنظمة الأقمار الفرعية وتحديد المدار والتنبؤ به وتخطيط المناورات وإرسال الأوامر واستقبال البيانات وتوزيعها وهندسة تشغيل القطاع الأرضي. ويُعد التحكم بالأقمار ودعم المهمات المأهولة مجالين مختلفين للخدمة.",
+              "kind": "technical",
+              "source_ids": [
+                "SRC-7de67e8d0712",
+                "UPG-7de67e8d0712"
+              ],
+              "show_langs": [
+                "en",
+                "ar"
+              ],
+              "editorial_scope": "EN_AR_SECTION_SYNOPSIS_NOT_FULL_CLAIM_PARITY"
+            },
+            {
+              "fa": "GSOC در اوبرفافنهوفن خدمات کنترل ماهواره و پشتیبانی مأموریت سرنشین‌دار را انجام می‌دهد.",
+              "en": "",
+              "ar": "",
+              "kind": "operations",
+              "source_ids": [
+                "SRC-7de67e8d0712"
+              ],
+              "show_langs": [
+                "fa"
+              ],
+              "editorial_scope": "FA_ORIGINAL_SOURCED_RESEARCH"
+            },
+            {
+              "fa": "مرکز عملیات فضایی آلمان GSOC در Oberpfaffenhofen وظایفی شامل کنترل زیرسامانه‌های ماهواره، پایش مدار، برنامه‌ریزی مانور، دریافت و پردازش داده و طراحی بخش زمینی دارد؛ این وظایف از صفحه رسمی DLR مستند است.",
+              "en": "",
+              "ar": "",
+              "kind": "operations",
+              "source_ids": [
+                "SRC-7de67e8d0712"
+              ],
+              "show_langs": [
+                "fa"
+              ],
+              "editorial_scope": "FA_ORIGINAL_SOURCED_RESEARCH"
+            },
+            {
+              "fa": "GSOC مسئول کنترل و پایش زیرسامانه‌های ماهواره، برنامه‌ریزی مانور، پیش‌بینی مدار، دریافت و توزیع داده و نگهداری بخش کنترل زمینی است.",
+              "en": "",
+              "ar": "",
+              "kind": "verified_research_supplement",
+              "source_ids": [
+                "UPG-7de67e8d0712"
+              ],
+              "show_langs": [
+                "fa"
+              ],
+              "editorial_scope": "FA_ORIGINAL_SOURCED_RESEARCH"
+            }
+          ]
+        },
+        {
+          "id": "network",
+          "fa": "شبکه ارتباطی",
+          "en": "Ground segment network",
+          "ar": "شبكة الاتصالات الأرضية",
+          "items": [
+            {
+              "fa": "",
+              "en": "GSOC operates mission control rooms including K1–K4 and hosts the Columbus Control Center. The Weilheim ground station is an associated but geographically separate asset; site relationship does not automatically establish ownership of every network antenna.",
+              "ar": "يشغّل GSOC غرف تحكم منها K1–K4 ويستضيف مركز التحكم بوحدة Columbus. ومحطة Weilheim الأرضية أصل مرتبط لكنه منفصل جغرافياً؛ ولا تثبت علاقة الموقع ملكية كل هوائيات الشبكة تلقائياً.",
+              "kind": "technical",
+              "source_ids": [
+                "SRC-7de67e8d0712",
+                "UPG-01541145eb36"
+              ],
+              "show_langs": [
+                "en",
+                "ar"
+              ],
+              "editorial_scope": "EN_AR_SECTION_SYNOPSIS_NOT_FULL_CLAIM_PARITY"
+            },
+            {
+              "fa": "مرکز GSOC دارای اتاق‌های کنترل K1 تا K4 برای مأموریت‌های ماهواره‌ای و آزمایشگاه اروپایی Columbus است؛ ایستگاه زمینی Weilheim به همین سازمان عملیاتی وابسته است ولی تأسیسات مستقلی است.",
+              "en": "",
+              "ar": "",
+              "kind": "operations",
+              "source_ids": [
+                "SRC-7de67e8d0712"
+              ],
+              "show_langs": [
+                "fa"
+              ],
+              "editorial_scope": "FA_ORIGINAL_SOURCED_RESEARCH"
+            },
+            {
+              "fa": "GSOC در Oberpfaffenhofen وابسته به DLR قرار دارد و با ایستگاه‌های زمینی برای دسترسی مخابراتی به فضاپیماها کار می‌کند؛ مالکیت تمامی ایستگاه‌ها از این سند نتیجه نمی‌شود.",
+              "en": "",
+              "ar": "",
+              "kind": "verified_research_supplement",
+              "source_ids": [
+                "UPG-01541145eb36"
+              ],
+              "show_langs": [
+                "fa"
+              ],
+              "editorial_scope": "FA_ORIGINAL_SOURCED_RESEARCH"
+            }
+          ]
+        },
+        {
+          "id": "history",
+          "fa": "تاریخچه و تحولات",
+          "en": "History & developments",
+          "ar": "التاريخ والتطور",
+          "items": [
+            {
+              "fa": "",
+              "en": "GSOC traces satellite operations to the AZUR launch on 8 November 1969, with later roles in Spacelab (1983) and the German D1 mission (1985). Its reported support for more than sixty space missions is a center-wide figure, not a claim solely for Columbus operations.",
+              "ar": "يرجع GSOC نشاط تشغيل الأقمار إلى إطلاق AZUR في 8 نوفمبر 1969، ثم المشاركة في Spacelab عام 1983 والمهمة الألمانية D1 عام 1985. ورقم دعم أكثر من ستين مهمة فضائية يخص المركز بأكمله، وليس عمليات Columbus وحدها.",
+              "kind": "technical",
+              "source_ids": [
+                "UPG-0cca3cfd4695",
+                "UPG-7de67e8d0712"
+              ],
+              "show_langs": [
+                "en",
+                "ar"
+              ],
+              "editorial_scope": "EN_AR_SECTION_SYNOPSIS_NOT_FULL_CLAIM_PARITY"
+            },
+            {
+              "fa": "مرکز عملیات فضایی آلمان GSOC از مأموریت AZUR که در ۸ نوامبر ۱۹۶۹ پرتاب شد، عملیات ماهواره‌ای انجام داده است.",
+              "en": "",
+              "ar": "",
+              "kind": "verified_research_supplement",
+              "source_ids": [
+                "UPG-7de67e8d0712"
+              ],
+              "show_langs": [
+                "fa"
+              ],
+              "editorial_scope": "FA_ORIGINAL_SOURCED_RESEARCH"
+            },
+            {
+              "fa": "GSOC در ۱۹۸۳ به‌عنوان مرکز کاربری در مأموریت Spacelab مشارکت کرد و سپس در ۱۹۸۵ عملیات علمی مأموریت D1 را پشتیبانی کرد.",
+              "en": "",
+              "ar": "",
+              "kind": "verified_research_supplement",
+              "source_ids": [
+                "UPG-7de67e8d0712"
+              ],
+              "show_langs": [
+                "fa"
+              ],
+              "editorial_scope": "FA_ORIGINAL_SOURCED_RESEARCH"
+            },
+            {
+              "fa": "مرکز GSOC در طول فعالیت خود بیش از ۶۰ مأموریت فضایی را پشتیبانی کرده است؛ این آمار متعلق به کل GSOC است نه مرکز جداگانه Columbus.",
+              "en": "",
+              "ar": "",
+              "kind": "verified_research_supplement",
+              "source_ids": [
+                "UPG-0cca3cfd4695"
+              ],
+              "show_langs": [
+                "fa"
+              ],
+              "editorial_scope": "FA_ORIGINAL_SOURCED_RESEARCH"
+            }
+          ]
+        }
+      ],
+      "key_facts": [],
+      "verified_on": "2026-11-13",
+      "release_status": "RESEARCH_PREVIEW_EDITORIAL_NOT_FINAL_VERIFICATION",
+      "source_inventory_id": "DISC-0155",
+      "stage5_persian_detailed_items": 12
+    },
+    "orbita_release_note": {
+      "release_date": "2026-11-13",
+      "inventory_id": "DISC-0155",
+      "status": "RESEARCH_PREVIEW",
+      "expert_review_pending": true,
+      "language_parity": "FA_FULL_EN_AR_CONDENSED",
+      "geo_precision": "approximate_shared_dlr_campus",
+      "unresolved_tasks": [
+        "Confirm legal identity and current operator if not already independently documented",
+        "Obtain facility/device model-specific technical sheets and dated operational history",
+        "Check mission-by-mission flight heritage and distinguish proposals from achieved missions",
+        "Prepare verified FA/EN/AR and map metadata only after science review"
+      ]
+    }
+  },
+  {
+    "id": "orbita-dlr-columbus-control",
+    "cat": "mission_control",
+    "en": "DLR Columbus Control Center (Col-CC)",
+    "fa": "مرکز کنترل کلمبوس",
+    "ar": "مركز التحكم بكولومبوس",
+    "country": "Germany",
+    "country_fa": "آلمان",
+    "country_ar": "ألمانيا",
+    "city": "Oberpfaffenhofen",
+    "city_fa": "اوبرفافنهوفن",
+    "city_ar": "أوبرفافنهوفن",
+    "lat": 48.086,
+    "lon": 11.279,
+    "coordinate_precision": "approximate_shared_dlr_campus",
+    "site": "https://www.dlr.de/en/research-and-transfer/projects-and-missions/iss/the-columbus-control-center",
+    "en_d": "The Columbus Control Center (Col-CC) is a specialized European ISS-module operations facility within DLR's GSOC at Oberpfaffenhofen. It is not an independent legal company, and GSOC's other satellite missions should not be attributed to it.",
+    "fa_d": "DLR وظیفه مرکز کنترل ماژول کلمبوس ایستگاه فضایی را در GSOC توضیح می‌دهد.",
+    "ar_d": "مركز التحكم Columbus أو Col-CC منشأة متخصصة لعمليات الوحدة الأوروبية على محطة الفضاء الدولية، تقع ضمن GSOC التابع لـDLR في أوبرفافنهوفن. وهو ليس شركة قانونية مستقلة، ولا تُنسب إليه مهمات GSOC الأخرى.",
+    "org_type_fa": "مرکز کنترل مأموریت",
+    "org_type_en": "Mission operations centre",
+    "org_type_ar": "مركز عمليات المهمات",
+    "parent_institution": "German Aerospace Center (DLR) / GSOC",
+    "logo": "assets/logos/orbita/orbita-dlr-columbus-control.svg",
+    "logo_kind": "orbita_editorial_nonofficial",
+    "orbita_marker_code": "CO",
+    "orbita_verified_profile": {
+      "schema_version": 3,
+      "profile_type": "mission_control",
+      "summary": {
+        "fa": "DLR وظیفه مرکز کنترل ماژول کلمبوس ایستگاه فضایی را در GSOC توضیح می‌دهد.",
+        "en": "The Columbus Control Center (Col-CC) is a specialized European ISS-module operations facility within DLR's GSOC at Oberpfaffenhofen. It is not an independent legal company, and GSOC's other satellite missions should not be attributed to it.",
+        "ar": "مركز التحكم Columbus أو Col-CC منشأة متخصصة لعمليات الوحدة الأوروبية على محطة الفضاء الدولية، تقع ضمن GSOC التابع لـDLR في أوبرفافنهوفن. وهو ليس شركة قانونية مستقلة، ولا تُنسب إليه مهمات GSOC الأخرى."
+      },
+      "review_scope": {
+        "fa": "نسخه نمایشی پژوهشی ORBITA بر پایه منابع درج‌شده. ارزیابی ادعاها و ثبت حقوقی همه زیرمجموعه‌ها هنوز نهایی نیست؛ مختصات برخی نشان‌ها تقریبی است. در فارسی، متن تفصیلی مستند و در انگلیسی و عربی خلاصه تخصصی هر تب نمایش داده می‌شود؛ خلاصه‌ها جایگزین ترجمه کامل همه گزاره‌ها نیستند.",
+        "en": "ORBITA research preview, based on listed sources. Complete legal, operator and claim-by-claim checks remain open. Some map positions are approximate. English and Arabic provide sourced section-level synopses; full individual Persian research statements are not yet translated one by one.",
+        "ar": "نسخة بحثية تجريبية من ORBITA تستند إلى المصادر المدرجة. لا تزال مراجعة الهويات القانونية والمشغّلين وجميع الادعاءات غير مكتملة، وبعض مواقع الخريطة تقريبية. تعرض الإنجليزية والعربية ملخصات موثّقة لكل تبويب، لا ترجمة كاملة لكل بند من البحث الفارسي."
+      },
+      "sources": [
+        {
+          "url": "https://www.dlr.de/en/research-and-transfer/projects-and-missions/iss/the-columbus-control-center",
+          "provenance_types": [
+            "ADDITIONAL_OFFICIAL_WEB_RESEARCH_2026_11_13"
+          ],
+          "id": "SRC-52e98afebab7",
+          "title": "www.dlr.de — en/research-and-transfer/projects-and-missions/iss/the-columbus-control-center"
+        },
+        {
+          "url": "https://www.dlr.de/en/research-and-transfer/projects-and-missions/iss/the-german-space-operations-center",
+          "provenance_types": [
+            "S3_325_CLAIMS_INHERITED",
+            "ADDITIONAL_OFFICIAL_WEB_RESEARCH_2026_11_13"
+          ],
+          "id": "SRC-7de67e8d0712",
+          "title": "www.dlr.de — en/research-and-transfer/projects-and-missions/iss/the-german-space-operations-center"
+        },
+        {
+          "id": "UPG-52e98afebab7",
+          "title": "www.dlr.de | research-and-transfer/projects-and-missions/iss/the-columbus-control-center",
+          "url": "https://www.dlr.de/en/research-and-transfer/projects-and-missions/iss/the-columbus-control-center",
+          "evidence_status": "PRIMARY_OFFICIAL_SITE_RESEARCHED_2026_11_13"
+        },
+        {
+          "id": "UPG-0cca3cfd4695",
+          "title": "www.dlr.de | /en/rb/research-operation/missions",
+          "url": "https://www.dlr.de/en/rb/research-operation/missions",
+          "evidence_status": "PRIMARY_OFFICIAL_SITE_RESEARCHED_2026_11_13"
+        }
+      ],
+      "sections": [
+        {
+          "id": "overview",
+          "fa": "شناسنامه مرکز",
+          "en": "Centre identity",
+          "ar": "التعريف بالمركز",
+          "items": [
+            {
+              "fa": "",
+              "en": "The Columbus Control Center (Col-CC) is a specialized European ISS-module operations facility within DLR's GSOC at Oberpfaffenhofen. It is not an independent legal company, and GSOC's other satellite missions should not be attributed to it.",
+              "ar": "مركز التحكم Columbus أو Col-CC منشأة متخصصة لعمليات الوحدة الأوروبية على محطة الفضاء الدولية، تقع ضمن GSOC التابع لـDLR في أوبرفافنهوفن. وهو ليس شركة قانونية مستقلة، ولا تُنسب إليه مهمات GSOC الأخرى.",
+              "kind": "technical",
+              "source_ids": [
+                "SRC-7de67e8d0712",
+                "UPG-52e98afebab7"
+              ],
+              "show_langs": [
+                "en",
+                "ar"
+              ],
+              "editorial_scope": "EN_AR_SECTION_SYNOPSIS_NOT_FULL_CLAIM_PARITY"
+            },
+            {
+              "fa": "DLR وظیفه مرکز کنترل ماژول کلمبوس ایستگاه فضایی را در GSOC توضیح می‌دهد.",
+              "en": "",
+              "ar": "",
+              "kind": "identity",
+              "source_ids": [
+                "SRC-7de67e8d0712"
+              ],
+              "show_langs": [
+                "fa"
+              ],
+              "editorial_scope": "FA_ORIGINAL_SOURCED_RESEARCH"
+            },
+            {
+              "fa": "DLR مرکز Col-CC را به‌عنوان مرکز اختصاصی کنترل ماژول اروپایی Columbus در ایستگاه فضایی بین‌المللی معرفی می‌کند؛ سایر فعالیت‌های GSOC به این مرکز نسبت داده نشوند.",
+              "en": "",
+              "ar": "",
+              "kind": "verified_research_supplement",
+              "source_ids": [
+                "UPG-52e98afebab7"
+              ],
+              "show_langs": [
+                "fa"
+              ],
+              "editorial_scope": "FA_ORIGINAL_SOURCED_RESEARCH"
+            }
+          ]
+        },
+        {
+          "id": "missions",
+          "fa": "مأموریت‌ها و ناوگان تحت کنترل",
+          "en": "Missions & spacecraft",
+          "ar": "المهمات والمركبات",
+          "items": [
+            {
+              "fa": "",
+              "en": "Since the Columbus module's arrival at the ISS in February 2008, Col-CC has supported its regular operations. From 2008 to 2015 it also provided communications interconnection involving Toulouse, Houston and Moscow for ATV activities; that does not make it the controller of all ISS elements.",
+              "ar": "منذ وصول وحدة Columbus إلى محطة الفضاء الدولية في فبراير 2008، يدعم Col-CC عملياتها المنتظمة. وبين 2008 و2015 قدم أيضاً ربطاً اتصالاتياً بين تولوز وهيوستن وموسكو لأنشطة ATV؛ ولا يجعله ذلك مركز التحكم بجميع عناصر المحطة الدولية.",
+              "kind": "technical",
+              "source_ids": [
+                "UPG-0cca3cfd4695",
+                "UPG-52e98afebab7"
+              ],
+              "show_langs": [
+                "en",
+                "ar"
+              ],
+              "editorial_scope": "EN_AR_SECTION_SYNOPSIS_NOT_FULL_CLAIM_PARITY"
+            },
+            {
+              "fa": "در فوریه ۲۰۰۸، پس از انتقال آزمایشگاه Columbus به ایستگاه فضایی بین‌المللی، مرکز Col-CC مسئولیت عملیات آن را عهده‌دار شد.",
+              "en": "",
+              "ar": "",
+              "kind": "verified_research_supplement",
+              "source_ids": [
+                "UPG-0cca3cfd4695"
+              ],
+              "show_langs": [
+                "fa"
+              ],
+              "editorial_scope": "FA_ORIGINAL_SOURCED_RESEARCH"
+            },
+            {
+              "fa": "Col-CC در ۲۰۰۸ تا ۲۰۱۵ خدمات مخابراتی بین مراکز تولوز، هیوستون و مسکو را برای عملیات فضاپیماهای ترابری ATV ارائه می‌کرد.",
+              "en": "",
+              "ar": "",
+              "kind": "verified_research_supplement",
+              "source_ids": [
+                "UPG-52e98afebab7"
+              ],
+              "show_langs": [
+                "fa"
+              ],
+              "editorial_scope": "FA_ORIGINAL_SOURCED_RESEARCH"
+            }
+          ]
+        },
+        {
+          "id": "operations",
+          "fa": "توانمندی‌های عملیاتی",
+          "en": "Operations capabilities",
+          "ar": "القدرات التشغيلية",
+          "items": [
+            {
+              "fa": "",
+              "en": "Working jointly with ESA, Col-CC oversees Columbus life support, thermal control, electrical power, data management, communications and video functions. Its STRATOS operations position handles specified module systems, not global station command.",
+              "ar": "يتولى Col-CC بالتعاون مع ESA الإشراف على دعم الحياة والتحكم الحراري والطاقة الكهربائية وإدارة البيانات والاتصالات والفيديو في Columbus. ويراقب موقع التشغيل STRATOS أنظمة محددة في الوحدة، لا القيادة الشاملة للمحطة الدولية.",
+              "kind": "technical",
+              "source_ids": [
+                "SRC-52e98afebab7",
+                "SRC-7de67e8d0712",
+                "UPG-0cca3cfd4695"
+              ],
+              "show_langs": [
+                "en",
+                "ar"
+              ],
+              "editorial_scope": "EN_AR_SECTION_SYNOPSIS_NOT_FULL_CLAIM_PARITY"
+            },
+            {
+              "fa": "DLR مرکز کنترل ماژول کلمبوس را در مجموعه GSOC معرفی می‌کند.",
+              "en": "",
+              "ar": "",
+              "kind": "operations",
+              "source_ids": [
+                "SRC-7de67e8d0712"
+              ],
+              "show_langs": [
+                "fa"
+              ],
+              "editorial_scope": "FA_ORIGINAL_SOURCED_RESEARCH"
+            },
+            {
+              "fa": "مرکز کنترل Columbus موسوم به Col-CC بخشی از GSOC در Oberpfaffenhofen آلمان است و به‌طور مشترک با آژانس فضایی اروپا عملیات آزمایشگاه Columbus در ایستگاه فضایی بین‌المللی را مدیریت می‌کند.",
+              "en": "",
+              "ar": "",
+              "kind": "operations",
+              "source_ids": [
+                "SRC-52e98afebab7"
+              ],
+              "show_langs": [
+                "fa"
+              ],
+              "editorial_scope": "FA_ORIGINAL_SOURCED_RESEARCH"
+            },
+            {
+              "fa": "موقعیت STRATOS در Col-CC بر سامانه‌های پشتیبانی حیات، کنترل حرارتی، توان، مدیریت داده، ارتباطات و ویدئو در ماژول Columbus نظارت می‌کند؛ این مسئولیت با کنترل همه اجزای ISS برابر نیست.",
+              "en": "",
+              "ar": "",
+              "kind": "operations",
+              "source_ids": [
+                "SRC-52e98afebab7"
+              ],
+              "show_langs": [
+                "fa"
+              ],
+              "editorial_scope": "FA_ORIGINAL_SOURCED_RESEARCH"
+            },
+            {
+              "fa": "عملیات مرکز Columbus در قالب پشتیبانی ۲۴ساعته و هفت‌روزه آزمایشگاه اروپایی ایستگاه فضایی بین‌المللی انجام می‌شود.",
+              "en": "",
+              "ar": "",
+              "kind": "verified_research_supplement",
+              "source_ids": [
+                "UPG-0cca3cfd4695"
+              ],
+              "show_langs": [
+                "fa"
+              ],
+              "editorial_scope": "FA_ORIGINAL_SOURCED_RESEARCH"
+            }
+          ]
+        },
+        {
+          "id": "network",
+          "fa": "شبکه ارتباطی",
+          "en": "Ground segment network",
+          "ar": "شبكة الاتصالات الأرضية",
+          "items": [
+            {
+              "fa": "",
+              "en": "The center is co-located with GSOC, interfaces with international ISS mission-control centers and supports the European Columbus operating chain. The correct relationship is a specialized center within DLR/GSOC, not a distinct commercial operator.",
+              "ar": "يقع المركز ضمن موقع GSOC ويرتبط بمراكز التحكم الدولية لمحطة الفضاء الدولية ويدعم سلسلة تشغيل Columbus الأوروبية. والعلاقة الصحيحة هي مركز متخصص داخل DLR/GSOC، لا مشغل تجاري مستقل.",
+              "kind": "technical",
+              "source_ids": [
+                "UPG-52e98afebab7"
+              ],
+              "show_langs": [
+                "en",
+                "ar"
+              ],
+              "editorial_scope": "EN_AR_SECTION_SYNOPSIS_NOT_FULL_CLAIM_PARITY"
+            },
+            {
+              "fa": "Col-CC مستقر در مجموعه GSOC در Oberpfaffenhofen است و با مراکز کنترل مأموریت بین‌المللی ایستگاه فضایی همکاری می‌کند؛ این یک مرکز تخصصی درون GSOC است نه شخص حقوقی مستقل.",
+              "en": "",
+              "ar": "",
+              "kind": "verified_research_supplement",
+              "source_ids": [
+                "UPG-52e98afebab7"
+              ],
+              "show_langs": [
+                "fa"
+              ],
+              "editorial_scope": "FA_ORIGINAL_SOURCED_RESEARCH"
+            }
+          ]
+        },
+        {
+          "id": "history",
+          "fa": "تاریخچه و تحولات",
+          "en": "History & developments",
+          "ar": "التاريخ والتطور",
+          "items": [
+            {
+              "fa": "",
+              "en": "ESA assigned DLR the Columbus control-center establishment task in 2002; Col-CC opened on 19 October 2004. It supported the Roberto Vittori flight in 2005 and Thomas Reiter's Astrolab mission in 2006 before regular Columbus operations from 2008.",
+              "ar": "كلفت ESA مؤسسة DLR بإنشاء مركز التحكم Columbus عام 2002، وافتتح Col-CC في 19 أكتوبر 2004. ودعم رحلة روبرتو فيتوري في 2005 ومهمة Astrolab لتوماس رايتر في 2006، قبل التشغيل المنتظم لوحدة Columbus ابتداء من 2008.",
+              "kind": "technical",
+              "source_ids": [
+                "UPG-52e98afebab7"
+              ],
+              "show_langs": [
+                "en",
+                "ar"
+              ],
+              "editorial_scope": "EN_AR_SECTION_SYNOPSIS_NOT_FULL_CLAIM_PARITY"
+            },
+            {
+              "fa": "آژانس فضایی اروپا در ۲۰۰۲ وظیفه تأسیس مرکز کنترل Columbus را به DLR سپرد.",
+              "en": "",
+              "ar": "",
+              "kind": "verified_research_supplement",
+              "source_ids": [
+                "UPG-52e98afebab7"
+              ],
+              "show_langs": [
+                "fa"
+              ],
+              "editorial_scope": "FA_ORIGINAL_SOURCED_RESEARCH"
+            },
+            {
+              "fa": "مرکز Col-CC در ۱۹ اکتبر ۲۰۰۴ افتتاح شد و در آوریل ۲۰۰۵ برای نخستین بار مأموریت روبرتو ویتوری به ایستگاه فضایی را پشتیبانی کرد.",
+              "en": "",
+              "ar": "",
+              "kind": "verified_research_supplement",
+              "source_ids": [
+                "UPG-52e98afebab7"
+              ],
+              "show_langs": [
+                "fa"
+              ],
+              "editorial_scope": "FA_ORIGINAL_SOURCED_RESEARCH"
+            },
+            {
+              "fa": "در سال ۲۰۰۶ مرکز Col-CC مأموریت Astrolab توماس رایتر را پشتیبانی کرد؛ سپس در ۲۰۰۸ به عملیات منظم Columbus وارد شد.",
+              "en": "",
+              "ar": "",
+              "kind": "verified_research_supplement",
+              "source_ids": [
+                "UPG-52e98afebab7"
+              ],
+              "show_langs": [
+                "fa"
+              ],
+              "editorial_scope": "FA_ORIGINAL_SOURCED_RESEARCH"
+            }
+          ]
+        }
+      ],
+      "key_facts": [],
+      "verified_on": "2026-11-13",
+      "release_status": "RESEARCH_PREVIEW_EDITORIAL_NOT_FINAL_VERIFICATION",
+      "source_inventory_id": "DISC-0156",
+      "stage5_persian_detailed_items": 12
+    },
+    "orbita_release_note": {
+      "release_date": "2026-11-13",
+      "inventory_id": "DISC-0156",
+      "status": "RESEARCH_PREVIEW",
+      "expert_review_pending": true,
+      "language_parity": "FA_FULL_EN_AR_CONDENSED",
+      "geo_precision": "approximate_shared_dlr_campus",
+      "unresolved_tasks": [
+        "Confirm legal identity and current operator if not already independently documented",
+        "Obtain facility/device model-specific technical sheets and dated operational history",
+        "Check mission-by-mission flight heritage and distinguish proposals from achieved missions",
+        "Prepare verified FA/EN/AR and map metadata only after science review"
+      ]
+    }
   }
 ]

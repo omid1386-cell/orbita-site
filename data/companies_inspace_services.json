@@ -277,5 +277,798 @@
         }
       ]
     }
+  },
+  {
+    "id": "orbita-intuitive-machines",
+    "cat": "inspace_services",
+    "en": "Intuitive Machines",
+    "fa": "اینتویتیو ماشینز",
+    "ar": "إنتويتيف ماشينز",
+    "country": "United States",
+    "country_fa": "ایالات متحده",
+    "country_ar": "الولايات المتحدة",
+    "city": "Houston, Texas",
+    "city_fa": "هیوستون، تگزاس",
+    "city_ar": "هيوستن، تكساس",
+    "lat": 29.57,
+    "lon": -95.09,
+    "coordinate_precision": "approximate_city_center",
+    "site": "https://www.intuitivemachines.com/",
+    "en_d": "Intuitive Machines is a US lunar-access and space-infrastructure business. Its 2026 activities span lunar landers, orbital services, cislunar data and communications, and ground infrastructure; a future capability should not be confused with an achieved landing or operational network.",
+    "fa_d": "در بررسی رسمی ۲۰۲۶ ناسا درباره وسایل انتقال مداری و خدمات پرتاب و استقرار معرفی شده است؛ وضعیت پرواز، وابسته به مدل است.",
+    "ar_d": "Intuitive Machines شركة أمريكية للخدمات القمرية والبنية التحتية الفضائية. تشمل أعمالها في 2026 مركبات الهبوط والخدمات المدارية والبيانات والاتصالات في الفضاء بين الأرض والقمر والبنية الأرضية؛ ولا يجوز الخلط بين قدرة مستقبلية وهبوط مُنجز أو شبكة عاملة فعلاً.",
+    "org_type_fa": "شرکت خدمات فضایی و مداری",
+    "org_type_en": "In-space services",
+    "org_type_ar": "شركة خدمات فضائية ومدارية",
+    "parent_institution": "Intuitive Machines, Inc.",
+    "logo": "assets/logos/orbita/orbita-intuitive-machines.svg",
+    "logo_kind": "orbita_editorial_nonofficial",
+    "orbita_marker_code": "IM",
+    "orbita_verified_profile": {
+      "schema_version": 3,
+      "profile_type": "inspace_services",
+      "summary": {
+        "fa": "در بررسی رسمی ۲۰۲۶ ناسا درباره وسایل انتقال مداری و خدمات پرتاب و استقرار معرفی شده است؛ وضعیت پرواز، وابسته به مدل است.",
+        "en": "Intuitive Machines is a US lunar-access and space-infrastructure business. Its 2026 activities span lunar landers, orbital services, cislunar data and communications, and ground infrastructure; a future capability should not be confused with an achieved landing or operational network.",
+        "ar": "Intuitive Machines شركة أمريكية للخدمات القمرية والبنية التحتية الفضائية. تشمل أعمالها في 2026 مركبات الهبوط والخدمات المدارية والبيانات والاتصالات في الفضاء بين الأرض والقمر والبنية الأرضية؛ ولا يجوز الخلط بين قدرة مستقبلية وهبوط مُنجز أو شبكة عاملة فعلاً."
+      },
+      "review_scope": {
+        "fa": "نسخه نمایشی پژوهشی ORBITA بر پایه منابع درج‌شده. ارزیابی ادعاها و ثبت حقوقی همه زیرمجموعه‌ها هنوز نهایی نیست؛ مختصات برخی نشان‌ها تقریبی است. در فارسی، متن تفصیلی مستند و در انگلیسی و عربی خلاصه تخصصی هر تب نمایش داده می‌شود؛ خلاصه‌ها جایگزین ترجمه کامل همه گزاره‌ها نیستند.",
+        "en": "ORBITA research preview, based on listed sources. Complete legal, operator and claim-by-claim checks remain open. Some map positions are approximate. English and Arabic provide sourced section-level synopses; full individual Persian research statements are not yet translated one by one.",
+        "ar": "نسخة بحثية تجريبية من ORBITA تستند إلى المصادر المدرجة. لا تزال مراجعة الهويات القانونية والمشغّلين وجميع الادعاءات غير مكتملة، وبعض مواقع الخريطة تقريبية. تعرض الإنجليزية والعربية ملخصات موثّقة لكل تبويب، لا ترجمة كاملة لكل بند من البحث الفارسي."
+      },
+      "sources": [
+        {
+          "url": "https://www.nasa.gov/smallsat-institute/sst-soa/integration-launch-and-deployment/",
+          "provenance_types": [
+            "S3_325_CLAIMS_INHERITED"
+          ],
+          "id": "SRC-0dd6be18823b",
+          "title": "www.nasa.gov — smallsat-institute/sst-soa/integration-launch-and-deployment"
+        },
+        {
+          "url": "https://www.intuitivemachines.com/missions/lunar",
+          "provenance_types": [
+            "S3_325_CLAIMS_INHERITED"
+          ],
+          "id": "SRC-85f9af33765e",
+          "title": "www.intuitivemachines.com — missions/lunar"
+        },
+        {
+          "url": "https://investors.intuitivemachines.com/news-releases/news-release-details/intuitive-machines-completes-acquisition-goonhilly-earth-station",
+          "provenance_types": [
+            "ADDITIONAL_OFFICIAL_WEB_RESEARCH_2026_11_13"
+          ],
+          "id": "SRC-ad8aebcfa739",
+          "title": "investors.intuitivemachines.com — news-releases/news-release-details/intuitive-machines-completes-acquisition-goonhilly-eart"
+        },
+        {
+          "url": "https://www.intuitivemachines.com/missions/lunar",
+          "provenance_types": [
+            "STEP2_COMPLETION_2026_11_13_OFFICIAL_WEB_RESEARCH"
+          ],
+          "id": "WEB-85f9af33765e",
+          "title": "www.intuitivemachines.com — missions/lunar"
+        },
+        {
+          "id": "UPG-ad8aebcfa739",
+          "title": "investors.intuitivemachines.com | se-details/intuitive-machines-completes-acquisition-goonhilly-earth-station",
+          "url": "https://investors.intuitivemachines.com/news-releases/news-release-details/intuitive-machines-completes-acquisition-goonhilly-earth-station",
+          "evidence_status": "PRIMARY_OFFICIAL_SITE_RESEARCHED_2026_11_13"
+        },
+        {
+          "id": "UPG-35f93b6629af",
+          "title": "investors.intuitivemachines.com | ase-details/intuitive-machines-reports-third-quarter-2026-financial-results",
+          "url": "https://investors.intuitivemachines.com/news-releases/news-release-details/intuitive-machines-reports-third-quarter-2026-financial-results",
+          "evidence_status": "PRIMARY_OFFICIAL_SITE_RESEARCHED_2026_11_13"
+        },
+        {
+          "id": "UPG-a3c2c6535ba2",
+          "title": "investors.intuitivemachines.com | -release-details/intuitive-machines-executes-southernmost-lunar-landing-and",
+          "url": "https://investors.intuitivemachines.com/news-releases/news-release-details/intuitive-machines-executes-southernmost-lunar-landing-and",
+          "evidence_status": "PRIMARY_OFFICIAL_SITE_RESEARCHED_2026_11_13"
+        }
+      ],
+      "sections": [
+        {
+          "id": "overview",
+          "fa": "شناسنامه و خدمات",
+          "en": "Identity & services",
+          "ar": "التعريف والخدمات",
+          "items": [
+            {
+              "fa": "",
+              "en": "Intuitive Machines is a US lunar-access and space-infrastructure business. Its 2026 activities span lunar landers, orbital services, cislunar data and communications, and ground infrastructure; a future capability should not be confused with an achieved landing or operational network.",
+              "ar": "Intuitive Machines شركة أمريكية للخدمات القمرية والبنية التحتية الفضائية. تشمل أعمالها في 2026 مركبات الهبوط والخدمات المدارية والبيانات والاتصالات في الفضاء بين الأرض والقمر والبنية الأرضية؛ ولا يجوز الخلط بين قدرة مستقبلية وهبوط مُنجز أو شبكة عاملة فعلاً.",
+              "kind": "technical",
+              "source_ids": [
+                "SRC-0dd6be18823b"
+              ],
+              "show_langs": [
+                "en",
+                "ar"
+              ],
+              "editorial_scope": "EN_AR_SECTION_SYNOPSIS_NOT_FULL_CLAIM_PARITY"
+            },
+            {
+              "fa": "در بررسی رسمی ۲۰۲۶ ناسا درباره وسایل انتقال مداری و خدمات پرتاب و استقرار معرفی شده است؛ وضعیت پرواز، وابسته به مدل است.",
+              "en": "",
+              "ar": "",
+              "kind": "identity",
+              "source_ids": [
+                "SRC-0dd6be18823b"
+              ],
+              "show_langs": [
+                "fa"
+              ],
+              "editorial_scope": "FA_ORIGINAL_SOURCED_RESEARCH"
+            }
+          ]
+        },
+        {
+          "id": "fleet",
+          "fa": "ناوگان و سامانه‌ها",
+          "en": "Fleet & systems",
+          "ar": "الأسطول والأنظمة",
+          "items": [
+            {
+              "fa": "",
+              "en": "The Nova-C lunar lander flew as Odysseus on IM-1 in 2024; IM-2 used the Athena lander. Future IM-3/IM-4 communications and relay concepts belong to planned lunar infrastructure and must not be listed as already operating hardware.",
+              "ar": "طارت مركبة الهبوط القمرية Nova-C باسم Odysseus في مهمة IM-1 عام 2024، واستخدمت IM-2 مركبة Athena. أما مفاهيم الاتصالات وترحيل البيانات المستقبلية المرتبطة بـIM-3 وIM-4 فتندرج ضمن البنية القمرية المخططة ولا تسجل كمعدات عاملة بالفعل.",
+              "kind": "technical",
+              "source_ids": [
+                "UPG-a3c2c6535ba2",
+                "WEB-85f9af33765e"
+              ],
+              "show_langs": [
+                "en",
+                "ar"
+              ],
+              "editorial_scope": "EN_AR_SECTION_SYNOPSIS_NOT_FULL_CLAIM_PARITY"
+            },
+            {
+              "fa": "شرکت Intuitive Machines علاوه بر خدمات حمل محموله به سطح ماه، برنامه‌های زیرساخت ارتباطات و رله داده در محیط ماه‌گرد و قمری را در خانواده مأموریت‌های IM-3 و IM-4 معرفی کرده است.",
+              "en": "",
+              "ar": "",
+              "kind": "technical",
+              "source_ids": [
+                "WEB-85f9af33765e"
+              ],
+              "show_langs": [
+                "fa"
+              ],
+              "editorial_scope": "FA_ORIGINAL_SOURCED_RESEARCH"
+            },
+            {
+              "fa": "ماه‌نشین Nova-C در مأموریت IM-1 با نام Odysseus در ۲۰۲۴ بر سطح ماه فرود آمد؛ این کلاس از سامانه‌های رله ارتباطی آینده جداست.",
+              "en": "",
+              "ar": "",
+              "kind": "verified_research_supplement",
+              "source_ids": [
+                "UPG-a3c2c6535ba2"
+              ],
+              "show_langs": [
+                "fa"
+              ],
+              "editorial_scope": "FA_ORIGINAL_SOURCED_RESEARCH"
+            }
+          ]
+        },
+        {
+          "id": "missions",
+          "fa": "مأموریت‌های انجام‌شده",
+          "en": "Completed missions",
+          "ar": "المهمات المنفّذة",
+          "items": [
+            {
+              "fa": "",
+              "en": "IM-1's Odysseus reached the Moon near the south polar region in 2024. IM-2's Athena reached the Mons Mouton area in March 2025 but came to rest on its side in a crater; the mission ended after battery depletion. Each landing outcome must be described accurately.",
+              "ar": "وصل Odysseus في IM-1 إلى سطح القمر قرب المنطقة القطبية الجنوبية عام 2024. ووصلت Athena في IM-2 إلى منطقة Mons Mouton في مارس 2025، لكنها استقرت على جانبها داخل فوهة وانتهت المهمة بعد نفاد البطارية. ويجب وصف نتيجة كل هبوط بدقة.",
+              "kind": "technical",
+              "source_ids": [
+                "SRC-85f9af33765e",
+                "UPG-a3c2c6535ba2",
+                "WEB-85f9af33765e"
+              ],
+              "show_langs": [
+                "en",
+                "ar"
+              ],
+              "editorial_scope": "EN_AR_SECTION_SYNOPSIS_NOT_FULL_CLAIM_PARITY"
+            },
+            {
+              "fa": "فضاپیمای ماه‌نشین Nova-C شرکت Intuitive Machines در مأموریت IM-1 در ۲۰۲۴ پرتاب شد و فرود نزدیک قطب جنوب ماه را انجام داد؛ این شاهد عملکرد مأموریت است، نه نتیجه درباره همه محصولات شرکت.",
+              "en": "",
+              "ar": "",
+              "kind": "missions",
+              "source_ids": [
+                "SRC-85f9af33765e"
+              ],
+              "show_langs": [
+                "fa"
+              ],
+              "editorial_scope": "FA_ORIGINAL_SOURCED_RESEARCH"
+            },
+            {
+              "fa": "مأموریت IM-1 شرکت Intuitive Machines در ۲۰۲۴ با ماه‌نشین Odysseus نزدیک قطب جنوب ماه فرود آمد؛ مأموریت IM-2 با Athena در مارس ۲۰۲۵ به ناحیه Mons Mouton رسید.",
+              "en": "",
+              "ar": "",
+              "kind": "missions",
+              "source_ids": [
+                "WEB-85f9af33765e"
+              ],
+              "show_langs": [
+                "fa"
+              ],
+              "editorial_scope": "FA_ORIGINAL_SOURCED_RESEARCH"
+            },
+            {
+              "fa": "طبق گزارش رسمی شرکت، Athena در مأموریت IM-2 در ۷ مارس ۲۰۲۵ در منطقه Mons Mouton داخل یک دهانه و به پهلو فرود آمد؛ مأموریت پس از تخلیه باتری پایان یافت.",
+              "en": "",
+              "ar": "",
+              "kind": "verified_research_supplement",
+              "source_ids": [
+                "UPG-a3c2c6535ba2"
+              ],
+              "show_langs": [
+                "fa"
+              ],
+              "editorial_scope": "FA_ORIGINAL_SOURCED_RESEARCH"
+            }
+          ]
+        },
+        {
+          "id": "capabilities",
+          "fa": "قابلیت‌های مداری",
+          "en": "In-orbit capabilities",
+          "ar": "القدرات المدارية",
+          "items": [
+            {
+              "fa": "",
+              "en": "The business defines lunar access, orbital services, lunar data services and space products/infrastructure as separate areas. Its August 2026 acquisition of Goonhilly Earth Station Limited and COMSAT LLC adds a parent-ownership relation; it does not erase the identity of individual ground stations.",
+              "ar": "تفصل الشركة بين الوصول إلى القمر والخدمات المدارية وخدمات البيانات القمرية والمنتجات والبنية التحتية الفضائية. ويضيف استحواذها في أغسطس 2026 على Goonhilly Earth Station Limited وCOMSAT LLC علاقة ملكية أم؛ ولا يمحو هوية المحطات الأرضية الفردية.",
+              "kind": "technical",
+              "source_ids": [
+                "SRC-ad8aebcfa739",
+                "UPG-a3c2c6535ba2"
+              ],
+              "show_langs": [
+                "en",
+                "ar"
+              ],
+              "editorial_scope": "EN_AR_SECTION_SYNOPSIS_NOT_FULL_CLAIM_PARITY"
+            },
+            {
+              "fa": "Intuitive Machines در اوت ۲۰۲۶ تملک Goonhilly و COMSAT را تکمیل کرد؛ ارتباط شرکت مادر با شرکت دارنده تأسیسات باید به‌عنوان رابطه مالکیت ثبت شود، نه حذف خودکار شناسنامه ایستگاه.",
+              "en": "",
+              "ar": "",
+              "kind": "technical",
+              "source_ids": [
+                "SRC-ad8aebcfa739"
+              ],
+              "show_langs": [
+                "fa"
+              ],
+              "editorial_scope": "FA_ORIGINAL_SOURCED_RESEARCH"
+            },
+            {
+              "fa": "Intuitive Machines چهار حوزه کسب‌وکار «دسترسی به ماه»، «خدمات مداری»، «خدمات داده قمری» و «محصولات و زیرساخت فضایی» را در معرفی رسمی ۲۰۲۵ خود تفکیک کرده است.",
+              "en": "",
+              "ar": "",
+              "kind": "verified_research_supplement",
+              "source_ids": [
+                "UPG-a3c2c6535ba2"
+              ],
+              "show_langs": [
+                "fa"
+              ],
+              "editorial_scope": "FA_ORIGINAL_SOURCED_RESEARCH"
+            }
+          ]
+        },
+        {
+          "id": "roadmap",
+          "fa": "برنامه توسعه و مشتریان",
+          "en": "Roadmap & customers",
+          "ar": "خارطة الطريق والعملاء",
+          "items": [
+            {
+              "fa": "",
+              "en": "The August 2026 Goonhilly/COMSAT transaction broadens intended ground communications coverage. The Q3 2026 target for Altus-2 through Altus-5 deployment in 2028 is a plan rather than an achieved launch; network capability claims require link-by-link verification.",
+              "ar": "وسعت صفقة Goonhilly/COMSAT في أغسطس 2026 نطاق التغطية الأرضية المستهدفة. ويعد هدف نشر Altus-2 إلى Altus-5 في 2028، الوارد في تقرير الربع الثالث 2026، خطة لا إطلاقاً منجزاً؛ وتحتاج قدرات الشبكة إلى تحقق على مستوى كل وصلة.",
+              "kind": "technical",
+              "source_ids": [
+                "UPG-35f93b6629af",
+                "UPG-ad8aebcfa739"
+              ],
+              "show_langs": [
+                "en",
+                "ar"
+              ],
+              "editorial_scope": "EN_AR_SECTION_SYNOPSIS_NOT_FULL_CLAIM_PARITY"
+            },
+            {
+              "fa": "در اوت ۲۰۲۶ Intuitive Machines خرید دو شرکت Goonhilly Earth Station Limited و COMSAT LLC را تکمیل کرد و زیرساخت شبکه زمینی خود را گسترش داد.",
+              "en": "",
+              "ar": "",
+              "kind": "verified_research_supplement",
+              "source_ids": [
+                "UPG-ad8aebcfa739"
+              ],
+              "show_langs": [
+                "fa"
+              ],
+              "editorial_scope": "FA_ORIGINAL_SOURCED_RESEARCH"
+            },
+            {
+              "fa": "شرکت در گزارش فصل سوم ۲۰۲۶، استقرار Altus-2 تا Altus-5 را برای ۲۰۲۸ هدف‌گذاری کرده بود؛ این هدف برنامه‌ای است، نه پرتاب انجام‌شده.",
+              "en": "",
+              "ar": "",
+              "kind": "verified_research_supplement",
+              "source_ids": [
+                "UPG-35f93b6629af"
+              ],
+              "show_langs": [
+                "fa"
+              ],
+              "editorial_scope": "FA_ORIGINAL_SOURCED_RESEARCH"
+            },
+            {
+              "fa": "گسترش شبکه از طریق Goonhilly و COMSAT برای پشتیبانی ارتباطات در محیط‌های LEO، MEO، GEO، فضای میان‌زمین‌وماه و اعماق فضا عنوان شده؛ این اعلام هدف، گواه ظرفیت عملیاتی هر پیوند نیست.",
+              "en": "",
+              "ar": "",
+              "kind": "verified_research_supplement",
+              "source_ids": [
+                "UPG-ad8aebcfa739"
+              ],
+              "show_langs": [
+                "fa"
+              ],
+              "editorial_scope": "FA_ORIGINAL_SOURCED_RESEARCH"
+            }
+          ]
+        }
+      ],
+      "key_facts": [],
+      "verified_on": "2026-11-13",
+      "release_status": "RESEARCH_PREVIEW_EDITORIAL_NOT_FINAL_VERIFICATION",
+      "source_inventory_id": "DISC-0088",
+      "stage5_persian_detailed_items": 11
+    },
+    "orbita_release_note": {
+      "release_date": "2026-11-13",
+      "inventory_id": "DISC-0088",
+      "status": "RESEARCH_PREVIEW",
+      "expert_review_pending": true,
+      "language_parity": "FA_FULL_EN_AR_CONDENSED",
+      "geo_precision": "approximate_city_center",
+      "unresolved_tasks": [
+        "Confirm legal identity and current operator if not already independently documented",
+        "Obtain facility/device model-specific technical sheets and dated operational history",
+        "Check mission-by-mission flight heritage and distinguish proposals from achieved missions",
+        "Prepare verified FA/EN/AR and map metadata only after science review"
+      ]
+    }
+  },
+  {
+    "id": "orbita-astroscale",
+    "cat": "inspace_services",
+    "en": "Astroscale",
+    "fa": "آستروسکیل",
+    "ar": "أستروسكيل",
+    "country": "Japan",
+    "country_fa": "ژاپن",
+    "country_ar": "اليابان",
+    "city": "Sumida-ku, Tokyo",
+    "city_fa": "سومیدا، توکیو",
+    "city_ar": "سوميدا، طوكيو",
+    "lat": 35.696,
+    "lon": 139.816,
+    "coordinate_precision": "approximate_city_center",
+    "site": "https://www.astroscale.com/en/",
+    "en_d": "Astroscale Holdings operates through subsidiaries including Astroscale Japan and develops active debris removal and on-orbit inspection. The JAXA ADRAS-J2 contract is with the Japanese operating entity; a group identity does not replace subsidiary-level records.",
+    "fa_d": "در بررسی رسمی ۲۰۲۶ ناسا درباره وسایل انتقال مداری و خدمات پرتاب و استقرار معرفی شده است؛ وضعیت پرواز، وابسته به مدل است.",
+    "ar_d": "تعمل Astroscale Holdings عبر شركات تابعة منها Astroscale Japan، وتطور إزالة الحطام النشطة والتفتيش المداري. ويتعلق عقد JAXA الخاص بـADRAS-J2 بالكيان الياباني المنفذ؛ ولا تحل هوية المجموعة محل سجلات الشركات التابعة.",
+    "org_type_fa": "شرکت خدمات فضایی و مداری",
+    "org_type_en": "In-space services",
+    "org_type_ar": "شركة خدمات فضائية ومدارية",
+    "parent_institution": "Astroscale Holdings Inc.",
+    "logo": "assets/logos/orbita/orbita-astroscale.svg",
+    "logo_kind": "orbita_editorial_nonofficial",
+    "orbita_marker_code": "AS",
+    "orbita_verified_profile": {
+      "schema_version": 3,
+      "profile_type": "inspace_services",
+      "summary": {
+        "fa": "در بررسی رسمی ۲۰۲۶ ناسا درباره وسایل انتقال مداری و خدمات پرتاب و استقرار معرفی شده است؛ وضعیت پرواز، وابسته به مدل است.",
+        "en": "Astroscale Holdings operates through subsidiaries including Astroscale Japan and develops active debris removal and on-orbit inspection. The JAXA ADRAS-J2 contract is with the Japanese operating entity; a group identity does not replace subsidiary-level records.",
+        "ar": "تعمل Astroscale Holdings عبر شركات تابعة منها Astroscale Japan، وتطور إزالة الحطام النشطة والتفتيش المداري. ويتعلق عقد JAXA الخاص بـADRAS-J2 بالكيان الياباني المنفذ؛ ولا تحل هوية المجموعة محل سجلات الشركات التابعة."
+      },
+      "review_scope": {
+        "fa": "نسخه نمایشی پژوهشی ORBITA بر پایه منابع درج‌شده. ارزیابی ادعاها و ثبت حقوقی همه زیرمجموعه‌ها هنوز نهایی نیست؛ مختصات برخی نشان‌ها تقریبی است. در فارسی، متن تفصیلی مستند و در انگلیسی و عربی خلاصه تخصصی هر تب نمایش داده می‌شود؛ خلاصه‌ها جایگزین ترجمه کامل همه گزاره‌ها نیستند.",
+        "en": "ORBITA research preview, based on listed sources. Complete legal, operator and claim-by-claim checks remain open. Some map positions are approximate. English and Arabic provide sourced section-level synopses; full individual Persian research statements are not yet translated one by one.",
+        "ar": "نسخة بحثية تجريبية من ORBITA تستند إلى المصادر المدرجة. لا تزال مراجعة الهويات القانونية والمشغّلين وجميع الادعاءات غير مكتملة، وبعض مواقع الخريطة تقريبية. تعرض الإنجليزية والعربية ملخصات موثّقة لكل تبويب، لا ترجمة كاملة لكل بند من البحث الفارسي."
+      },
+      "sources": [
+        {
+          "url": "https://www.astroscale.com/en/news/astroscales-adras-j-achieves-historic-15-meter-approach-to-space-debris",
+          "provenance_types": [
+            "ADDITIONAL_OFFICIAL_WEB_RESEARCH_2026_11_13"
+          ],
+          "id": "SRC-058ede896789",
+          "title": "www.astroscale.com — en/news/astroscales-adras-j-achieves-historic-15-meter-approach-to-space-debris"
+        },
+        {
+          "url": "https://www.nasa.gov/smallsat-institute/sst-soa/integration-launch-and-deployment/",
+          "provenance_types": [
+            "S3_325_CLAIMS_INHERITED"
+          ],
+          "id": "SRC-0dd6be18823b",
+          "title": "www.nasa.gov — smallsat-institute/sst-soa/integration-launch-and-deployment"
+        },
+        {
+          "url": "https://www.astroscale.com/en/news/astroscales-adras-j-mission-completes-operations-begins-deorbit",
+          "provenance_types": [
+            "ADDITIONAL_OFFICIAL_WEB_RESEARCH_2026_11_13"
+          ],
+          "id": "SRC-1ca77a395ac4",
+          "title": "www.astroscale.com — en/news/astroscales-adras-j-mission-completes-operations-begins-deorbit"
+        },
+        {
+          "url": "https://www.astroscale.com/en/news/historic-approach-to-space-debris-astroscales-adras-j-closes-in-by-50-meters",
+          "provenance_types": [
+            "ADDITIONAL_OFFICIAL_WEB_RESEARCH_2026_11_13"
+          ],
+          "id": "SRC-23fe7f880793",
+          "title": "www.astroscale.com — en/news/historic-approach-to-space-debris-astroscales-adras-j-closes-in-by-50-meters"
+        },
+        {
+          "url": "https://www.astroscale.com/en/missions/elsa-d",
+          "provenance_types": [
+            "S3_325_CLAIMS_INHERITED"
+          ],
+          "id": "SRC-d3f720b2137c",
+          "title": "www.astroscale.com — en/missions/elsa-d"
+        },
+        {
+          "id": "UPG-d3f720b2137c",
+          "title": "www.astroscale.com | /en/missions/elsa-d",
+          "url": "https://www.astroscale.com/en/missions/elsa-d",
+          "evidence_status": "PRIMARY_OFFICIAL_SITE_RESEARCHED_2026_11_13"
+        },
+        {
+          "id": "UPG-462e30eb7442",
+          "title": "www.astroscale.com | /en/missions/adras-j",
+          "url": "https://www.astroscale.com/en/missions/adras-j",
+          "evidence_status": "PRIMARY_OFFICIAL_SITE_RESEARCHED_2026_11_13"
+        },
+        {
+          "id": "UPG-99f61fcb2353",
+          "title": "www.astroscale.com | /en/missions/adras-j2",
+          "url": "https://www.astroscale.com/en/missions/adras-j2",
+          "evidence_status": "PRIMARY_OFFICIAL_SITE_RESEARCHED_2026_11_13"
+        },
+        {
+          "id": "UPG-6d0fd7747625",
+          "title": "www.astroscale.com | /en/news/astroscale-japan-selects-isar-aerospace-to-launch-adras-j2",
+          "url": "https://www.astroscale.com/en/news/astroscale-japan-selects-isar-aerospace-to-launch-adras-j2",
+          "evidence_status": "PRIMARY_OFFICIAL_SITE_RESEARCHED_2026_11_13"
+        },
+        {
+          "id": "UPG-1ca77a395ac4",
+          "title": "www.astroscale.com | /en/news/astroscales-adras-j-mission-completes-operations-begins-deorbit",
+          "url": "https://www.astroscale.com/en/news/astroscales-adras-j-mission-completes-operations-begins-deorbit",
+          "evidence_status": "PRIMARY_OFFICIAL_SITE_RESEARCHED_2026_11_13"
+        }
+      ],
+      "sections": [
+        {
+          "id": "overview",
+          "fa": "شناسنامه و خدمات",
+          "en": "Identity & services",
+          "ar": "التعريف والخدمات",
+          "items": [
+            {
+              "fa": "",
+              "en": "Astroscale Holdings operates through subsidiaries including Astroscale Japan and develops active debris removal and on-orbit inspection. The JAXA ADRAS-J2 contract is with the Japanese operating entity; a group identity does not replace subsidiary-level records.",
+              "ar": "تعمل Astroscale Holdings عبر شركات تابعة منها Astroscale Japan، وتطور إزالة الحطام النشطة والتفتيش المداري. ويتعلق عقد JAXA الخاص بـADRAS-J2 بالكيان الياباني المنفذ؛ ولا تحل هوية المجموعة محل سجلات الشركات التابعة.",
+              "kind": "technical",
+              "source_ids": [
+                "SRC-0dd6be18823b",
+                "UPG-99f61fcb2353"
+              ],
+              "show_langs": [
+                "en",
+                "ar"
+              ],
+              "editorial_scope": "EN_AR_SECTION_SYNOPSIS_NOT_FULL_CLAIM_PARITY"
+            },
+            {
+              "fa": "در بررسی رسمی ۲۰۲۶ ناسا درباره وسایل انتقال مداری و خدمات پرتاب و استقرار معرفی شده است؛ وضعیت پرواز، وابسته به مدل است.",
+              "en": "",
+              "ar": "",
+              "kind": "identity",
+              "source_ids": [
+                "SRC-0dd6be18823b"
+              ],
+              "show_langs": [
+                "fa"
+              ],
+              "editorial_scope": "FA_ORIGINAL_SOURCED_RESEARCH"
+            },
+            {
+              "fa": "Astroscale Holdings دارای شرکت زیرمجموعه Astroscale Japan است؛ مشتری قرارداد ADRAS-J2 آژانس JAXA بوده و واحد ژاپنی پیمانکار پروژه است.",
+              "en": "",
+              "ar": "",
+              "kind": "verified_research_supplement",
+              "source_ids": [
+                "UPG-99f61fcb2353"
+              ],
+              "show_langs": [
+                "fa"
+              ],
+              "editorial_scope": "FA_ORIGINAL_SOURCED_RESEARCH"
+            }
+          ]
+        },
+        {
+          "id": "fleet",
+          "fa": "ناوگان و سامانه‌ها",
+          "en": "Fleet & systems",
+          "ar": "الأسطول والأنظمة",
+          "items": [
+            {
+              "fa": "",
+              "en": "ELSA-d consisted of a servicing spacecraft and magnetic-docking client; ADRAS-J was a non-cooperative debris-inspection spacecraft. The proposed ADRAS-J2 capture mission is a different system and must not be merged into the already completed ADRAS-J inspection profile.",
+              "ar": "تألفت ELSA-d من مركبة خدمة ومركبة عميل للالتحام المغناطيسي، وكانت ADRAS-J مركبة لتفتيش حطام غير متعاون. أما مهمة الالتقاط المخططة ADRAS-J2 فهي منظومة مختلفة ولا ينبغي دمجها في سجل مهمة التفتيش ADRAS-J المنجزة.",
+              "kind": "technical",
+              "source_ids": [
+                "UPG-462e30eb7442",
+                "UPG-d3f720b2137c"
+              ],
+              "show_langs": [
+                "en",
+                "ar"
+              ],
+              "editorial_scope": "EN_AR_SECTION_SYNOPSIS_NOT_FULL_CLAIM_PARITY"
+            },
+            {
+              "fa": "ماهواره ELSA-d از دو فضاپیمای سرویس‌دهنده و مشتری تشکیل می‌شد و برای نمایش عملیات نزدیک‌شدن و اتصال مغناطیسی توسعه یافته بود.",
+              "en": "",
+              "ar": "",
+              "kind": "verified_research_supplement",
+              "source_ids": [
+                "UPG-d3f720b2137c"
+              ],
+              "show_langs": [
+                "fa"
+              ],
+              "editorial_scope": "FA_ORIGINAL_SOURCED_RESEARCH"
+            },
+            {
+              "fa": "ADRAS-J فضاپیمای بازرسی زباله فضایی است و برخلاف ADRAS-J2 مأموریت آن گرفتن یا از مدار خارج‌کردن بدنه موشک نبوده است.",
+              "en": "",
+              "ar": "",
+              "kind": "verified_research_supplement",
+              "source_ids": [
+                "UPG-462e30eb7442"
+              ],
+              "show_langs": [
+                "fa"
+              ],
+              "editorial_scope": "FA_ORIGINAL_SOURCED_RESEARCH"
+            }
+          ]
+        },
+        {
+          "id": "missions",
+          "fa": "مأموریت‌های انجام‌شده",
+          "en": "Completed missions",
+          "ar": "المهمات المنفّذة",
+          "items": [
+            {
+              "fa": "",
+              "en": "ELSA-d launched on 22 March 2021 and demonstrated magnetic release/recapture in August 2021 before ending in 2024. ADRAS-J inspected an abandoned upper stage from about 15 m in late 2024; its primary inspection operations ended in March 2026. Inspection did not constitute debris capture or removal.",
+              "ar": "أُطلقت ELSA-d في 22 مارس 2021 وعرضت الفصل وإعادة الالتقاط المغناطيسي في أغسطس 2021 قبل نهاية المهمة في 2024. وفحصت ADRAS-J مرحلة صاروخية مهجورة من مسافة تقارب 15 متراً أواخر 2024، وانتهت عمليات التفتيش الرئيسية في مارس 2026. ولم يتضمن التفتيش التقاط الحطام أو إزالته.",
+              "kind": "technical",
+              "source_ids": [
+                "SRC-058ede896789",
+                "SRC-23fe7f880793",
+                "SRC-d3f720b2137c",
+                "UPG-1ca77a395ac4"
+              ],
+              "show_langs": [
+                "en",
+                "ar"
+              ],
+              "editorial_scope": "EN_AR_SECTION_SYNOPSIS_NOT_FULL_CLAIM_PARITY"
+            },
+            {
+              "fa": "Astroscale در مأموریت ELSA-d که ۲۲ مارس ۲۰۲۱ پرتاب شد، جدایش و بازگرفتن مغناطیسی فضاپیمای مشتری را در اوت ۲۰۲۱ نمایش داد و مأموریت در ۲۰۲۴ پایان یافت.",
+              "en": "",
+              "ar": "",
+              "kind": "missions",
+              "source_ids": [
+                "SRC-d3f720b2137c"
+              ],
+              "show_langs": [
+                "fa"
+              ],
+              "editorial_scope": "FA_ORIGINAL_SOURCED_RESEARCH"
+            },
+            {
+              "fa": "در مأموریت ADRAS-J، ماهواره Astroscale در دسامبر ۲۰۲۴ تا حدود ۱۵ متر به مرحله فوقانی رهاشده موشک نزدیک شد و چندین مشاهده ثابت و مانور گردش پیرامونی انجام داد؛ این فعالیت «بازرسی زباله فضایی» است، نه گرفتن یا خروج قطعه از مدار.",
+              "en": "",
+              "ar": "",
+              "kind": "missions",
+              "source_ids": [
+                "SRC-058ede896789"
+              ],
+              "show_langs": [
+                "fa"
+              ],
+              "editorial_scope": "FA_ORIGINAL_SOURCED_RESEARCH"
+            },
+            {
+              "fa": "سامانه ADRAS-J از الگوریتم ناوبری زاویه‌ای بر اساس تصاویر دوربین و سپس تطبیق مدل برای نزدیک‌شدن به جسم غیرهمکار استفاده کرد؛ جزئیات در اطلاعیه فنی مأموریت شرح داده شده‌اند.",
+              "en": "",
+              "ar": "",
+              "kind": "missions",
+              "source_ids": [
+                "SRC-23fe7f880793"
+              ],
+              "show_langs": [
+                "fa"
+              ],
+              "editorial_scope": "FA_ORIGINAL_SOURCED_RESEARCH"
+            },
+            {
+              "fa": "شرکت در ۲۵ مارس ۲۰۲۶ پایان عملیات اصلی بازرسی ADRAS-J و آغاز مراحل کاهش ارتفاع مدار آن را اعلام کرد.",
+              "en": "",
+              "ar": "",
+              "kind": "verified_research_supplement",
+              "source_ids": [
+                "UPG-1ca77a395ac4"
+              ],
+              "show_langs": [
+                "fa"
+              ],
+              "editorial_scope": "FA_ORIGINAL_SOURCED_RESEARCH"
+            }
+          ]
+        },
+        {
+          "id": "capabilities",
+          "fa": "قابلیت‌های مداری",
+          "en": "In-orbit capabilities",
+          "ar": "القدرات المدارية",
+          "items": [
+            {
+              "fa": "",
+              "en": "The ELSA-d demonstrations involved magnetic proximity operations; ADRAS-J used camera-based navigation and model matching to approach an uncooperative object. These demonstrated capabilities must be separated from the robotic-arm capture proposed for ADRAS-J2.",
+              "ar": "تضمنت عروض ELSA-d عمليات اقتراب والتقاط مغناطيسي، واستخدمت ADRAS-J الملاحة المعتمدة على الكاميرات ومطابقة النماذج للاقتراب من جسم غير متعاون. ويجب فصل هذه القدرات المثبتة عن الالتقاط بالذراع الروبوتية المقترح في ADRAS-J2.",
+              "kind": "technical",
+              "source_ids": [
+                "UPG-462e30eb7442",
+                "UPG-d3f720b2137c"
+              ],
+              "show_langs": [
+                "en",
+                "ar"
+              ],
+              "editorial_scope": "EN_AR_SECTION_SYNOPSIS_NOT_FULL_CLAIM_PARITY"
+            },
+            {
+              "fa": "ELSA-d در اوت ۲۰۲۱ نمایش تکراری گیراندازی مغناطیسی را انجام داد و عملیات خروج از مدار خود را در ژانویه ۲۰۲۴ به پایان رساند.",
+              "en": "",
+              "ar": "",
+              "kind": "verified_research_supplement",
+              "source_ids": [
+                "UPG-d3f720b2137c"
+              ],
+              "show_langs": [
+                "fa"
+              ],
+              "editorial_scope": "FA_ORIGINAL_SOURCED_RESEARCH"
+            },
+            {
+              "fa": "ADRAS-J در نوامبر ۲۰۲۴ به فاصله حدود ۱۵ متری یک مرحله فوقانی رهاشده نزدیک شد و عملیات تصویربرداری مجاورتی انجام داد؛ این مأموریت جابه‌جایی زباله نبود.",
+              "en": "",
+              "ar": "",
+              "kind": "verified_research_supplement",
+              "source_ids": [
+                "UPG-462e30eb7442"
+              ],
+              "show_langs": [
+                "fa"
+              ],
+              "editorial_scope": "FA_ORIGINAL_SOURCED_RESEARCH"
+            }
+          ]
+        },
+        {
+          "id": "roadmap",
+          "fa": "برنامه توسعه و مشتریان",
+          "en": "Roadmap & customers",
+          "ar": "خارطة الطريق والعملاء",
+          "items": [
+            {
+              "fa": "",
+              "en": "ADRAS-J2 is being developed under an approximately ¥13.2 billion JAXA contract to demonstrate removal of an upper-stage body using a robotic arm. In September 2026 Isar Aerospace's Spectrum was selected for a target launch in Japanese FY2027; this is not a confirmed completed launch.",
+              "ar": "يجري تطوير ADRAS-J2 بموجب عقد مع JAXA بقيمة تقارب 13.2 مليار ين لعرض إزالة جسم مرحلة صاروخية بذراع روبوتية. وفي سبتمبر 2026 اختير صاروخ Spectrum من Isar Aerospace لإطلاق مستهدف في السنة المالية اليابانية 2027؛ وهذا ليس إطلاقاً منجزاً أو موعداً نهائياً مؤكداً.",
+              "kind": "technical",
+              "source_ids": [
+                "SRC-1ca77a395ac4",
+                "UPG-6d0fd7747625",
+                "UPG-99f61fcb2353"
+              ],
+              "show_langs": [
+                "en",
+                "ar"
+              ],
+              "editorial_scope": "EN_AR_SECTION_SYNOPSIS_NOT_FULL_CLAIM_PARITY"
+            },
+            {
+              "fa": "Astroscale در ۲۵ مارس ۲۰۲۶ پایان مأموریت اصلی ADRAS-J و آغاز کاهش مدار آن را اعلام کرد؛ سامانه ADRAS-J2 که برای مرحله بعد برداشتن زباله طراحی شده نباید به‌عنوان عملیاتی در همین مأموریت معرفی شود.",
+              "en": "",
+              "ar": "",
+              "kind": "history",
+              "source_ids": [
+                "SRC-1ca77a395ac4"
+              ],
+              "show_langs": [
+                "fa"
+              ],
+              "editorial_scope": "FA_ORIGINAL_SOURCED_RESEARCH"
+            },
+            {
+              "fa": "ADRAS-J2 تحت قرارداد حدود ۱۳٫۲ میلیارد ین با ژاکسا، برای نمایش گرفتن بدنه مرحله فوقانی با بازوی رباتیکی طراحی شده و در نوامبر ۲۰۲۶ هنوز توسعه‌ای محسوب می‌شود.",
+              "en": "",
+              "ar": "",
+              "kind": "verified_research_supplement",
+              "source_ids": [
+                "UPG-99f61fcb2353"
+              ],
+              "show_langs": [
+                "fa"
+              ],
+              "editorial_scope": "FA_ORIGINAL_SOURCED_RESEARCH"
+            },
+            {
+              "fa": "شرکت در ۱ سپتامبر ۲۰۲۶ پرتابگر Spectrum شرکت Isar Aerospace را برای ADRAS-J2 انتخاب و بازه هدف را سال مالی ۲۰۲۷ ژاپن اعلام کرد؛ نباید تاریخ قطعی پرتاب تلقی شود.",
+              "en": "",
+              "ar": "",
+              "kind": "verified_research_supplement",
+              "source_ids": [
+                "UPG-6d0fd7747625"
+              ],
+              "show_langs": [
+                "fa"
+              ],
+              "editorial_scope": "FA_ORIGINAL_SOURCED_RESEARCH"
+            }
+          ]
+        }
+      ],
+      "key_facts": [],
+      "verified_on": "2026-11-13",
+      "release_status": "RESEARCH_PREVIEW_EDITORIAL_NOT_FINAL_VERIFICATION",
+      "source_inventory_id": "DISC-0097",
+      "stage5_persian_detailed_items": 13
+    },
+    "orbita_release_note": {
+      "release_date": "2026-11-13",
+      "inventory_id": "DISC-0097",
+      "status": "RESEARCH_PREVIEW",
+      "expert_review_pending": true,
+      "language_parity": "FA_FULL_EN_AR_CONDENSED",
+      "geo_precision": "approximate_city_center",
+      "unresolved_tasks": [
+        "Confirm legal identity and current operator if not already independently documented",
+        "Obtain facility/device model-specific technical sheets and dated operational history",
+        "Check mission-by-mission flight heritage and distinguish proposals from achieved missions",
+        "Prepare verified FA/EN/AR and map metadata only after science review"
+      ]
+    }
   }
 ]
