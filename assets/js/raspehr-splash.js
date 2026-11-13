@@ -1,20 +1,17 @@
-/* RASPEHR: short branded reveal; the map continues loading behind it. */
+/* RASPEHR: keep the branded intro until a fully painted, usable map is ready. */
 (function () {
   'use strict';
   var splash = document.getElementById('raspehrSplash');
   if (!splash) return;
+  var status = splash.querySelector('.raspehr-status');
+  var createdAt = (window.performance && performance.now) ? performance.now() : Date.now();
+  var minBrandMs = 1050; // allow the complete ESPASH identity to be seen
+  var done = false;
+  var queued = false;
 
-  var startedAt = (window.performance && performance.now) ? performance.now() : Date.now();
-  var MIN_VISIBLE_MS = 750;
-  var MAX_VISIBLE_MS = 2300;
-  var finished = false;
-  var mapFrameReady = false;
-  var finishTimer = 0;
-
-  function finishSplash() {
-    if (finished) return;
-    finished = true;
-    if (finishTimer) window.clearTimeout(finishTimer);
+  function dismiss() {
+    if (done) return;
+    done = true;
     if (window.performance && performance.mark) performance.mark('raspehr-map-visible');
     splash.classList.add('raspehr-complete');
     splash.setAttribute('aria-hidden', 'true');
@@ -23,32 +20,16 @@
     }, 340);
   }
 
-  function markMapFrameReady() {
-    if (finished) return;
-    mapFrameReady = true;
+  window.RASPEHR_READY = function () {
+    if (done || queued) return;
+    queued = true;
     var now = (window.performance && performance.now) ? performance.now() : Date.now();
-    var elapsed = now - startedAt;
-    var remaining = Math.max(0, MIN_VISIBLE_MS - elapsed);
-    if (finishTimer) window.clearTimeout(finishTimer);
-    finishTimer = window.setTimeout(finishSplash, remaining);
-  }
+    window.setTimeout(dismiss, Math.max(0, minBrandMs - (now - createdAt)));
+  };
 
-  // Called after the first map frame. Basemap tiles and secondary layers
-  // continue loading after the overlay has disappeared.
-  window.RASPEHR_READY = markMapFrameReady;
-
-  var skip = document.getElementById('raspehrSkip');
-  if (skip) skip.addEventListener('click', finishSplash);
-
-  var notice = document.getElementById('raspehrLongLoad');
+  // No skip button, no early exit, no arbitrary maximum duration.
+  // If the map takes longer, show a factual loading status rather than a blank map.
   window.setTimeout(function () {
-    if (!finished && !mapFrameReady && notice) notice.hidden = false;
-    if (!finished && !mapFrameReady && skip) skip.hidden = false;
-  }, 1500);
-
-  // Hard limit: never keep visitors behind the brand screen for longer than
-  // 2.3 seconds. The map status stays visible if the style is still pending.
-  window.setTimeout(function () {
-    if (!finished) finishSplash();
-  }, MAX_VISIBLE_MS);
+    if (!done && status) status.textContent = 'در حال تکمیل نقشه و نشانگرهای فضایی…';
+  }, 4500);
 })();
