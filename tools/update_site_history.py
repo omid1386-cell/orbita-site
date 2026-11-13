@@ -31,7 +31,7 @@ MONTH_CAP = 2
 
 
 def fetch(url):
-    req = urllib.request.Request(url, headers={'User-Agent': UA})
+    req = urllib.request.Request(url, headers={'User-Agent': UA, 'Accept': 'application/json'})
     with urllib.request.urlopen(req, timeout=40) as r:
         return json.load(r)
 
@@ -105,7 +105,7 @@ def main():
         return
 
     try:
-        res = fetch('https://ll.thespacedevs.com/2.2.0/launch/previous/?mode=normal&limit=30&net__gte=%s' % marker)
+        res = fetch('https://ll.thespacedevs.com/2.3.0/launches/previous/?mode=normal&limit=30&net__gte=%s&format=json' % marker)
     except Exception as e:
         print('⛔ دروازهٔ اعتبارسنجی: %s — لغو شد.' % e)
         sys.exit(2)

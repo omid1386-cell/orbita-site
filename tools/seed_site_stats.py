@@ -12,7 +12,7 @@ SMAP = os.path.join(BASE, 'tools', 'site_stats_map.json')
 UA = 'OrbitaEducationalApp/1.0 (contact: orbita.app.dev@gmail.com)'
 
 def count(url):
-    req = urllib.request.Request(url, headers={'User-Agent': UA})
+    req = urllib.request.Request(url, headers={'User-Agent': UA, 'Accept': 'application/json'})
     with urllib.request.urlopen(req, timeout=40) as r:
         return json.load(r)['count']
 
@@ -32,15 +32,15 @@ def main():
     for s in pending[:maxn]:
         lid = smap[s['id']]
         if isinstance(lid, dict) and lid.get('pads'):
-            queries = [('pad__ids=%d' % pad_id) for pad_id in lid['pads']]
+            queries = [('pad=%d' % pad_id) for pad_id in lid['pads']]
         else:
-            queries = [('pad__ids=%d' % lid['pad']) if isinstance(lid, dict) else ('location__ids=%d' % lid)]
+            queries = [('pad=%d' % lid['pad']) if isinstance(lid, dict) else ('location__ids=%d' % lid)]
         try:
             total = 0
             succ = 0
             for qp in queries:
-                total += count('https://ll.thespacedevs.com/2.2.0/launch/previous/?%s&limit=1' % qp)
-                succ += count('https://ll.thespacedevs.com/2.2.0/launch/previous/?%s&status__ids=3&limit=1' % qp)
+                total += count('https://ll.thespacedevs.com/2.3.0/launches/previous/?%s&limit=1&format=json' % qp)
+                succ += count('https://ll.thespacedevs.com/2.3.0/launches/previous/?%s&status__ids=3&limit=1&format=json' % qp)
         except Exception as e:
             print('  ⛔ %s: %s — این نوبت رد شد' % (s['id'], e))
             break

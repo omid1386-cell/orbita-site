@@ -14,11 +14,12 @@
 سهمیه: ۲ درخواست فهرستی + حداکثر --max-detail (پیش‌فرض ۶) درخواست تفصیلی.
 """
 import json, sys, os, re, urllib.request, urllib.error, datetime
+from ll2_compat import API_ROOT, normalize_page
 
 BASE = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 DATA = os.path.join(BASE, 'data', 'upcoming_landings.json')
 UA = 'OrbitaEducationalApp/1.0 (contact: orbita.app.dev@gmail.com)'
-API = 'https://ll.thespacedevs.com/2.2.0/launch/'
+API = API_ROOT
 
 RECOVERY_LSPS = ('SpaceX', 'Blue Origin')
 STATUS_MAP = {'Go': 'go', 'TBC': 'tbc', 'TBD': 'queued', 'Hold': 'queued'}
@@ -55,7 +56,7 @@ ORIGIN = {
 
 
 def fetch(url):
-    req = urllib.request.Request(url, headers={'User-Agent': UA})
+    req = urllib.request.Request(url, headers={'User-Agent': UA, 'Accept': 'application/json'})
     with urllib.request.urlopen(req, timeout=40) as r:
         return json.load(r)
 
@@ -99,13 +100,14 @@ def main():
     today = datetime.date.today().isoformat()
     horizon = (datetime.date.today() + datetime.timedelta(days=28)).isoformat()
 
-    doc = json.load(open(DATA, encoding='utf-8'))
+    with open(DATA, encoding='utf-8') as fp:
+        doc = json.load(fp)
     key = [k for k, v in doc.items() if isinstance(v, list)][0]
     rows = doc[key]
 
     try:
-        up = fetch(API + 'upcoming/?mode=list&limit=100').get('results', [])
-        prev = fetch(API + 'previous/?mode=list&limit=40').get('results', [])
+        up = normalize_page(fetch(API + 'upcoming/?mode=normal&limit=100&ordering=net&hide_recent_previous=true&format=json'))
+        prev = normalize_page(fetch(API + 'previous/?mode=normal&limit=40&ordering=-net&format=json'))
     except Exception as e:
         print('⛔ دروازهٔ اعتبارسنجی: %s — لغو شد؛ نسخهٔ فعلی دست‌نخورده ماند.' % e)
         sys.exit(2)
@@ -126,7 +128,7 @@ def main():
             return None
         detail_budget -= 1
         try:
-            d = fetch(API + lid + '/')
+            d = fetch(API + lid + '/?format=json')
         except Exception:
             d = None
         detail_cache[lid] = d
@@ -134,10 +136,13 @@ def main():
 
     for r in rows:
         base = str(r.get('mission', '')).split(' Landing')[0]
-        if match(base, prev):
+        # Legacy hand-curated records have no LL2 id. A fuzzy mission-name
+        # match is NOT sufficient evidence to delete them as completed.
+        known_id = str(r.get('ll2_id') or '')
+        if known_id and any(str(p.get('id')) == known_id for p in prev):
             expired.append(r)
             continue
-        f = match(base, up)
+        f = next((x for x in up if x.get('id') == known_id), None) if known_id else match(base, up)
         if f is None:
             unmatched.append(r)
             out_rows.append(r)
@@ -146,7 +151,7 @@ def main():
         ch = []
         nd = f['net'][:10]
         st = STATUS_MAP.get((f.get('status') or {}).get('abbrev', ''))
-        if r.get('date') != nd and (r.get('date') or (f.get('net_precision') or {}).get('name') in ('Minute', 'Hour', 'Day')):
+        if r.get('date') != nd and (r.get('date') or (f.get('net_precision') or {}).get('name') in ('Second', 'Minute', 'Hour', 'Day')):
             ch.append('تاریخ: %s ← %s' % (r.get('date'), nd))
             new['date'] = nd
             hh = f['net'][11:16]
@@ -168,7 +173,7 @@ def main():
             if dd:
                 L, _ = landing_of(dd)
                 if L:
-                    ab = ((L.get('location') or {}).get('abbrev')) or ''
+                    ab = ((L.get('landing_location') or L.get('location') or {}).get('abbrev')) or ''
                     site = SHIP2SITE.get(ab)
                     lt = TYPE2LTYPE.get(((L.get('type') or {}).get('abbrev')) or '')
                     if site and site != r.get('site_id'):
@@ -198,7 +203,7 @@ def main():
         L, booster = landing_of(dd)
         if not L:
             continue  # این پرواز تلاش فرود ندارد
-        ab = ((L.get('location') or {}).get('abbrev')) or ((L.get('location') or {}).get('name')) or ''
+        ab = ((L.get('landing_location') or L.get('location') or {}).get('abbrev')) or ((L.get('landing_location') or L.get('location') or {}).get('name')) or ''
         site = SHIP2SITE.get(ab)
         lt = TYPE2LTYPE.get(((L.get('type') or {}).get('abbrev')) or '')
         rk = (f.get('name') or '').split(' | ')[0]
@@ -219,7 +224,7 @@ def main():
         ofa = 'مأموریت %s — %s' % (mission, ofa)
         oen = '%s — %s' % (mission, oen)
         prec = (f.get('net_precision') or {}).get('name')
-        dated = prec in ('Minute', 'Hour', 'Day')
+        dated = prec in ('Second', 'Minute', 'Hour', 'Day')
         hh = f['net'][11:16]
         st_new = STATUS_MAP.get((f.get('status') or {}).get('abbrev', ''), 'queued')
         # قرارداد تب: بی‌تاریخ یعنی در صف؛ تاریخ‌دار نمی‌تواند در صف بماند
@@ -227,7 +232,7 @@ def main():
         serial = booster.get('serial_number') if booster else None
         flights = booster.get('flights') if booster else None
         row = {
-            'id': 'upl-auto-' + f['id'][:8],
+            'id': 'upl-auto-' + f['id'][:8], 'll2_id': f['id'],
             'site_id': site,
             'mission': mission, 'mission_fa': mission,
             'vehicle_en': VEHICLE_EN[vkey], 'vehicle_fa': VEHICLE_FA[vkey],
@@ -279,7 +284,9 @@ def main():
     out_rows.sort(key=lambda r: (r.get('date') is None, r.get('date') or '9999'))
     doc[key] = out_rows
     doc['updated'] = today
-    open(DATA, 'w', encoding='utf-8').write(json.dumps(doc, ensure_ascii=False, indent=1))
+    doc['window_end'] = max(doc.get('window_end', ''), (datetime.date.today() + datetime.timedelta(days=90)).isoformat())
+    with open(DATA, 'w', encoding='utf-8') as fp:
+        json.dump(doc, fp, ensure_ascii=False, indent=1)
     print('\n✅ اعمال شد: %d به‌روزرسانی، %d حذف، %d افزودن. پشتیبان: /tmp/landings.pre_refresh.json' % (
         len(updated), len(expired), len(new_rows)))
 

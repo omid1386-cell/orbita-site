@@ -1,0 +1,74 @@
+$ python -m unittest discover -s tools -p test_ll2_refresh.py -v
+exit: 0
+test_bad_payload_blocked (test_ll2_refresh.LL2Compatibility.test_bad_payload_blocked) ... ok
+test_curated_landing_not_deleted_by_similar_past_mission (test_ll2_refresh.LL2Compatibility.test_curated_landing_not_deleted_by_similar_past_mission) ... ok
+test_landing_bad_feed_never_writes (test_ll2_refresh.LL2Compatibility.test_landing_bad_feed_never_writes) ... ok
+test_landing_detail_structure (test_ll2_refresh.LL2Compatibility.test_landing_detail_structure) ... ok
+test_landing_refresh_apply_with_mocked_v23 (test_ll2_refresh.LL2Compatibility.test_landing_refresh_apply_with_mocked_v23) ... ok
+test_launch_network_error_never_writes (test_ll2_refresh.LL2Compatibility.test_launch_network_error_never_writes) ... ok
+test_launch_refresh_apply_with_mocked_v23 (test_ll2_refresh.LL2Compatibility.test_launch_refresh_apply_with_mocked_v23) ... ok
+test_precision_second (test_ll2_refresh.LL2Compatibility.test_precision_second) ... ok
+test_production_endpoints_are_supported (test_ll2_refresh.LL2Compatibility.test_production_endpoints_are_supported) ... ok
+test_v23_normal_shape (test_ll2_refresh.LL2Compatibility.test_v23_normal_shape) ... ok
+
+----------------------------------------------------------------------
+Ran 10 tests in 0.037s
+
+OK
+
+
+$ node tests/upcoming.test.cjs
+exit: 0
+PASS شمار ردیف‌ها در بازهٔ سالم است (۱۰۰ تا ۲۵۰)
+PASS همهٔ ردیف‌ها به پایگاه معتبر اشاره می‌کنند
+PASS هر ۶۴ پایگاه پوشش‌دار اعلام شده‌اند
+PASS مهر به‌روزرسانی موجود است
+PASS هیچ ستون الزامی خالی نیست
+PASS شناسهٔ مرجع یکتا است
+PASS توضیح فارسی تکراری وجود ندارد
+PASS توضیح انگلیسی تکراری وجود ندارد
+PASS درجهٔ قطعیت معتبر است
+PASS هیچ تاریخ گذشته‌ای در داده نیست
+PASS پیوندهای گاه‌شمار فقط از دامنه‌های رسمی تأییدشده
+PASS پیوندهای پخش زنده فقط از دامنه‌های رسمی تأییدشده
+PASS ردیف‌های با قطعیت روزانه، ساعت دارند
+PASS بیست یادداشت وضعیت برای پایگاه‌های خاموش موجود است
+PASS همهٔ یادداشت‌ها دوزبانه و غیرخالی‌اند
+15 PASS / 0 FAIL
+
+
+$ node tests/upcoming_landings.test.cjs
+exit: 0
+PASS: ساختار سطح بالا سالم است؛ بدون محدودیت نمونه و بدون جملهٔ زمان نسبت به پرتاب
+PASS: 6 ردیف: شناسه‌ها یکتا، پایگاه‌ها معتبر، وضعیت و تاریخ سازگار، دوزبانگی کامل
+PASS: همهٔ پیوندهای پخش و گاه‌شمار https و از دامنه‌های رسمی تأییدشده‌اند
+PASS: هیچ جملهٔ توصیفی بیش از ۳ بار در کل پرونده تکرار نشده است
+PASS: در هیچ صفحه‌ای جملهٔ توصیفی تکراری کنار هم نمایش نمی‌یابد
+5 PASS / 0 FAIL
+
+
+$ node tests/site_stats.test.cjs
+exit: 0
+PASS multi-pad sources are summed, while automated history does not guess a site launch type
+PASS Overberg orbital statistics remain explicitly zero despite separate suborbital/test rows
+PASS Xuhai reported count uses the TASA reporting cut-off and unknown outcomes remain unknown
+PASS Sonmiani is represented as a documented minimum, not a complete total
+PASS ردیف‌های روایی خودکار (در صورت وجود) دوزبانه و منبع‌دارند
+PASS آمار پایگاه‌ها سازگار است (50 پایگاه بذرخورده از 79)
+6 PASS / 0 FAIL
+
+
+$ node tests/recovery.test.cjs
+exit: 0
+PASS: 16 landing registries (1029 rows) are sourced, dated, ordered and scope-labelled; marine sites disclose mobility and zone approximation.
+PASS: 20 sites, 70 sourced events and 31 official video links, honest coverage/coordinates, existing marker artwork and basemaps unchanged.
+PASS: only verified, event-matched, HTTPS official watch links are accepted.
+SKIP: browser checks skipped — playwright is not installed in this environment. Data checks all passed.
+
+
+$ python -m py_compile tools/ll2_compat.py tools/refresh_upcoming.py tools/refresh_landings.py tools/seed_site_stats.py tools/update_site_history.py
+exit: 0
+
+
+$ git diff --check
+exit: 0

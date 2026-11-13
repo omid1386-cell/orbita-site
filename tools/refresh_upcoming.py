@@ -17,12 +17,13 @@
   ۵) مهر تازگی: زمان برداشت موفق در فرادادهٔ پرونده ثبت می‌شود
 """
 import json, sys, os, urllib.request, urllib.error, datetime, copy
+from ll2_compat import API_ROOT, normalize_page
 
 BASE = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 DATA = os.path.join(BASE, 'data', 'upcoming.json')
 SITE_MAP = os.path.join(BASE, 'tools', 'site_map.json')
 UA = 'OrbitaEducationalApp/1.0 (contact: orbita.app.dev@gmail.com)'
-API = 'https://ll.thespacedevs.com/2.2.0/launch/upcoming/?mode=list&limit=100'
+API = API_ROOT + 'upcoming/?mode=normal&limit=100&ordering=net&hide_recent_previous=true&format=json'
 
 FA_DIGITS = str.maketrans('0123456789', '۰۱۲۳۴۵۶۷۸۹')
 
@@ -40,7 +41,7 @@ def fmt_timing(net, prec_name):
     (precision فقط day/month/quarter/tbd؛ برچسب و ساعت طبق قراردادهای موجود)."""
     y, mo = int(net[:4]), int(net[5:7])
     hhmm = net[11:16]
-    if prec_name in ('Minute', 'Hour', 'Day'):
+    if prec_name in ('Second', 'Minute', 'Hour', 'Day'):
         return {'precision': 'day', 'precision_fa': 'روز و ساعت مشخص', 'precision_en': 'Confirmed date & time',
                 'date_label_fa': net[:10], 'date_label_en': net[:10],
                 'time_fa': 'ساعت %s به وقت جهانی' % hhmm, 'time_en': '%s UTC' % hhmm}
@@ -59,7 +60,7 @@ def fmt_timing(net, prec_name):
 
 
 def fetch(url):
-    req = urllib.request.Request(url, headers={'User-Agent': UA})
+    req = urllib.request.Request(url, headers={'User-Agent': UA, 'Accept': 'application/json'})
     with urllib.request.urlopen(req, timeout=30) as r:
         return json.load(r)
 
@@ -75,7 +76,8 @@ def harvest_dicts(rows):
                 d[key].setdefault(en, fa)
     extra_path = os.path.join(BASE, 'tools', 'dict_extra.json')
     if os.path.exists(extra_path):
-        extra = json.load(open(extra_path, encoding='utf-8'))
+        with open(extra_path, encoding='utf-8') as fp:
+            extra = json.load(fp)
         for key in d:
             for en, fa in (extra.get(key) or {}).items():
                 d[key][en] = fa
@@ -107,14 +109,19 @@ def main():
     apply_mode = '--apply' in sys.argv
     today = datetime.date.today().isoformat()
 
-    cur = json.load(open(DATA, encoding='utf-8'))
+    with open(DATA, encoding='utf-8') as fp:
+        cur = json.load(fp)
     rows = cur['launches'] if 'launches' in cur else None
     if rows is None:
         for k, v in cur.items():
             if isinstance(v, list):
                 rows = v
                 break
-    smap = json.load(open(SITE_MAP, encoding='utf-8')) if os.path.exists(SITE_MAP) else {'locations': {}, 'pad_rules': []}
+    if os.path.exists(SITE_MAP):
+        with open(SITE_MAP, encoding='utf-8') as fp:
+            smap = json.load(fp)
+    else:
+        smap = {'locations': {}, 'pad_rules': []}
     dicts = harvest_dicts(rows)
 
     # ——— برداشت (نگهبان ۱: فقط دو درخواست)
@@ -128,7 +135,11 @@ def main():
         print('⛔ دروازهٔ اعتبارسنجی: خطای شبکه (%s) — لغو شد.' % e)
         sys.exit(2)
 
-    fresh = p1.get('results', []) + p2.get('results', [])
+    try:
+        fresh = normalize_page(p1) + normalize_page(p2)
+    except ValueError as e:
+        print('⛔ دروازهٔ اعتبارسنجی: پاسخ API ناسازگار است (%s).' % e)
+        sys.exit(2)
     # ——— نگهبان ۲: دادهٔ لاغر یا ناهمخوان یعنی لغو
     if len(fresh) < 120:
         print('⛔ دروازهٔ اعتبارسنجی: فقط %d ردیف رسید (انتظار ~۲۰۰) — لغو شد.' % len(fresh))
@@ -161,7 +172,7 @@ def main():
         new = copy.deepcopy(r)
         changes = []
         timing = fmt_timing(f['net'], (f.get('net_precision') or {}).get('name'))
-        if str(f['net'])[:16] != str(r['net'])[:16]:
+        if str(f['net'])[:19] != str(r['net'])[:19]:
             changes.append('تاریخ: %s ← %s' % (r['net'][:10], f['net'][:10]))
             new['net'] = f['net']
         if timing['precision'] != r.get('precision') or (changes and timing['precision'] == 'day'):
@@ -183,7 +194,7 @@ def main():
 
     # ——— ردیف‌های تازهٔ LL2 که ما نداریم (نگهبان ۴)
     known = {str(r.get('ll2_id')) for r in rows}
-    wend = cur.get('window_end', '2027-01-06')
+    wend = max(cur.get('window_end', ''), (datetime.date.today() + datetime.timedelta(days=90)).isoformat())
     for f in fresh:
         if f['id'] in known or str(f['net'])[:10] > wend:
             continue
@@ -258,7 +269,9 @@ def main():
     key = 'launches' if 'launches' in cur else [k for k, v in cur.items() if isinstance(v, list)][0]
     cur[key] = out_rows
     cur['updated'] = today            # نگهبان ۵: مهر تازگی
-    open(DATA, 'w', encoding='utf-8').write(json.dumps(cur, ensure_ascii=False, indent=1))
+    cur['window_end'] = wend
+    with open(DATA, 'w', encoding='utf-8') as fp:
+        json.dump(cur, fp, ensure_ascii=False, indent=1)
     print('\n✅ اعمال شد: %d به‌روزرسانی، %d حذف انجام‌شده، %d ردیف تازه. پشتیبان: /tmp/upcoming.pre_refresh.json' % (
         len(updated), len(launched), len(new_rows)))
 
