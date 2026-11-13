@@ -38,11 +38,11 @@
 @media(max-width:540px){.raspehr-stage{min-height:100vh;gap:11px;padding:22px 12px}.raspehr-espash{width:100%;max-width:450px}.raspehr-title{margin-top:15px}}
 </style>
 <link rel="stylesheet" href="assets/vendor/maplibre-gl.css?v=3" />
-<link rel="stylesheet" href="assets/css/app.css?_t=20261113-raspehr-14-step5-v1" />
+<link rel="stylesheet" href="assets/css/app.css?_t=20261113-help-14categories-v1" />
 <!-- Ordered defer scripts download in parallel instead of creating a network waterfall. -->
 <script defer src="assets/js/raspehr-splash.js?v=20261113-speed-v1"></script>
 <script defer src="assets/vendor/maplibre-gl.js?v=3"></script>
-<script defer src="assets/js/app.js?_t=20261113-raspehr-14-step5-v1"></script>
+<script defer src="assets/js/app.js?_t=20261113-help-14categories-v1"></script>
 <script>
   window.ORBITA_V = "20261113-raspehr-speed-splash-v1";
   window.ORBITA_APP_V = "20261113-raspehr-14-step5-v1";
@@ -229,6 +229,11 @@
             <span class="site-guide-task-copy"><strong data-i18n="guide_task_find_title">پیدا کردن یک شرکت، پایگاه یا کشور</strong><small data-i18n="guide_task_find_body">راهنمای نقشه و جست‌وجوی فهرست</small></span>
             <span class="site-guide-task-arrow" aria-hidden="true">↗</span>
           </button>
+          <button class="site-guide-task" type="button" data-guide-open-topic="catalog">
+            <span class="site-guide-task-icon" data-guide-icon="companies" aria-hidden="true"></span>
+            <span class="site-guide-task-copy"><strong data-i18n="guide_catalog_shortcut">شناخت ۱۴ دسته نقشه</strong><small data-i18n="guide_catalog_shortcut_body">کاربرد هر دسته و زبانه‌های شناسنامه</small></span>
+            <span class="site-guide-task-arrow" aria-hidden="true">↗</span>
+          </button>
           <button class="site-guide-task" type="button" data-guide-open-topic="metrics">
             <span class="site-guide-task-icon" data-guide-icon="metrics" aria-hidden="true"></span>
             <span class="site-guide-task-copy"><strong data-i18n="guide_task_counts_title">فهمیدن شمارش‌ها و وضعیت‌ها</strong><small data-i18n="guide_task_counts_body">معنی نشان‌ها، آمار و خانه‌های خالی</small></span>
@@ -264,6 +269,11 @@
           <div class="site-guide-topic-body"><div class="site-guide-visual" data-guide-visual="map-categories" aria-hidden="true"></div><p class="site-guide-copy" data-i18n="guide_map_body"></p><div class="site-guide-topic-actions"><button type="button" data-guide-command="map-search" data-i18n="guide_open_map">رفتن به نقشه و بازکردن جست‌وجو</button></div></div>
         </details>
 
+        <details id="guide-topic-catalog" class="site-guide-section" data-guide-topic="catalog" data-guide-keywords="۱۴ 14 دسته شرکت سازمان ماهواره قطعات زیرسامانه محموله ابزار خدمات زمینی داده مداری دانشگاه آزمایشگاه آزمون ایستگاه کنترل مأموریت انواع لایه category categories 14 layers components payload instruments ground services in orbit universities labs test facilities ground stations mission control launch propulsion satellite makers agencies sites recovery الفئات الطبقات المكونات الحمولات الخدمات المدارية الجامعات المحطات الأرضية التحكم بالمهمات">
+          <summary><span class="site-guide-topic-icon" data-guide-icon="companies" aria-hidden="true"></span><span class="site-guide-summary-copy"><strong data-i18n="guide_catalog_title">راهنمای کامل ۱۴ دسته نقشه</strong><small class="site-guide-teaser" data-guide-teaser></small></span></summary>
+          <div class="site-guide-topic-body"><p class="site-guide-copy" data-i18n="guide_catalog_body"></p><div class="site-guide-visual site-guide-catalog-visual" data-guide-visual="layer-directory" data-i18n-aria-label="guide_catalog_title" aria-label="راهنمای کامل ۱۴ دسته نقشه"></div><div class="site-guide-topic-actions"><button type="button" data-guide-command="map-search" data-i18n="guide_open_map">رفتن به نقشه و بازکردن جست‌وجو</button></div></div>
+        </details>
+
         <details id="guide-topic-search" class="site-guide-section" data-guide-topic="search" data-guide-keywords="جستجو جست‌وجو شرکت پایگاه کشور نتیجه فهرست میانبر ctrl k keyboard map search company launch site country result list بحث البحث الشركة الموقع الدولة">
           <summary><span class="site-guide-topic-icon" data-guide-icon="search" aria-hidden="true"></span><span class="site-guide-summary-copy"><strong data-i18n="guide_search_title">جست‌وجوی نقشه و فهرست نتایج</strong><small class="site-guide-teaser" data-guide-teaser></small></span></summary>
           <div class="site-guide-topic-body"><div class="site-guide-visual" data-guide-visual="map-search" aria-hidden="true"></div><p class="site-guide-copy" data-i18n="guide_search_body"></p><div class="site-guide-topic-actions"><button type="button" data-guide-command="map-search" data-i18n="guide_open_map">رفتن به نقشه و بازکردن جست‌وجو</button></div></div>
@@ -274,7 +284,7 @@
           <div class="site-guide-topic-body"><div class="site-guide-visual" data-guide-visual="country-profile" aria-hidden="true"></div><p class="site-guide-copy" data-i18n="guide_country_body"></p><div class="site-guide-topic-actions"><button type="button" data-guide-command="map-search" data-i18n="guide_open_map">رفتن به نقشه و بازکردن جست‌وجو</button></div></div>
         </details>
 
-        <details id="guide-topic-companies" class="site-guide-section" data-guide-topic="companies" data-guide-keywords="شرکت سازمان آژانس پیشران پرتاب ماهواره پرونده زبانه موتور ناوگان برنامه تاریخچه profile company organization agency propulsion launch satellite manufacturer dossier tabs engines fleet programs history space agency الشركة المؤسسة الوكالة مصنع ملف المحركات">
+        <details id="guide-topic-companies" class="site-guide-section" data-guide-topic="companies" data-guide-keywords="شرکت سازمان آژانس پیشران پرتاب ماهواره قطعات زیرسامانه محموله خدمات زمینی مداری دانشگاه آزمون ایستگاه کنترل مأموریت پرونده زبانه موتور ناوگان برنامه تاریخچه profile company organization agency propulsion launch satellite components payloads ground services in space university test ground station mission control dossier tabs الشركة المؤسسة الوكالة المكونات الحمولات المحطات الأرضية">
           <summary><span class="site-guide-topic-icon" data-guide-icon="companies" aria-hidden="true"></span><span class="site-guide-summary-copy"><strong data-i18n="guide_companies_title">پروندهٔ شرکت‌ها و سازمان‌ها</strong><small class="site-guide-teaser" data-guide-teaser></small></span></summary>
           <div class="site-guide-topic-body"><div class="site-guide-visual" data-guide-visual="company-categories" aria-hidden="true"></div><p class="site-guide-copy" data-i18n="guide_companies_body"></p><div class="site-guide-topic-actions"><button type="button" data-guide-command="map-search" data-i18n="guide_open_map">رفتن به نقشه و بازکردن جست‌وجو</button></div></div>
         </details>

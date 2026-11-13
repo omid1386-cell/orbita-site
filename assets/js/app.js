@@ -51,8 +51,15 @@
       n_s: "جنوب", n_sw: "جنوب غربی", n_w: "غرب", n_nw: "شمال غربی",
       guide_button: "راهنما", guide_title: "راهنمای استفاده از ORBITA", guide_kicker: "راهنمای سریع",
       guide_intro: "هر بخش را با آیکون آشنایش پیدا کن؛ یا در عنوان‌ها، توضیح‌ها و واژه‌های هم‌معنی جست‌وجو کن.",
+      guide_catalog_title: "راهنمای کامل ۱۴ دسته نقشه",
+      guide_catalog_body: "ORBITA دارای ۱۴ دسته قابل انتخاب است؛ این عدد تعداد نوع‌های اطلاعاتی است، نه تعداد شرکت‌ها. هر دسته را باز کن تا بدانی چه موجودیت‌هایی در آن ثبت می‌شوند، چه اطلاعاتی در شناسنامه می‌بینی و کدام پنج زبانه برای هشت حوزه تخصصی جدید وجود دارد. برخی نهادها در چند حوزه نقش دارند، اما این نقش‌ها لزوماً شرکت‌های مستقل یا رکوردهای تکراری نیستند.",
+      guide_catalog_look_for: "در شناسنامه چه ببینم؟",
+      guide_catalog_tabs: "پنج زبانه تخصصی این حوزه:",
+      guide_catalog_shortcut: "شناخت ۱۴ دسته نقشه",
+      guide_catalog_shortcut_body: "کاربرد هر دسته و زبانه‌های شناسنامه",
+
       guide_close: "بستن راهنما", guide_quick_title: "شروع در چند گام",
-      guide_quick_body: "ORBITA اکنون بر نقشهٔ جهانی متمرکز است. با روشن‌کردن دسته‌ها و جست‌وجوی نقشه، شرکت‌ها، سازمان‌ها، پایگاه‌ها و محل‌های فرود و بازیابی را پیدا کن و شناسنامه هر مورد را باز کن. اطلاعات پرتاب‌های پیش‌رو در شناسنامه پایگاه‌ها و نوار «پرتاب بعدی» در صورت دسترسی به داده نمایش داده می‌شود.",
+      guide_quick_body: "ORBITA نقشه‌ای با ۱۴ دسته تخصصی دارد. از پنل «مدیریت لایه‌ها» دسته‌های موردنظر را روشن کن، با جست‌وجوی نقشه یک شرکت، سازمان، ایستگاه یا تأسیسات را پیدا کن و شناسنامه آن را باز کن. «راهنمای کامل ۱۴ دسته نقشه» تفاوت هر حوزه و زبانه‌های هشت حوزه جدید را توضیح می‌دهد. اطلاعات پرتاب‌های پیش‌رو در شناسنامه پایگاه‌ها و نوار «پرتاب بعدی» در صورت دسترسی به داده نمایش داده می‌شود.",
       guide_map_title: "نقشه، دسته‌ها و نشانگرها",
       guide_map_body: "نقشه جای تقریبی رکوردهایی را نشان می‌دهد که دستهٔ مربوط به آن‌ها روشن است. این نسخه ۱۴ دسته قابل انتخاب دارد: شش دسته پیشین و هشت حوزه جدید در بخش شرکت‌ها، دانشگاه‌ها و زیرساخت‌های فضایی. حوزه‌های جدید فعلاً با پرونده‌های نمونه آغاز شده‌اند و ادعای پوشش کامل جهانی ندارند. خاموش‌کردن یک دسته، نمایش آن را از نقشه و فهرست نتایج پنهان می‌کند؛ رکورد را حذف نمی‌کند.\n\nعدد کنار هر دسته شمار رکوردهای فهرست آن دسته است، نه تعداد مواردی که در محدودهٔ دید یا نتیجهٔ جست‌وجوی فعلی مانده‌اند و نه سرشماری کل جهان. هنگام بارگذاری، علامت انتظار دیده می‌شود؛ علامت خطا یعنی دادهٔ آن دسته بارگذاری نشده است.\n\nنشانگر منفرد یک رکورد را باز می‌کند؛ خوشه فقط چند رکورد نزدیک را برای خوانایی نقشه کنار هم نشان می‌دهد. برای دیدن محتویات خوشه آن را باز کنید. انتخاب کشور شناسنامهٔ همان کشور را می‌آورد؛ کلیک روی فضای خالی انتخاب کشور را پاک می‌کند.\n\nدکمهٔ پوسته ظاهر نقشه را عوض می‌کند؛ در UI فعلی دکمهٔ جداگانه‌ای برای جابه‌جایی دستی بین نقشهٔ آنلاین و آفلاین دیده نمی‌شود. اگر نقشهٔ برخط در دسترس نباشد، برنامه می‌تواند به نقشهٔ محلی برگردد.",
       guide_search_title: "جست‌وجوی نقشه و فهرست نتایج",
@@ -60,7 +67,7 @@
       guide_country_title: "شناسنامهٔ کشور",
       guide_country_body: "شناسنامهٔ کشور، رکوردهایی را که طبق تطبیق فعلی سامانه به کشور نسبت داده شده‌اند، در دسته‌های پیشرانش، پرتاب، آژانس‌ها، پایگاه‌ها و فرود/بازیابی گروه‌بندی می‌کند. عدد «مجموعه‌های فعال» جمع همین رکوردهای دسته‌بندی‌شده است؛ شمار رسمی زیرساخت کشور یا شمار قطعی تأسیساتِ در حال کار نیست و می‌تواند رکوردهای در ساخت، غیرفعال یا راکد را نیز دربرگیرد.\n\nصفر یا خالی یعنی در مجموعهٔ فعلی رکورد مطابقی نمایش داده نشده است؛ از آن نمی‌توان نبودن مورد را در دنیای واقعی نتیجه گرفت. سازندگان ماهواره در دستهٔ جداگانهٔ نقشه هستند، اما در جمع و زبانه‌های فعلی شناسنامهٔ کشور وارد نشده‌اند.\n\nشمارهای این صفحه را با تعداد شرکت‌های جهان، کل مأموریت‌های یک کشور یا تعداد قطعی تأسیسات فعال یکی نگیرید. آن‌ها خلاصهٔ رکوردهای حاضر در دسته‌های همین شناسنامه‌اند.",
       guide_companies_title: "پروندهٔ شرکت‌ها و سازمان‌ها",
-      guide_companies_body: "پرونده‌ها یک قالب واحد ندارند؛ زبانه‌ها بر اساس نوع نهاد فرق می‌کنند. در شرکت‌های پرتاب، زبانه‌ها دربارهٔ شناسنامه و آمار، ناوگان پرتابگرها و تاریخچه/شبکه‌اند. در شرکت‌های پیشرانش، بخش‌ها معماری و نوع پیشران، موتورهای معرفی‌شده و پیوند مأموریت، آزمون‌ها و نقشهٔ راه را پوشش می‌دهند. پروندهٔ آژانس‌ها شناسنامه و برنامه‌های اصلی، محصولات/برنامه‌ها و سیر تاریخی/شبکه را دارد؛ پروندهٔ سازندگان ماهواره شناسنامه/تخصص، محصولات/مشتری‌ها و کارنامه/آینده را نشان می‌دهد.\n\nحوزه‌های جدید پرونده‌های تخصصی پنج‌تب و پیوند منبع در کنار ادعاهای منتخب دارند. وجود این نمونه‌ها به معنی ثبت تمام فعالان جهانی هر حوزه نیست.\n\nفیلدهای یکسانی در همهٔ پرونده‌ها وجود ندارد. خانهٔ خالی یعنی این مقدار در پروندهٔ فعلی نمایش داده نشده، نه اینکه حتماً وجود خارجی ندارد. پیوند وب‌سایت نهاد یا منبع عکس را استناد مستقل به همهٔ مشخصات و آمار پرونده تلقی نکنید.",
+      guide_companies_body: "پرونده‌ها بسته به نقش موجودیت متفاوت‌اند: شرکت‌های پرتاب، ناوگان و کارنامه پرتاب؛ شرکت‌های پیشرانش، موتورها و آزمون‌ها؛ سازمان‌های فضایی، برنامه‌ها و سیر تاریخی؛ و سازندگان ماهواره، محصولات و مشتریان را نمایش می‌دهند.\n\nهشت حوزه جدید برای قطعات، ابزارها و محموله‌ها، خدمات زمینی، خدمات مداری، دانشگاه‌ها، تأسیسات آزمون، ایستگاه‌های زمینی و مراکز کنترل مأموریت، پنج زبانه تخصصی متناسب با همان حوزه دارند. برای عنوان دقیق همه زبانه‌ها و تفاوت حوزه‌ها، بخش «راهنمای کامل ۱۴ دسته نقشه» را باز کنید.\n\nموجودیت‌های چندنقشی لزوماً رکوردهای جدا نیستند. فیلد خالی به معنای ثبت‌نشدن داده در شناسنامه فعلی است؛ وب‌سایت رسمی یا اعتبار تصویر نیز به‌تنهایی منبع همه مشخصات نیست.",
       guide_site_title: "پروندهٔ پایگاه پرتاب",
       guide_site_body: "در زبانهٔ «شناسنامه و آمار»، کشور، بهره‌بردار، وضعیت پایگاه، نخستین پرتاب، سکوها، راکت‌ها، مختصات و شاخص‌های جغرافیایی نمایش داده می‌شوند. ارتفاع، فاصله از استوا و ازیموت ویژگی‌های مکانی/جهت پرتاب‌اند؛ «مدار هدف» به مدارهای موردنظر یا معرفی‌شده برای پایگاه اشاره دارد و تضمین نمی‌کند هر مأموریت به همان مدار برسد.\n\nآمار کل پرتاب، موفقیت/شکست و نمودار سالانه خلاصهٔ دادهٔ ثبت‌شدهٔ پایگاه‌اند. شمار آمار تجمیعی ممکن است با تعداد ردیف‌هایی که در تاریخچهٔ همین صفحه دیده می‌شود یکسان نباشد. در زبانهٔ «تاریخچه»، هر ردیف یک پرتاب ثبت‌شده است؛ بازکردن ردیف جزئیات فنی و تحلیل همان رویداد را نشان می‌دهد. وضعیت «موفق/ناموفق» نتیجهٔ پرتاب است، نه وضعیت کنونی پایگاه.\n\nزبانهٔ «پرتاب‌های پیشِ رو» از فهرست محلی The Space Devs استفاده می‌کند و برخی تاریخ‌ها/وضعیت‌ها را با Launch Library 2 همگام می‌کند. تاریخ‌ها ممکن است جابه‌جا شوند؛ تاریخ دادهٔ محلی و وضعیت همگام‌سازی را در همان پنل بخوانید. اگر پنل بگوید داده برای این پایگاه پوشش ندارد، آن را با «در حال حاضر پرتابی اعلام نشده» یکی نگیرید.\n\nزبانهٔ «تحلیل جغرافیا و زیرساخت» توضیح مکانی و چک‌لیست ثبت‌شدهٔ زیرساخت را می‌دهد؛ چک‌لیست به‌تنهایی پایش زنده یا تضمین آمادگی عملیاتی امروز نیست.",
       guide_recovery_title: "پروندهٔ فرود و بازیابی",
@@ -177,8 +184,15 @@
       n_n: "N", n_ne: "NE", n_e: "E", n_se: "SE", n_s: "S", n_sw: "SW", n_w: "W", n_nw: "NW",
       guide_button: "Guide", guide_title: "Using ORBITA", guide_kicker: "Quick guide",
       guide_intro: "Find a part of the app by its familiar icon, or search titles, explanations, and related terms.",
+      guide_catalog_title: "Guide to all 14 map categories",
+      guide_catalog_body: "ORBITA has 14 selectable categories; this is a count of information types, not of companies. Expand a category to learn what it includes, how to read its profiles, and the five specialist tabs used in each of the eight new areas. An organization may have multiple roles without being a duplicate company or record.",
+      guide_catalog_look_for: "What should I look for in a profile?",
+      guide_catalog_tabs: "Five specialist tabs in this category:",
+      guide_catalog_shortcut: "Explore all 14 categories",
+      guide_catalog_shortcut_body: "What each layer means and where to look",
+
       guide_close: "Close guide", guide_quick_title: "Get started in a few steps",
-      guide_quick_body: "ORBITA now focuses on the World Map. Turn categories on and search the map to find companies, organizations, launch sites, and landing/recovery locations, then open their profiles. Upcoming launch information remains available in launch-site profiles and the next-launch ticker when data can be retrieved.",
+      guide_quick_body: "ORBITA maps 14 specialist categories. Open Map layers, enable the groups you need, search for a company, agency, station or facility, and open its profile. “Guide to all 14 map categories” explains each layer and the tabs in the eight new specialist areas. Upcoming launches can appear in launch-site profiles and the Next Launch banner when data is available.",
       guide_map_title: "Map, categories and markers",
       guide_map_body: "The map shows approximate record locations for enabled categories. This release offers 14 selectable categories: the six original groups plus eight new industry, university and infrastructure areas. New categories currently contain verified pilot profiles rather than exhaustive worldwide coverage. Turning a category off hides its records from the map and results list; it does not delete them.\n\nThe number beside each category is the number of records in that category's list—not the number currently in view or matching the search, and not a worldwide census. An ellipsis appears while the data is loading; an exclamation mark means that category's data did not load.\n\nA single marker opens one record; a cluster groups nearby records to keep the map readable. Open a cluster to see its contents. Selecting a country opens its profile; clicking empty map space clears the country selection.\n\nThe map-style button changes the map's appearance. The current UI does not show a separate manual online/offline map switch. If the online basemap is unavailable, the app may fall back to the local map.",
       guide_search_title: "Map search and results list",
@@ -186,7 +200,7 @@
       guide_country_title: "Country profile",
       guide_country_body: "The country profile groups records that the app's current matching rules assign to that country: propulsion, launch, space organizations, launch sites, and landing/recovery. The figure labelled Active Entities is the sum of those grouped records. It is not an official count of national infrastructure or a definitive count of facilities currently operating, and it can include records marked under construction, inactive, or dormant.\n\nZero or blank means that no matching record is shown in the current dataset; it does not prove real-world absence. Satellite manufacturers appear in a separate map category but are not included in the current country-profile total or tabs.\n\nDo not treat these totals as a worldwide company count, a country's total number of missions, or a definitive count of active facilities. They summarize the records currently included in this profile.",
       guide_companies_title: "Company and organization profiles",
-      guide_companies_body: "Profiles do not use one template; their tabs depend on the type of organization. A launch-company profile covers overview and statistics, its rocket fleet, and history/network. A propulsion-company profile covers overview and architecture, engines and mission links, and test history/roadmap. An organization profile covers its overview and core role, programmes/services, and timeline/network. A satellite-manufacturer profile covers overview/specialty, products/customers, and track record/future.\n\nThe new specialist categories include five-tab pilot profiles and source links for selected claims; they are not an exhaustive worldwide directory.\n\nThe same fields are not present in every profile. An empty field means that value is not shown in the current record; it does not necessarily mean the real-world entity or value does not exist. A company website or photo-source link should not be treated as an independent citation for every profile detail and statistic.",
+      guide_companies_body: "Profiles vary by role: launch providers cover fleets and flight record, propulsion firms cover engines and tests, agencies cover programmes and history, and satellite makers cover products and customers.\n\nThe eight new categories—components, payloads, ground services, in-space services, universities, test facilities, ground stations and mission control—have five specialized tabs for each field. Open “Guide to all 14 map categories” for every category’s purpose and exact tab titles.\n\nMultiple roles do not necessarily mean duplicate records. An empty field means data is not recorded in the current profile; a home page or photo credit is not a citation for every claim.",
       guide_site_title: "Launch-site profile",
       guide_site_body: "The Overview & Stats tab shows the country, operator, site status, first launch, pads, rockets, coordinates, and geographic indicators. Altitude, distance from the equator, and launch azimuth describe location or launch direction. Target orbit refers to an orbit listed or intended for the site; it does not guarantee that every mission reaches that orbit.\n\nTotal launches, success/failure figures, and the annual chart summarize recorded data. An aggregate total may differ from the number of rows shown in the history on the same page. In History, each row is a recorded launch; opening it shows technical details and analysis for that event. Success/Failed is the launch outcome, not the site's current status.\n\nThe Upcoming tab uses a local list from The Space Devs and synchronizes some dates and statuses with Launch Library 2. Dates may move; check the local-data update date and synchronization status in that panel. If the panel says the site is not covered by the data, do not interpret that as “no launches have been announced.”\n\nThe Analysis & Infrastructure tab provides geographic context and a recorded infrastructure checklist. The checklist is not live monitoring and does not guarantee the site's operational readiness today.",
       guide_recovery_title: "Landing and recovery profile",
@@ -305,8 +319,15 @@
       n_s: "جنوب", n_sw: "جنوب غربي", n_w: "غرب", n_nw: "شمال غربي",
       guide_button: "الدليل", guide_title: "دليل استخدام ORBITA", guide_kicker: "دليل سريع",
       guide_intro: "اعثر على القسم من أيقونته المألوفة، أو ابحث في العناوين والشروح والكلمات ذات الصلة.",
+      guide_catalog_title: "دليل فئات الخريطة الأربع عشرة",
+      guide_catalog_body: "تضم ORBITA أربع عشرة فئة قابلة للاختيار؛ وهذا عدد أنواع المعلومات وليس عدد الشركات. افتح أي فئة لمعرفة ما تشمله وكيفية قراءة ملفاتها والتبويبات الخمسة لكل مجال من المجالات التخصصية الثمانية الجديدة. وقد تؤدي المؤسسة أكثر من دور دون أن تكون سجلاً مكرراً.",
+      guide_catalog_look_for: "ما الذي أبحث عنه في الملف؟",
+      guide_catalog_tabs: "التبويبات التخصصية الخمسة:",
+      guide_catalog_shortcut: "تعرّف إلى الفئات الأربع عشرة",
+      guide_catalog_shortcut_body: "وظيفة كل فئة وكيفية قراءة ملفاتها",
+
       guide_close: "إغلاق الدليل", guide_quick_title: "ابدأ في خطوات قليلة",
-      guide_quick_body: "يركز ORBITA الآن على الخريطة العالمية. فعّل الفئات واستخدم البحث للعثور على الشركات والمؤسسات ومواقع الإطلاق ومواقع الهبوط والاستعادة، ثم افتح ملفاتها. تظل بيانات الإطلاقات القادمة متاحة في ملفات مواقع الإطلاق وشريط الإطلاق القادم عند توفر المصدر.",
+      guide_quick_body: "تعرض ORBITA أربع عشرة فئة متخصصة على الخريطة. افتح إدارة الطبقات وحدّد الفئات المطلوبة، ثم ابحث عن شركة أو وكالة أو محطة أو منشأة وافتح ملفها. يوضح «دليل فئات الخريطة الأربع عشرة» وظيفة كل فئة وتبويبات المجالات الثمانية الجديدة. وقد تظهر عمليات الإطلاق المقبلة في ملفات مواقع الإطلاق وشريط الإطلاق القادم عند توافر البيانات.",
       guide_map_title: "الخريطة والفئات والعلامات",
       guide_map_body: "تعرض الخريطة المواقع التقريبية للسجلات ضمن الفئات المفعّلة. يتضمن هذا الإصدار 14 فئة قابلة للاختيار: الفئات الست الأصلية وثمانية مجالات جديدة للصناعة والجامعات والبنية التحتية الفضائية. تحتوي الفئات الجديدة حالياً على ملفات تجريبية موثقة، وليست حصراً عالمياً شاملاً. يؤدي إيقاف فئة إلى إخفاء سجلاتها عن الخريطة وقائمة النتائج؛ ولا يحذفها.\n\nالعدد بجوار كل فئة هو عدد السجلات في قائمتها، وليس عدد العناصر الظاهرة حالياً أو المطابقة للبحث، ولا إحصاءً عالمياً. تظهر علامة الحذف أثناء تحميل البيانات؛ وتعني علامة التعجب أن بيانات تلك الفئة لم تُحمّل.\n\nتفتح العلامة المنفردة سجلاً واحداً؛ وتجمع المجموعة سجلات متقاربة لتسهيل قراءة الخريطة. افتح المجموعة لعرض محتوياتها. يؤدي اختيار دولة إلى فتح ملفها؛ والنقر على مساحة فارغة من الخريطة يلغي اختيار الدولة.\n\nيغيّر زر نمط الخريطة مظهرها. لا تعرض الواجهة الحالية مفتاحاً منفصلاً للتبديل اليدوي بين الخريطة المتصلة وغير المتصلة. وإذا تعذّر تحميل خريطة الإنترنت، فقد يعود التطبيق إلى الخريطة المحلية.",
       guide_search_title: "بحث الخريطة وقائمة النتائج",
@@ -314,7 +335,7 @@
       guide_country_title: "ملف الدولة",
       guide_country_body: "يجمع ملف الدولة السجلات التي تنسبها قواعد المطابقة الحالية في التطبيق إلى الدولة ضمن فئات أنظمة الدفع والإطلاق والجهات الفضائية ومواقع الإطلاق والهبوط والاستعادة. والعدد الموسوم الكيانات النشطة هو مجموع هذه السجلات؛ وليس إحصاءً رسمياً للبنية التحتية الوطنية ولا عدّاً نهائياً للمنشآت العاملة حالياً. وقد يشمل سجلات قيد الإنشاء أو غير نشطة أو خاملة.\n\nيعني الصفر أو الحقل الفارغ عدم عرض سجل مطابق في مجموعة البيانات الحالية؛ ولا يثبت عدم وجوده في الواقع. يظهر مصنّعو الأقمار الصناعية ضمن فئة مستقلة على الخريطة، لكنهم غير مدرجين في المجموع أو التبويبات الحالية لملف الدولة.\n\nلا تعامل هذه الأعداد على أنها إجمالي الشركات في العالم، أو إجمالي مهمات الدولة، أو عدّ نهائي للمنشآت النشطة؛ فهي تلخص السجلات الموجودة حالياً في هذا الملف.",
       guide_companies_title: "ملفات الشركات والمؤسسات",
-      guide_companies_body: "لا تتبع الملفات قالباً واحداً؛ إذ تختلف تبويباتها باختلاف نوع الجهة. يغطي ملف شركة الإطلاق النظرة العامة والإحصاءات، وأسطول الصواريخ، والسجل والشبكة. ويغطي ملف شركة أنظمة الدفع النظرة العامة والهندسة المعمارية، والمحركات وربط المهام، وسجل الاختبارات وخارطة الطريق. أما ملف الجهة الفضائية فيعرض نظرة عامة على دورها القانوني والعملي، والبرامج والخدمات، والخط الزمني والشبكة. ويعرض ملف مُصنّع الأقمار الصناعية النظرة العامة والتخصص، والمنتجات والعملاء، والسجل والآفاق المستقبلية.\n\nتتضمن المجالات التخصصية الجديدة ملفات تجريبية من خمسة تبويبات وروابط مصادر لمعلومات محددة؛ ولا تمثل دليلاً عالمياً شاملاً.\n\nلا تظهر الحقول نفسها في جميع الملفات. ويعني الحقل الفارغ أن القيمة غير معروضة في السجل الحالي؛ ولا يعني بالضرورة أن الجهة أو القيمة غير موجودة في الواقع. ولا ينبغي اعتبار رابط موقع الجهة أو مصدر الصورة مرجعاً مستقلاً لكل تفاصيل الملف وإحصاءاته.",
+      guide_companies_body: "تختلف الملفات بحسب الدور: تعرض شركات الإطلاق الأسطول والسجل، وشركات الدفع المحركات والاختبارات، والوكالات البرامج والتاريخ، ومصنّعو الأقمار المنتجات والعملاء.\n\nتضم الفئات الثماني الجديدة المكوّنات والحمولات والخدمات الأرضية والخدمات المدارية والجامعات ومنشآت الاختبار والمحطات الأرضية ومراكز التحكم؛ ولكل مجال خمسة تبويبات متخصصة. راجع «دليل فئات الخريطة الأربع عشرة» لمعرفة وظيفة كل فئة وعناوين تبويباتها.\n\nتعدّد الأدوار لا يعني بالضرورة تكرار السجلات. والحقل الفارغ لا يعني عدم وجود المعلومة في الواقع؛ كما أن رابط الموقع أو مصدر الصورة لا يوثق كل ادعاء.",
       guide_site_title: "ملف موقع الإطلاق",
       guide_site_body: "يعرض تبويب نظرة عامة وإحصاءات الدولة والمشغّل وحالة الموقع وأول إطلاق ومنصات الإطلاق والصواريخ والإحداثيات والمؤشرات الجغرافية. يصف الارتفاع والمسافة عن خط الاستواء وسمت الإطلاق الموقع أو اتجاه الإطلاق. ويشير المدار المستهدف إلى مدار مدرج أو مقصود للموقع؛ ولا يضمن وصول كل مهمة إليه.\n\nيلخص إجمالي الإطلاقات وأعداد النجاح والإخفاق والرسم السنوي البيانات المسجلة. وقد يختلف الإجمالي المجمّع عن عدد الصفوف الظاهرة في سجل التاريخ في الصفحة نفسها. في تبويب سجل الإطلاقات يمثل كل صف إطلاقاً مسجلاً؛ ويعرض فتحه التفاصيل الفنية وتحليل ذلك الحدث. وتشير Success/Failed إلى نتيجة الإطلاق، لا إلى الحالة الحالية للموقع.\n\nيستخدم تبويب الإطلاقات القادمة قائمة محلية من The Space Devs، وتتم مزامنة بعض التواريخ والحالات مع Launch Library 2. وقد تتغير المواعيد؛ راجع تاريخ تحديث البيانات المحلية وحالة المزامنة في اللوحة نفسها. وإذا أفادت اللوحة بأن الموقع غير مشمول بالبيانات، فلا تفسر ذلك على أنه «لم يُعلن عن أي إطلاق».\n\nيعرض تبويب التحليل والبنية التحتية سياقاً جغرافياً وقائمة تحقق مسجلة للبنية التحتية. وهذه القائمة ليست رصداً مباشراً ولا تضمن الجاهزية التشغيلية للموقع اليوم.",
       guide_recovery_title: "ملف الهبوط والاستعادة",
@@ -593,6 +614,373 @@
     { k: "ground_station", family: "infrastructure", short: { fa: "ایستگاه‌های زمینی", en: "Ground stations", ar: "المحطات الأرضية" }, full: { fa: "ایستگاه‌های زمینی ارتباط و ردیابی ماهواره", en: "Satellite communication and tracking ground stations", ar: "المحطات الأرضية لاتصالات الأقمار الصناعية وتتبعها" } },
     { k: "mission_control", family: "infrastructure", short: { fa: "کنترل مأموریت", en: "Mission control", ar: "التحكم بالمهمات" }, full: { fa: "مراکز کنترل مأموریت و بهره‌برداری ماهواره", en: "Mission control and satellite operations centers", ar: "مراكز التحكم بالمهمات وتشغيل الأقمار الصناعية" } }
   ];
+  // User-facing category descriptions and five-tab names verified against current map and profile schemas.
+  var GUIDE_CATEGORY_HELP = {
+  "launch": {
+    "fa": {
+      "about": "شرکت‌های ارائه‌دهنده خدمات پرتاب و توسعه‌دهنده پرتابگر؛ این دسته خودِ پایگاه پرتاب نیست.",
+      "read": "در شناسنامه، ناوگان پرتابگرها، وضعیت توسعه، آمار پرتاب و رویدادهای تاریخی را بخوانید؛ برنامه یا هدف اعلام‌شده را با پرتاب انجام‌شده یکی نگیرید."
+    },
+    "en": {
+      "about": "Launch providers and launch-vehicle developers, not the launch sites themselves.",
+      "read": "Read vehicle fleets, development status, launch statistics and history. An announced plan is not a completed launch."
+    },
+    "ar": {
+      "about": "شركات تقديم خدمات الإطلاق وتطوير مركبات الإطلاق، لا مواقع الإطلاق نفسها.",
+      "read": "اطّلع على أسطول الصواريخ وحالة التطوير وإحصاءات الإطلاق والسجل التاريخي؛ فالخطة المعلنة ليست إطلاقاً منفذاً."
+    }
+  },
+  "propulsion": {
+    "fa": {
+      "about": "سازندگان موتور، رانشگر و سامانه‌های پیشرانش برای پرتابگرها یا فضاپیماها.",
+      "read": "نوع پیشران، معماری موتور، آزمون‌های انجام‌شده و ارتباط با مأموریت‌ها را بررسی کنید؛ آزمون زمینی به‌تنهایی سابقه پرواز نیست."
+    },
+    "en": {
+      "about": "Developers of engines, thrusters and propulsion systems for launch vehicles or spacecraft.",
+      "read": "Compare propellants, engine architecture, actual tests and mission links; a ground test does not itself establish flight heritage."
+    },
+    "ar": {
+      "about": "مطوّرو المحركات والدافعات وأنظمة الدفع للصواريخ والمركبات الفضائية.",
+      "read": "راجع نوع الوقود وتصميم المحرك والاختبارات الفعلية وصلات المهمات؛ فالاختبار الأرضي وحده لا يثبت سجلاً طيرانياً."
+    }
+  },
+  "satmaker": {
+    "fa": {
+      "about": "شرکت‌های سازنده ماهواره، سکوهای ماهواره‌ای و برخی تجهیزات یکپارچه‌شده با آن‌ها.",
+      "read": "بخش محصولات و مشتریان، برنامه‌های ماهواره‌ای و کارنامه عملیاتی را ببینید؛ این دسته با سازندگان تخصصی قطعات و زیرسامانه‌ها هم‌پوشانی نقش دارد."
+    },
+    "en": {
+      "about": "Manufacturers of satellites, satellite platforms and some integrated space hardware.",
+      "read": "Explore products, customers, satellite programmes and flight track record. This role may overlap with specialist component makers."
+    },
+    "ar": {
+      "about": "مصنّعو الأقمار الصناعية ومنصاتها وبعض التجهيزات الفضائية المدمجة.",
+      "read": "راجع المنتجات والعملاء والبرامج والسجل التشغيلي؛ وقد تتداخل هذه الفئة وظيفياً مع مصنّعي المكوّنات المتخصصة."
+    }
+  },
+  "components": {
+    "fa": {
+      "about": "سازندگان قطعات و زیرسامانه‌های تخصصی مانند رایانه پرواز، سامانه کنترل وضعیت، حسگرها و تجهیزات الکترونیکی فضایی.",
+      "read": "محصول مشخص، ویژگی فنی، سابقه استفاده در فضا، مشتریان و زنجیره تأمین را بررسی کنید؛ ادعای سازنده را از سابقه پروازی مستند جدا کنید.",
+      "tabs": [
+        "شناسنامه و تخصص",
+        "محصولات و فناوری",
+        "سابقه پروازی",
+        "مشتریان و زنجیره تأمین",
+        "تاریخچه و تحولات"
+      ]
+    },
+    "en": {
+      "about": "Makers of specialist subsystems such as onboard computers, attitude control, sensors and space electronics.",
+      "read": "Check named products, technical specifications, flight heritage, customers and supply-chain links; distinguish vendor claims from documented missions.",
+      "tabs": [
+        "Identity & specialization",
+        "Products & technology",
+        "Flight heritage",
+        "Customers & supply chain",
+        "History & development"
+      ]
+    },
+    "ar": {
+      "about": "مصنّعو الأنظمة الفرعية المتخصصة مثل حواسيب الطيران والتحكم بالاتجاه والمستشعرات والإلكترونيات الفضائية.",
+      "read": "راجع المنتج والمواصفات والسجل الفضائي والعملاء وسلسلة التوريد، وميّز ادعاءات الشركة من المهمات الموثقة.",
+      "tabs": [
+        "التعريف والتخصص",
+        "المنتجات والتقنية",
+        "السجل الفضائي",
+        "العملاء وسلسلة التوريد",
+        "التاريخ والتطور"
+      ]
+    }
+  },
+  "payloads": {
+    "fa": {
+      "about": "سازندگان محموله‌های مأموریتی و ابزارهای سنجش، تصویربرداری یا اندازه‌گیری که روی فضاپیما نصب می‌شوند.",
+      "read": "نوع ابزار، مشخصات عملکردی، کاربرد مأموریتی، سطح بلوغ فناوری و همکاری‌ها را بخوانید؛ محموله را با کل ماهواره اشتباه نگیرید.",
+      "tabs": [
+        "شناسنامه و حوزه فعالیت",
+        "کاتالوگ ابزارها",
+        "مأموریت‌ها و کاربردها",
+        "بلوغ و عملکرد فناوری",
+        "توسعه و همکاری‌ها"
+      ]
+    },
+    "en": {
+      "about": "Makers of mission payloads and sensing, imaging or measuring instruments carried by spacecraft.",
+      "read": "Check instrument type, performance, mission use, technology readiness and partnerships; a payload is not the complete satellite.",
+      "tabs": [
+        "Identity & specialization",
+        "Instrument catalogue",
+        "Missions & applications",
+        "Readiness & performance",
+        "Development & collaborations"
+      ]
+    },
+    "ar": {
+      "about": "مصنّعو الحمولات العلمية وأدوات الاستشعار والتصوير والقياس المحمولة على المركبات الفضائية.",
+      "read": "راجع نوع الجهاز والأداء والاستخدام ونضج التقنية والشراكات؛ فالحمولة ليست القمر الصناعي بأكمله.",
+      "tabs": [
+        "التعريف والتخصص",
+        "فهرس الأجهزة",
+        "المهمات والاستخدامات",
+        "النضج والأداء التقني",
+        "التطوير والتعاون"
+      ]
+    }
+  },
+  "ground_services": {
+    "fa": {
+      "about": "شرکت‌های عرضه‌کننده تجهیزات زمینی، ارتباط ماهواره‌ای، پردازش داده یا خدمات پشتیبانی مأموریت.",
+      "read": "خدمات قابل ارائه، گستره شبکه، ظرفیت، مدل ارائه خدمت و مشتریان را بررسی کنید؛ ارائه‌دهنده خدمت لزوماً مالک همه ایستگاه‌های شبکه نیست.",
+      "tabs": [
+        "شناسنامه و مدل کسب‌وکار",
+        "محصولات و خدمات",
+        "شبکه و پوشش",
+        "عملکرد و ظرفیت",
+        "مشتریان و شبکه عملیاتی"
+      ]
+    },
+    "en": {
+      "about": "Providers of ground equipment, satellite links, data services and mission support.",
+      "read": "Review services, network footprint, capacity, delivery model and customers; a service provider need not own every station it uses.",
+      "tabs": [
+        "Identity & business model",
+        "Products & services",
+        "Network & footprint",
+        "Capability & capacity",
+        "Clients & operational links"
+      ]
+    },
+    "ar": {
+      "about": "شركات المعدات الأرضية والاتصالات الفضائية وخدمات البيانات ودعم المهمات.",
+      "read": "راجع الخدمات والشبكة والسعة ونموذج التشغيل والعملاء؛ فمقدّم الخدمة لا يملك بالضرورة جميع المحطات التي يستخدمها.",
+      "tabs": [
+        "التعريف ونموذج الأعمال",
+        "المنتجات والخدمات",
+        "الشبكة والتغطية",
+        "القدرات والسعة",
+        "العملاء والروابط التشغيلية"
+      ]
+    }
+  },
+  "inspace_services": {
+    "fa": {
+      "about": "ارائه‌دهندگان حمل‌ونقل فضایی و خدمات پس از استقرار، مانند انتقال مداری یا پشتیبانی عملیات در فضا.",
+      "read": "ناوگان و سامانه‌ها، مأموریت‌های انجام‌شده، توانایی‌های مداری و برنامه آینده را بررسی کنید؛ خدمات پیشنهادی را با عملیات اثبات‌شده یکی ندانید.",
+      "tabs": [
+        "شناسنامه و خدمات",
+        "ناوگان و سامانه‌ها",
+        "مأموریت‌های انجام‌شده",
+        "قابلیت‌های مداری",
+        "برنامه توسعه و مشتریان"
+      ]
+    },
+    "en": {
+      "about": "Providers of space transportation and services after deployment, including orbital transfer and in-space operations.",
+      "read": "Explore vehicles, completed missions, in-orbit capabilities and roadmaps; distinguish proposed services from demonstrated operations.",
+      "tabs": [
+        "Identity & services",
+        "Fleet & systems",
+        "Completed missions",
+        "In-orbit capabilities",
+        "Roadmap & customers"
+      ]
+    },
+    "ar": {
+      "about": "مقدّمو النقل والخدمات الفضائية بعد النشر، بما فيها النقل المداري والعمليات داخل الفضاء.",
+      "read": "راجع الأسطول والمهمات المنفّذة والقدرات المدارية والخطط؛ وميّز الخدمات المخططة من العمليات المثبتة.",
+      "tabs": [
+        "التعريف والخدمات",
+        "الأسطول والأنظمة",
+        "المهمات المنفّذة",
+        "القدرات المدارية",
+        "خارطة الطريق والعملاء"
+      ]
+    }
+  },
+  "agency": {
+    "fa": {
+      "about": "آژانس‌ها، سازمان‌های ملی و نهادهای مسئول یا هماهنگ‌کننده برنامه‌های فضایی.",
+      "read": "ماموریت نهادی، برنامه‌ها، پروژه‌ها، تاریخچه و شبکه همکاری را بررسی کنید؛ هر سازمان فضایی الزاماً سازنده یا بهره‌بردار پرتابگر نیست."
+    },
+    "en": {
+      "about": "Space agencies and national or institutional bodies coordinating space programmes.",
+      "read": "Review remit, programmes, projects, history and partnerships. An agency is not necessarily a launch-vehicle manufacturer or operator."
+    },
+    "ar": {
+      "about": "وكالات الفضاء والهيئات الوطنية أو المؤسسية المسؤولة عن تنسيق البرامج الفضائية.",
+      "read": "راجع الاختصاص والبرامج والمشروعات والتاريخ والشراكات؛ فالوكالة ليست بالضرورة مصنّعاً أو مشغّلاً للصواريخ."
+    }
+  },
+  "university_space": {
+    "fa": {
+      "about": "دانشگاه‌ها و آزمایشگاه‌های دانشگاهی فعال در پژوهش و فناوری فضایی.",
+      "read": "توانمندی‌های پژوهشی، پروژه‌ها، دستاوردهای علمی و همکاری‌ها را ببینید؛ آزمایشگاه دانشگاهی را با شرکت تجاریِ هم‌نام یکی نگیرید.",
+      "tabs": [
+        "شناسنامه علمی",
+        "توانمندی‌های پژوهشی",
+        "پروژه‌ها و مأموریت‌ها",
+        "دستاوردهای علمی و فناوری",
+        "همکاری‌ها و تاریخچه"
+      ]
+    },
+    "en": {
+      "about": "Universities and academic laboratories working on space research and technology.",
+      "read": "Review research capabilities, projects, scientific outputs and collaborations; an academic lab is not necessarily a same-named commercial company.",
+      "tabs": [
+        "Academic identity",
+        "Research capabilities",
+        "Projects & missions",
+        "Scientific & technical outputs",
+        "Collaboration & history"
+      ]
+    },
+    "ar": {
+      "about": "الجامعات والمختبرات الأكاديمية الناشطة في أبحاث وتقنيات الفضاء.",
+      "read": "راجع القدرات والمشروعات والمخرجات العلمية والتعاون، ولا تخلط بين المختبر الجامعي والشركة التجارية المشابهة في الاسم.",
+      "tabs": [
+        "الهوية الأكاديمية",
+        "القدرات البحثية",
+        "المشروعات والمهمات",
+        "المخرجات العلمية والتقنية",
+        "التعاون والتاريخ"
+      ]
+    }
+  },
+  "site": {
+    "fa": {
+      "about": "پایگاه‌ها و سکوهای انجام پرتاب فضایی، با وضعیت‌های عملیاتی متفاوت.",
+      "read": "اطلاعات بهره‌بردار، سکوها، تاریخچه پرتاب، برنامه‌های پیش‌رو و تحلیل جغرافیایی را ببینید؛ وضعیت پایگاه با نتیجه یک پرتاب متفاوت است."
+    },
+    "en": {
+      "about": "Space launch sites and pads with different operating statuses.",
+      "read": "Explore operators, pads, launch history, upcoming missions and geographic analysis. A site’s status differs from any launch outcome."
+    },
+    "ar": {
+      "about": "مواقع ومنصات الإطلاق الفضائي باختلاف حالتها التشغيلية.",
+      "read": "راجع الجهة المشغّلة والمنصات والتاريخ والعمليات المقبلة والتحليل الجغرافي؛ فحالة الموقع تختلف عن نتيجة إطلاق واحد."
+    }
+  },
+  "recovery": {
+    "fa": {
+      "about": "مناطق یا تأسیسات مرتبط با فرود، بازگشت و بازیابی فضاپیما یا بخش‌های پرتابگر.",
+      "read": "محل و روش بازیابی، تاریخچه تماس یا فرود و برنامه‌های پیش‌رو را ببینید؛ مختصات می‌تواند نقطه مرجع باشد، نه محل دقیق تماس."
+    },
+    "en": {
+      "about": "Locations and facilities used for landing, return or recovery of spacecraft and launch-vehicle elements.",
+      "read": "Read methods, landing history and planned recoveries; plotted coordinates can be representative rather than exact touchdown points."
+    },
+    "ar": {
+      "about": "المواقع والمنشآت المرتبطة بهبوط المركبات الفضائية وعودتها واستعادتها.",
+      "read": "راجع طريقة الاستعادة وسجل الهبوط والخطط المقبلة؛ وقد تكون الإحداثيات مرجعية لا موقع التلامس الدقيق."
+    }
+  },
+  "test_facility": {
+    "fa": {
+      "about": "مراکز انجام آزمون‌های محیطی، عملکردی و صلاحیت‌سنجی تجهیزات فضایی.",
+      "read": "ظرفیت تجهیزات، نوع آزمون، پروژه‌ها، استانداردها و سابقه تأسیسات را بررسی کنید؛ ذکر نام استاندارد به معنی دریافت گواهی برای همه محصولات نیست.",
+      "tabs": [
+        "شناسنامه تأسیسات",
+        "تجهیزات و ظرفیت آزمون",
+        "آزمون‌ها و پروژه‌ها",
+        "استانداردها و اعتبارسنجی",
+        "تاریخچه و مشتریان"
+      ]
+    },
+    "en": {
+      "about": "Facilities performing environmental, functional and qualification tests on space hardware.",
+      "read": "Check equipment capacity, test types, projects, standards and facility history; citing a standard does not certify every product.",
+      "tabs": [
+        "Facility identity",
+        "Facilities & test capability",
+        "Testing & projects",
+        "Standards & qualification",
+        "History & customers"
+      ]
+    },
+    "ar": {
+      "about": "مراكز الاختبارات البيئية والوظيفية واختبارات تأهيل المعدات الفضائية.",
+      "read": "راجع سعة المعدات وأنواع الاختبارات والمشروعات والمعايير وتاريخ المنشأة؛ وذكر معيار لا يعني اعتماد كل المنتجات.",
+      "tabs": [
+        "تعريف المنشأة",
+        "المرافق والقدرات الاختبارية",
+        "الاختبارات والمشروعات",
+        "المعايير والتأهيل",
+        "التاريخ والعملاء"
+      ]
+    }
+  },
+  "ground_station": {
+    "fa": {
+      "about": "ایستگاه‌های زمینی مشخص برای ارتباط، دریافت داده یا ردیابی ماهواره‌ها.",
+      "read": "آنتن‌ها، باندهای ارتباطی، مأموریت‌های پشتیبانی‌شده، پوشش و ظرفیت را بررسی کنید؛ ایستگاه فیزیکی با شرکت ارائه‌دهنده خدمات زمینی متفاوت است.",
+      "tabs": [
+        "شناسنامه ایستگاه",
+        "تجهیزات و قابلیت ارتباطی",
+        "مأموریت‌ها و شبکه",
+        "پوشش و ظرفیت",
+        "تاریخچه و توسعه"
+      ]
+    },
+    "en": {
+      "about": "Specific ground stations communicating with, receiving data from or tracking satellites.",
+      "read": "Review antennas, frequency bands, supported missions, coverage and capacity; a physical station differs from a ground-service company.",
+      "tabs": [
+        "Station profile",
+        "Equipment & links",
+        "Missions & network",
+        "Coverage & capacity",
+        "History & development"
+      ]
+    },
+    "ar": {
+      "about": "محطات أرضية محددة للاتصال بالأقمار الصناعية أو استقبال بياناتها أو تتبعها.",
+      "read": "راجع الهوائيات ونطاقات التردد والمهمات المدعومة والتغطية والسعة؛ فالمحطة الفعلية ليست شركة خدمات أرضية.",
+      "tabs": [
+        "التعريف بالمحطة",
+        "المعدات والاتصالات",
+        "المهمات والشبكة",
+        "التغطية والسعة",
+        "التاريخ والتطوير"
+      ]
+    }
+  },
+  "mission_control": {
+    "fa": {
+      "about": "مراکز هدایت و بهره‌برداری مأموریت‌ها و فضاپیماها از زمین.",
+      "read": "مأموریت‌های تحت کنترل، فرایندهای عملیاتی، شبکه ارتباطی و پیشینه مرکز را بخوانید؛ مرکز کنترل با یک ایستگاه آنتن صرف یکسان نیست.",
+      "tabs": [
+        "شناسنامه مرکز",
+        "مأموریت‌ها و ناوگان تحت کنترل",
+        "توانمندی‌های عملیاتی",
+        "شبکه ارتباطی",
+        "تاریخچه و تحولات"
+      ]
+    },
+    "en": {
+      "about": "Ground-based centres for directing and operating missions and spacecraft.",
+      "read": "Review controlled missions, operations, communications networks and centre history; a control centre is not merely an antenna station.",
+      "tabs": [
+        "Centre identity",
+        "Missions & spacecraft",
+        "Operations capabilities",
+        "Ground segment network",
+        "History & developments"
+      ]
+    },
+    "ar": {
+      "about": "مراكز أرضية لتوجيه المهمات وتشغيل المركبات الفضائية.",
+      "read": "راجع المهمات الخاضعة للتحكم والعمليات وشبكة الاتصالات وتاريخ المركز؛ فمركز التحكم ليس مجرد محطة هوائيات.",
+      "tabs": [
+        "التعريف بالمركز",
+        "المهمات والمركبات",
+        "القدرات التشغيلية",
+        "شبكة الاتصالات الأرضية",
+        "التاريخ والتطور"
+      ]
+    }
+  }
+};
   var LAYER_GROUPS = ["companies", "organizations", "research", "infrastructure"];
   var LAYER_CATEGORIES_BY_KEY = Object.create(null);
   LAYER_CATEGORIES.forEach(function (entry) { LAYER_CATEGORIES_BY_KEY[entry.k] = entry; });
@@ -716,22 +1104,44 @@
   }
 
   function guideIconMarkup(name) {
-    var categoryNames = ["launch", "propulsion", "agency", "satmaker", "site", "recovery"];
+    var categoryNames = LAYER_CATEGORIES.map(function (item) { return item.k; });
     if (categoryNames.indexOf(name) > -1) {
       return iconFor(name, "active").replace(/width="30"/, 'width="24"').replace(/height="38"/, 'height="30"');
     }
     if (name === "companies") {
-      return '<span class="site-guide-icon-pack">' + ["launch", "propulsion", "agency", "satmaker"].map(function (key) {
+      return '<span class="site-guide-icon-pack">' + ["launch", "components", "ground_station", "mission_control"].map(function (key) {
         return '<span>' + iconFor(key, "active").replace(/width="30"/, 'width="16"').replace(/height="38"/, 'height="21"') + '</span>';
       }).join("") + '</span>';
     }
     return guideSvg(name);
   }
 
+  function guideCategoryDirectory() {
+    var pieces = [], currentFamily = "";
+    LAYER_CATEGORIES.forEach(function (category) {
+      if (category.family !== currentFamily) {
+        currentFamily = category.family;
+        pieces.push('<h4 class="site-guide-category-group">' + esc(layerCopy(currentFamily)) + '</h4>');
+      }
+      var detail = (GUIDE_CATEGORY_HELP[category.k] || {})[LANG] || (GUIDE_CATEGORY_HELP[category.k] || {}).en;
+      if (!detail) return;
+      var icon = iconFor(category.k, "active").replace(/width="3\d"/, 'width="24"').replace(/height="38"/, 'height="30"');
+      pieces.push('<details class="site-guide-category-card" data-guide-category="' + esc(category.k) + '">' +
+        '<summary><span class="site-guide-category-marker" aria-hidden="true">' + icon + '</span>' +
+        '<span class="site-guide-category-heading"><strong>' + esc(layerName(category.k, false)) + '</strong>' +
+        '<small>' + esc(detail.about) + '</small></span></summary>' +
+        '<div class="site-guide-category-content"><p><strong>' + esc(t("guide_catalog_look_for")) + '</strong> ' + esc(detail.read) + '</p>' +
+        (detail.tabs ? '<div class="site-guide-category-tabs"><strong>' + esc(t("guide_catalog_tabs")) + '</strong>' +
+          '<ol>' + detail.tabs.map(function (tab) {return '<li>' + esc(tab) + '</li>';}).join('') + '</ol></div>' : '') +
+        '</div></details>');
+    });
+    return '<div class="site-guide-category-directory">' + pieces.join("") + '</div>';
+  }
+
   function guideCategoryPreview(keys) {
     return '<div class="site-guide-preview-categories">' + keys.map(function (key) {
       var icon = iconFor(key, "active").replace(/width="30"/, 'width="18"').replace(/height="38"/, 'height="23"');
-      return '<span class="site-guide-preview-chip"><span class="site-guide-preview-marker">' + icon + '</span><span>' + esc(t("cat_" + key)) + '</span></span>';
+      return '<span class="site-guide-preview-chip"><span class="site-guide-preview-marker">' + icon + '</span><span>' + esc(layerName(key, false)) + '</span></span>';
     }).join("") + '</div>';
   }
 
@@ -747,13 +1157,15 @@
       if (kind === "start") {
         html = '<div class="site-guide-preview-views"><span class="is-active">' + guideSvg("map") + '<b>' + esc(t("tab_map")) + '</b></span></div>';
       } else if (kind === "map-categories") {
-        html = guideCategoryPreview(["launch", "propulsion", "agency", "satmaker", "site", "recovery"]);
+        html = guideCategoryPreview(LAYER_CATEGORIES.map(function (category) { return category.k; }));
+      } else if (kind === "layer-directory") {
+        html = guideCategoryDirectory();
       } else if (kind === "map-search") {
         html = '<div class="site-guide-preview-search"><span>' + guideSvg("search") + '<b>' + esc(t("ph_search_map")) + '</b></span><kbd>Ctrl/⌘ K</kbd></div>';
       } else if (kind === "country-profile") {
         html = '<div class="site-guide-preview-country"><span class="site-guide-country-icon">' + guideSvg("country") + '</span><b>' + esc(t("country")) + '</b><span class="site-guide-country-bars"><i></i><i></i><i></i></span><small>' + esc(t("cat_launch")) + ' · ' + esc(t("cat_propulsion")) + ' · ' + esc(t("cat_agency")) + '</small></div>';
       } else if (kind === "company-categories") {
-        html = guideCategoryPreview(["launch", "propulsion", "agency", "satmaker"]);
+        html = guideCategoryPreview(LAYER_CATEGORIES.filter(function (category) { return category.family === "companies" || category.family === "organizations" || category.family === "research"; }).map(function (category) { return category.k; }));
       } else if (kind === "site-tabs") {
         html = guideTabPreview(["guide_site_tab_overview", "guide_site_tab_history", "guide_site_tab_upcoming", "guide_site_tab_analysis"]);
       } else if (kind === "recovery-tabs") {
@@ -801,6 +1213,29 @@
           topic.getAttribute("data-guide-keywords")].join(" ");
         var normalized = guideSearchNormalize(corpus);
         var matches = !active || words.every(function (word) { return normalized.indexOf(word) > -1; });
+        var cards = topic.querySelectorAll("[data-guide-category]");
+        if (cards.length) {
+          var matchedCards = 0;
+          Array.prototype.forEach.call(cards, function (card) {
+            var cardText = guideSearchNormalize(card.textContent + " " + layerName(card.getAttribute("data-guide-category"), true));
+            var cardMatches = !active || words.every(function (word) { return cardText.indexOf(word) > -1; });
+            card.hidden = active && !cardMatches;
+            if (cardMatches) matchedCards++;
+          });
+          var titleText = guideSearchNormalize((title && title.textContent || "") + " " + (copy && copy.textContent || ""));
+          if (active && !matchedCards && words.every(function (word) { return titleText.indexOf(word) > -1; })) {
+            Array.prototype.forEach.call(cards, function (card) { card.hidden = false; });
+          }
+          var groups = topic.querySelectorAll(".site-guide-category-group");
+          if (groups.length) Array.prototype.forEach.call(groups, function (group) {
+            var next = group.nextElementSibling, hasVisible = false;
+            while (next && !next.classList.contains("site-guide-category-group")) {
+              if (next.matches("[data-guide-category]") && !next.hidden) hasVisible = true;
+              next = next.nextElementSibling;
+            }
+            group.hidden = !hasVisible;
+          });
+        }
         topic.hidden = !matches;
         if (matches) matchCount++;
       });

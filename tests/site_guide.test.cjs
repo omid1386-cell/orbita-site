@@ -28,14 +28,14 @@ const guideBinding = app.slice(guideStart, guideEnd);
 
 const guideTitleKeys = [
   'guide_title', 'guide_quick_title', 'guide_map_title', 'guide_search_title',
-  'guide_country_title', 'guide_companies_title',
+  'guide_country_title', 'guide_companies_title', 'guide_catalog_title',
   'guide_site_title', 'guide_recovery_title', 'guide_next_title', 'guide_controls_title',
   'guide_report_title', 'guide_data_title', 'guide_scope_title', 'guide_sources_title',
   'guide_metrics_title', 'guide_limits_title', 'guide_glossary_title', 'guide_note'
 ];
 const guideBodyKeys = [
   'guide_quick_body', 'guide_map_body', 'guide_search_body', 'guide_country_body',
-  'guide_companies_body', 'guide_site_body', 'guide_recovery_body',
+  'guide_companies_body', 'guide_catalog_body', 'guide_site_body', 'guide_recovery_body',
   'guide_next_body', 'guide_controls_body', 'guide_report_body', 'guide_data_body',
   'guide_scope_body', 'guide_sources_body', 'guide_metrics_body', 'guide_limits_body',
   'guide_glossary_body'
@@ -43,7 +43,8 @@ const guideBodyKeys = [
 const guideUiKeys = [
   'guide_search_label', 'guide_search_placeholder', 'guide_search_hint', 'guide_search_clear',
   'guide_tasks_title', 'guide_tasks_intro', 'guide_task_find_title', 'guide_task_find_body',
-  'guide_task_counts_title',
+  'guide_catalog_shortcut', 'guide_catalog_shortcut_body',
+  'guide_catalog_look_for', 'guide_catalog_tabs', 'guide_task_counts_title',
   'guide_task_counts_body', 'guide_results_heading', 'guide_results_count',
   'guide_no_results_title', 'guide_no_results_body', 'guide_suggestions_label',
   'guide_suggest_map', 'guide_suggest_metrics',
@@ -61,6 +62,37 @@ function normalizeDigits(text) {
     .replace(/[۰-۹]/g, ch => String.fromCharCode(ch.charCodeAt(0) - 0x06f0 + 0x30))
     .replace(/[٠-٩]/g, ch => String.fromCharCode(ch.charCodeAt(0) - 0x0660 + 0x30));
 }
+
+
+test('all 14 live map layers appear in the guide with localized descriptions and eight verified five-tab schemas', () => {
+  const layers = [...app.matchAll(/\{ k: "(launch|propulsion|satmaker|components|payloads|ground_services|inspace_services|agency|university_space|site|recovery|test_facility|ground_station|mission_control)", family:/g)].map(m => m[1]);
+  assert.equal(layers.length, 14);
+  const match = app.match(/var GUIDE_CATEGORY_HELP = (\{[\s\S]*?\});\n  var LAYER_GROUPS/);
+  assert.ok(match, 'catalogue data exists beside the real layer schema');
+  const descriptions = JSON.parse(match[1]);
+  assert.deepEqual(Object.keys(descriptions).sort(), layers.slice().sort());
+  for (const key of layers) {
+    for (const lang of ['fa','en','ar']) {
+      const detail = descriptions[key][lang];
+      assert.ok(detail.about.length >= 40, `${key}.${lang} explains purpose`);
+      assert.ok(detail.read.length >= 40, `${key}.${lang} explains how to interpret records`);
+    }
+  }
+  const specialistKeys = ['components','payloads','ground_services','inspace_services','university_space','test_facility','ground_station','mission_control'];
+  const companies = JSON.parse(fs.readFileSync(path.join(root,'data','companies.json'),'utf8'));
+  for (const key of specialistKeys) {
+    const source = companies.find(row => row.orbita_verified_profile && row.orbita_verified_profile.profile_type === key);
+    assert.ok(source, `${key} has a real template`);
+    for (const lang of ['fa','en','ar']) {
+      assert.deepEqual(descriptions[key][lang].tabs, source.orbita_verified_profile.sections.map(sec => sec[lang]));
+    }
+  }
+  assert.match(app, /guideCategoryPreview\(LAYER_CATEGORIES\.map/);
+  assert.match(app, /function guideCategoryDirectory\(\)/);
+  assert.match(app, /data-guide-category/);
+  assert.match(app, /card\.hidden = active && !cardMatches/);
+  assert.doesNotMatch(app.slice(app.indexOf('function guideCategoryDirectory()'),app.indexOf('function guideCategoryPreview(')), /fetch\(|map\.on\(/);
+});
 
 test('the existing Help icon opens an accessible dialog with local search and task shortcuts', () => {
   assert.match(html, /<button id="siteGuideBtn"[^>]*aria-haspopup="dialog"[^>]*aria-controls="siteGuideDialog"/);
@@ -83,11 +115,13 @@ test('the existing Help icon opens an accessible dialog with local search and ta
 test('the guide covers all current user-facing areas and gives each topic an identifying icon', () => {
   const topics = [...dialog.matchAll(/data-guide-topic="([^"]+)"/g)].map(m => m[1]);
   assert.deepEqual(topics, [
-    'quick', 'map', 'search', 'country', 'companies', 'site', 'recovery',
+    'quick', 'map', 'catalog', 'search', 'country', 'companies', 'site', 'recovery',
     'next', 'controls', 'report', 'data', 'scope', 'sources', 'metrics', 'limits', 'glossary'
   ]);
   assert.equal((dialog.match(/class="site-guide-topic-icon" data-guide-icon=/g) || []).length, topics.length);
   assert.match(dialog, /data-guide-visual="map-categories"/);
+  assert.match(dialog, /data-guide-visual="layer-directory"/);
+  assert.match(dialog, /data-guide-open-topic="catalog"/);
   assert.doesNotMatch(dialog, /data-guide-visual="missions-table"/);
   assert.match(dialog, /data-guide-visual="company-categories"/);
   assert.match(dialog, /data-guide-visual="site-tabs"/);

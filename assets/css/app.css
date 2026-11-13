@@ -1269,6 +1269,30 @@ img.d-flag--globe{width:40px;height:40px;min-width:40px;max-width:40px;padding:0
 .site-guide-teaser{display:block;overflow:hidden;color:var(--muted);font-size:10px;font-weight:400;line-height:1.5;text-overflow:ellipsis;white-space:nowrap}
 .site-guide-topic-body{padding-block:0 13px;padding-inline-start:63px;padding-inline-end:14px}
 .site-guide-visual{margin:0 0 10px;padding:9px;border:1px solid var(--line);border-radius:10px;background:var(--panel-solid);overflow:hidden}
+/* Complete 14-layer guide: reuses existing category pins and theme tokens. */
+.site-guide-catalog-visual{padding:10px}
+.site-guide-category-directory{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:8px}
+.site-guide-category-group{grid-column:1/-1;margin:7px 0 0;color:var(--muted);font-size:10.5px;font-weight:750;line-height:1.6}
+.site-guide-category-group:first-child{margin-top:0}
+.site-guide-category-card{min-width:0;margin:0;border:1px solid var(--line);border-radius:10px;background:var(--bg2)}
+.site-guide-category-card[hidden],.site-guide-category-group[hidden]{display:none!important}
+.site-guide-category-card[open]{border-color:color-mix(in srgb,var(--accent) 48%,var(--line))}
+.site-guide-category-card>summary{display:flex;align-items:center;gap:9px;min-height:66px;padding:9px;border-radius:10px;cursor:pointer;list-style:none}
+.site-guide-category-card>summary::-webkit-details-marker{display:none}
+.site-guide-category-card>summary:focus-visible{outline:2px solid var(--accent);outline-offset:2px}
+.site-guide-category-marker{display:grid;place-items:center;width:27px;min-width:27px;height:32px}
+.site-guide-category-marker svg{display:block;max-width:24px;max-height:30px}
+.site-guide-category-heading{display:flex;flex-direction:column;gap:4px;min-width:0;flex:1}
+.site-guide-category-heading strong{font-size:10.5px;line-height:1.5;color:var(--text)}
+.site-guide-category-heading small{font-size:9.5px;line-height:1.65;color:var(--muted);font-weight:400}
+.site-guide-category-content{border-top:1px solid var(--line);padding:9px 11px;color:var(--text);font-size:10.5px;line-height:1.85}
+.site-guide-category-content p{margin:0}
+.site-guide-category-tabs{margin-top:9px}
+.site-guide-category-tabs>strong{display:block;margin-bottom:6px}
+.site-guide-category-tabs ol{display:flex;flex-wrap:wrap;gap:5px;list-style:none;margin:0;padding:0;counter-reset:guide-tab}
+.site-guide-category-tabs li{counter-increment:guide-tab;display:inline-flex;align-items:center;gap:5px;padding:4px 7px;border-radius:7px;border:1px solid var(--line);background:var(--panel-solid);font-size:9px;line-height:1.5}
+.site-guide-category-tabs li::before{content:counter(guide-tab);font-weight:750;color:var(--accent-tx)}
+@media(max-width:650px){.site-guide-category-directory{grid-template-columns:minmax(0,1fr)}}
 .site-guide-preview-categories{display:flex;flex-wrap:wrap;gap:6px}
 .site-guide-preview-chip{display:inline-flex;align-items:center;gap:5px;max-width:100%;min-height:29px;padding:3px 7px;border:1px solid var(--line);border-radius:8px;background:var(--bg2);color:var(--text);font-size:9.5px;line-height:1.3}
 .site-guide-preview-chip>span:last-child{overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
