@@ -1931,6 +1931,8 @@
 
     map.on("load", function () {
       try { map.resize(); maintainWorldCoverage(); } catch (e) {}
+      // Release the branded overlay after the first usable map, not after a timer.
+      if (window.RASPEHR_READY) requestAnimationFrame(function () { window.RASPEHR_READY(); });
       $("#mapStatus").style.display = "none";
       ensureCountryInteractionLayers();
       bindCountryCanvasExit();

@@ -1,35 +1,24 @@
-/* RASPEHR: keep the branded intro until a fully painted, usable map is ready. */
+/* RASPEHR: instant, non-blocking identity reveal. No map network or data logic here. */
 (function () {
   'use strict';
   var splash = document.getElementById('raspehrSplash');
   if (!splash) return;
-  var status = splash.querySelector('.raspehr-status');
-  var createdAt = (window.performance && performance.now) ? performance.now() : Date.now();
-  var minBrandMs = 1050; // allow the complete ESPASH identity to be seen
-  var done = false;
-  var queued = false;
-
-  function dismiss() {
-    if (done) return;
-    done = true;
+  var finished = false;
+  window.RASPEHR_READY = function () {
+    if (finished) return;
+    finished = true;
     if (window.performance && performance.mark) performance.mark('raspehr-map-visible');
     splash.classList.add('raspehr-complete');
     splash.setAttribute('aria-hidden', 'true');
-    window.setTimeout(function () {
-      if (splash.parentNode) splash.parentNode.removeChild(splash);
-    }, 340);
-  }
-
-  window.RASPEHR_READY = function () {
-    if (done || queued) return;
-    queued = true;
-    var now = (window.performance && performance.now) ? performance.now() : Date.now();
-    window.setTimeout(dismiss, Math.max(0, minBrandMs - (now - createdAt)));
+    window.setTimeout(function () { if (splash.parentNode) splash.parentNode.removeChild(splash); }, 450);
   };
-
-  // No skip button, no early exit, no arbitrary maximum duration.
-  // If the map takes longer, show a factual loading status rather than a blank map.
+  var skip = document.getElementById('raspehrSkip');
+  if (skip) skip.addEventListener('click', window.RASPEHR_READY);
+  // If MapLibre or the remote basemap fails, visitors can manually reveal
+  // the local page. No arbitrary minimum delay is imposed on a ready map.
+  var notice = document.getElementById('raspehrLongLoad');
   window.setTimeout(function () {
-    if (!done && status) status.textContent = 'در حال تکمیل نقشه و نشانگرهای فضایی…';
+    if (!finished && notice) notice.hidden = false;
+    if (!finished && skip) skip.hidden = false;
   }, 4500);
 })();
