@@ -1,22 +1,10 @@
-ORBITA FINAL IMPROVEMENT — STEP 1: COUNTRY PROFILE LIGHT THEME
+ORBITA — PERMANENT COUNTRY PROFILE LIGHT THEME FIX
 
-Replace only:
+Replace exactly these two files:
 - assets/css/app.css
 - index.html
 
-Included:
-- README_INSTALL_FA.md
-- REPORT_FA.md
-- tests/country_profile_light_theme.test.cjs
-- ORBITA_COUNTRY_PROFILE_LIGHT_THEME.patch
-
-Based on:
-ORBITA_Step4_Satellite_Maker_and_Component_Logos_2026-11-14
-
-Scope:
-- Light theme only: country profile summary labels become white.
-- Colored numbers and icons are preserved.
-- Dark theme unchanged.
-- Old explanatory note remains removed.
-- No data or JavaScript changes.
-- Only CSS cache version is bumped.
+Do not replace app.js or data files.
+CSS cache token: 20261114-country-profile-light-contrast-v2-final
+Preserves Step 3 map zoom, Step 4 manufacturer logos and developer attribution.
+No live GitHub/Render deployment performed.

@@ -1,0 +1,103 @@
+--- a/assets/css/app.css
++++ b/assets/css/app.css
+@@ -886,8 +886,6 @@
+ .country-profile-summary-icon{font-size:15px;line-height:1.2}
+ .country-profile-summary-item strong{font-size:16px;color:var(--country-category-color);font-variant-numeric:tabular-nums}
+ .country-profile-summary-item span:last-child{font-size:9px;line-height:1.45;color:var(--text);overflow-wrap:anywhere}
+-/* In light theme the country summary remains a dark panel; keep category labels readable. */
+-:root[data-theme="light"] .country-profile-summary-item span:last-child{color:#fff}
+ 
+ .country-profile-tabs{display:flex;flex-wrap:wrap;overflow:visible;gap:5px;padding-bottom:6px}
+ .country-profile-tabs .country-profile-tab{display:inline-flex;align-items:center;justify-content:center;gap:4px;flex:1 1 118px;min-width:0;white-space:normal;line-height:1.45;padding:7px 8px;font-size:10.5px}
+@@ -1769,3 +1767,70 @@
+ @media(prefers-reduced-motion:reduce){
+   img[data-logo-zoom="true"]{transition:none}
+ }
++
++
++/* ==========================================================================
++   ORBITA — definitive country dossier contrast fix (light theme)
++   The 14-category summary is intentionally dark in BOTH themes. Its labels
++   must therefore never inherit the light-theme --text token (dark ink).
++   Numeric category colors remain data-driven and are deliberately preserved.
++   ========================================================================== */
++:root[data-theme="light"] .detail-panel .country-profile-head-copy .d-kicker{
++  color:#006b78!important;
++}
++:root[data-theme="light"] .detail-panel .country-profile-head-copy .d-title{
++  color:#14243d!important;
++}
++:root[data-theme="light"] .detail-panel .country-profile-head-copy .d-sub{
++  color:#475569!important;
++}
++:root[data-theme="light"] .detail-panel .country-profile-total{
++  color:#075985!important;
++  background:rgba(2,132,199,.12)!important;
++  border-color:rgba(2,132,199,.42)!important;
++}
++:root[data-theme="light"] .detail-panel .country-profile-summary-title{
++  color:#f6d36b!important;
++}
++:root[data-theme="light"] .detail-panel .country-profile-summary-item > span:last-child{
++  color:#ffffff!important;
++  opacity:1!important;
++  font-size:10px!important;
++  font-weight:600!important;
++  line-height:1.55!important;
++  text-shadow:0 1px 2px rgba(0,0,0,.55);
++}
++:root[data-theme="light"] .detail-panel .country-profile-summary-item > strong{
++  color:var(--country-category-color)!important;
++}
++:root[data-theme="light"] .detail-panel .country-profile-summary-note{
++  color:#e2eaf4!important;
++}
++:root[data-theme="light"] .detail-panel .country-profile-tabs .country-profile-tab{
++  color:#334155!important;
++}
++:root[data-theme="light"] .detail-panel .country-profile-tabs .country-profile-tab.active{
++  color:#075985!important;
++}
++:root[data-theme="light"] .detail-panel .country-profile-tab-count{
++  color:#475569!important;
++  opacity:1!important;
++}
++:root[data-theme="light"] .detail-panel .country-profile-name{
++  color:#14243d!important;
++}
++:root[data-theme="light"] .detail-panel .country-profile-location{
++  color:#475569!important;
++}
++:root[data-theme="light"] .detail-panel .country-profile-tag{
++  color:color-mix(in srgb,var(--country-category-color) 58%,#14243d)!important;
++}
++:root[data-theme="light"] .detail-panel .country-profile-description{
++  color:#14243d!important;
++}
++:root[data-theme="light"] .detail-panel .country-profile-links a{
++  color:#075985!important;
++}
++:root[data-theme="light"] .detail-panel .country-profile-empty{
++  color:#475569!important;
++}
+
+--- a/index.html
++++ b/index.html
+@@ -39,7 +39,7 @@
+ @media(max-width:540px){.raspehr-stage{min-height:100vh;gap:11px;padding:22px 12px}.raspehr-espash{width:100%;max-width:450px}.raspehr-title{margin-top:15px}}
+ </style>
+ <link rel="stylesheet" href="assets/vendor/maplibre-gl.css?v=3" />
+-<link rel="stylesheet" href="assets/css/app.css?_t=20261114-country-profile-light-contrast-v1" />
++<link rel="stylesheet" href="assets/css/app.css?_t=20261114-country-profile-light-contrast-v2-final" />
+ <!-- Ordered defer scripts download in parallel instead of creating a network waterfall. -->
+ <script defer src="assets/js/raspehr-splash.js?v=20261113-speed-v1"></script>
+ <script defer src="assets/vendor/maplibre-gl.js?v=3"></script>
+@@ -47,7 +47,7 @@
+ <script>
+   window.ORBITA_V = "20261114-step4-manufacturer-logos-v1";
+   window.ORBITA_APP_V = "20261114-map-zoom-performance-step3-v1";
+-  window.ORBITA_CSS_V = "20261114-country-profile-light-contrast-v1";
++  window.ORBITA_CSS_V = "20261114-country-profile-light-contrast-v2-final";
+   window.ORBITA_COMPANIES_V = "20261114-step4-manufacturer-logos-v1";
+ 
+ 
