@@ -1,0 +1,156 @@
+--- a/assets/js/app.js
++++ b/assets/js/app.js
+@@ -10323,6 +10323,49 @@
+     event.preventDefault(); switchRecoveryTab(next); next.focus();
+   });
+ 
++
++  // Persian display override for records assigned to the Israel country profile.
++  // Canonical country codes, record IDs, source URLs and stored data remain unchanged.
++  function isOccupiedPalestineDisplayEntity(entity) {
++    var outer = entity || {};
++    var record = outer.o || outer;
++    var values = [
++      record.country_en, record.country, record.country_fa, record.country_ar,
++      record.country_iso, record.country_code,
++      outer.country_en, outer.country, outer.country_fa, outer.country_iso, outer.country_code
++    ];
++    return values.some(function (value) {
++      var key = String(value == null ? "" : value).trim().toLowerCase();
++      return key === "israel" || key === "il" || key === "isr" ||
++        key === "اسرائیل" || key === "اسراييل" || key === "إسرائيل";
++    });
++  }
++
++  function occupiedPalestineDisplayText(value) {
++    return String(value == null ? "" : value)
++      .replace(/اسرائیلی‌ها/g, "وابستگان به فلسطین اشغالی")
++      .replace(/اسرائیلی/g, "وابسته به فلسطین اشغالی")
++      .replace(/اسرائیل/g, "فلسطین اشغالی")
++      .replace(/اسراييل/g, "فلسطین اشغالی")
++      .replace(/إسرائيل/g, "فلسطین اشغالی")
++      .replace(/\bIsraeli\b/gi, "Occupied Palestinian")
++      .replace(/\bIsrael\b/gi, "Occupied Palestine");
++  }
++
++  function applyOccupiedPalestinePersianDisplay(html, entity) {
++    if (LANG !== "fa" || !isOccupiedPalestineDisplayEntity(entity)) return html;
++    var output = String(html == null ? "" : html);
++    // Rewrite visible text nodes, not href/src/IDs or canonical data attributes.
++    output = output.replace(/>([^<>]+)</g, function (match, text) {
++      return ">" + occupiedPalestineDisplayText(text) + "<";
++    });
++    // Also cover accessible labels and image titles shown by assistive technology/tooltips.
++    output = output.replace(/\b(alt|title|aria-label)=(["'])(.*?)\2/g, function (match, attr, quote, value) {
++      return attr + "=" + quote + occupiedPalestineDisplayText(value) + quote;
++    });
++    return output;
++  }
++
+   function activeDetailTabId(body) {
+     var active = body && body.querySelector(".site-tab-btn.active");
+     var match = active && (active.getAttribute("onclick") || "").match(/switchCompTab\(\s*['\"]([^'\"]+)/);
+@@ -10643,14 +10686,14 @@
+     if (__de) __de.setAttribute("data-ent", (cat === "site" || kind === "site" || cat === "recovery" || kind === "recovery") ? "site" : "org");
+ 
+     if (cat === "recovery" || kind === "recovery") {
+-      $("#detailBody").innerHTML = renderRecoveryDetail(p.o);
++      $("#detailBody").innerHTML = applyOccupiedPalestinePersianDisplay(renderRecoveryDetail(p.o), p.o);
+       $("#detail").classList.add("open");
+       $("#detail").scrollTop = 0;
+       return;
+     }
+     if (cat === "country" || kind === "country" || (p.o && p.o.cat === "country")) {
+       var countryBody = $("#detailBody"), countryPanel = $("#detail"), priorCountryTab = activeDetailTabId(countryBody);
+-      countryBody.innerHTML = renderCountryProfile(p);
++      countryBody.innerHTML = applyOccupiedPalestinePersianDisplay(renderCountryProfile(p), p);
+       countryPanel.classList.add("open");
+       bindCountryItemClicks();
+       var countryDataReady = LAYER_STATE.sites === "ready" && LAYER_STATE.recoveries === "ready" &&
+@@ -10664,7 +10707,7 @@
+       ensureCountryProfileData().then(function (results) {
+         if (detailToken !== openDetail._renderToken || !countryPanel.classList.contains("open")) return;
+         var selectedTab = activeDetailTabId(countryBody) || priorCountryTab;
+-        countryBody.innerHTML = renderCountryProfile(p);
++        countryBody.innerHTML = applyOccupiedPalestinePersianDisplay(renderCountryProfile(p), p);
+         restoreDetailTab(countryBody, selectedTab);
+         bindCountryItemClicks();
+         if (!results.every(Boolean)) {
+@@ -10683,59 +10726,59 @@
+     if (p.o && p.o.orbita_verified_profile &&
+         LAYER_CATEGORIES_BY_KEY[cat] && !LAYER_CATEGORIES_BY_KEY[cat].legacy &&
+         p.o.orbita_verified_profile.profile_type === cat) {
+-      $("#detailBody").innerHTML = renderVerifiedSpecialistProfile(p);
++      $("#detailBody").innerHTML = applyOccupiedPalestinePersianDisplay(renderVerifiedSpecialistProfile(p), p.o || p);
+       $("#detail").classList.add("open");
+       $("#detail").scrollTop = 0;
+       bindVerifiedSpecialistTabs();
+       return;
+     }
+     if (cat === "satmaker" || (p.o && p.o.cat === "satmaker")) {
+-      $("#detailBody").innerHTML = renderSatmakerDetail(p);
++      $("#detailBody").innerHTML = applyOccupiedPalestinePersianDisplay(renderSatmakerDetail(p), p.o || p);
+       $("#detail").classList.add("open");
+       return;
+     }
+     if (cat === "propulsion" || (p.o && p.o.cat === "propulsion")) {
+       var propulsionBody = $("#detailBody"), propulsionPanel = $("#detail"), propulsionTab = "";
+-      propulsionBody.innerHTML = renderPropulsionDetail(p);
++      propulsionBody.innerHTML = applyOccupiedPalestinePersianDisplay(renderPropulsionDetail(p), p.o || p);
+       propulsionPanel.classList.add("open");
+       if (COMPANY_CATEGORY_STATE.launch !== "ready") {
+         propulsionTab = activeDetailTabId(propulsionBody);
+         loadCompanyCategory("launch").then(function (ok) {
+           if (!ok || detailToken !== openDetail._renderToken || !propulsionPanel.classList.contains("open")) return;
+           var selectedTab = activeDetailTabId(propulsionBody) || propulsionTab;
+-          propulsionBody.innerHTML = renderPropulsionDetail(p);
++          propulsionBody.innerHTML = applyOccupiedPalestinePersianDisplay(renderPropulsionDetail(p), p.o || p);
+           restoreDetailTab(propulsionBody, selectedTab);
+         });
+       }
+       return;
+     }
+     if (cat === "site" || kind === "site") {
+-      $("#detailBody").innerHTML = renderSiteDetail(p);
++      $("#detailBody").innerHTML = applyOccupiedPalestinePersianDisplay(renderSiteDetail(p), p.o || p);
+       $("#detail").classList.add("open");
+       return;
+     }
+     if (cat === "agency" || (p.o && p.o.cat === "agency")) {
+-      $("#detailBody").innerHTML = renderAgencyDetail(p);
++      $("#detailBody").innerHTML = applyOccupiedPalestinePersianDisplay(renderAgencyDetail(p), p.o || p);
+       $("#detail").classList.add("open");
+       return;
+     }
+     if (cat === "agency" || cat === "launch" || kind === "company" || kind === "launch") {
+       var launchBody = $("#detailBody"), launchPanel = $("#detail"), launchTab = "";
+-      launchBody.innerHTML = renderCompanyDetail(p);
++      launchBody.innerHTML = applyOccupiedPalestinePersianDisplay(renderCompanyDetail(p), p.o || p);
+       launchPanel.classList.add("open");
+       if ((cat === "launch" || (p.o && p.o.cat === "launch")) && COMPANY_CATEGORY_STATE.propulsion !== "ready") {
+         launchTab = activeDetailTabId(launchBody);
+         loadCompanyCategory("propulsion").then(function (ok) {
+           if (!ok || detailToken !== openDetail._renderToken || !launchPanel.classList.contains("open")) return;
+           var selectedTab = activeDetailTabId(launchBody) || launchTab;
+-          launchBody.innerHTML = renderCompanyDetail(p);
++          launchBody.innerHTML = applyOccupiedPalestinePersianDisplay(renderCompanyDetail(p), p.o || p);
+           restoreDetailTab(launchBody, selectedTab);
+         });
+       }
+       return;
+     }
+     if (p.cat === "propulsion") {
+-      $("#detailBody").innerHTML = renderPropulsionDetail(p);
++      $("#detailBody").innerHTML = applyOccupiedPalestinePersianDisplay(renderPropulsionDetail(p), p.o || p);
+       $("#detail").classList.add("open");
+       return;
+     }
+@@ -10766,7 +10809,7 @@
+       h += '<details class="acc"><summary>▸ ' + t("en_desc") + '</summary><div class="in"><div class="d-desc en">' +
+         esc(LANG === "fa" ? o.en_d : o.fa_d) + "</div></div></details>";
+     }
+-    $("#detailBody").innerHTML = h;
++    $("#detailBody").innerHTML = applyOccupiedPalestinePersianDisplay(h, p.o || p);
+     $("#detail").classList.add("open");
+   }
+   on("#detailClose", "click", function () {
