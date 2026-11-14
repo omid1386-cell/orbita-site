@@ -10302,7 +10302,7 @@
       }
     ],
     "has_photo": true,
-    "photo_url": "assets/img/sites/chabahar.jpg",
+    "photo_url": "https://newsmedia.tasnimnews.com/Tasnim/Uploaded/Image/1402/07/10/14020710092925717284705610.jpg",
     "azimuth": "جنوب‌شرقی (۱۳۵° تا ۱۴۵°) روی کویر",
     "target_orbits": "LEO, SSO (400 - 750 km)",
     "geo_analysis": "موقعیت جغرافیایی مرکز فضایی چابهار با در نظر گرفتن دسترسی به پهنه ایمن پرتاب روی آب/کویر، کاهش ریسک خطرات جانی و تسهیل زیرساخت‌های حمل‌ونقل تجهیزات سنگین پرتابگر انتخاب شده است.",
@@ -10368,13 +10368,13 @@
         "active": true
       }
     ],
-    "photo_caption_fa": "ساحل چابهار؛ پایگاه فضایی چابهار در این منطقه در حال ساخت است",
-    "photo_caption_en": "The Chabahar coast; the Chabahar spaceport is under construction in this region",
-    "photo_credit": "Nightryder84",
-    "photo_license": "CC BY-SA 3.0",
-    "photo_source_url": "https://commons.wikimedia.org/wiki/File:Chabahar_coast.jpg",
+    "photo_caption_fa": "نمایی از سکوی پرتاب و تأسیسات پایگاه ملی فضایی چابهار؛ تصویر منتشرشده در گزارش تسنیم (مهر ۱۴۰۲).",
+    "photo_caption_en": "A view of the launch pad and facilities at the Chabahar National Space Center; image published by Tasnim News Agency (October 2023).",
+    "photo_credit": "Tasnim News Agency",
+    "photo_license": "CC BY 4.0",
+    "photo_source_url": "https://www.tasnimnews.ir/en/news/2023/10/14/2971692/chabahar-space-center-offers-promising-opportunities-for-space-launches-in-region",
     "country_ar": "إيران",
-    "photo_caption_ar": "ساحل تشابهار؛ يجري إنشاء ميناء تشابهار الفضائي في هذه المنطقة"
+    "photo_caption_ar": "منظر لمنصة الإطلاق ومنشآت مركز تشابهار الوطني للفضاء؛ صورة نشرتها وكالة تسنيم للأنباء (أكتوبر 2023)."
   },
   {
     "id": "emamshahr",

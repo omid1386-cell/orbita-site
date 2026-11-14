@@ -842,6 +842,48 @@ body.has-lnch .view{inset:86px 0 0 0}
   display: flex;
 }
 
+
+/* Country dossier: all fourteen map categories, compact summary and responsive tabs. */
+.country-profile-head{display:flex;align-items:center;gap:10px;margin-inline-end:35px;flex-wrap:wrap}
+.country-profile-head-copy{min-width:0;flex:1}
+.country-profile-head-copy .d-title{margin:0}
+.country-profile-head-copy .d-sub{margin-top:3px;color:var(--muted);font-size:11px}
+.country-profile-total{white-space:nowrap;align-self:center}
+.country-profile-summary{margin-top:12px;padding:12px;background:linear-gradient(135deg,rgba(15,31,51,.95),rgba(9,13,22,.98));border:1px solid rgba(56,189,248,.3);border-radius:9px}
+.country-profile-summary-title{font-size:12px;font-weight:800;color:#f2c649;margin-bottom:9px}
+.country-profile-summary-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(82px,1fr));gap:6px}
+.country-profile-summary-item{min-width:0;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:3px;padding:8px 4px;border:1px solid color-mix(in srgb,var(--country-category-color) 42%,transparent);border-radius:7px;background:color-mix(in srgb,var(--country-category-color) 10%,transparent);text-align:center}
+.country-profile-summary-icon{font-size:15px;line-height:1.2}
+.country-profile-summary-item strong{font-size:16px;color:var(--country-category-color);font-variant-numeric:tabular-nums}
+.country-profile-summary-item span:last-child{font-size:9px;line-height:1.45;color:var(--text);overflow-wrap:anywhere}
+.country-profile-summary-note{margin:9px 0 0;color:var(--muted);font-size:10px;line-height:1.8}
+.country-profile-tabs{display:flex;flex-wrap:wrap;overflow:visible;gap:5px;padding-bottom:6px}
+.country-profile-tabs .country-profile-tab{display:inline-flex;align-items:center;justify-content:center;gap:4px;flex:1 1 118px;min-width:0;white-space:normal;line-height:1.45;padding:7px 8px;font-size:10.5px}
+.country-profile-tab-count{opacity:.8;font-variant-numeric:tabular-nums;white-space:nowrap}
+.country-profile-panel{min-width:0}
+.country-profile-card-list{display:flex;flex-direction:column;gap:8px;margin-top:6px}
+.country-profile-card{min-width:0;padding:10px;border:1px solid var(--line);border-inline-start:3px solid var(--country-category-color);border-radius:8px;background:var(--bg2);display:flex;flex-direction:column;gap:7px}
+.country-profile-card-head{display:flex;align-items:center;justify-content:space-between;gap:8px}
+.country-profile-identity{display:flex;align-items:center;gap:8px;min-width:0}
+.country-profile-logo{width:34px;height:34px;flex:0 0 34px;object-fit:contain;border:1px solid var(--line);border-radius:6px;background:#0b1420;padding:3px}
+.country-profile-identity-copy{min-width:0;display:flex;flex-direction:column;gap:3px}
+.country-profile-name{font-size:12px;font-weight:800;color:var(--text);overflow-wrap:anywhere}
+.country-profile-location{font-size:10px;color:var(--muted)}
+.country-profile-tag{max-width:42%;padding:3px 7px;border:1px solid color-mix(in srgb,var(--country-category-color) 45%,transparent);border-radius:12px;color:var(--country-category-color);background:color-mix(in srgb,var(--country-category-color) 10%,transparent);font-size:9px;line-height:1.45;text-align:center;overflow-wrap:anywhere}
+.country-profile-description{margin:0;color:var(--text);font-size:10.5px;line-height:1.75}
+.country-profile-links,.country-profile-actions{display:flex;gap:6px;flex-wrap:wrap}
+.country-profile-links a{font-size:10px;color:#38bdf8;text-decoration:none;padding:3px 7px;border:1px solid rgba(56,189,248,.28);border-radius:5px;overflow-wrap:anywhere}
+.country-profile-actions .btn{flex:1 1 120px;font-size:10px;padding:6px 8px}
+.country-profile-empty{margin-top:8px;padding:16px 12px;border:1px dashed var(--line);border-radius:8px;color:var(--muted);font-size:11px;line-height:1.8;text-align:center}
+@media(max-width:560px){
+ .country-profile-head{margin-inline-end:24px;align-items:flex-start}
+ .country-profile-total{font-size:9px;padding:3px 7px}
+ .country-profile-summary-grid{grid-template-columns:repeat(3,minmax(0,1fr))}
+ .country-profile-tabs .country-profile-tab{flex:1 1 44%;font-size:10px}
+ .country-profile-card-head{align-items:flex-start}
+ .country-profile-tag{max-width:40%}
+}
+
 /* Landing & recovery dossier. Scoped to this module; existing markers and other dossiers are unchanged. */
 .recovery-chip .lb{color:var(--text)}
 .cat-chip:focus-visible{outline:2px solid var(--accent);outline-offset:2px}

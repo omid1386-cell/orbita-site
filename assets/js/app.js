@@ -65,7 +65,7 @@
       guide_search_title: "جست‌وجوی نقشه و فهرست نتایج",
       guide_search_body: "جست‌وجوی نقشه برای پیدا کردن شرکت، پایگاه یا کشور است و نتیجه‌ها با دسته‌های روشن‌شده هماهنگ‌اند. میانبر Ctrl/⌘ + K جست‌وجوی نقشه را باز می‌کند. اگر موردی را نمی‌بینی، دسته‌های فعال و عبارت جست‌وجو را بررسی کن. پیدا نشدن نتیجه به‌تنهایی ثابت نمی‌کند که آن مورد در جهان وجود ندارد؛ ممکن است در دادهٔ فعلی ثبت نشده یا با فیلترها پنهان باشد.\n\nانتخاب مورد از نقشه یا فهرست، پروندهٔ آن را باز می‌کند. زوم و جابه‌جایی فقط محدودهٔ دید را تغییر می‌دهند؛ شمار کنار دسته، شمار نتیجه‌های قابل‌دیدن نیست.",
       guide_country_title: "شناسنامهٔ کشور",
-      guide_country_body: "شناسنامهٔ کشور، رکوردهایی را که طبق تطبیق فعلی سامانه به کشور نسبت داده شده‌اند، در دسته‌های پیشرانش، پرتاب، آژانس‌ها، پایگاه‌ها و فرود/بازیابی گروه‌بندی می‌کند. عدد «مجموعه‌های فعال» جمع همین رکوردهای دسته‌بندی‌شده است؛ شمار رسمی زیرساخت کشور یا شمار قطعی تأسیساتِ در حال کار نیست و می‌تواند رکوردهای در ساخت، غیرفعال یا راکد را نیز دربرگیرد.\n\nصفر یا خالی یعنی در مجموعهٔ فعلی رکورد مطابقی نمایش داده نشده است؛ از آن نمی‌توان نبودن مورد را در دنیای واقعی نتیجه گرفت. سازندگان ماهواره در دستهٔ جداگانهٔ نقشه هستند، اما در جمع و زبانه‌های فعلی شناسنامهٔ کشور وارد نشده‌اند.\n\nشمارهای این صفحه را با تعداد شرکت‌های جهان، کل مأموریت‌های یک کشور یا تعداد قطعی تأسیسات فعال یکی نگیرید. آن‌ها خلاصهٔ رکوردهای حاضر در دسته‌های همین شناسنامه‌اند.",
+      guide_country_body: "شناسنامهٔ کشور اکنون هر ۱۴ دستهٔ نقشه را پوشش می‌دهد: ۱۲ حوزهٔ شرکت‌ها و سازمان‌ها، به‌علاوهٔ پایگاه‌های پرتاب و محل‌های فرود/بازیابی. برای هر دسته یک زبانه و شمار رکوردهای منتسب به کشور نمایش داده می‌شود. عدد کل، موجودیت‌های یکتا را می‌شمارد؛ بنابراین یک شرکت چندنقشی ممکن است در چند دسته دیده شود اما در مجموع فقط یک‌بار حساب می‌شود.\n\nاین اعداد خلاصهٔ داده‌های فعلی ORBITA هستند، نه سرشماری کامل صنعت فضایی کشور و نه تعداد قطعی تأسیسات فعال؛ وضعیت‌های در حال ساخت، غیرفعال یا راکد نیز ممکن است در داده‌ها وجود داشته باشند. صفر یا خالی یعنی در مجموعهٔ فعلی رکوردی به این کشور نسبت داده نشده است و نبودن آن مورد در دنیای واقعی را ثابت نمی‌کند.",
       guide_companies_title: "پروندهٔ شرکت‌ها و سازمان‌ها",
       guide_companies_body: "پرونده‌ها بسته به نقش موجودیت متفاوت‌اند: شرکت‌های پرتاب، ناوگان و کارنامه پرتاب؛ شرکت‌های پیشرانش، موتورها و آزمون‌ها؛ سازمان‌های فضایی، برنامه‌ها و سیر تاریخی؛ و سازندگان ماهواره، محصولات و مشتریان را نمایش می‌دهند.\n\nهشت حوزه جدید برای قطعات، ابزارها و محموله‌ها، خدمات زمینی، خدمات مداری، دانشگاه‌ها، تأسیسات آزمون، ایستگاه‌های زمینی و مراکز کنترل مأموریت، پنج زبانه تخصصی متناسب با همان حوزه دارند. برای عنوان دقیق همه زبانه‌ها و تفاوت حوزه‌ها، بخش «راهنمای کامل ۱۴ دسته نقشه» را باز کنید.\n\nموجودیت‌های چندنقشی لزوماً رکوردهای جدا نیستند. فیلد خالی به معنای ثبت‌نشدن داده در شناسنامه فعلی است؛ وب‌سایت رسمی یا اعتبار تصویر نیز به‌تنهایی منبع همه مشخصات نیست.",
       guide_site_title: "پروندهٔ پایگاه پرتاب",
@@ -198,7 +198,7 @@
       guide_search_title: "Map search and results list",
       guide_search_body: "Map search finds a company, launch site, or country, and follows the categories that are switched on. Press Ctrl/⌘ + K to open map search. If something is missing, check the active categories and search text. A missing result alone does not prove that the real-world item does not exist; it may not be recorded in the current data or may be hidden by filters.\n\nSelecting an item on the map or in the list opens its profile. Zooming and panning change only the view; the number beside a category is not the number of visible results.",
       guide_country_title: "Country profile",
-      guide_country_body: "The country profile groups records that the app's current matching rules assign to that country: propulsion, launch, space organizations, launch sites, and landing/recovery. The figure labelled Active Entities is the sum of those grouped records. It is not an official count of national infrastructure or a definitive count of facilities currently operating, and it can include records marked under construction, inactive, or dormant.\n\nZero or blank means that no matching record is shown in the current dataset; it does not prove real-world absence. Satellite manufacturers appear in a separate map category but are not included in the current country-profile total or tabs.\n\nDo not treat these totals as a worldwide company count, a country's total number of missions, or a definitive count of active facilities. They summarize the records currently included in this profile.",
+      guide_country_body: "The country profile now covers all 14 map categories: 12 company and organization fields, plus launch sites and landing/recovery locations. Each category has its own tab and country-assigned record count. The headline total counts unique entities, so a multi-role company may appear in several category tabs but is counted once in the total.\n\nThese figures summarize current ORBITA records; they are not a complete census of a country's space sector or a definitive count of operating facilities. Records marked under construction, inactive, or dormant may also be included. Zero or blank means no record is currently assigned to that country in this dataset; it does not prove real-world absence.",
       guide_companies_title: "Company and organization profiles",
       guide_companies_body: "Profiles vary by role: launch providers cover fleets and flight record, propulsion firms cover engines and tests, agencies cover programmes and history, and satellite makers cover products and customers.\n\nThe eight new categories—components, payloads, ground services, in-space services, universities, test facilities, ground stations and mission control—have five specialized tabs for each field. Open “Guide to all 14 map categories” for every category’s purpose and exact tab titles.\n\nMultiple roles do not necessarily mean duplicate records. An empty field means data is not recorded in the current profile; a home page or photo credit is not a citation for every claim.",
       guide_site_title: "Launch-site profile",
@@ -333,7 +333,7 @@
       guide_search_title: "بحث الخريطة وقائمة النتائج",
       guide_search_body: "يبحث بحث الخريطة عن شركة أو موقع إطلاق أو دولة، ويتبع الفئات المفعّلة. اضغط Ctrl/⌘ + K لفتح بحث الخريطة. إذا غاب عنصر، فتحقق من الفئات النشطة وعبارة البحث. عدم ظهور نتيجة لا يثبت وحده أن العنصر غير موجود في الواقع؛ فقد لا يكون مسجلاً في البيانات الحالية أو قد تخفيه المرشحات.\n\nيؤدي اختيار عنصر على الخريطة أو في القائمة إلى فتح ملفه. يغيّر التكبير والتحريك نطاق العرض فقط؛ والعدد بجوار الفئة ليس عدد النتائج الظاهرة.",
       guide_country_title: "ملف الدولة",
-      guide_country_body: "يجمع ملف الدولة السجلات التي تنسبها قواعد المطابقة الحالية في التطبيق إلى الدولة ضمن فئات أنظمة الدفع والإطلاق والجهات الفضائية ومواقع الإطلاق والهبوط والاستعادة. والعدد الموسوم الكيانات النشطة هو مجموع هذه السجلات؛ وليس إحصاءً رسمياً للبنية التحتية الوطنية ولا عدّاً نهائياً للمنشآت العاملة حالياً. وقد يشمل سجلات قيد الإنشاء أو غير نشطة أو خاملة.\n\nيعني الصفر أو الحقل الفارغ عدم عرض سجل مطابق في مجموعة البيانات الحالية؛ ولا يثبت عدم وجوده في الواقع. يظهر مصنّعو الأقمار الصناعية ضمن فئة مستقلة على الخريطة، لكنهم غير مدرجين في المجموع أو التبويبات الحالية لملف الدولة.\n\nلا تعامل هذه الأعداد على أنها إجمالي الشركات في العالم، أو إجمالي مهمات الدولة، أو عدّ نهائي للمنشآت النشطة؛ فهي تلخص السجلات الموجودة حالياً في هذا الملف.",
+      guide_country_body: "يغطي ملف الدولة الآن فئات الخريطة الأربع عشرة كلها: 12 مجالاً للشركات والجهات، إضافة إلى مواقع الإطلاق ومواقع الهبوط والاستعادة. لكل فئة تبويب مستقل وعدد السجلات المنسوبة إلى الدولة. ويحسب الإجمالي الكيانات الفريدة؛ لذلك قد تظهر الشركة متعددة الأدوار في عدة تبويبات، لكنها تُحسب مرة واحدة في الإجمالي.\n\nتلخص هذه الأرقام سجلات ORBITA الحالية، ولا تمثل تعداداً كاملاً لقطاع الفضاء في الدولة ولا حصراً نهائياً للمنشآت العاملة. وقد تشمل سجلات قيد الإنشاء أو غير نشطة أو خاملة. ويعني الصفر أو الحقل الفارغ عدم وجود سجل منسوب حالياً إلى الدولة في مجموعة البيانات، ولا يثبت غيابه في الواقع.",
       guide_companies_title: "ملفات الشركات والمؤسسات",
       guide_companies_body: "تختلف الملفات بحسب الدور: تعرض شركات الإطلاق الأسطول والسجل، وشركات الدفع المحركات والاختبارات، والوكالات البرامج والتاريخ، ومصنّعو الأقمار المنتجات والعملاء.\n\nتضم الفئات الثماني الجديدة المكوّنات والحمولات والخدمات الأرضية والخدمات المدارية والجامعات ومنشآت الاختبار والمحطات الأرضية ومراكز التحكم؛ ولكل مجال خمسة تبويبات متخصصة. راجع «دليل فئات الخريطة الأربع عشرة» لمعرفة وظيفة كل فئة وعناوين تبويباتها.\n\nتعدّد الأدوار لا يعني بالضرورة تكرار السجلات. والحقل الفارغ لا يعني عدم وجود المعلومة في الواقع؛ كما أن رابط الموقع أو مصدر الصورة لا يوثق كل ادعاء.",
       guide_site_title: "ملف موقع الإطلاق",
@@ -4116,6 +4116,8 @@
       target = $("#compTabRoadmap") || $("#compTabPartnerships");
     } else if (tabId === "gallery") {
       target = $("#compTabGallery");
+    } else if (/^cCategory[A-Za-z0-9]+$/.test(tabId)) {
+      target = document.getElementById("compTab" + tabId);
     }
 
     if (target) {
@@ -6332,420 +6334,181 @@
     var isFa = (typeof LANG !== "undefined" && LANG === "fa");
     var isAr = (typeof LANG !== "undefined" && LANG === "ar");
     var tr = function (fa, en, ar) { return isFa ? fa : (isAr ? ar : en); };
-    function activeEntitiesAr(n) {
-      var mod100 = n % 100;
-      if (n === 1) return "كيان فضائي نشط";
-      if (n === 2) return "كيانان فضائيان نشطان";
-      if (n === 0 || (mod100 >= 3 && mod100 <= 10)) return "كيانات فضائية نشطة";
-      if (mod100 >= 11 && mod100 <= 99) return "كيانًا فضائيًا نشطًا";
-      return "كيان فضائي نشط";
-    }
-    
-    // Determine Country Name
+
     var cEn = p.country_en || (p.o ? p.o.country_en || p.o.country : null) || p.country || "Iran";
     var cFa = p.country_fa || (p.o ? p.o.country_fa : null) || countryOf(cEn) || cEn;
     var cIso = p.country_iso || (p.o ? p.o.country_iso : null) || null;
     var cAr = p.country_ar || (p.o ? p.o.country_ar : null) || countryNameAr(cEn, cIso) || cEn;
 
     var allCompanies = (typeof DATA !== "undefined") ? canonicalCompanyRecords() : [];
-    var allSites = (typeof DATA !== "undefined" && DATA.sites) ? DATA.sites : [];
+    var allSites = (typeof DATA !== "undefined" && Array.isArray(DATA.sites)) ? DATA.sites : [];
+    var allRecoveries = (typeof DATA !== "undefined" && Array.isArray(DATA.recoveries)) ? DATA.recoveries : [];
 
-    // A propulsion dossier is included by explicit primary/secondary membership, not merely by having engine data.
-    var propulsionItems = allCompanies.filter(function(c) {
-      var isC = isEntityInCountry(c, cEn, cFa);
-      var isP = companyBelongsToCategory(c, "propulsion") || c.category === "propulsion" || c.org_type_en === "Propulsion Contractor";
-      return isC && isP;
-    });
-
-    propulsionItems.sort(function(a, b) {
-      if (a.id === "aio-propulsion") return -1;
-      if (b.id === "aio-propulsion") return 1;
-      return (a.fa || a.en || "").localeCompare(b.fa || b.en || "");
-    });
-
-    var launchItems = allCompanies.filter(function(c) {
-      var isC = isEntityInCountry(c, cEn, cFa);
-      var isL = (companyBelongsToCategory(c, "launch") || "rockets_fleet" in c || c.org_type_en === "Launch Operator");
-      return isC && isL;
-    });
-
-    launchItems.sort(function(a, b) {
-      if (a.id === "irgc-space" || a.id === "aio-iran") return -1;
-      if (b.id === "irgc-space" || b.id === "aio-iran") return 1;
-      return (a.fa || a.en || "").localeCompare(b.fa || b.en || "");
-    });
-
-    var agencyItems = allCompanies.filter(function(c) {
-      var isC = isEntityInCountry(c, cEn, cFa);
-      var isA = (c.cat === "agency");
-      return isC && isA;
-    });
-
-    var siteItems = allSites.filter(function(s) {
-      var isC = isEntityInCountry(s, cEn, cFa);
-      return isC;
-    });
-
-    // بخش «فرود و بازیابی» — پس از تأیید نمونه، برای همهٔ کشورها فعال است
-    var showRecovery = true;
-    var recoveryItems = [];
-    if (typeof DATA !== "undefined" && Array.isArray(DATA.recoveries)) {
-      recoveryItems = DATA.recoveries.filter(function(s) {
-        return isEntityInCountry(s, cEn, cFa);
+    // Keep the country dossier aligned with the same 14 selectable map categories.
+    // Company roles are counted per category for the breakdown, but unique IDs are
+    // counted only once in the headline total.
+    var categoryDefs = [
+      { key: "launch", kind: "company", icon: "🚀", color: "#10b981" },
+      { key: "propulsion", kind: "company", icon: "⚙️", color: "#f59e0b" },
+      { key: "satmaker", kind: "company", icon: "🛰️", color: "#a78bfa" },
+      { key: "components", kind: "company", icon: "🧩", color: "#60a5fa" },
+      { key: "payloads", kind: "company", icon: "📡", color: "#f472b6" },
+      { key: "ground_services", kind: "company", icon: "🔗", color: "#22c55e" },
+      { key: "inspace_services", kind: "company", icon: "🛠️", color: "#38bdf8" },
+      { key: "agency", kind: "company", icon: "🏛️", color: "#0ea5e9" },
+      { key: "university_space", kind: "company", icon: "🎓", color: "#e879f9" },
+      { key: "site", kind: "site", icon: "🚀", color: "#ef4444" },
+      { key: "recovery", kind: "recovery", icon: "🛬", color: "#2dd4bf" },
+      { key: "test_facility", kind: "company", icon: "🧪", color: "#f97316" },
+      { key: "ground_station", kind: "company", icon: "📡", color: "#14b8a6" },
+      { key: "mission_control", kind: "company", icon: "🎛️", color: "#64748b" }
+    ];
+    var companyCategoryKeys = categoryDefs.filter(function (d) { return d.kind === "company"; }).map(function (d) { return d.key; });
+    var categoryItems = Object.create(null);
+    companyCategoryKeys.forEach(function (key) {
+      categoryItems[key] = allCompanies.filter(function (c) {
+        return isEntityInCountry(c, cEn, cFa) && companyBelongsToCategory(c, key);
       });
-      recoveryItems.sort(function(a, b) {
-        return (a.fa || a.en || "").localeCompare(b.fa || b.en || "");
+      categoryItems[key].sort(function (a, b) {
+        return (name(a) || a.id || "").localeCompare(name(b) || b.id || "");
       });
+    });
+    var siteItems = allSites.filter(function (s) { return isEntityInCountry(s, cEn, cFa); });
+    siteItems.sort(function (a, b) { return (name(a) || a.id || "").localeCompare(name(b) || b.id || ""); });
+    var recoveryItems = allRecoveries.filter(function (s) { return isEntityInCountry(s, cEn, cFa); });
+    recoveryItems.sort(function (a, b) { return (name(a) || a.id || "").localeCompare(name(b) || b.id || ""); });
+
+    var uniqueCompanyIds = Object.create(null);
+    companyCategoryKeys.forEach(function (key) {
+      (categoryItems[key] || []).forEach(function (item) { uniqueCompanyIds[String(item.id)] = true; });
+    });
+    var totalRecords = Object.keys(uniqueCompanyIds).length + siteItems.length + recoveryItems.length;
+
+    function itemsFor(def) {
+      if (def.kind === "site") return siteItems;
+      if (def.kind === "recovery") return recoveryItems;
+      return categoryItems[def.key] || [];
     }
-
-    var countryCompanyIds = Object.create(null);
-    [propulsionItems, launchItems, agencyItems].forEach(function (list) {
-      list.forEach(function (company) { countryCompanyIds[String(company.id)] = true; });
-    });
-    var totalEntities = Object.keys(countryCompanyIds).length + siteItems.length + recoveryItems.length;
+    function tabToken(key) {
+      return key.split("_").map(function (part) { return part.charAt(0).toUpperCase() + part.slice(1); }).join("");
+    }
+    function cityText(item) {
+      if (isFa) return item.city_fa || item.location_fa || item.loc_fa || item.city || item.location || item.loc || "—";
+      if (isAr) return item.city_ar || item.location_ar || item.loc_ar || item.city || item.location || item.loc || item.city_fa || "—";
+      return item.city || item.location || item.loc || item.city_fa || "—";
+    }
+    function typeText(item, def) {
+      var candidates = isFa ? [item.org_type_fa, item.maker_class_fa, item.specialty_fa, item.propulsion_category_fa, item.recovery_type_fa] :
+        (isAr ? [item.org_type_ar, item.maker_class_ar, item.specialty_ar, item.propulsion_category_ar, item.recovery_type_ar] :
+          [item.org_type_en, item.maker_class_en, item.specialty_en, item.propulsion_category_en, item.recovery_type_en]);
+      for (var i = 0; i < candidates.length; i++) if (candidates[i]) return candidates[i];
+      if (def.kind === "site") {
+        if (item.status === "active") return tr("فعال", "Active", "نشط");
+        if (item.status === "under_construction") return tr("در دست ساخت", "Under construction", "قيد الإنشاء");
+        if (item.status === "dormant") return tr("راکد", "Dormant", "خامل");
+        return tr("غیرفعال / تاریخی", "Inactive / historical", "غير نشط / تاريخي");
+      }
+      return layerName(def.key, false);
+    }
+    function emptyText(def) {
+      return tr(
+        "در داده‌های فعلی، رکوردی از این دسته به این کشور نسبت داده نشده است.",
+        "No record in this category is currently assigned to this country in the dataset.",
+        "لا يوجد حالياً سجل من هذه الفئة منسوب إلى هذه الدولة في مجموعة البيانات."
+      );
+    }
+    function renderEntityCard(item, def) {
+      var isInfrastructure = def.kind === "site" || def.kind === "recovery";
+      var iconData = fallbackLogoDataUri(def.icon, def.color);
+      var logoSrc = !isInfrastructure ? (item.logo_data || item.logo || iconData) : iconData;
+      var itemName = name(item) || item.en || item.fa || item.id || "—";
+      var location = cityText(item);
+      var description = desc(item);
+      if (!description && item.orbita_verified_profile && item.orbita_verified_profile.summary) {
+        var summary = item.orbita_verified_profile.summary;
+        description = summary[LANG] || summary.en || summary.fa || "";
+      }
+      var tag = typeText(item, def);
+      var links = extractEntityLinks(item);
+      var lat = Number(item.lat), lon = Number(item.lon);
+      var hasCoords = item.lat != null && item.lon != null && Number.isFinite(lat) && Number.isFinite(lon);
+      var detailKind = def.key;
+      var html = '<article class="country-profile-card" style="--country-category-color:' + esc(def.color) + '">';
+      html += '<div class="country-profile-card-head"><div class="country-profile-identity">';
+      html += '<img class="country-profile-logo" src="' + esc(logoSrc) + '" alt="" loading="lazy" decoding="async"' + (!isInfrastructure ? fallbackImageErrorAttribute(iconData) : '') + ' />';
+      html += '<div class="country-profile-identity-copy"><bdi class="country-profile-name">' + esc(itemName) + '</bdi>';
+      html += '<span class="country-profile-location">📍 ' + esc(location) + '</span></div></div>';
+      html += '<span class="country-profile-tag"><bdi>' + esc(tag) + '</bdi></span></div>';
+      if (description) html += '<p class="country-profile-description">' + esc(description) + '</p>';
+      if (links.webUrl || links.linkedinUrl) {
+        html += '<div class="country-profile-links">';
+        if (links.webUrl) html += '<a href="' + esc(links.webUrl) + '" target="_blank" rel="noopener noreferrer" onclick="event.stopPropagation();">🌐 ' + esc(isAr ? "الموقع الرسمي" : (isFa ? "وب‌سایت رسمی" : "Website")) + ' ↗</a>';
+        if (links.linkedinUrl) html += '<a href="' + esc(links.linkedinUrl) + '" target="_blank" rel="noopener noreferrer" onclick="event.stopPropagation();">💼 LinkedIn ↗</a>';
+        html += '</div>';
+      }
+      html += '<div class="country-profile-actions">';
+      if (hasCoords) html += '<button type="button" class="btn btn-sm country-btn-fly" onclick="flyToCoords(' + lat + ',' + lon + ',8)">📍 ' + tr("مشاهده روی نقشه", "View on map", "عرض على الخريطة") + '</button>';
+      html += '<button type="button" class="btn btn-sm country-btn-detail" onclick="openDetailById(\'' + esc(item.id) + '\',\'' + esc(detailKind) + '\')">📖 ' + tr("بازکردن شناسنامه", "Open profile", "فتح الملف") + '</button>';
+      html += '</div></article>';
+      return html;
+    }
 
     var h = "";
-
-    // Header Title — country flag (ISO-first, name-table fallback); custom palette globe.svg fallback
-    var _flagCodes = flagCodesFor(cEn, cIso);
-    var _flagTitle = isFa ? cFa : (isAr ? cAr : cEn);
-    var _flagAlt = tr("پرچم " + cFa, "Flag of " + cEn, "علم " + cAr);
-    var _flagEl;
-    if (_flagCodes.length === 1 && _flagCodes[0] !== "globe") {
-      _flagEl = '<img class="d-flag" src="assets/img/flags/' + _flagCodes[0] + '.svg" alt="' + esc(_flagAlt) + '" title="' + esc(_flagTitle) + '" decoding="async">';
-    } else if (_flagCodes.length === 2) {
-      _flagEl = '<span class="d-flagset" role="img" aria-label="' + esc(_flagAlt) + '" title="' + esc(_flagTitle) + '">'
-        + '<img class="d-flag d-flag--a" src="assets/img/flags/' + _flagCodes[0] + '.svg" alt="" decoding="async">'
-        + '<img class="d-flag d-flag--b" src="assets/img/flags/' + _flagCodes[1] + '.svg" alt="" decoding="async">'
-        + '</span>';
+    var flagCodes = flagCodesFor(cEn, cIso);
+    var flagTitle = isFa ? cFa : (isAr ? cAr : cEn);
+    var flagAlt = tr("پرچم " + cFa, "Flag of " + cEn, "علم " + cAr);
+    var flagEl;
+    if (flagCodes.length === 1 && flagCodes[0] !== "globe") {
+      flagEl = '<img class="d-flag" src="assets/img/flags/' + flagCodes[0] + '.svg" alt="' + esc(flagAlt) + '" title="' + esc(flagTitle) + '" decoding="async">';
+    } else if (flagCodes.length === 2) {
+      flagEl = '<span class="d-flagset" role="img" aria-label="' + esc(flagAlt) + '" title="' + esc(flagTitle) + '">' +
+        '<img class="d-flag d-flag--a" src="assets/img/flags/' + flagCodes[0] + '.svg" alt="" decoding="async">' +
+        '<img class="d-flag d-flag--b" src="assets/img/flags/' + flagCodes[1] + '.svg" alt="" decoding="async"></span>';
     } else {
-      _flagEl = '<img class="d-flag d-flag--globe" src="assets/img/flags/globe.svg" alt="' + esc(_flagTitle) + '" title="' + esc(_flagTitle) + '" decoding="async">';
-    }
-    h += '<div class="d-head" style="display:flex; justify-content:space-between; align-items:center; gap:10px; margin-inline-end:35px;">';
-    h += '<div style="display:flex; gap:10px; align-items:center; flex:1;">';
-    h += _flagEl;
-    h += '<div><div class="d-kicker">' + tr("شناسنامه جامع فضایی کشور", "National Space Dossier", "ملف الدولة الفضائي") + '</div>';
-    h += '<h2 class="d-title" style="margin:0;">' + esc(isFa ? cFa : (isAr ? cAr : cEn)) + '</h2></div></div>';
-    h += '<span class="badge-gov" style="padding:3px 10px; border-radius:12px; font-size:10.5px; font-weight:bold; white-space:nowrap;">' + (isFa ? (totalEntities + " مرکز فعال") : (isAr ? (totalEntities + " " + activeEntitiesAr(totalEntities)) : (totalEntities + " Active Entities"))) + '</span>';
-    h += '</div>';
-
-    h += '<div class="d-sub" style="margin-top:4px;">' + esc(isFa ? cEn : (isAr ? cEn : cFa)) + '</div>';
-
-    // SECTION 1: SHARE & OVERVIEW 4-GRID BANNER (سهم و آمار فضایی کشور)
-    h += '<div style="background:linear-gradient(135deg, rgba(15, 31, 51, 0.95) 0%, rgba(9, 13, 22, 0.98) 100%); border:1px solid rgba(56, 189, 248, 0.35); border-radius:8px; padding:12px; margin-top:10px; box-shadow:0 4px 16px rgba(0,0,0,0.4);">';
-    h += '<div style="font-size:11.5px; font-weight:bold; color:#f2c649; margin-bottom:8px; display:flex; align-items:center; gap:6px; border-bottom:1px solid rgba(255,255,255,0.08); padding-bottom:6px;">📊 ' + tr("سهم و آمار توزیع زیرساخت‌های فضایی کشور:", "Space Infrastructure Share Distribution:", "توزيع البنية التحتية الفضائية في الدولة:") + '</div>';
-    
-    h += '<div style="display:grid; grid-template-columns:' + (showRecovery ? 'repeat(auto-fit, minmax(90px, 1fr))' : 'repeat(4, 1fr)') + '; gap:6px; text-align:center;">';
-    
-    // 1. Propulsion
-    h += '<div style="background:rgba(245, 158, 11, 0.1); padding:8px 4px; border-radius:6px; border:1px solid rgba(245, 158, 11, 0.3);">';
-    h += '<div style="font-size:16px; font-weight:bold; color:#f59e0b;">' + esc(propulsionItems.length) + '</div>';
-    h += '<div style="font-size:9px; color:#f59e0b; margin-top:2px;">' + tr("پیشرانش", "Propulsion", "أنظمة الدفع") + '</div>';
-    h += '</div>';
-
-    // 2. Launch
-    h += '<div style="background:rgba(16, 185, 129, 0.1); padding:8px 4px; border-radius:6px; border:1px solid rgba(16, 185, 129, 0.3);">';
-    h += '<div style="font-size:16px; font-weight:bold; color:#10b981;">' + esc(launchItems.length) + '</div>';
-    h += '<div style="font-size:9px; color:#10b981; margin-top:2px;">' + tr("پرتاب‌گرها", "Launch", "الإطلاق") + '</div>';
-    h += '</div>';
-
-    // 3. Agencies
-    h += '<div style="background:rgba(56, 189, 248, 0.1); padding:8px 4px; border-radius:6px; border:1px solid rgba(56, 189, 248, 0.3);">';
-    h += '<div style="font-size:16px; font-weight:bold; color:#38bdf8;">' + esc(agencyItems.length) + '</div>';
-    h += '<div style="font-size:9px; color:#38bdf8; margin-top:2px;">' + tr("سازمان‌ها", "Organizations", "الجهات الفضائية") + '</div>';
-    h += '</div>';
-
-    // 4. Sites
-    h += '<div style="background:rgba(239, 68, 68, 0.1); padding:8px 4px; border-radius:6px; border:1px solid rgba(239, 68, 68, 0.3);">';
-    h += '<div style="font-size:16px; font-weight:bold; color:#ef4444;">' + esc(siteItems.length) + '</div>';
-    h += '<div style="font-size:9px; color:#ef4444; margin-top:2px;">' + tr("پایگاه‌ها", "Spaceports", "مواقع الإطلاق") + '</div>';
-    h += '</div>';
-
-    // 5. Landing & Recovery (کشورهای نمونه)
-    if (showRecovery) {
-      h += '<div style="background:rgba(45, 212, 191, 0.1); padding:8px 4px; border-radius:6px; border:1px solid rgba(45, 212, 191, 0.3);">';
-      h += '<div style="font-size:16px; font-weight:bold; color:#2dd4bf;">' + esc(recoveryItems.length) + '</div>';
-      h += '<div style="font-size:9px; color:#2dd4bf; margin-top:2px;">' + tr("فرود و بازیابی", "Recovery", "الهبوط والاستعادة") + '</div>';
-      h += '</div>';
+      flagEl = '<img class="d-flag d-flag--globe" src="assets/img/flags/globe.svg" alt="' + esc(flagTitle) + '" title="' + esc(flagTitle) + '" decoding="async">';
     }
 
-    h += '</div></div>';
+    h += '<div class="d-head country-profile-head">' + flagEl + '<div class="country-profile-head-copy">' +
+      '<div class="d-kicker">' + tr("شناسنامه جامع فضایی کشور", "National Space Dossier", "ملف الدولة الفضائي") + '</div>' +
+      '<h2 class="d-title">' + esc(isFa ? cFa : (isAr ? cAr : cEn)) + '</h2>' +
+      '<div class="d-sub">' + esc(cEn) + '</div></div>' +
+      '<span class="badge-gov country-profile-total">' + (isFa ? (totalRecords + " رکورد ثبت‌شده") : (isAr ? (totalRecords + " سجل مسجل") : (totalRecords + " Registered Records"))) + '</span></div>';
 
-    // SECTION 2: 4 DEDICATED TABS
-    h += '<div class="site-tabs" style="margin-top:10px;">';
-    h += '<button class="site-tab-btn active" onclick="switchCompTab(\'cPropulsion\', this)">' + tr("شرکت‌های پیشران", "Propulsion", "شركات أنظمة الدفع") + ' (' + propulsionItems.length + ')</button>';
-    h += '<button class="site-tab-btn" onclick="switchCompTab(\'cLaunch\', this)">' + tr("شرکت‌های پرتاب", "Launch", "شركات الإطلاق") + ' (' + launchItems.length + ')</button>';
-    h += '<button class="site-tab-btn" onclick="switchCompTab(\'cAgency\', this)">' + tr("سازمان‌های فضایی", "Space organizations", "الجهات الفضائية") + ' (' + agencyItems.length + ')</button>';
-    h += '<button class="site-tab-btn" onclick="switchCompTab(\'cSite\', this)">' + tr("پایگاه‌های پرتاب", "Sites", "مواقع الإطلاق") + ' (' + siteItems.length + ')</button>';
-    if (showRecovery) {
-      h += '<button class="site-tab-btn" onclick="switchCompTab(\'cRecovery\', this)">' + tr("فرود و بازیابی", "Recovery", "الهبوط والاستعادة") + ' (' + recoveryItems.length + ')</button>';
-    }
-    h += '</div>';
+    h += '<section class="country-profile-summary" aria-label="' + tr("خلاصه دسته‌های فضایی کشور", "Country space-category summary", "ملخص فئات الفضاء في الدولة") + '">';
+    h += '<div class="country-profile-summary-title">📊 ' + tr("توزیع رکوردهای ثبت‌شده در ۱۴ دسته", "Registered records across 14 categories", "توزيع السجلات المسجلة عبر 14 فئة") + '</div>';
+    h += '<div class="country-profile-summary-grid">';
+    categoryDefs.forEach(function (def) {
+      var count = itemsFor(def).length;
+      h += '<div class="country-profile-summary-item" style="--country-category-color:' + esc(def.color) + '">' +
+        '<span class="country-profile-summary-icon" aria-hidden="true">' + def.icon + '</span>' +
+        '<strong>' + esc(count) + '</strong><span>' + esc(layerName(def.key, false)) + '</span></div>';
+    });
+    h += '</div><p class="country-profile-summary-note">' + tr(
+      "این آمار فقط رکوردهای فعلی ORBITA را که به این کشور نسبت داده شده‌اند جمع می‌کند؛ سرشماری کامل صنعت فضایی یا تعداد قطعی تأسیسات فعال کشور نیست. یک موجودیت چندنقشی ممکن است در چند دسته دیده شود، اما در عدد کل فقط یک‌بار شمرده می‌شود.",
+      "These figures count only current ORBITA records assigned to this country; they are not a complete census of its space sector or a definitive count of operating facilities. A multi-role entity may appear in several category breakdowns but is counted once in the headline total.",
+      "تحصي هذه الأرقام سجلات ORBITA الحالية المنسوبة إلى الدولة فقط؛ ولا تمثل تعداداً كاملاً لقطاعها الفضائي أو حصراً نهائياً للمنشآت العاملة. وقد يظهر الكيان متعدد الأدوار في أكثر من فئة، لكنه يُحسب مرة واحدة في الإجمالي.") + '</p></section>';
 
-    // TAB 1: PROPULSION CONTRACTORS
-    h += '<div id="compTabCPropulsion" class="site-tab-content active" style="display:block;">';
-    if (propulsionItems.length) {
-      h += '<div style="display:flex; flex-direction:column; gap:8px; margin-top:8px;">';
-      propulsionItems.forEach(function(item) {
-        var nameStr = isFa ? (item.fa || item.en) : (isAr ? (item.ar || item.en || item.fa) : (item.en || item.fa));
-        var cityStr = isFa ? (item.city_fa || item.city || "—") : (isAr ? (item.city_ar || item.city || item.city_fa || "—") : (item.city || item.city_fa || "—"));
-        var catStr = isFa ? (item.propulsion_category_fa || item.propulsion_category_en || "پیشرانه فضایی") : (isAr ? (item.propulsion_category_ar || "أنظمة الدفع الفضائي") : (item.propulsion_category_en || "Propulsion"));
-        var defaultLogo = fallbackLogoDataUri("⚙️", "#f59e0b");
-        var logoSrc = item.logo_data || item.logo || defaultLogo;
+    h += '<nav class="site-tabs country-profile-tabs" role="tablist" aria-label="' + tr("دسته‌های شناسنامه کشور", "Country dossier categories", "فئات ملف الدولة") + '">';
+    categoryDefs.forEach(function (def, index) {
+      var tabId = "cCategory" + tabToken(def.key);
+      h += '<button type="button" class="site-tab-btn country-profile-tab' + (index === 0 ? ' active' : '') + '" role="tab" aria-selected="' + (index === 0 ? 'true' : 'false') + '" aria-controls="compTab' + tabId + '" onclick="switchCompTab(\'' + tabId + '\',this)">' +
+        '<span aria-hidden="true">' + def.icon + '</span> ' + esc(layerName(def.key, false)) + ' <span class="country-profile-tab-count">(' + itemsFor(def).length + ')</span></button>';
+    });
+    h += '</nav>';
 
-        h += '<div style="background:var(--bg2); border:1px solid var(--line); border-radius:8px; padding:10px; display:flex; flex-direction:column; gap:6px;">';
-        h += '<div style="display:flex; justify-content:space-between; align-items:center;">';
-        h += '<div style="display:flex; align-items:center; gap:8px;">';
-        h += '<img src="' + esc(logoSrc) + '" alt=""' + fallbackImageErrorAttribute(defaultLogo) + ' style="width:28px; height:28px; object-fit:contain; border-radius:4px; background:#000; padding:1px; border:1px solid var(--line);" />';
-        h += '<div><b style="font-size:11.5px; color:var(--text);"><bdi>' + esc(nameStr) + '</bdi></b>';
-        h += '<div style="font-size:9.5px; color:var(--muted);">📍 ' + esc(cityStr) + '</div></div>';
-        h += '</div>';
-        h += '<span style="font-size:9.5px; color:var(--amber); background:rgba(245,158,11,0.12); border:1px solid rgba(245,158,11,0.3); padding:2px 6px; border-radius:10px;"><bdi>' + esc(catStr) + '</bdi></span>';
-        h += '</div>';
-
-        // Description Kicker
-        var shortDesc = desc(item);
-        if (shortDesc) {
-          h += '<div style="font-size:10px; color:var(--text); line-height:1.4; display:-webkit-box; -webkit-line-clamp:2; -webkit-box-orient:vertical; overflow:hidden;">' + esc(shortDesc) + '</div>';
-        }
-
-        // LINKS & 2 ACTION BUTTONS UNDER EACH ENTITY CARD
-        var links = extractEntityLinks(item);
-        if (links.webUrl || links.linkedinUrl) {
-          h += '<div style="display:flex; gap:6px; flex-wrap:wrap; margin-top:2px;">';
-          if (links.webUrl) {
-            h += '<a href="' + esc(links.webUrl) + '" target="_blank" rel="noopener noreferrer" style="color:#38bdf8; background:rgba(56, 189, 248, 0.12); border:1px solid rgba(56, 189, 248, 0.35); font-size:10px; font-weight:bold; font-family:monospace; padding:3px 8px; border-radius:4px; text-decoration:none; display:inline-flex; align-items:center; gap:3px; word-break:break-all;" onclick="event.stopPropagation();">🌐 ' + esc(links.displayWeb || (isAr ? "موقع إلكتروني" : "Website")) + ' ↗</a>';
-          }
-          if (links.linkedinUrl) {
-            h += '<a href="' + esc(links.linkedinUrl) + '" target="_blank" rel="noopener noreferrer" style="color:#38bdf8; background:rgba(14, 118, 168, 0.18); border:1px solid rgba(14, 118, 168, 0.45); font-size:10px; font-weight:bold; font-family:monospace; padding:3px 8px; border-radius:4px; text-decoration:none; display:inline-flex; align-items:center; gap:3px; word-break:break-all;" onclick="event.stopPropagation();">💼 ' + esc(links.displayLinkedin || "LinkedIn") + ' ↗</a>';
-          }
-          h += '</div>';
-        }
-
-        h += '<div style="display:flex; gap:6px; margin-top:4px;">';
-        if (item.lat && item.lon) {
-          h += '<button type="button" onclick="flyToCoords(' + item.lat + ',' + item.lon + ', 8)" class="btn btn-sm country-btn-fly" style="flex:1; font-size:10px; padding:5px 8px; cursor:pointer;">📍 ' + tr("مشاهده روی نقشه", "Fly on Map", "عرض الموقع على الخريطة") + '</button>';
-        }
-        h += '<button type="button" onclick="openDetailById(\'' + esc(item.id) + '\', \'propulsion\')" class="btn btn-sm country-btn-detail" style="flex:1; font-size:10px; padding:5px 8px; cursor:pointer; background:rgba(56, 189, 248, 0.15); border:1px solid rgba(56, 189, 248, 0.4); color:#38bdf8;">📖 ' + tr("باز شدن جزئیات", "Open Details", "فتح التفاصيل") + '</button>';
-        h += '</div>';
-
-        h += '</div>'; // end entity card
-      });
-      h += '</div>';
-    } else {
-      h += '<div style="padding:16px; text-align:center; color:var(--muted); font-size:11px;">' + tr("هیچ مرکز پیشرانش ثبت‌شده‌ای برای این کشور یافت نشد.", "No registered propulsion contractors for this country.", "لا توجد جهات مسجلة لأنظمة الدفع في هذه الدولة.") + '</div>';
-    }
-    h += '</div>'; // end TAB 1
-
-    // TAB 2: LAUNCH OPERATORS
-    h += '<div id="compTabCLaunch" class="site-tab-content" style="display:none;">';
-    if (launchItems.length) {
-      h += '<div style="display:flex; flex-direction:column; gap:8px; margin-top:8px;">';
-      launchItems.forEach(function(item) {
-        var nameStr = isFa ? (item.fa || item.en) : (isAr ? (item.ar || item.en || item.fa) : (item.en || item.fa));
-        var cityStr = isFa ? (item.city_fa || item.city || "—") : (isAr ? (item.city_ar || item.city || item.city_fa || "—") : (item.city || item.city_fa || "—"));
-        var orgStr = isFa ? (item.org_type_fa || "شرکت پرتاب تجاری") : (isAr ? (item.org_type_ar || "الجهة المنفذة للإطلاق") : (item.org_type_en || "Launch Provider"));
-        var defaultLogo = fallbackLogoDataUri("🚀", "#10b981");
-        var logoSrc = item.logo_data || item.logo || defaultLogo;
-
-        h += '<div style="background:var(--bg2); border:1px solid var(--line); border-radius:8px; padding:10px; display:flex; flex-direction:column; gap:6px;">';
-        h += '<div style="display:flex; justify-content:space-between; align-items:center;">';
-        h += '<div style="display:flex; align-items:center; gap:8px;">';
-        h += '<img src="' + esc(logoSrc) + '" alt=""' + fallbackImageErrorAttribute(defaultLogo) + ' style="width:28px; height:28px; object-fit:contain; border-radius:4px; background:#000; padding:1px; border:1px solid var(--line);" />';
-        h += '<div><b style="font-size:11.5px; color:var(--text);"><bdi>' + esc(nameStr) + '</bdi></b>';
-        h += '<div style="font-size:9.5px; color:var(--muted);">📍 ' + esc(cityStr) + '</div></div>';
-        h += '</div>';
-        h += '<span style="font-size:9.5px; color:#10b981; background:rgba(16,185,129,0.12); border:1px solid rgba(16,185,129,0.3); padding:2px 6px; border-radius:10px;"><bdi>' + esc(orgStr) + '</bdi></span>';
-        h += '</div>';
-
-        // Description Kicker
-        var shortDesc = desc(item);
-        if (shortDesc) {
-          h += '<div style="font-size:10px; color:var(--text); line-height:1.4; display:-webkit-box; -webkit-line-clamp:2; -webkit-box-orient:vertical; overflow:hidden;">' + esc(shortDesc) + '</div>';
-        }
-
-        // LINKS & 2 ACTION BUTTONS UNDER EACH ENTITY CARD
-        var links = extractEntityLinks(item);
-        if (links.webUrl || links.linkedinUrl) {
-          h += '<div style="display:flex; gap:6px; flex-wrap:wrap; margin-top:2px;">';
-          if (links.webUrl) {
-            h += '<a href="' + esc(links.webUrl) + '" target="_blank" rel="noopener noreferrer" style="color:#38bdf8; background:rgba(56, 189, 248, 0.12); border:1px solid rgba(56, 189, 248, 0.35); font-size:10px; font-weight:bold; font-family:monospace; padding:3px 8px; border-radius:4px; text-decoration:none; display:inline-flex; align-items:center; gap:3px; word-break:break-all;" onclick="event.stopPropagation();">🌐 ' + esc(links.displayWeb || (isAr ? "موقع إلكتروني" : "Website")) + ' ↗</a>';
-          }
-          if (links.linkedinUrl) {
-            h += '<a href="' + esc(links.linkedinUrl) + '" target="_blank" rel="noopener noreferrer" style="color:#38bdf8; background:rgba(14, 118, 168, 0.18); border:1px solid rgba(14, 118, 168, 0.45); font-size:10px; font-weight:bold; font-family:monospace; padding:3px 8px; border-radius:4px; text-decoration:none; display:inline-flex; align-items:center; gap:3px; word-break:break-all;" onclick="event.stopPropagation();">💼 ' + esc(links.displayLinkedin || "LinkedIn") + ' ↗</a>';
-          }
-          h += '</div>';
-        }
-
-        h += '<div style="display:flex; gap:6px; margin-top:4px;">';
-        if (item.lat && item.lon) {
-          h += '<button type="button" onclick="flyToCoords(' + item.lat + ',' + item.lon + ', 8)" class="btn btn-sm country-btn-fly" style="flex:1; font-size:10px; padding:5px 8px; cursor:pointer;">📍 ' + tr("مشاهده روی نقشه", "Fly on Map", "عرض الموقع على الخريطة") + '</button>';
-        }
-        h += '<button type="button" onclick="openDetailById(\'' + esc(item.id) + '\', \'launch\')" class="btn btn-sm country-btn-detail" style="flex:1; font-size:10px; padding:5px 8px; cursor:pointer; background:rgba(56, 189, 248, 0.15); border:1px solid rgba(56, 189, 248, 0.4); color:#38bdf8;">📖 ' + tr("باز شدن جزئیات", "Open Details", "فتح التفاصيل") + '</button>';
-        h += '</div>';
-
-        h += '</div>'; // end entity card
-      });
-      h += '</div>';
-    } else {
-      h += '<div style="padding:16px; text-align:center; color:var(--muted); font-size:11px;">' + tr("هیچ اپراتور پرتابی برای این کشور یافت نشد.", "No launch operators for this country.", "لا توجد جهات منفذة للإطلاق مسجلة في هذه الدولة.") + '</div>';
-    }
-    h += '</div>'; // end TAB 2
-
-    // TAB 3: SPACE AGENCIES
-    h += '<div id="compTabCAgency" class="site-tab-content" style="display:none;">';
-    if (agencyItems.length) {
-      h += '<div style="display:flex; flex-direction:column; gap:8px; margin-top:8px;">';
-      agencyItems.forEach(function(item) {
-        var nameStr = isFa ? (item.fa || item.en) : (isAr ? (item.ar || item.en || item.fa) : (item.en || item.fa));
-        var cityStr = isFa ? (item.city_fa || item.city || "—") : (isAr ? (item.city_ar || item.city || item.city_fa || "—") : (item.city || item.city_fa || "—"));
-        var orgStr = isFa ? (item.org_type_fa || "سازمان فضایی دولتی") : (isAr ? (item.org_type_ar || "وكالة فضاء") : (item.org_type_en || "Space Agency"));
-        var defaultLogo = fallbackLogoDataUri("🏛️", "#38bdf8");
-        var logoSrc = item.logo_data || item.logo || defaultLogo;
-
-        h += '<div style="background:var(--bg2); border:1px solid var(--line); border-radius:8px; padding:10px; display:flex; flex-direction:column; gap:6px;">';
-        h += '<div style="display:flex; justify-content:space-between; align-items:center;">';
-        h += '<div style="display:flex; align-items:center; gap:8px;">';
-        h += '<img src="' + esc(logoSrc) + '" alt=""' + fallbackImageErrorAttribute(defaultLogo) + ' style="width:28px; height:28px; object-fit:contain; border-radius:4px; background:#000; padding:1px; border:1px solid var(--line);" />';
-        h += '<div><b style="font-size:11.5px; color:var(--text);"><bdi>' + esc(nameStr) + '</bdi></b>';
-        h += '<div style="font-size:9.5px; color:var(--muted);">📍 ' + esc(cityStr) + '</div></div>';
-        h += '</div>';
-        h += '<span style="font-size:9.5px; color:#38bdf8; background:rgba(56,189,248,0.12); border:1px solid rgba(56,189,248,0.3); padding:2px 6px; border-radius:10px;"><bdi>' + esc(orgStr) + '</bdi></span>';
-        h += '</div>';
-
-        // Description Kicker
-        var shortDesc = desc(item);
-        if (shortDesc) {
-          h += '<div style="font-size:10px; color:var(--text); line-height:1.4; display:-webkit-box; -webkit-line-clamp:2; -webkit-box-orient:vertical; overflow:hidden;">' + esc(shortDesc) + '</div>';
-        }
-
-        // LINKS & 2 ACTION BUTTONS UNDER EACH ENTITY CARD
-        var links = extractEntityLinks(item);
-        if (links.webUrl || links.linkedinUrl) {
-          h += '<div style="display:flex; gap:6px; flex-wrap:wrap; margin-top:2px;">';
-          if (links.webUrl) {
-            h += '<a href="' + esc(links.webUrl) + '" target="_blank" rel="noopener noreferrer" style="color:#38bdf8; background:rgba(56, 189, 248, 0.12); border:1px solid rgba(56, 189, 248, 0.35); font-size:10px; font-weight:bold; font-family:monospace; padding:3px 8px; border-radius:4px; text-decoration:none; display:inline-flex; align-items:center; gap:3px; word-break:break-all;" onclick="event.stopPropagation();">🌐 ' + esc(links.displayWeb || (isAr ? "موقع إلكتروني" : "Website")) + ' ↗</a>';
-          }
-          if (links.linkedinUrl) {
-            h += '<a href="' + esc(links.linkedinUrl) + '" target="_blank" rel="noopener noreferrer" style="color:#38bdf8; background:rgba(14, 118, 168, 0.18); border:1px solid rgba(14, 118, 168, 0.45); font-size:10px; font-weight:bold; font-family:monospace; padding:3px 8px; border-radius:4px; text-decoration:none; display:inline-flex; align-items:center; gap:3px; word-break:break-all;" onclick="event.stopPropagation();">💼 ' + esc(links.displayLinkedin || "LinkedIn") + ' ↗</a>';
-          }
-          h += '</div>';
-        }
-
-        h += '<div style="display:flex; gap:6px; margin-top:4px;">';
-        if (item.lat && item.lon) {
-          h += '<button type="button" onclick="flyToCoords(' + item.lat + ',' + item.lon + ', 8)" class="btn btn-sm country-btn-fly" style="flex:1; font-size:10px; padding:5px 8px; cursor:pointer;">📍 ' + tr("مشاهده روی نقشه", "Fly on Map", "عرض الموقع على الخريطة") + '</button>';
-        }
-        h += '<button type="button" onclick="openDetailById(\'' + esc(item.id) + '\', \'agency\')" class="btn btn-sm country-btn-detail" style="flex:1; font-size:10px; padding:5px 8px; cursor:pointer; background:rgba(56, 189, 248, 0.15); border:1px solid rgba(56, 189, 248, 0.4); color:#38bdf8;">📖 ' + tr("باز شدن جزئیات", "Open Details", "فتح التفاصيل") + '</button>';
-        h += '</div>';
-
-        h += '</div>'; // end entity card
-      });
-      h += '</div>';
-    } else {
-      h += '<div style="padding:16px; text-align:center; color:var(--muted); font-size:11px;">' + tr("هیچ سازمان فضایی برای این کشور ثبت نشده است.", "No space organization is recorded for this country.", "لا توجد جهة فضائية مسجلة لهذه الدولة.") + '</div>';
-    }
-    h += '</div>'; // end TAB 3
-
-    // TAB 4: LAUNCH SITES
-    h += '<div id="compTabCSite" class="site-tab-content" style="display:none;">';
-    if (siteItems.length) {
-      h += '<div style="display:flex; flex-direction:column; gap:8px; margin-top:8px;">';
-      siteItems.forEach(function(item) {
-        var nameStr = isFa ? (item.fa || item.en) : (isAr ? (item.ar || item.en || item.fa) : (item.en || item.fa));
-        var locStr = isFa ? (item.loc_fa || item.loc || "—") : (isAr ? (item.loc_ar || countryNameAr(item.loc, null) || item.loc || item.loc_fa || "—") : (item.loc || item.loc_fa || "—"));
-        var stStr = isFa ? (item.status === "active" ? "فعال و عملیاتی" : "غیرفعال / تاریخی") : (isAr ? (item.status === "active" ? "قيد التشغيل" : "غير نشط / تاريخي") : (item.status === "active" ? "Active Spaceport" : "Inactive"));
-
-        h += '<div style="background:var(--bg2); border:1px solid var(--line); border-radius:8px; padding:10px; display:flex; flex-direction:column; gap:6px;">';
-        h += '<div style="display:flex; justify-content:space-between; align-items:center;">';
-        h += '<div><b style="font-size:11.5px; color:var(--text);">📍 <bdi>' + esc(nameStr) + '</bdi></b>';
-        h += '<div style="font-size:9.5px; color:var(--muted); margin-top:2px;">🌍 ' + esc(locStr) + '</div></div>';
-        h += '<span style="font-size:9.5px; color:#ef4444; background:rgba(239,68,68,0.12); border:1px solid rgba(239,68,68,0.3); padding:2px 6px; border-radius:10px;"><bdi>' + esc(stStr) + '</bdi></span>';
-        h += '</div>';
-
-        // Description Kicker
-        var shortDesc = desc(item);
-        if (shortDesc) {
-          h += '<div style="font-size:10px; color:var(--text); line-height:1.4; display:-webkit-box; -webkit-line-clamp:2; -webkit-box-orient:vertical; overflow:hidden;">' + esc(shortDesc) + '</div>';
-        }
-
-        // LINKS & 2 ACTION BUTTONS UNDER EACH ENTITY CARD
-        var links = extractEntityLinks(item);
-        if (links.webUrl || links.linkedinUrl) {
-          h += '<div style="display:flex; gap:6px; flex-wrap:wrap; margin-top:2px;">';
-          if (links.webUrl) {
-            h += '<a href="' + esc(links.webUrl) + '" target="_blank" rel="noopener noreferrer" style="color:#38bdf8; background:rgba(56, 189, 248, 0.12); border:1px solid rgba(56, 189, 248, 0.35); font-size:10px; font-weight:bold; font-family:monospace; padding:3px 8px; border-radius:4px; text-decoration:none; display:inline-flex; align-items:center; gap:3px; word-break:break-all;" onclick="event.stopPropagation();">🌐 ' + esc(links.displayWeb || (isAr ? "موقع إلكتروني" : "Website")) + ' ↗</a>';
-          }
-          if (links.linkedinUrl) {
-            h += '<a href="' + esc(links.linkedinUrl) + '" target="_blank" rel="noopener noreferrer" style="color:#38bdf8; background:rgba(14, 118, 168, 0.18); border:1px solid rgba(14, 118, 168, 0.45); font-size:10px; font-weight:bold; font-family:monospace; padding:3px 8px; border-radius:4px; text-decoration:none; display:inline-flex; align-items:center; gap:3px; word-break:break-all;" onclick="event.stopPropagation();">💼 ' + esc(links.displayLinkedin || "LinkedIn") + ' ↗</a>';
-          }
-          h += '</div>';
-        }
-
-        h += '<div style="display:flex; gap:6px; margin-top:4px;">';
-        if (item.lat && item.lon) {
-          h += '<button type="button" onclick="flyToCoords(' + item.lat + ',' + item.lon + ', 8)" class="btn btn-sm country-btn-fly" style="flex:1; font-size:10px; padding:5px 8px; cursor:pointer;">📍 ' + tr("مشاهده روی نقشه", "Fly on Map", "عرض الموقع على الخريطة") + '</button>';
-        }
-        h += '<button type="button" onclick="openDetailById(\'' + esc(item.id) + '\', \'site\')" class="btn btn-sm country-btn-detail" style="flex:1; font-size:10px; padding:5px 8px; cursor:pointer; background:rgba(56, 189, 248, 0.15); border:1px solid rgba(56, 189, 248, 0.4); color:#38bdf8;">📖 ' + tr("باز شدن جزئیات", "Open Details", "فتح التفاصيل") + '</button>';
-        h += '</div>';
-
-        h += '</div>'; // end site card
-      });
-      h += '</div>';
-    } else {
-      h += '<div style="padding:16px; text-align:center; color:var(--muted); font-size:11px;">' + tr("هیچ پایگاه پرتاب ثبت‌شده‌ای برای این کشور یافت نشد.", "No registered launch sites for this country.", "لا توجد مواقع إطلاق مسجلة في هذه الدولة.") + '</div>';
-    }
-    h += '</div>'; // end TAB 4
-
-    // TAB 5: LANDING & RECOVERY SITES (کشورهای نمونه؛ همان کالبد کارت‌های دیگر)
-    if (showRecovery) {
-      var recTypeFa = { booster: "سکوی بوستر", capsule: "بازیابی کپسول", runway: "باند فرود", mixed: "کپسول و باند",
-        tower: "برج گرفتن بوستر", droneship: "شناور فرود دریایی", splashdown_zone: "پهنهٔ آب‌نشینی" };
-      var recTypeEn = { booster: "Booster landing", capsule: "Capsule recovery", runway: "Runway landing", mixed: "Capsule & runway",
-        tower: "Booster catch tower", droneship: "Landing droneship", splashdown_zone: "Splashdown zone" };
-      var recTypeAr = { booster: "هبوط المعزّز", capsule: "استعادة الكبسولة", runway: "الهبوط على المدرج", mixed: "كبسولة ومدرج",
-        tower: "التقاط المعزّز بالبرج", droneship: "سفينة هبوط بحرية", splashdown_zone: "منطقة الهبوط المائي" };
-      h += '<div id="compTabCRecovery" class="site-tab-content" style="display:none;">';
-      if (recoveryItems.length) {
-        h += '<div style="display:flex; flex-direction:column; gap:8px; margin-top:8px;">';
-        recoveryItems.forEach(function(item) {
-          var nameStr = isFa ? (item.fa || item.en) : (isAr ? (item.ar || item.en || item.fa) : (item.en || item.fa));
-          var cityStr = isFa ? (item.city_fa || item.city || "—") : (isAr ? (item.city_ar || item.city || item.city_fa || "—") : (item.city || item.city_fa || "—"));
-          var typeStr = isFa ? (recTypeFa[item.recovery_type] || "فرود و بازیابی") : (isAr ? (recTypeAr[item.recovery_type] || "الهبوط والاستعادة") : (recTypeEn[item.recovery_type] || "Recovery"));
-          var recIcon = fallbackLogoDataUri("🛬", "#2dd4bf");
-
-          h += '<div style="background:var(--bg2); border:1px solid var(--line); border-radius:8px; padding:10px; display:flex; flex-direction:column; gap:6px;">';
-          h += '<div style="display:flex; justify-content:space-between; align-items:center;">';
-          h += '<div style="display:flex; align-items:center; gap:8px;">';
-          h += '<img src="' + recIcon + '" alt="" style="width:28px; height:28px; object-fit:contain; border-radius:4px; background:#000; padding:1px; border:1px solid var(--line);" />';
-          h += '<div><b style="font-size:11.5px; color:var(--text);"><bdi>' + esc(nameStr) + '</bdi></b>';
-          h += '<div style="font-size:9.5px; color:var(--muted);">📍 ' + esc(cityStr) + '</div></div>';
-          h += '</div>';
-          h += '<span style="font-size:9.5px; color:#2dd4bf; background:rgba(45,212,191,0.12); border:1px solid rgba(45,212,191,0.3); padding:2px 6px; border-radius:10px;"><bdi>' + esc(typeStr) + '</bdi></span>';
-          h += '</div>';
-
-          // Description Kicker
-          var shortDesc = desc(item);
-          if (shortDesc) {
-            h += '<div style="font-size:10px; color:var(--text); line-height:1.4; display:-webkit-box; -webkit-line-clamp:2; -webkit-box-orient:vertical; overflow:hidden;">' + esc(shortDesc) + '</div>';
-          }
-
-          h += '<div style="display:flex; gap:6px; margin-top:4px;">';
-          if (item.lat && item.lon) {
-            h += '<button type="button" onclick="flyToCoords(' + item.lat + ',' + item.lon + ', 8)" class="btn btn-sm country-btn-fly" style="flex:1; font-size:10px; padding:5px 8px; cursor:pointer;">📍 ' + tr("مشاهده روی نقشه", "Fly on Map", "عرض الموقع على الخريطة") + '</button>';
-          }
-          h += '<button type="button" onclick="openDetailById(\'' + esc(item.id) + '\', \'recovery\')" class="btn btn-sm country-btn-detail" style="flex:1; font-size:10px; padding:5px 8px; cursor:pointer; background:rgba(56, 189, 248, 0.15); border:1px solid rgba(56, 189, 248, 0.4); color:#38bdf8;">📖 ' + tr("باز شدن جزئیات", "Open Details", "فتح التفاصيل") + '</button>';
-          h += '</div>';
-
-          h += '</div>'; // end recovery card
-        });
+    categoryDefs.forEach(function (def, index) {
+      var tabId = "cCategory" + tabToken(def.key);
+      var items = itemsFor(def);
+      h += '<section id="compTabcCategory' + tabToken(def.key) + '" class="site-tab-content country-profile-panel' + (index === 0 ? ' active' : '') + '" role="tabpanel"' + (index === 0 ? '' : ' style="display:none;"') + '>';
+      if (items.length) {
+        h += '<div class="country-profile-card-list">';
+        items.forEach(function (item) { h += renderEntityCard(item, def); });
         h += '</div>';
       } else {
-        h += '<div style="padding:16px; text-align:center; color:var(--muted); font-size:11px;">' + tr("هیچ پایگاه فرود و بازیابی ثبت‌شده‌ای برای این کشور یافت نشد.", "No registered landing & recovery sites for this country.", "لا توجد مواقع هبوط واستعادة مسجلة في هذه الدولة.") + '</div>';
+        h += '<div class="country-profile-empty">' + esc(emptyText(def)) + '</div>';
       }
-      h += '</div>'; // end TAB 5
-    }
-
+      h += '</section>';
+    });
     return h;
   }
   window.isEntityInCountry = isEntityInCountry;
@@ -10882,7 +10645,7 @@
       countryPanel.classList.add("open");
       bindCountryItemClicks();
       var countryDataReady = LAYER_STATE.sites === "ready" && LAYER_STATE.recoveries === "ready" &&
-        ["launch", "propulsion", "agency"].every(function (key) { return COMPANY_CATEGORY_STATE[key] === "ready"; });
+        COMPANY_CATEGORY_KEYS.every(function (key) { return COMPANY_CATEGORY_STATE[key] === "ready"; });
       if (!countryDataReady) {
         var loadingNote = document.createElement("div");
         loadingNote.className = "up-empty";
@@ -11547,11 +11310,8 @@
   function ensureCountryProfileData() {
     return Promise.all([
       BOOT_LOADERS.sites(),
-      BOOT_LOADERS.recoveries(),
-      loadCompanyCategory("launch"),
-      loadCompanyCategory("propulsion"),
-      loadCompanyCategory("agency")
-    ]);
+      BOOT_LOADERS.recoveries()
+    ].concat(COMPANY_CATEGORY_KEYS.map(loadCompanyCategory)));
   }
   var BOOT_LOADERS = {
     sites: function () {

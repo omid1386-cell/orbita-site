@@ -1,14 +1,9 @@
-index.html
-assets/js/app.js
-assets/css/app.css
-tests/site_guide.test.cjs
-tests/cluster_label_startup.test.cjs
-tests/company_propulsion_ar.test.cjs
-tests/propulsion_logo_group2_assets.test.cjs
-tests/propulsion_logo_group3_assets.test.cjs
-README-site-guide-fa.md
-SITE_GUIDE_CONTENT_MAP_fa.md
-SITE_GUIDE_COPY_DRAFT_fa.md
-SITE_GUIDE_COPY_DRAFT_en_ar.md
-README_FA.md
-MANIFEST.txt
+Changed files:
+- assets/js/app.js
+- assets/css/app.css
+- data/sites.json
+- index.html
+- tests/country_profile_14_categories.test.cjs (new)
+
+This patch is based on ORBITA_AutoRefresh_FIX_FULL_2026-11-13.zip.
+It does not bundle the separate Help-14 update or the legacy-six link-audit package.
