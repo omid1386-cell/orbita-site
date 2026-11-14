@@ -1,0 +1,50 @@
+--- a/assets/js/app.js
++++ b/assets/js/app.js
+@@ -6336,9 +6336,18 @@
+     var tr = function (fa, en, ar) { return isFa ? fa : (isAr ? ar : en); };
+ 
+     var cEn = p.country_en || (p.o ? p.o.country_en || p.o.country : null) || p.country || "Iran";
+-    var cFa = p.country_fa || (p.o ? p.o.country_fa : null) || countryOf(cEn) || cEn;
+     var cIso = p.country_iso || (p.o ? p.o.country_iso : null) || null;
++    // Keep the source/canonical Persian value for record matching, but use the
++    // requested Persian display label for the country dossier heading.
++    var cFaMatch = p.country_fa || (p.o ? p.o.country_fa : null) || countryOf(cEn) || cEn;
++    var isOccupiedPalestineDisplay = countryNameKey(cEn) === "israel" ||
++      String(cIso || "").trim().toUpperCase() === "IL" ||
++      String(cIso || "").trim().toUpperCase() === "ISR";
++    var cFa = isOccupiedPalestineDisplay ? "فلسطین اشغالی" : cFaMatch;
+     var cAr = p.country_ar || (p.o ? p.o.country_ar : null) || countryNameAr(cEn, cIso) || cEn;
++    // In Persian UI, do not repeat the canonical English name underneath the
++    // requested display label. The canonical name remains intact internally.
++    var countryEnglishSubtitle = (isFa && isOccupiedPalestineDisplay) ? "" : cEn;
+ 
+     var allCompanies = (typeof DATA !== "undefined") ? canonicalCompanyRecords() : [];
+     var allSites = (typeof DATA !== "undefined" && Array.isArray(DATA.sites)) ? DATA.sites : [];
+@@ -6367,15 +6376,15 @@
+     var categoryItems = Object.create(null);
+     companyCategoryKeys.forEach(function (key) {
+       categoryItems[key] = allCompanies.filter(function (c) {
+-        return isEntityInCountry(c, cEn, cFa) && companyBelongsToCategory(c, key);
++        return isEntityInCountry(c, cEn, cFaMatch) && companyBelongsToCategory(c, key);
+       });
+       categoryItems[key].sort(function (a, b) {
+         return (name(a) || a.id || "").localeCompare(name(b) || b.id || "");
+       });
+     });
+-    var siteItems = allSites.filter(function (s) { return isEntityInCountry(s, cEn, cFa); });
++    var siteItems = allSites.filter(function (s) { return isEntityInCountry(s, cEn, cFaMatch); });
+     siteItems.sort(function (a, b) { return (name(a) || a.id || "").localeCompare(name(b) || b.id || ""); });
+-    var recoveryItems = allRecoveries.filter(function (s) { return isEntityInCountry(s, cEn, cFa); });
++    var recoveryItems = allRecoveries.filter(function (s) { return isEntityInCountry(s, cEn, cFaMatch); });
+     recoveryItems.sort(function (a, b) { return (name(a) || a.id || "").localeCompare(name(b) || b.id || ""); });
+ 
+     var uniqueCompanyIds = Object.create(null);
+@@ -6471,7 +6480,7 @@
+     h += '<div class="d-head country-profile-head">' + flagEl + '<div class="country-profile-head-copy">' +
+       '<div class="d-kicker">' + tr("شناسنامه جامع فضایی کشور", "National Space Dossier", "ملف الدولة الفضائي") + '</div>' +
+       '<h2 class="d-title">' + esc(isFa ? cFa : (isAr ? cAr : cEn)) + '</h2>' +
+-      '<div class="d-sub">' + esc(cEn) + '</div></div>' +
++      (countryEnglishSubtitle ? '<div class="d-sub">' + esc(countryEnglishSubtitle) + '</div>' : '') + '</div>' +
+       '<span class="badge-gov country-profile-total">' + (isFa ? (totalRecords + " رکورد ثبت‌شده") : (isAr ? (totalRecords + " سجل مسجل") : (totalRecords + " Registered Records"))) + '</span></div>';
+ 
+     h += '<section class="country-profile-summary" aria-label="' + tr("خلاصه دسته‌های فضایی کشور", "Country space-category summary", "ملخص فئات الفضاء في الدولة") + '">';

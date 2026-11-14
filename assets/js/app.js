@@ -6336,9 +6336,18 @@
     var tr = function (fa, en, ar) { return isFa ? fa : (isAr ? ar : en); };
 
     var cEn = p.country_en || (p.o ? p.o.country_en || p.o.country : null) || p.country || "Iran";
-    var cFa = p.country_fa || (p.o ? p.o.country_fa : null) || countryOf(cEn) || cEn;
     var cIso = p.country_iso || (p.o ? p.o.country_iso : null) || null;
+    // Keep the source/canonical Persian value for record matching, but use the
+    // requested Persian display label for the country dossier heading.
+    var cFaMatch = p.country_fa || (p.o ? p.o.country_fa : null) || countryOf(cEn) || cEn;
+    var isOccupiedPalestineDisplay = countryNameKey(cEn) === "israel" ||
+      String(cIso || "").trim().toUpperCase() === "IL" ||
+      String(cIso || "").trim().toUpperCase() === "ISR";
+    var cFa = isOccupiedPalestineDisplay ? "فلسطین اشغالی" : cFaMatch;
     var cAr = p.country_ar || (p.o ? p.o.country_ar : null) || countryNameAr(cEn, cIso) || cEn;
+    // In Persian UI, do not repeat the canonical English name underneath the
+    // requested display label. The canonical name remains intact internally.
+    var countryEnglishSubtitle = (isFa && isOccupiedPalestineDisplay) ? "" : cEn;
 
     var allCompanies = (typeof DATA !== "undefined") ? canonicalCompanyRecords() : [];
     var allSites = (typeof DATA !== "undefined" && Array.isArray(DATA.sites)) ? DATA.sites : [];
@@ -6367,15 +6376,15 @@
     var categoryItems = Object.create(null);
     companyCategoryKeys.forEach(function (key) {
       categoryItems[key] = allCompanies.filter(function (c) {
-        return isEntityInCountry(c, cEn, cFa) && companyBelongsToCategory(c, key);
+        return isEntityInCountry(c, cEn, cFaMatch) && companyBelongsToCategory(c, key);
       });
       categoryItems[key].sort(function (a, b) {
         return (name(a) || a.id || "").localeCompare(name(b) || b.id || "");
       });
     });
-    var siteItems = allSites.filter(function (s) { return isEntityInCountry(s, cEn, cFa); });
+    var siteItems = allSites.filter(function (s) { return isEntityInCountry(s, cEn, cFaMatch); });
     siteItems.sort(function (a, b) { return (name(a) || a.id || "").localeCompare(name(b) || b.id || ""); });
-    var recoveryItems = allRecoveries.filter(function (s) { return isEntityInCountry(s, cEn, cFa); });
+    var recoveryItems = allRecoveries.filter(function (s) { return isEntityInCountry(s, cEn, cFaMatch); });
     recoveryItems.sort(function (a, b) { return (name(a) || a.id || "").localeCompare(name(b) || b.id || ""); });
 
     var uniqueCompanyIds = Object.create(null);
@@ -6471,7 +6480,7 @@
     h += '<div class="d-head country-profile-head">' + flagEl + '<div class="country-profile-head-copy">' +
       '<div class="d-kicker">' + tr("شناسنامه جامع فضایی کشور", "National Space Dossier", "ملف الدولة الفضائي") + '</div>' +
       '<h2 class="d-title">' + esc(isFa ? cFa : (isAr ? cAr : cEn)) + '</h2>' +
-      '<div class="d-sub">' + esc(cEn) + '</div></div>' +
+      (countryEnglishSubtitle ? '<div class="d-sub">' + esc(countryEnglishSubtitle) + '</div>' : '') + '</div>' +
       '<span class="badge-gov country-profile-total">' + (isFa ? (totalRecords + " رکورد ثبت‌شده") : (isAr ? (totalRecords + " سجل مسجل") : (totalRecords + " Registered Records"))) + '</span></div>';
 
     h += '<section class="country-profile-summary" aria-label="' + tr("خلاصه دسته‌های فضایی کشور", "Country space-category summary", "ملخص فئات الفضاء في الدولة") + '">';
@@ -6483,7 +6492,10 @@
         '<span class="country-profile-summary-icon" aria-hidden="true">' + def.icon + '</span>' +
         '<strong>' + esc(count) + '</strong><span>' + esc(layerName(def.key, false)) + '</span></div>';
     });
-    h += '</div></section>';
+    h += '</div><p class="country-profile-summary-note">' + tr(
+      "این آمار فقط رکوردهای فعلی ORBITA را که به این کشور نسبت داده شده‌اند جمع می‌کند؛ سرشماری کامل صنعت فضایی یا تعداد قطعی تأسیسات فعال کشور نیست. یک موجودیت چندنقشی ممکن است در چند دسته دیده شود، اما در عدد کل فقط یک‌بار شمرده می‌شود.",
+      "These figures count only current ORBITA records assigned to this country; they are not a complete census of its space sector or a definitive count of operating facilities. A multi-role entity may appear in several category breakdowns but is counted once in the headline total.",
+      "تحصي هذه الأرقام سجلات ORBITA الحالية المنسوبة إلى الدولة فقط؛ ولا تمثل تعداداً كاملاً لقطاعها الفضائي أو حصراً نهائياً للمنشآت العاملة. وقد يظهر الكيان متعدد الأدوار في أكثر من فئة، لكنه يُحسب مرة واحدة في الإجمالي.") + '</p></section>';
 
     h += '<nav class="site-tabs country-profile-tabs" role="tablist" aria-label="' + tr("دسته‌های شناسنامه کشور", "Country dossier categories", "فئات ملف الدولة") + '">';
     categoryDefs.forEach(function (def, index) {
