@@ -11228,7 +11228,11 @@
   "photo_license": "CC BY-SA 4.0",
   "photo_source_url": "https://commons.wikimedia.org/wiki/File:Abbot_Point_Terminal.jpg",
   "country_ar": "أستراليا",
-  "photo_caption_ar": "ميناء أبوت بوينت؛ تقع منصة بوين المدارية في المنطقة الساحلية نفسها"
+  "photo_caption_ar": "ميناء أبوت بوينت؛ تقع منصة بوين المدارية في المنطقة الساحلية نفسها",
+  "stats_total": 1,
+  "stats_success": 0,
+  "stats_fail": 1,
+  "stats_asof": "2026-11-14"
  },
  {
   "id": "arnhem",
