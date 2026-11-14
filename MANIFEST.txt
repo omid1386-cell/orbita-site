@@ -1,10 +1,10 @@
-ORBITA — PERMANENT COUNTRY PROFILE LIGHT THEME FIX
+ORBITA STEP 4 — DEVELOPER ATTRIBUTION
 
-Replace exactly these two files:
-- assets/css/app.css
+Replace exactly one file at repository root:
 - index.html
 
-Do not replace app.js or data files.
-CSS cache token: 20261114-country-profile-light-contrast-v2-final
-Preserves Step 3 map zoom, Step 4 manufacturer logos and developer attribution.
-No live GitHub/Render deployment performed.
+Exact attribution: Produced by Omidreza Safar
+Scope: opening/loading splash only (#raspehrSplash)
+
+No JS, CSS asset, data, map, marker, company, or country profile files changed.
+No commit, push, or deploy has been performed.
