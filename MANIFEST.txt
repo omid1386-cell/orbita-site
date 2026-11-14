@@ -1,33 +1,22 @@
-ORBITA STEP 4 — SATELLITE MAKER & COMPONENT LOGOS
+ORBITA FINAL IMPROVEMENT — STEP 1: COUNTRY PROFILE LIGHT THEME
 
-Files to replace in the repository:
-- assets/js/app.js
+Replace only:
+- assets/css/app.css
 - index.html
-- data/companies_satmaker.json
-- data/companies_components.json
 
-Support files:
+Included:
 - README_INSTALL_FA.md
 - REPORT_FA.md
-- LOGO_SOURCE_MANIFEST.csv
-- logo_updates_only.json
-- LOGO_PREVIEW.html
+- tests/country_profile_light_theme.test.cjs
+- ORBITA_COUNTRY_PROFILE_LIGHT_THEME.patch
 
-Tests:
-- tests/country_profile_step1.test.cjs
-- tests/next_landing_announcement.test.cjs
-- tests/logo_zoom_step3.test.cjs
-- tests/logo_zoom_runtime_mock.test.cjs
-- tests/step4_company_logos.test.cjs
+Based on:
+ORBITA_Step4_Satellite_Maker_and_Component_Logos_2026-11-14
 
-Important:
-- Based on the Step 3 package; Step 3 logo zoom and Step 2 next-landing announcement are retained.
-- The 2 JSON files contain 37 satellite-maker records and 19 component-supplier records.
-- There are 54 unique companies; CubeSpace and Blue Canyon Technologies appear in both categories and share their logo URLs.
-- Logos are requested as official website favicons via Google S2 (up to 256px). They are remote images, not locally bundled full-resolution wordmark files.
-- Preserve all other data files and assets.
-- If the two company JSON files have changed since the supplied 9-part RAR archive, compare before replacing. Use logo_updates_only.json to merge only logo/site metadata into newer records.
-- No GitHub commit, push, or Render deployment has been performed.
-
-Optional Git patch:
-- ORBITA_STEP4_MANUFACTURER_LOGOS.patch
+Scope:
+- Light theme only: country profile summary labels become white.
+- Colored numbers and icons are preserved.
+- Dark theme unchanged.
+- Old explanatory note remains removed.
+- No data or JavaScript changes.
+- Only CSS cache version is bumped.
