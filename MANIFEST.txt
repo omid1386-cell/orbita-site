@@ -1,5 +1,21 @@
-Changed files:
-- data/sites.json
-- ORBITA_Country_Name_Chabahar_Image_Update.patch
+ORBITA STEP 2 — NEXT LANDING ANNOUNCEMENT
 
-No application code, styles, coordinates, internal country key, or unrelated records were intentionally changed.
+Changed files to replace:
+- assets/js/app.js
+- assets/css/app.css
+- index.html
+
+Documentation:
+- README_INSTALL_FA.md
+- REPORT_FA.md
+
+Tests:
+- tests/country_profile_step1.test.cjs
+- tests/next_landing_announcement.test.cjs
+
+Patch:
+- ORBITA_STEP2_NEXT_LANDING_ANNOUNCEMENT.patch
+
+IMPORTANT:
+Preserve the repository's existing data/upcoming_landings.json and data/recovery_sites.json.
+This package does not contain or replace data snapshots.

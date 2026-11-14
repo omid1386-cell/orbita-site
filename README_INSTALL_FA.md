@@ -1,37 +1,61 @@
-# ORBITA — Step 1: Country profile cleanup and precise country-name display
+# ORBITA — Step 2: Next Landing Announcement
 
-## Included changes
-1. Removed the explanatory statistics note under the 14-category country-profile summary in Persian, English, and Arabic. The statistics, counts, category cards, and tabs are unchanged.
-2. Country-name display is now field-specific:
-   - Country profile heading: Persian `فلسطین اشغالی`, English `Occupied Palestine`, Arabic `فلسطين المحتلة`.
-   - Country fields for records belonging to canonical country `Israel` use the matching localized country display label.
-   - Explicit prose phrase `کشور اسرائیل` is displayed as `فلسطین اشغالی` in Persian.
-   - Organization/company names and official names remain unchanged, including `سازمان فضایی اسرائیل`, `صنایع هوافضای اسرائیل`, `Israel Space Agency`, and `Israel Aerospace Industries`.
-3. Updated `country_fa` for the Israel-associated site record in `data/sites.json` to `فلسطین اشغالی`. The canonical `country` value remains `Israel`.
+## What this update adds
+A second compact announcement bar appears directly below the existing **Next Launch** ticker. It is labeled **Next Landing** and displays the nearest future dated landing/recovery entry from ORBITA's existing `data/upcoming_landings.json` snapshot.
 
-## What is not changed
-- Canonical country identifiers, ISO codes, IDs, coordinates, matching/filtering logic, and source URLs.
-- Organization/company names or their official English names.
-- Other countries' labels and data.
-- Statistics and the 14 category counts.
+The bar can display:
+- Mission name
+- Landing/recovery location
+- Scheduled date and, when available, time
+- Countdown to the planned date/time
+- Scheduling status (Scheduled / To be confirmed / Queued)
+- Operator schedule or webcast link, when present
 
-## Install without terminal (GitHub web interface)
-1. Back up the current `assets/js/app.js` and `data/sites.json`.
-2. Replace `assets/js/app.js` with the file in this package at the same path.
-3. Replace `data/sites.json` with the file in this package at the same path.
-4. Commit the changes to GitHub and wait for deployment.
-5. Hard-refresh the site (`Ctrl+F5`) and check a country profile, an Israel-associated organization/company profile, and the Israel-associated site detail.
+If a `site_id` matches a recovery-site record, clicking the mission name flies to that site on the map and opens its recovery dossier.
 
-## Install with Git
-The patch is intended for the app.js version from the previous ORBITA all-profile name-fix package and the original `data/sites.json` included in the 14-category Chabahar ZIP. In the repository root:
+## Data behavior and accuracy
+- This update reuses the same `data/upcoming_landings.json` file already fetched by the current app and shown in the recovery-site dossier tabs.
+- It selects the earliest future entry that has a usable date. Undated rows are not presented as the next landing.
+- Cancelled, aborted, scrubbed, or failed entries are excluded.
+- A full UTC timestamp or explicit `time_utc` can produce a countdown. Minute/second precision may show a detailed countdown; day/hour or date-only precision remains approximate.
+- Date-only entries remain eligible through the stated calendar day and are never presented as a second-accurate countdown.
+- The bar is a schedule announcement, not live tracking and not confirmation that touchdown has occurred. Schedules can change.
+- The banner is hidden if the snapshot is unavailable or contains no future dated landing.
+
+**Important:** The source ZIP supplied for this update did not contain `data/upcoming_landings.json`; the base app already references that file, so this package intentionally does not invent or replace its mission data. Keep the existing file in the repository. If that file is missing from the live repository, the new bar will remain hidden until a reviewed snapshot is added at that exact path.
+
+## Files to upload
+Replace these three files in the repository:
+1. `assets/js/app.js`
+2. `assets/css/app.css`
+3. `index.html`
+
+Do not replace or delete any other data files. In particular, preserve `data/upcoming_landings.json`, `data/recovery_sites.json`, all company data files, and the other existing datasets.
+
+The HTML cache version is bumped so browsers fetch the new JavaScript and CSS.
+
+## GitHub web upload (no VS Code terminal required)
+1. Back up the current three files.
+2. Open each matching path in GitHub.
+3. Replace the file contents with the corresponding file in this package, keeping the same path and filename.
+4. Commit the three file changes.
+5. Wait for the Render deployment to finish.
+6. Open the site and hard-refresh (`Ctrl + F5`).
+
+## Git patch option
+The patch is generated against the Step 1 app.js and the original 14-category package's index.html and app.css:
 ```bash
-git apply --check ORBITA_STEP1_COUNTRY_PROFILE_FIX.patch
+git apply --check ORBITA_STEP2_NEXT_LANDING_ANNOUNCEMENT.patch
 ```
-If check passes:
+If the check passes:
 ```bash
-git apply ORBITA_STEP1_COUNTRY_PROFILE_FIX.patch
+git apply ORBITA_STEP2_NEXT_LANDING_ANNOUNCEMENT.patch
 ```
-If check fails, do not force it; use the two complete files from this package after reconciling any newer local edits.
+Do not force-apply if the check fails. Use the complete replacement files after reconciling any newer local changes.
 
-## Validation
-JavaScript syntax and focused behavior tests are included in `tests/`.
+## Tests run
+- `node --check assets/js/app.js`
+- `node tests/country_profile_step1.test.cjs`
+- `node tests/next_landing_announcement.test.cjs`
+
+All passed in the prepared package.

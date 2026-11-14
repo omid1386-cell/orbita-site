@@ -3839,6 +3839,224 @@
   var UPC = { data: null, live: null, liveOk: false };
   var UPL = { data: null };
 
+  /* ================= next-landing ticker =================
+     Uses the same reviewed upcoming_landings.json snapshot as the
+     recovery-site dossiers. It does not infer landings from launch dates. */
+  var LND = null, lndTmr = 0;
+
+  function landingDigits(value) {
+    return String(value == null ? "" : value)
+      .replace(/[۰-۹]/g, function (c) { return "0123456789"["۰۱۲۳۴۵۶۷۸۹".indexOf(c)]; })
+      .replace(/[٠-٩]/g, function (c) { return "0123456789"["٠١٢٣٤٥٦٧٨٩".indexOf(c)]; });
+  }
+
+  function landingPrecisionRank(row) {
+    var raw = [
+      row && row.precision, row && row.time_precision, row && row.net_precision,
+      row && row.precision_en, row && row.precision_fa, row && row.precision_ar
+    ].join(" ").toLowerCase();
+    if (/second|ثانیه/.test(raw)) return 4;
+    if (/minute|min\b|دقیقه/.test(raw)) return 3;
+    if (/hour|hr\b|ساعت/.test(raw)) return 2;
+    if (/day|روز/.test(raw)) return 1;
+    if (/month|quarter|year|tbd|unknown|نامشخص|نامعین/.test(raw)) return 0;
+    return -1;
+  }
+
+  function landingDateInfo(row) {
+    if (!row) return null;
+    var utcField = landingDigits(row.datetime_utc || row.net || row.date_time_utc || "").trim();
+    var raw = landingDigits(utcField || row.datetime || row.date_time || row.date || "").trim();
+    if (!raw) return null;
+    var datePart = raw.slice(0, 10);
+    if (!/^\d{4}-\d{2}-\d{2}$/.test(datePart)) return null;
+
+    var precision = landingPrecisionRank(row);
+    var epoch = NaN, exact = false, hasClock = false;
+    var hasZone = /(?:Z|UTC|GMT|[+-]\d{2}:?\d{2})$/i.test(raw);
+    var utcTimestamp = !!utcField;
+
+    if (/[T ]\d{1,2}:\d{2}/.test(raw) && (hasZone || utcTimestamp)) {
+      var normalizedRaw = raw.replace(/\s+(UTC|GMT)$/i, "Z");
+      if (utcTimestamp && !/(?:Z|[+-]\d{2}:?\d{2})$/i.test(normalizedRaw)) normalizedRaw += "Z";
+      epoch = Date.parse(normalizedRaw);
+      hasClock = Number.isFinite(epoch);
+      if (hasClock) {
+        var clockPart = raw.match(/[T ](\d{1,2}):(\d{2})/);
+        var midnight = clockPart && +clockPart[1] === 0 && +clockPart[2] === 0;
+        exact = precision >= 3 || (precision === -1 && !midnight);
+        if (precision >= 0 && precision < 3) exact = false;
+      }
+    }
+
+    // A separate UTC clock is supported by the snapshot schema as well.
+    if (!Number.isFinite(epoch)) {
+      var timeUtc = landingDigits(row.time_utc || "").trim();
+      var utcMatch = timeUtc.match(/^(\d{1,2}):(\d{2})(?::(\d{2}))?(?:\s*(?:UTC|GMT|Z))?$/i);
+      if (utcMatch) {
+        epoch = Date.UTC(+datePart.slice(0,4), +datePart.slice(5,7)-1, +datePart.slice(8,10),
+          +utcMatch[1], +utcMatch[2], +(utcMatch[3] || 0));
+        hasClock = true;
+        exact = precision >= 3 || precision === -1;
+        if (precision >= 0 && precision < 3) exact = false;
+      }
+    }
+
+    // A display time explicitly marked UTC/GMT can be parsed safely.
+    if (!Number.isFinite(epoch)) {
+      var displayTime = landingDigits(row.time_en || row.time || "").trim();
+      var displayMatch = displayTime.match(/(\d{1,2}):(\d{2})(?::(\d{2}))?\s*(UTC|GMT|Z)\b/i);
+      if (displayMatch) {
+        epoch = Date.UTC(+datePart.slice(0,4), +datePart.slice(5,7)-1, +datePart.slice(8,10),
+          +displayMatch[1], +displayMatch[2], +(displayMatch[3] || 0));
+        hasClock = true;
+        exact = precision >= 3 || precision === -1;
+        if (precision >= 0 && precision < 3) exact = false;
+      }
+    }
+
+    // Date-only entries remain visible for the whole stated calendar day.
+    // Their countdown is deliberately approximate, never a second-by-second clock.
+    if (!Number.isFinite(epoch)) {
+      epoch = Date.parse(datePart + "T23:59:59Z");
+      exact = false;
+      hasClock = false;
+    }
+    if (!Number.isFinite(epoch)) return null;
+    return { epoch: epoch, exact: exact, hasClock: hasClock, date: datePart };
+  }
+
+  function nextLandingFromData(data, now) {
+    if (!data || !Array.isArray(data.landings)) return null;
+    var candidates = data.landings.map(function (row) {
+      var info = landingDateInfo(row);
+      if (!row || !info || info.epoch <= now) return null;
+      var status = String(row.status || "").toLowerCase();
+      if (/cancel|abort|scrub|failed|failure/.test(status)) return null;
+      var key = String(row.id || row.ll2_id || "") ||
+        [row.site_id || "", row.mission || row.mission_en || row.mission_fa || "", info.date].join("|");
+      return { row: row, info: info, key: key };
+    }).filter(Boolean);
+    candidates.sort(function (a, b) { return a.info.epoch - b.info.epoch; });
+    return candidates[0] || null;
+  }
+
+  function landingDateLabel(entry) {
+    var row = entry.row, info = entry.info;
+    var dateLabel = recoveryDate(info.date);
+    var timeLabel = recoveryDisplay(row.time_fa, row.time_en, row.time_ar, "");
+    if ((!timeLabel || timeLabel === "—") && row.time_utc) timeLabel = String(row.time_utc) + " UTC";
+    if ((!timeLabel || timeLabel === "—") && info.exact) {
+      var locale = LANG === "fa" ? "fa-IR-u-ca-gregory" : LANG === "ar" ? "ar-u-ca-gregory-nu-latn" : "en-GB";
+      timeLabel = new Date(info.epoch).toLocaleTimeString(locale, { hour: "2-digit", minute: "2-digit" });
+      timeLabel += recoveryUi(" به وقت محلی", " local time", " بالتوقيت المحلي");
+    }
+    return dateLabel + (timeLabel && timeLabel !== "—" ? " · " + timeLabel : "");
+  }
+
+  function landingStatusLabel(row) {
+    var status = String(row && row.status || "").toLowerCase();
+    if (status === "go") return recoveryUi("برنامه‌ریزی‌شده", "Scheduled", "مجدول");
+    if (status === "tbc") return recoveryUi("در انتظار تأیید", "To be confirmed", "بانتظار التأكيد");
+    if (status === "queued") return recoveryUi("در صف", "Queued", "في قائمة الانتظار");
+    return recoveryUi("زمان‌بندی پیش‌بینی‌شده", "Planned", "مخطط له");
+  }
+
+  function landingSiteById(siteId) {
+    return (typeof DATA !== "undefined" && Array.isArray(DATA.recoveries))
+      ? DATA.recoveries.find(function (site) { return site.id === siteId; }) || null : null;
+  }
+
+  function goToRecoveryLandingSite(siteId) {
+    var site = landingSiteById(siteId);
+    if (!site) return;
+    if (map && Number.isFinite(site.lon) && Number.isFinite(site.lat)) {
+      map.flyTo({ center: [site.lon, site.lat], zoom: 7, duration: 1200 });
+    }
+    openDetail({ kind: "recovery", cat: "recovery", o: site });
+  }
+
+  function hideLandingBar() {
+    var bar = $("#landBar");
+    if (bar) bar.hidden = true;
+    document.body.classList.remove("has-landing");
+    clearInterval(lndTmr);
+    lndTmr = 0;
+    LND = null;
+    if (map) setTimeout(function () { map.resize(); }, 60);
+    window.dispatchEvent(new Event("resize"));
+  }
+
+  function paintLanding() {
+    if (!LND) return;
+    var left = LND.info.epoch - Date.now();
+    if (left <= 0) {
+      renderNextLandingAnnouncement();
+      return;
+    }
+    var cd = $("#landCd");
+    if (!cd) return;
+    cd.textContent = cdText(left, LND.info.exact);
+    cd.classList.toggle("approx", !LND.info.exact);
+  }
+
+  function renderNextLandingAnnouncement() {
+    var bar = $("#landBar");
+    if (!bar || !UPL.data) return;
+    var next = nextLandingFromData(UPL.data, Date.now());
+    if (!next) { hideLandingBar(); return; }
+    try {
+      if (localStorage.getItem("orbita_lnd_dismissed") === next.key) {
+        hideLandingBar(); return;
+      }
+    } catch (e) {}
+
+    LND = next;
+    var row = next.row;
+    var mission = recoveryDisplay(row.mission_fa, row.mission || row.mission_en, row.mission_ar, "");
+    if (!mission || mission === "—") mission = recoveryDisplay(row.vehicle_fa, row.vehicle_en, row.vehicle_ar, "");
+    var site = landingSiteById(row.site_id);
+    var siteName = site ? name(site) : recoveryDisplay(
+      row.site_fa || row.location_fa, row.site_en || row.location_en || row.location,
+      row.site_ar || row.location_ar, "");
+    if (!siteName || siteName === "—") siteName = "";
+    var nm = $("#landName"), loc = $("#landSite"), date = $("#landDate");
+    var status = $("#landStatus"), source = $("#landSource");
+    if (nm) {
+      nm.textContent = mission || recoveryUi("فرود برنامه‌ریزی‌شده", "Planned landing", "هبوط مخطط");
+      nm.title = row.site_id ? recoveryUi("نمایش محل فرود روی نقشه", "Show landing site on the map", "عرض موقع الهبوط على الخريطة") : "";
+      nm.classList.toggle("clickable", !!row.site_id);
+      nm.onclick = row.site_id ? function () { goToRecoveryLandingSite(row.site_id); } : null;
+    }
+    if (loc) loc.textContent = siteName || "";
+    if (date) date.textContent = landingDateLabel(next);
+    if (status) {
+      status.textContent = landingStatusLabel(row);
+      status.classList.toggle("pending", String(row.status || "").toLowerCase() === "tbc");
+    }
+    if (source) {
+      var href = String(row.stream_url || row.calendar_url || "").trim();
+      if (/^https?:\/\//i.test(href)) {
+        source.href = href;
+        source.hidden = false;
+        var label = $("#landSourceLabel");
+        if (label) label.textContent = row.stream_url
+          ? recoveryUi("پخش", "Watch", "مشاهدة")
+          : recoveryUi("زمان‌بندی", "Schedule", "الجدول");
+      } else {
+        source.removeAttribute("href");
+        source.hidden = true;
+      }
+    }
+    bar.hidden = false;
+    document.body.classList.add("has-landing");
+    paintLanding();
+    clearInterval(lndTmr);
+    lndTmr = setInterval(paintLanding, 1000);
+    if (map) setTimeout(function () { map.resize(); }, 60);
+    window.dispatchEvent(new Event("resize"));
+  }
+
   function loadSiteUpcomingData() {
     fetch("data/upcoming.json?v=" + (window.ORBITA_V || "1"))
       .then(function (r) { if (!r.ok) throw new Error("upcoming data unavailable"); return r.json(); })
@@ -3846,8 +4064,8 @@
       .catch(function (e) { console.warn("upcoming:", e.message); });
     fetch("data/upcoming_landings.json?v=" + (window.ORBITA_V || "1"))
       .then(function (r) { if (!r.ok) throw new Error("upcoming landings unavailable"); return r.json(); })
-      .then(function (j) { UPL.data = j; })
-      .catch(function (e) { console.warn("upcoming landings:", e.message); });
+      .then(function (j) { UPL.data = j; renderNextLandingAnnouncement(); })
+      .catch(function (e) { console.warn("upcoming landings:", e.message); hideLandingBar(); });
   }
 
   function syncUpcomingLive() {
@@ -11039,6 +11257,11 @@
     window.dispatchEvent(new Event("resize"));
   });
 
+  on("#landClose", "click", function () {
+    try { if (LND) localStorage.setItem("orbita_lnd_dismissed", LND.key); } catch (e) {}
+    hideLandingBar();
+  });
+
   window.addEventListener("error", function (e) {
     var el = $("#mapStatus");
     if (el && el.style.display !== "none") {
@@ -11404,6 +11627,7 @@
     recoveries: function () {
       return loadLayer("recoveries", "data/recovery_sites.json", function (j) {
         DATA.recoveries = j && Array.isArray(j.sites) ? j.sites.filter(validRecoverySite) : [];
+        if (UPL.data) renderNextLandingAnnouncement();
       });
     },
     companies: function () {

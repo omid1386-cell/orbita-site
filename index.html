@@ -38,16 +38,16 @@
 @media(max-width:540px){.raspehr-stage{min-height:100vh;gap:11px;padding:22px 12px}.raspehr-espash{width:100%;max-width:450px}.raspehr-title{margin-top:15px}}
 </style>
 <link rel="stylesheet" href="assets/vendor/maplibre-gl.css?v=3" />
-<link rel="stylesheet" href="assets/css/app.css?_t=20261114-country-profile-lightmode-labels-v2" />
+<link rel="stylesheet" href="assets/css/app.css?_t=20261114-next-landing-announcement-v1" />
 <!-- Ordered defer scripts download in parallel instead of creating a network waterfall. -->
 <script defer src="assets/js/raspehr-splash.js?v=20261113-speed-v1"></script>
 <script defer src="assets/vendor/maplibre-gl.js?v=3"></script>
-<script defer src="assets/js/app.js?_t=20261114-country-profile-lightmode-labels-v2"></script>
+<script defer src="assets/js/app.js?_t=20261114-next-landing-announcement-v1"></script>
 <script>
-  window.ORBITA_V = "20261114-country-profile-lightmode-labels-v2";
-  window.ORBITA_APP_V = "20261114-country-profile-lightmode-labels-v2";
-  window.ORBITA_CSS_V = "20261114-country-profile-lightmode-labels-v2";
-  window.ORBITA_COMPANIES_V = "20261114-country-profile-lightmode-labels-v2";
+  window.ORBITA_V = "20261114-next-landing-announcement-v1";
+  window.ORBITA_APP_V = "20261114-next-landing-announcement-v1";
+  window.ORBITA_CSS_V = "20261114-next-landing-announcement-v1";
+  window.ORBITA_COMPANIES_V = "20261114-next-landing-announcement-v1";
 
 
   // Public API URL only; never place the Resend key or another secret here.
@@ -126,6 +126,23 @@
     <i aria-hidden="true"></i><span data-i18n="watch_live">پخش زنده</span>
   </a>
   <button class="lnch-x" id="lnchClose" data-i18n-title="close" title="بستن">✕</button>
+</div>
+
+<!-- ============ NEXT LANDING / RECOVERY TICKER ============ -->
+<div id="landBar" class="lnch-bar land-bar" hidden aria-live="polite"
+     title="زمان‌بندی فرود بر پایه snapshot داده‌های ORBITA است و ممکن است تغییر کند.">
+  <span class="lnch-dot land-dot" aria-hidden="true"></span>
+  <span class="lnch-lbl land-lbl" id="landLabel">فرود بعدی</span>
+  <b class="lnch-name land-name"><bdi id="landName"></bdi></b>
+  <span class="lnch-sep land-sep" aria-hidden="true">·</span>
+  <span class="lnch-prov land-site"><bdi id="landSite"></bdi></span>
+  <span class="land-date" id="landDate"></span>
+  <span class="land-status" id="landStatus"></span>
+  <span class="lnch-cd land-cd" id="landCd"></span>
+  <a class="lnch-live land-link" id="landSource" href="#" target="_blank" rel="noopener noreferrer" hidden>
+    <i aria-hidden="true"></i><span id="landSourceLabel">جزئیات</span>
+  </a>
+  <button class="lnch-x land-x" id="landClose" title="بستن" aria-label="بستن اعلان فرود">✕</button>
 </div>
 
 <!-- ============ MAP VIEW ============ -->
