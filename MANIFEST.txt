@@ -1,26 +1,33 @@
-ORBITA STEP 3 — LOGO ZOOM
+ORBITA STEP 4 — SATELLITE MAKER & COMPONENT LOGOS
 
-Replace only:
+Files to replace in the repository:
 - assets/js/app.js
-- assets/css/app.css
 - index.html
+- data/companies_satmaker.json
+- data/companies_components.json
 
-Documentation:
+Support files:
 - README_INSTALL_FA.md
 - REPORT_FA.md
-
-Patch:
-- ORBITA_STEP3_LOGO_ZOOM.patch
+- LOGO_SOURCE_MANIFEST.csv
+- logo_updates_only.json
+- LOGO_PREVIEW.html
 
 Tests:
 - tests/country_profile_step1.test.cjs
 - tests/next_landing_announcement.test.cjs
 - tests/logo_zoom_step3.test.cjs
 - tests/logo_zoom_runtime_mock.test.cjs
+- tests/step4_company_logos.test.cjs
 
 Important:
-- The source files are based on the Step 2 package (Next Landing Announcement).
-- Step 2 functionality remains included.
-- Preserve all existing data and logo/image assets in the repository.
-- Do not replace data/upcoming_landings.json, data/recovery_sites.json, company data, or logo files.
-- No GitHub commit, push, or Render deployment has been performed by the assistant.
+- Based on the Step 3 package; Step 3 logo zoom and Step 2 next-landing announcement are retained.
+- The 2 JSON files contain 37 satellite-maker records and 19 component-supplier records.
+- There are 54 unique companies; CubeSpace and Blue Canyon Technologies appear in both categories and share their logo URLs.
+- Logos are requested as official website favicons via Google S2 (up to 256px). They are remote images, not locally bundled full-resolution wordmark files.
+- Preserve all other data files and assets.
+- If the two company JSON files have changed since the supplied 9-part RAR archive, compare before replacing. Use logo_updates_only.json to merge only logo/site metadata into newer records.
+- No GitHub commit, push, or Render deployment has been performed.
+
+Optional Git patch:
+- ORBITA_STEP4_MANUFACTURER_LOGOS.patch

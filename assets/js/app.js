@@ -6789,7 +6789,8 @@
       var detailKind = def.key;
       var html = '<article class="country-profile-card" style="--country-category-color:' + esc(def.color) + '">';
       html += '<div class="country-profile-card-head"><div class="country-profile-identity">';
-      html += '<img class="country-profile-logo" src="' + esc(logoSrc) + '" alt="' + esc(itemName) + '"' +
+      var logoBg = item.logo_bg === "light" ? "#fff" : "#000";
+      html += '<img class="country-profile-logo" style="background:' + logoBg + ';" src="' + esc(logoSrc) + '" alt="' + esc(itemName) + '"' +
         ((!isInfrastructure && (item.logo_data || item.logo)) ? logoZoomAttrs(itemName) : '') +
         ' loading="lazy" decoding="async"' + (!isInfrastructure ? fallbackImageErrorAttribute(iconData) : '') + ' />';
       html += '<div class="country-profile-identity-copy"><bdi class="country-profile-name">' + esc(itemName) + '</bdi>';
@@ -9859,6 +9860,7 @@
     var defaultLogoSvg = fallbackLogoDataUri("🛰", "#a3e635");
     var logoSrc = o.logo_data || o.logo || defaultLogoSvg;
     var hasRealLogo = !!(o.logo_data || o.logo);
+    var logoBg = o.logo_bg === "light" ? "#fff" : "#000";
 
     var localizedName = arabicField(o.ar, "شركة فضائية");
     var profileDesc = arabicField(o.ar_d, "") || safeEnglish(o.en_d, "لا يتوفر وصف عربي موثّق لهذا المصنّع حالياً.");
@@ -9880,8 +9882,8 @@
     // Header follows the Persian dossier structure and order.
     h += '<div class="d-head" style="display:flex; justify-content:space-between; align-items:center; gap:10px; margin-inline-end:35px;">';
     h += '<div style="display:flex; gap:10px; align-items:center; flex:1;">';
-    h += '<div style="width:48px; height:48px; border-radius:8px; background:#000; border:1px solid var(--line); display:flex; align-items:center; justify-content:center; flex:0 0 auto; overflow:hidden; padding:2px;">';
-    h += '<img src="' + esc(logoSrc) + '" alt="' + esc(localizedName) + '"' + (hasRealLogo ? logoZoomAttrs(localizedName) : '') + ' style="max-width:100%; max-height:100%; object-fit:contain;" /></div>';
+    h += '<div style="width:48px; height:48px; border-radius:8px; background:' + logoBg + '; border:1px solid var(--line); display:flex; align-items:center; justify-content:center; flex:0 0 auto; overflow:hidden; padding:2px;">';
+    h += '<img src="' + esc(logoSrc) + '" alt="' + esc(localizedName) + '"' + (hasRealLogo ? logoZoomAttrs(localizedName) : '') + fallbackImageErrorAttribute(defaultLogoSvg) + ' style="max-width:100%; max-height:100%; object-fit:contain;" /></div>';
     h += '<div><div class="d-kicker">' + esc(safeEnglish(o.en || o.fa, "")) + '</div>';
     h += '<h2 class="d-title" style="margin:0;">' + esc(localizedName) + '</h2></div></div>';
     h += '<span class="' + stClass + '" style="padding:3px 10px; border-radius:12px; font-size:10.5px; font-weight:bold; white-space:nowrap;"><bdi>' + esc(orgTypeStr) + '</bdi></span>';
@@ -10074,11 +10076,12 @@
     var defaultLogoSvg = fallbackLogoDataUri("🛰", "#a3e635");
     var logoSrc = o.logo_data || o.logo || defaultLogoSvg;
     var hasRealLogo = !!(o.logo_data || o.logo);
+    var logoBg = o.logo_bg === "light" ? "#fff" : "#000";
 
     h += '<div class="d-head" style="display:flex; justify-content:space-between; align-items:center; gap:10px; margin-inline-end:35px;">';
     h += '<div style="display:flex; gap:10px; align-items:center; flex:1;">';
-    h += '<div style="width:48px; height:48px; border-radius:8px; background:#000; border:1px solid var(--line); display:flex; align-items:center; justify-content:center; flex:0 0 auto; overflow:hidden; padding:2px;">';
-    h += '<img src="' + esc(logoSrc) + '" alt="' + esc(name(o)) + '"' + (hasRealLogo ? logoZoomAttrs(name(o)) : '') + ' style="max-width:100%; max-height:100%; object-fit:contain;" /></div>';
+    h += '<div style="width:48px; height:48px; border-radius:8px; background:' + logoBg + '; border:1px solid var(--line); display:flex; align-items:center; justify-content:center; flex:0 0 auto; overflow:hidden; padding:2px;">';
+    h += '<img src="' + esc(logoSrc) + '" alt="' + esc(name(o)) + '"' + (hasRealLogo ? logoZoomAttrs(name(o)) : '') + fallbackImageErrorAttribute(defaultLogoSvg) + ' style="max-width:100%; max-height:100%; object-fit:contain;" /></div>';
     h += '<div><div class="d-kicker">' + esc(isFa ? (o.en || o.fa) : (o.en || o.fa)) + '</div>';
     h += '<h2 class="d-title" style="margin:0;">' + esc(name(o)) + '</h2></div></div>';
     h += '<span class="' + stClass + '" style="padding:3px 10px; border-radius:12px; font-size:10.5px; font-weight:bold; white-space:nowrap;"><bdi>' + esc(orgTypeStr) + '</bdi></span>';
@@ -10807,9 +10810,11 @@
     var html = '<section class="verified-profile verified-profile-v2" data-scope="' + esc(pf.profile_type) + '">';
     var isFourteen = o.orbita_release_note && o.orbita_release_note.batch === 'RASPEHR_14_STEP5';
     var brandIdentifier = String(o.brand_text_identifier || '').slice(0, 8);
-    var headerLogo = o.logo ? '<img class="verified-profile-logo" src="'+esc(o.logo)+'" alt="'+esc(name(o))+'"'+logoZoomAttrs(name(o))+' loading="eager" />' :
+    var logoFallbackSvg = fallbackLogoDataUri("🧩", "#38bdf8");
+    var logoBg = o.logo_bg === "light" ? "#fff" : "var(--panel-solid)";
+    var headerLogo = o.logo ? '<img class="verified-profile-logo" style="background:' + logoBg + ';" src="'+esc(o.logo)+'" alt="'+esc(name(o))+'"'+logoZoomAttrs(name(o))+fallbackImageErrorAttribute(logoFallbackSvg)+' loading="eager" />' :
       (isFourteen && brandIdentifier ? '<span class="verified-brand-identifier" aria-label="'+esc(o.en)+'">'+esc(brandIdentifier)+'</span>' : '<span class="verified-profile-logo-placeholder">◈</span>');
-    html += '<header class="verified-profile-head"><div class="verified-profile-logo-wrap">' +
+    html += '<header class="verified-profile-head"><div class="verified-profile-logo-wrap" style="background:' + logoBg + ';">' +
       headerLogo +
       '</div><div class="verified-profile-header-text"><p class="d-kicker">'+esc(role)+'</p>' +
       '<h2 class="d-title">'+esc(name(o))+'</h2><p class="d-desc verified-profile-sub">' +

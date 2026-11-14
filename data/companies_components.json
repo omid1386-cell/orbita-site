@@ -282,8 +282,8 @@
     "secondary_categories": [
       "components"
     ],
-    "logo": "assets/logos/orbita/cubespace.svg",
-    "logo_kind": "orbita_editorial_nonofficial",
+    "logo": "https://www.google.com/s2/favicons?domain_url=https%3A%2F%2Fcubespace.co.za&sz=256",
+    "logo_kind": "official_site_favicon",
     "orbita_marker_code": "CS",
     "orbita_verified_profile": {
       "schema_version": 2,
@@ -539,7 +539,13 @@
         }
       ]
     },
-    "coordinate_precision": "city_approximation_existing"
+    "coordinate_precision": "city_approximation_existing",
+    "logo_source_type": "official_website_favicon_via_google_s2",
+    "logo_source_url": "https://cubespace.co.za",
+    "logo_bg": "light",
+    "logo_resolution_note_en": "Official website favicon/brand icon; source resolution varies (requested up to 256 px). It is not guaranteed to be a full-resolution wordmark.",
+    "logo_resolution_note_fa": "نشان یا فاوآیکون وب‌سایت رسمی؛ وضوح واقعی به فایل منتشرشده در وب‌سایت وابسته است و لزوماً نسخه کامل و وضوح‌بالای لوگوتایپ نیست.",
+    "logo_domain_reviewed_on": "2026-11-14"
   },
   {
     "id": "blue-canyon",
@@ -778,8 +784,8 @@
     "secondary_categories": [
       "components"
     ],
-    "logo": "assets/logos/orbita/blue-canyon.svg",
-    "logo_kind": "orbita_editorial_nonofficial",
+    "logo": "https://www.google.com/s2/favicons?domain_url=https%3A%2F%2Fwww.bluecanyontech.com&sz=256",
+    "logo_kind": "official_site_favicon",
     "orbita_marker_code": "BC",
     "orbita_verified_profile": {
       "schema_version": 2,
@@ -1040,7 +1046,13 @@
         }
       ]
     },
-    "coordinate_precision": "city_approximation_existing"
+    "coordinate_precision": "city_approximation_existing",
+    "logo_source_type": "official_website_favicon_via_google_s2",
+    "logo_source_url": "https://www.bluecanyontech.com",
+    "logo_bg": "light",
+    "logo_resolution_note_en": "Official website favicon/brand icon; source resolution varies (requested up to 256 px). It is not guaranteed to be a full-resolution wordmark.",
+    "logo_resolution_note_fa": "نشان یا فاوآیکون وب‌سایت رسمی؛ وضوح واقعی به فایل منتشرشده در وب‌سایت وابسته است و لزوماً نسخه کامل و وضوح‌بالای لوگوتایپ نیست.",
+    "logo_domain_reviewed_on": "2026-11-14"
   },
   {
     "id": "dhv-technology",
@@ -1062,8 +1074,8 @@
     "en_d": "Spanish space-power subsystem manufacturer of solar arrays, EPS, PCDU and related technologies; located in Málaga.",
     "fa_d": "سازنده اسپانیایی پنل‌های خورشیدی و زیرسامانه‌های توان فضایی، از جمله EPS و PCDU، مستقر در مالاگا.",
     "ar_d": "مصنّع إسباني للألواح الشمسية وأنظمة القدرة الفضائية، بما فيها EPS وPCDU، ومقره مالقة.",
-    "logo": "assets/logos/orbita/dhv-technology.svg",
-    "logo_kind": "orbita_editorial_nonofficial",
+    "logo": "https://www.google.com/s2/favicons?domain_url=https%3A%2F%2Fdhvtechnology.com%2F&sz=256",
+    "logo_kind": "official_site_favicon",
     "orbita_marker_code": "DH",
     "orbita_verified_profile": {
       "schema_version": 2,
@@ -1331,7 +1343,13 @@
           ]
         }
       ]
-    }
+    },
+    "logo_source_type": "official_website_favicon_via_google_s2",
+    "logo_source_url": "https://dhvtechnology.com/",
+    "logo_bg": "light",
+    "logo_resolution_note_en": "Official website favicon/brand icon; source resolution varies (requested up to 256 px). It is not guaranteed to be a full-resolution wordmark.",
+    "logo_resolution_note_fa": "نشان یا فاوآیکون وب‌سایت رسمی؛ وضوح واقعی به فایل منتشرشده در وب‌سایت وابسته است و لزوماً نسخه کامل و وضوح‌بالای لوگوتایپ نیست.",
+    "logo_domain_reviewed_on": "2026-11-14"
   },
   {
     "id": "orbita-addnics",
@@ -1356,8 +1374,8 @@
     "org_type_en": "Space components and subsystems",
     "org_type_ar": "مصنّع مكونات وأنظمة فرعية فضائية",
     "parent_institution": "",
-    "logo": "assets/logos/orbita/orbita-addnics.svg",
-    "logo_kind": "orbita_editorial_nonofficial",
+    "logo": "https://www.google.com/s2/favicons?domain_url=https%3A%2F%2Faddnics.co.jp%2F&sz=256",
+    "logo_kind": "official_site_favicon",
     "orbita_marker_code": "AD",
     "orbita_verified_profile": {
       "schema_version": 3,
@@ -1753,7 +1771,13 @@
         "Check mission-by-mission flight heritage and distinguish proposals from achieved missions",
         "Prepare verified FA/EN/AR and map metadata only after science review"
       ]
-    }
+    },
+    "logo_source_type": "official_website_favicon_via_google_s2",
+    "logo_source_url": "https://addnics.co.jp/",
+    "logo_bg": "light",
+    "logo_resolution_note_en": "Official website favicon/brand icon; source resolution varies (requested up to 256 px). It is not guaranteed to be a full-resolution wordmark.",
+    "logo_resolution_note_fa": "نشان یا فاوآیکون وب‌سایت رسمی؛ وضوح واقعی به فایل منتشرشده در وب‌سایت وابسته است و لزوماً نسخه کامل و وضوح‌بالای لوگوتایپ نیست.",
+    "logo_domain_reviewed_on": "2026-11-14"
   },
   {
     "id": "orbita-alouette",
@@ -1778,8 +1802,8 @@
     "org_type_en": "Space components and subsystems",
     "org_type_ar": "مصنّع مكونات وأنظمة فرعية فضائية",
     "parent_institution": "",
-    "logo": "assets/logos/orbita/orbita-alouette.svg",
-    "logo_kind": "orbita_editorial_nonofficial",
+    "logo": "https://www.google.com/s2/favicons?domain_url=https%3A%2F%2Faltek.jp%2F&sz=256",
+    "logo_kind": "official_site_favicon",
     "orbita_marker_code": "AL",
     "orbita_verified_profile": {
       "schema_version": 3,
@@ -2125,7 +2149,13 @@
         "Check mission-by-mission flight heritage and distinguish proposals from achieved missions",
         "Prepare verified FA/EN/AR and map metadata only after science review"
       ]
-    }
+    },
+    "logo_source_type": "official_website_favicon_via_google_s2",
+    "logo_source_url": "https://altek.jp/",
+    "logo_bg": "light",
+    "logo_resolution_note_en": "Official website favicon/brand icon; source resolution varies (requested up to 256 px). It is not guaranteed to be a full-resolution wordmark.",
+    "logo_resolution_note_fa": "نشان یا فاوآیکون وب‌سایت رسمی؛ وضوح واقعی به فایل منتشرشده در وب‌سایت وابسته است و لزوماً نسخه کامل و وضوح‌بالای لوگوتایپ نیست.",
+    "logo_domain_reviewed_on": "2026-11-14"
   },
   {
     "id": "orbita-arkedge-space",
@@ -2150,8 +2180,8 @@
     "org_type_en": "Space components and subsystems",
     "org_type_ar": "مصنّع مكونات وأنظمة فرعية فضائية",
     "parent_institution": "",
-    "logo": "assets/logos/orbita/orbita-arkedge-space.svg",
-    "logo_kind": "orbita_editorial_nonofficial",
+    "logo": "https://www.google.com/s2/favicons?domain_url=https%3A%2F%2Farkedgespace.com%2Fen%2F&sz=256",
+    "logo_kind": "official_site_favicon",
     "orbita_marker_code": "AE",
     "orbita_verified_profile": {
       "schema_version": 3,
@@ -2539,7 +2569,13 @@
         "Check mission-by-mission flight heritage and distinguish proposals from achieved missions",
         "Prepare verified FA/EN/AR and map metadata only after science review"
       ]
-    }
+    },
+    "logo_source_type": "official_website_favicon_via_google_s2",
+    "logo_source_url": "https://arkedgespace.com/en/",
+    "logo_bg": "light",
+    "logo_resolution_note_en": "Official website favicon/brand icon; source resolution varies (requested up to 256 px). It is not guaranteed to be a full-resolution wordmark.",
+    "logo_resolution_note_fa": "نشان یا فاوآیکون وب‌سایت رسمی؛ وضوح واقعی به فایل منتشرشده در وب‌سایت وابسته است و لزوماً نسخه کامل و وضوح‌بالای لوگوتایپ نیست.",
+    "logo_domain_reviewed_on": "2026-11-14"
   },
   {
     "id": "orbita-arumotech",
@@ -2556,7 +2592,7 @@
     "lat": 35.0116,
     "lon": 135.7681,
     "coordinate_precision": "approximate_city_center",
-    "site": "",
+    "site": "https://arumotech.co.jp/",
     "en_d": "ArumoTech is presented at a 2025 Japanese microwave-industry exhibition with a Kyoto address. Its work covers RF and millimetre-wave components, design and testing; incorporation year and current registered legal form are not independently established.",
     "fa_d": "شرکت ArumoTech با نشانی نمایشگاهی در شهر کیوتو ژاپن در فهرست نمایشگاه تخصصی Microwave Workshops and Exhibition سال ۲۰۲۵ معرفی شده است. حوزه فعالیت معرفی‌شده شامل اجزای مایکروویو و میلی‌متری، ماژول‌های RF و خدمات طراحی و آزمون فرکانس بالا است؛ برای سال تأسیس و شکل حقوقی هنوز سند رسمی مستقیم بررسی نشده است.",
     "ar_d": "تظهر ArumoTech في معرض ياباني متخصص بالموجات الدقيقة لعام 2025 بعنوان في كيوتو. يشمل نشاطها مكونات الترددات الراديوية والموجات المليمترية والتصميم والاختبار؛ ولم يُثبت بصورة مستقلة تاريخ تأسيسها وشكلها القانوني المسجل الحالي.",
@@ -2564,8 +2600,8 @@
     "org_type_en": "Space components and subsystems",
     "org_type_ar": "مصنّع مكونات وأنظمة فرعية فضائية",
     "parent_institution": "",
-    "logo": "assets/logos/orbita/orbita-arumotech.svg",
-    "logo_kind": "orbita_editorial_nonofficial",
+    "logo": "https://www.google.com/s2/favicons?domain_url=https%3A%2F%2Farumotech.co.jp%2F&sz=256",
+    "logo_kind": "official_site_favicon",
     "orbita_marker_code": "AT",
     "orbita_verified_profile": {
       "schema_version": 3,
@@ -2849,7 +2885,13 @@
         "Check mission-by-mission flight heritage and distinguish proposals from achieved missions",
         "Prepare verified FA/EN/AR and map metadata only after science review"
       ]
-    }
+    },
+    "logo_source_type": "official_website_favicon_via_google_s2",
+    "logo_source_url": "https://arumotech.co.jp/",
+    "logo_bg": "light",
+    "logo_resolution_note_en": "Official website favicon/brand icon; source resolution varies (requested up to 256 px). It is not guaranteed to be a full-resolution wordmark.",
+    "logo_resolution_note_fa": "نشان یا فاوآیکون وب‌سایت رسمی؛ وضوح واقعی به فایل منتشرشده در وب‌سایت وابسته است و لزوماً نسخه کامل و وضوح‌بالای لوگوتایپ نیست.",
+    "logo_domain_reviewed_on": "2026-11-14"
   },
   {
     "id": "orbita-astrex",
@@ -2874,8 +2916,8 @@
     "org_type_en": "Space components and subsystems",
     "org_type_ar": "مصنّع مكونات وأنظمة فرعية فضائية",
     "parent_institution": "",
-    "logo": "assets/logos/orbita/orbita-astrex.svg",
-    "logo_kind": "orbita_editorial_nonofficial",
+    "logo": "https://www.google.com/s2/favicons?domain_url=https%3A%2F%2Fwww.astrex-space.com%2Fen%2F&sz=256",
+    "logo_kind": "official_site_favicon",
     "orbita_marker_code": "AX",
     "orbita_verified_profile": {
       "schema_version": 3,
@@ -3283,7 +3325,13 @@
         "Check mission-by-mission flight heritage and distinguish proposals from achieved missions",
         "Prepare verified FA/EN/AR and map metadata only after science review"
       ]
-    }
+    },
+    "logo_source_type": "official_website_favicon_via_google_s2",
+    "logo_source_url": "https://www.astrex-space.com/en/",
+    "logo_bg": "light",
+    "logo_resolution_note_en": "Official website favicon/brand icon; source resolution varies (requested up to 256 px). It is not guaranteed to be a full-resolution wordmark.",
+    "logo_resolution_note_fa": "نشان یا فاوآیکون وب‌سایت رسمی؛ وضوح واقعی به فایل منتشرشده در وب‌سایت وابسته است و لزوماً نسخه کامل و وضوح‌بالای لوگوتایپ نیست.",
+    "logo_domain_reviewed_on": "2026-11-14"
   },
   {
     "id": "orbita-composite-tailors",
@@ -3308,8 +3356,8 @@
     "org_type_en": "Space components and subsystems",
     "org_type_ar": "مصنّع مكونات وأنظمة فرعية فضائية",
     "parent_institution": "",
-    "logo": "assets/logos/orbita/orbita-composite-tailors.svg",
-    "logo_kind": "orbita_editorial_nonofficial",
+    "logo": "https://www.google.com/s2/favicons?domain_url=https%3A%2F%2Fwww.composite-tailors.com%2Fen%2F&sz=256",
+    "logo_kind": "official_site_favicon",
     "orbita_marker_code": "CT",
     "orbita_verified_profile": {
       "schema_version": 3,
@@ -3655,7 +3703,13 @@
         "Check mission-by-mission flight heritage and distinguish proposals from achieved missions",
         "Prepare verified FA/EN/AR and map metadata only after science review"
       ]
-    }
+    },
+    "logo_source_type": "official_website_favicon_via_google_s2",
+    "logo_source_url": "https://www.composite-tailors.com/en/",
+    "logo_bg": "light",
+    "logo_resolution_note_en": "Official website favicon/brand icon; source resolution varies (requested up to 256 px). It is not guaranteed to be a full-resolution wordmark.",
+    "logo_resolution_note_fa": "نشان یا فاوآیکون وب‌سایت رسمی؛ وضوح واقعی به فایل منتشرشده در وب‌سایت وابسته است و لزوماً نسخه کامل و وضوح‌بالای لوگوتایپ نیست.",
+    "logo_domain_reviewed_on": "2026-11-14"
   },
   {
     "id": "orbita-cosmobloom",
@@ -3680,8 +3734,8 @@
     "org_type_en": "Space components and subsystems",
     "org_type_ar": "مصنّع مكونات وأنظمة فرعية فضائية",
     "parent_institution": "",
-    "logo": "assets/logos/orbita/orbita-cosmobloom.svg",
-    "logo_kind": "orbita_editorial_nonofficial",
+    "logo": "https://www.google.com/s2/favicons?domain_url=https%3A%2F%2Fcosmo-bloom.com%2Fen%2F&sz=256",
+    "logo_kind": "official_site_favicon",
     "orbita_marker_code": "CB",
     "orbita_verified_profile": {
       "schema_version": 3,
@@ -4084,7 +4138,13 @@
         "Check mission-by-mission flight heritage and distinguish proposals from achieved missions",
         "Prepare verified FA/EN/AR and map metadata only after science review"
       ]
-    }
+    },
+    "logo_source_type": "official_website_favicon_via_google_s2",
+    "logo_source_url": "https://cosmo-bloom.com/en/",
+    "logo_bg": "light",
+    "logo_resolution_note_en": "Official website favicon/brand icon; source resolution varies (requested up to 256 px). It is not guaranteed to be a full-resolution wordmark.",
+    "logo_resolution_note_fa": "نشان یا فاوآیکون وب‌سایت رسمی؛ وضوح واقعی به فایل منتشرشده در وب‌سایت وابسته است و لزوماً نسخه کامل و وضوح‌بالای لوگوتایپ نیست.",
+    "logo_domain_reviewed_on": "2026-11-14"
   },
   {
     "id": "orbita-eagle-industry",
@@ -4109,8 +4169,8 @@
     "org_type_en": "Space components and subsystems",
     "org_type_ar": "مصنّع مكونات وأنظمة فرعية فضائية",
     "parent_institution": "",
-    "logo": "assets/logos/orbita/orbita-eagle-industry.svg",
-    "logo_kind": "orbita_editorial_nonofficial",
+    "logo": "https://www.google.com/s2/favicons?domain_url=https%3A%2F%2Fekk.nokgrp.com%2Fen%2F&sz=256",
+    "logo_kind": "official_site_favicon",
     "orbita_marker_code": "EI",
     "orbita_verified_profile": {
       "schema_version": 3,
@@ -4427,7 +4487,13 @@
         "Check mission-by-mission flight heritage and distinguish proposals from achieved missions",
         "Prepare verified FA/EN/AR and map metadata only after science review"
       ]
-    }
+    },
+    "logo_source_type": "official_website_favicon_via_google_s2",
+    "logo_source_url": "https://ekk.nokgrp.com/en/",
+    "logo_bg": "light",
+    "logo_resolution_note_en": "Official website favicon/brand icon; source resolution varies (requested up to 256 px). It is not guaranteed to be a full-resolution wordmark.",
+    "logo_resolution_note_fa": "نشان یا فاوآیکون وب‌سایت رسمی؛ وضوح واقعی به فایل منتشرشده در وب‌سایت وابسته است و لزوماً نسخه کامل و وضوح‌بالای لوگوتایپ نیست.",
+    "logo_domain_reviewed_on": "2026-11-14"
   },
   {
     "id": "orbita-genesia",
@@ -4444,7 +4510,7 @@
     "lat": 35.6895,
     "lon": 139.6917,
     "coordinate_precision": "approximate_city_center",
-    "site": "",
+    "site": "https://www.genesia.com/",
     "en_d": "Tokyo-based GENESIA develops ultraviolet, visible and infrared space optics, including imaging payloads and star trackers. The JAXA industry catalogue reports more than 50 space telescopes used across over 20 satellites/probes; these aggregate claims need mission/model attribution.",
     "fa_d": "شرکت با ابزارهای تصویربرداری چندطیفی و طیف‌سنجی از فرابنفش عمیق تا فروسرخ گرمایی و نیز ردیاب ستاره شناخته می‌شود. در بانک ORBITA باید فعالیت «اپتیک محموله» را از «ردیاب ستاره به‌عنوان قطعه تعیین وضعیت» جدا کرد، هرچند متعلق به یک شرکت باشد.",
     "ar_d": "تطور GENESIA ومقرها طوكيو بصريات فضائية في المجالات فوق البنفسجية والمرئية وتحت الحمراء، بما فيها حمولات التصوير ومتتبعات النجوم. ويذكر دليل JAXA الصناعي أكثر من 50 تلسكوباً فضائياً استخدمت في أكثر من 20 قمراً ومسباراً؛ وتحتاج هذه الأرقام الإجمالية إلى ربط كل طراز بمهمته.",
@@ -4452,8 +4518,8 @@
     "org_type_en": "Space components and subsystems",
     "org_type_ar": "مصنّع مكونات وأنظمة فرعية فضائية",
     "parent_institution": "",
-    "logo": "assets/logos/orbita/orbita-genesia.svg",
-    "logo_kind": "orbita_editorial_nonofficial",
+    "logo": "https://www.google.com/s2/favicons?domain_url=https%3A%2F%2Fwww.genesia.com%2F&sz=256",
+    "logo_kind": "official_site_favicon",
     "orbita_marker_code": "GE",
     "orbita_verified_profile": {
       "schema_version": 3,
@@ -4794,7 +4860,13 @@
         "Check mission-by-mission flight heritage and distinguish proposals from achieved missions",
         "Prepare verified FA/EN/AR and map metadata only after science review"
       ]
-    }
+    },
+    "logo_source_type": "official_website_favicon_via_google_s2",
+    "logo_source_url": "https://www.genesia.com/",
+    "logo_bg": "light",
+    "logo_resolution_note_en": "Official website favicon/brand icon; source resolution varies (requested up to 256 px). It is not guaranteed to be a full-resolution wordmark.",
+    "logo_resolution_note_fa": "نشان یا فاوآیکون وب‌سایت رسمی؛ وضوح واقعی به فایل منتشرشده در وب‌سایت وابسته است و لزوماً نسخه کامل و وضوح‌بالای لوگوتایپ نیست.",
+    "logo_domain_reviewed_on": "2026-11-14"
   },
   {
     "id": "orbita-nanobridge-semiconductor",
@@ -4819,8 +4891,8 @@
     "org_type_en": "Space components and subsystems",
     "org_type_ar": "مصنّع مكونات وأنظمة فرعية فضائية",
     "parent_institution": "",
-    "logo": "assets/logos/orbita/orbita-nanobridge-semiconductor.svg",
-    "logo_kind": "orbita_editorial_nonofficial",
+    "logo": "https://www.google.com/s2/favicons?domain_url=https%3A%2F%2Fnanobridgesemi.com%2F&sz=256",
+    "logo_kind": "official_site_favicon",
     "orbita_marker_code": "NB",
     "orbita_verified_profile": {
       "schema_version": 3,
@@ -5167,7 +5239,13 @@
         "Check mission-by-mission flight heritage and distinguish proposals from achieved missions",
         "Prepare verified FA/EN/AR and map metadata only after science review"
       ]
-    }
+    },
+    "logo_source_type": "official_website_favicon_via_google_s2",
+    "logo_source_url": "https://nanobridgesemi.com/",
+    "logo_bg": "light",
+    "logo_resolution_note_en": "Official website favicon/brand icon; source resolution varies (requested up to 256 px). It is not guaranteed to be a full-resolution wordmark.",
+    "logo_resolution_note_fa": "نشان یا فاوآیکون وب‌سایت رسمی؛ وضوح واقعی به فایل منتشرشده در وب‌سایت وابسته است و لزوماً نسخه کامل و وضوح‌بالای لوگوتایپ نیست.",
+    "logo_domain_reviewed_on": "2026-11-14"
   },
   {
     "id": "orbita-nec-space-technologies",
@@ -5184,7 +5262,7 @@
     "lat": 35.668,
     "lon": 139.476,
     "coordinate_precision": "approximate_city_center",
-    "site": "https://www.necspace.co.jp/en/",
+    "site": "https://group.nec/space-technologies/en/",
     "en_d": "NEC Space Technologies is a Japanese space-equipment company whose stated April 2026 snapshot lists 482 employees and ¥7 billion of capital including reserves. The legal entity must be distinguished from the wider NEC group's historic space activities.",
     "fa_d": "فهرست تأمین‌کنندگان قطعات ماهواره در کاتالوگ رسمی ژاپن (نسخه ۲۰۲۵)؛ حضور در فهرست به‌خودی‌خود سابقه پرواز هر محصول را ثابت نمی‌کند.",
     "ar_d": "NEC Space Technologies شركة يابانية للمعدات الفضائية؛ وتذكر بيانات أبريل 2026 عدد 482 موظفاً ورأسمالاً مع الاحتياطيات قدره 7 مليارات ين. يجب تمييز شخصيتها القانونية عن التاريخ الفضائي الأوسع لمجموعة NEC.",
@@ -5192,8 +5270,8 @@
     "org_type_en": "Space components and subsystems",
     "org_type_ar": "مصنّع مكونات وأنظمة فرعية فضائية",
     "parent_institution": "",
-    "logo": "assets/logos/orbita/orbita-nec-space-technologies.svg",
-    "logo_kind": "orbita_editorial_nonofficial",
+    "logo": "https://www.google.com/s2/favicons?domain_url=https%3A%2F%2Fgroup.nec%2Fspace-technologies%2Fen%2F&sz=256",
+    "logo_kind": "official_site_favicon",
     "orbita_marker_code": "NE",
     "orbita_verified_profile": {
       "schema_version": 3,
@@ -5555,7 +5633,13 @@
         "Check mission-by-mission flight heritage and distinguish proposals from achieved missions",
         "Prepare verified FA/EN/AR and map metadata only after science review"
       ]
-    }
+    },
+    "logo_source_type": "official_website_favicon_via_google_s2",
+    "logo_source_url": "https://group.nec/space-technologies/en/",
+    "logo_bg": "light",
+    "logo_resolution_note_en": "Official website favicon/brand icon; source resolution varies (requested up to 256 px). It is not guaranteed to be a full-resolution wordmark.",
+    "logo_resolution_note_fa": "نشان یا فاوآیکون وب‌سایت رسمی؛ وضوح واقعی به فایل منتشرشده در وب‌سایت وابسته است و لزوماً نسخه کامل و وضوح‌بالای لوگوتایپ نیست.",
+    "logo_domain_reviewed_on": "2026-11-14"
   },
   {
     "id": "orbita-arcsec",
@@ -5580,8 +5664,8 @@
     "org_type_en": "Space components and subsystems",
     "org_type_ar": "مصنّع مكونات وأنظمة فرعية فضائية",
     "parent_institution": "",
-    "logo": "assets/logos/orbita/orbita-arcsec.svg",
-    "logo_kind": "orbita_editorial_nonofficial",
+    "logo": "https://www.google.com/s2/favicons?domain_url=https%3A%2F%2Fwww.arcsec.space%2F&sz=256",
+    "logo_kind": "official_site_favicon",
     "orbita_marker_code": "AR",
     "orbita_verified_profile": {
       "schema_version": 3,
@@ -5953,7 +6037,13 @@
         "Check mission-by-mission flight heritage and distinguish proposals from achieved missions",
         "Prepare verified FA/EN/AR and map metadata only after science review"
       ]
-    }
+    },
+    "logo_source_type": "official_website_favicon_via_google_s2",
+    "logo_source_url": "https://www.arcsec.space/",
+    "logo_bg": "light",
+    "logo_resolution_note_en": "Official website favicon/brand icon; source resolution varies (requested up to 256 px). It is not guaranteed to be a full-resolution wordmark.",
+    "logo_resolution_note_fa": "نشان یا فاوآیکون وب‌سایت رسمی؛ وضوح واقعی به فایل منتشرشده در وب‌سایت وابسته است و لزوماً نسخه کامل و وضوح‌بالای لوگوتایپ نیست.",
+    "logo_domain_reviewed_on": "2026-11-14"
   },
   {
     "id": "raspehr-0012-idemitsu-kosan-co-ltd",
@@ -5981,8 +6071,8 @@
     "org_type_en": "Space components and subsystems",
     "org_type_ar": "مكونات وأنظمة فرعية فضائية",
     "parent_institution": "",
-    "logo": "",
-    "logo_kind": "no_verified_official_logo",
+    "logo": "https://www.google.com/s2/favicons?domain_url=https%3A%2F%2Fwww.idemitsu.com%2F&sz=256",
+    "logo_kind": "official_site_favicon",
     "brand_text_identifier": "IDE",
     "orbita_verified_profile": {
       "schema_version": 2,
@@ -6140,7 +6230,13 @@
       "language_parity": "FA_EN_AR_SECTION_DETAIL",
       "geo_precision": "approximate_neighbourhood_official_address",
       "logo_status": "typographic_name_only"
-    }
+    },
+    "logo_source_type": "official_website_favicon_via_google_s2",
+    "logo_source_url": "https://www.idemitsu.com/",
+    "logo_bg": "light",
+    "logo_resolution_note_en": "Official website favicon/brand icon; source resolution varies (requested up to 256 px). It is not guaranteed to be a full-resolution wordmark.",
+    "logo_resolution_note_fa": "نشان یا فاوآیکون وب‌سایت رسمی؛ وضوح واقعی به فایل منتشرشده در وب‌سایت وابسته است و لزوماً نسخه کامل و وضوح‌بالای لوگوتایپ نیست.",
+    "logo_domain_reviewed_on": "2026-11-14"
   },
   {
     "id": "raspehr-0019-meisei-electric-co-ltd",
@@ -6160,7 +6256,7 @@
     "coordinates_are_exact_site_gps": false,
     "address": "2223 Naganumamachi, Isesaki-shi, Gunma 372-8585, Japan",
     "address_evidence_url": "https://www.meisei.co.jp/english/aboutus/outline",
-    "site": "https://www.meisei.co.jp/english/",
+    "site": "https://www.meisei.co.jp/",
     "fa_d": "میسه‌ای الکتریک شرکت ژاپنی سازنده ابزار فضایی، حسگرها و تجهیزات مخابراتی است که در ۱۹۳۸ تأسیس شد. NOHMI BOSAI از ۲۰۲۶ مالک کامل آن است؛ IHI مالک پیشین بود.",
     "en_d": "Meisei Electric, established in Japan in 1938, develops space instruments, sensors and communications equipment. NOHMI BOSAI became its wholly owning parent in 2026; IHI was the former parent.",
     "ar_d": "ميسَي إلكتريك شركة يابانية تأسست عام 1938 وتطور أجهزة فضائية ومستشعرات ومعدات اتصالات. أصبحت NOHMI BOSAI الشركة المالكة بالكامل في 2026، بعدما كانت تابعة لـIHI.",
@@ -6168,8 +6264,8 @@
     "org_type_en": "Space components and subsystems",
     "org_type_ar": "مكونات وأنظمة فرعية فضائية",
     "parent_institution": "NOHMI BOSAI Co., Ltd. (2026)",
-    "logo": "",
-    "logo_kind": "no_verified_official_logo",
+    "logo": "https://www.google.com/s2/favicons?domain_url=https%3A%2F%2Fwww.meisei.co.jp%2F&sz=256",
+    "logo_kind": "official_site_favicon",
     "brand_text_identifier": "ME",
     "orbita_verified_profile": {
       "schema_version": 2,
@@ -6372,7 +6468,13 @@
       "language_parity": "FA_EN_AR_SECTION_DETAIL",
       "geo_precision": "approximate_city_official_address",
       "logo_status": "typographic_name_only"
-    }
+    },
+    "logo_source_type": "official_website_favicon_via_google_s2",
+    "logo_source_url": "https://www.meisei.co.jp/",
+    "logo_bg": "light",
+    "logo_resolution_note_en": "Official website favicon/brand icon; source resolution varies (requested up to 256 px). It is not guaranteed to be a full-resolution wordmark.",
+    "logo_resolution_note_fa": "نشان یا فاوآیکون وب‌سایت رسمی؛ وضوح واقعی به فایل منتشرشده در وب‌سایت وابسته است و لزوماً نسخه کامل و وضوح‌بالای لوگوتایپ نیست.",
+    "logo_domain_reviewed_on": "2026-11-14"
   },
   {
     "id": "raspehr-0023-mitsubishi-electric-corporation",
@@ -6400,8 +6502,8 @@
     "org_type_en": "Space components and subsystems",
     "org_type_ar": "مكونات وأنظمة فرعية فضائية",
     "parent_institution": "",
-    "logo": "",
-    "logo_kind": "no_verified_official_logo",
+    "logo": "https://www.google.com/s2/favicons?domain_url=https%3A%2F%2Fwww.mitsubishielectric.com%2F&sz=256",
+    "logo_kind": "official_site_favicon",
     "brand_text_identifier": "MEL",
     "orbita_verified_profile": {
       "schema_version": 2,
@@ -6580,7 +6682,13 @@
       "language_parity": "FA_EN_AR_SECTION_DETAIL",
       "geo_precision": "approximate_neighbourhood_official_address",
       "logo_status": "typographic_name_only"
-    }
+    },
+    "logo_source_type": "official_website_favicon_via_google_s2",
+    "logo_source_url": "https://www.mitsubishielectric.com/",
+    "logo_bg": "light",
+    "logo_resolution_note_en": "Official website favicon/brand icon; source resolution varies (requested up to 256 px). It is not guaranteed to be a full-resolution wordmark.",
+    "logo_resolution_note_fa": "نشان یا فاوآیکون وب‌سایت رسمی؛ وضوح واقعی به فایل منتشرشده در وب‌سایت وابسته است و لزوماً نسخه کامل و وضوح‌بالای لوگوتایپ نیست.",
+    "logo_domain_reviewed_on": "2026-11-14"
   },
   {
     "id": "raspehr-0041-3d-plus",
@@ -6608,8 +6716,8 @@
     "org_type_en": "Space components and subsystems",
     "org_type_ar": "مكونات وأنظمة فرعية فضائية",
     "parent_institution": "HEICO Corporation",
-    "logo": "",
-    "logo_kind": "no_verified_official_logo",
+    "logo": "https://www.google.com/s2/favicons?domain_url=https%3A%2F%2Fwww.3d-plus.com%2F&sz=256",
+    "logo_kind": "official_site_favicon",
     "brand_text_identifier": "3D+",
     "orbita_verified_profile": {
       "schema_version": 2,
@@ -6787,6 +6895,12 @@
       "language_parity": "FA_EN_AR_SECTION_DETAIL",
       "geo_precision": "approximate_city_official_address",
       "logo_status": "typographic_name_only"
-    }
+    },
+    "logo_source_type": "official_website_favicon_via_google_s2",
+    "logo_source_url": "https://www.3d-plus.com/",
+    "logo_bg": "light",
+    "logo_resolution_note_en": "Official website favicon/brand icon; source resolution varies (requested up to 256 px). It is not guaranteed to be a full-resolution wordmark.",
+    "logo_resolution_note_fa": "نشان یا فاوآیکون وب‌سایت رسمی؛ وضوح واقعی به فایل منتشرشده در وب‌سایت وابسته است و لزوماً نسخه کامل و وضوح‌بالای لوگوتایپ نیست.",
+    "logo_domain_reviewed_on": "2026-11-14"
   }
 ]

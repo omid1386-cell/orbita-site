@@ -28,7 +28,7 @@ assert(calls === 11, "expected helper plus 10 logo insertion points, found " + c
 assert(app.includes('(!isInfrastructure && (item.logo_data || item.logo)) ? logoZoomAttrs(itemName)'),
   "country profile cards must only magnify real company logos");
 assert(app.includes('o.logo ? \'<img class="verified-profile-logo"'), "verified dossier logo path missing");
-assert(html.includes("20261114-logo-zoom-step3-v1"), "asset cache version not updated");
+assert(html.includes("20261114-step4-manufacturer-logos-v1"), "asset cache version not updated");
 assert(app.includes("renderNextLandingAnnouncement"), "Step 2 landing feature was not preserved");
 
 const start = app.indexOf("  function logoZoomAttrs(label)");

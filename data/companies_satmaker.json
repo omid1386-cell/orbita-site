@@ -167,8 +167,8 @@
     "secondary_categories": [
       "payloads"
     ],
-    "logo": "assets/logos/orbita/dragonfly-space.svg",
-    "logo_kind": "orbita_editorial_nonofficial",
+    "logo": "https://www.google.com/s2/favicons?domain_url=https%3A%2F%2Fdragonflyaerospace.com%2F&sz=256",
+    "logo_kind": "official_site_favicon",
     "orbita_marker_code": "DF",
     "coordinate_precision": "city_approximation_existing",
     "orbita_verified_profile": {
@@ -292,7 +292,13 @@
         }
       ],
       "data_status": "verified_pilot"
-    }
+    },
+    "logo_source_type": "official_website_favicon_via_google_s2",
+    "logo_source_url": "https://dragonflyaerospace.com/",
+    "logo_bg": "light",
+    "logo_resolution_note_en": "Official website favicon/brand icon; source resolution varies (requested up to 256 px). It is not guaranteed to be a full-resolution wordmark.",
+    "logo_resolution_note_fa": "نشان یا فاوآیکون وب‌سایت رسمی؛ وضوح واقعی به فایل منتشرشده در وب‌سایت وابسته است و لزوماً نسخه کامل و وضوح‌بالای لوگوتایپ نیست.",
+    "logo_domain_reviewed_on": "2026-11-14"
   },
   {
     "id": "simera-sense",
@@ -458,7 +464,15 @@
       }
     ],
     "verified_role_ar": "مصنّع حمولات التصوير البصري، وليس مصنّع أقمار صناعية كاملة",
-    "record_location_role_ar": "موقع إنتاج في سومرست ويست بجنوب أفريقيا؛ وليس المقر الرئيسي للشركة"
+    "record_location_role_ar": "موقع إنتاج في سومرست ويست بجنوب أفريقيا؛ وليس المقر الرئيسي للشركة",
+    "logo": "https://www.google.com/s2/favicons?domain_url=https%3A%2F%2Fsimera-sense.com%2F&sz=256",
+    "logo_kind": "official_site_favicon",
+    "logo_source_type": "official_website_favicon_via_google_s2",
+    "logo_source_url": "https://simera-sense.com/",
+    "logo_bg": "light",
+    "logo_resolution_note_en": "Official website favicon/brand icon; source resolution varies (requested up to 256 px). It is not guaranteed to be a full-resolution wordmark.",
+    "logo_resolution_note_fa": "نشان یا فاوآیکون وب‌سایت رسمی؛ وضوح واقعی به فایل منتشرشده در وب‌سایت وابسته است و لزوماً نسخه کامل و وضوح‌بالای لوگوتایپ نیست.",
+    "logo_domain_reviewed_on": "2026-11-14"
   },
   {
     "id": "newspace-systems",
@@ -727,7 +741,15 @@
     "location_en": "Cape Town, South Africa",
     "location_ar": "كيب تاون، جنوب أفريقيا",
     "verified_role_ar": "مصنّع أنظمة فرعية للمركبات الفضائية؛ وليس مقاولاً رئيسياً مستقلاً لتصنيع أقمار كاملة",
-    "city_ar": "كيب تاون"
+    "city_ar": "كيب تاون",
+    "logo": "https://www.google.com/s2/favicons?domain_url=https%3A%2F%2Fnewspacesystems.com&sz=256",
+    "logo_kind": "official_site_favicon",
+    "logo_source_type": "official_website_favicon_via_google_s2",
+    "logo_source_url": "https://newspacesystems.com",
+    "logo_bg": "light",
+    "logo_resolution_note_en": "Official website favicon/brand icon; source resolution varies (requested up to 256 px). It is not guaranteed to be a full-resolution wordmark.",
+    "logo_resolution_note_fa": "نشان یا فاوآیکون وب‌سایت رسمی؛ وضوح واقعی به فایل منتشرشده در وب‌سایت وابسته است و لزوماً نسخه کامل و وضوح‌بالای لوگوتایپ نیست.",
+    "logo_domain_reviewed_on": "2026-11-14"
   },
   {
     "id": "cubespace",
@@ -1012,8 +1034,8 @@
     "secondary_categories": [
       "components"
     ],
-    "logo": "assets/logos/orbita/cubespace.svg",
-    "logo_kind": "orbita_editorial_nonofficial",
+    "logo": "https://www.google.com/s2/favicons?domain_url=https%3A%2F%2Fcubespace.co.za&sz=256",
+    "logo_kind": "official_site_favicon",
     "orbita_marker_code": "CS",
     "orbita_verified_profile": {
       "schema_version": 2,
@@ -1136,7 +1158,13 @@
         "ar": "شركة جنوب أفريقية لأنظمة التحكم في اتجاه الأقمار وعجلات رد الفعل ومتتبعات النجوم."
       }
     },
-    "coordinate_precision": "city_approximation_existing"
+    "coordinate_precision": "city_approximation_existing",
+    "logo_source_type": "official_website_favicon_via_google_s2",
+    "logo_source_url": "https://cubespace.co.za",
+    "logo_bg": "light",
+    "logo_resolution_note_en": "Official website favicon/brand icon; source resolution varies (requested up to 256 px). It is not guaranteed to be a full-resolution wordmark.",
+    "logo_resolution_note_fa": "نشان یا فاوآیکون وب‌سایت رسمی؛ وضوح واقعی به فایل منتشرشده در وب‌سایت وابسته است و لزوماً نسخه کامل و وضوح‌بالای لوگوتایپ نیست.",
+    "logo_domain_reviewed_on": "2026-11-14"
   },
   {
     "id": "kongsberg-space",
@@ -1404,7 +1432,15 @@
     ],
     "location_en": "Kongsberg, Norway",
     "location_ar": "كونغسبرغ، النرويج",
-    "city_ar": "كونغسبرغ"
+    "city_ar": "كونغسبرغ",
+    "logo": "https://www.google.com/s2/favicons?domain_url=https%3A%2F%2Fkongsberg.com%2Fkda&sz=256",
+    "logo_kind": "official_site_favicon",
+    "logo_source_type": "official_website_favicon_via_google_s2",
+    "logo_source_url": "https://kongsberg.com/kda",
+    "logo_bg": "light",
+    "logo_resolution_note_en": "Official website favicon/brand icon; source resolution varies (requested up to 256 px). It is not guaranteed to be a full-resolution wordmark.",
+    "logo_resolution_note_fa": "نشان یا فاوآیکون وب‌سایت رسمی؛ وضوح واقعی به فایل منتشرشده در وب‌سایت وابسته است و لزوماً نسخه کامل و وضوح‌بالای لوگوتایپ نیست.",
+    "logo_domain_reviewed_on": "2026-11-14"
   },
   {
     "id": "kawasaki-prop",
@@ -1694,7 +1730,15 @@
     "location_en": "Kobe, Japan",
     "location_ar": "كوبي، اليابان",
     "verified_role_ar": "مطوّر القمر الاستعراضي DRUMS ومورّد أنظمة فضائية فرعية ومعدات الإطلاق",
-    "city_ar": "كوبي"
+    "city_ar": "كوبي",
+    "logo": "https://www.google.com/s2/favicons?domain_url=https%3A%2F%2Fglobal.kawasaki.com&sz=256",
+    "logo_kind": "official_site_favicon",
+    "logo_source_type": "official_website_favicon_via_google_s2",
+    "logo_source_url": "https://global.kawasaki.com",
+    "logo_bg": "light",
+    "logo_resolution_note_en": "Official website favicon/brand icon; source resolution varies (requested up to 256 px). It is not guaranteed to be a full-resolution wordmark.",
+    "logo_resolution_note_fa": "نشان یا فاوآیکون وب‌سایت رسمی؛ وضوح واقعی به فایل منتشرشده در وب‌سایت وابسته است و لزوماً نسخه کامل و وضوح‌بالای لوگوتایپ نیست.",
+    "logo_domain_reviewed_on": "2026-11-14"
   },
   {
     "id": "comat",
@@ -1978,7 +2022,15 @@
     ],
     "location_en": "Flourens, France",
     "location_ar": "فلورنس (Flourens)، فرنسا",
-    "city_ar": "فلورنس (Flourens)"
+    "city_ar": "فلورنس (Flourens)",
+    "logo": "https://www.google.com/s2/favicons?domain_url=https%3A%2F%2Fcomat-space.com&sz=256",
+    "logo_kind": "official_site_favicon",
+    "logo_source_type": "official_website_favicon_via_google_s2",
+    "logo_source_url": "https://comat-space.com",
+    "logo_bg": "light",
+    "logo_resolution_note_en": "Official website favicon/brand icon; source resolution varies (requested up to 256 px). It is not guaranteed to be a full-resolution wordmark.",
+    "logo_resolution_note_fa": "نشان یا فاوآیکون وب‌سایت رسمی؛ وضوح واقعی به فایل منتشرشده در وب‌سایت وابسته است و لزوماً نسخه کامل و وضوح‌بالای لوگوتایپ نیست.",
+    "logo_domain_reviewed_on": "2026-11-14"
   },
   {
     "id": "mt-aerospace",
@@ -2273,7 +2325,15 @@
     "location_en": "Augsburg, Germany",
     "location_ar": "أوغسبورغ، ألمانيا",
     "verified_role_ar": "مورّد هياكل وخزانات مركبات الإطلاق والمعدات الفضائية؛ وليس مصنّع أقمار صناعية كاملة",
-    "city_ar": "أوغسبورغ"
+    "city_ar": "أوغسبورغ",
+    "logo": "https://www.google.com/s2/favicons?domain_url=https%3A%2F%2Fmt-aerospace.de&sz=256",
+    "logo_kind": "official_site_favicon",
+    "logo_source_type": "official_website_favicon_via_google_s2",
+    "logo_source_url": "https://mt-aerospace.de",
+    "logo_bg": "light",
+    "logo_resolution_note_en": "Official website favicon/brand icon; source resolution varies (requested up to 256 px). It is not guaranteed to be a full-resolution wordmark.",
+    "logo_resolution_note_fa": "نشان یا فاوآیکون وب‌سایت رسمی؛ وضوح واقعی به فایل منتشرشده در وب‌سایت وابسته است و لزوماً نسخه کامل و وضوح‌بالای لوگوتایپ نیست.",
+    "logo_domain_reviewed_on": "2026-11-14"
   },
   {
     "id": "coaes",
@@ -2521,7 +2581,15 @@
     ],
     "location_en": "Arlington, United States",
     "location_ar": "أرلينغتون، الولايات المتحدة",
-    "city_ar": "أرلينغتون"
+    "city_ar": "أرلينغتون",
+    "logo": "https://www.google.com/s2/favicons?domain_url=https%3A%2F%2Fcaes.com&sz=256",
+    "logo_kind": "official_site_favicon",
+    "logo_source_type": "official_website_favicon_via_google_s2",
+    "logo_source_url": "https://caes.com",
+    "logo_bg": "light",
+    "logo_resolution_note_en": "Official website favicon/brand icon; source resolution varies (requested up to 256 px). It is not guaranteed to be a full-resolution wordmark.",
+    "logo_resolution_note_fa": "نشان یا فاوآیکون وب‌سایت رسمی؛ وضوح واقعی به فایل منتشرشده در وب‌سایت وابسته است و لزوماً نسخه کامل و وضوح‌بالای لوگوتایپ نیست.",
+    "logo_domain_reviewed_on": "2026-11-14"
   },
   {
     "id": "apco-technologies",
@@ -2810,7 +2878,15 @@
     ],
     "location_en": "Aigle, Switzerland",
     "location_ar": "إيغل، سويسرا",
-    "city_ar": "إيغل"
+    "city_ar": "إيغل",
+    "logo": "https://www.google.com/s2/favicons?domain_url=https%3A%2F%2Fapco-technologies.com&sz=256",
+    "logo_kind": "official_site_favicon",
+    "logo_source_type": "official_website_favicon_via_google_s2",
+    "logo_source_url": "https://apco-technologies.com",
+    "logo_bg": "light",
+    "logo_resolution_note_en": "Official website favicon/brand icon; source resolution varies (requested up to 256 px). It is not guaranteed to be a full-resolution wordmark.",
+    "logo_resolution_note_fa": "نشان یا فاوآیکون وب‌سایت رسمی؛ وضوح واقعی به فایل منتشرشده در وب‌سایت وابسته است و لزوماً نسخه کامل و وضوح‌بالای لوگوتایپ نیست.",
+    "logo_domain_reviewed_on": "2026-11-14"
   },
   {
     "id": "airbus-space",
@@ -3094,7 +3170,15 @@
     ],
     "location_en": "Toulouse, France",
     "location_ar": "تولوز، فرنسا",
-    "city_ar": "تولوز"
+    "city_ar": "تولوز",
+    "logo": "https://www.google.com/s2/favicons?domain_url=https%3A%2F%2Fwww.airbus.com%2Fen%2Fspace&sz=256",
+    "logo_kind": "official_site_favicon",
+    "logo_source_type": "official_website_favicon_via_google_s2",
+    "logo_source_url": "https://www.airbus.com/en/space",
+    "logo_bg": "light",
+    "logo_resolution_note_en": "Official website favicon/brand icon; source resolution varies (requested up to 256 px). It is not guaranteed to be a full-resolution wordmark.",
+    "logo_resolution_note_fa": "نشان یا فاوآیکون وب‌سایت رسمی؛ وضوح واقعی به فایل منتشرشده در وب‌سایت وابسته است و لزوماً نسخه کامل و وضوح‌بالای لوگوتایپ نیست.",
+    "logo_domain_reviewed_on": "2026-11-14"
   },
   {
     "id": "thales-alenia",
@@ -3382,7 +3466,15 @@
     ],
     "location_en": "Cannes, France",
     "location_ar": "كان، فرنسا",
-    "city_ar": "كان"
+    "city_ar": "كان",
+    "logo": "https://www.google.com/s2/favicons?domain_url=https%3A%2F%2Fwww.thalesaleniaspace.com&sz=256",
+    "logo_kind": "official_site_favicon",
+    "logo_source_type": "official_website_favicon_via_google_s2",
+    "logo_source_url": "https://www.thalesaleniaspace.com",
+    "logo_bg": "light",
+    "logo_resolution_note_en": "Official website favicon/brand icon; source resolution varies (requested up to 256 px). It is not guaranteed to be a full-resolution wordmark.",
+    "logo_resolution_note_fa": "نشان یا فاوآیکون وب‌سایت رسمی؛ وضوح واقعی به فایل منتشرشده در وب‌سایت وابسته است و لزوماً نسخه کامل و وضوح‌بالای لوگوتایپ نیست.",
+    "logo_domain_reviewed_on": "2026-11-14"
   },
   {
     "id": "ohb",
@@ -3670,7 +3762,15 @@
     ],
     "location_en": "Bremen, Germany",
     "location_ar": "بريمن، ألمانيا",
-    "city_ar": "بريمن"
+    "city_ar": "بريمن",
+    "logo": "https://www.google.com/s2/favicons?domain_url=https%3A%2F%2Fwww.ohb.de&sz=256",
+    "logo_kind": "official_site_favicon",
+    "logo_source_type": "official_website_favicon_via_google_s2",
+    "logo_source_url": "https://www.ohb.de",
+    "logo_bg": "light",
+    "logo_resolution_note_en": "Official website favicon/brand icon; source resolution varies (requested up to 256 px). It is not guaranteed to be a full-resolution wordmark.",
+    "logo_resolution_note_fa": "نشان یا فاوآیکون وب‌سایت رسمی؛ وضوح واقعی به فایل منتشرشده در وب‌سایت وابسته است و لزوماً نسخه کامل و وضوح‌بالای لوگوتایپ نیست.",
+    "logo_domain_reviewed_on": "2026-11-14"
   },
   {
     "id": "maxar",
@@ -3684,7 +3784,7 @@
     "lat": 39.884,
     "lon": -105.064,
     "founded": 2017,
-    "site": "https://www.maxar.com",
+    "site": "https://lanterisspace.com/",
     "products": [
       "Maxar 1300 GEO Bus",
       "Maxar 500 / WorldView Legion Bus",
@@ -3936,7 +4036,15 @@
     ],
     "location_en": "Westminster, Colorado; manufacturing plant in Palo Alto",
     "location_ar": "وستمنستر، كولورادو؛ المصنع في بالو ألتو",
-    "city_ar": "وستمنستر، كولورادو"
+    "city_ar": "وستمنستر، كولورادو",
+    "logo": "https://www.google.com/s2/favicons?domain_url=https%3A%2F%2Flanterisspace.com%2F&sz=256",
+    "logo_kind": "official_site_favicon",
+    "logo_source_type": "official_website_favicon_via_google_s2",
+    "logo_source_url": "https://lanterisspace.com/",
+    "logo_bg": "light",
+    "logo_resolution_note_en": "Official website favicon/brand icon; source resolution varies (requested up to 256 px). It is not guaranteed to be a full-resolution wordmark.",
+    "logo_resolution_note_fa": "نشان یا فاوآیکون وب‌سایت رسمی؛ وضوح واقعی به فایل منتشرشده در وب‌سایت وابسته است و لزوماً نسخه کامل و وضوح‌بالای لوگوتایپ نیست.",
+    "logo_domain_reviewed_on": "2026-11-14"
   },
   {
     "id": "sstl",
@@ -4204,7 +4312,15 @@
     ],
     "location_en": "Guildford, United Kingdom",
     "location_ar": "غيلدفورد، المملكة المتحدة",
-    "city_ar": "غيلدفورد"
+    "city_ar": "غيلدفورد",
+    "logo": "https://www.google.com/s2/favicons?domain_url=https%3A%2F%2Fwww.sstl.co.uk&sz=256",
+    "logo_kind": "official_site_favicon",
+    "logo_source_type": "official_website_favicon_via_google_s2",
+    "logo_source_url": "https://www.sstl.co.uk",
+    "logo_bg": "light",
+    "logo_resolution_note_en": "Official website favicon/brand icon; source resolution varies (requested up to 256 px). It is not guaranteed to be a full-resolution wordmark.",
+    "logo_resolution_note_fa": "نشان یا فاوآیکون وب‌سایت رسمی؛ وضوح واقعی به فایل منتشرشده در وب‌سایت وابسته است و لزوماً نسخه کامل و وضوح‌بالای لوگوتایپ نیست.",
+    "logo_domain_reviewed_on": "2026-11-14"
   },
   {
     "id": "reshetnev",
@@ -4472,7 +4588,15 @@
     ],
     "location_en": "Zheleznogorsk, Siberia, Russia",
     "location_ar": "جيليزنوغورسك، سيبيريا، روسيا",
-    "city_ar": "جيليزنوغورسك"
+    "city_ar": "جيليزنوغورسك",
+    "logo": "https://www.google.com/s2/favicons?domain_url=https%3A%2F%2Fwww.reshetnev.com&sz=256",
+    "logo_kind": "official_site_favicon",
+    "logo_source_type": "official_website_favicon_via_google_s2",
+    "logo_source_url": "https://www.reshetnev.com",
+    "logo_bg": "light",
+    "logo_resolution_note_en": "Official website favicon/brand icon; source resolution varies (requested up to 256 px). It is not guaranteed to be a full-resolution wordmark.",
+    "logo_resolution_note_fa": "نشان یا فاوآیکون وب‌سایت رسمی؛ وضوح واقعی به فایل منتشرشده در وب‌سایت وابسته است و لزوماً نسخه کامل و وضوح‌بالای لوگوتایپ نیست.",
+    "logo_domain_reviewed_on": "2026-11-14"
   },
   {
     "id": "planet",
@@ -4737,7 +4861,15 @@
     ],
     "location_en": "San Francisco, United States",
     "location_ar": "سان فرانسيسكو، الولايات المتحدة",
-    "city_ar": "سان فرانسيسكو"
+    "city_ar": "سان فرانسيسكو",
+    "logo": "https://www.google.com/s2/favicons?domain_url=https%3A%2F%2Fwww.planet.com&sz=256",
+    "logo_kind": "official_site_favicon",
+    "logo_source_type": "official_website_favicon_via_google_s2",
+    "logo_source_url": "https://www.planet.com",
+    "logo_bg": "light",
+    "logo_resolution_note_en": "Official website favicon/brand icon; source resolution varies (requested up to 256 px). It is not guaranteed to be a full-resolution wordmark.",
+    "logo_resolution_note_fa": "نشان یا فاوآیکون وب‌سایت رسمی؛ وضوح واقعی به فایل منتشرشده در وب‌سایت وابسته است و لزوماً نسخه کامل و وضوح‌بالای لوگوتایپ نیست.",
+    "logo_domain_reviewed_on": "2026-11-14"
   },
   {
     "id": "york-space",
@@ -5002,7 +5134,15 @@
     ],
     "location_en": "Denver, Colorado",
     "location_ar": "دنفر، كولورادو",
-    "city_ar": "دنفر"
+    "city_ar": "دنفر",
+    "logo": "https://www.google.com/s2/favicons?domain_url=https%3A%2F%2Fwww.yorkspacesystems.com&sz=256",
+    "logo_kind": "official_site_favicon",
+    "logo_source_type": "official_website_favicon_via_google_s2",
+    "logo_source_url": "https://www.yorkspacesystems.com",
+    "logo_bg": "light",
+    "logo_resolution_note_en": "Official website favicon/brand icon; source resolution varies (requested up to 256 px). It is not guaranteed to be a full-resolution wordmark.",
+    "logo_resolution_note_fa": "نشان یا فاوآیکون وب‌سایت رسمی؛ وضوح واقعی به فایل منتشرشده در وب‌سایت وابسته است و لزوماً نسخه کامل و وضوح‌بالای لوگوتایپ نیست.",
+    "logo_domain_reviewed_on": "2026-11-14"
   },
   {
     "id": "astranis",
@@ -5265,7 +5405,15 @@
     ],
     "location_en": "San Francisco, United States",
     "location_ar": "سان فرانسيسكو، الولايات المتحدة",
-    "city_ar": "سان فرانسيسكو"
+    "city_ar": "سان فرانسيسكو",
+    "logo": "https://www.google.com/s2/favicons?domain_url=https%3A%2F%2Fwww.astranis.com&sz=256",
+    "logo_kind": "official_site_favicon",
+    "logo_source_type": "official_website_favicon_via_google_s2",
+    "logo_source_url": "https://www.astranis.com",
+    "logo_bg": "light",
+    "logo_resolution_note_en": "Official website favicon/brand icon; source resolution varies (requested up to 256 px). It is not guaranteed to be a full-resolution wordmark.",
+    "logo_resolution_note_fa": "نشان یا فاوآیکون وب‌سایت رسمی؛ وضوح واقعی به فایل منتشرشده در وب‌سایت وابسته است و لزوماً نسخه کامل و وضوح‌بالای لوگوتایپ نیست.",
+    "logo_domain_reviewed_on": "2026-11-14"
   },
   {
     "id": "iceye",
@@ -5530,7 +5678,15 @@
     ],
     "location_en": "Espoo, Finland",
     "location_ar": "إسبو، فنلندا",
-    "city_ar": "إسبو"
+    "city_ar": "إسبو",
+    "logo": "https://www.google.com/s2/favicons?domain_url=https%3A%2F%2Fwww.iceye.com&sz=256",
+    "logo_kind": "official_site_favicon",
+    "logo_source_type": "official_website_favicon_via_google_s2",
+    "logo_source_url": "https://www.iceye.com",
+    "logo_bg": "light",
+    "logo_resolution_note_en": "Official website favicon/brand icon; source resolution varies (requested up to 256 px). It is not guaranteed to be a full-resolution wordmark.",
+    "logo_resolution_note_fa": "نشان یا فاوآیکون وب‌سایت رسمی؛ وضوح واقعی به فایل منتشرشده در وب‌سایت وابسته است و لزوماً نسخه کامل و وضوح‌بالای لوگوتایپ نیست.",
+    "logo_domain_reviewed_on": "2026-11-14"
   },
   {
     "id": "satellogic",
@@ -5796,7 +5952,15 @@
     "location_en": "Montevideo, Uruguay",
     "location_ar": "مونتيفيديو، أوروغواي",
     "record_location_role_ar": "منشأة إنتاج/مكتب في مونتيفيديو؛ وليست المقر القانوني الحالي في الولايات المتحدة",
-    "city_ar": "مونتيفيديو"
+    "city_ar": "مونتيفيديو",
+    "logo": "https://www.google.com/s2/favicons?domain_url=https%3A%2F%2Fsatellogic.com&sz=256",
+    "logo_kind": "official_site_favicon",
+    "logo_source_type": "official_website_favicon_via_google_s2",
+    "logo_source_url": "https://satellogic.com",
+    "logo_bg": "light",
+    "logo_resolution_note_en": "Official website favicon/brand icon; source resolution varies (requested up to 256 px). It is not guaranteed to be a full-resolution wordmark.",
+    "logo_resolution_note_fa": "نشان یا فاوآیکون وب‌سایت رسمی؛ وضوح واقعی به فایل منتشرشده در وب‌سایت وابسته است و لزوماً نسخه کامل و وضوح‌بالای لوگوتایپ نیست.",
+    "logo_domain_reviewed_on": "2026-11-14"
   },
   {
     "id": "cast",
@@ -6087,7 +6251,15 @@
       }
     ],
     "location_en": "Haidian, Beijing",
-    "location_ar": "هايديان، بكين"
+    "location_ar": "هايديان، بكين",
+    "logo": "https://www.google.com/s2/favicons?domain_url=https%3A%2F%2Fwww.cast.cn&sz=256",
+    "logo_kind": "official_site_favicon",
+    "logo_source_type": "official_website_favicon_via_google_s2",
+    "logo_source_url": "https://www.cast.cn",
+    "logo_bg": "light",
+    "logo_resolution_note_en": "Official website favicon/brand icon; source resolution varies (requested up to 256 px). It is not guaranteed to be a full-resolution wordmark.",
+    "logo_resolution_note_fa": "نشان یا فاوآیکون وب‌سایت رسمی؛ وضوح واقعی به فایل منتشرشده در وب‌سایت وابسته است و لزوماً نسخه کامل و وضوح‌بالای لوگوتایپ نیست.",
+    "logo_domain_reviewed_on": "2026-11-14"
   },
   {
     "id": "blue-canyon",
@@ -6326,8 +6498,8 @@
     "secondary_categories": [
       "components"
     ],
-    "logo": "assets/logos/orbita/blue-canyon.svg",
-    "logo_kind": "orbita_editorial_nonofficial",
+    "logo": "https://www.google.com/s2/favicons?domain_url=https%3A%2F%2Fwww.bluecanyontech.com&sz=256",
+    "logo_kind": "official_site_favicon",
     "orbita_marker_code": "BC",
     "orbita_verified_profile": {
       "schema_version": 2,
@@ -6450,7 +6622,13 @@
         "ar": "شركة لصناعة الأقمار الصغيرة ومكوّنات التحكم في الاتجاه ضمن RTX، ومنها عجلات رد الفعل ومتتبعات النجوم."
       }
     },
-    "coordinate_precision": "city_approximation_existing"
+    "coordinate_precision": "city_approximation_existing",
+    "logo_source_type": "official_website_favicon_via_google_s2",
+    "logo_source_url": "https://www.bluecanyontech.com",
+    "logo_bg": "light",
+    "logo_resolution_note_en": "Official website favicon/brand icon; source resolution varies (requested up to 256 px). It is not guaranteed to be a full-resolution wordmark.",
+    "logo_resolution_note_fa": "نشان یا فاوآیکون وب‌سایت رسمی؛ وضوح واقعی به فایل منتشرشده در وب‌سایت وابسته است و لزوماً نسخه کامل و وضوح‌بالای لوگوتایپ نیست.",
+    "logo_domain_reviewed_on": "2026-11-14"
   },
   {
     "id": "gomspace",
@@ -6700,7 +6878,15 @@
     ],
     "location_en": "Aalborg, Denmark",
     "location_ar": "ألبورغ، الدنمارك",
-    "city_ar": "ألبورغ"
+    "city_ar": "ألبورغ",
+    "logo": "https://www.google.com/s2/favicons?domain_url=https%3A%2F%2Fgomspace.com&sz=256",
+    "logo_kind": "official_site_favicon",
+    "logo_source_type": "official_website_favicon_via_google_s2",
+    "logo_source_url": "https://gomspace.com",
+    "logo_bg": "light",
+    "logo_resolution_note_en": "Official website favicon/brand icon; source resolution varies (requested up to 256 px). It is not guaranteed to be a full-resolution wordmark.",
+    "logo_resolution_note_fa": "نشان یا فاوآیکون وب‌سایت رسمی؛ وضوح واقعی به فایل منتشرشده در وب‌سایت وابسته است و لزوماً نسخه کامل و وضوح‌بالای لوگوتایپ نیست.",
+    "logo_domain_reviewed_on": "2026-11-14"
   },
   {
     "id": "nanoavionics",
@@ -6936,7 +7122,15 @@
       }
     ],
     "location_en": "Vilnius, Lithuania",
-    "location_ar": "فيلنيوس، ليتوانيا"
+    "location_ar": "فيلنيوس، ليتوانيا",
+    "logo": "https://www.google.com/s2/favicons?domain_url=https%3A%2F%2Fnanoavionics.com&sz=256",
+    "logo_kind": "official_site_favicon",
+    "logo_source_type": "official_website_favicon_via_google_s2",
+    "logo_source_url": "https://nanoavionics.com",
+    "logo_bg": "light",
+    "logo_resolution_note_en": "Official website favicon/brand icon; source resolution varies (requested up to 256 px). It is not guaranteed to be a full-resolution wordmark.",
+    "logo_resolution_note_fa": "نشان یا فاوآیکون وب‌سایت رسمی؛ وضوح واقعی به فایل منتشرشده در وب‌سایت وابسته است و لزوماً نسخه کامل و وضوح‌بالای لوگوتایپ نیست.",
+    "logo_domain_reviewed_on": "2026-11-14"
   },
   {
     "id": "endurosat",
@@ -7169,7 +7363,15 @@
       }
     ],
     "location_en": "Sofia, Bulgaria",
-    "location_ar": "صوفيا، بلغاريا"
+    "location_ar": "صوفيا، بلغاريا",
+    "logo": "https://www.google.com/s2/favicons?domain_url=https%3A%2F%2Fwww.endurosat.com&sz=256",
+    "logo_kind": "official_site_favicon",
+    "logo_source_type": "official_website_favicon_via_google_s2",
+    "logo_source_url": "https://www.endurosat.com",
+    "logo_bg": "light",
+    "logo_resolution_note_en": "Official website favicon/brand icon; source resolution varies (requested up to 256 px). It is not guaranteed to be a full-resolution wordmark.",
+    "logo_resolution_note_fa": "نشان یا فاوآیکون وب‌سایت رسمی؛ وضوح واقعی به فایل منتشرشده در وب‌سایت وابسته است و لزوماً نسخه کامل و وضوح‌بالای لوگوتایپ نیست.",
+    "logo_domain_reviewed_on": "2026-11-14"
   },
   {
     "id": "aac-clyde",
@@ -7419,7 +7621,15 @@
     ],
     "location_en": "Uppsala, Sweden",
     "location_ar": "أوبسالا، السويد",
-    "city_ar": "أوبسالا"
+    "city_ar": "أوبسالا",
+    "logo": "https://www.google.com/s2/favicons?domain_url=https%3A%2F%2Fwww.aac-clyde.space&sz=256",
+    "logo_kind": "official_site_favicon",
+    "logo_source_type": "official_website_favicon_via_google_s2",
+    "logo_source_url": "https://www.aac-clyde.space",
+    "logo_bg": "light",
+    "logo_resolution_note_en": "Official website favicon/brand icon; source resolution varies (requested up to 256 px). It is not guaranteed to be a full-resolution wordmark.",
+    "logo_resolution_note_fa": "نشان یا فاوآیکون وب‌سایت رسمی؛ وضوح واقعی به فایل منتشرشده در وب‌سایت وابسته است و لزوماً نسخه کامل و وضوح‌بالای لوگوتایپ نیست.",
+    "logo_domain_reviewed_on": "2026-11-14"
   },
   {
     "id": "redwire",
@@ -7657,7 +7867,15 @@
     ],
     "location_en": "Jacksonville, Florida, United States",
     "location_ar": "جاكسونفيل، فلوريدا، الولايات المتحدة",
-    "city_ar": "جاكسونفيل، فلوريدا"
+    "city_ar": "جاكسونفيل، فلوريدا",
+    "logo": "https://www.google.com/s2/favicons?domain_url=https%3A%2F%2Fredwirespace.com&sz=256",
+    "logo_kind": "official_site_favicon",
+    "logo_source_type": "official_website_favicon_via_google_s2",
+    "logo_source_url": "https://redwirespace.com",
+    "logo_bg": "light",
+    "logo_resolution_note_en": "Official website favicon/brand icon; source resolution varies (requested up to 256 px). It is not guaranteed to be a full-resolution wordmark.",
+    "logo_resolution_note_fa": "نشان یا فاوآیکون وب‌سایت رسمی؛ وضوح واقعی به فایل منتشرشده در وب‌سایت وابسته است و لزوماً نسخه کامل و وضوح‌بالای لوگوتایپ نیست.",
+    "logo_domain_reviewed_on": "2026-11-14"
   },
   {
     "id": "avs-uk",
@@ -7771,7 +7989,15 @@
         "title_ar": "تأسيس الفرع البريطاني"
       }
     ],
-    "founded": 2014
+    "founded": 2014,
+    "logo": "https://www.google.com/s2/favicons?domain_url=https%3A%2F%2Fwww.a-v-s.es%2F&sz=256",
+    "logo_kind": "official_site_favicon",
+    "logo_source_type": "official_website_favicon_via_google_s2",
+    "logo_source_url": "https://www.a-v-s.es/",
+    "logo_bg": "light",
+    "logo_resolution_note_en": "Official website favicon/brand icon; source resolution varies (requested up to 256 px). It is not guaranteed to be a full-resolution wordmark.",
+    "logo_resolution_note_fa": "نشان یا فاوآیکون وب‌سایت رسمی؛ وضوح واقعی به فایل منتشرشده در وب‌سایت وابسته است و لزوماً نسخه کامل و وضوح‌بالای لوگوتایپ نیست.",
+    "logo_domain_reviewed_on": "2026-11-14"
   },
   {
     "id": "alpha-data-uk",
@@ -7869,7 +8095,15 @@
     ],
     "milestones_en": [],
     "milestones_fa": [],
-    "milestones_ar": []
+    "milestones_ar": [],
+    "logo": "https://www.google.com/s2/favicons?domain_url=https%3A%2F%2Falpha-data.com%2F&sz=256",
+    "logo_kind": "official_site_favicon",
+    "logo_source_type": "official_website_favicon_via_google_s2",
+    "logo_source_url": "https://alpha-data.com/",
+    "logo_bg": "light",
+    "logo_resolution_note_en": "Official website favicon/brand icon; source resolution varies (requested up to 256 px). It is not guaranteed to be a full-resolution wordmark.",
+    "logo_resolution_note_fa": "نشان یا فاوآیکون وب‌سایت رسمی؛ وضوح واقعی به فایل منتشرشده در وب‌سایت وابسته است و لزوماً نسخه کامل و وضوح‌بالای لوگوتایپ نیست.",
+    "logo_domain_reviewed_on": "2026-11-14"
   },
   {
     "id": "bright-ascension",
@@ -7982,7 +8216,15 @@
         "year": "2023",
         "title_ar": "إدراج EIRSAT-1 في قائمة مهمات الشركة"
       }
-    ]
+    ],
+    "logo": "https://www.google.com/s2/favicons?domain_url=https%3A%2F%2Fbrightascension.com%2F&sz=256",
+    "logo_kind": "official_site_favicon",
+    "logo_source_type": "official_website_favicon_via_google_s2",
+    "logo_source_url": "https://brightascension.com/",
+    "logo_bg": "light",
+    "logo_resolution_note_en": "Official website favicon/brand icon; source resolution varies (requested up to 256 px). It is not guaranteed to be a full-resolution wordmark.",
+    "logo_resolution_note_fa": "نشان یا فاوآیکون وب‌سایت رسمی؛ وضوح واقعی به فایل منتشرشده در وب‌سایت وابسته است و لزوماً نسخه کامل و وضوح‌بالای لوگوتایپ نیست.",
+    "logo_domain_reviewed_on": "2026-11-14"
   },
   {
     "id": "oxford-space-systems",
@@ -8095,7 +8337,15 @@
         "year": "2016",
         "title_ar": "وفق الشركة استُخدم AstroTube في مهمة AlSat-Nano"
       }
-    ]
+    ],
+    "logo": "https://www.google.com/s2/favicons?domain_url=https%3A%2F%2Foxford.space%2F&sz=256",
+    "logo_kind": "official_site_favicon",
+    "logo_source_type": "official_website_favicon_via_google_s2",
+    "logo_source_url": "https://oxford.space/",
+    "logo_bg": "light",
+    "logo_resolution_note_en": "Official website favicon/brand icon; source resolution varies (requested up to 256 px). It is not guaranteed to be a full-resolution wordmark.",
+    "logo_resolution_note_fa": "نشان یا فاوآیکون وب‌سایت رسمی؛ وضوح واقعی به فایل منتشرشده در وب‌سایت وابسته است و لزوماً نسخه کامل و وضوح‌بالای لوگوتایپ نیست.",
+    "logo_domain_reviewed_on": "2026-11-14"
   },
   {
     "id": "smartir",
@@ -8209,7 +8459,15 @@
         "title_ar": "إطلاق نموذج المشعاع للاختبار"
       }
     ],
-    "founded": 2020
+    "founded": 2020,
+    "logo": "https://www.google.com/s2/favicons?domain_url=https%3A%2F%2Fwww.smartir.co.uk%2F&sz=256",
+    "logo_kind": "official_site_favicon",
+    "logo_source_type": "official_website_favicon_via_google_s2",
+    "logo_source_url": "https://www.smartir.co.uk/",
+    "logo_bg": "light",
+    "logo_resolution_note_en": "Official website favicon/brand icon; source resolution varies (requested up to 256 px). It is not guaranteed to be a full-resolution wordmark.",
+    "logo_resolution_note_fa": "نشان یا فاوآیکون وب‌سایت رسمی؛ وضوح واقعی به فایل منتشرشده در وب‌سایت وابسته است و لزوماً نسخه کامل و وضوح‌بالای لوگوتایپ نیست.",
+    "logo_domain_reviewed_on": "2026-11-14"
   },
   {
     "id": "accelercomm",
@@ -8340,7 +8598,15 @@
         "label_en": "LDPC product",
         "url": "https://www.accelercomm.com/solutions/accelercomm-ldpc"
       }
-    ]
+    ],
+    "logo": "https://www.google.com/s2/favicons?domain_url=https%3A%2F%2Fwww.accelercomm.com%2F&sz=256",
+    "logo_kind": "official_site_favicon",
+    "logo_source_type": "official_website_favicon_via_google_s2",
+    "logo_source_url": "https://www.accelercomm.com/",
+    "logo_bg": "light",
+    "logo_resolution_note_en": "Official website favicon/brand icon; source resolution varies (requested up to 256 px). It is not guaranteed to be a full-resolution wordmark.",
+    "logo_resolution_note_fa": "نشان یا فاوآیکون وب‌سایت رسمی؛ وضوح واقعی به فایل منتشرشده در وب‌سایت وابسته است و لزوماً نسخه کامل و وضوح‌بالای لوگوتایپ نیست.",
+    "logo_domain_reviewed_on": "2026-11-14"
   },
   {
     "id": "all-space",
@@ -8487,7 +8753,15 @@
     "aliases": [
       "Isotropic Systems Ltd",
       "ALL.SPACE Networks Limited"
-    ]
+    ],
+    "logo": "https://www.google.com/s2/favicons?domain_url=https%3A%2F%2Fwww.all.space%2F&sz=256",
+    "logo_kind": "official_site_favicon",
+    "logo_source_type": "official_website_favicon_via_google_s2",
+    "logo_source_url": "https://www.all.space/",
+    "logo_bg": "light",
+    "logo_resolution_note_en": "Official website favicon/brand icon; source resolution varies (requested up to 256 px). It is not guaranteed to be a full-resolution wordmark.",
+    "logo_resolution_note_fa": "نشان یا فاوآیکون وب‌سایت رسمی؛ وضوح واقعی به فایل منتشرشده در وب‌سایت وابسته است و لزوماً نسخه کامل و وضوح‌بالای لوگوتایپ نیست.",
+    "logo_domain_reviewed_on": "2026-11-14"
   },
   {
     "id": "maya-htt-uk",
@@ -8606,7 +8880,15 @@
         "label_en": "Cubesat engineering demonstration",
         "url": "https://www.mayahtt.com/blog/cubesat-design-thermal-modelling-and-system-power-budget-analysis/"
       }
-    ]
+    ],
+    "logo": "https://www.google.com/s2/favicons?domain_url=https%3A%2F%2Fwww.mayahtt.com%2F&sz=256",
+    "logo_kind": "official_site_favicon",
+    "logo_source_type": "official_website_favicon_via_google_s2",
+    "logo_source_url": "https://www.mayahtt.com/",
+    "logo_bg": "light",
+    "logo_resolution_note_en": "Official website favicon/brand icon; source resolution varies (requested up to 256 px). It is not guaranteed to be a full-resolution wordmark.",
+    "logo_resolution_note_fa": "نشان یا فاوآیکون وب‌سایت رسمی؛ وضوح واقعی به فایل منتشرشده در وب‌سایت وابسته است و لزوماً نسخه کامل و وضوح‌بالای لوگوتایپ نیست.",
+    "logo_domain_reviewed_on": "2026-11-14"
   },
   {
     "id": "cobham-satcom",
@@ -8727,6 +9009,14 @@
     ],
     "aliases": [
       "Thrane & Thrane A/S"
-    ]
+    ],
+    "logo": "https://www.google.com/s2/favicons?domain_url=https%3A%2F%2Fwww.cobham-satcom.com%2F&sz=256",
+    "logo_kind": "official_site_favicon",
+    "logo_source_type": "official_website_favicon_via_google_s2",
+    "logo_source_url": "https://www.cobham-satcom.com/",
+    "logo_bg": "light",
+    "logo_resolution_note_en": "Official website favicon/brand icon; source resolution varies (requested up to 256 px). It is not guaranteed to be a full-resolution wordmark.",
+    "logo_resolution_note_fa": "نشان یا فاوآیکون وب‌سایت رسمی؛ وضوح واقعی به فایل منتشرشده در وب‌سایت وابسته است و لزوماً نسخه کامل و وضوح‌بالای لوگوتایپ نیست.",
+    "logo_domain_reviewed_on": "2026-11-14"
   }
 ]
