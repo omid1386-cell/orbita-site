@@ -1,9 +1,5 @@
 Changed files:
-- assets/js/app.js
-- assets/css/app.css
 - data/sites.json
-- index.html
-- tests/country_profile_14_categories.test.cjs (new)
+- ORBITA_Country_Name_Chabahar_Image_Update.patch
 
-This patch is based on ORBITA_AutoRefresh_FIX_FULL_2026-11-13.zip.
-It does not bundle the separate Help-14 update or the legacy-six link-audit package.
+No application code, styles, coordinates, internal country key, or unrelated records were intentionally changed.

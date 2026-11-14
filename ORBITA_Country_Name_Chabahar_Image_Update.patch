@@ -1,0 +1,84 @@
+--- a/data/sites.json
++++ b/data/sites.json
+@@ -9299,7 +9299,7 @@
+     "fa": "پایگاه هوایی پالماخیم",
+     "ar": "قاعدة بالماخيم الجوية",
+     "country": "Israel",
+-    "country_fa": "اسرائیل",
++    "country_fa": "فلسطین اشغالی",
+     "lat": 31.8847,
+     "lon": 34.6807,
+     "op": "Israeli Air Force / IAI",
+@@ -9310,7 +9310,7 @@
+       "Shavit-2"
+     ],
+     "en_d": "Israel's launch site; rockets fly westward over the Mediterranean into retrograde orbits.",
+-    "fa_d": "پایگاه پرتاب اسرائیل؛ موشک‌ها به سمت غرب و روی مدیترانه در مدار پس‌گرد پرتاب می‌شوند.",
++    "fa_d": "پایگاه پرتاب در فلسطین اشغالی؛ موشک‌ها به سمت غرب و روی مدیترانه در مدار پس‌گرد پرتاب می‌شوند.",
+     "ar_d": "موقع الإطلاق الإسرائيلي؛ تتجه الصواريخ غربًا فوق البحر المتوسط للوصول إلى المدارات الرجعية.",
+     "alt": "10 m",
+     "equator_dist": "3,541 km (31.9° N)",
+@@ -9327,7 +9327,7 @@
+         "rocket_var": "Shavit",
+         "inc": "143°",
+         "duration": "—",
+-        "analysis": "✅ <b>تحلیل:</b> اسرائیل هشتمین کشور دارای پرتاب بومی شد؛ پرتاب غرب‌سو بر خلاف چرخش زمین، به دلیل همسایگان شرقی.",
++        "analysis": "✅ <b>تحلیل:</b> این پرتاب، جایگاه فلسطین اشغالی را به‌عنوان هشتمین دارنده توان پرتاب بومی تثبیت کرد؛ پرتاب غرب‌سو بر خلاف چرخش زمین، به دلیل همسایگان شرقی.",
+         "has_photo": false,
+         "photo_url": "",
+         "mass_fa": "≈۱۵۵ کیلوگرم (افق-۱)",
+@@ -9335,7 +9335,7 @@
+         "inclination": "143°",
+         "inclination_fa": "143°",
+         "inclination_en": "143°",
+-        "analysis_fa": "✅ <b>تحلیل:</b> اسرائیل هشتمین کشور دارای پرتاب بومی شد؛ پرتاب غرب‌سو بر خلاف چرخش زمین، به دلیل همسایگان شرقی.",
++        "analysis_fa": "✅ <b>تحلیل:</b> این پرتاب، جایگاه فلسطین اشغالی را به‌عنوان هشتمین دارنده توان پرتاب بومی تثبیت کرد؛ پرتاب غرب‌سو بر خلاف چرخش زمین، به دلیل همسایگان شرقی.",
+         "analysis_en": "✅ <b>Analysis:</b> Israel became the eighth launch nation - flying westward against Earth's spin for safety over the sea.",
+         "payload_ar": "الأفق-1",
+         "analysis_ar": "أصبحت إسرائيل دولة الإطلاق الثامنة - حيث تحلق غربًا عكس دوران الأرض بحثًا عن الأمان فوق البحر."
+@@ -9352,7 +9352,7 @@
+         "rocket_var": "Shavit",
+         "inc": "143°",
+         "duration": "—",
+-        "analysis": "✅ <b>تحلیل:</b> افق-۳ دوربین عملیاتی واقعی برنامه را بالا برد؛ شناسایی ماهواره‌ای اسرائیل از اینجا جدی شد.",
++        "analysis": "✅ <b>تحلیل:</b> افق-۳ دوربین عملیاتی واقعی برنامه را بالا برد؛ شناسایی ماهواره‌ای در فلسطین اشغالی از اینجا وارد مرحله عملیاتی‌تری شد.",
+         "has_photo": false,
+         "photo_url": "",
+         "mass_fa": "≈۲۲۵ کیلوگرم (افق-۳)",
+@@ -9360,7 +9360,7 @@
+         "inclination": "143°",
+         "inclination_fa": "143°",
+         "inclination_en": "143°",
+-        "analysis_fa": "✅ <b>تحلیل:</b> افق-۳ دوربین عملیاتی واقعی برنامه را بالا برد؛ شناسایی ماهواره‌ای اسرائیل از اینجا جدی شد.",
++        "analysis_fa": "✅ <b>تحلیل:</b> افق-۳ دوربین عملیاتی واقعی برنامه را بالا برد؛ شناسایی ماهواره‌ای در فلسطین اشغالی از اینجا وارد مرحله عملیاتی‌تری شد.",
+         "analysis_en": "✅ <b>Analysis:</b> Ofeq-3 carried the program's first truly operational camera - Israeli satellite reconnaissance got serious here.",
+         "payload_ar": "الأفق-3",
+         "analysis_ar": "حمل القمر الصناعي Ofeq-3 أول كاميرا تشغيلية حقيقية للبرنامج - وقد أصبح استطلاع الأقمار الصناعية الإسرائيلية جديًا هنا."
+@@ -10302,7 +10302,7 @@
+       }
+     ],
+     "has_photo": true,
+-    "photo_url": "https://newsmedia.tasnimnews.com/Tasnim/Uploaded/Image/1402/07/10/14020710092925717284705610.jpg",
++    "photo_url": "https://www.armscontrolwonk.com/files/2026/02/Slide1-1024x576.png",
+     "azimuth": "جنوب‌شرقی (۱۳۵° تا ۱۴۵°) روی کویر",
+     "target_orbits": "LEO, SSO (400 - 750 km)",
+     "geo_analysis": "موقعیت جغرافیایی مرکز فضایی چابهار با در نظر گرفتن دسترسی به پهنه ایمن پرتاب روی آب/کویر، کاهش ریسک خطرات جانی و تسهیل زیرساخت‌های حمل‌ونقل تجهیزات سنگین پرتابگر انتخاب شده است.",
+@@ -10368,13 +10368,12 @@
+         "active": true
+       }
+     ],
+-    "photo_caption_fa": "نمایی از سکوی پرتاب و تأسیسات پایگاه ملی فضایی چابهار؛ تصویر منتشرشده در گزارش تسنیم (مهر ۱۴۰۲).",
+-    "photo_caption_en": "A view of the launch pad and facilities at the Chabahar National Space Center; image published by Tasnim News Agency (October 2023).",
+-    "photo_credit": "Tasnim News Agency",
+-    "photo_license": "CC BY 4.0",
+-    "photo_source_url": "https://www.tasnimnews.ir/en/news/2023/10/14/2971692/chabahar-space-center-offers-promising-opportunities-for-space-launches-in-region",
++    "photo_caption_fa": "تصویر ماهواره‌ای از وضعیت محوطه پایگاه فضایی چابهار؛ منتشرشده در گزارش Arms Control Wonk در فوریه ۲۰۲۶.",
++    "photo_caption_en": "Satellite imagery showing the Chabahar spaceport site, published in Arms Control Wonk in February 2026.",
++    "photo_credit": "Planet Labs via Arms Control Wonk",
++    "photo_source_url": "https://www.armscontrolwonk.com/archive/1221442/a-chabahar-check-in/",
+     "country_ar": "إيران",
+-    "photo_caption_ar": "منظر لمنصة الإطلاق ومنشآت مركز تشابهار الوطني للفضاء؛ صورة نشرتها وكالة تسنيم للأنباء (أكتوبر 2023)."
++    "photo_caption_ar": "صورة أقمار صناعية تُظهر موقع ميناء تشابهار الفضائي، نُشرت في تقرير Arms Control Wonk في فبراير 2026."
+   },
+   {
+     "id": "emamshahr",
