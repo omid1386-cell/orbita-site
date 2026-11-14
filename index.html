@@ -38,16 +38,16 @@
 @media(max-width:540px){.raspehr-stage{min-height:100vh;gap:11px;padding:22px 12px}.raspehr-espash{width:100%;max-width:450px}.raspehr-title{margin-top:15px}}
 </style>
 <link rel="stylesheet" href="assets/vendor/maplibre-gl.css?v=3" />
-<link rel="stylesheet" href="assets/css/app.css?_t=20261114-next-landing-announcement-v1" />
+<link rel="stylesheet" href="assets/css/app.css?_t=20261114-logo-zoom-step3-v1" />
 <!-- Ordered defer scripts download in parallel instead of creating a network waterfall. -->
 <script defer src="assets/js/raspehr-splash.js?v=20261113-speed-v1"></script>
 <script defer src="assets/vendor/maplibre-gl.js?v=3"></script>
-<script defer src="assets/js/app.js?_t=20261114-next-landing-announcement-v1"></script>
+<script defer src="assets/js/app.js?_t=20261114-logo-zoom-step3-v1"></script>
 <script>
-  window.ORBITA_V = "20261114-next-landing-announcement-v1";
-  window.ORBITA_APP_V = "20261114-next-landing-announcement-v1";
-  window.ORBITA_CSS_V = "20261114-next-landing-announcement-v1";
-  window.ORBITA_COMPANIES_V = "20261114-next-landing-announcement-v1";
+  window.ORBITA_V = "20261114-logo-zoom-step3-v1";
+  window.ORBITA_APP_V = "20261114-logo-zoom-step3-v1";
+  window.ORBITA_CSS_V = "20261114-logo-zoom-step3-v1";
+  window.ORBITA_COMPANIES_V = "20261114-logo-zoom-step3-v1";
 
 
   // Public API URL only; never place the Resend key or another secret here.
@@ -496,5 +496,23 @@
 </dialog>
 
 <!-- Script tags are predeclared in the document head, with defer order guaranteed. -->
+
+<!-- ORBITA Step 3: accessible logo enlargement lightbox -->
+<dialog id="logoZoomDialog" class="logo-zoom-dialog" aria-label="بزرگ‌نمایی لوگو">
+  <div class="logo-zoom-shell">
+    <header class="logo-zoom-toolbar">
+      <div class="logo-zoom-heading">
+        <span id="logoZoomEyebrow" class="logo-zoom-eyebrow">نمایش لوگو</span>
+        <strong id="logoZoomTitle" class="logo-zoom-title"></strong>
+      </div>
+      <button id="logoZoomClose" class="logo-zoom-close" type="button" aria-label="بستن پنجره">×</button>
+    </header>
+    <div id="logoZoomStage" class="logo-zoom-stage">
+      <img id="logoZoomImage" alt="" draggable="false" />
+    </div>
+    <p id="logoZoomHint" class="logo-zoom-hint">برای بستن، بیرون پنجره کلیک کنید یا کلید Escape را بزنید.</p>
+  </div>
+</dialog>
+
 </body>
 </html>

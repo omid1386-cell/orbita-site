@@ -1,6 +1,6 @@
-ORBITA STEP 2 — NEXT LANDING ANNOUNCEMENT
+ORBITA STEP 3 — LOGO ZOOM
 
-Changed files to replace:
+Replace only:
 - assets/js/app.js
 - assets/css/app.css
 - index.html
@@ -9,13 +9,18 @@ Documentation:
 - README_INSTALL_FA.md
 - REPORT_FA.md
 
+Patch:
+- ORBITA_STEP3_LOGO_ZOOM.patch
+
 Tests:
 - tests/country_profile_step1.test.cjs
 - tests/next_landing_announcement.test.cjs
+- tests/logo_zoom_step3.test.cjs
+- tests/logo_zoom_runtime_mock.test.cjs
 
-Patch:
-- ORBITA_STEP2_NEXT_LANDING_ANNOUNCEMENT.patch
-
-IMPORTANT:
-Preserve the repository's existing data/upcoming_landings.json and data/recovery_sites.json.
-This package does not contain or replace data snapshots.
+Important:
+- The source files are based on the Step 2 package (Next Landing Announcement).
+- Step 2 functionality remains included.
+- Preserve all existing data and logo/image assets in the repository.
+- Do not replace data/upcoming_landings.json, data/recovery_sites.json, company data, or logo files.
+- No GitHub commit, push, or Render deployment has been performed by the assistant.

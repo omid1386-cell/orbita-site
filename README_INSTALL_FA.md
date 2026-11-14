@@ -1,61 +1,65 @@
-# ORBITA — Step 2: Next Landing Announcement
+# ORBITA — گام سوم: بزرگ‌نمایی لوگوها
 
-## What this update adds
-A second compact announcement bar appears directly below the existing **Next Launch** ticker. It is labeled **Next Landing** and displays the nearest future dated landing/recovery entry from ORBITA's existing `data/upcoming_landings.json` snapshot.
+## هدف
+در این گام، لوگوهای واقعی شرکت‌ها، سازمان‌های فضایی و سازندگان تجهیزات در رابط نقشه قابل بزرگ‌نمایی شده‌اند. کلیک روی لوگو، یک پنجرهٔ بزرگ‌نمایی مستقل با پس‌زمینهٔ تیره باز می‌کند.
 
-The bar can display:
-- Mission name
-- Landing/recovery location
-- Scheduled date and, when available, time
-- Countdown to the planned date/time
-- Scheduling status (Scheduled / To be confirmed / Queued)
-- Operator schedule or webcast link, when present
+## رفتار قابلیت
+- کلیک روی لوگو، تصویر اصلی همان لوگو را در پنجرهٔ بزرگ‌نمایی باز می‌کند.
+- نسبت ابعاد تصویر حفظ می‌شود و تصویر با `object-fit: contain` بریده نمی‌شود.
+- سطح پس‌زمینهٔ خود لوگو (روشن یا تیره) تا حد امکان از محل اصلی نمایش آن حفظ می‌شود تا نشان‌های سفید یا تیره خوانا بمانند.
+- پنجره با دکمهٔ بستن، کلیک روی فضای بیرون پنجره یا کلید `Escape` بسته می‌شود.
+- پس از بسته‌شدن، تمرکز صفحه به لوگوی قبلی برمی‌گردد.
+- با کلیدهای `Enter` و `Space` نیز می‌توان لوگو را باز کرد.
+- متن‌های دسترس‌پذیری و راهنمای پنجره در فارسی، انگلیسی و عربی تنظیم می‌شوند.
+- اندازهٔ پنجره و تصویر برای نمایشگرهای موبایل و دسکتاپ واکنش‌گرا است.
 
-If a `site_id` matches a recovery-site record, clicking the mission name flies to that site on the map and opens its recovery dossier.
+## محل‌های تحت پوشش
+قابلیت در ده نقطهٔ تولید لوگو در رابط فعلی متصل شده است:
+1. فهرست نتایج جست‌وجوی نقشه
+2. کارت‌های موجودیت در شناسنامهٔ کشور
+3. شناسنامهٔ شرکت‌های پرتاب
+4. شناسنامهٔ شرکت‌های پیشرانش
+5. شناسنامهٔ سازندگان ماهواره
+6. شناسنامهٔ سازمان‌های فضایی
+7. پرونده‌های تخصصی/تأییدشده‌ای که لوگوی واقعی دارند
 
-## Data behavior and accuracy
-- This update reuses the same `data/upcoming_landings.json` file already fetched by the current app and shown in the recovery-site dossier tabs.
-- It selects the earliest future entry that has a usable date. Undated rows are not presented as the next landing.
-- Cancelled, aborted, scrubbed, or failed entries are excluded.
-- A full UTC timestamp or explicit `time_utc` can produce a countdown. Minute/second precision may show a detailed countdown; day/hour or date-only precision remains approximate.
-- Date-only entries remain eligible through the stated calendar day and are never presented as a second-accurate countdown.
-- The bar is a schedule announcement, not live tracking and not confirmation that touchdown has occurred. Schedules can change.
-- The banner is hidden if the snapshot is unavailable or contains no future dated landing.
+این موارد، ده نقطهٔ درج در قالب‌های موجود هستند؛ یک لوگو ممکن است در چند محل رابط نمایش داده شود.
 
-**Important:** The source ZIP supplied for this update did not contain `data/upcoming_landings.json`; the base app already references that file, so this package intentionally does not invent or replace its mission data. Keep the existing file in the repository. If that file is missing from the live repository, the new bar will remain hidden until a reviewed snapshot is added at that exact path.
+## مواردی که عمداً بزرگ‌نمایی نمی‌شوند
+- پرچم کشورها
+- عکس پایگاه‌ها، محل‌های فرود و تصاویر مأموریت
+- آیکون‌های دسته‌بندی و نشان‌های جایگزین ساخته‌شده برای رکوردهای بدون لوگوی واقعی
+- شناسه‌های نوشتاری که صریحاً به‌عنوان لوگوی رسمی معرفی نشده‌اند
 
-## Files to upload
-Replace these three files in the repository:
-1. `assets/js/app.js`
-2. `assets/css/app.css`
-3. `index.html`
+به این ترتیب، آیکون یا نشان جایگزین به‌اشتباه به‌عنوان لوگوی رسمی به مخاطب معرفی نمی‌شود.
 
-Do not replace or delete any other data files. In particular, preserve `data/upcoming_landings.json`, `data/recovery_sites.json`, all company data files, and the other existing datasets.
+## فایل‌های تغییرکرده
+فقط این سه فایل اجرایی تغییر کرده‌اند:
+- `assets/js/app.js`
+- `assets/css/app.css`
+- `index.html`
 
-The HTML cache version is bumped so browsers fetch the new JavaScript and CSS.
+نسخهٔ cache به `20261114-logo-zoom-step3-v1` تغییر کرده تا مرورگر فایل‌های جدید را دریافت کند.
 
-## GitHub web upload (no VS Code terminal required)
-1. Back up the current three files.
-2. Open each matching path in GitHub.
-3. Replace the file contents with the corresponding file in this package, keeping the same path and filename.
-4. Commit the three file changes.
-5. Wait for the Render deployment to finish.
-6. Open the site and hard-refresh (`Ctrl + F5`).
+هیچ فایل لوگو، مسیر دارایی تصویری، دادهٔ شرکت‌ها، سازمان‌ها یا پایگاه‌ها جایگزین یا حذف نشده است. قابلیت از همان URL یا دادهٔ تصویری فعلی هر لوگو استفاده می‌کند.
 
-## Git patch option
-The patch is generated against the Step 1 app.js and the original 14-category package's index.html and app.css:
-```bash
-git apply --check ORBITA_STEP2_NEXT_LANDING_ANNOUNCEMENT.patch
-```
-If the check passes:
-```bash
-git apply ORBITA_STEP2_NEXT_LANDING_ANNOUNCEMENT.patch
-```
-Do not force-apply if the check fails. Use the complete replacement files after reconciling any newer local changes.
+## نصب
+1. از نسخهٔ فعلی سه فایل بالا نسخهٔ پشتیبان بگیر.
+2. سه فایل متناظر را از این بسته در همان مسیرهای مخزن جایگزین کن.
+3. تغییرات را در GitHub ثبت (Commit) کن.
+4. پس از تکمیل Deploy در Render، صفحه را با Hard Refresh باز کن.
+5. روی چند لوگو در شناسنامهٔ شرکت‌ها و کارت‌های کشور کلیک کن و رفتار پنجره را در دسکتاپ و موبایل بررسی کن.
 
-## Tests run
+**مهم:** فایل‌های داده و دارایی‌های فعلی مخزن را حفظ کن؛ این بسته برای جایگزینی آن‌ها نیست. به‌ویژه فایل‌های `data/upcoming_landings.json` و `data/recovery_sites.json` و داده‌های شرکت‌ها دست‌نخورده بمانند.
+
+## آزمون‌ها
 - `node --check assets/js/app.js`
 - `node tests/country_profile_step1.test.cjs`
 - `node tests/next_landing_announcement.test.cjs`
+- `node tests/logo_zoom_step3.test.cjs`
+- `node tests/logo_zoom_runtime_mock.test.cjs`
 
-All passed in the prepared package.
+همهٔ آزمون‌های فوق در محیط ساخت بسته موفق بودند. آزمون تعاملی با DOM شبیه‌سازی‌شده، بازشدن پنجره، بستن با دکمه/پس‌زمینه، فعال‌سازی صفحه‌کلید، بازگرداندن focus و مدیریت خطای بارگذاری تصویر را کنترل می‌کند.
+
+## وضعیت انتشار
+این بسته آمادهٔ اعمال در مخزن است؛ هنوز به GitHub یا Render ارسال نشده است. تأیید نهایی در سایت زنده باید پس از نصب انجام شود.

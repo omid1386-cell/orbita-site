@@ -3469,8 +3469,131 @@
   }
   function fallbackImageErrorAttribute(url) {
     // Escaping into an HTML attribute is safe because the encoded data URL has no apostrophes.
-    return ' onerror="this.onerror=null;this.src=\'' + esc(url) + '\';"';
+    return ' onerror="this.onerror=null;this.removeAttribute(\'data-logo-zoom\');this.removeAttribute(\'role\');this.removeAttribute(\'tabindex\');this.src=\'' + esc(url) + '\';"';
   }
+  function logoZoomAttrs(label) {
+    var entityName = String(label || "").trim();
+    var action = LANG === "fa"
+      ? "برای بزرگ‌نمایی لوگوی " + (entityName || "مجموعه") + " کلیک کنید"
+      : LANG === "ar"
+        ? "انقر لتكبير شعار " + (entityName || "الجهة")
+        : "Click to enlarge the logo of " + (entityName || "this organization");
+    return ' data-logo-zoom="true" role="button" tabindex="0" aria-haspopup="dialog" aria-label="' +
+      esc(action) + '" title="' + esc(action) + '"';
+  }
+
+  function initLogoZoom() {
+    var dialog = $("#logoZoomDialog");
+    var image = $("#logoZoomImage");
+    var stage = $("#logoZoomStage");
+    var title = $("#logoZoomTitle");
+    var eyebrow = $("#logoZoomEyebrow");
+    var hint = $("#logoZoomHint");
+    var closeButton = $("#logoZoomClose");
+    if (!dialog || !image || !stage || !title || !closeButton || dialog.dataset.logoZoomBound === "1") return;
+
+    var previousFocus = null;
+    dialog.dataset.logoZoomBound = "1";
+
+    function localizedZoomText() {
+      var fa = LANG === "fa", ar = LANG === "ar";
+      return {
+        dialog: fa ? "بزرگ‌نمایی لوگو" : ar ? "تكبير الشعار" : "Logo enlargement",
+        eyebrow: fa ? "نمایش لوگو" : ar ? "عرض الشعار" : "Logo preview",
+        close: fa ? "بستن پنجره" : ar ? "إغلاق النافذة" : "Close window",
+        hint: fa ? "برای بستن، بیرون پنجره کلیک کنید یا کلید Escape را بزنید."
+          : ar ? "للإغلاق، انقر خارج النافذة أو اضغط مفتاح Escape."
+          : "Click outside the window or press Escape to close.",
+        unavailable: fa ? "نمایش این لوگو ممکن نیست." : ar ? "تعذر عرض هذا الشعار." : "This logo could not be displayed."
+      };
+    }
+
+    function closeZoom() {
+      if (dialog.open && typeof dialog.close === "function") dialog.close();
+      else dialog.removeAttribute("open");
+    }
+
+    function openZoom(source) {
+      if (!source) return;
+      var src = source.currentSrc || source.getAttribute("src") || source.src || "";
+      if (!src) return;
+
+      previousFocus = source;
+      var strings = localizedZoomText();
+      var label = (source.alt || "").trim();
+      var accessibleLabel = (source.getAttribute("aria-label") || "").trim();
+      if (!label && accessibleLabel) label = accessibleLabel;
+
+      image.hidden = false;
+      image.alt = label || strings.eyebrow;
+      image.src = src;
+      title.textContent = label || strings.eyebrow;
+      if (eyebrow) eyebrow.textContent = strings.eyebrow;
+      if (hint) hint.textContent = strings.hint;
+      dialog.setAttribute("aria-label", strings.dialog);
+      closeButton.setAttribute("aria-label", strings.close);
+      dialog.dir = LANG === "en" ? "ltr" : "rtl";
+
+      // Retain the source logo's original contrast surface (light or dark).
+      var background = "";
+      try {
+        var ownBg = window.getComputedStyle(source).backgroundColor;
+        if (ownBg && ownBg !== "transparent" && ownBg !== "rgba(0, 0, 0, 0)") background = ownBg;
+        if (!background && source.parentElement) {
+          var parentBg = window.getComputedStyle(source.parentElement).backgroundColor;
+          if (parentBg && parentBg !== "transparent" && parentBg !== "rgba(0, 0, 0, 0)") background = parentBg;
+        }
+      } catch (e) {}
+      stage.style.background = background || "var(--bg2)";
+
+      if (typeof dialog.showModal === "function") {
+        if (!dialog.open) dialog.showModal();
+      } else {
+        dialog.setAttribute("open", "");
+      }
+      closeButton.focus();
+    }
+
+    document.addEventListener("click", function (event) {
+      var target = event.target;
+      var logo = target && target.closest ? target.closest('img[data-logo-zoom="true"]') : null;
+      if (!logo) return;
+      event.preventDefault();
+      event.stopPropagation();
+      openZoom(logo);
+    }, true);
+
+    document.addEventListener("keydown", function (event) {
+      var target = event.target;
+      if (!target || !target.matches || !target.matches('img[data-logo-zoom="true"]')) return;
+      if (event.key !== "Enter" && event.key !== " ") return;
+      event.preventDefault();
+      event.stopPropagation();
+      openZoom(target);
+    }, true);
+
+    closeButton.addEventListener("click", closeZoom);
+    dialog.addEventListener("click", function (event) {
+      if (event.target === dialog) closeZoom();
+    });
+    dialog.addEventListener("close", function () {
+      image.removeAttribute("src");
+      image.hidden = false;
+      if (previousFocus && document.contains(previousFocus)) {
+        try { previousFocus.focus({ preventScroll: true }); }
+        catch (e) { previousFocus.focus(); }
+      }
+      previousFocus = null;
+    });
+    image.addEventListener("error", function () {
+      image.hidden = true;
+      if (hint) hint.textContent = localizedZoomText().unavailable;
+    });
+    image.addEventListener("load", function () {
+      image.hidden = false;
+    });
+  }
+
   function renderList() {
     var inCluster = !!clusterMode;
     var pts = inCluster ? clusterMode.pts : filteredPoints();
@@ -3493,7 +3616,7 @@
       var logoHtml = "";
       if (logoSrc) {
         logoHtml = '<div style="width:26px; height:26px; border-radius:6px; background:' + logoBg + '; border:1px solid var(--line); display:flex; align-items:center; justify-content:center; flex:0 0 auto; overflow:hidden; padding:1px;">' +
-          '<img src="' + esc(logoSrc) + '" alt="' + esc(name(p.o)) + '"' + fallbackImageErrorAttribute(defaultLogoSvg) + ' style="max-width:100%; max-height:100%; object-fit:contain;" />' +
+          '<img src="' + esc(logoSrc) + '" alt="' + esc(name(p.o)) + '"' + logoZoomAttrs(name(p.o)) + fallbackImageErrorAttribute(defaultLogoSvg) + ' style="max-width:100%; max-height:100%; object-fit:contain;" />' +
           '</div>';
       } else {
         var ic = iconFor(p.cat, p.o.status).replace(/width="3\d"/, 'width="17"').replace(/height="38"/, 'height="22"');
@@ -4600,12 +4723,13 @@
     var country = countryArabic(o.country);
     var city = arabicField(o.city_ar, "غير محدد");
     var logoSrc = o.logo_data || o.logo || fallbackLogoDataUri("🏛️", "#38bdf8");
+    var hasRealLogo = !!(o.logo_data || o.logo);
 
     // Keep the exact Persian/English agency dossier structure; Arabic changes only the text and data fields.
     h += '<div class="d-head" style="display:flex; justify-content:space-between; align-items:center; gap:10px; margin-inline-end: 35px;">';
     h += '<div style="display:flex; gap:10px; align-items:center; flex:1;">';
     h += '<div style="width:48px; height:48px; border-radius:8px; background:#000; border:1px solid var(--line); display:flex; align-items:center; justify-content:center; flex:0 0 auto; overflow:hidden; padding:2px;">';
-    h += '<img src="' + esc(logoSrc) + '" alt="' + esc(localizedName) + '" style="max-width:100%; max-height:100%; object-fit:contain;" />';
+    h += '<img src="' + esc(logoSrc) + '" alt="' + esc(localizedName) + '"' + (hasRealLogo ? logoZoomAttrs(localizedName) : '') + ' style="max-width:100%; max-height:100%; object-fit:contain;" />';
     h += '</div>';
     h += '<div><div class="d-kicker">الجهات الفضائية</div>';
     h += '<h2 class="d-title" style="margin:0;">' + esc(localizedName) + '</h2></div></div>';
@@ -5647,6 +5771,7 @@
 
     var defaultLogoSvg = fallbackLogoDataUri("🚀", "#38bdf8");
     var logoSrc = o.logo_data || o.logo || defaultLogoSvg;
+    var hasRealLogo = !!(o.logo_data || o.logo);
     var orgTypeStr = ORG_AR[o.org_type_en] || arabicText(o.org_type_ar) || "شركة إطلاق فضائي";
     var stClass = "badge-private";
     if ((o.org_type_fa || "").indexOf("دولتی") > -1 || (o.org_type_fa || "").indexOf("حاکمیتی") > -1 || (o.org_type_en || "").indexOf("State") > -1 || (o.org_type_en || "").indexOf("Government") > -1) stClass = "badge-gov";
@@ -5657,7 +5782,7 @@
     h += '<div class="d-head" style="display:flex; justify-content:space-between; align-items:center; gap:10px; margin-inline-end: 35px;">';
     h += '<div style="display:flex; gap:10px; align-items:center; flex:1;">';
     h += '<div style="width:48px; height:48px; border-radius:8px; background:#000; border:1px solid var(--line); display:flex; align-items:center; justify-content:center; flex:0 0 auto; overflow:hidden; padding:2px;">';
-    h += '<img src="' + esc(logoSrc) + '" alt="' + esc(name(o)) + '"' + fallbackImageErrorAttribute(defaultLogoSvg) + ' style="max-width:100%; max-height:100%; object-fit:contain;" />';
+    h += '<img src="' + esc(logoSrc) + '" alt="' + esc(name(o)) + '"' + (hasRealLogo ? logoZoomAttrs(name(o)) : '') + fallbackImageErrorAttribute(defaultLogoSvg) + ' style="max-width:100%; max-height:100%; object-fit:contain;" />';
     h += '</div>';
     h += '<div><div class="d-kicker">' + esc(o.en || o.fa || "") + '</div>';
     h += '<h2 class="d-title" style="margin:0;">' + esc(name(o)) + '</h2></div></div>';
@@ -5920,13 +6045,14 @@
     // Logo with graceful SVG fallback onerror
     var defaultLogoSvg = fallbackLogoDataUri("🚀", "#38bdf8");
     var logoSrc = o.logo_data || o.logo || defaultLogoSvg;
+    var hasRealLogo = !!(o.logo_data || o.logo);
 
     // Header with Title & Logo Image Tag & Org Type Badge
     h += '<div class="d-head" style="display:flex; justify-content:space-between; align-items:center; gap:10px; margin-inline-end: 35px;">';
     
     h += '<div style="display:flex; gap:10px; align-items:center; flex:1;">';
     h += '<div style="width:48px; height:48px; border-radius:8px; background:#000; border:1px solid var(--line); display:flex; align-items:center; justify-content:center; flex:0 0 auto; overflow:hidden; padding:2px;">';
-    h += '<img src="' + esc(logoSrc) + '" alt="' + esc(name(o)) + '"' + fallbackImageErrorAttribute(defaultLogoSvg) + ' style="max-width:100%; max-height:100%; object-fit:contain;" />';
+    h += '<img src="' + esc(logoSrc) + '" alt="' + esc(name(o)) + '"' + (hasRealLogo ? logoZoomAttrs(name(o)) : '') + fallbackImageErrorAttribute(defaultLogoSvg) + ' style="max-width:100%; max-height:100%; object-fit:contain;" />';
     h += '</div>';
     
     h += '<div><div class="d-kicker">' + esc(isFa ? (o.acronym_fa || o.en) : (o.en || o.fa)) + '</div>';
@@ -6663,7 +6789,9 @@
       var detailKind = def.key;
       var html = '<article class="country-profile-card" style="--country-category-color:' + esc(def.color) + '">';
       html += '<div class="country-profile-card-head"><div class="country-profile-identity">';
-      html += '<img class="country-profile-logo" src="' + esc(logoSrc) + '" alt="" loading="lazy" decoding="async"' + (!isInfrastructure ? fallbackImageErrorAttribute(iconData) : '') + ' />';
+      html += '<img class="country-profile-logo" src="' + esc(logoSrc) + '" alt="' + esc(itemName) + '"' +
+        ((!isInfrastructure && (item.logo_data || item.logo)) ? logoZoomAttrs(itemName) : '') +
+        ' loading="lazy" decoding="async"' + (!isInfrastructure ? fallbackImageErrorAttribute(iconData) : '') + ' />';
       html += '<div class="country-profile-identity-copy"><bdi class="country-profile-name">' + esc(itemName) + '</bdi>';
       html += '<span class="country-profile-location">📍 ' + esc(location) + '</span></div></div>';
       html += '<span class="country-profile-tag"><bdi>' + esc(tag) + '</bdi></span></div>';
@@ -6753,12 +6881,13 @@
     // Logo with graceful SVG fallback
     var defaultLogoSvg = fallbackLogoDataUri("🏛️", "#38bdf8");
     var logoSrc = o.logo_data || o.logo || defaultLogoSvg;
+    var hasRealLogo = !!(o.logo_data || o.logo);
 
     // Header
     h += '<div class="d-head" style="display:flex; justify-content:space-between; align-items:center; gap:10px; margin-inline-end: 35px;">';
     h += '<div style="display:flex; gap:10px; align-items:center; flex:1;">';
     h += '<div style="width:48px; height:48px; border-radius:8px; background:#000; border:1px solid var(--line); display:flex; align-items:center; justify-content:center; flex:0 0 auto; overflow:hidden; padding:2px;">';
-    h += '<img src="' + esc(logoSrc) + '" alt="' + esc(name(o)) + '"' + fallbackImageErrorAttribute(defaultLogoSvg) + ' style="max-width:100%; max-height:100%; object-fit:contain;" />';
+    h += '<img src="' + esc(logoSrc) + '" alt="' + esc(name(o)) + '"' + (hasRealLogo ? logoZoomAttrs(name(o)) : '') + fallbackImageErrorAttribute(defaultLogoSvg) + ' style="max-width:100%; max-height:100%; object-fit:contain;" />';
     h += '</div>';
     h += '<div><div class="d-kicker">' + esc(t("cat_agency")) + '</div>';
     h += '<h2 class="d-title" style="margin:0;">' + esc(name(o)) + '</h2></div></div>';
@@ -7033,10 +7162,11 @@
     h += '<div class="d-head" style="display:flex; justify-content:space-between; align-items:center; gap:10px; margin-inline-end: 35px;">';
     h += '<div style="display:flex; gap:10px; align-items:center; flex:1;">';
     var logoSrc = o.logo_data || o.logo;
+    var hasRealLogo = !!logoSrc;
     if (logoSrc) {
       var logoBg = o.logo_bg === "light" ? "#fff" : "#000";
       h += '<div style="width:56px; height:48px; border-radius:8px; background:' + logoBg + '; border:1px solid var(--line); display:flex; align-items:center; justify-content:center; flex:0 0 auto; overflow:hidden; padding:2px;">';
-      h += '<img src="' + esc(logoSrc) + '" alt="' + esc(name(o)) + '" style="max-width:100%; max-height:100%; object-fit:contain;" />';
+      h += '<img src="' + esc(logoSrc) + '" alt="' + esc(name(o)) + '"' + (hasRealLogo ? logoZoomAttrs(name(o)) : '') + ' style="max-width:100%; max-height:100%; object-fit:contain;" />';
       h += '</div>';
     } else {
       var ic = iconFor("propulsion", "active").replace(/width="3\d"/, 'width="34"').replace(/height="38"/, 'height="44"');
@@ -9728,6 +9858,7 @@
     if ((o.org_type_fa || "").indexOf("دولتی") > -1 || (o.org_type_en || "").indexOf("State") > -1 || (o.org_type_en || "").indexOf("Government") > -1) stClass = "badge-gov";
     var defaultLogoSvg = fallbackLogoDataUri("🛰", "#a3e635");
     var logoSrc = o.logo_data || o.logo || defaultLogoSvg;
+    var hasRealLogo = !!(o.logo_data || o.logo);
 
     var localizedName = arabicField(o.ar, "شركة فضائية");
     var profileDesc = arabicField(o.ar_d, "") || safeEnglish(o.en_d, "لا يتوفر وصف عربي موثّق لهذا المصنّع حالياً.");
@@ -9750,7 +9881,7 @@
     h += '<div class="d-head" style="display:flex; justify-content:space-between; align-items:center; gap:10px; margin-inline-end:35px;">';
     h += '<div style="display:flex; gap:10px; align-items:center; flex:1;">';
     h += '<div style="width:48px; height:48px; border-radius:8px; background:#000; border:1px solid var(--line); display:flex; align-items:center; justify-content:center; flex:0 0 auto; overflow:hidden; padding:2px;">';
-    h += '<img src="' + esc(logoSrc) + '" alt="' + esc(localizedName) + '" style="max-width:100%; max-height:100%; object-fit:contain;" /></div>';
+    h += '<img src="' + esc(logoSrc) + '" alt="' + esc(localizedName) + '"' + (hasRealLogo ? logoZoomAttrs(localizedName) : '') + ' style="max-width:100%; max-height:100%; object-fit:contain;" /></div>';
     h += '<div><div class="d-kicker">' + esc(safeEnglish(o.en || o.fa, "")) + '</div>';
     h += '<h2 class="d-title" style="margin:0;">' + esc(localizedName) + '</h2></div></div>';
     h += '<span class="' + stClass + '" style="padding:3px 10px; border-radius:12px; font-size:10.5px; font-weight:bold; white-space:nowrap;"><bdi>' + esc(orgTypeStr) + '</bdi></span>';
@@ -9942,11 +10073,12 @@
 
     var defaultLogoSvg = fallbackLogoDataUri("🛰", "#a3e635");
     var logoSrc = o.logo_data || o.logo || defaultLogoSvg;
+    var hasRealLogo = !!(o.logo_data || o.logo);
 
     h += '<div class="d-head" style="display:flex; justify-content:space-between; align-items:center; gap:10px; margin-inline-end:35px;">';
     h += '<div style="display:flex; gap:10px; align-items:center; flex:1;">';
     h += '<div style="width:48px; height:48px; border-radius:8px; background:#000; border:1px solid var(--line); display:flex; align-items:center; justify-content:center; flex:0 0 auto; overflow:hidden; padding:2px;">';
-    h += '<img src="' + esc(logoSrc) + '" alt="' + esc(name(o)) + '" style="max-width:100%; max-height:100%; object-fit:contain;" /></div>';
+    h += '<img src="' + esc(logoSrc) + '" alt="' + esc(name(o)) + '"' + (hasRealLogo ? logoZoomAttrs(name(o)) : '') + ' style="max-width:100%; max-height:100%; object-fit:contain;" /></div>';
     h += '<div><div class="d-kicker">' + esc(isFa ? (o.en || o.fa) : (o.en || o.fa)) + '</div>';
     h += '<h2 class="d-title" style="margin:0;">' + esc(name(o)) + '</h2></div></div>';
     h += '<span class="' + stClass + '" style="padding:3px 10px; border-radius:12px; font-size:10.5px; font-weight:bold; white-space:nowrap;"><bdi>' + esc(orgTypeStr) + '</bdi></span>';
@@ -10675,7 +10807,7 @@
     var html = '<section class="verified-profile verified-profile-v2" data-scope="' + esc(pf.profile_type) + '">';
     var isFourteen = o.orbita_release_note && o.orbita_release_note.batch === 'RASPEHR_14_STEP5';
     var brandIdentifier = String(o.brand_text_identifier || '').slice(0, 8);
-    var headerLogo = o.logo ? '<img class="verified-profile-logo" src="'+esc(o.logo)+'" alt="" loading="eager" />' :
+    var headerLogo = o.logo ? '<img class="verified-profile-logo" src="'+esc(o.logo)+'" alt="'+esc(name(o))+'"'+logoZoomAttrs(name(o))+' loading="eager" />' :
       (isFourteen && brandIdentifier ? '<span class="verified-brand-identifier" aria-label="'+esc(o.en)+'">'+esc(brandIdentifier)+'</span>' : '<span class="verified-profile-logo-placeholder">◈</span>');
     html += '<header class="verified-profile-head"><div class="verified-profile-logo-wrap">' +
       headerLogo +
@@ -11640,6 +11772,7 @@
     if (BOOT_LOADERS[k]) return BOOT_LOADERS[k]();
   };
   applyI18n();
+  initLogoZoom();
   initLayerPanelControls();
   initMap(); buildLayerBar(); renderList();
   var initialMapLoads = [];
