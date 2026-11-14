@@ -1,0 +1,38 @@
+id,company,website_recorded,old_logo,old_logo_status,logo_candidate_url,source_assessment,next_step
+dragonfly-space,Dragonfly Aerospace,https://dragonflyaerospace.com/,assets/logos/orbita/dragonfly-space.svg,broken_missing_file,https://media.licdn.com/dms/image/v2/D4E22AQGWkkPywcy9gA/feedshare-shrink_800/B4EZaqBtkoHoAk-/0/1746609298808?e=2147483647&t=n6bzQwHAS_AYYo1-XXS0L_P6KIesGQ6yWRCl1GSYmAY&v=beta,visually_identified_media_image_unchecked_HTTP,download_validate_apply
+simera-sense,Simera Sense,https://simera-sense.com/,,missing,https://cdn.lucidityinsights.com/uploads/startups/simera-sense.jpg,visually_identified_media_image_unchecked_HTTP,download_validate_apply
+newspace-systems,NewSpace Systems,https://newspacesystems.com,,missing,,official_website_discovery_needed,official_site_search_no_fake_logo
+cubespace,CubeSpace Satellite Systems,https://cubespace.co.za,assets/logos/orbita/cubespace.svg,broken_missing_file,https://www.cubespace.co.za/img/default.687f9b7094435516bfab8a9e5e7335d0.jpg,visually_identified_media_image_unchecked_HTTP,download_validate_apply
+kongsberg-space,Kongsberg Space,https://kongsberg.com/kda,,missing,,official_website_discovery_needed,official_site_search_no_fake_logo
+kawasaki-prop,Kawasaki Heavy Industries Aerospace,https://global.kawasaki.com,,missing,,official_website_discovery_needed,official_site_search_no_fake_logo
+comat,Comat,https://comat-space.com,,missing,https://www.aerospace-valley.com/sites/default/files/member-update/logo_153.jpeg,visually_identified_media_image_unchecked_HTTP,download_validate_apply
+mt-aerospace,MT Aerospace,https://mt-aerospace.de,,missing,https://www.bayern-innovativ.de/fileadmin/map/bilder/logos/kompetenzprofile/mt-aerospace-bayern-innovativ.jpg,visually_identified_media_image_unchecked_HTTP,download_validate_apply
+coaes,CAES Advanced Electronics,https://caes.com,,missing,,official_website_discovery_needed,official_site_search_no_fake_logo
+apco-technologies,APCO Technologies,https://apco-technologies.com,,missing,https://espacemembre.gifen.fr/uploads/company_logo/l/o/g/o/logo-apco-67ff4a7d24868268688206.jpg,visually_identified_media_image_unchecked_HTTP,download_validate_apply
+airbus-space,Airbus Defence and Space,https://www.airbus.com/en/space,,missing,,official_website_discovery_needed,official_site_search_no_fake_logo
+thales-alenia,Thales Alenia Space,https://www.thalesaleniaspace.com,,missing,https://upload.wikimedia.org/wikipedia/commons/thumb/e/e1/Thales_Alenia_Space_Logo.svg/1280px-Thales_Alenia_Space_Logo.svg.png,visually_identified_media_image_unchecked_HTTP,download_validate_apply
+ohb,OHB,https://www.ohb.de,,missing,https://www.remotely.de/images/logos/12106_ohb-se_logo.png,visually_identified_media_image_unchecked_HTTP,download_validate_apply
+maxar,Lanteris Space Systems,https://www.maxar.com,,missing,,official_website_discovery_needed,official_site_search_no_fake_logo
+sstl,Surrey Satellite Technology (SSTL),https://www.sstl.co.uk,,missing,https://static.wixstatic.com/media/3d111e_36be0bf0b55d4bf48a55cc87cc539ef0~mv2.jpeg/v1/fill/w_800%2Ch_800%2Cal_c%2Cq_85%2Cenc_avif%2Cquality_auto/3d111e_36be0bf0b55d4bf48a55cc87cc539ef0~mv2.jpeg,visually_identified_media_image_unchecked_HTTP,download_validate_apply
+reshetnev,ISS Reshetnev,https://www.reshetnev.com,,missing,,official_website_discovery_needed,official_site_search_no_fake_logo
+planet,Planet Labs,https://www.planet.com,,missing,https://mms.businesswire.com/media/20241021503372/en/1667152/23/logo.jpg,visually_identified_media_image_unchecked_HTTP,download_validate_apply
+york-space,York Space Systems,https://www.yorkspacesystems.com,,missing,https://cdn.pulse2.com/cdn/2026/03/York-Space-Systems-Logo.jpg,visually_identified_media_image_unchecked_HTTP,download_validate_apply
+astranis,Astranis,https://www.astranis.com,,missing,https://cdn.prod.website-files.com/66db71cbfa4aa686aab4dc62/69b1cb2bbcd34dc1e369c451_astranis-a-logo.jpg,visually_identified_media_image_unchecked_HTTP,download_validate_apply
+iceye,ICEYE,https://www.iceye.com,,missing,https://mmx.prnewswire.com/media/MS1800791/ICEYE-Logo.jpg?id=OA2981753&p=facebook,visually_identified_media_image_unchecked_HTTP,download_validate_apply
+satellogic,Satellogic,https://satellogic.com,,missing,https://satellogic.com/wp-content/uploads/2021/07/Satellogic_Logo_PNG_Horizontal_1_Positivo-THUMBNAIL.png,visually_identified_media_image_unchecked_HTTP,download_validate_apply
+cast,China Academy of Space Technology (CAST),https://www.cast.cn,,missing,,official_website_discovery_needed,official_site_search_no_fake_logo
+blue-canyon,Blue Canyon Technologies,https://www.bluecanyontech.com,assets/logos/orbita/blue-canyon.svg,broken_missing_file,https://mms.businesswire.com/media/20210726005141/en/893703/5/BCT_Logo_High_Res.jpg?download=1,visually_identified_media_image_unchecked_HTTP,download_validate_apply
+gomspace,GomSpace,https://gomspace.com,,missing,https://assets.rohde-schwarz.com/public/image/corporate/logos/gomspace-logo-rohde-schwarz_200_116537_1024_576_1.jpg,visually_identified_media_image_unchecked_HTTP,download_validate_apply
+nanoavionics,Kongsberg NanoAvionics,https://nanoavionics.com,,missing,https://images.squarespace-cdn.com/content/v1/5fefc0e10400f4089005e773/1610216642752-VN2FZ2J0OXPP4T3OTABV/nano%2Bavionics.jpg,visually_identified_media_image_unchecked_HTTP,download_validate_apply
+endurosat,EnduroSat,https://www.endurosat.com,,missing,https://api.platform-production.ensun.io/file/managed-company-logo/6825d882aebe66f582a8a0af,visually_identified_media_image_unchecked_HTTP,download_validate_apply
+aac-clyde,AAC Clyde Space,https://www.aac-clyde.space,,missing,https://images.dagensps.se/app/uploads/2023/08/aac-clyde-logo.png,visually_identified_media_image_unchecked_HTTP,download_validate_apply
+redwire,Redwire,https://redwirespace.com,,missing,https://mms.businesswire.com/media/20221108006239/en/1630253/23/redwire-logo-horizontal-black-red_%281%29.jpg,visually_identified_media_image_unchecked_HTTP,download_validate_apply
+avs-uk,AVS Added Value Solutions UK,https://www.a-v-s.es/,,missing,,official_website_discovery_needed,official_site_search_no_fake_logo
+alpha-data-uk,Alpha Data Parallel Systems,https://alpha-data.com/,,missing,,official_website_discovery_needed,official_site_search_no_fake_logo
+bright-ascension,Bright Ascension,https://brightascension.com/,,missing,https://media2.spaceref.com/wp-content/uploads/2023/08/10104512/Bright-Ascension.png,visually_identified_media_image_unchecked_HTTP,download_validate_apply
+oxford-space-systems,Oxford Space Systems,https://oxford.space/,,missing,,official_website_discovery_needed,official_site_search_no_fake_logo
+smartir,SmartIR,https://www.smartir.co.uk/,,missing,,official_website_discovery_needed,official_site_search_no_fake_logo
+accelercomm,AccelerComm Ltd,https://www.accelercomm.com/,,missing,,official_website_discovery_needed,official_site_search_no_fake_logo
+all-space,ALL.SPACE Networks Limited,https://www.all.space/,,missing,https://mma.prnewswire.com/media/1869635/ALL_SPACE_Logo.jpg?p=facebook,visually_identified_media_image_unchecked_HTTP,download_validate_apply
+maya-htt-uk,Maya HTT UK Ltd,https://www.mayahtt.com/,,missing,,official_website_discovery_needed,official_site_search_no_fake_logo
+cobham-satcom,Cobham Satcom (Thrane & Thrane A/S),https://www.cobham-satcom.com/,,missing,https://ram-tech.co.il/wp-content/uploads/2025/01/COBHAM-SATCOM.jpg,visually_identified_media_image_unchecked_HTTP,download_validate_apply

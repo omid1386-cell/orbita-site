@@ -1,0 +1,72 @@
+name: Update satellite-maker logos (original layer only)
+on:
+  workflow_dispatch:
+permissions:
+  contents: write
+concurrency:
+  group: satmaker-logo-update
+  cancel-in-progress: false
+jobs:
+  fetch-official-logos:
+    runs-on: ubuntu-latest
+    timeout-minutes: 30
+    steps:
+      - name: Checkout current ORBITA
+        uses: actions/checkout@v4
+      - name: Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+      - name: Install logo image processing
+        run: python -m pip install --disable-pip-version-check requests pillow beautifulsoup4 cairosvg
+      - name: Fetch and validate real corporate logos
+        run: python tools/fetch_satmaker_logos.py --apply
+      - name: Verify only original satellite-maker rows were edited
+        run: |
+          python - <<'PY'
+          import json,os
+          from pathlib import Path
+          a=json.loads(Path('data/companies_satmaker.json').read_text())
+          b=json.loads(Path('data/companies.json').read_text())
+          makers={x['id']:x for x in b if x.get('cat')=='satmaker'}
+          assert len(a)==37 and len(makers)==37
+          for x in a:
+              y=makers[x['id']]
+              assert x.get('logo')==y.get('logo')
+              v=x.get('logo')
+              if v and v.startswith('assets/img/logos/satmaker/'):
+                  assert Path(v).is_file(), v
+          print('Validated',len(a),'satellite maker records')
+          import csv
+          with open('docs/SATMAKER_LOGOS_AUDIT.csv',encoding='utf8') as handle: rows=list(csv.DictReader(handle))
+          good=sum(x['status'] in ('downloaded','existing_local') for x in rows)
+          print('Validated logos:',good,'of',len(rows))
+          if good==0: raise SystemExit('No real logo could be retrieved; check network or source URLs')
+          PY
+      - name: Publish new and validated logos only when changed
+        run: |
+          git config user.name 'orbita-logo-bot'
+          git config user.email 'orbita-logo-bot@users.noreply.github.com'
+          mkdir -p assets/img/logos/satmaker
+          git add data/companies_satmaker.json data/companies.json docs/SATMAKER_LOGOS_AUDIT.csv
+          if find assets/img/logos/satmaker -name '*.png' -type f | grep -q .; then git add assets/img/logos/satmaker/; fi
+          if git diff --cached --quiet; then
+            echo 'No new valid logos found; no changes published.'
+          else
+            git commit -m 'Add validated satellite maker logos without touching other categories'
+            git push
+          fi
+      - name: Summary
+        if: always()
+        run: |
+          echo '## ORBITA satellite maker logo audit' >> "$GITHUB_STEP_SUMMARY"
+          if [ -f docs/SATMAKER_LOGOS_AUDIT.csv ]; then
+            python - <<'PY' >> "$GITHUB_STEP_SUMMARY"
+          import csv
+          from collections import Counter
+          with open('docs/SATMAKER_LOGOS_AUDIT.csv',encoding='utf8') as f:
+              a=list(csv.DictReader(f))
+          print(f"Processed: {len(a)}")
+          for k,v in Counter(row['status'] for row in a).items(): print(f"- {k}: {v}")
+          PY
+          fi
