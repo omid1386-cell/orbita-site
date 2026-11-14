@@ -525,17 +525,19 @@
   var markerFeatureCollection = { type: "FeatureCollection", features: [] };
   var markerPointsByKey = Object.create(null), markerClustersByKey = Object.create(null);
   var recoveryMarkersByKey = Object.create(null), markerImagePromises = Object.create(null), markerLayerEnsurePromise = null;
-  // Debounce reclustering during camera motion; the previous 100ms source churn
-  // could overlap worker tile rebuilds and temporarily blank large marker groups.
-  var markerZoomRefreshTimer = 0, markerZoomRefreshInterval = 220;
+  // Keep the current marker snapshot stable while the camera is moving.
+  // Recluster once after zoom settles instead of repeatedly rebuilding GeoJSON.
+  var markerZoomRefreshFrame = 0, markerZoomInProgress = false;
   var markerHoverKey = "", markerHoverKind = "", pendingMarkerHoverKey = "", pendingMarkerHoverKind = "", markerHoverFrame = 0;
   var markerHoverEventsBound = false;
   var mapHoverTooltip = null;
   // Retain the v1 legacy key so existing users and the rollback package retain their six filters.
   var MAP_FILTERS_STORAGE_KEY = "orbita_map_filters_v1";
   var MAP_FILTERS_V2_STORAGE_KEY = "orbita_map_filters_v2";
+  // First-visit defaults: show only space agencies and launch sites.
+  // Explicitly saved visitor choices continue to override these defaults.
   var DEFAULT_MAP_FILTERS = {
-    launch: true, propulsion: false, agency: true, satmaker: false, site: true, recovery: false,
+    launch: false, propulsion: false, agency: true, satmaker: false, site: true, recovery: false,
     components: false, payloads: false, ground_services: false, inspace_services: false,
     test_facility: false, ground_station: false, mission_control: false, university_space: false
   };
@@ -1928,6 +1930,11 @@
     if (!map) return;
     var generation = ++mapStyleGeneration;
     mapStyleTransitionPending = true;
+    markerZoomInProgress = false;
+    if (markerZoomRefreshFrame) {
+      cancelAnimationFrame(markerZoomRefreshFrame);
+      markerZoomRefreshFrame = 0;
+    }
     overlayRepairAttempts = 0;
     // Never allow an image install started under the previous style to block or
     // mutate the fresh style's marker source.
@@ -2334,6 +2341,9 @@
       hash: true,
       fadeDuration: 0,
       maxTileCacheSize: 256,
+      // Retain one extra zoom level of visited vector tiles for smoother return zooms.
+      // Keep the mobile cache more conservative; the tile-count cap remains 256.
+      maxTileCacheZoomLevels: mobileView() ? 6 : 7,
       trackResize: true,
       attributionControl: { compact: true },
       customAttribution: "© OpenStreetMap contributors; Terrae"
@@ -3336,20 +3346,15 @@
     return true;
   }
   var clusterZoomBound = false;
-  function scheduleMarkerZoomRefresh(finalUpdate) {
-    if (!map) return;
-    if (markerZoomRefreshTimer) { clearTimeout(markerZoomRefreshTimer); markerZoomRefreshTimer = 0; }
-    if (finalUpdate) {
-      // Exactly one final, up-to-date clustering result after camera settles.
+  function scheduleMarkerZoomRefresh() {
+    if (!map || markerZoomInProgress || mapStyleTransitionPending) return;
+    if (markerZoomRefreshFrame) cancelAnimationFrame(markerZoomRefreshFrame);
+    markerZoomRefreshFrame = requestAnimationFrame(function () {
+      markerZoomRefreshFrame = 0;
+      // A new zoom gesture may begin before this frame is painted.
+      if (!map || markerZoomInProgress || mapStyleTransitionPending) return;
       renderMarkers();
-      return;
-    }
-    // Keep existing rendered markers moving with the camera rather than sending
-    // a fresh large GeoJSON collection to a worker every 100ms during zoom.
-    markerZoomRefreshTimer = setTimeout(function () {
-      markerZoomRefreshTimer = 0;
-      renderMarkers();
-    }, markerZoomRefreshInterval);
+    });
   }
   function publishMarkerFeatureCollection() {
     if (!map || mapStyleTransitionPending) return;
@@ -3437,8 +3442,17 @@
     publishMarkerFeatureCollection();
     if (!clusterZoomBound) {
       clusterZoomBound = true;
-      map.on("zoom", function () { scheduleMarkerZoomRefresh(false); });
-      map.on("zoomend", function () { scheduleMarkerZoomRefresh(true); });
+      map.on("zoomstart", function () {
+        markerZoomInProgress = true;
+        if (markerZoomRefreshFrame) {
+          cancelAnimationFrame(markerZoomRefreshFrame);
+          markerZoomRefreshFrame = 0;
+        }
+      });
+      map.on("zoomend", function () {
+        markerZoomInProgress = false;
+        scheduleMarkerZoomRefresh();
+      });
     }
   }
 

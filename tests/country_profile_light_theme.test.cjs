@@ -33,7 +33,7 @@ assert(
 );
 assert(
   html.includes('window.ORBITA_V = "20261114-step4-manufacturer-logos-v1";') &&
-  html.includes('window.ORBITA_APP_V = "20261114-step4-manufacturer-logos-v1";') &&
+  html.includes('window.ORBITA_APP_V = "20261114-map-zoom-performance-step3-v1";') &&
   html.includes('window.ORBITA_COMPANIES_V = "20261114-step4-manufacturer-logos-v1";'),
   "Data/app cache versions should not be changed by a CSS-only fix"
 );

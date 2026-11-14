@@ -1,10 +1,25 @@
-ORBITA STEP 4 — DEVELOPER ATTRIBUTION
+ORBITA STEP 3 — MAP ZOOM PERFORMANCE
 
-Replace exactly one file at repository root:
+Replace:
+- assets/js/app.js
 - index.html
 
-Exact attribution: Produced by Omidreza Safar
-Scope: opening/loading splash only (#raspehrSplash)
+Included unchanged for integration:
+- assets/css/app.css (preserves Step 1)
+- tests and test fixtures
 
-No JS, CSS asset, data, map, marker, company, or country profile files changed.
-No commit, push, or deploy has been performed.
+Changes:
+- Defer marker reclustering until zoomend.
+- Coalesce post-zoom refresh into one animation frame.
+- Cancel stale refresh on new zoom or map style transition.
+- Increase MapLibre tile cache zoom levels conservatively: mobile 6, desktop 7; max tile count remains 256.
+
+Preserved:
+- Step 1 country profile light-theme contrast.
+- Step 2 default layers and visitor preferences.
+- Next-landing announcement.
+- Logo zoom.
+- Step 4 company logo mappings.
+
+No data files were changed.
+No GitHub commit, push, or deployment has been performed.
