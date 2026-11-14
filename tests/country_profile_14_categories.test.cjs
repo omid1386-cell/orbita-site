@@ -34,13 +34,19 @@ for (const key of expectedAllCategories) {
 }
 assert.ok(rendererSource.includes('Object.keys(uniqueCompanyIds).length + siteItems.length + recoveryItems.length'),
   'headline total counts unique company IDs plus sites and recovery locations');
-assert.ok(rendererSource.includes('multi-role entity') || rendererSource.includes('موجودیت چندنقشی'),
-  'country dossier explains how multi-role records affect totals');
+assert.ok(rendererSource.includes('Object.keys(uniqueCompanyIds).length + siteItems.length + recoveryItems.length'),
+  'country dossier keeps unique-entity counting for multi-role records');
+assert.ok(!rendererSource.includes('country-profile-summary-note') && !rendererSource.includes('These figures count only current ORBITA records'),
+  'country summary omits the explanatory footer note');
+assert.ok(css.includes('.country-profile-summary-item span:last-child{font-size:9px;line-height:1.45;color:#fff;'),
+  'country summary category labels stay white on the dark summary card');
+assert.ok(css.includes('.country-profile-summary-item strong{font-size:16px;color:var(--country-category-color);'),
+  'country summary numbers retain their category colors');
 assert.ok(rendererSource.includes('Registered Records') && rendererSource.includes('رکورد ثبت‌شده'),
   'headline total is labelled as registered records rather than active entities');
 assert.ok(css.includes('.country-profile-summary-grid') && css.includes('.country-profile-tabs') && css.includes('@media(max-width:560px)'),
   '14-category summary and tabs have responsive styling');
-assert.ok(html.includes('20261114-country-profile-14categories-chabahar-v1'),
+assert.ok(html.includes('20261114-country-profile-lightmode-labels-v2'),
   'HTML cache keys are bumped for the country dossier and Chabahar image');
 
 // Execute the actual renderer in a small isolated harness to verify the 14 tabs/panels.

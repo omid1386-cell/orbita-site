@@ -6483,10 +6483,7 @@
         '<span class="country-profile-summary-icon" aria-hidden="true">' + def.icon + '</span>' +
         '<strong>' + esc(count) + '</strong><span>' + esc(layerName(def.key, false)) + '</span></div>';
     });
-    h += '</div><p class="country-profile-summary-note">' + tr(
-      "این آمار فقط رکوردهای فعلی ORBITA را که به این کشور نسبت داده شده‌اند جمع می‌کند؛ سرشماری کامل صنعت فضایی یا تعداد قطعی تأسیسات فعال کشور نیست. یک موجودیت چندنقشی ممکن است در چند دسته دیده شود، اما در عدد کل فقط یک‌بار شمرده می‌شود.",
-      "These figures count only current ORBITA records assigned to this country; they are not a complete census of its space sector or a definitive count of operating facilities. A multi-role entity may appear in several category breakdowns but is counted once in the headline total.",
-      "تحصي هذه الأرقام سجلات ORBITA الحالية المنسوبة إلى الدولة فقط؛ ولا تمثل تعداداً كاملاً لقطاعها الفضائي أو حصراً نهائياً للمنشآت العاملة. وقد يظهر الكيان متعدد الأدوار في أكثر من فئة، لكنه يُحسب مرة واحدة في الإجمالي.") + '</p></section>';
+    h += '</div></section>';
 
     h += '<nav class="site-tabs country-profile-tabs" role="tablist" aria-label="' + tr("دسته‌های شناسنامه کشور", "Country dossier categories", "فئات ملف الدولة") + '">';
     categoryDefs.forEach(function (def, index) {

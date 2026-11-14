@@ -1,0 +1,51 @@
+--- a/assets/js/app.js
++++ b/assets/js/app.js
+@@ -6483,10 +6483,7 @@
+         '<span class="country-profile-summary-icon" aria-hidden="true">' + def.icon + '</span>' +
+         '<strong>' + esc(count) + '</strong><span>' + esc(layerName(def.key, false)) + '</span></div>';
+     });
+-    h += '</div><p class="country-profile-summary-note">' + tr(
+-      "این آمار فقط رکوردهای فعلی ORBITA را که به این کشور نسبت داده شده‌اند جمع می‌کند؛ سرشماری کامل صنعت فضایی یا تعداد قطعی تأسیسات فعال کشور نیست. یک موجودیت چندنقشی ممکن است در چند دسته دیده شود، اما در عدد کل فقط یک‌بار شمرده می‌شود.",
+-      "These figures count only current ORBITA records assigned to this country; they are not a complete census of its space sector or a definitive count of operating facilities. A multi-role entity may appear in several category breakdowns but is counted once in the headline total.",
+-      "تحصي هذه الأرقام سجلات ORBITA الحالية المنسوبة إلى الدولة فقط؛ ولا تمثل تعداداً كاملاً لقطاعها الفضائي أو حصراً نهائياً للمنشآت العاملة. وقد يظهر الكيان متعدد الأدوار في أكثر من فئة، لكنه يُحسب مرة واحدة في الإجمالي.") + '</p></section>';
++    h += '</div></section>';
+ 
+     h += '<nav class="site-tabs country-profile-tabs" role="tablist" aria-label="' + tr("دسته‌های شناسنامه کشور", "Country dossier categories", "فئات ملف الدولة") + '">';
+     categoryDefs.forEach(function (def, index) {
+--- a/assets/css/app.css
++++ b/assets/css/app.css
+@@ -855,8 +855,7 @@
+ .country-profile-summary-item{min-width:0;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:3px;padding:8px 4px;border:1px solid color-mix(in srgb,var(--country-category-color) 42%,transparent);border-radius:7px;background:color-mix(in srgb,var(--country-category-color) 10%,transparent);text-align:center}
+ .country-profile-summary-icon{font-size:15px;line-height:1.2}
+ .country-profile-summary-item strong{font-size:16px;color:var(--country-category-color);font-variant-numeric:tabular-nums}
+-.country-profile-summary-item span:last-child{font-size:9px;line-height:1.45;color:var(--text);overflow-wrap:anywhere}
+-.country-profile-summary-note{margin:9px 0 0;color:var(--muted);font-size:10px;line-height:1.8}
++.country-profile-summary-item span:last-child{font-size:9px;line-height:1.45;color:#fff;overflow-wrap:anywhere}
+ .country-profile-tabs{display:flex;flex-wrap:wrap;overflow:visible;gap:5px;padding-bottom:6px}
+ .country-profile-tabs .country-profile-tab{display:inline-flex;align-items:center;justify-content:center;gap:4px;flex:1 1 118px;min-width:0;white-space:normal;line-height:1.45;padding:7px 8px;font-size:10.5px}
+ .country-profile-tab-count{opacity:.8;font-variant-numeric:tabular-nums;white-space:nowrap}
+--- a/index.html
++++ b/index.html
+@@ -38,16 +38,16 @@
+ @media(max-width:540px){.raspehr-stage{min-height:100vh;gap:11px;padding:22px 12px}.raspehr-espash{width:100%;max-width:450px}.raspehr-title{margin-top:15px}}
+ </style>
+ <link rel="stylesheet" href="assets/vendor/maplibre-gl.css?v=3" />
+-<link rel="stylesheet" href="assets/css/app.css?_t=20261114-country-profile-14categories-chabahar-v1" />
++<link rel="stylesheet" href="assets/css/app.css?_t=20261114-country-profile-lightmode-labels-v2" />
+ <!-- Ordered defer scripts download in parallel instead of creating a network waterfall. -->
+ <script defer src="assets/js/raspehr-splash.js?v=20261113-speed-v1"></script>
+ <script defer src="assets/vendor/maplibre-gl.js?v=3"></script>
+-<script defer src="assets/js/app.js?_t=20261114-country-profile-14categories-chabahar-v1"></script>
++<script defer src="assets/js/app.js?_t=20261114-country-profile-lightmode-labels-v2"></script>
+ <script>
+-  window.ORBITA_V = "20261114-country-profile-14categories-chabahar-v1";
+-  window.ORBITA_APP_V = "20261114-country-profile-14categories-chabahar-v1";
+-  window.ORBITA_CSS_V = "20261114-country-profile-14categories-chabahar-v1";
+-  window.ORBITA_COMPANIES_V = "20261114-country-profile-14categories-chabahar-v1";
++  window.ORBITA_V = "20261114-country-profile-lightmode-labels-v2";
++  window.ORBITA_APP_V = "20261114-country-profile-lightmode-labels-v2";
++  window.ORBITA_CSS_V = "20261114-country-profile-lightmode-labels-v2";
++  window.ORBITA_COMPANIES_V = "20261114-country-profile-lightmode-labels-v2";
+ 
+ 
+   // Public API URL only; never place the Resend key or another secret here.
