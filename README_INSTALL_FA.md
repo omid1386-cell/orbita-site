@@ -1,38 +1,37 @@
-# اصلاح نمایش نام سازمان‌ها و شرکت‌های کشور در شناسنامه ORBITA
+# ORBITA — Step 1: Country profile cleanup and precise country-name display
 
-## تغییر انجام‌شده
-در رابط فارسی، فقط هنگام نمایش شناسنامه کشور با شناسه/کد متعارف Israel / IL / ISR:
-- «اسرائیل» به «فلسطین اشغالی» تبدیل می‌شود.
-- «اسرائیلی» به «وابسته به فلسطین اشغالی» تبدیل می‌شود.
-- نام‌های انگلیسی قابل مشاهده در رابط فارسی که شامل Israel / Israeli هستند، به‌ترتیب به Occupied Palestine / Occupied Palestinian تبدیل می‌شوند.
+## Included changes
+1. Removed the explanatory statistics note under the 14-category country-profile summary in Persian, English, and Arabic. The statistics, counts, category cards, and tabs are unchanged.
+2. Country-name display is now field-specific:
+   - Country profile heading: Persian `فلسطین اشغالی`, English `Occupied Palestine`, Arabic `فلسطين المحتلة`.
+   - Country fields for records belonging to canonical country `Israel` use the matching localized country display label.
+   - Explicit prose phrase `کشور اسرائیل` is displayed as `فلسطین اشغالی` in Persian.
+   - Organization/company names and official names remain unchanged, including `سازمان فضایی اسرائیل`, `صنایع هوافضای اسرائیل`, `Israel Space Agency`, and `Israel Aerospace Industries`.
+3. Updated `country_fa` for the Israel-associated site record in `data/sites.json` to `فلسطین اشغالی`. The canonical `country` value remains `Israel`.
 
-این تبدیل در خروجی نمایشی شناسنامه کشور، کارت سازمان‌ها/شرکت‌ها و پنجره جزئیات موجودیت اعمال می‌شود.
+## What is not changed
+- Canonical country identifiers, ISO codes, IDs, coordinates, matching/filtering logic, and source URLs.
+- Organization/company names or their official English names.
+- Other countries' labels and data.
+- Statistics and the 14 category counts.
 
-## مواردی که تغییر نمی‌کنند
-- شناسه داخلی رکوردها، country code / ISO و کلیدهای تطبیق نقشه
-- داده خام منبع و فایل‌های JSON
-- نشانی وب‌سایت‌ها، لینک منابع و URL تصاویر
-- نمایش زبان انگلیسی و عربی سایت
-- نام‌ها و توضیحات مربوط به کشورهای دیگر
+## Install without terminal (GitHub web interface)
+1. Back up the current `assets/js/app.js` and `data/sites.json`.
+2. Replace `assets/js/app.js` with the file in this package at the same path.
+3. Replace `data/sites.json` with the file in this package at the same path.
+4. Commit the changes to GitHub and wait for deployment.
+5. Hard-refresh the site (`Ctrl+F5`) and check a country profile, an Israel-associated organization/company profile, and the Israel-associated site detail.
 
-## نصب ساده از طریق GitHub
-1. از مخزن فعلی یک نسخه پشتیبان از `assets/js/app.js` بگیر.
-2. فایل `assets/js/app.js` داخل این بسته را در همان مسیر مخزن جایگزین کن.
-3. Commit و Push کن.
-4. پس از Deploy، صفحه را با Ctrl+F5 تازه‌سازی کن.
-5. شناسنامه کشور را باز کن و هم کارت‌های سازمان/شرکت و هم پنجره جزئیات آن‌ها را بررسی کن.
-
-## نصب با Patch در VS Code
-در ریشه مخزن:
+## Install with Git
+The patch is intended for the app.js version from the previous ORBITA all-profile name-fix package and the original `data/sites.json` included in the 14-category Chabahar ZIP. In the repository root:
 ```bash
-git apply --check COUNTRY_PROFILE_ISRAEL_TERMS_FA.patch
+git apply --check ORBITA_STEP1_COUNTRY_PROFILE_FIX.patch
 ```
-اگر بدون خطا بود:
+If check passes:
 ```bash
-git apply COUNTRY_PROFILE_ISRAEL_TERMS_FA.patch
+git apply ORBITA_STEP1_COUNTRY_PROFILE_FIX.patch
 ```
+If check fails, do not force it; use the two complete files from this package after reconciling any newer local edits.
 
-Patch را روی نسخه‌ای اعمال کن که شامل اصلاح قبلی عنوان کشور به «فلسطین اشغالی» است. اگر فایل از آن زمان تغییر کرده و Patch با خطا مواجه شد، آن را به اجبار اعمال نکن.
-
-## دامنه اصلاح
-این بسته فقط `assets/js/app.js` را تغییر می‌دهد و داده‌های اصلی، `data/sites.json` و فایل‌های نقشه را بازنویسی نمی‌کند.
+## Validation
+JavaScript syntax and focused behavior tests are included in `tests/`.

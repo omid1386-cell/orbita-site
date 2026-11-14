@@ -6344,10 +6344,11 @@
       String(cIso || "").trim().toUpperCase() === "IL" ||
       String(cIso || "").trim().toUpperCase() === "ISR";
     var cFa = isOccupiedPalestineDisplay ? "فلسطین اشغالی" : cFaMatch;
-    var cAr = p.country_ar || (p.o ? p.o.country_ar : null) || countryNameAr(cEn, cIso) || cEn;
-    // In Persian UI, do not repeat the canonical English name underneath the
-    // requested display label. The canonical name remains intact internally.
-    var countryEnglishSubtitle = (isFa && isOccupiedPalestineDisplay) ? "" : cEn;
+    var cAr = isOccupiedPalestineDisplay ? "فلسطين المحتلة" :
+      (p.country_ar || (p.o ? p.o.country_ar : null) || countryNameAr(cEn, cIso) || cEn);
+    var cEnDisplay = isOccupiedPalestineDisplay ? "Occupied Palestine" : cEn;
+    // Keep canonical cEn for matching and filtering; use display labels only in the UI.
+    var countryEnglishSubtitle = (isFa && isOccupiedPalestineDisplay) ? "" : cEnDisplay;
 
     var allCompanies = (typeof DATA !== "undefined") ? canonicalCompanyRecords() : [];
     var allSites = (typeof DATA !== "undefined" && Array.isArray(DATA.sites)) ? DATA.sites : [];
@@ -6464,8 +6465,8 @@
 
     var h = "";
     var flagCodes = flagCodesFor(cEn, cIso);
-    var flagTitle = isFa ? cFa : (isAr ? cAr : cEn);
-    var flagAlt = tr("پرچم " + cFa, "Flag of " + cEn, "علم " + cAr);
+    var flagTitle = isFa ? cFa : (isAr ? cAr : cEnDisplay);
+    var flagAlt = tr("پرچم " + cFa, "Flag of " + cEnDisplay, "علم " + cAr);
     var flagEl;
     if (flagCodes.length === 1 && flagCodes[0] !== "globe") {
       flagEl = '<img class="d-flag" src="assets/img/flags/' + flagCodes[0] + '.svg" alt="' + esc(flagAlt) + '" title="' + esc(flagTitle) + '" decoding="async">';
@@ -6479,7 +6480,7 @@
 
     h += '<div class="d-head country-profile-head">' + flagEl + '<div class="country-profile-head-copy">' +
       '<div class="d-kicker">' + tr("شناسنامه جامع فضایی کشور", "National Space Dossier", "ملف الدولة الفضائي") + '</div>' +
-      '<h2 class="d-title">' + esc(isFa ? cFa : (isAr ? cAr : cEn)) + '</h2>' +
+      '<h2 class="d-title">' + esc(isFa ? cFa : (isAr ? cAr : cEnDisplay)) + '</h2>' +
       (countryEnglishSubtitle ? '<div class="d-sub">' + esc(countryEnglishSubtitle) + '</div>' : '') + '</div>' +
       '<span class="badge-gov country-profile-total">' + (isFa ? (totalRecords + " رکورد ثبت‌شده") : (isAr ? (totalRecords + " سجل مسجل") : (totalRecords + " Registered Records"))) + '</span></div>';
 
@@ -6492,10 +6493,7 @@
         '<span class="country-profile-summary-icon" aria-hidden="true">' + def.icon + '</span>' +
         '<strong>' + esc(count) + '</strong><span>' + esc(layerName(def.key, false)) + '</span></div>';
     });
-    h += '</div><p class="country-profile-summary-note">' + tr(
-      "این آمار فقط رکوردهای فعلی ORBITA را که به این کشور نسبت داده شده‌اند جمع می‌کند؛ سرشماری کامل صنعت فضایی یا تعداد قطعی تأسیسات فعال کشور نیست. یک موجودیت چندنقشی ممکن است در چند دسته دیده شود، اما در عدد کل فقط یک‌بار شمرده می‌شود.",
-      "These figures count only current ORBITA records assigned to this country; they are not a complete census of its space sector or a definitive count of operating facilities. A multi-role entity may appear in several category breakdowns but is counted once in the headline total.",
-      "تحصي هذه الأرقام سجلات ORBITA الحالية المنسوبة إلى الدولة فقط؛ ولا تمثل تعداداً كاملاً لقطاعها الفضائي أو حصراً نهائياً للمنشآت العاملة. وقد يظهر الكيان متعدد الأدوار في أكثر من فئة، لكنه يُحسب مرة واحدة في الإجمالي.") + '</p></section>';
+    h += '</div></section>';
 
     h += '<nav class="site-tabs country-profile-tabs" role="tablist" aria-label="' + tr("دسته‌های شناسنامه کشور", "Country dossier categories", "فئات ملف الدولة") + '">';
     categoryDefs.forEach(function (def, index) {
@@ -10324,45 +10322,79 @@
   });
 
 
-  // Persian display override for records assigned to the Israel country profile.
-  // Canonical country codes, record IDs, source URLs and stored data remain unchanged.
-  function isOccupiedPalestineDisplayEntity(entity) {
+  // Display-only country naming for records whose canonical country is Israel.
+  // Organization/company names (e.g. Israel Space Agency) are intentionally preserved.
+  function isIsraelCountryRecord(entity) {
     var outer = entity || {};
     var record = outer.o || outer;
     var values = [
-      record.country_en, record.country, record.country_fa, record.country_ar,
-      record.country_iso, record.country_code,
-      outer.country_en, outer.country, outer.country_fa, outer.country_iso, outer.country_code
+      record.country_en, record.country, record.country_iso, record.country_code,
+      outer.country_en, outer.country, outer.country_iso, outer.country_code
     ];
     return values.some(function (value) {
       var key = String(value == null ? "" : value).trim().toLowerCase();
-      return key === "israel" || key === "il" || key === "isr" ||
-        key === "اسرائیل" || key === "اسراييل" || key === "إسرائيل";
+      return key === "israel" || key === "il" || key === "isr";
     });
   }
 
-  function occupiedPalestineDisplayText(value) {
-    return String(value == null ? "" : value)
-      .replace(/اسرائیلی‌ها/g, "وابستگان به فلسطین اشغالی")
-      .replace(/اسرائیلی/g, "وابسته به فلسطین اشغالی")
-      .replace(/اسرائیل/g, "فلسطین اشغالی")
-      .replace(/اسراييل/g, "فلسطین اشغالی")
-      .replace(/إسرائيل/g, "فلسطین اشغالی")
-      .replace(/\bIsraeli\b/gi, "Occupied Palestinian")
-      .replace(/\bIsrael\b/gi, "Occupied Palestine");
+  function isIsraelCountryValue(value) {
+    var key = String(value == null ? "" : value).trim().toLowerCase();
+    return key === "israel" || key === "اسرائیل" || key === "اسراييل" ||
+      key === "إسرائيل" || key === "occupied palestine" || key === "فلسطین اشغالی";
   }
 
-  function applyOccupiedPalestinePersianDisplay(html, entity) {
-    if (LANG !== "fa" || !isOccupiedPalestineDisplayEntity(entity)) return html;
+  function applyCountrySpecificDisplay(html, entity) {
+    if (!isIsraelCountryRecord(entity)) return html;
     var output = String(html == null ? "" : html);
-    // Rewrite visible text nodes, not href/src/IDs or canonical data attributes.
-    output = output.replace(/>([^<>]+)</g, function (match, text) {
-      return ">" + occupiedPalestineDisplayText(text) + "<";
-    });
-    // Also cover accessible labels and image titles shown by assistive technology/tooltips.
-    output = output.replace(/\b(alt|title|aria-label)=(["'])(.*?)\2/g, function (match, attr, quote, value) {
-      return attr + "=" + quote + occupiedPalestineDisplayText(value) + quote;
-    });
+    var faCountry = "فلسطین اشغالی";
+    var enCountry = "Occupied Palestine";
+    var arCountry = "فلسطين المحتلة";
+
+    // Change only explicit country references in prose; do not rewrite organization names.
+    if (LANG === "fa") {
+      output = output.replace(/کشور(?:ِ|\s)+(?:اسرائیل|اسراييل|إسرائيل)/g, faCountry);
+      output = output.replace(/(<small\b[^>]*>\s*کشور(?:\s*\/\s*شهر)?\s*<\/small>\s*<b\b[^>]*>)([^<]*)(<\/b>)/g,
+        function (match, before, value, after) {
+          return isIsraelCountryValue(value) ? before + faCountry + after : match;
+        });
+      output = output.replace(/(<small\b[^>]*>\s*کشور(?:\s*\/\s*شهر)?\s*<\/small>\s*<bdi\b[^>]*>)([^<]*)(<\/bdi>)/g,
+        function (match, before, value, after) {
+          var parts = value.split(/\s*\/\s*/);
+          if (parts.length > 1 && isIsraelCountryValue(parts[0])) parts[0] = faCountry;
+          else if (isIsraelCountryValue(value)) return before + faCountry + after;
+          else return match;
+          return before + parts.join(" / ") + after;
+        });
+      output = output.replace(/(<dt\b[^>]*>\s*کشور[^<]*<\/dt>\s*<dd\b[^>]*>)([^<]*)(<\/dd>)/g,
+        function (match, before, value, after) {
+          return isIsraelCountryValue(value) ? before + faCountry + after : match;
+        });
+      output = output.replace(/(<b\b[^>]*>\s*کشور\s*\/\s*شهر\s*:\s*<\/b>\s*<bdi\b[^>]*>)([^/<]*)(\s*\/)/g,
+        function (match, before, value, slash) {
+          return isIsraelCountryValue(value) ? before + faCountry + slash : match;
+        });
+    } else if (LANG === "en") {
+      output = output.replace(/\b(?:the\s+)?country\s+of\s+Israel\b/gi, enCountry);
+      output = output.replace(/\b(?:the\s+)?country\s+Israel\b/gi, enCountry);
+      output = output.replace(/(<small\b[^>]*>\s*Country(?:\s*\/\s*City)?\s*<\/small>\s*<b\b[^>]*>)([^<]*)(<\/b>)/g,
+        function (match, before, value, after) {
+          return isIsraelCountryValue(value) ? before + enCountry + after : match;
+        });
+      output = output.replace(/(<dt\b[^>]*>\s*Country[^<]*<\/dt>\s*<dd\b[^>]*>)([^<]*)(<\/dd>)/g,
+        function (match, before, value, after) {
+          return isIsraelCountryValue(value) ? before + enCountry + after : match;
+        });
+    } else if (LANG === "ar") {
+      output = output.replace(/دولة\s+(?:إسرائيل|اسرائيل)/g, arCountry);
+      output = output.replace(/(<small\b[^>]*>\s*الدولة(?:\s*\/\s*المدينة)?\s*<\/small>\s*<b\b[^>]*>)([^<]*)(<\/b>)/g,
+        function (match, before, value, after) {
+          return isIsraelCountryValue(value) ? before + arCountry + after : match;
+        });
+      output = output.replace(/(<dt\b[^>]*>\s*الدولة[^<]*<\/dt>\s*<dd\b[^>]*>)([^<]*)(<\/dd>)/g,
+        function (match, before, value, after) {
+          return isIsraelCountryValue(value) ? before + arCountry + after : match;
+        });
+    }
     return output;
   }
 
@@ -10686,14 +10718,14 @@
     if (__de) __de.setAttribute("data-ent", (cat === "site" || kind === "site" || cat === "recovery" || kind === "recovery") ? "site" : "org");
 
     if (cat === "recovery" || kind === "recovery") {
-      $("#detailBody").innerHTML = applyOccupiedPalestinePersianDisplay(renderRecoveryDetail(p.o), p.o);
+      $("#detailBody").innerHTML = applyCountrySpecificDisplay(renderRecoveryDetail(p.o), p.o);
       $("#detail").classList.add("open");
       $("#detail").scrollTop = 0;
       return;
     }
     if (cat === "country" || kind === "country" || (p.o && p.o.cat === "country")) {
       var countryBody = $("#detailBody"), countryPanel = $("#detail"), priorCountryTab = activeDetailTabId(countryBody);
-      countryBody.innerHTML = applyOccupiedPalestinePersianDisplay(renderCountryProfile(p), p);
+      countryBody.innerHTML = applyCountrySpecificDisplay(renderCountryProfile(p), p);
       countryPanel.classList.add("open");
       bindCountryItemClicks();
       var countryDataReady = LAYER_STATE.sites === "ready" && LAYER_STATE.recoveries === "ready" &&
@@ -10707,7 +10739,7 @@
       ensureCountryProfileData().then(function (results) {
         if (detailToken !== openDetail._renderToken || !countryPanel.classList.contains("open")) return;
         var selectedTab = activeDetailTabId(countryBody) || priorCountryTab;
-        countryBody.innerHTML = applyOccupiedPalestinePersianDisplay(renderCountryProfile(p), p);
+        countryBody.innerHTML = applyCountrySpecificDisplay(renderCountryProfile(p), p);
         restoreDetailTab(countryBody, selectedTab);
         bindCountryItemClicks();
         if (!results.every(Boolean)) {
@@ -10726,59 +10758,59 @@
     if (p.o && p.o.orbita_verified_profile &&
         LAYER_CATEGORIES_BY_KEY[cat] && !LAYER_CATEGORIES_BY_KEY[cat].legacy &&
         p.o.orbita_verified_profile.profile_type === cat) {
-      $("#detailBody").innerHTML = applyOccupiedPalestinePersianDisplay(renderVerifiedSpecialistProfile(p), p.o || p);
+      $("#detailBody").innerHTML = applyCountrySpecificDisplay(renderVerifiedSpecialistProfile(p), p.o || p);
       $("#detail").classList.add("open");
       $("#detail").scrollTop = 0;
       bindVerifiedSpecialistTabs();
       return;
     }
     if (cat === "satmaker" || (p.o && p.o.cat === "satmaker")) {
-      $("#detailBody").innerHTML = applyOccupiedPalestinePersianDisplay(renderSatmakerDetail(p), p.o || p);
+      $("#detailBody").innerHTML = applyCountrySpecificDisplay(renderSatmakerDetail(p), p.o || p);
       $("#detail").classList.add("open");
       return;
     }
     if (cat === "propulsion" || (p.o && p.o.cat === "propulsion")) {
       var propulsionBody = $("#detailBody"), propulsionPanel = $("#detail"), propulsionTab = "";
-      propulsionBody.innerHTML = applyOccupiedPalestinePersianDisplay(renderPropulsionDetail(p), p.o || p);
+      propulsionBody.innerHTML = applyCountrySpecificDisplay(renderPropulsionDetail(p), p.o || p);
       propulsionPanel.classList.add("open");
       if (COMPANY_CATEGORY_STATE.launch !== "ready") {
         propulsionTab = activeDetailTabId(propulsionBody);
         loadCompanyCategory("launch").then(function (ok) {
           if (!ok || detailToken !== openDetail._renderToken || !propulsionPanel.classList.contains("open")) return;
           var selectedTab = activeDetailTabId(propulsionBody) || propulsionTab;
-          propulsionBody.innerHTML = applyOccupiedPalestinePersianDisplay(renderPropulsionDetail(p), p.o || p);
+          propulsionBody.innerHTML = applyCountrySpecificDisplay(renderPropulsionDetail(p), p.o || p);
           restoreDetailTab(propulsionBody, selectedTab);
         });
       }
       return;
     }
     if (cat === "site" || kind === "site") {
-      $("#detailBody").innerHTML = applyOccupiedPalestinePersianDisplay(renderSiteDetail(p), p.o || p);
+      $("#detailBody").innerHTML = applyCountrySpecificDisplay(renderSiteDetail(p), p.o || p);
       $("#detail").classList.add("open");
       return;
     }
     if (cat === "agency" || (p.o && p.o.cat === "agency")) {
-      $("#detailBody").innerHTML = applyOccupiedPalestinePersianDisplay(renderAgencyDetail(p), p.o || p);
+      $("#detailBody").innerHTML = applyCountrySpecificDisplay(renderAgencyDetail(p), p.o || p);
       $("#detail").classList.add("open");
       return;
     }
     if (cat === "agency" || cat === "launch" || kind === "company" || kind === "launch") {
       var launchBody = $("#detailBody"), launchPanel = $("#detail"), launchTab = "";
-      launchBody.innerHTML = applyOccupiedPalestinePersianDisplay(renderCompanyDetail(p), p.o || p);
+      launchBody.innerHTML = applyCountrySpecificDisplay(renderCompanyDetail(p), p.o || p);
       launchPanel.classList.add("open");
       if ((cat === "launch" || (p.o && p.o.cat === "launch")) && COMPANY_CATEGORY_STATE.propulsion !== "ready") {
         launchTab = activeDetailTabId(launchBody);
         loadCompanyCategory("propulsion").then(function (ok) {
           if (!ok || detailToken !== openDetail._renderToken || !launchPanel.classList.contains("open")) return;
           var selectedTab = activeDetailTabId(launchBody) || launchTab;
-          launchBody.innerHTML = applyOccupiedPalestinePersianDisplay(renderCompanyDetail(p), p.o || p);
+          launchBody.innerHTML = applyCountrySpecificDisplay(renderCompanyDetail(p), p.o || p);
           restoreDetailTab(launchBody, selectedTab);
         });
       }
       return;
     }
     if (p.cat === "propulsion") {
-      $("#detailBody").innerHTML = applyOccupiedPalestinePersianDisplay(renderPropulsionDetail(p), p.o || p);
+      $("#detailBody").innerHTML = applyCountrySpecificDisplay(renderPropulsionDetail(p), p.o || p);
       $("#detail").classList.add("open");
       return;
     }
@@ -10809,7 +10841,7 @@
       h += '<details class="acc"><summary>▸ ' + t("en_desc") + '</summary><div class="in"><div class="d-desc en">' +
         esc(LANG === "fa" ? o.en_d : o.fa_d) + "</div></div></details>";
     }
-    $("#detailBody").innerHTML = applyOccupiedPalestinePersianDisplay(h, p.o || p);
+    $("#detailBody").innerHTML = applyCountrySpecificDisplay(h, p.o || p);
     $("#detail").classList.add("open");
   }
   on("#detailClose", "click", function () {
