@@ -2,9 +2,9 @@ const fs = require("fs");
 const path = require("path");
 const app = fs.readFileSync(path.join(__dirname, "..", "assets/js/app.js"), "utf8");
 const html = fs.readFileSync(path.join(__dirname, "..", "index.html"), "utf8");
-const sat = JSON.parse(fs.readFileSync(path.join(__dirname, "fixtures", "companies_satmaker.json"), "utf8"));
-const components = JSON.parse(fs.readFileSync(path.join(__dirname, "fixtures", "companies_components.json"), "utf8"));
-const updates = JSON.parse(fs.readFileSync(path.join(__dirname, "fixtures", "logo_updates_only.json"), "utf8"));
+const sat = JSON.parse(fs.readFileSync(path.join(__dirname, "..", "data/companies_satmaker.json"), "utf8"));
+const components = JSON.parse(fs.readFileSync(path.join(__dirname, "..", "data/companies_components.json"), "utf8"));
+const updates = JSON.parse(fs.readFileSync(path.join(__dirname, "..", "logo_updates_only.json"), "utf8"));
 
 function assert(condition, message) {
   if (!condition) throw new Error(message);

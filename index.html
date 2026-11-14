@@ -19,7 +19,7 @@
 <style id="raspehrSplashCritical">
 #raspehrSplash{position:fixed;inset:0;z-index:10000;background:radial-gradient(ellipse at 50% 38%,#163348 0%,#0b1d2e 43%,#07121e 100%);display:grid;place-items:center;color:#f4f7fa;opacity:1;transition:opacity .38s ease;direction:rtl;overflow:auto}
 #raspehrSplash.raspehr-complete{opacity:0;pointer-events:none}
-.raspehr-stage{width:min(92vw,870px);min-height:min(90vh,620px);padding:34px 16px 48px;display:flex;flex-direction:column;align-items:center;justify-content:center;text-align:center;gap:15px}
+.raspehr-stage{width:min(92vw,870px);min-height:min(90vh,620px);box-sizing:border-box;padding:34px 16px 174px;display:flex;flex-direction:column;align-items:center;justify-content:center;text-align:center;gap:15px}
 .raspehr-espash{display:block;width:min(100%,760px);height:auto;object-fit:contain;opacity:0;animation:raspehr-appear .62s ease forwards}
 .raspehr-gold-line{width:min(55vw,230px);height:1px;background:linear-gradient(90deg,transparent,#e8b619,transparent);opacity:0;animation:raspehr-appear .55s .35s ease forwards}
 .raspehr-title{font-family:Tahoma,Arial,sans-serif;font-weight:800;font-size:clamp(35px,7vw,62px);line-height:1.25;color:#f0bb17;margin:3px 0 0;letter-spacing:.02em;opacity:0;animation:raspehr-appear .65s .42s ease forwards}
@@ -29,16 +29,18 @@
 .raspehr-orbit:before{content:"";position:absolute;inset:11px 4px 8px;border:1px solid #278e9a;border-radius:50%;transform:rotate(-12deg)}
 .raspehr-orbit:after{content:"";position:absolute;left:40%;top:4px;width:8px;height:8px;background:#e8b619;box-shadow:0 0 11px #e8b619;transform-origin:18px 10px;border-radius:50%;animation:raspehr-pulse 1.7s ease-in-out infinite alternate}
 .raspehr-status{font-family:Tahoma,Arial,sans-serif;color:#91a8ba;font-size:12px}
+#raspehrSplash .raspehr-credit{position:absolute;left:0;right:0;bottom:0;width:min(92vw,920px);min-height:146px;box-sizing:border-box;margin:0 auto;padding:38px 26px 24px;border-radius:0 0 34px 34px;background:#101827;display:flex;align-items:center;justify-content:center;text-align:center;direction:ltr;font-family:"Segoe Print","Bradley Hand","Comic Sans MS",cursive;font-size:clamp(20px,2.6vw,30px);font-weight:600;line-height:1.35;letter-spacing:.01em;color:#d8b96f;opacity:0;animation:raspehr-appear .55s .82s ease forwards;pointer-events:none;user-select:none;box-shadow:0 -12px 38px rgba(0,0,0,.18)}
+#raspehrSplash .raspehr-credit:before{content:"";position:absolute;top:26px;left:34px;right:34px;height:2px;background:#465363}
 #raspehrSkip{background:#143344;color:#e7edf1;border:1px solid #44838b;padding:9px 23px;border-radius:8px;cursor:pointer;font-size:12px}
 #raspehrSkip[hidden],#raspehrLongLoad[hidden]{display:none}
 #raspehrLongLoad{max-width:410px;line-height:1.8}
 @keyframes raspehr-appear{to{opacity:1;transform:translateY(0)}from{opacity:0;transform:translateY(9px)}}
 @keyframes raspehr-pulse{to{opacity:.58;transform:translateX(16px)}from{opacity:1;transform:translateX(-8px)}}
-@media(prefers-reduced-motion:reduce){#raspehrSplash,.raspehr-espash,.raspehr-gold-line,.raspehr-title,.raspehr-latin,.raspehr-desc,.raspehr-orbit,.raspehr-orbit:after{animation:none;transition:none;opacity:1}}
-@media(max-width:540px){.raspehr-stage{min-height:100vh;gap:11px;padding:22px 12px}.raspehr-espash{width:100%;max-width:450px}.raspehr-title{margin-top:15px}}
+@media(prefers-reduced-motion:reduce){#raspehrSplash,.raspehr-espash,.raspehr-gold-line,.raspehr-title,.raspehr-latin,.raspehr-desc,.raspehr-orbit,.raspehr-orbit:after,#raspehrSplash .raspehr-credit{animation:none;transition:none;opacity:1}}
+@media(max-width:540px){.raspehr-stage{min-height:100vh;gap:11px;padding:22px 12px 136px}.raspehr-espash{width:100%;max-width:450px}.raspehr-title{margin-top:15px}#raspehrSplash .raspehr-credit{width:94vw;min-height:112px;padding:32px 16px 18px;border-radius:0 0 26px 26px;font-size:clamp(17px,5vw,22px)}#raspehrSplash .raspehr-credit:before{top:22px;left:22px;right:22px;height:1px}}
 </style>
 <link rel="stylesheet" href="assets/vendor/maplibre-gl.css?v=3" />
-<link rel="stylesheet" href="assets/css/app.css?_t=20261114-country-profile-light-contrast-v1" />
+<link rel="stylesheet" href="assets/css/app.css?_t=20261114-country-profile-light-contrast-v2-final" />
 <!-- Ordered defer scripts download in parallel instead of creating a network waterfall. -->
 <script defer src="assets/js/raspehr-splash.js?v=20261113-speed-v1"></script>
 <script defer src="assets/vendor/maplibre-gl.js?v=3"></script>
@@ -46,7 +48,7 @@
 <script>
   window.ORBITA_V = "20261114-step4-manufacturer-logos-v1";
   window.ORBITA_APP_V = "20261114-map-zoom-performance-step3-v1";
-  window.ORBITA_CSS_V = "20261114-country-profile-light-contrast-v1";
+  window.ORBITA_CSS_V = "20261114-country-profile-light-contrast-v2-final";
   window.ORBITA_COMPANIES_V = "20261114-step4-manufacturer-logos-v1";
 
 
@@ -66,12 +68,13 @@
     <h1 class="raspehr-title">رَسپهر</h1>
     <div class="raspehr-latin" dir="ltr">RASPEHR</div>
     <div class="raspehr-desc">اطلس تعاملی صنعت فضایی جهان</div>
-    <!-- Author/byline area is reserved; content will be provided by the owner. -->
+    <!-- ORBITA Step 4: developer attribution is shown only on this opening splash. -->
     <div class="raspehr-orbit" aria-hidden="true"></div>
     <div class="raspehr-status">در حال آماده‌سازی نقشه و اطلاعات فضایی…</div>
     <small id="raspehrLongLoad" hidden>اگر بارگذاری طولانی شد، می‌توانید مستقیماً وارد نقشه شوید.</small>
     <button id="raspehrSkip" type="button" hidden>نمایش نقشه</button>
   </div>
+  <p class="raspehr-credit" lang="en" dir="ltr">Developed by Omidreza Saffar</p>
 </section>
 
 <header class="topbar">
