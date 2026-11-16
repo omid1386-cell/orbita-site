@@ -11557,7 +11557,11 @@
   "photo_license": "CC BY-SA 3.0",
   "photo_source_url": "https://commons.wikimedia.org/wiki/File:Ceduna_OTC,_South_Australia.jpg",
   "country_ar": "أستراليا",
-  "photo_caption_ar": "محطة سيدونا الأرضية للأقمار الصناعية؛ أقرب مدينة إلى موقع اختبارات كونيبا"
+  "photo_caption_ar": "محطة سيدونا الأرضية للأقمار الصناعية؛ أقرب مدينة إلى موقع اختبارات كونيبا",
+  "stats_total": 1,
+  "stats_success": 1,
+  "stats_fail": 0,
+  "stats_asof": "2026-11-16"
  },
  {
   "id": "whalersway",
