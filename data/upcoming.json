@@ -1,6 +1,6 @@
 {
- "updated": "2026-11-15",
- "window_end": "2027-02-13",
+ "updated": "2026-11-16",
+ "window_end": "2027-02-14",
  "sites_covered": [
   "ccsfs",
   "vandenberg",
@@ -69,34 +69,6 @@
  ],
  "note_fa": "داده‌ها از فهرست رسمی The Space Devs گردآوری و به دست انسان دوزبانه شده‌اند. هم‌زمانی زندهٔ تاریخ‌ها در خود برنامه انجام می‌شود.",
  "launches": [
-  {
-   "site": "ccsfs",
-   "ll2_id": "ef9850ad-1096-425b-9d27-f7bbd186e61a",
-   "net": "2026-11-15T17:11:30Z",
-   "date_label_fa": "2026-11-15",
-   "date_label_en": "2026-11-15",
-   "precision": "day",
-   "precision_fa": "روز و ساعت مشخص",
-   "precision_en": "Confirmed date & time",
-   "time_fa": "ساعت 17:11 به وقت جهانی",
-   "time_en": "17:11 UTC",
-   "rocket_fa": "وولکان VC6L",
-   "rocket_en": "Vulcan VC6L",
-   "payload_fa": "آمازون لئو (LV-01)",
-   "payload_en": "Amazon Leo (LV-01)",
-   "mtype_fa": "مخابراتی",
-   "mtype_en": "Communications",
-   "orbit_fa": "مدار پایین زمین (LEO)",
-   "orbit_en": "Low Earth Orbit",
-   "customer_fa": "آمازون لئو",
-   "customer_en": "Amazon Leo",
-   "desc_fa": "نخستین پرتاب راکت وولکان برای منظومهٔ اینترنتی آمازون لئو. ده‌ها ماهوارهٔ پهن‌باند یک‌جا به مدار پایین می‌روند.",
-   "desc_en": "First Vulcan launch for Amazon’s Leo broadband constellation, lofting dozens of satellites at once.",
-   "calendar_url": "https://www.ulalaunch.com/missions",
-   "stream_url": "https://www.youtube.com/@unitedlaunchalliance",
-   "status": "Go",
-   "status_fa": "تأیید شده"
-  },
   {
    "site": "taiyuan",
    "ll2_id": "e0a11eb1-0bda-4872-b36b-140247fd5c60",
