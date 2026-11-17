@@ -11944,7 +11944,11 @@
   "geo_analysis_en": "San Marco’s near-equatorial location enabled low-inclination orbital insertions; recorded launches from the offshore platform reached equatorial low Earth orbit. The sea platform has not launched since 1988. Active Malindi ground stations do not mean the launch pad or rocket infrastructure is operational.",
   "geo_analysis_ar": "أتاح موقع سان ماركو القريب من خط الاستواء إدخال الأقمار إلى مدارات منخفضة ذات ميل قليل؛ ووصلت الإطلاقات المسجلة من المنصة البحرية إلى مدار أرضي منخفض استوائي. لم تُجرَ أي عملية إطلاق من المنصة منذ 1988. ولا يعني نشاط محطات Malindi الأرضية أن منصة الإطلاق أو البنية الصاروخية ما زالت تشغيلية.",
   "country_ar": "كينيا",
-  "photo_caption_ar": "المنصة البحرية سان ماركو قبالة ساحل كينيا"
+  "photo_caption_ar": "المنصة البحرية سان ماركو قبالة ساحل كينيا",
+  "stats_total": 9,
+  "stats_success": 9,
+  "stats_fail": 0,
+  "stats_asof": "2026-11-17"
  },
  {
   "id": "hammaguir",

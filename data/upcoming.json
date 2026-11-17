@@ -100,7 +100,7 @@
   {
    "site": "vandenberg",
    "ll2_id": "76617033-4dc0-4448-b50c-e5b0d5a18539",
-   "net": "2026-11-19T03:00:00Z",
+   "net": "2026-11-20T02:46:00Z",
    "rocket_fa": "فالکون ۹ بلاک ۵",
    "rocket_en": "Falcon 9 Block 5",
    "payload_fa": "USSF-317",
@@ -120,10 +120,10 @@
    "precision": "day",
    "precision_fa": "روز و ساعت مشخص",
    "precision_en": "Confirmed date & time",
-   "date_label_fa": "2026-11-19",
-   "date_label_en": "2026-11-19",
-   "time_fa": "ساعت 03:00 به وقت جهانی",
-   "time_en": "03:00 UTC"
+   "date_label_fa": "2026-11-20",
+   "date_label_en": "2026-11-20",
+   "time_fa": "ساعت 02:46 به وقت جهانی",
+   "time_en": "02:46 UTC"
   },
   {
    "site": "hainan-commercial",
