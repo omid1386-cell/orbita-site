@@ -1,6 +1,6 @@
 {
- "updated": "2026-11-16",
- "window_end": "2027-02-14",
+ "updated": "2026-11-17",
+ "window_end": "2027-02-15",
  "sites_covered": [
   "ccsfs",
   "vandenberg",
@@ -3204,6 +3204,34 @@
    "date_label_en": "January 2027",
    "time_fa": "در طول ژانویه 2027",
    "time_en": "During January 2027"
+  },
+  {
+   "site": "vandenberg",
+   "ll2_id": "d1a3807e-f304-467c-a095-e08b86924347",
+   "net": "2027-02-15T00:00:00Z",
+   "rocket_fa": "فایرفلای آلفا بلاک ۲",
+   "rocket_en": "Firefly Alpha Block 2",
+   "payload_fa": "QuickSounder",
+   "payload_en": "QuickSounder",
+   "mtype_fa": "علوم زمین",
+   "mtype_en": "Earth Science",
+   "orbit_fa": "مدار خورشیدآهنگ",
+   "orbit_en": "Sun-Synchronous Orbit",
+   "customer_fa": "Firefly Aerospace",
+   "customer_en": "Firefly Aerospace",
+   "desc_fa": "پرتاب فایرفلای آلفا بلاک ۲ با محمولهٔ QuickSounder؛ زمان‌بندی: 2027-02-15.",
+   "desc_en": "Firefly Alpha Block 2 launching QuickSounder; schedule: 2027-02-15.",
+   "calendar_url": "",
+   "stream_url": "",
+   "status": "TBD",
+   "status_fa": "نامشخص",
+   "precision": "day",
+   "precision_fa": "روز و ساعت مشخص",
+   "precision_en": "Confirmed date & time",
+   "date_label_fa": "2027-02-15",
+   "date_label_en": "2027-02-15",
+   "time_fa": "ساعت 00:00 به وقت جهانی",
+   "time_en": "00:00 UTC"
   },
   {
    "site": "kourou",

@@ -11709,7 +11709,11 @@
   "photo_license": "CC0",
   "photo_source_url": "https://commons.wikimedia.org/wiki/File:Sleaford_Bay(GN05734).jpg",
   "country_ar": "أستراليا",
-  "photo_caption_ar": "ساحل خليج سليفورد في شبه جزيرة آير، بالقرب من موقع ويلرز واي"
+  "photo_caption_ar": "ساحل خليج سليفورد في شبه جزيرة آير، بالقرب من موقع ويلرز واي",
+  "stats_total": 1,
+  "stats_success": 0,
+  "stats_fail": 1,
+  "stats_asof": "2026-11-17"
  },
  {
   "id": "sanmarco",
