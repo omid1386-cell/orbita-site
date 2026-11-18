@@ -1,6 +1,6 @@
 {
- "updated": "2026-11-17",
- "window_end": "2027-02-15",
+ "updated": "2026-11-18",
+ "window_end": "2027-02-16",
  "sites_covered": [
   "ccsfs",
   "vandenberg",
@@ -128,7 +128,7 @@
   {
    "site": "hainan-commercial",
    "ll2_id": "a2975167-7c6f-4403-99e1-b40df17c8140",
-   "net": "2026-11-20T11:00:00Z",
+   "net": "2026-11-20T11:59:00Z",
    "rocket_fa": "لانگ مارچ ۸A",
    "rocket_en": "Long March 8A",
    "payload_fa": "SatNet LEO Group TBD?",
@@ -143,15 +143,15 @@
    "desc_en": "Long March 8A launching SatNet LEO Group TBD?; schedule: 2026-11-20.",
    "calendar_url": "",
    "stream_url": "",
-   "status": "TBC",
-   "status_fa": "در انتظار تأیید",
+   "status": "Go",
+   "status_fa": "تأیید شده",
    "precision": "day",
    "precision_fa": "روز و ساعت مشخص",
    "precision_en": "Confirmed date & time",
    "date_label_fa": "2026-11-20",
    "date_label_en": "2026-11-20",
-   "time_fa": "ساعت 11:00 به وقت جهانی",
-   "time_en": "11:00 UTC"
+   "time_fa": "ساعت 11:59 به وقت جهانی",
+   "time_en": "11:59 UTC"
   },
   {
    "site": "vandenberg",
@@ -184,14 +184,14 @@
   {
    "site": "kourou",
    "ll2_id": "7bdc412b-c965-4517-a131-f57a01189803",
-   "net": "2026-11-23T00:00:00Z",
+   "net": "2026-11-23T11:09:00Z",
    "date_label_fa": "2026-11-23",
    "date_label_en": "2026-11-23",
    "precision": "day",
    "precision_fa": "روز و ساعت مشخص",
    "precision_en": "Confirmed date & time",
-   "time_fa": "ساعت 00:00 به وقت جهانی",
-   "time_en": "00:00 UTC",
+   "time_fa": "ساعت 11:09 به وقت جهانی",
+   "time_en": "11:09 UTC",
    "rocket_fa": "آریان ۶۴ بلاک ۲",
    "rocket_en": "Ariane 64 Block 2",
    "payload_fa": "آمازون لئو (LE-04)",
@@ -206,8 +206,8 @@
    "desc_en": "Fourth Ariane 64 launch for Amazon Leo, adding dozens more broadband satellites.",
    "calendar_url": "https://www.arianespace.com/",
    "stream_url": "https://www.youtube.com/arianespace",
-   "status": "TBD",
-   "status_fa": "زمان نامعین"
+   "status": "Go",
+   "status_fa": "تأیید شده"
   },
   {
    "site": "vandenberg",

@@ -12153,7 +12153,11 @@
   "geo_analysis_en": "Hammaguir lies at about 31° N. Its historical Diamant orbital launches reached low Earth orbit at inclinations near the site latitude; there is no evidence of GEO, lunar or interplanetary launches from this site.",
   "geo_analysis_ar": "يقع حمّاقير عند نحو 31° شمالاً. وصلت إطلاقات Diamant المدارية التاريخية إلى مدار أرضي منخفض بميول قريبة من خط عرض الموقع؛ ولا يوجد دليل على إطلاقات إلى GEO أو القمر أو مدارات بين كوكبية من هذه القاعدة.",
   "country_ar": "الجزائر",
-  "photo_caption_ar": "صواريخ السبر فيرونيك وسنتور التي كانت تُطلق من حماقير (نماذج متحفية)"
+  "photo_caption_ar": "صواريخ السبر فيرونيك وسنتور التي كانت تُطلق من حماقير (نماذج متحفية)",
+  "stats_total": 4,
+  "stats_success": 4,
+  "stats_fail": 0,
+  "stats_asof": "2026-11-18"
  },
  {
   "id": "sea-launch",
