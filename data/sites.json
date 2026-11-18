@@ -12405,7 +12405,11 @@
   "photo_license": "CC BY 2.0",
   "photo_source_url": "https://commons.wikimedia.org/wiki/File:Sea_Launch_01.jpg",
   "country_ar": "دولي / المحيط الهادئ",
-  "photo_caption_ar": "إطلاق ليلي لصاروخ زينيت من منصة أوديسي البحرية"
+  "photo_caption_ar": "إطلاق ليلي لصاروخ زينيت من منصة أوديسي البحرية",
+  "stats_total": 40,
+  "stats_success": 36,
+  "stats_fail": 4,
+  "stats_asof": "2026-11-18"
  },
  {
   "id": "vostochny-angara",
