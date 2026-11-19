@@ -12557,7 +12557,11 @@
   "photo_license": "CC BY 2.0",
   "photo_source_url": "https://commons.wikimedia.org/wiki/File:Tsiolkovsky-cosmodrome-vostochny-july-2015-amur-oblast.jpg",
   "country_ar": "روسيا",
-  "photo_caption_ar": "أعمال بناء مدينة تسيولكوفسكي (أوغليغورسك سابقاً)، المدينة الداعمة لقاعدة سفوبودني الفضائية"
+  "photo_caption_ar": "أعمال بناء مدينة تسيولكوفسكي (أوغليغورسك سابقاً)، المدينة الداعمة لقاعدة سفوبودني الفضائية",
+  "stats_total": 5,
+  "stats_success": 5,
+  "stats_fail": 0,
+  "stats_asof": "2026-11-19"
  },
  {
   "id": "jeju",
