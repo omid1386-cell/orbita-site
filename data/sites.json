@@ -13429,7 +13429,11 @@
   "photo_license": "Public domain",
   "photo_source_url": "https://commons.wikimedia.org/wiki/File:Corn_Ranch_Spaceport_National_Map_view.png",
   "country_ar": "الولايات المتحدة",
-  "photo_caption_ar": "صورة جوية رسمية لقاعدة كورن رانش في صحراء غرب تكساس"
+  "photo_caption_ar": "صورة جوية رسمية لقاعدة كورن رانش في صحراء غرب تكساس",
+  "stats_total": 38,
+  "stats_success": 37,
+  "stats_fail": 1,
+  "stats_asof": "2026-11-20"
  },
  {
   "id": "mcgregor",
