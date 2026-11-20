@@ -14829,7 +14829,11 @@
   "photo_license": "Public domain (NASA)",
   "photo_source_url": "https://commons.wikimedia.org/wiki/File:ISS014-E-16026_-_View_of_North_Korea.jpg",
   "country_ar": "كوريا الشمالية",
-  "photo_caption_ar": "صورة التقطها رائد فضاء تابع لناسا (2007) لساحل مقاطعة هواداي؛ منطقة موقع تونغهاي (موسودان-ري)"
+  "photo_caption_ar": "صورة التقطها رائد فضاء تابع لناسا (2007) لساحل مقاطعة هواداي؛ منطقة موقع تونغهاي (موسودان-ري)",
+  "stats_total": 2,
+  "stats_success": 0,
+  "stats_fail": 2,
+  "stats_asof": "2026-11-20"
  },
  {
   "id": "yasny",
