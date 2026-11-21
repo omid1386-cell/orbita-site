@@ -1,0 +1,12 @@
+# ORBITA Step 5 final — QA log
+- All existing entities: 420 unchanged total.
+- Propulsion entities: 65; verified media coverage 37 -> 61.
+- New files/records: 25, of which 24 video link_only and 1 CC BY 2.0 image.
+- Old media arrays preserved in original order; old records untouched.
+- Launch and agency category dictionaries untouched.
+- All new media_id unique; all new media rights and verification metadata present.
+- Schema failures old/new: 116 / 116, no regression. These are 58 historical empty rights.proof_url fields each counted twice (format + pattern).
+- Python: 114 passed / 1 skipped; media Node.js: 20/20 passed.
+- Unresolved 4 documented explicitly, not masked or filled with stock imagery.
+- External video URL playback and CDN fetching not runtime-tested.
+- This is an internal overlay, not a deploy-ready assertion.

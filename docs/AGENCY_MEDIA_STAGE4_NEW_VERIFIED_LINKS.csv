@@ -1,0 +1,26 @@
+﻿entity_id,media_id,source_url,publisher,review_note
+dlr-germany,med-dlr-gsoc-control,https://www.dlr.de/en/rb/media/videos-1/video-german-space-operations-center-gsoc,German Aerospace Center (DLR),DLR official page explicitly labeled video
+csa-canada,med-csa-canadarm3-animation,https://www.asc-csa.gc.ca/eng/multimedia/search/video/18465,Canadian Space Agency,CSA individual video asset with credits to CSA/NASA
+csa-canada,med-csa-canadarm3-gateway,https://www.asc-csa.gc.ca/eng/multimedia/search/video/19110,Canadian Space Agency,CSA individual video asset
+aeb,med-aeb-institutional-30,https://www.gov.br/aeb/pt-br/centrais-de-conteudo/videos/video-institucional-aeb-30-anos,Agência Espacial Brasileira,Government official page explicitly embeds institutional video
+aeb,med-aeb-space-geodesy,https://www.gov.br/aeb/pt-br/centrais-de-conteudo/videos/acordo-de-cooperacao-tecnica-impulsiona-pesquisa-em-geodesia-espacial-no-brasil,Agência Espacial Brasileira,Government official page in video collection
+cnes-france,med-cnes-ariane5-film,https://videotheque.cnes.fr/index.php?id_doc=25103&id_panier=&rang=1&urlaction=doc,CNES Videothèque,CNES media asset; publication requires link-only as launcher-use permission separate
+cnes-france,med-cnes-ariane6-operations,https://videotheque.cnes.fr/index.php?id_doc=35197&rang=2&urlaction=doc,CNES Videothèque,CNES individual video catalogue entry
+polsa,med-polsa-sat4envi,https://polsa.gov.pl/multimedia/sat4envi/,Polish Space Agency,POLSA multimedia asset page with film variants
+eumetsat,med-eumetsat-user-portal,https://www.eumetsat.int/eumetsat-user-portal,EUMETSAT,Official EUMETSAT page linking directly to introduction video
+uksa-uk,med-uksa-unlocking-space-business,https://www.gov.uk/government/publications/unlocking-space-for-business,UK Space Agency / GOV.UK,Official GOV.UK publication explicitly links a programme video; historical agency label
+conae,med-conae-saocom-soil-water,https://www.argentina.gob.ar/ciencia/conae/30-aniversario/2020-en-adelante,CONAE / Argentina.gob.ar,Government official 30th anniversary archive explicitly describes video
+conae,med-conae-saocom-acquisition-plan,https://www.argentina.gob.ar/noticias/nuevo-visor-del-plan-de-adquisicion-saocom-1,CONAE / Argentina.gob.ar,Official Argentine government article explicitly offers video guide
+snsa,med-snsa-mats-documentary,https://www.rymdstyrelsen.se/upptack-rymden/bloggen/2019/05/se-satelliten-mats-pa-film/,Swedish National Space Agency,Agency post specifically about film of MATS satellite
+snsa,med-snsa-mats-video-archive,https://www.rymdstyrelsen.se/en/swedish-space-industry/swedish-satellites/,Swedish National Space Agency,Official agency Swedish satellites page explicitly describes MATS film
+portugal-space,med-portugal-space-euroc2025,https://www.esa.int/esatv/Videos/2025/10/European_Rocketry_Challenge_2025_celebrating_innovation_and_young_talent_in_space,Portuguese Space Agency / ESA TV,ESA TV explicitly credits Agência Espacial Portuguesa as copyright holder
+casc,med-casc-2026-long-march10b-recovery,https://www.spacechina.com/n25/n2014789/n2014834/c4647806/content.html,CASC (China Aerospace Science and Technology Corporation),CASC official video center individual item dated 10 July 2026
+kari,med-kari-danuri-moon-impact,https://www.kari.re.kr//kor/article/ATCL87374b48c/18698,Korea Aerospace Research Institute,KARI government article attaches an actual MP4
+german-space-agency-dlr,med-dlr-enmap-mission,https://www.dlr.de/en/research-and-transfer/projects-and-missions/enmap/mission-video-the-german-enmap-environmental-satellite,German Space Agency at DLR,DLR confirms project mission managed by German Space Agency at DLR
+nasrda,med-nasrda-director-2026,https://central.nasrda.gov.ng/nigerias-development-is-in-gestation-needs-patience-and-strategic-investment-says-nasrda-dg/,"National Space Research and Development Agency, Nigeria",NASRDA central subdomain post embeds a YouTube video; legacy nasrda.gov.ng/blog contains unrelated spam and is not trusted
+gistda,med-gistda-apsco-forum,https://sapace.gistda.or.th/gistda-%E0%B8%A3%E0%B9%88%E0%B8%A7%E0%B8%A1%E0%B8%A1%E0%B8%B7%E0%B8%AD%E0%B8%9E%E0%B8%AB%E0%B8%B8%E0%B8%A0%E0%B8%B2%E0%B8%84%E0%B8%B5%E0%B8%94%E0%B9%89%E0%B8%B2%E0%B8%99%E0%B8%AD%E0%B8%A7%E0%B8%81/,GISTDA,Official GISTDA subsite page explicitly tagged [VIDEO]
+ssa-saudi,med-ssa-earth-spherical-video,https://www.youtube.com/watch?v=euqjrR-Z4bo,Saudi Space Agency,Official SSA YouTube channel and SSA knowledge portal confirm the series
+mysa,med-mysa-makgeopadi-video,https://youtu.be/XYeEPwu8Lu4,Malaysian Space Agency (MYSA),MYSA official article embeds and links the specific YouTube film
+ksa,med-kenya-strategic-plan-2023-2027,https://www.youtube.com/watch?v=sCCEMYGX-jQ,Kenya Space Agency,Video is published by the verified organization channel in source result turn657907youtube6
+ksa,med-kenya-global-data-space-expo-2026,https://www.youtube.com/watch?v=8hWWnQ0uHkU,Kenya Space Agency,Video is published by Kenya Space Agency in source result turn326683youtube1
+bahrain-space-agency,med-bahrain-build-satellite-model,https://www.youtube.com/watch?v=JwsGGsIZNus,Bahrain Space Agency,Video is published by Bahrain Space Agency in source result turn326683youtube0

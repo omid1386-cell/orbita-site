@@ -1,0 +1,52 @@
+﻿entity_id,name_en,previous_verified_media,new_media_this_pass,verified_media_current,status,next_action
+ngpropulsion,Northrop Grumman Propulsion Systems,2,0,2,covered_link_only_or_licensed_image,Enrich gallery when original licensed photographs available
+impulse,Impulse Space,1,0,1,covered_link_only_or_licensed_image,Enrich gallery when original licensed photographs available
+busek,Busek,2,0,2,covered_link_only_or_licensed_image,Enrich gallery when original licensed photographs available
+benchmark,Benchmark Space Systems,1,0,1,covered_link_only_or_licensed_image,Enrich gallery when original licensed photographs available
+moog,Moog Space and Defense,0,1,1,covered_link_only_or_licensed_image,Enrich gallery when original licensed photographs available
+safran-vernon,ArianeGroup Vernon Propulsion Centre,2,0,2,covered_link_only_or_licensed_image,Enrich gallery when original licensed photographs available
+exotrail,Exotrail,2,0,2,covered_link_only_or_licensed_image,Enrich gallery when original licensed photographs available
+thrustme,ThrustMe,1,0,1,covered_link_only_or_licensed_image,Enrich gallery when original licensed photographs available
+kbkha,KB Khimavtomatika (KBKhA),0,1,1,covered_link_only_or_licensed_image,Enrich gallery when original licensed photographs available
+bellatrix,Bellatrix Aerospace,1,0,1,covered_link_only_or_licensed_image,Enrich gallery when original licensed photographs available
+paleblue,Pale Blue,1,0,1,covered_link_only_or_licensed_image,Enrich gallery when original licensed photographs available
+spaceforest,SpaceForest,2,0,2,covered_link_only_or_licensed_image,Enrich gallery when original licensed photographs available
+phasefour,Phase Four,0,1,1,covered_link_only_or_licensed_image,Enrich gallery when original licensed photographs available
+accion,Revolution Space (formerly Accion Systems),0,1,1,covered_link_only_or_licensed_image,Enrich gallery when original licensed photographs available
+bradford-ecaps,Bradford Space / ECAPS,0,1,1,covered_link_only_or_licensed_image,Enrich gallery when original licensed photographs available
+sitael,SITAEL,0,1,1,covered_link_only_or_licensed_image,Enrich gallery when original licensed photographs available
+okb-fakel,OKB Fakel,0,0,0,company_verified_source_rights_missing,Permission for a particular company-sourced photograph or authoritative video
+aalpt-china,Academy of Aerospace Liquid Propulsion Technology (AALPT),0,1,1,covered_link_only_or_licensed_image,Enrich gallery when original licensed photographs available
+aio-propulsion,AIO Propulsion Division,0,0,0,organizational_identity_needs_audit,Clarify exact subunit and footage provenance
+blueorigin-engine,Blue Origin Engines Division,2,0,2,covered_link_only_or_licensed_image,Enrich gallery when original licensed photographs available
+relativity-engine,Relativity Space Propulsion,1,0,1,covered_link_only_or_licensed_image,Enrich gallery when original licensed photographs available
+casc-6th,CASC 6th Academy (AALPT alias; same organization),0,1,1,covered_link_only_or_licensed_image,Enrich gallery when original licensed photographs available
+enpulsion,Enpulsion,1,0,1,covered_link_only_or_licensed_image,Enrich gallery when original licensed photographs available
+morpheus-space,Morpheus Space,3,0,3,covered_link_only_or_licensed_image,Enrich gallery when original licensed photographs available
+vacco,Vacco Industries,0,1,1,covered_link_only_or_licensed_image,Enrich gallery when original licensed photographs available
+airborne-eng,Airborne Engineering,0,2,2,covered_link_only_or_licensed_image,Enrich gallery when original licensed photographs available
+lpsc-test,"ISRO Propulsion Complex (IPRC), Mahendragiri Test Facility",1,0,1,covered_link_only_or_licensed_image,Enrich gallery when original licensed photographs available
+asri-ukzn,"Aerospace Systems Research Institute (ASRI), UKZN",0,1,1,covered_link_only_or_licensed_image,Enrich gallery when original licensed photographs available
+cstp-nasrda,"Centre for Space Transport and Propulsion (CSTP), NASRDA",0,1,1,covered_link_only_or_licensed_image,Enrich gallery when original licensed photographs available
+solid-state-propulsion-za,Solid State Propulsion (SSP),0,1,1,covered_link_only_or_licensed_image,Enrich gallery when original licensed photographs available
+nakuja-project,Nakuja Project (JKUAT student rocketry programme),0,1,1,covered_link_only_or_licensed_image,Enrich gallery when original licensed photographs available
+pyralink-aerospace,PyraLink Aerospace (low-confidence listing),0,0,0,identity_much_stronger_media_missing,Company-origin signed video/photo licence or suitable conference footage
+deltav,Delta V Space Technologies,0,1,1,covered_link_only_or_licensed_image,Enrich gallery when original licensed photographs available
+manastu,Manastu Space,1,0,1,covered_link_only_or_licensed_image,Enrich gallery when original licensed photographs available
+spacefields,SpaceFields,2,0,2,covered_link_only_or_licensed_image,Enrich gallery when original licensed photographs available
+europropulsion,Europropulsion,0,1,1,covered_link_only_or_licensed_image,Enrich gallery when original licensed photographs available
+regulus-guyane,Regulus,0,1,1,covered_link_only_or_licensed_image,Enrich gallery when original licensed photographs available
+ion-x,ION-X,1,0,1,covered_link_only_or_licensed_image,Enrich gallery when original licensed photographs available
+magdrive,Magdrive,0,1,1,covered_link_only_or_licensed_image,Enrich gallery when original licensed photographs available
+pulsar-fusion,Pulsar Fusion,1,0,1,covered_link_only_or_licensed_image,Enrich gallery when original licensed photographs available
+t4i,T4i — Technology for Propulsion and Innovation,1,0,1,covered_link_only_or_licensed_image,Enrich gallery when original licensed photographs available
+pangea-propulsion,Pangea Propulsion,2,0,2,covered_link_only_or_licensed_image,Enrich gallery when original licensed photographs available
+miprons,MIPRONS,0,1,1,covered_link_only_or_licensed_image,Enrich gallery when original licensed photographs available
+ienai-space,IENAI Space,1,0,1,covered_link_only_or_licensed_image,Enrich gallery when original licensed photographs available
+uec-kuznetsov,UEC-Kuznetsov,2,0,2,covered_link_only_or_licensed_image,Enrich gallery when original licensed photographs available
+proton-pm,Proton-PM,0,0,0,manufacturer_verified_media_rights_missing,Russian original video or official media licence
+niimash,NIIMash — Research & Development Institute of Mechanical Engineering,0,1,1,covered_link_only_or_licensed_image,Enrich gallery when original licensed photographs available
+kbhm-isayev,Isayev Design Bureau of Chemical Machine Building (KBKhM),0,1,1,covered_link_only_or_licensed_image,Enrich gallery when original licensed photographs available
+sets,SETS — Space Electric Thruster Systems,0,1,1,covered_link_only_or_licensed_image,Enrich gallery when original licensed photographs available
+atd-aerospace-rs,ATD Aerospace RS,0,1,1,covered_link_only_or_licensed_image,Enrich gallery when original licensed photographs available
+thaliana-space,Thaliana Space,0,1,1,covered_link_only_or_licensed_image,Enrich gallery when original licensed photographs available

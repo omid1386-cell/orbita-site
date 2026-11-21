@@ -1,0 +1,35 @@
+{
+  "package_type": "stage7_round2_delta_manifest",
+  "version": "orbita-stage7-round2-2026-11-21",
+  "date": "2026-11-21",
+  "new_media_count": 13,
+  "verified_count": 7,
+  "candidate_count": 6,
+  "new_media_ids": [
+    "med-stage7-hainan-commercial-01",
+    "med-stage7-hainan-commercial-02",
+    "med-stage7-kapyar-01",
+    "med-stage7-kapyar-02",
+    "med-stage7-kapyar-03",
+    "med-stage7-kii-01",
+    "med-stage7-kulasekarapattinam-01",
+    "med-stage7-malbusca-01",
+    "med-stage7-malbusca-02",
+    "med-stage7-malbusca-03",
+    "med-stage7-recovery-jacklyn-01",
+    "med-stage7-shahroud-01",
+    "med-stage7-taiyuan-01"
+  ],
+  "sha256_by_file": {
+    "docs/stage7/STAGE7_REPORT_FA.md": "3a803ffcea262eba512778bed8df0d94d87f936b15ae5e89d6d748471c568e0d",
+    "docs/stage7/STAGE7_QA.md": "b55dca1e98102abb22578ec3d75e6ed08a5be06d5c0fe010608982aa957269f7",
+    "docs/stage7/STAGE7_MEDIA_SOURCES.csv": "29148f6f2dc7f3e9c703836a6cc8e93e00f2e4ea961e43b94977089abdecbacb",
+    "docs/stage7/STAGE7_ROUND2_NEW_MEDIA.csv": "2ed07807c522da99d383b3dbc1b38f77106b4d060d7680dcdb02d1b129dc849e",
+    "docs/stage7/STAGE7_99_SITES_STATUS.csv": "a124dae30f4a713b4dbec775956b253d80ee529a2f1465b0b022934ddd198c56",
+    "docs/stage7/STAGE7_RESEARCH_QUEUE.csv": "65b0e3cf22b88b2f4db068d3e376d7ce80953817fe7596db3deef7e996f42edd",
+    "docs/stage7/STAGE7_RIGHTS_REVIEW_QUEUE.csv": "99ba96527282c0317615c8dfc47c7d10d33d4c427250e9f557a60c79e69d8036",
+    "docs/stage7/STAGE7_ROUND2_RESEARCH_NOTES_FA.md": "da6ef5cd85b3580329c9e3426e8e47b96baa7ae69b95e564d8f7bd9843df936f",
+    "tests/test_stage7_sites_media.py": "7a5eb176069b8663493ce43f9e25e2c62cfc9426826698e819ae651ac64b37eb",
+    "data/media/catalog.v1.json": "d841055040ddaf7b87d834278dc5a4d5c25c54b182d951c3741e5aada5fa84a9"
+  }
+}

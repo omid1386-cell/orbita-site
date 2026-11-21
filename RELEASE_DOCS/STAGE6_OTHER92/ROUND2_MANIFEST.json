@@ -1,0 +1,30 @@
+{
+  "stage": "STAGE6_OTHER92_ROUND2",
+  "date": "2026-11-21",
+  "new_entities_covered": 9,
+  "new_media": 16,
+  "images": 14,
+  "video_links": 2,
+  "entity_keys": [
+    "company_or_organization:ground_station:orbita-esa-santa-maria",
+    "company_or_organization:ground_station:orbita-ssc-kiruna",
+    "company_or_organization:ground_station:orbita-ssc-south-point",
+    "company_or_organization:mission_control:raspehr-0157-isro-istrac-mission-operations",
+    "company_or_organization:satmaker:gomspace",
+    "company_or_organization:satmaker:kawasaki-prop",
+    "company_or_organization:satmaker:reshetnev",
+    "company_or_organization:satmaker:york-space",
+    "company_or_organization:test_facility:raspehr-0106-isro-isite-satellite-integration-an"
+  ],
+  "catalog_sha256": "b00e1f7d2082d7d51c561b5e1908f7c6808bbcacb4ce8818aa2e48cbdf7cc91a",
+  "rights_policy": "Commons CC / GODL-India / official GomSpace editorial press gallery / link-only original publisher videos",
+  "unverified_live_cdn": true,
+  "deployed": false,
+  "python_tests_passed": 82,
+  "node_tests_passed": 37,
+  "media_bank_validator_errors": 0,
+  "json_schema_diagnostics_before": 116,
+  "json_schema_diagnostics_after": 116,
+  "live_cdn_browser_tested": false,
+  "render_tested": false
+}

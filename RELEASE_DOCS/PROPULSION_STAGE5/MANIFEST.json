@@ -1,0 +1,12 @@
+{
+  "date": "2026-11-21",
+  "base_zip": "ORBITA_LAUNCH_MEDIA_DEEP_RESEARCH_INTERNAL_CUMULATIVE_2026-11-21.zip",
+  "initial_missing_propulsion": 51,
+  "newly_covered": 23,
+  "media_added": 34,
+  "remaining_without_media": 28,
+  "final_covered": 37,
+  "modified_app_files": [
+    "data/media/catalog.v1.json"
+  ]
+}

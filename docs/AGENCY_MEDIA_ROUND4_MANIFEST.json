@@ -1,0 +1,32 @@
+{
+  "baseline_approved": 58,
+  "baseline_covered_agencies": 37,
+  "added_media": 20,
+  "added_approved": 19,
+  "added_candidates": 1,
+  "added_images": 2,
+  "added_videos": 17,
+  "new_agencies": 14,
+  "new_agency_ids": [
+    "afsa",
+    "azercosmos",
+    "belspo",
+    "egsa",
+    "ggpen",
+    "gssti-ghana",
+    "in-space",
+    "lsa-luxembourg",
+    "nlsa",
+    "rwanda-space-agency",
+    "slovak-space-office",
+    "tua",
+    "uzbekspace",
+    "zingsa-zimbabwe"
+  ],
+  "approved_total": 77,
+  "covered_agencies": 51,
+  "remaining": 45,
+  "nonagency_media_records": 0,
+  "all_entities": 420,
+  "candidate_total": 4
+}

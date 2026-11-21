@@ -1,0 +1,5 @@
+﻿entity_id,name_en,status,source_evidence,next_required
+okb-fakel,OKB Fakel,company_verified_source_rights_missing,Public technical reports feature SPT-100 images from OKB Fakel archive; redistribution permission absent,Permission for a particular company-sourced photograph or authoritative video
+aio-propulsion,AIO Propulsion Division,organizational_identity_needs_audit,AIO Propulsion Division is broad/ambiguous; no clearly attributable and licensable public visual identified,Clarify exact subunit and footage provenance
+pyralink-aerospace,PyraLink Aerospace (low-confidence listing),identity_much_stronger_media_missing,"Company presence evidenced by Innovation Bridge and historical company presentations; earlier low-confidence identity assessment should be revised, but no valid reusable gallery media identified",Company-origin signed video/photo licence or suitable conference footage
+proton-pm,Proton-PM,manufacturer_verified_media_rights_missing,Official engine/product pages confirm manufacturing RD-276; photographs are copyrighted and no documented reusable file or standalone relevant video passed review,Russian original video or official media licence

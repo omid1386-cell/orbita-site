@@ -1,0 +1,374 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://espash.ir/orbita/media/schema/v1",
+  "title": "ORBITA media catalog v1",
+  "type": "object",
+  "required": [
+    "schema_version",
+    "catalog_kind",
+    "total_entities",
+    "entities"
+  ],
+  "properties": {
+    "schema_version": {
+      "const": "1.0.0"
+    },
+    "catalog_kind": {
+      "const": "orbita_entity_media"
+    },
+    "snapshot_on": {
+      "type": "string",
+      "format": "date"
+    },
+    "total_entities": {
+      "type": "integer",
+      "minimum": 0
+    },
+    "description": {
+      "type": "string"
+    },
+    "entities": {
+      "type": "array",
+      "items": {
+        "$ref": "#/$defs/entity"
+      }
+    }
+  },
+  "additionalProperties": false,
+  "$defs": {
+    "localized": {
+      "type": "object",
+      "properties": {
+        "fa": {
+          "type": "string"
+        },
+        "en": {
+          "type": "string"
+        },
+        "ar": {
+          "type": "string"
+        }
+      },
+      "additionalProperties": false
+    },
+    "entity": {
+      "type": "object",
+      "required": [
+        "entity_type",
+        "category",
+        "entity_id",
+        "entity_key",
+        "names",
+        "source_data_file",
+        "preserve_current_hero_photo",
+        "review_status",
+        "legacy_media",
+        "media"
+      ],
+      "properties": {
+        "entity_type": {
+          "enum": [
+            "company_or_organization",
+            "launch_site",
+            "recovery_site"
+          ]
+        },
+        "category": {
+          "enum": [
+            "agency",
+            "launch",
+            "propulsion",
+            "satmaker",
+            "components",
+            "ground_station",
+            "university_space",
+            "inspace_services",
+            "test_facility",
+            "mission_control",
+            "ground_services",
+            "payloads",
+            "launch_site",
+            "recovery_site"
+          ]
+        },
+        "entity_id": {
+          "type": "string",
+          "minLength": 1
+        },
+        "entity_key": {
+          "type": "string",
+          "minLength": 5
+        },
+        "names": {
+          "$ref": "#/$defs/localized"
+        },
+        "source_data_file": {
+          "type": "string",
+          "pattern": "^data/"
+        },
+        "preserve_current_hero_photo": {
+          "type": "boolean"
+        },
+        "review_status": {
+          "enum": [
+            "pending",
+            "in_progress",
+            "reviewed"
+          ]
+        },
+        "legacy_media": {
+          "type": "object",
+          "required": [
+            "gallery_count",
+            "profile_photo",
+            "profile_photo_source_url",
+            "logo_exists",
+            "event_video_link_count"
+          ],
+          "properties": {
+            "gallery_count": {
+              "type": "integer",
+              "minimum": 0
+            },
+            "profile_photo": {
+              "type": [
+                "string",
+                "null"
+              ]
+            },
+            "profile_photo_source_url": {
+              "type": [
+                "string",
+                "null"
+              ]
+            },
+            "logo_exists": {
+              "type": "boolean"
+            },
+            "event_video_link_count": {
+              "type": "integer",
+              "minimum": 0
+            }
+          },
+          "additionalProperties": false
+        },
+        "media": {
+          "type": "array",
+          "items": {
+            "$ref": "#/$defs/media"
+          }
+        }
+      },
+      "additionalProperties": false
+    },
+    "media": {
+      "type": "object",
+      "required": [
+        "media_id",
+        "kind",
+        "role",
+        "caption",
+        "source",
+        "rights",
+        "verification",
+        "added_on"
+      ],
+      "properties": {
+        "media_id": {
+          "type": "string",
+          "pattern": "^med-[a-z0-9][a-z0-9-]{3,79}$"
+        },
+        "kind": {
+          "enum": [
+            "image",
+            "video"
+          ]
+        },
+        "role": {
+          "enum": [
+            "facility",
+            "operations",
+            "product",
+            "mission",
+            "launch",
+            "landing",
+            "equipment",
+            "historical",
+            "overview",
+            "other"
+          ]
+        },
+        "file_path": {
+          "type": "string",
+          "pattern": "^assets/media/"
+        },
+        "external_url": {
+          "type": "string",
+          "format": "uri",
+          "pattern": "^https://"
+        },
+        "caption": {
+          "$ref": "#/$defs/localized"
+        },
+        "source": {
+          "type": "object",
+          "required": [
+            "url",
+            "publisher"
+          ],
+          "properties": {
+            "url": {
+              "type": "string",
+              "format": "uri",
+              "pattern": "^https://"
+            },
+            "publisher": {
+              "type": "string",
+              "minLength": 1
+            }
+          },
+          "additionalProperties": false
+        },
+        "rights": {
+          "type": "object",
+          "required": [
+            "usage",
+            "checked_on"
+          ],
+          "properties": {
+            "usage": {
+              "enum": [
+                "undetermined",
+                "public_domain",
+                "permission_granted",
+                "attribution_required",
+                "link_only",
+                "restricted"
+              ]
+            },
+            "license": {
+              "type": "string"
+            },
+            "credit": {
+              "type": "string"
+            },
+            "proof_url": {
+              "type": "string",
+              "format": "uri",
+              "pattern": "^https://"
+            },
+            "checked_on": {
+              "type": [
+                "string",
+                "null"
+              ],
+              "format": "date"
+            }
+          },
+          "additionalProperties": false
+        },
+        "verification": {
+          "type": "object",
+          "required": [
+            "status",
+            "identity_match",
+            "source_verified",
+            "reviewed_on"
+          ],
+          "properties": {
+            "status": {
+              "enum": [
+                "candidate",
+                "verified",
+                "rejected"
+              ]
+            },
+            "identity_match": {
+              "enum": [
+                "unverified",
+                "confirmed",
+                "rejected"
+              ]
+            },
+            "source_verified": {
+              "type": "boolean"
+            },
+            "reviewed_on": {
+              "type": [
+                "string",
+                "null"
+              ],
+              "format": "date"
+            },
+            "notes": {
+              "type": "string"
+            },
+            "reviewer": {
+              "type": "string",
+              "minLength": 1
+            }
+          },
+          "additionalProperties": false
+        },
+        "added_on": {
+          "type": "string",
+          "format": "date"
+        },
+        "thumbnail_path": {
+          "type": "string",
+          "pattern": "^assets/media/"
+        },
+        "captured_on": {
+          "type": "string",
+          "format": "date"
+        },
+        "width": {
+          "type": "integer",
+          "minimum": 1
+        },
+        "height": {
+          "type": "integer",
+          "minimum": 1
+        },
+        "duration_seconds": {
+          "type": "number",
+          "minimum": 0
+        },
+        "sort_order": {
+          "type": "integer",
+          "minimum": 0
+        },
+        "file_sha256": {
+          "type": "string",
+          "pattern": "^[a-f0-9]{64}$"
+        },
+        "alt": {
+          "$ref": "#/$defs/localized"
+        }
+      },
+      "oneOf": [
+        {
+          "required": [
+            "file_path"
+          ],
+          "not": {
+            "required": [
+              "external_url"
+            ]
+          }
+        },
+        {
+          "required": [
+            "external_url"
+          ],
+          "not": {
+            "required": [
+              "file_path"
+            ]
+          }
+        }
+      ],
+      "additionalProperties": false
+    }
+  }
+}

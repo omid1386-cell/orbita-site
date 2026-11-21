@@ -1,0 +1,52 @@
+/* ORBITA MEDIA / visually distinct dossier gallery. Scoped to .orbita-media-* */
+.orbita-media-section{--mg-gold:#d9b76e;--mg-ink:#0a1828;position:relative;isolation:isolate;margin:14px 0 19px;padding:14px 12px 14px;color:var(--text,#eaf4ff);background:linear-gradient(155deg,rgba(16,43,65,.97),rgba(6,18,33,.98) 68%);border:1px solid rgba(217,183,110,.3);border-radius:16px;box-shadow:0 11px 30px rgba(0,0,0,.18);overflow:hidden}
+.orbita-media-section::before{content:'';pointer-events:none;position:absolute;inset:0;background:radial-gradient(circle at 12% 0%,rgba(70,145,191,.12),transparent 48%),radial-gradient(circle at 98% 82%,rgba(217,183,110,.07),transparent 35%);z-index:-1}
+.orbita-media-heading{display:flex;align-items:center;gap:10px;min-width:0;flex-wrap:wrap;margin-bottom:12px}
+.orbita-media-heading-mark{width:39px;height:39px;display:grid;place-items:center;flex:0 0 auto;border:1px solid rgba(217,183,110,.4);border-radius:12px;background:rgba(217,183,110,.08);color:var(--mg-gold)}
+.orbita-media-heading-mark svg{width:24px;height:24px}
+.orbita-media-heading-copy{flex:1 1 130px;min-width:0}
+.orbita-media-eyebrow{display:block;color:var(--mg-gold);font-family:inherit;font-size:9px;font-weight:800;letter-spacing:.4px;text-transform:uppercase;line-height:1.55}
+.orbita-media-heading h3{font-size:14px;line-height:1.55;margin:1px 0 0;color:#fff;font-weight:800}
+.orbita-media-count{display:inline-block;font-size:10px;border-radius:20px;border:1px solid rgba(217,183,110,.33);color:#ecd09b;padding:4px 9px;white-space:nowrap}
+.orbita-media-empty{min-height:124px;padding:16px 12px;display:grid;place-items:center;gap:6px;text-align:center;background:rgba(255,255,255,.026);border:1px dashed rgba(217,183,110,.28);border-radius:12px}
+.orbita-media-empty-glyph{color:var(--mg-gold);font-size:25px;line-height:1}
+.orbita-media-empty strong{font-size:12px;color:#f0e1bf;font-weight:700}
+.orbita-media-empty p{margin:0;color:#9eb2c4;font-size:10px;line-height:1.9;max-width:290px}
+.orbita-media-filters{display:flex;gap:7px;flex-wrap:wrap;margin:2px 0 12px}
+.orbita-media-section button{font-family:inherit;cursor:pointer}
+.orbita-media-filter{border:1px solid rgba(161,190,208,.27);background:rgba(255,255,255,.045);color:#bdcfde;border-radius:999px;padding:7px 13px;font-size:11px;font-weight:650;min-height:36px;transition:background .15s,border-color .15s}
+.orbita-media-filter:hover{border-color:var(--mg-gold)}
+.orbita-media-filter.is-active{color:#131e28;background:linear-gradient(110deg,#f0d49c,#c69943);border-color:#e8c882}
+.orbita-media-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:9px}
+.orbita-media-card{min-width:0;border:1px solid rgba(138,179,204,.25);border-radius:12px;overflow:hidden;background:rgba(10,23,37,.8);transition:transform .16s,border-color .16s}
+.orbita-media-card:hover{transform:translateY(-2px);border-color:rgba(217,183,110,.7)}
+.orbita-media-card-cover{position:relative;aspect-ratio:1.42/1;display:flex;align-items:center;justify-content:center;background:linear-gradient(145deg,#112e47,#041320);overflow:hidden}
+.orbita-media-card-cover img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover}
+.orbita-media-placeholder{font-size:35px;color:rgba(217,183,110,.68)}
+.orbita-media-type{position:absolute;top:7px;inset-inline-start:7px;color:#fff;background:rgba(6,19,31,.82);border:1px solid rgba(255,255,255,.2);border-radius:8px;font-size:9px;padding:3px 7px}
+.orbita-media-card-action{position:absolute;bottom:7px;inset-inline-end:7px;z-index:1;border:1px solid rgba(235,210,159,.8);background:rgba(8,21,33,.94);border-radius:8px;color:#f4ddb1;min-height:32px;display:flex;align-items:center;padding:5px 9px;text-decoration:none;font-size:10px;line-height:1.6}
+.orbita-media-card-info{display:grid;gap:3px;padding:9px 10px}
+.orbita-media-card-info strong{color:#fff;font-size:11px;line-height:1.55;overflow-wrap:anywhere}
+.orbita-media-card-info span{font-size:10px;color:#afbecf;overflow-wrap:anywhere}
+.orbita-media-inline-link{font-size:10px;color:#efcf8f;justify-self:start;text-decoration:underline;text-underline-offset:3px}
+.orbita-media-msg{color:#c3d2df;border:1px dashed rgba(255,255,255,.17);padding:15px 12px;border-radius:11px;text-align:center;line-height:1.9;font-size:11px}
+.orbita-media-error{color:#e9c8b7}.orbita-media-retry{margin-inline-start:10px;border:1px solid #deb76e;color:#f2d8a3;padding:5px 11px;border-radius:7px;background:transparent}
+.orbita-media-section :focus-visible,.orbita-media-lightbox :focus-visible{outline:3px solid #ffdd81;outline-offset:3px}
+.orbita-media-lightbox{color:#f4f7fb;border:1px solid rgba(217,183,110,.5);border-radius:18px;background:#071829;padding:0;width:min(900px,calc(100vw - 28px));max-width:900px;max-height:calc(100dvh - 28px);box-shadow:0 23px 85px #000b}
+.orbita-media-lightbox::backdrop{background:rgba(2,8,17,.87);backdrop-filter:blur(8px)}
+.orbita-media-viewer{display:flex;flex-direction:column;max-height:calc(100dvh - 30px);min-height:0}
+.orbita-media-viewer-bar{display:flex;align-items:center;justify-content:space-between;gap:12px;padding:11px 14px;background:linear-gradient(110deg,#0c2a42,#071827);border-bottom:1px solid rgba(217,183,110,.27)}
+.orbita-media-viewer-heading{display:grid;gap:2px;min-width:0}.orbita-media-viewer-heading strong{font-size:13px;overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
+.orbita-media-close{flex:0 0 auto;width:36px;height:36px;border-radius:10px;background:#24384c;border:1px solid #566c81;color:#fff;font-size:22px;cursor:pointer}
+.orbita-media-viewer-stage{min-height:0;display:grid;place-items:center;padding:10px;background:radial-gradient(circle,#16354d,#07131f 70%);overflow:auto}
+.orbita-media-viewer-stage img{display:block;max-width:100%;max-height:60dvh;object-fit:contain;border-radius:6px}
+.orbita-media-viewer-stage video{display:block;max-width:100%;max-height:60dvh;width:auto;border-radius:7px}
+.orbita-media-viewer-caption{display:grid;gap:7px;padding:12px 15px;line-height:1.7;overflow:auto}
+.orbita-media-viewer-caption strong{font-size:13px}.orbita-media-viewer-caption p{margin:0;color:#b4c9d9;font-size:11px}
+.orbita-media-source{font-size:11px;color:#e9c481;justify-self:start}
+.orbita-media-viewer-nav{display:flex;justify-content:space-between;padding:0 14px 12px;gap:10px}
+.orbita-media-nav{min-height:37px;min-width:88px;border:1px solid #8b7857;color:#f5dbb2;border-radius:8px;background:#1b3449;cursor:pointer}
+@media(min-width:780px){.orbita-media-section{padding:16px}.orbita-media-grid{grid-template-columns:repeat(3,minmax(0,1fr))}}
+@media(max-width:520px){.orbita-media-section{margin:12px 0;padding:11px;border-radius:13px}.orbita-media-card-cover{aspect-ratio:1.16/1}.orbita-media-card-info{padding:7px}.orbita-media-card-action{font-size:9px}.orbita-media-viewer-stage img,.orbita-media-viewer-stage video{max-height:52dvh}}
+@media(prefers-reduced-motion:reduce){.orbita-media-card,.orbita-media-filter{transition:none!important}.orbita-media-card:hover{transform:none}}
+/* Light application theme still uses a dark astronomical gallery by design. */

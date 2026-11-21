@@ -1,0 +1,24 @@
+{
+  "date": "2026-11-21",
+  "stage": 5,
+  "scope_entities": 133,
+  "launch_entities": 68,
+  "propulsion_entities": 65,
+  "new_media": 18,
+  "new_images": 8,
+  "new_videos": 10,
+  "covered_entities": 13,
+  "remaining_entities": 120,
+  "approved_agency_media_baseline": 77,
+  "source_cumulative_sha256": "f78c4ff2c1e4650ac23e3467b6b1000145c45ecc760cb6e8f1e70ffd538f3039",
+  "baseline_catalog_sha256": "a3bd2e8df55b5086779cd24fa5ceb48f41e5ab50d87649798aa2bed9e36effb1",
+  "publication_state": "internal_checkpoint; not deployed",
+  "notes": "Video records are link-only. Images use Commons direct file URL constructed from verified original file title; production hotlink tests pending.",
+  "agency_media_total_including_candidates": 81,
+  "preexisting_jsonschema_violations": 58,
+  "new_jsonschema_violations": 0,
+  "tests": {
+    "python_unittest": 53,
+    "node_media_tests": 20
+  }
+}

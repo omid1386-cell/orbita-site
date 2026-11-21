@@ -1,0 +1,26 @@
+{
+  "stage": 4,
+  "date": "2026-11-21",
+  "status": "partial_data_checkpoint_not_for_production",
+  "entities_total": 420,
+  "agencies_total": 96,
+  "agencies_with_verified_media": 9,
+  "approved_images": 4,
+  "approved_link_only_videos": 14,
+  "unpublished_candidates": 2,
+  "validated_media_urls": "web_page_checked_not_end_to_end_deployment_verified",
+  "updated_files": {
+    "data/media/catalog.v1.json": "a0a28b2cc15106486544a7c49c7a7352e52a1172b8ab3240e3a609ced98276f3",
+    "docs/AGENCY_MEDIA_COVERAGE_96.csv": "7f7396cae5e7e87740a83ebc66b1127420ba6e396c696d944ad23ef90f47fd7e",
+    "docs/AGENCY_MEDIA_COVERAGE_96.json": "e3515148fbaf56c975f1bcae01d6889514149be665ff42d8f7523fc5b1f96302",
+    "docs/AGENCY_MEDIA_SOURCES_20.csv": "b822570e8f0fe02c95316456f97bf037362676cf6b21d140f10534fd53595f55",
+    "tests/test_media_bank.py": "bb922a124c56b9a020ff36490d9073a56b7f6237598bdcd3688eed2b5ef2b658",
+    "tests/media-bank.test.cjs": "3780903a34b23e3b4ee1f3f3c3e38ca4e809d695e0ee8592911bbe526a78ac6d",
+    "tests/media-gallery.test.cjs": "e36f2ed8f9c91244a9744cd3c0cf293b6371b446e178ae365af6907b4f21e07d",
+    "tests/test_agency_media_stage4.py": "11da015b8481df729ba7adf87fccce27a748ab8e79cc95b4bb23530e8474c296",
+    "tests/stage4-media-policy.test.cjs": "820007dd8c99976a4458b4235e0ab384ec1a149b0b1c6018c69f7472ccbc9349",
+    "ORBITA_MEDIA_STAGE4_PROGRESS_FA.md": "8b17aa3651d0ddcea52bf44906547e9bfe539200d991580b98c2e1385e28d78b",
+    "README_STAGE4_CHECKPOINT_FA.md": "549bff2d265aa79ec78999970ece3d2360083bbc1e3a573fa001013c6d746c0c"
+  },
+  "must_not_be_deployed_alone": true
+}

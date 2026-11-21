@@ -1,0 +1,134 @@
+﻿category,entity_id,name_en,name_fa,approved_media_count,images,videos,editorial_status
+launch,abl,Long Wall (formerly ABL Space Systems),لانگ وال (ای‌بی‌ال سابق),0,0,0,not_yet_reviewed
+launch,agnikul,Agnikul Cosmos,آگنی‌کول کاسموس,0,0,0,not_yet_reviewed
+launch,aio-iran,Aerospace Industries Organization (AIO),سازمان صنایع هوافضا,0,0,0,not_yet_reviewed
+launch,arianegroup,ArianeGroup,آریان‌گروپ,1,1,0,partially_populated
+launch,arianespace,Arianespace,آریان‌اسپیس,1,0,1,partially_populated
+launch,astra,Astra Space,آسترا اسپیس,1,1,0,partially_populated
+launch,avio,Avio,آویو,1,1,0,partially_populated
+launch,blueorigin,Blue Origin,بلو اوریجین,2,1,1,partially_populated
+launch,boeing,"Boeing Defense, Space & Security",بوئینگ (بخش دفاع و فضا),1,1,0,partially_populated
+launch,borospace,Borospace,بوروسپیس,0,0,0,not_yet_reviewed
+launch,calt,CALT (China Academy of Launch Vehicle Technology),آکادمی فناوری پرتابگر چین,0,0,0,not_yet_reviewed
+launch,casspace,CAS Space,سی‌ای‌اس اسپیس,0,0,0,not_yet_reviewed
+launch,deepblue,Deep Blue Aerospace,دیپ بلو ایروسپیس,0,0,0,not_yet_reviewed
+launch,energia,RSC Energia,انرژیا,0,0,0,not_yet_reviewed
+launch,etherealx,EtherealX,اتریال‌ایکس,0,0,0,not_yet_reviewed
+launch,exolaunch,Exolaunch,اکسولاونچ,0,0,0,not_yet_reviewed
+launch,expace,ExPace / CASIC,اکس‌پیس (کاسیک),0,0,0,not_yet_reviewed
+launch,firefly,Firefly Aerospace,فایرفلای ایروسپیس,1,0,1,partially_populated
+launch,galactic-energy,Galactic Energy,گلکتیک انرژی,0,0,0,not_yet_reviewed
+launch,gilmour,Gilmour Space Technologies,گیلمور اسپیس,1,1,0,partially_populated
+launch,glavkosmos,Glavkosmos,گلاوکاسموس,0,0,0,not_yet_reviewed
+launch,hanwha,Hanwha Aerospace,هانوا ایروسپیس,0,0,0,not_yet_reviewed
+launch,honda,Honda (Space Development),هوندا (بخش فضایی),0,0,0,not_yet_reviewed
+launch,hyimpulse,HyImpulse,های‌ایمپالس,1,0,1,partially_populated
+launch,hyprspace,HyPrSpace,های‌پر‌اسپیس,0,0,0,not_yet_reviewed
+launch,iai,Israel Aerospace Industries,صنایع هوافضای اسرائیل,0,0,0,not_yet_reviewed
+launch,innospace,Innospace,اینواسپیس,0,0,0,not_yet_reviewed
+launch,interstellar-jp,Interstellar Technologies,اینترستلار تکنولوجیز,0,0,0,not_yet_reviewed
+launch,irgc-space,IRGC Aerospace Force – Space Division,بخش فضایی نیروی هوافضای سپاه,0,0,0,not_yet_reviewed
+launch,isar,Isar Aerospace,ایزار ایروسپیس,1,0,1,partially_populated
+launch,ispace-cn,i-Space (Beijing Interstellar Glory),آی‌اسپیس چین,0,0,0,not_yet_reviewed
+launch,khrunichev,Khrunichev Center,مرکز خرونیچف,0,0,0,not_yet_reviewed
+launch,landspace,LandSpace,لند اسپیس,0,0,0,not_yet_reviewed
+launch,latitude,Latitude,لتیتود,0,0,0,not_yet_reviewed
+launch,lockheed,Lockheed Martin Space,لاکهید مارتین (بخش فضا),1,1,0,partially_populated
+launch,maiaspace,MaiaSpace,مایا اسپیس,0,0,0,not_yet_reviewed
+launch,mhi,Mitsubishi Heavy Industries,صنایع سنگین میتسوبیشی,0,0,0,not_yet_reviewed
+launch,mura-space,Mura Space,شرکت توسعه زیرساخت پرتاب Mura Space,0,0,0,not_yet_reviewed
+launch,nakuja-space,Nakuja Space,شرکت پرتاب نکوژا (Nakuja Space),0,0,0,not_yet_reviewed
+launch,nordspace,NordSpace,نوردسپیس,0,0,0,not_yet_reviewed
+launch,northrop,Northrop Grumman Space Systems,نورث‌راپ گرومن,1,1,0,partially_populated
+launch,orbex,Orbex,اوربکس,0,0,0,not_yet_reviewed
+launch,orienspace,Orienspace,اورین‌اسپیس,0,0,0,not_yet_reviewed
+launch,otespace,OteSpace,اوت‌اسپیس,0,0,0,not_yet_reviewed
+launch,perigee,Perigee Aerospace,پریجی ایروسپیس,0,0,0,not_yet_reviewed
+launch,phantomspace,Phantom Space,فانتوم اسپیس,0,0,0,not_yet_reviewed
+launch,pivdenmash,Pivdenmash (Yuzhmash),پیودنماش (یوژماش),0,0,0,not_yet_reviewed
+launch,pivdenne,Pivdenne (Yuzhnoye) State Design Office,دفتر طراحی دولتی پیودننه (یوژنویه),0,0,0,not_yet_reviewed
+launch,pldspace,PLD Space,پی‌ال‌دی اسپیس,3,2,1,partially_populated
+launch,progress-rocket,Progress Rocket Space Centre,مرکز فضایی-موشکی پراگرس,0,0,0,not_yet_reviewed
+launch,relativity,Relativity Space,رلتیویتی اسپیس,0,0,0,not_yet_reviewed
+launch,rfa,Rocket Factory Augsburg (RFA),راکت فکتوری آگسبورگ,2,0,2,partially_populated
+launch,rocketlab,Rocket Lab,راکت لب,1,1,0,partially_populated
+launch,roketsan,Roketsan,روکتسان,0,0,0,not_yet_reviewed
+launch,sast,SAST (Shanghai Academy of Spaceflight Technology),آکادمی فناوری فضایی شانگهای,0,0,0,not_yet_reviewed
+launch,sierraspace,Sierra Space,سیرا اسپیس,0,0,0,not_yet_reviewed
+launch,sirius-space-services,Sirius Space Services,سریوس اسپیس سرویسز,0,0,0,not_yet_reviewed
+launch,skyroot,Skyroot Aerospace,اسکای‌روت ایروسپیس,1,1,0,partially_populated
+launch,skyrora,Skyrora,اسکای‌رورا,0,0,0,not_yet_reviewed
+launch,space-epoch,Space Epoch,اسپیس ایپاک,0,0,0,not_yet_reviewed
+launch,space-pioneer,Space Pioneer (Tianbing),اسپیس پایونیر,0,0,0,not_yet_reviewed
+launch,spaceone,Space One,اسپیس وان,0,0,0,not_yet_reviewed
+launch,spacex,SpaceX,اسپیس‌ایکس,2,1,1,partially_populated
+launch,stellar-kinetics,Stellar Kinetics MCT,استلار کینتیکس (MCT),0,0,0,not_yet_reviewed
+launch,stoke,Stoke Space,استوک اسپیس,0,0,0,not_yet_reviewed
+launch,t-minus-engineering,T-Minus Engineering,تی‌ماینِس انجینیرینگ,0,0,0,not_yet_reviewed
+launch,ula,United Launch Alliance (ULA),یونایتد لانچ الاینس,1,1,0,partially_populated
+launch,virgingalactic,Virgin Galactic,ویرجین گلکتیک,1,0,1,partially_populated
+propulsion,aalpt-china,Academy of Aerospace Liquid Propulsion Technology (AALPT),آکادمی فناوری پیشرانه‌های مایع چین (AALPT),0,0,0,not_yet_reviewed
+propulsion,accion,Revolution Space (formerly Accion Systems),رِوُلوشن اسپیس (نام پیشین: Accion Systems),0,0,0,not_yet_reviewed
+propulsion,agile,Agile Space Industries,اجایل اسپیس,1,0,1,partially_populated
+propulsion,aio-propulsion,AIO Propulsion Division,صنایع سوخت و پیشرانه هوافضا,0,0,0,not_yet_reviewed
+propulsion,airborne-eng,Airborne Engineering,ایربرن انجینیرینگ,0,0,0,not_yet_reviewed
+propulsion,asri-ukzn,"Aerospace Systems Research Institute (ASRI), UKZN",مؤسسه پژوهش سامانه‌های هوافضایی (ASRI)، دانشگاه کوازولو-ناتال,0,0,0,not_yet_reviewed
+propulsion,atd-aerospace-rs,ATD Aerospace RS,ای‌تی‌دی ایروسپیس آر‌اس,0,0,0,not_yet_reviewed
+propulsion,bellatrix,Bellatrix Aerospace,بلاتریکس ایروسپیس,0,0,0,not_yet_reviewed
+propulsion,benchmark,Benchmark Space Systems,بنچ‌مارک اسپیس,0,0,0,not_yet_reviewed
+propulsion,blueorigin-engine,Blue Origin Engines Division,بخش موتورهای پیشران بلو اوریجین,0,0,0,not_yet_reviewed
+propulsion,bradford-ecaps,Bradford Space / ECAPS,بردفورد اسپیس / اکپس,0,0,0,not_yet_reviewed
+propulsion,busek,Busek,بوسک,0,0,0,not_yet_reviewed
+propulsion,casc-6th,CASC 6th Academy (AALPT alias; same organization),آکادمی ششم CASC (نام بدیل AALPT؛ همان سازمان),0,0,0,not_yet_reviewed
+propulsion,cstp-nasrda,"Centre for Space Transport and Propulsion (CSTP), NASRDA",مرکز حمل‌ونقل فضایی و پیشران (CSTP)، NASRDA,0,0,0,not_yet_reviewed
+propulsion,dawn-aerospace,Dawn Aerospace,داون ایروسپیس,1,0,1,partially_populated
+propulsion,deltav,Delta V Space Technologies,دلتا وی,0,0,0,not_yet_reviewed
+propulsion,dlr-lampoldshausen,DLR Lampoldshausen Test Center,مرکز تست پیشرانه لامپولدس‌هاوزن آلمان,1,1,0,partially_populated
+propulsion,energomash,NPO Energomash,ان‌پی‌او انرگومash,1,1,0,partially_populated
+propulsion,enpulsion,Enpulsion,ان‌پالشن,0,0,0,not_yet_reviewed
+propulsion,europropulsion,Europropulsion,یوروپراپالژن,0,0,0,not_yet_reviewed
+propulsion,exotrail,Exotrail,اگزوترِیل,0,0,0,not_yet_reviewed
+propulsion,ienai-space,IENAI Space,ایِنای اسپیس,0,0,0,not_yet_reviewed
+propulsion,ihi,IHI Aerospace,آی‌اچ‌آی ایروسپیس,1,1,0,partially_populated
+propulsion,impulse,Impulse Space,ایمپالس اسپیس,0,0,0,not_yet_reviewed
+propulsion,ion-x,ION-X,آیون-ایکس,0,0,0,not_yet_reviewed
+propulsion,kbhm-isayev,Isayev Design Bureau of Chemical Machine Building (KBKhM),دفتر طراحی شیمیایی ایسایف (KBKhM),0,0,0,not_yet_reviewed
+propulsion,kbkha,KB Khimavtomatika (KBKhA),کا‌بی خیم‌آوتوماتیکا,0,0,0,not_yet_reviewed
+propulsion,l3harris,L3Harris Technologies (RS-25 & Defense Propulsion),ال۳هریس (RS-25 و پیشرانش دفاعی),2,1,1,partially_populated
+propulsion,lpsc-isro,Liquid Propulsion Systems Centre (LPSC),مرکز سیستم‌های پیشران مایع (LPSC),1,1,0,partially_populated
+propulsion,lpsc-test,"ISRO Propulsion Complex (IPRC), Mahendragiri Test Facility",مجتمع پیشرانه‌های ایسرو (IPRC)، مرکز آزمون ماهندراگیری,0,0,0,not_yet_reviewed
+propulsion,magdrive,Magdrive,مگ‌درایو,0,0,0,not_yet_reviewed
+propulsion,manastu,Manastu Space,ماناستو اسپیس,0,0,0,not_yet_reviewed
+propulsion,miprons,MIPRONS,میپرونز,0,0,0,not_yet_reviewed
+propulsion,moog,Moog Space and Defense,موگ (فضا و دفاع),0,0,0,not_yet_reviewed
+propulsion,morpheus-space,Morpheus Space,مورفیوس اسپیس,0,0,0,not_yet_reviewed
+propulsion,nakuja-project,Nakuja Project (JKUAT student rocketry programme),پروژه موشکی دانشگاهی Nakuja (JKUAT),0,0,0,not_yet_reviewed
+propulsion,nammo,Nammo,نامو,1,0,1,partially_populated
+propulsion,nasa-stennis,NASA Stennis Space Center,مجتمع تست پیشرانه استنیس ناسا,1,0,1,partially_populated
+propulsion,nasa-wstf,NASA White Sands Test Facility,پایگاه تست وایت سندز ناسا,1,1,0,partially_populated
+propulsion,ngpropulsion,Northrop Grumman Propulsion Systems,سامانه‌های پیشران نورث‌راپ گرومن,0,0,0,not_yet_reviewed
+propulsion,niimash,NIIMash — Research & Development Institute of Mechanical Engineering,ان‌آی‌آی‌ماش — مؤسسهٔ پژوهشی و توسعهٔ ماشین‌سازی,0,0,0,not_yet_reviewed
+propulsion,okb-fakel,OKB Fakel,اوکی‌بی فاکل,0,0,0,not_yet_reviewed
+propulsion,paleblue,Pale Blue,پیل بلو,0,0,0,not_yet_reviewed
+propulsion,pangea-propulsion,Pangea Propulsion,پانگه‌آ پرپالژن,0,0,0,not_yet_reviewed
+propulsion,phasefour,Phase Four,فِیز فور (پیشرانه‌های پلاسما),0,0,0,not_yet_reviewed
+propulsion,proton-pm,Proton-PM,پروتون-پی‌ام,0,0,0,not_yet_reviewed
+propulsion,pulsar-fusion,Pulsar Fusion,پالسار فیوژن,0,0,0,not_yet_reviewed
+propulsion,pyralink-aerospace,PyraLink Aerospace (low-confidence listing),PyraLink Aerospace (ثبت کم‌اطمینان),0,0,0,not_yet_reviewed
+propulsion,regulus-guyane,Regulus,رگولوس,0,0,0,not_yet_reviewed
+propulsion,relativity-engine,Relativity Space Propulsion,بخش پیشران ریلاتیویتی اسپیس,0,0,0,not_yet_reviewed
+propulsion,rocketdyne,Rocketdyne,راکت‌داین (Rocketdyne),2,2,0,partially_populated
+propulsion,safran-spacecraft-propulsion,Safran Spacecraft Propulsion,پیشرانش فضاپیمای سفران,1,1,0,partially_populated
+propulsion,safran-vernon,ArianeGroup Vernon Propulsion Centre,مرکز پیشران آریان‌گروپ (ورنون),0,0,0,not_yet_reviewed
+propulsion,sets,SETS — Space Electric Thruster Systems,SETS — سامانه‌های رانش الکتریکی فضا,0,0,0,not_yet_reviewed
+propulsion,sitael,SITAEL,سیتائل,0,0,0,not_yet_reviewed
+propulsion,solid-state-propulsion-za,Solid State Propulsion (SSP),شرکت Solid State Propulsion (SSP),0,0,0,not_yet_reviewed
+propulsion,spacefields,SpaceFields,اسپیس‌فیلدز,0,0,0,not_yet_reviewed
+propulsion,spaceforest,SpaceForest,اسپیس‌فارست,0,0,0,not_yet_reviewed
+propulsion,spacex-engine,SpaceX Propulsion Division,بخش موتورهای پیشران اسپیس‌ایکس,1,1,0,partially_populated
+propulsion,t4i,T4i — Technology for Propulsion and Innovation,تی۴آی — فناوری برای پیشرانش و نوآوری,0,0,0,not_yet_reviewed
+propulsion,thaliana-space,Thaliana Space,تالینا اسپیس,0,0,0,not_yet_reviewed
+propulsion,thrustme,ThrustMe,تراست‌می,0,0,0,not_yet_reviewed
+propulsion,uec-kuznetsov,UEC-Kuznetsov,او‌ای‌سی-کوزنتسوف,0,0,0,not_yet_reviewed
+propulsion,ursamajor,Ursa Major,اورسا میجر,1,0,1,partially_populated
+propulsion,vacco,Vacco Industries,واکو اینداستریز,0,0,0,not_yet_reviewed

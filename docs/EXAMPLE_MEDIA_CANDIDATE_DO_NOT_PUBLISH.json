@@ -1,0 +1,21 @@
+{
+  "media_id": "med-example-candidate-001",
+  "kind": "video",
+  "role": "operations",
+  "external_url": "https://example.org/media/demo-video",
+  "caption": {
+    "fa": "نمونه آزمایشی رسانه (واقعی نیست)",
+    "en": "Placeholder media example (not real)",
+    "ar": "مثال توضيحي غير حقيقي"
+  },
+  "source": {"url": "https://example.org/source", "publisher": "Example publisher (placeholder)"},
+  "rights": {"usage": "undetermined", "checked_on": null},
+  "verification": {
+    "status": "candidate",
+    "identity_match": "unverified",
+    "source_verified": false,
+    "reviewed_on": null,
+    "notes": "Placeholder for schema documentation only, do not submit as real media."
+  },
+  "added_on": "2026-11-21"
+}

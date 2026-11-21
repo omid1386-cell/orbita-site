@@ -1,0 +1,14 @@
+{
+  "review_date": "2026-11-21",
+  "review_scope": 28,
+  "newly_covered_entities": 24,
+  "new_records": 25,
+  "pending": 4,
+  "notes": [
+    "AALPT and CASC Sixth Academy appear to refer to same institution; no entity IDs changed.",
+    "ATD Aerospace RS is Romanian according to ESA. Do not infer RS means Republic of Serbia.",
+    "PyraLink Aerospace has independent business-directory presence despite prior low confidence, but rights-cleared images not found.",
+    "Nakuja is a university/student programme, not a company.",
+    "Thaliana video depicts Łukasiewicz ILOT-led project with future collaboration; do not imply engine in footage was built by Thaliana."
+  ]
+}

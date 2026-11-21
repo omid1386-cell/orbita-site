@@ -1061,6 +1061,7 @@
   }
   on("#langBtn", "click", function () {
     var previousLang = LANG;
+    if (window.ORBITA_MEDIA_GALLERY) window.ORBITA_MEDIA_GALLERY.onPanelClose();
     LANG = LANG === "fa" ? "en" : LANG === "en" ? "ar" : "fa";
     localStorage.setItem("orbita_lang", LANG);
     applyI18n(); buildLayerBar(); renderMarkers(); buildLabels(); buildCityLabels(); renderList();
@@ -11067,6 +11068,11 @@
     if (p.o && p.o.id) Promise.resolve().then(function () { mountVerifiedConnections(p, detailToken); });
     var cat = p.cat || (p.o ? p.o.cat : "");
     var kind = p.kind || cat;
+    // Stage 3: asynchronously attach the independently verified media gallery.
+    // It runs after the synchronous profile renderer and does not modify existing photos.
+    if (window.ORBITA_MEDIA_GALLERY && typeof window.ORBITA_MEDIA_GALLERY.onProfileOpen === "function") {
+      window.ORBITA_MEDIA_GALLERY.onProfileOpen(p, LANG);
+    }
 
     /* ORBITA custom palette: entity-coded dossier rail (org = teal, site/recovery = gold) */
     var __de = document.getElementById("detail");
@@ -11200,6 +11206,7 @@
     $("#detail").classList.add("open");
   }
   on("#detailClose", "click", function () {
+    if (window.ORBITA_MEDIA_GALLERY) window.ORBITA_MEDIA_GALLERY.onPanelClose();
     openDetail._renderToken = (openDetail._renderToken || 0) + 1;
     var d = $("#detail"); if (d) d.classList.remove("open");
   });

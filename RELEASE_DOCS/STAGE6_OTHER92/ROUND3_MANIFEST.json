@@ -1,0 +1,26 @@
+{
+  "stage": "STAGE6_OTHER92_ROUND3",
+  "date": "2026-11-21",
+  "new_entities_covered": 12,
+  "new_media": 13,
+  "images": 0,
+  "video_links": 13,
+  "entity_keys": [
+    "company_or_organization:components:dhv-technology",
+    "company_or_organization:components:orbita-arcsec",
+    "company_or_organization:components:orbita-arkedge-space",
+    "company_or_organization:ground_services:raspehr-0057-leaf-space",
+    "company_or_organization:ground_services:raspehr-0062-infostellar",
+    "company_or_organization:satmaker:aac-clyde",
+    "company_or_organization:satmaker:bright-ascension",
+    "company_or_organization:satmaker:dragonfly-space",
+    "company_or_organization:satmaker:maya-htt-uk",
+    "company_or_organization:satmaker:oxford-space-systems",
+    "company_or_organization:university_space:orbita-ntu-satellite-research",
+    "company_or_organization:university_space:raspehr-0179-space-technology-research-laborator"
+  ],
+  "catalog_sha256": "8b16dc7cbd7b7be86196492da6ebbc2a84b72d6483ecba290110049a38cc36ba",
+  "rights_policy": "link_only original publisher videos; no download, embedding or rehosting",
+  "unverified_live_cdn": true,
+  "deployed": false
+}
