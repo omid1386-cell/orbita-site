@@ -14966,7 +14966,11 @@
   "photo_license": "CC BY 2.5",
   "photo_source_url": "https://commons.wikimedia.org/wiki/File:General_View_snyi.jpg",
   "country_ar": "روسيا",
-  "photo_caption_ar": "منظر عام لمنشآت قاعدة ياسني (دومباروفسكي) في روسيا"
+  "photo_caption_ar": "منظر عام لمنشآت قاعدة ياسني (دومباروفسكي) في روسيا",
+  "stats_total": 10,
+  "stats_success": 10,
+  "stats_fail": 0,
+  "stats_asof": "2026-11-21"
  },
  {
   "id": "white-sands",
