@@ -1,0 +1,99 @@
+--- index.html (step 3/4)
++++ index.html (step 5/6)
+@@ -49,12 +49,14 @@
+ <script defer src="assets/js/app.js?_t=20261114-map-zoom-performance-step3-v1"></script>
+ <script defer src="assets/js/upcoming-launch-filters.js?v=20261121-step3-4"></script>
+ <script defer src="assets/js/upcoming-launch-browser.js?v=20261121-step3-4"></script>
++<script defer src="assets/js/upcoming-landing-browser.js?v=20261121-step5-6"></script>
+ <script>
+   window.ORBITA_V = "20261114-step4-manufacturer-logos-v1";
+   window.ORBITA_APP_V = "20261114-map-zoom-performance-step3-v1";
+   window.ORBITA_CSS_V = "20261114-country-profile-light-contrast-v2-final";
+   window.ORBITA_COMPANIES_V = "20261114-step4-manufacturer-logos-v1";
+   window.ORBITA_UPCOMING_GLOBAL_V = "20261121-step3-4";
++  window.ORBITA_UPCOMING_LANDINGS_V = "20261121-step5-6";
+ 
+ 
+   // Public API URL only; never place the Resend key or another secret here.
+@@ -96,6 +98,10 @@
+     <button class="tab upcoming-launch-tab" id="upcomingLaunchesBtn" type="button"
+       aria-haspopup="dialog" aria-controls="globalLaunchDialog" aria-expanded="false">
+       <span aria-hidden="true">🚀</span><span>پرتاب‌های پیش‌رو</span>
++    </button>
++    <button class="tab upcoming-launch-tab" id="upcomingLandingsBtn" type="button"
++      aria-haspopup="dialog" aria-controls="globalLandingDialog" aria-expanded="false">
++      <span aria-hidden="true">🛬</span><span>فرودهای پیش‌رو</span>
+     </button>
+   </nav>
+ 
+@@ -279,6 +285,70 @@
+   </div>
+ </dialog>
+ 
++<!-- ============ WORLDWIDE UPCOMING LANDINGS ============ -->
++<dialog id="globalLandingDialog" class="global-launch-dialog" aria-labelledby="globalLandingTitle" aria-describedby="globalLandingIntro">
++  <div class="global-launch-shell">
++    <header class="global-launch-head">
++      <div class="global-launch-heading">
++        <span id="globalLandingEyebrow" class="global-launch-eyebrow">پایش جهانی فرود‌ها</span>
++        <h2 id="globalLandingTitle">فهرست جهانی فرود‌های پیش‌رو</h2>
++        <p id="globalLandingIntro">فرود‌های اعلام‌شده در سراسر جهان را بر اساس بازه زمانی و کشور فیلتر کنید.</p>
++      </div>
++      <button id="globalLandingClose" class="global-launch-close" type="button" aria-label="بستن">×</button>
++    </header>
++    <div class="global-launch-content">
++      <section class="global-launch-filter-panel" aria-label="فیلتر فرود‌ها">
++        <div class="global-launch-filter-block">
++          <h3 id="globalLandingTimeLabel">بازه زمانی</h3>
++          <div id="globalLandingPeriods" class="global-launch-periods" role="group" aria-labelledby="globalLandingTimeLabel">
++            <button class="global-launch-period" type="button" data-days="7" aria-pressed="false">۱ هفته آینده</button>
++            <button class="global-launch-period" type="button" data-days="14" aria-pressed="false">۲ هفته آینده</button>
++            <button class="global-launch-period is-active" type="button" data-days="30" aria-pressed="true">۱ ماه آینده</button>
++            <button class="global-launch-period" type="button" data-days="120" aria-pressed="false">۴ ماه آینده</button>
++          </div>
++        </div>
++        <div class="global-launch-filter-block">
++          <label id="globalLandingBasisLabel" for="globalLandingCountryBasis">مبنای انتساب کشور</label>
++          <select id="globalLandingCountryBasis" class="global-launch-select">
++            <option value="operator">کشور اپراتور فرود</option>
++            <option value="site">کشور محل بازیابی</option>
++          </select>
++          <p id="globalLandingBasisNote" class="global-launch-basis-note">انتخاب اپراتور، کشور ارائه‌دهنده خدمت فرود را نشان می‌دهد؛ انتخاب محل فرود، کشور جغرافیایی پایگاه را. این دو لزوماً یکی نیستند.</p>
++        </div>
++        <div class="global-launch-country-block">
++          <div class="global-launch-country-head">
++            <div>
++              <h3 id="globalLandingCountryLabel">فیلتر کشورها</h3>
++              <span id="globalLandingCountryCount" class="global-launch-country-count">همه کشورها</span>
++            </div>
++            <button id="globalLandingAllCountries" class="global-launch-all-btn is-active" type="button" aria-pressed="true">همه کشورها</button>
++          </div>
++          <label id="globalLandingCountrySearchLabel" class="global-launch-visually-hidden" for="globalLandingCountrySearch">جستجوی کشور</label>
++          <input id="globalLandingCountrySearch" class="global-launch-country-search" type="search" autocomplete="off" spellcheck="false" placeholder="جستجوی کشور…" />
++          <div id="globalLandingCountryOptions" class="global-launch-country-options" role="group" aria-label="انتخاب چند کشور"></div>
++          <p id="globalLandingCountryHelp" class="global-launch-country-help">برای محدودکردن نتایج، یک یا چند کشور را انتخاب کنید.</p>
++          <div id="globalLandingSelectedCountries" class="global-launch-selected-countries" aria-live="polite"></div>
++        </div>
++      </section>
++      <section class="global-launch-results-panel" aria-labelledby="globalLandingResultsHeading">
++        <header class="global-launch-results-head">
++          <div>
++            <h3 id="globalLandingResultsHeading">نتایج <span id="globalLandingResultCount" class="global-launch-result-count">—</span></h3>
++            <small id="globalLandingUpdated"></small>
++          </div>
++          <div class="global-launch-results-head-actions">
++            <p id="globalLandingFeedState" class="global-launch-feed-state" role="status" aria-live="polite"></p>
++            <button id="globalLandingReload" class="global-launch-reload" type="button">تلاش دوباره</button>
++          </div>
++        </header>
++        <div id="globalLandingResults" class="global-launch-results" aria-live="polite">
++          <div class="global-launch-empty">در حال آماده‌سازی…</div>
++        </div>
++      </section>
++    </div>
++  </div>
++</dialog>
++
+ <dialog id="siteGuideDialog" class="site-guide-dialog" aria-labelledby="siteGuideTitle" aria-describedby="siteGuideIntro">
+   <div class="site-guide-shell">
+     <header class="site-guide-head">

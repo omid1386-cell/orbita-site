@@ -36,6 +36,15 @@
 
   function eventWithinWindow(event, now, end) {
     var exact = validEpoch(event && (event.net || event.net_utc));
+    // LL2 can publish a UTC midnight NET with *day-only* precision. That
+    // midnight is a placeholder, not a confirmed event time. Keep the event
+    // visible throughout its UTC day (including after midnight) when the
+    // requested rolling window intersects that day.
+    var precision = String(event && event.net_precision || "").toLowerCase();
+    if (Number.isFinite(exact) && /\bday\b/.test(precision)) {
+      var startOfDay = Date.parse(new Date(exact).toISOString().slice(0, 10) + "T00:00:00.000Z");
+      return startOfDay + 86400000 > now && startOfDay < end;
+    }
     if (Number.isFinite(exact)) return exact >= now && exact < end;
     var date = String(event && (event.date_utc || event.date) || "").trim();
     if (/^\d{4}-\d\d-\d\d$/.test(date)) {

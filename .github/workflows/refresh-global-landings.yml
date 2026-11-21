@@ -1,0 +1,60 @@
+# The LL2 API limits unauthenticated clients to 15 requests/hour.
+# This job runs at 03/11/19 UTC, separately from global launches (05/13/21 UTC)
+# and legacy refresh (01/09/17 UTC). Uses at most 12 list-page calls/run.
+name: refresh-global-landings-120-days
+on:
+  schedule:
+    - cron: '43 3,11,19 * * *'
+  workflow_dispatch: {}
+permissions:
+  contents: write
+concurrency:
+  group: orbita-global-landings
+  cancel-in-progress: false
+jobs:
+  refresh-global-landings:
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          persist-credentials: true
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - name: Offline logic, UI and regression tests
+        run: |
+          python -m unittest discover -s tools -p 'test_global_landings.py' -v
+          python -m unittest discover -s tools -p 'test_live_source_contract.py' -v
+          node tests/upcoming-landing-filters.test.cjs
+          node tests/upcoming-landing-ui.test.cjs
+          node tests/upcoming-launch-filters.test.cjs
+          node tests/upcoming-launch-ui.test.cjs
+          node tests/upcoming_landings.test.cjs
+      - name: Fetch LL2 landing index and upcoming landing attempts
+        run: python tools/refresh_global_landings.py --apply
+      - name: Validate saved landing snapshot schema and current filters
+        run: |
+          node tests/upcoming-landing-ui.test.cjs
+          node tests/upcoming-landing-filters.test.cjs
+      - name: Commit only the validated global landing snapshot
+        run: |
+          git config user.name 'orbita-refresh-bot'
+          git config user.email 'orbita-refresh-bot@users.noreply.github.com'
+          git add data/upcoming_global_landings.json
+          if git diff --cached --quiet; then
+            echo 'No data changes.'
+          else
+            git commit -m "Auto-refresh 120-day landing index $(date -u +%Y-%m-%dT%H:%M)Z"
+            git push origin "HEAD:${GITHUB_REF_NAME}"
+          fi
+      - name: Explain coverage limitations
+        if: always()
+        run: |
+          {
+            echo '## 120-day best-effort upcoming landings'
+            echo "- Outcome: ${{ job.status }}"
+            echo '- Landings API has no future-date filter; coverage is incomplete.'
+            echo '- Landing times are NOT inferred from linked launch times.'
+            echo '- Previous successful JSON snapshot remains intact on failure.'
+          } >> "$GITHUB_STEP_SUMMARY"

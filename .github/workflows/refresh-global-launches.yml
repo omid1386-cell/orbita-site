@@ -26,6 +26,7 @@ jobs:
       - name: Offline regression and LL2 pagination tests
         run: |
           python -m unittest discover -s tools -p 'test_global_launches.py' -v
+          python -m unittest discover -s tools -p 'test_live_source_contract.py' -v
           node tests/upcoming_global.test.cjs
           node tests/upcoming-launch-filters.test.cjs
           node tests/upcoming-launch-ui.test.cjs

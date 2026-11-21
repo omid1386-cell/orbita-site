@@ -24,8 +24,9 @@ def item(number, offset_days=10, pad_country='CHN'):
             'status': {'abbrev': 'TBC', 'name': 'To Be Confirmed'},
             'net_precision': {'name': 'Day'},
             'pad': {'id': 7, 'name': 'Example Pad',
-                    'location': {'id': 12, 'name': 'Example Location', 'country_code': pad_country}},
-            'launch_service_provider': {'id': 14, 'name': 'Example Co.', 'country_code': 'USA'},
+                    'location': {'id': 12, 'name': 'Example Location', 'country': {'alpha_3_code': pad_country}},
+                    'country': {'alpha_3_code': pad_country}},
+            'launch_service_provider': {'id': 14, 'name': 'Example Co.', 'country': [{'alpha_3_code': 'USA'}]},
             'rocket': {'configuration': {'full_name': 'Example Rocket'}},
             'mission': {'name': 'Payload %d' % number, 'type': 'Earth Science'}}
 
@@ -34,7 +35,7 @@ def fake_feed(events):
     def fetcher(url):
         query = parse_qs(urlparse(url).query)
         assert query['net__lt'] and query['net__gte']
-        assert query['mode'] == ['normal']
+        assert query['mode'] == ['detailed']
         assert query['include_suborbital'] == ['true']
         offset = int(query['offset'][0])
         size = int(query['limit'][0])
@@ -75,6 +76,30 @@ class GlobalLaunchTests(unittest.TestCase):
         self.assertEqual(result['launches'][0]['net_precision'], 'Day')
         self.assertEqual(result['coverage_status'], 'complete_from_source_at_fetch_time')
         self.assertEqual((utc_datetime(result['window_end_utc_exclusive']) - utc_datetime(result['window_start_utc'])).days, 120)
+
+    def test_today_day_precision_is_retained_from_utc_midnight(self):
+        raw = item(501)
+        raw['net'] = '2026-11-21T00:00:00Z'
+        raw['net_precision'] = {'name': 'Day'}
+        observed_urls = []
+        def source(url):
+            observed_urls.append(url)
+            return fake_feed([raw])(url)
+        result = global_launches.collect(now=NOW, fetcher=source)
+        self.assertEqual(result['count'], 1)
+        query = parse_qs(urlparse(observed_urls[0]).query)
+        self.assertEqual(query['net__gte'], ['2026-11-21T00:00:00Z'])
+
+    def test_already_past_timed_launch_today_is_not_published(self):
+        past = item(502)
+        past['net'] = '2026-11-21T08:00:00Z'
+        past['net_precision'] = {'name': 'Minute'}
+        future = item(503)
+        future['net'] = '2026-11-23T08:00:00Z'
+        future['net_precision'] = {'name': 'Minute'}
+        result = global_launches.collect(now=NOW, fetcher=fake_feed([past, future]))
+        self.assertEqual(result['count'], 1)
+        self.assertEqual(result['launches'][0]['ll2_id'], future['id'])
 
     def test_preserves_unknown_pad_and_operator_without_guessing(self):
         raw = item(7)

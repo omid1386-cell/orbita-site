@@ -1,0 +1,705 @@
+--- a/index.html
++++ b/index.html
+@@ -43,12 +43,13 @@
+ </style>
+ <link rel="stylesheet" href="assets/vendor/maplibre-gl.css?v=3" />
+ <link rel="stylesheet" href="assets/css/app.css?_t=20261121-global-launch-browser-step3-4" />
++<link rel="stylesheet" href="assets/css/launch-mission-ui.css?v=20261121-redesign-v1" />
+ <!-- Ordered defer scripts download in parallel instead of creating a network waterfall. -->
+ <script defer src="assets/js/raspehr-splash.js?v=20261113-speed-v1"></script>
+ <script defer src="assets/vendor/maplibre-gl.js?v=3"></script>
+ <script defer src="assets/js/app.js?_t=20261114-map-zoom-performance-step3-v1"></script>
+ <script defer src="assets/js/upcoming-launch-filters.js?v=20261121-step3-4"></script>
+-<script defer src="assets/js/upcoming-launch-browser.js?v=20261121-step3-4"></script>
++<script defer src="assets/js/upcoming-launch-browser.js?v=20261121-launch-ui-v1"></script>
+ <script defer src="assets/js/upcoming-landing-browser.js?v=20261121-step5-6"></script>
+ <script>
+   window.ORBITA_V = "20261114-step4-manufacturer-logos-v1";
+@@ -95,10 +96,6 @@
+ 
+   <nav class="tabs">
+     <button class="tab active" data-view="map"><span data-i18n="tab_map">نقشهٔ جهانی</span></button>
+-    <button class="tab upcoming-launch-tab" id="upcomingLaunchesBtn" type="button"
+-      aria-haspopup="dialog" aria-controls="globalLaunchDialog" aria-expanded="false">
+-      <span aria-hidden="true">🚀</span><span>پرتاب‌های پیش‌رو</span>
+-    </button>
+     <button class="tab upcoming-launch-tab" id="upcomingLandingsBtn" type="button"
+       aria-haspopup="dialog" aria-controls="globalLandingDialog" aria-expanded="false">
+       <span aria-hidden="true">🛬</span><span>فرودهای پیش‌رو</span>
+@@ -213,6 +210,29 @@
+ 
+   <div class="coords" id="coords">0.0, 0.0 · z0</div>
+ 
++  <!-- A dedicated launch-control beacon, intentionally separate from the map navigation tabs. -->
++  <button class="launch-mission-dock" id="upcomingLaunchesBtn" type="button"
++    aria-haspopup="dialog" aria-controls="globalLaunchDialog" aria-expanded="false" aria-label="پرتاب‌های پیش‌رو">
++    <span class="launch-mission-dock-signal" aria-hidden="true">
++      <svg viewBox="0 0 48 48" fill="none" role="presentation" focusable="false">
++        <circle cx="24" cy="24" r="20" stroke="currentColor" stroke-opacity=".22" stroke-dasharray="3 5"/>
++        <path d="M10 31C18 41 35 41 41 23" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-opacity=".58"/>
++        <path d="M19 31.5c-1-7 2-15 12.5-20.5 2.1 10.7-1 18.7-7.1 22.1" fill="#E5B866" stroke="#FFE1A5" stroke-width="1.2" stroke-linejoin="round"/>
++        <path d="m20 27-5 3-2 7 7-4m6-3 6 4 4-2-7-5" fill="#527A91" stroke="#B7E7ED" stroke-width="1.1"/>
++        <path d="m24 33-1 8 4-7" fill="#69DEEA"/>
++        <circle cx="26" cy="21" r="2.4" fill="#0C3040" stroke="#E6F8F9" stroke-width="1.1"/>
++      </svg>
++      <span class="launch-mission-dock-ping"></span>
++    </span>
++    <span class="launch-mission-dock-copy">
++      <span class="launch-mission-dock-eyebrow" id="launchMissionDockEyebrow">کنسول مأموریت</span>
++      <strong class="launch-mission-dock-title" id="launchMissionDockTitle">پرتاب‌های پیش‌رو</strong>
++    </span>
++    <span class="launch-mission-dock-arrow" aria-hidden="true">
++      <svg viewBox="0 0 20 20" fill="none"><path d="M5 10h10m-5-5 5 5-5 5" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"/></svg>
++    </span>
++  </button>
++
+   <section id="detail" class="detail-panel">
+     <button class="close-x" id="detailClose" title="بستن" data-i18n-title="close" aria-label="Close">✕</button>
+     <div id="detailBody"></div>
+@@ -222,25 +242,42 @@
+ <!-- World Map is the only main view. -->
+ 
+ <!-- ============ WORLDWIDE UPCOMING LAUNCHES ============ -->
+-<dialog id="globalLaunchDialog" class="global-launch-dialog" aria-labelledby="globalLaunchTitle" aria-describedby="globalLaunchIntro">
++<dialog id="globalLaunchDialog" class="global-launch-dialog launch-mission-dialog" aria-labelledby="globalLaunchTitle" aria-describedby="globalLaunchIntro">
+   <div class="global-launch-shell">
+     <header class="global-launch-head">
++      <div class="launch-mission-hero-art" aria-hidden="true">
++        <svg viewBox="0 0 550 220" preserveAspectRatio="xMidYMid slice" focusable="false">
++          <defs><radialGradient id="launchPlanetGlow"><stop offset="0" stop-color="#1E8A9F" stop-opacity=".48"/><stop offset="1" stop-color="#0D2940" stop-opacity="0"/></radialGradient><linearGradient id="launchPlanetLine" x1="0" y1="0" x2="1" y2="1"><stop stop-color="#64DEEA" stop-opacity=".8"/><stop offset="1" stop-color="#D6AB60" stop-opacity=".23"/></linearGradient></defs>
++          <ellipse cx="350" cy="180" rx="220" ry="170" fill="url(#launchPlanetGlow)"/>
++          <circle cx="360" cy="230" r="155" fill="#0A3047" fill-opacity=".72" stroke="url(#launchPlanetLine)" stroke-width="1.5"/>
++          <circle cx="360" cy="230" r="173" fill="none" stroke="#51B7CF" stroke-opacity=".18" stroke-dasharray="3 7"/>
++          <path d="M73 208C164 82 347 27 493 67" fill="none" stroke="#E5B866" stroke-width="1.4" stroke-dasharray="8 8" opacity=".7"/>
++          <path d="M127 198C235 119 374 94 496 118" fill="none" stroke="#59C5DB" stroke-width="1" stroke-opacity=".4"/>
++          <circle cx="458" cy="62" r="6" fill="#F0C16B"/><circle cx="458" cy="62" r="12" fill="none" stroke="#F0C16B" stroke-opacity=".38"/>
++          <g stroke="#7ADDE8" stroke-opacity=".24"><path d="M360 76v310M205 230h310"/><ellipse cx="360" cy="230" rx="155" ry="58" fill="none"/><ellipse cx="360" cy="230" rx="80" ry="155" fill="none"/></g>
++          <path d="M370 60l6-11 2 14 9 7-13-2-8 9z" fill="#F6D698"/>
++        </svg>
++      </div>
+       <div class="global-launch-heading">
+-        <span id="globalLaunchEyebrow" class="global-launch-eyebrow">پایش جهانی پرتاب‌ها</span>
++        <div class="launch-mission-overline"><span class="launch-mission-overline-dot" aria-hidden="true"></span><span id="globalLaunchEyebrow" class="global-launch-eyebrow">پایش جهانی پرتاب‌ها</span><span class="launch-mission-overline-code" dir="ltr">ORBITA / MISSION OPS</span></div>
+         <h2 id="globalLaunchTitle">فهرست جهانی پرتاب‌های پیش‌رو</h2>
+         <p id="globalLaunchIntro">پرتاب‌های اعلام‌شده در سراسر جهان را بر اساس بازه زمانی و کشور فیلتر کنید.</p>
+-      </div>
+-      <button id="globalLaunchClose" class="global-launch-close" type="button" aria-label="بستن">×</button>
++        <div class="launch-mission-head-tags" aria-hidden="true"><span>GLOBAL LAUNCH WATCH</span><span>07D — 120D</span></div>
++      </div>
++      <button id="globalLaunchClose" class="global-launch-close" type="button" aria-label="بستن">
++        <svg viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M6 6l12 12M18 6L6 18" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/></svg>
++      </button>
+     </header>
+     <div class="global-launch-content">
+       <section class="global-launch-filter-panel" aria-label="فیلتر پرتاب‌ها">
++        <div class="launch-mission-panel-label"><span id="launchMissionFilterHeading">تنظیمات رصد</span><span class="launch-mission-panel-number" dir="ltr">01 / FILTER</span></div>
+         <div class="global-launch-filter-block">
+           <h3 id="globalLaunchTimeLabel">بازه زمانی</h3>
+           <div id="globalLaunchPeriods" class="global-launch-periods" role="group" aria-labelledby="globalLaunchTimeLabel">
+-            <button class="global-launch-period" type="button" data-days="7" aria-pressed="false">۱ هفته آینده</button>
+-            <button class="global-launch-period" type="button" data-days="14" aria-pressed="false">۲ هفته آینده</button>
+-            <button class="global-launch-period is-active" type="button" data-days="30" aria-pressed="true">۱ ماه آینده</button>
+-            <button class="global-launch-period" type="button" data-days="120" aria-pressed="false">۴ ماه آینده</button>
++            <button class="global-launch-period" type="button" data-days="7" aria-pressed="false"><span class="launch-mission-period-index" dir="ltr">07<small>D</small></span><span class="launch-mission-period-label">۱ هفته آینده</span></button>
++            <button class="global-launch-period" type="button" data-days="14" aria-pressed="false"><span class="launch-mission-period-index" dir="ltr">14<small>D</small></span><span class="launch-mission-period-label">۲ هفته آینده</span></button>
++            <button class="global-launch-period is-active" type="button" data-days="30" aria-pressed="true"><span class="launch-mission-period-index" dir="ltr">30<small>D</small></span><span class="launch-mission-period-label">۱ ماه آینده</span></button>
++            <button class="global-launch-period" type="button" data-days="120" aria-pressed="false"><span class="launch-mission-period-index" dir="ltr">120<small>D</small></span><span class="launch-mission-period-label">۴ ماه آینده</span></button>
+           </div>
+         </div>
+         <div class="global-launch-filter-block">
+@@ -259,23 +296,45 @@
+             </div>
+             <button id="globalLaunchAllCountries" class="global-launch-all-btn is-active" type="button" aria-pressed="true">همه کشورها</button>
+           </div>
++          <div class="launch-mission-quick-wrap">
++            <span id="launchMissionQuickLabel" class="launch-mission-quick-label">دسترسی سریع</span>
++            <div class="launch-mission-quick-countries" role="group" aria-labelledby="launchMissionQuickLabel">
++              <button type="button" data-quick-country="CHN" aria-pressed="false">چین</button>
++              <button type="button" data-quick-country="USA" aria-pressed="false">آمریکا</button>
++              <button type="button" data-quick-country="RUS" aria-pressed="false">روسیه</button>
++              <button type="button" data-quick-country="IND" aria-pressed="false">هند</button>
++            </div>
++          </div>
+           <label id="globalLaunchCountrySearchLabel" class="global-launch-visually-hidden" for="globalLaunchCountrySearch">جستجوی کشور</label>
+-          <input id="globalLaunchCountrySearch" class="global-launch-country-search" type="search" autocomplete="off" spellcheck="false" placeholder="جستجوی کشور…" />
++          <div class="launch-mission-search-wrap">
++            <svg viewBox="0 0 24 24" fill="none" aria-hidden="true"><circle cx="10.8" cy="10.8" r="6" stroke="currentColor" stroke-width="1.8"/><path d="m16 16 4.5 4.5" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/></svg>
++            <input id="globalLaunchCountrySearch" class="global-launch-country-search" type="search" autocomplete="off" spellcheck="false" placeholder="جستجوی کشور…" />
++          </div>
++          <button id="launchMissionCountryToggle" class="launch-mission-country-toggle" type="button" aria-expanded="false" aria-controls="globalLaunchCountryOptions">
++            <span id="launchMissionCountryToggleLabel">نمایش فهرست همه کشورها</span>
++            <svg viewBox="0 0 20 20" fill="none" aria-hidden="true"><path d="m5 7 5 5 5-5" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg>
++          </button>
+           <div id="globalLaunchCountryOptions" class="global-launch-country-options" role="group" aria-label="انتخاب چند کشور"></div>
+           <p id="globalLaunchCountryHelp" class="global-launch-country-help">برای محدودکردن نتایج، یک یا چند کشور را انتخاب کنید.</p>
+           <div id="globalLaunchSelectedCountries" class="global-launch-selected-countries" aria-live="polite"></div>
+         </div>
++        <button class="launch-mission-mobile-results" type="button" id="launchMissionJumpResults" aria-controls="globalLaunchResults">
++          <span id="launchMissionJumpLabel">مشاهده نتایج</span><strong id="launchMissionJumpCount">—</strong>
++          <svg viewBox="0 0 20 20" fill="none" aria-hidden="true"><path d="M10 4v12m-5-5 5 5 5-5" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg>
++        </button>
+       </section>
+       <section class="global-launch-results-panel" aria-labelledby="globalLaunchResultsHeading">
+         <header class="global-launch-results-head">
++          <div class="launch-mission-feed-label"><span class="launch-mission-signal-line" aria-hidden="true"></span><span id="launchMissionFeedLabel">جریان مأموریت‌ها</span><span class="launch-mission-feed-code" dir="ltr">02 / FEED</span></div>
+           <div>
+-            <h3 id="globalLaunchResultsHeading">نتایج <span id="globalLaunchResultCount" class="global-launch-result-count">—</span></h3>
++            <h3 id="globalLaunchResultsHeading" tabindex="-1">نتایج <span id="globalLaunchResultCount" class="global-launch-result-count">—</span></h3>
+             <small id="globalLaunchUpdated"></small>
+           </div>
+           <div class="global-launch-results-head-actions">
+             <p id="globalLaunchFeedState" class="global-launch-feed-state" role="status" aria-live="polite"></p>
+             <button id="globalLaunchReload" class="global-launch-reload" type="button">تلاش دوباره</button>
+           </div>
++          <div id="globalLaunchFilterSummary" class="launch-mission-filter-summary" aria-live="polite"></div>
+         </header>
+         <div id="globalLaunchResults" class="global-launch-results" aria-live="polite">
+           <div class="global-launch-empty">در حال آماده‌سازی…</div>
+--- a/assets/js/upcoming-launch-browser.js
++++ b/assets/js/upcoming-launch-browser.js
+@@ -29,12 +29,13 @@
+     days: 30,
+     countryBasis: "operator",
+     selectedCountries: [],
+-    countryQuery: ""
++    countryQuery: "",
++    countryListExpanded: false
+   };
+ 
+   var COPY = {
+     fa: {
+-      open: "پرتاب‌های پیش‌رو", eyebrow: "پایش جهانی پرتاب‌ها", title: "فهرست جهانی پرتاب‌های پیش‌رو",
++      open: "پرتاب‌های پیش‌رو", dockEyebrow: "رادار مأموریت", filterHeading: "تنظیمات رصد", quick: "کشورهای پرکاربرد", feedLabel: "جریان مأموریت‌ها", selectedRemove: "حذف کشور", summaryPrefix: "نمایش", showCountryList: "نمایش فهرست کشورها", hideCountryList: "بستن فهرست کشورها", jumpResults: "مشاهده پرتاب‌ها", eyebrow: "پایش جهانی پرتاب‌ها", title: "فهرست جهانی پرتاب‌های پیش‌رو",
+       intro: "پرتاب‌های اعلام‌شده در سراسر جهان را بر اساس بازه زمانی و کشور فیلتر کنید.", close: "بستن",
+       time: "بازه زمانی", d7: "۱ هفته آینده", d14: "۲ هفته آینده", d30: "۱ ماه آینده", d120: "۴ ماه آینده",
+       country: "فیلتر کشورها", all: "همه کشورها", selected: "کشور انتخاب‌شده", selectedPlural: "کشور انتخاب‌شده",
+@@ -54,7 +55,7 @@
+       allCount: "همه کشورها", countryCount: "کشور", noDate: "زمان معتبر در منبع ثبت نشده است."
+     },
+     en: {
+-      open: "Upcoming launches", eyebrow: "Global launch monitor", title: "Worldwide upcoming launches",
++      open: "Upcoming launches", dockEyebrow: "Mission radar", filterHeading: "Mission filters", quick: "Quick selection", feedLabel: "Mission feed", selectedRemove: "Remove country", summaryPrefix: "Showing", showCountryList: "Browse all countries", hideCountryList: "Hide country list", jumpResults: "View launches", eyebrow: "Global launch monitor", title: "Worldwide upcoming launches",
+       intro: "Filter announced launches worldwide by time window and country.", close: "Close",
+       time: "Time window", d7: "Next 7 days", d14: "Next 14 days", d30: "Next 30 days", d120: "Next 120 days",
+       country: "Country filters", all: "All countries", selected: "country selected", selectedPlural: "countries selected",
+@@ -74,7 +75,7 @@
+       allCount: "All countries", countryCount: "country", noDate: "No valid time is recorded by the source."
+     },
+     ar: {
+-      open: "الإطلاقات القادمة", eyebrow: "متابعة الإطلاقات العالمية", title: "قائمة الإطلاقات القادمة حول العالم",
++      open: "الإطلاقات القادمة", dockEyebrow: "رادار المهام", filterHeading: "مرشحات الرصد", quick: "اختيار سريع", feedLabel: "سجل المهمات", selectedRemove: "إزالة الدولة", summaryPrefix: "عرض", showCountryList: "عرض قائمة الدول", hideCountryList: "إخفاء قائمة الدول", jumpResults: "عرض الإطلاقات", eyebrow: "متابعة الإطلاقات العالمية", title: "قائمة الإطلاقات القادمة حول العالم",
+       intro: "صفِّ الإطلاقات المعلنة عالمياً حسب الفترة الزمنية والدولة.", close: "إغلاق",
+       time: "الفترة الزمنية", d7: "الأيام السبعة القادمة", d14: "الأيام الأربعة عشر القادمة", d30: "الثلاثون يوماً القادمة", d120: "الأيام الـ120 القادمة",
+       country: "تصفية الدول", all: "كل الدول", selected: "دولة محددة", selectedPlural: "دول محددة",
+@@ -212,7 +213,7 @@
+         state.error = "";
+         state.refreshError = "";
+         state.dataPromise = null;
+-        render();
++        renderResults();
+         return doc;
+       })
+       .catch(function (error) {
+@@ -225,7 +226,7 @@
+           state.error = message;
+         }
+         state.dataPromise = null;
+-        render();
++        renderResults();
+         return null;
+       });
+     return state.dataPromise;
+@@ -236,23 +237,26 @@
+     var rtl = language !== "en";
+     dialog.dir = rtl ? "rtl" : "ltr";
+     document.documentElement.lang = language;
+-    openButton.textContent = "";
+-    var icon = document.createElement("span");
+-    icon.setAttribute("aria-hidden", "true");
+-    icon.textContent = "🚀";
+-    var label = document.createElement("span");
+-    label.textContent = tr("open");
+-    openButton.appendChild(icon);
+-    openButton.appendChild(label);
++    // Keep the custom SVG launch beacon intact when changing languages.
++    var dockTitle = $("#launchMissionDockTitle");
++    var dockEyebrow = $("#launchMissionDockEyebrow");
++    if (dockTitle) dockTitle.textContent = tr("open");
++    if (dockEyebrow) dockEyebrow.textContent = tr("dockEyebrow");
++    openButton.setAttribute("aria-label", tr("open"));
++    openButton.setAttribute("title", tr("open"));
+     var textMap = {
+       "#globalLaunchEyebrow": "eyebrow", "#globalLaunchTitle": "title", "#globalLaunchIntro": "intro",
+-      "#globalLaunchClose": "close", "#globalLaunchTimeLabel": "time", "#globalLaunchCountryLabel": "country",
++      "#globalLaunchTimeLabel": "time", "#globalLaunchCountryLabel": "country",
++      "#launchMissionFilterHeading": "filterHeading", "#launchMissionQuickLabel": "quick", "#launchMissionFeedLabel": "feedLabel",
++      "#launchMissionJumpLabel": "jumpResults",
+       "#globalLaunchCountrySearchLabel": "countrySearch", "#globalLaunchBasisLabel": "basis",
+       "#globalLaunchBasisNote": "basisNote", "#globalLaunchAllCountries": "all", "#globalLaunchReload": "retry"
+     };
+     Object.keys(textMap).forEach(function (selector) {
+       var el = $(selector); if (el) el.textContent = tr(textMap[selector]);
+     });
++    $("#globalLaunchClose").setAttribute("aria-label", tr("close"));
++    $("#globalLaunchClose").setAttribute("title", tr("close"));
+     var basis = $("#globalLaunchCountryBasis");
+     if (basis) {
+       basis.options[0].textContent = tr("operator");
+@@ -263,7 +267,8 @@
+     if (search) search.placeholder = tr("countrySearch");
+     $$(".global-launch-period").forEach(function (button) {
+       var days = button.getAttribute("data-days");
+-      button.textContent = tr(days === "7" ? "d7" : days === "14" ? "d14" : days === "120" ? "d120" : "d30");
++      var periodLabel = button.querySelector(".launch-mission-period-label");
++      if (periodLabel) periodLabel.textContent = tr(days === "7" ? "d7" : days === "14" ? "d14" : days === "120" ? "d120" : "d30");
+       button.setAttribute("aria-pressed", String(Number(days) === state.days));
+       button.classList.toggle("is-active", Number(days) === state.days);
+     });
+@@ -271,6 +276,8 @@
+     if (note) note.textContent = tr("chooseCountry");
+     renderCountrySelection();
+     renderCountryOptions();
++    renderQuickCountries();
++    renderCountryBrowserMode();
+     renderResults();
+   }
+   function $$(selector) { return Array.prototype.slice.call(dialog.querySelectorAll(selector)); }
+@@ -280,6 +287,34 @@
+       return String(a[lang()] || a.en || a.code).localeCompare(String(b[lang()] || b.en || b.code), lang());
+     });
+   }
++  function renderQuickCountries() {
++    $$(".launch-mission-quick-countries [data-quick-country]").forEach(function (button) {
++      var code = button.getAttribute("data-quick-country");
++      var chosen = state.selectedCountries.indexOf(code) >= 0;
++      button.classList.toggle("is-selected", chosen);
++      button.setAttribute("aria-pressed", String(chosen));
++      button.textContent = countryName(code);
++    });
++  }
++  function renderCountryBrowserMode() {
++    var list = $("#globalLaunchCountryOptions");
++    var toggle = $("#launchMissionCountryToggle");
++    var label = $("#launchMissionCountryToggleLabel");
++    if (!list || !toggle || !label) return;
++    list.classList.toggle("launch-mission-expanded", state.countryListExpanded);
++    toggle.setAttribute("aria-expanded", String(state.countryListExpanded));
++    label.textContent = tr(state.countryListExpanded ? "hideCountryList" : "showCountryList");
++  }
++  function renderFilterSummary() {
++    var el = $("#globalLaunchFilterSummary");
++    if (!el) return;
++    var p = state.days === 7 ? "d7" : state.days === 14 ? "d14" : state.days === 120 ? "d120" : "d30";
++    var places = state.selectedCountries.length
++      ? state.selectedCountries.map(countryName).join(lang() === "en" ? ", " : "، ")
++      : tr("allCount");
++    el.textContent = tr("summaryPrefix") + " · " + tr(p) + " · " + places;
++  }
++
+   function renderCountrySelection() {
+     var box = $("#globalLaunchSelectedCountries");
+     var all = $("#globalLaunchAllCountries");
+@@ -291,12 +326,14 @@
+     if (!selected.length) {
+       count.textContent = tr("allCount");
+       box.innerHTML = '<span class="global-launch-selected-chip is-all">' + esc(tr("allCount")) + '</span>';
++      renderQuickCountries();
+       return;
+     }
+     count.textContent = number(selected.length) + " " + (selected.length === 1 ? tr("selected") : tr("selectedPlural"));
+     box.innerHTML = selected.map(function (code) {
+-      return '<span class="global-launch-selected-chip">' + esc(countryName(code)) + '</span>';
++      return '<button type="button" class="global-launch-selected-chip" data-remove-country-code="' + esc(code) + '" aria-label="' + esc(tr("selectedRemove") + ": " + countryName(code)) + '"><span>' + esc(countryName(code)) + '</span><span class="launch-mission-chip-remove" aria-hidden="true">×</span></button>';
+     }).join("");
++    renderQuickCountries();
+   }
+   function renderCountryOptions() {
+     var list = $("#globalLaunchCountryOptions");
+@@ -322,6 +359,9 @@
+     var updatedEl = $("#globalLaunchUpdated");
+     var stateEl = $("#globalLaunchFeedState");
+     if (!results || !countEl || !updatedEl || !stateEl) return;
++    renderFilterSummary();
++    var jumpCount = $("#launchMissionJumpCount");
++    if (jumpCount) jumpCount.textContent = "—";
+ 
+     var reloadButton = $("#globalLaunchReload");
+     if (reloadButton) reloadButton.disabled = !!state.loading;
+@@ -329,7 +369,7 @@
+       countEl.textContent = "—";
+       stateEl.className = "global-launch-feed-state is-loading";
+       stateEl.textContent = tr("loading");
+-      results.innerHTML = '<div class="global-launch-empty"><span class="global-launch-spinner" aria-hidden="true"></span>' + esc(tr("loading")) + '</div>';
++      results.innerHTML = renderEmpty(tr("loading"), "loading");
+       updatedEl.textContent = "";
+       return;
+     }
+@@ -337,7 +377,7 @@
+       countEl.textContent = "—";
+       stateEl.className = "global-launch-feed-state is-error";
+       stateEl.textContent = tr("error");
+-      results.innerHTML = '<div class="global-launch-empty is-error">' + esc(tr("error")) + '</div>';
++      results.innerHTML = renderEmpty(tr("error"), "error");
+       updatedEl.textContent = "";
+       return;
+     }
+@@ -345,7 +385,7 @@
+       countEl.textContent = "—";
+       stateEl.className = "global-launch-feed-state is-pending";
+       stateEl.textContent = tr("waiting");
+-      results.innerHTML = '<div class="global-launch-empty">' + esc(tr("waiting")) + '</div>';
++      results.innerHTML = renderEmpty(tr("waiting"), "waiting");
+       updatedEl.textContent = "";
+       return;
+     }
+@@ -358,6 +398,7 @@
+       now: Date.now()
+     });
+     countEl.textContent = number(rows.length) + " " + (rows.length === 1 ? tr("launches") : tr("launchesPlural"));
++    if (jumpCount) jumpCount.textContent = number(rows.length);
+     stateEl.className = "global-launch-feed-state is-ready";
+     stateEl.textContent = state.refreshError ? tr("refreshFailed") + " " + tr("source") : tr("source");
+     updatedEl.textContent = tr("updated") + ": " + formatUpdated(state.data.updated_utc);
+@@ -366,13 +407,20 @@
+       stateEl.textContent = tr("stale") + " " + tr("source");
+     }
+     if (!rows.length) {
+-      results.innerHTML = '<div class="global-launch-empty">' + esc(tr("noResults")) + '</div>';
++      results.innerHTML = renderEmpty(tr("noResults"), "empty");
+       return;
+     }
+     results.innerHTML = rows.map(renderLaunchCard).join("");
+   }
+ 
+-  function renderLaunchCard(event) {
++  function renderEmpty(message, kind) {
++    return '<div class="global-launch-empty launch-mission-empty is-' + esc(kind) + '">' +
++      '<div class="launch-mission-empty-art" aria-hidden="true">' +
++      '<svg viewBox="0 0 130 130" fill="none"><circle cx="65" cy="65" r="50" stroke="currentColor" stroke-opacity=".22" stroke-dasharray="4 6"/><circle cx="65" cy="65" r="31" stroke="currentColor" stroke-opacity=".34"/><path d="M65 25v80M25 65h80" stroke="currentColor" stroke-opacity=".24"/><path d="M45 89L84 39 78 80z" fill="currentColor" fill-opacity=".28" stroke="currentColor" stroke-width="1.6"/><circle cx="65" cy="65" r="5" fill="currentColor"/></svg></div>' +
++      '<p>' + esc(message) + '</p></div>';
++  }
++
++  function renderLaunchCard(event, index) {
+     var key = statusKey(event.status);
+     var status = tr(key);
+     var precision = tr(precisionKey(event.net_precision));
+@@ -386,6 +434,7 @@
+     var operator = event.operator_name ? esc(event.operator_name) : "—";
+     var site = [event.pad_name, event.location_name].filter(Boolean).join(" · ");
+     return '<article class="global-launch-card">' +
++      '<div class="launch-mission-card-index"><span dir="ltr">FLIGHT / ' + esc(String(index + 1).padStart(2, "0")) + '</span><span class="launch-mission-card-index-line" aria-hidden="true"></span></div>' +
+       '<div class="global-launch-card-top">' +
+         '<div class="global-launch-card-title"><span class="global-launch-status ' + statusClass(key) + '">' + esc(status) + '</span><strong><bdi>' + esc(title) + '</bdi></strong></div>' +
+         '<div class="global-launch-card-date"><bdi>' + esc(date) + '</bdi><small>' + esc(precision) + '</small></div>' +
+@@ -434,10 +483,44 @@
+   });
+   $("#globalLaunchCountrySearch").addEventListener("input", function (event) {
+     state.countryQuery = event.target.value || "";
+-    renderCountryOptions();
++    if (state.countryQuery.trim()) state.countryListExpanded = true;
++    renderCountryBrowserMode();
++    renderCountryOptions();
++  });
++  $("#launchMissionCountryToggle").addEventListener("click", function () {
++    state.countryListExpanded = !state.countryListExpanded;
++    renderCountryBrowserMode();
++  });
++  $("#launchMissionJumpResults").addEventListener("click", function () {
++    var target = $("#globalLaunchResultsHeading");
++    if (target) {
++      target.scrollIntoView({ behavior: "smooth", block: "start" });
++      target.focus({ preventScroll: true });
++    }
+   });
+   $("#globalLaunchAllCountries").addEventListener("click", function () {
+     state.selectedCountries = [];
++    renderCountrySelection();
++    renderCountryOptions();
++    renderResults();
++  });
++  $(".launch-mission-quick-countries").addEventListener("click", function (event) {
++    var button = event.target.closest("button[data-quick-country]");
++    if (!button) return;
++    var code = button.getAttribute("data-quick-country");
++    var index = state.selectedCountries.indexOf(code);
++    if (index >= 0) state.selectedCountries.splice(index, 1);
++    else state.selectedCountries.push(code);
++    state.selectedCountries.sort();
++    renderCountrySelection();
++    renderCountryOptions();
++    renderResults();
++  });
++  $("#globalLaunchSelectedCountries").addEventListener("click", function (event) {
++    var button = event.target.closest("button[data-remove-country-code]");
++    if (!button) return;
++    var code = button.getAttribute("data-remove-country-code");
++    state.selectedCountries = state.selectedCountries.filter(function (c) { return c !== code; });
+     renderCountrySelection();
+     renderCountryOptions();
+     renderResults();
+--- /dev/null
++++ b/assets/css/launch-mission-ui.css
+@@ -0,0 +1,222 @@
++/* ORBITA Launch Mission Control · visual redesign 2026-11-21
++ * Deliberately scoped: the map and the upcoming-landing dialog retain their own UI.
++ * No external image/font/API dependency; decorative orbital shapes are SVG/CSS.
++ */
++.launch-mission-dock {
++  --lm-gold:#e9bb70; --lm-cyan:#62dbea;
++  position:absolute;left:18px;bottom:39px;z-index:28;
++  display:flex;align-items:center;gap:11px;width:248px;min-height:76px;
++  padding:11px 12px;direction:rtl;text-align:start;cursor:pointer;
++  border:1px solid rgba(237,195,119,.61);border-radius:17px;
++  background:linear-gradient(115deg,rgba(13,42,59,.97),rgba(5,19,34,.99));
++  color:#f9f6eb;box-shadow:0 14px 40px rgba(0,0,0,.48),0 0 0 1px rgba(5,18,28,.6),inset 0 1px 0 rgba(252,232,181,.12);
++  isolation:isolate;overflow:hidden;transition:transform .2s,box-shadow .2s,border-color .2s;
++}
++.launch-mission-dock::before{content:"";position:absolute;inset:0;background:linear-gradient(98deg,transparent 15%,rgba(95,215,231,.07) 55%,transparent 91%);pointer-events:none;z-index:-1}
++.launch-mission-dock::after{content:"";position:absolute;bottom:0;inset-inline:38px 38px;height:2px;background:linear-gradient(90deg,transparent,#e9bb70,transparent);opacity:.8}
++.launch-mission-dock:hover,.launch-mission-dock[aria-expanded="true"]{transform:translateY(-3px);border-color:#ffe0a0;box-shadow:0 19px 46px rgba(0,0,0,.55),0 0 24px rgba(215,171,94,.16)}
++.launch-mission-dock:focus-visible{outline:3px solid #67e7ee;outline-offset:4px}
++.launch-mission-dock-signal{display:grid;place-items:center;flex:0 0 52px;width:52px;height:52px;position:relative;color:var(--lm-cyan);border:1px solid rgba(111,225,229,.22);border-radius:14px;background:radial-gradient(circle at 50% 55%,rgba(61,153,177,.23),rgba(9,32,48,.1) 70%)}
++.launch-mission-dock-signal svg{display:block;width:46px;height:46px;transition:transform .2s}
++.launch-mission-dock:hover .launch-mission-dock-signal svg{transform:translateY(-2px) rotate(-4deg)}
++.launch-mission-dock-ping{position:absolute;top:3px;left:4px;width:7px;height:7px;border-radius:100%;background:#68e3cb;box-shadow:0 0 0 3px rgba(104,227,203,.11),0 0 12px #68e3cb}
++.launch-mission-dock-copy{display:flex;flex-direction:column;flex:1;min-width:0;gap:3px}
++.launch-mission-dock-eyebrow{color:var(--lm-gold);font-size:10px;font-weight:600;letter-spacing:.015em}
++.launch-mission-dock-title{font-size:14px;font-weight:800;line-height:1.5;white-space:nowrap;color:#fff6e8}
++.launch-mission-dock-arrow{flex:0 0 16px;width:16px;height:16px;color:var(--lm-gold);transform:rotate(180deg);transition:transform .2s}
++.launch-mission-dock-arrow svg{width:100%;height:100%}
++.launch-mission-dock:hover .launch-mission-dock-arrow{transform:rotate(180deg) translateX(-3px)}
++#view-map:has(#detail.open) .launch-mission-dock,
++#view-map:has(#layerPanel:not([hidden])) .launch-mission-dock{opacity:0;pointer-events:none;transform:translateY(12px)}
++
++/* Full mission-room surface. No selector below changes the landing browser. */
++.launch-mission-dialog{
++  --lm-bg:#061522;--lm-panel:#0b2031;--lm-panel-2:#0d283a;--lm-line:rgba(121,185,208,.18);
++  --lm-text:#eff8fb;--lm-muted:#a0b7c8;--lm-gold:#f0c77e;--lm-cyan:#74e0eb;--lm-green:#7ce1be;
++  width:min(1160px,calc(100vw - 40px));max-width:1160px;
++  height:min(790px,calc(100dvh - 36px));max-height:calc(100dvh - 36px);
++  border:1px solid rgba(230,189,116,.4);border-radius:24px;
++  background:var(--lm-bg);color:var(--lm-text);box-shadow:0 38px 140px rgba(0,4,12,.88),0 0 0 1px rgba(255,255,255,.03);
++  color-scheme:dark;isolation:isolate;
++}
++.launch-mission-dialog::backdrop{background:rgba(0,7,16,.83);backdrop-filter:blur(8px) saturate(.8)}
++.launch-mission-dialog .global-launch-shell{height:100%;max-height:none;min-height:0;overflow:hidden}
++.launch-mission-dialog .global-launch-head{flex:0 0 auto;position:relative;min-height:174px;overflow:hidden;padding:29px 35px 23px;border:0;border-bottom:1px solid rgba(228,184,105,.32);background:linear-gradient(112deg,#091728 10%,#0b3044 68%,#0c192a 100%)}
++.launch-mission-dialog .global-launch-head::after{content:"";position:absolute;bottom:0;inset-inline:0;height:2px;background:linear-gradient(90deg,transparent,rgba(241,194,100,.78),rgba(102,223,236,.55),transparent);pointer-events:none}
++.launch-mission-dialog .launch-mission-hero-art{position:absolute;inset-inline-end:6px;top:-2px;width:min(58%,590px);height:100%;opacity:.96;pointer-events:none;z-index:0}
++.launch-mission-dialog .launch-mission-hero-art svg{height:100%;width:100%;object-fit:contain}
++.launch-mission-dialog .global-launch-heading{position:relative;z-index:1;width:min(580px,72%);min-width:0;text-shadow:0 2px 10px rgba(0,0,0,.15)}
++.launch-mission-dialog .launch-mission-overline{display:flex;align-items:center;gap:9px;flex-wrap:wrap;margin-bottom:12px}
++.launch-mission-dialog .launch-mission-overline-dot{width:7px;height:7px;flex:0 0 7px;background:var(--lm-cyan);border-radius:50%;box-shadow:0 0 10px var(--lm-cyan),0 0 0 5px rgba(116,224,235,.09)}
++.launch-mission-dialog .global-launch-eyebrow{margin:0;font-size:11px;font-weight:750;color:var(--lm-gold);letter-spacing:0}
++.launch-mission-dialog .launch-mission-overline-code{font-family:ui-monospace,monospace;font-size:9px;letter-spacing:.13em;color:rgba(183,220,229,.5)}
++.launch-mission-dialog .global-launch-head h2{font-size:clamp(20px,2.7vw,29px);font-weight:900;letter-spacing:-.015em;line-height:1.45;color:#f7faf8;margin:0}
++.launch-mission-dialog .global-launch-head p{max-width:480px;font-size:12px;line-height:1.95;color:#b9d3df;margin-top:7px}
++.launch-mission-dialog .launch-mission-head-tags{display:flex;gap:9px;margin-top:15px;direction:ltr;justify-content:flex-end;flex-wrap:wrap}
++.launch-mission-dialog .launch-mission-head-tags span{border:1px solid rgba(116,224,235,.22);border-radius:5px;padding:4px 8px;color:#b2d9dc;background:rgba(10,27,40,.54);font:600 9px/1.4 ui-monospace,monospace;letter-spacing:.07em}
++.launch-mission-dialog .global-launch-close{z-index:2;position:relative;flex:0 0 40px;width:40px;height:40px;border-radius:12px;border:1px solid rgba(221,245,255,.2);display:grid;place-items:center;background:rgba(5,22,35,.65);color:#d4e6ed;font-size:inherit;transition:.18s}
++.launch-mission-dialog .global-launch-close svg{width:18px;height:18px}
++.launch-mission-dialog .global-launch-close:hover{background:#263c4b;border-color:var(--lm-gold);color:white;transform:rotate(90deg)}
++.launch-mission-dialog :is(button,input,select):focus-visible{outline:2px solid var(--lm-cyan);outline-offset:3px}
++
++.launch-mission-dialog .global-launch-content{flex:1 1 auto;display:grid;grid-template-columns:minmax(280px,352px) minmax(0,1fr);gap:17px;padding:17px;background:radial-gradient(ellipse at 60% 0%,rgba(18,84,110,.13),transparent 59%),var(--lm-bg);min-height:0;overflow:hidden}
++.launch-mission-dialog .global-launch-filter-panel,.launch-mission-dialog .global-launch-results-panel{border:1px solid var(--lm-line);background:linear-gradient(160deg,rgba(15,44,61,.98),rgba(8,27,43,.98));border-radius:17px;min-width:0;box-shadow:inset 0 1px 0 rgba(255,255,255,.035)}
++.launch-mission-dialog .global-launch-filter-panel{height:100%;min-height:0;overflow:auto;overscroll-behavior:contain;align-self:stretch;padding:18px 17px;gap:15px;scrollbar-width:thin;scrollbar-color:#23495e transparent}
++.launch-mission-dialog .launch-mission-panel-label{display:flex;justify-content:space-between;align-items:center;gap:10px;padding-bottom:13px;border-bottom:1px solid rgba(122,189,210,.22);font-size:14px;font-weight:800;color:#f6f6ed}
++.launch-mission-dialog .launch-mission-panel-number{font:600 10px/1.4 ui-monospace,monospace;color:var(--lm-gold);letter-spacing:.1em}
++.launch-mission-dialog .global-launch-filter-block h3,.launch-mission-dialog .global-launch-country-head h3{font-size:12px;color:#d7eef5;font-weight:800}
++.launch-mission-dialog .global-launch-periods{grid-template-columns:repeat(4,minmax(0,1fr));gap:6px;margin-top:10px}
++.launch-mission-dialog .global-launch-period{display:flex;flex-direction:column;justify-content:center;align-items:center;text-align:center;gap:5px;min-width:0;min-height:84px;padding:8px 4px;border:1px solid rgba(130,175,191,.2);border-radius:11px;background:rgba(6,22,35,.64);color:var(--lm-muted);box-shadow:none;transition:background .18s,border-color .18s,transform .18s;color:var(--lm-muted)}
++.launch-mission-dialog .global-launch-period:hover{border-color:rgba(240,199,126,.75);background:rgba(34,61,75,.8);transform:translateY(-2px)}
++.launch-mission-dialog .global-launch-period.is-active{border-color:rgba(241,199,125,.8);background:linear-gradient(160deg,rgba(221,170,83,.27),rgba(44,47,49,.65));box-shadow:inset 0 1px 0 rgba(251,233,194,.2),0 0 22px rgba(229,177,91,.1);color:#fff6de}
++.launch-mission-dialog .launch-mission-period-index{font-family:ui-monospace,monospace;font-weight:800;font-size:22px;letter-spacing:-.07em;line-height:1;color:#eff7f6}
++.launch-mission-dialog .launch-mission-period-index small{font-size:9px;margin-inline-start:2px;letter-spacing:0;color:var(--lm-gold)}
++.launch-mission-dialog .launch-mission-period-label{font-size:9px;line-height:1.5;color:#b6c9d2}
++.launch-mission-dialog .global-launch-period.is-active .launch-mission-period-label{color:#fae3ac}
++.launch-mission-dialog .global-launch-filter-block label{font-size:12px;color:#d6e9ef;margin-bottom:8px}
++.launch-mission-dialog .global-launch-select{min-height:44px;border-radius:10px;background:#08192a;color:#f1f7f7;border-color:#315164;font-size:11.5px;padding:9px 11px}
++.launch-mission-dialog .global-launch-basis-note{line-height:1.85;font-size:10px;color:#a1bbcd}
++.launch-mission-dialog .global-launch-country-block{border-top:1px solid rgba(122,189,210,.21);padding-top:15px}
++.launch-mission-dialog .global-launch-country-head{align-items:flex-start;margin-bottom:12px}
++.launch-mission-dialog .global-launch-country-head>div{gap:5px;flex-direction:column;align-items:flex-start}
++.launch-mission-dialog .global-launch-country-count{font-size:10px;color:#b6d3dd}
++.launch-mission-dialog .global-launch-all-btn{color:#d4ebf1;border:1px solid #416377;background:#0a2334;border-radius:20px;font-size:10px;min-height:32px;padding:6px 12px}
++.launch-mission-dialog .global-launch-all-btn:hover{border-color:var(--lm-cyan)}
++.launch-mission-dialog .global-launch-all-btn.is-active{color:#1b291f;background:var(--lm-gold);border-color:var(--lm-gold);font-weight:800}
++.launch-mission-dialog .launch-mission-quick-wrap{margin:0 0 12px}
++.launch-mission-dialog .launch-mission-quick-label{display:block;margin-bottom:7px;color:#a4c1cf;font-size:10px}
++.launch-mission-dialog .launch-mission-quick-countries{display:flex;flex-wrap:wrap;gap:5px}
++.launch-mission-dialog .launch-mission-quick-countries button{border-radius:16px;border:1px solid #35586b;padding:6px 11px;background:#102d3f;color:#c5dce5;font-size:10px;line-height:1.4;cursor:pointer;transition:.15s}
++.launch-mission-dialog .launch-mission-quick-countries button:hover{border-color:var(--lm-cyan);color:white}
++.launch-mission-dialog .launch-mission-quick-countries button.is-selected{border-color:var(--lm-gold);color:#fae3b2;background:#584626}
++.launch-mission-dialog .launch-mission-search-wrap{position:relative;display:flex;align-items:center;color:#8ab7c7}
++.launch-mission-dialog .launch-mission-search-wrap svg{position:absolute;inset-inline-start:12px;width:16px;height:16px;pointer-events:none}
++.launch-mission-dialog .global-launch-country-search{width:100%;min-height:42px;margin:0;border-radius:10px;background:#061b2a;color:#f4f7f8;border-color:#345468;padding-inline-start:35px;padding-inline-end:12px;font-size:11.5px}
++.launch-mission-dialog .global-launch-country-search::placeholder{color:#86a4b4}
++.launch-mission-dialog .global-launch-country-options{margin-top:9px;display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:4px;max-height:178px;overflow:auto;scrollbar-width:thin;scrollbar-color:#3d5b6b transparent;background:rgba(4,16,26,.56);border:1px solid rgba(128,182,205,.2);padding:6px;border-radius:11px}
++.launch-mission-dialog .global-launch-country-option{min-height:32px;border-radius:7px;color:#bdd4df;font-size:10.5px;gap:5px}
++.launch-mission-dialog .global-launch-country-option:hover{background:#193c51;border-color:#3c6d84;color:#fff}
++.launch-mission-dialog .global-launch-country-option.is-selected{background:rgba(226,178,99,.13);border-color:rgba(240,199,126,.56);color:#ffe3b1}
++.launch-mission-dialog .global-launch-country-option small{color:#8aabb9;font-size:8px}
++.launch-mission-dialog .global-launch-country-check{border-color:#42657a;color:#ffe3b1}
++.launch-mission-dialog .global-launch-country-option.is-selected .global-launch-country-check{background:#785b2b;border-color:#d9a552}
++.launch-mission-dialog .global-launch-country-empty{color:#aac3cf}
++.launch-mission-dialog .global-launch-country-help{font-size:9.5px;color:#9bb8c5}
++.launch-mission-dialog .global-launch-selected-countries{gap:5px;display:flex;flex-wrap:wrap;min-height:21px}
++.launch-mission-dialog .global-launch-selected-chip{display:inline-flex;align-items:center;gap:7px;min-height:25px;border:1px solid #527185;border-radius:7px;padding:4px 8px;background:#0b293b;color:#d8eff5;font-family:inherit;font-size:10px;cursor:pointer}
++.launch-mission-dialog button.global-launch-selected-chip:hover{border-color:#ffdaa4;color:#ffdd9a}
++.launch-mission-dialog .global-launch-selected-chip.is-all{cursor:default;background:transparent;border-style:dashed;color:#a5c5d1}
++.launch-mission-dialog .launch-mission-chip-remove{font-size:15px;line-height:1;color:#f0c77e}
++
++.launch-mission-dialog .global-launch-results-panel{min-height:0;height:100%;display:flex;flex-direction:column;overflow:hidden}
++.launch-mission-dialog .global-launch-results-head{position:relative;flex:0 0 auto;padding:17px 19px 15px;border:0;border-bottom:1px solid rgba(122,189,210,.19);background:linear-gradient(110deg,rgba(28,65,80,.55),rgba(9,31,45,.6))}
++.launch-mission-dialog .launch-mission-feed-label{display:flex;align-items:center;gap:8px;margin-bottom:10px;color:var(--lm-gold);font-size:10px;font-weight:750}
++.launch-mission-dialog .launch-mission-signal-line{display:block;width:22px;height:2px;border-radius:4px;background:linear-gradient(90deg,#e7bc75,#77deea)}
++.launch-mission-dialog .launch-mission-feed-code{margin-inline-start:auto;color:#7baab9;font:600 10px ui-monospace,monospace;letter-spacing:.08em}
++.launch-mission-dialog .global-launch-results-head h3{font-size:17px;color:#f2f7f8}
++.launch-mission-dialog .global-launch-result-count{min-width:40px;border:1px solid rgba(236,190,106,.38);border-radius:7px;background:rgba(242,192,107,.09);padding:4px 9px;color:var(--lm-gold);font-size:11px}
++.launch-mission-dialog .global-launch-results-head small{font-size:9.5px;color:#b1cad5}
++.launch-mission-dialog .global-launch-results-head-actions{padding-top:8px;gap:6px}
++.launch-mission-dialog .global-launch-feed-state{margin:0;line-height:1.6;color:#b7cbd5;font-size:10px;max-width:500px}
++.launch-mission-dialog .global-launch-feed-state.is-loading{color:#a0e5ed}
++.launch-mission-dialog .global-launch-feed-state.is-ready{color:#a8dec6}
++.launch-mission-dialog .global-launch-feed-state.is-stale,.launch-mission-dialog .global-launch-feed-state.is-error{color:#f9c58f}
++.launch-mission-dialog .global-launch-reload{padding:6px 11px;font-size:10px;min-height:30px;border-radius:8px;border:1px solid #42677c;color:#b9edf2;background:rgba(15,44,61,.9)}
++.launch-mission-dialog .global-launch-reload:hover{border-color:#7be0e9;background:#173e55;color:white}
++.launch-mission-dialog .launch-mission-filter-summary{display:block;margin-top:11px;padding:7px 10px;border:1px solid rgba(93,172,190,.23);border-radius:8px;background:rgba(10,36,51,.8);font-size:10px;line-height:1.6;color:#c5dce2;overflow-wrap:anywhere}
++.launch-mission-dialog .global-launch-results{padding:14px;gap:11px;min-height:0;overflow-y:auto;flex:1;scrollbar-width:thin;scrollbar-color:#2b5669 transparent}
++.launch-mission-dialog .global-launch-card{position:relative;padding:13px 15px 14px;overflow:hidden;border:1px solid rgba(102,168,192,.2);border-radius:14px;background:linear-gradient(125deg,rgba(18,49,66,.91),rgba(6,27,43,.92));box-shadow:inset 3px 0 0 rgba(224,182,110,.58),0 3px 14px rgba(0,9,17,.16)}
++.launch-mission-dialog[dir="rtl"] .global-launch-card{box-shadow:inset -3px 0 0 rgba(224,182,110,.58),0 3px 14px rgba(0,9,17,.16)}
++.launch-mission-dialog .global-launch-card:hover{border-color:rgba(239,198,126,.49);background:linear-gradient(125deg,rgba(23,59,77,.95),rgba(9,34,51,.92))}
++.launch-mission-dialog .launch-mission-card-index{display:flex;align-items:center;gap:9px;margin-bottom:9px;color:var(--lm-gold);font:600 9px/1.4 ui-monospace,monospace;letter-spacing:.08em}
++.launch-mission-dialog .launch-mission-card-index-line{height:1px;flex:1;max-width:60px;background:linear-gradient(90deg,rgba(240,199,126,.65),transparent)}
++.launch-mission-dialog .global-launch-card-title{align-items:center;flex-wrap:wrap;gap:9px}
++.launch-mission-dialog .global-launch-card-title strong{font-size:13px;line-height:1.7;font-weight:800;color:#f3f7f8}
++.launch-mission-dialog .global-launch-status{font-size:9px;font-weight:700;border-radius:6px;padding:4px 8px;background:rgba(95,196,173,.09)}
++.launch-mission-dialog .global-launch-status.is-confirmed{color:#8be7c6;border-color:rgba(107,222,181,.38)}
++.launch-mission-dialog .global-launch-status.is-tentative{color:#f7c981;border-color:rgba(246,193,108,.45)}
++.launch-mission-dialog .global-launch-status.is-hold,.launch-mission-dialog .global-launch-status.is-cancelled{color:#fa9ba7;border-color:#9a5964}
++.launch-mission-dialog .global-launch-card-date{max-width:44%;align-items:flex-end;color:var(--lm-gold);font-size:12px;line-height:1.55;font-weight:800}
++.launch-mission-dialog .global-launch-card-date small{font-size:9px;color:#a9c3d0}
++.launch-mission-dialog .global-launch-card-fields,.launch-mission-dialog .global-launch-card-meta{gap:9px;margin-top:11px}
++.launch-mission-dialog .global-launch-card-fields>span,.launch-mission-dialog .global-launch-card-meta>span{font-size:10.5px;line-height:1.7;color:#e0edf2}
++.launch-mission-dialog .global-launch-card-fields small,.launch-mission-dialog .global-launch-card-meta small{font-size:9px;color:#91b1c0}
++.launch-mission-dialog .global-launch-card-countries{margin-top:11px;border-top:1px dashed rgba(125,178,195,.21);font-size:9.5px;color:#92b3c3}
++.launch-mission-dialog .global-launch-card-countries bdi{color:#d1e6ef}
++.launch-mission-dialog .global-launch-empty{height:100%;min-height:255px;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:11px;color:#bbd4df;font-size:12px;line-height:2;text-align:center;padding:25px}
++.launch-mission-dialog .global-launch-empty p{margin:0;max-width:470px}
++.launch-mission-dialog .launch-mission-empty-art{width:124px;height:124px;display:grid;place-items:center;color:var(--lm-cyan);opacity:.86}
++.launch-mission-dialog .launch-mission-empty-art svg{width:100%;height:100%}
++.launch-mission-dialog .global-launch-empty.is-error{color:#ffd39c}
++
++/* Bidi: label/readout orientation follows locale, decorative imagery stays anchored. */
++.launch-mission-dialog[dir="ltr"] .global-launch-card{box-shadow:inset 3px 0 0 rgba(224,182,110,.58),0 3px 14px rgba(0,9,17,.16)}
++.launch-mission-dialog[dir="ltr"] .launch-mission-head-tags{justify-content:flex-start}
++.launch-mission-dialog[dir="ltr"] .launch-mission-search-wrap svg{left:12px;right:auto}
++.launch-mission-dialog[dir="rtl"] .launch-mission-search-wrap svg{right:12px;left:auto}
++
++@media(max-width:980px){
++  .launch-mission-dialog{width:calc(100vw - 20px);max-height:calc(100dvh - 18px);height:calc(100dvh - 18px);border-radius:18px}
++  .launch-mission-dialog .global-launch-head{min-height:153px;padding:24px 25px 18px}
++  .launch-mission-dialog .global-launch-content{grid-template-columns:minmax(248px,310px) minmax(0,1fr);gap:11px;padding:11px}
++  .launch-mission-dialog .global-launch-filter-panel{padding:15px 13px}
++  .launch-mission-dialog .global-launch-periods{gap:4px}
++  .launch-mission-dialog .global-launch-period{min-height:78px}
++  .launch-mission-dialog .launch-mission-period-index{font-size:20px}
++}
++@media(max-width:760px){
++  .launch-mission-dock{left:12px;bottom:14px;min-height:62px;width:206px;padding:8px;border-radius:14px;gap:8px}
++  .launch-mission-dock-signal{width:44px;height:44px;flex-basis:44px;border-radius:11px}
++  .launch-mission-dock-signal svg{width:42px;height:42px}
++  .launch-mission-dock-title{font-size:11.5px}
++  .launch-mission-dock-eyebrow{font-size:9px}
++  .launch-mission-dock-arrow{flex-basis:13px;width:13px}
++  .launch-mission-dialog{width:100vw;max-width:none;height:100dvh;max-height:100dvh;border:0;border-radius:0}
++  .launch-mission-dialog .global-launch-shell{height:100dvh;max-height:100dvh}
++  .launch-mission-dialog .global-launch-head{min-height:155px;padding:21px 16px 17px;gap:9px}
++  .launch-mission-dialog .global-launch-heading{width:calc(100% - 46px)}
++  .launch-mission-dialog .launch-mission-hero-art{width:78%;opacity:.35;inset-inline-end:-64px}
++  .launch-mission-dialog .global-launch-head h2{font-size:19px}
++  .launch-mission-dialog .global-launch-head p{font-size:10px;line-height:1.7}
++  .launch-mission-dialog .launch-mission-head-tags{margin-top:9px;gap:5px}
++  .launch-mission-dialog .launch-mission-head-tags span{font-size:8px;padding:3px 5px}
++  .launch-mission-dialog .launch-mission-overline{margin-bottom:8px;gap:6px}
++  .launch-mission-dialog .launch-mission-overline-code{font-size:8px}
++  .launch-mission-dialog .global-launch-close{flex-basis:34px;width:34px;height:34px;border-radius:9px}
++  .launch-mission-dialog .global-launch-content{display:flex;flex-direction:column;overflow-y:auto;overscroll-behavior:contain;gap:12px;padding:12px}
++  .launch-mission-dialog .global-launch-filter-panel{height:auto;flex:none;overflow:visible;padding:16px 13px;border-radius:13px}
++  .launch-mission-dialog .global-launch-results-panel{height:auto;min-height:360px;overflow:visible;flex:none;border-radius:13px}
++  .launch-mission-dialog .global-launch-results{overflow:visible;padding:10px}
++  .launch-mission-dialog .global-launch-period{min-height:72px}
++  .launch-mission-dialog .global-launch-country-options{max-height:146px}
++  .launch-mission-dialog .global-launch-results-head{padding:15px 13px 13px}
++  .launch-mission-dialog .global-launch-card{padding:12px}
++  .launch-mission-dialog .global-launch-card-title strong{font-size:11.5px}
++}
++@media(max-width:385px){
++  .launch-mission-dock{width:179px}
++  .launch-mission-dock-title{font-size:10.5px}
++  .launch-mission-dialog .global-launch-periods{gap:3px}
++  .launch-mission-dialog .launch-mission-period-index{font-size:17px}
++  .launch-mission-dialog .launch-mission-period-label{font-size:8px}
++  .launch-mission-dialog .global-launch-head h2{font-size:17px}
++  .launch-mission-dialog .global-launch-card-top{flex-wrap:wrap}
++  .launch-mission-dialog .global-launch-card-date{max-width:100%;align-items:flex-start}
++}
++@media(prefers-reduced-motion:reduce){
++  .launch-mission-dock,.launch-mission-dock *, .launch-mission-dialog *{transition:none!important;animation:none!important}
++}
++
++/* Mobile discovery: keep the world-country catalog reachable, but avoid an
++   exhausting 249-item scroll before the mission feed. Search expands it. */
++.launch-mission-dialog .launch-mission-country-toggle,
++.launch-mission-dialog .launch-mission-mobile-results{display:none}
++@media(max-width:760px){
++ .launch-mission-dialog .launch-mission-country-toggle{width:100%;display:flex;align-items:center;justify-content:space-between;gap:8px;min-height:34px;margin-top:9px;padding:6px 11px;border:1px dashed #507187;border-radius:8px;background:rgba(14,40,55,.6);color:#c7e5ed;font-size:10.5px;cursor:pointer}
++ .launch-mission-dialog .launch-mission-country-toggle svg{width:15px;height:15px;transition:transform .18s}
++ .launch-mission-dialog .launch-mission-country-toggle[aria-expanded="true"] svg{transform:rotate(180deg)}
++ .launch-mission-dialog .global-launch-country-options:not(.launch-mission-expanded){display:none}
++ .launch-mission-dialog .launch-mission-mobile-results{width:100%;display:flex;align-items:center;justify-content:center;gap:10px;min-height:45px;border:1px solid rgba(242,204,135,.66);border-radius:11px;background:linear-gradient(100deg,#ab7a39,#ebbf77);color:#172c35;cursor:pointer;font-size:12px;font-weight:800}
++ .launch-mission-dialog .launch-mission-mobile-results strong{min-width:25px;padding:2px 7px;border-radius:6px;background:rgba(20,40,52,.18);font-variant-numeric:tabular-nums}
++ .launch-mission-dialog .launch-mission-mobile-results svg{width:15px;height:15px}
++}
+--- /dev/null
++++ b/tests/launch-mission-ui-redesign.test.cjs
+@@ -0,0 +1,38 @@
++'use strict';
++const fs = require('node:fs');
++const path = require('node:path');
++const assert = require('node:assert/strict');
++const root = path.resolve(__dirname, '..');
++const html = fs.readFileSync(path.join(root, 'index.html'),'utf8');
++const css = fs.readFileSync(path.join(root, 'assets/css/launch-mission-ui.css'),'utf8');
++const js = fs.readFileSync(path.join(root, 'assets/js/upcoming-launch-browser.js'),'utf8');
++
++const checks = [
++  [ /<main id="view-map"[\s\S]*id="upcomingLaunchesBtn"[\s\S]*<\/main>/, 'Standalone launch dock inside map view'],
++  [ /id="upcomingLaunchesBtn"[^>]*aria-haspopup="dialog"[^>]*aria-controls="globalLaunchDialog"/, 'Launch entry accessible'],
++  [ /<dialog id="globalLaunchDialog" class="global-launch-dialog launch-mission-dialog"/, 'Exclusive dialog namespace'],
++  [ /id="launchMissionDockTitle"/, 'Stable icon label'],
++  [ /class="launch-mission-hero-art"/, 'Unique visual hero'],
++  [ /id="launchMissionCountryToggle"[^>]*aria-expanded="false"/, 'Collapsible mobile country picker'],
++  [ /id="launchMissionJumpResults"[^>]*aria-controls="globalLaunchResults"/, 'Mobile results shortcut'],
++  [ /id="globalLaunchFilterSummary"/, 'Current filter summary'],
++  [ /id="globalLaunchSelectedCountries"/, 'Removable applied country chips'],
++  [ /<dialog id="globalLandingDialog" class="global-launch-dialog"/, 'Existing landing dialog untouched'],
++];
++for (const [re, label] of checks) assert.match(html, re, label);
++assert.ok(!/<nav class="tabs">[\s\S]*id="upcomingLaunchesBtn"[\s\S]*<\/nav>/.test(html), 'No old tab launcher');
++assert.match(css, /\.launch-mission-dialog\s*\{/);
++assert.match(css, /@media\(max-width:760px\)/);
++assert.match(css, /\.global-launch-country-options:not\(\.launch-mission-expanded\)/);
++for (const code of ['CHN','USA','RUS','IND']) assert.match(html, new RegExp('data-quick-country="'+code+'"'));
++for (const n of ['7','14','30','120']) assert.match(html, new RegExp('data-days="'+n+'"'));
++for (const language of ['fa','en','ar']) assert.match(js,new RegExp('\\b'+language+': \\{'));
++assert.match(js, /function renderQuickCountries\(/);
++assert.match(js, /function renderCountryBrowserMode\(/);
++assert.match(js, /data-remove-country-code/);
++assert.match(js, /renderResults\(\);/);
++assert.doesNotMatch(js, /\brender\(\);/, 'Unknown render() must not be called on fetch completion');
++assert.match(js, /Filters\.filterLaunches\(/, 'Filtering unchanged');
++assert.equal((html.match(/id="upcomingLaunchesBtn"/g) || []).length,1);
++assert.equal((html.match(/id="globalLaunchDialog"/g) || []).length,1);
++console.log('PASS: launch mission UI redesign, responsive behavior, i18n hooks, preserved landing dialog');

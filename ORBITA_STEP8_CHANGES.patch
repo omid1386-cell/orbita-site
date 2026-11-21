@@ -1,0 +1,281 @@
+--- a/assets/js/upcoming-landing-browser.js
++++ b/assets/js/upcoming-landing-browser.js
+@@ -342,12 +342,10 @@
+       now: Date.now()
+     });
+     countEl.textContent = number(rows.length) + " " + (rows.length === 1 ? tr("landings") : tr("landingsPlural"));
+-    stateEl.className = "global-launch-feed-state is-ready";
+-    stateEl.textContent = state.refreshError ? tr("refreshFailed") : tr("fresh");
+-    if (state.data.updated_utc && Date.now() - new Date(state.data.updated_utc).getTime() > 86400000) {
+-      stateEl.className += " is-stale";
+-      stateEl.textContent = (state.refreshError ? tr("refreshFailed") + " · " : "") + tr("stale");
+-    }
++    var feedHealth = Display.freshness(state.data.updated_utc, Date.now());
++    var feedHealthText = tr(feedHealth === "fresh" ? "fresh" : feedHealth === "stale" ? "stale" : feedHealth === "invalid" ? "syncInvalid" : "syncPending");
++    stateEl.className = "global-launch-feed-state is-ready" + (feedHealth === "fresh" && !state.refreshError ? "" : " is-stale");
++    stateEl.textContent = (state.refreshError ? tr("refreshFailed") + " · " : "") + feedHealthText;
+     if (!rows.length) {
+       results.innerHTML = renderEmpty(tr("noResults"), "empty", true);
+       return;
+--- a/assets/js/upcoming-launch-browser.js
++++ b/assets/js/upcoming-launch-browser.js
+@@ -383,12 +383,10 @@
+     });
+     countEl.textContent = number(rows.length) + " " + (rows.length === 1 ? tr("launches") : tr("launchesPlural"));
+     if (jumpCount) jumpCount.textContent = number(rows.length);
+-    stateEl.className = "global-launch-feed-state is-ready";
+-    stateEl.textContent = state.refreshError ? tr("refreshFailed") : tr("fresh");
+-    if (state.data.updated_utc && Date.now() - new Date(state.data.updated_utc).getTime() > 86400000) {
+-      stateEl.className += " is-stale";
+-      stateEl.textContent = (state.refreshError ? tr("refreshFailed") + " · " : "") + tr("stale");
+-    }
++    var feedHealth = Display.freshness(state.data.updated_utc, Date.now());
++    var feedHealthText = tr(feedHealth === "fresh" ? "fresh" : feedHealth === "stale" ? "stale" : feedHealth === "invalid" ? "syncInvalid" : "syncPending");
++    stateEl.className = "global-launch-feed-state is-ready" + (feedHealth === "fresh" && !state.refreshError ? "" : " is-stale");
++    stateEl.textContent = (state.refreshError ? tr("refreshFailed") + " · " : "") + feedHealthText;
+     if (!rows.length) {
+       results.innerHTML = renderEmpty(tr("noResults"), "empty", true);
+       return;
+--- a/assets/js/upcoming-launch-filters.js
++++ b/assets/js/upcoming-launch-filters.js
+@@ -36,6 +36,15 @@
+ 
+   function eventWithinWindow(event, now, end) {
+     var exact = validEpoch(event && (event.net || event.net_utc));
++    // LL2 can publish a UTC midnight NET with *day-only* precision. That
++    // midnight is a placeholder, not a confirmed event time. Keep the event
++    // visible throughout its UTC day (including after midnight) when the
++    // requested rolling window intersects that day.
++    var precision = String(event && event.net_precision || "").toLowerCase();
++    if (Number.isFinite(exact) && /\bday\b/.test(precision)) {
++      var startOfDay = Date.parse(new Date(exact).toISOString().slice(0, 10) + "T00:00:00.000Z");
++      return startOfDay + 86400000 > now && startOfDay < end;
++    }
+     if (Number.isFinite(exact)) return exact >= now && exact < end;
+     var date = String(event && (event.date_utc || event.date) || "").trim();
+     if (/^\d{4}-\d\d-\d\d$/.test(date)) {
+--- a/tools/refresh_global_launches.py
++++ b/tools/refresh_global_launches.py
+@@ -100,10 +100,16 @@
+         raise ValueError('max_pages must be between 1 and 12')
+     since = now.isoformat(timespec='seconds').replace('+00:00', 'Z')
+     until = end.isoformat(timespec='seconds').replace('+00:00', 'Z')
++    # A launch labelled only "Day" may use 00:00 UTC as a nominal NET. If we
++    # queried strictly from now, all remaining day-only events for *today*
++    # would disappear after midnight. Scan from today's UTC midnight instead;
++    # only retain already-past records when their precision is day-only.
++    day_floor = now.replace(hour=0, minute=0, second=0, microsecond=0)
++    fetch_since = day_floor.isoformat(timespec='seconds').replace('+00:00', 'Z')
+     params = {'mode': 'normal', 'format': 'json', 'limit': PAGE_SIZE,
+               'ordering': 'net', 'hide_recent_previous': 'true',
+               'include_suborbital': 'true',
+-              'net__gte': since, 'net__lt': until}
++              'net__gte': fetch_since, 'net__lt': until}
+     items = []
+     seen = set()
+     count = None
+@@ -134,12 +140,15 @@
+             raise EventContractError('Invalid or incomplete LL2 page')
+         for raw in results:
+             event, when = _event(raw)
+-            if not now <= when < end:
++            if not day_floor <= when < end:
+                 raise EventContractError('LL2 returned launch outside requested four-month window')
+             lid = event['ll2_id']
+             if lid in seen:
+                 raise EventContractError('Duplicate LL2 ID across pages: ' + lid)
+             seen.add(lid)
++            if when < now and str(event.get('net_precision') or '').lower() != 'day':
++                # A timed launch before the current instant is already past.
++                continue
+             items.append(event)
+         offset += len(results)
+         if offset == count:
+--- a/tools/test_global_launches.py
++++ b/tools/test_global_launches.py
+@@ -76,6 +76,30 @@
+         self.assertEqual(result['coverage_status'], 'complete_from_source_at_fetch_time')
+         self.assertEqual((utc_datetime(result['window_end_utc_exclusive']) - utc_datetime(result['window_start_utc'])).days, 120)
+ 
++    def test_today_day_precision_is_retained_from_utc_midnight(self):
++        raw = item(501)
++        raw['net'] = '2026-11-21T00:00:00Z'
++        raw['net_precision'] = {'name': 'Day'}
++        observed_urls = []
++        def source(url):
++            observed_urls.append(url)
++            return fake_feed([raw])(url)
++        result = global_launches.collect(now=NOW, fetcher=source)
++        self.assertEqual(result['count'], 1)
++        query = parse_qs(urlparse(observed_urls[0]).query)
++        self.assertEqual(query['net__gte'], ['2026-11-21T00:00:00Z'])
++
++    def test_already_past_timed_launch_today_is_not_published(self):
++        past = item(502)
++        past['net'] = '2026-11-21T08:00:00Z'
++        past['net_precision'] = {'name': 'Minute'}
++        future = item(503)
++        future['net'] = '2026-11-23T08:00:00Z'
++        future['net_precision'] = {'name': 'Minute'}
++        result = global_launches.collect(now=NOW, fetcher=fake_feed([past, future]))
++        self.assertEqual(result['count'], 1)
++        self.assertEqual(result['launches'][0]['ll2_id'], future['id'])
++
+     def test_preserves_unknown_pad_and_operator_without_guessing(self):
+         raw = item(7)
+         raw['pad'] = None
+--- /dev/null
++++ b/tests/step8-integration.test.cjs
+@@ -0,0 +1,48 @@
++/* Step 8 — deterministic integration regressions for the rolling time-window,
++ * multi-country filters and snapshot freshness. Uses no external network.
++ */
++const test = require('node:test');
++const assert = require('node:assert/strict');
++const Filter = require('../assets/js/upcoming-launch-filters.js');
++const Display = require('../assets/js/upcoming-event-display.js');
++const NOW = Date.parse('2026-11-21T12:00:00Z');
++
++test('Day precision NET at midnight stays visible until its UTC calendar day ends', () => {
++  const today = {event_kind:'launch', ll2_id:'one', net:'2026-11-21T00:00:00Z', net_precision:'Day'};
++  const past = {event_kind:'launch', ll2_id:'past', net:'2026-11-20T00:00:00Z', net_precision:'Day'};
++  const future = {event_kind:'launch', ll2_id:'future', net:'2026-11-29T00:00:00Z', net_precision:'Day'};
++  assert.deepEqual(Filter.filterLaunches([today,past,future],{days:7,now:NOW}).map(x=>x.ll2_id),['one']);
++});
++
++test('Minute-precision past NET must not survive merely because it is on the same day', () => {
++  const rows = Filter.filterLaunches([
++    {ll2_id:'past',net:'2026-11-21T11:59:00Z',net_precision:'Minute'},
++    {ll2_id:'future',net:'2026-11-21T12:01:00Z',net_precision:'Minute'}
++  ],{days:7,now:NOW});
++  assert.deepEqual(rows.map(x=>x.ll2_id),['future']);
++});
++
++test('Operator and site country filters keep multi-selection disjoint', () => {
++ const rows=[
++  {ll2_id:'ch',net:'2026-11-23T09:00:00Z',operator_country_code:'CHN',launch_country_code:'USA'},
++  {ll2_id:'us',net:'2026-11-24T09:00:00Z',operator_country_code:'USA',launch_country_code:'USA'},
++  {ll2_id:'ru',net:'2026-11-25T09:00:00Z',operator_country_code:'RUS',launch_country_code:'CHN'}
++ ];
++ assert.deepEqual(Filter.filterLaunches(rows,{now:NOW,days:7,countryBasis:'operator',countryCodes:['CHN','USA']}).map(x=>x.ll2_id),['ch','us']);
++ assert.deepEqual(Filter.filterLaunches(rows,{now:NOW,days:7,countryBasis:'site',countryCodes:['CHN']}).map(x=>x.ll2_id),['ru']);
++});
++
++test('Landing date-only today remains eligible; landing hour is never fabricated', () => {
++ const row={event_kind:'landing',event_id:'landing1',date_utc:'2026-11-21',date_basis:'associated_launch_date_not_landing_time'};
++ assert.equal(Filter.filterEvents([row],{days:7,now:NOW}).length,1);
++ const shown=Display.landingDate(row,'fa','—');
++ assert.equal(shown.timeKnown,false);
++ assert.doesNotMatch(shown.text,/UTC|[0-9]{2}:[0-9]{2}/);
++});
++
++test('Missing, stale, future, and fresh update timestamps are distinct', () => {
++ assert.equal(Display.freshness(null,NOW),'missing');
++ assert.equal(Display.freshness('2026-11-19T10:00:00Z',NOW),'stale');
++ assert.equal(Display.freshness('2026-11-22T10:00:00Z',NOW),'invalid');
++ assert.equal(Display.freshness('2026-11-21T10:00:00Z',NOW),'fresh');
++});
+--- /dev/null
++++ b/qa/step8_browser_checks.py
+@@ -0,0 +1,101 @@
++"""Isolated Chromium cross-panel integration regression against complete ORBITA HTML/CSS.
++Uses in-memory synthetic test responses. Does not claim a live MapLibre or API test.
++"""
++from pathlib import Path
++import json, re
++from datetime import datetime, timezone, timedelta
++from bs4 import BeautifulSoup
++from playwright.sync_api import sync_playwright
++ROOT=Path(__file__).resolve().parents[1]
++soup=BeautifulSoup((ROOT/'index.html').read_text(), 'html.parser')
++for tag in soup.select('script, link[rel=stylesheet], link[rel=preconnect], link[rel=preload]'):
++ tag.decompose()
++html=str(soup)
++now=datetime.now(timezone.utc)
++def iso(days): return (now+timedelta(days=days)).strftime('%Y-%m-%dT%H:%M:%SZ')
++def date(days): return (now+timedelta(days=days)).strftime('%Y-%m-%d')
++fixture={
++ 'data/country_codes.json':json.loads((ROOT/'data/country_codes.json').read_text()),
++ 'data/upcoming_global.json':{'schema_version':1,'coverage_status':'complete_from_source_at_fetch_time','updated_utc':iso(-0.04),'horizon_days':120,'count':5,'launches':[
++ {'ll2_id':'A','launch_name':'CHINA NEAR','net':iso(5),'net_precision':'Minute','status':'go','operator_country_code':'CHN','launch_country_code':'USA'},
++ {'ll2_id':'B','launch_name':'USA NEAR','net':iso(10),'net_precision':'Day','status':'tbc','operator_country_code':'USA','launch_country_code':'USA'},
++ {'ll2_id':'C','launch_name':'CHINA LATER','net':iso(25),'net_precision':'Month','status':'tbd','operator_country_code':'CHN','launch_country_code':'CHN'},
++ {'ll2_id':'D','launch_name':'INDIA FAR','net':iso(90),'net_precision':'Day','status':'tbc','operator_country_code':'IND','launch_country_code':'IND'},
++ {'ll2_id':'E','launch_name':'UNKNOWN','net':iso(12),'net_precision':'Day','status':'planned','operator_country_code':None,'launch_country_code':None},
++ ]},
++ 'data/upcoming_global_landings.json':{'schema_version':1,'coverage_status':'partial_source_coverage','updated_utc':iso(-0.04),'horizon_days':120,'count':3,'landings':[
++ {'event_kind':'landing','event_id':'L1','mission_name':'CHINA RECOVERY','date_utc':date(5),'date_basis':'associated_launch_date_not_landing_time','status':'planned','operator_country_code':'CHN','recovery_country_code':'CHN'},
++ {'event_kind':'landing','event_id':'L2','mission_name':'USA RECOVERY','date_utc':date(25),'date_basis':'spacecraft_mission_end_estimate','status':'planned','operator_country_code':'USA','recovery_country_code':None},
++ {'event_kind':'landing','event_id':'L3','mission_name':'INDIA RECOVERY','date_utc':date(90),'date_basis':'curated_schedule_date_unverified','status':'planned','operator_country_code':'IND','recovery_country_code':'IND'}
++ ]}}
++mock_js='''window.__testLang="fa"; Object.defineProperty(window,"localStorage",{configurable:true,value:{getItem:function(k){return k==="orbita_lang"?window.__testLang:null},setItem:function(k,v){if(k==="orbita_lang")window.__testLang=v}}}); window.__testBroken={};const FIXTURE=REPLACE; window.__qaFixture=FIXTURE; window.fetch=function(url){let k=String(url).split('?')[0];if(window.__testBroken[k])return Promise.reject(new Error('simulate network failure')); if(!FIXTURE[k])return Promise.reject(new Error('not in in-memory synthetic fixture: '+k));return Promise.resolve({ok:true,json:()=>Promise.resolve(JSON.parse(JSON.stringify(FIXTURE[k])))})};'''.replace('REPLACE',json.dumps(fixture,ensure_ascii=False))
++with sync_playwright() as p:
++ browser=p.chromium.launch(executable_path='/usr/bin/chromium',headless=True,args=['--no-sandbox'])
++ for width,height in [(1440,900),(390,844)]:
++  pg=browser.new_page(viewport={'width':width,'height':height})
++  errs=[]
++  pg.on('pageerror',lambda e: errs.append(str(e)))
++  pg.set_content(html)
++  for css in ('assets/css/app.css','assets/css/launch-mission-ui.css','assets/css/upcoming-event-display.css'):
++   pg.add_style_tag(content=(ROOT/css).read_text())
++  pg.evaluate('(function(){'+mock_js+'})()')
++  for js in ('assets/js/upcoming-launch-filters.js','assets/js/upcoming-event-display.js','assets/js/upcoming-launch-browser.js','assets/js/upcoming-landing-browser.js'):
++   pg.add_script_tag(content=(ROOT/js).read_text())
++  # Hide splash overlay, whose actual runtime is deliberately not loaded.
++  pg.evaluate('document.getElementById("raspehrSplash")?.remove()')
++  pg.locator('#upcomingLaunchesBtn').click(force=True)
++  pg.locator('#globalLaunchResults .global-launch-card').first.wait_for(timeout=6000)
++  assert pg.locator('#globalLaunchResults .global-launch-card').count()==4
++  pg.locator('#globalLaunchDialog [data-quick-country="CHN"]').click(force=True)
++  pg.locator('#globalLaunchDialog [data-quick-country="USA"]').click(force=True)
++  assert pg.locator('#globalLaunchResults .global-launch-card').count()==3
++  pg.locator('#globalLaunchDialog [data-days="7"]').click(force=True)
++  assert pg.locator('#globalLaunchResults .global-launch-card').count()==1
++  pg.locator('#globalLaunchDialog [data-days="120"]').click(force=True)
++  assert pg.locator('#globalLaunchResults .global-launch-card').count()==3
++  pg.locator('#globalLaunchCountryBasis').select_option('site')
++  assert pg.locator('#globalLaunchResults .global-launch-card').count()==3
++  pg.locator('#globalLaunchCountryBasis').select_option('operator')
++  pg.locator('#globalLaunchReload').click(force=True)
++  assert pg.locator('#globalLaunchResults .global-launch-card').count()==3
++  pg.evaluate('window.__testBroken["data/upcoming_global.json"]=true')
++  pg.locator('#globalLaunchReload').click(force=True)
++  pg.wait_for_timeout(100)
++  assert pg.locator('#globalLaunchResults .global-launch-card').count()==3, 'last good snapshot not retained'
++  pg.evaluate('window.__testBroken["data/upcoming_global.json"]=false;window.__qaFixture["data/upcoming_global.json"].updated_utc=null')
++  pg.locator('#globalLaunchReload').click(force=True)
++  pg.wait_for_timeout(70)
++  assert 'نخستین' in pg.locator('#globalLaunchFeedState').inner_text(), 'missing update timestamp falsely marked fresh'
++  pg.evaluate('window.__qaFixture["data/upcoming_global.json"].updated_utc="2099-01-01T00:00:00Z"')
++  pg.locator('#globalLaunchReload').click(force=True)
++  pg.wait_for_timeout(70)
++  assert 'نامعتبر' in pg.locator('#globalLaunchFeedState').inner_text(), 'future timestamp falsely marked fresh'
++  pg.evaluate('window.__qaFixture["data/upcoming_global.json"].updated_utc = ' + json.dumps(iso(-0.04)))
++  pg.locator('#globalLaunchReload').click(force=True)
++  pg.evaluate('window.__testLang="en"')
++  pg.locator('#langBtn').dispatch_event('click')
++  pg.wait_for_timeout(100)
++  assert 'launch' in pg.locator('#globalLaunchResultCount').inner_text().lower()
++  pg.locator('#globalLaunchClose').click(force=True)
++  pg.locator('#upcomingLandingsBtn').click(force=True)
++  pg.locator('#globalLandingResults .global-launch-card').first.wait_for(timeout=6000)
++  assert pg.locator('#globalLandingResults .global-launch-card').count()==2
++  pg.locator('#globalLandingDialog [data-days="120"]').click(force=True)
++  assert pg.locator('#globalLandingResults .global-launch-card').count()==3
++  pg.locator('#globalLandingCountryOptions [data-country-code="CHN"]').click(force=True)
++  assert pg.locator('#globalLandingResults .global-launch-card').count()==1
++  pg.locator('#globalLandingCountryBasis').select_option('site')
++  assert pg.locator('#globalLandingResults .global-launch-card').count()==1
++  pg.evaluate('window.__qaFixture["data/upcoming_global_landings.json"].updated_utc=null')
++  pg.locator('#globalLandingReload').click(force=True)
++  pg.wait_for_timeout(50)
++  assert 'Awaiting first update' in pg.locator('#globalLandingFeedState').inner_text(), 'missing landing timestamp falsely marked fresh'
++  pg.locator('#globalLandingClose').click(force=True)
++  assert not pg.locator('#globalLaunchDialog').evaluate('(x)=>x.open')
++  assert not pg.locator('#globalLandingDialog').evaluate('(x)=>x.open')
++  if width==390:
++   assert pg.evaluate('document.documentElement.scrollWidth<=window.innerWidth+1'), 'horizontal overflow'
++  assert not errs,errs
++  print('PASS',width,'full ORBITA DOM: 2 modals, cross-panel launch/landing, filters, 120d, basis, refresh failure, i18n, no JS error')
++  pg.close()
++ browser.close()

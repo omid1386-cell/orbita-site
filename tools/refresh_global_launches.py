@@ -23,6 +23,7 @@ import urllib.parse
 import urllib.request
 
 from ll2_compat import API_ROOT
+from ll2_country import country_code
 from upcoming_event_contract import EventContractError, utc_datetime
 
 BASE = Path(__file__).resolve().parents[1]
@@ -32,6 +33,7 @@ UA = 'ORBITA/1.0 (https://orbita-site.onrender.com)'
 PAGE_SIZE = 100
 MAX_PAGES = 12
 HORIZON_DAYS = 120
+MIN_COUNTRY_COVERAGE = 0.85
 
 
 def utcnow():
@@ -82,12 +84,12 @@ def _event(item):
         'mission_type': _text(mission.get('type')),
         'operator_id': provider.get('id'),
         'operator_name': _text(provider.get('name')),
-        'operator_country_code': _text(provider.get('country_code')),
+        'operator_country_code': country_code(provider),
         'pad_id': pad.get('id'),
         'pad_name': _text(pad.get('name')),
         'location_id': loc.get('id'),
         'location_name': _text(loc.get('name')),
-        'launch_country_code': _text(loc.get('country_code')),
+        'launch_country_code': country_code(pad) or country_code(loc),
         'last_updated': _text(item.get('last_updated')),
     }, when
 
@@ -100,10 +102,18 @@ def collect(*, now=None, fetcher=None, max_pages=MAX_PAGES):
         raise ValueError('max_pages must be between 1 and 12')
     since = now.isoformat(timespec='seconds').replace('+00:00', 'Z')
     until = end.isoformat(timespec='seconds').replace('+00:00', 'Z')
-    params = {'mode': 'normal', 'format': 'json', 'limit': PAGE_SIZE,
+    # A launch labelled only "Day" may use 00:00 UTC as a nominal NET. If we
+    # queried strictly from now, all remaining day-only events for *today*
+    # would disappear after midnight. Scan from today's UTC midnight instead;
+    # only retain already-past records when their precision is day-only.
+    day_floor = now.replace(hour=0, minute=0, second=0, microsecond=0)
+    fetch_since = day_floor.isoformat(timespec='seconds').replace('+00:00', 'Z')
+    # Detailed mode embeds service-provider country affiliations; normal mode
+    # exposes provider ID/name only and would break operator-country filters.
+    params = {'mode': 'detailed', 'format': 'json', 'limit': PAGE_SIZE,
               'ordering': 'net', 'hide_recent_previous': 'true',
               'include_suborbital': 'true',
-              'net__gte': since, 'net__lt': until}
+              'net__gte': fetch_since, 'net__lt': until}
     items = []
     seen = set()
     count = None
@@ -134,12 +144,15 @@ def collect(*, now=None, fetcher=None, max_pages=MAX_PAGES):
             raise EventContractError('Invalid or incomplete LL2 page')
         for raw in results:
             event, when = _event(raw)
-            if not now <= when < end:
+            if not day_floor <= when < end:
                 raise EventContractError('LL2 returned launch outside requested four-month window')
             lid = event['ll2_id']
             if lid in seen:
                 raise EventContractError('Duplicate LL2 ID across pages: ' + lid)
             seen.add(lid)
+            if when < now and str(event.get('net_precision') or '').lower() != 'day':
+                # A timed launch before the current instant is already past.
+                continue
             items.append(event)
         offset += len(results)
         if offset == count:
@@ -150,6 +163,16 @@ def collect(*, now=None, fetcher=None, max_pages=MAX_PAGES):
             raise EventContractError('LL2 stopped before all results were delivered')
 
     items.sort(key=lambda e: (e['net'], e['ll2_id']))
+    # Safety gate: never claim this snapshot is suitable for country filters
+    # when LL2 response mode omits the affiliation metadata.
+    with_provider = [e for e in items if e.get('operator_id') is not None]
+    op_known = sum(bool(e.get('operator_country_code')) for e in with_provider)
+    pad_known = sum(bool(e.get('launch_country_code')) for e in items if e.get('pad_id') is not None)
+    pad_present = sum(e.get('pad_id') is not None for e in items)
+    if with_provider and op_known / len(with_provider) < MIN_COUNTRY_COVERAGE:
+        raise EventContractError('Insufficient provider country metadata in LL2 detailed responses; do not publish broken operator-country filters')
+    if pad_present and pad_known / pad_present < MIN_COUNTRY_COVERAGE:
+        raise EventContractError('Insufficient launch site country metadata in LL2 responses; do not publish broken launch-site filters')
     return {
         'schema_version': 1,
         'source': 'Launch Library 2 (The Space Devs), v2.3.0',
@@ -161,6 +184,10 @@ def collect(*, now=None, fetcher=None, max_pages=MAX_PAGES):
         'horizon_days': HORIZON_DAYS,
         'count': len(items),
         'pages_fetched': pages,
+        'country_quality': {
+            'operator_covered': op_known, 'operator_with_id': len(with_provider),
+            'site_covered': pad_known, 'site_with_pad_id': pad_present,
+        },
         'launches': items,
     }
 

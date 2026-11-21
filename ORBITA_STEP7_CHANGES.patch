@@ -1,0 +1,697 @@
+--- a/index.html
++++ b/index.html
+@@ -44,13 +44,15 @@
+ <link rel="stylesheet" href="assets/vendor/maplibre-gl.css?v=3" />
+ <link rel="stylesheet" href="assets/css/app.css?_t=20261121-global-launch-browser-step3-4" />
+ <link rel="stylesheet" href="assets/css/launch-mission-ui.css?v=20261121-redesign-v1" />
++<link rel="stylesheet" href="assets/css/upcoming-event-display.css?v=20261121-step7" />
+ <!-- Ordered defer scripts download in parallel instead of creating a network waterfall. -->
+ <script defer src="assets/js/raspehr-splash.js?v=20261113-speed-v1"></script>
+ <script defer src="assets/vendor/maplibre-gl.js?v=3"></script>
+ <script defer src="assets/js/app.js?_t=20261114-map-zoom-performance-step3-v1"></script>
+ <script defer src="assets/js/upcoming-launch-filters.js?v=20261121-step3-4"></script>
+-<script defer src="assets/js/upcoming-launch-browser.js?v=20261121-launch-ui-v1"></script>
+-<script defer src="assets/js/upcoming-landing-browser.js?v=20261121-step5-6"></script>
++<script defer src="assets/js/upcoming-event-display.js?v=20261121-step7"></script>
++<script defer src="assets/js/upcoming-launch-browser.js?v=20261121-step7"></script>
++<script defer src="assets/js/upcoming-landing-browser.js?v=20261121-step7"></script>
+ <script>
+   window.ORBITA_V = "20261114-step4-manufacturer-logos-v1";
+   window.ORBITA_APP_V = "20261114-map-zoom-performance-step3-v1";
+@@ -327,8 +329,8 @@
+         <header class="global-launch-results-head">
+           <div class="launch-mission-feed-label"><span class="launch-mission-signal-line" aria-hidden="true"></span><span id="launchMissionFeedLabel">جریان مأموریت‌ها</span><span class="launch-mission-feed-code" dir="ltr">02 / FEED</span></div>
+           <div>
+-            <h3 id="globalLaunchResultsHeading" tabindex="-1">نتایج <span id="globalLaunchResultCount" class="global-launch-result-count">—</span></h3>
+-            <small id="globalLaunchUpdated"></small>
++            <h3 id="globalLaunchResultsHeading" tabindex="-1">نتایج <span id="globalLaunchResultCount" class="global-launch-result-count" aria-live="polite">—</span></h3>
++            <div class="event-display-update-row"><small id="globalLaunchUpdated" class="event-display-updated"></small><span id="globalLaunchFreshness" class="event-display-freshness" role="status"></span></div>
+           </div>
+           <div class="global-launch-results-head-actions">
+             <p id="globalLaunchFeedState" class="global-launch-feed-state" role="status" aria-live="polite"></p>
+@@ -336,6 +338,8 @@
+           </div>
+           <div id="globalLaunchFilterSummary" class="launch-mission-filter-summary" aria-live="polite"></div>
+         </header>
++        <div class="event-display-info-strip"><p id="globalLaunchCoverageNote" class="event-display-coverage-note"></p>
++          <p id="globalLaunchClockNote" class="event-display-clock-note"></p></div>
+         <div id="globalLaunchResults" class="global-launch-results" aria-live="polite">
+           <div class="global-launch-empty">در حال آماده‌سازی…</div>
+         </div>
+@@ -392,14 +396,16 @@
+       <section class="global-launch-results-panel" aria-labelledby="globalLandingResultsHeading">
+         <header class="global-launch-results-head">
+           <div>
+-            <h3 id="globalLandingResultsHeading">نتایج <span id="globalLandingResultCount" class="global-launch-result-count">—</span></h3>
+-            <small id="globalLandingUpdated"></small>
++            <h3 id="globalLandingResultsHeading">نتایج <span id="globalLandingResultCount" class="global-launch-result-count" aria-live="polite">—</span></h3>
++            <div class="event-display-update-row"><small id="globalLandingUpdated" class="event-display-updated"></small><span id="globalLandingFreshness" class="event-display-freshness" role="status"></span></div>
+           </div>
+           <div class="global-launch-results-head-actions">
+             <p id="globalLandingFeedState" class="global-launch-feed-state" role="status" aria-live="polite"></p>
+             <button id="globalLandingReload" class="global-launch-reload" type="button">تلاش دوباره</button>
+           </div>
+         </header>
++        <div class="event-display-info-strip"><p id="globalLandingCoverageNote" class="event-display-coverage-note"></p>
++          <p id="globalLandingClockNote" class="event-display-clock-note"></p></div>
+         <div id="globalLandingResults" class="global-launch-results" aria-live="polite">
+           <div class="global-launch-empty">در حال آماده‌سازی…</div>
+         </div>
+--- /dev/null
++++ b/assets/js/upcoming-event-display.js
+@@ -0,0 +1,77 @@
++/* ORBITA — Step 7 common presentation helpers for launch and landing feeds.
++ * No network, no mutation of source data, no guessed event times.
++ */
++(function (root, factory) {
++  "use strict";
++  var api = factory();
++  if (typeof module === "object" && module.exports) module.exports = api;
++  if (root) root.ORBITAUpcomingEventDisplay = api;
++})(typeof globalThis !== "undefined" ? globalThis : this, function () {
++  "use strict";
++  var locales = { fa: "fa-IR-u-ca-gregory", en: "en-GB", ar: "ar-u-ca-gregory-nu-latn" };
++  function locale(lang) { return locales[lang] || locales.fa; }
++  function validDate(value) {
++    if (!value || typeof value !== "string") return null;
++    var date = new Date(value);
++    return Number.isFinite(date.getTime()) ? date : null;
++  }
++  function dateParts(date, lang, opts) {
++    try { return new Intl.DateTimeFormat(locale(lang), Object.assign({timeZone:"UTC"}, opts)).format(date); }
++    catch (e) { return date.toISOString().slice(0,10); }
++  }
++  function precision(value) {
++    var raw = String(value || "").toLowerCase();
++    if (/second|sec/.test(raw)) return "sec";
++    if (/minute|min/.test(raw)) return "min";
++    if (/hour|hr/.test(raw)) return "hour";
++    if (/day/.test(raw)) return "day";
++    if (/month/.test(raw)) return "month";
++    if (/quarter/.test(raw)) return "quarter";
++    if (/year/.test(raw)) return "year";
++    return "tbd";
++  }
++  function number(value, lang) {
++    try {return new Intl.NumberFormat(lang === "fa" ? "fa-IR" : lang === "ar" ? "ar-u-nu-latn" : "en-GB").format(value);}
++    catch (e) {return String(value);}
++  }
++  function launchTime(event, lang, noDate) {
++    var d = validDate(event && event.net);
++    if (!d) return {text:noDate, precision:"tbd", timeKnown:false};
++    var key = precision(event.net_precision);
++    if (key === "year") return {text:dateParts(d,lang,{year:"numeric"}),precision:key,timeKnown:false};
++    if (key === "quarter") {
++      var q = number(Math.floor(d.getUTCMonth()/3)+1,lang);
++      return {text:(lang === "fa" ? "سه‌ماههٔ " : lang === "ar" ? "الربع " : "Q") + q + " " + dateParts(d,lang,{year:"numeric"}),precision:key,timeKnown:false};
++    }
++    if (key === "month") return {text:dateParts(d,lang,{month:"long",year:"numeric"}),precision:key,timeKnown:false};
++    var opts = {day:"numeric",month:"short",year:"numeric"};
++    var hasClock = key === "sec" || key === "min" || key === "hour";
++    if (hasClock) {
++      opts.hour = "2-digit";
++      if (key !== "hour") opts.minute = "2-digit";
++      if (key === "sec") opts.second = "2-digit";
++      opts.hourCycle = "h23";
++    }
++    return {text:dateParts(d,lang,opts) + (hasClock ? " UTC" : ""),precision:key,timeKnown:hasClock};
++  }
++  function landingDate(event, lang, noDate) {
++    var raw = String(event && event.date_utc || "");
++    if (!/^\d{4}-\d{2}-\d{2}$/.test(raw)) return {text:noDate,timeKnown:false};
++    var date = validDate(raw + "T00:00:00Z");
++    if (!date || date.toISOString().slice(0,10) !== raw) return {text:noDate,timeKnown:false};
++    return {text:dateParts(date,lang,{day:"numeric",month:"short",year:"numeric"}),timeKnown:false};
++  }
++  function updatedAt(value, lang, fallback) {
++    var d = validDate(value);
++    if (!d) return fallback || "—";
++    return dateParts(d,lang,{year:"numeric",month:"short",day:"numeric",hour:"2-digit",minute:"2-digit",hourCycle:"h23"}) + " UTC";
++  }
++  function freshness(value, now) {
++    var d = validDate(value);
++    if (!d) return "missing";
++    var n = Number.isFinite(now) ? now : Date.now();
++    if (d.getTime() > n + 5 * 60000) return "invalid";
++    return n - d.getTime() > 86400000 ? "stale" : "fresh";
++  }
++  return Object.freeze({launchTime:launchTime,landingDate:landingDate,updatedAt:updatedAt,freshness:freshness,precision:precision});
++});
+--- a/assets/js/upcoming-launch-browser.js
++++ b/assets/js/upcoming-launch-browser.js
+@@ -5,6 +5,8 @@
+ (function () {
+   "use strict";
+ 
++  var Display = window.ORBITAUpcomingEventDisplay;
++  if (!Display) { console.error("ORBITA step 7 event display helper unavailable."); return; }
+   var Filters = window.ORBITAUpcomingLaunchFilters;
+   if (!Filters) {
+     console.error("ORBITA upcoming-launch filter engine is unavailable.");
+@@ -52,7 +54,8 @@
+       confirmed: "تأییدشده", tentative: "در انتظار تأیید", unscheduled: "زمان نامشخص", hold: "در حالت توقف", cancelled: "لغوشده", unknown: "نامشخص",
+       sec: "ثانیه‌ای", min: "دقیقه‌ای", hour: "ساعتی", day: "روز مشخص", month: "ماه تقریبی", quarter: "فصل تقریبی", year: "سال تقریبی", tbd: "دقت اعلام نشده",
+       timeUtc: "به وقت جهانی (UTC)", unknownCountry: "کشور نامشخص", chooseCountry: "برای محدودکردن نتایج، یک یا چند کشور را انتخاب کنید.",
+-      allCount: "همه کشورها", countryCount: "کشور", noDate: "زمان معتبر در منبع ثبت نشده است."
++      allCount: "همه کشورها", countryCount: "کشور", noDate: "زمان معتبر در منبع ثبت نشده است.",
++      syncPending: "در انتظار نخستین به‌روزرسانی", fresh: "داده تازه", staleLabel: "نیازمند به‌روزرسانی", syncInvalid: "زمان به‌روزرسانی نامعتبر", reset: "پاک‌کردن فیلترها", emptyTip: "بازه زمانی یا کشورهای انتخابی را تغییر دهید.", timeLabelLaunch: "ساعت فقط برای زمان‌های دارای دقت کافی نمایش داده می‌شود؛ همه ساعت‌ها UTC هستند.", dateBasisLabel: "زمان اعلام‌شده", timeLabelLanding: "تاریخ‌های فرود فقط روز را نشان می‌دهند؛ ساعت دقیق فرود از این داده‌ها قابل استنباط نیست.", notExactLanding: "این تاریخ، ساعت تأییدشده فرود نیست."
+     },
+     en: {
+       open: "Upcoming launches", dockEyebrow: "Mission radar", filterHeading: "Mission filters", quick: "Quick selection", feedLabel: "Mission feed", selectedRemove: "Remove country", summaryPrefix: "Showing", showCountryList: "Browse all countries", hideCountryList: "Hide country list", jumpResults: "View launches", eyebrow: "Global launch monitor", title: "Worldwide upcoming launches",
+@@ -72,7 +75,8 @@
+       confirmed: "Confirmed", tentative: "To be confirmed", unscheduled: "Unscheduled", hold: "On hold", cancelled: "Cancelled", unknown: "Unknown",
+       sec: "Second-level", min: "Minute-level", hour: "Hour-level", day: "Day-level", month: "Approx. month", quarter: "Approx. quarter", year: "Approx. year", tbd: "Precision not stated",
+       timeUtc: "UTC", unknownCountry: "Country unknown", chooseCountry: "Select one or more countries to narrow the list.",
+-      allCount: "All countries", countryCount: "country", noDate: "No valid time is recorded by the source."
++      allCount: "All countries", countryCount: "country", noDate: "No valid time is recorded by the source.",
++      syncPending: "Awaiting first update", fresh: "Up to date", staleLabel: "Update overdue", syncInvalid: "Invalid update timestamp", reset: "Clear filters", emptyTip: "Try a different time window or country selection.", timeLabelLaunch: "Clock times appear only when the source provides sufficient precision; all shown times are UTC.", dateBasisLabel: "Scheduled time", timeLabelLanding: "Landing dates indicate the calendar day only; no exact landing time is inferred.", notExactLanding: "This is not a verified landing time."
+     },
+     ar: {
+       open: "الإطلاقات القادمة", dockEyebrow: "رادار المهام", filterHeading: "مرشحات الرصد", quick: "اختيار سريع", feedLabel: "سجل المهمات", selectedRemove: "إزالة الدولة", summaryPrefix: "عرض", showCountryList: "عرض قائمة الدول", hideCountryList: "إخفاء قائمة الدول", jumpResults: "عرض الإطلاقات", eyebrow: "متابعة الإطلاقات العالمية", title: "قائمة الإطلاقات القادمة حول العالم",
+@@ -92,7 +96,8 @@
+       confirmed: "مؤكد", tentative: "بانتظار التأكيد", unscheduled: "غير مجدول", hold: "معلّق", cancelled: "ملغى", unknown: "غير معروف",
+       sec: "بدقة الثانية", min: "بدقة الدقيقة", hour: "بدقة الساعة", day: "اليوم محدد", month: "شهر تقريبي", quarter: "ربع سنة تقريبي", year: "سنة تقريبية", tbd: "الدقة غير محددة",
+       timeUtc: "بتوقيت UTC", unknownCountry: "الدولة غير معروفة", chooseCountry: "اختر دولة واحدة أو أكثر لتصفية القائمة.",
+-      allCount: "كل الدول", countryCount: "دولة", noDate: "لا يوجد موعد صالح مسجل في المصدر."
++      allCount: "كل الدول", countryCount: "دولة", noDate: "لا يوجد موعد صالح مسجل في المصدر.",
++      syncPending: "في انتظار أول تحديث", fresh: "بيانات حديثة", staleLabel: "تحديث متأخر", syncInvalid: "وقت التحديث غير صالح", reset: "مسح المرشحات", emptyTip: "جرّب تغيير الفترة الزمنية أو الدول المختارة.", timeLabelLaunch: "لا تظهر الساعة إلا عند توافر دقة كافية؛ جميع الأوقات المعروضة بتوقيت UTC.", dateBasisLabel: "وقت الإعلان", timeLabelLanding: "تُعرض تواريخ الهبوط باليوم فقط؛ لا يمكن استنتاج ساعة هبوط دقيقة من هذه البيانات.", notExactLanding: "هذا ليس توقيت هبوط مؤكداً."
+     }
+   };
+ 
+@@ -118,48 +123,13 @@
+     try { return new Intl.NumberFormat(lang() === "fa" ? "fa-IR" : lang() === "ar" ? "ar-u-nu-latn" : "en-GB").format(value); }
+     catch (e) { return String(value); }
+   }
+-  function dateFormatter(options) {
+-    var locale = lang() === "fa" ? "fa-IR-u-ca-gregory" : lang() === "ar" ? "ar-u-ca-gregory-nu-latn" : "en-GB";
+-    return new Intl.DateTimeFormat(locale, Object.assign({ timeZone: "UTC" }, options));
+-  }
+-  function precisionKey(value) {
+-    var raw = String(value || "").toLowerCase();
+-    if (/second|sec/.test(raw)) return "sec";
+-    if (/minute|min/.test(raw)) return "min";
+-    if (/hour|hr/.test(raw)) return "hour";
+-    if (/day/.test(raw)) return "day";
+-    if (/month/.test(raw)) return "month";
+-    if (/quarter/.test(raw)) return "quarter";
+-    if (/year/.test(raw)) return "year";
+-    return "tbd";
+-  }
+-  function formatNet(event) {
+-    var date = new Date(event.net);
+-    if (!Number.isFinite(date.getTime())) return tr("noDate");
+-    var key = precisionKey(event.net_precision);
+-    if (key === "year") return dateFormatter({ year: "numeric" }).format(date);
+-    if (key === "quarter") {
+-      var q = Math.floor(date.getUTCMonth() / 3) + 1;
+-      return (lang() === "fa" ? "سه‌ماههٔ " : lang() === "ar" ? "الربع " : "Q") + number(q) + " " + dateFormatter({ year: "numeric" }).format(date);
+-    }
+-    if (key === "month") return dateFormatter({ year: "numeric", month: "long" }).format(date);
+-    var parts = { year: "numeric", month: "short", day: "numeric" };
+-    if (key === "sec" || key === "min" || key === "hour") {
+-      parts.hour = "2-digit"; parts.minute = "2-digit";
+-      if (key === "sec") parts.second = "2-digit";
+-    }
+-    return dateFormatter(parts).format(date) + ((key === "sec" || key === "min" || key === "hour") ? " UTC" : "");
+-  }
+-  function formatUpdated(value) {
+-    if (!value) return "—";
+-    var date = new Date(value);
+-    if (!Number.isFinite(date.getTime())) return "—";
+-    return dateFormatter({ year: "numeric", month: "short", day: "numeric", hour: "2-digit", minute: "2-digit" }).format(date) + " UTC";
+-  }
++  function precisionKey(value) { return Display.precision(value); }
++  function formatNet(event) { return Display.launchTime(event, lang(), tr("noDate")).text; }
++  function formatUpdated(value) { return Display.updatedAt(value, lang(), tr("syncPending")); }
+   function statusKey(value) {
+     var s = String(value || "").toLowerCase();
+     if (s === "go" || s === "confirmed") return "confirmed";
+-    if (s === "tbc" || s === "tentative") return "tentative";
++    if (s === "tbc" || s === "tentative" || s === "planned") return "tentative";
+     if (s === "tbd" || s === "unscheduled") return "unscheduled";
+     if (s === "hold" || s === "on_hold") return "hold";
+     if (/cancel|abort|scrub/.test(s)) return "cancelled";
+@@ -353,12 +323,29 @@
+         '<span class="global-launch-country-check" aria-hidden="true">' + (selected ? '✓' : '') + '</span><span>' + esc(item[lang()] || item.en || item.code) + '</span><small dir="ltr">' + esc(item.alpha2 || item.code) + '</small></button>';
+     }).join("");
+   }
++  function updateFeedMeta() {
++    var updated = $("#globalLaunchUpdated");
++    var freshness = $("#globalLaunchFreshness");
++    var coverage = $("#globalLaunchCoverageNote");
++    var clock = $("#globalLaunchClockNote");
++    var stamp = state.data && state.data.updated_utc;
++    var condition = Display.freshness(stamp, Date.now());
++    if (updated) updated.textContent = tr("updated") + ": " + formatUpdated(stamp);
++    if (freshness) {
++      freshness.className = "event-display-freshness is-" + condition;
++      freshness.textContent = tr(condition === "fresh" ? "fresh" : condition === "stale" ? "staleLabel" : condition === "invalid" ? "syncInvalid" : "syncPending");
++    }
++    if (coverage) coverage.textContent = tr("source");
++    if (clock) clock.textContent = tr("timeLabelLaunch");
++  }
++
+   function renderResults() {
+     var results = $("#globalLaunchResults");
+     var countEl = $("#globalLaunchResultCount");
+     var updatedEl = $("#globalLaunchUpdated");
+     var stateEl = $("#globalLaunchFeedState");
+     if (!results || !countEl || !updatedEl || !stateEl) return;
++    updateFeedMeta();
+     renderFilterSummary();
+     var jumpCount = $("#launchMissionJumpCount");
+     if (jumpCount) jumpCount.textContent = "—";
+@@ -370,7 +357,6 @@
+       stateEl.className = "global-launch-feed-state is-loading";
+       stateEl.textContent = tr("loading");
+       results.innerHTML = renderEmpty(tr("loading"), "loading");
+-      updatedEl.textContent = "";
+       return;
+     }
+     if (state.error && !activeData()) {
+@@ -378,7 +364,6 @@
+       stateEl.className = "global-launch-feed-state is-error";
+       stateEl.textContent = tr("error");
+       results.innerHTML = renderEmpty(tr("error"), "error");
+-      updatedEl.textContent = "";
+       return;
+     }
+     if (!state.data || state.data.coverage_status !== "complete_from_source_at_fetch_time") {
+@@ -386,7 +371,6 @@
+       stateEl.className = "global-launch-feed-state is-pending";
+       stateEl.textContent = tr("waiting");
+       results.innerHTML = renderEmpty(tr("waiting"), "waiting");
+-      updatedEl.textContent = "";
+       return;
+     }
+ 
+@@ -400,24 +384,23 @@
+     countEl.textContent = number(rows.length) + " " + (rows.length === 1 ? tr("launches") : tr("launchesPlural"));
+     if (jumpCount) jumpCount.textContent = number(rows.length);
+     stateEl.className = "global-launch-feed-state is-ready";
+-    stateEl.textContent = state.refreshError ? tr("refreshFailed") + " " + tr("source") : tr("source");
+-    updatedEl.textContent = tr("updated") + ": " + formatUpdated(state.data.updated_utc);
++    stateEl.textContent = state.refreshError ? tr("refreshFailed") : tr("fresh");
+     if (state.data.updated_utc && Date.now() - new Date(state.data.updated_utc).getTime() > 86400000) {
+       stateEl.className += " is-stale";
+-      stateEl.textContent = tr("stale") + " " + tr("source");
++      stateEl.textContent = (state.refreshError ? tr("refreshFailed") + " · " : "") + tr("stale");
+     }
+     if (!rows.length) {
+-      results.innerHTML = renderEmpty(tr("noResults"), "empty");
++      results.innerHTML = renderEmpty(tr("noResults"), "empty", true);
+       return;
+     }
+     results.innerHTML = rows.map(renderLaunchCard).join("");
+   }
+ 
+-  function renderEmpty(message, kind) {
++  function renderEmpty(message, kind, showReset) {
+     return '<div class="global-launch-empty launch-mission-empty is-' + esc(kind) + '">' +
+       '<div class="launch-mission-empty-art" aria-hidden="true">' +
+       '<svg viewBox="0 0 130 130" fill="none"><circle cx="65" cy="65" r="50" stroke="currentColor" stroke-opacity=".22" stroke-dasharray="4 6"/><circle cx="65" cy="65" r="31" stroke="currentColor" stroke-opacity=".34"/><path d="M65 25v80M25 65h80" stroke="currentColor" stroke-opacity=".24"/><path d="M45 89L84 39 78 80z" fill="currentColor" fill-opacity=".28" stroke="currentColor" stroke-width="1.6"/><circle cx="65" cy="65" r="5" fill="currentColor"/></svg></div>' +
+-      '<p>' + esc(message) + '</p></div>';
++      '<p>' + esc(message) + '</p>' + (showReset ? '<p class="event-display-empty-tip">' + esc(tr("emptyTip")) + '</p><button type="button" class="event-display-reset" data-step7-reset>' + esc(tr("reset")) + '</button>' : '') + '</div>';
+   }
+ 
+   function renderLaunchCard(event, index) {
+@@ -437,7 +420,7 @@
+       '<div class="launch-mission-card-index"><span dir="ltr">FLIGHT / ' + esc(String(index + 1).padStart(2, "0")) + '</span><span class="launch-mission-card-index-line" aria-hidden="true"></span></div>' +
+       '<div class="global-launch-card-top">' +
+         '<div class="global-launch-card-title"><span class="global-launch-status ' + statusClass(key) + '">' + esc(status) + '</span><strong><bdi>' + esc(title) + '</bdi></strong></div>' +
+-        '<div class="global-launch-card-date"><bdi>' + esc(date) + '</bdi><small>' + esc(precision) + '</small></div>' +
++        '<div class="global-launch-card-date event-display-date"><span class="event-display-date-caption">' + esc(tr("dateBasisLabel")) + '</span><bdi>' + esc(date) + '</bdi><small>' + esc(precision) + '</small></div>' +
+       '</div>' +
+       (fields.length ? '<div class="global-launch-card-fields">' + fields.join("") + '</div>' : '') +
+       '<div class="global-launch-card-meta">' +
+@@ -537,6 +520,16 @@
+     renderCountryOptions();
+     renderResults();
+   });
++  $("#globalLaunchResults").addEventListener("click", function (event) {
++    var button = event.target.closest("[data-step7-reset]");
++    if (!button) return;
++    state.days = 30;
++    state.selectedCountries = [];
++    state.countryQuery = "";
++    var search = $("#globalLaunchCountrySearch");
++    if (search) search.value = "";
++    renderChrome();
++  });
+   var langButton = $("#langBtn");
+   if (langButton) langButton.addEventListener("click", function () { setTimeout(renderChrome, 0); });
+   renderChrome();
+--- a/assets/js/upcoming-landing-browser.js
++++ b/assets/js/upcoming-landing-browser.js
+@@ -5,6 +5,8 @@
+ (function () {
+   "use strict";
+ 
++  var Display = window.ORBITAUpcomingEventDisplay;
++  if (!Display) { console.error("ORBITA step 7 event display helper unavailable."); return; }
+   var Filters = window.ORBITAUpcomingLaunchFilters;
+   if (!Filters) {
+     console.error("ORBITA upcoming-launch filter engine is unavailable.");
+@@ -50,7 +52,8 @@
+       operatorCountry: "کشور اپراتور", siteCountry: "کشور محل بازیابی", precision: "دقت زمان", status: "وضعیت",
+       confirmed: "اعلام‌شده", tentative: "برنامه‌ریزی‌شده/تأییدنشده", unscheduled: "زمان نامشخص", hold: "متوقف", cancelled: "لغوشده", unknown: "نامشخص",
+       noDate: "تاریخ معتبر ندارد", dateBasisLaunch: "روز پرتاب مرتبط؛ نه ساعت فرود", dateBasisMission: "تاریخ پایان مأموریت؛ تخمینی", dateBasisCurated: "تاریخ ثبت‌شده در بانک قبلی؛ نیازمند بازبینی",
+-      unknownCountry: "نامشخص", chooseCountry: "برای محدودکردن فهرست، چند کشور انتخاب کنید.", allCount: "همه کشورها"
++      unknownCountry: "نامشخص", chooseCountry: "برای محدودکردن فهرست، چند کشور انتخاب کنید.", allCount: "همه کشورها",
++      syncPending: "در انتظار نخستین به‌روزرسانی", fresh: "داده تازه", staleLabel: "نیازمند به‌روزرسانی", syncInvalid: "زمان به‌روزرسانی نامعتبر", reset: "پاک‌کردن فیلترها", emptyTip: "بازه زمانی یا کشورهای انتخابی را تغییر دهید.", timeLabelLaunch: "ساعت فقط برای زمان‌های دارای دقت کافی نمایش داده می‌شود؛ همه ساعت‌ها UTC هستند.", timeLabelLanding: "تاریخ‌های فرود فقط روز را نشان می‌دهند؛ ساعت دقیق فرود از این داده‌ها قابل استنباط نیست.", notExactLanding: "این تاریخ، ساعت تأییدشده فرود نیست.", dateBasisLabel: "تاریخ مرجع"
+     },
+     en: {
+       open: "Upcoming landings", eyebrow: "Worldwide landing monitor", title: "Upcoming landings",
+@@ -69,7 +72,8 @@
+       operatorCountry: "Operator country", siteCountry: "Recovery location country", precision: "Time precision", status: "Status",
+       confirmed: "Reported", tentative: "Planned / unconfirmed", unscheduled: "Unscheduled", hold: "On hold", cancelled: "Cancelled", unknown: "Unknown",
+       noDate: "No verified date", dateBasisLaunch: "Associated launch date; not landing time", dateBasisMission: "Estimated mission end date", dateBasisCurated: "Legacy schedule date; recheck needed",
+-      unknownCountry: "Unknown", chooseCountry: "Select one or more countries to filter.", allCount: "All countries"
++      unknownCountry: "Unknown", chooseCountry: "Select one or more countries to filter.", allCount: "All countries",
++      syncPending: "Awaiting first update", fresh: "Up to date", staleLabel: "Update overdue", syncInvalid: "Invalid update timestamp", reset: "Clear filters", emptyTip: "Try a different time window or country selection.", timeLabelLaunch: "Clock times appear only when the source provides sufficient precision; all shown times are UTC.", timeLabelLanding: "Landing dates indicate the calendar day only; no exact landing time is inferred.", notExactLanding: "This is not a verified landing time.", dateBasisLabel: "Reference date"
+     },
+     ar: {
+       open: "الهبوطات القادمة", eyebrow: "متابعة عمليات الهبوط", title: "عمليات الهبوط القادمة",
+@@ -88,7 +92,8 @@
+       operatorCountry: "دولة المشغّل", siteCountry: "دولة موقع الاستعادة", precision: "دقة الوقت", status: "الحالة",
+       confirmed: "معلن", tentative: "مخطط / غير مؤكد", unscheduled: "غير مجدول", hold: "معلّق", cancelled: "ملغى", unknown: "غير معروف",
+       noDate: "لا موعد مؤكداً", dateBasisLaunch: "يوم الإطلاق المرتبط؛ وليس وقت الهبوط", dateBasisMission: "تاريخ انتهاء المهمة التقريبي", dateBasisCurated: "تاريخ جدول سابق يحتاج للمراجعة",
+-      unknownCountry: "غير معروف", chooseCountry: "اختر دولة واحدة أو أكثر للتصفية.", allCount: "جميع الدول"
++      unknownCountry: "غير معروف", chooseCountry: "اختر دولة واحدة أو أكثر للتصفية.", allCount: "جميع الدول",
++      syncPending: "في انتظار أول تحديث", fresh: "بيانات حديثة", staleLabel: "تحديث متأخر", syncInvalid: "وقت التحديث غير صالح", reset: "مسح المرشحات", emptyTip: "جرّب تغيير الفترة الزمنية أو الدول المختارة.", timeLabelLaunch: "لا تظهر الساعة إلا عند توافر دقة كافية؛ جميع الأوقات المعروضة بتوقيت UTC.", timeLabelLanding: "تُعرض تواريخ الهبوط باليوم فقط؛ لا يمكن استنتاج ساعة هبوط دقيقة من هذه البيانات.", notExactLanding: "هذا ليس توقيت هبوط مؤكداً.", dateBasisLabel: "تاريخ مرجعي"
+     }
+   };
+ 
+@@ -114,44 +119,9 @@
+     try { return new Intl.NumberFormat(lang() === "fa" ? "fa-IR" : lang() === "ar" ? "ar-u-nu-latn" : "en-GB").format(value); }
+     catch (e) { return String(value); }
+   }
+-  function dateFormatter(options) {
+-    var locale = lang() === "fa" ? "fa-IR-u-ca-gregory" : lang() === "ar" ? "ar-u-ca-gregory-nu-latn" : "en-GB";
+-    return new Intl.DateTimeFormat(locale, Object.assign({ timeZone: "UTC" }, options));
+-  }
+-  function precisionKey(value) {
+-    var raw = String(value || "").toLowerCase();
+-    if (/second|sec/.test(raw)) return "sec";
+-    if (/minute|min/.test(raw)) return "min";
+-    if (/hour|hr/.test(raw)) return "hour";
+-    if (/day/.test(raw)) return "day";
+-    if (/month/.test(raw)) return "month";
+-    if (/quarter/.test(raw)) return "quarter";
+-    if (/year/.test(raw)) return "year";
+-    return "tbd";
+-  }
+-  function formatNet(event) {
+-    var date = new Date((event.date_utc || "") + "T00:00:00Z");
+-    if (!Number.isFinite(date.getTime())) return tr("noDate");
+-    var key = "day";
+-    if (key === "year") return dateFormatter({ year: "numeric" }).format(date);
+-    if (key === "quarter") {
+-      var q = Math.floor(date.getUTCMonth() / 3) + 1;
+-      return (lang() === "fa" ? "سه‌ماههٔ " : lang() === "ar" ? "الربع " : "Q") + number(q) + " " + dateFormatter({ year: "numeric" }).format(date);
+-    }
+-    if (key === "month") return dateFormatter({ year: "numeric", month: "long" }).format(date);
+-    var parts = { year: "numeric", month: "short", day: "numeric" };
+-    if (key === "sec" || key === "min" || key === "hour") {
+-      parts.hour = "2-digit"; parts.minute = "2-digit";
+-      if (key === "sec") parts.second = "2-digit";
+-    }
+-    return dateFormatter(parts).format(date) + ((key === "sec" || key === "min" || key === "hour") ? " UTC" : "");
+-  }
+-  function formatUpdated(value) {
+-    if (!value) return "—";
+-    var date = new Date(value);
+-    if (!Number.isFinite(date.getTime())) return "—";
+-    return dateFormatter({ year: "numeric", month: "short", day: "numeric", hour: "2-digit", minute: "2-digit" }).format(date) + " UTC";
+-  }
++  function precisionKey(value) { return Display.precision(value); }
++  function formatNet(event) { return Display.landingDate(event, lang(), tr("noDate")).text; }
++  function formatUpdated(value) { return Display.updatedAt(value, lang(), tr("syncPending")); }
+   function statusKey(value) {
+     var s = String(value || "").toLowerCase();
+     if (s === "go" || s === "confirmed") return "confirmed";
+@@ -210,7 +180,7 @@
+         state.error = "";
+         state.refreshError = "";
+         state.dataPromise = null;
+-        render();
++        renderResults();
+         return doc;
+       })
+       .catch(function (error) {
+@@ -223,7 +193,7 @@
+           state.error = message;
+         }
+         state.dataPromise = null;
+-        render();
++        renderResults();
+         return null;
+       });
+     return state.dataPromise;
+@@ -244,13 +214,15 @@
+     openButton.appendChild(label);
+     var textMap = {
+       "#globalLandingEyebrow": "eyebrow", "#globalLandingTitle": "title", "#globalLandingIntro": "intro",
+-      "#globalLandingClose": "close", "#globalLandingTimeLabel": "time", "#globalLandingCountryLabel": "country",
++      "#globalLandingTimeLabel": "time", "#globalLandingCountryLabel": "country",
+       "#globalLandingCountrySearchLabel": "countrySearch", "#globalLandingBasisLabel": "basis",
+       "#globalLandingBasisNote": "basisNote", "#globalLandingAllCountries": "all", "#globalLandingReload": "retry"
+     };
+     Object.keys(textMap).forEach(function (selector) {
+       var el = $(selector); if (el) el.textContent = tr(textMap[selector]);
+     });
++    var close = $("#globalLandingClose");
++    if (close) { close.textContent = "×"; close.setAttribute("aria-label", tr("close")); close.title = tr("close"); }
+     var basis = $("#globalLandingCountryBasis");
+     if (basis) {
+       basis.options[0].textContent = tr("operator");
+@@ -314,12 +286,29 @@
+         '<span class="global-launch-country-check" aria-hidden="true">' + (selected ? '✓' : '') + '</span><span>' + esc(item[lang()] || item.en || item.code) + '</span><small dir="ltr">' + esc(item.alpha2 || item.code) + '</small></button>';
+     }).join("");
+   }
++  function updateFeedMeta() {
++    var updated = $("#globalLandingUpdated");
++    var freshness = $("#globalLandingFreshness");
++    var coverage = $("#globalLandingCoverageNote");
++    var clock = $("#globalLandingClockNote");
++    var stamp = state.data && state.data.updated_utc;
++    var condition = Display.freshness(stamp, Date.now());
++    if (updated) updated.textContent = tr("updated") + ": " + formatUpdated(stamp);
++    if (freshness) {
++      freshness.className = "event-display-freshness is-" + condition;
++      freshness.textContent = tr(condition === "fresh" ? "fresh" : condition === "stale" ? "staleLabel" : condition === "invalid" ? "syncInvalid" : "syncPending");
++    }
++    if (coverage) coverage.textContent = tr("source");
++    if (clock) clock.textContent = tr("timeLabelLanding");
++  }
++
+   function renderResults() {
+     var results = $("#globalLandingResults");
+     var countEl = $("#globalLandingResultCount");
+     var updatedEl = $("#globalLandingUpdated");
+     var stateEl = $("#globalLandingFeedState");
+     if (!results || !countEl || !updatedEl || !stateEl) return;
++    updateFeedMeta();
+ 
+     var reloadButton = $("#globalLandingReload");
+     if (reloadButton) reloadButton.disabled = !!state.loading;
+@@ -327,24 +316,21 @@
+       countEl.textContent = "—";
+       stateEl.className = "global-launch-feed-state is-loading";
+       stateEl.textContent = tr("loading");
+-      results.innerHTML = '<div class="global-launch-empty"><span class="global-launch-spinner" aria-hidden="true"></span>' + esc(tr("loading")) + '</div>';
+-      updatedEl.textContent = "";
++      results.innerHTML = renderEmpty(tr("loading"), "loading");
+       return;
+     }
+     if (state.error && !activeData()) {
+       countEl.textContent = "—";
+       stateEl.className = "global-launch-feed-state is-error";
+       stateEl.textContent = tr("error");
+-      results.innerHTML = '<div class="global-launch-empty is-error">' + esc(tr("error")) + '</div>';
+-      updatedEl.textContent = "";
++      results.innerHTML = renderEmpty(tr("error"), "error");
+       return;
+     }
+     if (!state.data || state.data.coverage_status !== "partial_source_coverage") {
+       countEl.textContent = "—";
+       stateEl.className = "global-launch-feed-state is-pending";
+       stateEl.textContent = tr("waiting");
+-      results.innerHTML = '<div class="global-launch-empty">' + esc(tr("waiting")) + '</div>';
+-      updatedEl.textContent = "";
++      results.innerHTML = renderEmpty(tr("waiting"), "waiting");
+       return;
+     }
+ 
+@@ -357,17 +343,24 @@
+     });
+     countEl.textContent = number(rows.length) + " " + (rows.length === 1 ? tr("landings") : tr("landingsPlural"));
+     stateEl.className = "global-launch-feed-state is-ready";
+-    stateEl.textContent = state.refreshError ? tr("refreshFailed") + " " + tr("source") : tr("source");
+-    updatedEl.textContent = tr("updated") + ": " + formatUpdated(state.data.updated_utc);
++    stateEl.textContent = state.refreshError ? tr("refreshFailed") : tr("fresh");
+     if (state.data.updated_utc && Date.now() - new Date(state.data.updated_utc).getTime() > 86400000) {
+       stateEl.className += " is-stale";
+-      stateEl.textContent = tr("stale") + " " + tr("source");
++      stateEl.textContent = (state.refreshError ? tr("refreshFailed") + " · " : "") + tr("stale");
+     }
+     if (!rows.length) {
+-      results.innerHTML = '<div class="global-launch-empty">' + esc(tr("noResults")) + '</div>';
++      results.innerHTML = renderEmpty(tr("noResults"), "empty", true);
+       return;
+     }
+     results.innerHTML = rows.map(renderLandingCard).join("");
++  }
++
++  function renderEmpty(message, kind, showReset) {
++    return '<div class="global-launch-empty event-display-empty is-' + esc(kind) + '">' +
++      '<span class="event-display-empty-symbol" aria-hidden="true">◉</span>' +
++      '<p>' + esc(message) + '</p>' +
++      (showReset ? '<p class="event-display-empty-tip">' + esc(tr("emptyTip")) + '</p><button type="button" class="event-display-reset" data-step7-reset>' + esc(tr("reset")) + '</button>' : '') +
++      '</div>';
+   }
+ 
+   function renderLandingCard(event) {
+@@ -381,7 +374,7 @@
+     return '<article class="global-launch-card">' +
+       '<div class="global-launch-card-top"><div class="global-launch-card-title"><span class="global-launch-status ' + statusClass(key) + '">' + esc(tr(key)) +
+       '</span><strong><bdi>' + esc(title) + '</bdi></strong></div>' +
+-      '<div class="global-launch-card-date"><bdi>' + esc(formatNet(event)) + '</bdi><small>' + esc(tr(basis)) + '</small></div></div>' +
++      '<div class="global-launch-card-date event-display-date"><span class="event-display-date-caption">' + esc(tr("dateBasisLabel")) + '</span><bdi>' + esc(formatNet(event)) + '</bdi><small class="event-display-date-basis">' + esc(tr(basis)) + '</small></div></div>' +
+       (fields.length ? '<div class="global-launch-card-fields">' + fields.join('') + '</div>' : '') +
+       '<div class="global-launch-card-meta"><span><small>' + esc(tr("operatorName")) + '</small><bdi>' + esc(event.operator_name || '—') + '</bdi></span>' +
+       '<span><small>' + esc(tr("landingSite")) + '</small><bdi>' + esc(event.recovery_location_name || '—') + '</bdi></span></div>' +
+@@ -441,6 +434,16 @@
+     renderCountryOptions();
+     renderResults();
+   });
++  $("#globalLandingResults").addEventListener("click", function (event) {
++    var button = event.target.closest("[data-step7-reset]");
++    if (!button) return;
++    state.days = 30;
++    state.selectedCountries = [];
++    state.countryQuery = "";
++    var search = $("#globalLandingCountrySearch");
++    if (search) search.value = "";
++    renderChrome();
++  });
+   var langButton = $("#langBtn");
+   if (langButton) langButton.addEventListener("click", function () { setTimeout(renderChrome, 0); });
+   renderChrome();
+--- /dev/null
++++ b/assets/css/upcoming-event-display.css
+@@ -0,0 +1,57 @@
++/* ORBITA — Step 7: readable event metadata, status and empty states.
++   Shared presentation refinements only; launch mission control retains its unique skin. */
++.global-launch-dialog .event-display-update-row{display:flex;align-items:center;gap:7px 10px;flex-wrap:wrap;margin-top:6px;max-width:100%}
++.global-launch-dialog .event-display-updated{display:inline-block;line-height:1.7;overflow-wrap:anywhere}
++.global-launch-dialog .event-display-freshness{display:inline-flex;align-items:center;gap:6px;padding:3px 8px;border:1px solid var(--line);border-radius:999px;background:var(--bg2);font-size:10px;font-weight:700;line-height:1.5;color:var(--muted);white-space:normal;text-align:start}
++.global-launch-dialog .event-display-freshness::before{content:"";width:6px;height:6px;flex:0 0 6px;border-radius:50%;background:currentColor;opacity:.85}
++.global-launch-dialog .event-display-freshness.is-fresh{color:var(--green);border-color:color-mix(in srgb,var(--green) 35%,var(--line))}
++.global-launch-dialog .event-display-freshness.is-stale,.global-launch-dialog .event-display-freshness.is-invalid{color:var(--amber);border-color:color-mix(in srgb,var(--amber) 35%,var(--line))}
++.global-launch-dialog .event-display-freshness.is-missing{color:var(--muted)}
++.global-launch-dialog .event-display-info-strip{flex:0 0 auto;display:grid;gap:5px;padding:9px 13px;border-bottom:1px solid var(--line);background:color-mix(in srgb,var(--bg2) 42%,transparent)}
++.global-launch-dialog .event-display-coverage-note,.global-launch-dialog .event-display-clock-note{margin:0;line-height:1.7;color:var(--muted);font-size:10px;overflow-wrap:anywhere}
++.global-launch-dialog .event-display-clock-note{border-inline-start:2px solid var(--accent);padding-inline-start:9px;color:var(--text)}
++.global-launch-dialog .event-display-date{min-width:0;max-width:46%;gap:4px;overflow-wrap:anywhere}
++.global-launch-dialog .event-display-date-caption{color:var(--muted);font-size:9px;font-weight:600;line-height:1.4}
++.global-launch-dialog .event-display-date bdi{font-variant-numeric:tabular-nums;direction:auto;unicode-bidi:isolate;line-height:1.7}
++.global-launch-dialog .event-display-date-basis{display:block;white-space:normal;overflow-wrap:anywhere;line-height:1.6}
++.global-launch-dialog .global-launch-card-title{min-width:0;flex-wrap:wrap}
++.global-launch-dialog .global-launch-card-title strong{overflow-wrap:anywhere}
++.global-launch-dialog .global-launch-status{white-space:normal;line-height:1.5;text-align:center}
++.global-launch-dialog .global-launch-results-head-actions{display:flex;gap:10px;align-items:center;justify-content:space-between}
++.global-launch-dialog .global-launch-feed-state{max-width:min(100%,670px);margin:0;line-height:1.75;overflow-wrap:anywhere}
++.global-launch-dialog .global-launch-empty{flex-direction:column;gap:9px}
++.global-launch-dialog .global-launch-empty>p{margin:0;max-width:520px;line-height:1.8}
++.global-launch-dialog .event-display-empty-tip{opacity:.8;font-size:10px}
++.global-launch-dialog .event-display-empty-symbol{width:50px;height:50px;border-radius:50%;display:grid;place-items:center;font-size:25px;border:1px dashed var(--line);color:var(--accent-tx)}
++.global-launch-dialog .event-display-reset{min-height:38px;padding:8px 15px;border:1px solid var(--accent);border-radius:9px;background:color-mix(in srgb,var(--accent) 15%,var(--bg2));color:var(--accent-tx);font-family:inherit;font-size:11px;font-weight:700;cursor:pointer}
++.global-launch-dialog .event-display-reset:hover{background:color-mix(in srgb,var(--accent) 26%,var(--bg2))}
++.global-launch-dialog .event-display-reset:focus-visible{outline:2px solid var(--accent);outline-offset:3px}
++.global-launch-dialog .global-launch-result-count{font-variant-numeric:tabular-nums}
++/* Distinctive launch mission room: only metadata refinements, not a redesign. */
++.launch-mission-dialog .event-display-info-strip{background:linear-gradient(90deg,rgba(15,50,67,.75),rgba(9,32,48,.75));border-bottom-color:rgba(97,166,190,.24);padding:11px 18px}
++.launch-mission-dialog .event-display-coverage-note{color:#a7c3cf;font-size:10px}
++.launch-mission-dialog .event-display-clock-note{border-inline-start-color:#d7a962;color:#e9d4ad;font-size:10px}
++.launch-mission-dialog .event-display-freshness{background:rgba(12,42,55,.84);border-color:rgba(86,168,188,.35);color:#b9e2e6;font-size:10px}
++.launch-mission-dialog .event-display-freshness.is-fresh{color:#8be7c6;border-color:rgba(107,222,181,.38)}
++.launch-mission-dialog .event-display-freshness.is-stale,.launch-mission-dialog .event-display-freshness.is-invalid{color:#f7c981;border-color:rgba(246,193,108,.45)}
++.launch-mission-dialog .event-display-date-caption{color:#adc9d4}
++.launch-mission-dialog .event-display-reset{border-color:#dba965;background:rgba(163,111,50,.2);color:#f6d390}
++.launch-mission-dialog .event-display-reset:hover{background:rgba(178,128,70,.3)}
++/* Landing stays visually aligned in metadata, without adopting the launch-only hero. */
++#globalLandingDialog .event-display-date-basis{color:var(--amber)}
++#globalLandingDialog .global-launch-card-date{max-width:49%;min-width:135px}
++@media(max-width:760px){
++ .global-launch-dialog .event-display-info-strip{padding:10px 12px}
++ .global-launch-dialog .event-display-update-row{align-items:flex-start;flex-direction:column;gap:4px}
++ .global-launch-dialog .event-display-date{max-width:100%;width:100%;align-items:flex-start;text-align:start;margin-top:4px}
++ .global-launch-dialog .global-launch-card-top{flex-wrap:wrap;align-items:flex-start;gap:9px}
++ .global-launch-dialog .global-launch-card-title{width:100%;flex:1 1 100%}
++ .global-launch-dialog .global-launch-card-date{max-width:100%}
++ #globalLandingDialog .global-launch-card-date{max-width:100%}
++ .global-launch-dialog .global-launch-results-head-actions{align-items:flex-start;gap:8px}
++ .global-launch-dialog .event-display-coverage-note,.global-launch-dialog .event-display-clock-note{font-size:10px}
++ .global-launch-dialog .global-launch-empty{min-height:165px;padding:18px 11px}
++}
++@media(prefers-reduced-motion:reduce){.global-launch-dialog .event-display-reset{transition:none}}
++
++#globalLandingDialog .global-launch-close{display:grid;place-items:center;flex:0 0 38px;width:38px;height:38px;font-size:24px;font-weight:400;line-height:1}
+--- /dev/null
++++ b/tests/upcoming-event-display.test.cjs
+@@ -0,0 +1,54 @@
++'use strict';
++const test = require('node:test');
++const assert = require('node:assert/strict');
++const fs = require('node:fs');
++const path = require('node:path');
++const root=path.resolve(__dirname,'..');
++const Display=require('../assets/js/upcoming-event-display.js');
++const html=fs.readFileSync(path.join(root,'index.html'),'utf8');
++const launch=fs.readFileSync(path.join(root,'assets/js/upcoming-launch-browser.js'),'utf8');
++const land=fs.readFileSync(path.join(root,'assets/js/upcoming-landing-browser.js'),'utf8');
++
++test('source event data remains untouched',()=>{
++ const a=JSON.parse(fs.readFileSync(path.join(root,'data/upcoming_global.json'),'utf8'));
++ const b=JSON.parse(fs.readFileSync(path.join(root,'data/upcoming_global_landings.json'),'utf8'));
++ assert.equal(a.coverage_status,'awaiting_first_successful_sync');
++ assert.equal(b.coverage_status,'awaiting_first_successful_sync');
++});
++test('launch time respects source precision, including unknown and approximate dates',()=>{
++ const instant='2026-12-01T13:45:29Z';
++ assert.match(Display.launchTime({net:instant,net_precision:'minute'},'en','Unknown').text,/13:45.*UTC/);
++ assert.doesNotMatch(Display.launchTime({net:instant,net_precision:'day'},'en','Unknown').text,/13:45|UTC/);
++ assert.doesNotMatch(Display.launchTime({net:instant,net_precision:'month'},'en','Unknown').text,/\b1\b|13:45/);
++ assert.equal(Display.launchTime({net:'invalid',net_precision:'minute'},'fa','نامشخص').text,'نامشخص');
++ assert.equal(Display.launchTime({net:instant,net_precision:'quarter'},'en','Unknown').text,'Q4 2026');
++});
++test('landing displays day only, never launch time as a landing hour',()=>{
++ const d=Display.landingDate({date_utc:'2026-12-11',net:'2026-12-11T14:32:00Z'},'en','Unknown');
++ assert.equal(d.timeKnown,false);
++ assert.doesNotMatch(d.text,/UTC|14:32/);
++ assert.equal(Display.landingDate({date_utc:'2026-02-30'},'fa','نامعتبر').text,'نامعتبر');
++});
++test('freshness never claims freshness with invalid or missing timestamps',()=>{
++ const now=Date.parse('2026-11-21T10:00:00Z');
++ assert.equal(Display.freshness(null,now),'missing');
++ assert.equal(Display.freshness('not-a-date',now),'missing');
++ assert.equal(Display.freshness('2026-11-21T09:00:00Z',now),'fresh');
++ assert.equal(Display.freshness('2026-11-19T09:00:00Z',now),'stale');
++ assert.equal(Display.freshness('2026-11-22T09:00:00Z',now),'invalid');
++});
++test('event metadata and reset controls are present in both dialogs',()=>{
++ for (const k of ['Launch','Landing']) {
++  for (const id of [`global${k}Freshness`,`global${k}CoverageNote`,`global${k}ClockNote`,`global${k}Updated`,`global${k}ResultCount`]) assert.match(html,new RegExp('id="'+id+'"'));
++ }
++ const scripts=['upcoming-launch-filters.js','upcoming-event-display.js','upcoming-launch-browser.js','upcoming-landing-browser.js'];
++ let prev=-1;
++ for(const name of scripts){const index=html.indexOf('src="assets/js/'+name);assert(index>prev,'script order: '+name);prev=index;}
++ assert.match(html,/assets\/css\/upcoming-event-display.css/);
++ for(const js of [launch,land]) {
++  assert.match(js,/function updateFeedMeta/);
++  assert.match(js,/data-step7-reset/);
++  assert.match(js,/Display\.freshness/);
++  assert.doesNotMatch(js,/\brender\(\);/);
++ }
++});

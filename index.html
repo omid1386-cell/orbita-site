@@ -43,18 +43,23 @@
 </style>
 <link rel="stylesheet" href="assets/vendor/maplibre-gl.css?v=3" />
 <link rel="stylesheet" href="assets/css/app.css?_t=20261121-global-launch-browser-step3-4" />
+<link rel="stylesheet" href="assets/css/launch-mission-ui.css?v=20261121-redesign-v1" />
+<link rel="stylesheet" href="assets/css/upcoming-event-display.css?v=20261121-step7" />
 <!-- Ordered defer scripts download in parallel instead of creating a network waterfall. -->
 <script defer src="assets/js/raspehr-splash.js?v=20261113-speed-v1"></script>
 <script defer src="assets/vendor/maplibre-gl.js?v=3"></script>
 <script defer src="assets/js/app.js?_t=20261114-map-zoom-performance-step3-v1"></script>
 <script defer src="assets/js/upcoming-launch-filters.js?v=20261121-step3-4"></script>
-<script defer src="assets/js/upcoming-launch-browser.js?v=20261121-step3-4"></script>
+<script defer src="assets/js/upcoming-event-display.js?v=20261121-step7"></script>
+<script defer src="assets/js/upcoming-launch-browser.js?v=20261121-step7"></script>
+<script defer src="assets/js/upcoming-landing-browser.js?v=20261121-step7"></script>
 <script>
   window.ORBITA_V = "20261114-step4-manufacturer-logos-v1";
   window.ORBITA_APP_V = "20261114-map-zoom-performance-step3-v1";
   window.ORBITA_CSS_V = "20261114-country-profile-light-contrast-v2-final";
   window.ORBITA_COMPANIES_V = "20261114-step4-manufacturer-logos-v1";
   window.ORBITA_UPCOMING_GLOBAL_V = "20261121-step3-4";
+  window.ORBITA_UPCOMING_LANDINGS_V = "20261121-step5-6";
 
 
   // Public API URL only; never place the Resend key or another secret here.
@@ -93,9 +98,9 @@
 
   <nav class="tabs">
     <button class="tab active" data-view="map"><span data-i18n="tab_map">نقشهٔ جهانی</span></button>
-    <button class="tab upcoming-launch-tab" id="upcomingLaunchesBtn" type="button"
-      aria-haspopup="dialog" aria-controls="globalLaunchDialog" aria-expanded="false">
-      <span aria-hidden="true">🚀</span><span>پرتاب‌های پیش‌رو</span>
+    <button class="tab upcoming-launch-tab" id="upcomingLandingsBtn" type="button"
+      aria-haspopup="dialog" aria-controls="globalLandingDialog" aria-expanded="false">
+      <span aria-hidden="true">🛬</span><span>فرودهای پیش‌رو</span>
     </button>
   </nav>
 
@@ -207,6 +212,29 @@
 
   <div class="coords" id="coords">0.0, 0.0 · z0</div>
 
+  <!-- A dedicated launch-control beacon, intentionally separate from the map navigation tabs. -->
+  <button class="launch-mission-dock" id="upcomingLaunchesBtn" type="button"
+    aria-haspopup="dialog" aria-controls="globalLaunchDialog" aria-expanded="false" aria-label="پرتاب‌های پیش‌رو">
+    <span class="launch-mission-dock-signal" aria-hidden="true">
+      <svg viewBox="0 0 48 48" fill="none" role="presentation" focusable="false">
+        <circle cx="24" cy="24" r="20" stroke="currentColor" stroke-opacity=".22" stroke-dasharray="3 5"/>
+        <path d="M10 31C18 41 35 41 41 23" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-opacity=".58"/>
+        <path d="M19 31.5c-1-7 2-15 12.5-20.5 2.1 10.7-1 18.7-7.1 22.1" fill="#E5B866" stroke="#FFE1A5" stroke-width="1.2" stroke-linejoin="round"/>
+        <path d="m20 27-5 3-2 7 7-4m6-3 6 4 4-2-7-5" fill="#527A91" stroke="#B7E7ED" stroke-width="1.1"/>
+        <path d="m24 33-1 8 4-7" fill="#69DEEA"/>
+        <circle cx="26" cy="21" r="2.4" fill="#0C3040" stroke="#E6F8F9" stroke-width="1.1"/>
+      </svg>
+      <span class="launch-mission-dock-ping"></span>
+    </span>
+    <span class="launch-mission-dock-copy">
+      <span class="launch-mission-dock-eyebrow" id="launchMissionDockEyebrow">کنسول مأموریت</span>
+      <strong class="launch-mission-dock-title" id="launchMissionDockTitle">پرتاب‌های پیش‌رو</strong>
+    </span>
+    <span class="launch-mission-dock-arrow" aria-hidden="true">
+      <svg viewBox="0 0 20 20" fill="none"><path d="M5 10h10m-5-5 5 5-5 5" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"/></svg>
+    </span>
+  </button>
+
   <section id="detail" class="detail-panel">
     <button class="close-x" id="detailClose" title="بستن" data-i18n-title="close" aria-label="Close">✕</button>
     <div id="detailBody"></div>
@@ -216,25 +244,42 @@
 <!-- World Map is the only main view. -->
 
 <!-- ============ WORLDWIDE UPCOMING LAUNCHES ============ -->
-<dialog id="globalLaunchDialog" class="global-launch-dialog" aria-labelledby="globalLaunchTitle" aria-describedby="globalLaunchIntro">
+<dialog id="globalLaunchDialog" class="global-launch-dialog launch-mission-dialog" aria-labelledby="globalLaunchTitle" aria-describedby="globalLaunchIntro">
   <div class="global-launch-shell">
     <header class="global-launch-head">
+      <div class="launch-mission-hero-art" aria-hidden="true">
+        <svg viewBox="0 0 550 220" preserveAspectRatio="xMidYMid slice" focusable="false">
+          <defs><radialGradient id="launchPlanetGlow"><stop offset="0" stop-color="#1E8A9F" stop-opacity=".48"/><stop offset="1" stop-color="#0D2940" stop-opacity="0"/></radialGradient><linearGradient id="launchPlanetLine" x1="0" y1="0" x2="1" y2="1"><stop stop-color="#64DEEA" stop-opacity=".8"/><stop offset="1" stop-color="#D6AB60" stop-opacity=".23"/></linearGradient></defs>
+          <ellipse cx="350" cy="180" rx="220" ry="170" fill="url(#launchPlanetGlow)"/>
+          <circle cx="360" cy="230" r="155" fill="#0A3047" fill-opacity=".72" stroke="url(#launchPlanetLine)" stroke-width="1.5"/>
+          <circle cx="360" cy="230" r="173" fill="none" stroke="#51B7CF" stroke-opacity=".18" stroke-dasharray="3 7"/>
+          <path d="M73 208C164 82 347 27 493 67" fill="none" stroke="#E5B866" stroke-width="1.4" stroke-dasharray="8 8" opacity=".7"/>
+          <path d="M127 198C235 119 374 94 496 118" fill="none" stroke="#59C5DB" stroke-width="1" stroke-opacity=".4"/>
+          <circle cx="458" cy="62" r="6" fill="#F0C16B"/><circle cx="458" cy="62" r="12" fill="none" stroke="#F0C16B" stroke-opacity=".38"/>
+          <g stroke="#7ADDE8" stroke-opacity=".24"><path d="M360 76v310M205 230h310"/><ellipse cx="360" cy="230" rx="155" ry="58" fill="none"/><ellipse cx="360" cy="230" rx="80" ry="155" fill="none"/></g>
+          <path d="M370 60l6-11 2 14 9 7-13-2-8 9z" fill="#F6D698"/>
+        </svg>
+      </div>
       <div class="global-launch-heading">
-        <span id="globalLaunchEyebrow" class="global-launch-eyebrow">پایش جهانی پرتاب‌ها</span>
+        <div class="launch-mission-overline"><span class="launch-mission-overline-dot" aria-hidden="true"></span><span id="globalLaunchEyebrow" class="global-launch-eyebrow">پایش جهانی پرتاب‌ها</span><span class="launch-mission-overline-code" dir="ltr">ORBITA / MISSION OPS</span></div>
         <h2 id="globalLaunchTitle">فهرست جهانی پرتاب‌های پیش‌رو</h2>
         <p id="globalLaunchIntro">پرتاب‌های اعلام‌شده در سراسر جهان را بر اساس بازه زمانی و کشور فیلتر کنید.</p>
+        <div class="launch-mission-head-tags" aria-hidden="true"><span>GLOBAL LAUNCH WATCH</span><span>07D — 120D</span></div>
       </div>
-      <button id="globalLaunchClose" class="global-launch-close" type="button" aria-label="بستن">×</button>
+      <button id="globalLaunchClose" class="global-launch-close" type="button" aria-label="بستن">
+        <svg viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M6 6l12 12M18 6L6 18" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/></svg>
+      </button>
     </header>
     <div class="global-launch-content">
       <section class="global-launch-filter-panel" aria-label="فیلتر پرتاب‌ها">
+        <div class="launch-mission-panel-label"><span id="launchMissionFilterHeading">تنظیمات رصد</span><span class="launch-mission-panel-number" dir="ltr">01 / FILTER</span></div>
         <div class="global-launch-filter-block">
           <h3 id="globalLaunchTimeLabel">بازه زمانی</h3>
           <div id="globalLaunchPeriods" class="global-launch-periods" role="group" aria-labelledby="globalLaunchTimeLabel">
-            <button class="global-launch-period" type="button" data-days="7" aria-pressed="false">۱ هفته آینده</button>
-            <button class="global-launch-period" type="button" data-days="14" aria-pressed="false">۲ هفته آینده</button>
-            <button class="global-launch-period is-active" type="button" data-days="30" aria-pressed="true">۱ ماه آینده</button>
-            <button class="global-launch-period" type="button" data-days="120" aria-pressed="false">۴ ماه آینده</button>
+            <button class="global-launch-period" type="button" data-days="7" aria-pressed="false"><span class="launch-mission-period-index" dir="ltr">07<small>D</small></span><span class="launch-mission-period-label">۱ هفته آینده</span></button>
+            <button class="global-launch-period" type="button" data-days="14" aria-pressed="false"><span class="launch-mission-period-index" dir="ltr">14<small>D</small></span><span class="launch-mission-period-label">۲ هفته آینده</span></button>
+            <button class="global-launch-period is-active" type="button" data-days="30" aria-pressed="true"><span class="launch-mission-period-index" dir="ltr">30<small>D</small></span><span class="launch-mission-period-label">۱ ماه آینده</span></button>
+            <button class="global-launch-period" type="button" data-days="120" aria-pressed="false"><span class="launch-mission-period-index" dir="ltr">120<small>D</small></span><span class="launch-mission-period-label">۴ ماه آینده</span></button>
           </div>
         </div>
         <div class="global-launch-filter-block">
@@ -253,25 +298,115 @@
             </div>
             <button id="globalLaunchAllCountries" class="global-launch-all-btn is-active" type="button" aria-pressed="true">همه کشورها</button>
           </div>
+          <div class="launch-mission-quick-wrap">
+            <span id="launchMissionQuickLabel" class="launch-mission-quick-label">دسترسی سریع</span>
+            <div class="launch-mission-quick-countries" role="group" aria-labelledby="launchMissionQuickLabel">
+              <button type="button" data-quick-country="CHN" aria-pressed="false">چین</button>
+              <button type="button" data-quick-country="USA" aria-pressed="false">آمریکا</button>
+              <button type="button" data-quick-country="RUS" aria-pressed="false">روسیه</button>
+              <button type="button" data-quick-country="IND" aria-pressed="false">هند</button>
+            </div>
+          </div>
           <label id="globalLaunchCountrySearchLabel" class="global-launch-visually-hidden" for="globalLaunchCountrySearch">جستجوی کشور</label>
-          <input id="globalLaunchCountrySearch" class="global-launch-country-search" type="search" autocomplete="off" spellcheck="false" placeholder="جستجوی کشور…" />
+          <div class="launch-mission-search-wrap">
+            <svg viewBox="0 0 24 24" fill="none" aria-hidden="true"><circle cx="10.8" cy="10.8" r="6" stroke="currentColor" stroke-width="1.8"/><path d="m16 16 4.5 4.5" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/></svg>
+            <input id="globalLaunchCountrySearch" class="global-launch-country-search" type="search" autocomplete="off" spellcheck="false" placeholder="جستجوی کشور…" />
+          </div>
+          <button id="launchMissionCountryToggle" class="launch-mission-country-toggle" type="button" aria-expanded="false" aria-controls="globalLaunchCountryOptions">
+            <span id="launchMissionCountryToggleLabel">نمایش فهرست همه کشورها</span>
+            <svg viewBox="0 0 20 20" fill="none" aria-hidden="true"><path d="m5 7 5 5 5-5" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg>
+          </button>
           <div id="globalLaunchCountryOptions" class="global-launch-country-options" role="group" aria-label="انتخاب چند کشور"></div>
           <p id="globalLaunchCountryHelp" class="global-launch-country-help">برای محدودکردن نتایج، یک یا چند کشور را انتخاب کنید.</p>
           <div id="globalLaunchSelectedCountries" class="global-launch-selected-countries" aria-live="polite"></div>
         </div>
+        <button class="launch-mission-mobile-results" type="button" id="launchMissionJumpResults" aria-controls="globalLaunchResults">
+          <span id="launchMissionJumpLabel">مشاهده نتایج</span><strong id="launchMissionJumpCount">—</strong>
+          <svg viewBox="0 0 20 20" fill="none" aria-hidden="true"><path d="M10 4v12m-5-5 5 5 5-5" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg>
+        </button>
       </section>
       <section class="global-launch-results-panel" aria-labelledby="globalLaunchResultsHeading">
         <header class="global-launch-results-head">
+          <div class="launch-mission-feed-label"><span class="launch-mission-signal-line" aria-hidden="true"></span><span id="launchMissionFeedLabel">جریان مأموریت‌ها</span><span class="launch-mission-feed-code" dir="ltr">02 / FEED</span></div>
           <div>
-            <h3 id="globalLaunchResultsHeading">نتایج <span id="globalLaunchResultCount" class="global-launch-result-count">—</span></h3>
-            <small id="globalLaunchUpdated"></small>
+            <h3 id="globalLaunchResultsHeading" tabindex="-1">نتایج <span id="globalLaunchResultCount" class="global-launch-result-count" aria-live="polite">—</span></h3>
+            <div class="event-display-update-row"><small id="globalLaunchUpdated" class="event-display-updated"></small><span id="globalLaunchFreshness" class="event-display-freshness" role="status"></span></div>
           </div>
           <div class="global-launch-results-head-actions">
             <p id="globalLaunchFeedState" class="global-launch-feed-state" role="status" aria-live="polite"></p>
             <button id="globalLaunchReload" class="global-launch-reload" type="button">تلاش دوباره</button>
           </div>
+          <div id="globalLaunchFilterSummary" class="launch-mission-filter-summary" aria-live="polite"></div>
         </header>
+        <div class="event-display-info-strip"><p id="globalLaunchCoverageNote" class="event-display-coverage-note"></p>
+          <p id="globalLaunchClockNote" class="event-display-clock-note"></p></div>
         <div id="globalLaunchResults" class="global-launch-results" aria-live="polite">
+          <div class="global-launch-empty">در حال آماده‌سازی…</div>
+        </div>
+      </section>
+    </div>
+  </div>
+</dialog>
+
+<!-- ============ WORLDWIDE UPCOMING LANDINGS ============ -->
+<dialog id="globalLandingDialog" class="global-launch-dialog" aria-labelledby="globalLandingTitle" aria-describedby="globalLandingIntro">
+  <div class="global-launch-shell">
+    <header class="global-launch-head">
+      <div class="global-launch-heading">
+        <span id="globalLandingEyebrow" class="global-launch-eyebrow">پایش جهانی فرود‌ها</span>
+        <h2 id="globalLandingTitle">فهرست جهانی فرود‌های پیش‌رو</h2>
+        <p id="globalLandingIntro">فرود‌های اعلام‌شده در سراسر جهان را بر اساس بازه زمانی و کشور فیلتر کنید.</p>
+      </div>
+      <button id="globalLandingClose" class="global-launch-close" type="button" aria-label="بستن">×</button>
+    </header>
+    <div class="global-launch-content">
+      <section class="global-launch-filter-panel" aria-label="فیلتر فرود‌ها">
+        <div class="global-launch-filter-block">
+          <h3 id="globalLandingTimeLabel">بازه زمانی</h3>
+          <div id="globalLandingPeriods" class="global-launch-periods" role="group" aria-labelledby="globalLandingTimeLabel">
+            <button class="global-launch-period" type="button" data-days="7" aria-pressed="false">۱ هفته آینده</button>
+            <button class="global-launch-period" type="button" data-days="14" aria-pressed="false">۲ هفته آینده</button>
+            <button class="global-launch-period is-active" type="button" data-days="30" aria-pressed="true">۱ ماه آینده</button>
+            <button class="global-launch-period" type="button" data-days="120" aria-pressed="false">۴ ماه آینده</button>
+          </div>
+        </div>
+        <div class="global-launch-filter-block">
+          <label id="globalLandingBasisLabel" for="globalLandingCountryBasis">مبنای انتساب کشور</label>
+          <select id="globalLandingCountryBasis" class="global-launch-select">
+            <option value="operator">کشور اپراتور فرود</option>
+            <option value="site">کشور محل بازیابی</option>
+          </select>
+          <p id="globalLandingBasisNote" class="global-launch-basis-note">انتخاب اپراتور، کشور ارائه‌دهنده خدمت فرود را نشان می‌دهد؛ انتخاب محل فرود، کشور جغرافیایی پایگاه را. این دو لزوماً یکی نیستند.</p>
+        </div>
+        <div class="global-launch-country-block">
+          <div class="global-launch-country-head">
+            <div>
+              <h3 id="globalLandingCountryLabel">فیلتر کشورها</h3>
+              <span id="globalLandingCountryCount" class="global-launch-country-count">همه کشورها</span>
+            </div>
+            <button id="globalLandingAllCountries" class="global-launch-all-btn is-active" type="button" aria-pressed="true">همه کشورها</button>
+          </div>
+          <label id="globalLandingCountrySearchLabel" class="global-launch-visually-hidden" for="globalLandingCountrySearch">جستجوی کشور</label>
+          <input id="globalLandingCountrySearch" class="global-launch-country-search" type="search" autocomplete="off" spellcheck="false" placeholder="جستجوی کشور…" />
+          <div id="globalLandingCountryOptions" class="global-launch-country-options" role="group" aria-label="انتخاب چند کشور"></div>
+          <p id="globalLandingCountryHelp" class="global-launch-country-help">برای محدودکردن نتایج، یک یا چند کشور را انتخاب کنید.</p>
+          <div id="globalLandingSelectedCountries" class="global-launch-selected-countries" aria-live="polite"></div>
+        </div>
+      </section>
+      <section class="global-launch-results-panel" aria-labelledby="globalLandingResultsHeading">
+        <header class="global-launch-results-head">
+          <div>
+            <h3 id="globalLandingResultsHeading">نتایج <span id="globalLandingResultCount" class="global-launch-result-count" aria-live="polite">—</span></h3>
+            <div class="event-display-update-row"><small id="globalLandingUpdated" class="event-display-updated"></small><span id="globalLandingFreshness" class="event-display-freshness" role="status"></span></div>
+          </div>
+          <div class="global-launch-results-head-actions">
+            <p id="globalLandingFeedState" class="global-launch-feed-state" role="status" aria-live="polite"></p>
+            <button id="globalLandingReload" class="global-launch-reload" type="button">تلاش دوباره</button>
+          </div>
+        </header>
+        <div class="event-display-info-strip"><p id="globalLandingCoverageNote" class="event-display-coverage-note"></p>
+          <p id="globalLandingClockNote" class="event-display-clock-note"></p></div>
+        <div id="globalLandingResults" class="global-launch-results" aria-live="polite">
           <div class="global-launch-empty">در حال آماده‌سازی…</div>
         </div>
       </section>

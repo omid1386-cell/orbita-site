@@ -5,6 +5,8 @@
 (function () {
   "use strict";
 
+  var Display = window.ORBITAUpcomingEventDisplay;
+  if (!Display) { console.error("ORBITA step 7 event display helper unavailable."); return; }
   var Filters = window.ORBITAUpcomingLaunchFilters;
   if (!Filters) {
     console.error("ORBITA upcoming-launch filter engine is unavailable.");
@@ -29,12 +31,13 @@
     days: 30,
     countryBasis: "operator",
     selectedCountries: [],
-    countryQuery: ""
+    countryQuery: "",
+    countryListExpanded: false
   };
 
   var COPY = {
     fa: {
-      open: "پرتاب‌های پیش‌رو", eyebrow: "پایش جهانی پرتاب‌ها", title: "فهرست جهانی پرتاب‌های پیش‌رو",
+      open: "پرتاب‌های پیش‌رو", dockEyebrow: "رادار مأموریت", filterHeading: "تنظیمات رصد", quick: "کشورهای پرکاربرد", feedLabel: "جریان مأموریت‌ها", selectedRemove: "حذف کشور", summaryPrefix: "نمایش", showCountryList: "نمایش فهرست کشورها", hideCountryList: "بستن فهرست کشورها", jumpResults: "مشاهده پرتاب‌ها", eyebrow: "پایش جهانی پرتاب‌ها", title: "فهرست جهانی پرتاب‌های پیش‌رو",
       intro: "پرتاب‌های اعلام‌شده در سراسر جهان را بر اساس بازه زمانی و کشور فیلتر کنید.", close: "بستن",
       time: "بازه زمانی", d7: "۱ هفته آینده", d14: "۲ هفته آینده", d30: "۱ ماه آینده", d120: "۴ ماه آینده",
       country: "فیلتر کشورها", all: "همه کشورها", selected: "کشور انتخاب‌شده", selectedPlural: "کشور انتخاب‌شده",
@@ -51,10 +54,11 @@
       confirmed: "تأییدشده", tentative: "در انتظار تأیید", unscheduled: "زمان نامشخص", hold: "در حالت توقف", cancelled: "لغوشده", unknown: "نامشخص",
       sec: "ثانیه‌ای", min: "دقیقه‌ای", hour: "ساعتی", day: "روز مشخص", month: "ماه تقریبی", quarter: "فصل تقریبی", year: "سال تقریبی", tbd: "دقت اعلام نشده",
       timeUtc: "به وقت جهانی (UTC)", unknownCountry: "کشور نامشخص", chooseCountry: "برای محدودکردن نتایج، یک یا چند کشور را انتخاب کنید.",
-      allCount: "همه کشورها", countryCount: "کشور", noDate: "زمان معتبر در منبع ثبت نشده است."
+      allCount: "همه کشورها", countryCount: "کشور", noDate: "زمان معتبر در منبع ثبت نشده است.",
+      syncPending: "در انتظار نخستین به‌روزرسانی", fresh: "داده تازه", staleLabel: "نیازمند به‌روزرسانی", syncInvalid: "زمان به‌روزرسانی نامعتبر", reset: "پاک‌کردن فیلترها", emptyTip: "بازه زمانی یا کشورهای انتخابی را تغییر دهید.", timeLabelLaunch: "ساعت فقط برای زمان‌های دارای دقت کافی نمایش داده می‌شود؛ همه ساعت‌ها UTC هستند.", dateBasisLabel: "زمان اعلام‌شده", timeLabelLanding: "تاریخ‌های فرود فقط روز را نشان می‌دهند؛ ساعت دقیق فرود از این داده‌ها قابل استنباط نیست.", notExactLanding: "این تاریخ، ساعت تأییدشده فرود نیست."
     },
     en: {
-      open: "Upcoming launches", eyebrow: "Global launch monitor", title: "Worldwide upcoming launches",
+      open: "Upcoming launches", dockEyebrow: "Mission radar", filterHeading: "Mission filters", quick: "Quick selection", feedLabel: "Mission feed", selectedRemove: "Remove country", summaryPrefix: "Showing", showCountryList: "Browse all countries", hideCountryList: "Hide country list", jumpResults: "View launches", eyebrow: "Global launch monitor", title: "Worldwide upcoming launches",
       intro: "Filter announced launches worldwide by time window and country.", close: "Close",
       time: "Time window", d7: "Next 7 days", d14: "Next 14 days", d30: "Next 30 days", d120: "Next 120 days",
       country: "Country filters", all: "All countries", selected: "country selected", selectedPlural: "countries selected",
@@ -71,10 +75,11 @@
       confirmed: "Confirmed", tentative: "To be confirmed", unscheduled: "Unscheduled", hold: "On hold", cancelled: "Cancelled", unknown: "Unknown",
       sec: "Second-level", min: "Minute-level", hour: "Hour-level", day: "Day-level", month: "Approx. month", quarter: "Approx. quarter", year: "Approx. year", tbd: "Precision not stated",
       timeUtc: "UTC", unknownCountry: "Country unknown", chooseCountry: "Select one or more countries to narrow the list.",
-      allCount: "All countries", countryCount: "country", noDate: "No valid time is recorded by the source."
+      allCount: "All countries", countryCount: "country", noDate: "No valid time is recorded by the source.",
+      syncPending: "Awaiting first update", fresh: "Up to date", staleLabel: "Update overdue", syncInvalid: "Invalid update timestamp", reset: "Clear filters", emptyTip: "Try a different time window or country selection.", timeLabelLaunch: "Clock times appear only when the source provides sufficient precision; all shown times are UTC.", dateBasisLabel: "Scheduled time", timeLabelLanding: "Landing dates indicate the calendar day only; no exact landing time is inferred.", notExactLanding: "This is not a verified landing time."
     },
     ar: {
-      open: "الإطلاقات القادمة", eyebrow: "متابعة الإطلاقات العالمية", title: "قائمة الإطلاقات القادمة حول العالم",
+      open: "الإطلاقات القادمة", dockEyebrow: "رادار المهام", filterHeading: "مرشحات الرصد", quick: "اختيار سريع", feedLabel: "سجل المهمات", selectedRemove: "إزالة الدولة", summaryPrefix: "عرض", showCountryList: "عرض قائمة الدول", hideCountryList: "إخفاء قائمة الدول", jumpResults: "عرض الإطلاقات", eyebrow: "متابعة الإطلاقات العالمية", title: "قائمة الإطلاقات القادمة حول العالم",
       intro: "صفِّ الإطلاقات المعلنة عالمياً حسب الفترة الزمنية والدولة.", close: "إغلاق",
       time: "الفترة الزمنية", d7: "الأيام السبعة القادمة", d14: "الأيام الأربعة عشر القادمة", d30: "الثلاثون يوماً القادمة", d120: "الأيام الـ120 القادمة",
       country: "تصفية الدول", all: "كل الدول", selected: "دولة محددة", selectedPlural: "دول محددة",
@@ -91,7 +96,8 @@
       confirmed: "مؤكد", tentative: "بانتظار التأكيد", unscheduled: "غير مجدول", hold: "معلّق", cancelled: "ملغى", unknown: "غير معروف",
       sec: "بدقة الثانية", min: "بدقة الدقيقة", hour: "بدقة الساعة", day: "اليوم محدد", month: "شهر تقريبي", quarter: "ربع سنة تقريبي", year: "سنة تقريبية", tbd: "الدقة غير محددة",
       timeUtc: "بتوقيت UTC", unknownCountry: "الدولة غير معروفة", chooseCountry: "اختر دولة واحدة أو أكثر لتصفية القائمة.",
-      allCount: "كل الدول", countryCount: "دولة", noDate: "لا يوجد موعد صالح مسجل في المصدر."
+      allCount: "كل الدول", countryCount: "دولة", noDate: "لا يوجد موعد صالح مسجل في المصدر.",
+      syncPending: "في انتظار أول تحديث", fresh: "بيانات حديثة", staleLabel: "تحديث متأخر", syncInvalid: "وقت التحديث غير صالح", reset: "مسح المرشحات", emptyTip: "جرّب تغيير الفترة الزمنية أو الدول المختارة.", timeLabelLaunch: "لا تظهر الساعة إلا عند توافر دقة كافية؛ جميع الأوقات المعروضة بتوقيت UTC.", dateBasisLabel: "وقت الإعلان", timeLabelLanding: "تُعرض تواريخ الهبوط باليوم فقط؛ لا يمكن استنتاج ساعة هبوط دقيقة من هذه البيانات.", notExactLanding: "هذا ليس توقيت هبوط مؤكداً."
     }
   };
 
@@ -117,48 +123,13 @@
     try { return new Intl.NumberFormat(lang() === "fa" ? "fa-IR" : lang() === "ar" ? "ar-u-nu-latn" : "en-GB").format(value); }
     catch (e) { return String(value); }
   }
-  function dateFormatter(options) {
-    var locale = lang() === "fa" ? "fa-IR-u-ca-gregory" : lang() === "ar" ? "ar-u-ca-gregory-nu-latn" : "en-GB";
-    return new Intl.DateTimeFormat(locale, Object.assign({ timeZone: "UTC" }, options));
-  }
-  function precisionKey(value) {
-    var raw = String(value || "").toLowerCase();
-    if (/second|sec/.test(raw)) return "sec";
-    if (/minute|min/.test(raw)) return "min";
-    if (/hour|hr/.test(raw)) return "hour";
-    if (/day/.test(raw)) return "day";
-    if (/month/.test(raw)) return "month";
-    if (/quarter/.test(raw)) return "quarter";
-    if (/year/.test(raw)) return "year";
-    return "tbd";
-  }
-  function formatNet(event) {
-    var date = new Date(event.net);
-    if (!Number.isFinite(date.getTime())) return tr("noDate");
-    var key = precisionKey(event.net_precision);
-    if (key === "year") return dateFormatter({ year: "numeric" }).format(date);
-    if (key === "quarter") {
-      var q = Math.floor(date.getUTCMonth() / 3) + 1;
-      return (lang() === "fa" ? "سه‌ماههٔ " : lang() === "ar" ? "الربع " : "Q") + number(q) + " " + dateFormatter({ year: "numeric" }).format(date);
-    }
-    if (key === "month") return dateFormatter({ year: "numeric", month: "long" }).format(date);
-    var parts = { year: "numeric", month: "short", day: "numeric" };
-    if (key === "sec" || key === "min" || key === "hour") {
-      parts.hour = "2-digit"; parts.minute = "2-digit";
-      if (key === "sec") parts.second = "2-digit";
-    }
-    return dateFormatter(parts).format(date) + ((key === "sec" || key === "min" || key === "hour") ? " UTC" : "");
-  }
-  function formatUpdated(value) {
-    if (!value) return "—";
-    var date = new Date(value);
-    if (!Number.isFinite(date.getTime())) return "—";
-    return dateFormatter({ year: "numeric", month: "short", day: "numeric", hour: "2-digit", minute: "2-digit" }).format(date) + " UTC";
-  }
+  function precisionKey(value) { return Display.precision(value); }
+  function formatNet(event) { return Display.launchTime(event, lang(), tr("noDate")).text; }
+  function formatUpdated(value) { return Display.updatedAt(value, lang(), tr("syncPending")); }
   function statusKey(value) {
     var s = String(value || "").toLowerCase();
     if (s === "go" || s === "confirmed") return "confirmed";
-    if (s === "tbc" || s === "tentative") return "tentative";
+    if (s === "tbc" || s === "tentative" || s === "planned") return "tentative";
     if (s === "tbd" || s === "unscheduled") return "unscheduled";
     if (s === "hold" || s === "on_hold") return "hold";
     if (/cancel|abort|scrub/.test(s)) return "cancelled";
@@ -212,7 +183,7 @@
         state.error = "";
         state.refreshError = "";
         state.dataPromise = null;
-        render();
+        renderResults();
         return doc;
       })
       .catch(function (error) {
@@ -225,7 +196,7 @@
           state.error = message;
         }
         state.dataPromise = null;
-        render();
+        renderResults();
         return null;
       });
     return state.dataPromise;
@@ -236,23 +207,26 @@
     var rtl = language !== "en";
     dialog.dir = rtl ? "rtl" : "ltr";
     document.documentElement.lang = language;
-    openButton.textContent = "";
-    var icon = document.createElement("span");
-    icon.setAttribute("aria-hidden", "true");
-    icon.textContent = "🚀";
-    var label = document.createElement("span");
-    label.textContent = tr("open");
-    openButton.appendChild(icon);
-    openButton.appendChild(label);
+    // Keep the custom SVG launch beacon intact when changing languages.
+    var dockTitle = $("#launchMissionDockTitle");
+    var dockEyebrow = $("#launchMissionDockEyebrow");
+    if (dockTitle) dockTitle.textContent = tr("open");
+    if (dockEyebrow) dockEyebrow.textContent = tr("dockEyebrow");
+    openButton.setAttribute("aria-label", tr("open"));
+    openButton.setAttribute("title", tr("open"));
     var textMap = {
       "#globalLaunchEyebrow": "eyebrow", "#globalLaunchTitle": "title", "#globalLaunchIntro": "intro",
-      "#globalLaunchClose": "close", "#globalLaunchTimeLabel": "time", "#globalLaunchCountryLabel": "country",
+      "#globalLaunchTimeLabel": "time", "#globalLaunchCountryLabel": "country",
+      "#launchMissionFilterHeading": "filterHeading", "#launchMissionQuickLabel": "quick", "#launchMissionFeedLabel": "feedLabel",
+      "#launchMissionJumpLabel": "jumpResults",
       "#globalLaunchCountrySearchLabel": "countrySearch", "#globalLaunchBasisLabel": "basis",
       "#globalLaunchBasisNote": "basisNote", "#globalLaunchAllCountries": "all", "#globalLaunchReload": "retry"
     };
     Object.keys(textMap).forEach(function (selector) {
       var el = $(selector); if (el) el.textContent = tr(textMap[selector]);
     });
+    $("#globalLaunchClose").setAttribute("aria-label", tr("close"));
+    $("#globalLaunchClose").setAttribute("title", tr("close"));
     var basis = $("#globalLaunchCountryBasis");
     if (basis) {
       basis.options[0].textContent = tr("operator");
@@ -263,7 +237,8 @@
     if (search) search.placeholder = tr("countrySearch");
     $$(".global-launch-period").forEach(function (button) {
       var days = button.getAttribute("data-days");
-      button.textContent = tr(days === "7" ? "d7" : days === "14" ? "d14" : days === "120" ? "d120" : "d30");
+      var periodLabel = button.querySelector(".launch-mission-period-label");
+      if (periodLabel) periodLabel.textContent = tr(days === "7" ? "d7" : days === "14" ? "d14" : days === "120" ? "d120" : "d30");
       button.setAttribute("aria-pressed", String(Number(days) === state.days));
       button.classList.toggle("is-active", Number(days) === state.days);
     });
@@ -271,6 +246,8 @@
     if (note) note.textContent = tr("chooseCountry");
     renderCountrySelection();
     renderCountryOptions();
+    renderQuickCountries();
+    renderCountryBrowserMode();
     renderResults();
   }
   function $$(selector) { return Array.prototype.slice.call(dialog.querySelectorAll(selector)); }
@@ -280,6 +257,34 @@
       return String(a[lang()] || a.en || a.code).localeCompare(String(b[lang()] || b.en || b.code), lang());
     });
   }
+  function renderQuickCountries() {
+    $$(".launch-mission-quick-countries [data-quick-country]").forEach(function (button) {
+      var code = button.getAttribute("data-quick-country");
+      var chosen = state.selectedCountries.indexOf(code) >= 0;
+      button.classList.toggle("is-selected", chosen);
+      button.setAttribute("aria-pressed", String(chosen));
+      button.textContent = countryName(code);
+    });
+  }
+  function renderCountryBrowserMode() {
+    var list = $("#globalLaunchCountryOptions");
+    var toggle = $("#launchMissionCountryToggle");
+    var label = $("#launchMissionCountryToggleLabel");
+    if (!list || !toggle || !label) return;
+    list.classList.toggle("launch-mission-expanded", state.countryListExpanded);
+    toggle.setAttribute("aria-expanded", String(state.countryListExpanded));
+    label.textContent = tr(state.countryListExpanded ? "hideCountryList" : "showCountryList");
+  }
+  function renderFilterSummary() {
+    var el = $("#globalLaunchFilterSummary");
+    if (!el) return;
+    var p = state.days === 7 ? "d7" : state.days === 14 ? "d14" : state.days === 120 ? "d120" : "d30";
+    var places = state.selectedCountries.length
+      ? state.selectedCountries.map(countryName).join(lang() === "en" ? ", " : "، ")
+      : tr("allCount");
+    el.textContent = tr("summaryPrefix") + " · " + tr(p) + " · " + places;
+  }
+
   function renderCountrySelection() {
     var box = $("#globalLaunchSelectedCountries");
     var all = $("#globalLaunchAllCountries");
@@ -291,12 +296,14 @@
     if (!selected.length) {
       count.textContent = tr("allCount");
       box.innerHTML = '<span class="global-launch-selected-chip is-all">' + esc(tr("allCount")) + '</span>';
+      renderQuickCountries();
       return;
     }
     count.textContent = number(selected.length) + " " + (selected.length === 1 ? tr("selected") : tr("selectedPlural"));
     box.innerHTML = selected.map(function (code) {
-      return '<span class="global-launch-selected-chip">' + esc(countryName(code)) + '</span>';
+      return '<button type="button" class="global-launch-selected-chip" data-remove-country-code="' + esc(code) + '" aria-label="' + esc(tr("selectedRemove") + ": " + countryName(code)) + '"><span>' + esc(countryName(code)) + '</span><span class="launch-mission-chip-remove" aria-hidden="true">×</span></button>';
     }).join("");
+    renderQuickCountries();
   }
   function renderCountryOptions() {
     var list = $("#globalLaunchCountryOptions");
@@ -316,12 +323,32 @@
         '<span class="global-launch-country-check" aria-hidden="true">' + (selected ? '✓' : '') + '</span><span>' + esc(item[lang()] || item.en || item.code) + '</span><small dir="ltr">' + esc(item.alpha2 || item.code) + '</small></button>';
     }).join("");
   }
+  function updateFeedMeta() {
+    var updated = $("#globalLaunchUpdated");
+    var freshness = $("#globalLaunchFreshness");
+    var coverage = $("#globalLaunchCoverageNote");
+    var clock = $("#globalLaunchClockNote");
+    var stamp = state.data && state.data.updated_utc;
+    var condition = Display.freshness(stamp, Date.now());
+    if (updated) updated.textContent = tr("updated") + ": " + formatUpdated(stamp);
+    if (freshness) {
+      freshness.className = "event-display-freshness is-" + condition;
+      freshness.textContent = tr(condition === "fresh" ? "fresh" : condition === "stale" ? "staleLabel" : condition === "invalid" ? "syncInvalid" : "syncPending");
+    }
+    if (coverage) coverage.textContent = tr("source");
+    if (clock) clock.textContent = tr("timeLabelLaunch");
+  }
+
   function renderResults() {
     var results = $("#globalLaunchResults");
     var countEl = $("#globalLaunchResultCount");
     var updatedEl = $("#globalLaunchUpdated");
     var stateEl = $("#globalLaunchFeedState");
     if (!results || !countEl || !updatedEl || !stateEl) return;
+    updateFeedMeta();
+    renderFilterSummary();
+    var jumpCount = $("#launchMissionJumpCount");
+    if (jumpCount) jumpCount.textContent = "—";
 
     var reloadButton = $("#globalLaunchReload");
     if (reloadButton) reloadButton.disabled = !!state.loading;
@@ -329,24 +356,21 @@
       countEl.textContent = "—";
       stateEl.className = "global-launch-feed-state is-loading";
       stateEl.textContent = tr("loading");
-      results.innerHTML = '<div class="global-launch-empty"><span class="global-launch-spinner" aria-hidden="true"></span>' + esc(tr("loading")) + '</div>';
-      updatedEl.textContent = "";
+      results.innerHTML = renderEmpty(tr("loading"), "loading");
       return;
     }
     if (state.error && !activeData()) {
       countEl.textContent = "—";
       stateEl.className = "global-launch-feed-state is-error";
       stateEl.textContent = tr("error");
-      results.innerHTML = '<div class="global-launch-empty is-error">' + esc(tr("error")) + '</div>';
-      updatedEl.textContent = "";
+      results.innerHTML = renderEmpty(tr("error"), "error");
       return;
     }
     if (!state.data || state.data.coverage_status !== "complete_from_source_at_fetch_time") {
       countEl.textContent = "—";
       stateEl.className = "global-launch-feed-state is-pending";
       stateEl.textContent = tr("waiting");
-      results.innerHTML = '<div class="global-launch-empty">' + esc(tr("waiting")) + '</div>';
-      updatedEl.textContent = "";
+      results.innerHTML = renderEmpty(tr("waiting"), "waiting");
       return;
     }
 
@@ -358,21 +382,26 @@
       now: Date.now()
     });
     countEl.textContent = number(rows.length) + " " + (rows.length === 1 ? tr("launches") : tr("launchesPlural"));
-    stateEl.className = "global-launch-feed-state is-ready";
-    stateEl.textContent = state.refreshError ? tr("refreshFailed") + " " + tr("source") : tr("source");
-    updatedEl.textContent = tr("updated") + ": " + formatUpdated(state.data.updated_utc);
-    if (state.data.updated_utc && Date.now() - new Date(state.data.updated_utc).getTime() > 86400000) {
-      stateEl.className += " is-stale";
-      stateEl.textContent = tr("stale") + " " + tr("source");
-    }
+    if (jumpCount) jumpCount.textContent = number(rows.length);
+    var feedHealth = Display.freshness(state.data.updated_utc, Date.now());
+    var feedHealthText = tr(feedHealth === "fresh" ? "fresh" : feedHealth === "stale" ? "stale" : feedHealth === "invalid" ? "syncInvalid" : "syncPending");
+    stateEl.className = "global-launch-feed-state is-ready" + (feedHealth === "fresh" && !state.refreshError ? "" : " is-stale");
+    stateEl.textContent = (state.refreshError ? tr("refreshFailed") + " · " : "") + feedHealthText;
     if (!rows.length) {
-      results.innerHTML = '<div class="global-launch-empty">' + esc(tr("noResults")) + '</div>';
+      results.innerHTML = renderEmpty(tr("noResults"), "empty", true);
       return;
     }
     results.innerHTML = rows.map(renderLaunchCard).join("");
   }
 
-  function renderLaunchCard(event) {
+  function renderEmpty(message, kind, showReset) {
+    return '<div class="global-launch-empty launch-mission-empty is-' + esc(kind) + '">' +
+      '<div class="launch-mission-empty-art" aria-hidden="true">' +
+      '<svg viewBox="0 0 130 130" fill="none"><circle cx="65" cy="65" r="50" stroke="currentColor" stroke-opacity=".22" stroke-dasharray="4 6"/><circle cx="65" cy="65" r="31" stroke="currentColor" stroke-opacity=".34"/><path d="M65 25v80M25 65h80" stroke="currentColor" stroke-opacity=".24"/><path d="M45 89L84 39 78 80z" fill="currentColor" fill-opacity=".28" stroke="currentColor" stroke-width="1.6"/><circle cx="65" cy="65" r="5" fill="currentColor"/></svg></div>' +
+      '<p>' + esc(message) + '</p>' + (showReset ? '<p class="event-display-empty-tip">' + esc(tr("emptyTip")) + '</p><button type="button" class="event-display-reset" data-step7-reset>' + esc(tr("reset")) + '</button>' : '') + '</div>';
+  }
+
+  function renderLaunchCard(event, index) {
     var key = statusKey(event.status);
     var status = tr(key);
     var precision = tr(precisionKey(event.net_precision));
@@ -386,9 +415,10 @@
     var operator = event.operator_name ? esc(event.operator_name) : "—";
     var site = [event.pad_name, event.location_name].filter(Boolean).join(" · ");
     return '<article class="global-launch-card">' +
+      '<div class="launch-mission-card-index"><span dir="ltr">FLIGHT / ' + esc(String(index + 1).padStart(2, "0")) + '</span><span class="launch-mission-card-index-line" aria-hidden="true"></span></div>' +
       '<div class="global-launch-card-top">' +
         '<div class="global-launch-card-title"><span class="global-launch-status ' + statusClass(key) + '">' + esc(status) + '</span><strong><bdi>' + esc(title) + '</bdi></strong></div>' +
-        '<div class="global-launch-card-date"><bdi>' + esc(date) + '</bdi><small>' + esc(precision) + '</small></div>' +
+        '<div class="global-launch-card-date event-display-date"><span class="event-display-date-caption">' + esc(tr("dateBasisLabel")) + '</span><bdi>' + esc(date) + '</bdi><small>' + esc(precision) + '</small></div>' +
       '</div>' +
       (fields.length ? '<div class="global-launch-card-fields">' + fields.join("") + '</div>' : '') +
       '<div class="global-launch-card-meta">' +
@@ -434,10 +464,44 @@
   });
   $("#globalLaunchCountrySearch").addEventListener("input", function (event) {
     state.countryQuery = event.target.value || "";
+    if (state.countryQuery.trim()) state.countryListExpanded = true;
+    renderCountryBrowserMode();
     renderCountryOptions();
+  });
+  $("#launchMissionCountryToggle").addEventListener("click", function () {
+    state.countryListExpanded = !state.countryListExpanded;
+    renderCountryBrowserMode();
+  });
+  $("#launchMissionJumpResults").addEventListener("click", function () {
+    var target = $("#globalLaunchResultsHeading");
+    if (target) {
+      target.scrollIntoView({ behavior: "smooth", block: "start" });
+      target.focus({ preventScroll: true });
+    }
   });
   $("#globalLaunchAllCountries").addEventListener("click", function () {
     state.selectedCountries = [];
+    renderCountrySelection();
+    renderCountryOptions();
+    renderResults();
+  });
+  $(".launch-mission-quick-countries").addEventListener("click", function (event) {
+    var button = event.target.closest("button[data-quick-country]");
+    if (!button) return;
+    var code = button.getAttribute("data-quick-country");
+    var index = state.selectedCountries.indexOf(code);
+    if (index >= 0) state.selectedCountries.splice(index, 1);
+    else state.selectedCountries.push(code);
+    state.selectedCountries.sort();
+    renderCountrySelection();
+    renderCountryOptions();
+    renderResults();
+  });
+  $("#globalLaunchSelectedCountries").addEventListener("click", function (event) {
+    var button = event.target.closest("button[data-remove-country-code]");
+    if (!button) return;
+    var code = button.getAttribute("data-remove-country-code");
+    state.selectedCountries = state.selectedCountries.filter(function (c) { return c !== code; });
     renderCountrySelection();
     renderCountryOptions();
     renderResults();
@@ -453,6 +517,16 @@
     renderCountrySelection();
     renderCountryOptions();
     renderResults();
+  });
+  $("#globalLaunchResults").addEventListener("click", function (event) {
+    var button = event.target.closest("[data-step7-reset]");
+    if (!button) return;
+    state.days = 30;
+    state.selectedCountries = [];
+    state.countryQuery = "";
+    var search = $("#globalLaunchCountrySearch");
+    if (search) search.value = "";
+    renderChrome();
   });
   var langButton = $("#langBtn");
   if (langButton) langButton.addEventListener("click", function () { setTimeout(renderChrome, 0); });

@@ -1,0 +1,50 @@
+{
+  "stage": "Step8",
+  "source": "Step7 cumulative",
+  "entries": {
+    "assets/js/upcoming-landing-browser.js": {
+      "sha256": "baa1f79c18abf1b5917eaa3ff6a9fbb73023c0716bf938cd1340438a2b72b209",
+      "bytes": 28568
+    },
+    "assets/js/upcoming-launch-browser.js": {
+      "sha256": "c0258d5191367ac839c8337e323e5e35ba0b250cd2f1ab58d32b143e33b4b2b1",
+      "bytes": 35315
+    },
+    "assets/js/upcoming-launch-filters.js": {
+      "sha256": "6ef33f8c98cf9171528829568c91ec807db74408937691b7ab916f00616fd884",
+      "bytes": 5971
+    },
+    "tools/refresh_global_launches.py": {
+      "sha256": "582819bf6931a51004312a777acca3bf42a28d2fb7ab0a77bce948765e4664a1",
+      "bytes": 8412
+    },
+    "tools/test_global_launches.py": {
+      "sha256": "f7c5cd60cd7821f4a25974bfcd6ce4712c618ae8624ccfd8bf6b093c61db8e75",
+      "bytes": 7908
+    },
+    "tests/step8-integration.test.cjs": {
+      "sha256": "83f849be27a2a72e9c51c5d3125626649a244feeec957f75166f74490a6f2f32",
+      "bytes": 2760
+    },
+    "qa/step8_browser_checks.py": {
+      "sha256": "8b0ba4f8e75c6db7e327f29dcbb132c8edeeaa72c3384f0d77856f0bdfb13490",
+      "bytes": 8142
+    },
+    "ORBITA_STEP8_QA_REPORT_FA.md": {
+      "sha256": "03bb558a171e7c64d8b7e7859526df277aed0f25a39ffdab7a2a2768d8b2b3d2",
+      "bytes": 10164
+    },
+    "README_INSTALL_STEP8_FA.md": {
+      "sha256": "a626e6d6a0c406a2d117490ebc46f84a67e9c3c32d641afcc6fd1ea199f9445c",
+      "bytes": 2746
+    },
+    "LEGACY_TEST_FAILURES.txt": {
+      "sha256": "782a3c6974ec9ff0d0aa7a75178595bb799afc92d6da2198368a93252bc52282",
+      "bytes": 3162
+    },
+    "ORBITA_STEP8_CHANGES.patch": {
+      "sha256": "752398e634040d5fd272aa6a8e96d9ac9068e617a2e39d2836cde5f6a34ad176",
+      "bytes": 18162
+    }
+  }
+}

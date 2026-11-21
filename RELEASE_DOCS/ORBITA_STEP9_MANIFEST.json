@@ -1,0 +1,339 @@
+{
+  "release_id": "ORBITA-UPCOMING-EVENTS-STEPS-1-9-2026-11-21-RC2.1",
+  "built_date": "2026-11-21",
+  "release_type": "candidate_network_and_live_data_not_yet_validated",
+  "upstream": "ORBITAA original 3-part RAR as extracted in this conversation",
+  "payload_file_count": 46,
+  "modified_or_added_relative_to_base_count": 45,
+  "modified_existing_paths": [
+    "assets/css/app.css",
+    "index.html"
+  ],
+  "new_paths": [
+    ".github/workflows/refresh-global-landings.yml",
+    ".github/workflows/refresh-global-launches.yml",
+    "data/country_codes.json",
+    "data/upcoming_global.json",
+    "data/upcoming_global_landings.json",
+    "tests/upcoming-landing-filters.test.cjs",
+    "tests/upcoming-landing-ui.test.cjs",
+    "tests/upcoming-launch-filters.test.cjs",
+    "tests/upcoming-launch-ui.test.cjs",
+    "tests/upcoming_global.test.cjs",
+    "tools/audit_upcoming_events.py",
+    "tools/refresh_global_landings.py",
+    "tools/test_global_landings.py",
+    "tools/upcoming_event_contract.py",
+    "ORBITA_STEPS5_6_REPORT_FA.md",
+    "README_INSTALL_STEPS5_6_FA.md",
+    "ORBITA_STEPS5_6_INDEX.patch",
+    "assets/css/launch-mission-ui.css",
+    "tests/launch-mission-ui-redesign.test.cjs",
+    "ORBITA_Launch_Mission_UI_Report_FA.md",
+    "README_INSTALL_LAUNCH_MISSION_UI_FA.md",
+    "ORBITA_Launch_Mission_UI_Changes.patch",
+    "assets/js/upcoming-event-display.js",
+    "assets/css/upcoming-event-display.css",
+    "tests/upcoming-event-display.test.cjs",
+    "ORBITA_STEP7_REPORT_FA.md",
+    "README_INSTALL_ORBITA_STEP7_FA.md",
+    "ORBITA_STEP7_CHANGES.patch",
+    "assets/js/upcoming-landing-browser.js",
+    "assets/js/upcoming-launch-browser.js",
+    "assets/js/upcoming-launch-filters.js",
+    "tools/refresh_global_launches.py",
+    "tools/test_global_launches.py",
+    "tests/step8-integration.test.cjs",
+    "qa/step8_browser_checks.py",
+    "ORBITA_STEP8_QA_REPORT_FA.md",
+    "README_INSTALL_STEP8_FA.md",
+    "LEGACY_TEST_FAILURES.txt",
+    "ORBITA_STEP8_CHANGES.patch",
+    "STEP8_MANIFEST_SHA256.json"
+  ],
+  "files": {
+    ".github/workflows/refresh-global-landings.yml": {
+      "sha256": "53b16238387004761b790cfddb1d2dd8ed2c57b8facbd527128c5f119b0474da",
+      "bytes": 2505,
+      "action": "add",
+      "original_sha256": null
+    },
+    ".github/workflows/refresh-global-launches.yml": {
+      "sha256": "74ec21ea978aad09ce89a03a7501179163630c5276af7a2446ffa5c09a17d408",
+      "bytes": 2363,
+      "action": "add",
+      "original_sha256": null
+    },
+    "assets/css/app.css": {
+      "sha256": "cb59910f61068eeca3bf0f1b571b056eb83da4c88b732796a75929f4e0079fed",
+      "bytes": 129579,
+      "action": "replace",
+      "original_sha256": "2efeb3a02630e20935d563a560b245028e015ec9445ea0290332c0cdf34c6c02"
+    },
+    "data/country_codes.json": {
+      "sha256": "74347d84db14e97ae46aa94dff06667829a8d59c74fc83277230e42b6951ca18",
+      "bytes": 69087,
+      "action": "add",
+      "original_sha256": null
+    },
+    "data/upcoming_global.json": {
+      "sha256": "985a024cd4c8c5f7ca39132c9e68743fd7c14eefa9d91aeb8ef18c13d4306500",
+      "bytes": 357,
+      "action": "add",
+      "original_sha256": null
+    },
+    "data/upcoming_global_landings.json": {
+      "sha256": "32cc763567721004321c14b375a327bc8860215cdf3d156316572c9ef795a477",
+      "bytes": 542,
+      "action": "add",
+      "original_sha256": null
+    },
+    "tests/upcoming-landing-filters.test.cjs": {
+      "sha256": "6d263ad0d6a08d51cdd2f755813db67ccc20c442f30fc94aa7d3e6e079c94753",
+      "bytes": 2032,
+      "action": "add",
+      "original_sha256": null
+    },
+    "tests/upcoming-landing-ui.test.cjs": {
+      "sha256": "55c124d021b55ea34075245adb8408731d48823931e46ebae4bca9f4287ccaf3",
+      "bytes": 1568,
+      "action": "add",
+      "original_sha256": null
+    },
+    "tests/upcoming-launch-filters.test.cjs": {
+      "sha256": "ae7332d5bd44b165100d3589d68e52ca8ec406a1685ebba6d35f939c713417af",
+      "bytes": 4735,
+      "action": "add",
+      "original_sha256": null
+    },
+    "tests/upcoming-launch-ui.test.cjs": {
+      "sha256": "145fee50f448b9498d90c98cfdc8e7b0217bb8a385d6226de62c0b6d7045f3cf",
+      "bytes": 2197,
+      "action": "add",
+      "original_sha256": null
+    },
+    "tests/upcoming_global.test.cjs": {
+      "sha256": "2d1ff58fc0e192e5baf2558efcd259f481e8a0218e1351ab9c6d8124fb905dbf",
+      "bytes": 1296,
+      "action": "add",
+      "original_sha256": null
+    },
+    "tools/audit_upcoming_events.py": {
+      "sha256": "17a5a36410121f029b8a992cf7c0a525fbefea1d01ed9b5be913e38ad48d2d97",
+      "bytes": 2422,
+      "action": "add",
+      "original_sha256": null
+    },
+    "tools/ll2_compat.py": {
+      "sha256": "70e8a72931e1a392f0623a99ec05537c410f8b2983f14a60c17f44918cd9a3eb",
+      "bytes": 2105,
+      "action": "identical_to_baseline",
+      "original_sha256": null
+    },
+    "tools/refresh_global_landings.py": {
+      "sha256": "4730bce0d82ace14f0a7c644fa0e29a348eedfb76f0fb685db8a825d042db591",
+      "bytes": 18459,
+      "action": "add",
+      "original_sha256": null
+    },
+    "tools/test_global_landings.py": {
+      "sha256": "743e30efdae2f1fa074c3e0e0b064dc59cb66fd3e847b310cdda4e26be8d024e",
+      "bytes": 6092,
+      "action": "add",
+      "original_sha256": null
+    },
+    "tools/upcoming_event_contract.py": {
+      "sha256": "def397cdada1dace649cd9c4f87999b2620a59b7bbe6bf8cd7d1d805d08b436b",
+      "bytes": 4151,
+      "action": "add",
+      "original_sha256": null
+    },
+    "ORBITA_STEPS5_6_REPORT_FA.md": {
+      "sha256": "c3734f44e056e1d174025b4c4f5973232d27b87ae2876aaf0c56d05204306b2c",
+      "bytes": 6753,
+      "action": "add",
+      "original_sha256": null
+    },
+    "README_INSTALL_STEPS5_6_FA.md": {
+      "sha256": "30298fae9777d9756991e0b5b33abee6ba2278bb6e70986155367f1fcb72d4a6",
+      "bytes": 2375,
+      "action": "add",
+      "original_sha256": null
+    },
+    "ORBITA_STEPS5_6_INDEX.patch": {
+      "sha256": "4a2b9bad7bf867a6b5e9a13ee00428b465ec5e2065659ad1ef16c6539b71514c",
+      "bytes": 6576,
+      "action": "add",
+      "original_sha256": null
+    },
+    "assets/css/launch-mission-ui.css": {
+      "sha256": "10bcd927a0bdc853c74db2e865396dbdb3cf151b91335ea39fe37a8f6fbc9294",
+      "bytes": 24648,
+      "action": "add",
+      "original_sha256": null
+    },
+    "tests/launch-mission-ui-redesign.test.cjs": {
+      "sha256": "c5218fc3c63e8295cbba5a0b3f1deb3fdafd5c646458ea60a322e44db9f8686d",
+      "bytes": 2659,
+      "action": "add",
+      "original_sha256": null
+    },
+    "ORBITA_Launch_Mission_UI_Report_FA.md": {
+      "sha256": "648d37b3219954ad0b5b5f2ca58679514b4312f9c26c675a96d2f7d93448311c",
+      "bytes": 6667,
+      "action": "add",
+      "original_sha256": null
+    },
+    "README_INSTALL_LAUNCH_MISSION_UI_FA.md": {
+      "sha256": "e0f76a0cc3dc1c69161d425828fa2ac4709d1534ed4e527227509a392f40890b",
+      "bytes": 2754,
+      "action": "add",
+      "original_sha256": null
+    },
+    "ORBITA_Launch_Mission_UI_Changes.patch": {
+      "sha256": "660b1eb8c582c7d352124a16fcdeb4db19df4b2bfba8a18694c13a8343f3a180",
+      "bytes": 57914,
+      "action": "add",
+      "original_sha256": null
+    },
+    "index.html": {
+      "sha256": "e7021c6dff8676fd18f954de0a72a0fd01ecfc56ec488095fcb2018b9a858510",
+      "bytes": 65115,
+      "action": "replace",
+      "original_sha256": "297b44b35d096e4a068648366c6a6208fc7b993065cf989f49fccbbb903764d4"
+    },
+    "assets/js/upcoming-event-display.js": {
+      "sha256": "3797dd7675de0d45783fc8680f1ed4c0c6819087035777c0b46ec5440d80e9e0",
+      "bytes": 3776,
+      "action": "add",
+      "original_sha256": null
+    },
+    "assets/css/upcoming-event-display.css": {
+      "sha256": "9428a7a592e71d34af21d143706c24c75b92a58751f9196053003d12bc1b4bb2",
+      "bytes": 6278,
+      "action": "add",
+      "original_sha256": null
+    },
+    "tests/upcoming-event-display.test.cjs": {
+      "sha256": "aefabe460479b9cf474617fbdf4b03b52f27a42665e3c6679e30fc6cb927af57",
+      "bytes": 3246,
+      "action": "add",
+      "original_sha256": null
+    },
+    "ORBITA_STEP7_REPORT_FA.md": {
+      "sha256": "2fc3acbb3dd087cb6cd7721bb51dd2975482c62d0fd04fa4cc45dc5b553ca9c0",
+      "bytes": 6599,
+      "action": "add",
+      "original_sha256": null
+    },
+    "README_INSTALL_ORBITA_STEP7_FA.md": {
+      "sha256": "c1986987cbfc30018f8f3fe2586eecf6de1deacb04f1e1a8a153434c0fc8ffb3",
+      "bytes": 3341,
+      "action": "add",
+      "original_sha256": null
+    },
+    "ORBITA_STEP7_CHANGES.patch": {
+      "sha256": "880bcbc61eaf4ecffea50570a8b5e6c2546b618bb74a5d8caa1bed215f8f9ff9",
+      "bytes": 49225,
+      "action": "add",
+      "original_sha256": null
+    },
+    "assets/js/upcoming-landing-browser.js": {
+      "sha256": "baa1f79c18abf1b5917eaa3ff6a9fbb73023c0716bf938cd1340438a2b72b209",
+      "bytes": 28568,
+      "action": "add",
+      "original_sha256": null
+    },
+    "assets/js/upcoming-launch-browser.js": {
+      "sha256": "c0258d5191367ac839c8337e323e5e35ba0b250cd2f1ab58d32b143e33b4b2b1",
+      "bytes": 35315,
+      "action": "add",
+      "original_sha256": null
+    },
+    "assets/js/upcoming-launch-filters.js": {
+      "sha256": "6ef33f8c98cf9171528829568c91ec807db74408937691b7ab916f00616fd884",
+      "bytes": 5971,
+      "action": "add",
+      "original_sha256": null
+    },
+    "tools/refresh_global_launches.py": {
+      "sha256": "710824703bdf0b82268591d5aae6c7376ec1c78a0451ee9552378add974d506d",
+      "bytes": 9722,
+      "action": "add",
+      "original_sha256": null
+    },
+    "tools/test_global_launches.py": {
+      "sha256": "f471299862e31d2e425576d1785f50790376ae203fd3239c0332690fd42d62f2",
+      "bytes": 8000,
+      "action": "add",
+      "original_sha256": null
+    },
+    "tests/step8-integration.test.cjs": {
+      "sha256": "83f849be27a2a72e9c51c5d3125626649a244feeec957f75166f74490a6f2f32",
+      "bytes": 2760,
+      "action": "add",
+      "original_sha256": null
+    },
+    "qa/step8_browser_checks.py": {
+      "sha256": "8b0ba4f8e75c6db7e327f29dcbb132c8edeeaa72c3384f0d77856f0bdfb13490",
+      "bytes": 8142,
+      "action": "add",
+      "original_sha256": null
+    },
+    "ORBITA_STEP8_QA_REPORT_FA.md": {
+      "sha256": "03bb558a171e7c64d8b7e7859526df277aed0f25a39ffdab7a2a2768d8b2b3d2",
+      "bytes": 10164,
+      "action": "add",
+      "original_sha256": null
+    },
+    "README_INSTALL_STEP8_FA.md": {
+      "sha256": "a626e6d6a0c406a2d117490ebc46f84a67e9c3c32d641afcc6fd1ea199f9445c",
+      "bytes": 2746,
+      "action": "add",
+      "original_sha256": null
+    },
+    "LEGACY_TEST_FAILURES.txt": {
+      "sha256": "782a3c6974ec9ff0d0aa7a75178595bb799afc92d6da2198368a93252bc52282",
+      "bytes": 3162,
+      "action": "add",
+      "original_sha256": null
+    },
+    "ORBITA_STEP8_CHANGES.patch": {
+      "sha256": "752398e634040d5fd272aa6a8e96d9ac9068e617a2e39d2836cde5f6a34ad176",
+      "bytes": 18162,
+      "action": "add",
+      "original_sha256": null
+    },
+    "STEP8_MANIFEST_SHA256.json": {
+      "sha256": "280001b49eea4da67742ad60c262ba96921503e43c2e25c4e632ba64a63f3adc",
+      "bytes": 1741,
+      "action": "add",
+      "original_sha256": null
+    },
+    "tools/ll2_country.py": {
+      "sha256": "3dda661b81e6c7cd62141ac2d6ab3cd549c405c4d6e9613e49e624cb96b3bb72",
+      "bytes": 1018,
+      "action": "add",
+      "original_sha256": null
+    },
+    "tools/test_live_source_contract.py": {
+      "sha256": "a52958f42a8d9c72aabf4144d5d126344fae02ff31e5ca2fa4da38daf17a97ba",
+      "bytes": 4702,
+      "action": "add",
+      "original_sha256": null
+    },
+    "tools/validate_live_global_sources.py": {
+      "sha256": "d751d41386e34a29a48da444209f99762751e1d5f5fab2588df30ae390ab1294",
+      "bytes": 3341,
+      "action": "add",
+      "original_sha256": null
+    }
+  },
+  "known_release_gates": [
+    "Initial successful LL2 launch and landing data synchronization not yet run",
+    "Real Render/MapLibre map end-to-end smoke test not yet run",
+    "48 inherited failing legacy Node tests require independent triage",
+    "Global landing coverage best effort and incomplete"
+  ],
+  "based_on": "RC1 plus LL2 country compatibility and read-only validation tools"
+}

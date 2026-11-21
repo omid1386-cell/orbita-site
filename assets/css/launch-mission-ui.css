@@ -1,0 +1,222 @@
+/* ORBITA Launch Mission Control · visual redesign 2026-11-21
+ * Deliberately scoped: the map and the upcoming-landing dialog retain their own UI.
+ * No external image/font/API dependency; decorative orbital shapes are SVG/CSS.
+ */
+.launch-mission-dock {
+  --lm-gold:#e9bb70; --lm-cyan:#62dbea;
+  position:absolute;left:18px;bottom:39px;z-index:28;
+  display:flex;align-items:center;gap:11px;width:248px;min-height:76px;
+  padding:11px 12px;direction:rtl;text-align:start;cursor:pointer;
+  border:1px solid rgba(237,195,119,.61);border-radius:17px;
+  background:linear-gradient(115deg,rgba(13,42,59,.97),rgba(5,19,34,.99));
+  color:#f9f6eb;box-shadow:0 14px 40px rgba(0,0,0,.48),0 0 0 1px rgba(5,18,28,.6),inset 0 1px 0 rgba(252,232,181,.12);
+  isolation:isolate;overflow:hidden;transition:transform .2s,box-shadow .2s,border-color .2s;
+}
+.launch-mission-dock::before{content:"";position:absolute;inset:0;background:linear-gradient(98deg,transparent 15%,rgba(95,215,231,.07) 55%,transparent 91%);pointer-events:none;z-index:-1}
+.launch-mission-dock::after{content:"";position:absolute;bottom:0;inset-inline:38px 38px;height:2px;background:linear-gradient(90deg,transparent,#e9bb70,transparent);opacity:.8}
+.launch-mission-dock:hover,.launch-mission-dock[aria-expanded="true"]{transform:translateY(-3px);border-color:#ffe0a0;box-shadow:0 19px 46px rgba(0,0,0,.55),0 0 24px rgba(215,171,94,.16)}
+.launch-mission-dock:focus-visible{outline:3px solid #67e7ee;outline-offset:4px}
+.launch-mission-dock-signal{display:grid;place-items:center;flex:0 0 52px;width:52px;height:52px;position:relative;color:var(--lm-cyan);border:1px solid rgba(111,225,229,.22);border-radius:14px;background:radial-gradient(circle at 50% 55%,rgba(61,153,177,.23),rgba(9,32,48,.1) 70%)}
+.launch-mission-dock-signal svg{display:block;width:46px;height:46px;transition:transform .2s}
+.launch-mission-dock:hover .launch-mission-dock-signal svg{transform:translateY(-2px) rotate(-4deg)}
+.launch-mission-dock-ping{position:absolute;top:3px;left:4px;width:7px;height:7px;border-radius:100%;background:#68e3cb;box-shadow:0 0 0 3px rgba(104,227,203,.11),0 0 12px #68e3cb}
+.launch-mission-dock-copy{display:flex;flex-direction:column;flex:1;min-width:0;gap:3px}
+.launch-mission-dock-eyebrow{color:var(--lm-gold);font-size:10px;font-weight:600;letter-spacing:.015em}
+.launch-mission-dock-title{font-size:14px;font-weight:800;line-height:1.5;white-space:nowrap;color:#fff6e8}
+.launch-mission-dock-arrow{flex:0 0 16px;width:16px;height:16px;color:var(--lm-gold);transform:rotate(180deg);transition:transform .2s}
+.launch-mission-dock-arrow svg{width:100%;height:100%}
+.launch-mission-dock:hover .launch-mission-dock-arrow{transform:rotate(180deg) translateX(-3px)}
+#view-map:has(#detail.open) .launch-mission-dock,
+#view-map:has(#layerPanel:not([hidden])) .launch-mission-dock{opacity:0;pointer-events:none;transform:translateY(12px)}
+
+/* Full mission-room surface. No selector below changes the landing browser. */
+.launch-mission-dialog{
+  --lm-bg:#061522;--lm-panel:#0b2031;--lm-panel-2:#0d283a;--lm-line:rgba(121,185,208,.18);
+  --lm-text:#eff8fb;--lm-muted:#a0b7c8;--lm-gold:#f0c77e;--lm-cyan:#74e0eb;--lm-green:#7ce1be;
+  width:min(1160px,calc(100vw - 40px));max-width:1160px;
+  height:min(790px,calc(100dvh - 36px));max-height:calc(100dvh - 36px);
+  border:1px solid rgba(230,189,116,.4);border-radius:24px;
+  background:var(--lm-bg);color:var(--lm-text);box-shadow:0 38px 140px rgba(0,4,12,.88),0 0 0 1px rgba(255,255,255,.03);
+  color-scheme:dark;isolation:isolate;
+}
+.launch-mission-dialog::backdrop{background:rgba(0,7,16,.83);backdrop-filter:blur(8px) saturate(.8)}
+.launch-mission-dialog .global-launch-shell{height:100%;max-height:none;min-height:0;overflow:hidden}
+.launch-mission-dialog .global-launch-head{flex:0 0 auto;position:relative;min-height:174px;overflow:hidden;padding:29px 35px 23px;border:0;border-bottom:1px solid rgba(228,184,105,.32);background:linear-gradient(112deg,#091728 10%,#0b3044 68%,#0c192a 100%)}
+.launch-mission-dialog .global-launch-head::after{content:"";position:absolute;bottom:0;inset-inline:0;height:2px;background:linear-gradient(90deg,transparent,rgba(241,194,100,.78),rgba(102,223,236,.55),transparent);pointer-events:none}
+.launch-mission-dialog .launch-mission-hero-art{position:absolute;inset-inline-end:6px;top:-2px;width:min(58%,590px);height:100%;opacity:.96;pointer-events:none;z-index:0}
+.launch-mission-dialog .launch-mission-hero-art svg{height:100%;width:100%;object-fit:contain}
+.launch-mission-dialog .global-launch-heading{position:relative;z-index:1;width:min(580px,72%);min-width:0;text-shadow:0 2px 10px rgba(0,0,0,.15)}
+.launch-mission-dialog .launch-mission-overline{display:flex;align-items:center;gap:9px;flex-wrap:wrap;margin-bottom:12px}
+.launch-mission-dialog .launch-mission-overline-dot{width:7px;height:7px;flex:0 0 7px;background:var(--lm-cyan);border-radius:50%;box-shadow:0 0 10px var(--lm-cyan),0 0 0 5px rgba(116,224,235,.09)}
+.launch-mission-dialog .global-launch-eyebrow{margin:0;font-size:11px;font-weight:750;color:var(--lm-gold);letter-spacing:0}
+.launch-mission-dialog .launch-mission-overline-code{font-family:ui-monospace,monospace;font-size:9px;letter-spacing:.13em;color:rgba(183,220,229,.5)}
+.launch-mission-dialog .global-launch-head h2{font-size:clamp(20px,2.7vw,29px);font-weight:900;letter-spacing:-.015em;line-height:1.45;color:#f7faf8;margin:0}
+.launch-mission-dialog .global-launch-head p{max-width:480px;font-size:12px;line-height:1.95;color:#b9d3df;margin-top:7px}
+.launch-mission-dialog .launch-mission-head-tags{display:flex;gap:9px;margin-top:15px;direction:ltr;justify-content:flex-end;flex-wrap:wrap}
+.launch-mission-dialog .launch-mission-head-tags span{border:1px solid rgba(116,224,235,.22);border-radius:5px;padding:4px 8px;color:#b2d9dc;background:rgba(10,27,40,.54);font:600 9px/1.4 ui-monospace,monospace;letter-spacing:.07em}
+.launch-mission-dialog .global-launch-close{z-index:2;position:relative;flex:0 0 40px;width:40px;height:40px;border-radius:12px;border:1px solid rgba(221,245,255,.2);display:grid;place-items:center;background:rgba(5,22,35,.65);color:#d4e6ed;font-size:inherit;transition:.18s}
+.launch-mission-dialog .global-launch-close svg{width:18px;height:18px}
+.launch-mission-dialog .global-launch-close:hover{background:#263c4b;border-color:var(--lm-gold);color:white;transform:rotate(90deg)}
+.launch-mission-dialog :is(button,input,select):focus-visible{outline:2px solid var(--lm-cyan);outline-offset:3px}
+
+.launch-mission-dialog .global-launch-content{flex:1 1 auto;display:grid;grid-template-columns:minmax(280px,352px) minmax(0,1fr);gap:17px;padding:17px;background:radial-gradient(ellipse at 60% 0%,rgba(18,84,110,.13),transparent 59%),var(--lm-bg);min-height:0;overflow:hidden}
+.launch-mission-dialog .global-launch-filter-panel,.launch-mission-dialog .global-launch-results-panel{border:1px solid var(--lm-line);background:linear-gradient(160deg,rgba(15,44,61,.98),rgba(8,27,43,.98));border-radius:17px;min-width:0;box-shadow:inset 0 1px 0 rgba(255,255,255,.035)}
+.launch-mission-dialog .global-launch-filter-panel{height:100%;min-height:0;overflow:auto;overscroll-behavior:contain;align-self:stretch;padding:18px 17px;gap:15px;scrollbar-width:thin;scrollbar-color:#23495e transparent}
+.launch-mission-dialog .launch-mission-panel-label{display:flex;justify-content:space-between;align-items:center;gap:10px;padding-bottom:13px;border-bottom:1px solid rgba(122,189,210,.22);font-size:14px;font-weight:800;color:#f6f6ed}
+.launch-mission-dialog .launch-mission-panel-number{font:600 10px/1.4 ui-monospace,monospace;color:var(--lm-gold);letter-spacing:.1em}
+.launch-mission-dialog .global-launch-filter-block h3,.launch-mission-dialog .global-launch-country-head h3{font-size:12px;color:#d7eef5;font-weight:800}
+.launch-mission-dialog .global-launch-periods{grid-template-columns:repeat(4,minmax(0,1fr));gap:6px;margin-top:10px}
+.launch-mission-dialog .global-launch-period{display:flex;flex-direction:column;justify-content:center;align-items:center;text-align:center;gap:5px;min-width:0;min-height:84px;padding:8px 4px;border:1px solid rgba(130,175,191,.2);border-radius:11px;background:rgba(6,22,35,.64);color:var(--lm-muted);box-shadow:none;transition:background .18s,border-color .18s,transform .18s;color:var(--lm-muted)}
+.launch-mission-dialog .global-launch-period:hover{border-color:rgba(240,199,126,.75);background:rgba(34,61,75,.8);transform:translateY(-2px)}
+.launch-mission-dialog .global-launch-period.is-active{border-color:rgba(241,199,125,.8);background:linear-gradient(160deg,rgba(221,170,83,.27),rgba(44,47,49,.65));box-shadow:inset 0 1px 0 rgba(251,233,194,.2),0 0 22px rgba(229,177,91,.1);color:#fff6de}
+.launch-mission-dialog .launch-mission-period-index{font-family:ui-monospace,monospace;font-weight:800;font-size:22px;letter-spacing:-.07em;line-height:1;color:#eff7f6}
+.launch-mission-dialog .launch-mission-period-index small{font-size:9px;margin-inline-start:2px;letter-spacing:0;color:var(--lm-gold)}
+.launch-mission-dialog .launch-mission-period-label{font-size:9px;line-height:1.5;color:#b6c9d2}
+.launch-mission-dialog .global-launch-period.is-active .launch-mission-period-label{color:#fae3ac}
+.launch-mission-dialog .global-launch-filter-block label{font-size:12px;color:#d6e9ef;margin-bottom:8px}
+.launch-mission-dialog .global-launch-select{min-height:44px;border-radius:10px;background:#08192a;color:#f1f7f7;border-color:#315164;font-size:11.5px;padding:9px 11px}
+.launch-mission-dialog .global-launch-basis-note{line-height:1.85;font-size:10px;color:#a1bbcd}
+.launch-mission-dialog .global-launch-country-block{border-top:1px solid rgba(122,189,210,.21);padding-top:15px}
+.launch-mission-dialog .global-launch-country-head{align-items:flex-start;margin-bottom:12px}
+.launch-mission-dialog .global-launch-country-head>div{gap:5px;flex-direction:column;align-items:flex-start}
+.launch-mission-dialog .global-launch-country-count{font-size:10px;color:#b6d3dd}
+.launch-mission-dialog .global-launch-all-btn{color:#d4ebf1;border:1px solid #416377;background:#0a2334;border-radius:20px;font-size:10px;min-height:32px;padding:6px 12px}
+.launch-mission-dialog .global-launch-all-btn:hover{border-color:var(--lm-cyan)}
+.launch-mission-dialog .global-launch-all-btn.is-active{color:#1b291f;background:var(--lm-gold);border-color:var(--lm-gold);font-weight:800}
+.launch-mission-dialog .launch-mission-quick-wrap{margin:0 0 12px}
+.launch-mission-dialog .launch-mission-quick-label{display:block;margin-bottom:7px;color:#a4c1cf;font-size:10px}
+.launch-mission-dialog .launch-mission-quick-countries{display:flex;flex-wrap:wrap;gap:5px}
+.launch-mission-dialog .launch-mission-quick-countries button{border-radius:16px;border:1px solid #35586b;padding:6px 11px;background:#102d3f;color:#c5dce5;font-size:10px;line-height:1.4;cursor:pointer;transition:.15s}
+.launch-mission-dialog .launch-mission-quick-countries button:hover{border-color:var(--lm-cyan);color:white}
+.launch-mission-dialog .launch-mission-quick-countries button.is-selected{border-color:var(--lm-gold);color:#fae3b2;background:#584626}
+.launch-mission-dialog .launch-mission-search-wrap{position:relative;display:flex;align-items:center;color:#8ab7c7}
+.launch-mission-dialog .launch-mission-search-wrap svg{position:absolute;inset-inline-start:12px;width:16px;height:16px;pointer-events:none}
+.launch-mission-dialog .global-launch-country-search{width:100%;min-height:42px;margin:0;border-radius:10px;background:#061b2a;color:#f4f7f8;border-color:#345468;padding-inline-start:35px;padding-inline-end:12px;font-size:11.5px}
+.launch-mission-dialog .global-launch-country-search::placeholder{color:#86a4b4}
+.launch-mission-dialog .global-launch-country-options{margin-top:9px;display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:4px;max-height:178px;overflow:auto;scrollbar-width:thin;scrollbar-color:#3d5b6b transparent;background:rgba(4,16,26,.56);border:1px solid rgba(128,182,205,.2);padding:6px;border-radius:11px}
+.launch-mission-dialog .global-launch-country-option{min-height:32px;border-radius:7px;color:#bdd4df;font-size:10.5px;gap:5px}
+.launch-mission-dialog .global-launch-country-option:hover{background:#193c51;border-color:#3c6d84;color:#fff}
+.launch-mission-dialog .global-launch-country-option.is-selected{background:rgba(226,178,99,.13);border-color:rgba(240,199,126,.56);color:#ffe3b1}
+.launch-mission-dialog .global-launch-country-option small{color:#8aabb9;font-size:8px}
+.launch-mission-dialog .global-launch-country-check{border-color:#42657a;color:#ffe3b1}
+.launch-mission-dialog .global-launch-country-option.is-selected .global-launch-country-check{background:#785b2b;border-color:#d9a552}
+.launch-mission-dialog .global-launch-country-empty{color:#aac3cf}
+.launch-mission-dialog .global-launch-country-help{font-size:9.5px;color:#9bb8c5}
+.launch-mission-dialog .global-launch-selected-countries{gap:5px;display:flex;flex-wrap:wrap;min-height:21px}
+.launch-mission-dialog .global-launch-selected-chip{display:inline-flex;align-items:center;gap:7px;min-height:25px;border:1px solid #527185;border-radius:7px;padding:4px 8px;background:#0b293b;color:#d8eff5;font-family:inherit;font-size:10px;cursor:pointer}
+.launch-mission-dialog button.global-launch-selected-chip:hover{border-color:#ffdaa4;color:#ffdd9a}
+.launch-mission-dialog .global-launch-selected-chip.is-all{cursor:default;background:transparent;border-style:dashed;color:#a5c5d1}
+.launch-mission-dialog .launch-mission-chip-remove{font-size:15px;line-height:1;color:#f0c77e}
+
+.launch-mission-dialog .global-launch-results-panel{min-height:0;height:100%;display:flex;flex-direction:column;overflow:hidden}
+.launch-mission-dialog .global-launch-results-head{position:relative;flex:0 0 auto;padding:17px 19px 15px;border:0;border-bottom:1px solid rgba(122,189,210,.19);background:linear-gradient(110deg,rgba(28,65,80,.55),rgba(9,31,45,.6))}
+.launch-mission-dialog .launch-mission-feed-label{display:flex;align-items:center;gap:8px;margin-bottom:10px;color:var(--lm-gold);font-size:10px;font-weight:750}
+.launch-mission-dialog .launch-mission-signal-line{display:block;width:22px;height:2px;border-radius:4px;background:linear-gradient(90deg,#e7bc75,#77deea)}
+.launch-mission-dialog .launch-mission-feed-code{margin-inline-start:auto;color:#7baab9;font:600 10px ui-monospace,monospace;letter-spacing:.08em}
+.launch-mission-dialog .global-launch-results-head h3{font-size:17px;color:#f2f7f8}
+.launch-mission-dialog .global-launch-result-count{min-width:40px;border:1px solid rgba(236,190,106,.38);border-radius:7px;background:rgba(242,192,107,.09);padding:4px 9px;color:var(--lm-gold);font-size:11px}
+.launch-mission-dialog .global-launch-results-head small{font-size:9.5px;color:#b1cad5}
+.launch-mission-dialog .global-launch-results-head-actions{padding-top:8px;gap:6px}
+.launch-mission-dialog .global-launch-feed-state{margin:0;line-height:1.6;color:#b7cbd5;font-size:10px;max-width:500px}
+.launch-mission-dialog .global-launch-feed-state.is-loading{color:#a0e5ed}
+.launch-mission-dialog .global-launch-feed-state.is-ready{color:#a8dec6}
+.launch-mission-dialog .global-launch-feed-state.is-stale,.launch-mission-dialog .global-launch-feed-state.is-error{color:#f9c58f}
+.launch-mission-dialog .global-launch-reload{padding:6px 11px;font-size:10px;min-height:30px;border-radius:8px;border:1px solid #42677c;color:#b9edf2;background:rgba(15,44,61,.9)}
+.launch-mission-dialog .global-launch-reload:hover{border-color:#7be0e9;background:#173e55;color:white}
+.launch-mission-dialog .launch-mission-filter-summary{display:block;margin-top:11px;padding:7px 10px;border:1px solid rgba(93,172,190,.23);border-radius:8px;background:rgba(10,36,51,.8);font-size:10px;line-height:1.6;color:#c5dce2;overflow-wrap:anywhere}
+.launch-mission-dialog .global-launch-results{padding:14px;gap:11px;min-height:0;overflow-y:auto;flex:1;scrollbar-width:thin;scrollbar-color:#2b5669 transparent}
+.launch-mission-dialog .global-launch-card{position:relative;padding:13px 15px 14px;overflow:hidden;border:1px solid rgba(102,168,192,.2);border-radius:14px;background:linear-gradient(125deg,rgba(18,49,66,.91),rgba(6,27,43,.92));box-shadow:inset 3px 0 0 rgba(224,182,110,.58),0 3px 14px rgba(0,9,17,.16)}
+.launch-mission-dialog[dir="rtl"] .global-launch-card{box-shadow:inset -3px 0 0 rgba(224,182,110,.58),0 3px 14px rgba(0,9,17,.16)}
+.launch-mission-dialog .global-launch-card:hover{border-color:rgba(239,198,126,.49);background:linear-gradient(125deg,rgba(23,59,77,.95),rgba(9,34,51,.92))}
+.launch-mission-dialog .launch-mission-card-index{display:flex;align-items:center;gap:9px;margin-bottom:9px;color:var(--lm-gold);font:600 9px/1.4 ui-monospace,monospace;letter-spacing:.08em}
+.launch-mission-dialog .launch-mission-card-index-line{height:1px;flex:1;max-width:60px;background:linear-gradient(90deg,rgba(240,199,126,.65),transparent)}
+.launch-mission-dialog .global-launch-card-title{align-items:center;flex-wrap:wrap;gap:9px}
+.launch-mission-dialog .global-launch-card-title strong{font-size:13px;line-height:1.7;font-weight:800;color:#f3f7f8}
+.launch-mission-dialog .global-launch-status{font-size:9px;font-weight:700;border-radius:6px;padding:4px 8px;background:rgba(95,196,173,.09)}
+.launch-mission-dialog .global-launch-status.is-confirmed{color:#8be7c6;border-color:rgba(107,222,181,.38)}
+.launch-mission-dialog .global-launch-status.is-tentative{color:#f7c981;border-color:rgba(246,193,108,.45)}
+.launch-mission-dialog .global-launch-status.is-hold,.launch-mission-dialog .global-launch-status.is-cancelled{color:#fa9ba7;border-color:#9a5964}
+.launch-mission-dialog .global-launch-card-date{max-width:44%;align-items:flex-end;color:var(--lm-gold);font-size:12px;line-height:1.55;font-weight:800}
+.launch-mission-dialog .global-launch-card-date small{font-size:9px;color:#a9c3d0}
+.launch-mission-dialog .global-launch-card-fields,.launch-mission-dialog .global-launch-card-meta{gap:9px;margin-top:11px}
+.launch-mission-dialog .global-launch-card-fields>span,.launch-mission-dialog .global-launch-card-meta>span{font-size:10.5px;line-height:1.7;color:#e0edf2}
+.launch-mission-dialog .global-launch-card-fields small,.launch-mission-dialog .global-launch-card-meta small{font-size:9px;color:#91b1c0}
+.launch-mission-dialog .global-launch-card-countries{margin-top:11px;border-top:1px dashed rgba(125,178,195,.21);font-size:9.5px;color:#92b3c3}
+.launch-mission-dialog .global-launch-card-countries bdi{color:#d1e6ef}
+.launch-mission-dialog .global-launch-empty{height:100%;min-height:255px;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:11px;color:#bbd4df;font-size:12px;line-height:2;text-align:center;padding:25px}
+.launch-mission-dialog .global-launch-empty p{margin:0;max-width:470px}
+.launch-mission-dialog .launch-mission-empty-art{width:124px;height:124px;display:grid;place-items:center;color:var(--lm-cyan);opacity:.86}
+.launch-mission-dialog .launch-mission-empty-art svg{width:100%;height:100%}
+.launch-mission-dialog .global-launch-empty.is-error{color:#ffd39c}
+
+/* Bidi: label/readout orientation follows locale, decorative imagery stays anchored. */
+.launch-mission-dialog[dir="ltr"] .global-launch-card{box-shadow:inset 3px 0 0 rgba(224,182,110,.58),0 3px 14px rgba(0,9,17,.16)}
+.launch-mission-dialog[dir="ltr"] .launch-mission-head-tags{justify-content:flex-start}
+.launch-mission-dialog[dir="ltr"] .launch-mission-search-wrap svg{left:12px;right:auto}
+.launch-mission-dialog[dir="rtl"] .launch-mission-search-wrap svg{right:12px;left:auto}
+
+@media(max-width:980px){
+  .launch-mission-dialog{width:calc(100vw - 20px);max-height:calc(100dvh - 18px);height:calc(100dvh - 18px);border-radius:18px}
+  .launch-mission-dialog .global-launch-head{min-height:153px;padding:24px 25px 18px}
+  .launch-mission-dialog .global-launch-content{grid-template-columns:minmax(248px,310px) minmax(0,1fr);gap:11px;padding:11px}
+  .launch-mission-dialog .global-launch-filter-panel{padding:15px 13px}
+  .launch-mission-dialog .global-launch-periods{gap:4px}
+  .launch-mission-dialog .global-launch-period{min-height:78px}
+  .launch-mission-dialog .launch-mission-period-index{font-size:20px}
+}
+@media(max-width:760px){
+  .launch-mission-dock{left:12px;bottom:14px;min-height:62px;width:206px;padding:8px;border-radius:14px;gap:8px}
+  .launch-mission-dock-signal{width:44px;height:44px;flex-basis:44px;border-radius:11px}
+  .launch-mission-dock-signal svg{width:42px;height:42px}
+  .launch-mission-dock-title{font-size:11.5px}
+  .launch-mission-dock-eyebrow{font-size:9px}
+  .launch-mission-dock-arrow{flex-basis:13px;width:13px}
+  .launch-mission-dialog{width:100vw;max-width:none;height:100dvh;max-height:100dvh;border:0;border-radius:0}
+  .launch-mission-dialog .global-launch-shell{height:100dvh;max-height:100dvh}
+  .launch-mission-dialog .global-launch-head{min-height:155px;padding:21px 16px 17px;gap:9px}
+  .launch-mission-dialog .global-launch-heading{width:calc(100% - 46px)}
+  .launch-mission-dialog .launch-mission-hero-art{width:78%;opacity:.35;inset-inline-end:-64px}
+  .launch-mission-dialog .global-launch-head h2{font-size:19px}
+  .launch-mission-dialog .global-launch-head p{font-size:10px;line-height:1.7}
+  .launch-mission-dialog .launch-mission-head-tags{margin-top:9px;gap:5px}
+  .launch-mission-dialog .launch-mission-head-tags span{font-size:8px;padding:3px 5px}
+  .launch-mission-dialog .launch-mission-overline{margin-bottom:8px;gap:6px}
+  .launch-mission-dialog .launch-mission-overline-code{font-size:8px}
+  .launch-mission-dialog .global-launch-close{flex-basis:34px;width:34px;height:34px;border-radius:9px}
+  .launch-mission-dialog .global-launch-content{display:flex;flex-direction:column;overflow-y:auto;overscroll-behavior:contain;gap:12px;padding:12px}
+  .launch-mission-dialog .global-launch-filter-panel{height:auto;flex:none;overflow:visible;padding:16px 13px;border-radius:13px}
+  .launch-mission-dialog .global-launch-results-panel{height:auto;min-height:360px;overflow:visible;flex:none;border-radius:13px}
+  .launch-mission-dialog .global-launch-results{overflow:visible;padding:10px}
+  .launch-mission-dialog .global-launch-period{min-height:72px}
+  .launch-mission-dialog .global-launch-country-options{max-height:146px}
+  .launch-mission-dialog .global-launch-results-head{padding:15px 13px 13px}
+  .launch-mission-dialog .global-launch-card{padding:12px}
+  .launch-mission-dialog .global-launch-card-title strong{font-size:11.5px}
+}
+@media(max-width:385px){
+  .launch-mission-dock{width:179px}
+  .launch-mission-dock-title{font-size:10.5px}
+  .launch-mission-dialog .global-launch-periods{gap:3px}
+  .launch-mission-dialog .launch-mission-period-index{font-size:17px}
+  .launch-mission-dialog .launch-mission-period-label{font-size:8px}
+  .launch-mission-dialog .global-launch-head h2{font-size:17px}
+  .launch-mission-dialog .global-launch-card-top{flex-wrap:wrap}
+  .launch-mission-dialog .global-launch-card-date{max-width:100%;align-items:flex-start}
+}
+@media(prefers-reduced-motion:reduce){
+  .launch-mission-dock,.launch-mission-dock *, .launch-mission-dialog *{transition:none!important;animation:none!important}
+}
+
+/* Mobile discovery: keep the world-country catalog reachable, but avoid an
+   exhausting 249-item scroll before the mission feed. Search expands it. */
+.launch-mission-dialog .launch-mission-country-toggle,
+.launch-mission-dialog .launch-mission-mobile-results{display:none}
+@media(max-width:760px){
+ .launch-mission-dialog .launch-mission-country-toggle{width:100%;display:flex;align-items:center;justify-content:space-between;gap:8px;min-height:34px;margin-top:9px;padding:6px 11px;border:1px dashed #507187;border-radius:8px;background:rgba(14,40,55,.6);color:#c7e5ed;font-size:10.5px;cursor:pointer}
+ .launch-mission-dialog .launch-mission-country-toggle svg{width:15px;height:15px;transition:transform .18s}
+ .launch-mission-dialog .launch-mission-country-toggle[aria-expanded="true"] svg{transform:rotate(180deg)}
+ .launch-mission-dialog .global-launch-country-options:not(.launch-mission-expanded){display:none}
+ .launch-mission-dialog .launch-mission-mobile-results{width:100%;display:flex;align-items:center;justify-content:center;gap:10px;min-height:45px;border:1px solid rgba(242,204,135,.66);border-radius:11px;background:linear-gradient(100deg,#ab7a39,#ebbf77);color:#172c35;cursor:pointer;font-size:12px;font-weight:800}
+ .launch-mission-dialog .launch-mission-mobile-results strong{min-width:25px;padding:2px 7px;border-radius:6px;background:rgba(20,40,52,.18);font-variant-numeric:tabular-nums}
+ .launch-mission-dialog .launch-mission-mobile-results svg{width:15px;height:15px}
+}

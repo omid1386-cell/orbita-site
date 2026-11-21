@@ -1,0 +1,48 @@
+Dragonfly Aerospace and Simera Sense are clean satellite/payload-maker records, not launchers
+UI marks dormant sites as non-operational and renders proposed orbit goals separately
+Africa Priority 2 adds the reviewed agencies and correctly separates institutions from national agencies
+agency profiles do not fabricate another agency’s website, LinkedIn, or email when fields are absent
+agency profiles display only contact destinations explicitly present in the record
+company category files preserve primary and explicitly approved secondary memberships
+startup requests compact map geometry and only default company categories; missions are demand-loaded
+the detail-copy readability fix refreshes CSS and app assets without changing the map/data cache
+Arabic data uses Arabic-script explanatory text, Latin technical digits, and no Persian-only letters
+all labels used by agency profiles map to Arabic
+the real openDetail route follows the Persian dossier layout with Arabic content and no English narrative
+missing Arabic fallbacks never expose untranslated Persian or English descriptions
+the global asset cache token is current and the country profile uses Arabic agency cards
+tests/company_launch_ar.test.cjs
+tests/company_propulsion_ar.test.cjs
+tests/company_satmaker_ar.test.cjs
+tests/country_ar.test.cjs
+tests/country_interaction.test.cjs
+tests/country_name_display.test.cjs
+tests/country_profile_14_categories.test.cjs
+tests/country_profile_light_mode_permanent.test.cjs
+tests/country_profile_light_theme.test.cjs
+tests/developer_attribution_step4.test.cjs
+tests/israel_fa_display.test.cjs
+the approved launch-company additions and Ukrainian split are present and fully sourced
+new JS cache key while scientific data/cache keys untouched
+tests/map_pan_markers.test.cjs
+wheel and trackpad zoom are responsive but below former 2x speed; both original themes remain intact
+marker hover preserves original CSS/map-data version while only script version changes
+tests/marker_halo_interaction.test.cjs
+tests/propulsion_logo_assets.test.cjs
+tests/propulsion_logo_group2_assets.test.cjs
+tests/propulsion_logo_group3_assets.test.cjs
+branded first-generation loading screen is unchanged while new JS and data are cache-busted
+tests/recovery_ar.test.cjs
+tests/site_ar.test.cjs
+tests/splash_credit_font_match.test.cjs
+tests/splash_credit_style_saffar.test.cjs
+33 candidate profiles are added with stable unique ids; 274 prior profiles retained
+category slices preserve existing 11 and cover all 33 new profiles
+map pins, lazy-loading counts, and version tokens include all 33
+legacy renderer outputs full Persian source claims but not Persian-only cards on EN/AR pages
+cache-busting changes only application assets; scientific sources remain stable
+only first and second basemap URLs survive byte-for-byte; no third Voyager style remains
+overlay completeness detects missing ANY layer, static pin, or dynamic cluster label
+repair runs only against matching generation and acknowledges complete markers
+image decoder does not declare ready if an SVG is missing from the map image registry
+map reacts to its own missing style images and ignores basemap sprite ids

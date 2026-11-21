@@ -1,0 +1,15 @@
+{
+  "schema_version": 1,
+  "source": "Launch Library 2 /landings/ v2.3.0 + ORBITA curated schedule",
+  "scope": "best_effort_recent_LL2_landing_records_and_legacy_schedule",
+  "coverage_status": "awaiting_first_successful_sync",
+  "coverage_note": "Global landing coverage is inherently incomplete until complementary reliable data sources are added.",
+  "updated_utc": null,
+  "window_start_utc": null,
+  "window_end_utc_exclusive": null,
+  "horizon_days": 120,
+  "pages_fetched": 0,
+  "records_scanned": 0,
+  "count": 0,
+  "landings": []
+}
