@@ -1,0 +1,4140 @@
+--- a/index.html
++++ b/index.html
+@@ -42,16 +42,19 @@
+ @media(max-width:540px){.raspehr-stage{min-height:100vh;gap:11px;padding:22px 12px 104px}.raspehr-espash{width:100%;max-width:450px}.raspehr-title{margin-top:15px}#raspehrSplash .raspehr-credit{width:94vw;min-height:88px;padding:26px 16px 14px;border-radius:0 0 24px 24px;font-size:13px}#raspehrSplash .raspehr-credit:before{top:17px;left:22px;right:22px;height:1px}}
+ </style>
+ <link rel="stylesheet" href="assets/vendor/maplibre-gl.css?v=3" />
+-<link rel="stylesheet" href="assets/css/app.css?_t=20261114-country-profile-light-contrast-v2-final" />
++<link rel="stylesheet" href="assets/css/app.css?_t=20261121-global-launch-browser-step3-4" />
+ <!-- Ordered defer scripts download in parallel instead of creating a network waterfall. -->
+ <script defer src="assets/js/raspehr-splash.js?v=20261113-speed-v1"></script>
+ <script defer src="assets/vendor/maplibre-gl.js?v=3"></script>
+ <script defer src="assets/js/app.js?_t=20261114-map-zoom-performance-step3-v1"></script>
++<script defer src="assets/js/upcoming-launch-filters.js?v=20261121-step3-4"></script>
++<script defer src="assets/js/upcoming-launch-browser.js?v=20261121-step3-4"></script>
+ <script>
+   window.ORBITA_V = "20261114-step4-manufacturer-logos-v1";
+   window.ORBITA_APP_V = "20261114-map-zoom-performance-step3-v1";
+   window.ORBITA_CSS_V = "20261114-country-profile-light-contrast-v2-final";
+   window.ORBITA_COMPANIES_V = "20261114-step4-manufacturer-logos-v1";
++  window.ORBITA_UPCOMING_GLOBAL_V = "20261121-step3-4";
+ 
+ 
+   // Public API URL only; never place the Resend key or another secret here.
+@@ -90,6 +93,10 @@
+ 
+   <nav class="tabs">
+     <button class="tab active" data-view="map"><span data-i18n="tab_map">نقشهٔ جهانی</span></button>
++    <button class="tab upcoming-launch-tab" id="upcomingLaunchesBtn" type="button"
++      aria-haspopup="dialog" aria-controls="globalLaunchDialog" aria-expanded="false">
++      <span aria-hidden="true">🚀</span><span>پرتاب‌های پیش‌رو</span>
++    </button>
+   </nav>
+ 
+   <div class="topbar-actions">
+@@ -208,6 +215,69 @@
+ 
+ <!-- World Map is the only main view. -->
+ 
++<!-- ============ WORLDWIDE UPCOMING LAUNCHES ============ -->
++<dialog id="globalLaunchDialog" class="global-launch-dialog" aria-labelledby="globalLaunchTitle" aria-describedby="globalLaunchIntro">
++  <div class="global-launch-shell">
++    <header class="global-launch-head">
++      <div class="global-launch-heading">
++        <span id="globalLaunchEyebrow" class="global-launch-eyebrow">پایش جهانی پرتاب‌ها</span>
++        <h2 id="globalLaunchTitle">فهرست جهانی پرتاب‌های پیش‌رو</h2>
++        <p id="globalLaunchIntro">پرتاب‌های اعلام‌شده در سراسر جهان را بر اساس بازه زمانی و کشور فیلتر کنید.</p>
++      </div>
++      <button id="globalLaunchClose" class="global-launch-close" type="button" aria-label="بستن">×</button>
++    </header>
++    <div class="global-launch-content">
++      <section class="global-launch-filter-panel" aria-label="فیلتر پرتاب‌ها">
++        <div class="global-launch-filter-block">
++          <h3 id="globalLaunchTimeLabel">بازه زمانی</h3>
++          <div id="globalLaunchPeriods" class="global-launch-periods" role="group" aria-labelledby="globalLaunchTimeLabel">
++            <button class="global-launch-period" type="button" data-days="7" aria-pressed="false">۱ هفته آینده</button>
++            <button class="global-launch-period" type="button" data-days="14" aria-pressed="false">۲ هفته آینده</button>
++            <button class="global-launch-period is-active" type="button" data-days="30" aria-pressed="true">۱ ماه آینده</button>
++            <button class="global-launch-period" type="button" data-days="120" aria-pressed="false">۴ ماه آینده</button>
++          </div>
++        </div>
++        <div class="global-launch-filter-block">
++          <label id="globalLaunchBasisLabel" for="globalLaunchCountryBasis">مبنای انتساب کشور</label>
++          <select id="globalLaunchCountryBasis" class="global-launch-select">
++            <option value="operator">کشور اپراتور / ارائه‌دهنده پرتاب</option>
++            <option value="site">کشور محل پرتاب</option>
++          </select>
++          <p id="globalLaunchBasisNote" class="global-launch-basis-note">انتخاب اپراتور، کشور ارائه‌دهنده خدمت پرتاب را نشان می‌دهد؛ انتخاب محل پرتاب، کشور جغرافیایی پایگاه را. این دو لزوماً یکی نیستند.</p>
++        </div>
++        <div class="global-launch-country-block">
++          <div class="global-launch-country-head">
++            <div>
++              <h3 id="globalLaunchCountryLabel">فیلتر کشورها</h3>
++              <span id="globalLaunchCountryCount" class="global-launch-country-count">همه کشورها</span>
++            </div>
++            <button id="globalLaunchAllCountries" class="global-launch-all-btn is-active" type="button" aria-pressed="true">همه کشورها</button>
++          </div>
++          <label id="globalLaunchCountrySearchLabel" class="global-launch-visually-hidden" for="globalLaunchCountrySearch">جستجوی کشور</label>
++          <input id="globalLaunchCountrySearch" class="global-launch-country-search" type="search" autocomplete="off" spellcheck="false" placeholder="جستجوی کشور…" />
++          <div id="globalLaunchCountryOptions" class="global-launch-country-options" role="group" aria-label="انتخاب چند کشور"></div>
++          <p id="globalLaunchCountryHelp" class="global-launch-country-help">برای محدودکردن نتایج، یک یا چند کشور را انتخاب کنید.</p>
++          <div id="globalLaunchSelectedCountries" class="global-launch-selected-countries" aria-live="polite"></div>
++        </div>
++      </section>
++      <section class="global-launch-results-panel" aria-labelledby="globalLaunchResultsHeading">
++        <header class="global-launch-results-head">
++          <div>
++            <h3 id="globalLaunchResultsHeading">نتایج <span id="globalLaunchResultCount" class="global-launch-result-count">—</span></h3>
++            <small id="globalLaunchUpdated"></small>
++          </div>
++          <div class="global-launch-results-head-actions">
++            <p id="globalLaunchFeedState" class="global-launch-feed-state" role="status" aria-live="polite"></p>
++            <button id="globalLaunchReload" class="global-launch-reload" type="button">تلاش دوباره</button>
++          </div>
++        </header>
++        <div id="globalLaunchResults" class="global-launch-results" aria-live="polite">
++          <div class="global-launch-empty">در حال آماده‌سازی…</div>
++        </div>
++      </section>
++    </div>
++  </div>
++</dialog>
+ 
+ <dialog id="siteGuideDialog" class="site-guide-dialog" aria-labelledby="siteGuideTitle" aria-describedby="siteGuideIntro">
+   <div class="site-guide-shell">
+--- a/assets/css/app.css
++++ b/assets/css/app.css
+@@ -1834,3 +1834,108 @@
+ :root[data-theme="light"] .detail-panel .country-profile-empty{
+   color:#475569!important;
+ }
++
++/* ===== Worldwide upcoming-launch browser (Steps 3–4) ===== */
++.upcoming-launch-tab{display:inline-flex;align-items:center;gap:6px;white-space:nowrap}
++.upcoming-launch-tab[aria-expanded="true"]{color:var(--accent);border-color:var(--accent);background:color-mix(in srgb,var(--accent) 13%,transparent)}
++.global-launch-dialog{width:min(1040px,calc(100vw - 28px));max-width:1040px;max-height:calc(100dvh - 28px);margin:auto;padding:0;overflow:hidden;border:1px solid var(--line);border-radius:16px;background:var(--panel-solid);color:var(--text);box-shadow:var(--shadow);font-family:inherit}
++.global-launch-dialog::backdrop{background:rgba(3,9,18,.72);backdrop-filter:blur(3px)}
++.global-launch-shell{display:flex;flex-direction:column;max-height:calc(100dvh - 30px);min-height:0}
++.global-launch-head{display:flex;align-items:flex-start;justify-content:space-between;gap:16px;padding:19px 21px 15px;border-bottom:1px solid var(--line);background:linear-gradient(115deg,color-mix(in srgb,var(--accent) 12%,var(--panel-solid)),var(--panel-solid) 68%)}
++.global-launch-heading{min-width:0}
++.global-launch-eyebrow{display:block;margin-bottom:5px;color:var(--accent-tx);font-size:10px;font-weight:700;letter-spacing:.04em}
++.global-launch-head h2{margin:0;color:var(--text);font-size:18px;font-weight:800;line-height:1.55}
++.global-launch-head p{margin:4px 0 0;color:var(--muted);font-size:11.5px;line-height:1.8}
++.global-launch-close{flex:0 0 34px;width:34px;height:34px;border:1px solid var(--line);border-radius:9px;background:var(--bg2);color:var(--muted);font-size:22px;line-height:1;cursor:pointer}
++.global-launch-close:hover{border-color:var(--accent);color:var(--text)}
++.global-launch-content{display:grid;grid-template-columns:minmax(270px,.86fr) minmax(0,1.5fr);gap:14px;min-height:0;overflow:auto;padding:15px}
++.global-launch-filter-panel,.global-launch-results-panel{min-width:0;border:1px solid var(--line);border-radius:12px;background:color-mix(in srgb,var(--bg2) 72%,transparent)}
++.global-launch-filter-panel{align-self:start;padding:13px;display:flex;flex-direction:column;gap:15px}
++.global-launch-filter-block h3,.global-launch-country-head h3,.global-launch-results-head h3{margin:0;color:var(--text);font-size:12px;font-weight:800}
++.global-launch-periods{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:7px;margin-top:9px}
++.global-launch-period{min-height:37px;padding:7px 8px;border:1px solid var(--line);border-radius:8px;background:var(--bg2);color:var(--muted);font-family:inherit;font-size:11px;font-weight:600;line-height:1.5;cursor:pointer;transition:background .15s,border-color .15s,color .15s}
++.global-launch-period:hover{border-color:var(--accent);color:var(--text)}
++.global-launch-period.is-active{border-color:var(--accent);background:color-mix(in srgb,var(--accent) 16%,var(--bg2));color:var(--accent-tx);box-shadow:inset 0 0 0 1px color-mix(in srgb,var(--accent) 20%,transparent)}
++.global-launch-filter-block label{display:block;margin-bottom:7px;color:var(--text);font-size:12px;font-weight:800}
++.global-launch-select,.global-launch-country-search{width:100%;min-height:38px;padding:8px 10px;border:1px solid var(--line);border-radius:8px;background:var(--bg2);color:var(--text);font:inherit;font-size:11.5px;outline:none}
++.global-launch-select:focus,.global-launch-country-search:focus{border-color:var(--accent);box-shadow:0 0 0 2px color-mix(in srgb,var(--accent) 18%,transparent)}
++.global-launch-basis-note,.global-launch-country-help{margin:7px 0 0;color:var(--muted);font-size:10px;line-height:1.8}
++.global-launch-country-block{padding-top:13px;border-top:1px solid var(--line)}
++.global-launch-country-head{display:flex;align-items:center;justify-content:space-between;gap:8px;margin-bottom:9px}
++.global-launch-country-head>div{display:flex;align-items:center;gap:8px;flex-wrap:wrap}
++.global-launch-country-count{color:var(--muted);font-size:9.5px}
++.global-launch-all-btn{flex:0 0 auto;min-height:29px;padding:5px 9px;border:1px solid var(--line);border-radius:7px;background:var(--bg2);color:var(--muted);font-family:inherit;font-size:10px;font-weight:600;cursor:pointer}
++.global-launch-all-btn.is-active{border-color:var(--accent);background:color-mix(in srgb,var(--accent) 13%,var(--bg2));color:var(--accent-tx)}
++.global-launch-country-search{margin-bottom:8px}
++.global-launch-country-options{display:grid;grid-template-columns:1fr 1fr;gap:4px;max-height:220px;overflow:auto;padding:3px;border:1px solid var(--line);border-radius:8px;background:color-mix(in srgb,var(--bg) 45%,transparent);scrollbar-width:thin}
++.global-launch-country-option{display:flex;align-items:center;gap:6px;min-width:0;min-height:31px;padding:4px 6px;border:1px solid transparent;border-radius:6px;background:transparent;color:var(--text);font-family:inherit;font-size:10.5px;font-weight:500;line-height:1.5;text-align:start;cursor:pointer}
++.global-launch-country-option:hover{background:var(--bg2);border-color:var(--line)}
++.global-launch-country-option.is-selected{background:color-mix(in srgb,var(--accent) 12%,var(--bg2));border-color:color-mix(in srgb,var(--accent) 42%,var(--line));color:var(--accent-tx)}
++.global-launch-country-option>span:nth-child(2){overflow:hidden;text-overflow:ellipsis;white-space:nowrap;flex:1;min-width:0}
++.global-launch-country-option small{color:var(--muted);font-size:8.5px}
++.global-launch-country-check{display:inline-flex;flex:0 0 15px;width:15px;height:15px;align-items:center;justify-content:center;border:1px solid var(--line);border-radius:4px;color:var(--accent-tx);font-size:10px}
++.global-launch-country-option.is-selected .global-launch-country-check{border-color:var(--accent);background:color-mix(in srgb,var(--accent) 22%,transparent)}
++.global-launch-country-empty{grid-column:1/-1;padding:14px 6px;text-align:center;color:var(--muted);font-size:10px}
++.global-launch-selected-countries{display:flex;flex-wrap:wrap;gap:5px;margin-top:8px}
++.global-launch-selected-chip{max-width:100%;padding:3px 7px;border:1px solid var(--line);border-radius:20px;background:var(--bg2);color:var(--muted);font-size:9px;overflow-wrap:anywhere}
++.global-launch-selected-chip.is-all{color:var(--accent-tx);border-color:color-mix(in srgb,var(--accent) 35%,var(--line))}
++.global-launch-visually-hidden{position:absolute!important;width:1px;height:1px;padding:0;margin:-1px;overflow:hidden;clip:rect(0,0,0,0);white-space:nowrap;border:0}
++.global-launch-results-panel{display:flex;flex-direction:column;min-height:300px;overflow:hidden}
++.global-launch-results-head{padding:12px 13px;border-bottom:1px solid var(--line);background:color-mix(in srgb,var(--bg2) 72%,transparent)}
++.global-launch-results-head>div{display:flex;align-items:center;justify-content:space-between;gap:8px;flex-wrap:wrap}
++.global-launch-results-head h3{display:flex;align-items:center;gap:8px}
++.global-launch-result-count{display:inline-flex;align-items:center;justify-content:center;min-width:27px;padding:2px 7px;border-radius:20px;background:color-mix(in srgb,var(--accent) 14%,var(--bg2));color:var(--accent-tx);font-size:10px;font-variant-numeric:tabular-nums}
++.global-launch-results-head small{color:var(--muted);font-size:9px}
++.global-launch-feed-state{margin:7px 0 0;color:var(--muted);font-size:9.5px;line-height:1.65}
++.global-launch-feed-state.is-ready{color:var(--green)}
++.global-launch-feed-state.is-stale,.global-launch-feed-state.is-error{color:var(--amber)}
++.global-launch-feed-state.is-loading{color:var(--accent-tx)}
++.global-launch-results{display:flex;flex-direction:column;gap:8px;min-height:0;padding:10px;overflow:auto;overscroll-behavior:contain}
++.global-launch-card{padding:11px 12px;border:1px solid var(--line);border-radius:9px;background:var(--bg2);min-width:0}
++.global-launch-card-top{display:flex;align-items:flex-start;justify-content:space-between;gap:10px}
++.global-launch-card-title{display:flex;align-items:flex-start;gap:7px;min-width:0;flex:1}
++.global-launch-card-title strong{min-width:0;color:var(--text);font-size:11.5px;line-height:1.75;overflow-wrap:anywhere}
++.global-launch-status{flex:0 0 auto;margin-top:1px;padding:2px 7px;border:1px solid var(--line);border-radius:20px;font-size:9px;white-space:nowrap}
++.global-launch-status.is-confirmed{color:var(--green);border-color:color-mix(in srgb,var(--green) 35%,var(--line));background:color-mix(in srgb,var(--green) 8%,transparent)}
++.global-launch-status.is-tentative{color:var(--amber);border-color:color-mix(in srgb,var(--amber) 35%,var(--line))}
++.global-launch-status.is-hold{color:var(--rose);border-color:color-mix(in srgb,var(--rose) 35%,var(--line))}
++.global-launch-status.is-unknown{color:var(--muted)}
++.global-launch-card-date{flex:0 0 auto;display:flex;flex-direction:column;align-items:flex-end;gap:3px;color:var(--accent-tx);font-size:10.5px;font-weight:700;text-align:end;max-width:43%}
++.global-launch-card-date small{color:var(--muted);font-size:8.5px;font-weight:500}
++.global-launch-card-fields,.global-launch-card-meta{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:7px;margin-top:9px}
++.global-launch-card-fields>span,.global-launch-card-meta>span{display:flex;flex-direction:column;gap:2px;min-width:0;color:var(--text);font-size:10px;overflow-wrap:anywhere}
++.global-launch-card-fields small,.global-launch-card-meta small{color:var(--muted);font-size:9px}
++.global-launch-card-countries{display:flex;flex-wrap:wrap;gap:6px 13px;margin-top:9px;padding-top:7px;border-top:1px solid var(--line);color:var(--muted);font-size:9px}
++.global-launch-card-countries bdi{color:var(--text)}
++.global-launch-empty{display:flex;align-items:center;justify-content:center;gap:10px;min-height:170px;padding:22px;color:var(--muted);font-size:11px;line-height:1.9;text-align:center}
++.global-launch-empty.is-error{color:var(--amber)}
++.global-launch-spinner{width:18px;height:18px;flex:0 0 auto;border:2px solid var(--line);border-top-color:var(--accent);border-radius:50%;animation:globalLaunchSpin .8s linear infinite}
++@keyframes globalLaunchSpin{to{transform:rotate(360deg)}}
++@media(max-width:760px){
++  .global-launch-dialog{width:calc(100vw - 12px);max-height:calc(100dvh - 12px);border-radius:12px}
++  .global-launch-shell{max-height:calc(100dvh - 14px)}
++  .global-launch-head{padding:13px 14px 11px;gap:10px}
++  .global-launch-head h2{font-size:15px}
++  .global-launch-head p{font-size:10px}
++  .global-launch-content{grid-template-columns:minmax(0,1fr);gap:10px;padding:9px}
++  .global-launch-filter-panel{padding:10px;gap:12px}
++  .global-launch-country-options{grid-template-columns:repeat(2,minmax(0,1fr));max-height:175px}
++  .global-launch-results-panel{min-height:240px}
++  .global-launch-card{padding:9px}
++}
++@media(max-width:430px){
++  .upcoming-launch-tab{padding:6px 7px!important;font-size:10px!important;gap:4px}
++  .global-launch-card-top{gap:6px}
++  .global-launch-card-title{gap:5px}
++  .global-launch-card-title strong{font-size:10.5px}
++  .global-launch-card-date{font-size:9.5px;max-width:42%}
++  .global-launch-status{font-size:8px;padding:2px 5px}
++  .global-launch-card-fields,.global-launch-card-meta{gap:5px}
++}
++@media(prefers-reduced-motion:reduce){.global-launch-spinner{animation:none}}
++.global-launch-results-head-actions{display:flex;align-items:center;justify-content:space-between;gap:8px;flex-wrap:wrap}
++.global-launch-reload{flex:0 0 auto;min-height:27px;padding:4px 9px;border:1px solid var(--line);border-radius:7px;background:var(--bg2);color:var(--accent-tx);font-family:inherit;font-size:9.5px;font-weight:600;line-height:1.5;cursor:pointer}
++.global-launch-reload:hover{border-color:var(--accent);background:color-mix(in srgb,var(--accent) 10%,var(--bg2))}
++
++.global-launch-status.is-cancelled{color:var(--rose);border-color:color-mix(in srgb,var(--rose) 38%,var(--line));background:color-mix(in srgb,var(--rose) 8%,transparent)}
++.global-launch-reload:disabled{opacity:.55;cursor:wait}
+--- a/.github/workflows/refresh-global-launches.yml
++++ b/.github/workflows/refresh-global-launches.yml
+@@ -27,10 +27,15 @@
+         run: |
+           python -m unittest discover -s tools -p 'test_global_launches.py' -v
+           node tests/upcoming_global.test.cjs
++          node tests/upcoming-launch-filters.test.cjs
++          node tests/upcoming-launch-ui.test.cjs
+       - name: Fetch and validate all upcoming launches within 120 days
+         run: python tools/refresh_global_launches.py --apply
+       - name: Validate published global snapshot
+-        run: node tests/upcoming_global.test.cjs
++        run: |
++          node tests/upcoming_global.test.cjs
++          node tests/upcoming-launch-filters.test.cjs
++          node tests/upcoming-launch-ui.test.cjs
+       - name: Commit validated global launch data (only if changed)
+         run: |
+           git config user.name 'orbita-refresh-bot'
+--- a/assets/js/upcoming-launch-filters.js
++++ b/assets/js/upcoming-launch-filters.js
+@@ -0,0 +1,132 @@
++/* ORBITA — shared upcoming-event filter engine (Steps 3–4)
++ * Pure functions for launch and landing snapshots; used by the UI and tests.
++ */
++(function (root, factory) {
++  "use strict";
++  var api = factory();
++  if (typeof module === "object" && module.exports) module.exports = api;
++  if (root) root.ORBITAUpcomingLaunchFilters = api;
++})(typeof globalThis !== "undefined" ? globalThis : this, function () {
++  "use strict";
++
++  var PRESETS = Object.freeze([
++    Object.freeze({ id: "7", days: 7 }),
++    Object.freeze({ id: "14", days: 14 }),
++    Object.freeze({ id: "30", days: 30 }),
++    Object.freeze({ id: "120", days: 120 })
++  ]);
++
++  function validEpoch(value) {
++    if (typeof value !== "string" || !value.trim()) return NaN;
++    var n = Date.parse(value);
++    return Number.isFinite(n) ? n : NaN;
++  }
++
++  function eventEpoch(event) {
++    if (!event || typeof event !== "object") return NaN;
++    var exact = validEpoch(event.net || event.net_utc);
++    if (Number.isFinite(exact)) return exact;
++    var date = String(event.date_utc || event.date || "").trim();
++    if (/^\d{4}-\d\d-\d\d$/.test(date)) {
++      // Use the start for stable ordering; the filter below handles the full day.
++      return Date.parse(date + "T00:00:00.000Z");
++    }
++    return validEpoch(date);
++  }
++
++  function eventWithinWindow(event, now, end) {
++    var exact = validEpoch(event && (event.net || event.net_utc));
++    if (Number.isFinite(exact)) return exact >= now && exact < end;
++    var date = String(event && (event.date_utc || event.date) || "").trim();
++    if (/^\d{4}-\d\d-\d\d$/.test(date)) {
++      var start = Date.parse(date + "T00:00:00.000Z");
++      var dayEnd = start + 86400000;
++      return Number.isFinite(start) && dayEnd > now && start < end;
++    }
++    var fallback = validEpoch(date);
++    return Number.isFinite(fallback) && fallback >= now && fallback < end;
++  }
++
++  function normalizeCountryCode(value, aliases) {
++    var code = String(value == null ? "" : value).trim().toUpperCase();
++    if (!code || ["UNK", "UNKNOWN", "TBD", "N/A", "NONE", "NULL"].includes(code)) return "";
++    return aliases && aliases[code] ? String(aliases[code]).toUpperCase() : code;
++  }
++
++  function countryCodeFor(event, basis, aliases) {
++    if (!event || typeof event !== "object") return "";
++    // The shared event contract uses site_country for both launch and
++    // recovery locations. The global LL2 launch feed uses launch_country_code.
++    var raw = basis === "site"
++      ? (event.site_country || event.launch_country_code || event.recovery_country_code || event.landing_country_code)
++      : (event.operator_country_code || event.operator_country);
++    return normalizeCountryCode(raw, aliases);
++  }
++
++  function filterEvents(events, options) {
++    options = options || {};
++    var rows = Array.isArray(events) ? events : [];
++    var days = Number(options.days);
++    if (![7, 14, 30, 120].includes(days)) days = 30;
++    var now = options.now instanceof Date ? options.now.getTime() : Number(options.now);
++    if (!Number.isFinite(now)) now = Date.now();
++    var end = now + days * 86400000;
++    var selected = Array.isArray(options.countryCodes)
++      ? options.countryCodes.map(function (x) { return normalizeCountryCode(x, options.aliases); }).filter(Boolean)
++      : [];
++    var selectedSet = new Set(selected);
++    var basis = options.countryBasis === "site" ? "site" : "operator";
++    var query = String(options.query || "").trim().toLocaleLowerCase();
++
++    return rows.filter(function (event) {
++      if (!event || typeof event !== "object") return false;
++      var epoch = eventEpoch(event);
++      if (!Number.isFinite(epoch) || !eventWithinWindow(event, now, end)) return false;
++      if (selectedSet.size) {
++        var code = countryCodeFor(event, basis, options.aliases);
++        if (!code || !selectedSet.has(code)) return false;
++      }
++      if (query) {
++        var haystack = [event.launch_name, event.mission_name, event.rocket_name,
++          event.operator_name, event.pad_name, event.location_name,
++          event.operator_country_code, event.launch_country_code,
++          event.event_id, event.source_id]
++          .filter(Boolean).join(" ").toLocaleLowerCase();
++        if (haystack.indexOf(query) < 0) return false;
++      }
++      return true;
++    }).sort(function (a, b) {
++      var delta = eventEpoch(a) - eventEpoch(b);
++      if (delta) return delta;
++      return String(a.ll2_id || a.event_id || "").localeCompare(String(b.ll2_id || b.event_id || ""));
++    });
++  }
++
++  function filterLaunches(events, options) {
++    return filterEvents((Array.isArray(events) ? events : []).filter(function (event) {
++      var kind = event && (event.event_kind || event.kind);
++      return !kind || kind === "launch";
++    }), options);
++  }
++
++  function availableCountryCodes(events, basis, aliases) {
++    var set = new Set();
++    (Array.isArray(events) ? events : []).forEach(function (event) {
++      var code = countryCodeFor(event, basis, aliases);
++      if (code) set.add(code);
++    });
++    return Array.from(set).sort();
++  }
++
++  return Object.freeze({
++    PRESETS: PRESETS,
++    validEpoch: validEpoch,
++    eventEpoch: eventEpoch,
++    eventWithinWindow: eventWithinWindow,
++    normalizeCountryCode: normalizeCountryCode,
++    countryCodeFor: countryCodeFor,
++    filterEvents: filterEvents,
++    filterLaunches: filterLaunches,
++    availableCountryCodes: availableCountryCodes
++  });
++});
+--- a/assets/js/upcoming-launch-browser.js
++++ b/assets/js/upcoming-launch-browser.js
+@@ -0,0 +1,460 @@
++/* ORBITA — worldwide upcoming launch browser (Step 4)
++ * Uses the independently refreshed 120-day global snapshot; does not alter
++ * the reviewed site-specific upcoming-launch tabs or the next-launch ticker.
++ */
++(function () {
++  "use strict";
++
++  var Filters = window.ORBITAUpcomingLaunchFilters;
++  if (!Filters) {
++    console.error("ORBITA upcoming-launch filter engine is unavailable.");
++    return;
++  }
++
++  var $ = function (selector) { return document.querySelector(selector); };
++  var dialog = $("#globalLaunchDialog");
++  var openButton = $("#upcomingLaunchesBtn");
++  if (!dialog || !openButton) return;
++
++  var state = {
++    data: null,
++    countries: null,
++    aliases: {},
++    countryByCode: {},
++    dataPromise: null,
++    countriesPromise: null,
++    loading: false,
++    error: "",
++    refreshError: "",
++    days: 30,
++    countryBasis: "operator",
++    selectedCountries: [],
++    countryQuery: ""
++  };
++
++  var COPY = {
++    fa: {
++      open: "پرتاب‌های پیش‌رو", eyebrow: "پایش جهانی پرتاب‌ها", title: "فهرست جهانی پرتاب‌های پیش‌رو",
++      intro: "پرتاب‌های اعلام‌شده در سراسر جهان را بر اساس بازه زمانی و کشور فیلتر کنید.", close: "بستن",
++      time: "بازه زمانی", d7: "۱ هفته آینده", d14: "۲ هفته آینده", d30: "۱ ماه آینده", d120: "۴ ماه آینده",
++      country: "فیلتر کشورها", all: "همه کشورها", selected: "کشور انتخاب‌شده", selectedPlural: "کشور انتخاب‌شده",
++      countrySearch: "جستجوی کشور…", basis: "مبنای انتساب کشور", operator: "کشور اپراتور / ارائه‌دهنده پرتاب", site: "کشور محل پرتاب",
++      basisNote: "انتخاب اپراتور، کشور ارائه‌دهنده خدمت پرتاب را نشان می‌دهد؛ انتخاب محل پرتاب، کشور جغرافیایی پایگاه را. این دو لزوماً یکی نیستند و از آن‌ها ملیت مالک ماهواره استنباط نمی‌شود.",
++      results: "نتیجه", launches: "پرتاب", launchesPlural: "پرتاب", loading: "در حال دریافت فهرست پرتاب‌های جهانی…",
++      waiting: "بانک جهانی پرتاب‌ها هنوز نخستین همگام‌سازی موفق را دریافت نکرده است. پس از اجرای گردش‌کار به‌روزرسانی، فهرست اینجا نمایش داده می‌شود.",
++      error: "دریافت اطلاعات پرتاب‌ها انجام نشد. اتصال را بررسی کنید و دوباره پنجره را باز کنید.",
++      noResults: "با این ترکیب از فیلترها پرتابی پیدا نشد.", noCountries: "کشوری با این عبارت پیدا نشد.", retry: "تلاش دوباره",
++      updated: "آخرین به‌روزرسانی داده", stale: "داده بیش از ۲۴ ساعت به‌روزرسانی نشده است.",
++      source: "منبع: Launch Library 2 · برنامه‌ها ممکن است تغییر کنند؛ پوشش تابع داده‌های این منبع است.", refreshFailed: "به‌روزرسانی جدید ناموفق بود؛ آخرین snapshot معتبر نمایش داده می‌شود.",
++      mission: "مأموریت", rocket: "پرتابگر", operatorName: "اپراتور", launchSite: "محل پرتاب",
++      operatorCountry: "کشور اپراتور", siteCountry: "کشور محل پرتاب", precision: "دقت زمان", status: "وضعیت",
++      confirmed: "تأییدشده", tentative: "در انتظار تأیید", unscheduled: "زمان نامشخص", hold: "در حالت توقف", cancelled: "لغوشده", unknown: "نامشخص",
++      sec: "ثانیه‌ای", min: "دقیقه‌ای", hour: "ساعتی", day: "روز مشخص", month: "ماه تقریبی", quarter: "فصل تقریبی", year: "سال تقریبی", tbd: "دقت اعلام نشده",
++      timeUtc: "به وقت جهانی (UTC)", unknownCountry: "کشور نامشخص", chooseCountry: "برای محدودکردن نتایج، یک یا چند کشور را انتخاب کنید.",
++      allCount: "همه کشورها", countryCount: "کشور", noDate: "زمان معتبر در منبع ثبت نشده است."
++    },
++    en: {
++      open: "Upcoming launches", eyebrow: "Global launch monitor", title: "Worldwide upcoming launches",
++      intro: "Filter announced launches worldwide by time window and country.", close: "Close",
++      time: "Time window", d7: "Next 7 days", d14: "Next 14 days", d30: "Next 30 days", d120: "Next 120 days",
++      country: "Country filters", all: "All countries", selected: "country selected", selectedPlural: "countries selected",
++      countrySearch: "Search countries…", basis: "Country attribution", operator: "Launch provider / operator country", site: "Launch-site country",
++      basisNote: "Provider country identifies the launch-service provider; launch-site country identifies the geographic country of the pad. They can differ. Neither establishes the payload owner's nationality.",
++      results: "Results", launches: "launch", launchesPlural: "launches", loading: "Loading worldwide launch data…",
++      waiting: "The global launch feed has not completed its first successful sync. The list will appear here after the refresh workflow runs.",
++      error: "Launch data could not be loaded. Check your connection and reopen this panel.",
++      noResults: "No launches match the selected filters.", noCountries: "No country matches this search.", retry: "Retry",
++      updated: "Data last updated", stale: "The data snapshot has not been refreshed for more than 24 hours.",
++      source: "Source: Launch Library 2 · Schedules may change; coverage depends on source reporting.", refreshFailed: "Refresh failed; showing the last validated snapshot.",
++      mission: "Mission", rocket: "Launch vehicle", operatorName: "Operator", launchSite: "Launch site",
++      operatorCountry: "Operator country", siteCountry: "Launch-site country", precision: "Time precision", status: "Status",
++      confirmed: "Confirmed", tentative: "To be confirmed", unscheduled: "Unscheduled", hold: "On hold", cancelled: "Cancelled", unknown: "Unknown",
++      sec: "Second-level", min: "Minute-level", hour: "Hour-level", day: "Day-level", month: "Approx. month", quarter: "Approx. quarter", year: "Approx. year", tbd: "Precision not stated",
++      timeUtc: "UTC", unknownCountry: "Country unknown", chooseCountry: "Select one or more countries to narrow the list.",
++      allCount: "All countries", countryCount: "country", noDate: "No valid time is recorded by the source."
++    },
++    ar: {
++      open: "الإطلاقات القادمة", eyebrow: "متابعة الإطلاقات العالمية", title: "قائمة الإطلاقات القادمة حول العالم",
++      intro: "صفِّ الإطلاقات المعلنة عالمياً حسب الفترة الزمنية والدولة.", close: "إغلاق",
++      time: "الفترة الزمنية", d7: "الأيام السبعة القادمة", d14: "الأيام الأربعة عشر القادمة", d30: "الثلاثون يوماً القادمة", d120: "الأيام الـ120 القادمة",
++      country: "تصفية الدول", all: "كل الدول", selected: "دولة محددة", selectedPlural: "دول محددة",
++      countrySearch: "ابحث عن دولة…", basis: "أساس تصنيف الدولة", operator: "دولة مزوّد خدمة الإطلاق / المشغّل", site: "دولة موقع الإطلاق",
++      basisNote: "تعرض دولة المشغّل بلد مزوّد خدمة الإطلاق، بينما تعرض دولة الموقع البلد الجغرافي لمنصة الإطلاق. وقد يختلفان؛ ولا يثبت أي منهما جنسية مالك الحمولة.",
++      results: "النتائج", launches: "إطلاق", launchesPlural: "إطلاقات", loading: "جارٍ تحميل بيانات الإطلاقات العالمية…",
++      waiting: "لم تكتمل المزامنة الأولى الناجحة لبيانات الإطلاقات العالمية بعد. ستظهر القائمة هنا بعد تشغيل التحديث.",
++      error: "تعذر تحميل بيانات الإطلاقات. تحقق من الاتصال وأعد فتح هذه النافذة.",
++      noResults: "لا توجد إطلاقات تطابق عوامل التصفية المحددة.", noCountries: "لا توجد دولة تطابق البحث.", retry: "إعادة المحاولة",
++      updated: "آخر تحديث للبيانات", stale: "لم تُحدَّث البيانات منذ أكثر من 24 ساعة.",
++      source: "المصدر: Launch Library 2 · قد تتغير الجداول؛ وتعتمد التغطية على بيانات المصدر.", refreshFailed: "فشل التحديث؛ تُعرض آخر نسخة تم التحقق منها.",
++      mission: "المهمة", rocket: "مركبة الإطلاق", operatorName: "المشغّل", launchSite: "موقع الإطلاق",
++      operatorCountry: "دولة المشغّل", siteCountry: "دولة موقع الإطلاق", precision: "دقة الموعد", status: "الحالة",
++      confirmed: "مؤكد", tentative: "بانتظار التأكيد", unscheduled: "غير مجدول", hold: "معلّق", cancelled: "ملغى", unknown: "غير معروف",
++      sec: "بدقة الثانية", min: "بدقة الدقيقة", hour: "بدقة الساعة", day: "اليوم محدد", month: "شهر تقريبي", quarter: "ربع سنة تقريبي", year: "سنة تقريبية", tbd: "الدقة غير محددة",
++      timeUtc: "بتوقيت UTC", unknownCountry: "الدولة غير معروفة", chooseCountry: "اختر دولة واحدة أو أكثر لتصفية القائمة.",
++      allCount: "كل الدول", countryCount: "دولة", noDate: "لا يوجد موعد صالح مسجل في المصدر."
++    }
++  };
++
++  function lang() {
++    var value = "fa";
++    try { value = localStorage.getItem("orbita_lang") || "fa"; } catch (e) {}
++    return COPY[value] ? value : "fa";
++  }
++  function tr(key) { return COPY[lang()][key] || COPY.fa[key] || key; }
++  function esc(value) {
++    return String(value == null ? "" : value).replace(/[&<>"']/g, function (c) {
++      return ({ "&": "&amp;", "<": "&lt;", ">": "&gt;", '"': "&quot;", "'": "&#39;" })[c];
++    });
++  }
++  function countryName(code) {
++    var normalized = Filters.normalizeCountryCode(code, state.aliases);
++    if (!normalized) return tr("unknownCountry");
++    var item = state.countryByCode[normalized];
++    if (!item) return String(code);
++    return item[lang()] || item.en || normalized;
++  }
++  function number(value) {
++    try { return new Intl.NumberFormat(lang() === "fa" ? "fa-IR" : lang() === "ar" ? "ar-u-nu-latn" : "en-GB").format(value); }
++    catch (e) { return String(value); }
++  }
++  function dateFormatter(options) {
++    var locale = lang() === "fa" ? "fa-IR-u-ca-gregory" : lang() === "ar" ? "ar-u-ca-gregory-nu-latn" : "en-GB";
++    return new Intl.DateTimeFormat(locale, Object.assign({ timeZone: "UTC" }, options));
++  }
++  function precisionKey(value) {
++    var raw = String(value || "").toLowerCase();
++    if (/second|sec/.test(raw)) return "sec";
++    if (/minute|min/.test(raw)) return "min";
++    if (/hour|hr/.test(raw)) return "hour";
++    if (/day/.test(raw)) return "day";
++    if (/month/.test(raw)) return "month";
++    if (/quarter/.test(raw)) return "quarter";
++    if (/year/.test(raw)) return "year";
++    return "tbd";
++  }
++  function formatNet(event) {
++    var date = new Date(event.net);
++    if (!Number.isFinite(date.getTime())) return tr("noDate");
++    var key = precisionKey(event.net_precision);
++    if (key === "year") return dateFormatter({ year: "numeric" }).format(date);
++    if (key === "quarter") {
++      var q = Math.floor(date.getUTCMonth() / 3) + 1;
++      return (lang() === "fa" ? "سه‌ماههٔ " : lang() === "ar" ? "الربع " : "Q") + number(q) + " " + dateFormatter({ year: "numeric" }).format(date);
++    }
++    if (key === "month") return dateFormatter({ year: "numeric", month: "long" }).format(date);
++    var parts = { year: "numeric", month: "short", day: "numeric" };
++    if (key === "sec" || key === "min" || key === "hour") {
++      parts.hour = "2-digit"; parts.minute = "2-digit";
++      if (key === "sec") parts.second = "2-digit";
++    }
++    return dateFormatter(parts).format(date) + ((key === "sec" || key === "min" || key === "hour") ? " UTC" : "");
++  }
++  function formatUpdated(value) {
++    if (!value) return "—";
++    var date = new Date(value);
++    if (!Number.isFinite(date.getTime())) return "—";
++    return dateFormatter({ year: "numeric", month: "short", day: "numeric", hour: "2-digit", minute: "2-digit" }).format(date) + " UTC";
++  }
++  function statusKey(value) {
++    var s = String(value || "").toLowerCase();
++    if (s === "go" || s === "confirmed") return "confirmed";
++    if (s === "tbc" || s === "tentative") return "tentative";
++    if (s === "tbd" || s === "unscheduled") return "unscheduled";
++    if (s === "hold" || s === "on_hold") return "hold";
++    if (/cancel|abort|scrub/.test(s)) return "cancelled";
++    return "unknown";
++  }
++  function statusClass(key) {
++    return key === "confirmed" ? "is-confirmed" : key === "tentative" ? "is-tentative" : key === "hold" ? "is-hold" : key === "cancelled" ? "is-cancelled" : "is-unknown";
++  }
++  function activeData() {
++    return state.data && state.data.coverage_status === "complete_from_source_at_fetch_time" && Array.isArray(state.data.launches);
++  }
++
++  function loadCountries() {
++    if (state.countriesPromise) return state.countriesPromise;
++    state.countriesPromise = fetch("data/country_codes.json?v=" + encodeURIComponent(window.ORBITA_UPCOMING_GLOBAL_V || "20261121-step3-4"))
++      .then(function (response) { if (!response.ok) throw new Error("country map HTTP " + response.status); return response.json(); })
++      .then(function (doc) {
++        state.countries = Array.isArray(doc.countries) ? doc.countries : [];
++        state.aliases = doc.aliases && typeof doc.aliases === "object" ? doc.aliases : {};
++        state.countryByCode = {};
++        state.countries.forEach(function (item) {
++          state.countryByCode[String(item.code).toUpperCase()] = item;
++          if (item.alpha2) state.countryByCode[String(item.alpha2).toUpperCase()] = item;
++        });
++        return doc;
++      })
++      .catch(function (error) {
++        console.warn("ORBITA country labels:", error.message);
++        state.countries = [];
++        state.countryByCode = {};
++        return null;
++      });
++    return state.countriesPromise;
++  }
++
++  function loadLaunchData(force) {
++    if (state.data && !force) return Promise.resolve(state.data);
++    if (state.dataPromise) return state.dataPromise;
++    state.loading = true;
++    state.error = "";
++    renderResults();
++    var version = window.ORBITA_UPCOMING_GLOBAL_V || window.ORBITA_V || "1";
++    state.dataPromise = fetch("data/upcoming_global.json?v=" + encodeURIComponent(version), { cache: "no-store" })
++      .then(function (response) { if (!response.ok) throw new Error("HTTP " + response.status); return response.json(); })
++      .then(function (doc) {
++        if (!doc || doc.schema_version !== 1 || !Array.isArray(doc.launches) || doc.count !== doc.launches.length) {
++          throw new Error("Invalid global launch snapshot");
++        }
++        state.data = doc;
++        state.loading = false;
++        state.error = "";
++        state.refreshError = "";
++        state.dataPromise = null;
++        render();
++        return doc;
++      })
++      .catch(function (error) {
++        state.loading = false;
++        var message = error && error.message ? error.message : "load failed";
++        if (activeData()) {
++          state.refreshError = message;
++          state.error = "";
++        } else {
++          state.error = message;
++        }
++        state.dataPromise = null;
++        render();
++        return null;
++      });
++    return state.dataPromise;
++  }
++
++  function renderChrome() {
++    var language = lang();
++    var rtl = language !== "en";
++    dialog.dir = rtl ? "rtl" : "ltr";
++    document.documentElement.lang = language;
++    openButton.textContent = "";
++    var icon = document.createElement("span");
++    icon.setAttribute("aria-hidden", "true");
++    icon.textContent = "🚀";
++    var label = document.createElement("span");
++    label.textContent = tr("open");
++    openButton.appendChild(icon);
++    openButton.appendChild(label);
++    var textMap = {
++      "#globalLaunchEyebrow": "eyebrow", "#globalLaunchTitle": "title", "#globalLaunchIntro": "intro",
++      "#globalLaunchClose": "close", "#globalLaunchTimeLabel": "time", "#globalLaunchCountryLabel": "country",
++      "#globalLaunchCountrySearchLabel": "countrySearch", "#globalLaunchBasisLabel": "basis",
++      "#globalLaunchBasisNote": "basisNote", "#globalLaunchAllCountries": "all", "#globalLaunchReload": "retry"
++    };
++    Object.keys(textMap).forEach(function (selector) {
++      var el = $(selector); if (el) el.textContent = tr(textMap[selector]);
++    });
++    var basis = $("#globalLaunchCountryBasis");
++    if (basis) {
++      basis.options[0].textContent = tr("operator");
++      basis.options[1].textContent = tr("site");
++      basis.value = state.countryBasis;
++    }
++    var search = $("#globalLaunchCountrySearch");
++    if (search) search.placeholder = tr("countrySearch");
++    $$(".global-launch-period").forEach(function (button) {
++      var days = button.getAttribute("data-days");
++      button.textContent = tr(days === "7" ? "d7" : days === "14" ? "d14" : days === "120" ? "d120" : "d30");
++      button.setAttribute("aria-pressed", String(Number(days) === state.days));
++      button.classList.toggle("is-active", Number(days) === state.days);
++    });
++    var note = $("#globalLaunchCountryHelp");
++    if (note) note.textContent = tr("chooseCountry");
++    renderCountrySelection();
++    renderCountryOptions();
++    renderResults();
++  }
++  function $$(selector) { return Array.prototype.slice.call(dialog.querySelectorAll(selector)); }
++
++  function countryList() {
++    return (state.countries || []).slice().sort(function (a, b) {
++      return String(a[lang()] || a.en || a.code).localeCompare(String(b[lang()] || b.en || b.code), lang());
++    });
++  }
++  function renderCountrySelection() {
++    var box = $("#globalLaunchSelectedCountries");
++    var all = $("#globalLaunchAllCountries");
++    var count = $("#globalLaunchCountryCount");
++    if (!box || !all || !count) return;
++    var selected = state.selectedCountries;
++    all.classList.toggle("is-active", selected.length === 0);
++    all.setAttribute("aria-pressed", String(selected.length === 0));
++    if (!selected.length) {
++      count.textContent = tr("allCount");
++      box.innerHTML = '<span class="global-launch-selected-chip is-all">' + esc(tr("allCount")) + '</span>';
++      return;
++    }
++    count.textContent = number(selected.length) + " " + (selected.length === 1 ? tr("selected") : tr("selectedPlural"));
++    box.innerHTML = selected.map(function (code) {
++      return '<span class="global-launch-selected-chip">' + esc(countryName(code)) + '</span>';
++    }).join("");
++  }
++  function renderCountryOptions() {
++    var list = $("#globalLaunchCountryOptions");
++    if (!list) return;
++    var query = state.countryQuery.trim().toLocaleLowerCase();
++    var rows = countryList().filter(function (item) {
++      var label = String(item[lang()] || item.en || item.code).toLocaleLowerCase();
++      return !query || label.indexOf(query) >= 0 || String(item.code).toLowerCase().indexOf(query) >= 0 || String(item.alpha2 || "").toLowerCase().indexOf(query) >= 0;
++    });
++    if (!rows.length) {
++      list.innerHTML = '<div class="global-launch-country-empty">' + esc(tr("noCountries")) + '</div>';
++      return;
++    }
++    list.innerHTML = rows.map(function (item) {
++      var selected = state.selectedCountries.indexOf(item.code) >= 0;
++      return '<button type="button" class="global-launch-country-option' + (selected ? ' is-selected' : '') + '" role="checkbox" aria-checked="' + String(selected) + '" data-country-code="' + esc(item.code) + '">' +
++        '<span class="global-launch-country-check" aria-hidden="true">' + (selected ? '✓' : '') + '</span><span>' + esc(item[lang()] || item.en || item.code) + '</span><small dir="ltr">' + esc(item.alpha2 || item.code) + '</small></button>';
++    }).join("");
++  }
++  function renderResults() {
++    var results = $("#globalLaunchResults");
++    var countEl = $("#globalLaunchResultCount");
++    var updatedEl = $("#globalLaunchUpdated");
++    var stateEl = $("#globalLaunchFeedState");
++    if (!results || !countEl || !updatedEl || !stateEl) return;
++
++    var reloadButton = $("#globalLaunchReload");
++    if (reloadButton) reloadButton.disabled = !!state.loading;
++    if (state.loading) {
++      countEl.textContent = "—";
++      stateEl.className = "global-launch-feed-state is-loading";
++      stateEl.textContent = tr("loading");
++      results.innerHTML = '<div class="global-launch-empty"><span class="global-launch-spinner" aria-hidden="true"></span>' + esc(tr("loading")) + '</div>';
++      updatedEl.textContent = "";
++      return;
++    }
++    if (state.error && !activeData()) {
++      countEl.textContent = "—";
++      stateEl.className = "global-launch-feed-state is-error";
++      stateEl.textContent = tr("error");
++      results.innerHTML = '<div class="global-launch-empty is-error">' + esc(tr("error")) + '</div>';
++      updatedEl.textContent = "";
++      return;
++    }
++    if (!state.data || state.data.coverage_status !== "complete_from_source_at_fetch_time") {
++      countEl.textContent = "—";
++      stateEl.className = "global-launch-feed-state is-pending";
++      stateEl.textContent = tr("waiting");
++      results.innerHTML = '<div class="global-launch-empty">' + esc(tr("waiting")) + '</div>';
++      updatedEl.textContent = "";
++      return;
++    }
++
++    var rows = Filters.filterLaunches(state.data.launches, {
++      days: state.days,
++      countryBasis: state.countryBasis,
++      countryCodes: state.selectedCountries,
++      aliases: state.aliases,
++      now: Date.now()
++    });
++    countEl.textContent = number(rows.length) + " " + (rows.length === 1 ? tr("launches") : tr("launchesPlural"));
++    stateEl.className = "global-launch-feed-state is-ready";
++    stateEl.textContent = state.refreshError ? tr("refreshFailed") + " " + tr("source") : tr("source");
++    updatedEl.textContent = tr("updated") + ": " + formatUpdated(state.data.updated_utc);
++    if (state.data.updated_utc && Date.now() - new Date(state.data.updated_utc).getTime() > 86400000) {
++      stateEl.className += " is-stale";
++      stateEl.textContent = tr("stale") + " " + tr("source");
++    }
++    if (!rows.length) {
++      results.innerHTML = '<div class="global-launch-empty">' + esc(tr("noResults")) + '</div>';
++      return;
++    }
++    results.innerHTML = rows.map(renderLaunchCard).join("");
++  }
++
++  function renderLaunchCard(event) {
++    var key = statusKey(event.status);
++    var status = tr(key);
++    var precision = tr(precisionKey(event.net_precision));
++    var opCountry = countryName(event.operator_country_code);
++    var siteCountry = countryName(event.launch_country_code);
++    var title = event.launch_name || event.mission_name || event.rocket_name || (lang() === "fa" ? "پرتاب بدون عنوان" : "Untitled launch");
++    var date = formatNet(event);
++    var fields = [];
++    if (event.rocket_name) fields.push('<span><small>' + esc(tr("rocket")) + '</small><bdi>' + esc(event.rocket_name) + '</bdi></span>');
++    if (event.mission_name) fields.push('<span><small>' + esc(tr("mission")) + '</small><bdi>' + esc(event.mission_name) + '</bdi></span>');
++    var operator = event.operator_name ? esc(event.operator_name) : "—";
++    var site = [event.pad_name, event.location_name].filter(Boolean).join(" · ");
++    return '<article class="global-launch-card">' +
++      '<div class="global-launch-card-top">' +
++        '<div class="global-launch-card-title"><span class="global-launch-status ' + statusClass(key) + '">' + esc(status) + '</span><strong><bdi>' + esc(title) + '</bdi></strong></div>' +
++        '<div class="global-launch-card-date"><bdi>' + esc(date) + '</bdi><small>' + esc(precision) + '</small></div>' +
++      '</div>' +
++      (fields.length ? '<div class="global-launch-card-fields">' + fields.join("") + '</div>' : '') +
++      '<div class="global-launch-card-meta">' +
++        '<span><small>' + esc(tr("operatorName")) + '</small><bdi>' + operator + '</bdi></span>' +
++        '<span><small>' + esc(tr("launchSite")) + '</small><bdi>' + esc(site || "—") + '</bdi></span>' +
++      '</div>' +
++      '<div class="global-launch-card-countries">' +
++        '<span>' + esc(tr("operatorCountry")) + ': <bdi>' + esc(opCountry) + '</bdi></span>' +
++        '<span>' + esc(tr("siteCountry")) + ': <bdi>' + esc(siteCountry) + '</bdi></span>' +
++      '</div>' +
++    '</article>';
++  }
++
++  function openDialog() {
++    if (!dialog.open) dialog.showModal();
++    renderChrome();
++    if (!state.countriesPromise) loadCountries().then(renderChrome);
++    if (!state.data && !state.dataPromise) loadLaunchData(!!state.error);
++  }
++
++  openButton.addEventListener("click", openDialog);
++  $("#globalLaunchClose").addEventListener("click", function () { dialog.close(); });
++  $("#globalLaunchReload").addEventListener("click", function () { loadLaunchData(true); });
++  dialog.addEventListener("click", function (event) {
++    if (event.target === dialog) dialog.close();
++  });
++  dialog.addEventListener("close", function () { openButton.setAttribute("aria-expanded", "false"); });
++  dialog.addEventListener("cancel", function () { openButton.setAttribute("aria-expanded", "false"); });
++  dialog.addEventListener("close", function () { openButton.blur(); });
++  openButton.addEventListener("click", function () { openButton.setAttribute("aria-expanded", "true"); });
++
++  $("#globalLaunchPeriods").addEventListener("click", function (event) {
++    var button = event.target.closest("button[data-days]");
++    if (!button) return;
++    state.days = Number(button.getAttribute("data-days"));
++    renderChrome();
++  });
++  $("#globalLaunchCountryBasis").addEventListener("change", function (event) {
++    state.countryBasis = event.target.value === "site" ? "site" : "operator";
++    renderCountrySelection();
++    renderCountryOptions();
++    renderResults();
++  });
++  $("#globalLaunchCountrySearch").addEventListener("input", function (event) {
++    state.countryQuery = event.target.value || "";
++    renderCountryOptions();
++  });
++  $("#globalLaunchAllCountries").addEventListener("click", function () {
++    state.selectedCountries = [];
++    renderCountrySelection();
++    renderCountryOptions();
++    renderResults();
++  });
++  $("#globalLaunchCountryOptions").addEventListener("click", function (event) {
++    var button = event.target.closest("button[data-country-code]");
++    if (!button) return;
++    var code = button.getAttribute("data-country-code");
++    var index = state.selectedCountries.indexOf(code);
++    if (index >= 0) state.selectedCountries.splice(index, 1);
++    else state.selectedCountries.push(code);
++    state.selectedCountries.sort();
++    renderCountrySelection();
++    renderCountryOptions();
++    renderResults();
++  });
++  var langButton = $("#langBtn");
++  if (langButton) langButton.addEventListener("click", function () { setTimeout(renderChrome, 0); });
++  renderChrome();
++})();
+--- a/data/country_codes.json
++++ b/data/country_codes.json
+@@ -0,0 +1,3012 @@
++{
++  "schema_version": 1,
++  "source": "ISO 3166-1 alpha-2/alpha-3; ORBITA country labels with CLDR/Babel fallback; unique name aliases for country-name normalization",
++  "countries": [
++    {
++      "code": "AFG",
++      "alpha2": "AF",
++      "en": "Afghanistan",
++      "fa": "افغانستان",
++      "ar": "أفغانستان"
++    },
++    {
++      "code": "ALB",
++      "alpha2": "AL",
++      "en": "Albania",
++      "fa": "آلبانی",
++      "ar": "ألبانيا"
++    },
++    {
++      "code": "DZA",
++      "alpha2": "DZ",
++      "en": "Algeria",
++      "fa": "الجزایر",
++      "ar": "الجزائر"
++    },
++    {
++      "code": "ASM",
++      "alpha2": "AS",
++      "en": "American Samoa",
++      "fa": "ساموآی امریکا",
++      "ar": "ساموا الأمريكية"
++    },
++    {
++      "code": "AND",
++      "alpha2": "AD",
++      "en": "Andorra",
++      "fa": "آندورا",
++      "ar": "أندورا"
++    },
++    {
++      "code": "AGO",
++      "alpha2": "AO",
++      "en": "Angola",
++      "fa": "آنگولا",
++      "ar": "أنغولا"
++    },
++    {
++      "code": "AIA",
++      "alpha2": "AI",
++      "en": "Anguilla",
++      "fa": "آنگویلا",
++      "ar": "أنغويلا"
++    },
++    {
++      "code": "ATA",
++      "alpha2": "AQ",
++      "en": "Antarctica",
++      "fa": "جنوبگان",
++      "ar": "أنتاركتيكا"
++    },
++    {
++      "code": "ATG",
++      "alpha2": "AG",
++      "en": "Antigua and Barbuda",
++      "fa": "آنتیگوا و باربودا",
++      "ar": "أنتيغوا وبربودا"
++    },
++    {
++      "code": "ARG",
++      "alpha2": "AR",
++      "en": "Argentina",
++      "fa": "آرژانتین",
++      "ar": "الأرجنتين"
++    },
++    {
++      "code": "ARM",
++      "alpha2": "AM",
++      "en": "Armenia",
++      "fa": "ارمنستان",
++      "ar": "أرمينيا"
++    },
++    {
++      "code": "ABW",
++      "alpha2": "AW",
++      "en": "Aruba",
++      "fa": "آروبا",
++      "ar": "أروبا"
++    },
++    {
++      "code": "AUS",
++      "alpha2": "AU",
++      "en": "Australia",
++      "fa": "استرالیا",
++      "ar": "أستراليا"
++    },
++    {
++      "code": "AUT",
++      "alpha2": "AT",
++      "en": "Austria",
++      "fa": "اتریش",
++      "ar": "النمسا"
++    },
++    {
++      "code": "AZE",
++      "alpha2": "AZ",
++      "en": "Azerbaijan",
++      "fa": "جمهوری آذربایجان",
++      "ar": "أذربيجان"
++    },
++    {
++      "code": "BHR",
++      "alpha2": "BH",
++      "en": "Bahrain",
++      "fa": "بحرین",
++      "ar": "البحرين"
++    },
++    {
++      "code": "BGD",
++      "alpha2": "BD",
++      "en": "Bangladesh",
++      "fa": "بنگلادش",
++      "ar": "بنغلاديش"
++    },
++    {
++      "code": "BRB",
++      "alpha2": "BB",
++      "en": "Barbados",
++      "fa": "باربادوس",
++      "ar": "بربادوس"
++    },
++    {
++      "code": "BLR",
++      "alpha2": "BY",
++      "en": "Belarus",
++      "fa": "بلاروس",
++      "ar": "بيلاروس"
++    },
++    {
++      "code": "BEL",
++      "alpha2": "BE",
++      "en": "Belgium",
++      "fa": "بلژیک",
++      "ar": "بلجيكا"
++    },
++    {
++      "code": "BLZ",
++      "alpha2": "BZ",
++      "en": "Belize",
++      "fa": "بلیز",
++      "ar": "بليز"
++    },
++    {
++      "code": "BEN",
++      "alpha2": "BJ",
++      "en": "Benin",
++      "fa": "بنین",
++      "ar": "بنين"
++    },
++    {
++      "code": "BMU",
++      "alpha2": "BM",
++      "en": "Bermuda",
++      "fa": "برمودا",
++      "ar": "برمودا"
++    },
++    {
++      "code": "BTN",
++      "alpha2": "BT",
++      "en": "Bhutan",
++      "fa": "بوتان",
++      "ar": "بوتان"
++    },
++    {
++      "code": "BOL",
++      "alpha2": "BO",
++      "en": "Bolivia",
++      "fa": "بولیوی",
++      "ar": "بوليفيا"
++    },
++    {
++      "code": "BES",
++      "alpha2": "BQ",
++      "en": "Bonaire, Sint Eustatius and Saba",
++      "fa": "جزایر کارائیب هلند",
++      "ar": "هولندا الكاريبية"
++    },
++    {
++      "code": "BIH",
++      "alpha2": "BA",
++      "en": "Bosnia and Herzegovina",
++      "fa": "بوسنی و هرزگوین",
++      "ar": "البوسنة والهرسك"
++    },
++    {
++      "code": "BWA",
++      "alpha2": "BW",
++      "en": "Botswana",
++      "fa": "بوتسوانا",
++      "ar": "بوتسوانا"
++    },
++    {
++      "code": "BVT",
++      "alpha2": "BV",
++      "en": "Bouvet Island",
++      "fa": "جزیرهٔ بووه",
++      "ar": "جزيرة بوفيه"
++    },
++    {
++      "code": "BRA",
++      "alpha2": "BR",
++      "en": "Brazil",
++      "fa": "برزیل",
++      "ar": "البرازيل"
++    },
++    {
++      "code": "IOT",
++      "alpha2": "IO",
++      "en": "British Indian Ocean Territory",
++      "fa": "قلمرو بریتانیا در اقیانوس هند",
++      "ar": "الإقليم البريطاني في المحيط الهندي"
++    },
++    {
++      "code": "BRN",
++      "alpha2": "BN",
++      "en": "Brunei",
++      "fa": "برونئی",
++      "ar": "بروناي"
++    },
++    {
++      "code": "BGR",
++      "alpha2": "BG",
++      "en": "Bulgaria",
++      "fa": "بلغارستان",
++      "ar": "بلغاريا"
++    },
++    {
++      "code": "BFA",
++      "alpha2": "BF",
++      "en": "Burkina Faso",
++      "fa": "بورکینافاسو",
++      "ar": "بوركينا فاسو"
++    },
++    {
++      "code": "BDI",
++      "alpha2": "BI",
++      "en": "Burundi",
++      "fa": "بوروندی",
++      "ar": "بوروندي"
++    },
++    {
++      "code": "CPV",
++      "alpha2": "CV",
++      "en": "Cabo Verde",
++      "fa": "کیپ‌ورد",
++      "ar": "الرأس الأخضر"
++    },
++    {
++      "code": "KHM",
++      "alpha2": "KH",
++      "en": "Cambodia",
++      "fa": "کامبوج",
++      "ar": "كمبوديا"
++    },
++    {
++      "code": "CMR",
++      "alpha2": "CM",
++      "en": "Cameroon",
++      "fa": "کامرون",
++      "ar": "الكاميرون"
++    },
++    {
++      "code": "CAN",
++      "alpha2": "CA",
++      "en": "Canada",
++      "fa": "کانادا",
++      "ar": "كندا"
++    },
++    {
++      "code": "CYM",
++      "alpha2": "KY",
++      "en": "Cayman Islands",
++      "fa": "جزایر کِیمن",
++      "ar": "جزر كايمان"
++    },
++    {
++      "code": "CAF",
++      "alpha2": "CF",
++      "en": "Central African Republic",
++      "fa": "جمهوری آفریقای مرکزی",
++      "ar": "جمهورية أفريقيا الوسطى"
++    },
++    {
++      "code": "TCD",
++      "alpha2": "TD",
++      "en": "Chad",
++      "fa": "چاد",
++      "ar": "تشاد"
++    },
++    {
++      "code": "CHL",
++      "alpha2": "CL",
++      "en": "Chile",
++      "fa": "شیلی",
++      "ar": "تشيلي"
++    },
++    {
++      "code": "CXR",
++      "alpha2": "CX",
++      "en": "Christmas Island",
++      "fa": "جزیرهٔ کریسمس",
++      "ar": "جزيرة كريسماس"
++    },
++    {
++      "code": "CCK",
++      "alpha2": "CC",
++      "en": "Cocos (Keeling) Islands",
++      "fa": "جزایر کوکوس",
++      "ar": "جزر كوكوس (كيلينغ)"
++    },
++    {
++      "code": "COL",
++      "alpha2": "CO",
++      "en": "Colombia",
++      "fa": "کلمبیا",
++      "ar": "كولومبيا"
++    },
++    {
++      "code": "COM",
++      "alpha2": "KM",
++      "en": "Comoros",
++      "fa": "کومور",
++      "ar": "جزر القمر"
++    },
++    {
++      "code": "COK",
++      "alpha2": "CK",
++      "en": "Cook Islands",
++      "fa": "جزایر کوک",
++      "ar": "جزر كوك"
++    },
++    {
++      "code": "CRI",
++      "alpha2": "CR",
++      "en": "Costa Rica",
++      "fa": "کاستاریکا",
++      "ar": "كوستاريكا"
++    },
++    {
++      "code": "HRV",
++      "alpha2": "HR",
++      "en": "Croatia",
++      "fa": "کرواسی",
++      "ar": "كرواتيا"
++    },
++    {
++      "code": "CUB",
++      "alpha2": "CU",
++      "en": "Cuba",
++      "fa": "کوبا",
++      "ar": "كوبا"
++    },
++    {
++      "code": "CUW",
++      "alpha2": "CW",
++      "en": "Curaçao",
++      "fa": "کوراسائو",
++      "ar": "كوراساو"
++    },
++    {
++      "code": "CYP",
++      "alpha2": "CY",
++      "en": "Cyprus",
++      "fa": "قبرس",
++      "ar": "قبرص"
++    },
++    {
++      "code": "CZE",
++      "alpha2": "CZ",
++      "en": "Czech Republic",
++      "fa": "جمهوری چک",
++      "ar": "التشيك"
++    },
++    {
++      "code": "COD",
++      "alpha2": "CD",
++      "en": "Democratic Republic of the Congo",
++      "fa": "جمهوری دموکراتیک کنگو",
++      "ar": "الكونغو - كينشاسا"
++    },
++    {
++      "code": "DNK",
++      "alpha2": "DK",
++      "en": "Denmark",
++      "fa": "دانمارک",
++      "ar": "الدانمرك"
++    },
++    {
++      "code": "DJI",
++      "alpha2": "DJ",
++      "en": "Djibouti",
++      "fa": "جیبوتی",
++      "ar": "جيبوتي"
++    },
++    {
++      "code": "DMA",
++      "alpha2": "DM",
++      "en": "Dominica",
++      "fa": "دومینیکا",
++      "ar": "دومينيكا"
++    },
++    {
++      "code": "DOM",
++      "alpha2": "DO",
++      "en": "Dominican Republic",
++      "fa": "جمهوری دومینیکن",
++      "ar": "جمهورية الدومينيكان"
++    },
++    {
++      "code": "TLS",
++      "alpha2": "TL",
++      "en": "East Timor",
++      "fa": "تیمور شرقی",
++      "ar": "تيمور - ليشتي"
++    },
++    {
++      "code": "ECU",
++      "alpha2": "EC",
++      "en": "Ecuador",
++      "fa": "اکوادور",
++      "ar": "الإكوادور"
++    },
++    {
++      "code": "EGY",
++      "alpha2": "EG",
++      "en": "Egypt",
++      "fa": "مصر",
++      "ar": "مصر"
++    },
++    {
++      "code": "SLV",
++      "alpha2": "SV",
++      "en": "El Salvador",
++      "fa": "السالوادور",
++      "ar": "السلفادور"
++    },
++    {
++      "code": "GNQ",
++      "alpha2": "GQ",
++      "en": "Equatorial Guinea",
++      "fa": "گینه استوایی",
++      "ar": "غينيا الاستوائية"
++    },
++    {
++      "code": "ERI",
++      "alpha2": "ER",
++      "en": "Eritrea",
++      "fa": "اریتره",
++      "ar": "إريتريا"
++    },
++    {
++      "code": "EST",
++      "alpha2": "EE",
++      "en": "Estonia",
++      "fa": "استونی",
++      "ar": "إستونيا"
++    },
++    {
++      "code": "SWZ",
++      "alpha2": "SZ",
++      "en": "Eswatini",
++      "fa": "اسواتینی",
++      "ar": "إسواتيني"
++    },
++    {
++      "code": "ETH",
++      "alpha2": "ET",
++      "en": "Ethiopia",
++      "fa": "اتیوپی",
++      "ar": "إثيوبيا"
++    },
++    {
++      "code": "FLK",
++      "alpha2": "FK",
++      "en": "Falkland Islands",
++      "fa": "جزایر فالکلند",
++      "ar": "جزر فوكلاند"
++    },
++    {
++      "code": "FRO",
++      "alpha2": "FO",
++      "en": "Faroe Islands",
++      "fa": "جزایر فارو",
++      "ar": "جزر فارو"
++    },
++    {
++      "code": "FJI",
++      "alpha2": "FJ",
++      "en": "Fiji",
++      "fa": "فیجی",
++      "ar": "فيجي"
++    },
++    {
++      "code": "FIN",
++      "alpha2": "FI",
++      "en": "Finland",
++      "fa": "فنلاند",
++      "ar": "فنلندا"
++    },
++    {
++      "code": "FRA",
++      "alpha2": "FR",
++      "en": "France",
++      "fa": "فرانسه",
++      "ar": "فرنسا"
++    },
++    {
++      "code": "GUF",
++      "alpha2": "GF",
++      "en": "French Guiana",
++      "fa": "گویان فرانسه",
++      "ar": "غويانا الفرنسية"
++    },
++    {
++      "code": "PYF",
++      "alpha2": "PF",
++      "en": "French Polynesia",
++      "fa": "پلی‌نزی فرانسه",
++      "ar": "بولينيزيا الفرنسية"
++    },
++    {
++      "code": "ATF",
++      "alpha2": "TF",
++      "en": "French Southern and Antarctic Lands",
++      "fa": "سرزمینهای جنوبی و جنوبگانی فرانسه",
++      "ar": "الأقاليم الجنوبية الفرنسية"
++    },
++    {
++      "code": "GAB",
++      "alpha2": "GA",
++      "en": "Gabon",
++      "fa": "گابن",
++      "ar": "الغابون"
++    },
++    {
++      "code": "GEO",
++      "alpha2": "GE",
++      "en": "Georgia",
++      "fa": "گرجستان",
++      "ar": "جورجيا"
++    },
++    {
++      "code": "DEU",
++      "alpha2": "DE",
++      "en": "Germany",
++      "fa": "آلمان",
++      "ar": "ألمانيا"
++    },
++    {
++      "code": "GHA",
++      "alpha2": "GH",
++      "en": "Ghana",
++      "fa": "غنا",
++      "ar": "غانا"
++    },
++    {
++      "code": "GIB",
++      "alpha2": "GI",
++      "en": "Gibraltar",
++      "fa": "جبل‌الطارق",
++      "ar": "جبل طارق"
++    },
++    {
++      "code": "GRC",
++      "alpha2": "GR",
++      "en": "Greece",
++      "fa": "یونان",
++      "ar": "اليونان"
++    },
++    {
++      "code": "GRL",
++      "alpha2": "GL",
++      "en": "Greenland",
++      "fa": "گرینلند",
++      "ar": "غرينلاند"
++    },
++    {
++      "code": "GRD",
++      "alpha2": "GD",
++      "en": "Grenada",
++      "fa": "گرنادا",
++      "ar": "غرينادا"
++    },
++    {
++      "code": "GLP",
++      "alpha2": "GP",
++      "en": "Guadeloupe",
++      "fa": "گوادلوپ",
++      "ar": "غوادلوب"
++    },
++    {
++      "code": "GUM",
++      "alpha2": "GU",
++      "en": "Guam",
++      "fa": "گوام",
++      "ar": "غوام"
++    },
++    {
++      "code": "GTM",
++      "alpha2": "GT",
++      "en": "Guatemala",
++      "fa": "گواتمالا",
++      "ar": "غواتيمالا"
++    },
++    {
++      "code": "GGY",
++      "alpha2": "GG",
++      "en": "Guernsey",
++      "fa": "گرنزی",
++      "ar": "غيرنزي"
++    },
++    {
++      "code": "GIN",
++      "alpha2": "GN",
++      "en": "Guinea",
++      "fa": "گینه",
++      "ar": "غينيا"
++    },
++    {
++      "code": "GNB",
++      "alpha2": "GW",
++      "en": "Guinea-Bissau",
++      "fa": "گینه بیسائو",
++      "ar": "غينيا بيساو"
++    },
++    {
++      "code": "GUY",
++      "alpha2": "GY",
++      "en": "Guyana",
++      "fa": "گویان",
++      "ar": "غيانا"
++    },
++    {
++      "code": "HTI",
++      "alpha2": "HT",
++      "en": "Haiti",
++      "fa": "هائیتی",
++      "ar": "هايتي"
++    },
++    {
++      "code": "HMD",
++      "alpha2": "HM",
++      "en": "Heard Island and McDonald Islands",
++      "fa": "هرد و جزایر مک‌دونالد",
++      "ar": "جزيرة هيرد وجزر ماكدونالد"
++    },
++    {
++      "code": "VAT",
++      "alpha2": "VA",
++      "en": "Holy See (Vatican City State)",
++      "fa": "واتیکان",
++      "ar": "الفاتيكان"
++    },
++    {
++      "code": "HND",
++      "alpha2": "HN",
++      "en": "Honduras",
++      "fa": "هندوراس",
++      "ar": "هندوراس"
++    },
++    {
++      "code": "HKG",
++      "alpha2": "HK",
++      "en": "Hong Kong",
++      "fa": "هنگ‌کنگ، منطقهٔ ویژهٔ اداری چین",
++      "ar": "هونغ كونغ الصينية (منطقة إدارية خاصة)"
++    },
++    {
++      "code": "HUN",
++      "alpha2": "HU",
++      "en": "Hungary",
++      "fa": "مجارستان",
++      "ar": "هنغاريا"
++    },
++    {
++      "code": "ISL",
++      "alpha2": "IS",
++      "en": "Iceland",
++      "fa": "ایسلند",
++      "ar": "آيسلندا"
++    },
++    {
++      "code": "IND",
++      "alpha2": "IN",
++      "en": "India",
++      "fa": "هند",
++      "ar": "الهند"
++    },
++    {
++      "code": "IDN",
++      "alpha2": "ID",
++      "en": "Indonesia",
++      "fa": "اندونزی",
++      "ar": "إندونيسيا"
++    },
++    {
++      "code": "IRN",
++      "alpha2": "IR",
++      "en": "Iran",
++      "fa": "ایران",
++      "ar": "إيران"
++    },
++    {
++      "code": "IRQ",
++      "alpha2": "IQ",
++      "en": "Iraq",
++      "fa": "عراق",
++      "ar": "العراق"
++    },
++    {
++      "code": "IRL",
++      "alpha2": "IE",
++      "en": "Ireland",
++      "fa": "ایرلند",
++      "ar": "أيرلندا"
++    },
++    {
++      "code": "IMN",
++      "alpha2": "IM",
++      "en": "Isle of Man",
++      "fa": "جزیرهٔ من",
++      "ar": "جزيرة مان"
++    },
++    {
++      "code": "ISR",
++      "alpha2": "IL",
++      "en": "Israel",
++      "fa": "فلسطین اشغالی",
++      "ar": "فلسطين المحتلة"
++    },
++    {
++      "code": "ITA",
++      "alpha2": "IT",
++      "en": "Italy",
++      "fa": "ایتالیا",
++      "ar": "إيطاليا"
++    },
++    {
++      "code": "CIV",
++      "alpha2": "CI",
++      "en": "Ivory Coast",
++      "fa": "ساحل عاج",
++      "ar": "ساحل العاج"
++    },
++    {
++      "code": "JAM",
++      "alpha2": "JM",
++      "en": "Jamaica",
++      "fa": "جامائیکا",
++      "ar": "جامايكا"
++    },
++    {
++      "code": "JPN",
++      "alpha2": "JP",
++      "en": "Japan",
++      "fa": "ژاپن",
++      "ar": "اليابان"
++    },
++    {
++      "code": "JEY",
++      "alpha2": "JE",
++      "en": "Jersey",
++      "fa": "جرزی",
++      "ar": "جيرسي"
++    },
++    {
++      "code": "JOR",
++      "alpha2": "JO",
++      "en": "Jordan",
++      "fa": "اردن",
++      "ar": "الأردن"
++    },
++    {
++      "code": "KAZ",
++      "alpha2": "KZ",
++      "en": "Kazakhstan",
++      "fa": "قزاقستان",
++      "ar": "كازاخستان"
++    },
++    {
++      "code": "KEN",
++      "alpha2": "KE",
++      "en": "Kenya",
++      "fa": "کنیا",
++      "ar": "كينيا"
++    },
++    {
++      "code": "KIR",
++      "alpha2": "KI",
++      "en": "Kiribati",
++      "fa": "کیریباتی",
++      "ar": "كيريباتي"
++    },
++    {
++      "code": "KWT",
++      "alpha2": "KW",
++      "en": "Kuwait",
++      "fa": "کویت",
++      "ar": "الكويت"
++    },
++    {
++      "code": "KGZ",
++      "alpha2": "KG",
++      "en": "Kyrgyzstan",
++      "fa": "قرقیزستان",
++      "ar": "قيرغيزستان"
++    },
++    {
++      "code": "LAO",
++      "alpha2": "LA",
++      "en": "Laos",
++      "fa": "لائوس",
++      "ar": "لاوس"
++    },
++    {
++      "code": "LVA",
++      "alpha2": "LV",
++      "en": "Latvia",
++      "fa": "لتونی",
++      "ar": "لاتفيا"
++    },
++    {
++      "code": "LBN",
++      "alpha2": "LB",
++      "en": "Lebanon",
++      "fa": "لبنان",
++      "ar": "لبنان"
++    },
++    {
++      "code": "LSO",
++      "alpha2": "LS",
++      "en": "Lesotho",
++      "fa": "لسوتو",
++      "ar": "ليسوتو"
++    },
++    {
++      "code": "LBR",
++      "alpha2": "LR",
++      "en": "Liberia",
++      "fa": "لیبریا",
++      "ar": "ليبيريا"
++    },
++    {
++      "code": "LBY",
++      "alpha2": "LY",
++      "en": "Libya",
++      "fa": "لیبی",
++      "ar": "ليبيا"
++    },
++    {
++      "code": "LIE",
++      "alpha2": "LI",
++      "en": "Liechtenstein",
++      "fa": "لیختن‌اشتاین",
++      "ar": "ليختنشتاين"
++    },
++    {
++      "code": "LTU",
++      "alpha2": "LT",
++      "en": "Lithuania",
++      "fa": "لیتوانی",
++      "ar": "ليتوانيا"
++    },
++    {
++      "code": "LUX",
++      "alpha2": "LU",
++      "en": "Luxembourg",
++      "fa": "لوکزامبورگ",
++      "ar": "لوكسمبورغ"
++    },
++    {
++      "code": "MAC",
++      "alpha2": "MO",
++      "en": "Macao",
++      "fa": "ماکائو، منطقهٔ ویژهٔ اداری چین",
++      "ar": "منطقة ماكاو الإدارية الخاصة"
++    },
++    {
++      "code": "MDG",
++      "alpha2": "MG",
++      "en": "Madagascar",
++      "fa": "ماداگاسکار",
++      "ar": "مدغشقر"
++    },
++    {
++      "code": "MWI",
++      "alpha2": "MW",
++      "en": "Malawi",
++      "fa": "مالاوی",
++      "ar": "ملاوي"
++    },
++    {
++      "code": "MYS",
++      "alpha2": "MY",
++      "en": "Malaysia",
++      "fa": "مالزی",
++      "ar": "ماليزيا"
++    },
++    {
++      "code": "MDV",
++      "alpha2": "MV",
++      "en": "Maldives",
++      "fa": "مالدیو",
++      "ar": "جزر المالديف"
++    },
++    {
++      "code": "MLI",
++      "alpha2": "ML",
++      "en": "Mali",
++      "fa": "مالی",
++      "ar": "مالي"
++    },
++    {
++      "code": "MLT",
++      "alpha2": "MT",
++      "en": "Malta",
++      "fa": "مالت",
++      "ar": "مالطا"
++    },
++    {
++      "code": "MHL",
++      "alpha2": "MH",
++      "en": "Marshall Islands",
++      "fa": "جزایر مارشال",
++      "ar": "جزر مارشال"
++    },
++    {
++      "code": "MTQ",
++      "alpha2": "MQ",
++      "en": "Martinique",
++      "fa": "مارتینیک",
++      "ar": "جزر المارتينيك"
++    },
++    {
++      "code": "MRT",
++      "alpha2": "MR",
++      "en": "Mauritania",
++      "fa": "موریتانی",
++      "ar": "موريتانيا"
++    },
++    {
++      "code": "MUS",
++      "alpha2": "MU",
++      "en": "Mauritius",
++      "fa": "موریس",
++      "ar": "موريشيوس"
++    },
++    {
++      "code": "MYT",
++      "alpha2": "YT",
++      "en": "Mayotte",
++      "fa": "مایوت",
++      "ar": "مايوت"
++    },
++    {
++      "code": "MEX",
++      "alpha2": "MX",
++      "en": "Mexico",
++      "fa": "مکزیک",
++      "ar": "المكسيك"
++    },
++    {
++      "code": "FSM",
++      "alpha2": "FM",
++      "en": "Micronesia, Federated States of",
++      "fa": "میکرونزی",
++      "ar": "ميكرونيزيا"
++    },
++    {
++      "code": "MDA",
++      "alpha2": "MD",
++      "en": "Moldova",
++      "fa": "مولداوی",
++      "ar": "مولدوفا"
++    },
++    {
++      "code": "MCO",
++      "alpha2": "MC",
++      "en": "Monaco",
++      "fa": "موناکو",
++      "ar": "موناكو"
++    },
++    {
++      "code": "MNG",
++      "alpha2": "MN",
++      "en": "Mongolia",
++      "fa": "مغولستان",
++      "ar": "منغوليا"
++    },
++    {
++      "code": "MNE",
++      "alpha2": "ME",
++      "en": "Montenegro",
++      "fa": "مونتهنگرو",
++      "ar": "الجبل الأسود"
++    },
++    {
++      "code": "MSR",
++      "alpha2": "MS",
++      "en": "Montserrat",
++      "fa": "مونت‌سرات",
++      "ar": "مونتسرات"
++    },
++    {
++      "code": "MAR",
++      "alpha2": "MA",
++      "en": "Morocco",
++      "fa": "مراکش",
++      "ar": "المغرب"
++    },
++    {
++      "code": "MOZ",
++      "alpha2": "MZ",
++      "en": "Mozambique",
++      "fa": "موزامبیک",
++      "ar": "موزمبيق"
++    },
++    {
++      "code": "MMR",
++      "alpha2": "MM",
++      "en": "Myanmar",
++      "fa": "میانمار",
++      "ar": "ميانمار (بورما)"
++    },
++    {
++      "code": "NAM",
++      "alpha2": "NA",
++      "en": "Namibia",
++      "fa": "نامیبیا",
++      "ar": "ناميبيا"
++    },
++    {
++      "code": "NRU",
++      "alpha2": "NR",
++      "en": "Nauru",
++      "fa": "نائورو",
++      "ar": "ناورو"
++    },
++    {
++      "code": "NPL",
++      "alpha2": "NP",
++      "en": "Nepal",
++      "fa": "نپال",
++      "ar": "نيبال"
++    },
++    {
++      "code": "NLD",
++      "alpha2": "NL",
++      "en": "Netherlands",
++      "fa": "هلند",
++      "ar": "هولندا"
++    },
++    {
++      "code": "NCL",
++      "alpha2": "NC",
++      "en": "New Caledonia",
++      "fa": "کالدونیای جدید",
++      "ar": "كاليدونيا الجديدة"
++    },
++    {
++      "code": "NZL",
++      "alpha2": "NZ",
++      "en": "New Zealand",
++      "fa": "نیوزیلند",
++      "ar": "نيوزيلندا"
++    },
++    {
++      "code": "NIC",
++      "alpha2": "NI",
++      "en": "Nicaragua",
++      "fa": "نیکاراگوئه",
++      "ar": "نيكاراغوا"
++    },
++    {
++      "code": "NER",
++      "alpha2": "NE",
++      "en": "Niger",
++      "fa": "نیجر",
++      "ar": "النيجر"
++    },
++    {
++      "code": "NGA",
++      "alpha2": "NG",
++      "en": "Nigeria",
++      "fa": "نیجریه",
++      "ar": "نيجيريا"
++    },
++    {
++      "code": "NIU",
++      "alpha2": "NU",
++      "en": "Niue",
++      "fa": "نیوئه",
++      "ar": "نيوي"
++    },
++    {
++      "code": "NFK",
++      "alpha2": "NF",
++      "en": "Norfolk Island",
++      "fa": "جزیرهٔ نورفولک",
++      "ar": "جزيرة نورفولك"
++    },
++    {
++      "code": "PRK",
++      "alpha2": "KP",
++      "en": "North Korea",
++      "fa": "کره شمالی",
++      "ar": "كوريا الشمالية"
++    },
++    {
++      "code": "MKD",
++      "alpha2": "MK",
++      "en": "North Macedonia",
++      "fa": "مقدونیه شمالی",
++      "ar": "مقدونيا الشمالية"
++    },
++    {
++      "code": "MNP",
++      "alpha2": "MP",
++      "en": "Northern Mariana Islands",
++      "fa": "جزایر ماریانای شمالی",
++      "ar": "جزر ماريانا الشمالية"
++    },
++    {
++      "code": "NOR",
++      "alpha2": "NO",
++      "en": "Norway",
++      "fa": "نروژ",
++      "ar": "النرويج"
++    },
++    {
++      "code": "OMN",
++      "alpha2": "OM",
++      "en": "Oman",
++      "fa": "عمان",
++      "ar": "عُمان"
++    },
++    {
++      "code": "PAK",
++      "alpha2": "PK",
++      "en": "Pakistan",
++      "fa": "پاکستان",
++      "ar": "باكستان"
++    },
++    {
++      "code": "PLW",
++      "alpha2": "PW",
++      "en": "Palau",
++      "fa": "پالائو",
++      "ar": "بالاو"
++    },
++    {
++      "code": "PSE",
++      "alpha2": "PS",
++      "en": "Palestine",
++      "fa": "فلسطین",
++      "ar": "الأراضي الفلسطينية"
++    },
++    {
++      "code": "PAN",
++      "alpha2": "PA",
++      "en": "Panama",
++      "fa": "پاناما",
++      "ar": "بنما"
++    },
++    {
++      "code": "PNG",
++      "alpha2": "PG",
++      "en": "Papua New Guinea",
++      "fa": "پاپوآ گینه نو",
++      "ar": "بابوا غينيا الجديدة"
++    },
++    {
++      "code": "PRY",
++      "alpha2": "PY",
++      "en": "Paraguay",
++      "fa": "پاراگوئه",
++      "ar": "باراغواي"
++    },
++    {
++      "code": "CHN",
++      "alpha2": "CN",
++      "en": "People's Republic of China",
++      "fa": "جمهوری خلق چین",
++      "ar": "الصين"
++    },
++    {
++      "code": "PER",
++      "alpha2": "PE",
++      "en": "Peru",
++      "fa": "پرو",
++      "ar": "بيرو"
++    },
++    {
++      "code": "PHL",
++      "alpha2": "PH",
++      "en": "Philippines",
++      "fa": "فیلیپین",
++      "ar": "الفلبين"
++    },
++    {
++      "code": "PCN",
++      "alpha2": "PN",
++      "en": "Pitcairn",
++      "fa": "جزایر پیت‌کرن",
++      "ar": "جزر بيتكيرن"
++    },
++    {
++      "code": "POL",
++      "alpha2": "PL",
++      "en": "Poland",
++      "fa": "لهستان",
++      "ar": "بولندا"
++    },
++    {
++      "code": "PRT",
++      "alpha2": "PT",
++      "en": "Portugal",
++      "fa": "پرتغال",
++      "ar": "البرتغال"
++    },
++    {
++      "code": "PRI",
++      "alpha2": "PR",
++      "en": "Puerto Rico",
++      "fa": "پورتوریکو",
++      "ar": "بورتوريكو"
++    },
++    {
++      "code": "QAT",
++      "alpha2": "QA",
++      "en": "Qatar",
++      "fa": "قطر",
++      "ar": "قطر"
++    },
++    {
++      "code": "COG",
++      "alpha2": "CG",
++      "en": "Republic of the Congo",
++      "fa": "جمهوری کنگو",
++      "ar": "الكونغو - برازافيل"
++    },
++    {
++      "code": "ROU",
++      "alpha2": "RO",
++      "en": "Romania",
++      "fa": "رومانی",
++      "ar": "رومانيا"
++    },
++    {
++      "code": "RUS",
++      "alpha2": "RU",
++      "en": "Russia",
++      "fa": "روسیه",
++      "ar": "روسيا"
++    },
++    {
++      "code": "RWA",
++      "alpha2": "RW",
++      "en": "Rwanda",
++      "fa": "رواندا",
++      "ar": "رواندا"
++    },
++    {
++      "code": "REU",
++      "alpha2": "RE",
++      "en": "Réunion",
++      "fa": "رئونیون",
++      "ar": "روينيون"
++    },
++    {
++      "code": "BLM",
++      "alpha2": "BL",
++      "en": "Saint Barthélemy",
++      "fa": "سن بارتلمی",
++      "ar": "سان بارتليمي"
++    },
++    {
++      "code": "SHN",
++      "alpha2": "SH",
++      "en": "Saint Helena, Ascension and Tristan da Cunha",
++      "fa": "سنت هلن",
++      "ar": "سانت هيلينا"
++    },
++    {
++      "code": "KNA",
++      "alpha2": "KN",
++      "en": "Saint Kitts and Nevis",
++      "fa": "سنت کیتس و نویس",
++      "ar": "سانت كيتس ونيفيس"
++    },
++    {
++      "code": "LCA",
++      "alpha2": "LC",
++      "en": "Saint Lucia",
++      "fa": "سنت لوسیا",
++      "ar": "سانت لوسيا"
++    },
++    {
++      "code": "MAF",
++      "alpha2": "MF",
++      "en": "Saint Martin (French part)",
++      "fa": "سنت مارتین",
++      "ar": "سان مارتن"
++    },
++    {
++      "code": "SPM",
++      "alpha2": "PM",
++      "en": "Saint Pierre and Miquelon",
++      "fa": "سن پیر و میکلن",
++      "ar": "سان بيير ومكويلون"
++    },
++    {
++      "code": "VCT",
++      "alpha2": "VC",
++      "en": "Saint Vincent and the Grenadines",
++      "fa": "سنت وینسنت و گرنادین",
++      "ar": "سانت فنسنت وجزر غرينادين"
++    },
++    {
++      "code": "WSM",
++      "alpha2": "WS",
++      "en": "Samoa",
++      "fa": "ساموآ",
++      "ar": "ساموا"
++    },
++    {
++      "code": "SMR",
++      "alpha2": "SM",
++      "en": "San Marino",
++      "fa": "سان‌مارینو",
++      "ar": "سان مارينو"
++    },
++    {
++      "code": "STP",
++      "alpha2": "ST",
++      "en": "Sao Tome and Principe",
++      "fa": "سائوتومه و پرینسیپ",
++      "ar": "ساو تومي وبرينسيبي"
++    },
++    {
++      "code": "SAU",
++      "alpha2": "SA",
++      "en": "Saudi Arabia",
++      "fa": "عربستان سعودی",
++      "ar": "المملكة العربية السعودية"
++    },
++    {
++      "code": "SEN",
++      "alpha2": "SN",
++      "en": "Senegal",
++      "fa": "سنگال",
++      "ar": "السنغال"
++    },
++    {
++      "code": "SRB",
++      "alpha2": "RS",
++      "en": "Serbia",
++      "fa": "صربستان",
++      "ar": "صربيا"
++    },
++    {
++      "code": "SYC",
++      "alpha2": "SC",
++      "en": "Seychelles",
++      "fa": "سیشل",
++      "ar": "سيشل"
++    },
++    {
++      "code": "SLE",
++      "alpha2": "SL",
++      "en": "Sierra Leone",
++      "fa": "سیرالئون",
++      "ar": "سيراليون"
++    },
++    {
++      "code": "SGP",
++      "alpha2": "SG",
++      "en": "Singapore",
++      "fa": "سنگاپور",
++      "ar": "سنغافورة"
++    },
++    {
++      "code": "SXM",
++      "alpha2": "SX",
++      "en": "Sint Maarten (Dutch part)",
++      "fa": "سنت مارتن",
++      "ar": "سانت مارتن"
++    },
++    {
++      "code": "SVK",
++      "alpha2": "SK",
++      "en": "Slovakia",
++      "fa": "اسلواکی",
++      "ar": "سلوفاكيا"
++    },
++    {
++      "code": "SVN",
++      "alpha2": "SI",
++      "en": "Slovenia",
++      "fa": "اسلوونی",
++      "ar": "سلوفينيا"
++    },
++    {
++      "code": "SLB",
++      "alpha2": "SB",
++      "en": "Solomon Islands",
++      "fa": "جزایر سلیمان",
++      "ar": "جزر سليمان"
++    },
++    {
++      "code": "SOM",
++      "alpha2": "SO",
++      "en": "Somalia",
++      "fa": "سومالی",
++      "ar": "الصومال"
++    },
++    {
++      "code": "ZAF",
++      "alpha2": "ZA",
++      "en": "South Africa",
++      "fa": "آفریقای جنوبی",
++      "ar": "جنوب أفريقيا"
++    },
++    {
++      "code": "SGS",
++      "alpha2": "GS",
++      "en": "South Georgia and the South Sandwich Islands",
++      "fa": "جورجیای جنوبی و جزایر ساندویچ جنوبی",
++      "ar": "جورجيا الجنوبية وجزر ساندويتش الجنوبية"
++    },
++    {
++      "code": "KOR",
++      "alpha2": "KR",
++      "en": "South Korea",
++      "fa": "کره جنوبی",
++      "ar": "كوريا الجنوبية"
++    },
++    {
++      "code": "SSD",
++      "alpha2": "SS",
++      "en": "South Sudan",
++      "fa": "سودان جنوبی",
++      "ar": "جنوب السودان"
++    },
++    {
++      "code": "ESP",
++      "alpha2": "ES",
++      "en": "Spain",
++      "fa": "اسپانیا",
++      "ar": "إسبانيا"
++    },
++    {
++      "code": "LKA",
++      "alpha2": "LK",
++      "en": "Sri Lanka",
++      "fa": "سریلانکا",
++      "ar": "سريلانكا"
++    },
++    {
++      "code": "SDN",
++      "alpha2": "SD",
++      "en": "Sudan",
++      "fa": "سودان",
++      "ar": "السودان"
++    },
++    {
++      "code": "SUR",
++      "alpha2": "SR",
++      "en": "Suriname",
++      "fa": "سورینام",
++      "ar": "سورينام"
++    },
++    {
++      "code": "SJM",
++      "alpha2": "SJ",
++      "en": "Svalbard and Jan Mayen",
++      "fa": "سوالبارد و یان ماین",
++      "ar": "سفالبارد وجان ماين"
++    },
++    {
++      "code": "SWE",
++      "alpha2": "SE",
++      "en": "Sweden",
++      "fa": "سوئد",
++      "ar": "السويد"
++    },
++    {
++      "code": "CHE",
++      "alpha2": "CH",
++      "en": "Switzerland",
++      "fa": "سوئیس",
++      "ar": "سويسرا"
++    },
++    {
++      "code": "SYR",
++      "alpha2": "SY",
++      "en": "Syria",
++      "fa": "سوریه",
++      "ar": "سوريا"
++    },
++    {
++      "code": "TWN",
++      "alpha2": "TW",
++      "en": "Taiwan, Province of China",
++      "fa": "تایوان",
++      "ar": "تايوان"
++    },
++    {
++      "code": "TJK",
++      "alpha2": "TJ",
++      "en": "Tajikistan",
++      "fa": "تاجیکستان",
++      "ar": "طاجيكستان"
++    },
++    {
++      "code": "TZA",
++      "alpha2": "TZ",
++      "en": "Tanzania",
++      "fa": "تانزانیا",
++      "ar": "تنزانيا"
++    },
++    {
++      "code": "THA",
++      "alpha2": "TH",
++      "en": "Thailand",
++      "fa": "تایلند",
++      "ar": "تايلاند"
++    },
++    {
++      "code": "BHS",
++      "alpha2": "BS",
++      "en": "The Bahamas",
++      "fa": "باهاما",
++      "ar": "جزر البهاما"
++    },
++    {
++      "code": "GMB",
++      "alpha2": "GM",
++      "en": "The Gambia",
++      "fa": "گامبیا",
++      "ar": "غامبيا"
++    },
++    {
++      "code": "TGO",
++      "alpha2": "TG",
++      "en": "Togo",
++      "fa": "توگو",
++      "ar": "توغو"
++    },
++    {
++      "code": "TKL",
++      "alpha2": "TK",
++      "en": "Tokelau",
++      "fa": "توکلائو",
++      "ar": "توكيلاو"
++    },
++    {
++      "code": "TON",
++      "alpha2": "TO",
++      "en": "Tonga",
++      "fa": "تونگا",
++      "ar": "تونغا"
++    },
++    {
++      "code": "TTO",
++      "alpha2": "TT",
++      "en": "Trinidad and Tobago",
++      "fa": "ترینیداد و توباگو",
++      "ar": "ترينيداد وتوباغو"
++    },
++    {
++      "code": "TUN",
++      "alpha2": "TN",
++      "en": "Tunisia",
++      "fa": "تونس",
++      "ar": "تونس"
++    },
++    {
++      "code": "TUR",
++      "alpha2": "TR",
++      "en": "Turkey",
++      "fa": "ترکیه",
++      "ar": "تركيا"
++    },
++    {
++      "code": "TKM",
++      "alpha2": "TM",
++      "en": "Turkmenistan",
++      "fa": "ترکمنستان",
++      "ar": "تركمانستان"
++    },
++    {
++      "code": "TCA",
++      "alpha2": "TC",
++      "en": "Turks and Caicos Islands",
++      "fa": "جزایر تورکس و کایکوس",
++      "ar": "جزر توركس وكايكوس"
++    },
++    {
++      "code": "TUV",
++      "alpha2": "TV",
++      "en": "Tuvalu",
++      "fa": "تووالو",
++      "ar": "توفالو"
++    },
++    {
++      "code": "UGA",
++      "alpha2": "UG",
++      "en": "Uganda",
++      "fa": "اوگاندا",
++      "ar": "أوغندا"
++    },
++    {
++      "code": "UKR",
++      "alpha2": "UA",
++      "en": "Ukraine",
++      "fa": "اوکراین",
++      "ar": "أوكرانيا"
++    },
++    {
++      "code": "ARE",
++      "alpha2": "AE",
++      "en": "United Arab Emirates",
++      "fa": "امارات متحده عربی",
++      "ar": "الإمارات العربية المتحدة"
++    },
++    {
++      "code": "GBR",
++      "alpha2": "GB",
++      "en": "United Kingdom",
++      "fa": "بریتانیا",
++      "ar": "المملكة المتحدة"
++    },
++    {
++      "code": "UMI",
++      "alpha2": "UM",
++      "en": "United States Minor Outlying Islands",
++      "fa": "جزایر دورافتادهٔ ایالات متحده",
++      "ar": "جزر الولايات المتحدة النائية"
++    },
++    {
++      "code": "USA",
++      "alpha2": "US",
++      "en": "United States of America",
++      "fa": "ایالات متحده آمریکا",
++      "ar": "الولايات المتحدة"
++    },
++    {
++      "code": "URY",
++      "alpha2": "UY",
++      "en": "Uruguay",
++      "fa": "اروگوئه",
++      "ar": "أورغواي"
++    },
++    {
++      "code": "UZB",
++      "alpha2": "UZ",
++      "en": "Uzbekistan",
++      "fa": "ازبکستان",
++      "ar": "أوزبكستان"
++    },
++    {
++      "code": "VUT",
++      "alpha2": "VU",
++      "en": "Vanuatu",
++      "fa": "وانواتو",
++      "ar": "فانواتو"
++    },
++    {
++      "code": "VEN",
++      "alpha2": "VE",
++      "en": "Venezuela",
++      "fa": "ونزوئلا",
++      "ar": "فنزويلا"
++    },
++    {
++      "code": "VNM",
++      "alpha2": "VN",
++      "en": "Vietnam",
++      "fa": "ویتنام",
++      "ar": "فيتنام"
++    },
++    {
++      "code": "VGB",
++      "alpha2": "VG",
++      "en": "Virgin Islands, British",
++      "fa": "جزایر ویرجین بریتانیا",
++      "ar": "جزر فيرجن البريطانية"
++    },
++    {
++      "code": "VIR",
++      "alpha2": "VI",
++      "en": "Virgin Islands, U.S.",
++      "fa": "جزایر ویرجین ایالات متحده",
++      "ar": "جزر فيرجن الأمريكية"
++    },
++    {
++      "code": "WLF",
++      "alpha2": "WF",
++      "en": "Wallis and Futuna",
++      "fa": "والیس و فوتونا",
++      "ar": "جزر والس وفوتونا"
++    },
++    {
++      "code": "ESH",
++      "alpha2": "EH",
++      "en": "Western Sahara",
++      "fa": "صحرای غربی",
++      "ar": "الصحراء الغربية"
++    },
++    {
++      "code": "YEM",
++      "alpha2": "YE",
++      "en": "Yemen",
++      "fa": "یمن",
++      "ar": "اليمن"
++    },
++    {
++      "code": "ZMB",
++      "alpha2": "ZM",
++      "en": "Zambia",
++      "fa": "زامبیا",
++      "ar": "زامبيا"
++    },
++    {
++      "code": "ZWE",
++      "alpha2": "ZW",
++      "en": "Zimbabwe",
++      "fa": "زیمبابوه",
++      "ar": "زيمبابوي"
++    },
++    {
++      "code": "ALA",
++      "alpha2": "AX",
++      "en": "Åland Islands",
++      "fa": "جزایر آلاند",
++      "ar": "جزر آلاند"
++    }
++  ],
++  "aliases": {
++    "AW": "ABW",
++    "ABW": "ABW",
++    "AF": "AFG",
++    "AFG": "AFG",
++    "AO": "AGO",
++    "AGO": "AGO",
++    "AI": "AIA",
++    "AIA": "AIA",
++    "AX": "ALA",
++    "ALA": "ALA",
++    "AL": "ALB",
++    "ALB": "ALB",
++    "AD": "AND",
++    "AND": "AND",
++    "AE": "ARE",
++    "ARE": "ARE",
++    "AR": "ARG",
++    "ARG": "ARG",
++    "AM": "ARM",
++    "ARM": "ARM",
++    "AS": "ASM",
++    "ASM": "ASM",
++    "AQ": "ATA",
++    "ATA": "ATA",
++    "TF": "ATF",
++    "ATF": "ATF",
++    "AG": "ATG",
++    "ATG": "ATG",
++    "AU": "AUS",
++    "AUS": "AUS",
++    "AT": "AUT",
++    "AUT": "AUT",
++    "AZ": "AZE",
++    "AZE": "AZE",
++    "BI": "BDI",
++    "BDI": "BDI",
++    "BE": "BEL",
++    "BEL": "BEL",
++    "BJ": "BEN",
++    "BEN": "BEN",
++    "BQ": "BES",
++    "BES": "BES",
++    "BF": "BFA",
++    "BFA": "BFA",
++    "BD": "BGD",
++    "BGD": "BGD",
++    "BG": "BGR",
++    "BGR": "BGR",
++    "BH": "BHR",
++    "BHR": "BHR",
++    "BS": "BHS",
++    "BHS": "BHS",
++    "BA": "BIH",
++    "BIH": "BIH",
++    "BL": "BLM",
++    "BLM": "BLM",
++    "BY": "BLR",
++    "BLR": "BLR",
++    "BZ": "BLZ",
++    "BLZ": "BLZ",
++    "BM": "BMU",
++    "BMU": "BMU",
++    "BO": "BOL",
++    "BOL": "BOL",
++    "BR": "BRA",
++    "BRA": "BRA",
++    "BB": "BRB",
++    "BRB": "BRB",
++    "BN": "BRN",
++    "BRN": "BRN",
++    "BT": "BTN",
++    "BTN": "BTN",
++    "BV": "BVT",
++    "BVT": "BVT",
++    "BW": "BWA",
++    "BWA": "BWA",
++    "CF": "CAF",
++    "CAF": "CAF",
++    "CA": "CAN",
++    "CAN": "CAN",
++    "CC": "CCK",
++    "CCK": "CCK",
++    "CH": "CHE",
++    "CHE": "CHE",
++    "CL": "CHL",
++    "CHL": "CHL",
++    "CN": "CHN",
++    "CHN": "CHN",
++    "CI": "CIV",
++    "CIV": "CIV",
++    "CM": "CMR",
++    "CMR": "CMR",
++    "CD": "COD",
++    "COD": "COD",
++    "CG": "COG",
++    "COG": "COG",
++    "CK": "COK",
++    "COK": "COK",
++    "CO": "COL",
++    "COL": "COL",
++    "KM": "COM",
++    "COM": "COM",
++    "CV": "CPV",
++    "CPV": "CPV",
++    "CR": "CRI",
++    "CRI": "CRI",
++    "CU": "CUB",
++    "CUB": "CUB",
++    "CW": "CUW",
++    "CUW": "CUW",
++    "CX": "CXR",
++    "CXR": "CXR",
++    "KY": "CYM",
++    "CYM": "CYM",
++    "CY": "CYP",
++    "CYP": "CYP",
++    "CZ": "CZE",
++    "CZE": "CZE",
++    "DE": "DEU",
++    "DEU": "DEU",
++    "DJ": "DJI",
++    "DJI": "DJI",
++    "DM": "DMA",
++    "DMA": "DMA",
++    "DK": "DNK",
++    "DNK": "DNK",
++    "DO": "DOM",
++    "DOM": "DOM",
++    "DZ": "DZA",
++    "DZA": "DZA",
++    "EC": "ECU",
++    "ECU": "ECU",
++    "EG": "EGY",
++    "EGY": "EGY",
++    "ER": "ERI",
++    "ERI": "ERI",
++    "EH": "ESH",
++    "ESH": "ESH",
++    "ES": "ESP",
++    "ESP": "ESP",
++    "EE": "EST",
++    "EST": "EST",
++    "ET": "ETH",
++    "ETH": "ETH",
++    "FI": "FIN",
++    "FIN": "FIN",
++    "FJ": "FJI",
++    "FJI": "FJI",
++    "FK": "FLK",
++    "FLK": "FLK",
++    "FR": "FRA",
++    "FRA": "FRA",
++    "FO": "FRO",
++    "FRO": "FRO",
++    "FM": "FSM",
++    "FSM": "FSM",
++    "GA": "GAB",
++    "GAB": "GAB",
++    "GB": "GBR",
++    "GBR": "GBR",
++    "GE": "GEO",
++    "GEO": "GEO",
++    "GG": "GGY",
++    "GGY": "GGY",
++    "GH": "GHA",
++    "GHA": "GHA",
++    "GI": "GIB",
++    "GIB": "GIB",
++    "GN": "GIN",
++    "GIN": "GIN",
++    "GP": "GLP",
++    "GLP": "GLP",
++    "GM": "GMB",
++    "GMB": "GMB",
++    "GW": "GNB",
++    "GNB": "GNB",
++    "GQ": "GNQ",
++    "GNQ": "GNQ",
++    "GR": "GRC",
++    "GRC": "GRC",
++    "GD": "GRD",
++    "GRD": "GRD",
++    "GL": "GRL",
++    "GRL": "GRL",
++    "GT": "GTM",
++    "GTM": "GTM",
++    "GF": "GUF",
++    "GUF": "GUF",
++    "GU": "GUM",
++    "GUM": "GUM",
++    "GY": "GUY",
++    "GUY": "GUY",
++    "HK": "HKG",
++    "HKG": "HKG",
++    "HM": "HMD",
++    "HMD": "HMD",
++    "HN": "HND",
++    "HND": "HND",
++    "HR": "HRV",
++    "HRV": "HRV",
++    "HT": "HTI",
++    "HTI": "HTI",
++    "HU": "HUN",
++    "HUN": "HUN",
++    "ID": "IDN",
++    "IDN": "IDN",
++    "IM": "IMN",
++    "IMN": "IMN",
++    "IN": "IND",
++    "IND": "IND",
++    "IO": "IOT",
++    "IOT": "IOT",
++    "IE": "IRL",
++    "IRL": "IRL",
++    "IR": "IRN",
++    "IRN": "IRN",
++    "IQ": "IRQ",
++    "IRQ": "IRQ",
++    "IS": "ISL",
++    "ISL": "ISL",
++    "IL": "ISR",
++    "ISR": "ISR",
++    "IT": "ITA",
++    "ITA": "ITA",
++    "JM": "JAM",
++    "JAM": "JAM",
++    "JE": "JEY",
++    "JEY": "JEY",
++    "JO": "JOR",
++    "JOR": "JOR",
++    "JP": "JPN",
++    "JPN": "JPN",
++    "KZ": "KAZ",
++    "KAZ": "KAZ",
++    "KE": "KEN",
++    "KEN": "KEN",
++    "KG": "KGZ",
++    "KGZ": "KGZ",
++    "KH": "KHM",
++    "KHM": "KHM",
++    "KI": "KIR",
++    "KIR": "KIR",
++    "KN": "KNA",
++    "KNA": "KNA",
++    "KR": "KOR",
++    "KOR": "KOR",
++    "KW": "KWT",
++    "KWT": "KWT",
++    "LA": "LAO",
++    "LAO": "LAO",
++    "LB": "LBN",
++    "LBN": "LBN",
++    "LR": "LBR",
++    "LBR": "LBR",
++    "LY": "LBY",
++    "LBY": "LBY",
++    "LC": "LCA",
++    "LCA": "LCA",
++    "LI": "LIE",
++    "LIE": "LIE",
++    "LK": "LKA",
++    "LKA": "LKA",
++    "LS": "LSO",
++    "LSO": "LSO",
++    "LT": "LTU",
++    "LTU": "LTU",
++    "LU": "LUX",
++    "LUX": "LUX",
++    "LV": "LVA",
++    "LVA": "LVA",
++    "MO": "MAC",
++    "MAC": "MAC",
++    "MF": "MAF",
++    "MAF": "MAF",
++    "MA": "MAR",
++    "MAR": "MAR",
++    "MC": "MCO",
++    "MCO": "MCO",
++    "MD": "MDA",
++    "MDA": "MDA",
++    "MG": "MDG",
++    "MDG": "MDG",
++    "MV": "MDV",
++    "MDV": "MDV",
++    "MX": "MEX",
++    "MEX": "MEX",
++    "MH": "MHL",
++    "MHL": "MHL",
++    "MK": "MKD",
++    "MKD": "MKD",
++    "ML": "MLI",
++    "MLI": "MLI",
++    "MT": "MLT",
++    "MLT": "MLT",
++    "MM": "MMR",
++    "MMR": "MMR",
++    "ME": "MNE",
++    "MNE": "MNE",
++    "MN": "MNG",
++    "MNG": "MNG",
++    "MP": "MNP",
++    "MNP": "MNP",
++    "MZ": "MOZ",
++    "MOZ": "MOZ",
++    "MR": "MRT",
++    "MRT": "MRT",
++    "MS": "MSR",
++    "MSR": "MSR",
++    "MQ": "MTQ",
++    "MTQ": "MTQ",
++    "MU": "MUS",
++    "MUS": "MUS",
++    "MW": "MWI",
++    "MWI": "MWI",
++    "MY": "MYS",
++    "MYS": "MYS",
++    "YT": "MYT",
++    "MYT": "MYT",
++    "NA": "NAM",
++    "NAM": "NAM",
++    "NC": "NCL",
++    "NCL": "NCL",
++    "NE": "NER",
++    "NER": "NER",
++    "NF": "NFK",
++    "NFK": "NFK",
++    "NG": "NGA",
++    "NGA": "NGA",
++    "NI": "NIC",
++    "NIC": "NIC",
++    "NU": "NIU",
++    "NIU": "NIU",
++    "NL": "NLD",
++    "NLD": "NLD",
++    "NO": "NOR",
++    "NOR": "NOR",
++    "NP": "NPL",
++    "NPL": "NPL",
++    "NR": "NRU",
++    "NRU": "NRU",
++    "NZ": "NZL",
++    "NZL": "NZL",
++    "OM": "OMN",
++    "OMN": "OMN",
++    "PK": "PAK",
++    "PAK": "PAK",
++    "PA": "PAN",
++    "PAN": "PAN",
++    "PN": "PCN",
++    "PCN": "PCN",
++    "PE": "PER",
++    "PER": "PER",
++    "PH": "PHL",
++    "PHL": "PHL",
++    "PW": "PLW",
++    "PLW": "PLW",
++    "PG": "PNG",
++    "PNG": "PNG",
++    "PL": "POL",
++    "POL": "POL",
++    "PR": "PRI",
++    "PRI": "PRI",
++    "KP": "PRK",
++    "PRK": "PRK",
++    "PT": "PRT",
++    "PRT": "PRT",
++    "PY": "PRY",
++    "PRY": "PRY",
++    "PS": "PSE",
++    "PSE": "PSE",
++    "PF": "PYF",
++    "PYF": "PYF",
++    "QA": "QAT",
++    "QAT": "QAT",
++    "RE": "REU",
++    "REU": "REU",
++    "RO": "ROU",
++    "ROU": "ROU",
++    "RU": "RUS",
++    "RUS": "RUS",
++    "RW": "RWA",
++    "RWA": "RWA",
++    "SA": "SAU",
++    "SAU": "SAU",
++    "SD": "SDN",
++    "SDN": "SDN",
++    "SN": "SEN",
++    "SEN": "SEN",
++    "SG": "SGP",
++    "SGP": "SGP",
++    "GS": "SGS",
++    "SGS": "SGS",
++    "SH": "SHN",
++    "SHN": "SHN",
++    "SJ": "SJM",
++    "SJM": "SJM",
++    "SB": "SLB",
++    "SLB": "SLB",
++    "SL": "SLE",
++    "SLE": "SLE",
++    "SV": "SLV",
++    "SLV": "SLV",
++    "SM": "SMR",
++    "SMR": "SMR",
++    "SO": "SOM",
++    "SOM": "SOM",
++    "PM": "SPM",
++    "SPM": "SPM",
++    "RS": "SRB",
++    "SRB": "SRB",
++    "SS": "SSD",
++    "SSD": "SSD",
++    "ST": "STP",
++    "STP": "STP",
++    "SR": "SUR",
++    "SUR": "SUR",
++    "SK": "SVK",
++    "SVK": "SVK",
++    "SI": "SVN",
++    "SVN": "SVN",
++    "SE": "SWE",
++    "SWE": "SWE",
++    "SZ": "SWZ",
++    "SWZ": "SWZ",
++    "SX": "SXM",
++    "SXM": "SXM",
++    "SC": "SYC",
++    "SYC": "SYC",
++    "SY": "SYR",
++    "SYR": "SYR",
++    "TC": "TCA",
++    "TCA": "TCA",
++    "TD": "TCD",
++    "TCD": "TCD",
++    "TG": "TGO",
++    "TGO": "TGO",
++    "TH": "THA",
++    "THA": "THA",
++    "TJ": "TJK",
++    "TJK": "TJK",
++    "TK": "TKL",
++    "TKL": "TKL",
++    "TM": "TKM",
++    "TKM": "TKM",
++    "TL": "TLS",
++    "TLS": "TLS",
++    "TO": "TON",
++    "TON": "TON",
++    "TT": "TTO",
++    "TTO": "TTO",
++    "TN": "TUN",
++    "TUN": "TUN",
++    "TR": "TUR",
++    "TUR": "TUR",
++    "TV": "TUV",
++    "TUV": "TUV",
++    "TW": "TWN",
++    "TWN": "TWN",
++    "TZ": "TZA",
++    "TZA": "TZA",
++    "UG": "UGA",
++    "UGA": "UGA",
++    "UA": "UKR",
++    "UKR": "UKR",
++    "UM": "UMI",
++    "UMI": "UMI",
++    "UY": "URY",
++    "URY": "URY",
++    "US": "USA",
++    "USA": "USA",
++    "UZ": "UZB",
++    "UZB": "UZB",
++    "VA": "VAT",
++    "VAT": "VAT",
++    "VC": "VCT",
++    "VCT": "VCT",
++    "VE": "VEN",
++    "VEN": "VEN",
++    "VG": "VGB",
++    "VGB": "VGB",
++    "VI": "VIR",
++    "VIR": "VIR",
++    "VN": "VNM",
++    "VNM": "VNM",
++    "VU": "VUT",
++    "VUT": "VUT",
++    "WF": "WLF",
++    "WLF": "WLF",
++    "WS": "WSM",
++    "WSM": "WSM",
++    "YE": "YEM",
++    "YEM": "YEM",
++    "ZA": "ZAF",
++    "ZAF": "ZAF",
++    "ZM": "ZMB",
++    "ZMB": "ZMB",
++    "ZW": "ZWE",
++    "ZWE": "ZWE",
++    "آروبا": "ABW",
++    "أروبا": "ABW",
++    "ARUBA": "ABW",
++    "افغانستان": "AFG",
++    "أفغانستان": "AFG",
++    "AFGHANISTAN": "AFG",
++    "آنگولا": "AGO",
++    "ANGOLA": "AGO",
++    "أنغولا": "AGO",
++    "ANGUILLA": "AIA",
++    "أنغويلا": "AIA",
++    "آنگویلا": "AIA",
++    "ÅLAND ISLANDS": "ALA",
++    "جزایر آلاند": "ALA",
++    "جزر آلاند": "ALA",
++    "ALBANIA": "ALB",
++    "آلبانی": "ALB",
++    "ألبانيا": "ALB",
++    "أندورا": "AND",
++    "آندورا": "AND",
++    "ANDORRA": "AND",
++    "امارات متحده عربی": "ARE",
++    "الإمارات العربية المتحدة": "ARE",
++    "UNITED ARAB EMIRATES": "ARE",
++    "الأرجنتين": "ARG",
++    "ARGENTINA": "ARG",
++    "آرژانتین": "ARG",
++    "أرمينيا": "ARM",
++    "ARMENIA": "ARM",
++    "ارمنستان": "ARM",
++    "ساموا الأمريكية": "ASM",
++    "ساموآی امریکا": "ASM",
++    "AMERICAN SAMOA": "ASM",
++    "جنوبگان": "ATA",
++    "ANTARCTICA": "ATA",
++    "أنتاركتيكا": "ATA",
++    "FRENCH SOUTHERN TERRITORIES": "ATF",
++    "سرزمینهای جنوبی و جنوبگانی فرانسه": "ATF",
++    "FRENCH SOUTHERN AND ANTARCTIC LANDS": "ATF",
++    "الأقاليم الجنوبية الفرنسية": "ATF",
++    "آنتیگوا و باربودا": "ATG",
++    "أنتيغوا وبربودا": "ATG",
++    "ANTIGUA AND BARBUDA": "ATG",
++    "AUSTRALIA": "AUS",
++    "استرالیا": "AUS",
++    "أستراليا": "AUS",
++    "AUSTRIA": "AUT",
++    "النمسا": "AUT",
++    "اتریش": "AUT",
++    "AZERBAIJAN": "AZE",
++    "أذربيجان": "AZE",
++    "جمهوری آذربایجان": "AZE",
++    "بوروندی": "BDI",
++    "بوروندي": "BDI",
++    "BURUNDI": "BDI",
++    "بلجيكا": "BEL",
++    "بلژیک": "BEL",
++    "BELGIUM": "BEL",
++    "بنين": "BEN",
++    "بنین": "BEN",
++    "BENIN": "BEN",
++    "هولندا الكاريبية": "BES",
++    "جزایر کارائیب هلند": "BES",
++    "BONAIRE, SINT EUSTATIUS AND SABA": "BES",
++    "بوركينا فاسو": "BFA",
++    "بورکینافاسو": "BFA",
++    "BURKINA FASO": "BFA",
++    "BANGLADESH": "BGD",
++    "بنغلاديش": "BGD",
++    "بنگلادش": "BGD",
++    "بلغارستان": "BGR",
++    "بلغاريا": "BGR",
++    "BULGARIA": "BGR",
++    "BAHRAIN": "BHR",
++    "بحرین": "BHR",
++    "البحرين": "BHR",
++    "باهاما": "BHS",
++    "BAHAMAS": "BHS",
++    "THE BAHAMAS": "BHS",
++    "جزر البهاما": "BHS",
++    "البوسنة والهرسك": "BIH",
++    "بوسنی و هرزگوین": "BIH",
++    "BOSNIA AND HERZEGOVINA": "BIH",
++    "سان بارتليمي": "BLM",
++    "SAINT BARTHÉLEMY": "BLM",
++    "سن بارتلمی": "BLM",
++    "BELARUS": "BLR",
++    "بيلاروس": "BLR",
++    "بلاروس": "BLR",
++    "بليز": "BLZ",
++    "بلیز": "BLZ",
++    "BELIZE": "BLZ",
++    "BERMUDA": "BMU",
++    "برمودا": "BMU",
++    "بولیوی": "BOL",
++    "BOLIVIA, PLURINATIONAL STATE OF": "BOL",
++    "بوليفيا": "BOL",
++    "BOLIVIA": "BOL",
++    "برزیل": "BRA",
++    "البرازيل": "BRA",
++    "BRAZIL": "BRA",
++    "بربادوس": "BRB",
++    "باربادوس": "BRB",
++    "BARBADOS": "BRB",
++    "BRUNEI DARUSSALAM": "BRN",
++    "بروناي": "BRN",
++    "برونئی": "BRN",
++    "BRUNEI": "BRN",
++    "بوتان": "BTN",
++    "BHUTAN": "BTN",
++    "جزيرة بوفيه": "BVT",
++    "BOUVET ISLAND": "BVT",
++    "جزیرهٔ بووه": "BVT",
++    "BOTSWANA": "BWA",
++    "بوتسوانا": "BWA",
++    "CENTRAL AFRICAN REPUBLIC": "CAF",
++    "جمهوری آفریقای مرکزی": "CAF",
++    "جمهورية أفريقيا الوسطى": "CAF",
++    "كندا": "CAN",
++    "CANADA": "CAN",
++    "کانادا": "CAN",
++    "جزر كوكوس (كيلينغ)": "CCK",
++    "COCOS (KEELING) ISLANDS": "CCK",
++    "جزایر کوکوس": "CCK",
++    "SWITZERLAND": "CHE",
++    "سويسرا": "CHE",
++    "سوئیس": "CHE",
++    "CHILE": "CHL",
++    "شیلی": "CHL",
++    "تشيلي": "CHL",
++    "الصين": "CHN",
++    "جمهوری خلق چین": "CHN",
++    "CHINA": "CHN",
++    "PEOPLE'S REPUBLIC OF CHINA": "CHN",
++    "ساحل عاج": "CIV",
++    "ساحل العاج": "CIV",
++    "CÔTE D'IVOIRE": "CIV",
++    "IVORY COAST": "CIV",
++    "کامرون": "CMR",
++    "الكاميرون": "CMR",
++    "CAMEROON": "CMR",
++    "جمهوری دموکراتیک کنگو": "COD",
++    "الكونغو - كينشاسا": "COD",
++    "CONGO, THE DEMOCRATIC REPUBLIC OF THE": "COD",
++    "DEMOCRATIC REPUBLIC OF THE CONGO": "COD",
++    "الكونغو - برازافيل": "COG",
++    "جمهوری کنگو": "COG",
++    "CONGO": "COG",
++    "REPUBLIC OF THE CONGO": "COG",
++    "جزر كوك": "COK",
++    "COOK ISLANDS": "COK",
++    "جزایر کوک": "COK",
++    "COLOMBIA": "COL",
++    "كولومبيا": "COL",
++    "کلمبیا": "COL",
++    "کومور": "COM",
++    "COMOROS": "COM",
++    "جزر القمر": "COM",
++    "CABO VERDE": "CPV",
++    "الرأس الأخضر": "CPV",
++    "کیپ‌ورد": "CPV",
++    "كوستاريكا": "CRI",
++    "COSTA RICA": "CRI",
++    "کاستاریکا": "CRI",
++    "كوبا": "CUB",
++    "CUBA": "CUB",
++    "کوبا": "CUB",
++    "کوراسائو": "CUW",
++    "كوراساو": "CUW",
++    "CURAÇAO": "CUW",
++    "CHRISTMAS ISLAND": "CXR",
++    "جزيرة كريسماس": "CXR",
++    "جزیرهٔ کریسمس": "CXR",
++    "جزایر کِیمن": "CYM",
++    "جزر كايمان": "CYM",
++    "CAYMAN ISLANDS": "CYM",
++    "CYPRUS": "CYP",
++    "قبرص": "CYP",
++    "قبرس": "CYP",
++    "جمهوری چک": "CZE",
++    "التشيك": "CZE",
++    "CZECHIA": "CZE",
++    "CZECH REPUBLIC": "CZE",
++    "ألمانيا": "DEU",
++    "آلمان": "DEU",
++    "GERMANY": "DEU",
++    "DJIBOUTI": "DJI",
++    "جیبوتی": "DJI",
++    "جيبوتي": "DJI",
++    "دومینیکا": "DMA",
++    "DOMINICA": "DMA",
++    "دومينيكا": "DMA",
++    "دانمارک": "DNK",
++    "الدانمرك": "DNK",
++    "DENMARK": "DNK",
++    "DOMINICAN REPUBLIC": "DOM",
++    "جمهورية الدومينيكان": "DOM",
++    "جمهوری دومینیکن": "DOM",
++    "الجزائر": "DZA",
++    "ALGERIA": "DZA",
++    "الجزایر": "DZA",
++    "ECUADOR": "ECU",
++    "الإكوادور": "ECU",
++    "اکوادور": "ECU",
++    "مصر": "EGY",
++    "EGYPT": "EGY",
++    "إريتريا": "ERI",
++    "ERITREA": "ERI",
++    "اریتره": "ERI",
++    "الصحراء الغربية": "ESH",
++    "صحرای غربی": "ESH",
++    "WESTERN SAHARA": "ESH",
++    "SPAIN": "ESP",
++    "إسبانيا": "ESP",
++    "اسپانیا": "ESP",
++    "استونی": "EST",
++    "ESTONIA": "EST",
++    "إستونيا": "EST",
++    "إثيوبيا": "ETH",
++    "ETHIOPIA": "ETH",
++    "اتیوپی": "ETH",
++    "فنلندا": "FIN",
++    "FINLAND": "FIN",
++    "فنلاند": "FIN",
++    "FIJI": "FJI",
++    "فیجی": "FJI",
++    "فيجي": "FJI",
++    "جزر فوكلاند": "FLK",
++    "FALKLAND ISLANDS (MALVINAS)": "FLK",
++    "FALKLAND ISLANDS": "FLK",
++    "جزایر فالکلند": "FLK",
++    "فرنسا": "FRA",
++    "FRANCE": "FRA",
++    "فرانسه": "FRA",
++    "FAROE ISLANDS": "FRO",
++    "جزر فارو": "FRO",
++    "جزایر فارو": "FRO",
++    "MICRONESIA, FEDERATED STATES OF": "FSM",
++    "ميكرونيزيا": "FSM",
++    "میکرونزی": "FSM",
++    "گابن": "GAB",
++    "GABON": "GAB",
++    "الغابون": "GAB",
++    "بریتانیا": "GBR",
++    "UNITED KINGDOM": "GBR",
++    "المملكة المتحدة": "GBR",
++    "گرجستان": "GEO",
++    "GEORGIA": "GEO",
++    "جورجيا": "GEO",
++    "غيرنزي": "GGY",
++    "گرنزی": "GGY",
++    "GUERNSEY": "GGY",
++    "غنا": "GHA",
++    "غانا": "GHA",
++    "GHANA": "GHA",
++    "GIBRALTAR": "GIB",
++    "جبل طارق": "GIB",
++    "جبل‌الطارق": "GIB",
++    "GUINEA": "GIN",
++    "گینه": "GIN",
++    "غينيا": "GIN",
++    "GUADELOUPE": "GLP",
++    "غوادلوب": "GLP",
++    "گوادلوپ": "GLP",
++    "THE GAMBIA": "GMB",
++    "گامبیا": "GMB",
++    "غامبيا": "GMB",
++    "GAMBIA": "GMB",
++    "غينيا بيساو": "GNB",
++    "GUINEA-BISSAU": "GNB",
++    "گینه بیسائو": "GNB",
++    "گینه استوایی": "GNQ",
++    "EQUATORIAL GUINEA": "GNQ",
++    "غينيا الاستوائية": "GNQ",
++    "یونان": "GRC",
++    "اليونان": "GRC",
++    "GREECE": "GRC",
++    "غرينادا": "GRD",
++    "گرنادا": "GRD",
++    "GRENADA": "GRD",
++    "غرينلاند": "GRL",
++    "GREENLAND": "GRL",
++    "گرینلند": "GRL",
++    "GUATEMALA": "GTM",
++    "غواتيمالا": "GTM",
++    "گواتمالا": "GTM",
++    "غويانا الفرنسية": "GUF",
++    "FRENCH GUIANA": "GUF",
++    "گویان فرانسه": "GUF",
++    "GUAM": "GUM",
++    "گوام": "GUM",
++    "غوام": "GUM",
++    "غيانا": "GUY",
++    "GUYANA": "GUY",
++    "گویان": "GUY",
++    "هنگ‌کنگ، منطقهٔ ویژهٔ اداری چین": "HKG",
++    "هونغ كونغ الصينية (منطقة إدارية خاصة)": "HKG",
++    "HONG KONG": "HKG",
++    "HEARD ISLAND AND MCDONALD ISLANDS": "HMD",
++    "هرد و جزایر مک‌دونالد": "HMD",
++    "جزيرة هيرد وجزر ماكدونالد": "HMD",
++    "هندوراس": "HND",
++    "HONDURAS": "HND",
++    "CROATIA": "HRV",
++    "كرواتيا": "HRV",
++    "کرواسی": "HRV",
++    "هائیتی": "HTI",
++    "HAITI": "HTI",
++    "هايتي": "HTI",
++    "مجارستان": "HUN",
++    "هنغاريا": "HUN",
++    "HUNGARY": "HUN",
++    "INDONESIA": "IDN",
++    "إندونيسيا": "IDN",
++    "اندونزی": "IDN",
++    "ISLE OF MAN": "IMN",
++    "جزیرهٔ من": "IMN",
++    "جزيرة مان": "IMN",
++    "INDIA": "IND",
++    "الهند": "IND",
++    "هند": "IND",
++    "قلمرو بریتانیا در اقیانوس هند": "IOT",
++    "الإقليم البريطاني في المحيط الهندي": "IOT",
++    "BRITISH INDIAN OCEAN TERRITORY": "IOT",
++    "ایرلند": "IRL",
++    "IRELAND": "IRL",
++    "أيرلندا": "IRL",
++    "إيران": "IRN",
++    "IRAN": "IRN",
++    "IRAN, ISLAMIC REPUBLIC OF": "IRN",
++    "ایران": "IRN",
++    "العراق": "IRQ",
++    "عراق": "IRQ",
++    "IRAQ": "IRQ",
++    "ایسلند": "ISL",
++    "ICELAND": "ISL",
++    "آيسلندا": "ISL",
++    "ISRAEL": "ISR",
++    "فلسطين المحتلة": "ISR",
++    "فلسطین اشغالی": "ISR",
++    "ITALY": "ITA",
++    "ایتالیا": "ITA",
++    "إيطاليا": "ITA",
++    "JAMAICA": "JAM",
++    "جامايكا": "JAM",
++    "جامائیکا": "JAM",
++    "جيرسي": "JEY",
++    "جرزی": "JEY",
++    "JERSEY": "JEY",
++    "الأردن": "JOR",
++    "JORDAN": "JOR",
++    "اردن": "JOR",
++    "ژاپن": "JPN",
++    "JAPAN": "JPN",
++    "اليابان": "JPN",
++    "قزاقستان": "KAZ",
++    "كازاخستان": "KAZ",
++    "KAZAKHSTAN": "KAZ",
++    "كينيا": "KEN",
++    "کنیا": "KEN",
++    "KENYA": "KEN",
++    "قيرغيزستان": "KGZ",
++    "KYRGYZSTAN": "KGZ",
++    "قرقیزستان": "KGZ",
++    "CAMBODIA": "KHM",
++    "کامبوج": "KHM",
++    "كمبوديا": "KHM",
++    "KIRIBATI": "KIR",
++    "کیریباتی": "KIR",
++    "كيريباتي": "KIR",
++    "SAINT KITTS AND NEVIS": "KNA",
++    "سانت كيتس ونيفيس": "KNA",
++    "سنت کیتس و نویس": "KNA",
++    "کره جنوبی": "KOR",
++    "KOREA, REPUBLIC OF": "KOR",
++    "SOUTH KOREA": "KOR",
++    "كوريا الجنوبية": "KOR",
++    "KUWAIT": "KWT",
++    "کویت": "KWT",
++    "الكويت": "KWT",
++    "لائوس": "LAO",
++    "LAO PEOPLE'S DEMOCRATIC REPUBLIC": "LAO",
++    "LAOS": "LAO",
++    "لاوس": "LAO",
++    "LEBANON": "LBN",
++    "لبنان": "LBN",
++    "ليبيريا": "LBR",
++    "لیبریا": "LBR",
++    "LIBERIA": "LBR",
++    "لیبی": "LBY",
++    "ليبيا": "LBY",
++    "LIBYA": "LBY",
++    "سانت لوسيا": "LCA",
++    "SAINT LUCIA": "LCA",
++    "سنت لوسیا": "LCA",
++    "LIECHTENSTEIN": "LIE",
++    "لیختن‌اشتاین": "LIE",
++    "ليختنشتاين": "LIE",
++    "سریلانکا": "LKA",
++    "سريلانكا": "LKA",
++    "SRI LANKA": "LKA",
++    "LESOTHO": "LSO",
++    "ليسوتو": "LSO",
++    "لسوتو": "LSO",
++    "لیتوانی": "LTU",
++    "LITHUANIA": "LTU",
++    "ليتوانيا": "LTU",
++    "لوكسمبورغ": "LUX",
++    "لوکزامبورگ": "LUX",
++    "LUXEMBOURG": "LUX",
++    "LATVIA": "LVA",
++    "لاتفيا": "LVA",
++    "لتونی": "LVA",
++    "MACAO": "MAC",
++    "ماکائو، منطقهٔ ویژهٔ اداری چین": "MAC",
++    "منطقة ماكاو الإدارية الخاصة": "MAC",
++    "سنت مارتین": "MAF",
++    "SAINT MARTIN (FRENCH PART)": "MAF",
++    "سان مارتن": "MAF",
++    "المغرب": "MAR",
++    "مراکش": "MAR",
++    "MOROCCO": "MAR",
++    "موناکو": "MCO",
++    "MONACO": "MCO",
++    "موناكو": "MCO",
++    "MOLDOVA, REPUBLIC OF": "MDA",
++    "MOLDOVA": "MDA",
++    "مولداوی": "MDA",
++    "مولدوفا": "MDA",
++    "مدغشقر": "MDG",
++    "MADAGASCAR": "MDG",
++    "ماداگاسکار": "MDG",
++    "MALDIVES": "MDV",
++    "جزر المالديف": "MDV",
++    "مالدیو": "MDV",
++    "MEXICO": "MEX",
++    "المكسيك": "MEX",
++    "مکزیک": "MEX",
++    "جزر مارشال": "MHL",
++    "MARSHALL ISLANDS": "MHL",
++    "جزایر مارشال": "MHL",
++    "NORTH MACEDONIA": "MKD",
++    "مقدونیه شمالی": "MKD",
++    "مقدونيا الشمالية": "MKD",
++    "مالي": "MLI",
++    "MALI": "MLI",
++    "مالی": "MLI",
++    "MALTA": "MLT",
++    "مالطا": "MLT",
++    "مالت": "MLT",
++    "MYANMAR": "MMR",
++    "ميانمار (بورما)": "MMR",
++    "میانمار": "MMR",
++    "مونتهنگرو": "MNE",
++    "MONTENEGRO": "MNE",
++    "الجبل الأسود": "MNE",
++    "منغوليا": "MNG",
++    "مغولستان": "MNG",
++    "MONGOLIA": "MNG",
++    "جزایر ماریانای شمالی": "MNP",
++    "NORTHERN MARIANA ISLANDS": "MNP",
++    "جزر ماريانا الشمالية": "MNP",
++    "موزامبیک": "MOZ",
++    "MOZAMBIQUE": "MOZ",
++    "موزمبيق": "MOZ",
++    "موریتانی": "MRT",
++    "MAURITANIA": "MRT",
++    "موريتانيا": "MRT",
++    "مونت‌سرات": "MSR",
++    "مونتسرات": "MSR",
++    "MONTSERRAT": "MSR",
++    "مارتینیک": "MTQ",
++    "MARTINIQUE": "MTQ",
++    "جزر المارتينيك": "MTQ",
++    "موريشيوس": "MUS",
++    "MAURITIUS": "MUS",
++    "موریس": "MUS",
++    "ملاوي": "MWI",
++    "MALAWI": "MWI",
++    "مالاوی": "MWI",
++    "مالزی": "MYS",
++    "ماليزيا": "MYS",
++    "MALAYSIA": "MYS",
++    "مايوت": "MYT",
++    "MAYOTTE": "MYT",
++    "مایوت": "MYT",
++    "ناميبيا": "NAM",
++    "نامیبیا": "NAM",
++    "NAMIBIA": "NAM",
++    "کالدونیای جدید": "NCL",
++    "كاليدونيا الجديدة": "NCL",
++    "NEW CALEDONIA": "NCL",
++    "NIGER": "NER",
++    "نیجر": "NER",
++    "النيجر": "NER",
++    "جزیرهٔ نورفولک": "NFK",
++    "NORFOLK ISLAND": "NFK",
++    "جزيرة نورفولك": "NFK",
++    "نیجریه": "NGA",
++    "نيجيريا": "NGA",
++    "NIGERIA": "NGA",
++    "نيكاراغوا": "NIC",
++    "نیکاراگوئه": "NIC",
++    "NICARAGUA": "NIC",
++    "NIUE": "NIU",
++    "نیوئه": "NIU",
++    "نيوي": "NIU",
++    "NETHERLANDS": "NLD",
++    "هولندا": "NLD",
++    "هلند": "NLD",
++    "نروژ": "NOR",
++    "NORWAY": "NOR",
++    "النرويج": "NOR",
++    "NEPAL": "NPL",
++    "نپال": "NPL",
++    "نيبال": "NPL",
++    "ناورو": "NRU",
++    "نائورو": "NRU",
++    "NAURU": "NRU",
++    "NEW ZEALAND": "NZL",
++    "نیوزیلند": "NZL",
++    "نيوزيلندا": "NZL",
++    "عمان": "OMN",
++    "عُمان": "OMN",
++    "OMAN": "OMN",
++    "PAKISTAN": "PAK",
++    "پاکستان": "PAK",
++    "باكستان": "PAK",
++    "بنما": "PAN",
++    "پاناما": "PAN",
++    "PANAMA": "PAN",
++    "جزایر پیت‌کرن": "PCN",
++    "PITCAIRN": "PCN",
++    "جزر بيتكيرن": "PCN",
++    "پرو": "PER",
++    "PERU": "PER",
++    "بيرو": "PER",
++    "فیلیپین": "PHL",
++    "PHILIPPINES": "PHL",
++    "الفلبين": "PHL",
++    "پالائو": "PLW",
++    "بالاو": "PLW",
++    "PALAU": "PLW",
++    "پاپوآ گینه نو": "PNG",
++    "بابوا غينيا الجديدة": "PNG",
++    "PAPUA NEW GUINEA": "PNG",
++    "بولندا": "POL",
++    "POLAND": "POL",
++    "لهستان": "POL",
++    "PUERTO RICO": "PRI",
++    "پورتوریکو": "PRI",
++    "بورتوريكو": "PRI",
++    "KOREA, DEMOCRATIC PEOPLE'S REPUBLIC OF": "PRK",
++    "کره شمالی": "PRK",
++    "NORTH KOREA": "PRK",
++    "كوريا الشمالية": "PRK",
++    "البرتغال": "PRT",
++    "پرتغال": "PRT",
++    "PORTUGAL": "PRT",
++    "PARAGUAY": "PRY",
++    "پاراگوئه": "PRY",
++    "باراغواي": "PRY",
++    "فلسطین": "PSE",
++    "الأراضي الفلسطينية": "PSE",
++    "PALESTINE, STATE OF": "PSE",
++    "PALESTINE": "PSE",
++    "FRENCH POLYNESIA": "PYF",
++    "پلی‌نزی فرانسه": "PYF",
++    "بولينيزيا الفرنسية": "PYF",
++    "قطر": "QAT",
++    "QATAR": "QAT",
++    "روينيون": "REU",
++    "رئونیون": "REU",
++    "RÉUNION": "REU",
++    "رومانيا": "ROU",
++    "رومانی": "ROU",
++    "ROMANIA": "ROU",
++    "روسیه": "RUS",
++    "روسيا": "RUS",
++    "RUSSIA": "RUS",
++    "RUSSIAN FEDERATION": "RUS",
++    "رواندا": "RWA",
++    "RWANDA": "RWA",
++    "SAUDI ARABIA": "SAU",
++    "عربستان سعودی": "SAU",
++    "المملكة العربية السعودية": "SAU",
++    "سودان": "SDN",
++    "السودان": "SDN",
++    "SUDAN": "SDN",
++    "سنگال": "SEN",
++    "السنغال": "SEN",
++    "SENEGAL": "SEN",
++    "سنغافورة": "SGP",
++    "SINGAPORE": "SGP",
++    "سنگاپور": "SGP",
++    "جورجیای جنوبی و جزایر ساندویچ جنوبی": "SGS",
++    "SOUTH GEORGIA AND THE SOUTH SANDWICH ISLANDS": "SGS",
++    "جورجيا الجنوبية وجزر ساندويتش الجنوبية": "SGS",
++    "SAINT HELENA, ASCENSION AND TRISTAN DA CUNHA": "SHN",
++    "سانت هيلينا": "SHN",
++    "سنت هلن": "SHN",
++    "سفالبارد وجان ماين": "SJM",
++    "سوالبارد و یان ماین": "SJM",
++    "SVALBARD AND JAN MAYEN": "SJM",
++    "جزایر سلیمان": "SLB",
++    "جزر سليمان": "SLB",
++    "SOLOMON ISLANDS": "SLB",
++    "سیرالئون": "SLE",
++    "سيراليون": "SLE",
++    "SIERRA LEONE": "SLE",
++    "EL SALVADOR": "SLV",
++    "السلفادور": "SLV",
++    "السالوادور": "SLV",
++    "سان‌مارینو": "SMR",
++    "SAN MARINO": "SMR",
++    "سان مارينو": "SMR",
++    "الصومال": "SOM",
++    "سومالی": "SOM",
++    "SOMALIA": "SOM",
++    "SAINT PIERRE AND MIQUELON": "SPM",
++    "سن پیر و میکلن": "SPM",
++    "سان بيير ومكويلون": "SPM",
++    "صربيا": "SRB",
++    "صربستان": "SRB",
++    "SERBIA": "SRB",
++    "جنوب السودان": "SSD",
++    "سودان جنوبی": "SSD",
++    "SOUTH SUDAN": "SSD",
++    "ساو تومي وبرينسيبي": "STP",
++    "SAO TOME AND PRINCIPE": "STP",
++    "سائوتومه و پرینسیپ": "STP",
++    "SURINAME": "SUR",
++    "سورینام": "SUR",
++    "سورينام": "SUR",
++    "اسلواکی": "SVK",
++    "SLOVAKIA": "SVK",
++    "سلوفاكيا": "SVK",
++    "سلوفينيا": "SVN",
++    "SLOVENIA": "SVN",
++    "اسلوونی": "SVN",
++    "السويد": "SWE",
++    "سوئد": "SWE",
++    "SWEDEN": "SWE",
++    "اسواتینی": "SWZ",
++    "ESWATINI": "SWZ",
++    "إسواتيني": "SWZ",
++    "سانت مارتن": "SXM",
++    "سنت مارتن": "SXM",
++    "SINT MAARTEN (DUTCH PART)": "SXM",
++    "SEYCHELLES": "SYC",
++    "سیشل": "SYC",
++    "سيشل": "SYC",
++    "سوریه": "SYR",
++    "SYRIAN ARAB REPUBLIC": "SYR",
++    "SYRIA": "SYR",
++    "سوريا": "SYR",
++    "TURKS AND CAICOS ISLANDS": "TCA",
++    "جزایر تورکس و کایکوس": "TCA",
++    "جزر توركس وكايكوس": "TCA",
++    "CHAD": "TCD",
++    "تشاد": "TCD",
++    "چاد": "TCD",
++    "TOGO": "TGO",
++    "توغو": "TGO",
++    "توگو": "TGO",
++    "تايلاند": "THA",
++    "تایلند": "THA",
++    "THAILAND": "THA",
++    "تاجیکستان": "TJK",
++    "TAJIKISTAN": "TJK",
++    "طاجيكستان": "TJK",
++    "توكيلاو": "TKL",
++    "TOKELAU": "TKL",
++    "توکلائو": "TKL",
++    "تركمانستان": "TKM",
++    "TURKMENISTAN": "TKM",
++    "ترکمنستان": "TKM",
++    "EAST TIMOR": "TLS",
++    "تیمور شرقی": "TLS",
++    "TIMOR-LESTE": "TLS",
++    "تيمور - ليشتي": "TLS",
++    "تونگا": "TON",
++    "TONGA": "TON",
++    "تونغا": "TON",
++    "ترينيداد وتوباغو": "TTO",
++    "ترینیداد و توباگو": "TTO",
++    "TRINIDAD AND TOBAGO": "TTO",
++    "تونس": "TUN",
++    "TUNISIA": "TUN",
++    "TÜRKIYE": "TUR",
++    "تركيا": "TUR",
++    "ترکیه": "TUR",
++    "TURKEY": "TUR",
++    "TUVALU": "TUV",
++    "تووالو": "TUV",
++    "توفالو": "TUV",
++    "تایوان": "TWN",
++    "TAIWAN, PROVINCE OF CHINA": "TWN",
++    "تايوان": "TWN",
++    "TANZANIA": "TZA",
++    "TANZANIA, UNITED REPUBLIC OF": "TZA",
++    "تنزانيا": "TZA",
++    "تانزانیا": "TZA",
++    "اوگاندا": "UGA",
++    "أوغندا": "UGA",
++    "UGANDA": "UGA",
++    "UKRAINE": "UKR",
++    "اوکراین": "UKR",
++    "أوكرانيا": "UKR",
++    "جزایر دورافتادهٔ ایالات متحده": "UMI",
++    "جزر الولايات المتحدة النائية": "UMI",
++    "UNITED STATES MINOR OUTLYING ISLANDS": "UMI",
++    "أورغواي": "URY",
++    "اروگوئه": "URY",
++    "URUGUAY": "URY",
++    "UNITED STATES OF AMERICA": "USA",
++    "UNITED STATES": "USA",
++    "ایالات متحده آمریکا": "USA",
++    "الولايات المتحدة": "USA",
++    "أوزبكستان": "UZB",
++    "ازبکستان": "UZB",
++    "UZBEKISTAN": "UZB",
++    "واتیکان": "VAT",
++    "الفاتيكان": "VAT",
++    "HOLY SEE (VATICAN CITY STATE)": "VAT",
++    "سنت وینسنت و گرنادین": "VCT",
++    "سانت فنسنت وجزر غرينادين": "VCT",
++    "SAINT VINCENT AND THE GRENADINES": "VCT",
++    "VENEZUELA, BOLIVARIAN REPUBLIC OF": "VEN",
++    "ونزوئلا": "VEN",
++    "VENEZUELA": "VEN",
++    "فنزويلا": "VEN",
++    "جزایر ویرجین بریتانیا": "VGB",
++    "جزر فيرجن البريطانية": "VGB",
++    "VIRGIN ISLANDS, BRITISH": "VGB",
++    "جزایر ویرجین ایالات متحده": "VIR",
++    "جزر فيرجن الأمريكية": "VIR",
++    "VIRGIN ISLANDS, U.S.": "VIR",
++    "ویتنام": "VNM",
++    "VIETNAM": "VNM",
++    "فيتنام": "VNM",
++    "VIET NAM": "VNM",
++    "فانواتو": "VUT",
++    "وانواتو": "VUT",
++    "VANUATU": "VUT",
++    "والیس و فوتونا": "WLF",
++    "WALLIS AND FUTUNA": "WLF",
++    "جزر والس وفوتونا": "WLF",
++    "SAMOA": "WSM",
++    "ساموآ": "WSM",
++    "ساموا": "WSM",
++    "یمن": "YEM",
++    "اليمن": "YEM",
++    "YEMEN": "YEM",
++    "SOUTH AFRICA": "ZAF",
++    "آفریقای جنوبی": "ZAF",
++    "جنوب أفريقيا": "ZAF",
++    "زامبيا": "ZMB",
++    "زامبیا": "ZMB",
++    "ZAMBIA": "ZMB",
++    "ZIMBABWE": "ZWE",
++    "زیمبابوه": "ZWE",
++    "زيمبابوي": "ZWE"
++  }
++}
+--- a/tests/upcoming-launch-filters.test.cjs
++++ b/tests/upcoming-launch-filters.test.cjs
+@@ -0,0 +1,49 @@
++'use strict';
++const assert = require('node:assert/strict');
++const F = require('../assets/js/upcoming-launch-filters.js');
++const countryMap = require('../data/country_codes.json');
++
++const now = Date.parse('2026-11-21T12:00:00Z');
++const rows = [
++  { ll2_id: 'a', net: '2026-11-22T12:00:00Z', operator_country_code: 'CHN', launch_country_code: 'CHN', launch_name: 'China launch' },
++  { ll2_id: 'b', net: '2026-11-28T12:00:00Z', operator_country_code: 'USA', launch_country_code: 'NZL', launch_name: 'US provider from NZ' },
++  { ll2_id: 'c', net: '2026-12-10T12:00:00Z', operator_country_code: 'RUS', launch_country_code: 'RUS', launch_name: 'Russian launch' },
++  { ll2_id: 'd', net: '2027-03-20T12:00:00Z', operator_country_code: 'IND', launch_country_code: 'IND', launch_name: 'India launch' },
++  { ll2_id: 'e', net: '2027-03-22T12:00:00Z', operator_country_code: 'USA', launch_country_code: 'USA', launch_name: 'Outside 120-day window' },
++  { ll2_id: 'f', net: '2026-11-21T11:59:59Z', operator_country_code: 'CHN', launch_country_code: 'CHN', launch_name: 'Already passed' },
++  { ll2_id: 'g', net: 'not-a-date', operator_country_code: 'CHN', launch_country_code: 'CHN', launch_name: 'Invalid time' },
++  { ll2_id: 'h', net: '2026-11-25T12:00:00Z', operator_country_code: null, launch_country_code: 'CHN', launch_name: 'Unknown provider country' }
++];
++
++assert.deepEqual(F.PRESETS.map(x => x.days), [7, 14, 30, 120]);
++assert.equal(F.normalizeCountryCode('us', countryMap.aliases), 'USA');
++assert.equal(F.normalizeCountryCode('CHN', countryMap.aliases), 'CHN');
++assert.deepEqual(F.filterLaunches(rows, { now, days: 7, aliases: countryMap.aliases }).map(x => x.ll2_id), ['a', 'h']);
++assert.deepEqual(F.filterLaunches(rows, { now, days: 30, aliases: countryMap.aliases }).map(x => x.ll2_id), ['a', 'h', 'b', 'c']);
++assert.deepEqual(F.filterLaunches(rows, { now, days: 120, aliases: countryMap.aliases }).map(x => x.ll2_id), ['a', 'h', 'b', 'c', 'd']);
++assert.deepEqual(F.filterLaunches(rows, { now, days: 30, countryCodes: ['CHN', 'USA'], aliases: countryMap.aliases }).map(x => x.ll2_id), ['a', 'b']);
++assert.deepEqual(F.filterLaunches(rows, { now, days: 30, countryCodes: ['USA'], countryBasis: 'operator', aliases: countryMap.aliases }).map(x => x.ll2_id), ['b']);
++assert.deepEqual(F.filterLaunches(rows, { now, days: 30, countryCodes: ['USA'], countryBasis: 'site', aliases: countryMap.aliases }).map(x => x.ll2_id), []);
++assert.deepEqual(F.filterLaunches(rows, { now, days: 30, countryCodes: ['NZ'], countryBasis: 'site', aliases: countryMap.aliases }).map(x => x.ll2_id), ['b']);
++assert.deepEqual(F.filterLaunches(rows, { now, days: 30, countryCodes: [], aliases: countryMap.aliases, query: 'russian' }).map(x => x.ll2_id), ['c']);
++assert.deepEqual(F.availableCountryCodes(rows, 'operator', countryMap.aliases), ['CHN', 'IND', 'RUS', 'USA']);
++assert.deepEqual(F.availableCountryCodes(rows, 'site', countryMap.aliases), ['CHN', 'IND', 'NZL', 'RUS', 'USA']);
++assert.deepEqual(F.filterLaunches(rows, { now, days: 30, countryCodes: ['CHN'], aliases: countryMap.aliases, countryBasis: 'site' }).map(x => x.ll2_id), ['a', 'h']);
++console.log('PASS: 13 worldwide launch-filter assertions');
++
++// The same Step-3 engine is ready for the landing dataset planned for Step 6.
++const landings = [
++  { event_id: 'landing:today', kind: 'landing', date_utc: '2026-11-21', site_country: 'USA' },
++  { event_id: 'landing:tomorrow', kind: 'landing', date_utc: '2026-11-22', site_country: 'CHN' },
++  { event_id: 'landing:later', kind: 'landing', date_utc: '2026-12-12', site_country: 'KAZ' },
++  { event_id: 'landing:unknown-country', kind: 'landing', date_utc: '2026-11-23', site_country: null }
++];
++assert.deepEqual(F.filterEvents(landings, { now, days: 7, countryBasis: 'site', countryCodes: ['USA', 'CHN'], aliases: countryMap.aliases }).map(x => x.event_id), ['landing:today', 'landing:tomorrow']);
++assert.deepEqual(F.filterEvents(landings, { now, days: 30, countryBasis: 'site', countryCodes: ['KAZ'], aliases: countryMap.aliases }).map(x => x.event_id), ['landing:later']);
++assert.deepEqual(F.filterEvents(landings, { now, days: 7, countryBasis: 'operator', countryCodes: ['USA'], aliases: countryMap.aliases }), []);
++assert.equal(F.countryCodeFor(landings[0], 'site', countryMap.aliases), 'USA');
++console.log('PASS: shared date-only landing and site-country filter assertions');
++assert.equal(F.normalizeCountryCode('United States of America', countryMap.aliases), 'USA');
++assert.equal(F.normalizeCountryCode('ایران', countryMap.aliases), 'IRN');
++assert.deepEqual(F.filterLaunches(landings, { now, days: 7, countryBasis: 'site', aliases: countryMap.aliases }), []);
++console.log('PASS: country-name normalization and launch/landing type separation');
+--- a/tests/upcoming-launch-ui.test.cjs
++++ b/tests/upcoming-launch-ui.test.cjs
+@@ -0,0 +1,30 @@
++'use strict';
++const fs = require('node:fs');
++const path = require('node:path');
++const assert = require('node:assert/strict');
++const root = path.resolve(__dirname, '..');
++const html = fs.readFileSync(path.join(root, 'index.html'), 'utf8');
++const css = fs.readFileSync(path.join(root, 'assets/css/app.css'), 'utf8');
++const ui = fs.readFileSync(path.join(root, 'assets/js/upcoming-launch-browser.js'), 'utf8');
++const engine = fs.readFileSync(path.join(root, 'assets/js/upcoming-launch-filters.js'), 'utf8');
++const countryMap = JSON.parse(fs.readFileSync(path.join(root, 'data/country_codes.json'), 'utf8'));
++
++assert.match(html, /id="upcomingLaunchesBtn"[\s\S]*aria-controls="globalLaunchDialog"/);
++assert.match(html, /<dialog id="globalLaunchDialog"[\s\S]*aria-labelledby="globalLaunchTitle"/);
++for (const days of ['7', '14', '30', '120']) assert.match(html, new RegExp('data-days="' + days + '"'));
++assert.match(html, /<select id="globalLaunchCountryBasis"[\s\S]*value="operator"[\s\S]*value="site"/);
++assert.match(html, /id="globalLaunchCountryOptions"[\s\S]*role="group"/);
++assert.match(html, /id="globalLaunchSelectedCountries"/);
++assert.match(html, /id="globalLaunchResultCount"/);
++assert.match(html, /id="globalLaunchReload"/);
++assert.ok(html.indexOf('assets/js/app.js?') < html.indexOf('assets/js/upcoming-launch-filters.js?'));
++assert.ok(html.indexOf('assets/js/upcoming-launch-filters.js?') < html.indexOf('assets/js/upcoming-launch-browser.js?'));
++assert.match(css, /@media\(max-width:760px\)[\s\S]*?\.global-launch-content\{grid-template-columns:minmax\(0,1fr\)/);
++assert.match(ui, /fa:\s*\{/); assert.match(ui, /en:\s*\{/); assert.match(ui, /ar:\s*\{/);
++assert.match(ui, /aria-checked=/); assert.match(ui, /aria-pressed/);
++assert.match(ui, /Filters\.filterLaunches\(/);
++assert.match(engine, /function filterEvents\(/); assert.match(engine, /function filterLaunches\(/);
++assert.equal(countryMap.countries.length, 249);
++assert.equal(countryMap.aliases.US, 'USA');
++assert.equal(countryMap.countries.find(x => x.code === 'ISR').fa, 'فلسطین اشغالی');
++console.log('PASS: worldwide upcoming-launch UI markup, responsive layout, 3-language copy, script order and 249-country index');
+--- a/ORBITA_STEPS3_4_REPORT_FA.md
++++ b/ORBITA_STEPS3_4_REPORT_FA.md
+@@ -0,0 +1,93 @@
++# گزارش فنی گام‌های ۳ و ۴ ORBITA — ۲۱ نوامبر ۲۰۲۶
++
++## خلاصه اجرایی
++
++گام سوم (موتور مشترک فیلتر رویدادها) و گام چهارم (رابط فهرست جهانی پرتاب‌های پیش‌رو) روی نسخه کاری جداگانه‌ای از سورس ORBITA پیاده‌سازی شدند. نسخه آنلاین تغییر نکرده است.
++
++این بسته باید روی بسته گام‌های ۱ و ۲ اعمال شود؛ فایل‌های موردنیاز آن دو گام نیز در بسته تجمیعی نهایی گنجانده شده‌اند.
++
++## گام سوم — موتور فیلتر زمان و کشور
++
++فایل اصلی: `assets/js/upcoming-launch-filters.js`
++
++قابلیت‌ها:
++
++- چهار بازه زمانی ثابت: ۷، ۱۴، ۳۰ و ۱۲۰ روز آینده.
++- انتخاب هم‌زمان چند کشور؛ انتخاب چند کشور با منطق «یا» انجام می‌شود.
++- حالت «همه کشورها» با پاک‌کردن انتخاب‌ها.
++- دو مبنای مستقل برای انتساب کشور:
++  - کشور اپراتور/ارائه‌دهنده خدمت پرتاب؛
++  - کشور جغرافیایی محل پرتاب.
++- نرمال‌سازی کدهای ISO دوحرفی و سه‌حرفی و نام‌های یکتای کشورها.
++- حذف رویدادهای دارای تاریخ نامعتبر و مرتب‌سازی از نزدیک‌ترین زمان به دورترین زمان.
++- پشتیبانی از تاریخ‌های صرفاً روزانه در قرارداد مشترک رویدادها؛ تاریخ روزانه به‌عنوان یک روز تقویمی کامل تفسیر می‌شود، نه یک ساعت فرضی.
++- موتور به‌صورت عمومی برای رویدادهای پرتاب و فرود طراحی شده است؛ رابط کاربری فعلی فقط پرتاب‌ها را نمایش می‌دهد و رابط فرودها در گام‌های ۵ و ۶ ساخته خواهد شد.
++
++فایل کشورها: `data/country_codes.json`
++
++- شامل ۲۴۹ کشور/قلمرو دارای کد ISO 3166-1.
++- پشتیبانی از کدهای alpha-2 و alpha-3.
++- نام‌های فارسی و عربی؛ در موارد فاقد نام محلی در داده جغرافیایی ORBITA، از نام‌های محلی CLDR استفاده شده است.
++- قاعده نمایشی تأییدشده ORBITA برای کد ISR در فارسی حفظ شده است: «فلسطین اشغالی».
++
++## گام چهارم — رابط جهانی پرتاب‌های پیش‌رو
++
++فایل‌های اصلی:
++
++- `index.html`
++- `assets/css/app.css`
++- `assets/js/upcoming-launch-browser.js`
++
++قابلیت‌ها:
++
++- دکمه مستقل «پرتاب‌های پیش‌رو» در نوار بالای نقشه برای دسترسی مستقیم.
++- پنجره مستقل و واکنش‌گرا، سازگار با موبایل و دسکتاپ.
++- فیلترهای ۱ هفته، ۲ هفته، ۱ ماه و ۴ ماه.
++- فهرست انتخاب چندکشوری همراه با جستجوی کشور.
++- امکان بازگشت به «همه کشورها».
++- انتخاب مبنای کشور بین اپراتور/ارائه‌دهنده و محل جغرافیایی پرتاب.
++- شمار نتایج، مرتب‌سازی زمانی و نمایش اطلاعات هر پرتاب.
++- نمایش نام مأموریت، پرتابگر، اپراتور، محل پرتاب، کشور اپراتور، کشور محل پرتاب، وضعیت و دقت زمان.
++- نمایش زمان‌ها با برچسب UTC و تفکیک زمان دقیق از زمان تقریبی.
++- پیام مشخص برای نبود نتیجه، خطای دریافت، داده قدیمی و انتظار برای نخستین همگام‌سازی.
++- ترجمه رابط فارسی، انگلیسی و عربی.
++- حفظ تب‌های فعلی پرتاب‌های پیش‌رو در شناسنامه پایگاه‌ها و نوار «پرتاب بعدی»؛ هیچ‌کدام جایگزین یا حذف نشده‌اند.
++
++## مرزبندی معنای فیلتر کشور
++
++حالت پیش‌فرض «کشور اپراتور/ارائه‌دهنده خدمت پرتاب» است. کاربر می‌تواند آن را به «کشور محل پرتاب» تغییر دهد. این دو مقدار لزوماً یکسان نیستند؛ برای مثال ممکن است یک اپراتور در کشوری دیگر از پایگاه پرتاب استفاده کند. رابط، هر دو مقدار را جداگانه در کارت رویداد نشان می‌دهد و ملیت مالک محموله را از این دو فیلد استنباط نمی‌کند.
++
++## وابستگی به گام‌های ۱ و ۲ و وضعیت داده
++
++رابط جدید داده را از `data/upcoming_global.json` می‌خواند؛ این فایل با گردش‌کار مستقل Launch Library 2 که در گام دوم ساخته شد به‌روزرسانی می‌شود.
++
++در نسخه کاری فعلی، وضعیت فایل هنوز `awaiting_first_successful_sync` است؛ بنابراین رابط به‌جای نمایش فهرست ساختگی یا خالی، پیام انتظار برای همگام‌سازی را نشان می‌دهد. پس از انتشار فایل‌های بسته و اجرای موفق گردش‌کار GitHub Actions، پرتاب‌های واقعی موجود در منبع در رابط ظاهر می‌شوند.
++
++## آزمون‌ها
++
++- ۲۱ آزمون منطقی برای بازه‌های زمانی، مرز بازه، انتخاب چند کشور، مبنای اپراتور/محل پرتاب، نام‌های کشور، تاریخ روزانه فرود و جداسازی نوع رویداد.
++- آزمون ساختار رابط: دکمه دسترسی، پنجره، چهار بازه، انتخاب چندکشوری، دو مبنای کشور، ترتیب بارگذاری اسکریپت‌ها، سه زبان و فهرست ۲۴۹ کشوری.
++- آزمون‌های موجود داده‌های پرتاب و فرود، فهرست جهانی، راهنمای سایت و اعلان فرود بدون خطا اجرا شدند.
++- ۲۱ آزمون پایتون موجود ابزارهای گام‌های ۱ و ۲ موفق شدند.
++- مجموعه کامل آزمون‌های Node در سورس پایه ۳۴ شکست از ۵۳ آزمون داشت. در نسخه کاری پس از افزودن دو آزمون جدید نیز همان ۳۴ شکست باقی ماند و هیچ شکست جدیدی نسبت به سورس پایه ایجاد نشد؛ هر دو آزمون جدید موفق‌اند.
++- آزمون مرورگر واقعی در این محیط اجرا نشد؛ Chromium محلی توسط محیط اجرا مسدود شد. بنابراین آزمون رابط در این مرحله بر مبنای بررسی ایستای HTML/CSS و آزمون‌های Node انجام شده است.
++
++## فایل‌های تغییرکرده یا افزوده‌شده در این بسته
++
++- `index.html`
++- `assets/css/app.css`
++- `assets/js/upcoming-launch-filters.js` (جدید)
++- `assets/js/upcoming-launch-browser.js` (جدید)
++- `data/country_codes.json` (جدید)
++- `tests/upcoming-launch-filters.test.cjs` (جدید)
++- `tests/upcoming-launch-ui.test.cjs` (جدید)
++- `.github/workflows/refresh-global-launches.yml` (به‌روزرسانی برای اجرای آزمون‌های جدید)
++
++همراه این فایل‌ها، ابزارها و داده‌های لازم گام‌های ۱ و ۲ نیز در بسته ZIP تجمیعی قرار دارند.
++
++## وضعیت انتشار
++
++- کدنویسی گام‌های ۳ و ۴: تکمیل‌شده.
++- آزمون منطق و ساختار: موفق.
++- دریافت زنده داده: در انتظار اجرای گردش‌کار پس از انتشار.
++- انتشار روی سایت آنلاین: انجام نشده.
+--- a/README_INSTALL_STEPS3_4_FA.md
++++ b/README_INSTALL_STEPS3_4_FA.md
+@@ -0,0 +1,67 @@
++# راهنمای نصب گام‌های ۳ و ۴ ORBITA
++
++این بسته، تغییرات گام‌های ۱ تا ۴ را به‌صورت تجمیعی دارد؛ بنابراین اگر هنوز بسته گام‌های ۱ و ۲ را روی GitHub قرار نداده‌اید، همین بسته را مبنای نصب قرار دهید.
++
++## ۱) پیش از نصب
++
++1. از نسخه فعلی مخزن نسخه پشتیبان بگیرید.
++2. فایل ZIP را روی رایانه استخراج کنید.
++3. مسیرهای داخل ZIP از ریشه مخزن ORBITA نوشته شده‌اند؛ ساختار پوشه‌ها را حفظ کنید.
++
++## ۲) فایل‌هایی که باید در مخزن قرار بگیرند
++
++### فایل‌های رابط و فیلتر گام‌های ۳ و ۴
++
++- `index.html`
++- `assets/css/app.css`
++- `assets/js/upcoming-launch-filters.js`
++- `assets/js/upcoming-launch-browser.js`
++- `data/country_codes.json`
++- `tests/upcoming-launch-filters.test.cjs`
++- `tests/upcoming-launch-ui.test.cjs`
++
++### فایل‌های داده و به‌روزرسانی گام‌های ۱ و ۲
++
++- `data/upcoming_global.json`
++- `tools/upcoming_event_contract.py`
++- `tools/audit_upcoming_events.py`
++- `tools/refresh_global_launches.py`
++- `tools/test_global_launches.py`
++- `.github/workflows/refresh-global-launches.yml`
++- `tests/upcoming_global.test.cjs`
++
++فایل `tools/ll2_compat.py` نیز در بسته آمده تا وابستگی دریافت داده‌های Launch Library 2 همراه مجموعه باشد.
++
++## ۳) اجرای آزمون‌ها
++
++پس از بارگذاری فایل‌ها، این آزمون‌ها را می‌توان محلی یا در GitHub Actions اجرا کرد:
++
++```bash
++python -m unittest discover -s tools -p 'test_global_launches.py' -v
++node tests/upcoming_global.test.cjs
++node tests/upcoming-launch-filters.test.cjs
++node tests/upcoming-launch-ui.test.cjs
++```
++
++## ۴) نخستین همگام‌سازی داده‌های واقعی
++
++1. در GitHub مخزن را باز کنید.
++2. به بخش Actions بروید.
++3. گردش‌کار `refresh-global-launches-120-days` را انتخاب کنید.
++4. گزینه `Run workflow` را اجرا کنید.
++5. پس از موفقیت، گردش‌کار فایل `data/upcoming_global.json` را با داده کامل دریافتی از Launch Library 2 به‌روزرسانی و commit می‌کند.
++
++تا پیش از نخستین اجرای موفق، رابط جدید پیام «در انتظار نخستین همگام‌سازی» را نمایش می‌دهد. داده آزمایشی یا ساختگی در فایل اصلی قرار داده نشده است.
++
++## ۵) مشاهده در نرم‌افزار
++
++پس از انتشار، دکمه «پرتاب‌های پیش‌رو» در نوار بالای نقشه ظاهر می‌شود. از آن می‌توان بازه ۷، ۱۴، ۳۰ یا ۱۲۰ روز را انتخاب کرد و یک یا چند کشور را هم‌زمان فیلتر کرد.
++
++مبنای کشور به‌صورت پیش‌فرض کشور اپراتور/ارائه‌دهنده پرتاب است. برای فیلتر جغرافیایی، گزینه «کشور محل پرتاب» را انتخاب کنید.
++
++## ۶) نکات مهم
++
++- فایل `data/upcoming.json` و تب‌های فعلی پرتاب هر پایگاه تغییر نکرده‌اند.
++- `data/upcoming_landings.json` و تب فرودهای پیش‌رو در این مرحله تغییر نکرده‌اند؛ رابط فرودها در گام‌های ۵ و ۶ ساخته می‌شود.
++- هیچ کلید API یا رمز محرمانه‌ای به فایل‌های عمومی اضافه نشده است.
++- این بسته روی سایت آنلاین منتشر نشده است؛ انتشار فقط پس از بارگذاری و تأیید شما انجام می‌شود.
+--- a/reports/ORBITA_Steps3_4_Test_Log.txt
++++ b/reports/ORBITA_Steps3_4_Test_Log.txt
+@@ -0,0 +1,39 @@
++ORBITA Steps 3–4 QA Log
++Date: 2026-11-21
++
++JavaScript syntax checks:
++- assets/js/app.js: PASS
++- assets/js/upcoming-launch-filters.js: PASS
++- assets/js/upcoming-launch-browser.js: PASS
++
++Focused existing tests:
++- tests/upcoming.test.cjs: 15 PASS / 0 FAIL
++- tests/upcoming_global.test.cjs: PASS
++- tests/upcoming_landings.test.cjs: 5 PASS / 0 FAIL
++- tests/site_guide.test.cjs: 10 PASS / 0 FAIL
++- tests/next_landing_announcement.test.cjs: PASS
++
++New tests:
++- tests/upcoming-launch-filters.test.cjs: 21 assertions PASS
++- tests/upcoming-launch-ui.test.cjs: PASS
++
++Python tests:
++- python -m unittest discover -s tools -p 'test*.py' -v
++- 21 tests PASS / 0 FAIL
++
++Static validation:
++- HTML parsed successfully; no duplicate IDs.
++- Script order validated: app.js, filter engine, browser UI.
++- CSS parsed successfully; no stylesheet/declaration parse errors.
++
++Full Node suite comparison:
++- Original source: 53 tests, 34 pre-existing failures.
++- Working copy: 56 tests, 34 failures.
++- New failures relative to original source: 0.
++- Both newly added tests pass.
++
++Browser limitation:
++- A live Chromium/Playwright run was attempted but the execution environment blocked local browser navigation (ERR_BLOCKED_BY_ADMINISTRATOR). No live-browser pass is claimed.
++
++Data limitation:
++- data/upcoming_global.json remains awaiting_first_successful_sync until the GitHub Actions refresh workflow runs successfully. No synthetic launch records were inserted.

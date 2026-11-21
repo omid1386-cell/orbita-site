@@ -1,0 +1,126 @@
+{
+  "package": "ORBITA Steps 1-4 cumulative package",
+  "created": "2026-11-21",
+  "files": [
+    {
+      "path": ".github/workflows/refresh-global-launches.yml",
+      "sha256": "2d5ac796ebcff605c8b6f00fa80d9e531e90f01284e9d9ddc5f8561af84227ca",
+      "bytes": 2279
+    },
+    {
+      "path": "ORBITA_STEPS1_2_REPORT_FA.md",
+      "sha256": "654c6a2af977c0a76ee8dda65e7d9fdedd20a00b68214891e73c2099a4568617",
+      "bytes": 7154
+    },
+    {
+      "path": "ORBITA_STEPS1_2_SHA256SUMS.txt",
+      "sha256": "8acfc07389a88e4dc763e49f581f0e9488747bb988f9ab67f823b85510c5898d",
+      "bytes": 1104
+    },
+    {
+      "path": "ORBITA_STEPS3_4.patch",
+      "sha256": "2a4e6ceb427fda13ea8f01e9456a2adef8e6cf970bf3d5f5d4740f8a0f6b9060",
+      "bytes": 147255
+    },
+    {
+      "path": "ORBITA_STEPS3_4_REPORT_FA.md",
+      "sha256": "0099755e3d0765d009c52bbd351217c20571f12f8acd3481f951f6f32df8828b",
+      "bytes": 8049
+    },
+    {
+      "path": "README_INSTALL_STEPS1_2_FA.md",
+      "sha256": "b871a9d53bc69d326e105598e1a4e11e800a9c21c70ad3ec447bfd399aacb237",
+      "bytes": 2460
+    },
+    {
+      "path": "README_INSTALL_STEPS3_4_FA.md",
+      "sha256": "e298e20c17fa8110c681841201beccc013b4c196e4e4cc0fd7b8a51cd99b67cb",
+      "bytes": 3878
+    },
+    {
+      "path": "assets/css/app.css",
+      "sha256": "cb59910f61068eeca3bf0f1b571b056eb83da4c88b732796a75929f4e0079fed",
+      "bytes": 129579
+    },
+    {
+      "path": "assets/js/upcoming-launch-browser.js",
+      "sha256": "32f92ae3557efa6bcd51ec17ec6c74ac7cefe46df7d422a2c51ad0d1690effd7",
+      "bytes": 27637
+    },
+    {
+      "path": "assets/js/upcoming-launch-filters.js",
+      "sha256": "31af8eb8ef9710d8b96fc9086a7d4b973366f8bfb376b5ea62a64bef364dc7cc",
+      "bytes": 5386
+    },
+    {
+      "path": "data/country_codes.json",
+      "sha256": "74347d84db14e97ae46aa94dff06667829a8d59c74fc83277230e42b6951ca18",
+      "bytes": 69087
+    },
+    {
+      "path": "data/upcoming_global.json",
+      "sha256": "985a024cd4c8c5f7ca39132c9e68743fd7c14eefa9d91aeb8ef18c13d4306500",
+      "bytes": 357
+    },
+    {
+      "path": "index.html",
+      "sha256": "8e4f3ba4ca6bfb926cf5fae7c7461133ff3e6acd47916b52eb067472c552dd05",
+      "bytes": 52317
+    },
+    {
+      "path": "reports/ORBITA_Step1_Snapshot_Audit_2026-11-21.json",
+      "sha256": "6ef1e04611f3e1a3f8c8063726297781be8a133e4f18234e1192b2f91126bf3a",
+      "bytes": 916
+    },
+    {
+      "path": "reports/ORBITA_Steps1_2_Test_Log.txt",
+      "sha256": "528761653419a6cc9f138e82626326f01edf1ce61a24a3ae0ac8945e869ef6cc",
+      "bytes": 4549
+    },
+    {
+      "path": "reports/ORBITA_Steps3_4_Test_Log.txt",
+      "sha256": "76874cc2a4e56456847b7de2bb82167f58b83f3a203ccff1501a251d83237c27",
+      "bytes": 1431
+    },
+    {
+      "path": "tests/upcoming-launch-filters.test.cjs",
+      "sha256": "ae7332d5bd44b165100d3589d68e52ca8ec406a1685ebba6d35f939c713417af",
+      "bytes": 4735
+    },
+    {
+      "path": "tests/upcoming-launch-ui.test.cjs",
+      "sha256": "145fee50f448b9498d90c98cfdc8e7b0217bb8a385d6226de62c0b6d7045f3cf",
+      "bytes": 2197
+    },
+    {
+      "path": "tests/upcoming_global.test.cjs",
+      "sha256": "2d1ff58fc0e192e5baf2558efcd259f481e8a0218e1351ab9c6d8124fb905dbf",
+      "bytes": 1296
+    },
+    {
+      "path": "tools/audit_upcoming_events.py",
+      "sha256": "17a5a36410121f029b8a992cf7c0a525fbefea1d01ed9b5be913e38ad48d2d97",
+      "bytes": 2422
+    },
+    {
+      "path": "tools/ll2_compat.py",
+      "sha256": "70e8a72931e1a392f0623a99ec05537c410f8b2983f14a60c17f44918cd9a3eb",
+      "bytes": 2105
+    },
+    {
+      "path": "tools/refresh_global_launches.py",
+      "sha256": "12a8b5d2c7366f86e9956d4348d0e13c74a95e532df163e6212e3caa018921db",
+      "bytes": 7757
+    },
+    {
+      "path": "tools/test_global_launches.py",
+      "sha256": "ad0af1a5d4766f6b381b2c58328e4c86331c3920a39634fd946642cac8bcc9ab",
+      "bytes": 6831
+    },
+    {
+      "path": "tools/upcoming_event_contract.py",
+      "sha256": "def397cdada1dace649cd9c4f87999b2620a59b7bbe6bf8cd7d1d805d08b436b",
+      "bytes": 4151
+    }
+  ]
+}

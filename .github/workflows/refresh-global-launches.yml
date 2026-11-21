@@ -1,0 +1,59 @@
+# Independent from refresh-data.yml, to respect the unauthenticated LL2
+# quota of 15 requests/hour. The existing job runs at 01/09/17 UTC.
+name: refresh-global-launches-120-days
+on:
+  schedule:
+    - cron: '23 5,13,21 * * *'
+  workflow_dispatch: {}
+permissions:
+  contents: write
+concurrency:
+  group: orbita-global-launches
+  cancel-in-progress: false
+jobs:
+  refresh-global:
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+        with:
+          persist-credentials: true
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - name: Offline regression and LL2 pagination tests
+        run: |
+          python -m unittest discover -s tools -p 'test_global_launches.py' -v
+          node tests/upcoming_global.test.cjs
+          node tests/upcoming-launch-filters.test.cjs
+          node tests/upcoming-launch-ui.test.cjs
+      - name: Fetch and validate all upcoming launches within 120 days
+        run: python tools/refresh_global_launches.py --apply
+      - name: Validate published global snapshot
+        run: |
+          node tests/upcoming_global.test.cjs
+          node tests/upcoming-launch-filters.test.cjs
+          node tests/upcoming-launch-ui.test.cjs
+      - name: Commit validated global launch data (only if changed)
+        run: |
+          git config user.name 'orbita-refresh-bot'
+          git config user.email 'orbita-refresh-bot@users.noreply.github.com'
+          git add data/upcoming_global.json
+          if git diff --cached --quiet; then
+            echo 'No changes.'
+          else
+            git commit -m "Auto-refresh worldwide 120-day launches $(date -u +%Y-%m-%dT%H:%M)Z"
+            git push origin "HEAD:${GITHUB_REF_NAME}"
+          fi
+      - name: Report outcome
+        if: always()
+        run: |
+          {
+            echo '## Worldwide upcoming launches'
+            echo "- Workflow status: ${{ job.status }}"
+            echo '- Source: Launch Library 2 v2.3.0'
+            echo '- Horizon: 120 days / separate from curated site-specific data'
+            echo '- Failure guard: previous successful snapshot preserved on any incomplete API response'
+          } >> "$GITHUB_STEP_SUMMARY"

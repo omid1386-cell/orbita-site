@@ -1,0 +1,13 @@
+{
+  "schema_version": 1,
+  "source": "Launch Library 2 (The Space Devs), v2.3.0",
+  "scope": "all_upcoming_launches_reported_by_source",
+  "coverage_status": "awaiting_first_successful_sync",
+  "updated_utc": null,
+  "window_start_utc": null,
+  "window_end_utc_exclusive": null,
+  "horizon_days": 120,
+  "count": 0,
+  "pages_fetched": 0,
+  "launches": []
+}

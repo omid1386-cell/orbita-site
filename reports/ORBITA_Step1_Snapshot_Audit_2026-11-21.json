@@ -1,0 +1,30 @@
+{
+  "audit_utc_date": "2026-11-21",
+  "planned_four_month_end_exclusive": "2027-03-21",
+  "legacy_curated_launches": 137,
+  "legacy_curated_landings": 9,
+  "launches_within_next_120_days_by_NET_not_guaranteed": 111,
+  "launches_outside_next_120_days": 26,
+  "launches_with_past_NET": 5,
+  "manual_launches_preserved": 5,
+  "launches_by_site_country_top10": {
+    "United States": 86,
+    "New Zealand": 9,
+    "China": 8,
+    "French Guiana": 7,
+    "India": 6,
+    "Japan": 6,
+    "Norway": 4,
+    "United Kingdom": 2,
+    "Iran": 2,
+    "Kazakhstan (leased by Russia)": 1
+  },
+  "launch_snapshot_updated": "2026-11-14",
+  "launch_snapshot_window_end": "2027-02-12",
+  "landing_snapshot_updated": "2026-11-14",
+  "landing_snapshot_window_end": "2027-02-12",
+  "landings_without_credible_date": 5,
+  "landing_dates_in_past": 1,
+  "contract_events_validated": 146,
+  "global_feed": "awaiting_first_successful_sync"
+}

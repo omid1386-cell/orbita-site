@@ -1,0 +1,39 @@
+ORBITA Steps 3–4 QA Log
+Date: 2026-11-21
+
+JavaScript syntax checks:
+- assets/js/app.js: PASS
+- assets/js/upcoming-launch-filters.js: PASS
+- assets/js/upcoming-launch-browser.js: PASS
+
+Focused existing tests:
+- tests/upcoming.test.cjs: 15 PASS / 0 FAIL
+- tests/upcoming_global.test.cjs: PASS
+- tests/upcoming_landings.test.cjs: 5 PASS / 0 FAIL
+- tests/site_guide.test.cjs: 10 PASS / 0 FAIL
+- tests/next_landing_announcement.test.cjs: PASS
+
+New tests:
+- tests/upcoming-launch-filters.test.cjs: 21 assertions PASS
+- tests/upcoming-launch-ui.test.cjs: PASS
+
+Python tests:
+- python -m unittest discover -s tools -p 'test*.py' -v
+- 21 tests PASS / 0 FAIL
+
+Static validation:
+- HTML parsed successfully; no duplicate IDs.
+- Script order validated: app.js, filter engine, browser UI.
+- CSS parsed successfully; no stylesheet/declaration parse errors.
+
+Full Node suite comparison:
+- Original source: 53 tests, 34 pre-existing failures.
+- Working copy: 56 tests, 34 failures.
+- New failures relative to original source: 0.
+- Both newly added tests pass.
+
+Browser limitation:
+- A live Chromium/Playwright run was attempted but the execution environment blocked local browser navigation (ERR_BLOCKED_BY_ADMINISTRATOR). No live-browser pass is claimed.
+
+Data limitation:
+- data/upcoming_global.json remains awaiting_first_successful_sync until the GitHub Actions refresh workflow runs successfully. No synthetic launch records were inserted.
