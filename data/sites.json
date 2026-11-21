@@ -15105,7 +15105,11 @@
   "photo_license": "Public domain",
   "photo_source_url": "https://commons.wikimedia.org/wiki/File:V-2_GANTRY,_LAUNCH_COMPLEX_33-_LOOKING_NORTH_-_White_Sands_Missile_Range,_V-2_Gantry_Crane,_White_Sands,_Dona_Ana_County,_NM_HAER_NM,7-WHSA,1A-1.tif",
   "country_ar": "الولايات المتحدة",
-  "photo_caption_ar": "برج الإطلاق التاريخي لصاروخ V-2 في المجمع 33 بوایت ساندز"
+  "photo_caption_ar": "برج الإطلاق التاريخي لصاروخ V-2 في المجمع 33 بوایت ساندز",
+  "stats_total": 5,
+  "stats_success": 4,
+  "stats_fail": 1,
+  "stats_asof": "2026-11-21"
  },
  {
   "id": "etlaq",
