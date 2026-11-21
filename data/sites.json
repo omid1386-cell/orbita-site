@@ -15223,7 +15223,11 @@
   "photo_license": "CC BY-SA 4.0",
   "photo_source_url": "https://commons.wikimedia.org/wiki/File:Duqm-1_Mission_Launch_-_Etlaq_Spaceport.png",
   "country_ar": "عُمان",
-  "photo_caption_ar": "إقلاع صاروخ دقم-1 من ميناء إتلاق الفضائي في ديسمبر 2024"
+  "photo_caption_ar": "إقلاع صاروخ دقم-1 من ميناء إتلاق الفضائي في ديسمبر 2024",
+  "stats_total": 0,
+  "stats_success": 0,
+  "stats_fail": 0,
+  "stats_asof": "2026-11-21"
  },
  {
   "id": "somalia-spaceport",

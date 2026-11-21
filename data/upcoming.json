@@ -100,7 +100,7 @@
   {
    "site": "vandenberg",
    "ll2_id": "951a341f-236b-42fe-a667-4ab2fcf36eac",
-   "net": "2026-11-22T12:16:00Z",
+   "net": "2026-11-22T12:23:56Z",
    "rocket_fa": "فالکون ۹ بلاک ۵",
    "rocket_en": "Falcon 9 Block 5",
    "payload_fa": "NROL-136",
@@ -122,8 +122,8 @@
    "precision_en": "Confirmed date & time",
    "date_label_fa": "2026-11-22",
    "date_label_en": "2026-11-22",
-   "time_fa": "ساعت 12:16 به وقت جهانی",
-   "time_en": "12:16 UTC"
+   "time_fa": "ساعت 12:23 به وقت جهانی",
+   "time_en": "12:23 UTC"
   },
   {
    "site": "kourou",
