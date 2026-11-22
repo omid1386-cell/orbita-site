@@ -1,6 +1,6 @@
 {
- "updated": "2026-11-21",
- "window_end": "2027-02-19",
+ "updated": "2026-11-22",
+ "window_end": "2027-02-20",
  "sites_covered": [
   "ccsfs",
   "vandenberg",
@@ -69,34 +69,6 @@
  ],
  "note_fa": "داده‌ها از فهرست رسمی The Space Devs گردآوری و به دست انسان دوزبانه شده‌اند. هم‌زمانی زندهٔ تاریخ‌ها در خود برنامه انجام می‌شود.",
  "launches": [
-  {
-   "site": "vandenberg",
-   "ll2_id": "76617033-4dc0-4448-b50c-e5b0d5a18539",
-   "net": "2026-11-21T04:20:35Z",
-   "rocket_fa": "فالکون ۹ بلاک ۵",
-   "rocket_en": "Falcon 9 Block 5",
-   "payload_fa": "USSF-317",
-   "payload_en": "USSF-317",
-   "mtype_fa": "دولتی / محرمانه",
-   "mtype_en": "Government/Top Secret",
-   "orbit_fa": "مدار پایین زمین",
-   "orbit_en": "Low Earth Orbit",
-   "customer_fa": "اسپیس‌ایکس",
-   "customer_en": "SpaceX",
-   "desc_fa": "پرتاب فالکون ۹ بلاک ۵ با محمولهٔ USSF-317؛ زمان‌بندی: 2026-11-18.",
-   "desc_en": "Falcon 9 Block 5 launching USSF-317; schedule: 2026-11-18.",
-   "calendar_url": "",
-   "stream_url": "",
-   "status": "Go",
-   "status_fa": "تأیید شده",
-   "precision": "day",
-   "precision_fa": "روز و ساعت مشخص",
-   "precision_en": "Confirmed date & time",
-   "date_label_fa": "2026-11-21",
-   "date_label_en": "2026-11-21",
-   "time_fa": "ساعت 04:20 به وقت جهانی",
-   "time_en": "04:20 UTC"
-  },
   {
    "site": "vandenberg",
    "ll2_id": "951a341f-236b-42fe-a667-4ab2fcf36eac",
