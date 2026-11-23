@@ -3,9 +3,9 @@
   "source": "Launch Library 2 (The Space Devs), v2.3.0",
   "scope": "all_upcoming_launches_reported_by_source",
   "coverage_status": "complete_from_source_at_fetch_time",
-  "updated_utc": "2026-11-22T13:27:54Z",
-  "window_start_utc": "2026-11-22T13:27:54Z",
-  "window_end_utc_exclusive": "2027-03-22T13:27:54Z",
+  "updated_utc": "2026-11-23T01:50:11Z",
+  "window_start_utc": "2026-11-23T01:50:11Z",
+  "window_end_utc_exclusive": "2027-03-23T01:50:11Z",
   "horizon_days": 120,
   "count": 107,
   "pages_fetched": 2,
@@ -40,7 +40,7 @@
     {
       "ll2_id": "8dd5de11-831b-445f-86f0-bffefe0550d9",
       "event_kind": "launch",
-      "net": "2026-11-24T05:03:00Z",
+      "net": "2026-11-24T10:13:00Z",
       "net_precision": "Minute",
       "status": "TBC",
       "status_name": "To Be Confirmed",
@@ -56,7 +56,7 @@
       "location_id": 15,
       "location_name": "Baikonur Cosmodrome, Republic of Kazakhstan",
       "launch_country_code": "KAZ",
-      "last_updated": "2026-06-08T21:46:36Z"
+      "last_updated": "2026-11-22T19:47:17Z"
     },
     {
       "ll2_id": "460d9db7-eaf6-4cd9-b095-cff433534c09",
@@ -77,7 +77,7 @@
       "location_id": 11,
       "location_name": "Vandenberg SFB, CA, USA",
       "launch_country_code": "USA",
-      "last_updated": "2026-11-21T20:29:25Z"
+      "last_updated": "2026-11-23T00:27:48Z"
     },
     {
       "ll2_id": "c9605b67-8a53-4239-a8ae-577fe3b79799",
