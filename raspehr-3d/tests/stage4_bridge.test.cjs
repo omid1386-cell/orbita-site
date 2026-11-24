@@ -1,0 +1,35 @@
+'use strict';
+const assert=require('node:assert/strict');
+const fs=require('node:fs');
+const vm=require('node:vm');
+const path=require('node:path');
+const script=fs.readFileSync(path.resolve(__dirname,'../../assets/js/raspehr-profile-bridge.js'),'utf8');
+const messages=[];const listeners={};const opened=[];
+const panel={classList:{contains:c=>c==='open'},scrollTop:4};
+const body={querySelector:()=>({textContent:'عنوان آزمون'})};
+const parent={postMessage:(data,origin)=>messages.push({data,origin})};
+const rows={companies:[{id:'nasa',cat:'agency',fa:'ناسا'}],sites:[{id:'ksc39a',cat:'site',fa:'کندی'}],recoveries:[{id:'recovery-lz4',cat:'recovery',fa:'فرود ۴'}]};
+const w={RASPEHR_PROFILE_EMBEDDED:true,parent,location:{origin:'https://raspehr.example'},DATA:rows,
+ openDetail:p=>opened.push(p),retryLayer:async key=>['agency','sites','recoveries'].includes(key)};
+const document={getElementById:id=>id==='detail'?panel:id==='detailBody'?body:null,addEventListener:(name,fn)=>{listeners['document:'+name]=fn},querySelector:()=>null};
+w.document=document;w.addEventListener=(name,fn)=>{listeners[name]=fn};
+vm.runInNewContext(script,{window:w,document,console});
+assert.equal(messages[0].data.type,'ready');
+const deliver=(data,origin='https://raspehr.example',source=parent)=>listeners.message({origin,source,data:{channel:'RASPEHR_STAGE4',type:'open',...data}});
+const flush=()=>new Promise(resolve=>setTimeout(resolve,5));
+(async()=>{
+ deliver({kind:'company',id:'nasa',category:'agency',requestId:1});await flush();
+ assert.equal(opened.at(-1).o.id,'nasa');assert.equal(opened.at(-1).cat,'agency');
+ assert.equal(messages.at(-1).data.type,'opened');assert.equal(messages.at(-1).data.requestId,1);
+ deliver({kind:'site',id:'ksc39a',category:'site',requestId:2});await flush();assert.equal(opened.at(-1).o.id,'ksc39a');
+ deliver({kind:'recovery',id:'recovery-lz4',category:'recovery',requestId:3});await flush();assert.equal(opened.at(-1).o.id,'recovery-lz4');
+ deliver({kind:'country',id:'Côte d’Ivoire',countryFa:'ساحل عاج',requestId:4});await flush();
+ assert.equal(opened.at(-1).country_en,'Côte d’Ivoire');assert.equal(messages.at(-1).data.type,'opened');
+ const before=opened.length;
+ deliver({kind:'company',id:'nasa',category:'agency',requestId:5},'https://untrusted.example');await flush();assert.equal(opened.length,before);
+ deliver({kind:'company',id:'nasa',category:'agency',requestId:6},'https://raspehr.example',{});await flush();assert.equal(opened.length,before);
+ deliver({kind:'company',id:'unknown-id',category:'agency',requestId:7});await flush();assert.equal(messages.at(-1).data.type,'error');
+ deliver({kind:'company',id:'nasa',category:'site',requestId:8});await flush();assert.equal(messages.at(-1).data.type,'error');
+ listeners['document:keydown']({key:'Escape'});assert.equal(messages.at(-1).data.type,'close');
+ console.log('PASS Stage4 original-renderer bridge: company/site/recovery/country, punctuation, same-origin guard, errors and close');
+})().catch(e=>{console.error(e);process.exitCode=1;});

@@ -7560,10 +7560,10 @@
     "cat": "propulsion",
     "country": "India",
     "country_fa": "هند",
-    "coordinates_precision": "approximate_city_pin",
-    "location_note_en": "Approximate city-area marker; not a verified company-office coordinate.",
-    "location_fa": "مکان‌نمای تقریبی محدودهٔ شهر؛ مختصات دفتر تأیید نشده است.",
-    "location_ar": "علامة تقريبية ضمن المدينة؛ إحداثيات المكتب غير متحققة.",
+    "coordinates_precision": "approximate_locality_pin",
+    "location_note_en": "Representative area reference; not a verified exact office, launch pad or construction site.",
+    "location_fa": "نشانی شرکت در پاوانه ثبت شده است؛ نشانگر نماینده محدوده صنعتی است، نه نقطه دقیق دفتر.",
+    "location_ar": "علامة جغرافية تمثيلية تقريبية؛ ليست إحداثيات مؤكدة للمكتب أو منصة الإطلاق أو موقع البناء.",
     "org_type_en": "Private space propulsion developer",
     "org_type_fa": "شرکت خصوصی فناوری پیشران",
     "id": "manastu",
@@ -7573,8 +7573,8 @@
     "city": "Navi Mumbai",
     "city_fa": "ناوی مومبای",
     "city_ar": "نافي مومباي",
-    "lat": null,
-    "lon": null,
+    "lat": 19.073,
+    "lon": 73.014,
     "founded": 2017,
     "site": "https://manastuspace.com/",
     "linkedin": "https://www.linkedin.com/company/manastu-space/",
@@ -7807,16 +7807,20 @@
         "desc": "تصف الإعلانات العامة استمرار أعمال الدفع؛ ولا يُنسب إلى Manastu إطلاق إضافي."
       }
     ],
-    "location_en": "Approximate city-area marker; office coordinates have not been verified."
+    "location_en": "Approximate city-area marker; office coordinates have not been verified.",
+    "coordinate_note_fa": "نشانی شرکت در پاوانه ثبت شده است؛ نشانگر نماینده محدوده صنعتی است، نه نقطه دقیق دفتر.",
+    "coordinate_note_en": "Representative area reference; not a verified exact office, launch pad or construction site.",
+    "coordinate_note_ar": "علامة جغرافية تمثيلية تقريبية؛ ليست إحداثيات مؤكدة للمكتب أو منصة الإطلاق أو موقع البناء.",
+    "coordinate_uncertainty_km": 3
   },
   {
     "cat": "propulsion",
     "country": "India",
     "country_fa": "هند",
-    "coordinates_precision": "approximate_city_pin",
-    "location_note_en": "Approximate city-area marker; not a verified company-office coordinate.",
-    "location_fa": "مکان‌نمای تقریبی محدودهٔ شهر؛ مختصات دفتر تأیید نشده است.",
-    "location_ar": "علامة تقريبية ضمن المدينة؛ إحداثيات المكتب غير متحققة.",
+    "coordinates_precision": "approximate_locality_pin",
+    "location_note_en": "Representative area reference; not a verified exact office, launch pad or construction site.",
+    "location_fa": "نشانی رسمی در راجاجی‌ناگار؛ نقطه مربوط به محدوده صنعتی است نه ساختمان شرکت.",
+    "location_ar": "علامة جغرافية تمثيلية تقريبية؛ ليست إحداثيات مؤكدة للمكتب أو منصة الإطلاق أو موقع البناء.",
     "org_type_en": "Private space propulsion developer",
     "org_type_fa": "شرکت خصوصی فناوری پیشران",
     "id": "spacefields",
@@ -7826,8 +7830,8 @@
     "city": "Bengaluru",
     "city_fa": "بنگلور",
     "city_ar": "بنغالورو",
-    "lat": null,
-    "lon": null,
+    "lat": 12.97857,
+    "lon": 77.55106,
     "founded": 2021,
     "site": "https://spacefields.in/",
     "linkedin": "https://www.linkedin.com/company/spacefields/",
@@ -7931,7 +7935,11 @@
         "desc": "ذُكر إجراء اختبار إشعال ساخن في IISc Challakere؛ ولا يشير هذا السجل إلى رحلة أو إطلاق مداري."
       }
     ],
-    "location_en": "Approximate city-area marker; office coordinates have not been verified."
+    "location_en": "Approximate city-area marker; office coordinates have not been verified.",
+    "coordinate_note_fa": "نشانی رسمی در راجاجی‌ناگار؛ نقطه مربوط به محدوده صنعتی است نه ساختمان شرکت.",
+    "coordinate_note_en": "Representative area reference; not a verified exact office, launch pad or construction site.",
+    "coordinate_note_ar": "علامة جغرافية تمثيلية تقريبية؛ ليست إحداثيات مؤكدة للمكتب أو منصة الإطلاق أو موقع البناء.",
+    "coordinate_uncertainty_km": 2
   },
   {
     "id": "hyprspace",

@@ -1,0 +1,38 @@
+'use strict';
+const assert=require('node:assert/strict'),fs=require('node:fs'),vm=require('node:vm'),path=require('node:path');
+const root=path.resolve(__dirname,'..'),THREE=require(path.resolve(root,'../assets/vendor/three.min.js'));
+const ctx={window:{THREE},console};
+for(const file of ['entity-data.js','entity-markers.js','entity-explore.js'])vm.runInNewContext(fs.readFileSync(path.join(root,'assets/js',file),'utf8'),ctx);
+const group=new THREE.Group(),scene=new THREE.Scene();scene.add(group);
+const camera=new THREE.PerspectiveCamera(42,800/600,0.025,180);camera.position.set(0,0,5.55);camera.lookAt(0,0,0);
+const handlers=new Map();
+const canvas={addEventListener:(name,fn)=>handlers.set(name,fn),removeEventListener:(name)=>handlers.delete(name),getBoundingClientRect:()=>({left:0,top:0,width:800,height:600})};
+const engine={renderer:{domElement:canvas},globeGroup:group,scene,camera,target:{rx:0,ry:0,distance:5.55},controls:new Map(),dragVelocity:{x:0,y:0}};
+const rows=[{key:'a',id:'a',lat:0,lon:-90,category:'agency',categories:['agency']},{key:'b',id:'b',lat:0,lon:-90,category:'launch',categories:['launch']},{key:'c',id:'c',lat:21,lon:-70,category:'site',categories:['site']}];
+const obj=new ctx.window.RaspehrEntityMarkers.EntityMarkers(engine,{markers:rows},()=>{});
+assert.equal(obj.meshes.reduce((n,m)=>n+m.count,0),3);
+const combined={key:'cluster:a|b',isCluster:true,count:2,lat:0,lon:-90,category:'cluster',categories:['agency','launch'],members:rows.slice(0,2)};
+assert.equal(obj.setDisplay([rows[2]],[combined]),true);
+assert.equal(obj.meshes.reduce((n,m)=>n+m.count,0),2);
+assert.equal(obj.meshes.find(m=>m.name.endsWith('cluster')).geometry,obj.clusterGeometry);
+assert.equal(obj.setDisplay([rows[2]],[combined]),false,'skip duplicate rebuild');
+obj.select(combined,true);assert.ok(obj.selectionRing.visible);
+obj.setDisplay([],[]);assert.equal(obj.meshes.length,0);assert.equal(obj.selectionRing.visible,false);
+obj.setDisplay(rows,[]);assert.equal(obj.meshes.reduce((n,m)=>n+m.count,0),3);
+// Multi-touch must not be interpreted as a tap on a geographic marker.
+const hits=[];obj.pick=()=>rows[0];obj.select=row=>{hits.push(row);return true;};
+function point(id,x=100,y=100){return {pointerId:id,pointerType:'touch',clientX:x,clientY:y,button:0};}
+engine.controls.set(1,{x:100,y:100});handlers.get('pointerdown')(point(1));
+engine.controls.set(2,{x:110,y:110});handlers.get('pointerdown')(point(2,110,110));
+engine.controls.delete(2);handlers.get('pointerup')(point(2,110,110));
+engine.controls.delete(1);handlers.get('pointerup')(point(1));
+assert.equal(hits.length,0,'pinch gesture must never select markers');
+engine.controls.set(3,{x:100,y:100});handlers.get('pointerdown')(point(3));
+engine.controls.delete(3);handlers.get('pointerup')(point(3));
+assert.equal(hits.length,1,'single-finger tap should still select');
+engine.controls.set(4,{x:100,y:100});handlers.get('pointerdown')(point(4));
+handlers.get('pointermove')(point(4,160,160));
+engine.controls.delete(4);handlers.get('pointerup')(point(4,160,160));
+assert.equal(hits.length,1,'drag must never count as selection');
+obj.dispose();assert.equal(obj.meshes.length,0);
+console.log('PASS Stage3 marker updates: no duplicates, dedicated cluster style, selection lifecycle and cleanup');

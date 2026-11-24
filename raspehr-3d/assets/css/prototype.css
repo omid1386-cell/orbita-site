@@ -1,0 +1,132 @@
+:root{color-scheme:dark;font-family:system-ui,Segoe UI,Tahoma,sans-serif}
+*{box-sizing:border-box} body{margin:0;background:#06111d;color:#eef6ff} .app-shell{display:grid;grid-template-columns:320px 1fr;min-height:100vh}
+.stage-panel{padding:16px;display:flex;flex-direction:column;gap:12px;background:rgba(6,17,29,.92)} .globe-panel{position:relative;min-height:100vh}
+#globeMount{position:absolute;inset:0} #loading,#sceneIntro,#errorBox{position:absolute;inset:auto 16px 16px 16px;background:rgba(5,10,18,.75);padding:12px;border-radius:12px;backdrop-filter:blur(6px)}
+#loading{top:16px;bottom:auto;right:16px;left:auto}.is-hidden{display:none!important}.toolbar-row,.preset-grid,.option-grid{display:grid;gap:8px}.preset-grid{grid-template-columns:repeat(4,minmax(0,1fr))}.option-grid{grid-template-columns:repeat(2,minmax(0,1fr))}.status-box{display:grid;gap:6px;padding:10px;border:1px solid rgba(255,255,255,.12);border-radius:12px;background:rgba(255,255,255,.03)} button,select,label{font:inherit} button{cursor:pointer;padding:8px 10px;border-radius:10px;border:1px solid rgba(255,255,255,.18);background:#0c2033;color:#fff} button.is-active{background:#23517a}
+#sceneIntro.is-faded{opacity:.35} @media (max-width: 700px){.app-shell{grid-template-columns:1fr}.stage-panel{order:2}.globe-panel{min-height:70vh}}
+.grid-test{display:grid;grid-template-columns:repeat(4,1fr)}
+
+.terrain-attribution{font-size:11px;color:#9fb8cf;line-height:1.6}.terrain-attribution a{color:#9fcfe8;text-decoration:underline;text-underline-offset:3px}
+
+/* Stage 02/03 — entity indicators and exploration. */
+.entity-panel{border:1px solid rgba(255,211,136,.30);border-radius:12px;padding:12px;background:rgba(12,27,45,.72)}
+.entity-head{display:flex;align-items:center;justify-content:space-between;gap:8px;flex-wrap:wrap}
+.entity-head strong{font-size:13px}.entity-toggle{font-size:11px;display:flex;align-items:center;gap:5px;cursor:pointer}
+#markerStatus{font-size:12px;color:#b9d0eb;line-height:1.8;margin:8px 0}
+.entity-note{font-size:10.5px;color:#91a8be;line-height:1.7;margin:6px 0}
+.entity-legend{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:5px;max-height:200px;overflow:auto}
+.legend-item{display:flex;align-items:center;gap:5px;font-size:10px;line-height:1.5;color:#b5c9da}
+.legend-dot{width:8px;height:8px;flex:none;border-radius:50%;background:var(--dot,#c8d9e7);box-shadow:0 0 5px var(--dot,#c8d9e7)}
+.entity-card{margin-top:10px;border-top:1px solid rgba(255,255,255,.15);padding-top:10px;display:flex;flex-direction:column;gap:5px}
+.entity-card[hidden]{display:none!important}.entity-card strong{font-size:14px;color:#f6dc9e}
+.entity-card small{font-size:11px;color:#b8c9db}.entity-card p{margin:0;font-size:12px;line-height:1.7}
+.entity-card button{background:rgba(229,181,91,.18);border-color:rgba(229,181,91,.55)}
+@media(max-width:700px){.entity-legend{max-height:150px}.entity-panel{padding:10px}}
+
+/* Stage 03 — accessible exploration controls and cluster counters */
+.stage3-search{display:grid;gap:7px;margin:10px 0}
+.stage3-search label{font-size:11px;color:#d4e2f3}
+.stage3-search input,.stage3-search select{min-width:0;width:100%;padding:9px 11px;border:1px solid #425b6d;border-radius:9px;background:#091b2c;color:#f2f6fc;font:inherit;font-size:12px}
+.stage3-search input:focus-visible,.stage3-search select:focus-visible,.entity-panel button:focus-visible,.cluster-bubble:focus-visible{outline:2px solid #f1c67c;outline-offset:2px}
+.stage3-search #entityClear{padding:6px;font-size:11px;background:#203a50}
+.category-tools{display:flex;gap:5px;align-items:center;justify-content:space-between;font-size:11px;margin-bottom:8px}
+.category-tools button{padding:4px 8px;font-size:10px}
+.entity-legend{max-height:245px}
+.legend-item{cursor:pointer;padding:3px 0;align-items:center}
+.legend-item input{width:13px;height:13px;flex:none;accent-color:#eabd6c}
+.entity-summary{font-size:11px;color:#efcc81;line-height:1.8;margin:8px 0 0}
+.entity-results{max-height:220px;overflow:auto;display:grid;gap:6px;padding-top:5px}
+.entity-results[hidden]{display:none}
+.entity-result{width:100%;text-align:right;display:flex;flex-direction:column;gap:2px;padding:8px 10px;font-size:11px;background:#112c43}
+.entity-result strong{font-size:11.5px}.entity-result small{font-size:10px;color:#94b5c9}
+.cluster-members{max-height:180px}
+.cluster-overlay{position:absolute;inset:0;pointer-events:none;z-index:4}
+.cluster-overlay[hidden]{display:none}
+.cluster-bubble{position:absolute;transform:translate(-50%,-50%);display:flex;align-items:center;justify-content:center;min-width:30px;height:30px;border-radius:50%;padding:0 5px;border:2px solid #f3d189;background:rgba(23,49,71,.95);color:#ffe6a2;box-shadow:0 0 0 4px rgba(235,187,93,.12),0 4px 13px #000b;pointer-events:auto;font-size:11px;font-weight:700}
+.cluster-bubble:hover{background:#926726;color:#fff}
+@media(max-width:700px){.stage-panel{max-height:none}.cluster-bubble{min-width:34px;height:34px}}
+
+/* Stage 03 QA hardening: touch targets, safe areas and reduced-motion support. */
+.cluster-bubble{touch-action:manipulation;user-select:none;-webkit-tap-highlight-color:transparent}
+.cluster-bubble:active{background:#8b692f;border-color:#ffe5aa}
+@media(hover:none),(pointer:coarse){
+ .cluster-bubble{min-width:44px;height:44px;font-size:13px}
+ .entity-result,.category-tools button,.stage3-search #entityClear{min-height:44px}
+ .legend-item{min-height:36px}
+ .legend-item input{width:18px;height:18px}
+}
+@media(max-width:700px){
+ .globe-panel{min-height:70svh}
+ .stage-panel{padding:12px max(12px,env(safe-area-inset-right)) max(16px,env(safe-area-inset-bottom)) max(12px,env(safe-area-inset-left))}
+ .cluster-overlay{overflow:hidden}
+ .stage3-search input,.stage3-search select{font-size:16px}
+ .entity-result{font-size:13px}
+}
+@media(prefers-reduced-motion:reduce){.cluster-bubble{transition:none;animation:none}}
+
+/* Stage 04 — canonical original dossier in an accessible single-viewport drawer. */
+.stage4-open-btn,#countryProfileBtn{font-weight:700;background:linear-gradient(135deg,#856126,#422f16)!important;color:#fff5da!important;border-color:#e0bb68!important}
+#entityFullProfile:disabled,#countryProfileBtn:disabled{opacity:.5;cursor:not-allowed}
+.stage4-dossier-overlay[hidden]{display:none!important}
+.stage4-dossier-overlay{position:fixed;z-index:50;inset:0 0 0 auto;width:min(760px,100vw);height:100vh;height:100dvh;display:flex;flex-direction:column;background:#091626;border-inline-start:1px solid #bd9859;box-shadow:-14px 0 60px #000a;color:#f4f0e7}
+.stage4-dossier-head{display:flex;align-items:center;justify-content:space-between;gap:8px;min-height:75px;padding:12px 16px;background:#0c2032;border-bottom:1px solid #70542c}
+.stage4-dossier-title{display:grid;gap:4px;min-width:0}
+.stage4-dossier-title small{color:#dfbd78;font-size:10px}
+.stage4-dossier-title strong{color:#fff;font-size:17px;overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
+#dossierClose{white-space:nowrap;flex:none;background:#25394e;border-color:#a48659;min-height:40px}
+#dossierStatus{padding:12px 17px;font-size:12px;line-height:1.8;color:#f0d6a0}
+#dossierStatus[hidden]{display:none}
+#dossierFrame{flex:1;width:100%;height:100%;border:0;background:#061323}
+#dossierFrame[hidden]{display:none}
+body.stage4-profile-open{overflow:hidden}
+@media(max-width:700px){.stage4-dossier-overlay{width:100vw}.stage4-dossier-head{min-height:68px;padding:10px 12px}.stage4-dossier-title strong{font-size:15px}#dossierClose{font-size:12px}}
+
+/* Stage 06 — restrained cartographic interface, immersive globe, mobile-first controls. */
+:root{--r6-gold:#e9c17e;--r6-ink:#071525;--r6-edge:rgba(221,184,112,.22);--r6-muted:#a9bfd5}
+body{background:#020b16;color:#edf5fd}
+.app-shell{height:100vh;height:100dvh;min-height:0;grid-template-columns:minmax(300px,335px) minmax(0,1fr);overflow:hidden}
+.stage-panel{height:100%;min-height:0;overflow-y:auto;overscroll-behavior:contain;scrollbar-color:#5b7080 transparent;background:linear-gradient(172deg,#10263b 0%,#081727 50%,#060f1c 100%);border-inline-end:1px solid var(--r6-edge);padding:18px 15px}
+.stage-panel button,.stage-panel select{transition:background-color .16s ease,border-color .16s ease,box-shadow .16s ease}
+.stage-panel button:hover:not(:disabled){border-color:var(--r6-gold);background-color:#1c354d}
+.stage-panel button:focus-visible,.stage-panel select:focus-visible,.stage-panel input:focus-visible{outline:2px solid var(--r6-gold);outline-offset:2px}
+.stage6-panel-title{display:flex;flex-direction:column;gap:3px;padding:0 2px 12px;border-bottom:1px solid var(--r6-edge)}
+.stage6-panel-title strong{font-size:15px;letter-spacing:.05px;color:#fff4db}
+.stage6-panel-title small{font-size:11px;color:var(--r6-muted)}
+.stage6-brand{position:absolute;z-index:12;inset-inline-start:355px;top:18px;display:flex;align-items:center;gap:9px;pointer-events:none;font-family:system-ui,sans-serif;letter-spacing:.09em;font-size:13px;font-weight:700;color:#fff5df;text-shadow:0 2px 9px #000}
+.stage6-brand span:last-child{font-size:11px;font-weight:400;letter-spacing:normal;color:#afc4d8}
+.stage6-brand-orbit{font-size:22px;line-height:1;color:var(--r6-gold);filter:drop-shadow(0 0 6px #cc8b3d5c)}
+.globe-panel{height:100%;min-height:0;background:radial-gradient(ellipse at 50% 46%,#0a2840 0%,#061522 46%,#020813 100%);isolation:isolate}
+.globe-panel::after{content:"";position:absolute;inset:0;z-index:2;background:radial-gradient(ellipse at center,transparent 31%,rgba(1,7,15,.21) 78%,rgba(1,6,14,.42) 100%);pointer-events:none}
+#globeMount{z-index:1}
+.stage6-scene-meta{position:absolute;z-index:5;top:22px;inset-inline-end:20px;display:flex;align-items:center;gap:11px;border:1px solid rgba(217,182,110,.22);border-radius:999px;background:rgba(5,15,27,.64);padding:8px 12px;backdrop-filter:blur(8px);font-size:10px;letter-spacing:.08em;color:#d1dfe9;pointer-events:none}
+.stage6-live-dot{display:inline-flex;align-items:center;gap:6px;letter-spacing:0;color:#f4d59d}
+.stage6-live-dot::before{content:"";height:6px;width:6px;border-radius:50%;background:#e8bd68;box-shadow:0 0 8px #f0c56b}
+#sceneIntro{z-index:3;max-width:340px;inset:auto auto 19px 18px;border:1px solid rgba(219,186,126,.22);color:#cad7e4;font-size:11px}
+#loading{z-index:10;border:1px solid var(--r6-edge)}
+.toolbar-row{grid-template-columns:repeat(2,minmax(0,1fr))}
+.toolbar-row button{min-height:40px}
+.toolbar-row label{min-width:0;display:flex;flex-direction:column;gap:5px;font-size:11px;color:var(--r6-muted)}
+.toolbar-row label select{width:100%;min-width:0;background:#0a2134;color:#fff;border:1px solid #40536a;border-radius:9px;min-height:37px;padding:6px}
+.option-grid label{border:1px solid rgba(255,255,255,.08);padding:7px 8px;border-radius:8px;background:#ffffff05;font-size:11px;display:flex;align-items:center;gap:5px}
+.preset-grid button{font-size:11px;min-height:38px;padding:5px 3px}
+.preset-grid button.is-active{color:#ffe5b7;border-color:#dfad60;background:linear-gradient(135deg,#45351f,#15283b)}
+.status-box{background:rgba(3,16,31,.54);border-color:var(--r6-edge);font-size:11px;line-height:1.7;color:#a4bacb}
+#performanceStatus{color:#f2cd91}
+.entity-panel{background:linear-gradient(160deg,rgba(17,40,60,.85),rgba(7,23,37,.7));border-color:var(--r6-edge)}
+.entity-head strong{color:#f7e1b9}
+.cluster-bubble{background:linear-gradient(145deg,#193a54,#0a2033);border-color:#e1bb7d;box-shadow:0 0 0 5px rgba(219,174,84,.14),0 8px 20px #000a}
+.stage4-dossier-overlay{z-index:60}
+@media(max-width:900px){.stage6-brand{inset-inline-start:345px}.stage6-brand span:last-child{display:none}.stage6-scene-meta{top:64px}}
+@media(max-width:700px){
+ .app-shell{display:flex;flex-direction:column;overflow:auto;height:100dvh;max-height:100dvh}
+ .globe-panel{order:0;flex:none;height:clamp(300px,56dvh,650px);min-height:300px}
+ .stage-panel{order:1;flex:1;min-height:0;overflow-y:auto;padding:14px max(12px,env(safe-area-inset-right)) max(24px,env(safe-area-inset-bottom)) max(12px,env(safe-area-inset-left));border-inline-end:0;border-top:1px solid var(--r6-edge)}
+ .stage6-brand{inset-inline-start:14px;top:12px;font-size:12px}
+ .stage6-scene-meta{inset-inline-end:12px;top:13px;font-size:9px;padding:7px 9px}
+ .stage6-scene-meta>span:first-child{display:none}
+ #sceneIntro{inset:auto 10px 10px 10px;font-size:10px}
+ .entity-legend{max-height:160px}
+ .toolbar-row button,.toolbar-row select,.stage-panel button{min-height:44px}
+ .stage4-dossier-overlay{height:100dvh}
+}
+@media(prefers-reduced-motion:reduce){.stage-panel button,.stage-panel select{transition:none}}

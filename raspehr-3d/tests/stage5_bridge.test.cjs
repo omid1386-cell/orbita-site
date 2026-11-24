@@ -1,0 +1,41 @@
+'use strict';
+const assert=require('node:assert/strict');const fs=require('node:fs');const path=require('node:path');const vm=require('node:vm');
+const root=path.resolve(__dirname,'../..');
+const common=require('../../assets/js/raspehr-stage5-state.js');
+const listeners={};const emitted=[];
+function element(tag){
+ const events={};const el={tagName:tag,hidden:false,textContent:'',classList:{x:new Set(),add(k){this.x.add(k);},remove(k){this.x.delete(k);},toggle(k,on){if(on)this.x.add(k);else this.x.delete(k);},contains(k){return this.x.has(k);}},setAttribute(k,v){this[k]=v;},addEventListener(k,fn){events[k]=fn;},focus(){},trigger(k){events[k]();}};
+ return el;
+}
+const button=element('BUTTON'),overlay=element('SECTION'),status=element('SPAN'),frame=element('IFRAME');
+const fakeChild={postMessage(packet,target){emitted.push({packet,target});}};frame.contentWindow=fakeChild;
+const els={raspehrStage5Toggle:button,raspehr3dOverlay:overlay,raspehrStage5Status:status,raspehrStage5Frame:frame};
+let original={camera:{lat:35.8,lon:51.4,zoom:4.2},query:'NASA',country:'Iran',categories:['agency','site'],profile:null};
+const restored=[];
+const win={RASPEHR_PROFILE_EMBEDDED:false,location:{origin:'https://raspehr.test'},document:{body:{classList:element().classList},getElementById:id=>els[id]},RaspehrStage5MapAdapter:{getState(){return original;},applyState(s){restored.push(s);return Promise.resolve(true);}},map:{resize(){win.resized=true;}},addEventListener(name,fn){listeners[name]=fn;},clearTimeout(){},setTimeout(){return 1;}};
+vm.runInNewContext(fs.readFileSync(path.join(root,'assets/js/raspehr-stage5-switch.js'),'utf8'),{window:win,console});
+button.trigger('click');
+assert.equal(overlay.hidden,false);assert.equal(frame.src,'raspehr-3d/index.html?raspehr_3d_embedded=1');
+assert.equal(emitted.length,0,'state not sent before child readiness');
+listeners.message({source:{},origin:'https://raspehr.test',data:{channel:'RASPEHR_STAGE5',type:'ready'}});
+assert.equal(emitted.length,0,'foreign iframe must not activate');
+listeners.message({source:fakeChild,origin:'https://evil.test',data:{channel:'RASPEHR_STAGE5',type:'ready'}});
+assert.equal(emitted.length,0,'foreign origin must not activate');
+listeners.message({source:fakeChild,origin:'https://raspehr.test',data:{channel:'RASPEHR_STAGE5',type:'ready'}});
+assert.equal(emitted.length,2);assert.equal(emitted[0].packet.type,'stage6-visibility');assert.equal(emitted[0].packet.state.visible,true);
+assert.equal(emitted[1].packet.type,'apply');assert.deepEqual(Array.from(emitted[1].packet.state.categories),['agency','site']);
+button.trigger('click');assert.equal(emitted[2].packet.type,'snapshot');
+listeners.message({source:fakeChild,origin:'https://raspehr.test',data:{channel:'RASPEHR_STAGE5',type:'snapshot',requestId:999,state:{query:'wrong'}}});
+assert.equal(restored.length,0,'stale reply must be ignored');
+const ticket=emitted[2].packet.requestId;
+const from3d=common.normalize({camera:{lat:39,lon:63,zoom:3.1},query:'چابهار',country:'Iran',categories:[],profile:{kind:'site',id:'ksc39a'}});
+listeners.message({source:fakeChild,origin:'https://raspehr.test',data:{channel:'RASPEHR_STAGE5',type:'snapshot',requestId:ticket,state:from3d}});
+assert.equal(restored.length,1);assert.equal(restored[0].query,'چابهار');
+assert.equal(overlay.hidden,true);assert.equal(win.resized,true);
+// Second switch should reuse the same iframe and resynchronize the main map state.
+original={...original,query:'updated'};
+button.trigger('click');assert.equal(emitted[3].packet.type,'stage6-visibility');assert.equal(emitted[3].packet.state.visible,false);
+assert.equal(emitted[4].packet.type,'stage6-visibility');assert.equal(emitted[4].packet.state.visible,true);
+assert.equal(emitted[5].packet.type,'apply');assert.equal(emitted[5].packet.state.query,'updated');
+assert.equal(frame.src,'raspehr-3d/index.html?raspehr_3d_embedded=1');
+console.log('PASS Stage5 host bridge: lazy load, same-origin gate, handshake, stale reply guard, 2-way state, iframe reuse');

@@ -1,0 +1,20 @@
+{
+  "baseline_zip": "RASPEHR_STAGE2_INTEGRATED_FULL_SOURCE_2026-11-22.zip",
+  "added": [
+    "orbitaa/raspehr-3d/STAGE3_OPEN_ITEMS_FA.md",
+    "orbitaa/raspehr-3d/STAGE3_README_FA.md",
+    "orbitaa/raspehr-3d/tests/stage3_browser.py",
+    "orbitaa/raspehr-3d/tests/stage3_markers.test.cjs",
+    "orbitaa/raspehr-3d/tests/stage3_explore.test.cjs",
+    "orbitaa/raspehr-3d/assets/js/entity-explore.js",
+    "orbitaa/raspehr-3d/assets/js/entity-stage3-ui.js"
+  ],
+  "changed": [
+    "orbitaa/raspehr-3d/index.html",
+    "orbitaa/raspehr-3d/assets/css/prototype.css",
+    "orbitaa/raspehr-3d/assets/js/prototype.js",
+    "orbitaa/raspehr-3d/assets/js/entity-markers.js"
+  ],
+  "removed": [],
+  "summary": "Stage 3 working build; no canonical data changes or deploy."
+}

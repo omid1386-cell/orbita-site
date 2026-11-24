@@ -1,0 +1,139 @@
+<!doctype html>
+<html lang="fa" dir="rtl">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>رسپهر — نمونه سه‌بعدی زمین</title>
+  <link rel="stylesheet" href="assets/css/prototype.css">
+</head>
+<body>
+  <main class="app-shell">
+    <div class="stage6-brand" aria-hidden="true"><span class="stage6-brand-orbit">◉</span> RASPEHR <span>· اطلس سه‌بعدی صنعت فضایی</span></div>
+    <section class="stage-panel">
+      <div class="stage6-panel-title"><strong>فرماندهی نمای زمین</strong><small>کنترل دوربین، اطلاعات و لایه‌های اطلس</small></div>
+      <div class="toolbar-row">
+        <button id="resetBtn" type="button">بازنشانی</button>
+        <button id="stage5BackToMap" type="button" hidden>🗺 بازگشت به نمای دوبعدی</button>
+        <button id="zoomIn" type="button">+</button>
+        <button id="zoomOut" type="button">−</button>
+        <label>عملکرد
+          <select id="performanceMode" aria-label="حالت عملکرد سه‌بعدی">
+            <option value="auto" selected>هوشمند</option>
+            <option value="economy">کم‌مصرف</option>
+            <option value="balanced">متعادل</option>
+            <option value="detail">جزئیات بیشتر</option>
+          </select>
+        </label>
+        <label>کیفیت
+          <select id="quality" disabled>
+            <option value="low">۲K</option>
+            <option value="balanced" selected>۴K</option>
+            <option value="high">۸K</option>
+          </select>
+        </label>
+      </div>
+      <div class="preset-grid">
+        <button data-preset="world" class="is-active">جهانی</button>
+        <button data-preset="asia">آسیا</button>
+        <button data-preset="europe">اروپا</button>
+        <button data-preset="americas">آمریکا</button>
+        <button data-preset="middleeast">خاورمیانه</button>
+        <button data-preset="africa">آفریقا</button>
+        <button data-preset="northpole">قطب شمال</button>
+        <button data-preset="antarctica">جنوبگان</button>
+      </div>
+      <div class="option-grid">
+        <label><input id="lighting" type="checkbox" checked> نورپردازی</label>
+        <label><input id="clouds" type="checkbox" checked> ابرها</label>
+        <label><input id="rotation" type="checkbox"> چرخش</label>
+        <label><input id="stars" type="checkbox" checked> ستارگان</label>
+        <label><input id="grid" type="checkbox"> شبکه</label>
+        <label><input id="relief" type="checkbox" checked> سایه‌روشن سطح</label>
+        <label><input id="terrain" type="checkbox" checked> پستی‌وبلندی واقعی (DEM)</label>
+        <label>مقیاس برجستگی <select id="terrainExaggeration"><option value="1" selected>واقعی ×۱</option><option value="2">×۲</option><option value="4">×۴</option></select></label>
+      </div>
+      <section class="entity-panel" aria-label="جست‌وجو و فیلتر نشانگرهای سه‌بعدی رسپهر">
+        <div class="entity-head">
+          <strong>مکان‌های ثبت‌شده در رسپهر</strong>
+          <label class="entity-toggle"><input id="markerToggle" type="checkbox" checked> نمایش نشانگرها</label>
+        </div>
+        <p id="markerStatus" role="status" aria-live="polite">در حال آماده‌سازی داده‌های مکان‌ها…</p>
+        <div class="stage3-search">
+          <label for="entitySearch">جست‌وجوی نام، شهر، کشور یا شناسه</label>
+          <input id="entitySearch" type="search" placeholder="مثلاً ناسا، چابهار یا NASA" autocomplete="off">
+          <label for="entityCountry">انتخاب کشور یا قلمرو ثبت‌شده</label>
+          <select id="entityCountry"><option value="">همه کشورها و قلمروها</option></select>
+          <button id="entityClear" type="button">پاک‌کردن فیلترها</button>
+          <button id="countryProfileBtn" type="button" disabled>نمایش شناسنامه کامل کشور</button>
+        </div>
+        <div class="category-tools"><strong>فیلتر ۱۴ دسته</strong><button id="categoryAll" type="button">همه</button><button id="categoryNone" type="button">هیچ‌کدام</button></div>
+        <p class="entity-note">هر مکان فقط یک نشانگر دارد؛ بعضی سازمان‌ها در چند دسته حضور دارند. برای ۲۳ پرونده، نقاط مرجع تقریبی با برچسب دقت نمایش داده می‌شوند؛ این نقاط جای دفتر یا سکوی قطعی نیستند.</p>
+        <div id="entityLegend" class="entity-legend" aria-label="انتخاب دسته‌های نشانگرها"></div>
+        <p id="entityResultCount" role="status" aria-live="polite" class="entity-summary"></p>
+        <div id="entityResults" class="entity-results" aria-label="نتایج جست‌وجو" hidden></div>
+        <article id="clusterCard" class="entity-card" hidden>
+          <strong id="clusterSummary"></strong>
+          <p class="entity-note">نشانگرهای نزدیک در نمای فعلی به یک خوشه تبدیل شده‌اند.</p>
+          <button id="clusterFocusBtn" type="button">بزرگ‌نمایی روی این خوشه</button>
+          <div id="clusterMembers" class="entity-results cluster-members"></div>
+          <p id="clusterMore" class="entity-note"></p>
+        </article>
+        <article id="entityCard" class="entity-card" hidden aria-live="polite">
+          <strong id="entityLabel"></strong>
+          <small id="entityEn"></small>
+          <p id="entityCat"></p>
+          <p id="entityLocation"></p>
+          <p id="entityCoord" dir="ltr"></p>
+          <p id="entityPrecision"></p>
+          <small id="entityId" dir="ltr"></small>
+          <button id="markerFocusBtn" type="button">تمرکز دوربین روی این مکان</button>
+          <button id="entityFullProfile" type="button" class="stage4-open-btn">مشاهده شناسنامه کامل و گالری</button>
+        </article>
+      </section>
+      <div class="status-box">
+        <div id="performanceStatus" role="status" aria-live="polite">تنظیم عملکرد بر اساس دستگاه</div>
+        <div id="engineStatus">در انتظار شروع</div>
+        <div id="qualityStatus">در انتظار بارگذاری</div>
+        <div id="terrainStatus" role="status" aria-live="polite">زمین مسطح تا بارگذاری DEM</div>
+        <button id="terrainRetry" type="button" hidden>تلاش مجدد برای دریافت داده ارتفاعی</button>
+        <div class="terrain-attribution"><a href="https://registry.opendata.aws/terrain-tiles/" target="_blank" rel="noopener noreferrer">داده‌های ارتفاعی: Mapzen / AWS Terrain Tiles</a></div>
+        <div id="viewName">جهانی</div>
+        <div id="fps">۰ FPS</div>
+        <div id="altitude">۰ km</div>
+        <div id="sunPoint">۰° / ۰°</div>
+      </div>
+      <div id="errorBox" hidden>
+        <p id="errorMessage"></p>
+        <button id="retryBtn" hidden type="button">تلاش دوباره</button>
+      </div>
+    </section>
+    <section class="globe-panel">
+      <div class="stage6-scene-meta" aria-hidden="true"><span>EARTH / GEO ATLAS</span><span class="stage6-live-dot">نمای تعاملی</span></div>
+      <div id="globeMount"></div>
+      <div id="sceneIntro">نمونه مستقل برای توسعه نقشه سه‌بعدی رسپهر</div>
+      <div id="loading"><div>در حال بارگذاری</div><div id="loadingDetail">در حال آماده‌سازی</div></div>
+    </section>
+  </main>
+  <section id="dossierOverlay" class="stage4-dossier-overlay" aria-label="شناسنامه کامل رسپهر" aria-modal="true" role="dialog" hidden>
+    <header class="stage4-dossier-head">
+      <div class="stage4-dossier-title"><small>آرشیو اصلی رسپهر</small><strong id="dossierHeading">شناسنامه کامل</strong></div>
+      <button id="dossierClose" type="button" aria-label="بازگشت به کره سه‌بعدی">✕ بازگشت به کره</button>
+    </header>
+    <p id="dossierStatus" role="status" aria-live="polite">برای بازکردن شناسنامه، یک نشانگر را انتخاب کنید.</p>
+    <iframe id="dossierFrame" title="شناسنامه اصلی رسپهر" loading="lazy" referrerpolicy="same-origin" hidden></iframe>
+  </section>
+  <script src="../assets/vendor/three.min.js"></script>
+  <script src="assets/js/terrain-source.js"></script>
+  <script src="assets/js/terrain-dem.js"></script>
+  <script src="assets/js/stage6-performance.js"></script>
+  <script src="assets/js/globe-engine.js"></script>
+  <script src="assets/js/entity-data.js"></script>
+  <script src="assets/js/entity-markers.js"></script>
+  <script src="assets/js/entity-explore.js"></script>
+  <script src="assets/js/entity-stage3-ui.js"></script>
+  <script src="assets/js/entity-stage4-dossier.js"></script>
+  <script src="../assets/js/raspehr-stage5-state.js"></script>
+  <script src="assets/js/stage5-integration.js"></script>
+  <script src="assets/js/prototype.js"></script>
+</body>
+</html>

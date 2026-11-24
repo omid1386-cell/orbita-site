@@ -1,0 +1,51 @@
+{
+  "project": "RASPEHR",
+  "stage": 5,
+  "created": "2026-11-23",
+  "base": "RASPEHR_STAGE4_WORKING_FULL_SOURCE_2026-11-23.zip",
+  "status": "working integration - end-to-end live URL and physical devices pending",
+  "changed_files": [
+    "assets/js/app.js",
+    "index.html",
+    "raspehr-3d/assets/js/entity-stage3-ui.js",
+    "raspehr-3d/assets/js/entity-stage4-dossier.js",
+    "raspehr-3d/assets/js/prototype.js",
+    "raspehr-3d/index.html"
+  ],
+  "added_files": [
+    "assets/css/raspehr-stage5-switch.css",
+    "assets/js/raspehr-stage5-state.js",
+    "assets/js/raspehr-stage5-switch.js",
+    "raspehr-3d/STAGE5_OPEN_ITEMS_FA.md",
+    "raspehr-3d/STAGE5_README_FA.md",
+    "raspehr-3d/assets/js/stage5-integration.js",
+    "raspehr-3d/tests/stage5_bridge.test.cjs",
+    "raspehr-3d/tests/stage5_child_bridge.test.cjs",
+    "raspehr-3d/tests/stage5_state.test.cjs"
+  ],
+  "deleted_files": [],
+  "file_sha256": {
+    "assets/js/app.js": "1be6b4ea7449ec5b017f0eceb57d4f63d3ba1e1c02eb8c4e316749d8920f8c76",
+    "index.html": "8210050c578778258f2fd87c2e73e794b003e802581bca7d1980314afce2866c",
+    "raspehr-3d/assets/js/entity-stage3-ui.js": "1697ed793feafa0ad2810c538dd369e3797481df7c3ffcbbb40322f46d077787",
+    "raspehr-3d/assets/js/entity-stage4-dossier.js": "9cc02f366d345b97c41ccc8eb74fd2fe02a9538251ecbdccdf677ecef7b86409",
+    "raspehr-3d/assets/js/prototype.js": "6165c705d1115f6ee8021956a25c9b7053aec2e07a21d87db28902d067cacdb0",
+    "raspehr-3d/index.html": "505efaed75c45966ec4f5aba08145ff5143781617a57ec0500525553d39c14e6",
+    "assets/css/raspehr-stage5-switch.css": "a820d385a9e492d3c483da9ff49006f071b4b1a55fa6c2e0812d6d9d2b45fd35",
+    "assets/js/raspehr-stage5-state.js": "fab3b70898a3de31b2288934470176245ad90462f0c952883657ecfcb3946af9",
+    "assets/js/raspehr-stage5-switch.js": "b8735be9cfca669f9228738e53671aa6bac1739ab97f6a0f072a114ee6b0b6d9",
+    "raspehr-3d/STAGE5_OPEN_ITEMS_FA.md": "0c3694f3bd3ea61467b13c1724a354f9003ededf77449ebe3696544b675fd069",
+    "raspehr-3d/STAGE5_README_FA.md": "0d7af014bf89c3d31f591a15f09bfb01f6f517f01570cc4351e40ad2ceddc83e",
+    "raspehr-3d/assets/js/stage5-integration.js": "bc35e28bee72c37250e972a554d4cdfbaad2a4852998c364faf955eed424bb1f",
+    "raspehr-3d/tests/stage5_bridge.test.cjs": "a6d375d89ef12e7a087b4756477c8adb568a920402d9da68ef35c7fa71c6b27b",
+    "raspehr-3d/tests/stage5_child_bridge.test.cjs": "37fce901328adb9fcc463e3ece3b7777b613cb6a788fd30e828b03fdbd1f0f32",
+    "raspehr-3d/tests/stage5_state.test.cjs": "c942cfeb67333773da24b6217db0df2f22e19f42abceddf1c3eda35d9c937bd6"
+  },
+  "unchanged_canonical_data_sha256": {
+    "data/companies.json": "b1c18682b7743df9ddbc373465fb4c95d88d5e3ebbbd49d58ec2f3a3a6503d23",
+    "data/sites.json": "8d90d1473f2ff288aef4a7c616277bc0a49acc6126b02261085b7c15d17e0322",
+    "data/recovery_sites.json": "a22a2de67a679d89f33fc046890a5ee3d7794bbb3b36d05eb2f72f4ee8d4995d",
+    "data/media/catalog.v1.json": "d14d6895fb161857ef9cc8e9f7c7d9190a43f55a867637960421a4aa9be97847"
+  },
+  "deferred": "23 canonical location records with missing or invalid coordinates; remind at end of all stages"
+}

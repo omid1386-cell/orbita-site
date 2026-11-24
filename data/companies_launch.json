@@ -17307,8 +17307,8 @@
     "city": null,
     "city_fa": null,
     "city_ar": null,
-    "lat": null,
-    "lon": null,
+    "lat": 23.6284,
+    "lon": 58.26588,
     "founded": null,
     "site": "https://stellarkinetics.om/",
     "products": [
@@ -17465,7 +17465,15 @@
     "identity_verified_on": null,
     "timeline_scope_fa": "رویدادها از تاریخچه واقعی توسعه و پرواز گردآوری شده‌اند. آزمون زیرمداری، قرارداد، عملیات شرکت مادر و پرتاب مداری یکسان نیستند. هر رویدادِ بدون سند اولیه با برچسب بررسی نمایش داده می‌شود.",
     "timeline_scope_en": "Historical milestones distinguish orbital flight, suborbital test, corporate agreements and parent-company heritage. Unsourced events are marked for review.",
-    "timeline_scope_ar": "تميّز الوقائع بين الإطلاق المداري والتجارب دون المدار والتاريخ المؤسسي؛ وتُوسم البيانات غير المؤكدة."
+    "timeline_scope_ar": "تميّز الوقائع بين الإطلاق المداري والتجارب دون المدار والتاريخ المؤسسي؛ وتُوسم البيانات غير المؤكدة.",
+    "coordinates_precision": "approximate_locality_pin",
+    "coordinate_note_fa": "دفتر در الموج مسقط معرفی شده؛ نقطه مرکز محله است نه مختصات دقیق دفتر.",
+    "coordinate_note_en": "Representative area reference; not a verified exact office, launch pad or construction site.",
+    "coordinate_note_ar": "علامة جغرافية تمثيلية تقريبية؛ ليست إحداثيات مؤكدة للمكتب أو منصة الإطلاق أو موقع البناء.",
+    "coordinate_uncertainty_km": 2,
+    "location_note_en": "Representative area reference; not a verified exact office, launch pad or construction site.",
+    "location_fa": "دفتر در الموج مسقط معرفی شده؛ نقطه مرکز محله است نه مختصات دقیق دفتر.",
+    "location_ar": "علامة جغرافية تمثيلية تقريبية؛ ليست إحداثيات مؤكدة للمكتب أو منصة الإطلاق أو موقع البناء."
   },
   {
     "id": "glavkosmos",

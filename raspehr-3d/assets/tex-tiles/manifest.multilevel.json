@@ -1,0 +1,97 @@
+{
+  "schema": "raspehr-imagery-pyramid-v1",
+  "projection": "equirectangular",
+  "source": "existing RASPEHR 8192x4096 global imagery only",
+  "important": "No new local/regional source resolution; near-surface geographic detail is limited by the 8192x4096 originals",
+  "levels": [
+    {
+      "id": "z0",
+      "rows": 1,
+      "cols": 2,
+      "tile_width": 1024,
+      "tile_height": 1024,
+      "effective_global_width": 2048,
+      "effective_global_height": 1024,
+      "day_pattern": "assets/tex-tiles/z0/day/day_z0_r{row}_c{col}.jpg",
+      "night_pattern": "assets/tex-tiles/z0/night/night_z0_r{row}_c{col}.jpg"
+    },
+    {
+      "id": "z1",
+      "rows": 2,
+      "cols": 4,
+      "tile_width": 1024,
+      "tile_height": 1024,
+      "effective_global_width": 4096,
+      "effective_global_height": 2048,
+      "day_pattern": "assets/tex-tiles/z1/day/day_z1_r{row}_c{col}.jpg",
+      "night_pattern": "assets/tex-tiles/z1/night/night_z1_r{row}_c{col}.jpg"
+    },
+    {
+      "id": "z2",
+      "rows": 4,
+      "cols": 8,
+      "tile_width": 1024,
+      "tile_height": 1024,
+      "effective_global_width": 8192,
+      "effective_global_height": 4096,
+      "day_pattern": "assets/tex-tiles/z2/day/day_z2_r{row}_c{col}.jpg",
+      "night_pattern": "assets/tex-tiles/z2/night/night_z2_r{row}_c{col}.jpg"
+    }
+  ],
+  "counts": {
+    "z0/day": {
+      "tiles": 2,
+      "tile_px": [
+        1024,
+        1024
+      ],
+      "global_width_px": 2048,
+      "global_height_px": 1024
+    },
+    "z0/night": {
+      "tiles": 2,
+      "tile_px": [
+        1024,
+        1024
+      ],
+      "global_width_px": 2048,
+      "global_height_px": 1024
+    },
+    "z1/day": {
+      "tiles": 8,
+      "tile_px": [
+        1024,
+        1024
+      ],
+      "global_width_px": 4096,
+      "global_height_px": 2048
+    },
+    "z1/night": {
+      "tiles": 8,
+      "tile_px": [
+        1024,
+        1024
+      ],
+      "global_width_px": 4096,
+      "global_height_px": 2048
+    },
+    "z2/day": {
+      "tiles": 32,
+      "tile_px": [
+        1024,
+        1024
+      ],
+      "global_width_px": 8192,
+      "global_height_px": 4096
+    },
+    "z2/night": {
+      "tiles": 32,
+      "tile_px": [
+        1024,
+        1024
+      ],
+      "global_width_px": 8192,
+      "global_height_px": 4096
+    }
+  }
+}

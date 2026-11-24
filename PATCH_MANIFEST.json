@@ -1,0 +1,1213 @@
+{
+  "project": "RASPEHR",
+  "purpose": "Only changed/new files from stages 1 through 8, relative to the 3-part user-supplied original source",
+  "baseline": "orbitaa.part1(1).rar (1) + orbitaa.part2(1).rar (1) + orbitaa.part3(1).rar (1)",
+  "target": "RASPEHR_STAGE8_RELEASE_CANDIDATE_FULL_SOURCE_2026-11-23.zip",
+  "upload_folder": "UPLOAD_TO_GITHUB/",
+  "patch_paths_relative_to_repository_root": true,
+  "counts": {
+    "baseline_files": 1165,
+    "target_files": 1326,
+    "new": 161,
+    "modified": 9,
+    "deleted": 0,
+    "patch_files": 170
+  },
+  "files": [
+    {
+      "path": "RASPEHR_STAGE7_CHANGE_MANIFEST.json",
+      "action": "add",
+      "original_sha256": null,
+      "target_sha256": "dc7a2067f69692ba080e00a53656aca214128b1f9327ab6203e2f0351312f9d7",
+      "bytes": 4053
+    },
+    {
+      "path": "RASPEHR_STAGE7_FINAL_QA_FA.md",
+      "action": "add",
+      "original_sha256": null,
+      "target_sha256": "8a84a550d00b50fa543e8b8bee345ed82c29ea37892584e55b85b521d977ebc7",
+      "bytes": 12113
+    },
+    {
+      "path": "STAGE8_ALL_FILES_SHA256.txt",
+      "action": "add",
+      "original_sha256": null,
+      "target_sha256": "b84cb6038be3d6f001205c375c4dcda25e7d344bd681dd8803c012092198bbc8",
+      "bytes": 131500
+    },
+    {
+      "path": "STAGE8_CHANGE_MANIFEST.json",
+      "action": "add",
+      "original_sha256": null,
+      "target_sha256": "3939dce707dc817562552225a54b2483a1196033563a4f2627a0c709aef44070",
+      "bytes": 941
+    },
+    {
+      "path": "STAGE8_FINAL_HANDOFF_FA.md",
+      "action": "add",
+      "original_sha256": null,
+      "target_sha256": "0aeddd768231d515c1c9403e97e1a9d7c5e4ef01ebc4a5cb896407e95067a3d2",
+      "bytes": 10525
+    },
+    {
+      "path": "assets/css/raspehr-profile-host.css",
+      "action": "add",
+      "original_sha256": null,
+      "target_sha256": "d46a361e1adecdecf74a7f99285a1d326529ed584e6a33a8dc0054a64cce597d",
+      "bytes": 1941
+    },
+    {
+      "path": "assets/css/raspehr-stage5-switch.css",
+      "action": "add",
+      "original_sha256": null,
+      "target_sha256": "a820d385a9e492d3c483da9ff49006f071b4b1a55fa6c2e0812d6d9d2b45fd35",
+      "bytes": 1416
+    },
+    {
+      "path": "assets/js/app.js",
+      "action": "replace",
+      "original_sha256": "5f9e486b60d719676f4ecc58fccf907e5c234e6ccfdc2d29d90f2c60ee3f8652",
+      "target_sha256": "ed73a290384536b5ae78cd138df875a674022fc7c121f3afa3e0090d60839b96",
+      "bytes": 881182
+    },
+    {
+      "path": "assets/js/raspehr-profile-bridge.js",
+      "action": "add",
+      "original_sha256": null,
+      "target_sha256": "718d56222513248ae650cc22eb816b35960eae079528d54ad24b682c8edfb2ad",
+      "bytes": 4124
+    },
+    {
+      "path": "assets/js/raspehr-stage5-state.js",
+      "action": "add",
+      "original_sha256": null,
+      "target_sha256": "fab3b70898a3de31b2288934470176245ad90462f0c952883657ecfcb3946af9",
+      "bytes": 1994
+    },
+    {
+      "path": "assets/js/raspehr-stage5-switch.js",
+      "action": "add",
+      "original_sha256": null,
+      "target_sha256": "c68154c8da891ab0095f9bda8f1e963a45af77cc5dd5fe018f7099fd48d541fe",
+      "bytes": 3445
+    },
+    {
+      "path": "data/companies.json",
+      "action": "replace",
+      "original_sha256": "b1c18682b7743df9ddbc373465fb4c95d88d5e3ebbbd49d58ec2f3a3a6503d23",
+      "target_sha256": "fe62a65de95e3514922fafba9e17e021c7d536a8314daaad6bb56c2036a7a74e",
+      "bytes": 5482029
+    },
+    {
+      "path": "data/companies_agency.json",
+      "action": "replace",
+      "original_sha256": "e21ee18154905d292c051ac383efbab99ae1ce1e9aae79a69e125add74a4cf9b",
+      "target_sha256": "a49263c887939c92d15e10dbc175090ffe56ab310a8a37a7d0549ef9baad05e6",
+      "bytes": 2023780
+    },
+    {
+      "path": "data/companies_agency_map.json",
+      "action": "replace",
+      "original_sha256": "0748bd3f67bbcb0da9250202f4339ad2361f289441d6d874383cb0ca93baa803",
+      "target_sha256": "3770a052a6c22445ad1216952669ae0646fd83573a2afd91917ed7225c79caf0",
+      "bytes": 74448
+    },
+    {
+      "path": "data/companies_launch.json",
+      "action": "replace",
+      "original_sha256": "062addeddd7299c39e8c556f2fab20c7753c8d462407f0d654e2bc46b1be7091",
+      "target_sha256": "8b1aab11946f8d498a34c86a012c9e36819f5a8593045a9eba6bd2f7697d5433",
+      "bytes": 1068092
+    },
+    {
+      "path": "data/companies_launch_map.json",
+      "action": "replace",
+      "original_sha256": "36fa2586a97cece78347b66c57b078c1076eccc91bb51d6d79e6ae392fb817e7",
+      "target_sha256": "0d52d6f4c0bbbe6722a485858510997f20e6e7fe10634ff728d519bfd9a8c9fa",
+      "bytes": 43274
+    },
+    {
+      "path": "data/companies_propulsion.json",
+      "action": "replace",
+      "original_sha256": "729781e32c6ec51faf59a5ca840b7668931a04ce62df7542e7268d39e288cbbb",
+      "target_sha256": "0cdd39bea6c8816df51e0cb07bb3d6adbd7f13dd79e14b6c82351a6e48c1f0e2",
+      "bytes": 800845
+    },
+    {
+      "path": "data/raspehr_coordinates_stage7_provenance.json",
+      "action": "add",
+      "original_sha256": null,
+      "target_sha256": "b624ad7e80d786678fdd82d677be1d22c485b38434e27821a726681b0bdc533c",
+      "bytes": 17570
+    },
+    {
+      "path": "data/sites.json",
+      "action": "replace",
+      "original_sha256": "8d90d1473f2ff288aef4a7c616277bc0a49acc6126b02261085b7c15d17e0322",
+      "target_sha256": "09a1a7c25911449c76fecb27b3ba05011edaf18207c68136435efdf4f22bc988",
+      "bytes": 884427
+    },
+    {
+      "path": "index.html",
+      "action": "replace",
+      "original_sha256": "5227060fb213038265553e2a704db3b3b0e981b05448b441e39ba9c39eef7ee1",
+      "target_sha256": "fe9f94c3013f7004cc3db4f05fdf047c599b6fb05fecd4b72df601d7c7fb8005",
+      "bytes": 66728
+    },
+    {
+      "path": "qa/stage8/STAGE8_49_LEGACY_FAILURES.csv",
+      "action": "add",
+      "original_sha256": null,
+      "target_sha256": "c4d354680729a763d709a9037f7a6490a4ed8312fcd00121521c80584e5d4838",
+      "bytes": 10988
+    },
+    {
+      "path": "qa/stage8/STAGE8_AUDIT.json",
+      "action": "add",
+      "original_sha256": null,
+      "target_sha256": "b547448d58f72b1e7a3323230dccb3de803054e5bc2165b504b5b3f0e19da413",
+      "bytes": 1767
+    },
+    {
+      "path": "qa/stage8/STAGE8_DIAGNOSTICS_SUMMARY.json",
+      "action": "add",
+      "original_sha256": null,
+      "target_sha256": "8e0cd5a46d9d226c63a218a8720a6509fb4d0d056e7abb59e1c3cad347d0d1af",
+      "bytes": 436
+    },
+    {
+      "path": "qa/stage8/STAGE8_MANUAL_ACCEPTANCE_FA.md",
+      "action": "add",
+      "original_sha256": null,
+      "target_sha256": "d610e496b58bc6377b30c0cd0d612c325d7e3aef42052911ea5686f5fb4cb577",
+      "bytes": 3015
+    },
+    {
+      "path": "qa/stage8/STAGE8_MISSING_LOCAL_LOGOS.csv",
+      "action": "add",
+      "original_sha256": null,
+      "target_sha256": "29d2e456e5db0c759d1064ade4659c4d2c013538658293e287c31d0ad6bc04eb",
+      "bytes": 7516
+    },
+    {
+      "path": "qa/stage8/generate_diagnostics.py",
+      "action": "add",
+      "original_sha256": null,
+      "target_sha256": "c3d07be10d32e76f3bdbdf30880cb21051d23e1def8908b829647056a691c289",
+      "bytes": 3266
+    },
+    {
+      "path": "qa/stage8/release_audit.py",
+      "action": "add",
+      "original_sha256": null,
+      "target_sha256": "e87a9f6ce734b1ef6e0477524f63d2086ecaa576beed35b08047436e92bf5482",
+      "bytes": 5440
+    },
+    {
+      "path": "raspehr-3d/README_FA.md",
+      "action": "add",
+      "original_sha256": null,
+      "target_sha256": "0a4fd4ef3f7afc099c01549fafed2e90ccbf667550a78fc1a2999e6de2a51816",
+      "bytes": 7633
+    },
+    {
+      "path": "raspehr-3d/STAGE1_FINAL_QA_FA.md",
+      "action": "add",
+      "original_sha256": null,
+      "target_sha256": "687d53c809beb255bf7f9cdff0bcf4df0e14f86ae498b3b7ad9e66509cc7e0ec",
+      "bytes": 7738
+    },
+    {
+      "path": "raspehr-3d/STAGE2_MISSING_COORDINATES_23.csv",
+      "action": "add",
+      "original_sha256": null,
+      "target_sha256": "a4474e50ca09c7ec395b68e5213e04057e61c8e357797060a6e96abdad35eaa8",
+      "bytes": 4162
+    },
+    {
+      "path": "raspehr-3d/STAGE2_README_FA.md",
+      "action": "add",
+      "original_sha256": null,
+      "target_sha256": "68d195206b497366ed59274607d956a47c6096a1a15e39ed99fbf498174599ee",
+      "bytes": 2647
+    },
+    {
+      "path": "raspehr-3d/STAGE2_REPORT_FA.md",
+      "action": "add",
+      "original_sha256": null,
+      "target_sha256": "f2e5a72fe07882ef793b84ab923d7610a7940a83360614422b62fd054068f748",
+      "bytes": 8938
+    },
+    {
+      "path": "raspehr-3d/STAGE3_FILE_MANIFEST.json",
+      "action": "add",
+      "original_sha256": null,
+      "target_sha256": "76e7b6fbfe8bccf17298c6eac1af9312a02471ef8659bd43c7a8eaad2f3ffd1d",
+      "bytes": 764
+    },
+    {
+      "path": "raspehr-3d/STAGE3_OPEN_ITEMS_FA.md",
+      "action": "add",
+      "original_sha256": null,
+      "target_sha256": "43c8ffedea1261bf7b92c5509c36fc07b8e4198457e555ae305c08e989c85c1a",
+      "bytes": 2266
+    },
+    {
+      "path": "raspehr-3d/STAGE3_QA_REPORT_FA.md",
+      "action": "add",
+      "original_sha256": null,
+      "target_sha256": "a06d2a25d05cbb592b6c958909778bdddf334f39d2674bb156d13cff698940c9",
+      "bytes": 6281
+    },
+    {
+      "path": "raspehr-3d/STAGE3_README_FA.md",
+      "action": "add",
+      "original_sha256": null,
+      "target_sha256": "26b29bd52a4a241c48a713fd2c2f2f63b77cb25773ec965535a94939946ed8bf",
+      "bytes": 4751
+    },
+    {
+      "path": "raspehr-3d/STAGE4_FILE_MANIFEST.json",
+      "action": "add",
+      "original_sha256": null,
+      "target_sha256": "703196c770b19c063c168e19edf141be0b7cf07dcaa178f93a8aa8ac0acf1414",
+      "bytes": 2417
+    },
+    {
+      "path": "raspehr-3d/STAGE4_README_FA.md",
+      "action": "add",
+      "original_sha256": null,
+      "target_sha256": "55f0245236d9b926f635c81f62368d928e358e08b75a72e2e0914363b1d7c7de",
+      "bytes": 4875
+    },
+    {
+      "path": "raspehr-3d/STAGE5_CHANGE_MANIFEST.json",
+      "action": "add",
+      "original_sha256": null,
+      "target_sha256": "5766aa5d9d1299f60d64525c02dfaa5be97d821c87800a7d68b72fde372eaefa",
+      "bytes": 3106
+    },
+    {
+      "path": "raspehr-3d/STAGE5_OPEN_ITEMS_FA.md",
+      "action": "add",
+      "original_sha256": null,
+      "target_sha256": "0c3694f3bd3ea61467b13c1724a354f9003ededf77449ebe3696544b675fd069",
+      "bytes": 879
+    },
+    {
+      "path": "raspehr-3d/STAGE5_README_FA.md",
+      "action": "add",
+      "original_sha256": null,
+      "target_sha256": "0d7af014bf89c3d31f591a15f09bfb01f6f517f01570cc4351e40ad2ceddc83e",
+      "bytes": 3002
+    },
+    {
+      "path": "raspehr-3d/STAGE6_CHANGE_MANIFEST.json",
+      "action": "add",
+      "original_sha256": null,
+      "target_sha256": "dddf13ddcc8a08b43d2f655b2ee6fac0e2485144ad4a43edea460ac412d7c264",
+      "bytes": 4768
+    },
+    {
+      "path": "raspehr-3d/STAGE6_OPEN_ITEMS_FA.md",
+      "action": "add",
+      "original_sha256": null,
+      "target_sha256": "13599101bf77756c89bc2aa139c4966179b6d7a15005b83415d7174554b8ecce",
+      "bytes": 1145
+    },
+    {
+      "path": "raspehr-3d/STAGE6_README_FA.md",
+      "action": "add",
+      "original_sha256": null,
+      "target_sha256": "da9fb20ee833804d8365e60d7e61ed2356cfede4f4c58f55fba9e239d62428d8",
+      "bytes": 1619
+    },
+    {
+      "path": "raspehr-3d/STAGE7_COORDINATES_23.csv",
+      "action": "add",
+      "original_sha256": null,
+      "target_sha256": "7cb1f891007143af44a8a3510b2a26ba1e4acf2f275daf021749579ae39a879d",
+      "bytes": 8374
+    },
+    {
+      "path": "raspehr-3d/STAGE7_COORDINATE_POLICY_FA.md",
+      "action": "add",
+      "original_sha256": null,
+      "target_sha256": "68d00d904641a89f06238405c2473ee15a33ff5ffb1e8c0b989b4528e469247e",
+      "bytes": 859
+    },
+    {
+      "path": "raspehr-3d/assets/css/prototype.css",
+      "action": "add",
+      "original_sha256": null,
+      "target_sha256": "ef34b2cb749d3aa5a8c1bcc5b61b432aa7aa4e6fe8880c389b590c1705914451",
+      "bytes": 12574
+    },
+    {
+      "path": "raspehr-3d/assets/js/entity-data.js",
+      "action": "add",
+      "original_sha256": null,
+      "target_sha256": "20cd114633e34a0c881662aa10ad784b23fbdb64760cda8baa06991432f512a7",
+      "bytes": 5812
+    },
+    {
+      "path": "raspehr-3d/assets/js/entity-explore.js",
+      "action": "add",
+      "original_sha256": null,
+      "target_sha256": "3756f9a034c7dd212d83c576ca5e32a3ba19e956d2233927f069c5179e32caff",
+      "bytes": 4823
+    },
+    {
+      "path": "raspehr-3d/assets/js/entity-markers.js",
+      "action": "add",
+      "original_sha256": null,
+      "target_sha256": "9d233150008eb8d37646b43f367be4d676272da7956f118b14af198df8f137bf",
+      "bytes": 9210
+    },
+    {
+      "path": "raspehr-3d/assets/js/entity-stage3-ui.js",
+      "action": "add",
+      "original_sha256": null,
+      "target_sha256": "08432c4994fc90fd18539c2da4b08b196e805cc620a7777ebb79689f9b95cc70",
+      "bytes": 12672
+    },
+    {
+      "path": "raspehr-3d/assets/js/entity-stage4-dossier.js",
+      "action": "add",
+      "original_sha256": null,
+      "target_sha256": "9cc02f366d345b97c41ccc8eb74fd2fe02a9538251ecbdccdf677ecef7b86409",
+      "bytes": 4495
+    },
+    {
+      "path": "raspehr-3d/assets/js/globe-engine.js",
+      "action": "add",
+      "original_sha256": null,
+      "target_sha256": "df828c0d7afad0445798c24d51c9c56c1f95ad8e54e14fa56bb003c587014502",
+      "bytes": 50945
+    },
+    {
+      "path": "raspehr-3d/assets/js/prototype.js",
+      "action": "add",
+      "original_sha256": null,
+      "target_sha256": "b42139d606273160aa336408ab30889950e031a985606a1a698481239633bacb",
+      "bytes": 11620
+    },
+    {
+      "path": "raspehr-3d/assets/js/stage5-integration.js",
+      "action": "add",
+      "original_sha256": null,
+      "target_sha256": "98f898642f3e6ef1a7162eeaba3e049cbfd517306d211a2848a6eaae0d241a98",
+      "bytes": 2444
+    },
+    {
+      "path": "raspehr-3d/assets/js/stage6-performance.js",
+      "action": "add",
+      "original_sha256": null,
+      "target_sha256": "b02a40bee9ef90a4dd044b7498bd4b95c786d350c589846a70921c19dabce904",
+      "bytes": 1536
+    },
+    {
+      "path": "raspehr-3d/assets/js/terrain-dem.js",
+      "action": "add",
+      "original_sha256": null,
+      "target_sha256": "cdd693158b4a3ecdcc9c599d100f219c7b3df3b6d15c48516dbd2ef78caaf904",
+      "bytes": 8889
+    },
+    {
+      "path": "raspehr-3d/assets/js/terrain-source.js",
+      "action": "add",
+      "original_sha256": null,
+      "target_sha256": "598da2314046129d65a2ad12a17fa0b69105bccbaa66e81fd3a60ec53e91413b",
+      "bytes": 331
+    },
+    {
+      "path": "raspehr-3d/assets/tex-tiles/manifest.multilevel.json",
+      "action": "add",
+      "original_sha256": null,
+      "target_sha256": "d9b37178223caf7a24f7ac3baa62f93745bc496616885d99fb0f9182f9209631",
+      "bytes": 2299
+    },
+    {
+      "path": "raspehr-3d/assets/tex-tiles/z0/day/day_z0_r0_c0.jpg",
+      "action": "add",
+      "original_sha256": null,
+      "target_sha256": "e7a43ef8a9e3d986ff13d54e1cc4dc6e6d4104b4a24d690088be3008f9a12436",
+      "bytes": 268151
+    },
+    {
+      "path": "raspehr-3d/assets/tex-tiles/z0/day/day_z0_r0_c1.jpg",
+      "action": "add",
+      "original_sha256": null,
+      "target_sha256": "c7d6c2e5c4ad39634a6fb0176918cef08196067b9dbaaf1502fa466f0d75ef52",
+      "bytes": 327233
+    },
+    {
+      "path": "raspehr-3d/assets/tex-tiles/z0/night/night_z0_r0_c0.jpg",
+      "action": "add",
+      "original_sha256": null,
+      "target_sha256": "f5f1eaa4734333e1c6457ec8e6a1c3e146c8cdb22fb3ff11a87c72cd209783ae",
+      "bytes": 105727
+    },
+    {
+      "path": "raspehr-3d/assets/tex-tiles/z0/night/night_z0_r0_c1.jpg",
+      "action": "add",
+      "original_sha256": null,
+      "target_sha256": "ae29b2abdb0bfd6b465da3443763d2ddc150b8f59cd9b48b7a20dec8b7164fa7",
+      "bytes": 159578
+    },
+    {
+      "path": "raspehr-3d/assets/tex-tiles/z1/day/day_z1_r0_c0.jpg",
+      "action": "add",
+      "original_sha256": null,
+      "target_sha256": "1a5b42fd9f4feab79da98c79ba4655c765de357b555bbf0559908768a7052b8f",
+      "bytes": 268781
+    },
+    {
+      "path": "raspehr-3d/assets/tex-tiles/z1/day/day_z1_r0_c1.jpg",
+      "action": "add",
+      "original_sha256": null,
+      "target_sha256": "cc8e21c44373944d16f2b17677dc90d8c9a959cb38ea469c75166a5f61c72910",
+      "bytes": 288034
+    },
+    {
+      "path": "raspehr-3d/assets/tex-tiles/z1/day/day_z1_r0_c2.jpg",
+      "action": "add",
+      "original_sha256": null,
+      "target_sha256": "148a2238da29c262c6822845b54850dacf2fd8647481286e27de662d07e02eab",
+      "bytes": 377719
+    },
+    {
+      "path": "raspehr-3d/assets/tex-tiles/z1/day/day_z1_r0_c3.jpg",
+      "action": "add",
+      "original_sha256": null,
+      "target_sha256": "71fb34ba2dbb3c1c99e3a9c2b026a3c4b39b2e3387d704b7f5f6486e4f1e371b",
+      "bytes": 314598
+    },
+    {
+      "path": "raspehr-3d/assets/tex-tiles/z1/day/day_z1_r1_c0.jpg",
+      "action": "add",
+      "original_sha256": null,
+      "target_sha256": "3a5d93edb27490ea49ae55fe7f1f49cffd0760a87bb26f3d3fd75f07f1e5d84c",
+      "bytes": 129266
+    },
+    {
+      "path": "raspehr-3d/assets/tex-tiles/z1/day/day_z1_r1_c1.jpg",
+      "action": "add",
+      "original_sha256": null,
+      "target_sha256": "56fad42326bde8d9c43626f9f9018632095e8d900411bfdeee64e36822ac0920",
+      "bytes": 218031
+    },
+    {
+      "path": "raspehr-3d/assets/tex-tiles/z1/day/day_z1_r1_c2.jpg",
+      "action": "add",
+      "original_sha256": null,
+      "target_sha256": "26a4c9b1ae6e92a734ef55693fee76d09ff0fea7b7f46389249ec0a85c5ab0a0",
+      "bytes": 206046
+    },
+    {
+      "path": "raspehr-3d/assets/tex-tiles/z1/day/day_z1_r1_c3.jpg",
+      "action": "add",
+      "original_sha256": null,
+      "target_sha256": "d6a30049a833340538cbd4dfb8e43eef731f07c107455b682092f3389c8d34eb",
+      "bytes": 230996
+    },
+    {
+      "path": "raspehr-3d/assets/tex-tiles/z1/night/night_z1_r0_c0.jpg",
+      "action": "add",
+      "original_sha256": null,
+      "target_sha256": "0fafb6f39104814e853a4c3e1b7d02923d4ffc08fe562a511117ee3c93efe9be",
+      "bytes": 133001
+    },
+    {
+      "path": "raspehr-3d/assets/tex-tiles/z1/night/night_z1_r0_c1.jpg",
+      "action": "add",
+      "original_sha256": null,
+      "target_sha256": "956fe1c1a77d64142313914f43282db498b876f920caa264d99332f60ae790ef",
+      "bytes": 133665
+    },
+    {
+      "path": "raspehr-3d/assets/tex-tiles/z1/night/night_z1_r0_c2.jpg",
+      "action": "add",
+      "original_sha256": null,
+      "target_sha256": "cef07c357f324dd985544e9e0b24b4bf888e2683974fb09a0061f822afc72b73",
+      "bytes": 283133
+    },
+    {
+      "path": "raspehr-3d/assets/tex-tiles/z1/night/night_z1_r0_c3.jpg",
+      "action": "add",
+      "original_sha256": null,
+      "target_sha256": "dece1f5461224d706373e6555dc150ecd3591a74327d391772163433e722bcc3",
+      "bytes": 159107
+    },
+    {
+      "path": "raspehr-3d/assets/tex-tiles/z1/night/night_z1_r1_c0.jpg",
+      "action": "add",
+      "original_sha256": null,
+      "target_sha256": "ba7e2696180e901765a9dce768e7f40d5dd39aa49bd29e497b8db29e4997c6c5",
+      "bytes": 17160
+    },
+    {
+      "path": "raspehr-3d/assets/tex-tiles/z1/night/night_z1_r1_c1.jpg",
+      "action": "add",
+      "original_sha256": null,
+      "target_sha256": "470f881c4c6863c9ee5c77608c10897dd228ec3577f375e4987a29c5ec81362c",
+      "bytes": 84203
+    },
+    {
+      "path": "raspehr-3d/assets/tex-tiles/z1/night/night_z1_r1_c2.jpg",
+      "action": "add",
+      "original_sha256": null,
+      "target_sha256": "0dfef9a69a08282ac815c3ea637d08bcae68c4d24df1a5867c9cf5c850106d9f",
+      "bytes": 48662
+    },
+    {
+      "path": "raspehr-3d/assets/tex-tiles/z1/night/night_z1_r1_c3.jpg",
+      "action": "add",
+      "original_sha256": null,
+      "target_sha256": "1dff130beca112c54b270448676c1d6ea977a972dbb64033d9480a8d46593f61",
+      "bytes": 64608
+    },
+    {
+      "path": "raspehr-3d/assets/tex-tiles/z2/day/day_z2_r0_c0.jpg",
+      "action": "add",
+      "original_sha256": null,
+      "target_sha256": "5c12d23aad81d397bccde52ec9704b97cef5e8b8b32143db6047dbb0525c6b87",
+      "bytes": 167105
+    },
+    {
+      "path": "raspehr-3d/assets/tex-tiles/z2/day/day_z2_r0_c1.jpg",
+      "action": "add",
+      "original_sha256": null,
+      "target_sha256": "edcd4cc7ab478203f6421ae8c8f92d5f80c7a53e0dc22a3c81040ff5d9b98bc2",
+      "bytes": 315239
+    },
+    {
+      "path": "raspehr-3d/assets/tex-tiles/z2/day/day_z2_r0_c2.jpg",
+      "action": "add",
+      "original_sha256": null,
+      "target_sha256": "4c331daae80e6d9d30288bdcfe47cb44ce62eab2c4d1beec27f260c58aed6121",
+      "bytes": 264209
+    },
+    {
+      "path": "raspehr-3d/assets/tex-tiles/z2/day/day_z2_r0_c3.jpg",
+      "action": "add",
+      "original_sha256": null,
+      "target_sha256": "61df14ff6d78cceda1cd4753032fef2b1e9877d508dd2fd0b41c71354123d867",
+      "bytes": 163502
+    },
+    {
+      "path": "raspehr-3d/assets/tex-tiles/z2/day/day_z2_r0_c4.jpg",
+      "action": "add",
+      "original_sha256": null,
+      "target_sha256": "2cfe180d3a83cfd17ed622bb2a84fb29337fcd60dad0540437d6c47211a46e82",
+      "bytes": 285841
+    },
+    {
+      "path": "raspehr-3d/assets/tex-tiles/z2/day/day_z2_r0_c5.jpg",
+      "action": "add",
+      "original_sha256": null,
+      "target_sha256": "65a12b85386abe4b015fe6da4819707032c8c493ec1c9cfcfa18622fbc87c086",
+      "bytes": 281753
+    },
+    {
+      "path": "raspehr-3d/assets/tex-tiles/z2/day/day_z2_r0_c6.jpg",
+      "action": "add",
+      "original_sha256": null,
+      "target_sha256": "474924b81d7c243b0cd0ec0a12a7e7fadb1ec0fda58f711970bc13c86839e372",
+      "bytes": 294564
+    },
+    {
+      "path": "raspehr-3d/assets/tex-tiles/z2/day/day_z2_r0_c7.jpg",
+      "action": "add",
+      "original_sha256": null,
+      "target_sha256": "3fdf08f0a7270fe41acda93cc49790db562ab663759cb5f946b81255eff9c611",
+      "bytes": 191270
+    },
+    {
+      "path": "raspehr-3d/assets/tex-tiles/z2/day/day_z2_r1_c0.jpg",
+      "action": "add",
+      "original_sha256": null,
+      "target_sha256": "a4bf9fd3ccb9b74de863dbde06f65e7966b4b921aa3479b6c19df3cc30c9a6f5",
+      "bytes": 51432
+    },
+    {
+      "path": "raspehr-3d/assets/tex-tiles/z2/day/day_z2_r1_c1.jpg",
+      "action": "add",
+      "original_sha256": null,
+      "target_sha256": "8d8d937fdede32ba6d95aece5fa02fd9fa92b47f8b53d02c8772e2c4b3473ff7",
+      "bytes": 171057
+    },
+    {
+      "path": "raspehr-3d/assets/tex-tiles/z2/day/day_z2_r1_c2.jpg",
+      "action": "add",
+      "original_sha256": null,
+      "target_sha256": "7e08aa71d4240f4de61c69756a1f6f48ed2adbb9c7e851af7a8be0259ba48eac",
+      "bytes": 155671
+    },
+    {
+      "path": "raspehr-3d/assets/tex-tiles/z2/day/day_z2_r1_c3.jpg",
+      "action": "add",
+      "original_sha256": null,
+      "target_sha256": "600ab45abd1cf9064eb09cd9f3040cc447e9f225a472440ddac342ad8d067119",
+      "bytes": 148684
+    },
+    {
+      "path": "raspehr-3d/assets/tex-tiles/z2/day/day_z2_r1_c4.jpg",
+      "action": "add",
+      "original_sha256": null,
+      "target_sha256": "0fced44ae956c05fe0ee73d108953e50c43eb80a40f58b47bf003bbaa7d50736",
+      "bytes": 260047
+    },
+    {
+      "path": "raspehr-3d/assets/tex-tiles/z2/day/day_z2_r1_c5.jpg",
+      "action": "add",
+      "original_sha256": null,
+      "target_sha256": "1497a274da87c7f51557c9c5ad36391e18566298b3b29c081f5e627fb398c742",
+      "bytes": 253464
+    },
+    {
+      "path": "raspehr-3d/assets/tex-tiles/z2/day/day_z2_r1_c6.jpg",
+      "action": "add",
+      "original_sha256": null,
+      "target_sha256": "5ab2f3d5b677a0bb054da414bc3ddd001b0db71128845b1238a5b65a7da66a82",
+      "bytes": 244567
+    },
+    {
+      "path": "raspehr-3d/assets/tex-tiles/z2/day/day_z2_r1_c7.jpg",
+      "action": "add",
+      "original_sha256": null,
+      "target_sha256": "fc33375bcd08c46e5fd58fa4d6e8667a3d48c0215f236864e59a4ed822ecfb69",
+      "bytes": 106599
+    },
+    {
+      "path": "raspehr-3d/assets/tex-tiles/z2/day/day_z2_r2_c0.jpg",
+      "action": "add",
+      "original_sha256": null,
+      "target_sha256": "146c442ba62d8f4019b60fb744c3c1be2fe32b4c744ac6e625aa43086f104429",
+      "bytes": 67814
+    },
+    {
+      "path": "raspehr-3d/assets/tex-tiles/z2/day/day_z2_r2_c1.jpg",
+      "action": "add",
+      "original_sha256": null,
+      "target_sha256": "5d56391038e9dd35f5b961ddfcbc7017a7d7f1f30f4b6890650fbac83be1123e",
+      "bytes": 50804
+    },
+    {
+      "path": "raspehr-3d/assets/tex-tiles/z2/day/day_z2_r2_c2.jpg",
+      "action": "add",
+      "original_sha256": null,
+      "target_sha256": "a66a2d54cd982a004fa1d99fc3b4ae6c3975b117c586f94c30d2ce4456211ecc",
+      "bytes": 182396
+    },
+    {
+      "path": "raspehr-3d/assets/tex-tiles/z2/day/day_z2_r2_c3.jpg",
+      "action": "add",
+      "original_sha256": null,
+      "target_sha256": "14c43fd4ebcba849e2309a5cd0e18d6e4123b0dd2b3ce62f6688156f4088cfb6",
+      "bytes": 98911
+    },
+    {
+      "path": "raspehr-3d/assets/tex-tiles/z2/day/day_z2_r2_c4.jpg",
+      "action": "add",
+      "original_sha256": null,
+      "target_sha256": "b705d64d22bf512a94c55bb49a135c5e875058031610f607591cc003c013dc8d",
+      "bytes": 161591
+    },
+    {
+      "path": "raspehr-3d/assets/tex-tiles/z2/day/day_z2_r2_c5.jpg",
+      "action": "add",
+      "original_sha256": null,
+      "target_sha256": "554df360a2aaa864037ed3f38f44deb3f7f1875da550fceb3a38eec66cebdbd5",
+      "bytes": 114996
+    },
+    {
+      "path": "raspehr-3d/assets/tex-tiles/z2/day/day_z2_r2_c6.jpg",
+      "action": "add",
+      "original_sha256": null,
+      "target_sha256": "ca629f9f9e0eb6431597e75940f4a01a6598cdfd3f648f4de69cbcad42c390d7",
+      "bytes": 136120
+    },
+    {
+      "path": "raspehr-3d/assets/tex-tiles/z2/day/day_z2_r2_c7.jpg",
+      "action": "add",
+      "original_sha256": null,
+      "target_sha256": "2b863e38018d74aaac6eae5214f344a0d6591e6d7d6a5c9a6c474c624564500c",
+      "bytes": 168050
+    },
+    {
+      "path": "raspehr-3d/assets/tex-tiles/z2/day/day_z2_r3_c0.jpg",
+      "action": "add",
+      "original_sha256": null,
+      "target_sha256": "2cb234a07c4132386491d9b8f954fc09cd1a668b74ef429c0df516b73dfe0cea",
+      "bytes": 92603
+    },
+    {
+      "path": "raspehr-3d/assets/tex-tiles/z2/day/day_z2_r3_c1.jpg",
+      "action": "add",
+      "original_sha256": null,
+      "target_sha256": "3e04cd1f5171d9e91ba1ac48387efcc4a52ac0081060809eea37c87862ecb200",
+      "bytes": 100325
+    },
+    {
+      "path": "raspehr-3d/assets/tex-tiles/z2/day/day_z2_r3_c2.jpg",
+      "action": "add",
+      "original_sha256": null,
+      "target_sha256": "f0688c405534bfc80b481b86d76d0a7fc897142f722a2fce158373277b1f20ca",
+      "bytes": 154906
+    },
+    {
+      "path": "raspehr-3d/assets/tex-tiles/z2/day/day_z2_r3_c3.jpg",
+      "action": "add",
+      "original_sha256": null,
+      "target_sha256": "ec1cd5a365212f9295d32dcd1b86c0a979c8896baa3d5db4719a7e5ef9a3dc88",
+      "bytes": 129928
+    },
+    {
+      "path": "raspehr-3d/assets/tex-tiles/z2/day/day_z2_r3_c4.jpg",
+      "action": "add",
+      "original_sha256": null,
+      "target_sha256": "33b49590e5eaba9718336b5b129e9b779c3e86d36a5abd54d905184102821161",
+      "bytes": 124933
+    },
+    {
+      "path": "raspehr-3d/assets/tex-tiles/z2/day/day_z2_r3_c5.jpg",
+      "action": "add",
+      "original_sha256": null,
+      "target_sha256": "3eea07d909298fa58f67f55d8c611b9c43b8becc7ee5a2f999bba0c8e4070a7c",
+      "bytes": 117080
+    },
+    {
+      "path": "raspehr-3d/assets/tex-tiles/z2/day/day_z2_r3_c6.jpg",
+      "action": "add",
+      "original_sha256": null,
+      "target_sha256": "e66bc762f114feeb8e3198c252459da5c6554b9838cf45798eef9dbaaaf1dc73",
+      "bytes": 100457
+    },
+    {
+      "path": "raspehr-3d/assets/tex-tiles/z2/day/day_z2_r3_c7.jpg",
+      "action": "add",
+      "original_sha256": null,
+      "target_sha256": "60564c3c6ab3696cd693294d10560eefc262c51651a835c412eed60bf40fa28d",
+      "bytes": 165444
+    },
+    {
+      "path": "raspehr-3d/assets/tex-tiles/z2/night/night_z2_r0_c0.jpg",
+      "action": "add",
+      "original_sha256": null,
+      "target_sha256": "9b7c97c7f3c2a8d82c2f8e9fbe593d5a114225aa96d8efa0c08e0fd07b7ba99d",
+      "bytes": 50190
+    },
+    {
+      "path": "raspehr-3d/assets/tex-tiles/z2/night/night_z2_r0_c1.jpg",
+      "action": "add",
+      "original_sha256": null,
+      "target_sha256": "195a175c77d2a0c86ae2e2d6fcaf587d86b294be2aa44414da52658b76a542f3",
+      "bytes": 138972
+    },
+    {
+      "path": "raspehr-3d/assets/tex-tiles/z2/night/night_z2_r0_c2.jpg",
+      "action": "add",
+      "original_sha256": null,
+      "target_sha256": "998c7faf4128ac187db98a3dfae758a4f2a9571bd96c90c58f4021320edf77f8",
+      "bytes": 88905
+    },
+    {
+      "path": "raspehr-3d/assets/tex-tiles/z2/night/night_z2_r0_c3.jpg",
+      "action": "add",
+      "original_sha256": null,
+      "target_sha256": "f8e2e67db7ea5599832fb75012ca0c1c04ec441f10355c9fed61687f9e359b21",
+      "bytes": 56210
+    },
+    {
+      "path": "raspehr-3d/assets/tex-tiles/z2/night/night_z2_r0_c4.jpg",
+      "action": "add",
+      "original_sha256": null,
+      "target_sha256": "5a4deeff26b09ed614b1d72f1391d71a2e407db7b283135b4ca420b32d50b92f",
+      "bytes": 220258
+    },
+    {
+      "path": "raspehr-3d/assets/tex-tiles/z2/night/night_z2_r0_c5.jpg",
+      "action": "add",
+      "original_sha256": null,
+      "target_sha256": "4a626a6f19ad6c01701f6fe6c2d40471581400a05188ef82294476a1f8359774",
+      "bytes": 138554
+    },
+    {
+      "path": "raspehr-3d/assets/tex-tiles/z2/night/night_z2_r0_c6.jpg",
+      "action": "add",
+      "original_sha256": null,
+      "target_sha256": "71a9dc944e71416de0137e09c96cca8122f0fda9498a753a035d9f3bf1018c55",
+      "bytes": 95579
+    },
+    {
+      "path": "raspehr-3d/assets/tex-tiles/z2/night/night_z2_r0_c7.jpg",
+      "action": "add",
+      "original_sha256": null,
+      "target_sha256": "935557a0e526796eec47f4c37c13951b7e2a7fd0f0e104bd3ee741284005e1bf",
+      "bytes": 60513
+    },
+    {
+      "path": "raspehr-3d/assets/tex-tiles/z2/night/night_z2_r1_c0.jpg",
+      "action": "add",
+      "original_sha256": null,
+      "target_sha256": "ca3e44852d9f14471ec9e4a14e2592f752673384cb2990d8e462f726903684f1",
+      "bytes": 7785
+    },
+    {
+      "path": "raspehr-3d/assets/tex-tiles/z2/night/night_z2_r1_c1.jpg",
+      "action": "add",
+      "original_sha256": null,
+      "target_sha256": "5405abdbaad81fb9c5638043ea26e03a4d635b8ead3a1badb2075abe9bc3a657",
+      "bytes": 147395
+    },
+    {
+      "path": "raspehr-3d/assets/tex-tiles/z2/night/night_z2_r1_c2.jpg",
+      "action": "add",
+      "original_sha256": null,
+      "target_sha256": "a8a0441a77985071b009e5ee63c0f6e6284d5c56be12bfd6d99175721c61f1e0",
+      "bytes": 137895
+    },
+    {
+      "path": "raspehr-3d/assets/tex-tiles/z2/night/night_z2_r1_c3.jpg",
+      "action": "add",
+      "original_sha256": null,
+      "target_sha256": "141d2b839a2606c76291570b91c82cd7a4eeebdcf442b6ab1283eef6f1a40a2d",
+      "bytes": 63123
+    },
+    {
+      "path": "raspehr-3d/assets/tex-tiles/z2/night/night_z2_r1_c4.jpg",
+      "action": "add",
+      "original_sha256": null,
+      "target_sha256": "2f0c159ccbb270fc71e41d06b557a429bbc8be8dfc71f90ca48a8e86f85d6136",
+      "bytes": 198554
+    },
+    {
+      "path": "raspehr-3d/assets/tex-tiles/z2/night/night_z2_r1_c5.jpg",
+      "action": "add",
+      "original_sha256": null,
+      "target_sha256": "1481184202110a016c9739c5691ee6e6bcddec212b284e541bdab88b6c4ea43c",
+      "bytes": 211419
+    },
+    {
+      "path": "raspehr-3d/assets/tex-tiles/z2/night/night_z2_r1_c6.jpg",
+      "action": "add",
+      "original_sha256": null,
+      "target_sha256": "260c0d34aa4b2639ebcd52d54d88c466d402fcffd44f1010c5bd85db67c17972",
+      "bytes": 245591
+    },
+    {
+      "path": "raspehr-3d/assets/tex-tiles/z2/night/night_z2_r1_c7.jpg",
+      "action": "add",
+      "original_sha256": null,
+      "target_sha256": "f91e471c682aba6dec049826874a28d736398077c3c10b6d80c7b74c50ac5ec3",
+      "bytes": 23994
+    },
+    {
+      "path": "raspehr-3d/assets/tex-tiles/z2/night/night_z2_r2_c0.jpg",
+      "action": "add",
+      "original_sha256": null,
+      "target_sha256": "2d1c691b2ad91a6fa03bf047ffe3fe2fd043166e48d59892401b12e36eaae244",
+      "bytes": 7353
+    },
+    {
+      "path": "raspehr-3d/assets/tex-tiles/z2/night/night_z2_r2_c1.jpg",
+      "action": "add",
+      "original_sha256": null,
+      "target_sha256": "0263bed36b07314661409d967d4daab8dff18df365f85f4a29d4c2d6553031a6",
+      "bytes": 6722
+    },
+    {
+      "path": "raspehr-3d/assets/tex-tiles/z2/night/night_z2_r2_c2.jpg",
+      "action": "add",
+      "original_sha256": null,
+      "target_sha256": "97b73f0567885f8b9f1c664e868dd217e447ca311d24dbc0dc33a2fc03045985",
+      "bytes": 143508
+    },
+    {
+      "path": "raspehr-3d/assets/tex-tiles/z2/night/night_z2_r2_c3.jpg",
+      "action": "add",
+      "original_sha256": null,
+      "target_sha256": "97f7674a2eaa37a8302643e9ee91986adefe62ba834dac49666815802e1be5cc",
+      "bytes": 43947
+    },
+    {
+      "path": "raspehr-3d/assets/tex-tiles/z2/night/night_z2_r2_c4.jpg",
+      "action": "add",
+      "original_sha256": null,
+      "target_sha256": "884a42657a54dcddc2b31c1517bc4efefb7ba904c993befca3012f99ed4a1125",
+      "bytes": 86661
+    },
+    {
+      "path": "raspehr-3d/assets/tex-tiles/z2/night/night_z2_r2_c5.jpg",
+      "action": "add",
+      "original_sha256": null,
+      "target_sha256": "ccaf415e9913e19fe008bc91e0a1cf83a21c5c3c4e8ab48c72bf1f03634dc396",
+      "bytes": 14161
+    },
+    {
+      "path": "raspehr-3d/assets/tex-tiles/z2/night/night_z2_r2_c6.jpg",
+      "action": "add",
+      "original_sha256": null,
+      "target_sha256": "d60f2f4359db0def65c6d70bec105cc5d0742789c4e46d47401d359e6251f6af",
+      "bytes": 74899
+    },
+    {
+      "path": "raspehr-3d/assets/tex-tiles/z2/night/night_z2_r2_c7.jpg",
+      "action": "add",
+      "original_sha256": null,
+      "target_sha256": "e29abb59eb94c35b789bc787c64b721ca658d45f775170993762bae98c724de2",
+      "bytes": 56163
+    },
+    {
+      "path": "raspehr-3d/assets/tex-tiles/z2/night/night_z2_r3_c0.jpg",
+      "action": "add",
+      "original_sha256": null,
+      "target_sha256": "aacfec0faff2148b152252a366a7bcfd49bb9dd72fb2c05af15a8884d1f92adf",
+      "bytes": 9897
+    },
+    {
+      "path": "raspehr-3d/assets/tex-tiles/z2/night/night_z2_r3_c1.jpg",
+      "action": "add",
+      "original_sha256": null,
+      "target_sha256": "b0b61b8bab7056675fdeffacc74f68c3553ada2ce398ab12df317840a79457e3",
+      "bytes": 11129
+    },
+    {
+      "path": "raspehr-3d/assets/tex-tiles/z2/night/night_z2_r3_c2.jpg",
+      "action": "add",
+      "original_sha256": null,
+      "target_sha256": "2b3eb4034fc50d8da42205ceec62d0175e737b830054b822d570cc197f21f0ce",
+      "bytes": 34468
+    },
+    {
+      "path": "raspehr-3d/assets/tex-tiles/z2/night/night_z2_r3_c3.jpg",
+      "action": "add",
+      "original_sha256": null,
+      "target_sha256": "0b24dcfa452bfcb4e4eee56215efd56c27d567a1c5ca4d71a1f3c54eb080e43a",
+      "bytes": 10807
+    },
+    {
+      "path": "raspehr-3d/assets/tex-tiles/z2/night/night_z2_r3_c4.jpg",
+      "action": "add",
+      "original_sha256": null,
+      "target_sha256": "df151decae798c745a4227c3019fbc38214b25bbe6419c75c64764ae2e3911d0",
+      "bytes": 10220
+    },
+    {
+      "path": "raspehr-3d/assets/tex-tiles/z2/night/night_z2_r3_c5.jpg",
+      "action": "add",
+      "original_sha256": null,
+      "target_sha256": "ac8195c0400653e0caf028cae64360c3ff79d4a9d8b77a3badcd0fef714da7da",
+      "bytes": 11521
+    },
+    {
+      "path": "raspehr-3d/assets/tex-tiles/z2/night/night_z2_r3_c6.jpg",
+      "action": "add",
+      "original_sha256": null,
+      "target_sha256": "d51aae2d71f2a4f4651897074252d86843aa6b762df7d83347a66a1e69f65ad5",
+      "bytes": 10810
+    },
+    {
+      "path": "raspehr-3d/assets/tex-tiles/z2/night/night_z2_r3_c7.jpg",
+      "action": "add",
+      "original_sha256": null,
+      "target_sha256": "d986b2262d3f757231a92c7f94906a48ba4da4d30ccecf3a98ee29fa5b2ed86a",
+      "bytes": 14836
+    },
+    {
+      "path": "raspehr-3d/index.html",
+      "action": "add",
+      "original_sha256": null,
+      "target_sha256": "ea89c335a4f65ad96e5a633a4e5cea57940ebc64c2ab83ad026c9345eaec8e2c",
+      "bytes": 9455
+    },
+    {
+      "path": "raspehr-3d/tests/browser_terrain_mock.py",
+      "action": "add",
+      "original_sha256": null,
+      "target_sha256": "ef430fce6430e9443d5521c4d4294303aa02cf0af3e70c57c3da1d061c3676da",
+      "bytes": 3320
+    },
+    {
+      "path": "raspehr-3d/tests/browser_webgl_r7.py",
+      "action": "add",
+      "original_sha256": null,
+      "target_sha256": "0d4e88ff5b424b420289bda93c57643cae0d9317c0766dc4ac7b87ab9f7f73ab",
+      "bytes": 4596
+    },
+    {
+      "path": "raspehr-3d/tests/stage1_imagery_r7.test.cjs",
+      "action": "add",
+      "original_sha256": null,
+      "target_sha256": "b19230ed679a1aaf25728492e73a2543b25e92274549367ff10da3923430df5c",
+      "bytes": 5148
+    },
+    {
+      "path": "raspehr-3d/tests/stage1_smoke.cjs",
+      "action": "add",
+      "original_sha256": null,
+      "target_sha256": "007d6dee81377eead9ed8bb08eb81c499fed470c3185cfe8675600e47e13af13",
+      "bytes": 3261
+    },
+    {
+      "path": "raspehr-3d/tests/stage2_browser.py",
+      "action": "add",
+      "original_sha256": null,
+      "target_sha256": "226663edced88849b221240235cc465c601186c5825b95b27c71a8c6c079bc1f",
+      "bytes": 5837
+    },
+    {
+      "path": "raspehr-3d/tests/stage2_entities.test.cjs",
+      "action": "add",
+      "original_sha256": null,
+      "target_sha256": "164193ed80b08277c0172175a4c7306cf703c56ffe41db94d09875e66b587303",
+      "bytes": 3380
+    },
+    {
+      "path": "raspehr-3d/tests/stage2_markers.test.cjs",
+      "action": "add",
+      "original_sha256": null,
+      "target_sha256": "702102629f7f6732e6f49f6aa40bc50e1dd16390b1b12e932c2f3d4611063a6a",
+      "bytes": 2897
+    },
+    {
+      "path": "raspehr-3d/tests/stage3_browser.py",
+      "action": "add",
+      "original_sha256": null,
+      "target_sha256": "abb7cdccd699f23e35652c5f9c39baac6c4414cefbfedfec28efea6b4eefcdda",
+      "bytes": 5802
+    },
+    {
+      "path": "raspehr-3d/tests/stage3_explore.test.cjs",
+      "action": "add",
+      "original_sha256": null,
+      "target_sha256": "be0625fd6e17c4bd96f5690fa2bb72d349cad47b98f6adf28b1ed78154dd3878",
+      "bytes": 3562
+    },
+    {
+      "path": "raspehr-3d/tests/stage3_markers.test.cjs",
+      "action": "add",
+      "original_sha256": null,
+      "target_sha256": "9d73164213d93a6c7075686cf85fa610ff335bbc2a02954599f511265dc17e77",
+      "bytes": 3278
+    },
+    {
+      "path": "raspehr-3d/tests/stage3_qa_browser.py",
+      "action": "add",
+      "original_sha256": null,
+      "target_sha256": "01d192b442a4fb7f5e98e00423107a535a615dd9f407162a85507c1645cf8f54",
+      "bytes": 9795
+    },
+    {
+      "path": "raspehr-3d/tests/stage4_bridge.test.cjs",
+      "action": "add",
+      "original_sha256": null,
+      "target_sha256": "bf12a453d439368269e6595e8d66d2aa0fb9e1cb4a9e7f0e499733ebcd966af4",
+      "bytes": 3073
+    },
+    {
+      "path": "raspehr-3d/tests/stage4_dossier_dom.py",
+      "action": "add",
+      "original_sha256": null,
+      "target_sha256": "55388cdad1b86800db49e55f7f4da4c6c87486ae70e43909c3b443da4018fcfe",
+      "bytes": 4426
+    },
+    {
+      "path": "raspehr-3d/tests/stage5_bridge.test.cjs",
+      "action": "add",
+      "original_sha256": null,
+      "target_sha256": "24268da12780053b8e54f46a7a542597bcdf34b8af5d30fc0b161a7c09244965",
+      "bytes": 4035
+    },
+    {
+      "path": "raspehr-3d/tests/stage5_child_bridge.test.cjs",
+      "action": "add",
+      "original_sha256": null,
+      "target_sha256": "37fce901328adb9fcc463e3ece3b7777b613cb6a788fd30e828b03fdbd1f0f32",
+      "bytes": 3037
+    },
+    {
+      "path": "raspehr-3d/tests/stage5_state.test.cjs",
+      "action": "add",
+      "original_sha256": null,
+      "target_sha256": "c942cfeb67333773da24b6217db0df2f22e19f42abceddf1c3eda35d9c937bd6",
+      "bytes": 2489
+    },
+    {
+      "path": "raspehr-3d/tests/stage6_lifecycle.test.cjs",
+      "action": "add",
+      "original_sha256": null,
+      "target_sha256": "06b7a6c2e27d3fe2605dfbcc8405dee5148d1093669fb6b994a16eb2f351ab68",
+      "bytes": 2152
+    },
+    {
+      "path": "raspehr-3d/tests/stage6_performance.test.cjs",
+      "action": "add",
+      "original_sha256": null,
+      "target_sha256": "bb76414b57c5720474cb3a917f4b06511b0e484b943317429394530a5bdfcaf8",
+      "bytes": 1670
+    },
+    {
+      "path": "raspehr-3d/tests/stage7_coordinate_provenance.test.cjs",
+      "action": "add",
+      "original_sha256": null,
+      "target_sha256": "2f4c3d62b9dec5c036f8e5698d15088d6cdf6ff71b0e58f7160074b1928e14c7",
+      "bytes": 2877
+    },
+    {
+      "path": "raspehr-3d/tests/terrain_dem.test.cjs",
+      "action": "add",
+      "original_sha256": null,
+      "target_sha256": "ed14a95a7988e055f99f0a631f3a2bc3848f1478bcacb959f102b0f9e6c84392",
+      "bytes": 2789
+    },
+    {
+      "path": "raspehr-3d/tests/terrain_geometry_real_three.test.cjs",
+      "action": "add",
+      "original_sha256": null,
+      "target_sha256": "b0b09ce88313cd98c0eb7aaec1763efa133896b0fbe82219de43ad7128169b14",
+      "bytes": 2410
+    },
+    {
+      "path": "raspehr-3d/tests/terrain_r6.integration.test.cjs",
+      "action": "add",
+      "original_sha256": null,
+      "target_sha256": "e495b912756d19fb4f417bad832689d2c4de488e96ff199041a10421b56f0876",
+      "bytes": 3537
+    },
+    {
+      "path": "raspehr-3d/tests/verify_dem_downloader.py",
+      "action": "add",
+      "original_sha256": null,
+      "target_sha256": "08289656f28a1af4a5b4c8ea6e77646ad7d5e8eed77e63105e450c928bbdbb5f",
+      "bytes": 839
+    },
+    {
+      "path": "raspehr-3d/tests/verify_stage1_assets.py",
+      "action": "add",
+      "original_sha256": null,
+      "target_sha256": "ba23f484a18ee4481575e40015199201e157ef4575217850e91a78cdfcc57282",
+      "bytes": 1814
+    },
+    {
+      "path": "raspehr-3d/tools/fetch_dem_z2.py",
+      "action": "add",
+      "original_sha256": null,
+      "target_sha256": "a3658100da244b37ff47bde86de6ef967ec39e9757ec4c8c36a8349b1c07ee13",
+      "bytes": 4228
+    },
+    {
+      "path": "tests/stage8_release_regressions.test.cjs",
+      "action": "add",
+      "original_sha256": null,
+      "target_sha256": "6acae6a17a4275add9b501efcee56caa0744df353a241d6feee73e06f2813695",
+      "bytes": 2792
+    }
+  ],
+  "warnings": [
+    "Existing GitHub repository must match original 3-part source for safe direct replacement. Confirm hashes for the nine modified files.",
+    "Candidate release; 49 pre-existing failing tests, missing local logos, no locally bundled complete DEM; manual GitHub/Render and real device QA still pending.",
+    "23 additional coordinates are approximate reference locations; not precise surveyed sites."
+  ]
+}

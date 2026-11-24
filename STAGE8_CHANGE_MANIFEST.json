@@ -1,0 +1,29 @@
+{
+  "stage": "RASPEHR Stage 8 - offline QA and conditional release candidate",
+  "source": "RASPEHR_STAGE7_WORKING_FULL_SOURCE_2026-11-23.zip",
+  "as_of_date": "2026-11-23",
+  "release_approved": false,
+  "files_changed": [
+    "assets/js/app.js",
+    "index.html"
+  ],
+  "files_added": [
+    "STAGE8_FINAL_HANDOFF_FA.md",
+    "qa/stage8/STAGE8_49_LEGACY_FAILURES.csv",
+    "qa/stage8/STAGE8_AUDIT.json",
+    "qa/stage8/STAGE8_DIAGNOSTICS_SUMMARY.json",
+    "qa/stage8/STAGE8_MANUAL_ACCEPTANCE_FA.md",
+    "qa/stage8/STAGE8_MISSING_LOCAL_LOGOS.csv",
+    "qa/stage8/generate_diagnostics.py",
+    "qa/stage8/release_audit.py",
+    "tests/stage8_release_regressions.test.cjs"
+  ],
+  "files_deleted": [],
+  "limitations": [
+    "49 legacy tests are still failing",
+    "No actual Render/physical-device QA",
+    "DEM 16 local tiles missing",
+    "23 new coordinates are representative, not exact",
+    "38 unique missing local logo paths"
+  ]
+}

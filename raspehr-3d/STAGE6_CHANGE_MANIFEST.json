@@ -1,0 +1,117 @@
+{
+  "step": 6,
+  "date": "2026-11-23",
+  "source": "RASPEHR_STAGE5_WORKING_FULL_SOURCE_2026-11-23.zip",
+  "files_count": 1309,
+  "added": [
+    "raspehr-3d/STAGE6_CHANGE_MANIFEST.json",
+    "raspehr-3d/STAGE6_OPEN_ITEMS_FA.md",
+    "raspehr-3d/STAGE6_README_FA.md",
+    "raspehr-3d/assets/js/stage6-performance.js",
+    "raspehr-3d/tests/stage6_lifecycle.test.cjs",
+    "raspehr-3d/tests/stage6_performance.test.cjs"
+  ],
+  "modified": [
+    "assets/js/raspehr-stage5-switch.js",
+    "raspehr-3d/assets/css/prototype.css",
+    "raspehr-3d/assets/js/entity-markers.js",
+    "raspehr-3d/assets/js/entity-stage3-ui.js",
+    "raspehr-3d/assets/js/globe-engine.js",
+    "raspehr-3d/assets/js/prototype.js",
+    "raspehr-3d/assets/js/stage5-integration.js",
+    "raspehr-3d/index.html",
+    "raspehr-3d/tests/stage5_bridge.test.cjs"
+  ],
+  "deleted": [],
+  "tests": [
+    {
+      "name": "stage1_imagery_r7.test.cjs",
+      "ok": true,
+      "detail": "PASS RASPEHR R7 imagery: paths, hysteresis, partial failure cleanup, stale generations, zoom races and safe texture swap"
+    },
+    {
+      "name": "stage2_entities.test.cjs",
+      "ok": true,
+      "detail": "PASS Stage2 adapter: 420 canonical entities, 397 valid markers, 23 missing; exact 14 memberships and safe partial-source failure"
+    },
+    {
+      "name": "stage2_markers.test.cjs",
+      "ok": true,
+      "detail": "PASS Stage2 marker engine: geographic vectors, 3 categories, instancing, visible-side ray picking, selection and cleanup"
+    },
+    {
+      "name": "stage3_explore.test.cjs",
+      "ok": true,
+      "detail": "PASS Stage3 search/countries/14-category membership/date-line clustering: 420 records, 397 geolocated, 23 untouched"
+    },
+    {
+      "name": "stage3_markers.test.cjs",
+      "ok": true,
+      "detail": "PASS Stage3 marker updates: no duplicates, dedicated cluster style, selection lifecycle and cleanup"
+    },
+    {
+      "name": "stage4_bridge.test.cjs",
+      "ok": true,
+      "detail": "PASS Stage4 original-renderer bridge: company/site/recovery/country, punctuation, same-origin guard, errors and close"
+    },
+    {
+      "name": "stage5_bridge.test.cjs",
+      "ok": true,
+      "detail": "PASS Stage5 host bridge: lazy load, same-origin gate, handshake, stale reply guard, 2-way state, iframe reuse"
+    },
+    {
+      "name": "stage5_child_bridge.test.cjs",
+      "ok": true,
+      "detail": "PASS Stage5 child bridge: strict origin/source, state application, camera mapping, full dossier ID, snapshot/back"
+    },
+    {
+      "name": "stage5_state.test.cjs",
+      "ok": true,
+      "detail": "stage5 state and structural checks: PASS (14 categories; filters, camera, dossier, HTML and bridge)"
+    },
+    {
+      "name": "stage6_lifecycle.test.cjs",
+      "ok": true,
+      "detail": "PASS Stage6 2D/3D render pause and resume, idempotence, GPU budget mode, selected marker halo"
+    },
+    {
+      "name": "stage6_performance.test.cjs",
+      "ok": true,
+      "detail": "PASS Stage6 performance policy, device caps, quality profile and HTML wiring"
+    },
+    {
+      "name": "terrain_dem.test.cjs",
+      "ok": true,
+      "detail": "PASS terrain DEM: Terrarium conversion, Mercator coordinates, elevation sampling, vertex displacement, restoration."
+    },
+    {
+      "name": "terrain_geometry_real_three.test.cjs",
+      "ok": true,
+      "detail": "PASS terrain R6 actual Three.js CPU geometry: displacement, restoration, texture/DEM longitude alignment"
+    },
+    {
+      "name": "terrain_r6.integration.test.cjs",
+      "ok": true,
+      "detail": "PASS terrain R6 integration: Mercator wrap, seam continuity, 16-tile atomic load, failure cleanup, retry, geometry toggle"
+    },
+    {
+      "name": "stage1_smoke.cjs",
+      "ok": true,
+      "detail": "RASPEHR Stage-1 R4: multilevel imagery pyramid (z0/z1/z2), quality profiles, UI hooks and fallback paths passed."
+    }
+  ],
+  "base_data_sha256": {
+    "data/companies.json": "b1c18682b7743df9ddbc373465fb4c95d88d5e3ebbbd49d58ec2f3a3a6503d23",
+    "data/sites.json": "8d90d1473f2ff288aef4a7c616277bc0a49acc6126b02261085b7c15d17e0322",
+    "data/recovery_sites.json": "a22a2de67a679d89f33fc046890a5ee3d7794bbb3b36d05eb2f72f4ee8d4995d",
+    "data/media/catalog.v1.json": "d14d6895fb161857ef9cc8e9f7c7d9190a43f55a867637960421a4aa9be97847",
+    "assets/js/app.js": "1be6b4ea7449ec5b017f0eceb57d4f63d3ba1e1c02eb8c4e316749d8920f8c76",
+    "assets/css/app.css": "cb59910f61068eeca3bf0f1b571b056eb83da4c88b732796a75929f4e0079fed"
+  },
+  "verification": {
+    "layout_dom_chromium": "pass desktop 1366x900, mobile 390x844",
+    "full_http_webgl": "blocked_by_administrator",
+    "physical_mobile": "not_tested"
+  },
+  "reminder": "23 missing coordinates from stage 2 must be reviewed at end of all stages"
+}

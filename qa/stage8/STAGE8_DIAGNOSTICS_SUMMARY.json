@@ -1,0 +1,13 @@
+{
+  "legacy_failure_count": 49,
+  "failure_group_counts": {
+    "dataset_or_schema_expectation": 11,
+    "map_interaction_or_UI": 14,
+    "version_or_static_asset_assertion": 11,
+    "localization_or_profile_renderer": 11,
+    "needs_manual_diagnosis": 2
+  },
+  "missing_local_logo_references": 47,
+  "unique_missing_logo_paths": 38,
+  "important": "classification is indicative, not proof of test obsolescence or operational defect"
+}

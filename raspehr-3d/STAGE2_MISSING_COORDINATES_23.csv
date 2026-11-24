@@ -1,0 +1,24 @@
+﻿kind,id,category,name_fa,name_en,country,city,lat,lon,source_file,issue
+company,manastu,propulsion,ماناستو اسپیس,Manastu Space,India,Navi Mumbai,,,companies.json,missing_or_invalid_coordinates
+company,spacefields,propulsion,اسپیس‌فیلدز,SpaceFields,India,Bengaluru,,,companies.json,missing_or_invalid_coordinates
+company,nsas,agency,سازمان ملی فضایی سنگاپور (NSAS),National Space Agency of Singapore (NSAS),Singapore,Singapore,,,companies.json,missing_or_invalid_coordinates
+company,kasa,agency,اداره هوافضای کره (KASA),Korea AeroSpace Administration (KASA),South Korea,Sacheon,,,companies.json,missing_or_invalid_coordinates
+company,philsa,agency,آژانس فضایی فیلیپین (PhilSA),Philippine Space Agency (PhilSA),Philippines,Quezon City,,,companies.json,missing_or_invalid_coordinates
+company,mysa,agency,آژانس فضایی مالزی (MYSA),Malaysian Space Agency (MYSA),Malaysia,Malaysia,,,companies.json,missing_or_invalid_coordinates
+company,tasa,agency,سازمان فضایی تایوان (TASA),Taiwan Space Agency (TASA),Taiwan,Hsinchu,,,companies.json,missing_or_invalid_coordinates
+company,uzbekspace,agency,آژانس فضایی ازبکستان (اوزبک‌کاسموس),Uzbekistan Space Agency (Uzbekcosmos),Uzbekistan,Tashkent,,,companies.json,missing_or_invalid_coordinates
+company,gistda,agency,آژانس توسعه فناوری فضایی و اطلاعات جغرافیایی تایلند (GISTDA),Geo-Informatics and Space Technology Development Agency (GISTDA),Thailand,Bangkok,,,companies.json,missing_or_invalid_coordinates
+company,vnsc,agency,مرکز ملی فضایی ویتنام (VNSC),Vietnam National Space Center (VNSC),Vietnam,Hanoi,,,companies.json,missing_or_invalid_coordinates
+company,in-space,agency,مرکز ملی ترویج و صدور مجوز فعالیت‌های فضایی هند (IN-SPACe),Indian National Space Promotion and Authorization Center (IN-SPACe),India,Ahmedabad,,,companies.json,missing_or_invalid_coordinates
+company,kazakhstan-aerospace-committee,agency,کمیته هوافضای قزاقستان,Aerospace Committee of Kazakhstan,Kazakhstan,Astana,,,companies.json,missing_or_invalid_coordinates
+company,sparrso,agency,سازمان پژوهش فضایی و سنجش‌ازدور بنگلادش (SPARRSO),Bangladesh Space Research and Remote Sensing Organization (SPARRSO),Bangladesh,Dhaka,,,companies.json,missing_or_invalid_coordinates
+company,inasa-brin,agency,برنامه فضایی اندونزی (INASA / BRIN),Indonesian National Space Agency programme (INASA / BRIN),Indonesia,Jakarta (BRIN),,,companies.json,missing_or_invalid_coordinates
+company,bahrain-space-agency,agency,آژانس فضایی بحرین (BSA),Bahrain Space Agency (BSA),Bahrain,Manama,,,companies.json,missing_or_invalid_coordinates
+company,apsco,agency,سازمان همکاری فضایی آسیا-اقیانوسیه (APSCO),Asia-Pacific Space Cooperation Organization (APSCO),Asia-Pacific,Beijing,,,companies.json,missing_or_invalid_coordinates
+company,uae-space-agency,agency,آژانس فضایی امارات متحده عربی,UAE Space Agency,United Arab Emirates,Abu Dhabi,,,companies.json,missing_or_invalid_coordinates
+company,stellar-kinetics,launch,استلار کینتیکس (MCT),Stellar Kinetics MCT,Oman,,,,companies.json,missing_or_invalid_coordinates
+site,xuhai,site,پایگاه پژوهشی پرتاب راکت شُوهای,Xuhai Research Rocket Launch Site,Taiwan,,,,sites.json,missing_or_invalid_coordinates
+site,jiupeng,site,میدان آزمون راکت جیوپِنگ,Jiupeng Rocket Test Range,Taiwan,,,,sites.json,missing_or_invalid_coordinates
+site,sonmiani,site,میدان موشکی سونمیانی,Sonmiani Rocket Range,Pakistan,,,,sites.json,missing_or_invalid_coordinates
+site,pameungpeuk,site,میدان آزمون راکت پامئونگ‌پئوک,Pameungpeuk Rocket Test Range,Indonesia,,,,sites.json,missing_or_invalid_coordinates
+site,biak,site,پایگاه فضایی پیشنهادی بایک,Biak Proposed Spaceport,Indonesia,,,,sites.json,missing_or_invalid_coordinates

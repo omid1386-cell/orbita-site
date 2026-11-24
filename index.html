@@ -46,17 +46,26 @@
 <link rel="stylesheet" href="assets/css/launch-mission-ui.css?v=20261121-redesign-v1" />
 <link rel="stylesheet" href="assets/css/upcoming-event-display.css?v=20261121-step7" />
 <link rel="stylesheet" href="assets/css/media-gallery.css?v=20261121-stage3-v1" />
+<link rel="stylesheet" href="assets/css/raspehr-profile-host.css?v=20261123-stage4" />
+<link rel="stylesheet" href="assets/css/raspehr-stage5-switch.css?v=20261123-stage5">
 <!-- Ordered defer scripts download in parallel instead of creating a network waterfall. -->
 <script defer src="assets/js/raspehr-splash.js?v=20261113-speed-v1"></script>
 <script defer src="assets/vendor/maplibre-gl.js?v=3"></script>
-<script defer src="assets/js/app.js?_t=20261114-map-zoom-performance-step3-v1"></script>
+<script defer src="assets/js/raspehr-stage5-state.js?v=20261123-stage5"></script>
+<script defer src="assets/js/app.js?_t=20261123-stage8-app-final-v1"></script>
+<script defer src="assets/js/raspehr-stage5-switch.js?v=20261123-stage5"></script>
 <script defer src="assets/js/media-bank.js?v=20261121-stage2-v1"></script>
 <script defer src="assets/js/media-gallery.js?v=20261121-stage3-v1"></script>
+<script defer src="assets/js/raspehr-profile-bridge.js?v=20261123-stage4"></script>
 <script defer src="assets/js/upcoming-launch-filters.js?v=20261121-step3-4"></script>
 <script defer src="assets/js/upcoming-event-display.js?v=20261121-step7"></script>
 <script defer src="assets/js/upcoming-launch-browser.js?v=20261121-step7"></script>
 <script defer src="assets/js/upcoming-landing-browser.js?v=20261121-step7"></script>
 <script>
+  // Only the dedicated 3D dossier iframe enters profile-only mode.
+  // Normal 2D users keep the exact same application and map boot behavior.
+  window.RASPEHR_PROFILE_EMBEDDED = new URLSearchParams(location.search).get('raspehr_profile_embedded') === '1' && window.parent !== window;
+  if (window.RASPEHR_PROFILE_EMBEDDED) document.documentElement.classList.add('raspehr-profile-host');
   window.ORBITA_V = "20261114-step4-manufacturer-logos-v1";
   window.ORBITA_APP_V = "20261114-map-zoom-performance-step3-v1";
   window.ORBITA_CSS_V = "20261114-country-profile-light-contrast-v2-final";
@@ -168,6 +177,13 @@
 <!-- ============ MAP VIEW ============ -->
 <main id="view-map" class="view active">
   <div id="map"></div>
+  <div class="raspehr-stage5-dock" id="raspehrStage5Dock">
+    <button id="raspehrStage5Toggle" type="button" aria-pressed="false" aria-controls="raspehr3dOverlay">🌐 نمای سه‌بعدی</button>
+    <span id="raspehrStage5Status" role="status" aria-live="polite" hidden></span>
+  </div>
+  <section id="raspehr3dOverlay" class="raspehr-stage5-overlay" aria-label="نمای سه‌بعدی تعاملی رسپهر" hidden>
+    <iframe id="raspehrStage5Frame" title="زمین سه‌بعدی رسپهر" loading="lazy" referrerpolicy="same-origin"></iframe>
+  </section>
   <div id="mapStatus" class="map-status" data-i18n="loading_map">در حال بارگذاری نقشه…</div>
 
   <!-- Phase 1: collapsible map-layer selector. The six original data feeds are unchanged. -->

@@ -1,0 +1,58 @@
+{
+  "schema": "raspehr-stage8-audit-v1",
+  "scope": "offline static/data checks only; does not claim live browser, live URLs or physical device QA",
+  "checks": {
+    "company_count_321": true,
+    "site_count_79": true,
+    "recovery_count_20": true,
+    "unique_420_entities": true,
+    "valid_geographical_coordinates": true,
+    "23_disclosed_approximate_references": true,
+    "no_approximate_point_mislabelled_exact": true,
+    "catalog_has_420_entities": true,
+    "stage5_toggle_is_lazy_loaded": true,
+    "default_layers_agency_and_site_only": true,
+    "antarctica_country_dossier_suppressed": true,
+    "updated_app_cache_token_matches": true,
+    "all_static_html_dependencies_present": true
+  },
+  "data": {
+    "companies": 321,
+    "sites": 79,
+    "recovery_sites": 20,
+    "all": 420,
+    "unique_ids": 420,
+    "representative_coordinate_records": 23,
+    "catalog_entities": 420,
+    "media_verification_statuses": {
+      "verified": 400,
+      "candidate": 14
+    }
+  },
+  "html_local_asset_checks": {
+    "index.html": {
+      "total_references": 27,
+      "missing_local_references": []
+    },
+    "raspehr-3d/index.html": {
+      "total_references": 15,
+      "missing_local_references": []
+    }
+  },
+  "dem": {
+    "local_tiles": 0,
+    "required_tiles": 16,
+    "locally_complete": false,
+    "remote_source_configured": true
+  },
+  "passed": 13,
+  "failed": [],
+  "release_ready": false,
+  "release_blockers": [
+    "49 legacy Node tests remain failing",
+    "No real deployment and physical-device end-to-end test",
+    "16 locally cached real DEM tiles unavailable",
+    "23 geographic points are representative, not independently surveyed exact coordinates",
+    "DEM will require remote connectivity; offline terrain not proven"
+  ]
+}

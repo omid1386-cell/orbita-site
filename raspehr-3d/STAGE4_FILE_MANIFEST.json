@@ -1,0 +1,74 @@
+{
+  "base": "RASPEHR_STAGE3_STABILIZED_FULL_SOURCE_2026-11-22.zip",
+  "status": "stage4-working",
+  "changed_or_added": [
+    {
+      "path": "assets/css/raspehr-profile-host.css",
+      "sha256": "d46a361e1adecdecf74a7f99285a1d326529ed584e6a33a8dc0054a64cce597d",
+      "type": "added"
+    },
+    {
+      "path": "assets/js/app.js",
+      "sha256": "e43371351462fe7c4764876a223d374e02653d103237769efd4277903dc6bfab",
+      "type": "modified"
+    },
+    {
+      "path": "assets/js/raspehr-profile-bridge.js",
+      "sha256": "718d56222513248ae650cc22eb816b35960eae079528d54ad24b682c8edfb2ad",
+      "type": "added"
+    },
+    {
+      "path": "index.html",
+      "sha256": "5bafdf36a09ed91a8b36833af89ee37dae5bd3c5c7c16f86fc7d4822b20aeb59",
+      "type": "modified"
+    },
+    {
+      "path": "raspehr-3d/STAGE3_OPEN_ITEMS_FA.md",
+      "sha256": "43c8ffedea1261bf7b92c5509c36fc07b8e4198457e555ae305c08e989c85c1a",
+      "type": "modified"
+    },
+    {
+      "path": "raspehr-3d/STAGE4_README_FA.md",
+      "sha256": "55f0245236d9b926f635c81f62368d928e358e08b75a72e2e0914363b1d7c7de",
+      "type": "added"
+    },
+    {
+      "path": "raspehr-3d/assets/css/prototype.css",
+      "sha256": "9c443665ad155dae64288dc146c0e2017b5894f189f9cc63a626b7579bb11efc",
+      "type": "modified"
+    },
+    {
+      "path": "raspehr-3d/assets/js/entity-stage4-dossier.js",
+      "sha256": "15beac740c8b466a87e92e2f2a22f0195683d7bfab9cc5ed9540b8b06d2aa532",
+      "type": "added"
+    },
+    {
+      "path": "raspehr-3d/assets/js/prototype.js",
+      "sha256": "0c2cf661d3a9eb957a7004c8401447efa9a08aae9b002db09dfee37c42312085",
+      "type": "modified"
+    },
+    {
+      "path": "raspehr-3d/index.html",
+      "sha256": "9dc96d0d09c44d6832b18ecabaec6727a8c261a307c05e408df8699dbfbbf657",
+      "type": "modified"
+    },
+    {
+      "path": "raspehr-3d/tests/stage4_bridge.test.cjs",
+      "sha256": "bf12a453d439368269e6595e8d66d2aa0fb9e1cb4a9e7f0e499733ebcd966af4",
+      "type": "added"
+    },
+    {
+      "path": "raspehr-3d/tests/stage4_dossier_dom.py",
+      "sha256": "55388cdad1b86800db49e55f7f4da4c6c87486ae70e43909c3b443da4018fcfe",
+      "type": "added"
+    }
+  ],
+  "deleted": [],
+  "protected_data_unchanged": [
+    "data/companies.json",
+    "data/sites.json",
+    "data/recovery_sites.json",
+    "data/media/catalog.v1.json"
+  ],
+  "reminder": "23 missing coordinate dossiers, explicitly remind at end of all stages"
+}

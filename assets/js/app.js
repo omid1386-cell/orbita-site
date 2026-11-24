@@ -535,7 +535,7 @@
   var MAP_FILTERS_STORAGE_KEY = "orbita_map_filters_v1";
   var MAP_FILTERS_V2_STORAGE_KEY = "orbita_map_filters_v2";
   var DEFAULT_MAP_FILTERS = {
-    launch: true, propulsion: false, agency: true, satmaker: false, site: true, recovery: false,
+    launch: false, propulsion: false, agency: true, satmaker: false, site: true, recovery: false,
     components: false, payloads: false, ground_services: false, inspace_services: false,
     test_facility: false, ground_station: false, mission_control: false, university_space: false
   };
@@ -1723,7 +1723,9 @@
     if (!record && e.lngLat && (!countryInteractionEventLayer || !sourceReady)) {
       record = countryRecordFromSpatialMatch(getCountryAtLngLat(e.lngLat.lng, e.lngLat.lat));
     }
-    if (!record) { setSelectedCountry(""); return; }
+    // Antarctica is a geographical region, not a sovereign country dossier.
+    // Keep the landmass visible while suppressing independent-country selection.
+    if (!record || record.iso === "AQ" || record.en === "Antarctica") { setSelectedCountry(""); return; }
     clearMarkerHoverState();
     setSelectedCountry(record.en);
     openDetail({
@@ -11035,8 +11037,16 @@
     });
   });
 
+  var raspehrStage5LastDetail = null;
   function openDetail(p) {
     if (!p) return;
+    // Track the canonical dossier that is currently visible; do not copy its body.
+    var stage5Source = p.o || p;
+    var stage5Kind = p.kind || p.cat || stage5Source.cat || 'company';
+    if (stage5Kind !== 'site' && stage5Kind !== 'recovery' && stage5Kind !== 'country') stage5Kind = 'company';
+    var stage5Id = stage5Kind === 'country' ? (stage5Source.country_en || stage5Source.en || '') : stage5Source.id;
+    if (stage5Id) raspehrStage5LastDetail = {kind:stage5Kind,id:String(stage5Id),
+      category:stage5Kind==='company' ? (p.cat || stage5Source.cat || 'agency') : stage5Kind};
     if (!p.o) {
       p = { kind: p.cat || "company", cat: p.cat || "launch", o: p };
     }
@@ -11209,6 +11219,7 @@
     if (window.ORBITA_MEDIA_GALLERY) window.ORBITA_MEDIA_GALLERY.onPanelClose();
     openDetail._renderToken = (openDetail._renderToken || 0) + 1;
     var d = $("#detail"); if (d) d.classList.remove("open");
+    raspehrStage5LastDetail = null;
   });
   on("#mapSearch", "input", function () { clusterMode = null; renderMarkers(); renderList(); });
 
@@ -11783,19 +11794,65 @@
     if (COMPANY_CATEGORY_FILES[k]) return loadCompanyCategory(k);
     if (BOOT_LOADERS[k]) return BOOT_LOADERS[k]();
   };
+  // Stage 05 adapter lives inside the existing app closure, with access to the
+  // real MapLibre map, layer filters and canonical dossier renderer.
+  if (!window.RASPEHR_PROFILE_EMBEDDED) window.RaspehrStage5MapAdapter = {
+    getState: function () {
+      var c = map && map.getCenter ? map.getCenter() : {lat:25,lng:20};
+      var raw = {
+        camera:{lat:c.lat,lon:c.lng,zoom:map && map.getZoom ? map.getZoom():1.9},
+        query:($("#mapSearch") || {}).value || '',country:selectedCountryName,
+        categories:Object.keys(filters).filter(function (key) {return !!filters[key];}),
+        profile:$("#detail") && $("#detail").classList.contains('open') ? raspehrStage5LastDetail : null
+      };
+      return window.RaspehrStage5State.normalize(raw);
+    },
+    applyState: function (state) {
+      var s=window.RaspehrStage5State.normalize(state);
+      var patch={};Object.keys(DEFAULT_MAP_FILTERS).forEach(function (key) {patch[key]=s.categories.indexOf(key)!==-1;});
+      setLayerFilters(patch);
+      var search=$("#mapSearch");if(search){search.value=s.query;clusterMode=null;renderMarkers();renderList();}
+      setSelectedCountry(s.country);
+      if(map && map.jumpTo){map.jumpTo({center:[s.camera.lon,s.camera.lat],zoom:s.camera.zoom});}
+      var panel=$("#detail");
+      if(!s.profile){if(panel)panel.classList.remove('open');raspehrStage5LastDetail=null;
+        if(window.ORBITA_MEDIA_GALLERY)window.ORBITA_MEDIA_GALLERY.onPanelClose();return Promise.resolve(true);}
+      var p=s.profile;
+      if(p.kind==='country'){
+        openDetail({kind:'country',cat:'country',country_en:p.id,country_fa:p.id});
+        return Promise.resolve(true);
+      }
+      var layer=p.kind==='company'?p.category:(p.kind==='site'?'sites':'recoveries');
+      return Promise.resolve(window.retryLayer(layer)).then(function(ok){
+        if(!ok)return false;
+        var rows=p.kind==='company'?DATA.companies:(p.kind==='site'?DATA.sites:DATA.recoveries);
+        var row=(rows||[]).find(function(r){return r && String(r.id)===p.id;});
+        if(!row)return false;
+        openDetail({kind:p.kind,cat:p.kind==='company'?(row.cat||p.category):p.kind,o:row});
+        return true;
+      }).catch(function(e){console.warn('[Stage5] profile sync',e);return false;});
+    }
+  };
   applyI18n();
   initLogoZoom();
   initLayerPanelControls();
-  initMap(); buildLayerBar(); renderList();
-  var initialMapLoads = [];
-  if (filters.site) initialMapLoads.push(BOOT_LOADERS.sites());
-  if (filters.recovery) initialMapLoads.push(BOOT_LOADERS.recoveries());
-  COMPANY_CATEGORY_KEYS.forEach(function (category) {
-    if (filters[category]) initialMapLoads.push(loadCompanyCategorySummary(category));
-  });
-  Promise.all(initialMapLoads).then(function () {
-    /* Non-critical panels start only after the first map data work has settled. */
-    var idle = window.requestIdleCallback || function (fn) { return setTimeout(fn, 900); };
-    idle(function () { loadNextLaunch(); loadSiteUpcomingData(); }, { timeout: 2500 });
-  });
+  if (!window.RASPEHR_PROFILE_EMBEDDED) {
+    // The original 2D app follows its unmodified boot path.
+    initMap(); buildLayerBar(); renderList();
+    var initialMapLoads = [];
+    if (filters.site) initialMapLoads.push(BOOT_LOADERS.sites());
+    if (filters.recovery) initialMapLoads.push(BOOT_LOADERS.recoveries());
+    COMPANY_CATEGORY_KEYS.forEach(function (category) {
+      if (filters[category]) initialMapLoads.push(loadCompanyCategorySummary(category));
+    });
+    Promise.all(initialMapLoads).then(function () {
+      var idle = window.requestIdleCallback || function (fn) { return setTimeout(fn, 900); };
+      idle(function () { loadNextLaunch(); loadSiteUpcomingData(); }, { timeout: 2500 });
+    });
+  } else {
+    // The dossier iframe renders the *same* original profiles and media, but
+    // intentionally does not initialize another MapLibre/WebGL renderer.
+    buildLayerBar();
+    loadSiteUpcomingData();
+  }
 })();
