@@ -1,0 +1,42 @@
+{
+  "project": "RASPEHR",
+  "date": "2026-11-24",
+  "source_baseline_zip": "RASPEHR_STAGE8_RELEASE_CANDIDATE_FULL_SOURCE_2026-11-23.zip",
+  "phase": "3D experience redesign, priority 1 of 6",
+  "status": "implemented; offline DOM/Node and test Chromium-WebGL passed; production and physical-phone testing pending",
+  "priority1": {
+    "title_fa": "اصلاح کامل نشانگرها و خوشه‌بندی",
+    "done": true,
+    "production_verified": false,
+    "changes": [
+      "world anchored markers",
+      "near-side and silhouette culling",
+      "single rendering per cluster",
+      "frame-synchronized cluster overlay",
+      "responsive compact clusters",
+      "initial agency/site only"
+    ]
+  },
+  "next_priorities": {
+    "2": "انتخاب، کلیک، زوم و نمایش شناسنامه",
+    "3": "تصاویر محلی/نمای تأسیسات با منبع معتبر",
+    "4": "Bottom Sheet واقعی موبایل",
+    "5": "بهبود جلوه‌های بصری",
+    "6": "آزمون سایت واقعی و دستگاه‌های فیزیکی"
+  },
+  "unchanged": [
+    "original 2D map",
+    "420 canonical records",
+    "14 categories",
+    "media catalog",
+    "upcoming launches and landings"
+  ],
+  "open_caveats": [
+    "23 reference coordinates remain approximate",
+    "49 old general-app test failures",
+    "38 missing logo paths",
+    "local real DEM tiles incomplete"
+  ],
+  "do_not_deploy_without_user_permission": true,
+  "handoff_document": "raspehr-3d/PRIORITY1_HANDOFF_FA.md"
+}

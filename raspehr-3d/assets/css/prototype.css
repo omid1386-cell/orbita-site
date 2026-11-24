@@ -130,3 +130,17 @@ body{background:#020b16;color:#edf5fd}
  .stage4-dossier-overlay{height:100dvh}
 }
 @media(prefers-reduced-motion:reduce){.stage-panel button,.stage-panel select{transition:none}}
+
+/* Priority 1 — compact geography-anchored cluster labels; finger-friendly hit area. */
+.cluster-bubble{
+  width:30px;min-width:30px;height:30px;padding:0;border:1px solid rgba(243,209,137,.90);
+  background:rgba(9,28,43,.94);color:#ffe5ac;font-size:11px;
+  box-shadow:0 2px 9px rgba(0,0,0,.6),0 0 0 2px rgba(236,191,112,.10);
+  will-change:transform;
+}
+.cluster-bubble[hidden]{display:none!important}
+.cluster-bubble::before{content:"";position:absolute;inset:-7px;border-radius:50%}
+@media(hover:none),(pointer:coarse){
+  .cluster-bubble{width:32px;min-width:32px;height:32px;font-size:11px}
+  .cluster-bubble::before{inset:-7px}
+}

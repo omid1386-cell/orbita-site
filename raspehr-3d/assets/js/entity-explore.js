@@ -59,12 +59,13 @@
   }
   function cluster(records, project, radius) {
     const r=Math.max(16,Number(radius)||48), cell=r;
-    const grid=new Map(), clusters=[], singles=[], visible=[];
+    const grid=new Map(), clusters=[], singles=[], visible=[], positions=new Map();
     const cellKey=(a,b)=>a+','+b;
     for(const row of records){
       const at=project(row);
       if(!at || !Number.isFinite(at.x) || !Number.isFinite(at.y) || at.visible===false)continue;
       visible.push(row);
+      positions.set(row.key,at);
       const gx=Math.floor(at.x/cell), gy=Math.floor(at.y/cell);
       let best=null, bestDist=r*r;
       for(let ix=gx-1;ix<=gx+1;ix++)for(let iy=gy-1;iy<=gy+1;iy++){
@@ -94,11 +95,20 @@
     for (const group of clusters) {
       if (group.rows.length===1){singles.push(group.rows[0]);continue;}
       const center=centralGeo(group.rows);
+      // A cluster must be anchored to an ACTUAL member location, not a
+      // synthesized geographic centroid. Pick the screen-space medoid.
+      let anchor=group.rows[0],bestDistance=Infinity;
+      for(const row of group.rows){
+        const pos=positions.get(row.key);
+        if(!pos)continue;
+        const distance=(pos.x-group.x)**2+(pos.y-group.y)**2;
+        if(distance<bestDistance){bestDistance=distance;anchor=row;}
+      }
       grouped.push({
         key:'cluster:'+group.rows.map(row=>row.key).sort().join('|'),
         id:'',kind:'cluster',category:'cluster',categories:[...new Set(group.rows.flatMap(row=>row.categories||[]))],
         isCluster:true,count:group.rows.length,members:group.rows.slice(),
-        lat:center.lat,lon:center.lon,x:group.x,y:group.y
+        lat:center.lat,lon:center.lon,anchor:{lat:anchor.lat,lon:anchor.lon,key:anchor.key},x:group.x,y:group.y
       });
     }
     return {singles,clusters:grouped,visibleCount:visible.length};

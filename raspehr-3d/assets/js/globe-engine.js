@@ -134,6 +134,7 @@
       this.stopped = false;
       this.raf = 0;
       this.bindings = [];
+      this.frameObservers = new Set();
       this.textureToken = 0;
       this.textureQuality = null;
       this.textureLoadingStarted = false;
@@ -149,6 +150,12 @@
       this.terrainLoaded = false;
       this.surfaceMode = 'uninitialized';
       this.start();
+    }
+
+    addFrameObserver(callback){
+      if(typeof callback !== 'function')throw new TypeError('frame observer must be a function');
+      this.frameObservers.add(callback);
+      return () => this.frameObservers.delete(callback);
     }
 
     listen(node, event, handler, options) {
@@ -924,6 +931,15 @@
         this.sunCoordinates = getSunCoordinates(date);
       }
       this.updateImageryLevel(now);
+      // Keep DOM cluster badges aligned to the rendered globe on every frame,
+      // rather than making them jump every 180ms while the camera is moving.
+      if(this.frameObservers.size){
+        this.scene.updateMatrixWorld(true);
+        this.camera.updateMatrixWorld(true);
+        for(const callback of this.frameObservers){
+          try{callback(now);}catch(error){console.error('[RASPEHR frame observer]',error);this.frameObservers.delete(callback);}
+        }
+      }
       this.renderer.render(this.scene, this.camera);
       this.frameCount++;
       if (now - this.fpsTime > 1100) {
@@ -943,6 +959,7 @@
 
     dispose() {
       this.stopped = true;
+      if(this.frameObservers)this.frameObservers.clear();
       this.active = false;
       if (this.raf) cancelAnimationFrame(this.raf);
       if (this.observer) this.observer.disconnect();

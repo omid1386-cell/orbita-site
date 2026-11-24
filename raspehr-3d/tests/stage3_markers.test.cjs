@@ -13,8 +13,8 @@ const obj=new ctx.window.RaspehrEntityMarkers.EntityMarkers(engine,{markers:rows
 assert.equal(obj.meshes.reduce((n,m)=>n+m.count,0),3);
 const combined={key:'cluster:a|b',isCluster:true,count:2,lat:0,lon:-90,category:'cluster',categories:['agency','launch'],members:rows.slice(0,2)};
 assert.equal(obj.setDisplay([rows[2]],[combined]),true);
-assert.equal(obj.meshes.reduce((n,m)=>n+m.count,0),2);
-assert.equal(obj.meshes.find(m=>m.name.endsWith('cluster')).geometry,obj.clusterGeometry);
+assert.equal(obj.meshes.reduce((n,m)=>n+m.count,0),1,'only singleton pins are rendered as 3D geometry');
+assert.ok(!obj.meshes.some(m=>m.name.endsWith('cluster')),'cluster bubbles must not duplicate 3D geometry');
 assert.equal(obj.setDisplay([rows[2]],[combined]),false,'skip duplicate rebuild');
 obj.select(combined,true);assert.ok(obj.selectionRing.visible);
 obj.setDisplay([],[]);assert.equal(obj.meshes.length,0);assert.equal(obj.selectionRing.visible,false);
@@ -35,4 +35,4 @@ handlers.get('pointermove')(point(4,160,160));
 engine.controls.delete(4);handlers.get('pointerup')(point(4,160,160));
 assert.equal(hits.length,1,'drag must never count as selection');
 obj.dispose();assert.equal(obj.meshes.length,0);
-console.log('PASS Stage3 marker updates: no duplicates, dedicated cluster style, selection lifecycle and cleanup');
+console.log('PASS Stage3 marker updates: no duplicates, no duplicated cluster geometry, selection lifecycle and cleanup');

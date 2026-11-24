@@ -1,57 +1,95 @@
 {
-  "project": "ORBITA",
-  "date": "2026-11-12",
-  "purpose": "Arabic and English language correspondence to Persian reference",
-  "scope": "JSON data only",
-  "source": "ORBITA_Language_Consistency_Fix_2026-11-12.zip baseline",
-  "primary_field_edit_operations": 915,
-  "arabic_field_edit_operations": 766,
-  "english_field_edit_operations": 149,
-  "original_targeted_arabic_gaps": 506,
-  "targeted_gaps_remaining": 0,
-  "automated_tests_passed": 9,
-  "files": {
-    "data/companies.json": {
-      "baseline_sha256": "b8c6a7d403334fa3ab7a53c4daeaf4686ac5479b43f45456e5029f2e13217a47",
-      "updated_sha256": "de3c9daa2e913d95717d9971355fa078b21850bc3518fb2aad9460fff757e819",
-      "record_count": 266,
-      "record_ids_unchanged": true,
-      "bytes": 4350561
+  "project": "RASPEHR",
+  "date": "2026-11-24",
+  "patch_name": "RASPEHR_PRIORITY1_MARKERS_GITHUB_PATCH_2026-11-24.zip",
+  "baseline_zip": "RASPEHR_STAGE8_RELEASE_CANDIDATE_FULL_SOURCE_2026-11-23.zip",
+  "baseline_zip_sha256": "bb2d75e040f10b8eed4540987ffc1cfaff6c1dc0a7dc9b78a9b6949c1da7ca86",
+  "diff_against": "exact file hashes from stage8 release-candidate ZIP",
+  "counts": {
+    "modified": 7,
+    "added": 4,
+    "deleted": 0
+  },
+  "files": [
+    {
+      "path": "raspehr-3d/PRIORITY1_HANDOFF_FA.md",
+      "action": "added",
+      "old_sha256": null,
+      "new_sha256": "9431909ca730f2b8e0655022d8b2542d8bfb6f5c5d831c6ff9f0672323efa575",
+      "size": 10251
     },
-    "data/companies_launch.json": {
-      "baseline_sha256": "0c1e50c0b66ebd7c196b38e04e65b48a91fc59123ad5dc21b571024ece1b8dd9",
-      "updated_sha256": "062addeddd7299c39e8c556f2fab20c7753c8d462407f0d654e2bc46b1be7091",
-      "record_count": 68,
-      "record_ids_unchanged": true,
-      "bytes": 1067068
+    {
+      "path": "raspehr-3d/PRIORITY1_STATE.json",
+      "action": "added",
+      "old_sha256": null,
+      "new_sha256": "f653904443731379e0526e673f96bad8a160afa7166d31deebe7ebf692b5f401",
+      "size": 1529
     },
-    "data/companies_agency.json": {
-      "baseline_sha256": "d692b6d3e6c267c04e0306b25b3497f764085d82cc15f260854b6907a767901b",
-      "updated_sha256": "03a9f2d6534c95dcba344af1fb6aefcd1797eb40ab7e456938376ef6bddadbc6",
-      "record_count": 96,
-      "record_ids_unchanged": true,
-      "bytes": 2007789
+    {
+      "path": "raspehr-3d/assets/css/prototype.css",
+      "action": "modified",
+      "old_sha256": "ef34b2cb749d3aa5a8c1bcc5b61b432aa7aa4e6fe8880c389b590c1705914451",
+      "new_sha256": "fc924a9bfe3213258322b40d375188d11b64a814daaba299c01877d5296dbd3a",
+      "size": 13211
     },
-    "data/companies_propulsion.json": {
-      "baseline_sha256": "57f970b6d213fbc07d6cfd84d93d7fc935d7c7024ff433a813308ce1a4da7a77",
-      "updated_sha256": "87af75869ec4c4e4205bcd86cdb012835784fa02c64ca17bc467dcc6be67991e",
-      "record_count": 68,
-      "record_ids_unchanged": true,
-      "bytes": 799427
+    {
+      "path": "raspehr-3d/assets/js/entity-explore.js",
+      "action": "modified",
+      "old_sha256": "3756f9a034c7dd212d83c576ca5e32a3ba19e956d2233927f069c5179e32caff",
+      "new_sha256": "7545ca5a5eec6acec019b9dc81c59ffbdbd4276404f4aa90f19a1286021ce084",
+      "size": 5372
     },
-    "data/companies_satmaker.json": {
-      "baseline_sha256": "337bfd20c2377d945154c8f4ce9a7344393285159f49aa6b073117adbc4d60c6",
-      "updated_sha256": "bc85f5095f4cb7f9b1dfc3da2fc0548f49a0afe61b257dc544c94f4416fee115",
-      "record_count": 37,
-      "record_ids_unchanged": true,
-      "bytes": 532477
+    {
+      "path": "raspehr-3d/assets/js/entity-markers.js",
+      "action": "modified",
+      "old_sha256": "9d233150008eb8d37646b43f367be4d676272da7956f118b14af198df8f137bf",
+      "new_sha256": "ea79ffebdb880569b6415815021dca2d880e281a86d2ff17ce02f729c519e234",
+      "size": 11325
     },
-    "data/sites.json": {
-      "baseline_sha256": "f5805114b64bc7083ab40a8560b68be4854e689ef1cf48e9f0270ea595a60f2e",
-      "updated_sha256": "6b372455d8febf40cb0c64a187594f16bdcec4873267c5942c6e033de9604d75",
-      "record_count": 79,
-      "record_ids_unchanged": true,
-      "bytes": 877332
+    {
+      "path": "raspehr-3d/assets/js/entity-stage3-ui.js",
+      "action": "modified",
+      "old_sha256": "08432c4994fc90fd18539c2da4b08b196e805cc620a7777ebb79689f9b95cc70",
+      "new_sha256": "b99622757d2b2dc0a4e9811dbcda0e70b4c0821cd507e1a7cdb971c1bfa756d5",
+      "size": 13562
+    },
+    {
+      "path": "raspehr-3d/assets/js/globe-engine.js",
+      "action": "modified",
+      "old_sha256": "df828c0d7afad0445798c24d51c9c56c1f95ad8e54e14fa56bb003c587014502",
+      "new_sha256": "7598da2c91a06676904a1f854c7c3d3c0948eff9d753fd6e136f355fdd0e0b3a",
+      "size": 51758
+    },
+    {
+      "path": "raspehr-3d/tests/priority1_anchoring.test.cjs",
+      "action": "added",
+      "old_sha256": null,
+      "new_sha256": "8c432f9476ff1d92e2406338c545e12036e8120a9caef7884d604bb6ae2921c1",
+      "size": 3322
+    },
+    {
+      "path": "raspehr-3d/tests/priority1_browser_dom.py",
+      "action": "added",
+      "old_sha256": null,
+      "new_sha256": "3f4e2449808eff386908b3a6c1f5050dd26413bcda1d608855bd939736711df7",
+      "size": 4997
+    },
+    {
+      "path": "raspehr-3d/tests/stage3_markers.test.cjs",
+      "action": "modified",
+      "old_sha256": "9d73164213d93a6c7075686cf85fa610ff335bbc2a02954599f511265dc17e77",
+      "new_sha256": "d4bee09511c75ecf4fcc378ce096838149bc6a26be8cf7eb52231f54bfc33ba7",
+      "size": 3353
+    },
+    {
+      "path": "raspehr-3d/tests/stage3_qa_browser.py",
+      "action": "modified",
+      "old_sha256": "01d192b442a4fb7f5e98e00423107a535a615dd9f407162a85507c1645cf8f54",
+      "new_sha256": "312b2a930fb5e2991e0d12aee234ff7f39e1aef31152e0eb4571ba3a31a4023e",
+      "size": 10166
     }
-  }
+  ],
+  "readme": "README_FIRST_FA.md",
+  "next_chat_handoff": "UPLOAD_TO_GITHUB/raspehr-3d/PRIORITY1_HANDOFF_FA.md",
+  "instructions": "Copy contents of UPLOAD_TO_GITHUB into root of a repository at the same baseline, not the folder itself. Do not upload ROLLBACK_STAGE8_ONLY."
 }

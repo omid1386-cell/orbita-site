@@ -6,6 +6,8 @@
   const T=global.THREE;
   const R=1.72;
   const MARKER_RADIUS=R*1.010;
+  const EARTH_RADIUS=R;
+  const HORIZON_MARGIN=0.003; // never show a marker on the far hemisphere or at the unstable limb
   const DEG=Math.PI/180;
   function finite(v,limit){return typeof v==='number' && Number.isFinite(v) && Math.abs(v)<=limit;}
   function geo(lat,lon,r){
@@ -23,8 +25,10 @@
       this.group.name='raspehr-location-markers';
       this.engine.globeGroup.add(this.group);
       this.meshes=[];
-      this.geometry=new T.SphereGeometry(0.0075,9,7);
-      this.clusterGeometry=new T.SphereGeometry(0.019,12,9);
+      this.geometry=new T.SphereGeometry(0.007,9,7);
+      // Cluster labels are screen-space UI only. Rendering a second 3D sphere for each
+      // cluster doubled the visible symbols and made the old interface cluttered.
+      this.clusterGeometry=null;
       this.selectionGeometry=new T.RingGeometry(0.016,0.025,28);
       this.selectionMaterial=new T.MeshBasicMaterial({color:0xffefad,side:T.DoubleSide,transparent:true,opacity:0.95,depthWrite:false});
       this.selectionRing=new T.Mesh(this.selectionGeometry,this.selectionMaterial);
@@ -52,14 +56,15 @@
       const defs=global.RaspehrEntityData.CATEGORIES;
       const groups=new Map();
       (rows||this.catalog.markers).forEach(row=>{
-        const category=row.isCluster ? 'cluster' : (defs[row.category]?row.category:'agency');
+        if(row.isCluster)return;
+        const category=defs[row.category]?row.category:'agency';
         if(!groups.has(category))groups.set(category,[]);
         groups.get(category).push(row);
       });
       for(const [category,items] of groups){
-        const color=category==='cluster' ? 0xffdf83 : defs[category].color;
+        const color=defs[category].color;
         const material=new T.MeshBasicMaterial({color,depthTest:true,depthWrite:true});
-        const mesh=new T.InstancedMesh(category==='cluster'?this.clusterGeometry:this.geometry,material,items.length);
+        const mesh=new T.InstancedMesh(this.geometry,material,items.length);
         mesh.name='raspehr-marker:'+category;
         mesh.userData.records=items;
         mesh.frustumCulled=false; // mark every point; otherwise partial instanced-bounds can cull markers
@@ -67,7 +72,7 @@
         items.forEach((row,i)=>{
           this.tmpObject.position.copy(geo(row.lat,row.lon,MARKER_RADIUS));
           this.tmpObject.rotation.set(0,0,0);
-          this.tmpObject.scale.setScalar(row.isCluster ? Math.min(2.15,1+Math.log2(row.count)/5) : 1);
+          this.tmpObject.scale.setScalar(1);
           this.tmpObject.updateMatrix();
           mesh.setMatrixAt(i,this.tmpObject.matrix);
         });
@@ -115,6 +120,34 @@
         if(item)this.select(item,true);
       });
     }
+    // All positions are calculated from immutable lat/lon coordinates in the
+    // SAME local coordinate system as the globe mesh. No stored screen x/y is
+    // used as a geographic anchor. Call after updating scene/camera matrices.
+    projectAnchor(row,rect,edgePadding){
+      if(!row || !finite(row.lat,90) || !finite(row.lon,180))return null;
+      const box=rect||this.engine.renderer.domElement.getBoundingClientRect();
+      if(!box.width||!box.height)return null;
+      const local=geo(row.lat,row.lon,MARKER_RADIUS);
+      const world=local.applyMatrix4(this.group.matrixWorld);
+      const surfaceNormal=world.clone().sub(this.engine.globeGroup.getWorldPosition(new T.Vector3())).normalize();
+      const toCamera=this.engine.camera.position.clone().sub(world);
+      // A marker must face the camera (back-side markers must not 'float'
+      // outside the geographic disk when the Earth rotates).
+      if(surfaceNormal.dot(toCamera)<=HORIZON_MARGIN)return null;
+      const ndc=world.clone().project(this.engine.camera);
+      if(ndc.z<=-1 || ndc.z>=1 || Math.abs(ndc.x)>1 || Math.abs(ndc.y)>1)return null;
+      const x=(ndc.x+1)*box.width/2, y=(1-ndc.y)*box.height/2;
+      // Keep cluster bubbles fully INSIDE the visible Earth silhouette.
+      // Sphere angular radius as projected by a perspective camera.
+      const center=this.engine.globeGroup.getWorldPosition(new T.Vector3());
+      const d=this.engine.camera.position.distanceTo(center);
+      const fov=this.engine.camera.fov*Math.PI/180;
+      const radiusPixels=(box.height/2)*EARTH_RADIUS/Math.sqrt(Math.max(d*d-EARTH_RADIUS*EARTH_RADIUS,0.0001))/Math.tan(fov/2);
+      const centerProjection=center.project(this.engine.camera);
+      const cx=(centerProjection.x+1)*box.width/2, cy=(1-centerProjection.y)*box.height/2;
+      if(Math.hypot(x-cx,y-cy)>radiusPixels-Math.max(0,edgePadding||0))return null;
+      return {x,y,visible:true};
+    }
     pick(clientX,clientY){
       if(!this.enabled)return null;
       const rect=this.engine.renderer.domElement.getBoundingClientRect();
@@ -137,7 +170,7 @@
       return null;
     }
     setDisplay(singles, clusters){
-      const displayed=(singles||[]).concat(clusters||[]);
+      const displayed=(singles||[]); // never double-render screen-space cluster badges
       const signature=displayed.map(row=>row.key).join('\n');
       if(signature===this.displaySignature)return false;
       this.displaySignature=signature;
@@ -187,7 +220,7 @@
       this.engine.globeGroup.remove(this.group);
       this.meshes.forEach(mesh=>{mesh.material.dispose();});
       this.geometry.dispose();
-      this.clusterGeometry.dispose();
+      if(this.clusterGeometry)this.clusterGeometry.dispose();
       this.selectionGeometry.dispose();
       this.selectionMaterial.dispose();
       this.haloGeometry.dispose();
