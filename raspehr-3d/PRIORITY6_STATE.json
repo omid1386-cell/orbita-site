@@ -1,0 +1,45 @@
+{
+  "project": "RASPEHR",
+  "date": "2026-11-25",
+  "priority": 6,
+  "total_priorities": 6,
+  "baseline": "Stage8 exact release candidate + patches P1→P2→P3→P4→P5",
+  "release_decision": "NO_GO_UNTIL_PRODUCTION_AND_DEVICE_QA",
+  "offline_status": "PASS",
+  "test_summary": {
+    "3d_node_suites": "21/21 PASS",
+    "release_checks": "10/10 PASS",
+    "legacy_2d_test_files": "30/65 PASS, 35/65 FAIL; unchanged from P5",
+    "responsive": "320,390,667 landscape,1280 PASS",
+    "webgl": "Chromium SwiftShader PASS, fixture imagery/buildings",
+    "local_http_smoke": "14/14 PASS",
+    "live_render": "NOT TESTED",
+    "physical_phone": "NOT TESTED"
+  },
+  "changed_runtime": [
+    "index.html cache version for stage5 switch",
+    "assets/js/raspehr-stage5-switch.js iframe cache version",
+    "raspehr-3d/index.html CSS/JS cache versions and page title"
+  ],
+  "data_changed": false,
+  "total_dossiers": 420,
+  "category_count": 14,
+  "approximate_stage7_locations": 23,
+  "legacy_missing_logo_paths": 38,
+  "publication_performed": false,
+  "installation_methods": [
+    "sequential P1-P6 after Stage8",
+    "OR single combined patch P1-P6 after exact Stage8; NEVER both"
+  ],
+  "remaining_risks": [
+    "live Render/browser/physical phone not tested",
+    "OAM/Overpass real coverage not verified",
+    "35 legacy test files failing",
+    "38 distinct missing logo paths",
+    "23 approximate points remain non-building-verified",
+    "DEM data coverage incomplete"
+  ],
+  "handoff": "raspehr-3d/PRIORITY6_HANDOFF_FA.md",
+  "qa": "raspehr-3d/PRIORITY6_QA_REPORT_FA.md",
+  "manual": "raspehr-3d/PRIORITY6_STAGING_ACCEPTANCE_FA.md"
+}

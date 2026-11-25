@@ -1,0 +1,42 @@
+{
+  "project": "RASPEHR",
+  "date": "2026-11-25",
+  "priority": 5,
+  "of": 6,
+  "base": "Stage8 + Priority1 + Priority2 + Priority3 + Priority4 sequential",
+  "status": "implemented in isolated working copy; QA passed; production and physical-phone validation pending",
+  "features": [
+    "cohesive navy/gold/cyan style layer",
+    "density and category-aware compact cluster bubbles",
+    "selected-only geography-anchored floating label",
+    "selected label hides on far hemisphere and outside globe",
+    "selected ring pixel-sized to avoid oversized close-zoom geometry",
+    "reduced-motion support",
+    "mobile/desktop unified visual hierarchy"
+  ],
+  "tests": {
+    "node_suites": "20/20 passed",
+    "mobile_browser_sizes": [
+      "320x720",
+      "390x844",
+      "667x375"
+    ],
+    "desktop_browser": "1280x800",
+    "stage3_stress_camera_steps": 240,
+    "real_webgl": "Chromium SwiftShader; 420 dossiers / 14 categories; selected marker / 9 fixture tiles / 3 fixture buildings; 0 JS errors"
+  },
+  "unchanged": [
+    "420 entity dossiers",
+    "14 categories",
+    "23 approximate reference locations",
+    "original 2D map",
+    "media and gallery data",
+    "upcoming launch/landing lists",
+    "Priority 1-4 behaviors"
+  ],
+  "next_priority": "Priority6: live website/device checks, regression acceptance and final install sequence",
+  "requires_user_authorization_for_deployment": true,
+  "published_to_github_or_render": false,
+  "handoff": "raspehr-3d/PRIORITY5_HANDOFF_FA.md",
+  "qa": "raspehr-3d/PRIORITY5_QA_REPORT_FA.md"
+}

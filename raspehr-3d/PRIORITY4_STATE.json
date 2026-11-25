@@ -1,0 +1,52 @@
+{
+  "project": "RASPEHR",
+  "date": "2026-11-25",
+  "phase": "3D redesign priority 4 of 6",
+  "baseline": "Stage8 + patches Priority1, Priority2, Priority3 (in order)",
+  "status": "implemented, 19/19 Node, responsive Chromium mobile and real Chromium WebGL mobile passed; not deployed",
+  "user_deployment_plan": "User will apply all patches in order after all six priorities are complete; Priority 2 and 3 not yet deployed as of this conversation",
+  "priority4": {
+    "title_fa": "بازطراحی کامل پنل موبایل با Bottom Sheet سه‌حالته",
+    "features": [
+      "full viewport globe",
+      "collapsed 118px",
+      "half 55dvh",
+      "full safe viewport",
+      "filter/location/map-controls tabs",
+      "drag only on handle",
+      "keyboard arrows and Escape",
+      "no-clone relocated selected-location card",
+      "same dossier iframe with 3 mobile sizes",
+      "RTL/safe area/landscape/viewport resize/reduced motion"
+    ],
+    "tests": [
+      "19/19 Node suites",
+      "Chromium 390x844,320x720,667x375 mobile + 1280x800 desktop",
+      "real WebGL mobile selected KSC39A + fixture facility view + dossier",
+      "No JS errors or horizontal overflow in mobile tests"
+    ],
+    "production_verified": false,
+    "changed_source_files": [
+      "raspehr-3d/index.html",
+      "raspehr-3d/assets/css/prototype.css"
+    ],
+    "new_logic": [
+      "raspehr-3d/assets/js/mobile-bottom-sheet.js"
+    ]
+  },
+  "next_priorities": {
+    "5": "visual design, refined animations and polished UI",
+    "6": "live website/device QA and final consolidated release validation"
+  },
+  "unchanged": [
+    "420 records",
+    "14 categories",
+    "23 approximate reference points",
+    "original 2D map",
+    "media galleries",
+    "launches/landings",
+    "global and local imagery engine"
+  ],
+  "do_not_deploy_without_user_permission": true,
+  "handoff_document": "raspehr-3d/PRIORITY4_HANDOFF_FA.md"
+}

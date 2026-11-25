@@ -15,7 +15,7 @@
   if(!global.RaspehrStage5MapAdapter){note('نقشه دوبعدی هنوز آماده نیست.');return;}
   revision++;global.clearTimeout(pendingTimer);
   toggleVisual(true);note(ready?'':'در حال آماده‌سازی کره سه‌بعدی…');
-  if(!loaded){loaded=true;frame.src='raspehr-3d/index.html?raspehr_3d_embedded=1';}
+  if(!loaded){loaded=true;frame.src='raspehr-3d/index.html?raspehr_3d_embedded=1&v=20261125-p6';}
   else if(ready){stage6Visible(true);send('apply',global.RaspehrStage5MapAdapter.getState(),revision);note('');}
  }
  function finishBack(state,message){

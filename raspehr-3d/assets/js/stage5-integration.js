@@ -17,7 +17,9 @@
   }));
  }
  function apply(s){
+  global.RaspehrLocalFacilityView?.exit({restoreCamera:false});
   const state=controller.applyState(s),rad=Math.PI/180;
+  if(engine.cancelCameraFlight)engine.cancelCameraFlight();
   engine.target.rx=state.camera.lat*rad;
   engine.target.ry=(-90-state.camera.lon)*rad;
   engine.target.distance=model.zoomToDistance(state.camera.zoom);
@@ -43,6 +45,7 @@
  });
  back.addEventListener('click',()=>{
    if(!engine||!controller)return;
+   global.RaspehrLocalFacilityView?.exit({restoreCamera:false});
    reply('switchTo2d',{state:current()});
  });
  global.RaspehrStage5Child={

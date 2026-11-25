@@ -32,6 +32,12 @@ FAKE_ENGINE=r'''(function(global){
     setTimeout(()=>status({type:'ready',quality:'balanced',surfaceMode:'multilevel',imageryLevel:'z0'}),0);
    }
    turn(a,b){this.globeGroup.rotation.y+=a;this.globeGroup.rotation.x+=b;}
+   flyToGeo(lat,lon,distance){
+    this.target.rx=lat*Math.PI/180;this.target.ry=(-90-lon)*Math.PI/180;
+    this.target.distance=distance;this.globeGroup.rotation.x=this.target.rx;
+    this.globeGroup.rotation.y=this.target.ry;this.camera.position.z=distance;return true;
+   }
+   cancelCameraFlight(){return false;}
    zoomBy(n){this.target.distance=Math.max(2.02,Math.min(10.8,this.target.distance*n));this.camera.position.z=this.target.distance;}
    preset(){this.target.distance=5.55;this.camera.position.z=5.55;this.globeGroup.rotation.set(0,0,0);}
    setOption(){}
@@ -50,7 +56,7 @@ def load_page(browser,viewport, touch=False):
     page.evaluate('(data)=>{window.fetch=url=>Promise.resolve(data[url]?{ok:true,status:200,json:async()=>data[url]}:{ok:false,status:404});}',records)
     page.add_script_tag(content=(root/'assets/vendor/three.min.js').read_text('utf-8'))
     page.add_script_tag(content=FAKE_ENGINE)
-    for n in ('entity-data.js','entity-markers.js','entity-explore.js','entity-stage3-ui.js'):
+    for n in ('entity-data.js','entity-markers.js','entity-explore.js','entity-stage3-ui.js','local-facility-view.js'):
         page.add_script_tag(content=(app/'assets/js'/n).read_text('utf-8'))
     prototype=(app/'assets/js/prototype.js').read_text('utf-8')
     prototype=prototype.replace('engine = new window.RaspehrGlobe.GlobeEngine(', 'engine = window.__testEngine = new window.RaspehrGlobe.GlobeEngine(')
@@ -79,13 +85,15 @@ with sync_playwright() as pw:
         # padding preserves the recommended >=44px touch interaction footprint.
         tap=page.evaluate('''()=>{const b=document.querySelector('.cluster-bubble:not([hidden])');const c=getComputedStyle(b,'::before');return b.getBoundingClientRect().width+2*Math.abs(parseFloat(c.left||'-7'))}''')
         assert tap>=43,('touch hit area',tap,bbox)
+    before=page.evaluate('window.__testEngine.target.distance')
     bubble.click(timeout=5000)
     assert not page.locator('#clusterCard').is_hidden(), ('cluster card',mode)
     assert page.locator('#clusterMembers .entity-result').count()>=2
-    before=page.evaluate('window.__testEngine.target.distance')
-    page.locator('#clusterFocusBtn').click()
     after=page.evaluate('window.__testEngine.target.distance')
     assert after<before,(mode,before,after)
+    page.locator('#clusterFocusBtn').click()
+    refocus=page.evaluate('window.__testEngine.target.distance')
+    assert 2.15<=refocus<=6.8,(mode,refocus)
     # Repeated zoom/rotation stresses re-clustering while keeping DOM and mesh count bounded.
     result=page.evaluate('''()=>{
       const ui=window.__testStage3, e=window.__testEngine;
@@ -114,12 +122,39 @@ with sync_playwright() as pw:
     page.wait_for_function('()=>window.__testStage3.filtered.some(r=>r.id==="nasa")',timeout=5000)
     page.locator('#entityResults .entity-result').first.click()
     assert page.locator('#entityId').inner_text()=='company:nasa'
+    assert not page.locator('#selectedLocationCard').is_hidden()
+    assert page.locator('#selectedLocationTitle').inner_text()=='ناسا'
+    assert page.evaluate('window.__testStage3.pinnedKey')=='company:nasa'
+    assert page.evaluate('window.__testMarkers.displayRows.some(r=>r.key===\"company:nasa\")')
+    # A forgiving off-center canvas tap must resolve the nearest visible pin.
+    page.locator('#entitySearch').fill('ksc39a')
+    page.wait_for_function("()=>window.__testStage3.filtered.length===1 && window.__testStage3.filtered[0].id==='ksc39a'",timeout=5000)
+    page.evaluate('''()=>{
+      const ui=window.__testStage3,e=window.__testEngine,m=window.__testMarkers;
+      const row=ui.filtered[0];
+      e.flyToGeo(row.lat,row.lon,3.05);
+      e.scene.updateMatrixWorld(true);e.camera.updateMatrixWorld(true);
+      const at=m.projectAnchor(row,e.renderer.domElement.getBoundingClientRect(),0);
+      const rect=e.renderer.domElement.getBoundingClientRect(),x=rect.left+at.x+12,y=rect.top+at.y+8;
+      const canvas=e.renderer.domElement;
+      canvas.dispatchEvent(new PointerEvent('pointerdown',{pointerId:77,pointerType:'mouse',button:0,clientX:x,clientY:y,bubbles:true}));
+      canvas.dispatchEvent(new PointerEvent('pointerup',{pointerId:77,pointerType:'mouse',button:0,clientX:x,clientY:y,bubbles:true}));
+    }''')
+    assert page.evaluate('window.__testMarkers.selected && window.__testMarkers.selected.id')=='ksc39a'
+    assert not page.locator('#selectedLocationCard').is_hidden()
+    assert page.locator('#selectedLocationTitle').inner_text()=='مرکز فضایی کندی، سکوی ۳۹A'
+    assert page.evaluate('window.__testStage3.pinnedKey')=='site:ksc39a'
+    card_box=page.locator('#selectedLocationCard').bounding_box()
+    assert card_box and card_box['x']>=0 and card_box['y']>=0
+    assert card_box['x']+card_box['width']<=viewport['width']+1,(mode,card_box,viewport)
+    globe_box=page.locator('.globe-panel').bounding_box()
+    assert globe_box and card_box['y']+card_box['height']<=globe_box['y']+globe_box['height']+1,(mode,card_box,globe_box)
     # Stage 7 precision disclosure on a proposed, not built, site.
     page.locator('#entityClear').click()
     page.locator('#entitySearch').fill('Biak')
     page.wait_for_function("()=>window.__testStage3.filtered.some(r=>r.id==='biak')",timeout=5000)
     page.locator('#entityResults .entity-result').first.click()
-    assert 'نماینده محدوده' in page.locator('#entityCoord').inner_text()
+    assert 'نقطه مرجع' in page.locator('#entityCoord').inner_text()
     assert 'تأیید نشده' in page.locator('#entityPrecision').inner_text()
     page.locator('#markerToggle').uncheck()
     assert page.locator('.cluster-bubble').count()==0

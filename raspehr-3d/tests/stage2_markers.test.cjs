@@ -34,7 +34,7 @@ assert.equal(markers.group.children.filter(x=>x.isInstancedMesh).length,3);
 const hit=markers.pick(400,300);
 assert.equal(hit.id,'front','front-facing marker must be ray-pickable');
 markers.select(hit,true);
-assert.equal(latest.id,'front');near(engine.target.ry,0);assert.equal(engine.target.distance,3.35);
+assert.equal(latest.id,'front');near(engine.target.ry,0);assert.equal(engine.target.distance,3.05);
 assert.equal(markers.selectionRing.visible,true);
 markers.setVisible(false);assert.equal(markers.pick(400,300),null);assert.equal(markers.selectionRing.visible,false);
 markers.setVisible(true);assert.equal(markers.pick(400,300).id,'front');

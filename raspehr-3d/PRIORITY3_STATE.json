@@ -1,0 +1,98 @@
+{
+  "project": "RASPEHR",
+  "date": "2026-11-25",
+  "baseline": "Stage 8 source + Priority 1 + Priority 2 patches",
+  "phase": "3D redesign priority 3 of 6",
+  "status": "implemented and locally tested; live imagery/building coverage, physical-device and production endpoint verification pending",
+  "priority3": {
+    "title_fa": "تصاویر محلی باز، نمای نزدیک تأسیسات و footprint/حجم‌سازی ساختمان‌ها",
+    "done_in_working_source": true,
+    "production_verified": false,
+    "imagery_provider": "OpenAerialMap STAC + per-item TiTiler WebMercatorQuad tiles",
+    "imagery_rules": {
+      "licenses_allowed": [
+        "CC-BY-4.0",
+        "CC-BY-SA-4.0"
+      ],
+      "noncommercial_excluded": true,
+      "visual_asset_required": true,
+      "point_must_be_inside_item_geometry": true,
+      "max_gsd_m_per_pixel": 10,
+      "local_tile_grid": "3x3",
+      "concurrent_tile_requests": 3,
+      "zoom_range": [
+        14,
+        19
+      ]
+    },
+    "building_provider": "OpenStreetMap via Overpass read-only API",
+    "building_rules": {
+      "query_radius_m": 500,
+      "max_rendered_buildings": 80,
+      "geometry": "building ways only",
+      "height": "explicit height tag",
+      "levels": "3.2m per level, explicitly marked approximate",
+      "no_height": "flat footprint only",
+      "cache": "up to 80 location responses in session memory",
+      "endpoint_override": "window.RASPEHR_OVERPASS_URL",
+      "default_endpoint": "https://overpass.private.coffee/api/interpreter"
+    },
+    "coordinate_safety": {
+      "approximate_reference_records_detected": 186,
+      "all_blocked_from_close_facility_view": true,
+      "site_records_without_precision": "allowed with explicit warning; imagery describes surrounding area, not a verified building point",
+      "companies": "requires explicit facility precision and facility-related category",
+      "recovery": "requires explicit precision"
+    },
+    "camera": {
+      "facility_distance": 1.72012,
+      "facility_min_distance": 1.72008,
+      "near": 1e-05,
+      "far": 12,
+      "temporary_hidden_layers": [
+        "markers",
+        "clouds",
+        "atmosphere",
+        "stars",
+        "graticule"
+      ],
+      "restore_verified": true
+    },
+    "tests": {
+      "node_suites": "18/18 passed",
+      "javascript_syntax": "all files passed",
+      "responsive_browser": "desktop and mobile passed",
+      "stage2_stage3": "420 records / 14 categories passed",
+      "stage3_stress": "240 camera steps desktop and mobile passed",
+      "priority2_webgl": "marker pick, camera focus and 7-member cluster passed",
+      "priority3_webgl": "9 synthetic imagery tiles + 3 synthetic OSM buildings; entry/exit and approximate guard passed",
+      "dossier_gallery": "company/site/recovery/country passed",
+      "js_errors_priority3": 0
+    },
+    "live_external_coverage_verified": false,
+    "physical_phone_tested": false
+  },
+  "unchanged": [
+    "420 canonical records",
+    "14 categories",
+    "original 2D map",
+    "media gallery data",
+    "upcoming launches and landings",
+    "existing global texture pyramid",
+    "Priority 1 marker logic",
+    "Priority 2 selection/focus logic"
+  ],
+  "open_caveats": [
+    "OAM/Overpass live responses were not reachable in QA; browser fixtures prove rendering path, not real-world coverage",
+    "OAM imagery availability varies by facility and no image is fabricated when coverage is absent",
+    "OSM footprints may be missing or incomplete; only building ways are currently processed",
+    "OSM extrusion is not photogrammetric/CAD building modeling; missing height remains flat footprint",
+    "building:levels uses an explicitly approximate 3.2m per floor estimate",
+    "production Overpass endpoint should be self-hosted/paid for high-volume or SLA use",
+    "no Render/GitHub deployment and no physical-device test"
+  ],
+  "next_priority": "Priority 4 — mobile Bottom Sheet with three states",
+  "do_not_deploy_without_user_permission": true,
+  "handoff_document": "raspehr-3d/PRIORITY3_HANDOFF_FA.md",
+  "qa_report": "raspehr-3d/PRIORITY3_QA_REPORT_FA.md"
+}

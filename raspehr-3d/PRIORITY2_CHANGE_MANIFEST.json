@@ -1,0 +1,94 @@
+{
+  "project": "RASPEHR",
+  "priority": 2,
+  "date": "2026-11-24",
+  "base": "Priority 1 working source",
+  "summary": "Priority 2 selection, camera focus/zoom and dossier quick card patch",
+  "modified_files": [
+    {
+      "path": "raspehr-3d/assets/css/prototype.css",
+      "sha256_before": "fc924a9bfe3213258322b40d375188d11b64a814daaba299c01877d5296dbd3a",
+      "sha256_after": "e0053c08180bcdf2d68be02f6d98147960fc34630fee5a0db643ce454fa88b5d",
+      "size_after": 15457
+    },
+    {
+      "path": "raspehr-3d/assets/js/entity-markers.js",
+      "sha256_before": "ea79ffebdb880569b6415815021dca2d880e281a86d2ff17ce02f729c519e234",
+      "sha256_after": "22c3159138d6f7da88a3f943ea9d89d4fbc5700f624ebfc2e13416edbb9bfc29",
+      "size_after": 13240
+    },
+    {
+      "path": "raspehr-3d/assets/js/entity-stage3-ui.js",
+      "sha256_before": "b99622757d2b2dc0a4e9811dbcda0e70b4c0821cd507e1a7cdb971c1bfa756d5",
+      "sha256_after": "76908cfbda956f3d17ea1b47d07a02aee881b02f856ad23d84b7265153e962dc",
+      "size_after": 15820
+    },
+    {
+      "path": "raspehr-3d/assets/js/globe-engine.js",
+      "sha256_before": "7598da2c91a06676904a1f854c7c3d3c0948eff9d753fd6e136f355fdd0e0b3a",
+      "sha256_after": "1fbd7e1a87de21626a8d90673bbba2e1e4f3aeffc82a4f95df331e51bff443c5",
+      "size_after": 54293
+    },
+    {
+      "path": "raspehr-3d/assets/js/prototype.js",
+      "sha256_before": "b42139d606273160aa336408ab30889950e031a985606a1a698481239633bacb",
+      "sha256_after": "10907e460c0d28fd0cdce68ba336975d79c29f14f35d82cf685ce6cbd41793e2",
+      "size_after": 13463
+    },
+    {
+      "path": "raspehr-3d/assets/js/stage5-integration.js",
+      "sha256_before": "98f898642f3e6ef1a7162eeaba3e049cbfd517306d211a2848a6eaae0d241a98",
+      "sha256_after": "2b9cabc911abdcf8fcb26abb2b0d0a5874d91c1a5acb4d2ee7177c4c5c8fae95",
+      "size_after": 2504
+    },
+    {
+      "path": "raspehr-3d/index.html",
+      "sha256_before": "ea89c335a4f65ad96e5a633a4e5cea57940ebc64c2ab83ad026c9345eaec8e2c",
+      "sha256_after": "d58f88f9db4820c611c1def1e8549b98386fb242978f403f6a9080786d0b162b",
+      "size_after": 10717
+    },
+    {
+      "path": "raspehr-3d/tests/stage2_markers.test.cjs",
+      "sha256_before": "702102629f7f6732e6f49f6aa40bc50e1dd16390b1b12e932c2f3d4611063a6a",
+      "sha256_after": "b1d140ad3f2ca82eb9a72978a365481644a9e433798aac1b7f60182309de00d5",
+      "size_after": 2897
+    },
+    {
+      "path": "raspehr-3d/tests/stage3_qa_browser.py",
+      "sha256_before": "312b2a930fb5e2991e0d12aee234ff7f39e1aef31152e0eb4571ba3a31a4023e",
+      "sha256_after": "551b34697dd218e5e80faeaeb1e16ac7ee3c4315c6d5da3c0cd84bafe5ef9fa9",
+      "size_after": 12670
+    }
+  ],
+  "added_files": [
+    {
+      "path": "raspehr-3d/PRIORITY2_HANDOFF_FA.md",
+      "sha256": "132563ac2354fb4dadd65472ffd14089ce77c24869ec51046f28f0408cf1c508",
+      "size": 11883
+    },
+    {
+      "path": "raspehr-3d/PRIORITY2_QA_REPORT_FA.md",
+      "sha256": "4e1777e3565295767599b84c6bbbb758d0498646e9f88c1548e45372e00af47e",
+      "size": 4827
+    },
+    {
+      "path": "raspehr-3d/PRIORITY2_STATE.json",
+      "sha256": "b1473762f7acd140757de130f0cd040fb5baa078f504cc831b1240ce7fd5f989",
+      "size": 2714
+    },
+    {
+      "path": "raspehr-3d/tests/priority2_focus.test.cjs",
+      "sha256": "e5b5881f488597571f3fcee2a76f330b781d676c1feabbb612983c57d34e1ce6",
+      "size": 4272
+    },
+    {
+      "path": "raspehr-3d/tests/priority2_webgl_browser.py",
+      "sha256": "92bf9a7c1ac374a7098ff53ac46f0cc24cf966759dd3d6cbb59a54abf301174a",
+      "size": 8407
+    }
+  ],
+  "deleted_files": [],
+  "canonical_data_changed": false,
+  "original_2d_map_changed": false,
+  "deployment_performed": false
+}

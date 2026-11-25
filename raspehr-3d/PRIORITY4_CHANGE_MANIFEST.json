@@ -1,0 +1,52 @@
+{
+  "project": "RASPEHR",
+  "priority": 4,
+  "date": "2026-11-25",
+  "baseline": "priority3 patch applied on top of priority2, priority1 and Stage8",
+  "modified_files": [
+    {
+      "path": "raspehr-3d/assets/css/prototype.css",
+      "sha256_before": "001c631a4aa2a5ae90ef0756d4ac095d5567a9619b2fae363b33c60a1e3e2673",
+      "sha256_after": "9f9a38d390d3259c023f74ae9f17a36dfed1c35745f35c7c18899a10d708a414"
+    },
+    {
+      "path": "raspehr-3d/index.html",
+      "sha256_before": "e6799e0695e89800900962ec9da1e5e0f591830df0c595e071e1eafed717d351",
+      "sha256_after": "27772be149aa5ca5e5344d2051d10591ebbfef4c8ef0a9ca0dd6f68cdaf0c7c8"
+    }
+  ],
+  "added_files": [
+    {
+      "path": "raspehr-3d/PRIORITY4_HANDOFF_FA.md",
+      "sha256": "9590d1469774894029cad4ae18e4ba0a97013776fa9b887d55b4eabc42abb20e"
+    },
+    {
+      "path": "raspehr-3d/PRIORITY4_QA_REPORT_FA.md",
+      "sha256": "d980998289efa5d7947a561162c511289826b0636c7cec29bd563c032e6fb4e7"
+    },
+    {
+      "path": "raspehr-3d/PRIORITY4_STATE.json",
+      "sha256": "753dcedce17238d6b988ee40f30d7f46235c366e1fdc03549f1bb48877fd8f49"
+    },
+    {
+      "path": "raspehr-3d/assets/js/mobile-bottom-sheet.js",
+      "sha256": "4f2b9a1a24de0c16e113bd87c04ebd3a0db9525cce7846f61b70815591013f2e"
+    },
+    {
+      "path": "raspehr-3d/tests/priority4_mobile_browser.py",
+      "sha256": "5793655df43cf050427f4694c75587103c65c2cefef50d4f6f3bd5a8de3e63c1"
+    },
+    {
+      "path": "raspehr-3d/tests/priority4_mobile_structure.test.cjs",
+      "sha256": "83ba76d3c6ce9b6d485c210834ecc2364efae96a32368178281964adea31878a"
+    },
+    {
+      "path": "raspehr-3d/tests/priority4_real_webgl_mobile.py",
+      "sha256": "6d09c8ccd0d6a7c35540da4b2ac94874105037336c030dc286d2ba6f33c3abab"
+    }
+  ],
+  "deleted_files": [],
+  "canonical_data_changed": false,
+  "deployment_performed": false,
+  "deployment_order": "Stage8 -> Priority1 -> Priority2 -> Priority3 -> Priority4"
+}

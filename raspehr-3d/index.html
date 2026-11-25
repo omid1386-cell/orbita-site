@@ -3,13 +3,32 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>رسپهر — نمونه سه‌بعدی زمین</title>
-  <link rel="stylesheet" href="assets/css/prototype.css">
+  <title>رسپهر | اطلس سه‌بعدی صنعت فضایی</title>
+  <link rel="stylesheet" href="assets/css/prototype.css?v=20261125-p6">
+  <link rel="stylesheet" href="assets/css/priority5-visual.css?v=20261125-p6">
 </head>
 <body>
   <main class="app-shell">
     <div class="stage6-brand" aria-hidden="true"><span class="stage6-brand-orbit">◉</span> RASPEHR <span>· اطلس سه‌بعدی صنعت فضایی</span></div>
-    <section class="stage-panel">
+    <section class="stage-panel" id="mobileMainSheet" data-mobile-snap="half" data-mobile-tab="filters" aria-label="پنل کنترل و اطلاعات رسپهر">
+      <div class="mobile-sheet-header" id="mobileSheetHeader" hidden>
+        <button id="mobileSheetHandle" class="mobile-sheet-handle" type="button" aria-label="تغییر اندازه پنل پایین؛ با کشیدن به بالا یا پایین" aria-controls="mobileSheetBody"><span aria-hidden="true"></span></button>
+        <div class="mobile-sheet-headline">
+          <strong id="mobileSheetTitle">مکان‌ها و فیلترها</strong>
+          <div class="mobile-sheet-snap-buttons" role="group" aria-label="اندازه پنل">
+            <button type="button" data-mobile-snap="collapsed" aria-label="جمع کردن پنل">کم</button>
+            <button type="button" data-mobile-snap="half" aria-label="نمای نیمه‌باز">نیمه</button>
+            <button type="button" data-mobile-snap="full" aria-label="بازکردن تمام‌صفحه پنل">کامل</button>
+          </div>
+        </div>
+        <nav class="mobile-sheet-tabs" aria-label="بخش‌های پنل موبایل">
+          <button type="button" data-mobile-tab="filters" aria-controls="mobileSheetBody">جست‌وجو و فیلترها</button>
+          <button type="button" data-mobile-tab="place" id="mobileLocationTab" aria-controls="mobileSelectedSlot" disabled>مکان انتخابی</button>
+          <button type="button" data-mobile-tab="controls" aria-controls="mobileSheetBody">کنترل نقشه</button>
+        </nav>
+      </div>
+      <div class="mobile-sheet-body" id="mobileSheetBody">
+        <div id="mobileSelectedSlot" class="mobile-selected-slot" aria-label="مکان انتخاب‌شده"></div>
       <div class="stage6-panel-title"><strong>فرماندهی نمای زمین</strong><small>کنترل دوربین، اطلاعات و لایه‌های اطلس</small></div>
       <div class="toolbar-row">
         <button id="resetBtn" type="button">بازنشانی</button>
@@ -106,15 +125,61 @@
         <p id="errorMessage"></p>
         <button id="retryBtn" hidden type="button">تلاش دوباره</button>
       </div>
+      </div>
     </section>
     <section class="globe-panel">
+      <nav class="mobile-map-shortcuts" id="mobileMapShortcuts" aria-label="دسترسی سریع روی نقشه" hidden>
+        <button type="button" data-mobile-quick="filters" aria-controls="mobileMainSheet">⌕ جست‌وجو</button>
+        <button type="button" data-mobile-quick="place" id="mobileMapPlace" aria-controls="mobileMainSheet" disabled>◎ مکان</button>
+        <button type="button" data-mobile-quick="controls" aria-controls="mobileMainSheet">⚙ کنترل</button>
+      </nav>
       <div class="stage6-scene-meta" aria-hidden="true"><span>EARTH / GEO ATLAS</span><span class="stage6-live-dot">نمای تعاملی</span></div>
       <div id="globeMount"></div>
+      <aside id="selectedLocationCard" class="selected-location-card" aria-live="polite" aria-label="اطلاعات مکان انتخاب‌شده" hidden>
+        <header class="selected-location-head">
+          <div class="selected-location-title">
+            <small id="selectedLocationKind">مکان انتخاب‌شده</small>
+            <strong id="selectedLocationTitle"></strong>
+            <span id="selectedLocationEnglish" dir="ltr"></span>
+          </div>
+          <button id="selectedLocationClose" type="button" aria-label="بستن اطلاعات مکان">×</button>
+        </header>
+        <p id="selectedLocationCategory" class="selected-location-category"></p>
+        <p id="selectedLocationPlace" class="selected-location-place"></p>
+        <div class="selected-location-meta">
+          <span id="selectedLocationCoordinates" dir="ltr"></span>
+          <span id="selectedLocationPrecision"></span>
+        </div>
+        <div class="selected-location-actions">
+          <button id="selectedLocationProfile" type="button" class="selected-location-primary">شناسنامه کامل و گالری</button>
+          <button id="selectedLocationFocus" type="button">تمرکز دوباره</button>
+        </div>
+        <div class="selected-location-facility-tools">
+          <button id="selectedLocationFacility" type="button" hidden>نمای نزدیک تصاویر و تأسیسات</button>
+          <button id="selectedLocationFacilityExit" type="button" hidden>بازگشت به نمای معمول کره</button>
+          <p id="selectedLocationFacilityStatus" role="status" aria-live="polite">نمای نزدیک تأسیسات پس از انتخاب یک مکان واجد مختصات معتبر در دسترس است.</p>
+          <p id="selectedLocationFacilityMeta" class="selected-location-facility-meta" hidden></p>
+          <a id="selectedLocationFacilitySource" class="selected-location-facility-source" href="#" target="_blank" rel="noopener noreferrer" hidden>مشاهده فراداده تصویر</a>
+          <div class="selected-location-attribution">
+            <a href="https://openaerialmap.org/" target="_blank" rel="noopener noreferrer">تصاویر: OpenAerialMap</a>
+            <span>·</span>
+            <a href="https://www.openstreetmap.org/copyright" target="_blank" rel="noopener noreferrer">© OpenStreetMap contributors · ODbL</a>
+          </div>
+        </div>
+      </aside>
       <div id="sceneIntro">نمونه مستقل برای توسعه نقشه سه‌بعدی رسپهر</div>
       <div id="loading"><div>در حال بارگذاری</div><div id="loadingDetail">در حال آماده‌سازی</div></div>
     </section>
   </main>
-  <section id="dossierOverlay" class="stage4-dossier-overlay" aria-label="شناسنامه کامل رسپهر" aria-modal="true" role="dialog" hidden>
+  <section id="dossierOverlay" class="stage4-dossier-overlay" aria-label="شناسنامه کامل رسپهر" aria-modal="true" role="dialog" data-mobile-snap="full" hidden>
+    <div class="mobile-dossier-bar" id="mobileDossierBar" hidden>
+      <button type="button" id="mobileDossierHandle" class="mobile-sheet-handle" aria-label="کشیدن شناسنامه به پایین یا بالا"><span aria-hidden="true"></span></button>
+      <div class="mobile-dossier-snap-buttons" role="group" aria-label="اندازه شناسنامه">
+        <button type="button" data-dossier-snap="collapsed">کم</button>
+        <button type="button" data-dossier-snap="half">نیمه</button>
+        <button type="button" data-dossier-snap="full">کامل</button>
+      </div>
+    </div>
     <header class="stage4-dossier-head">
       <div class="stage4-dossier-title"><small>آرشیو اصلی رسپهر</small><strong id="dossierHeading">شناسنامه کامل</strong></div>
       <button id="dossierClose" type="button" aria-label="بازگشت به کره سه‌بعدی">✕ بازگشت به کره</button>
@@ -123,17 +188,19 @@
     <iframe id="dossierFrame" title="شناسنامه اصلی رسپهر" loading="lazy" referrerpolicy="same-origin" hidden></iframe>
   </section>
   <script src="../assets/vendor/three.min.js"></script>
-  <script src="assets/js/terrain-source.js"></script>
-  <script src="assets/js/terrain-dem.js"></script>
-  <script src="assets/js/stage6-performance.js"></script>
-  <script src="assets/js/globe-engine.js"></script>
-  <script src="assets/js/entity-data.js"></script>
-  <script src="assets/js/entity-markers.js"></script>
-  <script src="assets/js/entity-explore.js"></script>
-  <script src="assets/js/entity-stage3-ui.js"></script>
-  <script src="assets/js/entity-stage4-dossier.js"></script>
-  <script src="../assets/js/raspehr-stage5-state.js"></script>
-  <script src="assets/js/stage5-integration.js"></script>
-  <script src="assets/js/prototype.js"></script>
+  <script src="assets/js/terrain-source.js?v=20261125-p6"></script>
+  <script src="assets/js/terrain-dem.js?v=20261125-p6"></script>
+  <script src="assets/js/stage6-performance.js?v=20261125-p6"></script>
+  <script src="assets/js/globe-engine.js?v=20261125-p6"></script>
+  <script src="assets/js/entity-data.js?v=20261125-p6"></script>
+  <script src="assets/js/entity-markers.js?v=20261125-p6"></script>
+  <script src="assets/js/entity-explore.js?v=20261125-p6"></script>
+  <script src="assets/js/entity-stage3-ui.js?v=20261125-p6"></script>
+  <script src="assets/js/entity-stage4-dossier.js?v=20261125-p6"></script>
+  <script src="assets/js/local-facility-view.js?v=20261125-p6"></script>
+  <script src="../assets/js/raspehr-stage5-state.js?v=20261125-p6"></script>
+  <script src="assets/js/stage5-integration.js?v=20261125-p6"></script>
+  <script src="assets/js/prototype.js?v=20261125-p6"></script>
+  <script src="assets/js/mobile-bottom-sheet.js?v=20261125-p6"></script>
 </body>
 </html>

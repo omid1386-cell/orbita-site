@@ -48,17 +48,23 @@ with sync_playwright() as playwright:
     for src in [(main_assets/'vendor/three.min.js').read_text(encoding='utf-8'),
                 (app/'assets/js/terrain-dem.js').read_text(encoding='utf-8'), engine,
                 (app/'assets/js/entity-data.js').read_text(encoding='utf-8'),
-                (app/'assets/js/entity-markers.js').read_text(encoding='utf-8')]:
+                (app/'assets/js/entity-markers.js').read_text(encoding='utf-8'),
+                (app/'assets/js/entity-explore.js').read_text(encoding='utf-8'),
+                (app/'assets/js/entity-stage3-ui.js').read_text(encoding='utf-8'),
+                (app/'assets/js/local-facility-view.js').read_text(encoding='utf-8')]:
         page.add_script_tag(content=src)
     # Deliberately inject test observables into the prototype controller; not production code.
     ctrl=(app/'assets/js/prototype.js').read_text(encoding='utf-8')
     ctrl=ctrl.replace('engine = new window.RaspehrGlobe.GlobeEngine(', 'engine = window.__testGlobeEngine = new window.RaspehrGlobe.GlobeEngine(')
     ctrl=ctrl.replace('markers = new window.RaspehrEntityMarkers.EntityMarkers(', 'markers = window.__testMarkers = new window.RaspehrEntityMarkers.EntityMarkers(')
+    ctrl=ctrl.replace('stage3 = new window.RaspehrStage3.Controller(', 'stage3 = window.__testStage3 = new window.RaspehrStage3.Controller(')
     page.add_script_tag(content=ctrl)
-    page.wait_for_function("() => window.__testMarkers && document.querySelector('#markerStatus').textContent.includes('۳۹۷')",timeout=90000)
+    page.wait_for_function("() => window.__testMarkers && document.querySelector('#markerStatus').textContent.includes('۴۲۰')",timeout=90000)
+    page.locator('#categoryAll').click()
     status=page.evaluate('''() => ({
-      count:window.__testMarkers.meshes.reduce((sum,m)=>sum+m.count,0),
-      categories:window.__testMarkers.meshes.length,
+      count:window.__testStage3.catalog.counts.markers,
+      categories:document.querySelectorAll('.category-checkbox').length,
+      visiblePins:window.__testMarkers.meshes.reduce((sum,m)=>sum+m.count,0),
       canvasCount:document.querySelectorAll('#globeMount canvas').length,
       state:document.querySelector('#markerStatus').textContent,
       legend:document.querySelectorAll('.legend-item').length,
@@ -66,7 +72,7 @@ with sync_playwright() as playwright:
     })''')
     print('BROWSER',status,flush=True)
     assert status['count']==420,status
-    assert status['categories']==14,status
+    assert status['categories']==14 and status['visiblePins']>0,status
     assert status['legend']==14,status
     assert status['gl'] is True
     assert not errors,errors

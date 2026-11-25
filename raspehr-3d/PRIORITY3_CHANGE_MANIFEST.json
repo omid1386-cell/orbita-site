@@ -1,0 +1,100 @@
+{
+  "project": "RASPEHR",
+  "priority": 3,
+  "date": "2026-11-25",
+  "baseline": "Priority 2 working source",
+  "summary": "OpenAerialMap local imagery and OpenStreetMap mapped facility view",
+  "modified_files": [
+    {
+      "path": "raspehr-3d/assets/css/prototype.css",
+      "sha256_before": "e0053c08180bcdf2d68be02f6d98147960fc34630fee5a0db643ce454fa88b5d",
+      "sha256_after": "001c631a4aa2a5ae90ef0756d4ac095d5567a9619b2fae363b33c60a1e3e2673",
+      "size_after": 16939
+    },
+    {
+      "path": "raspehr-3d/assets/js/globe-engine.js",
+      "sha256_before": "1fbd7e1a87de21626a8d90673bbba2e1e4f3aeffc82a4f95df331e51bff443c5",
+      "sha256_after": "6b43209ac4bce865e91bfbafdb7c4e3b0ad8268a6654e2ec8d9e3f5233148ce2",
+      "size_after": 54614
+    },
+    {
+      "path": "raspehr-3d/assets/js/prototype.js",
+      "sha256_before": "10907e460c0d28fd0cdce68ba336975d79c29f14f35d82cf685ce6cbd41793e2",
+      "sha256_after": "ea7113c7ab6d221911fedd120218f4f57a7ab01767200e48fc8b938e97acdcde",
+      "size_after": 15998
+    },
+    {
+      "path": "raspehr-3d/assets/js/stage5-integration.js",
+      "sha256_before": "2b9cabc911abdcf8fcb26abb2b0d0a5874d91c1a5acb4d2ee7177c4c5c8fae95",
+      "sha256_after": "80d27cca64adcc6a616148661d38f6860dc7716c0a15b38e6797713b4cdda72e",
+      "size_after": 2633
+    },
+    {
+      "path": "raspehr-3d/index.html",
+      "sha256_before": "d58f88f9db4820c611c1def1e8549b98386fb242978f403f6a9080786d0b162b",
+      "sha256_after": "e6799e0695e89800900962ec9da1e5e0f591830df0c595e071e1eafed717d351",
+      "size_after": 11976
+    },
+    {
+      "path": "raspehr-3d/tests/priority2_webgl_browser.py",
+      "sha256_before": "92bf9a7c1ac374a7098ff53ac46f0cc24cf966759dd3d6cbb59a54abf301174a",
+      "sha256_after": "81403d00912d0d60e604fa49ef0753c1e7b0b11e781ffb33ed0c301763ad2270",
+      "size_after": 8463
+    },
+    {
+      "path": "raspehr-3d/tests/stage2_browser.py",
+      "sha256_before": "226663edced88849b221240235cc465c601186c5825b95b27c71a8c6c079bc1f",
+      "sha256_after": "0e32edc3cee9f1fc5b17b1eeab5f7cb8fc20adf18e4d6a2a5ad5eff7caf95cef",
+      "size_after": 6380
+    },
+    {
+      "path": "raspehr-3d/tests/stage3_browser.py",
+      "sha256_before": "abb7cdccd699f23e35652c5f9c39baac6c4414cefbfedfec28efea6b4eefcdda",
+      "sha256_after": "e3ef1ccbc0ffaa153101d10091985117f7f5f59fdcaecb70768e06cae43241e1",
+      "size_after": 5827
+    },
+    {
+      "path": "raspehr-3d/tests/stage3_qa_browser.py",
+      "sha256_before": "551b34697dd218e5e80faeaeb1e16ac7ee3c4315c6d5da3c0cd84bafe5ef9fa9",
+      "sha256_after": "565de0470429677e6ad3c9045d3d09dc453111524b301e8a0082f6b9fe05fa6e",
+      "size_after": 12695
+    }
+  ],
+  "added_files": [
+    {
+      "path": "raspehr-3d/PRIORITY3_HANDOFF_FA.md",
+      "sha256": "5271f70cefed456d59bfe71e10fa0fb7a2c0057a51180557b8cc1d31788df924",
+      "size": 15343
+    },
+    {
+      "path": "raspehr-3d/PRIORITY3_QA_REPORT_FA.md",
+      "sha256": "d47b13e2bd12986f1f4218572fe4577993ee515d13c3a6d785f906ce3be49221",
+      "size": 6495
+    },
+    {
+      "path": "raspehr-3d/PRIORITY3_STATE.json",
+      "sha256": "8749ddcdc5a653af21303b963f9a129cd785426a0287c3e390bca57cad39f460",
+      "size": 4143
+    },
+    {
+      "path": "raspehr-3d/assets/js/local-facility-view.js",
+      "sha256": "4a3c8e1102df44fd6e67a83c8c0db69c7bc2a7b2205c1daf4c792ce6b4304203",
+      "size": 29710
+    },
+    {
+      "path": "raspehr-3d/tests/priority3_local_facility.test.cjs",
+      "sha256": "9ab0f75ea01d3f8ea273c1db29ca47ca4736faaccc281e5e752a429b5ef9ba79",
+      "size": 5921
+    },
+    {
+      "path": "raspehr-3d/tests/priority3_webgl_browser.py",
+      "sha256": "62bfb788a91b0b8db0fcf30ead2eec856c6f94bcb7eb4ae494bd5231869c9e00",
+      "size": 12681
+    }
+  ],
+  "manifest_self_hash": "omitted to avoid self-reference; included in outer ZIP MANIFEST.json and SHA256SUMS.txt",
+  "deleted_files": [],
+  "canonical_data_changed": false,
+  "original_2d_map_changed": false,
+  "deployment_performed": false
+}

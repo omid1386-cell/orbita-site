@@ -32,6 +32,28 @@
   });
 
   function clamp(v, min, max) { return Math.max(min, Math.min(max, v)); }
+  function geoFocusTarget(lat, lon, distance, minDistance) {
+    if (!Number.isFinite(lat) || Math.abs(lat) > 90 || !Number.isFinite(lon) || Math.abs(lon) > 180) {
+      throw new Error('مختصات مقصد برای تمرکز دوربین معتبر نیست.');
+    }
+    return {
+      rx: clamp(lat * DEG, -1.569, 1.569),
+      ry: (-90 - lon) * DEG,
+      distance: clamp(Number.isFinite(distance) ? distance : 3.35, Number.isFinite(minDistance) ? minDistance : MIN_DISTANCE, MAX_DISTANCE)
+    };
+  }
+  function sampleCameraFlight(flight, now) {
+    if (!flight) return null;
+    const raw = clamp((now - flight.startedAt) / flight.duration, 0, 1);
+    const eased = raw < 0.5 ? 4 * raw * raw * raw : 1 - Math.pow(-2 * raw + 2, 3) / 2;
+    return {
+      rx: flight.from.rx + (flight.to.rx - flight.from.rx) * eased,
+      ry: lerpAngle(flight.from.ry, flight.to.ry, eased),
+      distance: flight.from.distance + (flight.to.distance - flight.from.distance) * eased,
+      progress: raw,
+      done: raw >= 1
+    };
+  }
   function normalizeDegrees(v) { return ((v + 180) % 360 + 360) % 360 - 180; }
   function lerpAngle(a, b, t) { return a + Math.atan2(Math.sin(b - a), Math.cos(b - a)) * t; }
   function seedRng(seed) {
@@ -122,6 +144,7 @@
       this.active = true;
       this.options = {lighting:true, clouds:true, rotation:false, stars:true, grid:false, relief:true, terrain:true, terrainExaggeration:1, quality:this.perfPolicy.quality};
       this.target = {rx:0, ry:0, distance:HOME_DISTANCE};
+      this.minDistance = MIN_DISTANCE;
       this.controls = new Map();
       this.dragVelocity = {x:0, y:0};
       this.lastPointerTime = 0;
@@ -644,6 +667,7 @@
       };
       this.listen(el, 'pointerdown', e => {
         if (e.pointerType === 'mouse' && e.button !== 0) return;
+        this.cancelCameraFlight();
         try { el.setPointerCapture(e.pointerId); } catch (_) {}
         this.controls.set(e.pointerId, {x:e.clientX,y:e.clientY});
         this.lastPointerTime = performance.now();
@@ -668,7 +692,7 @@
           this.dragVelocity.y = vy / dt;
         } else if (this.controls.size >= 2) {
           const after = distance();
-          if (this.pinchDistance > 0) this.target.distance = clamp(this.target.distance * (this.pinchDistance / Math.max(1, after)), MIN_DISTANCE, MAX_DISTANCE);
+          if (this.pinchDistance > 0) this.target.distance = clamp(this.target.distance * (this.pinchDistance / Math.max(1, after)), this.minDistance || MIN_DISTANCE, MAX_DISTANCE);
           this.pinchDistance = after;
         }
         this.lastPointerTime = now;
@@ -775,7 +799,39 @@
       }
     }
 
+    cancelCameraFlight() {
+      if (!this.cameraFlight) return false;
+      this.cameraFlight = null;
+      this.target.rx = this.globeGroup.rotation.x;
+      this.target.ry = this.globeGroup.rotation.y;
+      this.target.distance = this.camera.position.z;
+      return true;
+    }
+
+    flyToGeo(lat, lon, distance, options) {
+      const lowerBound = Number.isFinite(options && options.minDistance) ? options.minDistance : (this.minDistance || MIN_DISTANCE);
+      const to = geoFocusTarget(lat, lon, distance, lowerBound);
+      const duration = clamp(Number(options && options.duration) || 1350, 350, 4500);
+      this.dragVelocity.x = this.dragVelocity.y = 0;
+      this.cameraFlight = {
+        from: {
+          rx: this.globeGroup.rotation.x,
+          ry: this.globeGroup.rotation.y,
+          distance: this.camera.position.z
+        },
+        to,
+        startedAt: performance.now(),
+        duration
+      };
+      this.target.rx = to.rx;
+      this.target.ry = to.ry;
+      this.target.distance = to.distance;
+      return true;
+    }
+
     preset(name) {
+      this.cancelCameraFlight();
+      this.minDistance = MIN_DISTANCE;
       const p = PRESETS[name] || PRESETS.world;
       this.target.rx = p.lat * DEG;
       this.target.ry = (-90 - p.lon) * DEG;
@@ -783,8 +839,15 @@
       this.dragVelocity.x = this.dragVelocity.y = 0;
       return p;
     }
-    zoomBy(factor) { this.target.distance = clamp(this.target.distance * factor, MIN_DISTANCE, MAX_DISTANCE); }
-    turn(x, y) { this.target.ry += x; this.target.rx = clamp(this.target.rx + y, -1.535, 1.535); }
+    zoomBy(factor) {
+      this.cancelCameraFlight();
+      this.target.distance = clamp(this.target.distance * factor, this.minDistance || MIN_DISTANCE, MAX_DISTANCE);
+    }
+    turn(x, y) {
+      this.cancelCameraFlight();
+      this.target.ry += x;
+      this.target.rx = clamp(this.target.rx + y, -1.535, 1.535);
+    }
 
     setOption(key, value) {
       if (!(key in this.options)) return;
@@ -910,19 +973,30 @@
       const dt = clamp((now - this.lastTime) / 1000, 0, 0.06);
       this.lastTime = now;
       const easing = 1 - Math.exp(-dt * 5.6);
-      if (this.options.rotation && !this.controls.size) this.target.ry += dt * 0.024;
-      if (!this.controls.size && !this.options.rotation) {
-        this.target.ry += this.dragVelocity.x * dt;
-        this.target.rx = clamp(this.target.rx + this.dragVelocity.y * dt, -1.535, 1.535);
-        const decay = Math.exp(-dt * 3.7);
-        this.dragVelocity.x *= decay;
-        this.dragVelocity.y *= decay;
-        if (Math.abs(this.dragVelocity.x) < 0.002) this.dragVelocity.x = 0;
-        if (Math.abs(this.dragVelocity.y) < 0.002) this.dragVelocity.y = 0;
+      if (this.cameraFlight) {
+        const sample = sampleCameraFlight(this.cameraFlight, now);
+        this.globeGroup.rotation.x = sample.rx;
+        this.globeGroup.rotation.y = sample.ry;
+        this.camera.position.z = sample.distance;
+        this.target.rx = sample.rx;
+        this.target.ry = sample.ry;
+        this.target.distance = sample.distance;
+        if (sample.done) this.cameraFlight = null;
+      } else {
+        if (this.options.rotation && !this.controls.size) this.target.ry += dt * 0.024;
+        if (!this.controls.size && !this.options.rotation) {
+          this.target.ry += this.dragVelocity.x * dt;
+          this.target.rx = clamp(this.target.rx + this.dragVelocity.y * dt, -1.535, 1.535);
+          const decay = Math.exp(-dt * 3.7);
+          this.dragVelocity.x *= decay;
+          this.dragVelocity.y *= decay;
+          if (Math.abs(this.dragVelocity.x) < 0.002) this.dragVelocity.x = 0;
+          if (Math.abs(this.dragVelocity.y) < 0.002) this.dragVelocity.y = 0;
+        }
+        this.globeGroup.rotation.x += (this.target.rx - this.globeGroup.rotation.x) * easing;
+        this.globeGroup.rotation.y = lerpAngle(this.globeGroup.rotation.y, this.target.ry, easing);
+        this.camera.position.z += (this.target.distance - this.camera.position.z) * easing;
       }
-      this.globeGroup.rotation.x += (this.target.rx - this.globeGroup.rotation.x) * easing;
-      this.globeGroup.rotation.y = lerpAngle(this.globeGroup.rotation.y, this.target.ry, easing);
-      this.camera.position.z += (this.target.distance - this.camera.position.z) * easing;
       if (this.options.clouds) this.clouds.rotation.y += dt * 0.00145;
       if (now - this.lastSunUpdate > 15000) {
         const date = new Date();
@@ -989,5 +1063,5 @@
     }
   }
 
-  global.RaspehrGlobe = {GlobeEngine, PRESETS, QUALITY, TILE_LEVELS, getSunDirection, getSunCoordinates, geoToVector3, getTileLevelForDistance};
+  global.RaspehrGlobe = {GlobeEngine, PRESETS, QUALITY, TILE_LEVELS, getSunDirection, getSunCoordinates, geoToVector3, getTileLevelForDistance, geoFocusTarget, sampleCameraFlight};
 })(window);

@@ -45,7 +45,7 @@ with sync_playwright() as p:
     for source in [main_assets/'vendor/three.min.js',app/'assets/js/terrain-dem.js']:
         page.add_script_tag(content=source.read_text(encoding='utf-8'))
     page.add_script_tag(content=engine)
-    for name in ['entity-data.js','entity-markers.js','entity-explore.js','entity-stage3-ui.js']:
+    for name in ['entity-data.js','entity-markers.js','entity-explore.js','entity-stage3-ui.js','local-facility-view.js']:
         page.add_script_tag(content=(app/'assets/js'/name).read_text(encoding='utf-8'))
     controller=(app/'assets/js/prototype.js').read_text(encoding='utf-8')
     controller=controller.replace('engine = new window.RaspehrGlobe.GlobeEngine(','engine = window.__testGlobeEngine = new window.RaspehrGlobe.GlobeEngine(')

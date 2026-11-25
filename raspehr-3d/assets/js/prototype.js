@@ -9,19 +9,48 @@
   let markers;
   let stage3;
   let selectedEntity;
+  let localFacility = null;
 
   function showEntity(row) {
+    if(!row){
+      selectedEntity=null;
+      if(localFacility)localFacility.setSelection(null);
+      $('entityCard').hidden=true;
+      $('selectedLocationCard').hidden=true;
+      if(window.RaspehrStage4)window.RaspehrStage4.select(null);
+      intro.classList.remove('is-faded');
+      return;
+    }
     selectedEntity = row;
+    if(localFacility)localFacility.setSelection(row);
     const categories = window.RaspehrEntityData.CATEGORIES;
     $('entityCard').hidden = false;
     $('entityLabel').textContent = row.fa;
     $('entityEn').textContent = row.en !== row.fa ? row.en : '';
     $('entityCat').textContent = 'دسته‌ها: ' + row.categories.map(key => categories[key].fa).join('، ');
     $('entityLocation').textContent = [row.cityFa || row.city, row.countryFa || row.country].filter(Boolean).join('، ') || 'مکان اداری ثبت نشده';
-    $('entityCoord').textContent = row.lat.toFixed(row.precision && row.precision.startsWith('approximate') ? 2 : 6) + '°, ' + row.lon.toFixed(row.precision && row.precision.startsWith('approximate') ? 2 : 6) + '°' + (row.precision && row.precision.startsWith('approximate') ? ' (نماینده محدوده)' : '');
+    const precisionText=(row.precision||'')+' '+(row.coordinateNote||'');
+    const approximate=/approx|representative|reference|city|locality|region|area|campus|district|town|تقریبی|مرجع|نماینده|ناحیه|شهر|محوطه|پردیس/i.test(precisionText);
+    const coordinateDigits=approximate?2:6;
+    $('entityCoord').textContent = row.lat.toFixed(coordinateDigits) + '°, ' + row.lon.toFixed(coordinateDigits) + '°' + (approximate ? ' (نقطه مرجع)' : '');
     const accuracy = row.precision || 'دقت مختصات در رکورد مشخص نشده';
     $('entityPrecision').textContent = 'دقت/یادداشت مختصات: ' + (row.coordinateNote || accuracy);
     $('entityId').textContent = row.key;
+    const kindLabel=row.kind==='site'?'پایگاه پرتاب':row.kind==='recovery'?'محل فرود و بازیابی':'شرکت یا سازمان فضایی';
+    $('selectedLocationKind').textContent=kindLabel;
+    $('selectedLocationTitle').textContent=row.fa;
+    $('selectedLocationEnglish').textContent=row.en!==row.fa?row.en:'';
+    $('selectedLocationCategory').textContent=row.categories.map(key=>categories[key].fa).join('، ');
+    $('selectedLocationPlace').textContent=[row.cityFa||row.city,row.countryFa||row.country].filter(Boolean).join('، ')||'مکان اداری ثبت نشده';
+    $('selectedLocationCoordinates').textContent=$('entityCoord').textContent;
+    $('selectedLocationPrecision').textContent=approximate?'نقطه مرجع تقریبی؛ برای تعیین ساختمان دقیق کافی نیست.':(row.precision?'مبنای مختصات: '+row.precision:'دقت مختصات در رکورد مشخص نشده است.');
+    const facilityAccess=localFacility?localFacility.canOpen(row):{allowed:false,reason:'ماژول نمای تأسیسات بارگذاری نشده است.'};
+    $('selectedLocationFacility').hidden=!facilityAccess.allowed;
+    $('selectedLocationFacility').disabled=!facilityAccess.allowed;
+    $('selectedLocationFacilityExit').hidden=true;
+    $('selectedLocationFacilityStatus').textContent=facilityAccess.allowed?facilityAccess.reason:facilityAccess.reason;
+    $('selectedLocationFacilityMeta').hidden=true;
+    $('selectedLocationCard').hidden=false;
     intro.classList.add('is-faded');
     if (window.RaspehrStage4) window.RaspehrStage4.select(row);
   }
@@ -47,10 +76,28 @@
     $('markerToggle').disabled = true;
     window.RaspehrEntityData.load().then(catalog => {
       if (engine.stopped) return;
-      markers = new window.RaspehrEntityMarkers.EntityMarkers(engine,catalog,row => {
+      localFacility = new window.RaspehrLocalFacility.LocalFacilityView(engine,status=>{
+      $('selectedLocationFacilityStatus').textContent=status.message||'';
+      $('selectedLocationFacility').hidden=!!status.active || !selectedEntity || !localFacility.canOpen(selectedEntity).allowed;
+      $('selectedLocationFacilityExit').hidden=!status.active;
+      const meta=status.imagery,buildingInfo=status.buildings||{total:0,extruded:0,footprints:0};
+      if(status.active || meta){
+        const imageText=meta?('تصویر: '+meta.provider+' · سکوی '+meta.platform+' · '+meta.date+' · '+meta.gsd+' متر/پیکسل · '+meta.license):'تصویر هوایی/ماهواره‌ای باز برای این نقطه پیدا نشد';
+        $('selectedLocationFacilityMeta').textContent=imageText+' · ساختمان‌ها: '+buildingInfo.total+' ('+buildingInfo.heightExplicit+' ارتفاع ثبت‌شده، '+buildingInfo.heightApproximate+' برآورد از طبقات، '+buildingInfo.footprints+' محدوده بدون ارتفاع) · داده نقشه: '+(buildingInfo.osmTimestamp||'نامشخص');
+        $('selectedLocationFacilityMeta').hidden=false;
+      }else{$('selectedLocationFacilityMeta').hidden=true;}
+      $('selectedLocationFacilitySource').hidden=!meta;
+      $('selectedLocationFacilitySource').href=meta?meta.url:'#';
+    });
+    window.RaspehrLocalFacilityView = localFacility;
+    markers = new window.RaspehrEntityMarkers.EntityMarkers(engine,catalog,row => {
         if(row.isCluster){if(stage3)stage3.showCluster(row);}
-        else{if(stage3)stage3.hideCluster();showEntity(row);}
+        else{
+          if(stage3){stage3.hideCluster();stage3.pinSelected(row);}
+          showEntity(row);
+        }
       });
+      localFacility.setMarkers(markers);
       stage3 = new window.RaspehrStage3.Controller(engine,markers,catalog,showEntity);
       if (window.RaspehrStage4) window.RaspehrStage4.setCatalog(catalog);
       if (window.RaspehrStage5Child) window.RaspehrStage5Child.mount(engine,stage3,catalog);
@@ -129,13 +176,19 @@
       if (markers) markers.setVisible(event.target.checked);
     });
     $('markerFocusBtn').addEventListener('click', () => {
-      if (markers && selectedEntity) markers.select(selectedEntity,true);
+      if (markers && selectedEntity) markers.focus(selectedEntity);
     });
+    $('selectedLocationClose').addEventListener('click',()=>{if(stage3)stage3.clearSelected();else showEntity(null);});
+    $('selectedLocationFocus').addEventListener('click',()=>{if(markers&&selectedEntity)markers.focus(selectedEntity);});
+    $('selectedLocationProfile').addEventListener('click',()=>{if(window.RaspehrStage4)window.RaspehrStage4.openSelected();});
+    $('selectedLocationFacility').addEventListener('click',()=>{if(localFacility&&selectedEntity)localFacility.enter(selectedEntity);});
+    $('selectedLocationFacilityExit').addEventListener('click',()=>{if(localFacility)localFacility.exit();});
     loadEntityMarkers();
 
     const nameFor = Object.fromEntries(Object.entries(window.RaspehrGlobe.PRESETS).map(([key, value]) => [key, value.name]));
     document.querySelectorAll('[data-preset]').forEach(btn => btn.addEventListener('click', () => {
       const preset = btn.dataset.preset;
+      if(localFacility)localFacility.exit({restoreCamera:false});
       engine.preset(preset);
       $('viewName').textContent = nameFor[preset] || 'جهانی';
       document.querySelectorAll('[data-preset]').forEach(other => other.classList.toggle('is-active', other === btn));
@@ -157,6 +210,7 @@
     $('zoomIn').addEventListener('click', () => engine.zoomBy(0.77));
     $('zoomOut').addEventListener('click', () => engine.zoomBy(1.30));
     $('resetBtn').addEventListener('click', () => {
+      if(localFacility)localFacility.exit({restoreCamera:false});
       document.querySelector('[data-preset="world"]').click();
       const defaults = {lighting:true, clouds:true, rotation:false, stars:true, grid:false, relief:true, terrain:true};
       $('terrainExaggeration').value = '1';
@@ -191,6 +245,6 @@
       loader.classList.add('is-hidden');
       if (result.errors && result.errors.length) console.warn('[RASPEHR / 3D] optional texture warnings:', result.errors);
     }).catch(reportFailure);
-    window.addEventListener('pagehide', () => { if(stage3)stage3.dispose(); if(markers)markers.dispose(); if(engine)engine.dispose(); }, {once:true});
+    window.addEventListener('pagehide', () => { if(localFacility)localFacility.dispose(); if(stage3)stage3.dispose(); if(markers)markers.dispose(); if(engine)engine.dispose(); }, {once:true});
   } catch (err) { reportFailure(err); }
 })();

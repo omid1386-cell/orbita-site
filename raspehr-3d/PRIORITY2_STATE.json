@@ -1,0 +1,57 @@
+{
+  "project": "RASPEHR",
+  "date": "2026-11-24",
+  "baseline": "Stage 8 release candidate + Priority 1 marker patch",
+  "phase": "3D experience redesign, priority 2 of 6",
+  "status": "implemented; Node, responsive browser, real Chromium WebGL and dossier DOM tests passed; production/physical-device verification pending",
+  "priority1": {
+    "done": true,
+    "production_verified": false
+  },
+  "priority2": {
+    "title_fa": "انتخاب نشانگر، تمرکز و زوم دوربین و نمایش شناسنامه",
+    "done": true,
+    "production_verified": false,
+    "features": [
+      "nearest screen-space marker picking with 18px mouse, 22px pen, 27px touch targets",
+      "raycaster fallback when no projected marker is within target radius",
+      "smooth cancellable geographic camera flight with shortest-angle rotation",
+      "precision-aware focus distances and explicit approximate-reference labeling",
+      "pin selected marker outside clustering until filters change",
+      "cluster selection opens member list and auto-fits geographic extent",
+      "visible selected-location quick card with canonical dossier/gallery action",
+      "manual pointer/wheel/preset input cancels active camera flight"
+    ],
+    "tests": {
+      "node_suites": "17/17 passed",
+      "responsive_browser": "desktop and mobile passed; 240 camera-step stress; no JS errors or horizontal overflow",
+      "real_webgl": "WebGL/WebGL2 Chromium SwiftShader passed with 420 records and 14 categories",
+      "dossier_dom": "company/site/recovery/country and media gallery passed"
+    }
+  },
+  "next_priorities": {
+    "3": "تصاویر ماهواره‌ای دقیق‌تر در بزرگ‌نمایی محلی و نمای تأسیسات با منبع داده معتبر",
+    "4": "Bottom Sheet سه‌حالته موبایل",
+    "5": "بهبود جلوه‌های بصری",
+    "6": "آزمون سایت واقعی و دستگاه‌های فیزیکی"
+  },
+  "unchanged": [
+    "original 2D map",
+    "420 canonical records",
+    "14 categories",
+    "media catalog",
+    "upcoming launches and landings",
+    "23 approximate reference coordinate records"
+  ],
+  "open_caveats": [
+    "physical phone and live Render/GitHub not tested",
+    "local high-resolution imagery and building models not implemented",
+    "23 location references remain approximate, not building-verified",
+    "49 legacy general-app test failures remain from previous baseline",
+    "38 missing logo paths remain",
+    "local real DEM tiles incomplete"
+  ],
+  "do_not_deploy_without_user_permission": true,
+  "handoff_document": "raspehr-3d/PRIORITY2_HANDOFF_FA.md",
+  "qa_report": "raspehr-3d/PRIORITY2_QA_REPORT_FA.md"
+}

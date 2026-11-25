@@ -1,0 +1,58 @@
+{
+  "project": "RASPEHR",
+  "priority": 5,
+  "date": "2026-11-25",
+  "base": "priority4",
+  "changed": [
+    {
+      "path": "raspehr-3d/assets/js/entity-markers.js",
+      "before": "22c3159138d6f7da88a3f943ea9d89d4fbc5700f624ebfc2e13416edbb9bfc29",
+      "after": "10e122b2e2fa26e4920d12d54827b3ab5b9bd95481d8a231859aa89fbca65842"
+    },
+    {
+      "path": "raspehr-3d/assets/js/entity-stage3-ui.js",
+      "before": "76908cfbda956f3d17ea1b47d07a02aee881b02f856ad23d84b7265153e962dc",
+      "after": "3289ad14e728443ef236f487d98a211d2b4cf35bab55b3ce5624d5857f77765e"
+    },
+    {
+      "path": "raspehr-3d/index.html",
+      "before": "27772be149aa5ca5e5344d2051d10591ebbfef4c8ef0a9ca0dd6f68cdaf0c7c8",
+      "after": "3dcae8b9487009b05167485279bbe2d435bc093f8c491370119dca30848b6b03"
+    }
+  ],
+  "added": [
+    {
+      "path": "raspehr-3d/PRIORITY5_HANDOFF_FA.md",
+      "sha256": "6de7cdbc6e668d560f78362e63e20309d3cf02095dd6ce41bdc093750f17ac85"
+    },
+    {
+      "path": "raspehr-3d/PRIORITY5_QA_REPORT_FA.md",
+      "sha256": "7fb7e8823f8a267db8bc4f1d3d7ee33781cb6ffb46e5d257a88cca6f874ca278"
+    },
+    {
+      "path": "raspehr-3d/PRIORITY5_STATE.json",
+      "sha256": "143745b4b9638305f8b305c1a4f21cae9b41502bfa2f118675c756e558da3afd"
+    },
+    {
+      "path": "raspehr-3d/assets/css/priority5-visual.css",
+      "sha256": "c57d9bedb1ee0fd05f61942528700fd221fd951b162e2a05530673e09a612a42"
+    },
+    {
+      "path": "raspehr-3d/tests/priority5_real_webgl_mobile.py",
+      "sha256": "af58d44c26d786818d32012f5a14296c3d0b4276ce8451c994a3c9887dd73ecb"
+    },
+    {
+      "path": "raspehr-3d/tests/priority5_visual_browser.py",
+      "sha256": "5c4c35380699c2d122cc750caa7391b99c35a1a0787561b28f9f59a38b3f5478"
+    },
+    {
+      "path": "raspehr-3d/tests/priority5_visual_marker.test.cjs",
+      "sha256": "e1f83f01cd52c8fc5f0fad921c1dbfa77ec06ade49d1ff7acf8e06d815303958"
+    }
+  ],
+  "deleted": [],
+  "changed_count": 3,
+  "added_count": 7,
+  "data_modified": false,
+  "deployed": false
+}

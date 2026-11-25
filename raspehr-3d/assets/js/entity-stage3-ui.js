@@ -5,13 +5,34 @@
  'use strict';
  const $=id=>document.getElementById(id);
  const format=n=>n.toLocaleString('fa-IR');
+ function clusterFitDistance(cluster,engine){
+   const members=cluster && Array.isArray(cluster.members) ? cluster.members : [];
+   if(members.length<2)return 3.55;
+   const toUnit=(row)=>{
+     const lat=row.lat*Math.PI/180,lon=row.lon*Math.PI/180;
+     return {x:Math.cos(lat)*Math.cos(lon),y:Math.sin(lat),z:-Math.cos(lat)*Math.sin(lon)};
+   };
+   const center=toUnit(cluster);
+   let angle=0;
+   for(const row of members){
+     const p=toUnit(row);
+     const dot=Math.max(-1,Math.min(1,center.x*p.x+center.y*p.y+center.z*p.z));
+     angle=Math.max(angle,Math.acos(dot));
+   }
+   const radius=1.72,vertical=(engine.camera.fov||42)*Math.PI/360;
+   const aspect=engine.camera.aspect||1;
+   const horizontal=Math.atan(Math.tan(vertical)*aspect);
+   const safeHalf=Math.max(0.09,Math.min(vertical,horizontal)*0.76);
+   const distance=radius*Math.cos(angle)+radius*Math.sin(angle)/Math.tan(safeHalf)+0.14;
+   return Math.max(2.15,Math.min(6.8,distance));
+ }
  class Controller {
    constructor(engine,markers,catalog,showEntity){
      this.engine=engine;this.markers=markers;this.catalog=catalog;this.showEntityCallback=showEntity;
      this.explore=global.RaspehrEntityExplore;
      this.categories=new Set(['agency','site']);
      this.query='';this.country='';this.filtered=[];this.view=null;this.timer=null;
-     this.lastCamera='';this.lastClusterAt=0;this.clusterPointerHeld=false;this.clusterHoldUntil=0;this.overlay=document.createElement('div');
+     this.lastCamera='';this.lastClusterAt=0;this.pinnedKey='';this.clusterPointerHeld=false;this.clusterHoldUntil=0;this.overlay=document.createElement('div');
      this.overlay.id='clusterOverlay';this.overlay.className='cluster-overlay';
      $('globeMount').appendChild(this.overlay);
      this.initialize();
@@ -52,8 +73,8 @@
        this.country=event.target.value;this.refreshFilters();
        if(this.country && this.filtered.length){
          const center=this.explore.centralGeo(this.filtered);
-         this.markers.focus(center);
-         this.engine.target.distance=4.0;
+         if(typeof this.engine.flyToGeo==='function')this.engine.flyToGeo(center.lat,center.lon,4.0,{duration:1250});
+         else this.markers.focus(center);
        }
      });
      $('categoryAll').addEventListener('click',()=>{this.categories=new Set(Object.keys(defs));this.syncCheckboxes();this.refreshFilters();});
@@ -84,7 +105,9 @@
      });
      this.clusterPointerHeld=false;this.clusterHoldUntil=0;
      const card=$('entityCard');card.hidden=true;
-     $('clusterCard').hidden=true;this.activeCluster=null;this.markers.clearSelection();
+     $('clusterCard').hidden=true;this.activeCluster=null;this.pinnedKey='';
+     this.markers.clearSelection();
+     this.showEntityCallback(null);
      this.populateResults();this.lastCamera='';this.refreshView(true);
    }
    populateResults(){
@@ -163,7 +186,13 @@
      const width=this.engine.renderer.domElement.getBoundingClientRect().width;
      const close=this.engine.camera.position.z<2.9;
      const radius=width<600?(close?44:68):(close?34:56);
-     const view=this.explore.cluster(this.filtered,project,radius);
+     const pinned=this.pinnedKey?this.filtered.find(row=>row.key===this.pinnedKey):null;
+     const clusterRows=pinned?this.filtered.filter(row=>row.key!==pinned.key):this.filtered;
+     const view=this.explore.cluster(clusterRows,project,radius);
+     if(pinned){
+       view.singles.push(pinned);
+       if(project(pinned))view.visibleCount+=1;
+     }
      this.view=view;
      this.markers.setDisplay(view.singles,view.clusters);
      this.showClusters(view);
@@ -203,7 +232,16 @@
        }
        button.clusterRecord=cluster;
        button.textContent=format(cluster.count);
-       button.title=format(cluster.count)+' مکان؛ برای بزرگ‌نمایی و مشاهده اعضا کلیک کنید';
+       const roles=new Set((cluster.members||[]).map(row=>row.category));
+       const dominant=roles.size===1?[...roles][0]:null;
+       const palette=global.RaspehrEntityData.CATEGORIES;
+       const accent=dominant&&palette[dominant]?'#'+palette[dominant].color.toString(16).padStart(6,'0'):'#d4b781';
+       button.style.setProperty('--cluster-accent',accent);
+       button.dataset.density=cluster.count>=25?'high':cluster.count>=8?'medium':'low';
+       button.dataset.mixed=String(roles.size!==1);
+       button.classList.toggle('is-selected',!!(this.activeCluster&&this.activeCluster.key===cluster.key));
+       button.setAttribute('aria-pressed',String(!!(this.activeCluster&&this.activeCluster.key===cluster.key)));
+       button.title=format(cluster.count)+' مکان؛ برای تمرکز روی محدوده و مشاهده اعضا کلیک کنید';
        button.setAttribute('aria-label',button.title);
        // The geographic anchor is projected each render frame by positionClusters().
      }
@@ -213,6 +251,7 @@
      this.activeCluster=cluster;
      $('entityCard').hidden=true;
      $('clusterCard').hidden=false;
+     $('clusterFocusBtn').textContent='تمرکز دوباره روی این خوشه';
      $('clusterSummary').textContent='خوشه شامل '+format(cluster.count)+' مکان';
      const list=$('clusterMembers');list.replaceChildren();
      for(const row of cluster.members.slice(0,28)){
@@ -222,18 +261,43 @@
      $('clusterMore').textContent=cluster.members.length>28?'برای مشاهده همه '+format(cluster.members.length)+' مورد، بزرگ‌نمایی یا فیلتر جست‌وجو را محدودتر کنید.':'';
    }
    hideCluster(){$('clusterCard').hidden=true;this.activeCluster=null;}
-   selectCluster(cluster){this.markers.select(Object.assign({},cluster,cluster.anchor||{}),false);}
+   selectCluster(cluster){
+     if(!cluster)return;
+     this.pinnedKey='';
+     this.markers.clearSelection();
+     $('entityCard').hidden=true;
+     this.showEntityCallback(null);
+     this.showCluster(cluster);
+     this.focusCluster(cluster);
+   }
    focusCluster(cluster){
-     this.markers.focus(cluster);
-     this.engine.target.distance=Math.max(2.10,this.engine.target.distance*0.64);
-     // The regular render loop projects clusters after camera easing; avoid forcing
-     // a scene rebuild while the interaction event is being dispatched.
+     if(!cluster)return;
+     const distance=clusterFitDistance(cluster,this.engine);
+     if(typeof this.engine.flyToGeo==='function')this.engine.flyToGeo(cluster.lat,cluster.lon,distance,{duration:1350});
+     else this.markers.focus(cluster);
      this.lastCamera='';
    }
+   pinSelected(row){
+     if(!row||!row.key)return;
+     this.pinnedKey=row.key;
+     this.lastCamera='';
+     this.refreshView(true);
+   }
    selectRecord(row){
-     this.hideCluster();this.markers.select(row,true);
-     this.showEntityCallback(row);
+     if(!row)return;
+     this.hideCluster();
+     this.pinnedKey=row.key;
+     this.markers.select(row,true);
      $('entitySearch').blur();
+   }
+   clearSelected(){
+     this.pinnedKey='';
+     this.markers.clearSelection();
+     $('entityCard').hidden=true;
+     this.hideCluster();
+     this.showEntityCallback(null);
+     this.lastCamera='';
+     this.refreshView(true);
    }
    getState(){return {query:this.query,country:this.country,categories:[...this.categories],markerVisible:$('markerToggle').checked};}
    applyState(state){
@@ -248,5 +312,5 @@
    }
    dispose(){if(this.timer){global.clearInterval(this.timer);this.timer=null;}if(this.removeFrameObserver)this.removeFrameObserver();this.clusterPointerHeld=false;this.overlay.remove();}
  }
- global.RaspehrStage3={Controller};
+ global.RaspehrStage3={Controller,clusterFitDistance};
 })(window);
