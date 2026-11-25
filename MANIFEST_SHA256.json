@@ -1,0 +1,412 @@
+{
+  "project": "RASPEHR",
+  "package": "local_site_photos",
+  "date": "2026-11-25",
+  "base": "Stage8 + priorities 1–6 (no separate imagery patch required)",
+  "counts": {
+    "modified": 11,
+    "added": 66,
+    "deleted": 0,
+    "local_photos": 48,
+    "sites_total": 79,
+    "uncovered": 31
+  },
+  "files": {
+    "assets/js/raspehr-stage5-switch.js": {
+      "action": "modified",
+      "after_sha256": "3637f6f925115f2e9c9cd62b7655d9e4bef816cb65f123f7b8300703bb7eb85e",
+      "after_bytes": 3471,
+      "before_sha256": "c2b92d3c5e3e8a164ee5e314e630c1bb38d418cadd753b4ca13dc958dad6cd04"
+    },
+    "data/sites.json": {
+      "action": "modified",
+      "after_sha256": "dca3a78dfa448184a306a62caaba25a9407b9b7a59ef92166a2044880779a168",
+      "after_bytes": 885302,
+      "before_sha256": "09a1a7c25911449c76fecb27b3ba05011edaf18207c68136435efdf4f22bc988"
+    },
+    "index.html": {
+      "action": "modified",
+      "after_sha256": "9f279bb05a74883d5104ac373708fc7da8bbd5f7bcf118284cd160ff767e284d",
+      "after_bytes": 66736,
+      "before_sha256": "b6286ee29401cb6590e4a865e83f1e3036b51efe7cdd541e9876975a8e33463d"
+    },
+    "raspehr-3d/assets/css/prototype.css": {
+      "action": "modified",
+      "after_sha256": "7d37fb47d7c96a4f1ef3265395708fd64509771a4ec98198aebd6433e6bab486",
+      "after_bytes": 26347,
+      "before_sha256": "9f9a38d390d3259c023f74ae9f17a36dfed1c35745f35c7c18899a10d708a414"
+    },
+    "raspehr-3d/assets/js/local-facility-view.js": {
+      "action": "modified",
+      "after_sha256": "249f6d0c8dcbc92c4c1048f3babc4a039e21bfa22e79b647f805eb19ccaf2e16",
+      "after_bytes": 38939,
+      "before_sha256": "4a3c8e1102df44fd6e67a83c8c0db69c7bc2a7b2205c1daf4c792ce6b4304203"
+    },
+    "raspehr-3d/assets/js/prototype.js": {
+      "action": "modified",
+      "after_sha256": "7e2b07ca90c9b2c934ad80393e6f214c073c22b02fba2b3b104f5e391ab9634a",
+      "after_bytes": 16622,
+      "before_sha256": "ea7113c7ab6d221911fedd120218f4f57a7ab01767200e48fc8b938e97acdcde"
+    },
+    "raspehr-3d/index.html": {
+      "action": "modified",
+      "after_sha256": "061b0be56f3bfc198b5a672dfa9d7fa76d5a34a8fc49d631f7502449ba9f7ad7",
+      "after_bytes": 18423,
+      "before_sha256": "62fcfe3e006b11c343379d7c8521b8efa53e6e4606546ce74f40824ce7161080"
+    },
+    "raspehr-3d/tests/priority3_webgl_browser.py": {
+      "action": "modified",
+      "after_sha256": "2f82e96d427f948ee854643b8e33fe1bf243153e10a93ca32f84615404f1e62d",
+      "after_bytes": 12917,
+      "before_sha256": "62bfb788a91b0b8db0fcf30ead2eec856c6f94bcb7eb4ae494bd5231869c9e00"
+    },
+    "raspehr-3d/tests/priority4_real_webgl_mobile.py": {
+      "action": "modified",
+      "after_sha256": "f99463676f3e1b4c6a44ced5fb1c84e8cba88a73cd0546a7e8569b4bcb8d1355",
+      "after_bytes": 10601,
+      "before_sha256": "6d09c8ccd0d6a7c35540da4b2ac94874105037336c030dc286d2ba6f33c3abab"
+    },
+    "raspehr-3d/tests/priority5_real_webgl_mobile.py": {
+      "action": "modified",
+      "after_sha256": "adb2fa85334f375af6a0286cfe27c2f60c841e0c1a24521257cde2333f93c03c",
+      "after_bytes": 13321,
+      "before_sha256": "af58d44c26d786818d32012f5a14296c3d0b4276ce8451c994a3c9887dd73ecb"
+    },
+    "raspehr-3d/tests/stage5_bridge.test.cjs": {
+      "action": "modified",
+      "after_sha256": "114712e14a46682dd5c84fad54ad42e8a4b1a42a12057ba5867e051713f03729",
+      "after_bytes": 4083,
+      "before_sha256": "a7b469c1840d2831de138caa03803a43f654a24ca9139749d746097a1fa6ca97"
+    },
+    "raspehr-3d/IMAGERY_UPGRADE_HANDOFF_FA.md": {
+      "action": "added",
+      "after_sha256": "093d5c4e741da16cb9aa41fdd7de1c3d707f81412f82fb830359baee3816decb",
+      "after_bytes": 10988
+    },
+    "raspehr-3d/IMAGERY_UPGRADE_QA_FA.md": {
+      "action": "added",
+      "after_sha256": "b406a1285ff23de57dcbd551cc507cc09b63ab0c08579973da3513613d931165",
+      "after_bytes": 4268
+    },
+    "raspehr-3d/IMAGERY_UPGRADE_STATE.json": {
+      "action": "added",
+      "after_sha256": "bee6f83bc7870ac39f50048bf15b15b4b70662fc2d11fca6eba396919039a631",
+      "after_bytes": 1990
+    },
+    "raspehr-3d/LOCAL_SITE_VIEWS_HANDOFF_FA.md": {
+      "action": "added",
+      "after_sha256": "4721c58ab482862e36827ea9dfa13b8aa51e626b8728c041645839e27609e199",
+      "after_bytes": 3097
+    },
+    "raspehr-3d/LOCAL_SITE_VIEWS_REPORT_FA.md": {
+      "action": "added",
+      "after_sha256": "d3fa9ee6164d8ecd67121ff68ed48954576fb619fa8638111091bcef587fa298",
+      "after_bytes": 7252
+    },
+    "raspehr-3d/LOCAL_SITE_VIEWS_STATE.json": {
+      "action": "added",
+      "after_sha256": "5ffc121ec425cf4e8804cdc65b69eab6a00c4c064f4033fc9c579852917cbf4d",
+      "after_bytes": 1121
+    },
+    "raspehr-3d/assets/css/site-views.css": {
+      "action": "added",
+      "after_sha256": "f3adfe5a780b56824f26ccb8969fd30eb492ad3c741728e1cbdc40e74efbf4bc",
+      "after_bytes": 3094
+    },
+    "raspehr-3d/assets/js/site-views.js": {
+      "action": "added",
+      "after_sha256": "20ec99bc532a55ff68d7c10b54a807189d35a3ceb036977117909f56845dab3e",
+      "after_bytes": 8004
+    },
+    "raspehr-3d/assets/site-views/photos/alcantara.jpg": {
+      "action": "added",
+      "after_sha256": "d979d0c97ac9ddfd26dd050ba09cb45010ffc3e7b4430bb9b51940229600eb01",
+      "after_bytes": 51726
+    },
+    "raspehr-3d/assets/site-views/photos/andoya.jpg": {
+      "action": "added",
+      "after_sha256": "94ca301a4a2b4a9311b9e641059e4d7198e19a0a1fad7b49f7e36e0c3ccc0c5f",
+      "after_bytes": 64866
+    },
+    "raspehr-3d/assets/site-views/photos/arnhem.jpg": {
+      "action": "added",
+      "after_sha256": "304326d164d20f61551c839abf5ee18039005cefd356f08b11b739f49874882a",
+      "after_bytes": 257657
+    },
+    "raspehr-3d/assets/site-views/photos/baikonur.jpg": {
+      "action": "added",
+      "after_sha256": "629933f47e6642882c7126335c38ec1d3b93567db3494a491ff338a7fb829771",
+      "after_bytes": 153843
+    },
+    "raspehr-3d/assets/site-views/photos/ccsfs.jpg": {
+      "action": "added",
+      "after_sha256": "e1cdf68d501093a2214023d56a13a1b5554d6a3c6da726a15cc31361d722f1da",
+      "after_bytes": 249277
+    },
+    "raspehr-3d/assets/site-views/photos/corn-ranch.jpg": {
+      "action": "added",
+      "after_sha256": "d19f674ebf785186e719e4e35e19a4de3ec2828dbf0eedc7c2083501f45ed09f",
+      "after_bytes": 49182
+    },
+    "raspehr-3d/assets/site-views/photos/cornwall.jpg": {
+      "action": "added",
+      "after_sha256": "c6c4ff06a9ae3c6edd3f9a0ef80c4bc2ab423abfaed780f0193b2cca919b46dd",
+      "after_bytes": 146530
+    },
+    "raspehr-3d/assets/site-views/photos/elarenosillo.jpg": {
+      "action": "added",
+      "after_sha256": "de2ba967b84b2fafdb2b927b1c64c44e4ec4e55e1d8c99d39ddc1cc0c8dddf21",
+      "after_bytes": 102614
+    },
+    "raspehr-3d/assets/site-views/photos/emamshahr.jpg": {
+      "action": "added",
+      "after_sha256": "9595744f140f296e193ba854f9bdce2b384bbd3ab328663ff63f4eed276728ba",
+      "after_bytes": 31207
+    },
+    "raspehr-3d/assets/site-views/photos/esrange.jpg": {
+      "action": "added",
+      "after_sha256": "7d263ad5e9315936e4fe5797241b962b1c504bcec7c7de74a288f0c7608731de",
+      "after_bytes": 268479
+    },
+    "raspehr-3d/assets/site-views/photos/etlaq.jpg": {
+      "action": "added",
+      "after_sha256": "47abbc2f6d35fdb0370ebc28bdeecc33e6c9bba322766b8fdccc04559f475a17",
+      "after_bytes": 108590
+    },
+    "raspehr-3d/assets/site-views/photos/haiyang.jpg": {
+      "action": "added",
+      "after_sha256": "cfa141c47d2bd7ad6db13adaa7204362b4577d664a5a0a6b5e83db3090f0b4e3",
+      "after_bytes": 43949
+    },
+    "raspehr-3d/assets/site-views/photos/imam-khomeini.jpg": {
+      "action": "added",
+      "after_sha256": "544f7c72b17bff75e2283fcc304ca1be8c97803e742b4ea18bb8974c04418549",
+      "after_bytes": 85843
+    },
+    "raspehr-3d/assets/site-views/photos/jiuquan.jpg": {
+      "action": "added",
+      "after_sha256": "ad05fefaef82e99731504d90c9274f55f9545d1ee3abb90f33cbf33478ecbb03",
+      "after_bytes": 82222
+    },
+    "raspehr-3d/assets/site-views/photos/kodiak.jpg": {
+      "action": "added",
+      "after_sha256": "5a06eeb0fe5680450e2d7525e97674ab8bc8653c761b36fb884cdcaf655ed511",
+      "after_bytes": 53567
+    },
+    "raspehr-3d/assets/site-views/photos/kourou.jpg": {
+      "action": "added",
+      "after_sha256": "8f90d1a1a6b8be55e02da132e538ae445b372ae360443dd88d3ba52e5eff35b8",
+      "after_bytes": 100802
+    },
+    "raspehr-3d/assets/site-views/photos/ksc39a.jpg": {
+      "action": "added",
+      "after_sha256": "23d053622c6854ce5d371f09e150b8aaa03366849ef3de8d12703fc48ee49648",
+      "after_bytes": 259935
+    },
+    "raspehr-3d/assets/site-views/photos/ksc39b.jpg": {
+      "action": "added",
+      "after_sha256": "500397740f9db2286cae0769adec4cc9effbfb2c5436963ad76bd61b419145aa",
+      "after_bytes": 95585
+    },
+    "raspehr-3d/assets/site-views/photos/kwajalein.jpg": {
+      "action": "added",
+      "after_sha256": "e656195e844cedbf6721de7b30b048f2298c7b27a943df877aa3c33f7eebcd30",
+      "after_bytes": 102899
+    },
+    "raspehr-3d/assets/site-views/photos/lc36.jpg": {
+      "action": "added",
+      "after_sha256": "47c6adebb483da8b3a217c305375e8afa41f28ecae591a483d8c1a43efa17327",
+      "after_bytes": 168956
+    },
+    "raspehr-3d/assets/site-views/photos/mahia.jpg": {
+      "action": "added",
+      "after_sha256": "90b91e2742b8fa55c8a72d0c5826908c322875b0a9859c7fae9203a7b6616882",
+      "after_bytes": 182260
+    },
+    "raspehr-3d/assets/site-views/photos/mcgregor.jpg": {
+      "action": "added",
+      "after_sha256": "8020b81269848642896f4df973071325c3df96ce613deda9260324d0a110297b",
+      "after_bytes": 209866
+    },
+    "raspehr-3d/assets/site-views/photos/mojave.jpg": {
+      "action": "added",
+      "after_sha256": "baec909554c6fc9abb928ba45e9c148833caf856b6e3927678b5a55dd11474ec",
+      "after_bytes": 183835
+    },
+    "raspehr-3d/assets/site-views/photos/naro.jpg": {
+      "action": "added",
+      "after_sha256": "c72ffd060005da2ee3fe6fe3cb2ed762b23cfbdec8cc8a972ff79b4b6a355646",
+      "after_bytes": 31278
+    },
+    "raspehr-3d/assets/site-views/photos/pad0a.jpg": {
+      "action": "added",
+      "after_sha256": "d1b3d8bf5cf93bfbace1fb5043b66da9f36951043604af4a1a8d1d2004526586",
+      "after_bytes": 61721
+    },
+    "raspehr-3d/assets/site-views/photos/palmachim.jpg": {
+      "action": "added",
+      "after_sha256": "9d6d0dbf30586c33bfa91f9dd2c433d9958ca86a3cd4c83e164059915f0ce84e",
+      "after_bytes": 25361
+    },
+    "raspehr-3d/assets/site-views/photos/plesetsk.jpg": {
+      "action": "added",
+      "after_sha256": "25270404927df6a719e679aa4788809c9d8c1825bf3d7cf626ab59658e1bec91",
+      "after_bytes": 213488
+    },
+    "raspehr-3d/assets/site-views/photos/sanmarco.jpg": {
+      "action": "added",
+      "after_sha256": "6d71c64196751dee876474db3dbff86cfb20acd174e4c21f8725d8d73844bc39",
+      "after_bytes": 132373
+    },
+    "raspehr-3d/assets/site-views/photos/saxavord.jpg": {
+      "action": "added",
+      "after_sha256": "5b8ed575943cba03e171c337a326343912707a6700eb59d51d04a0e3928cc6e2",
+      "after_bytes": 154063
+    },
+    "raspehr-3d/assets/site-views/photos/sea-launch.jpg": {
+      "action": "added",
+      "after_sha256": "1c4eb61be718e86a5bde5e924bbc8446d3fea67ad9c5115c8367297026593107",
+      "after_bytes": 74192
+    },
+    "raspehr-3d/assets/site-views/photos/shahroud.jpg": {
+      "action": "added",
+      "after_sha256": "0067c7e0a2db97cb4ec4434b42c2d16ef7c63b310f5e5031560d590317b37717",
+      "after_bytes": 30134
+    },
+    "raspehr-3d/assets/site-views/photos/sohae.jpg": {
+      "action": "added",
+      "after_sha256": "83cd0a82efdb524c04f359f0afaa30fea74854243d24f418aebb98d4e372dd60",
+      "after_bytes": 105564
+    },
+    "raspehr-3d/assets/site-views/photos/spaceportamerica.jpg": {
+      "action": "added",
+      "after_sha256": "a450cf1bb50c10ed1edbfe43de0db7809e5f1048c4eea30e58b9f420555faea9",
+      "after_bytes": 97503
+    },
+    "raspehr-3d/assets/site-views/photos/sriharikota.jpg": {
+      "action": "added",
+      "after_sha256": "0bc5d72f64d389fbbe334f686c3bc59d4e2545fa59496b367f207c7e31477a7f",
+      "after_bytes": 167753
+    },
+    "raspehr-3d/assets/site-views/photos/starbase.jpg": {
+      "action": "added",
+      "after_sha256": "e1d06ca53b7726ae7572311ac581b25a2bba45fbeb6235156104bfc57282195b",
+      "after_bytes": 79612
+    },
+    "raspehr-3d/assets/site-views/photos/stennis.jpg": {
+      "action": "added",
+      "after_sha256": "41f333046a889e952602bfc09ba418e01ccd612507c933d7d9719bb108077927",
+      "after_bytes": 212414
+    },
+    "raspehr-3d/assets/site-views/photos/taiyuan.jpg": {
+      "action": "added",
+      "after_sha256": "68a90948562d2c15d09fca4f2246bd1cd6357bfa4cd2de2d6ba4e31b1097a3d4",
+      "after_bytes": 352882
+    },
+    "raspehr-3d/assets/site-views/photos/tanegashima.jpg": {
+      "action": "added",
+      "after_sha256": "677936f88872e0a4298c2178cb914e8e7b1f7746e4d003a5d9c5442ec8628822",
+      "after_bytes": 255017
+    },
+    "raspehr-3d/assets/site-views/photos/thumba.jpg": {
+      "action": "added",
+      "after_sha256": "c2d95b7a76d84aa47d7a733a271152cad2a7124024324ab115e5ce87312105b9",
+      "after_bytes": 34736
+    },
+    "raspehr-3d/assets/site-views/photos/uchinoura.jpg": {
+      "action": "added",
+      "after_sha256": "6b64602d21eab845838775ab3a4b8296a9f39ad41b23921e53040a5c674bf7f8",
+      "after_bytes": 186463
+    },
+    "raspehr-3d/assets/site-views/photos/vandenberg-slc6.jpg": {
+      "action": "added",
+      "after_sha256": "0d5c77cb8461d70ae6f979edace1518ec837588066587e4fd5ac353157efe76b",
+      "after_bytes": 187851
+    },
+    "raspehr-3d/assets/site-views/photos/vandenberg.jpg": {
+      "action": "added",
+      "after_sha256": "43c94001040ab646ff12858957d89b8b50f0267f60ded85c60c82b60c98568db",
+      "after_bytes": 152984
+    },
+    "raspehr-3d/assets/site-views/photos/vostochny.jpg": {
+      "action": "added",
+      "after_sha256": "8b4054cba7d8d659f0346076a97c4afc8abbed6a1a4612f4cd57a9a44e4c8241",
+      "after_bytes": 74724
+    },
+    "raspehr-3d/assets/site-views/photos/wallops.jpg": {
+      "action": "added",
+      "after_sha256": "5c9c875646d5b4e69fc2e7e0536fce10720b891d63f4ebbf6a12b56ea6e9cb98",
+      "after_bytes": 123245
+    },
+    "raspehr-3d/assets/site-views/photos/wenchang.jpg": {
+      "action": "added",
+      "after_sha256": "44fb1c77ab045a5940bd5e6efdc310eaba3c793ca219910858b768b0c990c5ec",
+      "after_bytes": 76734
+    },
+    "raspehr-3d/assets/site-views/photos/white-sands.jpg": {
+      "action": "added",
+      "after_sha256": "956682baca214ecfc355b5e2b5d353706ed56e51805db93d0402e835c69180d2",
+      "after_bytes": 173005
+    },
+    "raspehr-3d/assets/site-views/photos/xichang.jpg": {
+      "action": "added",
+      "after_sha256": "facb5ea9c2d7b52b9dae133071d0b677460ffd47ce6088a557c3ec0e011714a2",
+      "after_bytes": 88404
+    },
+    "raspehr-3d/assets/site-views/photos/yasny.jpg": {
+      "action": "added",
+      "after_sha256": "13e4d80cb7bcef7336bebc860e87ad7b342ab3712bc91113d80d7e95b13bd409",
+      "after_bytes": 102819
+    },
+    "raspehr-3d/data/site-imagery-evidence-63.json": {
+      "action": "added",
+      "after_sha256": "53fb5dfd263f326d953590ae2a4640eb50ece9de24d1bfc97cee577ebeb172c9",
+      "after_bytes": 66258
+    },
+    "raspehr-3d/data/site-views-local.v1.json": {
+      "action": "added",
+      "after_sha256": "bee6d9ab1d573b5b85956b84a044585330a392578fa9bc40779f60b4d01a15fe",
+      "after_bytes": 68635
+    },
+    "raspehr-3d/data/site-views-status-79.csv": {
+      "action": "added",
+      "after_sha256": "ad5b7d109f36fa05a5735558e81961a04daf5105202ca59130aa8ff6bfb5ba25",
+      "after_bytes": 28434
+    },
+    "raspehr-3d/tests/imagery_upgrade_resilience.test.cjs": {
+      "action": "added",
+      "after_sha256": "f93742759b1801eee853423df087c4ed29160fed83c2975e6b3f5a84b8d34605",
+      "after_bytes": 7446
+    },
+    "raspehr-3d/tests/imagery_upgrade_usgs_browser.py": {
+      "action": "added",
+      "after_sha256": "6298049da9889d8fc1d527919fa43e530dc808f8b0141300bb9b3a39d403366e",
+      "after_bytes": 12996
+    },
+    "raspehr-3d/tests/site_views_browser.py": {
+      "action": "added",
+      "after_sha256": "de1540e4d761c96c5504f1d3cb30438d25ab651fa993be20d01be7ea8e51f87f",
+      "after_bytes": 3910
+    },
+    "raspehr-3d/tests/site_views_integrity.py": {
+      "action": "added",
+      "after_sha256": "567e4268a330acd92f0d45445a4dd6294782cf34798599a97303098cbbb349ec",
+      "after_bytes": 1523
+    },
+    "raspehr-3d/tests/site_views_real_webgl_integration.py": {
+      "action": "added",
+      "after_sha256": "3db444b0f41706bc24c3e4c951a655a5870585f9af4b9d429f801b15eb1e9d12",
+      "after_bytes": 15174
+    },
+    "raspehr-3d/tools/imagery-diagnostics.html": {
+      "action": "added",
+      "after_sha256": "afbecc0b45419216f6a8cc86403ed5406267d9f7ba1671bf76b8c447fc6efe1a",
+      "after_bytes": 6830
+    },
+    "raspehr-3d/tools/site-views-audit.html": {
+      "action": "added",
+      "after_sha256": "90a232910cc66c8a023a1be6f625153d5e75195538cab153cfd01d55228a0be8",
+      "after_bytes": 5513
+    }
+  }
+}

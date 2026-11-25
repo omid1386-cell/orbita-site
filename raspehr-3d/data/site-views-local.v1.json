@@ -1,0 +1,1381 @@
+{
+  "schema_version": "1.0.0",
+  "scope": "79_launch_sites",
+  "delivery": "same_origin_static_files_only",
+  "image_kind_note": "Only existing real source photographs of sites and activities; NOT georeferenced satellite tiles, 360-degree imagery, or photogrammetric 3D.",
+  "counts": {
+    "site_overview": 11,
+    "facility": 26,
+    "operations": 10,
+    "unavailable": 31,
+    "radar_overview": 1
+  },
+  "sites": [
+    {
+      "id": "ksc39a",
+      "fa": "مرکز فضایی کندی، سکوی ۳۹A",
+      "en": "Kennedy Space Center – LC-39A",
+      "country": "United States",
+      "status": "site_overview",
+      "status_fa": "نمای محیط یا عکس هوایی پایگاه",
+      "files": [
+        {
+          "src": "assets/site-views/photos/ksc39a.jpg",
+          "caption_fa": "نمای هوایی سکوی ۳۹A با راکت ساترن ۵ (دوران آپولو)",
+          "caption_en": "Aerial view of Pad 39A with a Saturn V rocket (Apollo era)",
+          "credit": "NASA",
+          "license": "Public Domain",
+          "source_url": "https://images.nasa.gov/details/KSC-66C-6962",
+          "width": 1200,
+          "height": 960,
+          "sha256": "23d053622c6854ce5d371f09e150b8aaa03366849ef3de8d12703fc48ee49648"
+        }
+      ],
+      "coverage_note": "یک تصویر محلی؛ بزرگ‌نمایی و جابه‌جایی در همان عکس، نه بازسازی سه‌بعدی یا نمای ۳۶۰ درجه."
+    },
+    {
+      "id": "ksc39b",
+      "fa": "مرکز فضایی کندی، سکوی ۳۹B",
+      "en": "Kennedy Space Center – LC-39B",
+      "country": "United States",
+      "status": "facility",
+      "status_fa": "نمای بخشی از تأسیسات یا سکوی پایگاه",
+      "files": [
+        {
+          "src": "assets/site-views/photos/ksc39b.jpg",
+          "caption_fa": "راکت مأموریت آرتمیس ۱ روی سکوی ۳۹B در طلوع آفتاب",
+          "caption_en": "The Artemis I rocket on Pad 39B at sunrise",
+          "credit": "Ben Smegelsky",
+          "license": "Public domain",
+          "source_url": "https://commons.wikimedia.org/wiki/File:Artemis_I_at_Pad_39B_-_Sunrise_(KSC-20220321-PH-JBS01_0085).jpg",
+          "width": 1200,
+          "height": 800,
+          "sha256": "500397740f9db2286cae0769adec4cc9effbfb2c5436963ad76bd61b419145aa"
+        }
+      ],
+      "coverage_note": "یک تصویر محلی؛ بزرگ‌نمایی و جابه‌جایی در همان عکس، نه بازسازی سه‌بعدی یا نمای ۳۶۰ درجه."
+    },
+    {
+      "id": "ccsfs",
+      "fa": "پایگاه نیروی فضایی کیپ کاناورال",
+      "en": "Cape Canaveral Space Force Station",
+      "country": "United States",
+      "status": "site_overview",
+      "status_fa": "نمای محیط یا عکس هوایی پایگاه",
+      "files": [
+        {
+          "src": "assets/site-views/photos/ccsfs.jpg",
+          "caption_fa": "نمای هوایی مجتمع پرتاب ۴۰ در کیپ کاناورال",
+          "caption_en": "Aerial view of Space Launch Complex 40, Cape Canaveral",
+          "credit": "SpaceX",
+          "license": "CC0",
+          "source_url": "https://commons.wikimedia.org/wiki/File:Space_Launch_Complex_40_at_Cape_Canaveral_(aerial).jpg",
+          "width": 1200,
+          "height": 696,
+          "sha256": "e1cdf68d501093a2214023d56a13a1b5554d6a3c6da726a15cc31361d722f1da"
+        }
+      ],
+      "coverage_note": "یک تصویر محلی؛ بزرگ‌نمایی و جابه‌جایی در همان عکس، نه بازسازی سه‌بعدی یا نمای ۳۶۰ درجه."
+    },
+    {
+      "id": "vandenberg",
+      "fa": "پایگاه نیروی فضایی ونندنبرگ",
+      "en": "Vandenberg Space Force Base",
+      "country": "United States",
+      "status": "site_overview",
+      "status_fa": "نمای محیط یا عکس هوایی پایگاه",
+      "files": [
+        {
+          "src": "assets/site-views/photos/vandenberg.jpg",
+          "caption_fa": "نمای تأسیسات مجتمع پرتاب ۴ و منطقهٔ فرود در وندنبرگ",
+          "caption_en": "View of the SLC-4 launch and landing facilities at Vandenberg",
+          "credit": "SpaceX",
+          "license": "CC0",
+          "source_url": "https://commons.wikimedia.org/wiki/File:Vandenberg_Launch_and_Landing_Site.jpg",
+          "width": 1200,
+          "height": 600,
+          "sha256": "43c94001040ab646ff12858957d89b8b50f0267f60ded85c60c82b60c98568db"
+        }
+      ],
+      "coverage_note": "یک تصویر محلی؛ بزرگ‌نمایی و جابه‌جایی در همان عکس، نه بازسازی سه‌بعدی یا نمای ۳۶۰ درجه."
+    },
+    {
+      "id": "starbase",
+      "fa": "استاربیس (بوکا چیکا)",
+      "en": "Starbase (Boca Chica)",
+      "country": "United States",
+      "status": "facility",
+      "status_fa": "نمای بخشی از تأسیسات یا سکوی پایگاه",
+      "files": [
+        {
+          "src": "assets/site-views/photos/starbase.jpg",
+          "caption_fa": "تأسیسات پرتاب استاربیس در بوکاچیکا، تگزاس",
+          "caption_en": "The Starbase launch facility at Boca Chica, Texas",
+          "credit": "Lars Plougmann from United States",
+          "license": "CC BY-SA 2.0",
+          "source_url": "https://commons.wikimedia.org/wiki/File:SpaceX_Starbase_launch_facility_(51438071556).jpg",
+          "width": 1200,
+          "height": 800,
+          "sha256": "e1d06ca53b7726ae7572311ac581b25a2bba45fbeb6235156104bfc57282195b"
+        }
+      ],
+      "coverage_note": "یک تصویر محلی؛ بزرگ‌نمایی و جابه‌جایی در همان عکس، نه بازسازی سه‌بعدی یا نمای ۳۶۰ درجه."
+    },
+    {
+      "id": "wallops",
+      "fa": "پایگاه پروازی والوپس",
+      "en": "Wallops Flight Facility / MARS",
+      "country": "United States",
+      "status": "facility",
+      "status_fa": "نمای بخشی از تأسیسات یا سکوی پایگاه",
+      "files": [
+        {
+          "src": "assets/site-views/photos/wallops.jpg",
+          "caption_fa": "راکت آنتارس روی سکوی پرتاب والوپس",
+          "caption_en": "An Antares rocket on the launch pad at Wallops",
+          "credit": "NASA/Bill Ingalls",
+          "license": "Public Domain",
+          "source_url": "https://images.nasa.gov/details/201401080005HQ",
+          "width": 910,
+          "height": 1200,
+          "sha256": "5c9c875646d5b4e69fc2e7e0536fce10720b891d63f4ebbf6a12b56ea6e9cb98"
+        }
+      ],
+      "coverage_note": "یک تصویر محلی؛ بزرگ‌نمایی و جابه‌جایی در همان عکس، نه بازسازی سه‌بعدی یا نمای ۳۶۰ درجه."
+    },
+    {
+      "id": "kodiak",
+      "fa": "مجتمع فضایی پاسیفیک، آلاسکا",
+      "en": "Pacific Spaceport Complex – Alaska",
+      "country": "United States",
+      "status": "facility",
+      "status_fa": "نمای بخشی از تأسیسات یا سکوی پایگاه",
+      "files": [
+        {
+          "src": "assets/site-views/photos/kodiak.jpg",
+          "caption_fa": "ساختمان پردازش و مونتاژ مجتمع فضایی پاسیفیک، جزیرهٔ کودیاک",
+          "caption_en": "Processing and integration facility at the Pacific Spaceport Complex, Kodiak Island",
+          "credit": "U.S. Air Force/Tech. Sgt. Bennie J. Davis III",
+          "license": "Public domain",
+          "source_url": "https://commons.wikimedia.org/wiki/File:Kodiak_Launch_Complex,_Kodiak_Island,_Alaska_AF.jpg",
+          "width": 1000,
+          "height": 665,
+          "sha256": "5a06eeb0fe5680450e2d7525e97674ab8bc8653c761b36fb884cdcaf655ed511"
+        }
+      ],
+      "coverage_note": "یک تصویر محلی؛ بزرگ‌نمایی و جابه‌جایی در همان عکس، نه بازسازی سه‌بعدی یا نمای ۳۶۰ درجه."
+    },
+    {
+      "id": "spaceportamerica",
+      "fa": "اسپیس‌پورت آمریکا",
+      "en": "Spaceport America",
+      "country": "United States",
+      "status": "facility",
+      "status_fa": "نمای بخشی از تأسیسات یا سکوی پایگاه",
+      "files": [
+        {
+          "src": "assets/site-views/photos/spaceportamerica.jpg",
+          "caption_fa": "پایانهٔ اصلی اسپیس‌پورت آمریکا در شب",
+          "caption_en": "The main terminal hangar of Spaceport America at night",
+          "credit": "Land Rover MENA",
+          "license": "CC BY 2.0",
+          "source_url": "https://commons.wikimedia.org/wiki/File:Spaceport_America_terminal_hangar_at_night_(14907530348).jpg",
+          "width": 1200,
+          "height": 800,
+          "sha256": "a450cf1bb50c10ed1edbfe43de0db7809e5f1048c4eea30e58b9f420555faea9"
+        }
+      ],
+      "coverage_note": "یک تصویر محلی؛ بزرگ‌نمایی و جابه‌جایی در همان عکس، نه بازسازی سه‌بعدی یا نمای ۳۶۰ درجه."
+    },
+    {
+      "id": "kwajalein",
+      "fa": "جزیرهٔ اومِلِک، آتول کواجالین",
+      "en": "Omelek Island / Kwajalein Atoll",
+      "country": "Marshall Islands",
+      "status": "operations",
+      "status_fa": "عکس فعالیت یا پرتاب در پایگاه (نه نمای کامل محوطه)",
+      "files": [
+        {
+          "src": "assets/site-views/photos/kwajalein.jpg",
+          "caption_fa": "پرتاب فالکون ۱ از جزیرهٔ اوملک (۲۰۰۹)",
+          "caption_en": "Falcon 1 lifting off from Omelek Island (2009)",
+          "credit": "SpaceX",
+          "license": "CC0",
+          "source_url": "https://commons.wikimedia.org/wiki/File:2009_Falcon_1_launches_from_Omelek_Island_02.jpg",
+          "width": 1200,
+          "height": 800,
+          "sha256": "e656195e844cedbf6721de7b30b048f2298c7b27a943df877aa3c33f7eebcd30"
+        }
+      ],
+      "coverage_note": "یک تصویر محلی؛ بزرگ‌نمایی و جابه‌جایی در همان عکس، نه بازسازی سه‌بعدی یا نمای ۳۶۰ درجه."
+    },
+    {
+      "id": "mahia",
+      "fa": "مجتمع پرتاب ۱ راکت‌لب، ماهیا",
+      "en": "Rocket Lab Launch Complex 1 – Māhia",
+      "country": "New Zealand",
+      "status": "site_overview",
+      "status_fa": "نمای محیط یا عکس هوایی پایگاه",
+      "files": [
+        {
+          "src": "assets/site-views/photos/mahia.jpg",
+          "caption_fa": "نمای هوایی مجتمع پرتاب ۱ راکت‌لب در شبه‌جزیرهٔ ماهیا",
+          "caption_en": "Aerial survey view of Rocket Lab Launch Complex 1, Mahia Peninsula",
+          "credit": "Land Information New Zealand (LINZ)",
+          "license": "CC BY 4.0",
+          "source_url": "https://commons.wikimedia.org/wiki/File:Rocket_Lab_Launch_Complex_1_survey_image.jpg",
+          "width": 909,
+          "height": 964,
+          "sha256": "90b91e2742b8fa55c8a72d0c5826908c322875b0a9859c7fae9203a7b6616882"
+        }
+      ],
+      "coverage_note": "یک تصویر محلی؛ بزرگ‌نمایی و جابه‌جایی در همان عکس، نه بازسازی سه‌بعدی یا نمای ۳۶۰ درجه."
+    },
+    {
+      "id": "kourou",
+      "fa": "پایگاه فضایی گویان، کورو",
+      "en": "Guiana Space Centre (CSG) – Kourou",
+      "country": "French Guiana",
+      "status": "facility",
+      "status_fa": "نمای بخشی از تأسیسات یا سکوی پایگاه",
+      "files": [
+        {
+          "src": "assets/site-views/photos/kourou.jpg",
+          "caption_fa": "انتقال آریان ۵ به سکوی پرتاب ELA-3 در کورو",
+          "caption_en": "An Ariane 5 on its way to the ELA-3 pad, Kourou",
+          "credit": "elisabetta_monaco from Munich, Germany",
+          "license": "CC BY 2.0",
+          "source_url": "https://commons.wikimedia.org/wiki/File:Ariane_5ECA_on_its_way_to_launch_pad_ELA-3.jpg",
+          "width": 1200,
+          "height": 900,
+          "sha256": "8f90d1a1a6b8be55e02da132e538ae445b372ae360443dd88d3ba52e5eff35b8"
+        }
+      ],
+      "coverage_note": "یک تصویر محلی؛ بزرگ‌نمایی و جابه‌جایی در همان عکس، نه بازسازی سه‌بعدی یا نمای ۳۶۰ درجه."
+    },
+    {
+      "id": "andoya",
+      "fa": "پایگاه فضایی آندویا",
+      "en": "Andøya Spaceport",
+      "country": "Norway",
+      "status": "site_overview",
+      "status_fa": "نمای محیط یا عکس هوایی پایگاه",
+      "files": [
+        {
+          "src": "assets/site-views/photos/andoya.jpg",
+          "caption_fa": "نمای هوایی تأسیسات پایگاه فضایی آندویا",
+          "caption_en": "Aerial view of the Andøya launch site facilities",
+          "credit": "MM2sp",
+          "license": "Public domain",
+          "source_url": "https://commons.wikimedia.org/wiki/File:Rocketrangesummer.JPG",
+          "width": 640,
+          "height": 481,
+          "sha256": "94ca301a4a2b4a9311b9e641059e4d7198e19a0a1fad7b49f7e36e0c3ccc0c5f"
+        }
+      ],
+      "coverage_note": "یک تصویر محلی؛ بزرگ‌نمایی و جابه‌جایی در همان عکس، نه بازسازی سه‌بعدی یا نمای ۳۶۰ درجه."
+    },
+    {
+      "id": "esrange",
+      "fa": "مرکز فضایی اسرنج",
+      "en": "Esrange Space Center",
+      "country": "Sweden",
+      "status": "facility",
+      "status_fa": "نمای بخشی از تأسیسات یا سکوی پایگاه",
+      "files": [
+        {
+          "src": "assets/site-views/photos/esrange.jpg",
+          "caption_fa": "راکت کاوشی در برج پرتاب اسرنج",
+          "caption_en": "A sounding rocket inside the Esrange launch tower",
+          "credit": "DLR Picture",
+          "license": "CC BY 3.0 de",
+          "source_url": "https://commons.wikimedia.org/wiki/File:VSB-30_rocket_for_TEXUS_50_flight_in_launch_tower.jpg",
+          "width": 1200,
+          "height": 674,
+          "sha256": "7d263ad5e9315936e4fe5797241b962b1c504bcec7c7de74a288f0c7608731de"
+        }
+      ],
+      "coverage_note": "یک تصویر محلی؛ بزرگ‌نمایی و جابه‌جایی در همان عکس، نه بازسازی سه‌بعدی یا نمای ۳۶۰ درجه."
+    },
+    {
+      "id": "saxavord",
+      "fa": "پایگاه فضایی ساکساورد",
+      "en": "SaxaVord Spaceport",
+      "country": "United Kingdom",
+      "status": "facility",
+      "status_fa": "نمای بخشی از تأسیسات یا سکوی پایگاه",
+      "files": [
+        {
+          "src": "assets/site-views/photos/saxavord.jpg",
+          "caption_fa": "ورودی و محوطهٔ در حال ساخت پایگاه ساکساورد، جزیرهٔ آنست",
+          "caption_en": "Entrance and construction works at SaxaVord Spaceport, Unst",
+          "credit": "Mike Pennington",
+          "license": "CC BY-SA 2.0",
+          "source_url": "https://commons.wikimedia.org/wiki/File:Site_entrance_for_the_proposed_Saxavord_Spaceport,_Lamba_Ness_-_geograph.org.uk_-_7179193.jpg",
+          "width": 1200,
+          "height": 540,
+          "sha256": "5b8ed575943cba03e171c337a326343912707a6700eb59d51d04a0e3928cc6e2"
+        }
+      ],
+      "coverage_note": "یک تصویر محلی؛ بزرگ‌نمایی و جابه‌جایی در همان عکس، نه بازسازی سه‌بعدی یا نمای ۳۶۰ درجه."
+    },
+    {
+      "id": "sutherland",
+      "fa": "پایگاه فضایی ساترلند",
+      "en": "Sutherland Spaceport",
+      "country": "United Kingdom",
+      "status": "unavailable",
+      "status_fa": "تصویر مناسب برای گشت‌وگذار محلی هنوز تأیید نشده",
+      "files": [],
+      "coverage_note": "در این بسته تصویر تاییدشده‌ای برای نمایش محلی وجود ندارد."
+    },
+    {
+      "id": "elarenosillo",
+      "fa": "ال آرنوسیو (سدآ)",
+      "en": "El Arenosillo (CEDEA)",
+      "country": "Spain",
+      "status": "operations",
+      "status_fa": "عکس فعالیت یا پرتاب در پایگاه (نه نمای کامل محوطه)",
+      "files": [
+        {
+          "src": "assets/site-views/photos/elarenosillo.jpg",
+          "caption_fa": "پرتاب شبانهٔ میورا ۱ از ال آرنوسیو",
+          "caption_en": "Night launch of Miura 1 from El Arenosillo",
+          "credit": "PLD Space",
+          "license": "CC BY-SA 4.0",
+          "source_url": "https://commons.wikimedia.org/wiki/File:Lanzamiento_exitoso_del_cohete_MIURA_1.jpg",
+          "width": 1200,
+          "height": 775,
+          "sha256": "de2ba967b84b2fafdb2b927b1c64c44e4ec4e55e1d8c99d39ddc1cc0c8dddf21"
+        }
+      ],
+      "coverage_note": "یک تصویر محلی؛ بزرگ‌نمایی و جابه‌جایی در همان عکس، نه بازسازی سه‌بعدی یا نمای ۳۶۰ درجه."
+    },
+    {
+      "id": "malbusca",
+      "fa": "مرکز پرتاب مالبوسکا",
+      "en": "Malbusca Launch Centre",
+      "country": "Portugal",
+      "status": "unavailable",
+      "status_fa": "تصویر مناسب برای گشت‌وگذار محلی هنوز تأیید نشده",
+      "files": [],
+      "coverage_note": "در این بسته تصویر تاییدشده‌ای برای نمایش محلی وجود ندارد."
+    },
+    {
+      "id": "plesetsk",
+      "fa": "پایگاه فضایی پلستسک",
+      "en": "Plesetsk Cosmodrome",
+      "country": "Russia",
+      "status": "facility",
+      "status_fa": "نمای بخشی از تأسیسات یا سکوی پایگاه",
+      "files": [
+        {
+          "src": "assets/site-views/photos/plesetsk.jpg",
+          "caption_fa": "راکت آنگارا-۱.۲ روی سکوی پرتاب پلستسک",
+          "caption_en": "An Angara-1.2 rocket on the pad at Plesetsk",
+          "credit": "Unknown authorUnknown author",
+          "license": "CC BY 4.0",
+          "source_url": "https://commons.wikimedia.org/wiki/File:Launch_of_the_Angara-1.2_from_the_Plesetsk_cosmodrome_(2025-08-21)_02.jpg",
+          "width": 1200,
+          "height": 800,
+          "sha256": "25270404927df6a719e679aa4788809c9d8c1825bf3d7cf626ab59658e1bec91"
+        }
+      ],
+      "coverage_note": "یک تصویر محلی؛ بزرگ‌نمایی و جابه‌جایی در همان عکس، نه بازسازی سه‌بعدی یا نمای ۳۶۰ درجه."
+    },
+    {
+      "id": "baikonur",
+      "fa": "پایگاه فضایی بایکونور",
+      "en": "Baikonur Cosmodrome",
+      "country": "Kazakhstan (leased by Russia)",
+      "status": "facility",
+      "status_fa": "نمای بخشی از تأسیسات یا سکوی پایگاه",
+      "files": [
+        {
+          "src": "assets/site-views/photos/baikonur.jpg",
+          "caption_fa": "برافراشتن راکت سایوز روی سکوی پرتاب بایکونور",
+          "caption_en": "A Soyuz rocket being erected on the launch pad at Baikonur",
+          "credit": "NASA/Bill Ingalls",
+          "license": "Public Domain",
+          "source_url": "https://images.nasa.gov/details/200903240032HQ",
+          "width": 905,
+          "height": 1200,
+          "sha256": "629933f47e6642882c7126335c38ec1d3b93567db3494a491ff338a7fb829771"
+        }
+      ],
+      "coverage_note": "یک تصویر محلی؛ بزرگ‌نمایی و جابه‌جایی در همان عکس، نه بازسازی سه‌بعدی یا نمای ۳۶۰ درجه."
+    },
+    {
+      "id": "vostochny",
+      "fa": "پایگاه فضایی واستوچنی",
+      "en": "Vostochny Cosmodrome",
+      "country": "Russia",
+      "status": "operations",
+      "status_fa": "عکس فعالیت یا پرتاب در پایگاه (نه نمای کامل محوطه)",
+      "files": [
+        {
+          "src": "assets/site-views/photos/vostochny.jpg",
+          "caption_fa": "پرتاب سایوز-۲.۱آ از وستوچنی (۱۳۹۵/۲۰۱۶)",
+          "caption_en": "Launch of a Soyuz-2.1a from Vostochny (2016)",
+          "credit": "Пресс-служба Президента России",
+          "license": "CC BY 4.0",
+          "source_url": "https://commons.wikimedia.org/wiki/File:Launch_of_the_Soyuz-2.1a_from_Vostochny_2016-04-28_011.jpg",
+          "width": 1200,
+          "height": 740,
+          "sha256": "8b4054cba7d8d659f0346076a97c4afc8abbed6a1a4612f4cd57a9a44e4c8241"
+        }
+      ],
+      "coverage_note": "یک تصویر محلی؛ بزرگ‌نمایی و جابه‌جایی در همان عکس، نه بازسازی سه‌بعدی یا نمای ۳۶۰ درجه."
+    },
+    {
+      "id": "kapyar",
+      "fa": "کاپوستین یار",
+      "en": "Kapustin Yar",
+      "country": "Russia",
+      "status": "unavailable",
+      "status_fa": "تصویر مناسب برای گشت‌وگذار محلی هنوز تأیید نشده",
+      "files": [],
+      "coverage_note": "در این بسته تصویر تاییدشده‌ای برای نمایش محلی وجود ندارد."
+    },
+    {
+      "id": "jiuquan",
+      "fa": "مرکز پرتاب ماهوارهٔ جیوچوان",
+      "en": "Jiuquan Satellite Launch Center",
+      "country": "China",
+      "status": "facility",
+      "status_fa": "نمای بخشی از تأسیسات یا سکوی پایگاه",
+      "files": [
+        {
+          "src": "assets/site-views/photos/jiuquan.jpg",
+          "caption_fa": "ساختمان مونتاژ عمودی مرکز پرتاب جیوچوان",
+          "caption_en": "The vertical assembly building at Jiuquan Launch Center",
+          "credit": "中国新闻网",
+          "license": "CC BY 4.0",
+          "source_url": "https://commons.wikimedia.org/wiki/File:Jiuquan_Launch_Center_Vertical_Assembly_Building.png",
+          "width": 1200,
+          "height": 675,
+          "sha256": "ad05fefaef82e99731504d90c9274f55f9545d1ee3abb90f33cbf33478ecbb03"
+        }
+      ],
+      "coverage_note": "یک تصویر محلی؛ بزرگ‌نمایی و جابه‌جایی در همان عکس، نه بازسازی سه‌بعدی یا نمای ۳۶۰ درجه."
+    },
+    {
+      "id": "taiyuan",
+      "fa": "مرکز پرتاب ماهوارهٔ تای‌یوان",
+      "en": "Taiyuan Satellite Launch Center",
+      "country": "China",
+      "status": "radar_overview",
+      "status_fa": "نمای ماهواره‌ای راداری از محوطه پایگاه (سیاه‌وسفید)",
+      "files": [
+        {
+          "src": "assets/site-views/photos/taiyuan.jpg",
+          "caption_fa": "نمای راداری ماهواره‌ای از تأسیسات مرکز پرتاب تای‌یوان",
+          "caption_en": "Satellite radar (SAR) view of the Taiyuan Satellite Launch Center facilities",
+          "credit": "Umbra Space / SpaceFrom.Space",
+          "license": "CC BY 2.0",
+          "source_url": "https://commons.wikimedia.org/wiki/File:Taiyuan_Satellite_Launch_Center_in_SAR_-_2023-06-20_(53264414596).jpg",
+          "width": 1200,
+          "height": 853,
+          "sha256": "68a90948562d2c15d09fca4f2246bd1cd6357bfa4cd2de2d6ba4e31b1097a3d4"
+        }
+      ],
+      "coverage_note": "یک تصویر محلی؛ بزرگ‌نمایی و جابه‌جایی در همان عکس، نه بازسازی سه‌بعدی یا نمای ۳۶۰ درجه."
+    },
+    {
+      "id": "xichang",
+      "fa": "مرکز پرتاب ماهوارهٔ شی‌چانگ",
+      "en": "Xichang Satellite Launch Center",
+      "country": "China",
+      "status": "operations",
+      "status_fa": "عکس فعالیت یا پرتاب در پایگاه (نه نمای کامل محوطه)",
+      "files": [
+        {
+          "src": "assets/site-views/photos/xichang.jpg",
+          "caption_fa": "پرتاب شبانهٔ لانگ‌مارچ ۳B از شی‌چانگ",
+          "caption_en": "Night launch of a Long March 3B from Xichang",
+          "credit": "AAxanderr",
+          "license": "Public domain",
+          "source_url": "https://commons.wikimedia.org/wiki/File:The_Launch_of_Long_March_3B_Rocket.jpg",
+          "width": 862,
+          "height": 1200,
+          "sha256": "facb5ea9c2d7b52b9dae133071d0b677460ffd47ce6088a557c3ec0e011714a2"
+        }
+      ],
+      "coverage_note": "یک تصویر محلی؛ بزرگ‌نمایی و جابه‌جایی در همان عکس، نه بازسازی سه‌بعدی یا نمای ۳۶۰ درجه."
+    },
+    {
+      "id": "wenchang",
+      "fa": "پایگاه پرتاب فضایی ون‌چانگ",
+      "en": "Wenchang Space Launch Site",
+      "country": "China",
+      "status": "facility",
+      "status_fa": "نمای بخشی از تأسیسات یا سکوی پایگاه",
+      "files": [
+        {
+          "src": "assets/site-views/photos/wenchang.jpg",
+          "caption_fa": "انتقال لانگ‌مارچ ۵ به سکوی پرتاب ونچانگ",
+          "caption_en": "Rollout of a Long March 5 at Wenchang",
+          "credit": "中国新闻社",
+          "license": "CC BY 3.0",
+          "source_url": "https://commons.wikimedia.org/wiki/File:Long_March_5_Y5_rollout.png",
+          "width": 1200,
+          "height": 672,
+          "sha256": "44fb1c77ab045a5940bd5e6efdc310eaba3c793ca219910858b768b0c990c5ec"
+        }
+      ],
+      "coverage_note": "یک تصویر محلی؛ بزرگ‌نمایی و جابه‌جایی در همان عکس، نه بازسازی سه‌بعدی یا نمای ۳۶۰ درجه."
+    },
+    {
+      "id": "haiyang",
+      "fa": "پرتاب دریایی های‌یانگ (دریای زرد)",
+      "en": "Haiyang / Yellow Sea Sea Launch",
+      "country": "China",
+      "status": "operations",
+      "status_fa": "عکس فعالیت یا پرتاب در پایگاه (نه نمای کامل محوطه)",
+      "files": [
+        {
+          "src": "assets/site-views/photos/haiyang.jpg",
+          "caption_fa": "پرتاب دریایی ماهواره‌بر جیه‌لونگ-۳ از سکوی شناور دریای زرد",
+          "caption_en": "Sea launch of a Jielong-3 rocket from the floating platform in the Yellow Sea",
+          "credit": "China News Service",
+          "license": "CC BY 4.0",
+          "source_url": "https://commons.wikimedia.org/wiki/File:Jielong-3_Carrier_Rocket_Maidan_Flight.png",
+          "width": 1200,
+          "height": 565,
+          "sha256": "cfa141c47d2bd7ad6db13adaa7204362b4577d664a5a0a6b5e83db3090f0b4e3"
+        }
+      ],
+      "coverage_note": "یک تصویر محلی؛ بزرگ‌نمایی و جابه‌جایی در همان عکس، نه بازسازی سه‌بعدی یا نمای ۳۶۰ درجه."
+    },
+    {
+      "id": "sriharikota",
+      "fa": "مرکز فضایی ساتیش دهاوان (شار)",
+      "en": "Satish Dhawan Space Centre (SHAR)",
+      "country": "India",
+      "status": "facility",
+      "status_fa": "نمای بخشی از تأسیسات یا سکوی پایگاه",
+      "files": [
+        {
+          "src": "assets/site-views/photos/sriharikota.jpg",
+          "caption_fa": "سکوی دوم پرتاب سریهاریکوتا با ماهواره‌بر GSLV Mk III",
+          "caption_en": "GSLV Mk III on the Second Launch Pad, Satish Dhawan Space Centre",
+          "credit": "Indian Space Research Organisation",
+          "license": "GODL-India",
+          "source_url": "https://commons.wikimedia.org/wiki/File:01_GSLV_Mk_III_D2_with_GSAT-29_on_Second_Launch_Pad_of_Satish_Dhawan_Space_Centre,_Sriharikota_(SDSC_SHAR).jpg",
+          "width": 1200,
+          "height": 801,
+          "sha256": "0bc5d72f64d389fbbe334f686c3bc59d4e2545fa59496b367f207c7e31477a7f"
+        }
+      ],
+      "coverage_note": "یک تصویر محلی؛ بزرگ‌نمایی و جابه‌جایی در همان عکس، نه بازسازی سه‌بعدی یا نمای ۳۶۰ درجه."
+    },
+    {
+      "id": "kulasekarapattinam",
+      "fa": "پایگاه فضایی کولاسکاراپاتینام",
+      "en": "Kulasekarapattinam Spaceport",
+      "country": "India",
+      "status": "unavailable",
+      "status_fa": "تصویر مناسب برای گشت‌وگذار محلی هنوز تأیید نشده",
+      "files": [],
+      "coverage_note": "در این بسته تصویر تاییدشده‌ای برای نمایش محلی وجود ندارد."
+    },
+    {
+      "id": "tanegashima",
+      "fa": "مرکز فضایی تانگاشیما",
+      "en": "Tanegashima Space Center",
+      "country": "Japan",
+      "status": "site_overview",
+      "status_fa": "نمای محیط یا عکس هوایی پایگاه",
+      "files": [
+        {
+          "src": "assets/site-views/photos/tanegashima.jpg",
+          "caption_fa": "سکوهای پرتاب تانگاشیما در ساحل اقیانوس آرام",
+          "caption_en": "The Tanegashima launch pads on the Pacific coast",
+          "credit": "Bill Ingalls",
+          "license": "Public domain",
+          "source_url": "https://commons.wikimedia.org/wiki/File:Global_Precipitation_Measurement_(GPM)_pre-launch.jpg",
+          "width": 1200,
+          "height": 1200,
+          "sha256": "677936f88872e0a4298c2178cb914e8e7b1f7746e4d003a5d9c5442ec8628822"
+        }
+      ],
+      "coverage_note": "یک تصویر محلی؛ بزرگ‌نمایی و جابه‌جایی در همان عکس، نه بازسازی سه‌بعدی یا نمای ۳۶۰ درجه."
+    },
+    {
+      "id": "uchinoura",
+      "fa": "مرکز فضایی اوچینورا",
+      "en": "Uchinoura Space Center",
+      "country": "Japan",
+      "status": "site_overview",
+      "status_fa": "نمای محیط یا عکس هوایی پایگاه",
+      "files": [
+        {
+          "src": "assets/site-views/photos/uchinoura.jpg",
+          "caption_fa": "نمای تأسیسات مرکز فضایی اوچینورا بر فراز تپه‌های ساحلی",
+          "caption_en": "The Uchinoura Space Center facilities on the coastal hills",
+          "credit": "Ippukucho",
+          "license": "CC BY 3.0",
+          "source_url": "https://commons.wikimedia.org/wiki/File:UchinouraSpaceCenterFromHoshigaoka.JPG",
+          "width": 1200,
+          "height": 900,
+          "sha256": "6b64602d21eab845838775ab3a4b8296a9f39ad41b23921e53040a5c674bf7f8"
+        }
+      ],
+      "coverage_note": "یک تصویر محلی؛ بزرگ‌نمایی و جابه‌جایی در همان عکس، نه بازسازی سه‌بعدی یا نمای ۳۶۰ درجه."
+    },
+    {
+      "id": "kii",
+      "fa": "پایگاه فضایی کی‌ای",
+      "en": "Spaceport Kii",
+      "country": "Japan",
+      "status": "unavailable",
+      "status_fa": "تصویر مناسب برای گشت‌وگذار محلی هنوز تأیید نشده",
+      "files": [],
+      "coverage_note": "در این بسته تصویر تاییدشده‌ای برای نمایش محلی وجود ندارد."
+    },
+    {
+      "id": "taiki",
+      "fa": "پایگاه فضایی هوکایدو (تایکی)",
+      "en": "Hokkaido Spaceport (Taiki)",
+      "country": "Japan",
+      "status": "unavailable",
+      "status_fa": "تصویر مناسب برای گشت‌وگذار محلی هنوز تأیید نشده",
+      "files": [],
+      "coverage_note": "در این بسته تصویر تاییدشده‌ای برای نمایش محلی وجود ندارد."
+    },
+    {
+      "id": "naro",
+      "fa": "مرکز فضایی نارو",
+      "en": "Naro Space Center",
+      "country": "South Korea",
+      "status": "operations",
+      "status_fa": "عکس فعالیت یا پرتاب در پایگاه (نه نمای کامل محوطه)",
+      "files": [
+        {
+          "src": "assets/site-views/photos/naro.jpg",
+          "caption_fa": "پرتاب ماهواره‌بر نوری از مرکز فضایی نارو",
+          "caption_en": "Launch of the Nuri (KSLV-II) rocket from Naro Space Center",
+          "credit": "Korea Aerospace Research Institute",
+          "license": "KOGL Type 1",
+          "source_url": "https://commons.wikimedia.org/wiki/File:%EB%88%84%EB%A6%AC%ED%98%B8_%EB%B0%9C%EC%82%AC_(1738).jpeg",
+          "width": 675,
+          "height": 1200,
+          "sha256": "c72ffd060005da2ee3fe6fe3cb2ed762b23cfbdec8cc8a972ff79b4b6a355646"
+        }
+      ],
+      "coverage_note": "یک تصویر محلی؛ بزرگ‌نمایی و جابه‌جایی در همان عکس، نه بازسازی سه‌بعدی یا نمای ۳۶۰ درجه."
+    },
+    {
+      "id": "sohae",
+      "fa": "ایستگاه پرتاب ماهوارهٔ سوهه",
+      "en": "Sohae Satellite Launching Station",
+      "country": "North Korea",
+      "status": "facility",
+      "status_fa": "نمای بخشی از تأسیسات یا سکوی پایگاه",
+      "files": [
+        {
+          "src": "assets/site-views/photos/sohae.jpg",
+          "caption_fa": "ماهواره‌بر اونها-۳ روی برج پرتاب سوهه",
+          "caption_en": "The Unha-3 rocket on the launch gantry at Sohae",
+          "credit": "Sungwon Baik / VOA",
+          "license": "Public domain",
+          "source_url": "https://commons.wikimedia.org/wiki/File:North_Korean_Unha-3_rocket_at_launch_pad.jpg",
+          "width": 640,
+          "height": 960,
+          "sha256": "83cd0a82efdb524c04f359f0afaa30fea74854243d24f418aebb98d4e372dd60"
+        }
+      ],
+      "coverage_note": "یک تصویر محلی؛ بزرگ‌نمایی و جابه‌جایی در همان عکس، نه بازسازی سه‌بعدی یا نمای ۳۶۰ درجه."
+    },
+    {
+      "id": "palmachim",
+      "fa": "پایگاه هوایی پالماخیم",
+      "en": "Palmachim Airbase",
+      "country": "Israel",
+      "status": "operations",
+      "status_fa": "عکس فعالیت یا پرتاب در پایگاه (نه نمای کامل محوطه)",
+      "files": [
+        {
+          "src": "assets/site-views/photos/palmachim.jpg",
+          "caption_fa": "پرتاب شبانهٔ شاویت (مأموریت افق ۷) از پالماخیم",
+          "caption_en": "Night launch of Shavit (Ofek-7) from Palmachim",
+          "credit": "התעשייה האווירית.",
+          "license": "CC BY 2.5",
+          "source_url": "https://commons.wikimedia.org/wiki/File:Shavit_Ofek7a.jpg",
+          "width": 600,
+          "height": 889,
+          "sha256": "9d6d0dbf30586c33bfa91f9dd2c433d9958ca86a3cd4c83e164059915f0ce84e"
+        }
+      ],
+      "coverage_note": "یک تصویر محلی؛ بزرگ‌نمایی و جابه‌جایی در همان عکس، نه بازسازی سه‌بعدی یا نمای ۳۶۰ درجه."
+    },
+    {
+      "id": "imam-khomeini",
+      "fa": "پایگاه فضایی امام خمینی (سمنان)",
+      "en": "Imam Khomeini Spaceport (Semnan)",
+      "country": "Iran",
+      "status": "facility",
+      "status_fa": "نمای بخشی از تأسیسات یا سکوی پایگاه",
+      "files": [
+        {
+          "src": "assets/site-views/photos/imam-khomeini.jpg",
+          "caption_fa": "ماهواره‌بر سیمرغ در پایگاه ملی فضایی امام خمینی (ره)، سمنان",
+          "caption_en": "Simorgh launch vehicle at the Imam Khomeini National Space Center, Semnan",
+          "credit": "Tasnim News Agency",
+          "license": "CC BY 4.0",
+          "source_url": "https://commons.wikimedia.org/wiki/File:%D8%B3%DB%8C%D9%85%D8%B1%D8%BA_-_%D8%A7%D9%81%D8%AA%D8%AA%D8%A7%D8%AD_%D9%BE%D8%A7%DB%8C%DA%AF%D8%A7%D9%87_%D9%85%D9%84%DB%8C_%D9%81%D8%B6%D8%A7%DB%8C%DB%8C_%D8%A7%D9%85%D8%A7%D9%85_%D8%AE%D9%85%DB%8C%D9%86%DB%8C(%D8%B1%D9%87)_(1).jpg",
+          "width": 800,
+          "height": 486,
+          "sha256": "544f7c72b17bff75e2283fcc304ca1be8c97803e742b4ea18bb8974c04418549"
+        }
+      ],
+      "coverage_note": "یک تصویر محلی؛ بزرگ‌نمایی و جابه‌جایی در همان عکس، نه بازسازی سه‌بعدی یا نمای ۳۶۰ درجه."
+    },
+    {
+      "id": "shahroud",
+      "fa": "پایگاه فضایی شاهرود",
+      "en": "Shahroud Space Center",
+      "country": "Iran",
+      "status": "facility",
+      "status_fa": "نمای بخشی از تأسیسات یا سکوی پایگاه",
+      "files": [
+        {
+          "src": "assets/site-views/photos/shahroud.jpg",
+          "caption_fa": "نخستین پرتاب ماهواره‌بر قاصد از پایگاه فضایی شاهرود",
+          "caption_en": "First launch of the Qased satellite carrier from the Shahroud space site",
+          "credit": "Fars News Agency",
+          "license": "CC BY 4.0",
+          "source_url": "https://commons.wikimedia.org/wiki/File:Qased_SLV_first_launch_01-cropped.jpg",
+          "width": 666,
+          "height": 482,
+          "sha256": "0067c7e0a2db97cb4ec4434b42c2d16ef7c63b310f5e5031560d590317b37717"
+        }
+      ],
+      "coverage_note": "یک تصویر محلی؛ بزرگ‌نمایی و جابه‌جایی در همان عکس، نه بازسازی سه‌بعدی یا نمای ۳۶۰ درجه."
+    },
+    {
+      "id": "chabahar",
+      "fa": "مرکز فضایی چابهار",
+      "en": "Chabahar Space Center",
+      "country": "Iran",
+      "status": "unavailable",
+      "status_fa": "تصویر مناسب برای گشت‌وگذار محلی هنوز تأیید نشده",
+      "files": [],
+      "coverage_note": "در این بسته تصویر تاییدشده‌ای برای نمایش محلی وجود ندارد."
+    },
+    {
+      "id": "emamshahr",
+      "fa": "محدودهٔ آزمون امام‌شهر",
+      "en": "Emamshahr Test Range",
+      "country": "Iran",
+      "status": "operations",
+      "status_fa": "عکس فعالیت یا پرتاب در پایگاه (نه نمای کامل محوطه)",
+      "files": [
+        {
+          "src": "assets/site-views/photos/emamshahr.jpg",
+          "caption_fa": "پرتاب کاوشگر زیستی پیشگام از سکوی ریلی محدودهٔ کاوشگرهای ایران",
+          "caption_en": "Launch of the Pishgam bio-capsule sounding rocket from the rail launcher of Iran's Kavoshgar range",
+          "credit": "Fars News",
+          "license": "CC BY 4.0",
+          "source_url": "https://commons.wikimedia.org/wiki/File:Launch_and_recovery_of_Iranian_Kavoshgar-Pishgam_space_research_rocket_(04).jpg",
+          "width": 600,
+          "height": 334,
+          "sha256": "9595744f140f296e193ba854f9bdce2b384bbd3ab328663ff63f4eed276728ba"
+        }
+      ],
+      "coverage_note": "یک تصویر محلی؛ بزرگ‌نمایی و جابه‌جایی در همان عکس، نه بازسازی سه‌بعدی یا نمای ۳۶۰ درجه."
+    },
+    {
+      "id": "alcantara",
+      "fa": "مرکز پرتاب آلکانترا",
+      "en": "Alcântara Launch Center",
+      "country": "Brazil",
+      "status": "facility",
+      "status_fa": "نمای بخشی از تأسیسات یا سکوی پایگاه",
+      "files": [
+        {
+          "src": "assets/site-views/photos/alcantara.jpg",
+          "caption_fa": "پرتاب کاوشگر VSB-30 از مرکز پرتاب آلکانترا",
+          "caption_en": "Launch of a VSB-30 sounding rocket from the Alcântara Launch Center",
+          "credit": "Agência Brasil",
+          "license": "CC BY 3.0",
+          "source_url": "https://commons.wikimedia.org/wiki/File:Lan%C3%A7amento_do_foguete_brasileiro_de_m%C3%A9dio_porte_VSB-30_V07_da_Base_de_Alc%C3%A2ntara.jpg",
+          "width": 1062,
+          "height": 1200,
+          "sha256": "d979d0c97ac9ddfd26dd050ba09cb45010ffc3e7b4430bb9b51940229600eb01"
+        }
+      ],
+      "coverage_note": "یک تصویر محلی؛ بزرگ‌نمایی و جابه‌جایی در همان عکس، نه بازسازی سه‌بعدی یا نمای ۳۶۰ درجه."
+    },
+    {
+      "id": "woomera",
+      "fa": "مجتمع محدودهٔ ووومرا",
+      "en": "Woomera Range Complex",
+      "country": "Australia",
+      "status": "unavailable",
+      "status_fa": "تصویر مناسب برای گشت‌وگذار محلی هنوز تأیید نشده",
+      "files": [],
+      "coverage_note": "در این بسته تصویر تاییدشده‌ای برای نمایش محلی وجود ندارد."
+    },
+    {
+      "id": "bowen",
+      "fa": "پایگاه مداری بووِن",
+      "en": "Bowen Orbital Spaceport",
+      "country": "Australia",
+      "status": "unavailable",
+      "status_fa": "تصویر مناسب برای گشت‌وگذار محلی هنوز تأیید نشده",
+      "files": [],
+      "coverage_note": "در این بسته تصویر تاییدشده‌ای برای نمایش محلی وجود ندارد."
+    },
+    {
+      "id": "arnhem",
+      "fa": "مرکز فضایی آرنهم",
+      "en": "Arnhem Space Centre",
+      "country": "Australia",
+      "status": "site_overview",
+      "status_fa": "نمای محیط یا عکس هوایی پایگاه",
+      "files": [
+        {
+          "src": "assets/site-views/photos/arnhem.jpg",
+          "caption_fa": "نمای هوایی محوطهٔ مرکز فضایی آرنهم",
+          "caption_en": "Aerial view of the Arnhem Space Centre grounds",
+          "credit": "NASA's Scientific Visualization Studio - NASA/WFF/Keith Koehler, KBR Wyle Services, LLC/Jo",
+          "license": "Public domain",
+          "source_url": "https://commons.wikimedia.org/wiki/File:Australia_Sounding_Rocket_Campaign_Press_Kit_(SVS14164_-_DJI_0005_v2_Arnhem_Space_Center_ELA).jpg",
+          "width": 1200,
+          "height": 661,
+          "sha256": "304326d164d20f61551c839abf5ee18039005cefd356f08b11b739f49874882a"
+        }
+      ],
+      "coverage_note": "یک تصویر محلی؛ بزرگ‌نمایی و جابه‌جایی در همان عکس، نه بازسازی سه‌بعدی یا نمای ۳۶۰ درجه."
+    },
+    {
+      "id": "koonibba",
+      "fa": "محدودهٔ آزمون کونیبا",
+      "en": "Koonibba Test Range",
+      "country": "Australia",
+      "status": "unavailable",
+      "status_fa": "تصویر مناسب برای گشت‌وگذار محلی هنوز تأیید نشده",
+      "files": [],
+      "coverage_note": "در این بسته تصویر تاییدشده‌ای برای نمایش محلی وجود ندارد."
+    },
+    {
+      "id": "whalersway",
+      "fa": "مجتمع پرتاب مداری ویلرز وی",
+      "en": "Whalers Way Orbital Launch Complex",
+      "country": "Australia",
+      "status": "unavailable",
+      "status_fa": "تصویر مناسب برای گشت‌وگذار محلی هنوز تأیید نشده",
+      "files": [],
+      "coverage_note": "در این بسته تصویر تاییدشده‌ای برای نمایش محلی وجود ندارد."
+    },
+    {
+      "id": "sanmarco",
+      "fa": "مرکز فضایی برولیو (سن مارکو)",
+      "en": "Broglio Space Centre (San Marco)",
+      "country": "Kenya",
+      "status": "facility",
+      "status_fa": "نمای بخشی از تأسیسات یا سکوی پایگاه",
+      "files": [
+        {
+          "src": "assets/site-views/photos/sanmarco.jpg",
+          "caption_fa": "سکوی دریایی سن مارکو در ساحل کنیا",
+          "caption_en": "The San Marco offshore launch platform off the Kenyan coast",
+          "credit": "NASA",
+          "license": "Public domain",
+          "source_url": "https://commons.wikimedia.org/wiki/File:San_Marco_launch_platform.jpg",
+          "width": 1200,
+          "height": 792,
+          "sha256": "6d71c64196751dee876474db3dbff86cfb20acd174e4c21f8725d8d73844bc39"
+        }
+      ],
+      "coverage_note": "یک تصویر محلی؛ بزرگ‌نمایی و جابه‌جایی در همان عکس، نه بازسازی سه‌بعدی یا نمای ۳۶۰ درجه."
+    },
+    {
+      "id": "hammaguir",
+      "fa": "پایگاه پرتاب حماگیر",
+      "en": "Hammaguir Launch Site",
+      "country": "Algeria",
+      "status": "unavailable",
+      "status_fa": "تصویر مناسب برای گشت‌وگذار محلی هنوز تأیید نشده",
+      "files": [],
+      "coverage_note": "در این بسته تصویر تاییدشده‌ای برای نمایش محلی وجود ندارد."
+    },
+    {
+      "id": "sea-launch",
+      "fa": "سکوی دریایی اودیسه",
+      "en": "Odyssey Sea Launch Platform",
+      "country": "International / Pacific Ocean",
+      "status": "facility",
+      "status_fa": "نمای بخشی از تأسیسات یا سکوی پایگاه",
+      "files": [
+        {
+          "src": "assets/site-views/photos/sea-launch.jpg",
+          "caption_fa": "پرتاب شبانهٔ زنیت از سکوی دریایی اودیسه",
+          "caption_en": "Night launch of a Zenit rocket from the Odyssey sea platform",
+          "credit": "jurvetson",
+          "license": "CC BY 2.0",
+          "source_url": "https://commons.wikimedia.org/wiki/File:Sea_Launch_01.jpg",
+          "width": 860,
+          "height": 797,
+          "sha256": "1c4eb61be718e86a5bde5e924bbc8446d3fea67ad9c5115c8367297026593107"
+        }
+      ],
+      "coverage_note": "یک تصویر محلی؛ بزرگ‌نمایی و جابه‌جایی در همان عکس، نه بازسازی سه‌بعدی یا نمای ۳۶۰ درجه."
+    },
+    {
+      "id": "vostochny-angara",
+      "fa": "سووابودنی (تاریخی)",
+      "en": "Svobodny (historic)",
+      "country": "Russia",
+      "status": "unavailable",
+      "status_fa": "تصویر مناسب برای گشت‌وگذار محلی هنوز تأیید نشده",
+      "files": [],
+      "coverage_note": "در این بسته تصویر تاییدشده‌ای برای نمایش محلی وجود ندارد."
+    },
+    {
+      "id": "jeju",
+      "fa": "پایگاه آزمون هانوا (ججو)",
+      "en": "Jeju Hanwha Test Site",
+      "country": "South Korea",
+      "status": "unavailable",
+      "status_fa": "تصویر مناسب برای گشت‌وگذار محلی هنوز تأیید نشده",
+      "files": [],
+      "coverage_note": "در این بسته تصویر تاییدشده‌ای برای نمایش محلی وجود ندارد."
+    },
+    {
+      "id": "vandenberg-slc6",
+      "fa": "سکوی SLC-6 ونندنبرگ",
+      "en": "Vandenberg SLC-6",
+      "country": "United States",
+      "status": "facility",
+      "status_fa": "نمای بخشی از تأسیسات یا سکوی پایگاه",
+      "files": [
+        {
+          "src": "assets/site-views/photos/vandenberg-slc6.jpg",
+          "caption_fa": "پرتاب دلتا ۴ سنگین از مجتمع پرتاب ۶ ونندنبرگ",
+          "caption_en": "A Delta IV Heavy launching from Space Launch Complex 6, Vandenberg",
+          "credit": "U.S. Air Force photo/Joe Davila",
+          "license": "Public domain",
+          "source_url": "https://commons.wikimedia.org/wiki/File:First_Delta_IV_Heavy_launch_from_SLC-6_at_Vandenberg_AFB.jpg",
+          "width": 960,
+          "height": 1200,
+          "sha256": "0d5c77cb8461d70ae6f979edace1518ec837588066587e4fd5ac353157efe76b"
+        }
+      ],
+      "coverage_note": "یک تصویر محلی؛ بزرگ‌نمایی و جابه‌جایی در همان عکس، نه بازسازی سه‌بعدی یا نمای ۳۶۰ درجه."
+    },
+    {
+      "id": "lc36",
+      "fa": "سکوی LC-36 کیپ کاناورال",
+      "en": "Cape Canaveral LC-36 (Blue Origin)",
+      "country": "United States",
+      "status": "site_overview",
+      "status_fa": "نمای محیط یا عکس هوایی پایگاه",
+      "files": [
+        {
+          "src": "assets/site-views/photos/lc36.jpg",
+          "caption_fa": "نمای ماهواره‌ای ردیف سکوهای کیپ کاناورال؛ مجتمع ۳۶ در میان آن‌هاست",
+          "caption_en": "Satellite view of the Cape Canaveral pad row, including Launch Complex 36",
+          "credit": "SpaceFrom.Space",
+          "license": "CC BY 2.0",
+          "source_url": "https://commons.wikimedia.org/wiki/File:Cape_Canaveral_Launch_Pads_-_2023-10-29_(53342411352).jpg",
+          "width": 674,
+          "height": 1200,
+          "sha256": "47c6adebb483da8b3a217c305375e8afa41f28ecae591a483d8c1a43efa17327"
+        }
+      ],
+      "coverage_note": "یک تصویر محلی؛ بزرگ‌نمایی و جابه‌جایی در همان عکس، نه بازسازی سه‌بعدی یا نمای ۳۶۰ درجه."
+    },
+    {
+      "id": "corn-ranch",
+      "fa": "کورن رنچ (پایگاه شمارهٔ یک)",
+      "en": "Corn Ranch – Launch Site One",
+      "country": "United States",
+      "status": "site_overview",
+      "status_fa": "نمای محیط یا عکس هوایی پایگاه",
+      "files": [
+        {
+          "src": "assets/site-views/photos/corn-ranch.jpg",
+          "caption_fa": "نمای هوایی رسمی پایگاه کورن رنچ در بیابان غرب تگزاس",
+          "caption_en": "Official aerial map view of the Corn Ranch launch site, West Texas",
+          "credit": "USGS",
+          "license": "Public domain",
+          "source_url": "https://commons.wikimedia.org/wiki/File:Corn_Ranch_Spaceport_National_Map_view.png",
+          "width": 812,
+          "height": 512,
+          "sha256": "d19f674ebf785186e719e4e35e19a4de3ec2828dbf0eedc7c2083501f45ed09f"
+        }
+      ],
+      "coverage_note": "یک تصویر محلی؛ بزرگ‌نمایی و جابه‌جایی در همان عکس، نه بازسازی سه‌بعدی یا نمای ۳۶۰ درجه."
+    },
+    {
+      "id": "mcgregor",
+      "fa": "مرکز آزمون مک‌گرگور اسپیس‌ایکس",
+      "en": "SpaceX McGregor Test Facility",
+      "country": "United States",
+      "status": "facility",
+      "status_fa": "نمای بخشی از تأسیسات یا سکوی پایگاه",
+      "files": [
+        {
+          "src": "assets/site-views/photos/mcgregor.jpg",
+          "caption_fa": "سالن تأسیسات آزمون مک‌گرگور؛ کپسول دراگون پس از بازگشت از مدار",
+          "caption_en": "Inside the McGregor test facility, with a flight-returned Dragon capsule",
+          "credit": "Bill Ingalls",
+          "license": "Public domain",
+          "source_url": "https://commons.wikimedia.org/wiki/File:Bolden_and_Musk_thanked_the_more_than_150_SpaceX_employees.jpg",
+          "width": 1200,
+          "height": 798,
+          "sha256": "8020b81269848642896f4df973071325c3df96ce613deda9260324d0a110297b"
+        }
+      ],
+      "coverage_note": "یک تصویر محلی؛ بزرگ‌نمایی و جابه‌جایی در همان عکس، نه بازسازی سه‌بعدی یا نمای ۳۶۰ درجه."
+    },
+    {
+      "id": "stennis",
+      "fa": "مرکز فضایی استنیس ناسا",
+      "en": "NASA Stennis Space Center",
+      "country": "United States",
+      "status": "facility",
+      "status_fa": "نمای بخشی از تأسیسات یا سکوی پایگاه",
+      "files": [
+        {
+          "src": "assets/site-views/photos/stennis.jpg",
+          "caption_fa": "نصب موتور روی تاسیسات آزمون مرکز استنیس ناسا",
+          "caption_en": "Engine installation on a test stand at NASA Stennis Space Center",
+          "credit": "Danny Nowlin",
+          "license": "Public Domain",
+          "source_url": "https://images.nasa.gov/details/SSC-20211101-s00289",
+          "width": 797,
+          "height": 1200,
+          "sha256": "41f333046a889e952602bfc09ba418e01ccd612507c933d7d9719bb108077927"
+        }
+      ],
+      "coverage_note": "یک تصویر محلی؛ بزرگ‌نمایی و جابه‌جایی در همان عکس، نه بازسازی سه‌بعدی یا نمای ۳۶۰ درجه."
+    },
+    {
+      "id": "pad0a",
+      "fa": "سکوی 0A والوپس",
+      "en": "MARS Pad 0A – Wallops",
+      "country": "United States",
+      "status": "facility",
+      "status_fa": "نمای بخشی از تأسیسات یا سکوی پایگاه",
+      "files": [
+        {
+          "src": "assets/site-views/photos/pad0a.jpg",
+          "caption_fa": "راکت آنتارس روی سکوی 0A والوپس در طلوع آفتاب",
+          "caption_en": "An Antares rocket on Wallops Pad-0A at sunrise",
+          "credit": "Joel Kowsky",
+          "license": "Public domain",
+          "source_url": "https://commons.wikimedia.org/wiki/File:Antares_Rocket_at_Sunrise,_October_26,_2014.jpg",
+          "width": 1200,
+          "height": 714,
+          "sha256": "d1b3d8bf5cf93bfbace1fb5043b66da9f36951043604af4a1a8d1d2004526586"
+        }
+      ],
+      "coverage_note": "یک تصویر محلی؛ بزرگ‌نمایی و جابه‌جایی در همان عکس، نه بازسازی سه‌بعدی یا نمای ۳۶۰ درجه."
+    },
+    {
+      "id": "overberg",
+      "fa": "پایگاه آزمون اووربرگ",
+      "en": "Overberg Test Range",
+      "country": "South Africa",
+      "status": "unavailable",
+      "status_fa": "تصویر مناسب برای گشت‌وگذار محلی هنوز تأیید نشده",
+      "files": [],
+      "coverage_note": "در این بسته تصویر تاییدشده‌ای برای نمایش محلی وجود ندارد."
+    },
+    {
+      "id": "djibouti-spaceport",
+      "fa": "طرح پیشنهادی پایگاه فضایی اوبوک (جیبوتی)",
+      "en": "Proposed Djibouti Spaceport (Obock)",
+      "country": "Djibouti",
+      "status": "unavailable",
+      "status_fa": "تصویر مناسب برای گشت‌وگذار محلی هنوز تأیید نشده",
+      "files": [],
+      "coverage_note": "در این بسته تصویر تاییدشده‌ای برای نمایش محلی وجود ندارد."
+    },
+    {
+      "id": "mojave",
+      "fa": "بندر هوافضایی موهاوی",
+      "en": "Mojave Air and Space Port",
+      "country": "USA",
+      "status": "site_overview",
+      "status_fa": "نمای محیط یا عکس هوایی پایگاه",
+      "files": [
+        {
+          "src": "assets/site-views/photos/mojave.jpg",
+          "caption_fa": "نمای هوایی بندر هوافضایی موهاوی، کالیفرنیا (۲۰۰۹)",
+          "caption_en": "Aerial view of Mojave Air and Space Port, California (2009)",
+          "credit": "Ian Kluft",
+          "license": "CC BY-SA 3.0",
+          "source_url": "https://commons.wikimedia.org/wiki/File:Kluft-photo-aerial-Mojave-Spaceport-Sept-2009-Img_0227.jpg",
+          "width": 1200,
+          "height": 800,
+          "sha256": "baec909554c6fc9abb928ba45e9c148833caf856b6e3927678b5a55dd11474ec"
+        }
+      ],
+      "coverage_note": "یک تصویر محلی؛ بزرگ‌نمایی و جابه‌جایی در همان عکس، نه بازسازی سه‌بعدی یا نمای ۳۶۰ درجه."
+    },
+    {
+      "id": "cornwall",
+      "fa": "بندر فضایی کورنوال",
+      "en": "Spaceport Cornwall",
+      "country": "UK",
+      "status": "facility",
+      "status_fa": "نمای بخشی از تأسیسات یا سکوی پایگاه",
+      "files": [
+        {
+          "src": "assets/site-views/photos/cornwall.jpg",
+          "caption_fa": "پایانهٔ فرودگاه نیوکی کورنوال؛ میزبان بندر فضایی کورنوال",
+          "caption_en": "Newquay Cornwall Airport terminal, home of Spaceport Cornwall",
+          "credit": "Christian Lee",
+          "license": "Public domain",
+          "source_url": "https://commons.wikimedia.org/wiki/File:Newquay_Cornwall_airport.jpg",
+          "width": 1200,
+          "height": 900,
+          "sha256": "c6c4ff06a9ae3c6edd3f9a0ef80c4bc2ab423abfaed780f0193b2cca919b46dd"
+        }
+      ],
+      "coverage_note": "یک تصویر محلی؛ بزرگ‌نمایی و جابه‌جایی در همان عکس، نه بازسازی سه‌بعدی یا نمای ۳۶۰ درجه."
+    },
+    {
+      "id": "thumba",
+      "fa": "پایگاه پرتاب راکت استوایی تومبا",
+      "en": "Thumba Equatorial Rocket Launching Station (TERLS)",
+      "country": "India",
+      "status": "operations",
+      "status_fa": "عکس فعالیت یا پرتاب در پایگاه (نه نمای کامل محوطه)",
+      "files": [
+        {
+          "src": "assets/site-views/photos/thumba.jpg",
+          "caption_fa": "آماده‌سازی راکت کاوشی در پایگاه تومبا، دههٔ ۱۹۶۰",
+          "caption_en": "Sounding rocket preparation at Thumba (TERLS), 1960s",
+          "credit": "آرشیو تاریخی / Times of India",
+          "license": "Public domain",
+          "source_url": "https://commons.wikimedia.org/wiki/File:TERLS-01.jpg",
+          "width": 537,
+          "height": 752,
+          "sha256": "c2d95b7a76d84aa47d7a733a271152cad2a7124024324ab115e5ce87312105b9"
+        }
+      ],
+      "coverage_note": "یک تصویر محلی؛ بزرگ‌نمایی و جابه‌جایی در همان عکس، نه بازسازی سه‌بعدی یا نمای ۳۶۰ درجه."
+    },
+    {
+      "id": "tonghae",
+      "fa": "پایگاه پرتاب ماهوارهٔ تونگهه (موسودان-ری)",
+      "en": "Tonghae Satellite Launching Ground (Musudan-ri)",
+      "country": "North Korea",
+      "status": "unavailable",
+      "status_fa": "تصویر مناسب برای گشت‌وگذار محلی هنوز تأیید نشده",
+      "files": [],
+      "coverage_note": "در این بسته تصویر تاییدشده‌ای برای نمایش محلی وجود ندارد."
+    },
+    {
+      "id": "yasny",
+      "fa": "پایگاه پرتاب یاسنی (دومباروفسکی)",
+      "en": "Yasny Launch Base (Dombarovsky)",
+      "country": "Russia",
+      "status": "facility",
+      "status_fa": "نمای بخشی از تأسیسات یا سکوی پایگاه",
+      "files": [
+        {
+          "src": "assets/site-views/photos/yasny.jpg",
+          "caption_fa": "نمای کلی تأسیسات پایگاه یاسنی (دومباروفسکی)، روسیه",
+          "caption_en": "General view of Yasny (Dombarovsky) launch base facilities, Russia",
+          "credit": "ISC Kosmotras",
+          "license": "CC BY 2.5",
+          "source_url": "https://commons.wikimedia.org/wiki/File:General_View_snyi.jpg",
+          "width": 1181,
+          "height": 435,
+          "sha256": "13e4d80cb7bcef7336bebc860e87ad7b342ab3712bc91113d80d7e95b13bd409"
+        }
+      ],
+      "coverage_note": "یک تصویر محلی؛ بزرگ‌نمایی و جابه‌جایی در همان عکس، نه بازسازی سه‌بعدی یا نمای ۳۶۰ درجه."
+    },
+    {
+      "id": "white-sands",
+      "fa": "بُرد موشکی وایت سندز",
+      "en": "White Sands Missile Range",
+      "country": "USA",
+      "status": "facility",
+      "status_fa": "نمای بخشی از تأسیسات یا سکوی پایگاه",
+      "files": [
+        {
+          "src": "assets/site-views/photos/white-sands.jpg",
+          "caption_fa": "دکل تاریخی پرتاب وی-۲، مجتمع ۳۳ وایت سندز",
+          "caption_en": "Historic V-2 launch gantry, Launch Complex 33, White Sands",
+          "credit": "HABS / کتابخانهٔ کنگره",
+          "license": "Public domain",
+          "source_url": "https://commons.wikimedia.org/wiki/File:V-2_GANTRY,_LAUNCH_COMPLEX_33-_LOOKING_NORTH_-_White_Sands_Missile_Range,_V-2_Gantry_Crane,_White_Sands,_Dona_Ana_County,_NM_HAER_NM,7-WHSA,1A-1.tif",
+          "width": 973,
+          "height": 1200,
+          "sha256": "956682baca214ecfc355b5e2b5d353706ed56e51805db93d0402e835c69180d2"
+        }
+      ],
+      "coverage_note": "یک تصویر محلی؛ بزرگ‌نمایی و جابه‌جایی در همان عکس، نه بازسازی سه‌بعدی یا نمای ۳۶۰ درجه."
+    },
+    {
+      "id": "etlaq",
+      "fa": "بندر فضایی اتلاق",
+      "en": "Etlaq Spaceport",
+      "country": "Oman",
+      "status": "operations",
+      "status_fa": "عکس فعالیت یا پرتاب در پایگاه (نه نمای کامل محوطه)",
+      "files": [
+        {
+          "src": "assets/site-views/photos/etlaq.jpg",
+          "caption_fa": "برخاست راکت دقم-۱ از بندر فضایی اتلاق، دسامبر ۲۰۲۴",
+          "caption_en": "Duqm-1 lifting off from Etlaq Spaceport, December 2024",
+          "credit": "Etlaq Spaceport",
+          "license": "CC BY-SA 4.0",
+          "source_url": "https://commons.wikimedia.org/wiki/File:Duqm-1_Mission_Launch_-_Etlaq_Spaceport.png",
+          "width": 1280,
+          "height": 720,
+          "sha256": "47abbc2f6d35fdb0370ebc28bdeecc33e6c9bba322766b8fdccc04559f475a17"
+        }
+      ],
+      "coverage_note": "یک تصویر محلی؛ بزرگ‌نمایی و جابه‌جایی در همان عکس، نه بازسازی سه‌بعدی یا نمای ۳۶۰ درجه."
+    },
+    {
+      "id": "somalia-spaceport",
+      "fa": "طرح پایگاه فضایی سومالی (محدوده ورشیخ)",
+      "en": "Somalia Spaceport Project (Warsheikh area)",
+      "country": "Somalia",
+      "status": "unavailable",
+      "status_fa": "تصویر مناسب برای گشت‌وگذار محلی هنوز تأیید نشده",
+      "files": [],
+      "coverage_note": "در این بسته تصویر تاییدشده‌ای برای نمایش محلی وجود ندارد."
+    },
+    {
+      "id": "kipini-spaceport",
+      "fa": "پایگاه تجاری فضایی پیشنهادی کیپینی (محدوده مطالعه)",
+      "en": "Proposed Kipini Commercial Spaceport (study area)",
+      "country": "Kenya",
+      "status": "unavailable",
+      "status_fa": "تصویر مناسب برای گشت‌وگذار محلی هنوز تأیید نشده",
+      "files": [],
+      "coverage_note": "در این بسته تصویر تاییدشده‌ای برای نمایش محلی وجود ندارد."
+    },
+    {
+      "id": "epe-lagoon-test-site",
+      "fa": "محدوده آزمون متحرک راکت در تالاب ایپه (CSTP)",
+      "en": "Epe Lagoon Mobile Rocket-Test Area (CSTP)",
+      "country": "Nigeria",
+      "status": "unavailable",
+      "status_fa": "تصویر مناسب برای گشت‌وگذار محلی هنوز تأیید نشده",
+      "files": [],
+      "coverage_note": "در این بسته تصویر تاییدشده‌ای برای نمایش محلی وجود ندارد."
+    },
+    {
+      "id": "isiolo-test-range",
+      "fa": "میدان مدرسه پیاده‌نظام ایزیولو (محل آزمون میدانی Nakuja)",
+      "en": "Isiolo School of Infantry Range (Nakuja field-test site)",
+      "country": "Kenya",
+      "status": "unavailable",
+      "status_fa": "تصویر مناسب برای گشت‌وگذار محلی هنوز تأیید نشده",
+      "files": [],
+      "coverage_note": "در این بسته تصویر تاییدشده‌ای برای نمایش محلی وجود ندارد."
+    },
+    {
+      "id": "reggane",
+      "fa": "محدوده تاریخی راکت کاوشی رقان",
+      "en": "Reggane Sounding-Rocket Range (historic)",
+      "country": "Algeria",
+      "status": "unavailable",
+      "status_fa": "تصویر مناسب برای گشت‌وگذار محلی هنوز تأیید نشده",
+      "files": [],
+      "coverage_note": "در این بسته تصویر تاییدشده‌ای برای نمایش محلی وجود ندارد."
+    },
+    {
+      "id": "shaba-north",
+      "fa": "میدان تاریخی شابا نورث / کاپانی تونئو (OTRAG)",
+      "en": "Shaba North / Kapani Tonneo OTRAG Range (historic)",
+      "country": "Democratic Republic of the Congo",
+      "status": "unavailable",
+      "status_fa": "تصویر مناسب برای گشت‌وگذار محلی هنوز تأیید نشده",
+      "files": [],
+      "coverage_note": "در این بسته تصویر تاییدشده‌ای برای نمایش محلی وجود ندارد."
+    },
+    {
+      "id": "tawiwa",
+      "fa": "میدان آزمون تاریخی تاویوا / واحه سبها (OTRAG)",
+      "en": "Tawiwa / Sebha Oasis OTRAG Test Range (historic)",
+      "country": "Libya",
+      "status": "unavailable",
+      "status_fa": "تصویر مناسب برای گشت‌وگذار محلی هنوز تأیید نشده",
+      "files": [],
+      "coverage_note": "در این بسته تصویر تاییدشده‌ای برای نمایش محلی وجود ندارد."
+    },
+    {
+      "id": "nouadhibou",
+      "fa": "محدوده تاریخی پرتاب راکت کاوشی نواذیبو",
+      "en": "Nouadhibou Sounding-Rocket Launch Area (historic)",
+      "country": "Mauritania",
+      "status": "unavailable",
+      "status_fa": "تصویر مناسب برای گشت‌وگذار محلی هنوز تأیید نشده",
+      "files": [],
+      "coverage_note": "در این بسته تصویر تاییدشده‌ای برای نمایش محلی وجود ندارد."
+    },
+    {
+      "id": "hainan-commercial",
+      "fa": "پایگاه تجاری پرتاب فضایی هاینان",
+      "en": "Hainan Commercial Spacecraft Launch Site",
+      "country": "China",
+      "status": "unavailable",
+      "status_fa": "تصویر مناسب برای گشت‌وگذار محلی هنوز تأیید نشده",
+      "files": [],
+      "coverage_note": "در این بسته تصویر تاییدشده‌ای برای نمایش محلی وجود ندارد."
+    },
+    {
+      "id": "xuhai",
+      "fa": "پایگاه پژوهشی پرتاب راکت شُوهای",
+      "en": "Xuhai Research Rocket Launch Site",
+      "country": "Taiwan",
+      "status": "unavailable",
+      "status_fa": "تصویر مناسب برای گشت‌وگذار محلی هنوز تأیید نشده",
+      "files": [],
+      "coverage_note": "در این بسته تصویر تاییدشده‌ای برای نمایش محلی وجود ندارد."
+    },
+    {
+      "id": "jiupeng",
+      "fa": "میدان آزمون راکت جیوپِنگ",
+      "en": "Jiupeng Rocket Test Range",
+      "country": "Taiwan",
+      "status": "unavailable",
+      "status_fa": "تصویر مناسب برای گشت‌وگذار محلی هنوز تأیید نشده",
+      "files": [],
+      "coverage_note": "در این بسته تصویر تاییدشده‌ای برای نمایش محلی وجود ندارد."
+    },
+    {
+      "id": "sonmiani",
+      "fa": "میدان موشکی سونمیانی",
+      "en": "Sonmiani Rocket Range",
+      "country": "Pakistan",
+      "status": "unavailable",
+      "status_fa": "تصویر مناسب برای گشت‌وگذار محلی هنوز تأیید نشده",
+      "files": [],
+      "coverage_note": "در این بسته تصویر تاییدشده‌ای برای نمایش محلی وجود ندارد."
+    },
+    {
+      "id": "pameungpeuk",
+      "fa": "میدان آزمون راکت پامئونگ‌پئوک",
+      "en": "Pameungpeuk Rocket Test Range",
+      "country": "Indonesia",
+      "status": "unavailable",
+      "status_fa": "تصویر مناسب برای گشت‌وگذار محلی هنوز تأیید نشده",
+      "files": [],
+      "coverage_note": "در این بسته تصویر تاییدشده‌ای برای نمایش محلی وجود ندارد."
+    },
+    {
+      "id": "biak",
+      "fa": "پایگاه فضایی پیشنهادی بایک",
+      "en": "Biak Proposed Spaceport",
+      "country": "Indonesia",
+      "status": "unavailable",
+      "status_fa": "تصویر مناسب برای گشت‌وگذار محلی هنوز تأیید نشده",
+      "files": [],
+      "coverage_note": "در این بسته تصویر تاییدشده‌ای برای نمایش محلی وجود ندارد."
+    }
+  ]
+}

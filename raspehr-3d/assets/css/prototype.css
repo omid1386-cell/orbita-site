@@ -281,3 +281,9 @@ body{background:#020b16;color:#edf5fd}
 @media(prefers-reduced-motion:reduce){
  body.mobile-sheet-ready .stage-panel,body.mobile-sheet-ready .stage4-dossier-overlay{transition:none}
 }
+
+/* RASPEHR imagery upgrade: diagnostic details do not crowd the main location card. */
+.selected-location-facility-details{margin-top:8px;color:#a7bed1;font-size:12px;}
+.selected-location-facility-details summary{cursor:pointer;list-style-position:inside;min-height:26px;line-height:26px;}
+.selected-location-facility-details[open]{border-top:1px solid rgba(204,221,237,.15);padding-top:7px;}
+.selected-location-facility-details .selected-location-facility-meta{margin:8px 0;overflow-wrap:anywhere;}

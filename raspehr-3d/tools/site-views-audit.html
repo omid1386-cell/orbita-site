@@ -1,0 +1,29 @@
+<!doctype html>
+<html lang="fa" dir="rtl"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>بازبینی تصاویر محلی پایگاه‌ها | رسپهر</title>
+<style>
+:root{color-scheme:dark}*{box-sizing:border-box}body{font-family:Tahoma,Arial,sans-serif;margin:0;background:#071421;color:#ebf0f7}header{padding:22px 4vw;background:#132b41;border-bottom:2px solid #b7975d}h1{font-size:21px;margin:0 0 10px;color:#f2d5a2}.sub{line-height:1.8;color:#b9c9d7;font-size:13px;margin:0}.toolbar{padding:15px 4vw;display:flex;flex-wrap:wrap;gap:8px;align-items:center}select,input{background:#182f45;color:#fff;border:1px solid #526c83;border-radius:8px;padding:10px}input{min-width:200px;flex:1}#summary{margin:0 4vw 12px;color:#cfd9e2}.grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(220px,1fr));gap:16px;margin:0 4vw 40px}.card{border:1px solid #2c4459;border-radius:12px;overflow:hidden;background:#10283d;display:flex;flex-direction:column}.card img{aspect-ratio:5/3;object-fit:cover;width:100%;cursor:zoom-in}.card .empty{aspect-ratio:5/3;background:#1a3042;display:flex;align-items:center;justify-content:center;color:#99aebe}.body{padding:11px}.body strong{font-size:14px;display:block}.body small{font-size:11px;color:#b4c2d0;line-height:1.8;display:block;padding-top:5px}.body a{color:#ebc98c;font-size:11px;display:inline-block;margin-top:5px}button{background:#b7935d;color:#071421;border:0;border-radius:8px;padding:11px;cursor:pointer;font:inherit}dialog{background:#071421;color:#fff;border:1px solid #ad8a5e;border-radius:12px;width:min(96vw,1100px);max-height:94vh;padding:12px}dialog::backdrop{background:#000c}dialog img{max-height:75vh;max-width:100%;object-fit:contain;display:block;margin:auto}dialog h2{font-size:16px}.actions{display:flex;justify-content:space-between;align-items:center;gap:8px}</style></head>
+<body><header><h1>بازبینی تصاویر محلی پایگاه‌های پرتاب رسپهر</h1><p class="sub">این ابزار صرفاً برای کنترل تصویرهای موجود در همین سایت است. هیچ تصویر خارجی بارگذاری نمی‌کند. پیش‌نمایش یک عکس ثابت، به معنی نمای ۳۶۰ درجه یا تصویر ماهواره‌ای نقشه‌پذیر نیست.</p></header>
+<div class="toolbar"><label>نوع تصویر <select id="filter"><option value="all">همه ۷۹ پایگاه</option><option value="site_overview">نمای هوایی یا کلی</option><option value="radar_overview">نمای راداری</option><option value="facility">تأسیسات/سکو</option><option value="operations">فعالیت و پرتاب</option><option value="unavailable">بدون تصویر مناسب</option></select></label><input id="search" type="search" placeholder="جست‌وجوی نام پایگاه"><button id="reset">پاک کردن فیلتر</button></div>
+<p id="summary">در حال خواندن فهرست محلی…</p><div class="grid" id="grid"></div>
+<dialog id="modal"><div class="actions"><h2 id="heading">پایگاه</h2><button id="close">بستن</button></div><img id="large" alt=""><p id="credit"></p></dialog>
+<script>
+(async()=>{
+ const q=id=>document.getElementById(id),container=q('grid'),filter=q('filter'),search=q('search');
+ const res=await fetch('../data/site-views-local.v1.json',{cache:'no-cache'});
+ if(!res.ok)throw Error('HTTP '+res.status);
+ const data=await res.json(),items=data.sites||[];
+ function repaint(){container.replaceChildren();const f=filter.value,s=search.value.trim().toLowerCase();let n=0;
+ for(const row of items){if(f!=='all'&&row.status!==f)continue;if(s&&!((row.fa+' '+row.en).toLowerCase().includes(s)))continue;n++;
+ const card=document.createElement('article');card.className='card';const file=(row.files||[])[0];
+ if(file&&/^assets\/site-views\/photos\/[a-z0-9-]+\.jpg$/.test(file.src)){
+ const img=document.createElement('img');img.src='../'+file.src;img.loading='lazy';img.alt=row.fa+' — '+row.status_fa;
+ img.addEventListener('click',()=>{q('heading').textContent=row.fa;q('large').src='../'+file.src;q('credit').textContent=(file.credit||'')+' · '+(file.license||'')+' · '+(file.caption_fa||'');q('modal').showModal()});card.append(img);
+ }else{const blank=document.createElement('div');blank.className='empty';blank.textContent='تصویر مناسب هنوز آماده نیست';card.append(blank);}
+ const body=document.createElement('div');body.className='body';const title=document.createElement('strong');title.textContent=row.fa;body.append(title);const sub=document.createElement('small');sub.textContent=row.status_fa;body.append(sub);
+ if(file&&file.source_url&&file.source_url.startsWith('https://')){const a=document.createElement('a');a.href=file.source_url;a.target='_blank';a.rel='noopener noreferrer';a.textContent='منبع اصلی تصویر';body.append(a);}card.append(body);container.append(card);
+ }q('summary').textContent=`نمایش ${n.toLocaleString('fa-IR')} مورد از ${items.length.toLocaleString('fa-IR')} پایگاه`;
+ }
+ filter.addEventListener('change',repaint);search.addEventListener('input',repaint);q('reset').addEventListener('click',()=>{filter.value='all';search.value='';repaint()});q('close').addEventListener('click',()=>q('modal').close());repaint();
+})().catch(err=>{document.getElementById('summary').textContent='فهرست تصاویر باز نشد: '+err.message});
+</script></body></html>

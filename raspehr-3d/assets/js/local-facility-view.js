@@ -18,6 +18,11 @@
   const STAC_SEARCH_URL = 'https://api.imagery.hotosm.org/stac/search';
   const OAM_TILE_ROOT = 'https://tiles.imagery.hotosm.org/raster/collections/openaerialmap/items/';
   const DEFAULT_OVERPASS_URL = 'https://overpass.private.coffee/api/interpreter';
+  const OAM_GLOBAL_TILES = 'https://global.imagery.hotosm.org/';
+  const USGS_ORTHO_TILES = 'https://basemap.nationalmap.gov/arcgis/rest/services/USGSImageryOnly/MapServer/tile/';
+  const REGIONAL_CAMERA_DISTANCE = RADIUS + 0.009;
+  const UNAVAILABLE_CAMERA_DISTANCE = RADIUS + 0.16;
+  const STAC_MAX_GSD = 10;
   const FACILITY_CATEGORIES = new Set(['test_facility','ground_station','mission_control','university_space','ground_services']);
   const BUILDING_CACHE = new Map();
 
@@ -37,12 +42,12 @@
       return {allowed:false, reason:'مختصات این رکورد تقریبی یا نماینده یک محدوده است؛ برای جلوگیری از نمایش گمراه‌کننده، نمای نزدیک تأسیسات غیرفعال است.'};
     const explicit = hasExplicitFacilityPrecision(row);
     if (row.kind === 'site') {
-      return {allowed:true, confidence:explicit?'verified':'unverified', reason:explicit?'مبنای مختصات تأسیسات در رکورد مشخص شده است.':'مبنای دقیق مختصات در رکورد ثبت نشده؛ تصویر فقط محدوده پیرامون نقطه ثبت‌شده را نشان می‌دهد.'};
+      return {allowed:true, tier:explicit?'facility':'regional', confidence:explicit?'verified':'unverified', reason:explicit?'مبنای مختصات تأسیسات در رکورد مشخص شده است.':'مبنای دقیق مختصات ثبت نشده؛ فقط نمای منطقه‌ای، نه ساختمان دقیق، مجاز است.'};
     }
     if (row.kind === 'company' && explicit && (row.categories || []).some(category => FACILITY_CATEGORIES.has(category)))
-      return {allowed:true, confidence:'verified', reason:'موقعیت تأسیسات دارای مبنای مکانی ثبت‌شده است.'};
+      return {allowed:true, tier:'facility', confidence:'verified', reason:'موقعیت تأسیسات دارای مبنای مکانی ثبت‌شده است.'};
     if (row.kind === 'recovery' && explicit)
-      return {allowed:true, confidence:'verified', reason:'مبنای مختصات مکان بازیابی ثبت شده است.'};
+      return {allowed:true, tier:'facility', confidence:'verified', reason:'مبنای مختصات مکان بازیابی ثبت شده است.'};
     return {allowed:false, reason:'برای این شناسنامه مختصات تأسیسات یا ساختمان به‌اندازه کافی مشخص نیست.'};
   }
 
@@ -83,9 +88,11 @@
   function geometryContainsPoint(item, point) {
     const geometry = item && item.geometry;
     if (geometry && geometry.type === 'Polygon' && Array.isArray(geometry.coordinates))
-      return pointInRing(point.lon,point.lat,geometry.coordinates[0]);
+      return geometry.coordinates.length>0 && pointInRing(point.lon,point.lat,geometry.coordinates[0]) &&
+        !geometry.coordinates.slice(1).some(hole=>pointInRing(point.lon,point.lat,hole));
     if (geometry && geometry.type === 'MultiPolygon' && Array.isArray(geometry.coordinates))
-      return geometry.coordinates.some(poly=>pointInRing(point.lon,point.lat,poly[0]));
+      return geometry.coordinates.some(poly=>poly.length>0 && pointInRing(point.lon,point.lat,poly[0]) &&
+        !poly.slice(1).some(hole=>pointInRing(point.lon,point.lat,hole)));
     const bbox=item && item.bbox;
     return Array.isArray(bbox) && bbox.length>=4 && point.lon>=bbox[0] && point.lon<=bbox[2] && point.lat>=bbox[1] && point.lat<=bbox[3];
   }
@@ -96,7 +103,7 @@
       const allowed=license==='CC-BY-4.0' || license==='CC-BY-SA-4.0';
       const gsd=Number(props.gsd || props['proj:gsd'] || props['eo:gsd']);
       const product=String(props['oam:product_type'] || 'visual').toLowerCase();
-      return !!(item && item.id && item.assets && item.assets.visual && allowed && product==='visual' && Number.isFinite(gsd) && gsd>0 && gsd<=10 && geometryContainsPoint(item,point));
+      return !!(item && item.id && item.assets && item.assets.visual && allowed && product==='visual' && Number.isFinite(gsd) && gsd>0 && gsd<=STAC_MAX_GSD && geometryContainsPoint(item,point));
     });
     candidates.sort((a,b)=>{
       const ag=Number(a.properties.gsd || a.properties['proj:gsd'] || a.properties['eo:gsd']);
@@ -123,12 +130,10 @@
       return {meters:levels*3.2,approximate:true,source:'building:levels'};
     return {meters:0,approximate:false,source:'footprint-only'};
   }
-  function makeOverpassQuery(row, radiusMeters) {
-    const latDelta=(radiusMeters || 500)/111320;
-    const lonDelta=(radiusMeters || 500)/(111320*Math.max(0.15,Math.cos(row.lat*DEG)));
-    const south=clamp(row.lat-latDelta,-85,85), north=clamp(row.lat+latDelta,-85,85);
-    const west=clamp(row.lon-lonDelta,-180,180), east=clamp(row.lon+lonDelta,-180,180);
-    return `[out:json][timeout:20];way["building"](${south.toFixed(6)},${west.toFixed(6)},${north.toFixed(6)},${east.toFixed(6)});out geom;`;
+  function makeOverpassQuery(row,radiusMeters) {
+    const radius=clamp(Number(radiusMeters)||500,100,2500);
+    // Around-point queries avoid the antimeridian/bbox issue and support n/w/r.
+    return `[out:json][timeout:25];(node["building"](around:${radius},${row.lat.toFixed(6)},${row.lon.toFixed(6)});way["building"](around:${radius},${row.lat.toFixed(6)},${row.lon.toFixed(6)});relation["building"](around:${radius},${row.lat.toFixed(6)},${row.lon.toFixed(6)}););out geom;`;
   }
   function imagerySearchUrl(row) {
     const latDelta=0.008;
@@ -157,6 +162,96 @@
       url:`https://api.imagery.hotosm.org/stac/collections/openaerialmap/items/${encodeURIComponent(item.id)}`
     };
   }
+  function isConusPoint(row) {
+    // The USGS cached orthophoto layer is only used inside the continental US.
+    // Alaska and offshore locations are intentionally excluded (mixed licensing and resolution).
+    return !!row && row.lat>=24 && row.lat<=50 && row.lon>=-125 && row.lon<=-66;
+  }
+  function rasterProviders(row,item) {
+    const out=[];
+    if(item){
+      const meta=imageryMetadata(item);
+      out.push({type:'stac',zoom:zoomForGsd(meta.gsd,row.lat),item,meta,facilityGrade:meta.gsd<=2});
+    }
+    if(isConusPoint(row)) out.push({type:'usgs',zoom:16,facilityGrade:false,meta:{
+      id:null,gsd:null,date:'تاریخ برداشت این نقطه تأیید نشده',provider:'USGS / USDA (The National Map)',
+      platform:'تصاویر هوایی',license:'Public-domain NAIP (منطقه آمریکا؛ صحنه باید بررسی شود)',
+      url:'https://basemap.nationalmap.gov/arcgis/rest/services/USGSImageryOnly/MapServer',
+      sourceType:'usgs',resolutionVerified:false
+    }});
+    out.push({type:'global',zoom:16,facilityGrade:false,meta:{
+      id:null,gsd:null,date:'تاریخ برداشت این نقطه در موزاییک مشخص نیست',
+      provider:'OpenAerialMap / Open Imagery Network',platform:'موزاییک عمومی',
+      license:'انتساب OIN؛ مجوز هر تصویر نیازمند بررسی',
+      url:'https://docs.imagery.hotosm.org/usage/using-imagery/',
+      sourceType:'oam-global',resolutionVerified:false
+    }});
+    return out;
+  }
+  function rasterTileUrl(provider,tile) {
+    const z=tile.z,x=tile.x,y=tile.y;
+    if(provider.type==='stac')
+      return `${OAM_TILE_ROOT}${encodeURIComponent(provider.item.id)}/tiles/WebMercatorQuad/${z}/${x}/${y}?assets=visual&nodata=0`;
+    if(provider.type==='usgs')return `${USGS_ORTHO_TILES}${z}/${y}/${x}`;
+    return `${OAM_GLOBAL_TILES}${z}/${x}/${y}.png`;
+  }
+  function inspectRasterImage(source) {
+    // This is a usability guard, not a scientific proof of satellite coverage.
+    // Transparent and entirely black nodata rasters must not count as real imagery.
+    const width=Number(source&&(source.width||source.naturalWidth)||0);
+    const height=Number(source&&(source.height||source.naturalHeight)||0);
+    if(!width||!height)return {valid:false,checked:true,reason:'empty-dimensions'};
+    if(typeof document==='undefined' || !document.createElement)
+      return {valid:true,checked:false,reason:'no-canvas-inspection'};
+    try{
+      const canvas=document.createElement('canvas');canvas.width=24;canvas.height=24;
+      const ctx=canvas.getContext('2d',{willReadFrequently:true});
+      if(!ctx)return {valid:true,checked:false,reason:'canvas-context-unavailable'};
+      ctx.drawImage(source,0,0,24,24);
+      const pixels=ctx.getImageData(0,0,24,24).data;
+      let valid=0,black=0;
+      for(let i=0;i<pixels.length;i+=4){
+        if(pixels[i+3]>=24){valid++;if(pixels[i]+pixels[i+1]+pixels[i+2]<12)black++;}
+      }
+      return {valid:valid>=15 && black<valid*.985,checked:true,validPixels:valid,blackPixels:black};
+    }catch(_){return {valid:true,checked:false,reason:'pixel-inspection-unavailable'};}
+  }
+  function extractOsmRings(element) {
+    if(!element || !element.tags || !element.tags.building)return [];
+    if(element.type==='way')return Array.isArray(element.geometry)?[element.geometry]:[];
+    if(element.type!=='relation'||!Array.isArray(element.members))return [];
+    const outer=element.members.filter(m=>m.role==='outer'&&m.type==='way'&&Array.isArray(m.geometry)&&m.geometry.length>=2);
+    const rings=[];
+    const distance=(a,b)=>Math.abs(a.lat-b.lat)<1e-6&&Math.abs(a.lon-b.lon)<1e-6;
+    let pending=outer.map(m=>m.geometry.map(p=>({lat:Number(p.lat),lon:Number(p.lon)})));
+    while(pending.length){
+      let ring=pending.shift().slice(),extended=true;
+      while(extended && pending.length){
+        extended=false;
+        for(let i=0;i<pending.length;i++){
+          const part=pending[i];if(!part.length)continue;
+          let updated=null;
+          if(distance(ring[ring.length-1],part[0]))updated=ring.concat(part.slice(1));
+          else if(distance(ring[ring.length-1],part[part.length-1]))updated=ring.concat(part.slice(0,-1).reverse());
+          else if(distance(ring[0],part[part.length-1]))updated=part.slice(0,-1).concat(ring);
+          else if(distance(ring[0],part[0]))updated=part.slice(1).reverse().concat(ring);
+          if(updated){ring=updated;pending.splice(i,1);extended=true;break;}
+        }
+      }
+      if(ring.length>=4 && distance(ring[0],ring[ring.length-1]))rings.push(ring);
+    }
+    return rings;
+  }
+  function parseOsmBuildings(element) {
+    if(!element || (element.type!=='way' && element.type!=='relation'))return [];
+    const result=[];
+    for(const ring of extractOsmRings(element)){
+      const building=parseOsmBuilding({type:'way',id:element.id,tags:element.tags,geometry:ring});
+      if(building){building.osmType=element.type;result.push(building);}
+    }
+    return result;
+  }
+  function buildingNodeCount(elements){return (elements||[]).filter(e=>e.type==='node'&&e.tags&&e.tags.building).length;}
   function pointOnSurface(lat,lon,radius) {
     const p=lat*DEG,l=lon*DEG,r=radius==null?RADIUS+PATCH_RADIUS_OFFSET:radius;
     return new T.Vector3(r*Math.cos(p)*Math.cos(l),r*Math.sin(p),-r*Math.cos(p)*Math.sin(l));
@@ -217,7 +312,7 @@
       this.buildingAbort=null;
       this.saved=null;
       this.imageryMeta=null;
-      this.buildingSummary={total:0,extruded:0,heightExplicit:0,heightApproximate:0,footprints:0,osmTimestamp:'نامشخص'};
+      this.buildingSummary={total:0,extruded:0,heightExplicit:0,heightApproximate:0,footprints:0,nodes:0,osmTimestamp:'نامشخص'};
       this.imageryGroup=new T.Group();
       this.imageryGroup.name='raspehr-local-imagery';
       this.buildingGroup=new T.Group();
@@ -262,19 +357,14 @@
       this.buildingAbort=new AbortController();
       this.saved={
         minDistance:this.engine.minDistance,
-        near:this.engine.camera.near,
-        far:this.engine.camera.far,
+        near:this.engine.camera.near,far:this.engine.camera.far,
         clouds:!!this.engine.clouds.visible,
         atmosphere:!!this.engine.atmosphere.visible,
         stars:!!this.engine.starField.visible,
         grid:!!this.engine.gridGroup.visible,
         markerEnabled:this.markers?this.markers.enabled:true
       };
-      const terrainMeters=this.engine.terrainData && this.engine.options.terrain
-        ? Math.max(0,this.engine.terrainData.meters(row.lat,row.lon))*(this.engine.options.terrainExaggeration||1):0;
-      const terrainOffset=(terrainMeters/EARTH_METERS)*RADIUS;
-      const localRadius=RADIUS+terrainOffset;
-      this.engine.minDistance=localRadius+(FACILITY_CAMERA_MIN-RADIUS);
+      this.imageryMeta=null;
       this.engine.camera.near=0.00001;
       this.engine.camera.far=12;
       this.engine.camera.updateProjectionMatrix();
@@ -285,21 +375,41 @@
       if(this.markers)this.markers.setVisible(false);
       this.imageryGroup.visible=true;
       this.buildingGroup.visible=true;
-      this.emit({state:'loading',active:true,message:'در حال جست‌وجوی تصویر باز و ساختمان‌های نقشه‌برداری‌شده پیرامون این مکان…'});
-      this.engine.flyToGeo(row.lat,row.lon,localRadius+(FACILITY_CAMERA_DISTANCE-RADIUS),{duration:1800,minDistance:this.engine.minDistance});
-      const [imagery,buildings]=await Promise.all([
-        this.loadImagery(row,token,this.imageryAbort.signal).catch(error=>({error:error&&error.message||String(error),loaded:0})),
-        this.loadBuildings(row,token,this.buildingAbort.signal).catch(error=>({error:error&&error.message||String(error),total:0,extruded:0,footprints:0}))
-      ]);
+      this.emit({state:'loading',active:true,message:'در حال بررسی پوشش تصویر واقعی برای این نقطه…'});
+      // No extreme close-up before real raster coverage has been confirmed.
+      // Building lookup is independent of the first imagery tile; do not keep the
+      // user at a blank globe while a public Overpass instance is slow.
+      const buildingsPromise=access.confidence==='verified'
+        ? this.loadBuildings(row,token,this.buildingAbort.signal).catch(error=>({error:error&&error.message||String(error),total:0}))
+        : Promise.resolve({total:0,message:'نمای ساختمان برای مختصات با دقت نامشخص نمایش داده نمی‌شود.'});
+      const imagery=await this.loadImagery(row,token,this.imageryAbort.signal)
+        .catch(error=>({error:error&&error.message||String(error),loaded:0}));
       if(token!==this.token || !this.active)return false;
-      const messages=[];
-      if(imagery && imagery.loaded) messages.push(`${imagery.loaded} قطعه تصویر محلی`);
-      else messages.push(imagery && imagery.message || 'تصویر ماهواره‌ای باز برای این محدوده پیدا نشد');
-      if(buildings && buildings.total) messages.push(`${buildings.total} ساختمان نقشه‌برداری‌شده`);
-      else messages.push(buildings && buildings.message || 'ساختمان ثبت‌شده‌ای در محدوده پیدا نشد');
-      if(imagery && imagery.error) messages.push('تصویر: '+imagery.error);
-      if(buildings && buildings.error) messages.push('ساختمان: '+buildings.error);
-      this.emit({state:'ready',active:true,message:messages.join(' · '),imagery:this.imageryMeta,buildings:this.buildingSummary,confidence:access.confidence});
+      const precise=!!(imagery && imagery.centerLoaded && imagery.facilityGrade && access.tier==='facility');
+      const terrainMeters=this.engine.terrainData && this.engine.options.terrain
+        ? Math.max(0,this.engine.terrainData.meters(row.lat,row.lon))*(this.engine.options.terrainExaggeration||1):0;
+      const localRadius=RADIUS+(terrainMeters/EARTH_METERS)*RADIUS;
+      const altitude=precise?(FACILITY_CAMERA_DISTANCE-RADIUS)
+        :(imagery&&imagery.centerLoaded?REGIONAL_CAMERA_DISTANCE-RADIUS:UNAVAILABLE_CAMERA_DISTANCE-RADIUS);
+      this.engine.minDistance=localRadius+Math.max(FACILITY_CAMERA_MIN-RADIUS,altitude*0.65);
+      this.engine.flyToGeo(row.lat,row.lon,localRadius+altitude,{duration:1500,minDistance:this.engine.minDistance});
+      let message='';
+      if(!imagery || !imagery.centerLoaded)
+        message='تصویر زمین‌مرجع قابل‌نمایش برای این نقطه دریافت نشد؛ از بزرگ‌نمایی تار جلوگیری شد و نمای منطقه‌ای نمایش داده می‌شود.';
+      else if(!precise)
+        message='کاشی تصویری در محدوده دریافت شد؛ چون وضوح صحنه یا دقت نقطه برای نمایش ساختمان تأیید نشده، فقط نمای منطقه‌ای نمایش داده می‌شود.';
+      else message='تصویر زمین‌مرجع با وضوح مناسب بارگذاری شد؛ نمای نزدیک تأسیسات فعال است.';
+      if(imagery&&imagery.error)message+=' (برخی منابع در دسترس نبودند.)';
+      this.emit({state:precise?'ready-facility':'ready-regional',active:true,message,
+        imagery:this.imageryMeta,buildings:this.buildingSummary,confidence:access.confidence,
+        quality:precise?'facility':imagery&&imagery.centerLoaded?'regional':'unavailable'});
+      this.pendingBuildings=buildingsPromise.then(info=>{
+        if(token===this.token && this.active){
+          const nextMessage=info&&info.error?message+' · اطلاعات ساختمان فعلاً در دسترس نیست.':message;
+          this.emit({state:precise?'ready-facility':'ready-regional',active:true,message:nextMessage,
+            quality:precise?'facility':imagery&&imagery.centerLoaded?'regional':'unavailable'});
+        }
+      });
       return true;
     }
     async fetchJson(url,options,signal,timeoutMs){
@@ -317,54 +427,78 @@
       }finally{clearTimeout(timer);if(signal)signal.removeEventListener('abort',relay);}
     }
     async loadImagery(row,token,signal){
-      const url=imagerySearchUrl(row);
-      const data=await this.fetchJson(url,{headers:{'Accept':'application/geo+json, application/json'}},signal,18000);
-      if(token!==this.token || signal.aborted)return {loaded:0,message:'درخواست تصویر لغو شد'};
-      const features=Array.isArray(data.features)?data.features:[];
-      const item=chooseBestImageryItem(features,{lat:row.lat,lon:row.lon});
-      if(!item)return {loaded:0,message:'تصویر باز با پوشش همین مختصات و وضوح حداکثر ۱۰ متر در کاتالوگ موجود نیست'};
-      const meta=imageryMetadata(item);
-      this.imageryMeta=meta;
-      const zoom=zoomForGsd(meta.gsd,row.lat);
-      const center=mercatorTile(row.lat,row.lon,zoom);
-      const n=2**zoom,tasks=[];
-      for(let dy=-1;dy<=1;dy++)for(let dx=-1;dx<=1;dx++){
-        const x=((center.x+dx)%n+n)%n,y=clamp(center.y+dy,0,n-1);
-        tasks.push({x,y,z:zoom});
+      let item=null,searchError='';
+      try{
+        const data=await this.fetchJson(imagerySearchUrl(row),{headers:{'Accept':'application/geo+json, application/json'}},signal,9500);
+        if(token!==this.token||signal.aborted)return {loaded:0,centerLoaded:false};
+        item=chooseBestImageryItem(Array.isArray(data.features)?data.features:[],{lat:row.lat,lon:row.lon});
+      }catch(error){searchError=error&&error.message||String(error);}
+      for(const provider of rasterProviders(row,item)){
+        if(signal.aborted||token!==this.token)return {loaded:0,centerLoaded:false};
+        this.clearGroup(this.imageryGroup);
+        const result=await this.loadRasterProvider(row,provider,token,signal);
+        if(result.centerLoaded){
+          this.imageryMeta=Object.assign({},provider.meta,{sourceType:provider.type,
+            resolutionVerified:provider.type==='stac',tileZoom:provider.zoom,
+            tileCount:result.loaded,centralTileChecked:result.centralChecked});
+          return Object.assign(result,{facilityGrade:provider.facilityGrade});
+        }
       }
-      let next=0,loaded=0,errors=0;
+      this.clearGroup(this.imageryGroup);
+      this.imageryMeta=null;
+      return {loaded:0,centerLoaded:false,error:searchError||'',message:'در حال حاضر منبع تصویر دارای کاشی معتبر برای همین نقطه تأیید نشد'};
+    }
+    async loadRasterProvider(row,provider,token,signal){
+      const center=mercatorTile(row.lat,row.lon,provider.zoom),n=2**provider.zoom;
+      let loaded=0,centralChecked=false;
+      const addTile=async tile=>{
+        const texture=await this.loadTexture(rasterTileUrl(provider,tile),signal);
+        if(signal.aborted||token!==this.token){this.disposeTexture(texture);return false;}
+        const geometry=buildTileGeometry(tile.z,tile.x,tile.y,18);
+        if(this.engine.terrainData && this.engine.options.terrain && global.RaspehrTerrainDEM)
+          global.RaspehrTerrainDEM.applyHeightToGeometry(geometry,this.engine.terrainData,RADIUS,this.engine.options.terrainExaggeration||1);
+        const material=new T.MeshBasicMaterial({map:texture,transparent:true,depthWrite:false,depthTest:true,
+          side:T.DoubleSide,toneMapped:false,polygonOffset:true,polygonOffsetFactor:-2});
+        const mesh=new T.Mesh(geometry,material);
+        mesh.renderOrder=3;this.imageryGroup.add(mesh);loaded++;return true;
+      };
+      try{await addTile({x:center.x,y:center.y,z:provider.zoom});centralChecked=true;}
+      catch(_){return {loaded:0,centerLoaded:false,centralChecked};}
+      // Only request adjacent imagery once the point-containing center tile works.
+      const tasks=[];
+      for(let dy=-1;dy<=1;dy++)for(let dx=-1;dx<=1;dx++){
+        if(!dx&&!dy)continue;
+        const y=center.y+dy;if(y<0||y>=n)continue;
+        tasks.push({x:((center.x+dx)%n+n)%n,y,z:provider.zoom});
+      }
+      let next=0;
       const worker=async()=>{
         while(next<tasks.length && !signal.aborted && token===this.token){
           const tile=tasks[next++];
-          try{
-            const tileUrl=`${OAM_TILE_ROOT}${encodeURIComponent(item.id)}/tiles/WebMercatorQuad/${tile.z}/${tile.x}/${tile.y}?assets=visual&nodata=0`;
-            const texture=await this.loadTexture(tileUrl,signal);
-            if(signal.aborted || token!==this.token){this.disposeTexture(texture);continue;}
-            const geometry=buildTileGeometry(tile.z,tile.x,tile.y,18);
-            if(this.engine.terrainData && this.engine.options.terrain && global.RaspehrTerrainDEM)
-              global.RaspehrTerrainDEM.applyHeightToGeometry(geometry,this.engine.terrainData,RADIUS,this.engine.options.terrainExaggeration||1);
-            const material=new T.MeshBasicMaterial({map:texture,transparent:true,depthWrite:false,depthTest:true,side:T.DoubleSide,toneMapped:false,polygonOffset:true,polygonOffsetFactor:-2});
-            const mesh=new T.Mesh(geometry,material);
-            mesh.renderOrder=3;
-            this.imageryGroup.add(mesh);
-            loaded++;
-          }catch(error){errors++;}
+          try{await addTile(tile);}catch(_){/* sparse coverage is normal */}
         }
       };
-      await Promise.all(Array.from({length:3},worker));
-      if(token!==this.token || signal.aborted)return {loaded:0,message:'درخواست تصویر لغو شد'};
-      return {loaded,errors,message:loaded?'تصویر باز بارگذاری شد':'کاشی تصویری برای این محدوده در دسترس نبود'};
+      // Show the confirmed central image first; adjacent tiles stream in without
+      // delaying camera focus or making a user wait for a slow tile server.
+      this.pendingRasterTiles=Promise.all(Array.from({length:3},worker)).then(()=>{
+        if(token===this.token && this.active && this.imageryMeta && this.imageryMeta.sourceType===provider.type)
+          this.imageryMeta.tileCount=loaded;
+      });
+      return {loaded,centerLoaded:true,centralChecked};
     }
     async loadTexture(url,signal){
       const controller=new AbortController();
       const relay=()=>controller.abort();
       if(signal){if(signal.aborted)controller.abort();else signal.addEventListener('abort',relay,{once:true});}
-      const timer=setTimeout(()=>controller.abort(),18000);
+      const timer=setTimeout(()=>controller.abort(),9000);
       let blob;
       try{
         const response=await fetch(url,{mode:'cors',credentials:'omit',signal:controller.signal,cache:'force-cache'});
         if(!response.ok)throw new Error('کاشی تصویر HTTP '+response.status);
+        const mime=response.headers&&response.headers.get&&response.headers.get('Content-Type');
+        if(mime && !/image\/|octet-stream/i.test(mime))throw new Error('پاسخ سرویس تصویر نیست');
         blob=await response.blob();
+        if(blob.size<100)throw new Error('تصویر خالی یا نامعتبر');
       }catch(error){
         if(controller.signal.aborted && !(signal&&signal.aborted))throw new Error('مهلت دریافت کاشی تصویر به پایان رسید.');
         throw error;
@@ -378,7 +512,10 @@
         try{source=await new Promise((resolve,reject)=>{const image=new Image();image.crossOrigin='anonymous';image.onload=()=>resolve(image);image.onerror=()=>reject(new Error('رمزگشایی کاشی تصویر ناموفق بود'));image.src=objectUrl;});}
         finally{URL.revokeObjectURL(objectUrl);}
       }
+      const quality=inspectRasterImage(source);
+      if(!quality.valid){if(source&&typeof source.close==='function')source.close();throw new Error('کاشی شفاف یا فاقد داده تصویری است');}
       const texture=new T.Texture(source);
+      texture.userData={rasterQuality:quality};
       texture.flipY=flipY;
       texture.generateMipmaps=true;
       texture.minFilter=T.LinearMipmapLinearFilter;
@@ -398,13 +535,16 @@
         const query=makeOverpassQuery(row,500);
         const endpoint=String(global.RASPEHR_OVERPASS_URL || DEFAULT_OVERPASS_URL);
         const body='data='+encodeURIComponent(query);
-        data=await this.fetchJson(endpoint,{method:'POST',headers:{'Content-Type':'application/x-www-form-urlencoded;charset=UTF-8','Accept':'application/json'},body},signal,24000);
+        data=await this.fetchJson(endpoint,{method:'POST',headers:{'Content-Type':'application/x-www-form-urlencoded;charset=UTF-8','Accept':'application/json'},body},signal,15000);
         if(BUILDING_CACHE.size>=80)BUILDING_CACHE.delete(BUILDING_CACHE.keys().next().value);
         BUILDING_CACHE.set(key,data);
       }
       if(token!==this.token || signal.aborted)return {total:0,extruded:0,footprints:0,message:'درخواست ساختمان لغو شد'};
       const elements=Array.isArray(data.elements)?data.elements:[];
-      const parsed=elements.map(parseOsmBuilding).filter(Boolean)
+      const relationMemberRefs=new Set(elements.filter(e=>e.type==='relation'&&e.tags&&e.tags.building&&parseOsmBuildings(e).length>0)
+        .flatMap(e=>(e.members||[]).filter(m=>m.type==='way'&&m.role==='outer').map(m=>m.ref)));
+      const parsed=elements.filter(e=>!(e.type==='way'&&relationMemberRefs.has(e.id)))
+        .flatMap(parseOsmBuildings)
         .sort((a,b)=>{
           const da=Math.hypot((a.center.lat-row.lat)*111320,(a.center.lon-row.lon)*111320*Math.cos(row.lat*DEG));
           const db=Math.hypot((b.center.lat-row.lat)*111320,(b.center.lon-row.lon)*111320*Math.cos(row.lat*DEG));
@@ -451,9 +591,9 @@
           if(building.height.approximate)heightApproximate++;else heightExplicit++;
         }else footprints++;
       });
-      this.buildingSummary={total:parsed.length,extruded,heightExplicit,heightApproximate,footprints,
+      this.buildingSummary={total:parsed.length,extruded,heightExplicit,heightApproximate,footprints,nodes:buildingNodeCount(elements),
         osmTimestamp:data.osm3s&&data.osm3s.timestamp_osm_base||'زمان به‌روزرسانی ثبت نشده'};
-      return Object.assign({},this.buildingSummary,{message:parsed.length?'ساختمان‌های ثبت‌شده در نقشه بارگذاری شدند':'در محدوده انتخابی ساختمان نقشه‌برداری‌شده‌ای ثبت نشده است'});
+      return Object.assign({},this.buildingSummary,{message:parsed.length?'شکل ساختمان‌های ثبت‌شده در نقشه بارگذاری شد':'در پاسخ این محدوده، شکل ساختمان قابل ترسیمی پیدا نشد؛ این موضوع نبود ساختمان واقعی را اثبات نمی‌کند.'});
     }
     exit(options){
       const opts=options||{};
@@ -469,7 +609,7 @@
       this.imageryGroup.visible=false;
       this.buildingGroup.visible=false;
       this.imageryMeta=null;
-      this.buildingSummary={total:0,extruded:0,heightExplicit:0,heightApproximate:0,footprints:0,osmTimestamp:'نامشخص'};
+      this.buildingSummary={total:0,extruded:0,heightExplicit:0,heightApproximate:0,footprints:0,nodes:0,osmTimestamp:'نامشخص'};
       this.engine.minDistance=Number.isFinite(saved.minDistance)?saved.minDistance:2.02;
       this.engine.camera.near=Number.isFinite(saved.near)?saved.near:0.025;
       this.engine.camera.far=Number.isFinite(saved.far)?saved.far:180;
@@ -493,7 +633,8 @@
   global.RaspehrLocalFacility={
     LocalFacilityView,facilityEligibility,isApproximate,hasExplicitFacilityPrecision,
     mercatorTile,tileBounds,zoomForGsd,chooseBestImageryItem,geometryContainsPoint,
+    isConusPoint,rasterProviders,rasterTileUrl,inspectRasterImage,extractOsmRings,parseOsmBuildings,buildingNodeCount,
     parseHeight,makeOverpassQuery,imagerySearchUrl,buildTileGeometry,parseOsmBuilding,
-    constants:{RADIUS,EARTH_METERS,FACILITY_CAMERA_MIN,FACILITY_CAMERA_DISTANCE,STAC_SEARCH_URL,OAM_TILE_ROOT,DEFAULT_OVERPASS_URL}
+    constants:{RADIUS,EARTH_METERS,FACILITY_CAMERA_MIN,FACILITY_CAMERA_DISTANCE,REGIONAL_CAMERA_DISTANCE,UNAVAILABLE_CAMERA_DISTANCE,STAC_SEARCH_URL,OAM_TILE_ROOT,OAM_GLOBAL_TILES,USGS_ORTHO_TILES,DEFAULT_OVERPASS_URL}
   };
 })(window);

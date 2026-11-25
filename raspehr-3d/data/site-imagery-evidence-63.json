@@ -1,0 +1,1336 @@
+{
+  "project": "RASPEHR",
+  "version": "2026-11-25",
+  "note": "پژوهش ۶۳ پایگاه؛ این داده‌ها اثبات پوشش تصویر زمین‌مرجع نیستند. برای استفاده خودکار تصویری به API زنده و حقوق تصویر نیاز است.",
+  "sites": [
+    {
+      "site_id": "shahroud",
+      "coordinate_precision": "not_recorded",
+      "published_scene_reference": {
+        "url": "https://www.timesofisrael.com/satellite-photos-show-israels-iran-strike-likely-hit-key-irgc-missile-production-base/",
+        "type": "optical",
+        "date": "2024-10-29",
+        "provider": "Planet Labs / AP",
+        "claimed_gsd_m": null
+      },
+      "deployable_georeferenced_tile": false,
+      "license_for_republication_verified": false,
+      "live_coverage_verified": false,
+      "note": "صفحه تصویر منتشرشده، لایه زمین‌مرجع قابل استفاده را تضمین نمی‌کند.",
+      "research_status": "صفحه تصویر واقعی منتشرشده و فراداده آن مشاهده شد",
+      "national_reference": {
+        "name": "Copernicus Sentinel-2 10m",
+        "url": "https://dataspace.copernicus.eu/explore-data/data-collections/sentinel-data/sentinel-2"
+      },
+      "position_limitation": "مختصات مرجع با Pad115 گزارش‌شده حدود ۳۵۶ متر اختلاف دارد؛ نوع نقطه روشن نیست."
+    },
+    {
+      "site_id": "ksc39a",
+      "coordinate_precision": "operator_published_pad_coordinates",
+      "published_scene_reference": {
+        "url": "https://spacefromspace.com/spaceport-images/launch-complex-39a-20250104/",
+        "type": "optical",
+        "date": "2025-01-04",
+        "provider": "Airbus",
+        "claimed_gsd_m": 0.3
+      },
+      "deployable_georeferenced_tile": false,
+      "license_for_republication_verified": false,
+      "live_coverage_verified": false,
+      "note": "صفحه تصویر منتشرشده، لایه زمین‌مرجع قابل استفاده را تضمین نمی‌کند.",
+      "research_status": "صفحه تصویر واقعی منتشرشده و فراداده آن مشاهده شد",
+      "national_reference": {
+        "name": "USGS/USDA NAIP",
+        "url": "https://imagery.nationalmap.gov/arcgis/rest/services/USGSNAIPImagery/ImageServer"
+      },
+      "position_limitation": "منبع نقش و دقت مختصات ثبت نشده؛ تطبیق footprint با همین پین لازم است.",
+      "coordinate_source_url": "https://netspublic.grc.nasa.gov/main/20190919_Final_EA_SpaceX_Starship.pdf",
+      "coordinate_role": "launch_pad",
+      "source_reviewed_on": "2026-11-25"
+    },
+    {
+      "site_id": "alcantara",
+      "coordinate_precision": "not_recorded",
+      "published_scene_reference": {
+        "url": null,
+        "type": "نامشخص",
+        "date": null,
+        "provider": null,
+        "claimed_gsd_m": null
+      },
+      "deployable_georeferenced_tile": false,
+      "license_for_republication_verified": false,
+      "live_coverage_verified": false,
+      "note": "صفحه تصویر منتشرشده، لایه زمین‌مرجع قابل استفاده را تضمین نمی‌کند.",
+      "research_status": "برای این نقطه در جست‌وجوی انجام‌شده صفحه تصویر خاصی ثبت نشد",
+      "national_reference": {
+        "name": "INPE Brazil CBERS-4A WPM 2m",
+        "url": "https://data.inpe.br/nova-colecao-de-imagens-fusionadas-de-alta-resolucao-espacial-do-satelite-sensor-cbers-4a-wpm/"
+      },
+      "position_limitation": "مرجع کلی سایت در برابر سکوی متحرک گزارش رسمی؛ حدود ۷ کیلومتر اختلاف."
+    },
+    {
+      "site_id": "andoya",
+      "coordinate_precision": "not_recorded",
+      "published_scene_reference": {
+        "url": "https://spacefromspace.com/satellite-images/andoya-spaceport-norway-20250330",
+        "type": "optical",
+        "date": "2025-03-30",
+        "provider": "Airbus",
+        "claimed_gsd_m": 0.3
+      },
+      "deployable_georeferenced_tile": false,
+      "license_for_republication_verified": false,
+      "live_coverage_verified": false,
+      "note": "صفحه تصویر منتشرشده، لایه زمین‌مرجع قابل استفاده را تضمین نمی‌کند.",
+      "research_status": "صفحه تصویر واقعی منتشرشده و فراداده آن مشاهده شد",
+      "national_reference": {
+        "name": "Norwegian aerial mapping",
+        "url": "https://www.norgeibilder.no/"
+      },
+      "position_limitation": "نقطه رسپهر با محل سکوی مداری جدید در داده ثانویه حدود ۲۶٫۸ کیلومتر تفاوت دارد."
+    },
+    {
+      "site_id": "arnhem",
+      "coordinate_precision": "not_recorded",
+      "published_scene_reference": {
+        "url": null,
+        "type": "نامشخص",
+        "date": null,
+        "provider": null,
+        "claimed_gsd_m": null
+      },
+      "deployable_georeferenced_tile": false,
+      "license_for_republication_verified": false,
+      "live_coverage_verified": false,
+      "note": "صفحه تصویر منتشرشده، لایه زمین‌مرجع قابل استفاده را تضمین نمی‌کند.",
+      "research_status": "برای این نقطه در جست‌وجوی انجام‌شده صفحه تصویر خاصی ثبت نشد",
+      "national_reference": {
+        "name": "Copernicus Sentinel-2 10m",
+        "url": "https://dataspace.copernicus.eu/explore-data/data-collections/sentinel-data/sentinel-2"
+      },
+      "position_limitation": "منبع نقش و دقت مختصات ثبت نشده؛ تطبیق footprint با همین پین لازم است."
+    },
+    {
+      "site_id": "baikonur",
+      "coordinate_precision": "not_recorded",
+      "published_scene_reference": {
+        "url": "https://spacefromspace.com/spaceport-images/baikonur-cosmodrome-20240318/",
+        "type": "SAR",
+        "date": "2024-03-18",
+        "provider": "Umbra",
+        "claimed_gsd_m": 0.25
+      },
+      "deployable_georeferenced_tile": false,
+      "license_for_republication_verified": false,
+      "live_coverage_verified": false,
+      "note": "صفحه تصویر منتشرشده، لایه زمین‌مرجع قابل استفاده را تضمین نمی‌کند.",
+      "research_status": "صفحه تصویر واقعی منتشرشده و فراداده آن مشاهده شد",
+      "national_reference": {
+        "name": "Copernicus Sentinel-2 10m",
+        "url": "https://dataspace.copernicus.eu/explore-data/data-collections/sentinel-data/sentinel-2"
+      },
+      "position_limitation": "پین فعلی ممکن است یکی از سکوها باشد نه centroid کازمودروم."
+    },
+    {
+      "site_id": "bowen",
+      "coordinate_precision": "not_recorded",
+      "published_scene_reference": {
+        "url": "https://spacefromspace.com/spaceport-images/bowen-spaceport-australia-20240101/",
+        "type": "SAR",
+        "date": "2024-01-01",
+        "provider": "Umbra",
+        "claimed_gsd_m": 0.35
+      },
+      "deployable_georeferenced_tile": false,
+      "license_for_republication_verified": false,
+      "live_coverage_verified": false,
+      "note": "صفحه تصویر منتشرشده، لایه زمین‌مرجع قابل استفاده را تضمین نمی‌کند.",
+      "research_status": "صفحه تصویر واقعی منتشرشده و فراداده آن مشاهده شد",
+      "national_reference": {
+        "name": "Copernicus Sentinel-2 10m",
+        "url": "https://dataspace.copernicus.eu/explore-data/data-collections/sentinel-data/sentinel-2"
+      },
+      "position_limitation": "منبع نقش و دقت مختصات ثبت نشده؛ تطبیق footprint با همین پین لازم است."
+    },
+    {
+      "site_id": "ccsfs",
+      "coordinate_precision": "not_recorded",
+      "published_scene_reference": {
+        "url": "https://spacefromspace.com/spaceport-images/cape-canaveral-20241014/",
+        "type": "aerial",
+        "date": "2024-10-14",
+        "provider": "NOAA / NOS / NGS",
+        "claimed_gsd_m": null
+      },
+      "deployable_georeferenced_tile": false,
+      "license_for_republication_verified": false,
+      "live_coverage_verified": false,
+      "note": "صفحه تصویر منتشرشده، لایه زمین‌مرجع قابل استفاده را تضمین نمی‌کند.",
+      "research_status": "صفحه تصویر واقعی منتشرشده و فراداده آن مشاهده شد",
+      "national_reference": {
+        "name": "USGS/USDA NAIP",
+        "url": "https://imagery.nationalmap.gov/arcgis/rest/services/USGSNAIPImagery/ImageServer"
+      },
+      "position_limitation": "منبع نقش و دقت مختصات ثبت نشده؛ تطبیق footprint با همین پین لازم است."
+    },
+    {
+      "site_id": "chabahar",
+      "coordinate_precision": "not_recorded",
+      "published_scene_reference": {
+        "url": "https://spacefromspace.com/spaceport-images/chabahar-spaceport-iran-20250521/",
+        "type": "SAR",
+        "date": "2025-05-21",
+        "provider": "Umbra",
+        "claimed_gsd_m": 0.35
+      },
+      "deployable_georeferenced_tile": false,
+      "license_for_republication_verified": false,
+      "live_coverage_verified": false,
+      "note": "صفحه تصویر منتشرشده، لایه زمین‌مرجع قابل استفاده را تضمین نمی‌کند.",
+      "research_status": "صفحه تصویر واقعی منتشرشده و فراداده آن مشاهده شد",
+      "national_reference": {
+        "name": "Copernicus Sentinel-2 10m",
+        "url": "https://dataspace.copernicus.eu/explore-data/data-collections/sentinel-data/sentinel-2"
+      },
+      "position_limitation": "منبع نقش و دقت مختصات ثبت نشده؛ تطبیق footprint با همین پین لازم است."
+    },
+    {
+      "site_id": "corn-ranch",
+      "coordinate_precision": "not_recorded",
+      "published_scene_reference": {
+        "url": null,
+        "type": "نامشخص",
+        "date": null,
+        "provider": null,
+        "claimed_gsd_m": null
+      },
+      "deployable_georeferenced_tile": false,
+      "license_for_republication_verified": false,
+      "live_coverage_verified": false,
+      "note": "صفحه تصویر منتشرشده، لایه زمین‌مرجع قابل استفاده را تضمین نمی‌کند.",
+      "research_status": "برای این نقطه در جست‌وجوی انجام‌شده صفحه تصویر خاصی ثبت نشد",
+      "national_reference": {
+        "name": "USGS/USDA NAIP",
+        "url": "https://imagery.nationalmap.gov/arcgis/rest/services/USGSNAIPImagery/ImageServer"
+      },
+      "position_limitation": "منبع نقش و دقت مختصات ثبت نشده؛ تطبیق footprint با همین پین لازم است."
+    },
+    {
+      "site_id": "cornwall",
+      "coordinate_precision": "not_recorded",
+      "published_scene_reference": {
+        "url": null,
+        "type": "نامشخص",
+        "date": null,
+        "provider": null,
+        "claimed_gsd_m": null
+      },
+      "deployable_georeferenced_tile": false,
+      "license_for_republication_verified": false,
+      "live_coverage_verified": false,
+      "note": "صفحه تصویر منتشرشده، لایه زمین‌مرجع قابل استفاده را تضمین نمی‌کند.",
+      "research_status": "برای این نقطه در جست‌وجوی انجام‌شده صفحه تصویر خاصی ثبت نشد",
+      "national_reference": {
+        "name": "Environment Agency England orthophoto",
+        "url": "https://www.data.gov.uk/dataset/4921f8a1-d47e-458b-873b-2a489b1c8165/vertical-aerial-photography"
+      },
+      "position_limitation": "منبع نقش و دقت مختصات ثبت نشده؛ تطبیق footprint با همین پین لازم است."
+    },
+    {
+      "site_id": "djibouti-spaceport",
+      "coordinate_precision": "not_recorded",
+      "published_scene_reference": {
+        "url": null,
+        "type": "نامشخص",
+        "date": null,
+        "provider": null,
+        "claimed_gsd_m": null
+      },
+      "deployable_georeferenced_tile": false,
+      "license_for_republication_verified": false,
+      "live_coverage_verified": false,
+      "note": "صفحه تصویر منتشرشده، لایه زمین‌مرجع قابل استفاده را تضمین نمی‌کند.",
+      "research_status": "برای این نقطه در جست‌وجوی انجام‌شده صفحه تصویر خاصی ثبت نشد",
+      "national_reference": {
+        "name": "Copernicus Sentinel-2 10m",
+        "url": "https://dataspace.copernicus.eu/explore-data/data-collections/sentinel-data/sentinel-2"
+      },
+      "position_limitation": "سایت پیشنهادی: محل تأسیسات ساخته‌شده ثابت فرض نشود."
+    },
+    {
+      "site_id": "elarenosillo",
+      "coordinate_precision": "not_recorded",
+      "published_scene_reference": {
+        "url": null,
+        "type": "نامشخص",
+        "date": null,
+        "provider": null,
+        "claimed_gsd_m": null
+      },
+      "deployable_georeferenced_tile": false,
+      "license_for_republication_verified": false,
+      "live_coverage_verified": false,
+      "note": "صفحه تصویر منتشرشده، لایه زمین‌مرجع قابل استفاده را تضمین نمی‌کند.",
+      "research_status": "برای این نقطه در جست‌وجوی انجام‌شده صفحه تصویر خاصی ثبت نشد",
+      "national_reference": {
+        "name": "Spanish PNOA 25-50cm WMTS",
+        "url": "https://pnoa.ign.es/web/portal/pnoa-imagen/visualizadores-y-servicios-web"
+      },
+      "position_limitation": "منبع نقش و دقت مختصات ثبت نشده؛ تطبیق footprint با همین پین لازم است."
+    },
+    {
+      "site_id": "emamshahr",
+      "coordinate_precision": "not_recorded",
+      "published_scene_reference": {
+        "url": null,
+        "type": "نامشخص",
+        "date": null,
+        "provider": null,
+        "claimed_gsd_m": null
+      },
+      "deployable_georeferenced_tile": false,
+      "license_for_republication_verified": false,
+      "live_coverage_verified": false,
+      "note": "صفحه تصویر منتشرشده، لایه زمین‌مرجع قابل استفاده را تضمین نمی‌کند.",
+      "research_status": "برای این نقطه در جست‌وجوی انجام‌شده صفحه تصویر خاصی ثبت نشد",
+      "national_reference": {
+        "name": "Copernicus Sentinel-2 10m",
+        "url": "https://dataspace.copernicus.eu/explore-data/data-collections/sentinel-data/sentinel-2"
+      },
+      "position_limitation": "منبع نقش و دقت مختصات ثبت نشده؛ تطبیق footprint با همین پین لازم است."
+    },
+    {
+      "site_id": "esrange",
+      "coordinate_precision": "not_recorded",
+      "published_scene_reference": {
+        "url": null,
+        "type": "نامشخص",
+        "date": null,
+        "provider": null,
+        "claimed_gsd_m": null
+      },
+      "deployable_georeferenced_tile": false,
+      "license_for_republication_verified": false,
+      "live_coverage_verified": false,
+      "note": "صفحه تصویر منتشرشده، لایه زمین‌مرجع قابل استفاده را تضمین نمی‌کند.",
+      "research_status": "برای این نقطه در جست‌وجوی انجام‌شده صفحه تصویر خاصی ثبت نشد",
+      "national_reference": {
+        "name": "Copernicus Sentinel-2 10m",
+        "url": "https://dataspace.copernicus.eu/explore-data/data-collections/sentinel-data/sentinel-2"
+      },
+      "position_limitation": "منبع نقش و دقت مختصات ثبت نشده؛ تطبیق footprint با همین پین لازم است."
+    },
+    {
+      "site_id": "etlaq",
+      "coordinate_precision": "not_recorded",
+      "published_scene_reference": {
+        "url": null,
+        "type": "نامشخص",
+        "date": null,
+        "provider": null,
+        "claimed_gsd_m": null
+      },
+      "deployable_georeferenced_tile": false,
+      "license_for_republication_verified": false,
+      "live_coverage_verified": false,
+      "note": "صفحه تصویر منتشرشده، لایه زمین‌مرجع قابل استفاده را تضمین نمی‌کند.",
+      "research_status": "برای این نقطه در جست‌وجوی انجام‌شده صفحه تصویر خاصی ثبت نشد",
+      "national_reference": {
+        "name": "Copernicus Sentinel-2 10m",
+        "url": "https://dataspace.copernicus.eu/explore-data/data-collections/sentinel-data/sentinel-2"
+      },
+      "position_limitation": "منبع نقش و دقت مختصات ثبت نشده؛ تطبیق footprint با همین پین لازم است."
+    },
+    {
+      "site_id": "haiyang",
+      "coordinate_precision": "not_recorded",
+      "published_scene_reference": {
+        "url": null,
+        "type": "نامشخص",
+        "date": null,
+        "provider": null,
+        "claimed_gsd_m": null
+      },
+      "deployable_georeferenced_tile": false,
+      "license_for_republication_verified": false,
+      "live_coverage_verified": false,
+      "note": "صفحه تصویر منتشرشده، لایه زمین‌مرجع قابل استفاده را تضمین نمی‌کند.",
+      "research_status": "برای این نقطه در جست‌وجوی انجام‌شده صفحه تصویر خاصی ثبت نشد",
+      "national_reference": {
+        "name": "Copernicus Sentinel-2 10m",
+        "url": "https://dataspace.copernicus.eu/explore-data/data-collections/sentinel-data/sentinel-2"
+      },
+      "position_limitation": "عملیات پرتاب دریایی/متحرک: نقطه ثابت ساحلی نماینده همه پرتاب‌ها نیست."
+    },
+    {
+      "site_id": "hammaguir",
+      "coordinate_precision": "not_recorded",
+      "published_scene_reference": {
+        "url": null,
+        "type": "نامشخص",
+        "date": null,
+        "provider": null,
+        "claimed_gsd_m": null
+      },
+      "deployable_georeferenced_tile": false,
+      "license_for_republication_verified": false,
+      "live_coverage_verified": false,
+      "note": "صفحه تصویر منتشرشده، لایه زمین‌مرجع قابل استفاده را تضمین نمی‌کند.",
+      "research_status": "برای این نقطه در جست‌وجوی انجام‌شده صفحه تصویر خاصی ثبت نشد",
+      "national_reference": {
+        "name": "Copernicus Sentinel-2 10m",
+        "url": "https://dataspace.copernicus.eu/explore-data/data-collections/sentinel-data/sentinel-2"
+      },
+      "position_limitation": "سایت تاریخی: تصاویر امروز لزوماً تأسیسات زمان فعالیت را نشان نمی‌دهند."
+    },
+    {
+      "site_id": "imam-khomeini",
+      "coordinate_precision": "not_recorded",
+      "published_scene_reference": {
+        "url": "https://www.thenationalnews.com/mena/iran/2022/03/08/irans-irgc-puts-second-satellite-into-space/",
+        "type": "optical",
+        "date": "2022-02-27",
+        "provider": "Maxar Technologies / AP",
+        "claimed_gsd_m": null
+      },
+      "deployable_georeferenced_tile": false,
+      "license_for_republication_verified": false,
+      "live_coverage_verified": false,
+      "note": "صفحه تصویر منتشرشده، لایه زمین‌مرجع قابل استفاده را تضمین نمی‌کند.",
+      "research_status": "صفحه تصویر واقعی منتشرشده و فراداده آن مشاهده شد",
+      "national_reference": {
+        "name": "Copernicus Sentinel-2 10m",
+        "url": "https://dataspace.copernicus.eu/explore-data/data-collections/sentinel-data/sentinel-2"
+      },
+      "position_limitation": "منبع نقش و دقت مختصات ثبت نشده؛ تطبیق footprint با همین پین لازم است."
+    },
+    {
+      "site_id": "jeju",
+      "coordinate_precision": "not_recorded",
+      "published_scene_reference": {
+        "url": null,
+        "type": "نامشخص",
+        "date": null,
+        "provider": null,
+        "claimed_gsd_m": null
+      },
+      "deployable_georeferenced_tile": false,
+      "license_for_republication_verified": false,
+      "live_coverage_verified": false,
+      "note": "صفحه تصویر منتشرشده، لایه زمین‌مرجع قابل استفاده را تضمین نمی‌کند.",
+      "research_status": "برای این نقطه در جست‌وجوی انجام‌شده صفحه تصویر خاصی ثبت نشد",
+      "national_reference": {
+        "name": "Copernicus Sentinel-2 10m",
+        "url": "https://dataspace.copernicus.eu/explore-data/data-collections/sentinel-data/sentinel-2"
+      },
+      "position_limitation": "منبع نقش و دقت مختصات ثبت نشده؛ تطبیق footprint با همین پین لازم است."
+    },
+    {
+      "site_id": "jiuquan",
+      "coordinate_precision": "not_recorded",
+      "published_scene_reference": {
+        "url": "https://spacefromspace.com/spaceport-images/jiuquan-satellite-launch-center-china-20250302/",
+        "type": "SAR",
+        "date": "2025-03-02",
+        "provider": "Umbra",
+        "claimed_gsd_m": 0.5
+      },
+      "deployable_georeferenced_tile": false,
+      "license_for_republication_verified": false,
+      "live_coverage_verified": false,
+      "note": "صفحه تصویر منتشرشده، لایه زمین‌مرجع قابل استفاده را تضمین نمی‌کند.",
+      "research_status": "صفحه تصویر واقعی منتشرشده و فراداده آن مشاهده شد",
+      "national_reference": {
+        "name": "Copernicus Sentinel-2 10m",
+        "url": "https://dataspace.copernicus.eu/explore-data/data-collections/sentinel-data/sentinel-2"
+      },
+      "position_limitation": "منبع نقش و دقت مختصات ثبت نشده؛ تطبیق footprint با همین پین لازم است."
+    },
+    {
+      "site_id": "kapyar",
+      "coordinate_precision": "not_recorded",
+      "published_scene_reference": {
+        "url": null,
+        "type": "نامشخص",
+        "date": null,
+        "provider": null,
+        "claimed_gsd_m": null
+      },
+      "deployable_georeferenced_tile": false,
+      "license_for_republication_verified": false,
+      "live_coverage_verified": false,
+      "note": "صفحه تصویر منتشرشده، لایه زمین‌مرجع قابل استفاده را تضمین نمی‌کند.",
+      "research_status": "برای این نقطه در جست‌وجوی انجام‌شده صفحه تصویر خاصی ثبت نشد",
+      "national_reference": {
+        "name": "Copernicus Sentinel-2 10m",
+        "url": "https://dataspace.copernicus.eu/explore-data/data-collections/sentinel-data/sentinel-2"
+      },
+      "position_limitation": "منبع نقش و دقت مختصات ثبت نشده؛ تطبیق footprint با همین پین لازم است."
+    },
+    {
+      "site_id": "kii",
+      "coordinate_precision": "not_recorded",
+      "published_scene_reference": {
+        "url": "https://spacefromspace.com/spaceport-images/spaceport-kii-japan-20240307/",
+        "type": "SAR",
+        "date": "2024-03-07",
+        "provider": "Umbra",
+        "claimed_gsd_m": 0.35
+      },
+      "deployable_georeferenced_tile": false,
+      "license_for_republication_verified": false,
+      "live_coverage_verified": false,
+      "note": "صفحه تصویر منتشرشده، لایه زمین‌مرجع قابل استفاده را تضمین نمی‌کند.",
+      "research_status": "صفحه تصویر واقعی منتشرشده و فراداده آن مشاهده شد",
+      "national_reference": {
+        "name": "Japan GSI Seamless Photo",
+        "url": "https://cyberjapandata.gsi.go.jp/development/ichiran.html"
+      },
+      "position_limitation": "منبع نقش و دقت مختصات ثبت نشده؛ تطبیق footprint با همین پین لازم است."
+    },
+    {
+      "site_id": "kodiak",
+      "coordinate_precision": "not_recorded",
+      "published_scene_reference": {
+        "url": "https://spacefromspace.com/spaceport-images/pacific-spaceport-complex-alaska-20230819/",
+        "type": "optical",
+        "date": "2023-08-19",
+        "provider": "Planet",
+        "claimed_gsd_m": 0.71
+      },
+      "deployable_georeferenced_tile": false,
+      "license_for_republication_verified": false,
+      "live_coverage_verified": false,
+      "note": "صفحه تصویر منتشرشده، لایه زمین‌مرجع قابل استفاده را تضمین نمی‌کند.",
+      "research_status": "صفحه تصویر واقعی منتشرشده و فراداده آن مشاهده شد",
+      "national_reference": {
+        "name": "USGS NAIP geographic exclusion",
+        "url": "https://imagery.nationalmap.gov/arcgis/rest/services/USGSNAIPImagery/ImageServer"
+      },
+      "position_limitation": "منبع نقش و دقت مختصات ثبت نشده؛ تطبیق footprint با همین پین لازم است."
+    },
+    {
+      "site_id": "koonibba",
+      "coordinate_precision": "not_recorded",
+      "published_scene_reference": {
+        "url": null,
+        "type": "نامشخص",
+        "date": null,
+        "provider": null,
+        "claimed_gsd_m": null
+      },
+      "deployable_georeferenced_tile": false,
+      "license_for_republication_verified": false,
+      "live_coverage_verified": false,
+      "note": "صفحه تصویر منتشرشده، لایه زمین‌مرجع قابل استفاده را تضمین نمی‌کند.",
+      "research_status": "برای این نقطه در جست‌وجوی انجام‌شده صفحه تصویر خاصی ثبت نشد",
+      "national_reference": {
+        "name": "Copernicus Sentinel-2 10m",
+        "url": "https://dataspace.copernicus.eu/explore-data/data-collections/sentinel-data/sentinel-2"
+      },
+      "position_limitation": "منبع نقش و دقت مختصات ثبت نشده؛ تطبیق footprint با همین پین لازم است."
+    },
+    {
+      "site_id": "kourou",
+      "coordinate_precision": "not_recorded",
+      "published_scene_reference": {
+        "url": "https://spacefromspace.com/spaceport-images/angara-a5-vostochny-cosmodrome-russia-20240407/",
+        "type": "ردّ تصویر در فهرست",
+        "date": null,
+        "provider": null,
+        "claimed_gsd_m": null
+      },
+      "deployable_georeferenced_tile": false,
+      "license_for_republication_verified": false,
+      "live_coverage_verified": false,
+      "note": "صفحه تصویر منتشرشده، لایه زمین‌مرجع قابل استفاده را تضمین نمی‌کند.",
+      "research_status": "ردّ تصویر در فهرست عمومی؛ صفحه اصلی محصول بررسی نشده",
+      "national_reference": {
+        "name": "Copernicus Sentinel-2 10m",
+        "url": "https://dataspace.copernicus.eu/explore-data/data-collections/sentinel-data/sentinel-2"
+      },
+      "position_limitation": "منبع نقش و دقت مختصات ثبت نشده؛ تطبیق footprint با همین پین لازم است."
+    },
+    {
+      "site_id": "ksc39b",
+      "coordinate_precision": "not_recorded",
+      "published_scene_reference": {
+        "url": "https://spacefromspace.com/spaceport-images/launch-complex-39-20240210/",
+        "type": "SAR",
+        "date": "2024-02-10",
+        "provider": "Umbra",
+        "claimed_gsd_m": 0.25
+      },
+      "deployable_georeferenced_tile": false,
+      "license_for_republication_verified": false,
+      "live_coverage_verified": false,
+      "note": "صفحه تصویر منتشرشده، لایه زمین‌مرجع قابل استفاده را تضمین نمی‌کند.",
+      "research_status": "صفحه تصویر واقعی منتشرشده و فراداده آن مشاهده شد",
+      "national_reference": {
+        "name": "USGS/USDA NAIP",
+        "url": "https://imagery.nationalmap.gov/arcgis/rest/services/USGSNAIPImagery/ImageServer"
+      },
+      "position_limitation": "منبع نقش و دقت مختصات ثبت نشده؛ تطبیق footprint با همین پین لازم است."
+    },
+    {
+      "site_id": "kulasekarapattinam",
+      "coordinate_precision": "not_recorded",
+      "published_scene_reference": {
+        "url": null,
+        "type": "نامشخص",
+        "date": null,
+        "provider": null,
+        "claimed_gsd_m": null
+      },
+      "deployable_georeferenced_tile": false,
+      "license_for_republication_verified": false,
+      "live_coverage_verified": false,
+      "note": "صفحه تصویر منتشرشده، لایه زمین‌مرجع قابل استفاده را تضمین نمی‌کند.",
+      "research_status": "برای این نقطه در جست‌وجوی انجام‌شده صفحه تصویر خاصی ثبت نشد",
+      "national_reference": {
+        "name": "Copernicus Sentinel-2 10m",
+        "url": "https://dataspace.copernicus.eu/explore-data/data-collections/sentinel-data/sentinel-2"
+      },
+      "position_limitation": "منبع نقش و دقت مختصات ثبت نشده؛ تطبیق footprint با همین پین لازم است."
+    },
+    {
+      "site_id": "kwajalein",
+      "coordinate_precision": "not_recorded",
+      "published_scene_reference": {
+        "url": null,
+        "type": "نامشخص",
+        "date": null,
+        "provider": null,
+        "claimed_gsd_m": null
+      },
+      "deployable_georeferenced_tile": false,
+      "license_for_republication_verified": false,
+      "live_coverage_verified": false,
+      "note": "صفحه تصویر منتشرشده، لایه زمین‌مرجع قابل استفاده را تضمین نمی‌کند.",
+      "research_status": "برای این نقطه در جست‌وجوی انجام‌شده صفحه تصویر خاصی ثبت نشد",
+      "national_reference": {
+        "name": "Copernicus Sentinel-2 10m",
+        "url": "https://dataspace.copernicus.eu/explore-data/data-collections/sentinel-data/sentinel-2"
+      },
+      "position_limitation": "منبع نقش و دقت مختصات ثبت نشده؛ تطبیق footprint با همین پین لازم است."
+    },
+    {
+      "site_id": "lc36",
+      "coordinate_precision": "not_recorded",
+      "published_scene_reference": {
+        "url": "https://spacefromspace.com/spaceport-images/launch-complex-36-20240214/",
+        "type": "SAR",
+        "date": "2024-02-14",
+        "provider": "Umbra",
+        "claimed_gsd_m": 0.25
+      },
+      "deployable_georeferenced_tile": false,
+      "license_for_republication_verified": false,
+      "live_coverage_verified": false,
+      "note": "صفحه تصویر منتشرشده، لایه زمین‌مرجع قابل استفاده را تضمین نمی‌کند.",
+      "research_status": "صفحه تصویر واقعی منتشرشده و فراداده آن مشاهده شد",
+      "national_reference": {
+        "name": "USGS/USDA NAIP",
+        "url": "https://imagery.nationalmap.gov/arcgis/rest/services/USGSNAIPImagery/ImageServer"
+      },
+      "position_limitation": "منبع نقش و دقت مختصات ثبت نشده؛ تطبیق footprint با همین پین لازم است."
+    },
+    {
+      "site_id": "mahia",
+      "coordinate_precision": "not_recorded",
+      "published_scene_reference": {
+        "url": "https://spacefromspace.com/spaceport-images/rocket-labs-launch-site-1-20230911/",
+        "type": "optical",
+        "date": "2023-09-11",
+        "provider": "Airbus",
+        "claimed_gsd_m": 0.5
+      },
+      "deployable_georeferenced_tile": false,
+      "license_for_republication_verified": false,
+      "live_coverage_verified": false,
+      "note": "صفحه تصویر منتشرشده، لایه زمین‌مرجع قابل استفاده را تضمین نمی‌کند.",
+      "research_status": "صفحه تصویر واقعی منتشرشده و فراداده آن مشاهده شد",
+      "national_reference": {
+        "name": "Copernicus Sentinel-2 10m",
+        "url": "https://dataspace.copernicus.eu/explore-data/data-collections/sentinel-data/sentinel-2"
+      },
+      "position_limitation": "منبع نقش و دقت مختصات ثبت نشده؛ تطبیق footprint با همین پین لازم است."
+    },
+    {
+      "site_id": "mcgregor",
+      "coordinate_precision": "not_recorded",
+      "published_scene_reference": {
+        "url": "https://spacefromspace.com/spaceport-images/spacex-mcgregor-test-site-20230805/",
+        "type": "optical",
+        "date": "2023-08-05",
+        "provider": "Airbus",
+        "claimed_gsd_m": 0.5
+      },
+      "deployable_georeferenced_tile": false,
+      "license_for_republication_verified": false,
+      "live_coverage_verified": false,
+      "note": "صفحه تصویر منتشرشده، لایه زمین‌مرجع قابل استفاده را تضمین نمی‌کند.",
+      "research_status": "صفحه تصویر واقعی منتشرشده و فراداده آن مشاهده شد",
+      "national_reference": {
+        "name": "USGS/USDA NAIP",
+        "url": "https://imagery.nationalmap.gov/arcgis/rest/services/USGSNAIPImagery/ImageServer"
+      },
+      "position_limitation": "منبع نقش و دقت مختصات ثبت نشده؛ تطبیق footprint با همین پین لازم است."
+    },
+    {
+      "site_id": "mojave",
+      "coordinate_precision": "not_recorded",
+      "published_scene_reference": {
+        "url": "https://spacefromspace.com/spaceport-images/mojave-air-and-space-port-19940602/",
+        "type": "historical",
+        "date": "1994-06-02",
+        "provider": "USGS / published by SpaceFromSpace",
+        "claimed_gsd_m": null
+      },
+      "deployable_georeferenced_tile": false,
+      "license_for_republication_verified": false,
+      "live_coverage_verified": false,
+      "note": "صفحه تصویر منتشرشده، لایه زمین‌مرجع قابل استفاده را تضمین نمی‌کند.",
+      "research_status": "صفحه تصویر واقعی منتشرشده و فراداده آن مشاهده شد",
+      "national_reference": {
+        "name": "USGS/USDA NAIP",
+        "url": "https://imagery.nationalmap.gov/arcgis/rest/services/USGSNAIPImagery/ImageServer"
+      },
+      "position_limitation": "منبع نقش و دقت مختصات ثبت نشده؛ تطبیق footprint با همین پین لازم است."
+    },
+    {
+      "site_id": "naro",
+      "coordinate_precision": "not_recorded",
+      "published_scene_reference": {
+        "url": null,
+        "type": "نامشخص",
+        "date": null,
+        "provider": null,
+        "claimed_gsd_m": null
+      },
+      "deployable_georeferenced_tile": false,
+      "license_for_republication_verified": false,
+      "live_coverage_verified": false,
+      "note": "صفحه تصویر منتشرشده، لایه زمین‌مرجع قابل استفاده را تضمین نمی‌کند.",
+      "research_status": "برای این نقطه در جست‌وجوی انجام‌شده صفحه تصویر خاصی ثبت نشد",
+      "national_reference": {
+        "name": "Copernicus Sentinel-2 10m",
+        "url": "https://dataspace.copernicus.eu/explore-data/data-collections/sentinel-data/sentinel-2"
+      },
+      "position_limitation": "منبع نقش و دقت مختصات ثبت نشده؛ تطبیق footprint با همین پین لازم است."
+    },
+    {
+      "site_id": "pad0a",
+      "coordinate_precision": "not_recorded",
+      "published_scene_reference": {
+        "url": "https://spacefromspace.com/spaceport-images/wallops-spaceport-20240530/",
+        "type": "optical",
+        "date": "2024-05-30",
+        "provider": "Airbus",
+        "claimed_gsd_m": 0.5
+      },
+      "deployable_georeferenced_tile": false,
+      "license_for_republication_verified": false,
+      "live_coverage_verified": false,
+      "note": "صفحه تصویر منتشرشده، لایه زمین‌مرجع قابل استفاده را تضمین نمی‌کند.",
+      "research_status": "صفحه تصویر واقعی منتشرشده و فراداده آن مشاهده شد",
+      "national_reference": {
+        "name": "USGS/USDA NAIP",
+        "url": "https://imagery.nationalmap.gov/arcgis/rest/services/USGSNAIPImagery/ImageServer"
+      },
+      "position_limitation": "منبع نقش و دقت مختصات ثبت نشده؛ تطبیق footprint با همین پین لازم است."
+    },
+    {
+      "site_id": "palmachim",
+      "coordinate_precision": "not_recorded",
+      "published_scene_reference": {
+        "url": null,
+        "type": "نامشخص",
+        "date": null,
+        "provider": null,
+        "claimed_gsd_m": null
+      },
+      "deployable_georeferenced_tile": false,
+      "license_for_republication_verified": false,
+      "live_coverage_verified": false,
+      "note": "صفحه تصویر منتشرشده، لایه زمین‌مرجع قابل استفاده را تضمین نمی‌کند.",
+      "research_status": "برای این نقطه در جست‌وجوی انجام‌شده صفحه تصویر خاصی ثبت نشد",
+      "national_reference": {
+        "name": "Copernicus Sentinel-2 10m",
+        "url": "https://dataspace.copernicus.eu/explore-data/data-collections/sentinel-data/sentinel-2"
+      },
+      "position_limitation": "منبع نقش و دقت مختصات ثبت نشده؛ تطبیق footprint با همین پین لازم است."
+    },
+    {
+      "site_id": "plesetsk",
+      "coordinate_precision": "not_recorded",
+      "published_scene_reference": {
+        "url": null,
+        "type": "نامشخص",
+        "date": null,
+        "provider": null,
+        "claimed_gsd_m": null
+      },
+      "deployable_georeferenced_tile": false,
+      "license_for_republication_verified": false,
+      "live_coverage_verified": false,
+      "note": "صفحه تصویر منتشرشده، لایه زمین‌مرجع قابل استفاده را تضمین نمی‌کند.",
+      "research_status": "برای این نقطه در جست‌وجوی انجام‌شده صفحه تصویر خاصی ثبت نشد",
+      "national_reference": {
+        "name": "Copernicus Sentinel-2 10m",
+        "url": "https://dataspace.copernicus.eu/explore-data/data-collections/sentinel-data/sentinel-2"
+      },
+      "position_limitation": "منبع نقش و دقت مختصات ثبت نشده؛ تطبیق footprint با همین پین لازم است."
+    },
+    {
+      "site_id": "sanmarco",
+      "coordinate_precision": "not_recorded",
+      "published_scene_reference": {
+        "url": null,
+        "type": "نامشخص",
+        "date": null,
+        "provider": null,
+        "claimed_gsd_m": null
+      },
+      "deployable_georeferenced_tile": false,
+      "license_for_republication_verified": false,
+      "live_coverage_verified": false,
+      "note": "صفحه تصویر منتشرشده، لایه زمین‌مرجع قابل استفاده را تضمین نمی‌کند.",
+      "research_status": "برای این نقطه در جست‌وجوی انجام‌شده صفحه تصویر خاصی ثبت نشد",
+      "national_reference": {
+        "name": "Copernicus Sentinel-2 10m",
+        "url": "https://dataspace.copernicus.eu/explore-data/data-collections/sentinel-data/sentinel-2"
+      },
+      "position_limitation": "منبع نقش و دقت مختصات ثبت نشده؛ تطبیق footprint با همین پین لازم است."
+    },
+    {
+      "site_id": "saxavord",
+      "coordinate_precision": "not_recorded",
+      "published_scene_reference": {
+        "url": null,
+        "type": "نامشخص",
+        "date": null,
+        "provider": null,
+        "claimed_gsd_m": null
+      },
+      "deployable_georeferenced_tile": false,
+      "license_for_republication_verified": false,
+      "live_coverage_verified": false,
+      "note": "صفحه تصویر منتشرشده، لایه زمین‌مرجع قابل استفاده را تضمین نمی‌کند.",
+      "research_status": "برای این نقطه در جست‌وجوی انجام‌شده صفحه تصویر خاصی ثبت نشد",
+      "national_reference": {
+        "name": "Copernicus Sentinel-2 10m",
+        "url": "https://dataspace.copernicus.eu/explore-data/data-collections/sentinel-data/sentinel-2"
+      },
+      "position_limitation": "منبع نقش و دقت مختصات ثبت نشده؛ تطبیق footprint با همین پین لازم است."
+    },
+    {
+      "site_id": "sea-launch",
+      "coordinate_precision": "not_recorded",
+      "published_scene_reference": {
+        "url": null,
+        "type": "نامشخص",
+        "date": null,
+        "provider": null,
+        "claimed_gsd_m": null
+      },
+      "deployable_georeferenced_tile": false,
+      "license_for_republication_verified": false,
+      "live_coverage_verified": false,
+      "note": "صفحه تصویر منتشرشده، لایه زمین‌مرجع قابل استفاده را تضمین نمی‌کند.",
+      "research_status": "برای این نقطه در جست‌وجوی انجام‌شده صفحه تصویر خاصی ثبت نشد",
+      "national_reference": {
+        "name": "Copernicus Sentinel-2 10m",
+        "url": "https://dataspace.copernicus.eu/explore-data/data-collections/sentinel-data/sentinel-2"
+      },
+      "position_limitation": "سکوی متحرک دریایی: پین فعلی مکان دائمی سکوی اودیسه نیست."
+    },
+    {
+      "site_id": "sohae",
+      "coordinate_precision": "not_recorded",
+      "published_scene_reference": {
+        "url": null,
+        "type": "نامشخص",
+        "date": null,
+        "provider": null,
+        "claimed_gsd_m": null
+      },
+      "deployable_georeferenced_tile": false,
+      "license_for_republication_verified": false,
+      "live_coverage_verified": false,
+      "note": "صفحه تصویر منتشرشده، لایه زمین‌مرجع قابل استفاده را تضمین نمی‌کند.",
+      "research_status": "برای این نقطه در جست‌وجوی انجام‌شده صفحه تصویر خاصی ثبت نشد",
+      "national_reference": {
+        "name": "Copernicus Sentinel-2 10m",
+        "url": "https://dataspace.copernicus.eu/explore-data/data-collections/sentinel-data/sentinel-2"
+      },
+      "position_limitation": "منبع نقش و دقت مختصات ثبت نشده؛ تطبیق footprint با همین پین لازم است."
+    },
+    {
+      "site_id": "spaceportamerica",
+      "coordinate_precision": "not_recorded",
+      "published_scene_reference": {
+        "url": "https://spacefromspace.com/search/?q=spaceport",
+        "type": "ردّ تصویر در فهرست",
+        "date": null,
+        "provider": null,
+        "claimed_gsd_m": null
+      },
+      "deployable_georeferenced_tile": false,
+      "license_for_republication_verified": false,
+      "live_coverage_verified": false,
+      "note": "صفحه تصویر منتشرشده، لایه زمین‌مرجع قابل استفاده را تضمین نمی‌کند.",
+      "research_status": "ردّ تصویر در فهرست عمومی؛ صفحه اصلی محصول بررسی نشده",
+      "national_reference": {
+        "name": "USGS/USDA NAIP",
+        "url": "https://imagery.nationalmap.gov/arcgis/rest/services/USGSNAIPImagery/ImageServer"
+      },
+      "position_limitation": "منبع نقش و دقت مختصات ثبت نشده؛ تطبیق footprint با همین پین لازم است."
+    },
+    {
+      "site_id": "sriharikota",
+      "coordinate_precision": "operator_published_pad_coordinates",
+      "published_scene_reference": {
+        "url": "https://spacefromspace.com/spaceport-images/satish-dhawan-space-center-india-gslv-mkiii-rocket/",
+        "type": "optical",
+        "date": "2022-10-20",
+        "provider": "Planet",
+        "claimed_gsd_m": 0.7
+      },
+      "deployable_georeferenced_tile": false,
+      "license_for_republication_verified": false,
+      "live_coverage_verified": false,
+      "note": "صفحه تصویر منتشرشده، لایه زمین‌مرجع قابل استفاده را تضمین نمی‌کند.",
+      "research_status": "صفحه تصویر واقعی منتشرشده و فراداده آن مشاهده شد",
+      "national_reference": {
+        "name": "Copernicus Sentinel-2 10m",
+        "url": "https://dataspace.copernicus.eu/explore-data/data-collections/sentinel-data/sentinel-2"
+      },
+      "position_limitation": "مختصات سایت رسپهر منطبق با Second Launch Pad (SLP) است، نه کل مرکز.",
+      "coordinate_source_url": "https://www.isro.gov.in/launchservices.html",
+      "coordinate_role": "launch_pad",
+      "source_reviewed_on": "2026-11-25"
+    },
+    {
+      "site_id": "starbase",
+      "coordinate_precision": "not_recorded",
+      "published_scene_reference": {
+        "url": "https://spacefromspace.com/spaceport-images/spacex-starbase-launch-site-flight-3-20240311/",
+        "type": "optical",
+        "date": "2024-03-11",
+        "provider": "Airbus",
+        "claimed_gsd_m": 0.27
+      },
+      "deployable_georeferenced_tile": false,
+      "license_for_republication_verified": false,
+      "live_coverage_verified": false,
+      "note": "صفحه تصویر منتشرشده، لایه زمین‌مرجع قابل استفاده را تضمین نمی‌کند.",
+      "research_status": "صفحه تصویر واقعی منتشرشده و فراداده آن مشاهده شد",
+      "national_reference": {
+        "name": "USGS/USDA NAIP",
+        "url": "https://imagery.nationalmap.gov/arcgis/rest/services/USGSNAIPImagery/ImageServer"
+      },
+      "position_limitation": "منبع نقش و دقت مختصات ثبت نشده؛ تطبیق footprint با همین پین لازم است."
+    },
+    {
+      "site_id": "stennis",
+      "coordinate_precision": "not_recorded",
+      "published_scene_reference": {
+        "url": null,
+        "type": "نامشخص",
+        "date": null,
+        "provider": null,
+        "claimed_gsd_m": null
+      },
+      "deployable_georeferenced_tile": false,
+      "license_for_republication_verified": false,
+      "live_coverage_verified": false,
+      "note": "صفحه تصویر منتشرشده، لایه زمین‌مرجع قابل استفاده را تضمین نمی‌کند.",
+      "research_status": "برای این نقطه در جست‌وجوی انجام‌شده صفحه تصویر خاصی ثبت نشد",
+      "national_reference": {
+        "name": "USGS/USDA NAIP",
+        "url": "https://imagery.nationalmap.gov/arcgis/rest/services/USGSNAIPImagery/ImageServer"
+      },
+      "position_limitation": "منبع نقش و دقت مختصات ثبت نشده؛ تطبیق footprint با همین پین لازم است."
+    },
+    {
+      "site_id": "sutherland",
+      "coordinate_precision": "not_recorded",
+      "published_scene_reference": {
+        "url": null,
+        "type": "نامشخص",
+        "date": null,
+        "provider": null,
+        "claimed_gsd_m": null
+      },
+      "deployable_georeferenced_tile": false,
+      "license_for_republication_verified": false,
+      "live_coverage_verified": false,
+      "note": "صفحه تصویر منتشرشده، لایه زمین‌مرجع قابل استفاده را تضمین نمی‌کند.",
+      "research_status": "برای این نقطه در جست‌وجوی انجام‌شده صفحه تصویر خاصی ثبت نشد",
+      "national_reference": {
+        "name": "Copernicus Sentinel-2 10m",
+        "url": "https://dataspace.copernicus.eu/explore-data/data-collections/sentinel-data/sentinel-2"
+      },
+      "position_limitation": "منبع نقش و دقت مختصات ثبت نشده؛ تطبیق footprint با همین پین لازم است."
+    },
+    {
+      "site_id": "taiki",
+      "coordinate_precision": "not_recorded",
+      "published_scene_reference": {
+        "url": null,
+        "type": "نامشخص",
+        "date": null,
+        "provider": null,
+        "claimed_gsd_m": null
+      },
+      "deployable_georeferenced_tile": false,
+      "license_for_republication_verified": false,
+      "live_coverage_verified": false,
+      "note": "صفحه تصویر منتشرشده، لایه زمین‌مرجع قابل استفاده را تضمین نمی‌کند.",
+      "research_status": "برای این نقطه در جست‌وجوی انجام‌شده صفحه تصویر خاصی ثبت نشد",
+      "national_reference": {
+        "name": "Japan GSI Seamless Photo",
+        "url": "https://cyberjapandata.gsi.go.jp/development/ichiran.html"
+      },
+      "position_limitation": "منبع نقش و دقت مختصات ثبت نشده؛ تطبیق footprint با همین پین لازم است."
+    },
+    {
+      "site_id": "taiyuan",
+      "coordinate_precision": "not_recorded",
+      "published_scene_reference": {
+        "url": null,
+        "type": "نامشخص",
+        "date": null,
+        "provider": null,
+        "claimed_gsd_m": null
+      },
+      "deployable_georeferenced_tile": false,
+      "license_for_republication_verified": false,
+      "live_coverage_verified": false,
+      "note": "صفحه تصویر منتشرشده، لایه زمین‌مرجع قابل استفاده را تضمین نمی‌کند.",
+      "research_status": "برای این نقطه در جست‌وجوی انجام‌شده صفحه تصویر خاصی ثبت نشد",
+      "national_reference": {
+        "name": "Copernicus Sentinel-2 10m",
+        "url": "https://dataspace.copernicus.eu/explore-data/data-collections/sentinel-data/sentinel-2"
+      },
+      "position_limitation": "منبع نقش و دقت مختصات ثبت نشده؛ تطبیق footprint با همین پین لازم است."
+    },
+    {
+      "site_id": "tanegashima",
+      "coordinate_precision": "not_recorded",
+      "published_scene_reference": {
+        "url": "https://spacefromspace.com/spaceport-images/tanegashima-space-center-20230217/",
+        "type": "optical",
+        "date": "2023-02-17",
+        "provider": "Planet",
+        "claimed_gsd_m": 0.72
+      },
+      "deployable_georeferenced_tile": false,
+      "license_for_republication_verified": false,
+      "live_coverage_verified": false,
+      "note": "صفحه تصویر منتشرشده، لایه زمین‌مرجع قابل استفاده را تضمین نمی‌کند.",
+      "research_status": "صفحه تصویر واقعی منتشرشده و فراداده آن مشاهده شد",
+      "national_reference": {
+        "name": "Japan GSI Seamless Photo",
+        "url": "https://cyberjapandata.gsi.go.jp/development/ichiran.html"
+      },
+      "position_limitation": "منبع نقش و دقت مختصات ثبت نشده؛ تطبیق footprint با همین پین لازم است."
+    },
+    {
+      "site_id": "thumba",
+      "coordinate_precision": "not_recorded",
+      "published_scene_reference": {
+        "url": null,
+        "type": "نامشخص",
+        "date": null,
+        "provider": null,
+        "claimed_gsd_m": null
+      },
+      "deployable_georeferenced_tile": false,
+      "license_for_republication_verified": false,
+      "live_coverage_verified": false,
+      "note": "صفحه تصویر منتشرشده، لایه زمین‌مرجع قابل استفاده را تضمین نمی‌کند.",
+      "research_status": "برای این نقطه در جست‌وجوی انجام‌شده صفحه تصویر خاصی ثبت نشد",
+      "national_reference": {
+        "name": "Copernicus Sentinel-2 10m",
+        "url": "https://dataspace.copernicus.eu/explore-data/data-collections/sentinel-data/sentinel-2"
+      },
+      "position_limitation": "منبع نقش و دقت مختصات ثبت نشده؛ تطبیق footprint با همین پین لازم است."
+    },
+    {
+      "site_id": "tonghae",
+      "coordinate_precision": "not_recorded",
+      "published_scene_reference": {
+        "url": null,
+        "type": "نامشخص",
+        "date": null,
+        "provider": null,
+        "claimed_gsd_m": null
+      },
+      "deployable_georeferenced_tile": false,
+      "license_for_republication_verified": false,
+      "live_coverage_verified": false,
+      "note": "صفحه تصویر منتشرشده، لایه زمین‌مرجع قابل استفاده را تضمین نمی‌کند.",
+      "research_status": "برای این نقطه در جست‌وجوی انجام‌شده صفحه تصویر خاصی ثبت نشد",
+      "national_reference": {
+        "name": "Copernicus Sentinel-2 10m",
+        "url": "https://dataspace.copernicus.eu/explore-data/data-collections/sentinel-data/sentinel-2"
+      },
+      "position_limitation": "منبع نقش و دقت مختصات ثبت نشده؛ تطبیق footprint با همین پین لازم است."
+    },
+    {
+      "site_id": "uchinoura",
+      "coordinate_precision": "not_recorded",
+      "published_scene_reference": {
+        "url": null,
+        "type": "نامشخص",
+        "date": null,
+        "provider": null,
+        "claimed_gsd_m": null
+      },
+      "deployable_georeferenced_tile": false,
+      "license_for_republication_verified": false,
+      "live_coverage_verified": false,
+      "note": "صفحه تصویر منتشرشده، لایه زمین‌مرجع قابل استفاده را تضمین نمی‌کند.",
+      "research_status": "برای این نقطه در جست‌وجوی انجام‌شده صفحه تصویر خاصی ثبت نشد",
+      "national_reference": {
+        "name": "Japan GSI Seamless Photo",
+        "url": "https://cyberjapandata.gsi.go.jp/development/ichiran.html"
+      },
+      "position_limitation": "منبع نقش و دقت مختصات ثبت نشده؛ تطبیق footprint با همین پین لازم است."
+    },
+    {
+      "site_id": "vandenberg",
+      "coordinate_precision": "not_recorded",
+      "published_scene_reference": {
+        "url": "https://spacefromspace.com/spaceport-images/falcon-9-vandenberg-slc4-20230818/",
+        "type": "optical",
+        "date": "2023-08-18",
+        "provider": "Airbus",
+        "claimed_gsd_m": null
+      },
+      "deployable_georeferenced_tile": false,
+      "license_for_republication_verified": false,
+      "live_coverage_verified": false,
+      "note": "صفحه تصویر منتشرشده، لایه زمین‌مرجع قابل استفاده را تضمین نمی‌کند.",
+      "research_status": "صفحه تصویر واقعی منتشرشده و فراداده آن مشاهده شد",
+      "national_reference": {
+        "name": "USGS/USDA NAIP",
+        "url": "https://imagery.nationalmap.gov/arcgis/rest/services/USGSNAIPImagery/ImageServer"
+      },
+      "position_limitation": "پین کلی پایگاه با تصویر سکوی SLC-4 اختلاف مکانی دارد."
+    },
+    {
+      "site_id": "vandenberg-slc6",
+      "coordinate_precision": "not_recorded",
+      "published_scene_reference": {
+        "url": "https://spacefromspace.com/spaceport-images/space-launch-complex-6/",
+        "type": "optical",
+        "date": "2023-05-06",
+        "provider": "Airbus",
+        "claimed_gsd_m": 0.3
+      },
+      "deployable_georeferenced_tile": false,
+      "license_for_republication_verified": false,
+      "live_coverage_verified": false,
+      "note": "صفحه تصویر منتشرشده، لایه زمین‌مرجع قابل استفاده را تضمین نمی‌کند.",
+      "research_status": "صفحه تصویر واقعی منتشرشده و فراداده آن مشاهده شد",
+      "national_reference": {
+        "name": "USGS/USDA NAIP",
+        "url": "https://imagery.nationalmap.gov/arcgis/rest/services/USGSNAIPImagery/ImageServer"
+      },
+      "position_limitation": "منبع نقش و دقت مختصات ثبت نشده؛ تطبیق footprint با همین پین لازم است."
+    },
+    {
+      "site_id": "vostochny",
+      "coordinate_precision": "not_recorded",
+      "published_scene_reference": {
+        "url": "https://spacefromspace.com/spaceport-images/angara-a5-vostochny-cosmodrome-russia-20240407/",
+        "type": "optical",
+        "date": "2024-04-07",
+        "provider": "Airbus",
+        "claimed_gsd_m": 0.3
+      },
+      "deployable_georeferenced_tile": false,
+      "license_for_republication_verified": false,
+      "live_coverage_verified": false,
+      "note": "صفحه تصویر منتشرشده، لایه زمین‌مرجع قابل استفاده را تضمین نمی‌کند.",
+      "research_status": "صفحه تصویر واقعی منتشرشده و فراداده آن مشاهده شد",
+      "national_reference": {
+        "name": "Copernicus Sentinel-2 10m",
+        "url": "https://dataspace.copernicus.eu/explore-data/data-collections/sentinel-data/sentinel-2"
+      },
+      "position_limitation": "منبع نقش و دقت مختصات ثبت نشده؛ تطبیق footprint با همین پین لازم است."
+    },
+    {
+      "site_id": "vostochny-angara",
+      "coordinate_precision": "not_recorded",
+      "published_scene_reference": {
+        "url": null,
+        "type": "نامشخص",
+        "date": null,
+        "provider": null,
+        "claimed_gsd_m": null
+      },
+      "deployable_georeferenced_tile": false,
+      "license_for_republication_verified": false,
+      "live_coverage_verified": false,
+      "note": "صفحه تصویر منتشرشده، لایه زمین‌مرجع قابل استفاده را تضمین نمی‌کند.",
+      "research_status": "برای این نقطه در جست‌وجوی انجام‌شده صفحه تصویر خاصی ثبت نشد",
+      "national_reference": {
+        "name": "Copernicus Sentinel-2 10m",
+        "url": "https://dataspace.copernicus.eu/explore-data/data-collections/sentinel-data/sentinel-2"
+      },
+      "position_limitation": "سووابودنی تاریخی: با پایگاه فعلی واستوچنی یکسان گرفته نشود."
+    },
+    {
+      "site_id": "wallops",
+      "coordinate_precision": "not_recorded",
+      "published_scene_reference": {
+        "url": "https://spacefromspace.com/spaceport-images/wallops-spaceport-20240530/",
+        "type": "optical",
+        "date": "2024-05-30",
+        "provider": "Airbus",
+        "claimed_gsd_m": 0.5
+      },
+      "deployable_georeferenced_tile": false,
+      "license_for_republication_verified": false,
+      "live_coverage_verified": false,
+      "note": "صفحه تصویر منتشرشده، لایه زمین‌مرجع قابل استفاده را تضمین نمی‌کند.",
+      "research_status": "صفحه تصویر واقعی منتشرشده و فراداده آن مشاهده شد",
+      "national_reference": {
+        "name": "USGS/USDA NAIP",
+        "url": "https://imagery.nationalmap.gov/arcgis/rest/services/USGSNAIPImagery/ImageServer"
+      },
+      "position_limitation": "منبع نقش و دقت مختصات ثبت نشده؛ تطبیق footprint با همین پین لازم است."
+    },
+    {
+      "site_id": "wenchang",
+      "coordinate_precision": "not_recorded",
+      "published_scene_reference": {
+        "url": "https://spacefromspace.com/spaceport-images/wenchang-space-launch-site-china-20260326/",
+        "type": "optical",
+        "date": "2026-03-26",
+        "provider": "Airbus",
+        "claimed_gsd_m": 0.5
+      },
+      "deployable_georeferenced_tile": false,
+      "license_for_republication_verified": false,
+      "live_coverage_verified": false,
+      "note": "صفحه تصویر منتشرشده، لایه زمین‌مرجع قابل استفاده را تضمین نمی‌کند.",
+      "research_status": "صفحه تصویر واقعی منتشرشده و فراداده آن مشاهده شد",
+      "national_reference": {
+        "name": "Copernicus Sentinel-2 10m",
+        "url": "https://dataspace.copernicus.eu/explore-data/data-collections/sentinel-data/sentinel-2"
+      },
+      "position_limitation": "مختصات رسپهر احتمالاً سکوی ۱۰۱ است، نه مرکز کل مجموعه."
+    },
+    {
+      "site_id": "whalersway",
+      "coordinate_precision": "not_recorded",
+      "published_scene_reference": {
+        "url": null,
+        "type": "نامشخص",
+        "date": null,
+        "provider": null,
+        "claimed_gsd_m": null
+      },
+      "deployable_georeferenced_tile": false,
+      "license_for_republication_verified": false,
+      "live_coverage_verified": false,
+      "note": "صفحه تصویر منتشرشده، لایه زمین‌مرجع قابل استفاده را تضمین نمی‌کند.",
+      "research_status": "برای این نقطه در جست‌وجوی انجام‌شده صفحه تصویر خاصی ثبت نشد",
+      "national_reference": {
+        "name": "Copernicus Sentinel-2 10m",
+        "url": "https://dataspace.copernicus.eu/explore-data/data-collections/sentinel-data/sentinel-2"
+      },
+      "position_limitation": "منبع نقش و دقت مختصات ثبت نشده؛ تطبیق footprint با همین پین لازم است."
+    },
+    {
+      "site_id": "white-sands",
+      "coordinate_precision": "not_recorded",
+      "published_scene_reference": {
+        "url": null,
+        "type": "نامشخص",
+        "date": null,
+        "provider": null,
+        "claimed_gsd_m": null
+      },
+      "deployable_georeferenced_tile": false,
+      "license_for_republication_verified": false,
+      "live_coverage_verified": false,
+      "note": "صفحه تصویر منتشرشده، لایه زمین‌مرجع قابل استفاده را تضمین نمی‌کند.",
+      "research_status": "برای این نقطه در جست‌وجوی انجام‌شده صفحه تصویر خاصی ثبت نشد",
+      "national_reference": {
+        "name": "USGS/USDA NAIP",
+        "url": "https://imagery.nationalmap.gov/arcgis/rest/services/USGSNAIPImagery/ImageServer"
+      },
+      "position_limitation": "منبع نقش و دقت مختصات ثبت نشده؛ تطبیق footprint با همین پین لازم است."
+    },
+    {
+      "site_id": "woomera",
+      "coordinate_precision": "not_recorded",
+      "published_scene_reference": {
+        "url": "https://spacefromspace.com/spaceport-images/woomera-launch-area-6-umbra-radar-20230816/",
+        "type": "SAR",
+        "date": "2023-08-16",
+        "provider": "Umbra",
+        "claimed_gsd_m": 0.35
+      },
+      "deployable_georeferenced_tile": false,
+      "license_for_republication_verified": false,
+      "live_coverage_verified": false,
+      "note": "صفحه تصویر منتشرشده، لایه زمین‌مرجع قابل استفاده را تضمین نمی‌کند.",
+      "research_status": "صفحه تصویر واقعی منتشرشده و فراداده آن مشاهده شد",
+      "national_reference": {
+        "name": "Copernicus Sentinel-2 10m",
+        "url": "https://dataspace.copernicus.eu/explore-data/data-collections/sentinel-data/sentinel-2"
+      },
+      "position_limitation": "محدوده پرتاب شماره ۶ با کل مجموعه گسترده ووومرا یکسان نیست."
+    },
+    {
+      "site_id": "xichang",
+      "coordinate_precision": "not_recorded",
+      "published_scene_reference": {
+        "url": "https://spacefromspace.com/spaceport-images/woomera-launch-area-6-umbra-radar-20230816/",
+        "type": "ردّ تصویر در فهرست",
+        "date": null,
+        "provider": null,
+        "claimed_gsd_m": null
+      },
+      "deployable_georeferenced_tile": false,
+      "license_for_republication_verified": false,
+      "live_coverage_verified": false,
+      "note": "صفحه تصویر منتشرشده، لایه زمین‌مرجع قابل استفاده را تضمین نمی‌کند.",
+      "research_status": "ردّ تصویر در فهرست عمومی؛ صفحه اصلی محصول بررسی نشده",
+      "national_reference": {
+        "name": "Copernicus Sentinel-2 10m",
+        "url": "https://dataspace.copernicus.eu/explore-data/data-collections/sentinel-data/sentinel-2"
+      },
+      "position_limitation": "منبع نقش و دقت مختصات ثبت نشده؛ تطبیق footprint با همین پین لازم است."
+    },
+    {
+      "site_id": "yasny",
+      "coordinate_precision": "not_recorded",
+      "published_scene_reference": {
+        "url": null,
+        "type": "نامشخص",
+        "date": null,
+        "provider": null,
+        "claimed_gsd_m": null
+      },
+      "deployable_georeferenced_tile": false,
+      "license_for_republication_verified": false,
+      "live_coverage_verified": false,
+      "note": "صفحه تصویر منتشرشده، لایه زمین‌مرجع قابل استفاده را تضمین نمی‌کند.",
+      "research_status": "برای این نقطه در جست‌وجوی انجام‌شده صفحه تصویر خاصی ثبت نشد",
+      "national_reference": {
+        "name": "Copernicus Sentinel-2 10m",
+        "url": "https://dataspace.copernicus.eu/explore-data/data-collections/sentinel-data/sentinel-2"
+      },
+      "position_limitation": "منبع نقش و دقت مختصات ثبت نشده؛ تطبیق footprint با همین پین لازم است."
+    }
+  ]
+}

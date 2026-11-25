@@ -1,0 +1,39 @@
+{
+  "date": "2026-11-25",
+  "project": "RASPEHR",
+  "stage": "local-site-photo-explorer",
+  "base": "Stage8 + priorities 1-6 + imagery-near-view patch",
+  "sites_total": 79,
+  "local_photo_sites": 48,
+  "photo_categories": {
+    "site_overview": 11,
+    "facility": 26,
+    "operations": 10,
+    "unavailable": 31,
+    "radar_overview": 1
+  },
+  "missing_photo_sites": 31,
+  "new_imagery_downloaded": 0,
+  "new_true_360_panoramas": 0,
+  "new_georeferenced_tiles": 0,
+  "photos_local_to_same_origin": true,
+  "photo_rights_independently_revalidated": false,
+  "site_data_modified": false,
+  "markers_coordinates_modified": false,
+  "deployed": false,
+  "qa": {
+    "node_cjs_files_passed": 26,
+    "offline_chromium_widths": [
+      390,
+      1280
+    ],
+    "real_webgl_integration": "pass with fixtures for remote imagery/OSM; zero JS errors"
+  },
+  "remaining": [
+    "31 sites missing acceptable photos",
+    "only 12 overview/radar photos of 79",
+    "permission audit for inherited source images",
+    "actual 360 photogrammetry requires new rights-cleared images",
+    "Render and physical phone acceptance"
+  ]
+}

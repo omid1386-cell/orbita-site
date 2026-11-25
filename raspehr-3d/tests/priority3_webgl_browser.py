@@ -19,6 +19,10 @@ data={
  '../data/sites.json':json.loads((root/'data/sites.json').read_text('utf-8')),
  '../data/recovery_sites.json':json.loads((root/'data/recovery_sites.json').read_text('utf-8')),
 }
+# Test-only explicit pad precision: production coordinates/data remain unchanged.
+for record in data['../data/sites.json']:
+    if record.get('id')=='ksc39a':
+        record['coordinates_precision']='operator_published_pad_coordinates'
 images={}
 for item in (app/'assets/tex-tiles').rglob('*.jpg'):
     rel=item.relative_to(app).as_posix()

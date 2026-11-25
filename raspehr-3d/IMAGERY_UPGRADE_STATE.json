@@ -1,0 +1,65 @@
+{
+  "project": "RASPEHR",
+  "date": "2026-11-25",
+  "stage": "imagery_upgrade_installable_patch_post_priority6",
+  "base": "exact Stage 8 full source plus cumulative priorities 1 to 6 patch",
+  "code_updated": true,
+  "github_or_render_deployed": false,
+  "imagery_sources": [
+    {
+      "name": "OpenAerialMap STAC",
+      "requires_point_footprint": true,
+      "licenses": [
+        "CC-BY-4.0",
+        "CC-BY-SA-4.0"
+      ],
+      "max_gsd_m": 10,
+      "facility_gsd_m_at_most": 2
+    },
+    {
+      "name": "USGSImageryOnly",
+      "region": "CONUS only",
+      "quality_tier": "regional unless scene metadata verified"
+    },
+    {
+      "name": "OpenAerialMap Global Mosaic",
+      "zoom": 16,
+      "quality_tier": "regional; per-scene license and GSD unverified"
+    }
+  ],
+  "coordinate_changes": {
+    "numeric_lat_lon_changed": 0,
+    "precision_metadata_updated_site_ids": [
+      "ksc39a",
+      "sriharikota"
+    ],
+    "approximate_point_labels_preserved": true
+  },
+  "imagery_evidence": {
+    "site_records": 63,
+    "published_scene_pages_or_leads": 29,
+    "confirmed_reusable_georeferenced_images": 0,
+    "live_point_coverage_verified": 0
+  },
+  "data_counts": {
+    "total_entities": 420,
+    "categories": 14,
+    "sites": 79,
+    "explicit_approximate_or_reference_records": 186
+  },
+  "tests": {
+    "node_suite_count": 22,
+    "node_suite_passed": 22,
+    "browser_webgl_stac_fixture": "passed",
+    "browser_webgl_usgs_fallback_fixture": "passed",
+    "mobile_fixture_tests": "passed earlier during this change",
+    "physical_device": "not tested",
+    "live_services": "not tested"
+  },
+  "notes": [
+    "Tile data was mocked for WebGL tests; no synthetic imagery shipped as production data.",
+    "No Google Earth or paid satellite imagery copied.",
+    "After installation test staged Render and source response at selected sites."
+  ],
+  "next_work": "Staging testing after user uploads patch, then licensing/obtaining georeferenced scenes as needed"
+}

@@ -15,6 +15,7 @@
     if(!row){
       selectedEntity=null;
       if(localFacility)localFacility.setSelection(null);
+      if(window.RaspehrSiteViews)window.RaspehrSiteViews.select(null);
       $('entityCard').hidden=true;
       $('selectedLocationCard').hidden=true;
       if(window.RaspehrStage4)window.RaspehrStage4.select(null);
@@ -23,6 +24,7 @@
     }
     selectedEntity = row;
     if(localFacility)localFacility.setSelection(row);
+    if(window.RaspehrSiteViews)window.RaspehrSiteViews.select(row);
     const categories = window.RaspehrEntityData.CATEGORIES;
     $('entityCard').hidden = false;
     $('entityLabel').textContent = row.fa;
@@ -48,7 +50,8 @@
     $('selectedLocationFacility').hidden=!facilityAccess.allowed;
     $('selectedLocationFacility').disabled=!facilityAccess.allowed;
     $('selectedLocationFacilityExit').hidden=true;
-    $('selectedLocationFacilityStatus').textContent=facilityAccess.allowed?facilityAccess.reason:facilityAccess.reason;
+    $('selectedLocationFacilityStatus').textContent=facilityAccess.reason;
+    $('selectedLocationFacility').textContent=facilityAccess.tier==='regional'?'نمای منطقه‌ای و تصاویر موجود':'نمای نزدیک تصاویر و تأسیسات';
     $('selectedLocationFacilityMeta').hidden=true;
     $('selectedLocationCard').hidden=false;
     intro.classList.add('is-faded');
@@ -80,14 +83,15 @@
       $('selectedLocationFacilityStatus').textContent=status.message||'';
       $('selectedLocationFacility').hidden=!!status.active || !selectedEntity || !localFacility.canOpen(selectedEntity).allowed;
       $('selectedLocationFacilityExit').hidden=!status.active;
-      const meta=status.imagery,buildingInfo=status.buildings||{total:0,extruded:0,footprints:0};
+      const meta=status.imagery,buildingInfo=status.buildings||{total:0,extruded:0,heightExplicit:0,heightApproximate:0,footprints:0,osmTimestamp:"نامشخص"};
       if(status.active || meta){
-        const imageText=meta?('تصویر: '+meta.provider+' · سکوی '+meta.platform+' · '+meta.date+' · '+meta.gsd+' متر/پیکسل · '+meta.license):'تصویر هوایی/ماهواره‌ای باز برای این نقطه پیدا نشد';
+        const imageText=meta?('تصویر: '+meta.provider+' · '+meta.platform+' · '+meta.date+' · '+(Number.isFinite(meta.gsd)?meta.gsd+' متر/پیکسل':'وضوح این نقطه تأیید نشده')+' · '+meta.license):'تصویر زمین‌مرجع قابل نمایش برای این نقطه تأیید نشد';
         $('selectedLocationFacilityMeta').textContent=imageText+' · ساختمان‌ها: '+buildingInfo.total+' ('+buildingInfo.heightExplicit+' ارتفاع ثبت‌شده، '+buildingInfo.heightApproximate+' برآورد از طبقات، '+buildingInfo.footprints+' محدوده بدون ارتفاع) · داده نقشه: '+(buildingInfo.osmTimestamp||'نامشخص');
         $('selectedLocationFacilityMeta').hidden=false;
       }else{$('selectedLocationFacilityMeta').hidden=true;}
       $('selectedLocationFacilitySource').hidden=!meta;
       $('selectedLocationFacilitySource').href=meta?meta.url:'#';
+      $('selectedLocationFacilityAttribution').textContent=meta&&meta.sourceType==='usgs'?'تصویر: USGS / USDA · نقشه: OpenStreetMap':'تصویر: OpenAerialMap / OIN · نقشه: OpenStreetMap';
     });
     window.RaspehrLocalFacilityView = localFacility;
     markers = new window.RaspehrEntityMarkers.EntityMarkers(engine,catalog,row => {

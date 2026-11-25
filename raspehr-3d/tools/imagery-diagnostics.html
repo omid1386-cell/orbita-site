@@ -1,0 +1,55 @@
+<!doctype html>
+<html lang="fa" dir="rtl"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1"><title>رسپهر | بررسی منابع نمای نزدیک</title>
+<style>
+:root{font-family:Tahoma,Arial,sans-serif;color-scheme:dark;background:#081b2e;color:#e7f0fa}
+body{margin:0;padding:20px;line-height:1.8}main{max-width:880px;margin:auto}h1{font-size:1.5rem;color:#e7cc85}p{color:#c8d6e4}
+section{background:#122b43;border:1px solid #3a5366;border-radius:13px;padding:16px;margin:12px 0}label{display:block;margin-bottom:9px}
+select,button{font:inherit;background:#193c58;color:#fff;border:1px solid #68839b;border-radius:8px;padding:9px;width:100%;box-sizing:border-box}
+button{background:#977e43;font-weight:bold;cursor:pointer;margin-top:12px}button:disabled{opacity:.6;cursor:wait}
+.card{border-bottom:1px solid #405d71;padding:9px 0}.card:last-child{border:0}.badge{font-size:.82rem;color:#f0ca83}
+a{color:#a5d7ff;overflow-wrap:anywhere}code{direction:ltr;display:inline-block;text-align:left}pre{white-space:pre-wrap;overflow-wrap:anywhere;direction:ltr;text-align:left}
+</style></head><body><main>
+<h1>بررسی منابع تصویری رسپهر</h1>
+<p>این صفحه فقط برای آزمون وضعیت واقعی سرویس‌ها از داخل مرورگر است؛ هیچ تغییری در داده‌ها ایجاد نمی‌کند. نتیجه یک پایگاه به معنی پوشش سایر مکان‌ها نیست.</p>
+<section><label for="site">پایگاه مورد بررسی</label><select id="site"></select><button id="run" type="button">بررسی منابع برای این پایگاه</button><button id="export" type="button" disabled>ذخیره گزارش JSON</button></section>
+<section id="summary" aria-live="polite">پس از انتخاب پایگاه، آزمون را اجرا کنید.</section>
+<section id="results" aria-live="polite"></section>
+<p>منابع: <a href="https://docs.imagery.hotosm.org/usage/using-imagery/" target="_blank" rel="noopener">OpenAerialMap</a> · <a href="https://basemap.nationalmap.gov/arcgis/rest/services/USGSImageryOnly/MapServer" target="_blank" rel="noopener">USGS</a> · <a href="https://www.openstreetmap.org/copyright" target="_blank" rel="noopener">OpenStreetMap</a></p>
+<script>
+(function(){'use strict';
+const $=id=>document.getElementById(id);let sites=[],last=null;
+function mercator(lat,lon,z){const n=2**z,r=Math.max(-85.0511,Math.min(85.0511,lat))*Math.PI/180;
+return {z,x:Math.floor((((lon+180)/360*n)%n+n)%n),y:Math.max(0,Math.min(n-1,Math.floor((1-Math.log(Math.tan(r)+1/Math.cos(r))/Math.PI)/2*n)))};}
+async function request(url,options={},seconds=9){const controller=new AbortController(),timer=setTimeout(()=>controller.abort(),seconds*1000);
+try{const r=await fetch(url,{...options,signal:controller.signal,mode:'cors',credentials:'omit',cache:'no-store'});if(!r.ok)throw Error('HTTP '+r.status);return r;}finally{clearTimeout(timer);}}
+function row(label,value){const div=document.createElement('div');div.className='card';const b=document.createElement('strong');b.textContent=label+' — ';
+const s=document.createElement('span');s.textContent=value;div.append(b,s);$('results').append(div);}
+async function raster(url){const res=await request(url),blob=await res.blob();if(blob.size<100)throw Error('بدون داده تصویر');
+const bmp=await createImageBitmap(blob);const c=document.createElement('canvas');c.width=c.height=24;const ctx=c.getContext('2d',{willReadFrequently:true});
+ctx.drawImage(bmp,0,0,24,24);const p=ctx.getImageData(0,0,24,24).data;bmp.close();let opaque=0,black=0;
+for(let i=0;i<p.length;i+=4){if(p[i+3]>=24){opaque++;if(p[i]+p[i+1]+p[i+2]<12)black++;}}
+if(opaque<15||black>=opaque*.985)throw Error('کاشی شفاف یا فاقد داده تصویری');
+return {downloaded:true,size:blob.size,opaquePixels:opaque};}
+async function run(){const s=sites.find(s=>s.id===$('site').value);if(!s)return;
+$('run').disabled=true;$('export').disabled=true;$('results').replaceChildren();$('summary').textContent='در حال بررسی '+s.fa+'…';
+last={id:s.id,name:s.fa,lat:s.lat,lon:s.lon,checked_at:new Date().toISOString(),checks:{}};
+const check=async(label,key,fn)=>{try{last.checks[key]={state:'accessible',result:await fn()};row(label,'پاسخ دریافت شد؛ برای قطعیت موقعیت/مجوز بررسی بیشتری لازم است.');}
+catch(e){last.checks[key]={state:'unconfirmed',reason:String(e.message||e)};row(label,'تأیید نشد: '+String(e.message||e));}};
+const p=mercator(s.lat,s.lon,16);
+await check('کاتالوگ تصاویر اختصاصی','stac',async()=>{const u=new URL('https://api.imagery.hotosm.org/stac/search');
+u.searchParams.set('bbox',[(s.lon-.008),(s.lat-.008),(s.lon+.008),(s.lat+.008)].join(','));u.searchParams.set('collections','openaerialmap');u.searchParams.set('limit','40');
+const j=await(await request(u.toString())).json();return {candidate_items:(j.features||[]).length,note:'وجود item به معنی پوشش پین، مجوز یا کاشی واقعی نیست'};});
+await check('موزاییک جهانی OAM در بزرگ‌نمایی ۱۶','global',()=>raster(`https://global.imagery.hotosm.org/${p.z}/${p.x}/${p.y}.png`));
+if(s.lat>=24&&s.lat<=50&&s.lon>=-125&&s.lon<=-66)
+ await check('ارتوفتوی عمومی USGS','usgs',()=>raster(`https://basemap.nationalmap.gov/arcgis/rest/services/USGSImageryOnly/MapServer/tile/${p.z}/${p.y}/${p.x}`));
+else last.checks.usgs={state:'out_of_region'};
+$('summary').textContent='بررسی تمام شد. پاسخ HTTP و تصویر دریافت‌شده، به‌تنهایی دقت ساختمان یا حق بازنشر را تأیید نمی‌کند.';
+$('run').disabled=false;$('export').disabled=false;}
+$('run').addEventListener('click',()=>run().catch(e=>{$('summary').textContent='خطای آزمون: '+e.message;$('run').disabled=false;}));
+$('export').addEventListener('click',()=>{if(!last)return;const b=new Blob([JSON.stringify(last,null,2)],{type:'application/json'});
+const a=document.createElement('a');a.href=URL.createObjectURL(b);a.download='raspehr-imagery-'+last.id+'.json';a.click();setTimeout(()=>URL.revokeObjectURL(a.href),1000);});
+fetch('../../data/sites.json',{cache:'no-store'}).then(r=>r.json()).then(data=>{sites=data;sites.sort((a,b)=>(a.fa||a.en).localeCompare(b.fa||b.en,'fa'));
+for(const s of sites){const o=document.createElement('option');o.value=s.id;o.textContent=s.fa||s.en;$('site').appendChild(o);}
+$('summary').textContent='فهرست '+sites.length+' پایگاه آماده است. برای بررسی، روی دکمه کلیک کنید.';}).catch(e=>{$('summary').textContent='فهرست پایگاه‌ها در دسترس نیست: '+e.message;});
+})();
+</script></main></body></html>
