@@ -3,9 +3,9 @@
   "source": "Launch Library 2 (The Space Devs), v2.3.0",
   "scope": "all_upcoming_launches_reported_by_source",
   "coverage_status": "complete_from_source_at_fetch_time",
-  "updated_utc": "2026-11-25T04:21:18Z",
-  "window_start_utc": "2026-11-25T04:21:18Z",
-  "window_end_utc_exclusive": "2027-03-25T04:21:18Z",
+  "updated_utc": "2026-11-25T15:48:34Z",
+  "window_start_utc": "2026-11-25T15:48:34Z",
+  "window_end_utc_exclusive": "2027-03-25T15:48:34Z",
   "horizon_days": 120,
   "count": 68,
   "pages_fetched": 1,
@@ -35,7 +35,7 @@
       "location_id": 16,
       "location_name": "Xichang Satellite Launch Center, People's Republic of China",
       "launch_country_code": "CHN",
-      "last_updated": "2026-11-20T09:12:38Z"
+      "last_updated": "2026-11-25T13:35:20Z"
     },
     {
       "ll2_id": "2093e4fc-ac8c-4296-a1b5-deececee6a72",
@@ -250,10 +250,10 @@
     {
       "ll2_id": "22e117bf-041c-49d5-9d09-7b180036e143",
       "event_kind": "launch",
-      "net": "2026-12-17T00:00:00Z",
-      "net_precision": "Day",
-      "status": "TBD",
-      "status_name": "To Be Determined",
+      "net": "2026-12-18T00:36:00Z",
+      "net_precision": "Minute",
+      "status": "Go",
+      "status_name": "Go for Launch",
       "launch_name": "Ariane 62 | Metop-SG B1",
       "rocket_name": "Ariane 62",
       "mission_name": "Metop-SG B1",
@@ -266,7 +266,7 @@
       "location_id": 13,
       "location_name": "Guiana Space Centre, French Guiana",
       "launch_country_code": "GUF",
-      "last_updated": "2026-11-19T11:44:23Z"
+      "last_updated": "2026-11-25T09:14:15Z"
     },
     {
       "ll2_id": "0196fba7-dd6c-4ba0-bf71-e1460930ffde",
