@@ -3,9 +3,9 @@
   "source": "Launch Library 2 (The Space Devs), v2.3.0",
   "scope": "all_upcoming_launches_reported_by_source",
   "coverage_status": "complete_from_source_at_fetch_time",
-  "updated_utc": "2026-11-25T15:48:34Z",
-  "window_start_utc": "2026-11-25T15:48:34Z",
-  "window_end_utc_exclusive": "2027-03-25T15:48:34Z",
+  "updated_utc": "2026-11-26T03:39:56Z",
+  "window_start_utc": "2026-11-26T03:39:56Z",
+  "window_end_utc_exclusive": "2027-03-26T03:39:56Z",
   "horizon_days": 120,
   "count": 68,
   "pages_fetched": 1,
@@ -51,12 +51,12 @@
       "operator_id": 147,
       "operator_name": "Rocket Lab",
       "operator_country_code": "USA",
-      "pad_id": 210,
-      "pad_name": "Unknown Pad",
+      "pad_id": 185,
+      "pad_name": "Rocket Lab Launch Complex 1B",
       "location_id": 10,
       "location_name": "Rocket Lab Launch Complex 1, Mahia Peninsula, New Zealand",
       "launch_country_code": "NZL",
-      "last_updated": "2026-11-20T06:34:05Z"
+      "last_updated": "2026-11-25T22:25:34Z"
     },
     {
       "ll2_id": "a6421db3-7c8a-4cf7-a659-cec195140f7f",
@@ -140,7 +140,7 @@
       "location_id": 12,
       "location_name": "Cape Canaveral SFS, FL, USA",
       "launch_country_code": "USA",
-      "last_updated": "2026-11-24T19:47:23Z"
+      "last_updated": "2026-11-25T17:21:30Z"
     },
     {
       "ll2_id": "9e27a1ed-e81a-4918-b32b-0380cf3a9f8f",
@@ -225,6 +225,27 @@
       "location_name": "Vandenberg SFB, CA, USA",
       "launch_country_code": "USA",
       "last_updated": "2026-11-23T16:43:43Z"
+    },
+    {
+      "ll2_id": "8bf5f61e-a7e1-41e6-aede-7b87e4beebab",
+      "event_kind": "launch",
+      "net": "2026-12-04T12:55:00Z",
+      "net_precision": "Minute",
+      "status": "Go",
+      "status_name": "Go for Launch",
+      "launch_name": "Falcon 9 Block 5 | CHORUS",
+      "rocket_name": "Falcon 9 Block 5",
+      "mission_name": "CHORUS",
+      "mission_type": "Earth Science",
+      "operator_id": 121,
+      "operator_name": "SpaceX",
+      "operator_country_code": "USA",
+      "pad_id": 80,
+      "pad_name": "Space Launch Complex 40",
+      "location_id": 12,
+      "location_name": "Cape Canaveral SFS, FL, USA",
+      "launch_country_code": "USA",
+      "last_updated": "2026-11-25T18:22:04Z"
     },
     {
       "ll2_id": "5ce59e3a-c343-430f-ae4e-e608ba536754",
@@ -666,27 +687,6 @@
       "location_name": "Wenchang Space Launch Site, People's Republic of China",
       "launch_country_code": "CHN",
       "last_updated": "2025-12-01T16:44:54Z"
-    },
-    {
-      "ll2_id": "8bf5f61e-a7e1-41e6-aede-7b87e4beebab",
-      "event_kind": "launch",
-      "net": "2026-12-31T00:00:00Z",
-      "net_precision": "Month",
-      "status": "TBD",
-      "status_name": "To Be Determined",
-      "launch_name": "Falcon 9 Block 5 | CHORUS",
-      "rocket_name": "Falcon 9 Block 5",
-      "mission_name": "CHORUS",
-      "mission_type": "Earth Science",
-      "operator_id": 121,
-      "operator_name": "SpaceX",
-      "operator_country_code": "USA",
-      "pad_id": 72,
-      "pad_name": "Unknown Pad",
-      "location_id": 12,
-      "location_name": "Cape Canaveral SFS, FL, USA",
-      "launch_country_code": "USA",
-      "last_updated": "2026-11-24T16:23:22Z"
     },
     {
       "ll2_id": "8d2a11e2-51e3-4841-a616-d41589373025",
