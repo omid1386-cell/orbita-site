@@ -1,0 +1,299 @@
+{
+  "source": "full 2D Node.js TAP run on V8 (2026-11-25)",
+  "baseline": {
+    "pass": 143,
+    "fail": 47,
+    "total": 190
+  },
+  "note": "Classification is a preliminary grouping by test name, not proof of root cause or proof of production bugs.",
+  "groups": {
+    "data_contract_or_count": 10,
+    "requires_manual_triage": 11,
+    "cache_version_expectation": 6,
+    "test_process_abort": 20
+  },
+  "unresolved": [
+    {
+      "tap_id": "1",
+      "name": "Dragonfly Aerospace and Simera Sense are clean satellite/payload-maker records, not launchers",
+      "triage_group": "data_contract_or_count",
+      "root_cause_verified": false
+    },
+    {
+      "tap_id": "5",
+      "name": "UI marks dormant sites as non-operational and renders proposed orbit goals separately",
+      "triage_group": "requires_manual_triage",
+      "root_cause_verified": false
+    },
+    {
+      "tap_id": "6",
+      "name": "Africa Priority 2 adds the reviewed agencies and correctly separates institutions from national agencies",
+      "triage_group": "requires_manual_triage",
+      "root_cause_verified": false
+    },
+    {
+      "tap_id": "13",
+      "name": "agency profiles do not fabricate another agency’s website, LinkedIn, or email when fields are absent",
+      "triage_group": "data_contract_or_count",
+      "root_cause_verified": false
+    },
+    {
+      "tap_id": "14",
+      "name": "agency profiles display only contact destinations explicitly present in the record",
+      "triage_group": "data_contract_or_count",
+      "root_cause_verified": false
+    },
+    {
+      "tap_id": "15",
+      "name": "company category files preserve primary and explicitly approved secondary memberships",
+      "triage_group": "data_contract_or_count",
+      "root_cause_verified": false
+    },
+    {
+      "tap_id": "17",
+      "name": "startup requests compact map geometry and only default company categories; missions are demand-loaded",
+      "triage_group": "data_contract_or_count",
+      "root_cause_verified": false
+    },
+    {
+      "tap_id": "22",
+      "name": "Arabic data uses Arabic-script explanatory text, Latin technical digits, and no Persian-only letters",
+      "triage_group": "requires_manual_triage",
+      "root_cause_verified": false
+    },
+    {
+      "tap_id": "23",
+      "name": "all labels used by agency profiles map to Arabic",
+      "triage_group": "data_contract_or_count",
+      "root_cause_verified": false
+    },
+    {
+      "tap_id": "24",
+      "name": "the real openDetail route follows the Persian dossier layout with Arabic content and no English narrative",
+      "triage_group": "requires_manual_triage",
+      "root_cause_verified": false
+    },
+    {
+      "tap_id": "25",
+      "name": "missing Arabic fallbacks never expose untranslated Persian or English descriptions",
+      "triage_group": "requires_manual_triage",
+      "root_cause_verified": false
+    },
+    {
+      "tap_id": "26",
+      "name": "the global asset cache token is current and the country profile uses Arabic agency cards",
+      "triage_group": "cache_version_expectation",
+      "root_cause_verified": false
+    },
+    {
+      "tap_id": "7",
+      "name": "tests/company_launch_ar.test.cjs",
+      "triage_group": "test_process_abort",
+      "root_cause_verified": false
+    },
+    {
+      "tap_id": "8",
+      "name": "tests/company_propulsion_ar.test.cjs",
+      "triage_group": "test_process_abort",
+      "root_cause_verified": false
+    },
+    {
+      "tap_id": "9",
+      "name": "tests/company_satmaker_ar.test.cjs",
+      "triage_group": "test_process_abort",
+      "root_cause_verified": false
+    },
+    {
+      "tap_id": "10",
+      "name": "tests/country_ar.test.cjs",
+      "triage_group": "test_process_abort",
+      "root_cause_verified": false
+    },
+    {
+      "tap_id": "12",
+      "name": "tests/country_interaction.test.cjs",
+      "triage_group": "test_process_abort",
+      "root_cause_verified": false
+    },
+    {
+      "tap_id": "13",
+      "name": "tests/country_name_display.test.cjs",
+      "triage_group": "test_process_abort",
+      "root_cause_verified": false
+    },
+    {
+      "tap_id": "14",
+      "name": "tests/country_profile_14_categories.test.cjs",
+      "triage_group": "test_process_abort",
+      "root_cause_verified": false
+    },
+    {
+      "tap_id": "15",
+      "name": "tests/country_profile_light_mode_permanent.test.cjs",
+      "triage_group": "test_process_abort",
+      "root_cause_verified": false
+    },
+    {
+      "tap_id": "16",
+      "name": "tests/country_profile_light_theme.test.cjs",
+      "triage_group": "test_process_abort",
+      "root_cause_verified": false
+    },
+    {
+      "tap_id": "18",
+      "name": "tests/developer_attribution_step4.test.cjs",
+      "triage_group": "test_process_abort",
+      "root_cause_verified": false
+    },
+    {
+      "tap_id": "21",
+      "name": "tests/israel_fa_display.test.cjs",
+      "triage_group": "test_process_abort",
+      "root_cause_verified": false
+    },
+    {
+      "tap_id": "43",
+      "name": "the approved launch-company additions and Ukrainian split are present and fully sourced",
+      "triage_group": "data_contract_or_count",
+      "root_cause_verified": false
+    },
+    {
+      "tap_id": "75",
+      "name": "new JS cache key while scientific data/cache keys untouched",
+      "triage_group": "cache_version_expectation",
+      "root_cause_verified": false
+    },
+    {
+      "tap_id": "31",
+      "name": "tests/map_pan_markers.test.cjs",
+      "triage_group": "test_process_abort",
+      "root_cause_verified": false
+    },
+    {
+      "tap_id": "95",
+      "name": "marker hover preserves original CSS/map-data version while only script version changes",
+      "triage_group": "cache_version_expectation",
+      "root_cause_verified": false
+    },
+    {
+      "tap_id": "34",
+      "name": "tests/marker_halo_interaction.test.cjs",
+      "triage_group": "test_process_abort",
+      "root_cause_verified": false
+    },
+    {
+      "tap_id": "38",
+      "name": "tests/propulsion_logo_assets.test.cjs",
+      "triage_group": "test_process_abort",
+      "root_cause_verified": false
+    },
+    {
+      "tap_id": "39",
+      "name": "tests/propulsion_logo_group2_assets.test.cjs",
+      "triage_group": "test_process_abort",
+      "root_cause_verified": false
+    },
+    {
+      "tap_id": "40",
+      "name": "tests/propulsion_logo_group3_assets.test.cjs",
+      "triage_group": "test_process_abort",
+      "root_cause_verified": false
+    },
+    {
+      "tap_id": "118",
+      "name": "branded first-generation loading screen is unchanged while new JS and data are cache-busted",
+      "triage_group": "cache_version_expectation",
+      "root_cause_verified": false
+    },
+    {
+      "tap_id": "43",
+      "name": "tests/recovery_ar.test.cjs",
+      "triage_group": "test_process_abort",
+      "root_cause_verified": false
+    },
+    {
+      "tap_id": "45",
+      "name": "tests/site_ar.test.cjs",
+      "triage_group": "test_process_abort",
+      "root_cause_verified": false
+    },
+    {
+      "tap_id": "49",
+      "name": "tests/splash_credit_font_match.test.cjs",
+      "triage_group": "test_process_abort",
+      "root_cause_verified": false
+    },
+    {
+      "tap_id": "50",
+      "name": "tests/splash_credit_style_saffar.test.cjs",
+      "triage_group": "test_process_abort",
+      "root_cause_verified": false
+    },
+    {
+      "tap_id": "153",
+      "name": "33 candidate profiles are added with stable unique ids; 274 prior profiles retained",
+      "triage_group": "data_contract_or_count",
+      "root_cause_verified": false
+    },
+    {
+      "tap_id": "154",
+      "name": "category slices preserve existing 11 and cover all 33 new profiles",
+      "triage_group": "data_contract_or_count",
+      "root_cause_verified": false
+    },
+    {
+      "tap_id": "156",
+      "name": "map pins, lazy-loading counts, and version tokens include all 33",
+      "triage_group": "cache_version_expectation",
+      "root_cause_verified": false
+    },
+    {
+      "tap_id": "157",
+      "name": "legacy renderer outputs full Persian source claims but not Persian-only cards on EN/AR pages",
+      "triage_group": "requires_manual_triage",
+      "root_cause_verified": false
+    },
+    {
+      "tap_id": "168",
+      "name": "cache-busting changes only application assets; scientific sources remain stable",
+      "triage_group": "cache_version_expectation",
+      "root_cause_verified": false
+    },
+    {
+      "tap_id": "170",
+      "name": "only first and second basemap URLs survive byte-for-byte; no third Voyager style remains",
+      "triage_group": "requires_manual_triage",
+      "root_cause_verified": false
+    },
+    {
+      "tap_id": "173",
+      "name": "overlay completeness detects missing ANY layer, static pin, or dynamic cluster label",
+      "triage_group": "requires_manual_triage",
+      "root_cause_verified": false
+    },
+    {
+      "tap_id": "174",
+      "name": "repair runs only against matching generation and acknowledges complete markers",
+      "triage_group": "requires_manual_triage",
+      "root_cause_verified": false
+    },
+    {
+      "tap_id": "175",
+      "name": "image decoder does not declare ready if an SVG is missing from the map image registry",
+      "triage_group": "requires_manual_triage",
+      "root_cause_verified": false
+    },
+    {
+      "tap_id": "178",
+      "name": "map reacts to its own missing style images and ignores basemap sprite ids",
+      "triage_group": "requires_manual_triage",
+      "root_cause_verified": false
+    },
+    {
+      "tap_id": "179",
+      "name": "source event data remains untouched",
+      "triage_group": "data_contract_or_count",
+      "root_cause_verified": false
+    }
+  ]
+}

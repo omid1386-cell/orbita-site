@@ -1,0 +1,51 @@
+{
+  "project": "RASPEHR",
+  "date": "2026-11-25",
+  "stage": "V9 release candidate / not deployed",
+  "baseline": "original user archive, 4 RAR parts",
+  "source_version": "V8 cumulative working source",
+  "status": "LOCAL_RELEASE_CANDIDATE_ONLY",
+  "public_release_approved": false,
+  "qa": {
+    "offline_audit_pass": 11,
+    "offline_audit_fail": 0,
+    "node_3d": {
+      "pass": 35,
+      "total": 35
+    },
+    "node_2d": {
+      "pass": 143,
+      "total": 190,
+      "fail": 47
+    },
+    "js_syntax": "PASS",
+    "browser_real_webgl": "NOT_RUN_BLOCKED_BY_ENVIRONMENT",
+    "physical_mobile": "NOT_RUN",
+    "staging": "NOT_DEPLOYED"
+  },
+  "protected_files_sha256": 887,
+  "protected_images": 846,
+  "protected_site_photos": 48,
+  "legacy_2d_groups_preliminary": {
+    "data_contract_or_count": 10,
+    "requires_manual_triage": 11,
+    "cache_version_expectation": 6,
+    "test_process_abort": 20
+  },
+  "changed_from_v8": [
+    "RASPEHR_V9_QA_SUMMARY.json",
+    "RASPEHR_V9_READ_ME_FIRST_FA.md",
+    "raspehr-3d/ATLAS_PANEL_V9_RELEASE_READINESS_FA.md",
+    "raspehr-3d/ATLAS_PANEL_V9_STAGING_QA_FA.md",
+    "raspehr-3d/ATLAS_V9_LEGACY_2D_FAILURE_TRIAGE.json",
+    "raspehr-3d/RELEASE_V9_PROTECTED_SHA256.json",
+    "raspehr-3d/tests/atlas_v9_release.test.cjs",
+    "raspehr-3d/tools/atlas-v9-release-audit.py"
+  ],
+  "remaining_blockers": [
+    "47 2D test failures need root-cause assessment and impact sign-off",
+    "real WebGL browser QA",
+    "physical mobile QA",
+    "staging integration QA"
+  ]
+}

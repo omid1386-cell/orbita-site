@@ -10,12 +10,31 @@
   let stage3;
   let selectedEntity;
   let localFacility = null;
+  let mapNoticeTimer = 0;
+  function focusSelectedPlace() {
+    if (!markers || !selectedEntity) return false;
+    const focused=markers.focus(selectedEntity);
+    if (focused===false) return false;
+    const sheet=window.RaspehrMobileSheet;
+    if(sheet&&sheet.getState&&sheet.getState().enabled){
+      sheet.setSnap('collapsed');
+      const notice=$('atlasMapNotice');
+      if(notice){
+        notice.textContent='دوربین روی «'+selectedEntity.fa+'» متمرکز شد. برای بازگشت به اطلاعات، «مکان» را بزنید.';
+        notice.hidden=false;
+        if(mapNoticeTimer)clearTimeout(mapNoticeTimer);
+        mapNoticeTimer=setTimeout(()=>{notice.hidden=true;mapNoticeTimer=0;},4500);
+      }
+    }
+    return true;
+  }
 
   function showEntity(row) {
     if(!row){
       selectedEntity=null;
       if(localFacility)localFacility.setSelection(null);
       if(window.RaspehrSiteViews)window.RaspehrSiteViews.select(null);
+      if(window.RaspehrPlaceJourney)window.RaspehrPlaceJourney.select(null);
       $('entityCard').hidden=true;
       $('selectedLocationCard').hidden=true;
       if(window.RaspehrStage4)window.RaspehrStage4.select(null);
@@ -39,6 +58,7 @@
     $('entityPrecision').textContent = 'دقت/یادداشت مختصات: ' + (row.coordinateNote || accuracy);
     $('entityId').textContent = row.key;
     const kindLabel=row.kind==='site'?'پایگاه پرتاب':row.kind==='recovery'?'محل فرود و بازیابی':'شرکت یا سازمان فضایی';
+    $('selectedLocationCard').dataset.placeKind=row.kind||'company';
     $('selectedLocationKind').textContent=kindLabel;
     $('selectedLocationTitle').textContent=row.fa;
     $('selectedLocationEnglish').textContent=row.en!==row.fa?row.en:'';
@@ -54,6 +74,7 @@
     $('selectedLocationFacility').textContent=facilityAccess.tier==='regional'?'نمای منطقه‌ای و تصاویر موجود':'نمای نزدیک تصاویر و تأسیسات';
     $('selectedLocationFacilityMeta').hidden=true;
     $('selectedLocationCard').hidden=false;
+    if(window.RaspehrPlaceJourney)window.RaspehrPlaceJourney.select(row);
     intro.classList.add('is-faded');
     if (window.RaspehrStage4) window.RaspehrStage4.select(row);
   }
@@ -103,6 +124,17 @@
       });
       localFacility.setMarkers(markers);
       stage3 = new window.RaspehrStage3.Controller(engine,markers,catalog,showEntity);
+      if(window.RaspehrPlaceJourney)window.RaspehrPlaceJourney.connect(catalog, row=>{
+        if(!stage3.filtered.some(item=>item.key===row.key)){
+          // A deliberate history click may require a different filter. Reuse the
+          // canonical explorer controller rather than creating a parallel map.
+          stage3.query='';stage3.country='';
+          $('entitySearch').value='';$('entityCountry').value='';
+          stage3.categories.add(row.category);
+          stage3.syncCheckboxes();stage3.refreshFilters();
+        }
+        stage3.selectRecord(row);
+      });
       if (window.RaspehrStage4) window.RaspehrStage4.setCatalog(catalog);
       if (window.RaspehrStage5Child) window.RaspehrStage5Child.mount(engine,stage3,catalog);
       markers.setVisible($('markerToggle').checked);
@@ -179,11 +211,9 @@
     $('markerToggle').addEventListener('change', event => {
       if (markers) markers.setVisible(event.target.checked);
     });
-    $('markerFocusBtn').addEventListener('click', () => {
-      if (markers && selectedEntity) markers.focus(selectedEntity);
-    });
+    $('markerFocusBtn').addEventListener('click', focusSelectedPlace);
     $('selectedLocationClose').addEventListener('click',()=>{if(stage3)stage3.clearSelected();else showEntity(null);});
-    $('selectedLocationFocus').addEventListener('click',()=>{if(markers&&selectedEntity)markers.focus(selectedEntity);});
+    $('selectedLocationFocus').addEventListener('click',focusSelectedPlace);
     $('selectedLocationProfile').addEventListener('click',()=>{if(window.RaspehrStage4)window.RaspehrStage4.openSelected();});
     $('selectedLocationFacility').addEventListener('click',()=>{if(localFacility&&selectedEntity)localFacility.enter(selectedEntity);});
     $('selectedLocationFacilityExit').addEventListener('click',()=>{if(localFacility)localFacility.exit();});
@@ -249,6 +279,6 @@
       loader.classList.add('is-hidden');
       if (result.errors && result.errors.length) console.warn('[RASPEHR / 3D] optional texture warnings:', result.errors);
     }).catch(reportFailure);
-    window.addEventListener('pagehide', () => { if(localFacility)localFacility.dispose(); if(stage3)stage3.dispose(); if(markers)markers.dispose(); if(engine)engine.dispose(); }, {once:true});
+    window.addEventListener('pagehide', () => { if(mapNoticeTimer)clearTimeout(mapNoticeTimer); if(localFacility)localFacility.dispose(); if(stage3)stage3.dispose(); if(markers)markers.dispose(); if(engine)engine.dispose(); }, {once:true});
   } catch (err) { reportFailure(err); }
 })();

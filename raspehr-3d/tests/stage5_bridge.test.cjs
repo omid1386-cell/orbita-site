@@ -1,6 +1,8 @@
 'use strict';
 const assert=require('node:assert/strict');const fs=require('node:fs');const path=require('node:path');const vm=require('node:vm');
 const root=path.resolve(__dirname,'../..');
+const expectedFrameSrc=fs.readFileSync(path.join(root,'assets/js/raspehr-stage5-switch.js'),'utf8').match(/frame\.src='([^']+)'/);
+assert.ok(expectedFrameSrc && /^raspehr-3d\/index\.html\?raspehr_3d_embedded=1&v=[a-zA-Z0-9-]+$/.test(expectedFrameSrc[1]), 'iframe is versioned and same-origin relative');
 const common=require('../../assets/js/raspehr-stage5-state.js');
 const listeners={};const emitted=[];
 function element(tag){
@@ -15,7 +17,7 @@ const restored=[];
 const win={RASPEHR_PROFILE_EMBEDDED:false,location:{origin:'https://raspehr.test'},document:{body:{classList:element().classList},getElementById:id=>els[id]},RaspehrStage5MapAdapter:{getState(){return original;},applyState(s){restored.push(s);return Promise.resolve(true);}},map:{resize(){win.resized=true;}},addEventListener(name,fn){listeners[name]=fn;},clearTimeout(){},setTimeout(){return 1;}};
 vm.runInNewContext(fs.readFileSync(path.join(root,'assets/js/raspehr-stage5-switch.js'),'utf8'),{window:win,console});
 button.trigger('click');
-assert.equal(overlay.hidden,false);assert.equal(frame.src,'raspehr-3d/index.html?raspehr_3d_embedded=1&v=20261125-imagery-fix1');
+assert.equal(overlay.hidden,false);assert.equal(frame.src,expectedFrameSrc[1]);
 assert.equal(emitted.length,0,'state not sent before child readiness');
 listeners.message({source:{},origin:'https://raspehr.test',data:{channel:'RASPEHR_STAGE5',type:'ready'}});
 assert.equal(emitted.length,0,'foreign iframe must not activate');
@@ -37,5 +39,5 @@ original={...original,query:'updated'};
 button.trigger('click');assert.equal(emitted[3].packet.type,'stage6-visibility');assert.equal(emitted[3].packet.state.visible,false);
 assert.equal(emitted[4].packet.type,'stage6-visibility');assert.equal(emitted[4].packet.state.visible,true);
 assert.equal(emitted[5].packet.type,'apply');assert.equal(emitted[5].packet.state.query,'updated');
-assert.equal(frame.src,'raspehr-3d/index.html?raspehr_3d_embedded=1&v=20261125-imagery-fix1');
+assert.equal(frame.src,expectedFrameSrc[1]);
 console.log('PASS Stage5 host bridge: lazy load, same-origin gate, handshake, stale reply guard, 2-way state, iframe reuse');

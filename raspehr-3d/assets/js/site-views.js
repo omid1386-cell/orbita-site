@@ -24,6 +24,8 @@
  function showPreview(row){
   selection=row||null;const record=recordFor(row),file=itemFor(row),path=validatedPath(file);
   preview.hidden=!path;
+  const missing=$('atlasPlaceMissingImage');
+  if(missing)missing.hidden=!(row&&row.kind==='site'&&!path);
   if(!path)return;
   previewImage.src=path;previewImage.alt=(record.fa||row.fa)+' — '+record.status_fa;
   previewTitle.textContent='دیدن محیط پایگاه و جابه‌جایی در تصویر';

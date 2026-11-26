@@ -77,6 +77,14 @@
          else this.markers.focus(center);
        }
      });
+     document.querySelectorAll('[data-category-preset]').forEach(button=>button.addEventListener('click',()=>{
+       const presets={site:['site'],agency:['agency'],starter:['agency','site'],all:Object.keys(defs)};
+       this.categories=new Set(presets[button.dataset.categoryPreset]||['agency','site']);
+       this.syncCheckboxes();this.refreshFilters();
+       const panel=global.RaspehrMobileSheet;
+       if(panel&&typeof panel.setSection==='function')panel.setSection('explore');
+       if(panel&&panel.getState&&panel.getState().enabled)panel.setTab('filters',{snap:'half'});
+     }));
      $('categoryAll').addEventListener('click',()=>{this.categories=new Set(Object.keys(defs));this.syncCheckboxes();this.refreshFilters();});
      $('categoryNone').addEventListener('click',()=>{this.categories.clear();this.syncCheckboxes();this.refreshFilters();});
      $('entityClear').addEventListener('click',()=>{
@@ -100,6 +108,14 @@
      document.querySelectorAll('.category-checkbox').forEach(checkbox=>{checkbox.checked=this.categories.has(checkbox.value);});
    }
    refreshFilters(){
+     const buttons=[...document.querySelectorAll('[data-category-preset]')];
+     const keys=[...this.categories].sort().join('|');
+     for(const button of buttons){
+       const active=keys===({site:'site',agency:'agency',starter:'agency|site',all:Object.keys(global.RaspehrEntityData.CATEGORIES).sort().join('|')}[button.dataset.categoryPreset]);
+       button.classList.toggle('is-active',active);button.setAttribute('aria-pressed',String(active));
+     }
+     const selectionCount=$('atlasLayerSelectionCount');
+     if(selectionCount)selectionCount.textContent= this.categories.size.toLocaleString('fa-IR')+' دسته از '+Object.keys(global.RaspehrEntityData.CATEGORIES).length.toLocaleString('fa-IR')+' دسته نقشه فعال است';
      this.filtered=this.explore.filter(this.catalog.markers,{
        query:this.query,country:this.country,categories:[...this.categories]
      });
@@ -141,7 +157,8 @@
      this.engine.scene.updateMatrixWorld(true);
      this.engine.camera.updateMatrixWorld(true);
      const box=this.engine.renderer.domElement.getBoundingClientRect();
-     return row=>this.markers.projectAnchor(row,box,edgePadding);
+     const context=this.markers.createProjectionContext(box);
+     return row=>this.markers.projectAnchor(row,box,edgePadding,context);
    }
    positionClusters(){
      if(this.overlay.hidden || !this.view)return;
@@ -153,10 +170,13 @@
        const visible=!!at;
        // Never allow an old screen-space bubble to linger over space after a
        // spin, zoom or crossing the limb of the globe.
-       button.hidden=!visible;
+       if(button.hidden===visible)button.hidden=!visible;
        if(visible){
-         button.style.left=at.x.toFixed(2)+'px';
-         button.style.top=at.y.toFixed(2)+'px';
+         // Pixel quantization avoids forcing style/layout recalculation for
+         // sub-pixel camera jitter or stationary frames.
+         const x=Math.round(at.x),y=Math.round(at.y);
+         if(button._raspehrX!==x){button.style.left=x+'px';button._raspehrX=x;}
+         if(button._raspehrY!==y){button.style.top=y+'px';button._raspehrY=y;}
        }
      }
    }

@@ -44,6 +44,7 @@
       this.group.name='raspehr-location-markers';
       this.engine.globeGroup.add(this.group);
       this.meshes=[];
+      this.meshPool=new Map(); // Reuse GPU buffers/materials during frequent reclustering.
       this.geometry=new T.SphereGeometry(0.0085,10,8);
       // Cluster labels are screen-space UI only. Rendering a second 3D sphere for each
       // cluster doubled the visible symbols and made the old interface cluttered.
@@ -95,22 +96,36 @@
         if(!groups.has(category))groups.set(category,[]);
         groups.get(category).push(row);
       });
+      // Detach inactive batches but keep their small, bounded per-category GPU
+      // allocations in a pool. Only grow a buffer when it is genuinely too small.
+      for(const mesh of this.meshes)this.group.remove(mesh);
+      this.meshes=[];
       for(const [category,items] of groups){
-        const color=defs[category].color;
-        const material=new T.MeshBasicMaterial({color,depthTest:true,depthWrite:true});
-        const mesh=new T.InstancedMesh(this.geometry,material,items.length);
-        mesh.name='raspehr-marker:'+category;
+        let entry=this.meshPool.get(category);
+        if(!entry || items.length>entry.capacity){
+          const capacity=Math.max(4,entry?entry.capacity*2:0,items.length);
+          const material=new T.MeshBasicMaterial({color:defs[category].color,depthTest:true,depthWrite:true});
+          const mesh=new T.InstancedMesh(this.geometry,material,capacity);
+          mesh.name='raspehr-marker:'+category;
+          mesh.frustumCulled=false;
+          mesh.instanceMatrix.setUsage(T.DynamicDrawUsage);
+          if(entry){this.group.remove(entry.mesh);entry.mesh.material.dispose();}
+          entry={mesh,capacity};
+          this.meshPool.set(category,entry);
+        }
+        const mesh=entry.mesh;
+        mesh.count=items.length;
         mesh.userData.records=items;
-        mesh.frustumCulled=false; // mark every point; otherwise partial instanced-bounds can cull markers
-        mesh.instanceMatrix.setUsage(T.StaticDrawUsage);
-        items.forEach((row,i)=>{
+        for(let i=0;i<items.length;i++){
+          const row=items[i];
           this.tmpObject.position.copy(geo(row.lat,row.lon,MARKER_RADIUS));
           this.tmpObject.rotation.set(0,0,0);
           this.tmpObject.scale.setScalar(1);
           this.tmpObject.updateMatrix();
           mesh.setMatrixAt(i,this.tmpObject.matrix);
-        });
+        }
         mesh.instanceMatrix.needsUpdate=true;
+        mesh.visible=this.enabled;
         this.meshes.push(mesh);
         this.group.add(mesh);
       }
@@ -157,28 +172,31 @@
     // All positions are calculated from immutable lat/lon coordinates in the
     // SAME local coordinate system as the globe mesh. No stored screen x/y is
     // used as a geographic anchor. Call after updating scene/camera matrices.
-    projectAnchor(row,rect,edgePadding){
-      if(!row || !finite(row.lat,90) || !finite(row.lon,180))return null;
+    createProjectionContext(rect){
       const box=rect||this.engine.renderer.domElement.getBoundingClientRect();
       if(!box.width||!box.height)return null;
-      const local=geo(row.lat,row.lon,MARKER_RADIUS);
-      const world=local.applyMatrix4(this.group.matrixWorld);
-      const surfaceNormal=world.clone().sub(this.engine.globeGroup.getWorldPosition(new T.Vector3())).normalize();
-      const toCamera=this.engine.camera.position.clone().sub(world);
-      // A marker must face the camera (back-side markers must not 'float'
-      // outside the geographic disk when the Earth rotates).
-      if(surfaceNormal.dot(toCamera)<=HORIZON_MARGIN)return null;
-      const ndc=world.clone().project(this.engine.camera);
-      if(ndc.z<=-1 || ndc.z>=1 || Math.abs(ndc.x)>1 || Math.abs(ndc.y)>1)return null;
-      const x=(ndc.x+1)*box.width/2, y=(1-ndc.y)*box.height/2;
-      // Keep cluster bubbles fully INSIDE the visible Earth silhouette.
-      // Sphere angular radius as projected by a perspective camera.
       const center=this.engine.globeGroup.getWorldPosition(new T.Vector3());
       const d=this.engine.camera.position.distanceTo(center);
-      const fov=this.engine.camera.fov*Math.PI/180;
-      const radiusPixels=(box.height/2)*EARTH_RADIUS/Math.sqrt(Math.max(d*d-EARTH_RADIUS*EARTH_RADIUS,0.0001))/Math.tan(fov/2);
-      const centerProjection=center.project(this.engine.camera);
-      const cx=(centerProjection.x+1)*box.width/2, cy=(1-centerProjection.y)*box.height/2;
+      const halfFov=this.engine.camera.fov*Math.PI/360;
+      const radiusPixels=(box.height/2)*EARTH_RADIUS/
+        Math.sqrt(Math.max(d*d-EARTH_RADIUS*EARTH_RADIUS,0.0001))/Math.tan(halfFov);
+      const centerNdc=center.clone().project(this.engine.camera);
+      return {box,center,camera:this.engine.camera.position,
+        cx:(centerNdc.x+1)*box.width/2,cy:(1-centerNdc.y)*box.height/2,radiusPixels};
+    }
+    projectAnchor(row,rect,edgePadding,projection){
+      if(!row || !finite(row.lat,90) || !finite(row.lon,180))return null;
+      const context=projection||this.createProjectionContext(rect);
+      if(!context)return null;
+      const {box,center,camera,cx,cy,radiusPixels}=context;
+      const world=geo(row.lat,row.lon,MARKER_RADIUS).applyMatrix4(this.group.matrixWorld);
+      const nx=world.x-center.x,ny=world.y-center.y,nz=world.z-center.z;
+      const vx=camera.x-world.x,vy=camera.y-world.y,vz=camera.z-world.z;
+      const front=(nx*vx+ny*vy+nz*vz)/Math.sqrt((nx*nx+ny*ny+nz*nz)*(vx*vx+vy*vy+vz*vz));
+      if(front<=HORIZON_MARGIN)return null;
+      const ndc=world.project(this.engine.camera);
+      if(ndc.z<=-1 || ndc.z>=1 || Math.abs(ndc.x)>1 || Math.abs(ndc.y)>1)return null;
+      const x=(ndc.x+1)*box.width/2,y=(1-ndc.y)*box.height/2;
       if(Math.hypot(x-cx,y-cy)>radiusPixels-Math.max(0,edgePadding||0))return null;
       return {x,y,visible:true};
     }
@@ -189,10 +207,11 @@
       this.engine.scene.updateMatrixWorld(true);
       this.engine.camera.updateMatrixWorld(true);
       const rows=this.meshes.flatMap(mesh=>mesh.userData.records||[]);
+      const projection=this.createProjectionContext(rect);
       // Prefer the nearest projected pin, not the first raycast hit. At dense
       // aerospace campuses several valid records can be only a few pixels apart.
       const radius=pointerType==='touch'?27:pointerType==='pen'?22:18;
-      const nearest=nearestProjectedMarker(rows,row=>this.projectAnchor(row,rect,0),
+      const nearest=nearestProjectedMarker(rows,row=>this.projectAnchor(row,rect,0,projection),
         clientX-rect.left,clientY-rect.top,radius);
       if(nearest)return nearest;
       this.pointer.set(((clientX-rect.left)/rect.width)*2-1,-((clientY-rect.top)/rect.height)*2+1);
@@ -216,8 +235,6 @@
       const signature=displayed.map(row=>row.key).join('\n');
       if(signature===this.displaySignature)return false;
       this.displaySignature=signature;
-      for(const mesh of this.meshes){this.group.remove(mesh);mesh.material.dispose();}
-      this.meshes=[];
       this.build(displayed);
       this.meshes.forEach(mesh=>{mesh.visible=this.enabled;});
       if(this.selected && !displayed.some(row=>row.key===this.selected.key))this.clearSelection();
@@ -304,7 +321,8 @@
       if(this.selectedLabel){this.selectedLabel.remove();this.selectedLabel=null;}
       this.activePointers.clear();
       this.engine.globeGroup.remove(this.group);
-      this.meshes.forEach(mesh=>{mesh.material.dispose();});
+      this.meshPool.forEach(entry=>entry.mesh.material.dispose());
+      this.meshPool.clear();
       this.geometry.dispose();
       if(this.clusterGeometry)this.clusterGeometry.dispose();
       this.selectionGeometry.dispose();

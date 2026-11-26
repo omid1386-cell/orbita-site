@@ -1,0 +1,15 @@
+/* RASPEHR V5 / interaction stability: avoid hiding globe focus below selected place sheet. */
+.atlas-map-notice{position:absolute;z-index:13;bottom:20px;left:50%;transform:translateX(-50%);max-width:min(480px,calc(100% - 34px));padding:10px 14px;margin:0;border:1px solid rgba(227,187,118,.4);border-radius:12px;background:rgba(5,25,40,.94);box-shadow:0 8px 32px #0006;color:#fce8c5;font-size:12px;line-height:1.8;text-align:center;pointer-events:none}
+.atlas-map-notice[hidden]{display:none!important}
+@media(max-width:700px){
+  /* Half-open PLACE sheet stops before the center of the map, so the focused point
+     remains visible. Other tabs retain their larger practical working height. */
+  body.mobile-sheet-ready .stage-panel[data-mobile-tab="place"][data-mobile-snap="half"]{
+    height:min(42dvh,380px,var(--sheet-full-height));
+  }
+  body.mobile-sheet-ready .atlas-map-notice{bottom:calc(84px + env(safe-area-inset-bottom));font-size:11px;width:max-content}
+  body.mobile-sheet-ready .mobile-sheet-handle{touch-action:none;user-select:none;-webkit-user-select:none}
+}
+@media(prefers-reduced-motion:reduce){
+ body.mobile-sheet-ready .stage-panel{transition:none!important}
+}

@@ -1,4 +1,4 @@
-/* RASPEHR / 3D Earth — Stage 01, consolidation R7.
+/* RASPEHR / 3D Earth — Stage 01, consolidation R8.
    Local multilevel imagery + optional remote geospatial DEM. No orbit data. */
 (function (global) {
   'use strict';
@@ -60,6 +60,25 @@
     let state = seed | 0;
     return function () { state = (1664525 * state + 1013904223) | 0; return (state >>> 0) / 4294967296; };
   }
+  // V8: no new draw passes or per-frame profile allocations.
+  // Pass an existing result object in the render loop; optional for QA callers.
+  const VISUAL_STYLES = Object.freeze({
+    low:      Object.freeze({halo:0.55, cloud:0.28, twilight:0.28, stars:0.68}),
+    balanced: Object.freeze({halo:0.82, cloud:0.34, twilight:0.65, stars:0.84}),
+    high:     Object.freeze({halo:1.00, cloud:0.38, twilight:0.85, stars:0.90})
+  });
+  function getVisualEnvelope(distance, quality, lighting, result) {
+    const style = VISUAL_STYLES[quality] || VISUAL_STYLES.balanced;
+    const t = clamp((Number(distance) - MIN_DISTANCE) / (HOME_DISTANCE - MIN_DISTANCE), 0, 1);
+    const smooth = t * t * (3 - 2 * t);
+    result = result || {};
+    result.atmosphere = style.halo * (0.18 + 0.82 * smooth);
+    result.cloud = style.cloud * (0.72 + 0.28 * smooth);
+    result.twilight = lighting === false ? 0 : style.twilight;
+    result.stars = style.stars;
+    return result;
+  }
+
   function getTileLevelForDistance(distance, activeLevel) {
     // 0.10 globe-unit hysteresis prevents visible level thrash near boundaries.
     if (activeLevel === 'z0' && distance >= 4.75) return TILE_LEVELS[0];
@@ -137,6 +156,8 @@
       this.onStatus = onStatus || function () {};
       const perf = global.RaspehrStage6Performance;
       this.performanceMode = 'auto';
+      this.visualMotionReduced = !!(global.matchMedia && global.matchMedia('(prefers-reduced-motion: reduce)').matches);
+      this.visualEnvelope = {};
       this.perfPolicy = perf ? perf.policy(perf.hints(), this.performanceMode)
         : {fps:60,pixelCap:1.35,quality:'balanced',prefetch:true,moderate:false,mobile:false};
       this.frameInterval = 1000 / this.perfPolicy.fps;
@@ -156,6 +177,8 @@
       this.lastLevelCheck = 0;
       this.stopped = false;
       this.raf = 0;
+      this.boundAnimate = this.animate.bind(this);
+      this.renderTiming = {total:0,max:0,count:0};
       this.bindings = [];
       this.frameObservers = new Set();
       this.textureToken = 0;
@@ -216,6 +239,7 @@
         uRelief:{value:blackFallback}, uSpecular:{value:blackFallback},
         uSun:{value:getSunDirection(new Date())}, uLighting:{value:1},
         uReliefStrength:{value:QUALITY.balanced.relief}, uSpecularStrength:{value:0.22},
+        uTwilightStrength:{value:0.65},
         uReliefTexel:{value:new T.Vector2(1 / 2048, 1 / 1024)}
       };
 
@@ -242,7 +266,7 @@
       this.textureLoadingStarted = true;
       this.ready = this.loadImageryStack(this.perfPolicy.quality, true);
       this.ready.then(() => { if (this.options.terrain && !this.stopped) this.enableTerrain(); }).catch(() => {});
-      this.raf = requestAnimationFrame(this.animate.bind(this));
+      this.raf = requestAnimationFrame(this.boundAnimate);
     }
 
     createSingleEarthMaterial() {
@@ -264,7 +288,7 @@
           }`,
         fragmentShader:`precision mediump float;
           uniform sampler2D uDay; uniform sampler2D uNight; uniform sampler2D uRelief; uniform sampler2D uSpecular;
-          uniform vec3 uSun; uniform float uLighting; uniform float uReliefStrength; uniform float uSpecularStrength; uniform vec2 uReliefTexel;
+          uniform vec3 uSun; uniform float uLighting; uniform float uReliefStrength; uniform float uSpecularStrength; uniform vec2 uReliefTexel; uniform float uTwilightStrength;
           varying vec2 vUvPoint; varying vec3 vWorldNormal; varying vec3 vWorldPosition; varying vec3 vWorldTangent; varying vec3 vWorldBitangent;
           void main(){
             float h0=texture2D(uRelief,vUvPoint).r;
@@ -284,7 +308,10 @@
             vec3 viewDirection=normalize(cameraPosition-vWorldPosition);
             vec3 halfVector=normalize(viewDirection+sun);
             float highlight=pow(max(dot(normal,halfVector),0.0),52.0)*ocean*uSpecularStrength*max(ndl,0.0);
-            color+=vec3(0.12,0.22,0.34)*highlight;
+            color+=vec3(0.16,0.25,0.37)*highlight;
+            // Subtle dawn/dusk warmth is applied equally to tiled and fallback terrain.
+            float dusk=smoothstep(-0.19,-0.02,ndl)*(1.0-smoothstep(0.07,0.31,ndl));
+            color+=vec3(0.075,0.034,0.012)*dusk*uTwilightStrength*uLighting;
             gl_FragColor=vec4(color,1.0);
           }`
       });
@@ -301,7 +328,8 @@
           uLighting:this.uniforms.uLighting,
           uReliefStrength:this.uniforms.uReliefStrength,
           uSpecularStrength:this.uniforms.uSpecularStrength,
-          uReliefTexel:this.uniforms.uReliefTexel
+          uReliefTexel:this.uniforms.uReliefTexel,
+          uTwilightStrength:this.uniforms.uTwilightStrength
         },
         vertexShader:`varying vec2 vTileUv; varying vec2 vGlobalUv; varying vec3 vWorldNormal; varying vec3 vWorldPosition; varying vec3 vWorldTangent; varying vec3 vWorldBitangent;
           void main(){
@@ -323,7 +351,7 @@
           }`,
         fragmentShader:`precision mediump float;
           uniform sampler2D uDayTile; uniform sampler2D uNightTile; uniform sampler2D uRelief; uniform sampler2D uSpecular;
-          uniform vec3 uSun; uniform float uLighting; uniform float uReliefStrength; uniform float uSpecularStrength; uniform vec2 uReliefTexel;
+          uniform vec3 uSun; uniform float uLighting; uniform float uReliefStrength; uniform float uSpecularStrength; uniform vec2 uReliefTexel; uniform float uTwilightStrength;
           varying vec2 vTileUv; varying vec2 vGlobalUv; varying vec3 vWorldNormal; varying vec3 vWorldPosition; varying vec3 vWorldTangent; varying vec3 vWorldBitangent;
           void main(){
             float h0=texture2D(uRelief,vGlobalUv).r;
@@ -343,7 +371,10 @@
             vec3 viewDirection=normalize(cameraPosition-vWorldPosition);
             vec3 halfVector=normalize(viewDirection+sun);
             float highlight=pow(max(dot(normal,halfVector),0.0),52.0)*ocean*uSpecularStrength*max(ndl,0.0);
-            color+=vec3(0.12,0.22,0.34)*highlight;
+            color+=vec3(0.16,0.25,0.37)*highlight;
+            // Subtle dawn/dusk warmth is applied equally to tiled and fallback terrain.
+            float dusk=smoothstep(-0.19,-0.02,ndl)*(1.0-smoothstep(0.07,0.31,ndl));
+            color+=vec3(0.075,0.034,0.012)*dusk*uTwilightStrength*uLighting;
             gl_FragColor=vec4(color,1.0);
           }`
       });
@@ -376,7 +407,7 @@
         vertexShader:`varying vec2 vUvPoint;varying vec3 vWorldNormal;
           void main(){vUvPoint=uv;vWorldNormal=normalize(mat3(modelMatrix)*normal);gl_Position=projectionMatrix*modelViewMatrix*vec4(position,1.0);}`,
         fragmentShader:`precision mediump float;uniform sampler2D uCloudMap;uniform vec3 uSun;uniform float uCloudOpacity;varying vec2 vUvPoint;varying vec3 vWorldNormal;
-          void main(){float cloud=texture2D(uCloudMap,vUvPoint).r;float coverage=smoothstep(0.12,0.60,cloud);float sun=max(dot(normalize(vWorldNormal),normalize(uSun)),0.0);float light=mix(0.34,1.0,smoothstep(-0.12,0.20,sun));float alpha=coverage*uCloudOpacity*light;gl_FragColor=vec4(vec3(0.88,0.93,1.0),alpha);}`,
+          void main(){float cloud=texture2D(uCloudMap,vUvPoint).r;float coverage=smoothstep(0.14,0.65,cloud);float sun=dot(normalize(vWorldNormal),normalize(uSun));float daylight=smoothstep(-0.19,0.21,sun);float alpha=coverage*uCloudOpacity*mix(0.26,1.0,daylight);vec3 tint=mix(vec3(0.70,0.80,0.93),vec3(0.93,0.96,1.0),daylight);gl_FragColor=vec4(tint,alpha);}`,
         transparent:true, depthWrite:false, side:T.FrontSide
       });
       this.clouds = new T.Mesh(new T.SphereGeometry(RADIUS * 1.012, 160, 112), this.cloudMaterial);
@@ -386,11 +417,11 @@
 
     createAtmosphere() {
       this.atmosphereMaterial = new T.ShaderMaterial({
-        uniforms:{uSun:this.uniforms.uSun},
+        uniforms:{uSun:this.uniforms.uSun,uAtmosphereIntensity:{value:0.82}},
         vertexShader:`varying vec3 vWorldNormal;varying vec3 vWorldPosition;
           void main(){vec4 wp=modelMatrix*vec4(position,1.0);vWorldPosition=wp.xyz;vWorldNormal=normalize(mat3(modelMatrix)*normal);gl_Position=projectionMatrix*viewMatrix*wp;}`,
-        fragmentShader:`precision mediump float;uniform vec3 uSun;varying vec3 vWorldNormal;varying vec3 vWorldPosition;
-          void main(){vec3 n=normalize(vWorldNormal);vec3 viewDirection=normalize(cameraPosition-vWorldPosition);float rim=pow(1.0-max(dot(n,viewDirection),0.0),3.25);float sunlit=0.24+0.76*max(dot(n,normalize(uSun)),0.0);vec3 color=mix(vec3(0.035,0.14,0.42),vec3(0.12,0.43,0.88),sunlit);gl_FragColor=vec4(color,rim*0.46);}`,
+        fragmentShader:`precision mediump float;uniform vec3 uSun;uniform float uAtmosphereIntensity;varying vec3 vWorldNormal;varying vec3 vWorldPosition;
+          void main(){vec3 n=normalize(vWorldNormal);vec3 viewDirection=normalize(cameraPosition-vWorldPosition);float rim=pow(1.0-max(dot(n,viewDirection),0.0),3.10);float ndl=dot(n,normalize(uSun));float daylight=smoothstep(-0.24,0.48,ndl);float dusk=smoothstep(-0.35,-0.02,ndl)*(1.0-smoothstep(0.10,0.38,ndl));vec3 blue=mix(vec3(0.027,0.085,0.23),vec3(0.105,0.39,0.83),daylight);vec3 color=mix(blue,vec3(0.42,0.19,0.10),dusk*0.26);float opacity=rim*(0.12+0.88*daylight)*uAtmosphereIntensity*0.46;gl_FragColor=vec4(color,opacity);}`,
         transparent:true, depthWrite:false, blending:T.AdditiveBlending, side:T.FrontSide
       });
       this.atmosphere = new T.Mesh(new T.SphereGeometry(RADIUS * 1.047, 128, 96), this.atmosphereMaterial);
@@ -657,6 +688,13 @@
       return {loaded:loadedCount, errors, surfaceMode:this.surfaceMode, imageryLevel:this.activeLevel};
     }
 
+    clearPointerGestures() {
+      if (this.controls) this.controls.clear();
+      this.pinchDistance = 0;
+      if (this.dragVelocity) { this.dragVelocity.x = 0; this.dragVelocity.y = 0; }
+      if (this.host && this.host.classList) this.host.classList.remove('is-dragging');
+    }
+
     installInteractions() {
       const el = this.renderer.domElement;
       el.style.touchAction = 'none';
@@ -666,6 +704,7 @@
         return Math.hypot(points[0].x - points[1].x, points[0].y - points[1].y);
       };
       this.listen(el, 'pointerdown', e => {
+        if (!this.active || this.stopped || document.hidden) return;
         if (e.pointerType === 'mouse' && e.button !== 0) return;
         this.cancelCameraFlight();
         try { el.setPointerCapture(e.pointerId); } catch (_) {}
@@ -676,7 +715,7 @@
         this.host.classList.add('is-dragging');
       });
       this.listen(el, 'pointermove', e => {
-        if (!this.controls.has(e.pointerId)) return;
+        if (!this.active || this.stopped || document.hidden || !this.controls.has(e.pointerId)) return;
         const before = this.controls.get(e.pointerId);
         const dx = e.clientX - before.x;
         const dy = e.clientY - before.y;
@@ -708,11 +747,14 @@
       this.listen(el, 'wheel', e => { e.preventDefault(); this.zoomBy(Math.exp(clamp(e.deltaY, -240, 240) * 0.0012)); }, {passive:false});
       this.listen(el, 'dblclick', e => { e.preventDefault(); this.zoomBy(0.76); });
       this.listen(el, 'contextmenu', e => e.preventDefault());
+      this.listen(global, 'blur', () => this.clearPointerGestures());
     }
 
     installLifecycle() {
       this.listen(document, 'visibilitychange', () => {
         if (document.hidden) {
+          this.clearPointerGestures();
+          this.cancelCameraFlight(); // prevent an unseen flight from jumping to its endpoint
           if (this.raf) cancelAnimationFrame(this.raf);
           this.raf = 0;
           this.lastTime = performance.now();
@@ -720,11 +762,13 @@
           this.lastTime = performance.now();
           this.fpsTime = this.lastTime;
           this.frameCount = 0;
-          this.raf = requestAnimationFrame(this.animate.bind(this));
+          this.raf = requestAnimationFrame(this.boundAnimate);
         }
       });
       this.listen(this.renderer.domElement, 'webglcontextlost', e => {
         e.preventDefault();
+        this.clearPointerGestures();
+        this.cancelCameraFlight();
         this.contextLost = true;
         if (this.raf) cancelAnimationFrame(this.raf);
         this.raf = 0;
@@ -737,7 +781,7 @@
         this.textureToken++; // invalidate outstanding asynchronous imagery requests
         // Keep current CPU-side textures; Three.js will re-upload on WebGL restoration.
         this.loadImageryStack(this.options.quality, false).catch(err => this.onStatus({type:'warning',message:err.message}));
-        if (this.active && !document.hidden && !this.raf) this.raf = requestAnimationFrame(this.animate.bind(this));
+        if (this.active && !document.hidden && !this.raf) this.raf = requestAnimationFrame(this.boundAnimate);
       });
     }
 
@@ -849,10 +893,29 @@
       this.target.rx = clamp(this.target.rx + y, -1.535, 1.535);
     }
 
+    updateVisualLayers(dt, immediate) {
+      if (!this.atmosphereMaterial || !this.cloudMaterial || !this.uniforms) return;
+      const distance = this.camera && this.camera.position ? this.camera.position.z : this.target.distance;
+      const visual = getVisualEnvelope(distance, this.options.quality, this.options.lighting,
+        this.visualEnvelope || (this.visualEnvelope = {}));
+      const ease = immediate ? 1 : 1 - Math.exp(-clamp(Number(dt) || 0, 0, 0.1) * 4.5);
+      const halo = this.atmosphereMaterial.uniforms.uAtmosphereIntensity;
+      const cloud = this.cloudMaterial.uniforms.uCloudOpacity;
+      const dusk = this.uniforms.uTwilightStrength;
+      if (Math.abs(halo.value - visual.atmosphere) > 0.0005) halo.value += (visual.atmosphere - halo.value) * ease;
+      if (Math.abs(cloud.value - visual.cloud) > 0.0005) cloud.value += (visual.cloud - cloud.value) * ease;
+      if (Math.abs(dusk.value - visual.twilight) > 0.0005) dusk.value += (visual.twilight - dusk.value) * ease;
+      if (this.starField && this.starField.material && this.starField.material.opacity !== visual.stars)
+        this.starField.material.opacity = visual.stars;
+    }
+
     setOption(key, value) {
       if (!(key in this.options)) return;
       this.options[key] = value;
-      if (key === 'lighting') this.uniforms.uLighting.value = value ? 1 : 0;
+      if (key === 'lighting') {
+        this.uniforms.uLighting.value = value ? 1 : 0;
+        this.updateVisualLayers(0, true);
+      }
       if (key === 'clouds') this.clouds.visible = !!value && !!this.cloudMaterial.uniforms.uCloudMap.value;
       if (key === 'stars') this.starField.visible = !!value;
       if (key === 'grid') this.gridGroup.visible = !!value;
@@ -888,6 +951,7 @@
         this.resize();
       }
       this.uniforms.uReliefStrength.value = this.options.relief ? profile.relief : 0;
+      this.updateVisualLayers(0, true);
       if (reload !== false && this.textureLoadingStarted && this.textureQuality !== normalized) {
         // The old level remains visible until the requested quality is ready.
         this.loadImageryStack(normalized, false).catch(err => this.onStatus({type:'warning',message:err.message}));
@@ -913,6 +977,8 @@
       if (this.stopped || this.active === next) return;
       this.active = next;
       if (!next) {
+        this.clearPointerGestures();
+        this.cancelCameraFlight(); // keep visible camera pose when the 3D view is hidden
         if (this.raf) cancelAnimationFrame(this.raf);
         this.raf = 0;
         this.frameCount = 0;
@@ -923,7 +989,7 @@
         this.frameCount = 0;
         this.resize();
         if (!document.hidden && !this.contextLost && !this.raf)
-          this.raf = requestAnimationFrame(this.animate.bind(this));
+          this.raf = requestAnimationFrame(this.boundAnimate);
       }
     }
 
@@ -965,7 +1031,7 @@
 
     animate(now) {
       if (this.stopped || !this.active || this.contextLost || document.hidden) { this.raf = 0; return; }
-      this.raf = requestAnimationFrame(this.animate.bind(this));
+      this.raf = requestAnimationFrame(this.boundAnimate);
       // Limit actual GPU draws on constrained devices without altering globe state.
       // RAF still schedules normally, but motion time advances only when a frame is rendered.
       if (this.lastRenderAt && now - this.lastRenderAt < this.frameInterval - 1.5) return;
@@ -997,7 +1063,8 @@
         this.globeGroup.rotation.y = lerpAngle(this.globeGroup.rotation.y, this.target.ry, easing);
         this.camera.position.z += (this.target.distance - this.camera.position.z) * easing;
       }
-      if (this.options.clouds) this.clouds.rotation.y += dt * 0.00145;
+      if (this.options.clouds && !this.visualMotionReduced) this.clouds.rotation.y += dt * 0.00145;
+      this.updateVisualLayers(dt, false);
       if (now - this.lastSunUpdate > 15000) {
         const date = new Date();
         this.uniforms.uSun.value.copy(getSunDirection(date));
@@ -1014,7 +1081,12 @@
           try{callback(now);}catch(error){console.error('[RASPEHR frame observer]',error);this.frameObservers.delete(callback);}
         }
       }
+      const drawStart=performance.now();
       this.renderer.render(this.scene, this.camera);
+      const drawMs=Math.max(0,performance.now()-drawStart);
+      this.renderTiming.total+=drawMs;
+      this.renderTiming.max=Math.max(this.renderTiming.max,drawMs);
+      this.renderTiming.count++;
       this.frameCount++;
       if (now - this.fpsTime > 1100) {
         const fps = Math.round(this.frameCount * 1000 / (now - this.fpsTime));
@@ -1025,9 +1097,14 @@
         const textureCount = Object.values(this.levelCache).reduce((sum, cache) => sum + (cache && cache.entries ? cache.entries.length * 2 : 0), 0)
           + (this.ownedAux ? Object.keys(this.ownedAux).length : 0)
           + (this.ownedFallback ? 2 : 0);
+        const timing=this.renderTiming;
+        const drawMsAvg=timing.count?Math.round(timing.total/timing.count*10)/10:0;
+        const drawMsMax=Math.round(timing.max*10)/10;
+        this.renderTiming={total:0,max:0,count:0};
         this.onMetrics({fps, altitudeKm:Math.round(altitude), distance:this.camera.position.z,
           quality:this.options.quality, textureQuality:this.textureQuality, surfaceMode:this.surfaceMode,
-          imageryLevel:this.activeLevel, sunLat:sun.lat, sunLon:sun.lon, textureCount});
+          imageryLevel:this.activeLevel, sunLat:sun.lat, sunLon:sun.lon, textureCount,
+          drawMsAvg,drawMsMax});
       }
     }
 
@@ -1063,5 +1140,5 @@
     }
   }
 
-  global.RaspehrGlobe = {GlobeEngine, PRESETS, QUALITY, TILE_LEVELS, getSunDirection, getSunCoordinates, geoToVector3, getTileLevelForDistance, geoFocusTarget, sampleCameraFlight};
+  global.RaspehrGlobe = {GlobeEngine, PRESETS, QUALITY, TILE_LEVELS, getSunDirection, getSunCoordinates, geoToVector3, getTileLevelForDistance, geoFocusTarget, sampleCameraFlight, getVisualEnvelope};
 })(window);

@@ -7,128 +7,196 @@
   <link rel="stylesheet" href="assets/css/prototype.css?v=20261125-imagery-fix1">
   <link rel="stylesheet" href="assets/css/priority5-visual.css?v=20261125-p6">
   <link rel="stylesheet" href="assets/css/site-views.css?v=20261125-gallery1">
+  <link rel="stylesheet" href="assets/css/atlas-panel-v2.css?v=20261125-atlas-panel-v3">
+  <link rel="stylesheet" href="assets/css/place-journey-v4.css?v=20261125-place-v4">
+  <link rel="stylesheet" href="assets/css/interaction-stability-v5.css?v=20261125-stability-v5">
 </head>
 <body>
   <main class="app-shell">
     <div class="stage6-brand" aria-hidden="true"><span class="stage6-brand-orbit">◉</span> RASPEHR <span>· اطلس سه‌بعدی صنعت فضایی</span></div>
-    <section class="stage-panel" id="mobileMainSheet" data-mobile-snap="half" data-mobile-tab="filters" aria-label="پنل کنترل و اطلاعات رسپهر">
+    <!-- RASPEHR Atlas UI v2: progressive-disclosure panel. Original functional element IDs retained. -->
+    <section class="stage-panel" id="mobileMainSheet" data-mobile-snap="collapsed" data-mobile-tab="filters" data-atlas-section="explore" aria-label="کاوش و تنظیمات کره سه‌بعدی">
+      <header class="atlas-panel-header">
+        <div class="atlas-panel-identity">
+          <span class="atlas-brand-symbol" aria-hidden="true">✦</span>
+          <div><strong>رسپهر <bdi dir="ltr">RASPEHR</bdi></strong><small>اطلس تعاملی صنعت فضایی</small></div>
+        </div>
+        <button id="atlasPanelCollapse" class="atlas-icon-btn" type="button" aria-label="جمع کردن پنل و گسترش نقشه" aria-controls="mobileMainSheet" title="گسترش نقشه">‹</button>
+      </header>
+      <nav class="atlas-desktop-nav" aria-label="بخش‌های پنل سه‌بعدی">
+        <button type="button" data-atlas-tab="explore" class="is-active" aria-pressed="true"><span aria-hidden="true">⌕</span> کاوش</button>
+        <button type="button" data-atlas-tab="layers" aria-pressed="false"><span aria-hidden="true">▧</span> لایه‌ها</button>
+        <button type="button" data-atlas-tab="settings" aria-pressed="false"><span aria-hidden="true">⚙</span> نمایش</button>
+      </nav>
       <div class="mobile-sheet-header" id="mobileSheetHeader" hidden>
-        <button id="mobileSheetHandle" class="mobile-sheet-handle" type="button" aria-label="تغییر اندازه پنل پایین؛ با کشیدن به بالا یا پایین" aria-controls="mobileSheetBody"><span aria-hidden="true"></span></button>
+        <button id="mobileSheetHandle" class="mobile-sheet-handle" type="button" aria-label="گسترش یا جمع کردن پنل؛ با کشیدن به بالا یا پایین" aria-controls="mobileSheetBody"><span aria-hidden="true"></span></button>
         <div class="mobile-sheet-headline">
-          <strong id="mobileSheetTitle">مکان‌ها و فیلترها</strong>
-          <div class="mobile-sheet-snap-buttons" role="group" aria-label="اندازه پنل">
-            <button type="button" data-mobile-snap="collapsed" aria-label="جمع کردن پنل">کم</button>
-            <button type="button" data-mobile-snap="half" aria-label="نمای نیمه‌باز">نیمه</button>
-            <button type="button" data-mobile-snap="full" aria-label="بازکردن تمام‌صفحه پنل">کامل</button>
+          <strong id="mobileSheetTitle">کاوش مکان‌ها</strong>
+          <div class="atlas-mobile-snap-actions">
+            <button id="mobileSheetMinimize" type="button" aria-label="جمع کردن پنل" title="جمع کردن">⌄</button>
+            <button id="mobileSheetMaximize" type="button" aria-label="نمایش تمام‌صفحه پنل" title="تمام‌صفحه">⤢</button>
+          </div>
+          <!-- Backward-compatible snap hooks remain hidden, not shown as three extra buttons. -->
+          <div class="mobile-sheet-snap-buttons" hidden aria-hidden="true">
+            <button type="button" data-mobile-snap="collapsed">کم</button>
+            <button type="button" data-mobile-snap="half">نیمه</button>
+            <button type="button" data-mobile-snap="full">کامل</button>
           </div>
         </div>
         <nav class="mobile-sheet-tabs" aria-label="بخش‌های پنل موبایل">
-          <button type="button" data-mobile-tab="filters" aria-controls="mobileSheetBody">جست‌وجو و فیلترها</button>
-          <button type="button" data-mobile-tab="place" id="mobileLocationTab" aria-controls="mobileSelectedSlot" disabled>مکان انتخابی</button>
-          <button type="button" data-mobile-tab="controls" aria-controls="mobileSheetBody">کنترل نقشه</button>
+          <button type="button" data-mobile-tab="filters" aria-controls="atlasExplore" aria-pressed="true">کاوش</button>
+          <button type="button" data-mobile-tab="layers" aria-controls="atlasLayers" aria-pressed="false">لایه‌ها</button>
+          <button type="button" data-mobile-tab="place" id="mobileLocationTab" aria-controls="mobileSelectedSlot" disabled>مکان</button>
+          <button type="button" data-mobile-tab="controls" aria-controls="atlasSettings" aria-pressed="false">تنظیمات</button>
         </nav>
       </div>
       <div class="mobile-sheet-body" id="mobileSheetBody">
         <div id="mobileSelectedSlot" class="mobile-selected-slot" aria-label="مکان انتخاب‌شده"></div>
-      <div class="stage6-panel-title"><strong>فرماندهی نمای زمین</strong><small>کنترل دوربین، اطلاعات و لایه‌های اطلس</small></div>
-      <div class="toolbar-row">
-        <button id="resetBtn" type="button">بازنشانی</button>
-        <button id="stage5BackToMap" type="button" hidden>🗺 بازگشت به نمای دوبعدی</button>
-        <button id="zoomIn" type="button">+</button>
-        <button id="zoomOut" type="button">−</button>
-        <label>عملکرد
-          <select id="performanceMode" aria-label="حالت عملکرد سه‌بعدی">
-            <option value="auto" selected>هوشمند</option>
-            <option value="economy">کم‌مصرف</option>
-            <option value="balanced">متعادل</option>
-            <option value="detail">جزئیات بیشتر</option>
-          </select>
-        </label>
-        <label>کیفیت
-          <select id="quality" disabled>
-            <option value="low">۲K</option>
-            <option value="balanced" selected>۴K</option>
-            <option value="high">۸K</option>
-          </select>
-        </label>
-      </div>
-      <div class="preset-grid">
-        <button data-preset="world" class="is-active">جهانی</button>
-        <button data-preset="asia">آسیا</button>
-        <button data-preset="europe">اروپا</button>
-        <button data-preset="americas">آمریکا</button>
-        <button data-preset="middleeast">خاورمیانه</button>
-        <button data-preset="africa">آفریقا</button>
-        <button data-preset="northpole">قطب شمال</button>
-        <button data-preset="antarctica">جنوبگان</button>
-      </div>
-      <div class="option-grid">
-        <label><input id="lighting" type="checkbox" checked> نورپردازی</label>
-        <label><input id="clouds" type="checkbox" checked> ابرها</label>
-        <label><input id="rotation" type="checkbox"> چرخش</label>
-        <label><input id="stars" type="checkbox" checked> ستارگان</label>
-        <label><input id="grid" type="checkbox"> شبکه</label>
-        <label><input id="relief" type="checkbox" checked> سایه‌روشن سطح</label>
-        <label><input id="terrain" type="checkbox" checked> پستی‌وبلندی واقعی (DEM)</label>
-        <label>مقیاس برجستگی <select id="terrainExaggeration"><option value="1" selected>واقعی ×۱</option><option value="2">×۲</option><option value="4">×۴</option></select></label>
-      </div>
-      <section class="entity-panel" aria-label="جست‌وجو و فیلتر نشانگرهای سه‌بعدی رسپهر">
-        <div class="entity-head">
-          <strong>مکان‌های ثبت‌شده در رسپهر</strong>
-          <label class="entity-toggle"><input id="markerToggle" type="checkbox" checked> نمایش نشانگرها</label>
-        </div>
-        <p id="markerStatus" role="status" aria-live="polite">در حال آماده‌سازی داده‌های مکان‌ها…</p>
-        <div class="stage3-search">
-          <label for="entitySearch">جست‌وجوی نام، شهر، کشور یا شناسه</label>
-          <input id="entitySearch" type="search" placeholder="مثلاً ناسا، چابهار یا NASA" autocomplete="off">
-          <label for="entityCountry">انتخاب کشور یا قلمرو ثبت‌شده</label>
-          <select id="entityCountry"><option value="">همه کشورها و قلمروها</option></select>
-          <button id="entityClear" type="button">پاک‌کردن فیلترها</button>
-          <button id="countryProfileBtn" type="button" disabled>نمایش شناسنامه کامل کشور</button>
-        </div>
-        <div class="category-tools"><strong>فیلتر ۱۴ دسته</strong><button id="categoryAll" type="button">همه</button><button id="categoryNone" type="button">هیچ‌کدام</button></div>
-        <p class="entity-note">هر مکان فقط یک نشانگر دارد؛ بعضی سازمان‌ها در چند دسته حضور دارند. برای ۲۳ پرونده، نقاط مرجع تقریبی با برچسب دقت نمایش داده می‌شوند؛ این نقاط جای دفتر یا سکوی قطعی نیستند.</p>
-        <div id="entityLegend" class="entity-legend" aria-label="انتخاب دسته‌های نشانگرها"></div>
-        <p id="entityResultCount" role="status" aria-live="polite" class="entity-summary"></p>
-        <div id="entityResults" class="entity-results" aria-label="نتایج جست‌وجو" hidden></div>
-        <article id="clusterCard" class="entity-card" hidden>
-          <strong id="clusterSummary"></strong>
-          <p class="entity-note">نشانگرهای نزدیک در نمای فعلی به یک خوشه تبدیل شده‌اند.</p>
-          <button id="clusterFocusBtn" type="button">بزرگ‌نمایی روی این خوشه</button>
-          <div id="clusterMembers" class="entity-results cluster-members"></div>
-          <p id="clusterMore" class="entity-note"></p>
-        </article>
-        <article id="entityCard" class="entity-card" hidden aria-live="polite">
-          <strong id="entityLabel"></strong>
-          <small id="entityEn"></small>
-          <p id="entityCat"></p>
-          <p id="entityLocation"></p>
-          <p id="entityCoord" dir="ltr"></p>
-          <p id="entityPrecision"></p>
-          <small id="entityId" dir="ltr"></small>
-          <button id="markerFocusBtn" type="button">تمرکز دوربین روی این مکان</button>
-          <button id="entityFullProfile" type="button" class="stage4-open-btn">مشاهده شناسنامه کامل و گالری</button>
-        </article>
-      </section>
-      <div class="status-box">
-        <div id="performanceStatus" role="status" aria-live="polite">تنظیم عملکرد بر اساس دستگاه</div>
-        <div id="engineStatus">در انتظار شروع</div>
-        <div id="qualityStatus">در انتظار بارگذاری</div>
-        <div id="terrainStatus" role="status" aria-live="polite">زمین مسطح تا بارگذاری DEM</div>
-        <button id="terrainRetry" type="button" hidden>تلاش مجدد برای دریافت داده ارتفاعی</button>
-        <div class="terrain-attribution"><a href="https://registry.opendata.aws/terrain-tiles/" target="_blank" rel="noopener noreferrer">داده‌های ارتفاعی: Mapzen / AWS Terrain Tiles</a></div>
-        <div id="viewName">جهانی</div>
-        <div id="fps">۰ FPS</div>
-        <div id="altitude">۰ km</div>
-        <div id="sunPoint">۰° / ۰°</div>
-      </div>
-      <div id="errorBox" hidden>
-        <p id="errorMessage"></p>
-        <button id="retryBtn" hidden type="button">تلاش دوباره</button>
-      </div>
+
+        <section class="atlas-section" id="atlasExplore" data-atlas-view="explore" aria-label="جست‌وجو و کاوش">
+          <div class="atlas-section-title"><div><small>کشف جهان فضایی</small><h2>کجا را می‌خواهید ببینید؟</h2></div><span class="atlas-section-glyph" aria-hidden="true">⌕</span></div>
+          <div class="atlas-start-card" aria-label="شروع سریع کاوش">
+            <div class="atlas-start-heading"><strong>از اینجا شروع کنید</strong><small>یک موضوع انتخاب کنید تا نشانگرهای مرتبط روی کره نمایش داده شوند.</small></div>
+            <div class="atlas-quick-categories" role="group" aria-label="مسیرهای آماده کاوش">
+              <button type="button" data-category-preset="site"><span aria-hidden="true">◉</span><strong>پایگاه‌های پرتاب</strong><small>نمایش ۷۹ پایگاه ثبت‌شده</small></button>
+              <button type="button" data-category-preset="agency"><span aria-hidden="true">✧</span><strong>سازمان‌های فضایی</strong><small>جست‌وجو در مراکز فضایی</small></button>
+              <button type="button" data-category-preset="starter" class="is-active" aria-pressed="true"><span aria-hidden="true">◎</span><strong>نمای پیشنهادی</strong><small>پایگاه‌ها و سازمان‌ها</small></button>
+            </div>
+            <button class="atlas-show-all" type="button" data-category-preset="all">نمایش همه دسته‌های نقشه <span aria-hidden="true">←</span></button>
+          </div>
+          <div class="entity-panel atlas-explore-panel">
+            <div class="stage3-search">
+              <label for="entitySearch">نام مکان، سازمان یا پایگاه را جست‌وجو کنید</label>
+              <input id="entitySearch" type="search" placeholder="مثلا چابهار، ناسا یا اسپیس‌ایکس" autocomplete="off">
+              <label for="entityCountry">کشور یا قلمرو</label>
+              <select id="entityCountry"><option value="">همه کشورها و قلمروها</option></select>
+              <div class="atlas-search-actions">
+                <button id="entityClear" type="button">پاک‌کردن فیلترها</button>
+                <button id="countryProfileBtn" type="button" disabled>شناسنامه کشور</button>
+              </div>
+            </div>
+            <p id="entityResultCount" role="status" aria-live="polite" class="entity-summary"></p>
+            <div id="entityResults" class="entity-results" aria-label="نتایج جست‌وجو" hidden></div>
+            <section class="atlas-recent" id="atlasRecentLocations" aria-label="مکان‌های اخیرا دیده‌شده" hidden>
+              <div class="atlas-recent-heading"><strong>مکان‌های همین بازدید</strong><button id="atlasRecentClear" type="button">پاک‌کردن</button></div>
+              <p>برای بازگشت به مکان‌هایی که همین حالا دیده‌اید.</p>
+              <div id="atlasRecentList" class="atlas-recent-list"></div>
+            </section>
+            <article id="clusterCard" class="entity-card" hidden>
+              <strong id="clusterSummary"></strong>
+              <p class="entity-note">نشانگرهای نزدیک در نمای فعلی به یک خوشه تبدیل شده‌اند.</p>
+              <button id="clusterFocusBtn" type="button">بزرگ‌نمایی روی این خوشه</button>
+              <div id="clusterMembers" class="entity-results cluster-members"></div>
+              <p id="clusterMore" class="entity-note"></p>
+            </article>
+          </div>
+          <details class="atlas-disclosure atlas-regions">
+            <summary><span>پرش سریع به مناطق جهان</span><small>۸ نمای آماده</small></summary>
+            <div class="preset-grid">
+              <button data-preset="world" class="is-active">جهانی</button>
+              <button data-preset="asia">آسیا</button>
+              <button data-preset="europe">اروپا</button>
+              <button data-preset="americas">آمریکا</button>
+              <button data-preset="middleeast">خاورمیانه</button>
+              <button data-preset="africa">آفریقا</button>
+              <button data-preset="northpole">قطب شمال</button>
+              <button data-preset="antarctica">جنوبگان</button>
+            </div>
+          </details>
+          <details class="atlas-disclosure atlas-howto">
+            <summary><span>راهنمای حرکت روی کره</span><small>موبایل و دسکتاپ</small></summary>
+            <div class="atlas-howto-copy"><p>برای چرخاندن کره، روی آن بکشید. با دو انگشت یا دکمه‌های + و − زوم کنید. با دکمه بازنشانی به نمای جهانی برگردید.</p><p>روی نشانگر یا خوشه بزنید تا مکان‌های آن محدوده و شناسنامه‌ها را ببینید. برای دیدن عکس واقعی پایگاه، در کارت مکان گزینه «دیدن محیط پایگاه» را انتخاب کنید، اگر تصویر آن موجود باشد.</p><p>تصاویر فعلی عکس ثابت هستند؛ امکان چرخش واقعی ۳۶۰ درجه فقط برای مکان‌هایی نمایش داده خواهد شد که داده مناسب داشته باشند.</p></div>
+          </details>
+        </section>
+
+        <section class="atlas-section" id="atlasLayers" data-atlas-view="layers" aria-label="مدیریت لایه‌ها">
+          <div class="atlas-section-title"><div><small>محتوای نقشه</small><h2>چه چیزهایی دیده شوند؟</h2></div><span class="atlas-section-glyph" aria-hidden="true">▧</span></div>
+          <div class="entity-panel atlas-layers-panel">
+            <div class="entity-head">
+              <strong>نشانگرهای فضایی</strong>
+              <label class="entity-toggle"><input id="markerToggle" type="checkbox" checked> نمایش روی کره</label>
+            </div>
+            <p id="markerStatus" role="status" aria-live="polite">در حال آماده‌سازی داده‌های مکان‌ها…</p>
+            <p id="atlasLayerSelectionCount" class="atlas-layer-count" role="status" aria-live="polite">نمای پیشنهادی: سازمان‌ها و پایگاه‌های پرتاب</p>
+            <div class="category-tools"><strong>۱۴ دسته موضوعی</strong><div><button id="categoryAll" type="button">انتخاب همه</button><button id="categoryNone" type="button">حذف همه</button></div></div>
+            <div id="entityLegend" class="entity-legend" aria-label="انتخاب دسته‌های نشانگرها"></div>
+          </div>
+          <details class="atlas-disclosure">
+            <summary><span>دقت جغرافیایی و نحوه نمایش</span><small>راهنمای داده‌ها</small></summary>
+            <p class="entity-note">هر مکان فقط یک نشانگر دارد؛ بعضی سازمان‌ها در چند دسته حضور دارند. برای ۲۳ پرونده، نقاط مرجع تقریبی با برچسب دقت نمایش داده می‌شوند؛ این نقاط جای دفتر یا سکوی قطعی نیستند.</p>
+          </details>
+        </section>
+
+        <section class="atlas-section" id="atlasSettings" data-atlas-view="settings" aria-label="تنظیمات نمایش و جزئیات فنی">
+          <div class="atlas-section-title"><div><small>تنظیم تجربه</small><h2>زمین را به سلیقه خود ببینید</h2></div><span class="atlas-section-glyph" aria-hidden="true">⚙</span></div>
+          <div class="atlas-group-heading"><strong>ظاهر کره</strong><small>تغییرات بلافاصله اعمال می‌شوند</small></div>
+          <div class="option-grid">
+            <label><input id="lighting" type="checkbox" checked> نورپردازی</label>
+            <label><input id="clouds" type="checkbox" checked> ابرها</label>
+            <label><input id="rotation" type="checkbox"> چرخش خودکار</label>
+            <label><input id="stars" type="checkbox" checked> ستارگان</label>
+            <label><input id="grid" type="checkbox"> شبکه مختصات</label>
+            <label><input id="relief" type="checkbox" checked> سایه‌روشن سطح</label>
+            <label><input id="terrain" type="checkbox" checked> پستی‌وبلندی واقعی</label>
+            <label class="atlas-exaggeration">ارتفاع برجستگی<select id="terrainExaggeration"><option value="1" selected>واقعی ×۱</option><option value="2">×۲</option><option value="4">×۴</option></select></label>
+          </div>
+          <div class="atlas-group-heading"><strong>کیفیت و مصرف منابع</strong><small>حالت هوشمند پیشنهاد می‌شود</small></div>
+          <div class="toolbar-row">
+            <label>عملکرد
+              <select id="performanceMode" aria-label="حالت عملکرد سه‌بعدی">
+                <option value="auto" selected>هوشمند</option>
+                <option value="economy">کم‌مصرف</option>
+                <option value="balanced">متعادل</option>
+                <option value="detail">جزئیات بیشتر</option>
+              </select>
+            </label>
+            <label>کیفیت بافت
+              <select id="quality" disabled>
+                <option value="low">۲K</option>
+                <option value="balanced" selected>۴K</option>
+                <option value="high">۸K</option>
+              </select>
+            </label>
+          </div>
+          <details class="atlas-disclosure atlas-technical" id="atlasTechnicalDetails">
+            <summary><span>اطلاعات تخصصی و عیب‌یابی</span><small>برای کاربران حرفه‌ای</small></summary>
+            <div class="status-box">
+              <div id="performanceStatus" role="status" aria-live="polite">تنظیم عملکرد بر اساس دستگاه</div>
+              <div id="engineStatus">در انتظار شروع</div>
+              <div id="qualityStatus">در انتظار بارگذاری</div>
+              <div id="terrainStatus" role="status" aria-live="polite">زمین مسطح تا بارگذاری DEM</div>
+              <button id="terrainRetry" type="button" hidden>تلاش مجدد برای دریافت داده ارتفاعی</button>
+              <div class="terrain-attribution"><a href="https://registry.opendata.aws/terrain-tiles/" target="_blank" rel="noopener noreferrer">داده‌های ارتفاعی: Mapzen / AWS Terrain Tiles</a></div>
+              <div>نمای فعلی: <span id="viewName">جهانی</span></div>
+              <div id="fps">۰ FPS</div>
+              <div id="altitude">۰ km</div>
+              <div id="sunPoint">۰° / ۰°</div>
+            </div>
+            <article id="entityCard" class="entity-card atlas-technical-record" hidden aria-live="polite">
+              <strong id="entityLabel"></strong>
+              <small id="entityEn"></small>
+              <p id="entityCat"></p>
+              <p id="entityLocation"></p>
+              <p id="entityCoord" dir="ltr"></p>
+              <p id="entityPrecision"></p>
+              <small id="entityId" dir="ltr"></small>
+              <button id="markerFocusBtn" type="button">تمرکز دوربین روی این مکان</button>
+              <button id="entityFullProfile" type="button" class="stage4-open-btn">مشاهده شناسنامه کامل و گالری</button>
+            </article>
+          </details>
+        </section>
       </div>
     </section>
     <section class="globe-panel">
+      <nav class="atlas-globe-toolbar" aria-label="کنترل سریع کره سه‌بعدی">
+        <button id="atlasPanelOpen" type="button" class="atlas-globe-tool atlas-panel-reopen" aria-label="بازکردن پنل کاوش" title="پنل کاوش" aria-controls="mobileMainSheet" hidden>☷</button>
+        <div class="atlas-zoom-tools" role="group" aria-label="بزرگ‌نمایی و بازنشانی کره">
+          <button id="zoomIn" class="atlas-globe-tool" type="button" aria-label="بزرگ‌نمایی کره" title="بزرگ‌نمایی">+</button>
+          <button id="zoomOut" class="atlas-globe-tool" type="button" aria-label="کوچک‌نمایی کره" title="کوچک‌نمایی">−</button>
+          <button id="resetBtn" class="atlas-globe-tool" type="button" aria-label="بازگشت به نمای جهانی" title="نمای جهانی">⌖</button>
+        </div>
+        <button id="stage5BackToMap" class="atlas-globe-tool atlas-map-return" type="button" hidden>بازگشت به نقشه دوبعدی</button>
+      </nav>
       <nav class="mobile-map-shortcuts" id="mobileMapShortcuts" aria-label="دسترسی سریع روی نقشه" hidden>
         <button type="button" data-mobile-quick="filters" aria-controls="mobileMainSheet">⌕ جست‌وجو</button>
         <button type="button" data-mobile-quick="place" id="mobileMapPlace" aria-controls="mobileMainSheet" disabled>◎ مکان</button>
@@ -136,6 +204,7 @@
       </nav>
       <div class="stage6-scene-meta" aria-hidden="true"><span>EARTH / GEO ATLAS</span><span class="stage6-live-dot">نمای تعاملی</span></div>
       <div id="globeMount"></div>
+      <p id="atlasMapNotice" class="atlas-map-notice" role="status" aria-live="polite" hidden></p>
       <aside id="selectedLocationCard" class="selected-location-card" aria-live="polite" aria-label="اطلاعات مکان انتخاب‌شده" hidden>
         <header class="selected-location-head">
           <div class="selected-location-title">
@@ -145,41 +214,59 @@
           </div>
           <button id="selectedLocationClose" type="button" aria-label="بستن اطلاعات مکان">×</button>
         </header>
-        <p id="selectedLocationCategory" class="selected-location-category"></p>
-        <p id="selectedLocationPlace" class="selected-location-place"></p>
-        <div class="selected-location-meta">
-          <span id="selectedLocationCoordinates" dir="ltr"></span>
-          <span id="selectedLocationPrecision"></span>
-        </div>
-        <div class="selected-location-actions">
-          <button id="selectedLocationProfile" type="button" class="selected-location-primary">شناسنامه کامل و گالری</button>
-          <button id="selectedLocationFocus" type="button">تمرکز دوباره</button>
+        <div class="atlas-place-essentials">
+          <p id="selectedLocationCategory" class="selected-location-category"></p>
+          <p id="selectedLocationPlace" class="selected-location-place"></p>
+          <div class="atlas-position-status" role="group" aria-label="وضعیت دقت مکان">
+            <span id="atlasLocationPosition" class="atlas-position-label">در حال بررسی مختصات</span>
+            <span id="atlasLocationPositionNote" class="atlas-position-note"></span>
+          </div>
         </div>
         <div class="site-view-preview" id="siteViewPreview" hidden>
           <button class="site-view-preview-button" id="siteViewPreviewOpen" type="button" aria-haspopup="dialog" aria-controls="siteViewDialog">
-            <img id="siteViewPreviewImage" alt="" loading="lazy" decoding="async">
-            <strong id="siteViewPreviewTitle">تصاویر محلی پایگاه</strong>
+            <div class="atlas-place-photo-wrap">
+              <img id="siteViewPreviewImage" alt="" loading="lazy" decoding="async">
+              <span class="atlas-photo-pill">عکس واقعی · نمای ثابت</span>
+            </div>
+            <strong id="siteViewPreviewTitle">دیدن محیط پایگاه</strong>
             <span id="siteViewPreviewNote" class="site-view-preview-note"></span>
           </button>
         </div>
-        <div class="selected-location-facility-tools">
+        <p id="atlasPlaceMissingImage" class="atlas-image-unavailable" hidden>برای این پایگاه هنوز نمای محیطی محلی قابل نمایش ثبت نشده است. شناسنامه کامل و سایر اطلاعات آن در دسترس است.</p>
+        <div class="selected-location-actions atlas-place-main-actions">
+          <button id="selectedLocationProfile" type="button" class="selected-location-primary">شناسنامه و گالری کامل</button>
+          <button id="selectedLocationFocus" type="button">تمرکز روی نقشه</button>
+        </div>
+        <div class="atlas-place-quick-actions" role="group" aria-label="اقدامات سریع مکان">
+          <button id="atlasCopyCoordinates" type="button" aria-describedby="atlasPlaceActionStatus">کپی مختصات</button>
+          <button id="atlasBackToExplore" type="button">بازگشت به کاوش</button>
+        </div>
+        <p id="atlasPlaceActionStatus" class="atlas-action-feedback" role="status" aria-live="polite"></p>
+        <div class="selected-location-facility-tools atlas-facility-primary">
           <button id="selectedLocationFacility" type="button" hidden>نمای نزدیک تصاویر و تأسیسات</button>
           <button id="selectedLocationFacilityExit" type="button" hidden>بازگشت به نمای معمول کره</button>
+        </div>
+        <details class="atlas-place-details">
+          <summary>مختصات، دقت داده و منابع فنی</summary>
+          <div class="selected-location-meta">
+            <span id="selectedLocationCoordinates" dir="ltr"></span>
+            <span id="selectedLocationPrecision"></span>
+          </div>
           <p id="selectedLocationFacilityStatus" role="status" aria-live="polite">نمای نزدیک تأسیسات پس از انتخاب یک مکان واجد مختصات معتبر در دسترس است.</p>
           <details class="selected-location-facility-details">
-            <summary>جزئیات تصویر، منبع و ساختمان‌های نقشه</summary>
+            <summary>اطلاعات تصویر زمین‌مرجع و ساختمان‌های نقشه</summary>
             <p id="selectedLocationFacilityMeta" class="selected-location-facility-meta" hidden></p>
             <a id="selectedLocationFacilitySource" class="selected-location-facility-source" href="#" target="_blank" rel="noopener noreferrer" hidden>مشاهده منبع تصویر</a>
           </details>
           <div class="selected-location-attribution">
             <span id="selectedLocationFacilityAttribution">تصویر: OpenAerialMap / OIN · نقشه: OpenStreetMap</span>
-            <span>·</span>
             <a href="https://openaerialmap.org/" target="_blank" rel="noopener noreferrer">OpenAerialMap</a>
             <span>·</span>
             <a href="https://www.openstreetmap.org/copyright" target="_blank" rel="noopener noreferrer">© OpenStreetMap contributors · ODbL</a>
           </div>
-        </div>
+        </details>
       </aside>
+      <div id="errorBox" hidden role="alert"><p id="errorMessage"></p><button id="retryBtn" hidden type="button">تلاش دوباره</button></div>
       <div id="sceneIntro">نمونه مستقل برای توسعه نقشه سه‌بعدی رسپهر</div>
       <div id="loading"><div>در حال بارگذاری</div><div id="loadingDetail">در حال آماده‌سازی</div></div>
     </section>
@@ -227,17 +314,18 @@
   <script src="assets/js/terrain-source.js?v=20261125-p6"></script>
   <script src="assets/js/terrain-dem.js?v=20261125-p6"></script>
   <script src="assets/js/stage6-performance.js?v=20261125-p6"></script>
-  <script src="assets/js/globe-engine.js?v=20261125-p6"></script>
+  <script src="assets/js/globe-engine.js?v=20261125-atlas-v8"></script>
   <script src="assets/js/entity-data.js?v=20261125-p6"></script>
-  <script src="assets/js/entity-markers.js?v=20261125-p6"></script>
+  <script src="assets/js/entity-markers.js?v=20261125-atlas-v6"></script>
   <script src="assets/js/entity-explore.js?v=20261125-p6"></script>
-  <script src="assets/js/entity-stage3-ui.js?v=20261125-p6"></script>
+  <script src="assets/js/entity-stage3-ui.js?v=20261125-atlas-v6"></script>
   <script src="assets/js/entity-stage4-dossier.js?v=20261125-p6"></script>
   <script src="assets/js/local-facility-view.js?v=20261125-imagery-fix1"></script>
   <script src="../assets/js/raspehr-stage5-state.js?v=20261125-p6"></script>
-  <script src="assets/js/stage5-integration.js?v=20261125-p6"></script>
-  <script src="assets/js/site-views.js?v=20261125-gallery1"></script>
+  <script src="assets/js/stage5-integration.js?v=20261125-atlas-v7"></script>
+  <script src="assets/js/site-views.js?v=20261125-atlas-panel-v3"></script>
+  <script src="assets/js/place-journey-v4.js?v=20261125-place-v4"></script>
   <script src="assets/js/prototype.js?v=20261125-imagery-fix1"></script>
-  <script src="assets/js/mobile-bottom-sheet.js?v=20261125-p6"></script>
+  <script src="assets/js/mobile-bottom-sheet.js?v=20261125-atlas-panel-v3"></script>
 </body>
 </html>

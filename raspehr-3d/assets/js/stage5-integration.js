@@ -10,9 +10,14 @@
  function reply(type,fields){global.parent.postMessage(Object.assign({channel:'RASPEHR_STAGE5',type},fields||{}),origin);}
  function current(){
   const g=engine.target,scale=180/Math.PI;
+  // A snapshot mid-flight must reflect the pose actually on screen, not the
+  // future target: otherwise returning to 2D causes a geographic jump.
+  const pose=engine.cameraFlight && engine.globeGroup && engine.camera
+   ? {rx:engine.globeGroup.rotation.x,ry:engine.globeGroup.rotation.y,distance:engine.camera.position.z}
+   : g;
   const data=controller.getState();
   return model.normalize(Object.assign({},data,{
-   camera:{lat:g.rx*scale,lon:model.wrapLon(-90-g.ry*scale),zoom:model.distanceToZoom(g.distance)},
+   camera:{lat:pose.rx*scale,lon:model.wrapLon(-90-pose.ry*scale),zoom:model.distanceToZoom(pose.distance)},
    profile:global.RaspehrStage4?.getState()||null
   }));
  }

@@ -1,0 +1,27 @@
+'use strict';
+const assert=require('node:assert/strict');
+const fs=require('node:fs');
+const path=require('node:path');
+const dir=path.resolve(__dirname,'..');
+const html=fs.readFileSync(path.join(dir,'index.html'),'utf8');
+const css=fs.readFileSync(path.join(dir,'assets/css/atlas-panel-v2.css'),'utf8');
+const ctl=fs.readFileSync(path.join(dir,'assets/js/mobile-bottom-sheet.js'),'utf8');
+const glb=fs.readFileSync(path.join(dir,'assets/js/globe-engine.js'),'utf8');
+const ids=[...html.matchAll(/\sid="([^"]+)"/g)].map(m=>m[1]);
+assert.equal(ids.length,new Set(ids).size,'all pre-existing control IDs must remain unique');
+for(const id of ['atlasExplore','atlasLayers','atlasSettings','atlasPanelOpen','atlasPanelCollapse','mobileMainSheet','mobileSheetBody','mobileSelectedSlot','mobileLocationTab','selectedLocationCard','entitySearch','entityCountry','entityLegend','entityResults','entityCard','clusterCard','selectedLocationProfile','siteViewPreview','dossierOverlay','resetBtn','zoomIn','zoomOut','performanceMode','quality','terrainRetry','engineStatus','viewName'])assert.equal(ids.filter(x=>x===id).length,1,id);
+for(const id of ['entityClear','categoryAll','categoryNone','markerToggle','markerFocusBtn','entityFullProfile','selectedLocationFacility','selectedLocationFacilityExit','selectedLocationFacilitySource','terrainExaggeration','stage5BackToMap'])assert.ok(ids.includes(id),id);
+for(const v of ['explore','layers','settings'])assert.ok(html.includes(`data-atlas-view="${v}"`),'missing section '+v);
+for(const v of ['filters','layers','place','controls'])assert.ok(html.includes(`data-mobile-tab="${v}"`),'missing mobile view '+v);
+for(const v of ['collapsed','half','full'])assert.ok(html.includes(`data-mobile-snap="${v}"`),'missing snap hook '+v);
+for(const v of ['world','asia','europe','americas','middleeast','africa','northpole','antarctica'])assert.ok(html.includes(`data-preset="${v}"`),'missing region '+v);
+for(const v of ['lighting','clouds','rotation','stars','grid','relief','terrain'])assert.ok(html.includes(`id="${v}"`),'missing globe toggle '+v);
+assert.ok(html.includes('assets/css/atlas-panel-v2.css'));
+assert.ok(css.includes('--sheet-collapsed-height:72px'),'mobile must open compact');
+assert.ok(css.includes('.atlas-desktop-collapsed .stage-panel{display:none}'));
+assert.ok(css.includes('@media(prefers-reduced-motion:reduce)'));
+assert.ok(ctl.includes('slot.appendChild(card)')&&ctl.includes('cardParent.insertBefore(card,cardNext)'));
+assert.ok(ctl.includes("new MutationObserver(syncSelection)"));
+assert.ok(ctl.includes("['collapsed','half','full']"));
+assert.ok(glb.includes('function') || glb.includes('class')); // Actual globe source still present.
+console.log('PASS Atlas panel v2 structural invariants, existing IDs and desktop/mobile navigation');

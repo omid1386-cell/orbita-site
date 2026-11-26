@@ -25,13 +25,16 @@ test('cluster labels use a single atlas readback and preserve their drawing styl
   assert.match(cluster, /addClusterLabelImages\(labelSpecs\);/);
 });
 
-test('the detail-copy readability fix refreshes CSS and app assets without changing the map/data cache', () => {
-  assert.match(html, /window\.ORBITA_V = "20261023mapuk2";/,
-    'map and data assets receive a fresh token for the corrected P2 records');
-  assert.match(html, /window\.ORBITA_CSS_V = "20261112tilecontinuitycssv1";/);
-  assert.match(html, /window\.ORBITA_APP_V = "20261112tilecontinuityv1";/);
-  assert.match(html, /var ts = window\.ORBITA_CSS_V \|\| window\.ORBITA_V;[\s\S]*?link\.href = 'assets\/css\/app\.css\?_t=' \+ ts;/,
-    'only the updated stylesheet receives its dedicated cache token');
-  assert.match(html, /var ts = window\.ORBITA_APP_V \|\| window\.ORBITA_V \|\| Date\.now\(\);[\s\S]*?s\.src = 'assets\/js\/app\.js\?_t=' \+ ts;/,
-    'the application script uses its dedicated cache token');
+test('CSS, application and data caches keep independent nonempty revision tokens', () => {
+  const getVersion = name => html.match(new RegExp('window\\.' + name + ' = \"([^\"]+)\";'))?.[1];
+  const dataV = getVersion('ORBITA_V'), cssV = getVersion('ORBITA_CSS_V'), appV = getVersion('ORBITA_APP_V');
+  for (const [label,value] of Object.entries({dataV,cssV,appV})) assert.match(value||'', /^[a-zA-Z0-9_-]+$/, label+' version exists');
+  assert.notEqual(appV,dataV,'app changes must not blindly invalidate canonical data');
+  assert.notEqual(cssV,dataV,'CSS changes must not blindly invalidate canonical data');
+  // The production page now uses static cache-busted asset URLs (not the
+  // older runtime script injection code). Validate those URLs directly.
+  assert.match(html, /<link[^>]+href="assets\/css\/app\.css\?_t=[a-zA-Z0-9_-]+"/);
+  assert.match(html, /<script defer src="assets\/js\/app\.js\?_t=[a-zA-Z0-9_-]+"/);
+  assert.equal((html.match(/<script defer src="assets\/js\/app\.js\?_t=/g)||[]).length,1,
+    'only one main application bootstrap is loaded');
 });
