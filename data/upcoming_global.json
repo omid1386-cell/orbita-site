@@ -3,40 +3,19 @@
   "source": "Launch Library 2 (The Space Devs), v2.3.0",
   "scope": "all_upcoming_launches_reported_by_source",
   "coverage_status": "complete_from_source_at_fetch_time",
-  "updated_utc": "2026-11-26T03:39:56Z",
-  "window_start_utc": "2026-11-26T03:39:56Z",
-  "window_end_utc_exclusive": "2027-03-26T03:39:56Z",
+  "updated_utc": "2026-11-26T15:28:40Z",
+  "window_start_utc": "2026-11-26T15:28:40Z",
+  "window_end_utc_exclusive": "2027-03-26T15:28:40Z",
   "horizon_days": 120,
-  "count": 68,
+  "count": 67,
   "pages_fetched": 1,
   "country_quality": {
-    "operator_covered": 67,
-    "operator_with_id": 68,
-    "site_covered": 68,
-    "site_with_pad_id": 68
+    "operator_covered": 66,
+    "operator_with_id": 67,
+    "site_covered": 67,
+    "site_with_pad_id": 67
   },
   "launches": [
-    {
-      "ll2_id": "b00f0e9a-48d6-4f26-9cb5-7d19169ff7c4",
-      "event_kind": "launch",
-      "net": "2026-11-26T09:35:00Z",
-      "net_precision": "Hour",
-      "status": "Go",
-      "status_name": "Go for Launch",
-      "launch_name": "Long March 2D | Unknown Payload",
-      "rocket_name": "Long March 2D",
-      "mission_name": "Unknown Payload",
-      "mission_type": "Unknown",
-      "operator_id": 88,
-      "operator_name": "China Aerospace Science and Technology Corporation",
-      "operator_country_code": "CHN",
-      "pad_id": 66,
-      "pad_name": "Launch Complex 3 (LC-3/LA-1)",
-      "location_id": 16,
-      "location_name": "Xichang Satellite Launch Center, People's Republic of China",
-      "launch_country_code": "CHN",
-      "last_updated": "2026-11-25T13:35:20Z"
-    },
     {
       "ll2_id": "2093e4fc-ac8c-4296-a1b5-deececee6a72",
       "event_kind": "launch",
@@ -119,7 +98,7 @@
       "location_id": 11,
       "location_name": "Vandenberg SFB, CA, USA",
       "launch_country_code": "USA",
-      "last_updated": "2026-11-20T21:29:36Z"
+      "last_updated": "2026-11-26T11:45:38Z"
     },
     {
       "ll2_id": "d74afbc7-0de5-491c-be05-4e9c31f736ac",
@@ -140,7 +119,7 @@
       "location_id": 12,
       "location_name": "Cape Canaveral SFS, FL, USA",
       "launch_country_code": "USA",
-      "last_updated": "2026-11-25T17:21:30Z"
+      "last_updated": "2026-11-26T11:44:54Z"
     },
     {
       "ll2_id": "9e27a1ed-e81a-4918-b32b-0380cf3a9f8f",
