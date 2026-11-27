@@ -1,0 +1,66 @@
+{
+  "base": "V21-RC1",
+  "release": "V22",
+  "files": [
+    {
+      "path": "RELEASE_DOCS/RASPEHR_UX_V22_PRIORITY2_3/CHANGE_MANIFEST.json",
+      "size": 1455,
+      "sha256": "b1e7acdd9360a5daf66817b59945268a632f425c6ea8f00769dffacaca6b6f5c"
+    },
+    {
+      "path": "RELEASE_DOCS/RASPEHR_UX_V22_PRIORITY2_3/HANDOFF_FA.md",
+      "size": 27107,
+      "sha256": "64a0a7da3c2281e75174ea802c187489e28b52279e74dc6810589462a4e90770"
+    },
+    {
+      "path": "RELEASE_DOCS/RASPEHR_UX_V22_PRIORITY2_3/QA_REPORT_FA.md",
+      "size": 9634,
+      "sha256": "a0cf8e3289ad208050e368cf77fb1b45a0a6ba8664f762a8e248e4f8849c7ba8"
+    },
+    {
+      "path": "RELEASE_DOCS/RASPEHR_UX_V22_PRIORITY2_3/README_APPLY_FA.md",
+      "size": 2293,
+      "sha256": "38d0a83d719fa64f3c82409d2e5c06aa11039e2065e6591377baf6b01fe4267f"
+    },
+    {
+      "path": "RELEASE_DOCS/RASPEHR_UX_V22_PRIORITY2_3/SHA256SUMS.txt",
+      "size": 1198,
+      "sha256": "c1c7b112420be775b6d456a51c1ce532c1d81a9e0fadc99cb85feb629b7422c7"
+    },
+    {
+      "path": "RELEASE_DOCS/RASPEHR_UX_V22_PRIORITY2_3/STATE.json",
+      "size": 769,
+      "sha256": "993a522c3bd85c1d698d19e7c30834e3771cf80d3ad2f83a84544e9c7de07976"
+    },
+    {
+      "path": "assets/js/raspehr-stage5-switch.js",
+      "size": 4454,
+      "sha256": "e1f7ec861cfb4ef75bd6202b5bdd6a81572105749d3208194d8a5e8c594628fe"
+    },
+    {
+      "path": "index.html",
+      "size": 68620,
+      "sha256": "d2409ec4fccef2d8597f3d84e2e2ed783c9e0b588784184a98239977ef36cc01"
+    },
+    {
+      "path": "raspehr-3d/assets/css/atlas-viewport-v22.css",
+      "size": 3047,
+      "sha256": "30c3826b324723d548247026931ec6866bacbec51abb655447b052cf18613dba"
+    },
+    {
+      "path": "raspehr-3d/assets/js/globe-engine.js",
+      "size": 62096,
+      "sha256": "0a90ce8594b6fc0d0c926d2ace7d75cd939f71d44ad9d641d46b4c17f228f075"
+    },
+    {
+      "path": "raspehr-3d/index.html",
+      "size": 30475,
+      "sha256": "a65a47b4c7e0a17f1157e0fc7bb1129ba85254409de52552070f2cd037d73c63"
+    },
+    {
+      "path": "raspehr-3d/tests/viewport_v22_browser.py",
+      "size": 9717,
+      "sha256": "cebfe19f934a923025cf2c1e875e573106da1babf54dad1928d2005b41260080"
+    }
+  ]
+}

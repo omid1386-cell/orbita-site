@@ -1,0 +1,3 @@
+برای بازگشت کامل به V21، پس از بازگرداندن چهار فایل موجود در ROLLBACK_TO_V21، این دو فایل جدید را حذف کنید:
+- raspehr-3d/assets/css/atlas-viewport-v22.css
+- raspehr-3d/tests/viewport_v22_browser.py

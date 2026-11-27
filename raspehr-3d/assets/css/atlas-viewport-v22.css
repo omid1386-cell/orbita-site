@@ -1,0 +1,118 @@
+/* RASPEHR V22 — visible-viewport globe centering + compact zoom controls.
+   The engine applies a matching PerspectiveCamera view offset while the
+   mobile bottom sheet overlaps the map. These rules only change control UI. */
+#globeMount canvas{
+  display:block;
+  width:100%!important;
+  height:100%!important;
+}
+
+.atlas-globe-toolbar{
+  top:82px;
+  inset-inline-start:auto;
+  inset-inline-end:12px;
+  align-items:flex-start;
+  gap:7px;
+  max-width:none;
+}
+.atlas-zoom-tools{
+  display:flex;
+  flex-direction:row;
+  align-items:center;
+  justify-content:center;
+  gap:0;
+  padding:0;
+  border:0;
+  border-radius:999px;
+  background:transparent;
+  box-shadow:none;
+  backdrop-filter:none;
+}
+.atlas-globe-toolbar .atlas-globe-tool{
+  display:grid;
+  place-items:center;
+  flex:0 0 auto;
+  width:38px;
+  height:38px;
+  min-width:38px;
+  min-height:38px;
+  padding:0;
+  border:0;
+  border-radius:50%;
+  background:radial-gradient(circle at center,rgba(21,47,64,.97) 0 12px,transparent 12.8px);
+  color:#fff1d5;
+  font-size:17px;
+  font-weight:650;
+  line-height:1;
+  box-shadow:none;
+  touch-action:manipulation;
+}
+.atlas-globe-toolbar .atlas-globe-tool:hover{
+  border:0;
+  background:radial-gradient(circle at center,rgba(38,75,96,.98) 0 12px,transparent 12.8px);
+}
+.atlas-globe-toolbar .atlas-globe-tool:focus-visible{
+  outline:2px solid #f0c77c;
+  outline-offset:1px;
+}
+.atlas-globe-toolbar #atlasPanelOpen{
+  border:0;
+  background:radial-gradient(circle at center,rgba(17,47,65,.98) 0 13px,transparent 13.8px);
+  font-size:17px;
+}
+.atlas-globe-toolbar .atlas-map-return{
+  width:auto;
+  height:auto;
+  min-width:0;
+  min-height:34px;
+  max-width:118px;
+  padding:6px 9px;
+  border:1px solid rgba(217,178,109,.35);
+  border-radius:999px;
+  background:rgba(8,27,43,.88);
+  font-size:9px;
+  line-height:1.4;
+  white-space:nowrap;
+}
+
+@media(max-width:700px){
+  body.mobile-sheet-ready .atlas-globe-toolbar{
+    top:max(100px,calc(88px + env(safe-area-inset-top)));
+    inset-inline-start:auto;
+    inset-inline-end:9px;
+    gap:6px;
+  }
+  body.mobile-sheet-ready .atlas-zoom-tools{
+    gap:0;
+    padding:0;
+    border:0;
+    border-radius:999px;
+    background:transparent;
+    box-shadow:none;
+    backdrop-filter:none;
+  }
+  body.mobile-sheet-ready .atlas-globe-toolbar .atlas-globe-tool{
+    width:44px;
+    height:44px;
+    min-width:44px;
+    min-height:44px;
+    font-size:17px;
+    background:radial-gradient(circle at center,rgba(21,47,64,.97) 0 14px,transparent 14.8px);
+  }
+  body.mobile-sheet-ready .atlas-globe-toolbar .atlas-globe-tool:hover{
+    background:radial-gradient(circle at center,rgba(38,75,96,.98) 0 14px,transparent 14.8px);
+  }
+  body.mobile-sheet-ready .atlas-globe-toolbar #atlasPanelOpen{
+    font-size:17px;
+    background:radial-gradient(circle at center,rgba(17,47,65,.98) 0 14px,transparent 14.8px);
+  }
+  body.mobile-sheet-ready .atlas-globe-toolbar .atlas-map-return{
+    width:auto;
+    height:auto;
+    min-width:0;
+    min-height:40px;
+    max-width:116px;
+    padding:6px 8px;
+    font-size:9px;
+  }
+}

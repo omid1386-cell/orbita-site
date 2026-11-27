@@ -260,6 +260,19 @@
       this.installLifecycle();
       this.observer = new ResizeObserver(() => this.resize());
       this.observer.observe(this.host);
+      // The mobile sheet overlays the globe without changing the globe host's
+      // size. Observe its height and state so the camera can center the Earth
+      // in the actually visible map area, not behind the sheet.
+      const mobileSheet = document.getElementById('mobileMainSheet');
+      if (mobileSheet) {
+        this.sheetObserver = new ResizeObserver(() => this.resize());
+        this.sheetObserver.observe(mobileSheet);
+        this.layoutObserver = new MutationObserver(() => {
+          if (!this.stopped) global.requestAnimationFrame(() => this.resize());
+        });
+        this.layoutObserver.observe(document.body, {attributes:true, attributeFilter:['class']});
+        this.layoutObserver.observe(mobileSheet, {attributes:true, attributeFilter:['data-mobile-snap']});
+      }
 
       this.preset('world');
       this.setQuality(this.perfPolicy.quality, false);
@@ -993,12 +1006,40 @@
       }
     }
 
+    getMobileSheetCameraOffset(height) {
+      if (!global.matchMedia || !global.matchMedia('(max-width: 700px)').matches) return 0;
+      if (!document.body.classList.contains('mobile-sheet-ready')) return 0;
+      const panel = document.getElementById('mobileMainSheet');
+      if (!panel || panel.dataset.mobileSnap === 'full') return 0;
+      const hostRect = this.host.getBoundingClientRect();
+      const panelRect = panel.getBoundingClientRect();
+      // Only compensate for a bottom-attached sheet that actually overlaps
+      // the globe canvas. A side panel or unrelated floating card is ignored.
+      if (Math.abs(hostRect.bottom - panelRect.bottom) > 4) return 0;
+      const overlapTop = Math.max(hostRect.top, panelRect.top);
+      const overlapBottom = Math.min(hostRect.bottom, panelRect.bottom);
+      const covered = Math.max(0, overlapBottom - overlapTop);
+      if (covered < 1) return 0;
+      // A vertical camera view offset moves the globe upward by half the
+      // covered area, placing its projected center at the center of the
+      // remaining map viewport. Cap it for unusually tall sheets.
+      return clamp(covered * 0.5, 0, height * 0.28);
+    }
+
     resize() {
       if (!this.renderer || !this.host) return;
       const w = this.host.clientWidth, h = this.host.clientHeight;
       if (w < 1 || h < 1) return;
       this.camera.aspect = w / h;
-      this.camera.updateProjectionMatrix();
+      const offsetY = this.getMobileSheetCameraOffset(h);
+      const previous = this.viewportLayout || {width:0,height:0,offsetY:NaN};
+      const changed = previous.width !== w || previous.height !== h || Math.abs(previous.offsetY - offsetY) > 0.5;
+      if (changed) {
+        if (offsetY > 0.5) this.camera.setViewOffset(w, h, 0, offsetY, w, h);
+        else if (this.camera.view && this.camera.view.enabled) this.camera.clearViewOffset();
+        else this.camera.updateProjectionMatrix();
+        this.viewportLayout = {width:w,height:h,offsetY};
+      }
       this.renderer.setSize(w, h, false);
     }
 
@@ -1114,6 +1155,8 @@
       this.active = false;
       if (this.raf) cancelAnimationFrame(this.raf);
       if (this.observer) this.observer.disconnect();
+      if (this.sheetObserver) this.sheetObserver.disconnect();
+      if (this.layoutObserver) this.layoutObserver.disconnect();
       this.textureToken++;
       if (this.terrainController) this.terrainController.abort();
       if (this.terrainData) this.terrainData.clear();
