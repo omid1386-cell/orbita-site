@@ -126,6 +126,13 @@
 .launch-mission-dialog .launch-mission-filter-summary{display:block;margin-top:11px;padding:7px 10px;border:1px solid rgba(93,172,190,.23);border-radius:8px;background:rgba(10,36,51,.8);font-size:10px;line-height:1.6;color:#c5dce2;overflow-wrap:anywhere}
 .launch-mission-dialog .global-launch-results{padding:14px;gap:11px;min-height:0;overflow-y:auto;flex:1;scrollbar-width:thin;scrollbar-color:#2b5669 transparent}
 .launch-mission-dialog .global-launch-card{position:relative;padding:13px 15px 14px;overflow:hidden;border:1px solid rgba(102,168,192,.2);border-radius:14px;background:linear-gradient(125deg,rgba(18,49,66,.91),rgba(6,27,43,.92));box-shadow:inset 3px 0 0 rgba(224,182,110,.58),0 3px 14px rgba(0,9,17,.16)}
+/* V23: launch cards must keep their intrinsic height in the constrained desktop
+   results scroller. Without flex-shrink:0, a long flight list collapses each
+   article to a thin strip and overflow:hidden clips the title/date/metadata.
+   Scope to launch results only: landing cards and their styles stay intact. */
+#globalLaunchDialog .global-launch-results > .global-launch-card{
+  flex:0 0 auto;
+}
 .launch-mission-dialog[dir="rtl"] .global-launch-card{box-shadow:inset -3px 0 0 rgba(224,182,110,.58),0 3px 14px rgba(0,9,17,.16)}
 .launch-mission-dialog .global-launch-card:hover{border-color:rgba(239,198,126,.49);background:linear-gradient(125deg,rgba(23,59,77,.95),rgba(9,34,51,.92))}
 .launch-mission-dialog .launch-mission-card-index{display:flex;align-items:center;gap:9px;margin-bottom:9px;color:var(--lm-gold);font:600 9px/1.4 ui-monospace,monospace;letter-spacing:.08em}
@@ -203,6 +210,26 @@
   .launch-mission-dialog .global-launch-card-top{flex-wrap:wrap}
   .launch-mission-dialog .global-launch-card-date{max-width:100%;align-items:flex-start}
 }
+/* V23: a short laptop viewport must not sacrifice the entire flight feed to
+   the decorative hero and tall explanatory header. Keep all mission metadata;
+   only compact non-essential header chrome in the launch dialog. */
+@media (min-width:761px) and (max-height:650px){
+  #globalLaunchDialog.launch-mission-dialog{height:calc(100dvh - 12px);max-height:calc(100dvh - 12px)}
+  #globalLaunchDialog .global-launch-head{min-height:0;padding:9px 18px 8px}
+  #globalLaunchDialog .global-launch-head p,
+  #globalLaunchDialog .launch-mission-head-tags,
+  #globalLaunchDialog .launch-mission-hero-art{display:none}
+  #globalLaunchDialog .global-launch-head h2{font-size:20px;line-height:1.35}
+  #globalLaunchDialog .launch-mission-overline{margin-bottom:4px}
+  #globalLaunchDialog .global-launch-content{padding:8px;gap:9px}
+  #globalLaunchDialog .global-launch-results-head{padding:8px 11px}
+  #globalLaunchDialog .launch-mission-feed-label{margin-bottom:4px}
+  #globalLaunchDialog .global-launch-results-head-actions{padding-top:2px}
+  #globalLaunchDialog .launch-mission-filter-summary{margin-top:4px;padding:5px 8px}
+  #globalLaunchDialog .event-display-info-strip{padding:5px 11px;gap:2px}
+  #globalLaunchDialog .global-launch-results{padding:8px;gap:8px}
+}
+
 @media(prefers-reduced-motion:reduce){
   .launch-mission-dock,.launch-mission-dock *, .launch-mission-dialog *{transition:none!important;animation:none!important}
 }

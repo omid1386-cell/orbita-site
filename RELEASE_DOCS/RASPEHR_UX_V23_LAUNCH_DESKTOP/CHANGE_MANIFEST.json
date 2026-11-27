@@ -1,0 +1,41 @@
+{
+  "version": "V23",
+  "base_version": "V22",
+  "date": "2026-11-27",
+  "scope": "launch desktop card flex shrink and short viewport compact header; no data/JS changes",
+  "files": {
+    "index.html": {
+      "size": 68636,
+      "sha256": "274e25c53f54e9ccf9fe911b1b9b4272008a55c2cf54011c073b197a0adc7974"
+    },
+    "assets/css/launch-mission-ui.css": {
+      "size": 26968,
+      "sha256": "f1341c437359c60d1145dea4de012580ce14d286e57e78f5fc44092d7755211b"
+    },
+    "qa/v23_launch_card_visibility_browser_qa.py": {
+      "size": 9231,
+      "sha256": "6c421535a112bfb675693b900addc28532beb7d45cb9185241225a6bdd09cbc0"
+    }
+  },
+  "unresolved_baseline": {
+    "two_d": {
+      "total": 195,
+      "pass": 148,
+      "fail_legacy": 47
+    },
+    "three_d": {
+      "total": 70,
+      "pass": 68,
+      "fail_legacy_hash": 2
+    }
+  },
+  "new_qa": {
+    "passed": 99,
+    "total": 99,
+    "old_qa_passed": 31,
+    "old_qa_total": 31
+  },
+  "photos_unchanged": 48,
+  "place_count": 420,
+  "link_count": 1260
+}
