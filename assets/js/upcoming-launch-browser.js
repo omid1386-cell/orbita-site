@@ -18,6 +18,36 @@
   var openButton = $("#upcomingLaunchesBtn");
   if (!dialog || !openButton) return;
 
+  // Step 2 (V18): the dedicated 2D-map dock is hidden by the 3D overlay.
+  // The landing launcher lives in the persistent topbar and remains usable.
+  // Install an equivalent desktop-only launch entry there, linked to this
+  // SAME dialog and SAME data/filter pipeline; do not duplicate the dialog.
+  // Creating it at runtime leaves protected index.html byte-identical.
+  function ensureDesktopLaunchButton() {
+    var tabs = document.querySelector('.topbar .tabs');
+    if (!tabs) return null;
+    var current = $("#upcomingLaunchesDesktopBtn");
+    if (current) return current;
+    var button = document.createElement('button');
+    button.id = 'upcomingLaunchesDesktopBtn';
+    button.className = 'tab upcoming-launch-desktop-tab';
+    button.type = 'button';
+    button.setAttribute('aria-haspopup', 'dialog');
+    button.setAttribute('aria-controls', 'globalLaunchDialog');
+    button.setAttribute('aria-expanded', 'false');
+    button.innerHTML = '<span aria-hidden="true">🚀</span><span id="upcomingLaunchesDesktopText">پرتاب‌های پیش‌رو</span>';
+    var landing = $("#upcomingLandingsBtn");
+    tabs.insertBefore(button, landing && landing.parentElement === tabs ? landing : null);
+    return button;
+  }
+  var desktopButton = ensureDesktopLaunchButton();
+  var launchButtons = [openButton];
+  if (desktopButton) launchButtons.push(desktopButton);
+
+  function syncLauncherState(expanded) {
+    launchButtons.forEach(function (button) { button.setAttribute('aria-expanded', String(!!expanded)); });
+  }
+
   var state = {
     data: null,
     countries: null,
@@ -212,8 +242,12 @@
     var dockEyebrow = $("#launchMissionDockEyebrow");
     if (dockTitle) dockTitle.textContent = tr("open");
     if (dockEyebrow) dockEyebrow.textContent = tr("dockEyebrow");
-    openButton.setAttribute("aria-label", tr("open"));
-    openButton.setAttribute("title", tr("open"));
+    launchButtons.forEach(function (button) {
+      button.setAttribute("aria-label", tr("open"));
+      button.setAttribute("title", tr("open"));
+    });
+    var desktopLabel = $("#upcomingLaunchesDesktopText");
+    if (desktopLabel) desktopLabel.textContent = tr("open");
     var textMap = {
       "#globalLaunchEyebrow": "eyebrow", "#globalLaunchTitle": "title", "#globalLaunchIntro": "intro",
       "#globalLaunchTimeLabel": "time", "#globalLaunchCountryLabel": "country",
@@ -434,21 +468,23 @@
 
   function openDialog() {
     if (!dialog.open) dialog.showModal();
+    syncLauncherState(true);
     renderChrome();
     if (!state.countriesPromise) loadCountries().then(renderChrome);
     if (!state.data && !state.dataPromise) loadLaunchData(!!state.error);
   }
 
-  openButton.addEventListener("click", openDialog);
+  launchButtons.forEach(function (button) { button.addEventListener("click", openDialog); });
   $("#globalLaunchClose").addEventListener("click", function () { dialog.close(); });
   $("#globalLaunchReload").addEventListener("click", function () { loadLaunchData(true); });
   dialog.addEventListener("click", function (event) {
     if (event.target === dialog) dialog.close();
   });
-  dialog.addEventListener("close", function () { openButton.setAttribute("aria-expanded", "false"); });
-  dialog.addEventListener("cancel", function () { openButton.setAttribute("aria-expanded", "false"); });
-  dialog.addEventListener("close", function () { openButton.blur(); });
-  openButton.addEventListener("click", function () { openButton.setAttribute("aria-expanded", "true"); });
+  dialog.addEventListener("close", function () {
+    syncLauncherState(false);
+    launchButtons.forEach(function (button) { button.blur(); });
+  });
+  dialog.addEventListener("cancel", function () { syncLauncherState(false); });
 
   $("#globalLaunchPeriods").addEventListener("click", function (event) {
     var button = event.target.closest("button[data-days]");

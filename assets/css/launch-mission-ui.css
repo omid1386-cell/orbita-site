@@ -220,3 +220,15 @@
  .launch-mission-dialog .launch-mission-mobile-results strong{min-width:25px;padding:2px 7px;border-radius:6px;background:rgba(20,40,52,.18);font-variant-numeric:tabular-nums}
  .launch-mission-dialog .launch-mission-mobile-results svg{width:15px;height:15px}
 }
+
+/* RASPEHR UX Step 2 / V18: desktop 2D and 3D use a single persistent header entry.
+   Mobile keeps the original dock and existing interaction completely unchanged. */
+.upcoming-launch-desktop-tab{display:inline-flex;align-items:center;gap:6px;white-space:nowrap}
+.upcoming-launch-desktop-tab[aria-expanded="true"]{color:var(--accent);border-color:var(--accent);background:color-mix(in srgb,var(--accent) 13%,transparent)}
+@media(min-width:761px){
+  #view-map > .launch-mission-dock{display:none!important}
+  .topbar .upcoming-launch-desktop-tab{display:inline-flex}
+}
+@media(max-width:760px){
+  .topbar .upcoming-launch-desktop-tab{display:none!important}
+}

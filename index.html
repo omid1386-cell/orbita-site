@@ -43,24 +43,25 @@
 </style>
 <link rel="stylesheet" href="assets/vendor/maplibre-gl.css?v=3" />
 <link rel="stylesheet" href="assets/css/app.css?_t=20261121-global-launch-browser-step3-4" />
-<link rel="stylesheet" href="assets/css/launch-mission-ui.css?v=20261121-redesign-v1" />
+<link rel="stylesheet" href="assets/css/launch-mission-ui.css?v=20261127-ux-v21" />
 <link rel="stylesheet" href="assets/css/upcoming-event-display.css?v=20261121-step7" />
+<link rel="stylesheet" href="assets/css/raspehr-event-parity-v21.css?v=20261127-ux-v21" />
 <link rel="stylesheet" href="assets/css/media-gallery.css?v=20261121-stage3-v1" />
 <link rel="stylesheet" href="assets/css/raspehr-profile-host.css?v=20261123-stage4" />
-<link rel="stylesheet" href="assets/css/raspehr-stage5-switch.css?v=20261123-stage5">
+<link rel="stylesheet" href="assets/css/raspehr-stage5-switch.css?v=20261127-ux-v21">
 <!-- Ordered defer scripts download in parallel instead of creating a network waterfall. -->
 <script defer src="assets/js/raspehr-splash.js?v=20261113-speed-v1"></script>
 <script defer src="assets/vendor/maplibre-gl.js?v=3"></script>
 <script defer src="assets/js/raspehr-stage5-state.js?v=20261123-stage5"></script>
-<script defer src="assets/js/app.js?_t=20261123-stage8-app-final-v1"></script>
-<script defer src="assets/js/raspehr-stage5-switch.js?v=20261125-local-gallery1"></script>
+<script defer src="assets/js/app.js?_t=20261127-ux-v21"></script>
+<script defer src="assets/js/raspehr-stage5-switch.js?v=20261127-ux-v21"></script>
 <script defer src="assets/js/media-bank.js?v=20261121-stage2-v1"></script>
 <script defer src="assets/js/media-gallery.js?v=20261121-stage3-v1"></script>
 <script defer src="assets/js/raspehr-profile-bridge.js?v=20261123-stage4"></script>
 <script defer src="assets/js/upcoming-launch-filters.js?v=20261121-step3-4"></script>
 <script defer src="assets/js/upcoming-event-display.js?v=20261121-step7"></script>
-<script defer src="assets/js/upcoming-launch-browser.js?v=20261121-step7"></script>
-<script defer src="assets/js/upcoming-landing-browser.js?v=20261121-step7"></script>
+<script defer src="assets/js/upcoming-launch-browser.js?v=20261127-ux-v21"></script>
+<script defer src="assets/js/upcoming-landing-browser.js?v=20261127-ux-v21"></script>
 <script>
   // Only the dedicated 3D dossier iframe enters profile-only mode.
   // Normal 2D users keep the exact same application and map boot behavior.
@@ -368,18 +369,31 @@
 </dialog>
 
 <!-- ============ WORLDWIDE UPCOMING LANDINGS ============ -->
-<dialog id="globalLandingDialog" class="global-launch-dialog" aria-labelledby="globalLandingTitle" aria-describedby="globalLandingIntro">
+<dialog id="globalLandingDialog" class="global-launch-dialog launch-mission-dialog raspehr-landing-parity" aria-labelledby="globalLandingTitle" aria-describedby="globalLandingIntro">
   <div class="global-launch-shell">
     <header class="global-launch-head">
+      <div class="launch-mission-hero-art" aria-hidden="true">
+        <svg viewBox="0 0 550 220" preserveAspectRatio="xMidYMid slice" focusable="false">
+          <defs><radialGradient id="landingPlanetGlow"><stop offset="0" stop-color="#1E8A9F" stop-opacity=".45"/><stop offset="1" stop-color="#0D2940" stop-opacity="0"/></radialGradient></defs>
+          <ellipse cx="350" cy="180" rx="220" ry="170" fill="url(#landingPlanetGlow)"/>
+          <circle cx="360" cy="230" r="155" fill="#0A3047" fill-opacity=".72" stroke="#D6AB60" stroke-opacity=".48" stroke-width="1.5"/>
+          <circle cx="360" cy="230" r="173" fill="none" stroke="#51B7CF" stroke-opacity=".18" stroke-dasharray="3 7"/>
+          <path d="M70 65C182 172 335 157 486 94" fill="none" stroke="#E5B866" stroke-width="1.4" stroke-dasharray="8 8" opacity=".7"/>
+          <path d="M405 53l-8 18h16l-8-18m0 18v32" fill="none" stroke="#64DEEA" stroke-width="2"/>
+          <circle cx="405" cy="116" r="5" fill="#F0C16B"/>
+        </svg>
+      </div>
       <div class="global-launch-heading">
-        <span id="globalLandingEyebrow" class="global-launch-eyebrow">پایش جهانی فرود‌ها</span>
-        <h2 id="globalLandingTitle">فهرست جهانی فرود‌های پیش‌رو</h2>
-        <p id="globalLandingIntro">فرود‌های اعلام‌شده در سراسر جهان را بر اساس بازه زمانی و کشور فیلتر کنید.</p>
+        <div class="launch-mission-overline"><span class="launch-mission-overline-dot" aria-hidden="true"></span><span id="globalLandingEyebrow" class="global-launch-eyebrow">پایش جهانی فرودها</span><span class="launch-mission-overline-code" dir="ltr">RASPEHR / LANDING OPS</span></div>
+        <h2 id="globalLandingTitle">فهرست جهانی فرودهای پیش‌رو</h2>
+        <p id="globalLandingIntro">فرودهای اعلام‌شده در سراسر جهان را بر اساس بازه زمانی و کشور فیلتر کنید.</p>
+        <div class="launch-mission-head-tags" aria-hidden="true"><span>GLOBAL LANDING WATCH</span><span>07D — 120D</span></div>
       </div>
       <button id="globalLandingClose" class="global-launch-close" type="button" aria-label="بستن">×</button>
     </header>
     <div class="global-launch-content">
       <section class="global-launch-filter-panel" aria-label="فیلتر فرود‌ها">
+        <div class="launch-mission-panel-label"><span id="raspehrLandingFilterHeading">تنظیمات رصد</span><span class="launch-mission-panel-number" dir="ltr">01 / FILTER</span></div>
         <div class="global-launch-filter-block">
           <h3 id="globalLandingTimeLabel">بازه زمانی</h3>
           <div id="globalLandingPeriods" class="global-launch-periods" role="group" aria-labelledby="globalLandingTimeLabel">
@@ -414,6 +428,7 @@
       </section>
       <section class="global-launch-results-panel" aria-labelledby="globalLandingResultsHeading">
         <header class="global-launch-results-head">
+          <div class="launch-mission-feed-label"><span class="launch-mission-signal-line" aria-hidden="true"></span><span id="raspehrLandingFeedLabel">جریان فرودها</span><span class="launch-mission-feed-code" dir="ltr">02 / FEED</span></div>
           <div>
             <h3 id="globalLandingResultsHeading">نتایج <span id="globalLandingResultCount" class="global-launch-result-count" aria-live="polite">—</span></h3>
             <div class="event-display-update-row"><small id="globalLandingUpdated" class="event-display-updated"></small><span id="globalLandingFreshness" class="event-display-freshness" role="status"></span></div>

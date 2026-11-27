@@ -42,7 +42,7 @@ test('the 3D module remains lazy-loaded; the original 2D map stays mounted', () 
 });
 
 test('changed app JavaScript is cache-busted without altering the data cache key', () => {
-  const token='20261123-stage8-app-final-v1';
+  const token='20261127-ux-v21'; // UX Step 5: updated bootstrap cache token; runtime data version remains unchanged
   assert.ok(html.includes('assets/js/app.js?_t='+token));
   assert.ok(html.includes('window.ORBITA_APP_V = "20261114-map-zoom-performance-step3-v1"')); // preserve data/runtime version
   assert.ok(html.includes('window.ORBITA_COMPANIES_V = "20261114-step4-manufacturer-logos-v1"'));

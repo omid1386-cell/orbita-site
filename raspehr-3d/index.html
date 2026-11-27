@@ -11,6 +11,7 @@
   <link rel="stylesheet" href="assets/css/place-journey-v4.css?v=20261125-place-v4">
   <link rel="stylesheet" href="assets/css/interaction-stability-v5.css?v=20261125-stability-v5">
   <link rel="stylesheet" href="assets/css/external-map-links-v1.css?v=20261126-v16-final-release">
+  <link rel="stylesheet" href="assets/css/atlas-ux-step4-v20.css?v=20261127-v20">
 </head>
 <body>
   <main class="app-shell">
@@ -28,6 +29,7 @@
         <button type="button" data-atlas-tab="explore" class="is-active" aria-pressed="true"><span aria-hidden="true">⌕</span> کاوش</button>
         <button type="button" data-atlas-tab="layers" aria-pressed="false"><span aria-hidden="true">▧</span> لایه‌ها</button>
         <button type="button" data-atlas-tab="settings" aria-pressed="false"><span aria-hidden="true">⚙</span> نمایش</button>
+        <button type="button" id="atlasDesktopPlaceTab" aria-pressed="false" aria-controls="mobileSelectedSlot" disabled hidden><span aria-hidden="true">◎</span> مکان</button>
       </nav>
       <div class="mobile-sheet-header" id="mobileSheetHeader" hidden>
         <button id="mobileSheetHandle" class="mobile-sheet-handle" type="button" aria-label="گسترش یا جمع کردن پنل؛ با کشیدن به بالا یا پایین" aria-controls="mobileSheetBody"><span aria-hidden="true"></span></button>
@@ -55,15 +57,14 @@
         <div id="mobileSelectedSlot" class="mobile-selected-slot" aria-label="مکان انتخاب‌شده"></div>
 
         <section class="atlas-section" id="atlasExplore" data-atlas-view="explore" aria-label="جست‌وجو و کاوش">
-          <div class="atlas-section-title"><div><small>کشف جهان فضایی</small><h2>کجا را می‌خواهید ببینید؟</h2></div><span class="atlas-section-glyph" aria-hidden="true">⌕</span></div>
-          <div class="atlas-start-card" aria-label="شروع سریع کاوش">
-            <div class="atlas-start-heading"><strong>از اینجا شروع کنید</strong><small>یک موضوع انتخاب کنید تا نشانگرهای مرتبط روی کره نمایش داده شوند.</small></div>
-            <div class="atlas-quick-categories" role="group" aria-label="مسیرهای آماده کاوش">
-              <button type="button" data-category-preset="site"><span aria-hidden="true">◉</span><strong>پایگاه‌های پرتاب</strong><small>نمایش ۷۹ پایگاه ثبت‌شده</small></button>
-              <button type="button" data-category-preset="agency"><span aria-hidden="true">✧</span><strong>سازمان‌های فضایی</strong><small>جست‌وجو در مراکز فضایی</small></button>
-              <button type="button" data-category-preset="starter" class="is-active" aria-pressed="true"><span aria-hidden="true">◎</span><strong>نمای پیشنهادی</strong><small>پایگاه‌ها و سازمان‌ها</small></button>
+          <!-- Compact discovery: retain all preset controls without the redundant welcome panel. -->
+          <div class="atlas-start-card atlas-explore-shortcuts" aria-label="فیلترهای سریع کاوش">
+            <div class="atlas-quick-categories" role="group" aria-label="انتخاب سریع نوع مکان">
+              <button type="button" data-category-preset="site"><span aria-hidden="true">◉</span><strong>پایگاه‌ها</strong></button>
+              <button type="button" data-category-preset="agency"><span aria-hidden="true">✧</span><strong>سازمان‌ها</strong></button>
+              <button type="button" data-category-preset="starter" class="is-active" aria-pressed="true"><span aria-hidden="true">◎</span><strong>پیشنهادی</strong></button>
+              <button type="button" data-category-preset="all" class="atlas-show-all"><span aria-hidden="true">▦</span><strong>همه دسته‌ها</strong></button>
             </div>
-            <button class="atlas-show-all" type="button" data-category-preset="all">نمایش همه دسته‌های نقشه <span aria-hidden="true">←</span></button>
           </div>
           <div class="entity-panel atlas-explore-panel">
             <div class="stage3-search">
@@ -223,6 +224,10 @@
             <span id="atlasLocationPositionNote" class="atlas-position-note"></span>
           </div>
         </div>
+        <div class="selected-location-actions atlas-place-main-actions">
+          <button id="selectedLocationProfile" type="button" class="selected-location-primary">شناسنامه و گالری کامل</button>
+          <button id="selectedLocationFocus" type="button">تمرکز روی نقشه</button>
+        </div>
         <div class="site-view-preview" id="siteViewPreview" hidden>
           <button class="site-view-preview-button" id="siteViewPreviewOpen" type="button" aria-haspopup="dialog" aria-controls="siteViewDialog">
             <div class="atlas-place-photo-wrap">
@@ -234,14 +239,13 @@
           </button>
         </div>
         <p id="atlasPlaceMissingImage" class="atlas-image-unavailable" hidden>برای این پایگاه هنوز نمای محیطی محلی قابل نمایش ثبت نشده است. شناسنامه کامل و سایر اطلاعات آن در دسترس است.</p>
-        <div class="selected-location-actions atlas-place-main-actions">
-          <button id="selectedLocationProfile" type="button" class="selected-location-primary">شناسنامه و گالری کامل</button>
-          <button id="selectedLocationFocus" type="button">تمرکز روی نقشه</button>
-        </div>
-        <div class="atlas-place-quick-actions" role="group" aria-label="اقدامات سریع مکان">
-          <button id="atlasCopyCoordinates" type="button" aria-describedby="atlasPlaceActionStatus">کپی مختصات</button>
-          <button id="atlasBackToExplore" type="button">بازگشت به کاوش</button>
-        </div>
+        <details class="atlas-place-utility-details">
+          <summary>اقدامات بیشتر</summary>
+          <div class="atlas-place-quick-actions" role="group" aria-label="اقدامات سریع مکان">
+            <button id="atlasCopyCoordinates" type="button" aria-describedby="atlasPlaceActionStatus">کپی مختصات</button>
+            <button id="atlasBackToExplore" type="button">بازگشت به کاوش</button>
+          </div>
+        </details>
         <details class="atlas-external-maps" id="atlasExternalMaps" hidden>
           <summary><span class="atlas-external-maps-icon" aria-hidden="true">↗</span><span>مشاهده در نقشه‌های دیگر<small>گوگل مپس و گوگل ارث · سرویس خارجی</small></span></summary>
           <div class="atlas-external-maps-body">
@@ -343,5 +347,6 @@
   <script src="assets/js/external-map-links-v1.js?v=20261126-v16-final-release"></script>
   <script src="assets/js/prototype.js?v=20261125-imagery-fix1"></script>
   <script src="assets/js/mobile-bottom-sheet.js?v=20261125-atlas-panel-v3"></script>
+  <script src="assets/js/atlas-ux-step4-v20.js?v=20261127-v20"></script>
 </body>
 </html>

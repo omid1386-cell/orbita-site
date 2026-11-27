@@ -1,0 +1,38 @@
+{
+  "project": "RASPEHR",
+  "stage": "UX Step 3 / V19",
+  "date": "2026-11-27",
+  "optimization": {
+    "before_full_sources_bytes": 7132381,
+    "before_full_sources_gzip_bytes": 1967211,
+    "after_index_bytes": 709794,
+    "after_index_gzip_bytes": 175580,
+    "source_request_reduction_factor_raw": 10.05,
+    "source_request_reduction_factor_gzip": 11.2,
+    "index_records": {
+      "company_dossiers_excluding_canonical_aliases": 320,
+      "sites": 79,
+      "recoveries": 20
+    },
+    "new_local_logo_assets": 24
+  },
+  "protected": {
+    "unchanged": 886,
+    "total": 887,
+    "intentional_exception": [
+      "assets/js/app.js"
+    ],
+    "protected_launch_site_photos_unchanged": 48,
+    "original_source_data_unchanged": true,
+    "index_html_unchanged": true
+  },
+  "tests": {
+    "new_node_fast_index": "PASS",
+    "browser_lazy_tab_checks": "72/72 PASS",
+    "browser_parity": "18/18 cases × 14 tabs PASS",
+    "two_dimensional_regressions": "144/191; 47 historical failures unchanged",
+    "three_dimensional_regressions": "69/70; one V9 immutable-app.js guard expected to fail because app.js deliberately changed",
+    "live_deployment_test": "NOT RUN"
+  },
+  "release_note": "V19 is a cumulative local work version. Update app.js cache query and revalidate live in final release Step 5."
+}

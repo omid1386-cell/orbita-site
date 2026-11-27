@@ -212,6 +212,17 @@
     label.textContent = tr("open");
     openButton.appendChild(icon);
     openButton.appendChild(label);
+    // UX V21: the matching navy mission-room labels follow the active locale.
+    var parityLabels = {
+      fa: ["تنظیمات رصد", "جریان فرودها"],
+      en: ["Mission filters", "Landing feed"],
+      ar: ["مرشحات المهمة", "سجل الهبوط"]
+    };
+    var parity = parityLabels[language] || parityLabels.fa;
+    var filterHeading = $("#raspehrLandingFilterHeading");
+    var feedLabel = $("#raspehrLandingFeedLabel");
+    if (filterHeading) filterHeading.textContent = parity[0];
+    if (feedLabel) feedLabel.textContent = parity[1];
     var textMap = {
       "#globalLandingEyebrow": "eyebrow", "#globalLandingTitle": "title", "#globalLandingIntro": "intro",
       "#globalLandingTimeLabel": "time", "#globalLandingCountryLabel": "country",

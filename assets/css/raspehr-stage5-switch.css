@@ -9,3 +9,13 @@
 body.raspehr-stage5-active #view-map > :not(#raspehrStage5Dock):not(#raspehr3dOverlay):not(#map){visibility:hidden;pointer-events:none}
 body.raspehr-stage5-active #view-map #map{visibility:hidden;pointer-events:none}
 @media(max-width:700px){.raspehr-stage5-dock{top:auto;bottom:64px;inset-inline-end:8px}.raspehr-stage5-dock button{padding:8px 10px;font-size:11px;min-height:40px}}
+
+/* UX fix step 1 (V17): the view toggle belongs to an unobstructed 2D map,
+   never above a country/company/site dossier, image viewer or dialog.
+   The embedded globe owns the single return-to-2D action. */
+body.raspehr-stage5-active #raspehrStage5Dock,
+body.raspehr-stage5-detail-open #raspehrStage5Dock,
+#view-map:has(> #detail.open) > #raspehrStage5Dock,
+body:has(dialog[open]) #raspehrStage5Dock {
+ display:none!important;
+}

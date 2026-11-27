@@ -1,0 +1,110 @@
+/* RASPEHR V20 | Stage 4 UX: compact exploration, accessible map controls,
+ * desktop docked place details and the unchanged mobile three-snap bottom sheet.
+ * Dedicated override file keeps legacy 3D styling available for regression review.
+ */
+:root{--atlas-ux-control:39px}
+.atlas-start-card.atlas-explore-shortcuts{
+  padding:0;margin:0 0 12px;border:0;border-radius:0;background:transparent;
+}
+.stage-panel .atlas-explore-shortcuts .atlas-quick-categories{
+  display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:5px;
+}
+.stage-panel .atlas-explore-shortcuts .atlas-quick-categories button{
+  min-height:49px;min-width:0;padding:7px 3px;display:flex;align-items:center;
+  justify-content:center;flex-direction:column;gap:2px;border-radius:10px;
+  background:rgba(13,37,55,.7);border:1px solid rgba(174,203,218,.18);
+}
+.stage-panel .atlas-explore-shortcuts .atlas-quick-categories button>span{font-size:15px;line-height:1.1}
+.stage-panel .atlas-explore-shortcuts .atlas-quick-categories button strong{
+  font-size:10px;line-height:1.4;white-space:normal;text-align:center;
+}
+.stage-panel .atlas-explore-shortcuts .atlas-show-all{margin:0;width:auto;font-size:10px}
+.stage-panel .atlas-explore-shortcuts .atlas-quick-categories button.is-active{
+  border-color:rgba(234,194,119,.72);background:rgba(222,183,109,.17);
+}
+/* Place controls on the physical left, away from the right-side dossier rail.
+   Tighten visual size without shrinking mobile touch targets below ~44px. */
+.atlas-globe-toolbar{
+  inset-inline-start:auto;inset-inline-end:14px;
+  top:82px;gap:7px;max-width:164px;
+}
+.atlas-zoom-tools{padding:3px;gap:3px;border-radius:12px}
+.atlas-globe-toolbar .atlas-globe-tool{
+  min-width:var(--atlas-ux-control);min-height:var(--atlas-ux-control);
+  width:var(--atlas-ux-control);height:var(--atlas-ux-control);
+  padding:4px;font-size:19px;border-radius:9px;
+}
+.atlas-globe-toolbar #atlasPanelOpen{font-size:18px}
+.atlas-globe-toolbar .atlas-map-return{
+  width:auto;height:auto;max-width:128px;padding:8px 10px;
+  font-size:10px;line-height:1.45;min-height:38px;
+}
+/* Secondary actions remain available, but only after explicit expansion. */
+.selected-location-card .atlas-place-utility-details{
+  border:1px solid rgba(175,203,222,.15);border-radius:10px;
+  background:rgba(8,28,44,.45);margin-top:9px;
+}
+.selected-location-card .atlas-place-utility-details>summary{
+  list-style:none;cursor:pointer;color:#b9cddb;font-size:11px;
+  min-height:37px;display:flex;align-items:center;padding:8px 11px;
+}
+.selected-location-card .atlas-place-utility-details>summary::-webkit-details-marker{display:none}
+.selected-location-card .atlas-place-utility-details>summary:after{
+  content:'⌄';margin-inline-start:auto;color:#e3c389;font-size:17px;
+}
+.selected-location-card .atlas-place-utility-details[open]>summary:after{transform:rotate(180deg)}
+.selected-location-card .atlas-place-utility-details .atlas-place-quick-actions{
+  margin:0;padding:0 9px 9px;
+}
+.selected-location-card .atlas-place-utility-details summary:focus-visible{
+  outline:2px solid #efc47a;outline-offset:2px;
+}
+.selected-location-card .atlas-place-essentials{margin-top:4px}
+.selected-location-card .atlas-place-main-actions{margin-top:8px}
+.selected-location-card .site-view-preview{margin-top:9px}
+/* On desktop the existing SINGLE card is relocated to the existing sidebar slot,
+   not cloned or overlaid on the globe. Other navigation tabs remain available. */
+@media(min-width:701px){
+  .stage-panel .atlas-desktop-nav:has(#atlasDesktopPlaceTab:not([hidden])){
+    grid-template-columns:repeat(4,minmax(0,1fr));
+  }
+  .stage-panel .atlas-desktop-nav button{font-size:11px;gap:4px}
+  .stage-panel .mobile-selected-slot{display:none}
+  body.atlas-desktop-place-active .stage-panel .mobile-selected-slot{display:block}
+  body.atlas-desktop-place-active .stage-panel .atlas-section{display:none!important}
+  .stage-panel .mobile-selected-slot .selected-location-card{
+    position:relative;inset:auto;width:100%;max-width:100%;max-height:none;
+    margin:0;padding:12px;border-radius:14px;overflow:visible;
+    box-shadow:none;background:linear-gradient(150deg,rgba(14,40,58,.85),rgba(7,23,37,.86));
+    backdrop-filter:none;
+  }
+  .stage-panel .mobile-selected-slot .selected-location-card[hidden]{display:none!important}
+  .stage-panel .mobile-selected-slot .selected-location-card .site-view-preview-button img{height:126px}
+  .stage-panel .mobile-selected-slot .selected-location-card .atlas-place-main-actions{
+    grid-template-columns:1fr 1fr;
+  }
+  .stage-panel .mobile-selected-slot .selected-location-card .atlas-place-main-actions button{
+    min-height:42px;font-size:11px;
+  }
+  .stage-panel .mobile-selected-slot .selected-location-card .selected-location-title strong{font-size:14px}
+}
+/* Mobile retains the native three-state bottom sheet and uses compact globe controls. */
+@media(max-width:700px){
+  body.mobile-sheet-ready .atlas-globe-toolbar{
+    inset-inline-start:auto;inset-inline-end:10px;
+    top:max(96px,calc(80px + env(safe-area-inset-top)));gap:6px;
+  }
+  body.mobile-sheet-ready .atlas-zoom-tools{padding:2px;gap:2px;border-radius:10px}
+  body.mobile-sheet-ready .atlas-globe-toolbar .atlas-globe-tool{
+    min-width:44px;min-height:44px;width:44px;height:44px;font-size:19px;border-radius:9px;
+  }
+  body.mobile-sheet-ready .atlas-globe-toolbar .atlas-map-return{
+    width:auto;height:auto;max-width:124px;min-height:44px;font-size:10px;
+  }
+  body.mobile-sheet-ready .atlas-explore-shortcuts{margin-bottom:9px}
+  body.mobile-sheet-ready .atlas-explore-shortcuts .atlas-quick-categories button{min-height:46px}
+  body.mobile-sheet-ready .selected-location-card .atlas-place-utility-details>summary{min-height:44px}
+}
+@media(max-width:360px){
+  .stage-panel .atlas-explore-shortcuts .atlas-quick-categories button strong{font-size:9px}
+}

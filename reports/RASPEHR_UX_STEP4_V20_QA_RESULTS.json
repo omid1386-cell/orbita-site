@@ -1,0 +1,45 @@
+{
+  "version": "V20",
+  "date": "2026-11-27",
+  "source_baseline": "V19",
+  "browser_mock_html_css": {
+    "pass": 98,
+    "total": 98,
+    "sizes": [
+      320,
+      360,
+      390,
+      701,
+      900,
+      1440
+    ],
+    "notes": "Actual project markup and CSS, but simulated place selection; live WebGL was not verified"
+  },
+  "node_3d": {
+    "pass": 69,
+    "total": 70,
+    "historical_failure": "V9 immutable app.js check, changed deliberately in V19"
+  },
+  "node_2d": {
+    "pass": 144,
+    "total": 191,
+    "historical_failures": 47
+  },
+  "protected_v9": {
+    "unchanged": 886,
+    "total": 887,
+    "exception_preexisting_v19": "assets/js/app.js",
+    "protected_launch_site_images_unchanged": 48
+  },
+  "main_data_unchanged": true,
+  "google_registry_entries": 420,
+  "modified_since_v19": [
+    "raspehr-3d/index.html"
+  ],
+  "new_files_since_v19": [
+    "qa/step4_v20_browser_qa.py",
+    "raspehr-3d/assets/css/atlas-ux-step4-v20.css",
+    "raspehr-3d/assets/js/atlas-ux-step4-v20.js"
+  ],
+  "published_to_github_or_render": false
+}

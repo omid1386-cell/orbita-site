@@ -17,7 +17,7 @@ const checks = [
   [ /id="launchMissionJumpResults"[^>]*aria-controls="globalLaunchResults"/, 'Mobile results shortcut'],
   [ /id="globalLaunchFilterSummary"/, 'Current filter summary'],
   [ /id="globalLaunchSelectedCountries"/, 'Removable applied country chips'],
-  [ /<dialog id="globalLandingDialog" class="global-launch-dialog"/, 'Existing landing dialog untouched'],
+  [ /<dialog id="globalLandingDialog" class="global-launch-dialog launch-mission-dialog raspehr-landing-parity"/, 'Landing uses the shared mission-room styling (UX step 5)'],
 ];
 for (const [re, label] of checks) assert.match(html, re, label);
 assert.ok(!/<nav class="tabs">[\s\S]*id="upcomingLaunchesBtn"[\s\S]*<\/nav>/.test(html), 'No old tab launcher');
@@ -35,4 +35,4 @@ assert.doesNotMatch(js, /\brender\(\);/, 'Unknown render() must not be called on
 assert.match(js, /Filters\.filterLaunches\(/, 'Filtering unchanged');
 assert.equal((html.match(/id="upcomingLaunchesBtn"/g) || []).length,1);
 assert.equal((html.match(/id="globalLaunchDialog"/g) || []).length,1);
-console.log('PASS: launch mission UI redesign, responsive behavior, i18n hooks, preserved landing dialog');
+console.log('PASS: launch mission UI redesign, responsive behavior, i18n hooks, shared landing dialog skin');

@@ -1,0 +1,135 @@
+{
+  "browser_mock": {
+    "passes": 20,
+    "failures": 0,
+    "tests": [
+      {
+        "screen": "mobile",
+        "case": "2D bare map: entry toggle visible",
+        "pass": true
+      },
+      {
+        "screen": "mobile",
+        "case": "country dossier: entry toggle hidden",
+        "pass": true
+      },
+      {
+        "screen": "mobile",
+        "case": "country dossier closed: entry restored",
+        "pass": true
+      },
+      {
+        "screen": "mobile",
+        "case": "media gallery/modal: entry toggle hidden",
+        "pass": true
+      },
+      {
+        "screen": "mobile",
+        "case": "media gallery closed: entry restored",
+        "pass": true
+      },
+      {
+        "screen": "mobile",
+        "case": "3D activated: duplicate parent return hidden",
+        "pass": true
+      },
+      {
+        "screen": "mobile",
+        "case": "3D activation leaves only child return control",
+        "pass": true
+      },
+      {
+        "screen": "mobile",
+        "case": "3D exit: 2D entry visible",
+        "pass": true
+      },
+      {
+        "screen": "mobile",
+        "case": "3D return with dossier: entry stays hidden",
+        "pass": true
+      },
+      {
+        "screen": "mobile",
+        "case": "3D return focus goes to dossier close",
+        "pass": true
+      },
+      {
+        "screen": "desktop",
+        "case": "2D bare map: entry toggle visible",
+        "pass": true
+      },
+      {
+        "screen": "desktop",
+        "case": "country dossier: entry toggle hidden",
+        "pass": true
+      },
+      {
+        "screen": "desktop",
+        "case": "country dossier closed: entry restored",
+        "pass": true
+      },
+      {
+        "screen": "desktop",
+        "case": "media gallery/modal: entry toggle hidden",
+        "pass": true
+      },
+      {
+        "screen": "desktop",
+        "case": "media gallery closed: entry restored",
+        "pass": true
+      },
+      {
+        "screen": "desktop",
+        "case": "3D activated: duplicate parent return hidden",
+        "pass": true
+      },
+      {
+        "screen": "desktop",
+        "case": "3D activation leaves only child return control",
+        "pass": true
+      },
+      {
+        "screen": "desktop",
+        "case": "3D exit: 2D entry visible",
+        "pass": true
+      },
+      {
+        "screen": "desktop",
+        "case": "3D return with dossier: entry stays hidden",
+        "pass": true
+      },
+      {
+        "screen": "desktop",
+        "case": "3D return focus goes to dossier close",
+        "pass": true
+      }
+    ]
+  },
+  "summary": {
+    "node_3d": {
+      "passed": 70,
+      "failed": 0
+    },
+    "node_2d": {
+      "passed": 143,
+      "failed": 47,
+      "preexisting_failures": 47
+    },
+    "browser_mock": {
+      "passed": 20,
+      "failed": 0,
+      "devices": [
+        "390x844",
+        "1365x768"
+      ]
+    },
+    "original_html_css": {
+      "passed": 2,
+      "failed": 0
+    },
+    "v16_preflight": {
+      "passed": 24,
+      "failed": 0
+    }
+  }
+}

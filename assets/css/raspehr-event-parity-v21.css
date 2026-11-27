@@ -1,0 +1,68 @@
+/* RASPEHR V21 / UX step 5 — unified upcoming-event appearance.
+ * Presentation only: the independent launch/landing data pipelines,
+ * filtering semantics and refresh workflows are unchanged.
+ * Force a shared navy surface even while the parent site uses light mode.
+ */
+#globalLaunchDialog,#globalLandingDialog{
+  --bg:#071522; --bg2:#102a3a; --panel-solid:#081a2a;
+  --text:#eff8fb; --muted:#a8c4d1; --line:rgba(115,181,204,.24);
+  --accent:#e6b86c; --accent-tx:#f5d69e;
+  --green:#8ae4c4; --amber:#f4c77e; --rose:#f6a3b6;
+  color-scheme:dark;
+}
+/* The same mission-room frame, spacing and surfaces now enclose both feeds. */
+#globalLandingDialog.raspehr-landing-parity{
+  background:#061522;color:#eff8fb;
+}
+#globalLandingDialog.raspehr-landing-parity .global-launch-head{
+  background:linear-gradient(112deg,#091728 10%,#0b3044 68%,#0c192a 100%);
+}
+#globalLandingDialog.raspehr-landing-parity .global-launch-country-search{
+  background:#061b2a;color:#f4f7f8;border-color:#345468;
+  padding-inline-start:12px; /* no magnifier in the landing dialog */
+}
+#globalLandingDialog.raspehr-landing-parity .global-launch-country-search::placeholder{
+  color:#99b9c8;
+}
+#globalLandingDialog.raspehr-landing-parity .global-launch-period{
+  display:flex;flex-direction:column;align-items:center;justify-content:center;
+  gap:7px;min-height:84px;padding:8px 4px;
+  line-height:1.6;color:#c4d9e1;
+}
+#globalLandingDialog.raspehr-landing-parity .global-launch-period::before{
+  content:attr(data-days) 'D';direction:ltr;
+  font:800 21px/1.1 ui-monospace,SFMono-Regular,Consolas,monospace;
+  letter-spacing:-.06em;color:#eff7f6;
+}
+#globalLandingDialog.raspehr-landing-parity .global-launch-period.is-active{
+  color:#ffe2a5;
+}
+#globalLandingDialog.raspehr-landing-parity .global-launch-country-options{
+  max-height:178px;
+}
+#globalLandingDialog.raspehr-landing-parity .global-launch-results-head>div{
+  justify-content:space-between;
+}
+#globalLandingDialog.raspehr-landing-parity .global-launch-results-head .event-display-update-row{
+  justify-content:flex-start;
+}
+#globalLandingDialog.raspehr-landing-parity .global-launch-result-count{
+  color:#f5d69e;
+}
+/* Keep this component consistent when the document changes to its light theme. */
+#globalLaunchDialog .event-display-info-strip,
+#globalLandingDialog .event-display-info-strip{
+  color:#d8e6ed;
+}
+@media(max-width:980px){
+ #globalLandingDialog.raspehr-landing-parity .global-launch-period{min-height:78px}
+}
+@media(max-width:760px){
+ #globalLandingDialog.raspehr-landing-parity .global-launch-period{min-height:72px;gap:4px}
+ #globalLandingDialog.raspehr-landing-parity .global-launch-period::before{font-size:19px}
+ #globalLandingDialog.raspehr-landing-parity .global-launch-head p{max-width:100%}
+}
+@media(max-width:385px){
+ #globalLandingDialog.raspehr-landing-parity .global-launch-period::before{font-size:16px}
+ #globalLandingDialog.raspehr-landing-parity .global-launch-period{font-size:9px;line-height:1.4}
+}
