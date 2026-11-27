@@ -10,6 +10,7 @@
   <link rel="stylesheet" href="assets/css/atlas-panel-v2.css?v=20261125-atlas-panel-v3">
   <link rel="stylesheet" href="assets/css/place-journey-v4.css?v=20261125-place-v4">
   <link rel="stylesheet" href="assets/css/interaction-stability-v5.css?v=20261125-stability-v5">
+  <link rel="stylesheet" href="assets/css/external-map-links-v1.css?v=20261126-v16-final-release">
 </head>
 <body>
   <main class="app-shell">
@@ -241,6 +242,20 @@
           <button id="atlasCopyCoordinates" type="button" aria-describedby="atlasPlaceActionStatus">کپی مختصات</button>
           <button id="atlasBackToExplore" type="button">بازگشت به کاوش</button>
         </div>
+        <details class="atlas-external-maps" id="atlasExternalMaps" hidden>
+          <summary><span class="atlas-external-maps-icon" aria-hidden="true">↗</span><span>مشاهده در نقشه‌های دیگر<small>گوگل مپس و گوگل ارث · سرویس خارجی</small></span></summary>
+          <div class="atlas-external-maps-body">
+            <p class="atlas-external-maps-precision" id="atlasExternalMapsPrecision"></p>
+            <div class="atlas-external-maps-links">
+              <a id="atlasGoogleMapsLink" class="atlas-external-maps-link" hidden target="_blank" rel="noopener noreferrer" referrerpolicy="no-referrer">مشاهده موقعیت در گوگل مپس <span aria-hidden="true">↗</span></a>
+              <a id="atlasGoogleSatelliteLink" class="atlas-external-maps-link atlas-external-maps-link--satellite" hidden target="_blank" rel="noopener noreferrer" referrerpolicy="no-referrer">نمای ماهواره‌ای محیط در گوگل مپس <span aria-hidden="true">↗</span></a>
+              <a id="atlasGoogleEarthLink" class="atlas-external-maps-link" hidden target="_blank" rel="noopener noreferrer" referrerpolicy="no-referrer"><span id="atlasGoogleEarthLinkLabel">کاوش در گوگل ارث</span> <span aria-hidden="true">↗</span></a>
+              <p class="atlas-external-maps-unavailable" id="atlasGoogleEarthUnavailable">لینک مستقیم گوگل ارث آزمایشی است؛ بازشدن سرویس و وجود مدل سه‌بعدی در هر مکان تضمین نمی‌شود.</p>
+            </div>
+            <p class="atlas-external-maps-info">نمای ماهواره‌ای بدون نشانگر باز می‌شود و دید واقعی سه‌بعدی/۳۶۰ درجه را تضمین نمی‌کند. مختصات تقریبی‌اند مگر خلاف آن مستند شده باشد.</p>
+            <p id="atlasExternalMapsStatus" class="atlas-external-maps-status" role="status" aria-live="polite"></p>
+          </div>
+        </details>
         <p id="atlasPlaceActionStatus" class="atlas-action-feedback" role="status" aria-live="polite"></p>
         <div class="selected-location-facility-tools atlas-facility-primary">
           <button id="selectedLocationFacility" type="button" hidden>نمای نزدیک تصاویر و تأسیسات</button>
@@ -325,6 +340,7 @@
   <script src="assets/js/stage5-integration.js?v=20261125-atlas-v7"></script>
   <script src="assets/js/site-views.js?v=20261125-atlas-panel-v3"></script>
   <script src="assets/js/place-journey-v4.js?v=20261125-place-v4"></script>
+  <script src="assets/js/external-map-links-v1.js?v=20261126-v16-final-release"></script>
   <script src="assets/js/prototype.js?v=20261125-imagery-fix1"></script>
   <script src="assets/js/mobile-bottom-sheet.js?v=20261125-atlas-panel-v3"></script>
 </body>

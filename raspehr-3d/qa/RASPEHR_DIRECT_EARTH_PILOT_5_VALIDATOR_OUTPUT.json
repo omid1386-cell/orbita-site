@@ -1,0 +1,7 @@
+{
+  "records": 5,
+  "valid_urls": 5,
+  "coordinate_matches": 5,
+  "live_open_verified": 0,
+  "notice": "Offline structural validation only; does not test Google Earth rendering or imagery."
+}

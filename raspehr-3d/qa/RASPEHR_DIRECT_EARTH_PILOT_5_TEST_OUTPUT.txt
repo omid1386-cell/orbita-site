@@ -1,0 +1,52 @@
+TAP version 13
+# Subtest: pilot has five canonical targets across site, company, recovery
+ok 1 - pilot has five canonical targets across site, company, recovery
+  ---
+  duration_ms: 1.294191
+  type: 'test'
+  ...
+# Subtest: all direct Earth candidate URLs use the observed HTTPS Earth Web camera path
+ok 2 - all direct Earth candidate URLs use the observed HTTPS Earth Web camera path
+  ---
+  duration_ms: 0.615048
+  type: 'test'
+  ...
+# Subtest: all links center on exact canonical registry coordinates
+ok 3 - all links center on exact canonical registry coordinates
+  ---
+  duration_ms: 3.365594
+  type: 'test'
+  ...
+# Subtest: malicious hosts, schemes, and invalid camera values are rejected
+ok 4 - malicious hosts, schemes, and invalid camera values are rejected
+  ---
+  duration_ms: 0.313583
+  type: 'test'
+  ...
+# Subtest: pilot labels are taken from the canonical Persian catalog
+ok 5 - pilot labels are taken from the canonical Persian catalog
+  ---
+  duration_ms: 0.138469
+  type: 'test'
+  ...
+# Subtest: existing Earth review parser reads the same candidate centers
+ok 6 - existing Earth review parser reads the same candidate centers
+  ---
+  duration_ms: 1.355364
+  type: 'test'
+  ...
+# Subtest: pilot validator never promotes candidates to live-verified status
+ok 7 - pilot validator never promotes candidates to live-verified status
+  ---
+  duration_ms: 0.37764
+  type: 'test'
+  ...
+1..7
+# tests 7
+# suites 0
+# pass 7
+# fail 0
+# cancelled 0
+# skipped 0
+# todo 0
+# duration_ms 62.301909

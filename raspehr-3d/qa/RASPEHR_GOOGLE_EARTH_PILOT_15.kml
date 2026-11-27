@@ -1,0 +1,47 @@
+<?xml version='1.0' encoding='utf-8'?>
+<kml xmlns="http://www.opengis.net/kml/2.2"><Document><name>RASPEHR — Google Earth pilot (15 records)</name><description>Research-only placemarks from RASPEHR V9. Not a verification of photorealistic 3D or Street View coverage.</description><Folder><name>پایگاه پرتاب</name><Placemark><name>مرکز فضایی کندی، سکوی ۳۹A (Kennedy Space Center – LC-39A)</name><description>RASPEHR ID: ksc39a
+Precision: operator_published_pad_coordinates
+سکوی مشخص، مختصات مستند؛ نامزد نخست آزمایش عملی.
+Source: https://www.google.com/maps/about/behind-the-scenes/streetview/treks/nasa/</description><Point><coordinates>-80.6043,28.6084,0</coordinates></Point></Placemark><Placemark><name>استاربیس (بوکا چیکا) (Starbase (Boca Chica))</name><description>RASPEHR ID: starbase
+Precision: ثبت نشده در رکورد V9
+بافت محوطه سریع تغییر می‌کند؛ تاریخ تصاویر باید بررسی شود.
+Source: https://www.faa.gov/space/stakeholder_engagement/spacex_starship/operations</description><Point><coordinates>-97.156,25.997,0</coordinates></Point></Placemark><Placemark><name>مجتمع پرتاب ۱ راکت‌لب، ماهیا (Rocket Lab Launch Complex 1 – Māhia)</name><description>RASPEHR ID: mahia
+Precision: ثبت نشده در رکورد V9
+پایگاهی دورافتاده؛ وجود عکس هوایی با مدل سه‌بعدی یکی نیست.
+Source: https://rocketlabcorp.com/launch/launch-with-us/index.php</description><Point><coordinates>177.8649,-39.2614,0</coordinates></Point></Placemark><Placemark><name>پایگاه فضایی گویان، کورو (Guiana Space Centre (CSG) – Kourou)</name><description>RASPEHR ID: kourou
+Precision: ثبت نشده در رکورد V9
+مرکز گسترده و چندسکویی؛ نقطه مرجع را با سکوی مدنظر اشتباه نگیریم.
+Source: https://www.nationsonline.org/oneworld/map/google_map_Kourou.htm</description><Point><coordinates>-52.7683,5.236,0</coordinates></Point></Placemark><Placemark><name>پایگاه پرتاب فضایی ون‌چانگ (Wenchang Space Launch Site)</name><description>RASPEHR ID: wenchang
+Precision: ثبت نشده در رکورد V9
+پوشش تصاویر و نمای سه‌بعدی این نقطه در گوگل مستقیم بررسی نشده است.
+Source: https://celestrak.org/satcat/maps/mapWSC.php</description><Point><coordinates>110.951,19.6144,0</coordinates></Point></Placemark><Placemark><name>پایگاه فضایی بایکونور (Baikonur Cosmodrome)</name><description>RASPEHR ID: baikonur
+Precision: ثبت نشده در رکورد V9
+محدوده بسیار بزرگ؛ یک نشانگر نماینده کل پایگاه است.
+Source: https://www.nationsonline.org/oneworld/map/google_map_Baikonur_Cosmodrome.htm</description><Point><coordinates>63.305,45.965,0</coordinates></Point></Placemark><Placemark><name>مرکز فضایی ساتیش دهاوان (شار) (Satish Dhawan Space Centre (SHAR))</name><description>RASPEHR ID: sriharikota
+Precision: operator_published_pad_coordinates
+مختصات نوع launch_pad در V9 ثبت شده؛ مطابقت نمای گوگل نیازمند کنترل است.
+Source: https://www.isro.gov.in/SDSC.html</description><Point><coordinates>80.2304,13.7199,0</coordinates></Point></Placemark></Folder><Folder><name>شرکت فضایی</name><Placemark><name>بلو اوریجین (Blue Origin)</name><description>RASPEHR ID: blueorigin
+Precision: ثبت نشده در رکورد V9
+بلو اوریجین در کنت چند تأسیسات دارد؛ نقطه V9 را باید به ساختمان مشخص نسبت داد.
+Source: https://apps.ecology.wa.gov/paris/FacilityDetails.aspx?FacilityId=1703747</description><Point><coordinates>-122.247,47.4108,0</coordinates></Point></Placemark><Placemark><name>راکت لب (Rocket Lab)</name><description>RASPEHR ID: rocketlab
+Precision: ثبت نشده در رکورد V9
+نشانی رسمی دفتر اصلی 3881 McGowen St است؛ تطبیق پین V9 با ساختمان باید سنجیده شود.
+Source: https://investors.rocketlabcorp.com/resources/investor-faqs</description><Point><coordinates>-118.149,33.8308,0</coordinates></Point></Placemark><Placemark><name>ایزار ایروسپیس (Isar Aerospace)</name><description>RASPEHR ID: isar
+Precision: ثبت نشده در رکورد V9
+در منابع رسمی نشانی ثبت شرکت به Vaterstetten تغییر یافته؛ V9 به Ottobrunn اشاره دارد. محل تولید را با دفتر مرکزی یکی نگیریم.
+Source: https://isaraerospace.com/privacy-policy</description><Point><coordinates>11.6667,48.0631,0</coordinates></Point></Placemark></Folder><Folder><name>سازمان فضایی</name><Placemark><name>ناسا (NASA)</name><description>RASPEHR ID: nasa
+Precision: ثبت نشده در رکورد V9
+این رکورد مربوط به مقر اداری واشینگتن است، نه مجموعه کندی.
+Source: https://www.nasa.gov/headquarters/visit-hq/</description><Point><coordinates>-77.0163,38.883,0</coordinates></Point></Placemark><Placemark><name>آژانس فضایی اروپا (European Space Agency (ESA))</name><description>RASPEHR ID: esa
+Precision: ثبت نشده در رکورد V9
+مقر ESA در پاریس دو سایت Mario Nikis و Daumesnil دارد؛ باید تعیین کنیم کدام یک مدنظر است.
+Source: https://www.esa.int/establishment/about-us/meet-us/sites-and-establishments/esa-headquarters/esa-headquarters</description><Point><coordinates>2.3082,48.8475,0</coordinates></Point></Placemark></Folder><Folder><name>فرود و بازیابی</name><Placemark><name>منطقهٔ فرود ۱ (Landing Zone 1)</name><description>RASPEHR ID: recovery-lz1
+Precision: ثبت نشده در رکورد V9
+ناحیه فرود ثابت است، ولی مختصات مرجع و مرکز دقیق سکو باید تطبیق داده شود.
+Source: https://commons.wikimedia.org/wiki/Category:Landing_Zone_1</description><Point><coordinates>-80.5444,28.4858,0</coordinates></Point></Placemark><Placemark><name>ناحیهٔ بازگشت دونگ‌فنگ (Dongfeng Return Region)</name><description>RASPEHR ID: recovery-dongfeng
+Precision: ثبت نشده در رکورد V9
+منطقه بازگشت، نقطه فرود ثابت نیست؛ لینک باید «نمای منطقه» نام‌گذاری شود.
+Source: https://lldev.thespacedevs.com/2.3.0/landings/1738/?format=api</description><Point><coordinates>100.318,41.7456,0</coordinates></Point></Placemark><Placemark><name>پهنهٔ فرود آبی استارشیپ در اقیانوس هند (Starship Indian Ocean splashdown zone)</name><description>RASPEHR ID: recovery-starship-indian
+Precision: ثبت نشده در رکورد V9
+مختصات اقیانوسی نشانگر پهنه تقریبی رویداد است؛ برای پانوراما یا ساختمان سه‌بعدی معنی ندارد.
+Source: https://www.faa.gov/media/76836</description><Point><coordinates>101.5,-26.0,0</coordinates></Point></Placemark></Folder></Document></kml>

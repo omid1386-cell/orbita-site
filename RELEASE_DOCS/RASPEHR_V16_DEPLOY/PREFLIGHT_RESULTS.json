@@ -1,0 +1,129 @@
+{
+  "project": "RASPEHR",
+  "release": "V16-RC1",
+  "offline_only": true,
+  "tests": [
+    {
+      "name": "file:index.html",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "file:assets/js/raspehr-stage5-switch.js",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "file:raspehr-3d/index.html",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "file:raspehr-3d/assets/js/external-map-links-v1.js",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "file:raspehr-3d/assets/css/external-map-links-v1.css",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "file:raspehr-3d/data/external-links-v1.json",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "file:data/companies.json",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "file:data/sites.json",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "file:data/recovery_sites.json",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "file:render.yaml",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "protected_sha256",
+      "passed": true,
+      "detail": "887 files, 0 mismatches: []"
+    },
+    {
+      "name": "protected_site_photos",
+      "passed": true,
+      "detail": "48 photos"
+    },
+    {
+      "name": "canonical_counts",
+      "passed": true,
+      "detail": "companies 321, sites 79, recovery 20, keys 420"
+    },
+    {
+      "name": "registry_coverage",
+      "passed": true,
+      "detail": "records=420, keys=420, unmatched=0"
+    },
+    {
+      "name": "direct_earth_status",
+      "passed": true,
+      "detail": "Counter({'generated_pattern_unverified': 415, 'pilot_user_confirmed': 5})"
+    },
+    {
+      "name": "no_false_verified_earth_share",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "coordinates_identical_to_source",
+      "passed": true,
+      "detail": "[]"
+    },
+    {
+      "name": "google_maps_urls",
+      "passed": true,
+      "detail": "840 links, mismatched=[]"
+    },
+    {
+      "name": "direct_earth_urls",
+      "passed": true,
+      "detail": "420 links, malformed=[]"
+    },
+    {
+      "name": "html_static_assets",
+      "passed": true,
+      "detail": "46 local references, missing=[]"
+    },
+    {
+      "name": "cache_version_for_external_links",
+      "passed": true,
+      "detail": "CSS and JS both contain final-release cache token"
+    },
+    {
+      "name": "root_loads_3d_switch",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "earth_external_navigation_secure",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "render_service_is_report_api",
+      "passed": true,
+      "detail": "render.yaml contains report API; static frontend deploy must be configured separately"
+    }
+  ],
+  "passed": 24,
+  "failed": 0
+}

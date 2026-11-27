@@ -35,6 +35,7 @@
       if(localFacility)localFacility.setSelection(null);
       if(window.RaspehrSiteViews)window.RaspehrSiteViews.select(null);
       if(window.RaspehrPlaceJourney)window.RaspehrPlaceJourney.select(null);
+      if(window.RaspehrExternalMaps)window.RaspehrExternalMaps.select(null);
       $('entityCard').hidden=true;
       $('selectedLocationCard').hidden=true;
       if(window.RaspehrStage4)window.RaspehrStage4.select(null);
@@ -75,6 +76,7 @@
     $('selectedLocationFacilityMeta').hidden=true;
     $('selectedLocationCard').hidden=false;
     if(window.RaspehrPlaceJourney)window.RaspehrPlaceJourney.select(row);
+    if(window.RaspehrExternalMaps)window.RaspehrExternalMaps.select(row);
     intro.classList.add('is-faded');
     if (window.RaspehrStage4) window.RaspehrStage4.select(row);
   }

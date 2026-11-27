@@ -1,0 +1,31 @@
+{
+  "date": "2026-11-26",
+  "attempts": [
+    {
+      "id": "starbase",
+      "status": "blocked_by_execution_environment",
+      "error": "Page.goto: net::ERR_BLOCKED_BY_ADMINISTRATOR at https://earth.google.com/web/@25.997,-97.156,0a,8000d,35y,0h,50t,0r"
+    },
+    {
+      "id": "mahia",
+      "status": "blocked_by_execution_environment",
+      "error": "Page.goto: net::ERR_BLOCKED_BY_ADMINISTRATOR at https://earth.google.com/web/@-39.2614,177.8649,0a,7000d,35y,0h,50t,0r"
+    },
+    {
+      "id": "sriharikota",
+      "status": "blocked_by_execution_environment",
+      "error": "Page.goto: net::ERR_BLOCKED_BY_ADMINISTRATOR at https://earth.google.com/web/@13.7199,80.2304,0a,5000d,35y,0h,50t,0r"
+    },
+    {
+      "id": "rocketlab",
+      "status": "blocked_by_execution_environment",
+      "error": "Page.goto: net::ERR_BLOCKED_BY_ADMINISTRATOR at https://earth.google.com/web/@33.8308,-118.149,0a,1800d,35y,0h,45t,0r"
+    },
+    {
+      "id": "recovery-kennedy-runway",
+      "status": "blocked_by_execution_environment",
+      "error": "Page.goto: net::ERR_BLOCKED_BY_ADMINISTRATOR at https://earth.google.com/web/@28.615,-80.6945,0a,5000d,35y,0h,50t,0r"
+    }
+  ],
+  "interpretation": "Navigation was blocked by the execution environment. This does not establish whether the candidate URLs work in a normal user browser."
+}

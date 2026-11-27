@@ -1,0 +1,84 @@
+{
+  "project": "RASPEHR",
+  "stage": "DIRECT_LINKS_STAGE1_V14",
+  "date": "2026-11-26",
+  "offline_structural_pass": true,
+  "location_count": 420,
+  "maps_position_urls": 420,
+  "maps_satellite_urls": 420,
+  "source_breakdown": {
+    "company": 321,
+    "site": 79,
+    "recovery": 20
+  },
+  "shared_coordinate_groups": 12,
+  "shared_coordinate_records": 24,
+  "shared_coordinate_details": {
+    "12.9716,77.5946": [
+      "company:isro",
+      "company:etherealx"
+    ],
+    "36.3504,127.3845": [
+      "company:kari",
+      "company:perigee"
+    ],
+    "25.997,-97.157": [
+      "company:spacex",
+      "recovery:recovery-starbase-catch"
+    ],
+    "33.8005,-118.1508": [
+      "company:relativity",
+      "company:relativity-engine"
+    ],
+    "35.6812,139.7671": [
+      "company:mhi",
+      "company:orbita-composite-tailors"
+    ],
+    "35.6892,51.389": [
+      "company:aio-iran",
+      "company:aio-propulsion"
+    ],
+    "34.1333,108.983": [
+      "company:aalpt-china",
+      "company:casc-6th"
+    ],
+    "34.6901,135.1955": [
+      "company:kawasaki-prop",
+      "company:orbita-astrex"
+    ],
+    "6.58573,3.97569": [
+      "company:cstp-nasrda",
+      "site:epe-lagoon-test-site"
+    ],
+    "-33.92883,18.41722": [
+      "company:pyralink-aerospace",
+      "company:mura-space"
+    ],
+    "37.9402,-75.4664": [
+      "company:orbita-nasa-wallops-ground",
+      "site:wallops"
+    ],
+    "48.086,11.279": [
+      "company:orbita-dlr-gsoc",
+      "company:orbita-dlr-columbus-control"
+    ]
+  },
+  "special_geo_review_notes": 10,
+  "coordinate_review_groups": {
+    "has provenance; not externally verified": 21,
+    "mobile/historical": 1,
+    "reference/approximate": 166,
+    "unverified precision": 212,
+    "zone/reference": 20
+  },
+  "google_maps_live_verified": 0,
+  "google_satellite_live_verified": 0,
+  "google_earth_live_verified": 0,
+  "warnings": [],
+  "failures": [],
+  "real_browser_tested": false,
+  "google_remote_map_content_tested": false,
+  "images_modified": false,
+  "release_approved": false,
+  "note": "Valid URL shape and canonical coordinates do not certify a physical building, image freshness, Street View, or 3D coverage."
+}

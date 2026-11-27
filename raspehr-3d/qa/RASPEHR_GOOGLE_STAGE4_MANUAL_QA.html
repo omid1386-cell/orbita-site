@@ -1,0 +1,135 @@
+<!DOCTYPE html><html lang="fa" dir="rtl"><head><meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>رسپهر | اعتبارسنجی پیوندهای گوگل – ۱۵ مکان</title>
+<style>
+:root{color-scheme:dark;font-family:Tahoma,Arial,sans-serif;background:#071521;color:#e6edf5}
+*{box-sizing:border-box}body{margin:0;background:radial-gradient(ellipse at 75% 0%,#12344d 0%,#071521 60%);min-height:100vh}
+header{padding:28px max(18px,calc((100vw - 1050px)/2)) 18px;border-bottom:1px solid #28445c}
+h1{font-size:25px;margin:6px 0 12px;line-height:1.7;color:#f5e3bd}
+header p{color:#bdccdb;max-width:900px;line-height:2;font-size:13px}
+.wrap{max-width:1050px;margin:auto;padding:18px}
+.stats{display:grid;grid-template-columns:repeat(4,1fr);gap:10px;margin-bottom:15px}
+.stat{padding:15px;background:#10283b;border:1px solid #294d63;border-radius:13px}
+.stat b{font-size:25px;color:#f5c883;display:block}.stat span{font-size:11px;color:#bbcad7}
+.toolbar{display:flex;flex-wrap:wrap;align-items:center;gap:10px;margin:16px 0}
+button,a.action{appearance:none;border:1px solid #9b8655;background:#2c3740;color:#ffe0a3;text-decoration:none;font-size:12px;border-radius:8px;padding:10px 14px;cursor:pointer;font-family:inherit;display:inline-block}
+button.primary{background:#c19a59;color:#071521;font-weight:bold}
+button:focus-visible,a:focus-visible,input:focus-visible,select:focus-visible{outline:2px solid #f4d79d;outline-offset:2px}
+select,input,textarea{font-family:inherit;font-size:12px;border-radius:7px;background:#0a1b2a;border:1px solid #39536a;color:#e4f0f9;padding:8px;width:100%;min-height:36px}
+textarea{min-height:55px;resize:vertical}
+input[type=checkbox]{width:auto;min-height:auto;accent-color:#e9bc6f}
+.filter{max-width:265px}.card{background:#102639;border:1px solid #2a475c;border-radius:14px;margin-bottom:12px;overflow:hidden}
+.card>summary{cursor:pointer;list-style:none;padding:14px 16px;display:flex;align-items:center;justify-content:space-between;gap:12px}
+.card>summary::-webkit-details-marker{display:none}
+.title{display:flex;align-items:center;gap:10px}.num{color:#e5c189;font-size:19px;font-weight:bold}
+.place{font-weight:bold;font-size:14px}.sub{font-size:11px;color:#aabfd1;margin-top:5px}
+.state{font-size:11px;color:#eacc92;border:1px solid #6a5839;border-radius:50px;padding:5px 9px}
+.content{padding:0 16px 15px}
+.notice{font-size:11px;line-height:1.9;padding:10px 13px;background:#183342;border-right:3px solid #cda765;border-radius:6px;color:#d3e0e5}
+.links{display:flex;flex-wrap:wrap;gap:8px;margin:12px 0}
+.grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:12px}
+.field>label{display:block;font-size:11px;color:#d5e2ea;margin-bottom:6px}
+.full{grid-column:1/-1}.muted{font-size:11px;color:#9fb2c1;line-height:1.9}
+#toast{position:fixed;bottom:12px;left:12px;right:12px;margin:auto;max-width:550px;text-align:center;pointer-events:none}
+#toast>span{display:inline-block;background:#25553f;color:#e5ffeb;border:1px solid #63957c;padding:9px 13px;border-radius:9px}
+footer{padding:30px 20px;text-align:center;color:#96aebc;font-size:11px}
+@media(max-width:700px){.stats{grid-template-columns:repeat(2,1fr)}.grid{grid-template-columns:1fr 1fr}.full{grid-column:1/-1}.wrap{padding:10px}header{padding:19px 14px}}
+@media(max-width:460px){.grid{grid-template-columns:1fr}.links{display:grid}.links>a{width:100%;text-align:center}}
+</style></head>
+<body>
+<header><div style="color:#b7cde0;font-size:12px;letter-spacing:1px">RASPEHR · گام چهارم</div>
+<h1>اعتبارسنجی ۱۵ مکان در گوگل مپس و گوگل ارث</h1>
+<p>این صفحه یک ابزار بررسی دستی و مستقل است. لینک گوگل مپس با مختصات اصلی رسپهر ساخته شده، اما بازشدن زنده، مدل سه‌بعدی و تصاویر ۳۶۰ درجه هنوز تأیید نشده‌اند. نتایج بررسی روی دستگاه خود را ثبت و فایل خروجی را ذخیره کنید؛ هیچ داده‌ای به سرور ارسال نمی‌شود.</p></header>
+<main class="wrap">
+<section class="stats" aria-label="وضعیت پیشرفت">
+<div class="stat"><b id="statAll">۱۵</b><span>مکان پایلوت</span></div>
+<div class="stat"><b id="statMaps">۰</b><span>بازشدن مپس تأیید دستی</span></div>
+<div class="stat"><b id="statEarth">۰</b><span>نمای ارث تأیید دستی</span></div>
+<div class="stat"><b id="statReturn">۰</b><span>بازگشت موبایل تأیید دستی</span></div></section>
+<div class="toolbar">
+<button type="button" class="primary" id="exportJSON">خروجی JSON بررسی‌ها</button>
+<button type="button" id="exportCSV">خروجی CSV</button>
+<button type="button" id="resetState">پاک‌کردن وضعیت ثبت‌شده در این صفحه</button>
+<select id="catFilter" class="filter" aria-label="فیلتر دسته">
+<option value="">همه گروه‌ها</option><option value="site">پایگاه‌های پرتاب</option><option value="company">شرکت‌ها و سازمان‌ها</option><option value="recovery">فرود و بازیابی</option>
+</select>
+</div>
+<div class="notice" style="margin:0 0 12px">برای گوگل ارث، ابتدا مکان را در خود برنامه پیدا کنید، زاویه مناسب را انتخاب کنید و از گزینه اشتراک‌گذاری، لینک نمای فعلی را دریافت کنید. ثبت لینک در این صفحه <b>به معنای تأیید پوشش سه‌بعدی نیست</b>. گزینه «تأیید دستی» را فقط پس از مشاهده واقعی علامت بزنید.</div>
+<div id="cards"></div></main><footer>RASPEHR · گزارش پژوهشی مستقل · ۲۵ نوامبر ۲۰۲۶ · تصاویر قبلی و کد نقشه بدون تغییر</footer><div id="toast" role="status" aria-live="polite"></div>
+<script>
+"use strict";
+const DATA={"records": [{"index": 1, "id": "ksc39a", "kind": "site", "category_fa": "پایگاه پرتاب", "name_fa": "مرکز فضایی کندی، سکوی ۳۹A", "name_en": "Kennedy Space Center – LC-39A", "country": "United States", "lat": 28.6084, "lon": -80.6043, "coordinate_accuracy": "operator_published_pad_coordinates", "google_maps_url": "https://www.google.com/maps/search/?api=1&query=28.6084%2C-80.6043", "maps_url_structure": "passed", "maps_live_status": "not_tested", "google_earth_share_url": null, "google_earth_live_status": "not_tested", "three_d_coverage": "not_verified", "street_view_coverage": "historical_kennedy_center_evidence_only", "return_desktop": "not_tested_on_google", "return_mobile": "not_tested_on_google", "note": "سکوی مشخص، مختصات مستند؛ نامزد نخست آزمایش عملی.", "evidence_url": "https://www.google.com/maps/about/behind-the-scenes/streetview/treks/nasa/", "manual_outcome": null, "last_live_review": null}, {"index": 2, "id": "starbase", "kind": "site", "category_fa": "پایگاه پرتاب", "name_fa": "استاربیس (بوکا چیکا)", "name_en": "Starbase (Boca Chica)", "country": "United States", "lat": 25.997, "lon": -97.156, "coordinate_accuracy": "ثبت نشده در رکورد V9", "google_maps_url": "https://www.google.com/maps/search/?api=1&query=25.997%2C-97.156", "maps_url_structure": "passed", "maps_live_status": "not_tested", "google_earth_share_url": null, "google_earth_live_status": "not_tested", "three_d_coverage": "not_verified", "street_view_coverage": "not_verified", "return_desktop": "not_tested_on_google", "return_mobile": "not_tested_on_google", "note": "بافت محوطه سریع تغییر می‌کند؛ تاریخ تصاویر باید بررسی شود.", "evidence_url": "https://www.faa.gov/space/stakeholder_engagement/spacex_starship/operations", "manual_outcome": null, "last_live_review": null}, {"index": 3, "id": "mahia", "kind": "site", "category_fa": "پایگاه پرتاب", "name_fa": "مجتمع پرتاب ۱ راکت‌لب، ماهیا", "name_en": "Rocket Lab Launch Complex 1 – Māhia", "country": "New Zealand", "lat": -39.2614, "lon": 177.8649, "coordinate_accuracy": "ثبت نشده در رکورد V9", "google_maps_url": "https://www.google.com/maps/search/?api=1&query=-39.2614%2C177.8649", "maps_url_structure": "passed", "maps_live_status": "not_tested", "google_earth_share_url": null, "google_earth_live_status": "not_tested", "three_d_coverage": "not_verified", "street_view_coverage": "not_verified", "return_desktop": "not_tested_on_google", "return_mobile": "not_tested_on_google", "note": "پایگاهی دورافتاده؛ وجود عکس هوایی با مدل سه‌بعدی یکی نیست.", "evidence_url": "https://rocketlabcorp.com/launch/launch-with-us/index.php", "manual_outcome": null, "last_live_review": null}, {"index": 4, "id": "kourou", "kind": "site", "category_fa": "پایگاه پرتاب", "name_fa": "پایگاه فضایی گویان، کورو", "name_en": "Guiana Space Centre (CSG) – Kourou", "country": "French Guiana", "lat": 5.236, "lon": -52.7683, "coordinate_accuracy": "ثبت نشده در رکورد V9", "google_maps_url": "https://www.google.com/maps/search/?api=1&query=5.236%2C-52.7683", "maps_url_structure": "passed", "maps_live_status": "not_tested", "google_earth_share_url": null, "google_earth_live_status": "not_tested", "three_d_coverage": "not_verified", "street_view_coverage": "not_verified", "return_desktop": "not_tested_on_google", "return_mobile": "not_tested_on_google", "note": "مرکز گسترده و چندسکویی؛ نقطه مرجع را با سکوی مدنظر اشتباه نگیریم.", "evidence_url": "https://www.nationsonline.org/oneworld/map/google_map_Kourou.htm", "manual_outcome": null, "last_live_review": null}, {"index": 5, "id": "wenchang", "kind": "site", "category_fa": "پایگاه پرتاب", "name_fa": "پایگاه پرتاب فضایی ون‌چانگ", "name_en": "Wenchang Space Launch Site", "country": "China", "lat": 19.6144, "lon": 110.951, "coordinate_accuracy": "ثبت نشده در رکورد V9", "google_maps_url": "https://www.google.com/maps/search/?api=1&query=19.6144%2C110.951", "maps_url_structure": "passed", "maps_live_status": "not_tested", "google_earth_share_url": null, "google_earth_live_status": "not_tested", "three_d_coverage": "not_verified", "street_view_coverage": "not_verified", "return_desktop": "not_tested_on_google", "return_mobile": "not_tested_on_google", "note": "پوشش تصاویر و نمای سه‌بعدی این نقطه در گوگل مستقیم بررسی نشده است.", "evidence_url": "https://celestrak.org/satcat/maps/mapWSC.php", "manual_outcome": null, "last_live_review": null}, {"index": 6, "id": "baikonur", "kind": "site", "category_fa": "پایگاه پرتاب", "name_fa": "پایگاه فضایی بایکونور", "name_en": "Baikonur Cosmodrome", "country": "Kazakhstan (leased by Russia)", "lat": 45.965, "lon": 63.305, "coordinate_accuracy": "ثبت نشده در رکورد V9", "google_maps_url": "https://www.google.com/maps/search/?api=1&query=45.965%2C63.305", "maps_url_structure": "passed", "maps_live_status": "not_tested", "google_earth_share_url": null, "google_earth_live_status": "not_tested", "three_d_coverage": "not_verified", "street_view_coverage": "not_verified", "return_desktop": "not_tested_on_google", "return_mobile": "not_tested_on_google", "note": "محدوده بسیار بزرگ؛ یک نشانگر نماینده کل پایگاه است.", "evidence_url": "https://www.nationsonline.org/oneworld/map/google_map_Baikonur_Cosmodrome.htm", "manual_outcome": null, "last_live_review": null}, {"index": 7, "id": "sriharikota", "kind": "site", "category_fa": "پایگاه پرتاب", "name_fa": "مرکز فضایی ساتیش دهاوان (شار)", "name_en": "Satish Dhawan Space Centre (SHAR)", "country": "India", "lat": 13.7199, "lon": 80.2304, "coordinate_accuracy": "operator_published_pad_coordinates", "google_maps_url": "https://www.google.com/maps/search/?api=1&query=13.7199%2C80.2304", "maps_url_structure": "passed", "maps_live_status": "not_tested", "google_earth_share_url": null, "google_earth_live_status": "not_tested", "three_d_coverage": "not_verified", "street_view_coverage": "not_verified", "return_desktop": "not_tested_on_google", "return_mobile": "not_tested_on_google", "note": "مختصات نوع launch_pad در V9 ثبت شده؛ مطابقت نمای گوگل نیازمند کنترل است.", "evidence_url": "https://www.isro.gov.in/SDSC.html", "manual_outcome": null, "last_live_review": null}, {"index": 8, "id": "blueorigin", "kind": "company", "category_fa": "شرکت فضایی", "name_fa": "بلو اوریجین", "name_en": "Blue Origin", "country": "United States", "lat": 47.4108, "lon": -122.247, "coordinate_accuracy": "ثبت نشده در رکورد V9", "google_maps_url": "https://www.google.com/maps/search/?api=1&query=47.4108%2C-122.247", "maps_url_structure": "passed", "maps_live_status": "not_tested", "google_earth_share_url": null, "google_earth_live_status": "not_tested", "three_d_coverage": "not_verified", "street_view_coverage": "not_verified", "return_desktop": "not_tested_on_google", "return_mobile": "not_tested_on_google", "note": "بلو اوریجین در کنت چند تأسیسات دارد؛ نقطه V9 را باید به ساختمان مشخص نسبت داد.", "evidence_url": "https://apps.ecology.wa.gov/paris/FacilityDetails.aspx?FacilityId=1703747", "manual_outcome": null, "last_live_review": null}, {"index": 9, "id": "rocketlab", "kind": "company", "category_fa": "شرکت فضایی", "name_fa": "راکت لب", "name_en": "Rocket Lab", "country": "United States / New Zealand", "lat": 33.8308, "lon": -118.149, "coordinate_accuracy": "ثبت نشده در رکورد V9", "google_maps_url": "https://www.google.com/maps/search/?api=1&query=33.8308%2C-118.149", "maps_url_structure": "passed", "maps_live_status": "not_tested", "google_earth_share_url": null, "google_earth_live_status": "not_tested", "three_d_coverage": "not_verified", "street_view_coverage": "not_verified", "return_desktop": "not_tested_on_google", "return_mobile": "not_tested_on_google", "note": "نشانی رسمی دفتر اصلی 3881 McGowen St است؛ تطبیق پین V9 با ساختمان باید سنجیده شود.", "evidence_url": "https://investors.rocketlabcorp.com/resources/investor-faqs", "manual_outcome": null, "last_live_review": null}, {"index": 10, "id": "isar", "kind": "company", "category_fa": "شرکت فضایی", "name_fa": "ایزار ایروسپیس", "name_en": "Isar Aerospace", "country": "Germany", "lat": 48.0631, "lon": 11.6667, "coordinate_accuracy": "ثبت نشده در رکورد V9", "google_maps_url": "https://www.google.com/maps/search/?api=1&query=48.0631%2C11.6667", "maps_url_structure": "passed", "maps_live_status": "not_tested", "google_earth_share_url": null, "google_earth_live_status": "not_tested", "three_d_coverage": "not_verified", "street_view_coverage": "not_verified", "return_desktop": "not_tested_on_google", "return_mobile": "not_tested_on_google", "note": "در منابع رسمی نشانی ثبت شرکت به Vaterstetten تغییر یافته؛ V9 به Ottobrunn اشاره دارد. محل تولید را با دفتر مرکزی یکی نگیریم.", "evidence_url": "https://isaraerospace.com/privacy-policy", "manual_outcome": null, "last_live_review": null}, {"index": 11, "id": "nasa", "kind": "company", "category_fa": "سازمان فضایی", "name_fa": "ناسا", "name_en": "NASA", "country": "United States", "lat": 38.883, "lon": -77.0163, "coordinate_accuracy": "ثبت نشده در رکورد V9", "google_maps_url": "https://www.google.com/maps/search/?api=1&query=38.883%2C-77.0163", "maps_url_structure": "passed", "maps_live_status": "not_tested", "google_earth_share_url": null, "google_earth_live_status": "not_tested", "three_d_coverage": "not_verified", "street_view_coverage": "not_verified", "return_desktop": "not_tested_on_google", "return_mobile": "not_tested_on_google", "note": "این رکورد مربوط به مقر اداری واشینگتن است، نه مجموعه کندی.", "evidence_url": "https://www.nasa.gov/headquarters/visit-hq/", "manual_outcome": null, "last_live_review": null}, {"index": 12, "id": "esa", "kind": "company", "category_fa": "سازمان فضایی", "name_fa": "آژانس فضایی اروپا", "name_en": "European Space Agency (ESA)", "country": "France / Europe", "lat": 48.8475, "lon": 2.3082, "coordinate_accuracy": "ثبت نشده در رکورد V9", "google_maps_url": "https://www.google.com/maps/search/?api=1&query=48.8475%2C2.3082", "maps_url_structure": "passed", "maps_live_status": "not_tested", "google_earth_share_url": null, "google_earth_live_status": "not_tested", "three_d_coverage": "not_verified", "street_view_coverage": "not_verified", "return_desktop": "not_tested_on_google", "return_mobile": "not_tested_on_google", "note": "مقر ESA در پاریس دو سایت Mario Nikis و Daumesnil دارد؛ باید تعیین کنیم کدام یک مدنظر است.", "evidence_url": "https://www.esa.int/establishment/about-us/meet-us/sites-and-establishments/esa-headquarters/esa-headquarters", "manual_outcome": null, "last_live_review": null}, {"index": 13, "id": "recovery-lz1", "kind": "recovery", "category_fa": "فرود و بازیابی", "name_fa": "منطقهٔ فرود ۱", "name_en": "Landing Zone 1", "country": "United States", "lat": 28.4858, "lon": -80.5444, "coordinate_accuracy": "ثبت نشده در رکورد V9", "google_maps_url": "https://www.google.com/maps/search/?api=1&query=28.4858%2C-80.5444", "maps_url_structure": "passed", "maps_live_status": "not_tested", "google_earth_share_url": null, "google_earth_live_status": "not_tested", "three_d_coverage": "not_verified", "street_view_coverage": "not_verified", "return_desktop": "not_tested_on_google", "return_mobile": "not_tested_on_google", "note": "ناحیه فرود ثابت است، ولی مختصات مرجع و مرکز دقیق سکو باید تطبیق داده شود.", "evidence_url": "https://commons.wikimedia.org/wiki/Category:Landing_Zone_1", "manual_outcome": null, "last_live_review": null}, {"index": 14, "id": "recovery-dongfeng", "kind": "recovery", "category_fa": "فرود و بازیابی", "name_fa": "ناحیهٔ بازگشت دونگ‌فنگ", "name_en": "Dongfeng Return Region", "country": "China", "lat": 41.7456, "lon": 100.318, "coordinate_accuracy": "ثبت نشده در رکورد V9", "google_maps_url": "https://www.google.com/maps/search/?api=1&query=41.7456%2C100.318", "maps_url_structure": "passed", "maps_live_status": "not_tested", "google_earth_share_url": null, "google_earth_live_status": "not_tested", "three_d_coverage": "not_verified", "street_view_coverage": "not_verified", "return_desktop": "not_tested_on_google", "return_mobile": "not_tested_on_google", "note": "منطقه بازگشت، نقطه فرود ثابت نیست؛ لینک باید «نمای منطقه» نام‌گذاری شود.", "evidence_url": "https://lldev.thespacedevs.com/2.3.0/landings/1738/?format=api", "manual_outcome": null, "last_live_review": null}, {"index": 15, "id": "recovery-starship-indian", "kind": "recovery", "category_fa": "فرود و بازیابی", "name_fa": "پهنهٔ فرود آبی استارشیپ در اقیانوس هند", "name_en": "Starship Indian Ocean splashdown zone", "country": "International waters", "lat": -26, "lon": 101.5, "coordinate_accuracy": "ثبت نشده در رکورد V9", "google_maps_url": "https://www.google.com/maps/search/?api=1&query=-26%2C101.5", "maps_url_structure": "passed", "maps_live_status": "not_tested", "google_earth_share_url": null, "google_earth_live_status": "not_tested", "three_d_coverage": "not_verified", "street_view_coverage": "not_verified", "return_desktop": "not_tested_on_google", "return_mobile": "not_tested_on_google", "note": "مختصات اقیانوسی نشانگر پهنه تقریبی رویداد است؛ برای پانوراما یا ساختمان سه‌بعدی معنی ندارد.", "evidence_url": "https://www.faa.gov/media/76836", "manual_outcome": null, "last_live_review": null}]};
+const STORE="raspehr-google-pilot-stage4-v1";
+let saved={};try{saved=JSON.parse(localStorage.getItem(STORE)||"{}")||{}}catch(e){}
+const choices=(a,chosen)=>a.map(([v,t])=>`<option value="${v}" ${chosen===v?'selected':''}>${t}</option>`).join('');
+const htmlEscape=(t)=>String(t??"").replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
+const defaults=()=>({maps:'not_tested',earth:'not_tested',earthURL:'',pano:'unknown',threeD:'unknown',desktopReturn:'not_tested',mobileReturn:'not_tested',evidence:'',notes:'',manualDate:''});
+function recordFor(r){return Object.assign(defaults(),saved[r.kind+":"+r.id]||{});}
+function notice(t){let el=document.getElementById("toast");el.innerHTML=`<span>${htmlEscape(t)}</span>`;setTimeout(()=>{el.textContent=""},2400);}
+function validateEarth(url){
+  if(!url.trim())return true;
+  try{const u=new URL(url);return u.protocol==="https:"&&u.hostname==="earth.google.com"&&(u.pathname.startsWith("/web")||u.pathname.startsWith("/earth"));}catch(e){return false}
+}
+function persist(){try{localStorage.setItem(STORE,JSON.stringify(saved))}catch(e){}updateStats()}
+function updateStats(){
+ let a=DATA.records.map(recordFor);
+ document.getElementById('statAll').textContent=String(a.length);
+ document.getElementById('statMaps').textContent=String(a.filter(x=>x.maps==="opened_correct").length);
+ document.getElementById('statEarth').textContent=String(a.filter(x=>x.earth==="opened_correct"&&validateEarth(x.earthURL)&&x.earthURL).length);
+ document.getElementById('statReturn').textContent=String(a.filter(x=>x.mobileReturn==="returned_with_state").length);
+}
+function render(){
+const c=document.getElementById("cards");let category=document.getElementById("catFilter").value;
+c.innerHTML=DATA.records.filter(r=>!category||category===r.kind).map(r=>{
+ const st=recordFor(r), key=r.kind+":"+r.id;
+ return `<details class="card" data-key="${htmlEscape(key)}"><summary><div class="title">
+ <span class="num">${r.index}</span><div><div class="place">${htmlEscape(r.name_fa)}</div>
+ <div class="sub" dir="ltr">${htmlEscape(r.name_en)} · ${htmlEscape(r.country)}</div></div>
+ </div><span class="state">${st.maps==='opened_correct'?'مپس تأیید دستی':'در انتظار بررسی'}</span></summary>
+ <div class="content"><p class="muted">شناسه: <span dir="ltr">${htmlEscape(r.id)}</span> · ${htmlEscape(r.category_fa)} · مختصات: <span dir="ltr">${r.lat}, ${r.lon}</span></p>
+ <p class="notice">دقت ثبت‌شده: ${htmlEscape(r.coordinate_accuracy)}. ${htmlEscape(r.note)}</p>
+ <div class="links">
+ <a class="action" href="${htmlEscape(r.google_maps_url)}" target="_blank" rel="noopener noreferrer" referrerpolicy="no-referrer">بازکردن موقعیت در گوگل مپس ↗</a>
+ <a class="action" href="https://earth.google.com/web/" target="_blank" rel="noopener noreferrer">رفتن به گوگل ارث (جست‌وجوی دستی) ↗</a>
+ ${st.earthURL&&validateEarth(st.earthURL)?`<a class="action" target="_blank" rel="noopener noreferrer" href="${htmlEscape(st.earthURL)}">آزمایش لینک نمای ثبت‌شده ارث ↗</a>`:''}
+ </div><div class="grid">
+ <div class="field"><label>مپس: آیا مکان درست باز شد؟</label><select data-field="maps">${choices([['not_tested','هنوز بررسی نشده'],['opened_correct','بله، مکان درست باز شد'],['opened_wrong','لینک باز شد اما مکان اشتباه است'],['blocked','دسترسی مسدود / باز نشد']],st.maps)}</select></div>
+ <div class="field"><label>گوگل ارث: آیا نمای درست باز شد؟</label><select data-field="earth">${choices([['not_tested','هنوز بررسی نشده'],['opened_correct','بله، مکان درست باز شد'],['opened_wrong','مکان اشتباه / نمای نامناسب'],['blocked','باز نشد / مسدود بود']],st.earth)}</select></div>
+ <div class="field"><label>مدل واقعی ساختمان‌های سه‌بعدی</label><select data-field="threeD">${choices([['unknown','بررسی نشده'],['yes','بله، دیده شد'],['no','خیر، دیده نشد']],st.threeD)}</select></div>
+ <div class="field"><label>پانورامای ۳۶۰ درجه</label><select data-field="pano">${choices([['unknown','بررسی نشده'],['yes','بله، زنده مشاهده شد'],['no','خیر، دیده نشد']],st.pano)}</select></div>
+ <div class="field"><label>بازگشت در دسکتاپ</label><select data-field="desktopReturn">${choices([['not_tested','بررسی نشده'],['returned_with_state','شناسنامه و وضعیت محفوظ بود'],['lost_state','وضعیت از دست رفت']],st.desktopReturn)}</select></div>
+ <div class="field"><label>بازگشت در موبایل</label><select data-field="mobileReturn">${choices([['not_tested','بررسی نشده'],['returned_with_state','شناسنامه و وضعیت محفوظ بود'],['lost_state','وضعیت از دست رفت']],st.mobileReturn)}</select></div>
+ <div class="field full"><label>لینک اشتراکی واقعی گوگل ارث (اختیاری)</label><input data-field="earthURL" inputmode="url" dir="ltr" value="${htmlEscape(st.earthURL)}" placeholder="https://earth.google.com/web/…"></div>
+ <div class="field full"><label>شواهد و منبع مشاهده</label><input data-field="evidence" dir="ltr" value="${htmlEscape(st.evidence)}" placeholder="آدرس منبع / اسکرین‌شات / تاریخ تصویر"></div>
+ <div class="field full"><label>توضیحات بازبین</label><textarea data-field="notes">${htmlEscape(st.notes)}</textarea></div>
+ </div><p class="muted">نتیجه‌ها تنها پس از ثبت دستی و بررسی مستقل می‌توانند مبنای فعال‌سازی گزینه گوگل ارث در رسپهر شوند.</p>
+ </div></details>`
+}).join('');
+ c.querySelectorAll(".card").forEach(card=>{
+   card.querySelectorAll("[data-field]").forEach(el=>{
+      const field=el.dataset.field,key=card.dataset.key;
+      el.addEventListener("change",()=>{
+       const v=el.value;
+       if(field==="earthURL"&&!validateEarth(v)){el.setCustomValidity("لینک باید از earth.google.com و با https باشد.");el.reportValidity();return}
+       el.setCustomValidity("");let st=saved[key]||defaults();
+       st[field]=v;st.manualDate=(new Date()).toISOString();saved[key]=st;persist();
+       if(field==="earthURL"){let opened=card.open;render();let c2=[...document.querySelectorAll(".card")].find(c=>c.dataset.key===key);if(c2)c2.open=opened;}
+      });
+   });
+ });
+ updateStats();
+}
+function exportData(asCSV){
+ const out=DATA.records.map(r=>({...r,...recordFor(r)}));
+ if(!asCSV){saveFile("RASPEHR_STAGE4_MANUAL_RESULTS.json",JSON.stringify({stage:4,exportedAt:new Date().toISOString(),records:out},null,2),"application/json");return;}
+ const fields=['id','kind','name_fa','lat','lon','maps','earth','threeD','pano','desktopReturn','mobileReturn','earthURL','evidence','notes','manualDate'];
+ const enc=x=>'"'+String(x??'').replace(/"/g,'""')+'"';
+ saveFile("RASPEHR_STAGE4_MANUAL_RESULTS.csv",'\ufeff'+fields.map(enc).join(',')+'\r\n'+out.map(r=>fields.map(f=>enc(r[f])).join(',')).join('\r\n'),'text/csv;charset=utf-8');
+}
+function saveFile(name,txt,type){const blob=new Blob([txt],{type}),url=URL.createObjectURL(blob);const a=document.createElement('a');a.href=url;a.download=name;document.body.append(a);a.click();a.remove();setTimeout(()=>URL.revokeObjectURL(url),1000);notice('فایل خروجی ساخته شد.');}
+document.getElementById('exportJSON').onclick=()=>exportData(false);
+document.getElementById('exportCSV').onclick=()=>exportData(true);
+document.getElementById('catFilter').onchange=render;
+document.getElementById('resetState').onclick=()=>{if(confirm("نتایج ثبت‌شده در این صفحه پاک شوند؟")){saved={};persist();render()}}
+render();
+</script></body></html>
